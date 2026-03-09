@@ -1,9 +1,10 @@
 # ECT Preprint — Numerical Code
 
-> **Paper:** *Euclidean Condensate Theory: Emergence of Spacetime, Gravity and Quantum Mechanics from a Single Condensate Field*  
+> **Paper:** *Euclidean Condensate Theory (ECT): Emergence of Spacetime, Quantum Mechanics, and Gravity from Spontaneous O(4) Symmetry Breaking*  
 > **Author:** Valeriy Blagovidov | vblagovidov@gmail.com  
-> **Preprint:** Zenodo/arXiv — link to be added on publication
+> **Preprint:** [10.5281/zenodo.18917930](https://doi.org/10.5281/zenodo.18917930)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18917930.svg)](https://doi.org/10.5281/zenodo.18917930)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/chufelo/ECT-preprint-code/master?filepath=ECT_interactive_dashboard.ipynb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
@@ -186,10 +187,14 @@ for f in fig*.py; do python $f; done
 ```bibtex
 @article{Blagovidov2026ECT,
   author = {Blagovidov, Valeriy},
-  title  = {Euclidean Condensate Theory: Emergence of Spacetime, Gravity
-            and Quantum Mechanics from a Single Condensate Field},
+  title  = {Euclidean Condensate Theory ({ECT}): Emergence of Spacetime,
+            Quantum Mechanics, and Gravity from Spontaneous $O(4)$
+            Symmetry Breaking},
   year   = {2026},
-  note   = {Preprint. Code: https://github.com/chufelo/ECT-preprint-code}
+  publisher = {Zenodo},
+  version   = {1.0},
+  doi    = {10.5281/zenodo.18917930},
+  url    = {https://doi.org/10.5281/zenodo.18917930}
 }
 ```
 
