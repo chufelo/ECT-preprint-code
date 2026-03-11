@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Figure 11: Cosmological predictions of ECT.
-See docstring in previous version for full description.
+All panels use general condensate physics.
 """
 import numpy as np
 import matplotlib
@@ -31,7 +31,7 @@ ax1.set_title('(a) Redshift anomaly', fontsize=10, fontweight='bold')
 ax1.legend(fontsize=8, loc='upper left')
 ax1.set_xlim(0, 0.05); ax1.set_ylim(0, 0.026)
 
-# ═══ (b) Dark energy EOS ══════════════════════════════════
+# ═══ (b) Condensate vacuum EOS w(z) ═══════════════════════
 z = np.linspace(0, 2.0, 300)
 w0_ect, wa_ect = -0.83, -0.75
 w_ect = w0_ect + wa_ect * z / (1 + z)
@@ -48,10 +48,9 @@ ax2.plot(z, w_lcdm, '--', color='0.50', lw=1.5,
          label=r'$\Lambda$CDM: $w = -1$')
 ax2.set_xlabel('Redshift $z$', fontsize=10)
 ax2.set_ylabel(r'$w(z)$', fontsize=10)
-ax2.set_title('(b) Dark energy EOS', fontsize=10, fontweight='bold')
+ax2.set_title('(b) Condensate vacuum EOS', fontsize=10, fontweight='bold')
 ax2.legend(fontsize=8, loc='upper right')
-ax2.set_xlim(0, 2.0)
-ax2.set_ylim(-1.15, -0.55)
+ax2.set_xlim(0, 1.25); ax2.set_ylim(-1.2, -0.7)
 
 # ═══ (c) Running G ════════════════════════════════════════
 z_c = np.linspace(0, 1200, 1000)
