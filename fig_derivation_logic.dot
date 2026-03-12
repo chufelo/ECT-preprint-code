@@ -2,19 +2,19 @@ digraph ECT_derivation {
     rankdir=TB;
     bgcolor=white;
     fontname="Helvetica";
-    fontsize=11;
+    fontsize=10;
     splines=ortho;
     nodesep=0.40;
-    ranksep=0.60;
+    ranksep=0.58;
     margin=0.3;
-    size="24,16";
+    size="26,17";
     dpi=150;
 
     node [shape=box, style="filled,rounded", fontname=Helvetica, fontsize=10, margin=0.09];
     edge [fontname=Helvetica, fontsize=8];
 
     // ═══════════════════════════════════════════════════════════════
-    // LAYER 0 — Postulates (medium grey, bold) + Phenom. inputs (dark)
+    // LAYER 0 — Postulates + Phenomenological inputs
     // ═══════════════════════════════════════════════════════════════
     { rank=same;
       P1  [label=<P1<BR/><B>4D Euclidean</B>>,
@@ -25,32 +25,37 @@ digraph ECT_derivation {
            fillcolor="#C8C8C8", color="#333333", fontname="Helvetica-Bold", width=1.72, height=0.50];
       P4  [label=<P4<BR/><B>Gradient cond.</B>>,
            fillcolor="#C8C8C8", color="#333333", fontname="Helvetica-Bold", width=1.72, height=0.50];
-      Ph1 [label=<Ph1<BR/><B>c* = c, &#945; = 2&#946;</B>>,
-           fillcolor="#777777", color="#222222", fontcolor=white, fontname="Helvetica-Bold", width=1.72, height=0.50];
-      Ph2 [label=<Ph2<BR/><B>v&#8320;&#178;(&#945;&#8722;&#946;) = M&#772;&#8346;&#8343;&#178; (obs.)</B>>,
-           fillcolor="#777777", color="#222222", fontcolor=white, fontname="Helvetica-Bold", width=2.10, height=0.50];
+      Ph1 [label=<Ph1<BR/><B>c* = c</B><BR/><I>(GW170817 bound)</I>>,
+           fillcolor="#777777", color="#222222", fontcolor=white, fontname="Helvetica-Bold", width=1.90, height=0.60];
+      Ph2 [label=<Ph2<BR/><B>v&#8320;&#178;(&#945;&#8722;&#946;) = M&#772;<SUB>Pl</SUB>&#178;</B><BR/><I>(G<SUB>N</SUB> matching, obs.)</I>>,
+           fillcolor="#777777", color="#222222", fontcolor=white, fontname="Helvetica-Bold", width=2.20, height=0.60];
+      Ph3 [label=<Ph3<BR/><B>N<SUB>e</SUB> = 60</B><BR/><I>(Planck 2018)</I>>,
+           fillcolor="#777777", color="#222222", fontcolor=white, fontname="Helvetica-Bold", width=1.72, height=0.60];
     }
 
     // ═══════════════════════════════════════════════════════════════
-    // LAYER 1 — SSB + Anisotropic coupling
+    // LAYER 1 — SSB + canonical normalisation derived from Ph1
     // ═══════════════════════════════════════════════════════════════
     { rank=same;
       SSB   [label=<SSB<BR/>O(4) &#8594; O(3)<BR/><I>selects w-direction</I>>,
              fillcolor="#EBEBEB", color="#555555", width=2.10, height=0.60];
+      Canon [label=<&#945; = 2&#946; (from c*=c)<BR/>&#946; = 1 (canonical norm.)>,
+             fillcolor="#EBEBEB", color="#555555", width=2.10, height=0.50];
       Aniso [label=<Anisotropic coupling<BR/>L<SUB>E</SUB> + &#945;(n<SUP>A</SUP>&#8706;<SUB>A</SUB>&#934;)&#178;>,
-             fillcolor="#EBEBEB", color="#555555", width=2.30, height=0.50];
+             fillcolor="#EBEBEB", color="#555555", width=2.20, height=0.50];
     }
     P1->SSB; P2->SSB; P3->SSB; P4->SSB;
+    Ph1->Canon;
     P2->Aniso; P4->Aniso;
 
     // ═══════════════════════════════════════════════════════════════
-    // LAYER 2 — Direct SSB consequences (Level A, light grey)
+    // LAYER 2 — Direct SSB consequences (Level A)
     // ═══════════════════════════════════════════════════════════════
     { rank=same;
       Lor   [label=<Lorentzian metric<BR/>diag(&#8722;(&#945;&#8722;&#946;), &#946;, &#946;, &#946;)>,
              fillcolor="#EBEBEB", color="#555555", width=2.00, height=0.50];
       cstar [label=<c* = &#8730;(&#946;/(&#945;&#8722;&#946;))<BR/>light speed>,
-             fillcolor="#EBEBEB", color="#555555", width=1.80, height=0.50];
+             fillcolor="#EBEBEB", color="#555555", width=1.85, height=0.50];
       GN    [label=<G<SUB>N</SUB> = 1/(8&#960;v&#8320;&#178;(&#945;&#8722;&#946;))<BR/>grav. constant>,
              fillcolor="#EBEBEB", color="#555555", width=2.20, height=0.50];
       hbar  [label=<&#295; = v&#8320;&#8730;(&#946;/(&#955;(&#945;&#8722;&#946;)))<BR/>from phase stiffness>,
@@ -61,14 +66,15 @@ digraph ECT_derivation {
              fillcolor="#EBEBEB", color="#555555", width=1.75, height=0.50];
     }
     SSB->Lor; SSB->cstar; SSB->GN; SSB->Golds; SSB->GE;
-    Aniso->Lor  [style=dashed, color="#777777"];
-    Aniso->cstar [style=dashed, color="#777777"];
-    Ph1->cstar  [style=dashed, color="#777777"];
+    Canon->Lor  [style=dashed, color="#777777"];
+    Canon->cstar [style=dashed, color="#777777"];
+    Canon->GN   [style=dashed, color="#777777"];
     Ph2->GN     [style=dashed, color="#777777"];
     P3->hbar    [style=dashed, color="#777777"];
+    Aniso->Lor  [style=dashed, color="#777777"];
 
     // ═══════════════════════════════════════════════════════════════
-    // LAYER 3 — Equations of motion + Quantum vacuum
+    // LAYER 3 — Equations + Quantum vacuum
     // ═══════════════════════════════════════════════════════════════
     { rank=same;
       KG      [label=<Klein&#8211;Gordon<BR/>equation>,
@@ -86,7 +92,7 @@ digraph ECT_derivation {
       BH      [label=<BH thermo.<BR/>S = A/(4G<SUB>N</SUB>&#295;)>,
                fillcolor="#B0B0B0", color="#444444", width=1.65, height=0.50];
       Unruh   [label=<Unruh effect<BR/>T<SUB>U</SUB> = &#295;a/(2&#960;c*k<SUB>B</SUB>)>,
-               fillcolor="#EBEBEB", color="#555555", width=1.80, height=0.50];
+               fillcolor="#EBEBEB", color="#555555", width=1.85, height=0.50];
       Casimir [label=<Casimir effect<BR/>(F/A) = 3/2&#183;(F/A)<SUB>QED</SUB>>,
                fillcolor="#EBEBEB", color="#555555", width=1.95, height=0.50];
       Decoher [label=<Decoherence functional<BR/>&#915;[q], N<SUB>eff</SUB> &#8811; 1>,
@@ -104,16 +110,16 @@ digraph ECT_derivation {
     KG->Decoher [style=dashed, color="#777777"];
 
     // ═══════════════════════════════════════════════════════════════
-    // LAYER 4 — Observational predictions (Level B, grey)
+    // LAYER 4 — Observational predictions (Level B)
     // ═══════════════════════════════════════════════════════════════
     { rank=same;
       RotC   [label=<Rotation curves<BR/>G<SUB>eff</SUB>(r), g&#8224; = c&#178;/r&#8320;<BR/>SPARC 148 gal., &#967;&#178;/N&#126;1.4>,
               fillcolor="#B0B0B0", color="#444444", width=2.00, height=0.60];
-      Infl   [label=<Inflation / part. prod.<BR/>n<SUB>s</SUB> = 0.967, N<SUB>e</SUB> = 60>,
-              fillcolor="#B0B0B0", color="#444444", width=1.85, height=0.50];
+      Infl   [label=<Inflation / part. prod.<BR/>n<SUB>s</SUB> = 1&#8722;2/N<SUB>e</SUB> = 0.967<BR/>(N<SUB>e</SUB> = 60 from Ph3)>,
+              fillcolor="#B0B0B0", color="#444444", width=2.00, height=0.60];
       DE     [label=<Dark energy<BR/>w&#8320; = &#8722;0.83, w<SUB>a</SUB> = &#8722;0.75<BR/>DESI DR2 2025 compat.>,
               fillcolor="#B0B0B0", color="#444444", width=2.00, height=0.60];
-      Hubble [label=<Hubble tension<BR/>G<SUB>eff</SUB>(z)=G(1+z)<SUP>2&#949;</SUP><BR/>&#916;H&#8320; &#126; 3 km/s/Mpc>,
+      Hubble [label=<Hubble tension<BR/>G<SUB>eff</SUB>(z) = G(1+z)<SUP>2&#949;</SUP><BR/>&#916;H&#8320; &#126; 3 km/s/Mpc>,
               fillcolor="#B0B0B0", color="#444444", width=2.00, height=0.60];
       FF     [label=<5th force<BR/>&#969;&#8325; &#126; 10<SUP>&#8722;10</SUP> rad/s<BR/>&#951; &#126; 10<SUP>&#8722;15</SUP> (MICROSCOPE-2)>,
               fillcolor="#B0B0B0", color="#444444", width=2.00, height=0.60];
@@ -121,11 +127,12 @@ digraph ECT_derivation {
               fillcolor="#B0B0B0", color="#444444", width=2.00, height=0.60];
       JWST   [label=<JWST galaxies<BR/>&#215;2&#8211;3 enhancement>,
               fillcolor="#B0B0B0", color="#444444", width=1.75, height=0.50];
-      NSmax  [label=<Neutron star max.<BR/>M<SUB>max</SUB> = 2.17 M&#9737;<BR/>(obs. PSR J0740: 2.14 M&#9737;)>,
+      NSmax  [label=<Neutron star max.<BR/>M<SUB>max</SUB> = 2.17 M&#9737;<BR/>obs. PSR J0740: 2.14 M&#9737;>,
               fillcolor="#B0B0B0", color="#444444", width=2.00, height=0.60];
     }
     GN->RotC;
-    Ein->Infl; Ein->DE;
+    Ein->Infl; Ph3->Infl [style=dashed, color="#777777"];
+    Ein->DE;
     GN->Hubble  [style=dashed, color="#777777"];
     Dir->FF     [style=dashed, color="#777777"];
     Gauge->Lepto [style=dashed, color="#777777"];
@@ -142,13 +149,13 @@ digraph ECT_derivation {
              fillcolor="#EBEBEB", color="#555555", width=1.65, height=0.50];
       law2  [label=<2nd law of thermo.<BR/>dS/dw &#8805; 0 (macro)<BR/>from d&#915;/dw &#8805; 0>,
              fillcolor="#EBEBEB", color="#555555", width=1.85, height=0.60];
-      LIV   [label=<Planck-scale LIV<BR/>|&#948;c/c| &lt; 10<SUP>&#8722;15</SUP>>,
-             fillcolor="#B0B0B0", color="#444444", width=1.65, height=0.50];
       Arrow [label=<Arrow of time<BR/>emergent, N<SUB>eff</SUB> &#8811; 1>,
              fillcolor="#EBEBEB", color="#555555", width=1.65, height=0.50];
-      BTFR  [label=<BTFR: r&#8320; &#8733; M&#8338;<SUP>1/3</SUP><BR/>pred. 0.333, obs. 0.383&#177;0.015<BR/>3.2&#963; tension>,
+      LIV   [label=<Planck-scale LIV<BR/>|&#948;c/c| &lt; 10<SUP>&#8722;15</SUP>>,
+             fillcolor="#B0B0B0", color="#444444", width=1.65, height=0.50];
+      BTFR  [label=<BTFR: r&#8320; &#8733; M<SUB>&#9733;</SUB><SUP>1/3</SUP><BR/>pred. 0.333, obs. 0.383&#177;0.015<BR/>3.2&#963; tension>,
              style="dashed,rounded", fillcolor="#F0F0F0", color="#555555", width=2.10, height=0.60];
-      CMB   [label=<CMB quadrupole<BR/>&#948;C&#8322;/C&#8322; &#126; e<SUP>&#8722;2&#960;</SUP> &#8776; 0.19<BR/>(obs. &#126;0.13, 30% match)>,
+      CMB   [label=<CMB quadrupole<BR/>&#948;C&#8322;/C&#8322; &#126; e<SUP>&#8722;2&#960;</SUP> &#8776; 0.19<BR/>obs. &#126;0.13, 30% match>,
              style="dashed,rounded", fillcolor="#F0F0F0", color="#555555", width=2.10, height=0.60];
       SU3   [label=<SU(3), &#945;<SUB>fs</SUB><BR/>[OPEN]>,
              style="dashed,rounded", fillcolor=white, color="#888888", fontname="Helvetica-Oblique", width=1.65, height=0.50];
@@ -168,7 +175,7 @@ digraph ECT_derivation {
     P3->OP0     [style=dashed, color="#777777"];
 
     // ═══════════════════════════════════════════════════════════════
-    // LEGEND — horizontal, with arrow types
+    // LEGEND — truly horizontal (rank=same forces one row)
     // ═══════════════════════════════════════════════════════════════
     subgraph cluster_legend {
         label="Legend";
@@ -177,37 +184,29 @@ digraph ECT_derivation {
         bgcolor="#F5F5F5";
         fontname="Helvetica-Bold";
         fontsize=10;
-        rank=sink;
 
-        // Node types — horizontal
-        Lp  [label=<Postulate (P1&#8211;P4)>,
-             fillcolor="#C8C8C8", color="#333333", fontname="Helvetica-Bold", fontsize=9, width=1.65, height=0.34];
-        Lph [label=<Phenomenological input>,
-             fillcolor="#777777", color="#222222", fontcolor=white, fontname="Helvetica-Bold", fontsize=9, width=1.65, height=0.34];
-        LdA [label=<Derived &#8211; Level A (strict)>,
-             fillcolor="#EBEBEB", color="#555555", fontsize=9, width=1.65, height=0.34];
-        LdB [label=<Derived &#8211; Level B (+assump.)>,
-             fillcolor="#B0B0B0", color="#444444", fontsize=9, width=1.65, height=0.34];
-        LpB [label=<Prediction (tension/partial)>,
-             style="dashed,rounded", fillcolor="#F0F0F0", color="#555555", fontsize=9, width=1.65, height=0.34];
-        Lo  [label=<Open problem>,
-             style="dashed,rounded", fillcolor=white, color="#888888", fontname="Helvetica-Oblique", fontsize=9, width=1.65, height=0.34];
-
-        // Arrow type explanations — as plain nodes
-        La1 [label="——▶  Strict derivation",
-             shape=plain, style="", fillcolor=transparent, color=transparent, fontsize=9, fontname=Helvetica];
-        La2 [label="- - -▶  Requires additional assumption",
-             shape=plain, style="", fillcolor=transparent, color=transparent, fontsize=9, fontname=Helvetica];
-
-        // Force horizontal layout for node-type row
-        Lp->Lph->LdA->LdB->LpB->Lo [style=invis];
-        // Arrow labels below
-        Lo->La1 [style=invis];
-        La1->La2 [style=invis];
+        { rank=same;
+          Lp  [label=<Postulate (P1&#8211;P4)>,
+               fillcolor="#C8C8C8", color="#333333", fontname="Helvetica-Bold", fontsize=9, width=1.65, height=0.34];
+          Lph [label=<Phenomenological input>,
+               fillcolor="#777777", color="#222222", fontcolor=white, fontname="Helvetica-Bold", fontsize=9, width=1.65, height=0.34];
+          LdA [label=<Derived &#8211; Level A (strict)>,
+               fillcolor="#EBEBEB", color="#555555", fontsize=9, width=1.65, height=0.34];
+          LdB [label=<Derived &#8211; Level B (+assump.)>,
+               fillcolor="#B0B0B0", color="#444444", fontsize=9, width=1.65, height=0.34];
+          LpB [label=<Prediction (tension/partial)>,
+               style="dashed,rounded", fillcolor="#F0F0F0", color="#555555", fontsize=9, width=1.65, height=0.34];
+          Lo  [label=<Open problem>,
+               style="dashed,rounded", fillcolor=white, color="#888888", fontname="Helvetica-Oblique", fontsize=9, width=1.65, height=0.34];
+          La1 [label="&#10230;  Strict derivation",
+               shape=plain, style="", fillcolor=transparent, color=transparent, fontsize=9];
+          La2 [label="&#8674;  Requires additional assumption",
+               shape=plain, style="", fillcolor=transparent, color=transparent, fontsize=9];
+          Lp->Lph->LdA->LdB->LpB->Lo->La1->La2 [style=invis];
+        }
     }
 
     // Anchor legend below graph
-    HUP->Lp   [style=invis];
     law2->Lp  [style=invis];
     OP0->Lo   [style=invis];
 }
