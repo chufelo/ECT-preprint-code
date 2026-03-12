@@ -25,16 +25,14 @@ digraph ECT_derivation {
            fillcolor="#C8C8C8", color="#333333", fontname="Helvetica-Bold", width=1.72, height=0.50];
       P4  [label=<P4<BR/><B>Gradient cond.</B>>,
            fillcolor="#C8C8C8", color="#333333", fontname="Helvetica-Bold", width=1.72, height=0.50];
-      Ph1 [label=<Ph1<BR/><B>c* = c</B><BR/><I>(GW170817 bound)</I>>,
-           fillcolor="#777777", color="#222222", fontcolor=white, fontname="Helvetica-Bold", width=1.90, height=0.60];
+      Ph1 [label=<Ph1<BR/><B>c* = c</B><BR/><I>(GW170817)</I>>,
+           fillcolor="#777777", color="#222222", fontcolor=white, fontname="Helvetica-Bold", width=1.85, height=0.60];
       Ph2 [label=<Ph2<BR/><B>v&#8320;&#178;(&#945;&#8722;&#946;) = M&#772;<SUB>Pl</SUB>&#178;</B><BR/><I>(G<SUB>N</SUB> matching, obs.)</I>>,
            fillcolor="#777777", color="#222222", fontcolor=white, fontname="Helvetica-Bold", width=2.20, height=0.60];
-      Ph3 [label=<Ph3<BR/><B>N<SUB>e</SUB> = 60</B><BR/><I>(Planck 2018)</I>>,
-           fillcolor="#777777", color="#222222", fontcolor=white, fontname="Helvetica-Bold", width=1.72, height=0.60];
     }
 
     // ═══════════════════════════════════════════════════════════════
-    // LAYER 1 — SSB + canonical normalisation derived from Ph1
+    // LAYER 1 — SSB + canonical normalisation
     // ═══════════════════════════════════════════════════════════════
     { rank=same;
       SSB   [label=<SSB<BR/>O(4) &#8594; O(3)<BR/><I>selects w-direction</I>>,
@@ -66,12 +64,12 @@ digraph ECT_derivation {
              fillcolor="#EBEBEB", color="#555555", width=1.75, height=0.50];
     }
     SSB->Lor; SSB->cstar; SSB->GN; SSB->Golds; SSB->GE;
-    Canon->Lor  [style=dashed, color="#777777"];
+    Canon->Lor   [style=dashed, color="#777777"];
     Canon->cstar [style=dashed, color="#777777"];
-    Canon->GN   [style=dashed, color="#777777"];
-    Ph2->GN     [style=dashed, color="#777777"];
-    P3->hbar    [style=dashed, color="#777777"];
-    Aniso->Lor  [style=dashed, color="#777777"];
+    Canon->GN    [style=dashed, color="#777777"];
+    Ph2->GN      [style=dashed, color="#777777"];
+    P3->hbar     [style=dashed, color="#777777"];
+    Aniso->Lor   [style=dashed, color="#777777"];
 
     // ═══════════════════════════════════════════════════════════════
     // LAYER 3 — Equations + Quantum vacuum
@@ -115,8 +113,8 @@ digraph ECT_derivation {
     { rank=same;
       RotC   [label=<Rotation curves<BR/>G<SUB>eff</SUB>(r), g&#8224; = c&#178;/r&#8320;<BR/>SPARC 148 gal., &#967;&#178;/N&#126;1.4>,
               fillcolor="#B0B0B0", color="#444444", width=2.00, height=0.60];
-      Infl   [label=<Inflation / part. prod.<BR/>n<SUB>s</SUB> = 1&#8722;2/N<SUB>e</SUB> = 0.967<BR/>(N<SUB>e</SUB> = 60 from Ph3)>,
-              fillcolor="#B0B0B0", color="#444444", width=2.00, height=0.60];
+      Infl   [label=<Inflation / part. prod.<BR/>n<SUB>s</SUB> = 1&#8722;2/N<SUB>e</SUB> = 0.967>,
+              fillcolor="#B0B0B0", color="#444444", width=1.90, height=0.50];
       DE     [label=<Dark energy<BR/>w&#8320; = &#8722;0.83, w<SUB>a</SUB> = &#8722;0.75<BR/>DESI DR2 2025 compat.>,
               fillcolor="#B0B0B0", color="#444444", width=2.00, height=0.60];
       Hubble [label=<Hubble tension<BR/>G<SUB>eff</SUB>(z) = G(1+z)<SUP>2&#949;</SUP><BR/>&#916;H&#8320; &#126; 3 km/s/Mpc>,
@@ -131,15 +129,15 @@ digraph ECT_derivation {
               fillcolor="#B0B0B0", color="#444444", width=2.00, height=0.60];
     }
     GN->RotC;
-    Ein->Infl; Ph3->Infl [style=dashed, color="#777777"];
+    Ein->Infl;
     Ein->DE;
-    GN->Hubble  [style=dashed, color="#777777"];
-    Dir->FF     [style=dashed, color="#777777"];
+    GN->Hubble   [style=dashed, color="#777777"];
+    Dir->FF      [style=dashed, color="#777777"];
     Gauge->Lepto [style=dashed, color="#777777"];
-    GN->JWST    [style=dashed, color="#777777"];
-    Golds->Infl [style=dashed, color="#777777"];
-    Dir->NSmax  [style=dashed, color="#777777"];
-    GN->NSmax   [style=dashed, color="#777777"];
+    GN->JWST     [style=dashed, color="#777777"];
+    Golds->Infl  [style=dashed, color="#777777"];
+    Dir->NSmax   [style=dashed, color="#777777"];
+    GN->NSmax    [style=dashed, color="#777777"];
 
     // ═══════════════════════════════════════════════════════════════
     // LAYER 5 — Emergent principles + tensions + open problems
@@ -167,15 +165,15 @@ digraph ECT_derivation {
     hbar->HUP;
     Decoher->law2;
     Decoher->Arrow;
-    cstar->LIV  [style=dashed, color="#777777"];
-    RotC->BTFR  [style=dashed, color="#777777"];
-    Ein->CMB    [style=dashed, color="#777777"];
-    Gauge->SU3  [style=dashed, color="#777777"];
-    Dir->Gen    [style=dashed, color="#777777"];
-    P3->OP0     [style=dashed, color="#777777"];
+    cstar->LIV   [style=dashed, color="#777777"];
+    RotC->BTFR   [style=dashed, color="#777777"];
+    Ein->CMB     [style=dashed, color="#777777"];
+    Gauge->SU3   [style=dashed, color="#777777"];
+    Dir->Gen     [style=dashed, color="#777777"];
+    P3->OP0      [style=dashed, color="#777777"];
 
     // ═══════════════════════════════════════════════════════════════
-    // LEGEND — truly horizontal (rank=same forces one row)
+    // LEGEND — horizontal, centred via invisible anchors
     // ═══════════════════════════════════════════════════════════════
     subgraph cluster_legend {
         label="Legend";
@@ -186,6 +184,9 @@ digraph ECT_derivation {
         fontsize=10;
 
         { rank=same;
+          // Left spacer — invisible, anchors legend to left side
+          Lspc [label="", shape=point, style=invis, width=0.01];
+
           Lp  [label=<Postulate (P1&#8211;P4)>,
                fillcolor="#C8C8C8", color="#333333", fontname="Helvetica-Bold", fontsize=9, width=1.65, height=0.34];
           Lph [label=<Phenomenological input>,
@@ -202,11 +203,15 @@ digraph ECT_derivation {
                shape=plain, style="", fillcolor=transparent, color=transparent, fontsize=9];
           La2 [label="&#8674;  Requires additional assumption",
                shape=plain, style="", fillcolor=transparent, color=transparent, fontsize=9];
-          Lp->Lph->LdA->LdB->LpB->Lo->La1->La2 [style=invis];
+
+          // Right spacer
+          Rspc [label="", shape=point, style=invis, width=0.01];
+
+          Lspc->Lp->Lph->LdA->LdB->LpB->Lo->La1->La2->Rspc [style=invis];
         }
     }
 
-    // Anchor legend below graph
-    law2->Lp  [style=invis];
-    OP0->Lo   [style=invis];
+    // Centre the legend by anchoring both ends to roughly central nodes
+    Ein->Lspc    [style=invis];
+    Decoher->Rspc [style=invis];
 }
