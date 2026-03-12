@@ -209,24 +209,25 @@ ax_c.text(T_NOW+2.2, 1.30, r'$G_\mathrm{eff}$'+'\n(Scen. B)',
           fontsize=FS_CURVE, color=MID, ha='center')
 
 # Scenario A box — far left, above log-a plateau
-# Arrow points to the v0(A) = 1 plateau well into the future
+# Arrow points DOWN to the flat v0(A) = 1 solid line (same as red arrow in sketch)
+# Tip on the flat plateau just before NOW line
 ax_c.annotate('Scenario A:\n$v_0 \\to v_\\infty$\neternal expansion',
-              xy=(19.5, 1.002),             # tip: on the v0(A) flat plateau
-              xytext=(8.0, 1.22),           # box position
+              xy=(15.0, 1.0),              # tip: flat v0(A) solid line, before NOW
+              xytext=(8.0, 1.22),          # box position
               fontsize=FS_ANN,
-              arrowprops=dict(arrowstyle='->', color='#888888', lw=0.8,
-                              connectionstyle='arc3,rad=-0.15'),
+              arrowprops=dict(arrowstyle='->', color='#555555', lw=1.0,
+                              connectionstyle='arc3,rad=0.0'),  # straight
               bbox=dict(fc='#F0F0F0', ec='#AAAAAA', lw=0.7, pad=5))
 
-# Scenario B box — near NOW, arrow points to the declining v0(B) dotted curve
-# v0_B at T_NOW+3.5 ≈ 0.89  (from tanh approximation)
+# Scenario B box — arrow points UP to the declining v0(B) dotted curve
+# v0_B at T_NOW+2.4 ~ 0.90 (from tanh)  — early decline, clearly visible
 ax_c.annotate('Scenario B:\n$v_0$ slowly $\\to 0$\n$G_\\mathrm{eff}\\to\\infty$\n'
               'Big Crunch $\\sim 10^{100}$ yr',
-              xy=(T_NOW+3.3, 0.885),        # tip: on the v0(B) dotted line
-              xytext=(T_NOW+0.7, 0.38),     # box position
+              xy=(T_NOW+2.4, 0.90),        # tip: dotted v0(B) line during decline
+              xytext=(T_NOW+0.5, 0.38),    # box position
               fontsize=FS_ANN,
-              arrowprops=dict(arrowstyle='->', color='#888888', lw=0.8,
-                              connectionstyle='arc3,rad=0.25'),
+              arrowprops=dict(arrowstyle='->', color='#555555', lw=1.0,
+                              connectionstyle='arc3,rad=-0.25'),  # arc up-right
               bbox=dict(fc='#E8E8E8', ec='#AAAAAA', lw=0.7, pad=5))
 
 ax_c.text(0.005, 0.005,
