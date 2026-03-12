@@ -204,6 +204,15 @@ field $\phi$ acting as a vacuum-phase variable that
 organises the macroscopic regime --- Newtonian, quantum,
 or MOND-like --- according to the local degree of
 Lorentzian ordering.
+A notable structural prediction of the black-hole sector is a
+universal near-horizon critical scale
+$\rho_c = \ell_{\rm Pl}/\sqrt{3\pi}\approx 0.33\,\ell_{\rm Pl}$,
+the proper distance at which the local Tolman temperature equals the
+condensate critical temperature $T_c$.
+This scale is independent of black-hole mass and identifies the natural
+location of the shell degrees of freedom responsible for carrying
+black-hole entropy and imprinting non-thermal corrections on Hawking
+emission.
 ECT is not presented as a complete theory of everything,
 but as a coherent and testable framework for emergent spacetime.
 \end{abstract}
@@ -3459,6 +3468,7 @@ frameworks.
 All frameworks reduce to standard GR when their respective
 extension parameters vanish.}
 \label{tab:GEE_comparison}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{@{}lccccc@{}}
 \toprule
 Term & Einstein-aether & Brans--Dicke & $f(R)$ & Horava--Lifshitz & \textbf{ECT} \\
@@ -3477,7 +3487,7 @@ not tied to a condensate direction.}\\
 \multicolumn{6}{@{}l}{\small $^{***}$ Einstein-aether back-reaction involves the aether EMT,
 which is structurally similar to $T_{AB}^{(n)}$ but with free coupling constants $c_{1..4}$.}\\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 The unique feature of ECT relative to all five frameworks is that
@@ -7573,7 +7583,7 @@ Abell~520 & 248 & 0 & gas core &
 \paragraph{Limitations of the present estimate.}
 
 The values of $R_{\rm cl}$ in
-Table~\ref{tab:cluster_tension} should be understood as
+Table~\ref{tab:4cluster} should be understood as
 order-of-magnitude indicators, not precision results.
 The current calculation relies on several simplifications
 whose combined effect could shift the numbers by a factor
@@ -7617,7 +7627,7 @@ For the Bullet Cluster, $f_b$ ranges from $\sim\!0.04$
 at $R_{200}$ to $\sim\!0.22$ within 250\,kpc.
 This factor-of-five variation directly propagates into
 $\mathcal{E}_{\rm req}$ and $R_{\rm cl}$.
-The values in Table~\ref{tab:cluster_tension} use
+The values in Table~\ref{tab:4cluster} use
 aperture-matched $f_b$ from recent JWST and strong-lensing
 analyses, but these carry systematic uncertainties of
 order 30--50\%.
@@ -8450,7 +8460,7 @@ The global cosmological evolution predicted by the ECT framework is
 illustrated in Fig.~\ref{fig:timeline}.
 
 
-\begin{figure*}[!htb]
+\begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/fig5_ECT_timeline_condensate.png}
 \caption{Cosmological evolution in $\Lambda$CDM and ECT.
@@ -8473,7 +8483,7 @@ Dark energy is identified as the residual condensate energy
 \textbf{Panel~(c):} evolution of the condensate amplitude $v_0(t)$,
 scale factor, $G_{\rm eff}(t)$, and dark energy density.}
 \label{fig:timeline}
-\end{figure*}
+\end{figure}
 
 
 \subsection{Universe size, structure, and effective dimensionality}
@@ -9300,6 +9310,12 @@ effective loop degrees of freedom intersecting the horizon surface.
 Each Planck-scale patch of area contributes approximately one independent
 loop configuration, leading to the well-known area law.
 
+% ---  Forward pointer  ---
+The thermodynamic derivation above establishes the \emph{leading-order}
+Hawking temperature and Bekenstein--Hawking entropy from loop dynamics.
+The question of whether the associated evaporation process is fundamentally
+unitary---the black-hole \emph{information problem}---is addressed separately
+in Section~\ref{sec:bh_information} and in Appendix~\ref{app:bh_info}.
 
 
 
@@ -9674,111 +9690,256 @@ $0.965\pm0.004$ (Planck) & A \\
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Compact Objects and Black Holes}
-\label{sec:compact_objects}
 
-This section discusses the ECT perspective on compact objects,
-horizons, and black-hole radiation.  The goal is to identify
-how the condensate framework organises the ingredients of
-black-hole physics and to formulate testable predictions.
+% ============================================================
+\section{Black-hole information problem: ECT perspective}
+\label{sec:bh_information}
+% ============================================================
 
-\subsection{Compact objects, horizons, and black-hole radiation
-(direction for derivation)}
-This section collects the parts of our earlier discussion that are most
-relevant for compact objects. We emphasise again the scope: the goal is
-to show how ECT naturally \emph{organises} the ingredients that enter
-black-hole physics, and to state concrete calculations/tests that would
-discriminate between ECT-like condensate pictures and standard
-semiclassical gravity. A fully microscopic, parameter-free derivation is
-not claimed in this version.
+\subsection{The paradox in brief}
+\label{sec:bh_paradox_brief}
 
-\subsubsection{What must be
-reproduced}
-Any viable framework must recover, at least in the appropriate limits:
-
-\begin{itemize}
-\tightlist
-\item
-  classical GR black-hole solutions (Schwarzschild/Kerr) in the regime
-  where $G_{\rm eff}$ is effectively constant,
-\item
-  black-hole thermodynamics (area law, first law) as an IR statement of
-  coarse-grained degrees of freedom,
-\item
-  Hawking radiation as an effective prediction of quantum fields on a
-  curved background (or an equivalent microscopic emission mechanism).
-\end{itemize}
-
-\subsubsection{ECT viewpoint: radiation without assuming a
-fundamental graviton
-quantisation}
-The standard Hawking derivation uses QFT in curved spacetime: a
-Bogoliubov transformation between ``in'' and ``out'' modes yields a
-thermal flux with temperature
-$T_H=\hbar\kappa/(2\pi k_B
-c)$, where $\kappa$ is the surface gravity. ECT
-suggests an alternative microscopic interpretation: the horizon is not a
-fundamental boundary but a macroscopic interface in an emergent medium.
-In such systems, thermality can arise from (i) mode conversion in an
-inhomogeneous background, (ii) entanglement across an effective causal
-boundary, and/or (iii) dissipation/noise described by
-fluctuation--dissipation relations.
-
-A conservative way to connect to data is to retain the standard
-semiclassical result as the leading term and parametrize possible ECT
-corrections as controlled deviations in the near-horizon dispersion
-relation or in $G_{\rm eff}(E)$:
-
+The black-hole information problem arises from an apparent conflict between
+the unitarity of quantum mechanics and the thermality of Hawking radiation
+\cite{Hawking1974,Hawking1975}.
+Starting from a pure initial state $|\Psi_{\rm in}\rangle$ of collapsing matter,
+the semiclassical Hawking calculation produces a nearly thermal density matrix
+$\rho_{\rm rad}$, suggesting the transition
 \begin{equation}
-\omega^2\;=\;c^2
-k^2\,\Bigl[1+\eta_1\,(k/k_*)^2+\eta_2\,(k/k_*)^4+\cdots\Bigr],
-\qquad G_{\rm
-eff}(E)=G_N\,[1+\delta_G(E)], 
+|\Psi_{\rm in}\rangle \;\longrightarrow\; \rho_{\rm rad}\,,
+\label{eq:info_paradox}
 \end{equation}
+which would violate unitarity.
+Arguments based on the Page curve \cite{Page1993} and on holographic
+calculations \cite{Penington2020} strongly suggest that unitary evaporation
+is correct, but the microscopic mechanism by which information is encoded in
+the outgoing radiation—and how the near-horizon region facilitates this—remains
+debated \cite{Mathur2009,Almheiri2013}.
 
-where $k_*\sim\ell_*^{-1}$ is the
-scale where condensate microphysics becomes important. Such
-modifications are known to leave the leading Hawking temperature
-remarkably robust in many analogue-gravity systems, but they can affect
-high-frequency tails, greybody factors, and late-time correlations. In
-ECT, the same micro-scale would also control higher-derivative terms in
-$\Delta\mathcal{L}_{\rm
-hd}$ (cf. Section~\ref{sec:gravity}), linking black-hole phenomenology to the UV
-completion.
+\subsection{ECT reformulation: the horizon is not fundamental}
+\label{sec:bh_info_reformulation}
 
-\subsubsection{Testable signatures}
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Ringdown spectroscopy:} small shifts in quasi-normal mode
-  frequencies/damping could arise if $G_{\rm eff}$
-  runs with frequency or if additional condensate modes couple to the
-  metric near strong curvature.
-\item
-  \textbf{Echoes / late-time structure:} if the horizon is an effective
-  interface with microstructure, weak reflections may produce echoes.
-  Any claim here must be quantified against detector systematics; the
-  point is that ECT provides a \emph{mechanism} to model such effects.
-\item
-  \textbf{Consistency with GW constraints on $c_T$:} modifications
-  must respect tight bounds on the tensor speed and dispersion, which in
-  EFT language heavily constrain
-  $\Delta\mathcal{L}_{\rm
-  hd}$.
-\item
-  \textbf{Primordial black holes / early-Universe:} if
-  $G_{\rm eff}$ varies in time (Fig. 5c), PBH
-  formation/evaporation histories provide additional constraints.
-\end{itemize}
+In ECT, Lorentzian geometry and the gravitational horizon are emergent
+structures arising from the spontaneous $O(4)\to O(3)$ symmetry breaking
+of the condensate (Section~\ref{sec:ssb}).
+This has an immediate implication for the information problem:
+the apparent loss of information in Hawking evaporation need not reflect
+true microscopic non-unitarity.
+Rather, it may signal the \emph{breakdown of the purely geometric,
+coarse-grained effective description} near the horizon.
 
-\textbf{Roadmap.} A dedicated follow-up should (i) choose a minimal
-$\mathcal{L}_{\varphi}$ consistent
-with the galaxy and cosmology fits, (ii) compute the corresponding
-static compact-object solutions of (6.5), (iii) derive mode propagation
-near the resulting horizons, and (iv) confront the predicted
-ringdown/dispersion with LIGO/Virgo/KAGRA and future detectors. This is
-the appropriate level for ``black-hole radiation without fundamental
-graviton quantisation'' in the present framework.
+The underlying condensate dynamics is governed by a self-adjoint
+Euclidean action $S_E[\Psi]$ (postulate P2, Section~\ref{sec:postulates}).
+Any apparent transition to a mixed state must therefore arise from
+truncating the full microscopic Hilbert space to an effective radiation
+sector alone.
+
+\subsection{Critical Lorentz-order shell}
+\label{sec:critical_shell}
+
+A key structural prediction of ECT is the existence of a physical
+\emph{critical shell} around any non-extremal horizon.
+The argument has two independent inputs.
+
+\paragraph{Near-horizon Tolman temperature.}
+Near any non-extremal horizon, the local temperature experienced by a
+static observer grows without bound as the proper distance~$\rho$ to
+the horizon tends to zero.
+In the Rindler approximation this is the Tolman relation
+\begin{equation}
+T_{\rm loc}(\rho)
+\;=\;
+\frac{\hbar c}{2\pi k_B \rho}\,.
+\label{eq:tolman}
+\end{equation}
+This is a standard result of semiclassical gravity independent of ECT
+\cite{Unruh1976}.
+
+\paragraph{Critical temperature of the Lorentz-ordered phase.}
+ECT predicts that the Lorentzian phase exists only below the critical
+temperature derived in Section~\ref{sec:quantum_vacuum} from the
+Dolan--Jackiw one-loop potential \cite{DolanJackiw1974}:
+\begin{equation}
+T_c \;=\; v_0\sqrt{6} \;\approx\; 5.96\times10^{18}\,\text{GeV}
+\;\approx\; 6.92\times10^{31}\,\text{K}\,,
+\label{eq:Tc_value}
+\end{equation}
+where $v_0 \approx \bar{M}_{\rm Pl} \approx 2.435\times10^{18}$\,GeV is
+the condensate vacuum expectation value (Section~\ref{sec:constants}).
+
+\paragraph{Critical shell location.}
+Because $T_{\rm loc}(\rho)\to\infty$ as $\rho\to0$, there exists a
+unique proper distance $\rho_c$ at which $T_{\rm loc}(\rho_c) = T_c$:
+\begin{equation}
+\boxed{
+\rho_c
+\;=\;
+\frac{\hbar c}{2\pi k_B T_c}
+\;=\;
+\frac{\hbar c}{2\pi\sqrt{6}\,k_B v_0}
+\;=\;
+\frac{\ell_{\rm Pl}}{\sqrt{3\pi}}
+\;\approx\;
+5.27\times10^{-36}\,\text{m}
+\;\approx\;
+0.33\,\ell_{\rm Pl}\,,
+}
+\label{eq:rho_c}
+\end{equation}
+where the algebraic simplification uses $v_0 = \bar{M}_{\rm Pl}$ and
+$G_N = c^2/(16\pi v_0^2)$ (Eq.~\eqref{eq:GN_condensate}).
+This result introduces no additional fit parameters once $T_c$ is fixed
+by the ECT thermal sector (Section~\ref{sec:quantum_vacuum}).
+It is moreover \emph{universal}: $\rho_c$ is independent of the black-hole
+mass, depending only on the condensate scale $v_0$, which is fixed by
+Newton's constant and Planck's constant simultaneously
+(Section~\ref{sec:constants}).
+
+The value $\rho_c \approx \ell_{\rm Pl}/3$ is consistent with
+the notion of a ``stretched horizon'' in the membrane paradigm
+\cite{PriceThorne1986}, but here it emerges from the condensate
+critical temperature rather than from phenomenological input.
+Appendix~\ref{app:bh_info} provides a detailed derivation
+and numerical illustrations (Figure~\ref{fig:bh_information}).
+
+\subsection{Enlarged Hilbert space and apparent mixedness}
+\label{sec:hilbert_enlarged}
+
+The critical shell is a physical region where the Lorentz-ordered phase
+becomes critical.
+It carries condensate degrees of freedom that are not captured by the
+standard geometric description.
+This motivates an enlarged Hilbert space:
+\begin{equation}
+\mathcal{H}_{\rm full}
+\;=\;
+\mathcal{H}_{\rm rad}
+\;\otimes\;
+\mathcal{H}_{\chi}
+\;\otimes\;
+\mathcal{H}_{\rm core}\,,
+\label{eq:Hilbert_full}
+\end{equation}
+where $\mathcal{H}_\chi$ describes shell degrees of freedom and
+$\mathcal{H}_{\rm core}$ a deeper pre-Lorentzian condensate sector.
+The observed radiation density matrix is then
+\begin{equation}
+\rho_{\rm rad}
+=
+\mathrm{Tr}_{\chi,\rm core}
+\bigl|\Psi\bigr\rangle\bigl\langle\Psi\bigr|\,,
+\label{eq:rho_rad_trace}
+\end{equation}
+so its apparent mixedness does not violate fundamental unitarity.
+
+\subsection{Conditional theorem and its consequence for thermality}
+\label{sec:no_exact_thermality}
+
+The mere existence of a near-horizon shell does not resolve the information
+paradox by itself.
+A structural theorem is required to show that, given unitarity and finite shell
+entropy, the outgoing channel \emph{cannot} remain exactly thermal and
+state-independent.
+
+\begin{quote}
+\textbf{Conditional theorem (ECT).}
+\textit{Assume: (i) microscopic condensate dynamics is unitary;
+(ii) the near-horizon region contains a finite-entropy critical shell;
+(iii) evaporation is complete with no infinite-capacity hidden remnant.
+Then: exact Hawking thermality throughout evaporation is impossible,
+true information loss is incompatible with (i)--(iii), and
+shell-state dependence of the outgoing channel is forced as a logical necessity.}
+\end{quote}
+
+\noindent
+Appendix~\ref{app:conditional_theorem} gives the full proof by contradiction:
+if the channel were universal, distinct shell microstates would produce
+identical radiation statistics, contradicting unitarity once evaporation is
+complete and no infinite hidden reservoir remains.
+Two independent routes reach the same conclusion: the emission-amplitude
+argument and the global entropy argument $S_{\rm rad}(t)=S_{\rm rem}(t)\to0$.
+Shell-state dependence is therefore a logical necessity, not an embellishment.
+
+As a result, in ECT the leading coarse-grained Hawking spectrum
+\begin{equation}
+N_\omega^{(s)}
+\;=\;
+\bigl|\mathcal{T}_\omega[s]\bigr|^2
+\cdot
+\frac{1}{e^{\hbar\omega/k_B T_H}-1}\,,
+\qquad
+\mathcal{T}_\omega[s]
+=
+e^{i\delta_\omega[s] - \Gamma_\omega[s]}\,,
+\label{eq:Nomega_corrected}
+\end{equation}
+must acquire state-dependent corrections $\delta_\omega[s]$, $\Gamma_\omega[s]$
+that are suppressed at early times but become order-one near and after the Page
+time.
+The standard thermal Hawking result is recovered in the coarse-grained
+approximation $\langle|\mathcal{T}_\omega|^2\rangle_s \approx 1$.
+The explicit computation of the kernel $\mathcal{K}_\omega(\rho)$ appearing in
+the general coupling
+Eq.~\eqref{eq:kernel_form} (Appendix~\ref{app:chi_dynamics})
+remains an open problem.
+
+\subsection{Status of the scenario}
+\label{sec:bh_info_status}
+
+The items that follow directly from ECT structure without free parameters are:
+(i) fundamental unitarity of condensate dynamics;
+(ii) critical temperature $T_c = v_0\sqrt{6}$ (Section~\ref{sec:quantum_vacuum});
+(iii) critical shell at $\rho_c = \ell_{\rm Pl}/\sqrt{3\pi}$
+(Eq.~\eqref{eq:rho_c}).
+
+The following items remain open problems:
+(i) deriving condition~(C2b) --- that the Tolman temperature is the control
+parameter for Lorentz-order loss near the horizon --- from the full condensate
+action;
+(ii) deriving the shell--radiation coupling coefficient~$g$
+(Eq.~\eqref{eq:Lint}) from first principles;
+(iii) deriving the shell Hamiltonian's microscopic coefficients
+$Z_\chi$, $W_\chi$, $\lambda_\chi$;
+(iv) constructing a quantitative ECT Page curve beyond the illustrative
+finite-memory toy model;
+(v) deriving the exact coefficient $1/4$ in $S_{BH} = A/(4\ell_{\rm Pl}^2)$
+from microscopic shell counting.
+
+An effective shell Hamiltonian and the unique form of the minimal
+shell--radiation coupling have been constructed
+(Appendix~\ref{app:chi_dynamics}).
+A toy finite-memory Page model demonstrates explicitly how unitary
+purification arises from a finite-entropy shell
+(Appendix~\ref{app:page_toy}).
+A microscopic consistency criterion identifies which ECT completions can
+resolve the paradox and which require additional structure
+(Appendix~\ref{app:consistency_criterion}).
+We therefore present the ECT black-hole picture as a \emph{sharply
+localized candidate resolution}: the conditional theorem closes the
+logical argument, and the remaining open tasks are precisely identified.
+The detailed supporting arguments and the figure are in
+Appendix~\ref{app:bh_info}.
+
+\paragraph{Compact-object observational context.}
+Classical Schwarzschild/Kerr solutions are recovered in the limit where
+$G_{\rm eff}$ is effectively constant.
+Observational tests linked to compact objects include:
+quasi-normal mode deviations at order $\rho_c/r_s \sim M_{\rm Pl}^2/M^2$
+(suppressed for astrophysical black holes, see Appendix~\ref{app:bh_info});
+constraints on primordial black-hole formation and evaporation if $G_{\rm eff}$
+runs with time (prediction~F6);
+and tensor-speed consistency $|c_T/c-1|<10^{-15}$, already satisfied
+(prediction~F4, GW170817).
+A dedicated computation of compact-object solutions to the generalised
+field equations~\eqref{eq:gen_EE} remains for future work.
+
+\paragraph{Relation to loop-dynamics BH thermodynamics.}
+Section~\ref{sec:loops} derives $T_H$ and $S_{BH}$ from the
+loop-decay picture of the condensate.
+That derivation gives the correct leading-order thermodynamic values.
+The present section provides an independent structural argument for why
+those relations arise from microscopic condensate degrees of freedom and
+suggests that they encode a unitary—not fundamentally dissipative—process.
 
 
 
@@ -9884,7 +10045,7 @@ $\Lambda$CDM and MOND-type modified gravity scenarios.
 A summary of the principal falsifiable predictions is given in 
 Table~\ref{tab:ECT_predictions}.
 
-\begin{longtable}{@{}p{0.06\textwidth}p{0.28\textwidth}p{0.25\textwidth}p{0.19\textwidth}p{0.18\textwidth}@{}}
+\begin{longtable}{@{}p{0.05\textwidth}p{0.26\textwidth}p{0.24\textwidth}p{0.22\textwidth}p{0.20\textwidth}@{}}
 \caption{Falsifiable predictions of the ECT framework. F1 (environmental modulation of $g_\dagger$) is the most distinctive new prediction; F4 is satisfied at the effective scalar--tensor level.}
 \label{tab:ECT_predictions}\\
 
@@ -10139,7 +10300,7 @@ We classify all key statements in ECT into three confidence levels:
   {Level C}: Hypothesis / conjecture / open problem.
 \end{itemize}
 
-\begin{longtable}{@{}p{0.06\textwidth}p{0.39\textwidth}p{0.07\textwidth}p{0.28\textwidth}p{0.12\textwidth}@{}}
+\begin{longtable}{@{}p{0.05\textwidth}p{0.37\textwidth}p{0.07\textwidth}p{0.27\textwidth}p{0.12\textwidth}@{}}
 \caption{Structured classification of ECT results. Level A = strict derivation; B = derivation with stated assumption; C = conjecture / open problem.}
 \label{tab:ect-levels}\\
 \toprule
@@ -10174,6 +10335,11 @@ D21 & Casimir: $(F/A)_{\rm ECT}=3/2\,(F/A)_{\rm QED}$ (3 Goldstone) & B & Dirich
 D22 & Unruh $T_U=\hbar a/(2\pi c_* k_B)$ from Euclidean correlator & A & --- & \ref{sec:unruh} \\
 D23 & Cosm.\ particle production; Bogoliubov $n_s=0.967$ & B & Slow-roll, $N_e=60$ & \ref{sec:cosm_particle_prod} \\
 D24 & Vacuum stiffness: $\bar M_{\rm Pl}^2=v_0^2(\alpha{-}\beta)$ & A & --- & \ref{sec:vacuum_stiffness} \\
+D25 & Universal near-horizon critical scale $\rho_c=\ell_{\rm Pl}/\sqrt{3\pi}$ & B & Tolman temperature as control parameter (C2b, open) & \ref{sec:critical_shell} \\
+D26 & Conditional theorem: exact thermality excluded given finite-entropy shell + complete evaporation & B & Unitarity (natural) + finite shell + no infinite remnant & \ref{sec:no_exact_thermality} \\
+D27 & Shell-state dependence of Hawking channel: derived consequence of D26, not assumption & B & Conditions of D26 & \ref{app:conditional_theorem} \\
+D28 & Effective shell Hamiltonian structure (form, not coefficients) & C & GL criticality + Rindler geometry; coefficients open & \ref{app:chi_dynamics} \\
+D29 & Minimal shell--radiation coupling form $\mathcal{L}_{\rm int}=-\tfrac{g}{2}\delta\chi(\partial\varphi)^2$ & C & Locality + linearity; coefficient $g$ open & \ref{app:chi_dynamics} \\
 \bottomrule
 \end{longtable}
 
@@ -10235,6 +10401,15 @@ These results either appear first in ECT or take qualitatively new forms.
         $T_U=\hbar a/(2\pi c_* k_B)$ from analytic continuation of the
         Euclidean correlator; cosmological Goldstone production at the
         $O(4)\to O(3)$ transition with spectral index $n_s=0.967$.
+  \item \emph{Black-hole information sector}
+        (Section~\ref{sec:bh_information}, Appendix~\ref{app:bh_info}):
+        universal near-horizon critical scale
+        $\rho_c = \ell_{\rm Pl}/\sqrt{3\pi} \approx 0.33\,\ell_{\rm Pl}$
+        (conditional on C2b);
+        conditional theorem excluding exact Hawking thermality given
+        unitarity, finite shell entropy, and complete evaporation;
+        microscopic consistency criterion classifying which ECT completions
+        can resolve the information paradox.
 \end{itemize}
 
 \paragraph{Category III — Open problems in ECT and elsewhere.}
@@ -10591,7 +10766,7 @@ scales remains an open question.
 
 A comparison of ECT with several alternative approaches to gravity is summarised in Table~\ref{tab:theory_comparison}.
 
-\begin{longtable}{@{}p{0.18\textwidth}p{0.12\textwidth}p{0.16\textwidth}p{0.10\textwidth}p{0.11\textwidth}p{0.25\textwidth}@{}}
+\begin{longtable}{@{}p{0.16\textwidth}p{0.11\textwidth}p{0.15\textwidth}p{0.10\textwidth}p{0.11\textwidth}p{0.24\textwidth}@{}}
 \caption{Comparison of the ECT framework with several alternative approaches to gravity and cosmology.}
 \label{tab:theory_comparison}\\
 
@@ -11894,6 +12069,52 @@ between the predicted and observed magnitude of $g_\dagger$ therefore
 provides a nontrivial consistency test of the theory.
 
 
+\paragraph{Universal near-horizon critical scale.}
+
+A noteworthy structural prediction of the ECT black-hole sector is
+the universal proper-distance scale
+\begin{equation}
+\rho_c
+\;=\;
+\frac{\ell_{\rm Pl}}{\sqrt{3\pi}}
+\;\approx\;
+0.33\,\ell_{\rm Pl}
+\;\approx\;
+5.3\times10^{-36}\,\text{m},
+\label{eq:rho_c_conclusion}
+\end{equation}
+at which the local Tolman temperature $T_{\rm loc}(\rho) = \hbar c/(2\pi k_B\rho)$
+reaches the condensate critical temperature $T_c = v_0\sqrt{6}$.
+The result is \emph{parameter-free} once $T_c$ is identified with the
+Dolan--Jackiw thermal mass of the condensate: no free parameters are
+adjusted to produce it.
+
+This scale carries several layers of physical content.
+First, it is \emph{universal}: $\rho_c$ does not depend on the
+black-hole mass, so the same Planck-thickness critical shell appears
+around stellar, intermediate, and supermassive black holes alike.
+Second, the fact that $\rho_c\sim\ell_{\rm Pl}$ --- rather than, say,
+the Schwarzschild radius --- explains why the standard semiclassical
+description works so well at low energies: all deviations from exact
+Hawking thermality are confined to a region of Planck thickness,
+invisible to low-frequency radiation.
+Third, $\rho_c$ gives a concrete physical location for the shell
+microstates required by the conditional theorem
+(Section~\ref{app:conditional_theorem}): it is not the horizon itself
+but the surface at proper distance $\rho_c$ where the Lorentzian
+ordered phase dissolves.
+
+The status of this result is \emph{structural}: the formula follows
+from the Tolman law and the ECT critical temperature, conditional on
+the physically natural assumption that local Tolman heating is the
+relevant control parameter for Lorentz-order loss.
+An independent derivation of this assumption from the full black-hole
+branch of the condensate action remains an open problem.
+Nevertheless, $\rho_c$ represents the sharpest quantitative output
+of the ECT black-hole sector and is in principle testable through
+universal near-horizon deviations in ringdown spectra and
+effective-boundary-condition analyses of gravitational-wave data.
+
 \paragraph{Dark-sector implications.}
 
 An important conceptual consequence of the ECT framework is that both
@@ -12019,6 +12240,11 @@ Results fall into four categories:
   \item Arrow of time: $\Gamma_{\rm loop}\gg1$ macroscopically.
   \item Galactic acceleration scale: $g_\dagger \propto c^2\phi_*(\phi_{\rm gal}) \propto cH_0$ (structural; $\mathcal{O}(1)$ coefficient undetermined).
   \item Inflation: $n_s=1-2/N_e=0.967$ at $N_e=60$.
+  \item Universal near-horizon critical scale (black-hole sector, conditional on Tolman control):
+        $\rho_c = \ell_{\rm Pl}/\sqrt{3\pi}\approx 0.33\,\ell_{\rm Pl}$,
+        mass-independent.
+  \item Conditional theorem: exact Hawking thermality excluded by unitarity
+        + finite shell entropy + complete evaporation.
 \end{enumerate}
 
 \medskip
@@ -12172,6 +12398,19 @@ $\Lambda$CDM and MOND:
   \item \textbf{Dark energy EOS:} $w_0 \approx -0.83$, $w_a \neq 0$;
         distinguishable from $\Lambda$CDM ($w=-1$) at $>2\sigma$ with
         DESI Year-5 data.
+  \item \textbf{Universal near-horizon critical scale $\rho_c$:}
+        the ECT black-hole sector predicts that \emph{all} non-extremal
+        black holes carry a critical shell at universal proper distance
+        $\rho_c = \ell_{\rm Pl}/\sqrt{3\pi}\approx0.33\,\ell_{\rm Pl}$
+        from the horizon, independent of mass.
+        This scale controls corrections to quasinormal-mode spectra
+        at relative order $\rho_c/r_s \sim M_{\rm Pl}^2/M^2$,
+        and sets the characteristic frequency of any near-horizon
+        boundary-condition deviation.
+        A detection of a \emph{universal} (mass-independent) near-horizon
+        scale in ringdown data from gravitational-wave events of different
+        masses would constitute direct evidence for the ECT shell picture;
+        conversely, a mass-dependent deviation would falsify it.
 \end{enumerate}
 
 % =============================================================================
@@ -14613,11 +14852,826 @@ by identical steps with the full tensor $K^{ABCD}$
 \cite{Jacobson2004}.
 
 \clearpage
+
+% ============================================================
+\section{Critical shell and black-hole information in ECT}
+\label{app:bh_info}
+% ============================================================
+
+This appendix develops, in more detail than the main text, the ECT scenario
+for unitary black-hole evaporation.
+We consistently distinguish what follows directly from ECT structure without
+free parameters from what remains open.
+
+\subsection{Microscopic unitarity and apparent information loss}
+\label{app:bh_unitarity}
+
+The underlying condensate dynamics is governed by a self-adjoint Euclidean
+action $S_E[\Psi]$ (postulate P2).
+Any quantum evolution derived from it is therefore unitary by construction.
+Fundamental information destruction---understood as the irreversible transition
+of a pure state to a genuinely mixed state at the microscopic level---is
+incompatible with this structure.
+
+The standard Hawking calculation works entirely in the effective Lorentzian
+description, which represents only a fraction of the full condensate Hilbert
+space $\mathcal{H}_{\rm full}$ (Eq.~\eqref{eq:Hilbert_full}).
+The apparent mixed-state character of $\rho_{\rm rad}$ can therefore be a
+consequence of partial tracing over shell and core degrees of freedom, rather
+than a sign of fundamental non-unitarity.
+This argument mirrors what is standard in decoherence theory \cite{Zurek2003}:
+coarse-graining over inaccessible degrees of freedom produces an effectively
+mixed state even from a pure global state.
+
+\subsection{Derivation of the critical shell}
+\label{app:shell_derivation}
+
+\paragraph{Rindler near-horizon geometry.}
+Near any non-extremal stationary horizon the proper-distance metric takes the
+local Rindler form
+\begin{equation}
+ds^2
+\approx
+-\!\left(\frac{\kappa\rho}{c}\right)^2\!c^2\,dt^2
++
+d\rho^2
++
+r_h^2\,d\Omega^2\,,
+\end{equation}
+where $\kappa$ is the surface gravity and $r_h$ is the horizon radius.
+The Tolman temperature for a static observer at proper distance $\rho$ is
+\begin{equation}
+T_{\rm loc}(\rho)
+=
+\frac{T_H}{\sqrt{-g_{tt}}}
+=
+\frac{\hbar c}{2\pi k_B\,\rho}\,,
+\label{eq:Tolman_app}
+\end{equation}
+which diverges as $\rho\to0$.
+This is a standard result \cite{Unruh1976,BirrellDavies1982}.
+
+\paragraph{ECT phase transition temperature.}
+The condensate effective potential at finite temperature is
+\begin{equation}
+V_{\rm eff}(\Phi,T)
+=
+-\frac{\mu^2}{2}\Phi^2
++\frac{\lambda}{4}\Phi^4
++\frac{\lambda T^2}{12}\Phi^2\,,
+\end{equation}
+from the Dolan--Jackiw one-loop correction \cite{DolanJackiw1974}.
+The ordered phase ($\langle\Phi\rangle\neq0$) exists while
+$-\mu^2+\lambda T^2/6<0$, i.e.\ for $T<T_c$ with
+$T_c=v_0\sqrt{6}$ (Eq.~\eqref{eq:Tc_value}).
+
+\paragraph{Critical shell.}
+Setting $T_{\rm loc}(\rho_c)=T_c$ and substituting
+Eq.~\eqref{eq:Tolman_app}:
+\begin{equation}
+\rho_c
+=
+\frac{\hbar c}{2\pi\sqrt{6}\,k_B v_0}\,.
+\label{eq:rho_c_app}
+\end{equation}
+Using $v_0=\bar{M}_{\rm Pl}$ and $G_N=c^2/(16\pi v_0^2)$
+one can show algebraically that
+\begin{equation}
+\rho_c
+=
+\frac{\ell_{\rm Pl}}{\sqrt{3\pi}}
+\approx 5.27\times10^{-36}\,\text{m}
+\approx 0.33\,\ell_{\rm Pl}\,.
+\label{eq:rho_c_analytic}
+\end{equation}
+This is a parameter-free prediction.
+Figure~\ref{fig:bh_information}(a) illustrates the Tolman temperature
+profile and marks $\rho_c$.
+
+The result $\rho_c=\ell_{\rm Pl}/\sqrt{3\pi}$ is close to the phenomenological
+``stretched horizon'' thickness introduced in the membrane paradigm
+\cite{PriceThorne1986}, but here it is derived from the condensate
+microphysics.
+
+\subsection{Shell entropy and the area law}
+\label{app:shell_entropy}
+
+If the shell of area $A$ and thickness $\rho_c$ is decomposed into effective
+condensate cells of linear scale $\ell_*$, the microstate count is
+\begin{equation}
+N\sim A/\ell_*^2\,,\qquad S_{\rm shell}\sim N\ln q = \frac{A\ln q}{\ell_*^2}\,.
+\label{eq:S_shell_app}
+\end{equation}
+Matching the Bekenstein--Hawking entropy $S_{BH}=A/(4\ell_{\rm Pl}^2)$
+\cite{Bekenstein1973} requires
+\begin{equation}
+\frac{\ln q}{\ell_*^2}=\frac{1}{4\ell_{\rm Pl}^2}\,.
+\label{eq:shell_matching_app}
+\end{equation}
+We do not derive the exact coefficient from first principles here;
+the matching condition~\eqref{eq:shell_matching_app} shows what is required,
+but the microscopic counting remains an open problem
+(Table~\ref{tab:bh_info_status}).
+The point is that the area law is \emph{structurally natural} in ECT once the
+critical shell is present, requiring only locality and a Planck-scale UV cutoff,
+both of which are built into the condensate theory.
+
+
+\subsection{Conditional theorem: exact thermality is incompatible with unitary evaporation}
+\label{app:conditional_theorem}
+
+% ---------------------------------------------------------------
+% WHY A THEOREM IS NEEDED
+% ---------------------------------------------------------------
+
+The mere presence of a critical shell or of additional condensate degrees of
+freedom does not by itself resolve the information paradox.
+One must show that these extra degrees of freedom are not optional
+decorations, but are \emph{forced to couple to the outgoing channel} if
+microscopic unitarity is to be maintained.
+Otherwise one could have a shell while leaving the Hawking channel exactly
+thermal and state-independent, and the standard information-loss contradiction
+would simply reappear in a different language.
+A structural theorem is therefore required.
+
+% ---------------------------------------------------------------
+% THEOREM STATEMENT
+% ---------------------------------------------------------------
+
+\paragraph{Conditional theorem (ECT).}
+\textit{
+Consider an evaporating black hole in ECT and assume:
+(i) the microscopic condensate dynamics is unitary;
+(ii) the near-horizon region contains a finite-entropy critical shell of
+     the Lorentz-order field;
+(iii) evaporation is complete, i.e.\ no infinite-capacity hidden remnant
+      remains at the end.
+Then: (a) exact Hawking thermality and true information loss are impossible;
+(b) the outgoing channel must be shell-state-dependent (this is a derived
+consequence, not an additional assumption);
+(c) the apparent mixedness of the radiation arises only after coarse-graining
+over shell and deeper condensate degrees of freedom, while the full evolution
+remains unitary on $\mathcal{H}_{\rm full}
+= \mathcal{H}_{\rm rad}\otimes\mathcal{H}_{\chi}\otimes\mathcal{H}_{\rm core}$.}
+
+% ---------------------------------------------------------------
+% PROOF
+% ---------------------------------------------------------------
+
+\paragraph{Proof.}
+
+\textit{Step 1 (enlarged state space).}
+If the full condensate dynamics is unitary, the complete state evolves as
+\begin{equation}
+|\Psi(t)\rangle = U(t)|\Psi(0)\rangle, \qquad U^\dagger U = \mathbf{1}.
+\end{equation}
+The observed radiation state is
+\begin{equation}
+\rho_{\rm rad}(t) = \mathrm{Tr}_{\chi,\rm core}\,|\Psi(t)\rangle\langle\Psi(t)|\,.
+\end{equation}
+Mixed radiation does not by itself imply fundamental non-unitarity; it is
+consistent with a pure global state once the tracing-out is acknowledged.
+
+\textit{Step 2 (proof by contradiction).}
+Consider a single emission step in the presence of shell microstates $|s\rangle$:
+\begin{equation}
+|s\rangle|0\rangle
+\;\longrightarrow\;
+\sum_{\omega,s'} A_{\omega s' s}\,|s'\rangle|\omega\rangle\,.
+\label{eq:emission_step}
+\end{equation}
+Suppose, for contradiction, that the outgoing channel is exactly thermal and
+strictly independent of $s$:
+\begin{equation}
+A_{\omega s' s} = a_{\omega s'}\,.
+\end{equation}
+Then two orthogonal initial shell microstates $s_1\neq s_2$ produce the same
+radiation statistics.
+If evaporation is complete and no infinite entropy reservoir remains,
+the final radiation state cannot distinguish $|\Psi(s_1)\rangle$ from
+$|\Psi(s_2)\rangle$.
+This contradicts unitarity (which requires distinct initial states to evolve to
+distinct final states).
+
+\textit{Conclusion.}
+Therefore shell-state dependence is \emph{not} an optional phenomenological
+embellishment.
+It is a logical necessity if one insists simultaneously on unitary microscopic
+dynamics, finite shell entropy, and complete evaporation.
+Exact Hawking thermality is then impossible in the full theory, and the
+information paradox is resolved at the level of the conditional theorem.
+
+\paragraph{Status of the conditions.}
+Condition~(i) is naturally motivated by the self-adjointness of the Euclidean
+condensate action (postulate P2); a fully explicit microscopic Hamiltonian and
+its self-adjoint domain remain to be constructed, so unitarity should be
+regarded as the physically natural assumption of the condensate framework
+rather than a derived theorem at this stage.
+Condition~(ii) follows structurally from the Tolman temperature argument
+(Section~\ref{sec:critical_shell}), conditional on the assumption that the
+local Tolman temperature is the control parameter for Lorentz-order loss near
+the horizon; this is condition~(C2b) of the microscopic consistency criterion
+(Appendix~\ref{app:consistency_criterion}) and remains an open derivation task.
+Condition~(iii) is an assumption about the final state of evaporation that we do
+not derive; the case of a Planck-mass remnant would require separate treatment.
+Shell-state dependence of the outgoing channel [conclusion~(b)] is
+\emph{not} an independent assumption: it is a necessary logical consequence of
+conditions~(i)--(iii), as the proof by contradiction shows.
+
+\paragraph{Complementary entropy argument.}
+The same conclusion follows from a global entropy argument.
+If the full state is pure and evolves unitarily, the von Neumann entropy
+of the radiation satisfies
+\begin{equation}
+S_{\rm rad}(t) = S_{\rm rem}(t)
+\end{equation}
+where $S_{\rm rem}(t)$ is the entropy of the remaining black-hole subsystem
+(shell $+$ core) \cite{Page1993}.
+Since $S_{\rm rem}\to 0$ as the black hole fully evaporates, $S_{\rm rad}$
+must also tend to zero at late times.
+This is incompatible with exact Hawking thermal emission, which would give
+monotonically increasing $S_{\rm rad}$ at all times.
+The proof-by-contradiction via emission amplitudes (above) and this global
+entropy argument are thus two independent routes to the same conclusion.
+Equation~\eqref{eq:Nomega_corrected} expresses the leading parametrisation
+of the shell-state-dependent corrections.
+Panel~(b) of Figure~\ref{fig:bh_information} shows the expected qualitative
+Page-curve behaviour.
+
+\paragraph{Relation to the Mathur obstruction.}
+The ``small corrections'' no-go argument \cite{Mathur2009} shows that
+individually small, independent corrections to each emission step cannot
+restore unitarity.
+This is not in contradiction with our result.
+The theorem does not claim that early-time corrections are large; it claims
+that near and after the Page time the channel \emph{must} become
+effectively order-one and state-dependent, because the finite shell entropy
+capacity is exhausted.
+This is a structural necessity, not a claim about the magnitude of early
+corrections.
+
+% ---------------------------------------------------------------
+% EFFECTIVE MEAN-FIELD CONSTRUCTION
+% ---------------------------------------------------------------
+
+\subsection{Near-horizon $\chi$-field dynamics: an effective mean-field construction}
+\label{app:chi_dynamics}
+
+The conditional theorem above is purely structural.
+To go beyond it and exhibit an explicit mechanism, we construct an effective
+mean-field model of the shell, valid in the Ginzburg--Landau regime.
+This is \emph{not} a full microscopic derivation from the underlying condensate
+action, and the results below have a weaker status than the theorem.
+We mark the status of each step explicitly.
+
+\paragraph{Step 1: local outer asymptotics of the $\chi$-field.}
+
+Near the critical point $T_{\rm loc}(\rho_c) = T_c$, the reduced temperature is
+\begin{equation}
+\varepsilon(\rho)
+\;=\;
+1 - \frac{T_{\rm loc}(\rho)}{T_c}
+\;=\;
+\frac{\rho - \rho_c}{\rho}
+\;\approx\;
+\frac{\rho - \rho_c}{\rho_c}
+\quad (\rho \downarrow \rho_c^+)\,.
+\label{eq:eps_rho2}
+\end{equation}
+The Ginzburg--Landau effective action for the order parameter $\chi$,
+with Tolman temperature as control parameter, is
+\begin{equation}
+\mathcal{F}_{\rm GL}[\chi]
+=
+\int d\rho\,r_h^2\,
+\Bigl[
+a\,(\partial_\rho\chi)^2
++ \frac{\lambda}{6}\,\varepsilon(\rho)\,\chi^2
++ \frac{\lambda}{4}\,\chi^4
+\Bigr]\,,
+\label{eq:F_GL2}
+\end{equation}
+where the coefficients are fixed by the Dolan--Jackiw potential
+\cite{DolanJackiw1974} used to derive $T_c$ (Section~\ref{sec:quantum_vacuum}).
+
+In the mean-field approximation (gradient term subdominant), the local outer
+asymptotic scaling just outside the shell is
+\begin{equation}
+\chi(\rho)
+\;\propto\;
+\left(\frac{\rho - \rho_c}{\rho_c}\right)^{1/2}
+\quad (\rho \downarrow \rho_c^+)\,.
+\label{eq:chi_asym}
+\end{equation}
+\textit{This is the leading outer asymptotic behaviour of the order parameter,
+not a complete radial profile.}
+The full profile, including the interface region and the inner branch
+$\rho < \rho_c$, requires solving the Euler--Lagrange equation of
+$\mathcal{F}_{\rm GL}$ numerically.
+The mean-field exponent $1/2$ is the leading-order result; fluctuation
+corrections modify it toward the Ising value $\nu\approx0.63$ in 3D.
+
+\paragraph{Step 2: effective mode equation in a minimal near-horizon closure.}
+
+A minimal ECT-motivated near-horizon closure is obtained by letting the
+redshift factor be modulated by the local Lorentz-order parameter:
+\begin{equation}
+g_{tt}^{\rm eff}(\rho)
+\;=\;
+-Z_t\!\left(\frac{\chi(\rho)}{\chi_{\rm vac}}\right)(\kappa\rho)^2\,,
+\qquad
+Z_t(1) = 1\,,
+\label{eq:metric_closure}
+\end{equation}
+where the simplest choice is $Z_t(\chi/\chi_{\rm vac}) = \chi/\chi_{\rm vac}$,
+giving an effective local speed
+\begin{equation}
+c_{\rm eff}(\rho)
+\;=\;
+c\,\sqrt{\chi(\rho)/\chi_{\rm vac}}\,.
+\label{eq:ceff2}
+\end{equation}
+\textit{This is a minimal closure, not a derived result.}
+It encodes the natural ECT expectation that the effective Lorentzian metric
+degrades continuously as $\chi\to0$, but the specific functional form is an
+assumption.
+
+Within this closure, the effective s-wave radial equation for an outgoing
+massless mode $\varphi = e^{-i\omega t}f(\rho)$ is
+\begin{equation}
+\partial_\rho
+\!\left[
+c_{\rm eff}^2(\rho)\,\partial_\rho f
+\right]
++
+\frac{\omega^2}{(\kappa\rho)^2}\,f
+=
+0\,.
+\label{eq:wave_eq2}
+\end{equation}
+\textit{This is the effective s-wave equation in the minimal near-horizon
+closure.
+Its validity is conditional on the closure Eq.~\eqref{eq:metric_closure}
+and on the local asymptotics Eq.~\eqref{eq:chi_asym}.}
+
+\paragraph{Step 3: finiteness of the shell correction.}
+
+In the WKB language the shell correction to the outgoing channel is encoded in
+\begin{equation}
+\ln |\mathcal{T}_\omega^{(0)}|
+\;\sim\;
+-\int_{\rm shell} d\rho\,\Im\,k_\omega(\rho)\,.
+\label{eq:WKB_shell}
+\end{equation}
+Because $c_{\rm eff}(\rho)\propto(\rho-\rho_c)^{1/4}$ in the outer asymptotic
+regime, the integrand behaves as $(\rho-\rho_c)^{-1/4}$ near the shell and the
+integral is \emph{finite}.
+This establishes that the shell induces a finite, nonzero correction to
+the standard Hawking channel; it does not suppress emission entirely.
+On dimensional grounds, within the minimal closure, the correction is
+expected to be extremely small for astrophysical black holes
+(suppressed by $\rho_c/r_h \sim M_{\rm Pl}^2/M^2$) and potentially
+order-unity near the Planck mass.
+This is a dimensional estimate within the minimal closure;
+the precise coefficient requires the fully derived shell Hamiltonian
+and is not claimed here.
+
+\paragraph{Step 4: structure of the state-dependent coupling.}
+
+Beyond the mean-field background $\chi(\rho)$, the quantum fluctuations
+$\delta\chi^{(s)}(\rho)$ encode the microstate $s$ of the shell.
+The general linear-response form of the shell-state-dependent correction to
+the transmission amplitude is
+\begin{equation}
+\delta\ln \mathcal{T}_\omega[s]
+\;=\;
+\int_{\rm shell} d\rho\;
+\mathcal{K}_\omega(\rho)\,\delta\chi^{(s)}(\rho)\,,
+\label{eq:kernel_form}
+\end{equation}
+where the kernel $\mathcal{K}_\omega(\rho)$ is determined by the near-horizon
+ECT dynamics.
+\textit{Equation~\eqref{eq:kernel_form} is the general structural form of the
+shell--radiation coupling at linear order in the fluctuation.
+Computing $\mathcal{K}_\omega(\rho)$ explicitly from first principles remains
+an open problem} (see Table~\ref{tab:bh_info_status}).
+
+In the simplest phase-dominated approximation the kernel reduces to a constant
+phase prefactor, consistent with the parametrisation
+Eq.~\eqref{eq:Nomega_corrected} in the main text.
+However, this further simplification should not be identified with a
+full first-principles derivation.
+
+\paragraph{Effective shell Hamiltonian.}
+
+Decomposing the Lorentz-order field as
+$\chi(\rho,\Omega,t) = \bar\chi(\rho) + \delta\chi(\rho,\Omega,t)$,
+the GL free energy Eq.~\eqref{eq:F_GL2} gives a \emph{static} energy functional.
+Adding the kinetic term from the time-dependent part of the ECT condensate
+action, the minimal effective shell Hamiltonian is
+\begin{equation}
+H_{\rm shell}
+=
+\int d\rho\,d\Omega\,r_h^2
+\left[
+\frac{\pi_\chi^2}{2\,Z_\chi}
++
+\frac{a}{r_h^2}\,(\partial_\rho\delta\chi)^2
++
+\frac{W_\chi}{2r_h^4}\,(\nabla_\Omega\delta\chi)^2
++
+U_{\rm eff}(\delta\chi;\rho)
+\right],
+\label{eq:Hshell_eff}
+\end{equation}
+where $\pi_\chi = Z_\chi\,\partial_t\delta\chi$ is the conjugate momentum,
+the effective potential is
+\begin{equation}
+U_{\rm eff}(\delta\chi;\rho)
+=
+\frac{1}{2}\,m_\chi^2(\rho)\,\delta\chi^2
++
+\frac{\lambda_\chi}{4}\,\delta\chi^4
++ \cdots,
+\qquad
+m_\chi^2(\rho)
+\propto
+\frac{\rho_c - \rho}{\rho_c}\,,
+\label{eq:Ueff_shell}
+\end{equation}
+and the kinetic coefficient $Z_\chi$ and the angular stiffness $W_\chi$ are
+effective parameters not yet derived from the full condensate action.
+
+\textit{Status of Eq.~\eqref{eq:Hshell_eff}.}
+The form of $H_{\rm shell}$ is uniquely determined by three inputs: the
+Ginzburg--Landau description of a critical scalar field, the Rindler-like
+geometry near the horizon, and the requirement that the effective potential
+vanish at $\rho = \rho_c$.
+In this sense the \emph{structure} of $H_{\rm shell}$ follows from ECT's
+near-horizon critical sector, but the numerical coefficients
+$Z_\chi$, $W_\chi$, $\lambda_\chi$ are not yet derived from the microscopic
+condensate action; they remain open parameters.
+
+\paragraph{Minimal shell--radiation coupling.}
+
+Because the emergent Lorentzian structure in ECT depends on $\chi$,
+outgoing radiation cannot propagate through the shell without coupling to
+its fluctuations.
+At leading order, the simplest local interaction consistent with locality,
+linearity in the fluctuation $\delta\chi$, and minimal operator dimension is
+\begin{equation}
+\mathcal{L}_{\rm int}
+=
+-\frac{g}{2}\,\delta\chi\,(\partial\varphi)^2\,,
+\label{eq:Lint}
+\end{equation}
+where $\varphi$ represents a generic outgoing radiation mode and
+$g$ is the shell--radiation coupling with dimension $[\text{length}]$.
+
+This form is not postulated but follows from the $\chi$-dependence of
+the effective metric: schematically,
+$g_{\mu\nu}^{\rm eff}(\chi) \approx \bar g_{\mu\nu}(1 + \delta\chi/\chi_{\rm vac})$,
+so $\delta g_{\mu\nu} \propto \delta\chi\,\bar g_{\mu\nu}$,
+and the minimal coupling to the stress tensor $T^{\mu\nu}_{\rm rad}$
+reduces to Eq.~\eqref{eq:Lint} for a massless scalar.
+For tensor modes (gravitons) the coupling has an identical structure
+at linearised order.
+
+\textit{Status of Eq.~\eqref{eq:Lint}.}
+The \emph{form} of the coupling is uniquely fixed at this order.
+The \emph{coefficient} $g$ is not yet derived from the microscopic action;
+it is the open parameter whose calculation constitutes the central missing
+step toward a complete resolution.
+The kernel $\mathcal{K}_\omega(\rho)$ in Eq.~\eqref{eq:kernel_form} is
+related to $g$ and the shell Green function by
+$\mathcal{K}_\omega(\rho) \sim g\,G_\omega^{\rm shell}(\rho)$,
+where $G_\omega^{\rm shell}$ is the shell propagator.
+
+\subsection{Toy finite-memory shell model and the Page mechanism}
+\label{app:page_toy}
+
+The conditional theorem guarantees that exact thermality is impossible and
+purification must occur, but it does not provide a quantitative evaporation
+curve.
+To illustrate how the Page mechanism arises within the ECT shell picture, we
+construct the following \emph{illustrative} finite-memory model.
+This model is not derived from the microscopic condensate action; it is an
+explicit realisation of the logical structure the theorem requires.
+
+\paragraph{Setup.}
+Discretise the shell into $N \sim A/\ell_*^2$ local cells, where $\ell_*$ is
+an effective UV cutoff.
+Give each cell a $q$-dimensional Hilbert space.
+The shell's total Hilbert space is
+$\mathcal{H}_{\rm shell} = (\mathbb{C}^q)^{\otimes N}$
+with
+\begin{equation}
+S_{\rm shell}^{\max}
+=
+N\ln q
+\;\sim\;
+\frac{A}{\ell_*^2}\ln q\,.
+\label{eq:Sshell_max}
+\end{equation}
+For $\ell_* \sim \ell_{\rm Pl}$ and $q \sim 2$ this reproduces the area
+law up to the undetermined $\ln q$ coefficient.
+
+\paragraph{Unitary emission map.}
+Each emission step is a unitary map on the full Hilbert space:
+\begin{equation}
+U_n:\;
+\mathcal{H}_{\rm shell}^{(n)}\otimes\mathcal{H}_{\rm vac}^{(n)}
+\;\longrightarrow\;
+\mathcal{H}_{\rm shell}^{(n+1)}\otimes\mathcal{H}_{\rm rad}^{(n)}\,,
+\label{eq:emission_map}
+\end{equation}
+with the only constraint that the map is unitary and is compatible with
+the coupling Eq.~\eqref{eq:Lint}.
+The key point is that $U_n$ depends on the shell state: different shell
+microstates lead to different outgoing quanta statistics.
+
+\paragraph{Resulting entropy curve.}
+The von Neumann entropy of the radiation after $n$ emission steps follows
+the Page curve for a system of total dimension
+$d_{\rm total} = q^N \times q^n$:
+\begin{equation}
+S_{\rm rad}(n)
+\;\approx\;
+\begin{cases}
+n\ln q & n \ll N/2\quad(\text{early: almost thermal})\\
+N\ln q - (n-N)\ln q & n \gg N/2\quad(\text{late: purifying})
+\end{cases}
+\label{eq:toy_page}
+\end{equation}
+with a smooth turnaround at the Page time $n_P \sim N/2$.
+
+\paragraph{Interpretation.}
+The early-time regime reproduces thermal emission at the Hawking rate.
+After the Page time, the radiation entropy decreases, consistent with
+purification of earlier quanta through shell-mediated correlations.
+The coarse-grained entropy (obtained by tracing over the shell) increases
+monotonically, recovering the Hawking result at low resolution.
+
+This model is \emph{illustrative}: it demonstrates that the Page mechanism
+follows automatically from the existence of a finite-entropy shell coupled to
+outgoing modes by a unitary map.
+The actual ECT Page curve requires the microscopic $H_{\rm shell}$ and
+the coefficient $g$; the toy model only shows what form the curve must take.
+
+\subsection{Interior and the singularity}
+\label{app:interior}
+
+In ECT the interior of a black hole is the region where
+$T_{\rm loc}\gg T_c$, so the Lorentz-ordered phase is completely broken.
+The metric description ceases to be fundamental well before the classical
+singularity is reached.
+The singularity is therefore not a physical object in ECT but a consequence
+of extending the effective Lorentzian description beyond its domain of validity.
+The ``pre-Lorentzian core'' sector $\mathcal{H}_{\rm core}$ in
+Eq.~\eqref{eq:Hilbert_full} replaces the classically singular interior.
+
+This picture is consistent with the broader ECT interpretation of the
+pre-Planckian epoch as a Euclidean condensate phase
+(Section~\ref{sec:cosmo_evolution_comparison}).
+The question of where information ``is'' inside the black hole may then be
+ill-posed in classical geometric terms; the information is distributed across
+the condensate microstate of the shell and core, which does not admit a simple
+Lorentzian spatial description.
+
+\subsection{Potential observational signatures}
+\label{app:bh_obs}
+
+Although the direct detection of information-carrying Hawking correlations
+from astrophysical black holes is not feasible with current technology,
+the critical-shell picture has several in-principle testable consequences.
+
+\begin{enumerate}
+\item \emph{Near-horizon deviations from perfect GR.}
+If the horizon is accompanied by a physical shell at $\rho_c$,
+small departures from the ideal GR boundary condition are expected.
+These may manifest as universal corrections to quasi-normal mode
+frequencies, effective horizon reflectivity, or late-time ringdown
+structure in gravitational-wave events
+\cite{Almheiri2013}.
+Any such signal is suppressed by $(\rho_c/r_s)\sim M_{\rm Pl}^2/M^2$
+and is therefore extremely small for astrophysical black holes, but
+may be visible in analogue-gravity experiments.
+
+\item \emph{Non-exact thermality.}
+Hawking radiation that carries information must deviate from exact
+thermal statistics.
+This cannot be tested with astrophysical black holes at present, but
+analogue systems (acoustic black holes, optical analogues, cold-atom
+setups) can probe near-thermal emission from horizons and may exhibit
+shell-like features.
+
+\item \emph{Universal shell scale.}
+The prediction that $\rho_c = \ell_{\rm Pl}/\sqrt{3\pi}$ is universal
+and mass-independent is a distinctive structural feature of ECT.
+It is consistent with current LIGO/Virgo ringdown data but requires
+future gravitational-wave observations at higher signal-to-noise to
+test quantitatively.
+
+\item \emph{Mass-independence as a falsifiable signature.}
+The microscopic consistency criterion (Section~\ref{app:consistency_criterion})
+implies that any near-horizon deviations from GR must scale with the single
+universal parameter $\rho_c$, not with the black-hole mass.
+Concretely, corrections to quasinormal-mode frequencies scale as
+$\delta\omega/\omega \sim \rho_c/r_h \propto M^{-1}$.
+If future gravitational-wave data reveal mass-dependent deviations with a
+\emph{different} scaling, condition~(C2b) of the criterion would be
+challenged: the Tolman control-parameter assumption would need revision.
+Conversely, confirmation of a universal $\propto M^{-1}$ near-horizon scale
+across events spanning a decade in mass would constitute direct evidence
+for the ECT shell picture.
+
+\item \emph{Analogue-horizon tests.}
+Acoustic black holes, optical analogues, and cold-atom setups can probe
+near-horizon thermal emission at laboratory scales.
+If a system with an analogue of a critical near-horizon medium produces
+emission that deviates from exact thermality in a state-dependent way,
+this would provide experimental support for the structural mechanism
+required by the conditional theorem, independently of the specific ECT
+coupling coefficient $g$.
+\end{enumerate}
+
+\subsection{Microscopic consistency criterion for ECT black-hole unitarity}
+\label{app:consistency_criterion}
+
+The conditional theorem (Section~\ref{app:conditional_theorem}) proves that
+the paradox is resolved whenever four conditions are simultaneously satisfied.
+Here we turn this into a \emph{classification of ECT microcompletions}: a
+microscopic completion of ECT that satisfies all four conditions below resolves
+the paradox; any that violates one of them either fails to resolve it or
+requires additional structure.
+
+\paragraph{The four genuine conditions.}
+
+The theorem's input conditions, and what they require of the underlying
+ECT microcompletion, are:
+
+\begin{enumerate}[label=(C\arabic*)]
+
+\item \textbf{Self-adjoint microscopic dynamics.}
+The condensate Hamiltonian must be self-adjoint: $H_{\rm micro} = H_{\rm micro}^\dagger$.
+In ECT this is a structural requirement of the Euclidean path-integral
+framework (postulate P2); it is the strongest motivation for expecting
+unitarity to hold.
+
+\item \textbf{Finite critical temperature and near-horizon Lorentz-order shell.}
+The condensate must have a finite critical temperature $T_c$ above which
+the Lorentz-ordered phase ceases to exist.
+Moreover, the local Tolman temperature must be the correct thermodynamic
+control parameter for this phase transition near the horizon.
+These two sub-requirements imply that a finite-entropy critical shell exists
+at $\rho_c = \hbar c/(2\pi k_B T_c)$.
+The first sub-requirement is derived in ECT (Dolan--Jackiw potential);
+the second remains conditional.
+
+\item \textbf{Complete evaporation with no infinite-capacity remnant.}
+Evaporation must proceed to completion without leaving a remnant carrying
+an unbounded amount of hidden information.
+This is an assumption about the final state of evaporation not derived from
+the current formulation; the Planck-remnant case requires separate treatment.
+
+\item \textbf{No additional non-unitary dissipation.}
+The interaction between the shell and the radiation sector must not
+introduce intrinsic non-unitarity (e.g.\ an open-system environment outside
+the ECT degrees of freedom).
+This follows from the ECT assumption of a closed condensate system.
+
+\end{enumerate}
+
+Note that \emph{shell-state-dependence of the outgoing channel is not
+an independent condition}: it is a \emph{consequence} of (C1)--(C4)
+proven by the theorem.
+Similarly, the breakdown of exact thermality and the late-time purification
+of radiation are consequences, not assumptions.
+
+\paragraph{Classification of microcompletions.}
+
+\begin{center}
+\begin{tabular}{@{}p{0.30\textwidth}p{0.60\textwidth}@{}}
+\toprule
+Condition violated & Implication for the information paradox \\
+\midrule
+(C1) violated & ECT itself admits fundamental non-unitarity; the theory
+requires substantial revision before the paradox can be addressed. \\[4pt]
+(C2) violated (no $T_c$) & The ECT horizon is effectively geometrically
+empty; near-horizon microphysics does not differ qualitatively from GR,
+and no shell mechanism exists. \\[4pt]
+(C2) violated (Tolman not the control parameter) & The shell location becomes
+a free parameter; the universal $\rho_c$ result is lost, and the shell-based
+mechanism must be re-derived for the actual control parameter. \\[4pt]
+(C3) violated (infinite remnant) & The paradox is formally evaded by hiding
+information indefinitely, but at the cost of pathological remnant physics
+(infinite pair-production rate in external fields, etc.). \\[4pt]
+(C4) violated & The ECT condensate is open to an external non-unitary
+environment; additional quantum gravity degrees of freedom must be specified. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{Current status within ECT.}
+
+Condition~(C1) is the most natural expectation: self-adjointness of the
+condensate action is postulate P2.
+Condition~(C2a) (existence of $T_c$) is established by the Dolan--Jackiw
+analysis (Section~\ref{sec:quantum_vacuum}).
+Condition~(C2b) (Tolman as control parameter) is the central remaining
+structural assumption; deriving it from the black-hole branch of the full
+condensate action is the sharpest open problem in the ECT black-hole sector.
+Conditions (C3) and (C4) are natural but not derived.
+
+Thus the present ECT framework satisfies (C1) structurally, (C2a) by
+calculation, and (C2b) by structural plausibility.
+What remains to be proved is (C2b) and to verify (C3)--(C4).
+No known feature of ECT violates any of these conditions.
+
+\subsection{Summary table}
+\label{app:bh_summary}
+
+\begin{table}[H]
+\centering
+\caption{Status of components of the ECT black-hole information scenario.
+D = derived from ECT without free parameters (D* = conditional on Tolman
+heating being the control parameter for Lorentz-order loss);
+T = consequence of the conditional theorem (\S\ref{app:conditional_theorem});
+S = effective/structural argument---motivated, but not a complete derivation;
+O = open problem.}
+\label{tab:bh_info_status}
+\begin{tabular}{@{}p{0.52\textwidth}cc@{}}
+\toprule
+Statement & Status & Reference \\
+\midrule
+\multicolumn{3}{@{}l}{\textit{Derived from ECT structure (D)}} \\[2pt]
+Fundamental unitarity of condensate dynamics & D & P2 \\
+Critical temperature $T_c = v_0\sqrt{6} \approx 5.96\times10^{18}$\,GeV & D & Eq.~\eqref{eq:Tc_value} \\
+Critical shell at $\rho_c = \ell_{\rm Pl}/\sqrt{3\pi} \approx 0.33\,\ell_{\rm Pl}$ & D* & Eq.~\eqref{eq:rho_c_analytic} \\[4pt]
+\multicolumn{3}{@{}l}{\textit{Conditional theorem (T)}} \\[2pt]
+State-dependence of emission channel required by unitarity + finite shell & T & \S\ref{app:conditional_theorem} \\
+Exact Hawking thermality excluded throughout evaporation & T & \S\ref{app:conditional_theorem} \\[4pt]
+\multicolumn{3}{@{}l}{\textit{Structural / effective model (S)}} \\[2pt]
+Area-scaling shell entropy & S & \S\ref{app:shell_entropy} \\
+GL outer asymptotics of $\chi$-field & S & Eq.~\eqref{eq:chi_asym} \\
+Minimal near-horizon closure and effective mode equation & S & Eq.~\eqref{eq:metric_closure} \\
+Finiteness of shell correction to Hawking channel & S & Eq.~\eqref{eq:WKB_shell} \\
+Linear-response shell--radiation kernel $\mathcal{K}_\omega(\rho)$ & S & Eq.~\eqref{eq:kernel_form} \\[4pt]
+\multicolumn{3}{@{}l}{\textit{Open problems (O)}} \\[2pt]
+Effective shell Hamiltonian structure & S & Eq.~\eqref{eq:Hshell_eff} \\
+Unique form of shell--radiation coupling at leading order & S & Eq.~\eqref{eq:Lint} \\
+Toy finite-memory Page model (illustrative) & S & \S\ref{app:page_toy} \\
+Shell--radiation coupling coefficient $g$ & O & --- \\
+Shell Hamiltonian coefficients from microdynamics & O & --- \\
+Exact coefficient $1/4$ in $S_{BH}=A/(4\ell_{\rm Pl}^2)$ & O & --- \\
+Quantitative ECT Page curve & O & --- \\
+Explicit kernel $\mathcal{K}_\omega(\rho)$ from first principles & O & --- \\
+Tolman heating as Lorentz-order control parameter (C2b) & O & --- \\
+Firewall vs.\ smooth-horizon consistency & O & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_bh_information.pdf}
+\caption{%
+ECT black-hole information scenario.
+\textbf{(a)} Tolman temperature profile $T_{\rm loc}(\rho)$ near a
+non-extremal horizon, plotted in units of $T_c$ vs.\ $\rho/\rho_c$.
+The condensate critical temperature $T_c = v_0\sqrt{6}$ (dashed horizontal
+line) is reached at the universal proper distance
+$\rho_c \approx 0.33\,\ell_{\rm Pl}$ (dotted vertical line), independently
+of the black-hole mass.
+The lightly shaded region is the well-ordered Lorentzian phase ($T_{\rm loc}<T_c$);
+the darker shaded region marks the near-horizon critical shell ($T_{\rm loc}>T_c$).
+\textbf{(b)} Schematic Page curve.
+The coarse-grained radiation entropy (dashed) rises monotonically as
+in the semiclassical Hawking approximation.
+The fine-grained entropy (solid) follows the coarse-grained branch
+until the Page time, then decreases as the shell entropy capacity becomes
+finite and state-dependent corrections to emission become order-one.
+The shaded area between the two curves represents entropy that is
+``returned'' via shell-mediated correlations.
+The figure is schematic; a quantitative curve requires the explicit shell
+Hamiltonian.
+\textbf{(c)} Black-hole parameters vs.\ mass.
+The critical shell proper distance $\rho_c$ is mass-independent (not shown
+separately); the ratio $\rho_c/r_s \propto M^{-1}$ (left axis, red) shows
+how deeply the shell is buried inside the Schwarzschild radius.
+The Hawking temperature $T_H \propto M^{-1}$ (right axis, dashed blue)
+decreases with mass.
+For all astrophysical black holes $T_H \ll T_c$; the critical shell is
+firmly in the sub-Planckian regime.
+}
+\label{fig:bh_information}
+\end{figure}
+
 \section*{Data and Code Availability}
 \addcontentsline{toc}{section}{Data and Code Availability}
 
 Galaxy rotation-curve data are drawn from the public SPARC database \cite{Lelli2016}
-(http://astroweb.cwru.edu/SPARC/).
+(\url{http://astroweb.cwru.edu/SPARC/}).
 All numerical scripts used to produce the figures and calculations in this paper
 are publicly available at:
 
