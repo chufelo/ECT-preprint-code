@@ -1,7 +1,40 @@
 #!/usr/bin/env python3
 """
-Figure 11: Cosmological predictions of ECT.
-All panels use general condensate physics.
+fig_cosmo_predictions.py
+=========================
+Figure: Cosmological predictions of ECT — three diagnostic panels.
+
+Paper location: Figure in Section 12 (Cosmological Predictions)
+
+Panels:
+-------
+(a) Redshift anomaly: delta_z = 0.5 * delta_phi
+    When the local Lorentz-order field phi fluctuates by delta_phi
+    (e.g. at a cluster boundary), photon frequencies are Doppler-shifted
+    by delta_z = (alpha-1)/2 * delta(v_0^2)/v_0^2.  This produces an
+    anomalous redshift not predicted by ΛCDM.  Detectable by DESI-level
+    BAO surveys at delta_z > 1e-4.
+
+(b) Condensate vacuum equation of state w(z):
+    w(z) = w_0 + w_a * z/(1+z)  (Chevallier-Polarski-Linder form)
+    ECT prediction: w_0 = -0.83,  w_a = -0.75
+    from rho_cond ~ V(v_inf) + (1/2) v_dot^2 ~ V(v_inf) (potential dominance).
+    This is compatible with DESI 2024 constraints (w_0 = -0.83 +/- 0.059).
+    ΛCDM predicts w = -1 (cosmological constant).
+
+(c) Running gravitational constant G_eff(z) / G_N:
+    G_eff(z) = G_N * (1+z)^{2*epsilon},  epsilon ~ 0.01
+    From G_N = 1/(8*pi*v_0^2) and v_0 slowly varying with epoch.
+    At high z: G_eff > G_N => faster expansion => higher apparent H_0.
+    Delta H_0 ~ 3 km/s/Mpc for epsilon = 0.01 — resolves ~40% of Hubble tension.
+
+Note on output path:
+    Output is saved to the local working directory as:
+    fig_cosmo_predictions.png and fig_cosmo_predictions.pdf
+    (was previously hardcoded to /home/claude/LaTex/figures/ — fixed).
+
+Dependencies: numpy, matplotlib
+Usage: python fig_cosmo_predictions.py
 """
 import numpy as np
 import matplotlib
@@ -72,7 +105,7 @@ ax3.legend(fontsize=8, loc='upper left')
 ax3.set_xlim(0, 1200); ax3.set_ylim(0.98, 1.15)
 
 plt.tight_layout()
-plt.savefig('/home/claude/LaTex/figures/fig_cosmo_predictions.png',
-            dpi=300, bbox_inches='tight', facecolor='white')
+plt.savefig('fig_cosmo_predictions.png', dpi=300, bbox_inches='tight', facecolor='white')
+plt.savefig('fig_cosmo_predictions.pdf', bbox_inches='tight', facecolor='white')
 plt.close()
-print("Done")
+print("Saved: fig_cosmo_predictions.png, fig_cosmo_predictions.pdf")

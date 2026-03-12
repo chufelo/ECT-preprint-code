@@ -1,14 +1,51 @@
 #!/usr/bin/env python3
 """
-2D thin-lens ECT phi-closure solver for merging clusters.
-No phenomenological M_cond,coll. Only baryons + phi-field.
+cluster_phi_solver_2d.py
+=========================
+2D thin-lens ECT phi-closure solver for merging galaxy clusters.
 
-Method (ChatGPT):
-  Sigma_b(x,y) = Sigma_star + Sigma_gas   [Gaussian peaks]
-  g_N(x,y) = 2*pi*G*Sigma_b              [thin-lens sheet]
-  nu(y) = sqrt((1+sqrt(1+4/y^2))/2),  y = g_N/g_dag
-  Sigma_eff = nu * Sigma_b
-  kappa = Sigma_eff / Sigma_crit
+Paper location: Section 13 (Bullet Cluster and Cluster Lensing)
+
+Physics:
+--------
+In ECT the effective surface mass density seen by gravitational lensing is:
+  Sigma_eff(x,y) = nu(y) * Sigma_b(x,y)
+
+where Sigma_b = Sigma_star + Sigma_gas is the baryonic surface density and
+the ECT enhancement factor nu is derived from the RAR interpolation function:
+  nu(y) = sqrt[(1 + sqrt(1 + 4/y^2)) / 2],   y = g_N / g_dag
+  g_N(x,y) = 2*pi*G * Sigma_b       [thin-lens Newtonian acceleration]
+  g_dag ~ 1.2e-10 m/s^2              [ECT/RAR acceleration scale]
+
+No dark matter halo is added; no phenomenological condensate collapse term
+M_cond,coll is included. The entire lensing signal comes from baryons + phi.
+
+Method:
+  1. Model each cluster component (stars, gas) as a 2D Gaussian surface
+     density Sigma_i(x,y) = M_i / (2*pi*s_i^2) * exp(-r^2/(2*s_i^2)).
+  2. Compute g_N = 2*pi*G*Sigma_b (thin-lens approximation).
+  3. Evaluate nu(g_N/g_dag) pointwise.
+  4. Find surface density peaks and compare with stellar vs gas locations.
+  5. Compute aperture mass within radius R and compare with observed lensing mass.
+
+Clusters modelled:
+  - Bullet Cluster (1E 0657-558):  canonical offset test
+  - MACS J0025.4-1222:             second bullet-like system
+  - El Gordo (ACT-CL J0102-4915):  most massive known merging cluster
+  - Abell 520:                     anomalous 'dark core' cluster
+
+Key results:
+  - All four clusters: kappa peaks follow STARS (correct for bullet-like)
+  - Abell 520: kappa follows dense gas core (correct for this anomalous case)
+  - Quantitative: phi-branch recovers 30-45% of observed lensing mass
+  - Deficit factor ~2-3x (same order as the classic MOND cluster problem)
+  - Identified three uncomputed effects that may close the gap:
+    (i)  environmental g_dag modulation
+    (ii) gravitational slip Phi_lens != Phi_dyn
+    (iii) non-equilibrium merger dynamics
+
+Dependencies: numpy, matplotlib, scipy
+Usage: python cluster_phi_solver_2d.py
 """
 import numpy as np
 import matplotlib; matplotlib.use('Agg')

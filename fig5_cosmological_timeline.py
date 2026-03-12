@@ -208,16 +208,25 @@ ax_c.text(T_EW+0.4,  0.24, r'$v_2$',      fontsize=FS_CURVE, color=MID)
 ax_c.text(T_NOW+2.2, 1.30, r'$G_\mathrm{eff}$'+'\n(Scen. B)',
           fontsize=FS_CURVE, color=MID, ha='center')
 
-# FIX: Scenario A box moved FAR LEFT (x≈8) — well left of Recomb.,
-# above the log-a plateau.  Nothing else is there.
+# Scenario A box — far left, above log-a plateau
+# Arrow points to the v0(A) = 1 plateau well into the future
 ax_c.annotate('Scenario A:\n$v_0 \\to v_\\infty$\neternal expansion',
-              xy=(8.0, 1.20),
+              xy=(19.5, 1.002),             # tip: on the v0(A) flat plateau
+              xytext=(8.0, 1.22),           # box position
               fontsize=FS_ANN,
+              arrowprops=dict(arrowstyle='->', color='#888888', lw=0.8,
+                              connectionstyle='arc3,rad=-0.15'),
               bbox=dict(fc='#F0F0F0', ec='#AAAAAA', lw=0.7, pad=5))
 
+# Scenario B box — near NOW, arrow points to the declining v0(B) dotted curve
+# v0_B at T_NOW+3.5 ≈ 0.89  (from tanh approximation)
 ax_c.annotate('Scenario B:\n$v_0$ slowly $\\to 0$\n$G_\\mathrm{eff}\\to\\infty$\n'
-              'Big Crunch $\\sim 10^{100}$ yr\n(curve off right axis)',
-              xy=(T_NOW+1.0, 0.36), fontsize=FS_ANN,
+              'Big Crunch $\\sim 10^{100}$ yr',
+              xy=(T_NOW+3.3, 0.885),        # tip: on the v0(B) dotted line
+              xytext=(T_NOW+0.7, 0.38),     # box position
+              fontsize=FS_ANN,
+              arrowprops=dict(arrowstyle='->', color='#888888', lw=0.8,
+                              connectionstyle='arc3,rad=0.25'),
               bbox=dict(fc='#E8E8E8', ec='#AAAAAA', lw=0.7, pad=5))
 
 ax_c.text(0.005, 0.005,
