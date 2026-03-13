@@ -111,17 +111,18 @@ condensate phase transition (full microscopic derivation open);
 the Born measure as the unique probability assignment consistent
 with the emergent amplitude sector under structural assumptions
 C1--C3 (unique outcome selection remains open);
-a mechanism for $U(1)$, $SU(2)$, and $SU(3)$ gauge fields
-via condensate phase symmetries;
+a structural embedding of $U(1)$, $SU(2)$, and $SU(3)$ gauge fields
+via condensate phase symmetries (partial; full SM derivation open);
 the Dirac equation from $O(3)$ spinor representations
 (structural reconstruction);
 and a candidate fifth interaction at Planck-suppressed strength.
 
-The quantum statistics of condensate excitations is derived
-from the representation theory of $SO(4)\cong SU(2)_L\times SU(2)_R$:
+The quantum statistics of condensate excitations follows
+structurally from the representation theory of $SO(4)\cong SU(2)_L\times SU(2)_R$:
 integer-spin (tensor) representations give bosons; half-integer-spin
-(spinor) representations give fermions and the Pauli exclusion principle.
-This is a \emph{structural derivation}, not a postulate.
+(spinor) representations give fermions.  This provides a \emph{structural
+route} to the Pauli exclusion principle, not a postulate; a full
+Pauli--L\"{u}ders--Zumino theorem has not been obtained.
 In ECT the exclusion principle is a structural result from $SU(2)$
 spinor representation signs in the quadratic approximation; a full
 Pauli--L\"{u}ders--Zumino theorem has not been obtained, and claims
@@ -1453,7 +1454,6 @@ The Schr\"odinger equation is the standard non-relativistic limit
 of the Klein--Gordon equation (textbook result); ECT's contribution
 is the microscopic motivation for the Klein--Gordon equation itself,
 not the KG$\to$Schr\"odinger step.
-from the condensate phase quantisation.
 
 \subsection{Fluctuations around the condensate vacuum}
 
@@ -1871,45 +1871,6 @@ thermodynamics and the macroscopic arrow of time
 
 \subsubsection{Thermodynamic irreversibility}
 \label{sec:second_law}
-
-\textbf{Statement of this section.} We derive thermodynamic
-irreversibility ($dS/dw\geq0$) from the ECT path integral.
-The derivation has two parts: (i) $dS/dw\geq0$ follows from the
-causal response kernel $K(\tau<0)=0$; (ii) $K(\tau<0)=0$ itself
-follows from the Lorentzian causal structure derived in
-Section~\ref{sec:ssb} (an advanced response would require
-propagation outside the forward light cone, violating ECT causality).
-The second law therefore rests entirely on ECT postulates,
-with no additional assumptions (formerly listed as OP5,
-now resolved; see Section~\ref{sec:open_problems}).
-
-System $q$ coupled to an environment with $N_{\rm
-eff}$ degrees of freedom. Integrating out the environment
-(Caldeira--Leggett \cite{CaldeiraLeggett1983}):
-
-\begin{equation}
-\rho_{\rm
-red}[q,q']\propto
-e^{-\Gamma[q,q']},\quad\Gamma[q,q']=\iint
-dw\,dw'(q-q')\,K(w-w')\,(q-q')
-\end{equation}
-
-For an ohmic environment
-$J(\omega)=N_{\rm
-eff}\gamma\omega$, the causal kernel gives
-$K(\tau)=N_{\rm
-eff}\gamma\,\delta(\tau)\theta(\tau)$:
-
-\begin{equation}
-\frac{d\Gamma_{\rm
-loop}}{dw} = N_{\rm
-eff}\,\gamma\!\left(\frac{dq}{dw}\right)^{\!2}\ge
-0\;\Longrightarrow\;\frac{dS_{\rm
-ent}}{dt}\ge 0
-\end{equation}
-
-\textbf{Thermodynamic irreversibility} follows from
-$K(\tau>0)>0$.  We now show this explicitly.
 
 \paragraph{Second Law from ECT: effective derivation and open problems.}
 
@@ -3547,7 +3508,8 @@ $v_0$ (matched: $v_0=\bar{M}_{\rm Pl}$) & $G_N$ &
 $G_N=\dfrac{1}{8\pi v_0^2(\alpha-\beta)}\xrightarrow{\alpha=2\beta,\,\beta=1}\dfrac{1}{8\pi v_0^2}$ &
 Condensate stiffness controls gravitational coupling.
 $G_N$ and $\hbar$ share a common source $v_0$; Planck length
-$\ell_{\rm Pl}=1/(\sqrt{8\pi}\,v_0)$ is the condensate coherence length.  \\[4pt]
+$\ell_{\rm Pl}=1/(\sqrt{8\pi}\,v_0)$ is identified with the condensate
+coherence length (consistency relation; non-circular derivation open, OP-$\Lambda$).  \\[4pt]
 $v_0,\,\lambda$ & $\hbar$ &
 $\hbar_{\rm eff}=v_0^2\sqrt{2\lambda}/2$ &
 $\hbar$ equals the action of the topologically minimal condensate excitation
@@ -9595,7 +9557,7 @@ geometry and topology of condensate loop configurations.
 
 A remarkable feature of the ECT framework is that several fundamental principles of modern physics arise naturally from the geometric and topological structure of condensate configurations. 
 
-In particular, the uncertainty principle, the principle of extremal action, quantum statistics, black hole thermodynamics, and cosmological inflation can all be related to properties of closed loop configurations of the Euclidean condensate field.  Beyond these principles, the quantum vacuum structure of the condensate --- Casimir energy, Unruh radiation, and cosmological particle production --- is derived in Section~\ref{sec:quantum_vacuum} from the analytic continuation of a single Euclidean two-point function, demonstrating the unified origin of all quantum vacuum phenomena in ECT.
+In particular, the uncertainty principle, the principle of extremal action, quantum statistics, black hole thermodynamics, and cosmological inflation can all be related to properties of closed loop configurations of the Euclidean condensate field.  Beyond these principles, the quantum vacuum structure of the condensate --- Casimir energy, Unruh radiation, and environmental decoherence --- is organised in Section~\ref{sec:quantum_vacuum} around a single Euclidean two-point function (organizing proposition; each effect requires its own boundary, detector, or coarse-graining specification).
 
 \subsection{Loop Configurations in ECT}
 
@@ -9799,7 +9761,7 @@ Odd loops correspond to antisymmetric wavefunctions (fermions),
 \psi(x_1,x_2) = -\psi(x_2,x_1).
 \end{equation}
 
-This reproduces the Pauli exclusion principle.
+This gives antisymmetric wavefunctions for fermions---a structural route toward the Pauli exclusion principle (full Pauli--L\"uders--Zumino theorem not yet obtained; see below).
 
 In two spatial dimensions the fundamental group becomes
 
@@ -10112,8 +10074,9 @@ by the $O(4)\to O(3)$ symmetry-breaking pattern.  In this section we derive thre
 quantum vacuum phenomena --- the Casimir effect, cosmological particle production,
 and the Unruh effect --- from ECT first principles.  The derivations illuminate
 how standard quantum vacuum physics is reorganised within the Euclidean condensate
-picture: each effect follows from the analytic continuation $w\to -ic_*t$ of a
-Euclidean correlator, with no additional assumptions.
+picture: each effect is controlled by an analytic continuation $w\to -ic_*t$ of a
+Euclidean correlator, though each still requires its own boundary conditions,
+detector specification, or coarse-graining prescription.
 
 % -------------------------------------------------------------------------
 \subsection{Unified correlator: an organizing principle of the ECT vacuum sector}
@@ -11545,13 +11508,14 @@ non-trivial consequence of the common origin, not a built-in feature.
 The key distinction from unification programmes is the direction of
 derivation.  ECT does not combine existing frameworks by design.
 The various structures~--- Lorentzian geometry, quantum mechanics,
-gravity, gauge fields~--- are not stitched together: they emerge
-independently from the same condensate dynamics, each finding its
-natural place within $O(4)\to O(3)$ symmetry breaking.
-In ECT the theories do not merely coexist~--- each one follows from
-the preceding as a necessary consequence, forming a single
-derivational chain rather than a union of independent inputs.
-This is what the phrase ``derivation, not unification'' means concretely.
+gravity~--- are not stitched together: they emerge from the same
+condensate dynamics within $O(4)\to O(3)$ symmetry breaking.
+Gauge fields are structurally embedded via condensate phase symmetries,
+though the full Standard Model derivation remains partial (D16,
+Section~\ref{sec:open_problems}).
+In ECT the core components share a common origin rather than being
+independent inputs; the phrase ``derivation, not unification'' refers
+to this common origin, not to a claim of complete logical necessity.
 
 A concrete test of the distinction: in a genuine unification, removing one component (e.g.\ quantum mechanics) leaves the rest intact.  In ECT the components are not independent---the Lorentzian signature, $\hbar$, and $G_N$ are three faces of the same condensate field, and none can be isolated without abandoning the common origin.
 
@@ -12180,12 +12144,13 @@ already a theorem of ECT.  Therefore
 \begin{equation}
   \boxed{K(\tau < 0) = 0}
 \end{equation}
-is not an additional assumption but a consequence of the
-Lorentzian causal structure derived in Section~\ref{sec:ssb}.
-This closes OP5: the second law derivation in
-Section~\ref{sec:second_law} now rests entirely on ECT postulates.
-\textit{Status: resolved; see Appendix~\ref{app:GN_derivation} for the
-related $G_N$ derivation.}
+is structurally motivated by the Lorentzian causal structure
+derived in Section~\ref{sec:ssb} (an advanced response would require
+propagation outside the forward light cone).  This provides strong
+support for $K(\tau<0)=0$, but the full non-Markovian derivation
+of the second law from the bare Euclidean path integral remains open (OP24).
+\textit{Status: partially resolved; $K(\tau<0)=0$ structurally motivated;
+full microscopic derivation open (OP24).}
 
 \item[\textbf{OP6 — UV renormalisability.}]
 Power-counting of graviton loops on the fixed Euclidean background
@@ -13187,19 +13152,19 @@ identity is $\Gamma[q,q]\equiv 0$ (the decoherence functional vanishes on
 the diagonal), which must not be confused with the entropy-production
 functional $\Gamma_{\rm irr}[q]=\kappa\int\dot{q}^2\,dw\geq0$.
 
-The quantum statistics of condensate excitations is derived from
+The quantum statistics of condensate excitations follows structurally from
 $SO(4)\cong SU(2)_L\times SU(2)_R$ representation theory (tensor
 representations $\to$ bosons; spinor representations $\to$ fermions;
-Pauli exclusion from the sign of spinor permutation relations).
-This derivation is \emph{structural}, not axiomatic.  Its key
-observable consequence is that the Pauli exclusion principle holds
-\emph{exactly only in the quadratic approximation}: corrections of
-order $(\rho/\rho_{\rm Pl})^2$ arise at Planck density, constituting a
-prediction absent in standard quantum mechanics (Section~\ref{sec:emergent_principles}).
+antisymmetry from the sign of spinor permutation relations).
+This provides a \emph{structural route} to the Pauli exclusion principle;
+a full Pauli--L\"{u}ders--Zumino theorem has not been obtained, and
+beyond-quadratic corrections at Planck density remain speculative
+(Section~\ref{sec:emergent_principles}).
 
 The three quantum vacuum phenomena --- Casimir effect, Unruh temperature,
-and environmental decoherence --- are shown to be three kinematic limits
-of the single condensate two-point function $N(\tau,\mathbf{r})$
+and environmental decoherence --- are three observables controlled by
+related limits of the condensate two-point function $N(\tau,\mathbf{r})$,
+an organizing proposition of the ECT vacuum sector
 (Section~\ref{sec:unified_correlator}).  This is not a reformulation
 in new notation: it is a structural unification in which all three
 phenomena are controlled by the same condensate vacuum amplitude $v_0^2$.
