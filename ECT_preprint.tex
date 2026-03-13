@@ -120,14 +120,15 @@ spinorial excitations of the ordered sector are admitted
 (Level~B; not a microscopic derivation of fermions);
 and a candidate fifth interaction at Planck-suppressed strength.
 
-ECT provides a \emph{structural route} toward fermionic
-antisymmetry and the Pauli exclusion principle
-(Level~B): integer-spin representations are compatible with bosonic
-symmetry; half-integer-spin (spinor) representations with fermionic
-antisymmetry in the ordered sector.  This is a structural
-compatibility statement, not a postulate and not a theorem.
-A full Pauli--L\"{u}ders--Zumino theorem has not been obtained;
-claims about beyond-quadratic corrections at Planck densities
+ECT provides a \emph{structural route} toward fermionic antisymmetry
+and a compatibility-based account of the Pauli exclusion principle
+(Level~B): integer-spin (tensor) representations of the residual
+$O(3)$ are compatible with bosonic symmetric wavefunctions;
+half-integer-spin (spinor) representations with fermionic
+antisymmetric wavefunctions.  This is a structural compatibility
+statement --- not a postulate and not a full
+Pauli--L\"{u}ders--Zumino theorem.
+Claims about beyond-quadratic corrections at Planck densities
 remain speculative.
 
 A structurally suggestive feature is that three quantum vacuum phenomena
@@ -563,10 +564,10 @@ implications including inflation, dark energy, and dark matter
 \textbf{Part~III (Quantum Sector)} collects the emergent
 principles of physics derived from condensate loop configurations
 --- uncertainty principle, extremal action, quantum statistics
-and the Pauli exclusion principle as a structural result
-(antisymmetry from $SU(2)$ spinor signs in the quadratic limit;
-full Pauli--L\"{u}ders--Zumino theorem open; beyond-quadratic
-corrections speculative) ---
+and a structural route toward the Pauli exclusion principle
+(sign structure associated with spinorial representations of the
+ordered sector; full Pauli--L\"{u}ders--Zumino theorem not
+obtained; beyond-quadratic corrections speculative) ---
 and the quantum vacuum structure showing that Casimir effect,
 Unruh temperature, and environmental decoherence are three
 observables controlled by related limits of a single condensate
@@ -2662,15 +2663,17 @@ calibrated from experiment.  It is the condensate two-point
 function $N(\tau) \propto v_0^2\,C_{\rm sym}(\tau)$, determined
 by the ECT action.  The same correlator appears in three
 physically distinct contexts (detailed in Section~\ref{sec:quantum_vacuum}):
+The same Euclidean two-point correlator enters three distinct
+constructions:
 \begin{equation}
   \label{eq:unified_N}
-  \underbrace{N(\tau,\mathbf{x})}_{\text{one correlator}}
-  \;\underbrace{\xrightarrow{\text{boundary-modified spectrum}}}_{\text{Casimir}}
-  E_{\rm Cas}
-  \;\underbrace{\xrightarrow{\text{accelerated detector}}}_{\text{Unruh}}
-  T_U
-  \;\underbrace{\xrightarrow{\text{coarse-grained open dynamics}}}_{\text{decoherence}}
-  \Gamma_{\rm dist}.
+  N(\tau,\mathbf{x}-\mathbf{x}')
+  \quad\Longrightarrow\quad
+  \begin{cases}
+    \text{boundary-modified vacuum spectrum} & \to\; E_{\rm Cas},\\[4pt]
+    \text{accelerated-detector response} & \to\; T_U,\\[4pt]
+    \text{coarse-grained open-system kernel} & \to\; \Gamma_{\rm dist}.
+  \end{cases}
 \end{equation}
 This unification of three quantum vacuum phenomena through a single
 condensate two-point function is an ECT-specific structural result.
@@ -10341,6 +10344,23 @@ $v_0^2$ sets the overall coupling strength.  This is the
 same function that appears as the noise kernel in the
 influence functional (Section~\ref{sec:influence_functional}).
 
+\paragraph{Relation between $G_E$ and $N$.}
+Two objects appear throughout this section and should not be conflated:
+\begin{description}[noitemsep,leftmargin=2.5em]
+  \item[$G_E(X,X')$] The Euclidean two-point Green function of a
+    massless Goldstone mode: $G_E = 1/(4\pi^2|X{-}X'|^2)$.
+    It controls propagation amplitudes.
+  \item[$N(\tau,\mathbf{r})$] The symmetrised noise kernel of the
+    condensate environment: $N(\tau) = \langle\chi(\tau)\chi(0)\rangle_{\rm sym}
+    \propto v_0^2\,C_{\rm sym}(\tau)$.
+    It controls decoherence and dissipation rates.
+\end{description}
+For free Gaussian Goldstone modes, $N$ is obtained from $G_E$
+by symmetrisation: $N(\tau,\mathbf{r}) = \tfrac{1}{2}[G_E(\tau,\mathbf{r})+G_E(-\tau,\mathbf{r})]$
+(up to the coupling constant $v_0^2$ and analytic continuation).
+The two objects share the same microscopic origin (the condensate action)
+but play different physical roles in the three constructions below.
+
 \paragraph{Three regimes of one correlator.}
 \begin{enumerate}
   \item \textit{Casimir effect.}
@@ -10407,16 +10427,17 @@ influence functional (Section~\ref{sec:influence_functional}).
 \end{enumerate}
 
 \paragraph{Summary of the unification.}
+The same Euclidean two-point correlator enters three
+physically distinct constructions:
 \begin{equation}
-  N(\tau,\mathbf{r})
-  \;\underbrace{\xrightarrow{\text{boundary-modified spectrum}}}_{\text{Casimir}}\;
-  E_{\rm Cas}
-  \quad
-  \underbrace{\xrightarrow{\text{accelerated detector}}}_{\text{Unruh}}
-  T_U
-  \quad
-  \underbrace{\xrightarrow{\text{coarse-grained open dynamics}}}_{\text{decoherence}}
-  \Gamma_{\rm dist}.
+  \label{eq:unified_N_vacuum}
+  N(\tau,\mathbf{r}-\mathbf{r}')
+  \quad\Longrightarrow\quad
+  \begin{cases}
+    \text{boundary-modified vacuum spectrum} & \to\; E_{\rm Cas},\\[4pt]
+    \text{accelerated-detector response} & \to\; T_U,\\[4pt]
+    \text{coarse-grained open-system kernel} & \to\; \Gamma_{\rm dist}.
+  \end{cases}
 \end{equation}
 In standard QFT the Casimir effect, Unruh effect, and decoherence
 are computed by separate formalisms (mode summation, Bogoliubov
@@ -10668,11 +10689,11 @@ $T_U\approx4\times10^{-8}$\,K.
 
 \subsubsection{Physical interpretation}
 
-In ECT the Unruh effect is not a postulate but a consequence of the
-$O(4)$-invariance of the Euclidean correlator $G_E$.  The Lorentzian
-regime is the IR effective description; the Euclidean correlator is the UV
-reality.  The thermal character of the Rindler vacuum follows from
-Euclidean rotational symmetry alone.
+In the ECT interpretation, the Unruh effect is not a postulate but a
+consequence of the $O(4)$-invariance of the Euclidean correlator $G_E$:
+the Lorentzian thermal response emerges from analytic continuation of
+an underlying Euclidean condensate correlator.  The thermal character of
+the Rindler vacuum follows from Euclidean rotational symmetry alone.
 
 % -------------------------------------------------------------------------
 \subsection{Summary of quantum vacuum predictions}
@@ -10701,10 +10722,9 @@ Unruh temperature &
 $\dfrac{\hbar a}{2\pi c_* k_B}$ &
 $4\times10^{-8}$\,K at LHC &
 $\dfrac{\hbar a}{2\pi c k_B}$ & A \\[8pt]
-Cosm.\ spectral index &
-$n_s = 1-2/N_e$ &
-$0.967$ ($N_e=60$) &
-$0.965\pm0.004$ (Planck) & A \\
+Decoherence rate (ohmic) &
+$\Gamma_{\rm dist}\sim N_{\rm eff}\gamma(\Delta q/\ell)^2$ &
+Matches Caldeira--Leggett & Standard CL & A \\
 \bottomrule
 \end{tabular}
 \end{table}
