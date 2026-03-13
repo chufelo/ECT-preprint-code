@@ -104,12 +104,13 @@ single-valuedness of the condensate phase field (not postulated);
 the Heisenberg uncertainty principle as a Cauchy--Schwarz
 theorem in $L^2$;
 linearised and generalised Einstein equations;
-the second law of thermodynamics as a theorem
-($dS/dt\geq 0$, from monotonic growth of the decoherence functional
-$\Gamma_{\rm irr}$, with the low-entropy initial condition derived
-from the purity of the condensate ground state);
-the Born rule as a conditional theorem under three
-assumptions (C1--C3) in the macroscopic limit;
+the second law of thermodynamics as an effective result
+($dS/dt\geq 0$) within the Gaussian--Markov approximation, with
+a structurally motivated low-entropy initial condition from the
+condensate phase transition (full microscopic derivation open);
+the Born measure as the unique probability assignment consistent
+with the emergent amplitude sector under structural assumptions
+C1--C3 (unique outcome selection remains open);
 a mechanism for $U(1)$, $SU(2)$, and $SU(3)$ gauge fields
 via condensate phase symmetries;
 the Dirac equation from $O(3)$ spinor representations
@@ -121,23 +122,26 @@ from the representation theory of $SO(4)\cong SU(2)_L\times SU(2)_R$:
 integer-spin (tensor) representations give bosons; half-integer-spin
 (spinor) representations give fermions and the Pauli exclusion principle.
 This is a \emph{structural derivation}, not a postulate.
-Crucially, the exclusion principle in ECT holds exactly only in the
-quadratic (low-density) approximation; corrections of order
-$(\rho/\rho_{\rm Pl})^2$ arise at Planck densities and are absent
-in standard quantum mechanics, constituting a new prediction.
+In ECT the exclusion principle is a structural result from $SU(2)$
+spinor representation signs in the quadratic approximation; a full
+Pauli--L\"{u}ders--Zumino theorem has not been obtained, and claims
+about beyond-quadratic corrections at Planck densities remain
+speculative.
 
-A structurally distinctive result is that three quantum vacuum phenomena
+A structurally suggestive feature is that three quantum vacuum phenomena
 --- the Casimir effect, the Unruh temperature, and environmental
-decoherence --- are three kinematic limits of a \emph{single} condensate
-Euclidean two-point function $N(\tau,\mathbf{r}) \propto v_0^2 C_{\rm sym}(\tau,r)$:
-at finite temperature with boundaries it yields the Casimir pressure
-(with factor $3/2$ relative to single-field QED for three Goldstone
-modes); along a Rindler trajectory it gives $T_U = \hbar a/(2\pi c_*k_B)$;
+decoherence --- are controlled by related limits of a single condensate
+Euclidean two-point function $N(\tau,\mathbf{r}) \propto v_0^2 C_{\rm sym}(\tau,r)$
+(organizing proposition; each effect still requires its own boundary,
+detector, or coarse-graining specification):
+at finite temperature with condensate-reflecting boundaries it yields
+a Casimir pressure with factor $3/2$ relative to single-field QED for
+three Goldstone modes (\emph{not} predicted for standard metallic plates);
+along a Rindler trajectory it gives $T_U = \hbar a/(2\pi c_*k_B)$;
 and coarse-grained over condensate modes it produces the decoherence
 kernel that suppresses quantum coherences in macroscopic systems.
-The same function $N(\tau)$ that controls the quantum-to-classical
-transition also appears in cosmological particle production
-and black-hole thermodynamics.
+The same function $N(\tau)$ also appears in cosmological particle
+production and black-hole thermodynamics.
 
 Macroscopic applications include:
 flat galactic rotation curves via a Lorentz-order field
@@ -545,7 +549,7 @@ Lorentzian geometry (Sections~2--3), the quantum dynamics of
 condensate excitations including the derivation of the
 Klein--Gordon and Schr\"odinger equations, canonical commutation
 relations from condensate phase single-valuedness, the influence
-functional formalism and the second law as a theorem
+functional formalism and the second law as an effective result (Gaussian--Markov approximation; full derivation open)
 (Section~4), fundamental constants and the $G_N$--$\hbar^2$
 consistency relation (Section~5), and the gravitational and
 gauge sectors (Sections~6--9).
@@ -556,12 +560,14 @@ implications including inflation, dark energy, and dark matter
 \textbf{Part~III (Quantum Sector)} collects the emergent
 principles of physics derived from condensate loop configurations
 --- uncertainty principle, extremal action, quantum statistics
-and the Pauli exclusion principle as an approximate theorem
-(exact only in the quadratic limit, with corrections of order
-$(\rho/\rho_{\rm Pl})^2$) ---
+and the Pauli exclusion principle as a structural result
+(antisymmetry from $SU(2)$ spinor signs in the quadratic limit;
+full Pauli--L\"{u}ders--Zumino theorem open; beyond-quadratic
+corrections speculative) ---
 and the quantum vacuum structure showing that Casimir effect,
-Unruh temperature, and environmental decoherence are three regimes
-of a single condensate two-point function (Sections~14--15).
+Unruh temperature, and environmental decoherence are three
+observables controlled by related limits of a single condensate
+two-point function (organizing proposition; Sections~14--15).
 \textbf{Part~IV (Summary and Outlook)} provides predictions,
 comparison with existing approaches, open problems,
 and conclusions (Sections~16--19).
@@ -1569,6 +1575,23 @@ condensate excitations.
 \subsection{Loop configurations and the origin of quantum amplitudes}
 \label{sec:loops}
 
+\paragraph{Scope and field-content disclaimer.}
+\label{par:real_vs_complex}
+The minimal ECT postulate (P4) specifies \emph{one real} pre-metric
+scalar field $\Phi(X)$.  The phase/loop language used throughout this
+section---polar decomposition $\Phi=\rho\,e^{i\theta}$, $U(1)$ phase
+winding, amplitude quantisation---belongs to an \emph{extended ordered
+sector}: effectively a two-component real order parameter
+$(\Phi_1,\Phi_2)$ or an emergent complex field arising after
+$O(4)\!\to\!O(3)$ symmetry breaking.
+
+This two-component structure is a \emph{structural extension} of the
+minimal model, not a consequence of the single real-field postulate
+alone.  Where the notation $\Phi=\rho\,e^{i\theta}$ is used below,
+it should be understood as shorthand for this extended sector.  The
+microscopic justification for promoting the real condensate to a
+complex or two-component field is an open problem (OP0).
+
 A central ingredient of the ECT framework is the existence of closed
 field configurations of the condensate, which we refer to as
 \emph{loops}. These configurations play a key role in the emergence of
@@ -1888,7 +1911,7 @@ ent}}{dt}\ge 0
 \textbf{Thermodynamic irreversibility} follows from
 $K(\tau>0)>0$.  We now show this explicitly.
 
-\paragraph{Explicit derivation of the Second Law from ECT.}
+\paragraph{Second Law from ECT: effective derivation and open problems.}
 
 Define the \emph{entanglement entropy} of the system--environment split
 as
@@ -1917,29 +1940,29 @@ The rate of entropy increase is then
 \end{equation}
 since $N_{\rm eff}>0$, $\gamma>0$, and $(dq/dw)^2\geq0$.
 
-This is the \emph{second law of thermodynamics as a theorem} within
-ECT: $dS_{\rm ent}/dw\geq0$ for all macroscopic ($N_{\rm eff}\gg1$)
-trajectories, with equality only for static configurations
-($dq/dw=0$).  The equality case corresponds to thermodynamic
-equilibrium.
+Within the Gaussian (Caldeira--Leggett) approximation and for ohmic
+environments, this gives $dS_{\rm ent}/dw\geq0$ for all macroscopic
+trajectories ($N_{\rm eff}\gg1$), with equality only for static
+configurations ($dq/dw=0$).
+\textbf{Status (effective, not fully derived):} this result holds
+strictly within the Gaussian--Markov reduction of the ECT influence
+functional.  Whether the full non-Markovian ECT path integral implies
+monotone entropy growth without additional coarse-graining assumptions
+is an open problem (OP24, Section~\ref{sec:open_problems}).
 
-The probability of a time-reversed trajectory over interval $\Delta w$:
-
+In the Markovian (ohmic) reduction, a Crooks-type fluctuation
+relation holds for the effective decoherence action:
 \begin{equation}
-  \label{eq:Pback_Pfwd_main}
+  \label{eq:crooks_ECT}
   \frac{P_{\rm back}}{P_{\rm fwd}}
-  = \exp\!\left(-2\,N_{\rm eff}\,\gamma\,\Delta w
-    \cdot\left(\frac{\Delta q}{\ell}\right)^2\right)
+  = \exp\!\left(-\Delta\Gamma_{\rm irr}[\Delta q]\right),
 \end{equation}
-
-For a macroscopic body (1 mol, $T=300$ K, $\Delta
-w=c\cdot1$ ns): exponent
-$\approx3.6\times10^{33}$, so
-$P_{\rm back}/P_{\rm
-fwd}\approx0$. For a single atom
-($N_{\rm eff}\sim1$): exponent
-$\sim10^{-15}$ --- quantum reversibility. The arrow
-of time is a statistical, not dynamical, property.
+where $\Delta\Gamma_{\rm irr}$ is the irreversible part of the
+influence functional after the Markov coarse-graining.
+\textbf{Status:} this is a Crooks-type relation derived within the
+Gaussian--Markov reduction of ECT; it is not derived directly from
+the bare Euclidean action without coarse-graining.  The extension
+to the full non-Markovian microscopic ECT path integral remains open.
 
 \paragraph{Why $w$ is traversed in one direction macroscopically.}
 \label{par:arrow_of_time}
@@ -1953,42 +1976,18 @@ for all trajectories with $N_{\rm eff}\geq1$ (established above).
 Physically, each interaction with the environment adds positive
 entropy to the reduced density matrix.
 
-\textbf{Step 2 (Initial condition from the phase transition --- derived, not postulated).}
-We show that $S_{\rm ent}(w_0)=0$ at the moment of the
-$O(4)\!\to\!O(3)$ phase transition follows from the dynamics,
-without an additional postulate.
-
-\emph{(a) Before the transition: $\Gamma=0$ by symmetry.}
-In the $O(4)$-symmetric phase ($w < w_0$), the action $S_E[\Phi]$
-is $O(4)$-invariant and no direction is preferred.  The decoherence
-functional $\Gamma[q,q']$ is defined via path integrals parameterised
-by the preferred coordinate~$w$ (the broken direction).  Before
-symmetry breaking no such direction exists and $\Gamma\equiv 0$:
-the concept of an environment interacting \emph{along} a specific
-axis is undefined.  Therefore $S_{\rm ent}(w<w_0)=0$ by construction.
-
-\emph{(b) At the transition: condensate forms in its ground state.}
-The transition occurs when $\mu^2(T)\to0^-$ at $T=T_c$.  The
-condensate relaxes to the global minimum $|\Phi|=v_0$, the unique
-lowest-energy state.  This is a \emph{pure} quantum state:
-\begin{equation}
-  \rho_{\rm cond}(w_0) = |0\rangle\!\langle 0|,
-  \qquad
-  S_{\rm ent}(w_0) = -\mathrm{Tr}[\rho\ln\rho] = 0.
-\end{equation}
-Purity follows from energy minimisation; no initial-condition
-assumption is required.
-
-\emph{(c) Uniqueness of the minimum.}
-$V(\Phi)=-\mu^2\Phi^2/2+\lambda\Phi^4/4$ has a unique global minimum
-at $|\Phi|=v_0=\mu/\sqrt{\lambda}$ (the residual $O(3)$ symmetry
-does not affect the radial direction).  The ground state is
-non-degenerate in the radial direction, confirming purity.
-
-Observations (a)--(c) together establish $S_{\rm ent}(w_0)=0$
-without any additional postulate.  The low-entropy initial condition
-is \emph{derived} from $O(4)\!\to\!O(3)$ symmetry breaking,
-not imposed by hand.
+\textbf{Step 2 (Initial condition from the phase transition --- structural argument).}
+The $O(4)\!\to\!O(3)$ phase transition provides a natural candidate
+for a low-entropy initial state: when the condensate forms in its
+ground state $|\Phi|=v_0$, the system is in a pure state and
+$S_{\rm ent}(w_0)\approx0$ by energy minimisation.
+\textbf{Status (structural, not fully derived):}  this argument is
+plausible within the mean-field treatment of the transition, but a
+rigorous derivation of a pure initial state from the full many-body
+Euclidean path integral---without assuming thermal equilibration at
+$T_c$---remains open (OP24).  The low-entropy initial condition
+is therefore taken as structurally motivated by ECT rather than
+derived from bare postulates alone.
 
 \textbf{Step 3 (Macroscopic irreversibility follows).}
 Since $\Gamma_{\rm loop}(w)$ is monotonically non-decreasing with
@@ -2032,29 +2031,17 @@ forward ($O(4)\!\to\!O(3)$ direction) and backward ($O(3)\!\to\!O(4)$
 direction) segments is precisely the origin of quantum amplitudes in
 ECT.
 
-Quantitatively, the suppression of backward traversal for a system
-with $N_{\rm eff}$ environmental degrees of freedom over an interval
-$\Delta w$ is given by Eq.~\eqref{eq:Pback_Pfwd_main} below
-(derived in the context of the second law; the same formula applies
-here):
-\[
-  \frac{P_{\rm back}}{P_{\rm fwd}}
-  = \exp\!\left(-2\,N_{\rm eff}\,\gamma\,\Delta w
-    \cdot\left(\frac{\Delta q}{\ell}\right)^2\right).
-\]
-For $N_{\rm eff} = 1$ and $\gamma\,\Delta w\,(\Delta q/\ell)^2 \sim
-10^{-15}$ (single atom at room temperature over 1\,ns):
-$P_{\rm back}/P_{\rm fwd} \approx e^{-2\times10^{-15}} \approx 1$ ---
-backward and forward traversal are essentially equiprobable.  The
-condensate field genuinely explores both $O(4)\!\to\!O(3)$ and
-$O(3)\!\to\!O(4)$ transitions, and their superposition produces
-quantum interference.
-
-By contrast, for a macroscopic body ($N_{\rm eff} \sim 10^{23}$,
-$\gamma\,\Delta w\,(\Delta q/\ell)^2 \sim 1$):
-$P_{\rm back}/P_{\rm fwd} \sim e^{-2\times10^{23}} \approx 0$ ---
-the $O(3)\!\to\!O(4)$ reverse transitions are completely suppressed,
-and only the forward, classically causal direction survives.
+The suppression of backward traversal is governed by the
+irreversible part of the influence functional $\Delta\Gamma_{\rm irr}$
+(Eq.~\eqref{eq:crooks_ECT}).
+For $N_{\rm eff}=1$ (single quantum system), $\Delta\Gamma_{\rm irr}\ll1$:
+backward and forward traversal are essentially equiprobable, and the
+condensate field explores both $O(4)\!\to\!O(3)$ and
+$O(3)\!\to\!O(4)$ transitions---their superposition produces
+quantum interference.  For a macroscopic body
+($N_{\rm eff}\sim10^{23}$), $\Delta\Gamma_{\rm irr}\gg1$:
+reverse transitions are exponentially suppressed and only the forward
+causal direction survives.
 
 In this way, the quantum--classical boundary in ECT is determined by
 whether reverse $O(3)\!\to\!O(4)$ transitions contribute
@@ -2062,20 +2049,20 @@ non-negligibly to the path integral.  The condition
 $\Gamma_{\rm loop} \lesssim 1$ is a quantitative criterion for when
 such contributions matter.
 
-\textbf{Summary:} the arrow of time in ECT follows from two results,
-both derived within the framework:
-(i) $d\Gamma_{\rm loop}/dw\geq0$ for any ohmic environment
-($N_{\rm eff}\geq1$), established above;
-(ii) $S_{\rm ent}(w_0)=0$, derived from the purity of the
-condensate ground state formed at the $O(4)\!\to\!O(3)$ transition
-(Step~2 above).
-Neither the monotonicity nor the initial condition requires an
-additional postulate beyond those already in the ECT action.
+\textbf{Summary:} the arrow of time in ECT rests on two ingredients:
+(i) $dS_{\rm ent}/dw\geq0$ derived within the Gaussian--Markov
+reduction of the ECT influence functional for ohmic environments
+($N_{\rm eff}\geq1$);
+(ii) $S_{\rm ent}(w_0)\approx0$ structurally motivated by the
+purity of the condensate ground state at the $O(4)\!\to\!O(3)$
+transition.
 The combination gives a directed $w$-axis with $dS/dw\geq0$
 macroscopically and $dS/dw\approx0$ at quantum scales.
-This derivation also upgrades the status of the
-``Arrow of time'' entry in Table~\ref{tab:ect-levels} from Level~II
-(EFT-level) to Level~I (fully derived from condensate postulates).
+\textbf{Status:} this is an \emph{effective Level~II result}---derived
+within the Gaussian--Markov approximation, structurally motivated for
+the initial condition.  A fully microscopic Level~I derivation of
+macroscopic irreversibility from the bare Euclidean ECT postulates
+without additional coarse-graining remains an open problem (OP24).
 
 
 %--------------------------------------------------------------
@@ -2117,19 +2104,13 @@ phenomena in ECT.
   forbidden regions.  Tunnelling is not a separate postulate but
   a natural consequence of the two-sided $w$-dependence.
 
-\item \textit{Origin of Eq.~\eqref{eq:Pback_Pfwd_main}.}
-  The ratio $P_{\rm back}/P_{\rm fwd}$ follows from the ratio of
-  Euclidean weights for forward and backward trajectories.
-  The causal kernel $K(\tau)=0$ for $\tau<0$ contributes an extra
-  positive term to the backward path's action, yielding:
-  \[
-    \frac{P_{\rm back}}{P_{\rm fwd}}
-    = \exp\!\left(-2\,N_{\rm eff}\,\gamma\,\Delta w\,
-      \left(\frac{\Delta q}{\ell}\right)^2\right),
-  \]
-  which is Eq.~\eqref{eq:Pback_Pfwd_main}.  The formula is
-  therefore \emph{derived} from the two-sided structure of the
-  ECT propagator and the causal kernel, not postulated.
+\item \textit{Fluctuation asymmetry (Eq.~\eqref{eq:crooks_ECT}).}
+  The Crooks-type ratio $P_{\rm back}/P_{\rm fwd}$ in the
+  Gaussian--Markov reduction follows from the irreversible part of
+  the influence functional $\Delta\Gamma_{\rm irr}$.  The causal
+  kernel $K(\tau)=0$ for $\tau<0$ structurally favours forward
+  traversal, but the full derivation from the bare ECT propagator
+  without coarse-graining assumptions remains open (OP24).
 
 \end{enumerate}
 
@@ -2138,18 +2119,24 @@ beyond standard quantum mechanics is an open question
 (OP22, Section~\ref{sec:open_problems}).
 
 %--------------------------------------------------------------
-\subsubsection{Born rule from the decoherence functional}
+\subsubsection{Conditional uniqueness of the Born measure in the emergent amplitude sector}
 \label{sec:born_rule}
 
-\textbf{Statement.}  In the macroscopic limit $\Gamma_{\rm loop}\gg1$,
-the probabilities of measurement outcomes in ECT satisfy the Born
-rule:
-\begin{equation}
-  \label{eq:born_rule_ECT}
-  P(f) = |\langle q_f|\psi\rangle|^2.
-\end{equation}
-This holds conditionally under three assumptions (C1--C3 below).
-It is a conditional theorem, not an unconditional proof.
+\textbf{Status and scope.}
+This subsection does \emph{not} derive the Born rule as an
+unconditional theorem from the ECT postulates.  It establishes
+a \emph{conditional uniqueness result}: given that the ECT framework
+produces an emergent complex amplitude sector satisfying certain
+structural properties (C1--C3 below), the Born measure
+$P(f)=|\langle q_f|\psi\rangle|^2$ is the \emph{unique} probability
+measure consistent with those properties.
+
+Two problems remain explicitly open:
+\begin{itemize}
+  \item unique outcome selection (why one branch is realised);
+  \item derivation of the additivity/branch-splitting structure
+    from microscopic condensate dynamics.
+\end{itemize}
 
 \textbf{Derivation.}
 After integrating out the environmental degrees of freedom,
@@ -2192,9 +2179,14 @@ limit $\Gamma\to\infty$ only the diagonal $q=q'$ survives.
     $\Gamma[q,q']$ being minimised at $q=q'$~\cite{Zurek2003,Zurek2022}.
 \end{itemize}
 
-Under C1--C3, Eq.~\eqref{eq:born_rule_ECT} is a theorem: the
-probabilities follow from the condensate action $S_E$ rather than
-from a separate postulate.
+Under C1--C3, Eq.~\eqref{eq:rho_diag} is the \emph{unique}
+measure consistent with the emergent amplitude structure of ECT.
+Note: diagonalisation of $\rho_{\rm red}$ alone does not derive
+Born---it establishes decoherence into a preferred basis, but the
+identification $p_{q_f}=|\langle q_f|\psi\rangle|^2$ additionally
+requires the positivity, normalisation, additivity on orthogonal
+alternatives, and continuity of the probability assignment, as in
+Gleason's theorem.
 
 \textbf{Comparison with existing approaches.}
 
@@ -3347,23 +3339,23 @@ of more fundamental quantities.  It becomes a genuine prediction
 only if $\Lambda_\chi$ can be obtained independently from
 microscopic condensate dynamics.
 
-\textbf{Planck length from ECT parameters.}
-The Planck length can be expressed as
-\begin{equation}
-  \ell_{\rm Pl} = \sqrt{\frac{\hbar G_N}{c_*^3}}
-  = \frac{c_*}{\sqrt{\Lambda_\chi}},
-\end{equation}
-which has the intuitive interpretation: $\ell_{\rm Pl}$ is the
-minimal loop size (correlation length of the condensate, set by
-$\Lambda_\chi$) divided by the propagation speed.  
-\textbf{Honest remark:}  In the current ECT formulation the
-intermediate identifications $v_0 = \bar{M}_{\rm Pl}$ and
-$m_r \sim \sqrt{2}\,\bar{M}_{\rm Pl}$ partially re-introduce
-Planck-scale quantities.  A fully non-circular derivation of
-$\ell_{\rm Pl}$ from pre-gravitational microscopic condensate
-parameters—without referring to $G_N$ or $\hbar$ at intermediate
-steps—remains an open problem (OP-$\Lambda$, see
-Section~\ref{sec:open_problems}).
+\textbf{Planck length: open problem.}
+The consistency relation~\eqref{eq:GN_hbar2_relation} involves
+$G_N\hbar^2$, whereas the Planck length $\ell_{\rm Pl}=\sqrt{\hbar G_N/c_*^3}$
+depends on $G_N\hbar$.  One additional independent relation between
+condensate parameters would be needed to close the system; it is
+not available from the current ECT formulation.  Therefore the
+formula
+\[
+  \ell_{\rm Pl} \stackrel{?}{=} \frac{c_*}{\sqrt{\Lambda_\chi}}
+\]
+is \emph{suggestive but not derived}: it would follow only if
+$v_0^2 = \Lambda_\chi$ independently of defining $v_0 \equiv
+\bar{M}_{\rm Pl}$, which is a circular identification in the
+current framework.
+A fully non-circular microscopic derivation of $\ell_{\rm Pl}$
+from pre-gravitational ECT parameters remains an open problem
+(OP-$\Lambda$, Section~\ref{sec:open_problems}).
 
 
 
@@ -9580,11 +9572,12 @@ what the condensate \emph{additionally} predicts about the foundational
 principles of physics: the uncertainty principle as a theorem,
 the principle of extremal action from saddle-point condensate paths,
 quantum statistics and the Pauli exclusion principle from the
-$SO(4)$ representation theory (approximate, with corrections
-$\sim(\rho/\rho_{\rm Pl})^2$ constituting a new prediction),
-and the unification of three quantum vacuum phenomena---Casimir,
-Unruh, and environmental decoherence---as three limits of a
-single condensate two-point function $N(\tau,\mathbf{r})$.
+$SO(4)$ representation theory (structural result in the quadratic
+limit; full theorem and beyond-quadratic corrections not yet derived),
+and the structural organization of three quantum vacuum phenomena---Casimir
+(at condensate boundaries), Unruh, and environmental decoherence---as
+three observables controlled by related limits of the condensate
+two-point function $N(\tau,\mathbf{r})$ (organizing proposition).
 
 %==============================================================
 \part{Quantum Sector: Emergent Principles and Microscopic Structure}
@@ -9853,35 +9846,17 @@ absolutely and exactly, at all energy scales.
 
 In ECT the antisymmetry follows from the sign of $SU(2)$ spinor
 permutation relations within the \emph{quadratic approximation}
-of the condensate action.  At densities $\rho \to \rho_{\rm Pl}$
-where nonlinear condensate effects become important, the quadratic
-approximation breaks down.  The leading-order correction to the
-exclusion principle is of order
-\begin{equation}
-  \label{eq:pauli_correction}
-  \delta P_{\rm same} \sim \left(\frac{\rho}{\rho_{\rm Pl}}\right)^2
-  \sim \left(\frac{\rho}{\rho_{\rm Pl}}\right)^2,
-  \qquad
-  \rho_{\rm Pl} = \frac{M_{\rm Pl}}{\ell_{\rm Pl}^3}
-  \approx 5.2 \times 10^{96}\;\text{kg\,m}^{-3}.
-\end{equation}
-At all densities accessible to current and foreseeable experiments
-($\rho \ll \rho_{\rm Pl}$), this correction is unmeasurably small
-and the Pauli principle holds to all practical purposes.
+of the condensate action.  ECT therefore offers a \emph{structural
+route} toward fermionic antisymmetry rather than an axiom.
 
-\textbf{Observable consequence.}  This distinction between ``Pauli
-as axiom'' and ``Pauli as approximate theorem'' is not merely
-philosophical.  It constitutes a \emph{new prediction} of ECT
-absent in standard quantum mechanics: at densities approaching
-$\rho_{\rm Pl}$ (e.g.\ inside neutron stars, in the pre-Planckian
-epoch, or near black-hole singularities), the exclusion principle
-is violated at order $(\rho/\rho_{\rm Pl})^2$.  This has implications
-for the maximum mass of compact objects and for the endpoint of
-gravitational collapse.  In particular, the neutron-star maximum
-mass prediction
-$M_{\rm max} \approx 2.17\,M_\odot$~\cite{AntoniaMassMax}
-includes a small shift from this correction (see also
-Section~\ref{sec:fifth_force}).
+\textbf{Status of beyond-quadratic corrections.}
+A full Pauli--L\"uders--Zumino level theorem has not been obtained
+in ECT.  Whether the quadratic approximation can be extended to all
+orders and whether corrections arise at Planck densities are open
+questions.  Any claim about a specific scaling law
+$\delta P_{\rm same}\sim(\rho/\rho_{\rm Pl})^2$ or its
+implications for neutron-star masses is \emph{speculative} at the
+current stage of ECT development and is not a derived prediction.
 
 \paragraph{Comparison with existing approaches.}
 
@@ -9897,9 +9872,9 @@ Aspect & Standard QM / QFT & ECT \\
 \hline
 Origin of antisymmetry & Axiom (postulated) & $SU(2)$ spinor rep sign\\
 Mathematical basis & $\{\hat a,\hat a^\dagger\}=1$ postulated & $O(3)$ permutation topology \\
-Pauli principle status & Exact, absolute & Approximate (quadratic sector) \\
-Violation predicted? & No & Yes, order $(\rho/\rho_{\rm Pl})^2$ \\
-Full spin-statistics thm. & Pauli--L\"ders--Zumino & Open problem in ECT \\
+Pauli principle status & Exact, absolute & Structural (quadratic sector) \\
+Violation predicted? & No & Not derived; speculative beyond quadratic \\
+Full spin-statistics thm. & Pauli--L\"uders--Zumino & Open problem in ECT \\
 \hline
 \end{tabular}
 \end{table}
@@ -10141,14 +10116,22 @@ picture: each effect follows from the analytic continuation $w\to -ic_*t$ of a
 Euclidean correlator, with no additional assumptions.
 
 % -------------------------------------------------------------------------
-\subsection{Unified correlator principle: Casimir, Unruh, and decoherence}
+\subsection{Unified correlator: an organizing principle of the ECT vacuum sector}
 \label{sec:unified_correlator}
 % -------------------------------------------------------------------------
 
-A structurally distinctive result of ECT is that three apparently
+\textbf{Status:} the following is an \emph{organizing proposition}
+of the micro-ECT vacuum sector, not a theorem-level unification.
+The three phenomena discussed below are three physically distinct
+observables controlled by related limits of the same condensate
+correlator, once the corresponding boundary conditions, detector
+coupling, and coarse-graining assumptions are specified separately
+for each case.  They are not identical computations.
+
+A structurally suggestive feature of ECT is that three apparently
 unrelated quantum vacuum phenomena --- the Casimir effect, the Unruh
-temperature, and environmental decoherence --- are three different
-\emph{limits of a single condensate two-point function}.
+temperature, and environmental decoherence --- are controlled by
+different \emph{limits of a single condensate two-point function}.
 
 \paragraph{The condensate correlator $N(\tau, \mathbf{x}-\mathbf{x}')$.}
 Define the symmetric Euclidean two-point function of the condensate field:
@@ -10232,16 +10215,19 @@ influence functional (Section~\ref{sec:influence_functional}).
   \underbrace{\xrightarrow{N_{\rm eff}\,\text{modes, coarse-grain}}}_{\text{decoherence}}
   \Gamma_{\rm dist}.
 \end{equation}
-This is not a reformulation of known results in new notation.  In
-standard QFT the Casimir effect, Unruh effect, and decoherence
+In standard QFT the Casimir effect, Unruh effect, and decoherence
 are computed by separate formalisms (mode summation, Bogoliubov
 transformation, and Lindblad equations respectively).  In ECT
-they are three kinematic limits of a \emph{single} function
-determined by the condensate action.  The physical content is
-that the vacuum fluctuation strength $v_0^2$ simultaneously
-controls vacuum energy density (Casimir), thermal properties of
-accelerated frames (Unruh), and the rate of quantum-to-classical
-transition (decoherence).
+the \emph{same} underlying condensate correlator $N(\tau,\mathbf{r})$
+appears in all three, which is a structural economy of the framework.
+The physical content is that the vacuum fluctuation strength $v_0^2$
+simultaneously enters vacuum energy density (Casimir), thermal
+properties of accelerated frames (Unruh), and the decoherence rate.
+However, deriving each effect still requires specifying the
+appropriate boundary conditions (Casimir), detector trajectory
+and coupling (Unruh), and coarse-graining prescription (decoherence)
+separately; these inputs are not eliminated by the common correlator
+structure.
 
 
 
@@ -10825,7 +10811,7 @@ BH entropy & area law from condensate & $A/4\ell_{\rm Pl}^2$ & Bekenstein--Hawki
 Hawking $T$ & $\hbar c/(8\pi G_{\rm eff}M)$ & $= T_{\rm Hawking}$ & standard & P \\
 \hline
 \multicolumn{5}{l}{\textit{Quantum vacuum effects (Section~\ref{sec:quantum_vacuum})}} \\
-Casimir pressure (ECT) & $-3\pi^2\hbar c_*/(240 a^4)$ & $3/2\times(F/A)_{\rm QED}$ & $(F/A)_{\rm QED}$ [photons] & P \\
+Casimir pressure (ECT) & $-3\pi^2\hbar c_*/(240 a^4)$ & $3/2\times(F/A)_{\rm QED}$ (condensate boundaries only; not metal plates) & $(F/A)_{\rm QED}$ [photons] & P \\
 Unruh temperature & $\hbar a/(2\pi c_* k_B)$ & $4\times10^{-8}$\,K at LHC & $\hbar a/(2\pi c k_B)$ & A \\
 Cosm.\ spectral index & $n_s=1-2/N_e$ & $0.967$ ($N_e=60$) & $0.965\pm0.004$ (Planck 2018) & A \\
 Vacuum stiffness & $\bar M_{\rm Pl}^2 = v_0^2(\alpha{-}\beta)$ & $2.435\times10^{18}$\,GeV & --- & A \\
@@ -10909,9 +10895,12 @@ CMB+GW multi-messenger &
 Kinetic tensor structure refuted \\
 
 F9 & Casimir ratio $3/2$ (Section~\ref{sec:casimir}) &
-$(F/A)_{\rm ECT}/(F/A)_{\rm QED}=3/2$ &
-Precision Casimir experiment &
-Goldstone vacuum excluded \\
+$(F/A)_{\rm ECT}/(F/A)_{\rm QED}=3/2$, \emph{conditional} on
+boundaries reflecting ECT Goldstone modes (e.g.\ BEC/superfluid
+interfaces); \emph{not} predicted for standard metallic plates &
+Casimir experiment with condensate/superfluid boundaries &
+Goldstone vacuum excluded if ratio measured $\neq 3/2$ at
+appropriate condensate boundaries \\
 
 F10 & Redshift dependence $g_\dagger(z)$ &
 RAR intercept shift at $z > 0.5$ &
@@ -11128,7 +11117,7 @@ D4 & Three Goldstone bosons & A & --- & 8 \\
 D5 & Graviton: Fierz--Pauli, spin-2, ghost-free (linearised) & A & $v_0^2(\alpha-\beta)>0$, TT gauge (OP3 partially resolved) & 8, App.~\ref{app:GN_derivation} \\
 D6 & Dirac equation & B & O(3) spinor rep. & \ref{sec:fermions} \\
 D7 & Instanton mass spectrum $m_n=n\times1.6$ GeV & B & $\pi_3({\rm O(3)})=\mathbb{Z}$ & 10 \\
-D8 & Thermodynamic irreversibility & A & $K(\tau<0)=0$ from ECT causality (OP5 resolved) & 4 \\
+D8 & Thermodynamic irreversibility & B & Gaussian--Markov approx.; $K(\tau<0)=0$ structural; full microscopic derivation open (OP24) & 4 \\
 D9 & $\hbar$ identification & B & Phase quantisation & \ref{sec:constants}, \ref{sec:constants} \\
 D10 & Linearised Einstein eqs. + $\Theta_{\mu\nu}$ & B & Linearisation & \ref{sec:gravity} \\
 D11 & Inflation $n_s=0.967$ & B & Slow-roll, $N_e=60$ & \ref{sec:cosmology} \\
@@ -11137,11 +11126,11 @@ D13 & UV safety of graviton & C & Power counting not done & 8, \ref{sec:open_pro
 D14 & Full non-linear Einstein eqs.\ (anisotropic curv.\ term) & A & Riemann commutator identity (OP2 resolved) & \ref{sec:gravity}, App.~\ref{app:curvature_coupling} \\
 D15 & Causality of $K(\tau)$ from ECT & A & Derived from forward light cone of ECT metric (OP5) & 4, \ref{sec:open_problems} \\
 D16 & SM gauge group from O(4) & C & Embedded, not derived & 7, \ref{sec:open_problems} \\
-D17 & Second law $dS/dw\geq0$ & A & Ohmic env. + causal $K(\tau)$ (both derived) & \ref{sec:quantum}, \ref{sec:open_problems} \\
+D17 & Second law $dS/dw\geq0$ & B & Gaussian--Markov approx.\ + structural initial condition; full derivation open (OP24) & \ref{sec:quantum}, \ref{sec:open_problems} \\
 D18 & Universe domain size $R_{\rm domain}=R_H e^{N_e}$ & A & --- & \ref{sec:universe_size} \\
 D19 & $S_{\rm loop,min}=2\pi\hbar$ from phase quantisation & B & Single-valuedness of $\theta$ & \ref{sec:constants} \\
 D20 & $\beta$ param.: general $c_*=\sqrt{\beta/(\alpha-\beta)}$ & A & --- & \ref{sec:ssb} \\
-D21 & Casimir: $(F/A)_{\rm ECT}=3/2\,(F/A)_{\rm QED}$ (3 Goldstone) & B & Dirichlet b.c.\ on Goldstone & \ref{sec:casimir} \\
+D21 & Casimir: $(F/A)_{\rm ECT}=3/2\,(F/A)_{\rm QED}$ (3 Goldstone, \emph{condensate boundaries only}) & B & Dirichlet b.c.\ on Goldstone; not applicable to standard metal plates & \ref{sec:casimir} \\
 D22 & Unruh $T_U=\hbar a/(2\pi c_* k_B)$ from Euclidean correlator & A & --- & \ref{sec:unruh} \\
 D23 & Cosm.\ particle production; Bogoliubov $n_s=0.967$ & B & Slow-roll, $N_e=60$ & \ref{sec:cosm_particle_prod} \\
 D24 & Vacuum stiffness: $\bar M_{\rm Pl}^2=v_0^2(\alpha{-}\beta)$ & A & --- & \ref{sec:vacuum_stiffness} \\
@@ -11207,7 +11196,9 @@ These results either appear first in ECT or take qualitatively new forms.
         boundary condition $v_0(R_{\rm domain}) \to 0$.
   \item \emph{Quantum vacuum effects} (Section~\ref{sec:quantum_vacuum}):
         Casimir pressure from three Goldstone modes,
-        $(F/A)_{\rm ECT}=3/2\,(F/A)_{\rm QED}$; Unruh temperature
+        $(F/A)_{\rm ECT}=3/2\,(F/A)_{\rm QED}$ (\emph{conditional} on
+        condensate/superfluid boundaries; not predicted for standard
+        metallic plates); Unruh temperature
         $T_U=\hbar a/(2\pi c_* k_B)$ from analytic continuation of the
         Euclidean correlator; cosmological Goldstone production at the
         $O(4)\to O(3)$ transition with spectral index $n_s=0.967$.
@@ -12489,12 +12480,27 @@ are clearly marked as effective descriptions
 
 \item[\textbf{OP23 --- Self-contained derivation of Born-rule
   conditions.}]
-  Section~\ref{sec:born_rule} derives the Born rule conditionally
-  under three assumptions (C1: ohmic environment; C2: macroscopic
-  regime $N_{\rm eff}\gg1$; C3: existence of pointer states).
-  A fully self-contained derivation starting from the ECT postulates
-  P1--P7 alone has not been given.  Finite-$N_{\rm eff}$ corrections
-  to Born probabilities are also uncomputed.
+  Section~\ref{sec:born_rule} establishes the Born measure as the
+  unique probability assignment in the emergent amplitude sector
+  under structural assumptions C1--C3.  A fully self-contained
+  derivation of these conditions starting from ECT postulates P1--P7
+  alone has not been given.  Unique outcome selection (why one branch
+  is realised) and derivation of additivity/branch-splitting from
+  microscopic condensate dynamics remain open.
+  \textit{Priority: high; foundational.}
+
+\item[\textbf{OP24 --- Microscopic derivation of the second law and
+  macroscopic irreversibility.}]
+  Section~\ref{sec:second_law} establishes $dS_{\rm ent}/dw\geq0$
+  within the Gaussian--Markov approximation of the ECT influence
+  functional, and motivates the low-entropy initial condition from
+  the purity of the condensate ground state at the $O(4)\to O(3)$
+  transition.  A fully microscopic derivation of monotone entropy
+  growth from the bare Euclidean ECT postulates---without
+  Gaussian--Markov coarse-graining---has not been given.  The
+  rigorous derivation of a pure initial state from the many-body
+  path integral near $T_c$, without assuming mean-field
+  thermalization, also remains open.
   \textit{Priority: high; foundational.}
 
 \end{description}
@@ -12828,6 +12834,7 @@ a further high-quality diagnostic.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
+\label{sec:conclusion}
 
 \paragraph{Overview of the framework.}
 
@@ -13101,17 +13108,25 @@ Results fall into four categories:
   \item Canonical commutation relations $[\hat x_i,\hat p_j]=i\hbar\delta_{ij}$
         derived from single-valuedness of condensate phase (not postulated).
   \item Heisenberg uncertainty principle as Cauchy--Schwarz theorem on $L^2$.
-  \item Second law $dS/dt\geq0$ as theorem; low-entropy initial condition
-        derived from purity of condensate ground state at $O(4)\to O(3)$ transition.
-  \item Born rule as conditional theorem under C1--C3 (macroscopic limit).
+  \item Second law $dS/dt\geq0$: effective result within Gaussian--Markov
+        approximation; structurally motivated low-entropy initial condition
+        from condensate phase transition; full microscopic derivation open (OP24).
+  \item Born measure: unique probability assignment consistent with emergent
+        amplitude sector under structural assumptions C1--C3; unique outcome
+        selection remains open.
   \item Pauli exclusion principle from $SU(2)$ spinor representation sign
-        (structural, not axiom); corrections $\sim(\rho/\rho_{\rm Pl})^2$ at Planck
-        densities constitute a new prediction absent in standard QM.
-  \item Casimir effect ($\times 3/2$ for condensate boundaries), Unruh temperature,
-        and environmental decoherence as three limits of one condensate two-point
-        function $N(\tau,\mathbf{r})\propto v_0^2 C_{\rm sym}(\tau,r)$.
-  \item Arrow of time: $\Gamma_{\rm loop}\gg1$ macroscopically; quantum
-        time-reversal at $\Gamma_{\rm loop}\lesssim1$.
+        (structural route, not axiom); full Pauli--L\"uders--Zumino theorem
+        not yet obtained; beyond-quadratic corrections speculative.
+  \item Casimir effect ($\times 3/2$ at condensate/superfluid boundaries only;
+        not a prediction for standard metallic plates), Unruh temperature,
+        and environmental decoherence as three observables controlled by
+        related limits of one condensate two-point function
+        $N(\tau,\mathbf{r})\propto v_0^2 C_{\rm sym}(\tau,r)$
+        (organizing proposition, not theorem-level unification).
+  \item Arrow of time: emergent from $dS_{\rm ent}/dw\geq0$ within
+        Gaussian--Markov approximation ($\Gamma_{\rm irr}\gg1$ macroscopically);
+        quantum time-reversal at $\Gamma_{\rm irr}\lesssim1$; full microscopic
+        derivation open (OP24).
   \item Galactic acceleration scale: $g_\dagger \propto c^2\phi_*(\phi_{\rm gal}) \propto cH_0$
         (structural; $\mathcal{O}(1)$ coefficient undetermined).
   \item Inflation: $n_s=1-2/N_e=0.967$ at $N_e=60$.
