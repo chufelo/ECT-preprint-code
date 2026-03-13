@@ -1452,13 +1452,14 @@ physical reality.  Perturbative QFT in Euclidean space (the starting point of
 lattice QFT, instanton calculus, and thermal field theory) can be understood as
 the ECT description of the UV sector.  The passage from Euclidean to Lorentzian
 is not a transformation of coordinates but a phase transition in the condensate.
-The Osterwalder--Schrader theorem~\cite{OsterwalderSchrader1973} provides the
-relevant mathematical bridge between Euclidean and Lorentzian descriptions
-when the Euclidean theory satisfies reflection positivity and the standard
-reconstruction conditions.  \textbf{We do not prove these conditions for
-full ECT here}; we assume that the ordered quadratic sector admits the
-standard analytic continuation (a positive mass $m^2=2\mu^2>0$ is necessary
-but not sufficient for reflection positivity).
+\textbf{Disclaimer on Osterwalder--Schrader reconstruction.}
+A full Osterwalder--Schrader reconstruction~\cite{OsterwalderSchrader1973}
+is \emph{not} established here.  We assume that the ordered quadratic sector
+admits the analytic continuation required for an emergent Lorentzian amplitude
+theory; this assumption is used throughout Part~III.  Deriving reflection
+positivity from the microscopic ECT action (rather than assuming it for the
+quadratic sector) remains an open problem.  A positive condensate mass
+$m^2=2\mu^2>0$ is \emph{necessary} but not sufficient for reflection positivity.
 
 \textbf{Level of the derivation.}
 The Klein--Gordon equation obtained below is an \emph{effective
@@ -5334,7 +5335,9 @@ This section has three distinct layers:
 The fermionic sector is introduced consistently with the full ECT
 action~\eqref{eq:ECT_action}.  The scalar condensate $\Phi$ couples
 to fermions via Yukawa interactions $y\bar\Psi\Phi\Psi$; gauge fields
-arise from the phase symmetries of $\Phi$ (Sections~\ref{sec:gauge}--\ref{sec:fifth_force}).
+can be embedded consistently via the phase symmetries of $\Phi$
+(Level~B/C; Sections~\ref{sec:gauge}--\ref{sec:fifth_force};
+SM gauge group is an input, not derived from the bare condensate action).
 The \emph{structural reconstruction} of the Dirac form below is written
 as an Euler--Lagrange equation of $S_{\rm ECT+f}$;
 the fermion field $\Psi$ and its couplings are additional
@@ -5533,9 +5536,9 @@ low-energy excitations propagate in an emergent Lorentzian spacetime.
 The local dispersion relation for a free massive excitation is
 
 \begin{equation}
-p_\mu p^\mu = m^2 c^2,
+p_\mu p^\mu = m^2 c_*^2,
 \qquad
-p_\mu = \left(\frac{E}{c},\mathbf p\right).
+p_\mu = \left(\frac{E}{c_*},\mathbf p\right).
 \end{equation}
 
 A first-order wave equation for a fermionic field $\Psi$ should therefore
@@ -5579,7 +5582,7 @@ quadratic invariant $p_\mu p^\mu$.
 The minimal first-order equation consistent with this structure is
 
 \begin{equation}
-(\slashed{p}-mc)\Psi=0 .
+(\slashed{p}-mc_*)\Psi=0 .
 \end{equation}
 
 In coordinate space, with $p_\mu\rightarrow i\hbar\partial_\mu$, this
@@ -5587,12 +5590,14 @@ becomes
 
 \begin{equation}
 \boxed{
-\left(i\hbar\gamma^\mu\partial_\mu - mc\right)\Psi = 0 .
+\left(i\hbar\gamma^\mu\partial_\mu - mc_*\right)\Psi = 0 .
 }
 \end{equation}
 
 This reproduces the Dirac equation for relativistic fermionic excitations
 on the ordered condensate branch (structural reconstruction, Level~B).
+At the canonical normalisation $\alpha=2$, $\beta=1$ one has
+$c_*=c$, recovering the standard Dirac form.
 
 \paragraph{Weyl decomposition}
 
@@ -6239,8 +6244,9 @@ v_2 = 246\,\mathrm{GeV}.
 \end{equation}
 
 The strong interaction corresponds to an unbroken $SU(3)$ sector of the
-condensate, producing the eight gluon gauge fields and naturally
-explaining the persistence of confinement.
+condensate (Level~C: embedded, not derived); this accommodates the
+eight gluon gauge fields.  A microscopic ECT derivation of confinement
+from the bare condensate action remains open.
 
 In addition to the Standard Model gauge sectors the symmetry breaking
 
@@ -6517,9 +6523,11 @@ stiffness becomes nonlinear, produces MOND-like dynamics and the
 baryonic Tully--Fisher relation as exact algebraic consequences.
 On cosmological scales the condensate provides a natural mechanism
 for inflation, dark energy, and ultralight dark-matter candidates.
-The observational predictions throughout Part~II are traceable to
-the same condensate parameters $v_0$, $\alpha$, $\beta$, $\lambda$
-that determined the microscopic results of Part~I.
+The observational predictions throughout Part~II are
+\emph{parametrically linked} within the same condensate framework:
+the parameters $v_0$, $\alpha$, $\beta$, $\lambda$ appear in both
+the microscopic results of Part~I and the macroscopic predictions here,
+reflecting an internal consistency structure rather than independent derivations.
 
 
 %==============================================================
@@ -9828,9 +9836,10 @@ with Gaussian--Markov assumptions), Part~III examines
 what the condensate \emph{additionally} predicts about the foundational
 principles of physics: the uncertainty principle as a theorem,
 the principle of extremal action from saddle-point condensate paths,
-quantum statistics and the Pauli exclusion principle from the
-$SO(4)$ representation theory (structural result in the quadratic
-limit; full theorem and beyond-quadratic corrections not yet derived),
+a structural route toward quantum statistics and the Pauli exclusion
+principle via $SO(4)$ representation theory (sign structure compatible
+with fermionic antisymmetry in the quadratic limit;
+full PLZ theorem not yet derived),
 and the structural organization of three quantum vacuum phenomena---Casimir
 (at condensate boundaries), Unruh, and environmental decoherence---as
 three observables controlled by related limits of the condensate
@@ -13407,9 +13416,10 @@ Results fall into four categories:
   \item Born measure: unique probability assignment consistent with emergent
         amplitude sector under structural assumptions C1--C3; unique outcome
         selection remains open.
-  \item Pauli exclusion principle from $SU(2)$ spinor representation sign
-        (structural route, not axiom); full Pauli--L\"uders--Zumino theorem
-        not yet obtained; beyond-quadratic corrections speculative.
+  \item Structural route toward Pauli exclusion principle via $SU(2)$
+        spinor representation sign structure (compatible with fermionic
+        antisymmetry in the ordered sector; full PLZ theorem not obtained;
+        beyond-quadratic corrections speculative).
   \item Casimir effect ($\times 3/2$ at condensate/superfluid boundaries only;
         not a prediction for standard metallic plates), Unruh temperature,
         and environmental decoherence as three observables controlled by
