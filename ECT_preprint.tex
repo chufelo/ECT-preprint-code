@@ -3141,7 +3141,7 @@ S^{(2)} =
 (\alpha-\beta)(\partial_w\varphi)^2
 +
 m_\varphi^2 \varphi^2
-\right]\quad[\beta=1:\;(\alpha-1)(\partial_w\varphi)^2\to(\partial_w\varphi)^2\text{ at }\alpha=2].
+\right].
 \end{equation}
 
 The crucial feature of this expression is the negative sign in front of
@@ -3607,16 +3607,18 @@ Confirmed: GW170817, $|\delta c/c|<10^{-15}$.  \\[4pt]
 $v_0$ (matched: $v_0=\bar{M}_{\rm Pl}$) & $G_N$ &
 $G_N=\dfrac{1}{8\pi v_0^2(\alpha-\beta)}\xrightarrow{\alpha=2\beta,\,\beta=1}\dfrac{1}{8\pi v_0^2}$ &
 Condensate stiffness controls gravitational coupling.
-$G_N$ and $\hbar$ share a common source $v_0$; Planck length
-$\ell_{\rm Pl}=1/(\sqrt{8\pi}\,v_0)$ is identified with the condensate
-coherence length (consistency relation; non-circular derivation open, OP-$\Lambda$).  \\[4pt]
+$G_N$ and $\hbar$ share a common source $v_0$; the Planck length
+$\ell_{\rm Pl}=1/(\sqrt{8\pi}\,v_0)$ coincides numerically with the condensate
+coherence scale (consistency relation and physical interpretation candidate;
+this is not a completed non-circular derivation, OP-$\Lambda$).  \\[4pt]
 $v_0,\,\lambda,\,\beta$ & $\hbar$ &
 $\hbar = \beta v_0^2 m_\varphi/2$,\quad$m_\varphi=\sqrt{2\lambda}\,v_0$ &
-Self-consistency relation: $\hbar$ equals the action of the topologically
-minimal condensate excitation (phase loop, $n=1$):
-$S_{\rm loop,min}=2\pi\hbar$.
-This is an internal consistency check, not an independent
-derivation of $\hbar$ from no prior input (OP-$\Lambda$).  \\
+Self-consistency interpretation: the minimal-loop action
+$S_{\rm loop,min}=2\pi\hbar$ provides a \emph{physical mechanism candidate}
+for the origin of $\hbar$---the condensate phase loop $n=1$.
+This is an internal consistency check (not an independent
+derivation of $\hbar$ from no prior input); the identification
+requires $v_0$ to be matched to $G_N$ beforehand (OP-$\Lambda$).  \\
 \hline
 \end{tabular}
 \end{table}
@@ -4840,9 +4842,27 @@ microscopic condensate dynamics is left for future work.
 \section{Elementary Particles and Field Excitations in ECT}
 \label{sec:particles}
 
+\textbf{Status guide for this section.}
+The material below spans three levels of rigour:
+\begin{description}[leftmargin=3em,style=unboxed,noitemsep]
+  \item[Core ECT (Level~A/B).]
+    Graviton (linearised, Level~A), Goldstone bosons (Level~A),
+    radial condensate scalar (Level~A/B).
+    These follow directly from the condensate action.
+  \item[Structural extensions (Level~B).]
+    Gauge bosons from phase symmetries; spinorial sector
+    (compatible with, not microscopically derived from, the condensate);
+    Dirac form under representation-theoretic assumptions.
+  \item[Phenomenological embeddings / speculative (Level~C).]
+    SM gauge group identification; Yukawa couplings and fermion
+    masses; neutrino sector; three-generation puzzle; dark-matter
+    abundance of condensate excitations.
+    These assume Standard-Model structure as external input.
+\end{description}
+
 The particle spectrum of ECT contains both Standard Model fields
 and new excitations specific to the condensate framework.
-This section catalogues the predicted excitations.
+This section catalogues the predicted excitations, labelled by level.
 
 \subsection{General Structure of Particle Excitations}
 
@@ -5093,14 +5113,19 @@ and $m_H = v_2\sqrt{2\lambda} \approx 125.1$\,GeV,
 with the electroweak scale $v_2 = 246$\,GeV.  The radial excitation of
 the doublet condensate corresponds to the Higgs boson.
 
-\subsection{Fermions}
+\subsection{Fermions (Level~B: structural route)}
+
+\textbf{Status.} This subsection describes a structural route to
+spinorial excitations; it does \emph{not} derive fermions
+microscopically from the bare bosonic condensate.
 
 The symmetry breaking $O(4)\to O(3)$ leaves a residual $O(3)$
-symmetry whose double cover $SU(2)$ generates spinor representations.
+symmetry whose double cover $SU(2)$ \emph{admits} spinor representations.
 After analytic continuation to Lorentzian spacetime the relevant group
 becomes $SL(2,\mathbb{C})$, the standard double cover of the Lorentz group.
 
-Dirac spinors can therefore be constructed from two Weyl components,
+Dirac spinors are then \emph{compatible} with, and can be constructed on,
+the ordered condensate background as two Weyl components,
 \begin{equation}
 \Psi = (\psi_L,\psi_R)^T.
 \end{equation}
@@ -5207,6 +5232,23 @@ around the condensate background.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Fermionic Sector}
 \label{sec:fermions}
+
+\textbf{Status guide.}
+This section has three distinct layers:
+\begin{description}[leftmargin=3em,style=unboxed,noitemsep]
+  \item[Structural reconstruction (Level~B).]
+    The Dirac form on the ordered Lorentzian branch, given additional
+    representation-theoretic and first-order-minimality inputs.
+    Fermions are \emph{not} derived as collective excitations of the bare
+    bosonic condensate; they are introduced as additional fields
+    compatible with the condensate symmetry.
+  \item[Phenomenological embedding (Level~C).]
+    Yukawa couplings, fermion masses, neutrino sector.
+    These assume Standard-Model structure as external input.
+  \item[Open problems.]
+    Three fermion generations, Yukawa hierarchy, fermionic
+    statistics from condensate structure, right-handed neutrino scale.
+\end{description}
 
 \paragraph{Connection to the fundamental ECT action.}
 The fermionic sector is introduced consistently with the full ECT
@@ -12247,7 +12289,7 @@ for all field configurations.
 \subsubsection{The problem}
 At the quadratic level around the vacuum, the action~\eqref{eq:quadratic_action} contains a
 negative kinetic term
-$-(\alpha-\beta)(\partial_w\varphi)^2/(2\beta)$ [$-(\alpha-1)(\partial_w\varphi)^2/2$ for $\beta=1$].
+$-(\alpha-\beta)(\partial_w\varphi)^2/(2\beta)$.
 Naively, the Euclidean path integral
 $Z=\int\mathcal{D}\varphi\,e^{-S_E^{(2)}}$
 would then diverge because the action is unbounded from below in the
