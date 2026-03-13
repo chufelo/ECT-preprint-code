@@ -237,7 +237,7 @@ black-hole thermodynamics
 \multicolumn{3}{@{}l}{\textit{Condensate field}} \\[2pt]
 $\Phi$ & Scalar condensate field on $\mathcal{M}^4$ & — \\
 $\Psi^A$ & Full condensate 4-vector; $\Phi = |\Psi^A|$ & — \\
-$\theta$ & Phase of the condensate: $\Phi = v_0 e^{i\theta}$ & rad \\
+$\theta$ & Phase of the condensate (two-component ordered sector): $\Phi_{\rm eff} = v_0 e^{i\theta}$ & rad \\
 $v_0$ & Vacuum expectation value (VEV) of $\Phi$; free parameter, determined by $G_N$ matching (Sec.~\ref{sec:constants}) & GeV \\
 $\mu$ & Mass parameter in $V(\Phi)$ & — \\
 $\lambda$ & Self-coupling constant in $V(\Phi)$ & $\simeq (1.5\times10^{43}\,\text{s}^{-1})^2$ \\[4pt]
@@ -1411,7 +1411,10 @@ four-dimensional Euclidean manifold along which the condensate phase
 field $\theta$ winds by $2\pi n$ ($n\in\mathbb{Z}$).
 Such configurations are not a phenomenological ingredient; they arise
 as a topological necessity.
-Writing the condensate in polar form, $\Phi=\rho\,e^{i\theta}$,
+Writing the condensate in \emph{effective complex ordered-sector}
+polar form, $\Phi_{\rm eff}=\rho\,e^{i\theta}$
+(Section~\ref{par:real_vs_complex}: the minimal ECT field is real;
+this notation refers to the two-component extension),
 the phase $\theta$ takes values on the circle $S^1$.
 Single-valuedness of $\Phi$ around any closed path requires
 \begin{equation}
@@ -1606,7 +1609,9 @@ Before defining loop configurations formally, it is worth explaining
 why \emph{closed} paths---rather than open curves, surfaces, or other
 geometric objects---are the natural fundamental objects here.
 
-The condensate can be written in polar form, $\Phi = \rho\,e^{i\theta}$,
+In the effective complex ordered sector
+(Section~\ref{par:real_vs_complex}), the condensate can be written
+in polar form, $\Phi_{\rm eff} = \rho\,e^{i\theta}$,
 where the phase field $\theta$ takes values on the circle $S^1$.
 Because $\Phi$ must be single-valued, traversing any \emph{closed} path
 $\mathcal{C}$ in the four-dimensional Euclidean manifold returns the
@@ -1741,7 +1746,7 @@ advances by exactly $2\pi$ around the loop.
 The action of such a phase configuration follows from the kinetic
 term in the ECT action~\eqref{eq:ECT_action}.  For a slowly varying
 amplitude $\rho\approx v_0$ and a pure-phase field
-$\Phi=v_0 e^{i\theta}$, the condensate kinetic term gives
+$\Phi_{\rm eff}=v_0 e^{i\theta}$ (two-component ordered sector), the condensate kinetic term gives
 \begin{equation}
 \label{eq:loop_action_kinetic}
 S_{\rm loop}[\theta] =
@@ -2165,14 +2170,18 @@ limit $\Gamma\to\infty$ only the diagonal $q=q'$ survives.
     $\Gamma[q,q']$ being minimised at $q=q'$~\cite{Zurek2003,Zurek2022}.
 \end{itemize}
 
-Under C1--C3, Eq.~\eqref{eq:rho_diag} is the \emph{unique}
-measure consistent with the emergent amplitude structure of ECT.
-Note: diagonalisation of $\rho_{\rm red}$ alone does not derive
-Born---it establishes decoherence into a preferred basis, but the
-identification $p_{q_f}=|\langle q_f|\psi\rangle|^2$ additionally
-requires the positivity, normalisation, additivity on orthogonal
-alternatives, and continuity of the probability assignment, as in
-Gleason's theorem.
+Under C1--C3, decoherence yields a preferred diagonal form
+of the reduced state with eigenweights $p_{q_f}$.
+The identification of these weights with the Born measure
+$p_{q_f}=|\langle q_f|\psi\rangle|^2$ is \emph{not} automatic:
+it additionally requires positivity, normalisation, additivity
+on orthogonal alternatives, and continuity of the probability
+assignment---conditions analogous to those of Gleason's theorem.
+\textbf{Status:} C1--C3 establish the pointer-basis structure and
+suppress off-diagonal coherences; they are necessary but
+\emph{not sufficient} for the Born rule.  The derivation of the
+Born measure from ECT therefore rests on structural assumptions
+beyond decoherence alone (open problem OP23).
 
 \textbf{Comparison with existing approaches.}
 
@@ -2195,7 +2204,8 @@ Framework
 Source of weights
   & Rationality axioms
   & Rationality + branch structure
-  & $e^{-\Gamma[q,q']}$ from $S_E$ \\
+  & Decoherence structure from $e^{-\Gamma[q,q']}$; probability
+    assignment additionally requires Gleason-type conditions \\
 Decoherence
   & Not used
   & Postulated
@@ -2207,7 +2217,8 @@ Extra assumptions
 Known limitations
   & Circularity~\cite{Barker2000}
   & Albert (2010) objection
-  & Finite-$N_{\rm eff}$ corrections uncomputed \\
+  & C1--C3 necessary but not sufficient; Gleason-type
+    conditions required; unique outcome selection open (OP23) \\
 \hline
 \end{tabular}
 \end{table}
@@ -2431,8 +2442,10 @@ suppressed by $(\rho/\rho_{\rm Pl})$ and are negligible in
 all current experiments.
 
 \textbf{Phase momentum.}
-Write the condensate field in polar form,
-$\Phi = \rho\,e^{i\theta}$.  In the ordered sector
+In the effective complex ordered sector
+(Section~\ref{par:real_vs_complex}), write the condensate field
+in polar form, $\Phi_{\rm eff} = \rho\,e^{i\theta}$.
+In the ordered sector
 $\rho \approx v_0$, so the dynamics reduces to the
 phase field $\theta(X)$.  The conjugate momentum associated
 with spatial gradients of $\theta$ is
@@ -2645,9 +2658,10 @@ condensate action scale with the Planck constant, not an independent
 derivation of $\hbar$ from no prior assumptions (see
 also Section~\ref{sec:constants}).
 
-\textbf{U(1) extension.} The real condensate $\Phi$ is
-extended to
-$\Phi=\rho\,e^{i\theta}$
+\textbf{U(1) extension.} The real pre-metric condensate $\Phi$
+is extended to a two-component effective field, conveniently written as
+$\Phi_{\rm eff}=\rho\,e^{i\theta}$
+(Section~\ref{par:real_vs_complex}),
 to accommodate charged quantum particles (complex phase carries momentum
 and probability amplitude). The phase action at
 $\rho=v_0$:
@@ -2779,15 +2793,21 @@ in detail in Section~\ref{sec:constants}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Fundamental Constants and Natural Scales}
+\section{Consistency Relations among Fundamental Constants and Condensate Scales}
 \label{sec:constants}
 
-In the ECT framework the fundamental constants of nature
-are not independent inputs but arise from different aspects
-of the same condensate background.  This section derives the
-gravitational constant~$G_N$, the speed of light~$c_*$,
-and the Planck constant~$\hbar$ from the condensate parameters
-$v_0$, $\alpha$, and~$\lambda$.
+In the present formulation of ECT, the fundamental constants
+$G_N$, $c_*$, and $\hbar$ are related to the condensate parameters
+$v_0$, $\alpha$, and $\lambda$ through \emph{internal matching and
+consistency relations}.  A fully parameter-free microscopic derivation
+of all constants from the bare Euclidean action---without matching
+any constant as an input---is not yet available.  What this section
+establishes is: given the condensate action and the identification
+of $v_0\simeq\bar{M}_{\rm Pl}$ from the gravitational sector, the
+remaining constants $c_*$ and $\hbar$ are expressed as ratios of
+condensate parameters, reducing the independent inputs from three
+($c$, $G_N$, $\hbar$) to four condensate quantities ($v_0$, $\alpha$,
+$\beta$, $\lambda$) connected by internal consistency relations.
 
 \subsection{Emergence of Newton’s constant $G$}
 \label{subsec:GN_FP}
@@ -2891,11 +2911,15 @@ deformations (the emergent metric sector) respond to stress-energy of
 excitations. Technically it appears as the coefficient that matches the
 quadratic (two-derivative) action for Goldstone/metric modes to the
 Einstein--Hilbert form, in the same spirit as induced-gravity matching.
-Although $\hbar$ enters the microscopic loop scale, the
-matching can be organised so that $\hbar$ is not assumed
-at the outset (Appendix~\ref{app:supplementary} clarifies the non-circular formulation);
-$\hbar$ and $G_N$ then become linked outputs of the
-same condensate parameters rather than independent inputs.
+The parameter $\hbar$ enters through the minimal loop action
+$S_{\rm loop,min}=2\pi\hbar$, which is identified with the phase
+stiffness of the condensate.  This gives a self-consistency relation
+between $\hbar$, $v_0$, and $\lambda$, rather than a derivation of
+$\hbar$ from more primitive objects.  The three constants $c$, $G_N$,
+$\hbar$ are related to the condensate parameters through four
+consistency relations; the mapping reduces independent inputs but
+does not eliminate the need for matching to observed physics at some
+level (see Section~\ref{sec:open_problems}, OP-$\Lambda$).
 
 
 
@@ -3219,8 +3243,14 @@ stiffness of the condensate vacuum.
 
 \paragraph{Physical interpretation and honest status of $\hbar$}
 
-In the ECT framework the fundamental constants arise from different
-aspects of the same condensate structure:
+In the ECT framework the fundamental constants are related to
+condensate parameters through internal consistency relations.  They are
+not all independently derived from the bare ECT action without input;
+rather, the three constants $c_*$, $G_N$, $\hbar$ are expressed in
+terms of four condensate parameters $(v_0, \alpha, \beta, \lambda)$,
+with $v_0$ fixed by matching $G_N$ to observation.  Within this
+matching, the constants are related to the condensate structure as
+follows:
 
 \begin{itemize}
 \item the propagation speed $c_*=\sqrt{\beta/(\alpha-\beta)}$ (general; $1/\sqrt{\alpha-1}$ for $\beta=1$) follows from the
@@ -4880,7 +4910,13 @@ If the condensate scale is near the Planck scale ($v_0 \sim M_{Pl}$) the radial 
 m_\sigma \sim M_{Pl}.
 \end{equation}
 
-Such a particle would not be directly observable but could generate suppressed higher–dimension operators in the low–energy effective theory.
+\textbf{Note (consistency-scale identification):}
+the relation $m_\sigma \sim M_{\rm Pl}$ follows from matching
+$v_0 \simeq \bar{M}_{\rm Pl}$; it is a consistency-scale identification
+within the gravitational matching, not an independent microscopic
+derivation.
+
+Such a particle would not be directly observable but could generate suppressed higher--dimension operators in the low--energy effective theory.
 
 \subsection{Emergence of the Graviton}
 \label{sec:graviton}
@@ -6290,7 +6326,8 @@ symmetry-broken vacuum:
 m_\sigma \sim \sqrt{2\lambda}\,v_\infty \sim M_{\rm Pl}\,,
 \qquad
 \xi_\sigma \sim m_\sigma^{-1} \sim \ell_{\rm Pl}
-\sim 10^{-35}\,\text{m}\,.
+\sim 10^{-35}\,\text{m}
+\quad\text{(consistency-scale identification; OP-$\Lambda$).}
 \end{equation}
 A kpc-scale variation of $v_0$ (over $\sim 10\,$kpc
 $\sim 3\times10^{20}\,$m) would require $m_\sigma^{-1}$ of order kpc,
@@ -9827,12 +9864,16 @@ into representations of the residual $O(3)$:
 \begin{itemize}
   \item \textit{Tensor representations} (integer spin, $j = 0,1,2,\ldots$):
         the condensate phase field returns to itself under $2\pi$
-        rotation $\to$ \emph{bosons} with symmetric wavefunctions.
+        rotation $\to$ provides the representation-theoretic
+        sign structure \emph{compatible with bosonic} symmetric
+        wavefunctions (structural route; not a derivation of
+        second-quantisation commutation relations).
   \item \textit{Spinor representations} (half-integer spin,
         $j = 1/2, 3/2,\ldots$): the condensate spinor acquires a
         minus sign under $2\pi$ rotation (double-cover structure of
-        $SU(2)$) $\to$ \emph{fermions} with antisymmetric
-        wavefunctions.
+        $SU(2)$) $\to$ provides the sign structure \emph{compatible
+        with fermionic} antisymmetric wavefunctions (structural route;
+        the full spin-statistics theorem requires additional steps).
 \end{itemize}
 In ECT, fermionic antisymmetry arises from the sign of the permutation
 relations of $SU(2)$ spinor representations---a \emph{structural route}
@@ -10159,11 +10200,14 @@ influence functional (Section~\ref{sec:influence_functional}).
 \paragraph{Three regimes of one correlator.}
 \begin{enumerate}
   \item \textit{Casimir effect.}
-    At finite temperature $T > 0$ in flat space with two
-    parallel boundaries separated by $a$, the correlator
-    $N(\tau, \mathbf{r})$ summed over image charges in the
-    $w$-direction produces zero-point mode pressure.  The
-    ECT result for three Goldstone modes is
+    In the presence of boundaries that reflect the relevant
+    condensate Goldstone modes (separated by $a$), the
+    boundary-modified vacuum mode spectrum of the correlator
+    $N(\tau, \mathbf{r})$ produces a shift in zero-point energy.
+    (The Euclidean formalism implements this via periodicity
+    conditions on the $w$-coordinate; no finite physical
+    temperature is required.)  The ECT result for three
+    Goldstone modes is
     \begin{equation}
       \frac{F}{A}\bigg|_{\rm ECT}
       = -\frac{3\pi^2\hbar c_*}{240\,a^4}
@@ -10194,9 +10238,13 @@ influence functional (Section~\ref{sec:influence_functional}).
       T_U = \frac{\hbar\,a}{2\pi\,c_*\,k_B}.
       \label{eq:unruh_unified}
     \end{equation}
-    No new input beyond the ECT action is needed; this is
-    the analytic continuation of the same correlator
-    $N(\tau)$ to the Rindler frame.
+    Given the standard Unruh-DeWitt detector coupling and a
+    uniformly accelerated worldline, the Unruh response follows
+    from analytic continuation of the same ECT correlator
+    $N(\tau)$ to the Rindler frame.  The derivation does not
+    require new dynamical input beyond the detector model and
+    trajectory specification; the condensate action supplies
+    the propagator structure.
 
   \item \textit{Environmental decoherence.}
     For a macroscopic system coupled to $N_{\rm eff}$ condensate
@@ -14659,12 +14707,14 @@ perturbations:
 \end{equation}
 which is Lorentzian (signature $-{+}{+}{+}$) when $\beta < \alpha < 4\beta$.
 
-\item[\textbf{E3 — Three fundamental constants from one field.}]
+\item[\textbf{E3 — Consistency relations among fundamental constants and condensate parameters.}]
 \begin{equation}
   c_* = \sqrt{\frac{\beta}{\alpha-\beta}},\qquad
   G_N = \frac{1}{8\pi v_0^2(\alpha-\beta)},\qquad
   \hbar = v_0\sqrt{\frac{\beta}{\lambda(\alpha-\beta)}}.
 \end{equation}
+\textit{(These are internal consistency relations; $v_0$ is fixed by
+matching $G_N$. See Section~\ref{sec:constants} and OP-$\Lambda$.)}
 
 \item[\textbf{E4 — Lorentzian window (condensate signature condition).}]
 \begin{equation}
