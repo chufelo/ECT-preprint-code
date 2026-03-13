@@ -278,7 +278,7 @@ $N_{\rm eff}$ & Effective number of environmental degrees of freedom & — \\
 $\gamma$ & Decoherence rate per environmental mode & s$^{-1}$ \\
 $\tau_{\rm loop}$ & Loop traversal time & s \\
 $\tau_{\rm dec}$ & Decoherence time: $\tau_{\rm dec}=1/(N_{\rm eff}\gamma)$ & s \\
-$S_{\rm loop,min}$ & Minimal loop action: $S_{\rm loop,min}=2\pi\hbar$ & J\,s \\[4pt]
+$S_{\rm loop,min}$ & Minimal loop action (consistency identification): $S_{\rm loop,min}\equiv 2\pi\hbar$ & J\,s \\[4pt]
 %── Fifth force ────────────────────────────────────────────────────────────────
 \multicolumn{3}{@{}l}{\textit{Fifth force}} \\[2pt]
 $\beta_5$ & Fifth-force coupling: $\beta_5\sim m/\bar{M}_{\rm Pl}$ & $\sim10^{-26}$--$10^{-18}$ \\
@@ -1733,7 +1733,7 @@ The discretisation of action in integer multiples of $2\pi\hbar$
 is the microscopic origin of the Bohr-Sommerfeld quantisation rule,
 and indirectly of the entire framework of quantum amplitudes.
 
-\paragraph{Derivation of $S_{\rm loop,min}=2\pi\hbar$ from circulation quantisation.}
+\paragraph{Computation of $S_{\rm loop,min}$ and its identification with $2\pi\hbar$.}
 \label{par:circulation_quantisation}
 
 Write the condensate field in polar form,
@@ -2334,7 +2334,7 @@ objects collapse with timescale $\tau_{\rm DP}=\hbar/E_G$, where
     \frac{|\psi(\mathbf{r})|^2\,|\psi(\mathbf{r}')|^2}
          {|\mathbf{r}-\mathbf{r}'|}\,d^3r\,d^3r'.
 \end{equation}
-In ECT, $G_N = 1/(8\pi v_0^2)$ is derived from the condensate.
+In ECT, $G_N = 1/(8\pi v_0^2)$ (canonical normalisation) is a consistency relation expressing the gravitational coupling in terms of the condensate amplitude.
 Gravitational decoherence is not a separate mechanism; it enters
 $\Gamma[q]$ through $N_{\rm eff}^{\rm grav}$, the number of
 $\delta n_A$ (graviton-like) condensate modes at frequency
@@ -3359,13 +3359,14 @@ definition $\bar{M}_{\rm Pl}^2\equiv 1/(8\pi G_N)$, with $v_0\equiv\bar{M}_{\rm 
 The answer is no, provided the derivation is carried out in the
 following order:
 \begin{enumerate}
-\item ECT derives $G_N = 1/(8\pi v_0^2(\alpha{-}\beta))$ by
-  matching the quadratic condensate action to the Einstein--Hilbert
-  form---a derivation that involves neither $\bar{M}_{\rm Pl}$ nor
-  any prior knowledge of $G_N$ (Section~\ref{sec:gravity}).
-\item Separately, ECT derives
+\item ECT \emph{expresses} $G_N = 1/(8\pi v_0^2(\alpha{-}\beta))$
+  by matching the quadratic condensate action to the Einstein--Hilbert
+  form---a step that involves neither $\bar{M}_{\rm Pl}$ nor
+  any prior knowledge of $G_N$ (Section~\ref{sec:gravity}; Level~B).
+\item Separately, ECT \emph{identifies}
   $\hbar = v_0\sqrt{\beta/[\lambda(\alpha{-}\beta)]}$
-  from the minimal closed-loop action (Section~\ref{sec:quantum}).
+  through the minimal closed-loop self-consistency condition
+  (Section~\ref{sec:quantum}; consistency relation, OP-$\Lambda$).
 \item The measured value $G_N^{\rm obs}=6.674\times10^{-11}$\,m$^3$\,kg$^{-1}$\,s$^{-2}$
   then \emph{calibrates} $v_0$: inserting $G_N^{\rm obs}$ at
   $\alpha=2\beta$, $\beta=1$ gives
@@ -11883,8 +11884,9 @@ to find a larger structure that contains both.
 ECT proceeds differently.  Starting from a single set of
 postulates---a four-dimensional Euclidean condensate with $O(4)$
 symmetry undergoing spontaneous symmetry breaking
-$O(4)\to O(3)$---several structures of modern physics are
-\emph{derived as consequences} within a single framework:
+$O(4)\to O(3)$---several structures of modern physics
+\emph{emerge as consequences} within a single framework
+(at varying levels of rigour; see Table~\ref{tab:ect-levels}):
 the Lorentzian metric signature, relativistic dispersion, quantum
 dynamics, the gravitational coupling, the arrow of time, and
 galactic-scale modifications of gravity all emerge from the same
@@ -15848,7 +15850,7 @@ The reduced Planck mass in SI units is
 $\bar{M}_{\rm Pl} = 2.435\times10^{18}\;\mathrm{GeV}/c^2
 = 2.435\times10^{18}\times1.783\times10^{-27}\;\mathrm{kg}
 = 4.341\times10^{-9}\;\mathrm{kg}$.
-Then
+Then (canonical normalisation $\alpha=2$, $\beta=1$, so $v_0=\bar{M}_{\rm Pl}$)
 \begin{equation}
 G_N \;=\; \frac{\hbar\,c}{8\pi\,\bar{M}_{\rm Pl}^2}
 \;=\; \frac{1.055\times10^{-34}\times2.998\times10^{8}}
@@ -16259,8 +16261,9 @@ profile and marks $\rho_c$.
 
 The result $\rho_c=\ell_{\rm Pl}/\sqrt{3\pi}$ is close to the phenomenological
 ``stretched horizon'' thickness introduced in the membrane paradigm
-\cite{PriceThorne1986}, but here it is derived from the condensate
-microphysics.
+\cite{PriceThorne1986}, but here it follows from the condensate
+microphysics via the Tolman law (structural result, conditional on
+identification of local Tolman heating as the control parameter).
 
 \subsection{Shell entropy and the area law}
 \label{app:shell_entropy}
