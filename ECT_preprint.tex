@@ -3580,8 +3580,13 @@ Section~\ref{sec:running_coupling}.
 \subsection*{Summary: condensate parameters and fundamental constants}
 \label{sec:three_params_three_constants}
 
-A central result of ECT is that the three fundamental constants $c$,
-$G_N$, and $\hbar$ all derive from the same set of condensate parameters.
+A central structural feature of ECT is that the three fundamental constants
+$c$, $G_N$, and $\hbar$ are all expressible in terms of the same set of
+condensate parameters through internal consistency relations.  They are not
+derived parameter-free from the bare ECT action alone: $v_0$ is calibrated
+by matching $G_N$ to observation, and the consistency between the $G_N$ and
+$\hbar$ formulas at the same $v_0$ is a non-trivial self-consistency test,
+not an independent prediction of all three constants.
 Table~\ref{tab:three_params} makes this correspondence explicit together
 with an honest assessment of the non-trivial physical content.
 
@@ -9882,7 +9887,12 @@ Odd loops correspond to antisymmetric wavefunctions (fermions),
 \psi(x_1,x_2) = -\psi(x_2,x_1).
 \end{equation}
 
-This gives antisymmetric wavefunctions for fermions---a structural route toward the Pauli exclusion principle (full Pauli--L\"uders--Zumino theorem not yet obtained; see below).
+This gives the topological dichotomy between symmetric and antisymmetric
+exchange sectors.  Within ECT, once spinorial excitations of the ordered
+condensate sector are admitted, this provides a structural route toward
+the Pauli exclusion principle.  It should not be confused with a full
+Pauli--L\"uders--Zumino theorem, which requires additional input from
+local relativistic QFT and goes beyond the topological classification alone.
 
 In two spatial dimensions the fundamental group becomes
 
@@ -10065,7 +10075,13 @@ spectrum of loop modes, the resulting temperature becomes
 T_{BH}=\frac{\hbar c^{3}}{8\pi G_N M},
 \end{equation}
 
-which coincides exactly with the Hawking temperature.
+which coincides with the Hawking temperature to leading order.
+\textbf{Status (ECT microscopic interpretation):} this reproduces
+the Hawking result via a loop-decay picture, but is not a parameter-free
+derivation independent of the identification $\Gamma_{\rm loop}=1$
+at the horizon.  The full derivation from the bare ECT path integral
+without additional assumptions remains a roadmap item
+(Section~\ref{sec:open_problems}).
 
 \paragraph{Entropy.}
 
@@ -10074,10 +10090,13 @@ The Bekenstein--Hawking entropy
 \begin{equation}
 S=\frac{A}{4\ell_{Pl}^{2}}\end{equation}
 
-acquires a natural interpretation in the ECT framework as the number of
-effective loop degrees of freedom intersecting the horizon surface.
-Each Planck-scale patch of area contributes approximately one independent
-loop configuration, leading to the well-known area law.
+acquires a \emph{candidate microscopic interpretation} in the ECT framework
+as the number of effective loop degrees of freedom intersecting the horizon
+surface.  Each Planck-scale patch of area is associated with approximately one
+independent loop configuration, leading to the area law.
+\textbf{Status:} this is an ECT-motivated picture, not yet a parameter-free
+derivation of the Bekenstein--Hawking coefficient from the bare condensate
+action.
 
 % ---  Forward pointer  ---
 The thermodynamic derivation above establishes the \emph{leading-order}
@@ -11186,8 +11205,10 @@ We classify all key statements in ECT into three confidence levels:
 \begin{itemize}
 \tightlist
 \item
-  {Level A}: Strictly derived from the action~\eqref{eq:ECT_action} and symmetries
-  P1--P4, with no additional assumptions.
+  {Level A}: Derived from the action~\eqref{eq:ECT_action} and symmetries
+  P1--P4 without additional physical input (analytic continuation and standard
+  mathematical steps are permitted; coarse-graining or effective-sector
+  reductions are not).
 \item
   {Level B}: Derived with one or more additional physical assumptions
   (explicitly stated).
@@ -13364,9 +13385,13 @@ phenomena are controlled by the same condensate vacuum amplitude $v_0^2$.
 ECT achieves a specific and well-defined unification: it derives the causal
 structure of spacetime, the quantum of action, and Newton's gravitational
 constant from the dynamics of a single scalar condensate.  In precise terms,
-the three constants $c$, $G_N$, $\hbar$ arise from three condensate parameters
-$(\alpha,\,v_0,\,\lambda)$ through a common field theory.  This unifies
-\emph{geometry, quantumness, and gravity} within one framework.
+the three constants $c$, $G_N$, $\hbar$ are related to condensate parameters
+$(\alpha,\,v_0,\,\lambda)$ through internal consistency relations in a common
+field theory.  Once $v_0$ is calibrated from $G_N$, both $c_*$ and $\hbar$
+are determined self-consistently.  This is a non-trivial structural unification
+of \emph{geometry, quantumness, and gravity} within one framework, though it
+does not yet constitute a fully non-circular microscopic derivation of the
+Planck scale (OP-$\Lambda$).
 
 At the same time, ECT is not a Theory of Everything.  The following elements
 remain beyond the current framework:
