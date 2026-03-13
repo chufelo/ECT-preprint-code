@@ -286,7 +286,7 @@ $\eta$ & Eötvös parameter & $\lesssim10^{-15}$ \\[4pt]
 \multicolumn{3}{@{}l}{\textit{Quantum vacuum (Section~\ref{sec:quantum_vacuum})}} \\[2pt]
 $G_E(X,X')$ & Euclidean two-point function: $1/(4\pi^2|X-X'|^2)$ & m$^{-2}$ \\
 $T_U$ & Unruh temperature: $\hbar a/(2\pi c_* k_B)$ & K \\
-$(F/A)_{\rm ECT}$ & ECT Casimir pressure: $-3\pi^2\hbar c_*/(240 a^4)$ & N\,m$^{-2}$ \\
+$(F/A)_{\rm ECT}$ & ECT Casimir pressure for condensate-reflecting (3 Goldstone-mode) boundaries: $-3\pi^2\hbar c_*/(240 a^4)$; \emph{conditional} --- not applicable to standard metallic plates & N\,m$^{-2}$ \\
 $\alpha_k$, $\beta_k$ & Bogoliubov coefficients for mode $k$ & dimensionless \\
 $\mathcal{N}_k$ & Particle number produced per mode: $|\beta_k|^2$ & dimensionless \\
 $\kappa$ & Vacuum stiffness: $V''(v_0)=2\lambda v_0^2$ & GeV$^2$ \\[4pt]
@@ -5128,25 +5128,40 @@ as does the origin of exactly three fermion generations.
 
 In the minimal construction the right–handed neutrino is absent.
 
-Small neutrino masses, as implied by oscillation experiments \cite{Fukuda1998}, may arise through Majorana operators
+\textbf{Status (Level~C — speculative SM embedding).}
+The neutrino sector below is not derived from the minimal ECT
+condensate action; it is a speculative phenomenological embedding
+drawing on Standard-Model mechanisms.  The mass estimate uses
+$M_{\rm GUT}$ as an external input.
+
+Small neutrino masses, as implied by oscillation experiments~\cite{Fukuda1998},
+may arise through Majorana operators
 
 \begin{equation}
 \mathcal{L}_M =
 \frac12 M\, \nu_L^T C \nu_L .
 \end{equation}
 
-A natural estimate for the scale of this operator is
+A rough dimensional estimate for the scale of this operator
+(speculative; $M_{\rm GUT}$ not derived in ECT) is
 
 \begin{equation}
-M \sim \frac{v_0^2}{M_{GUT}},
+M \sim \frac{v_0^2}{M_{\rm GUT}},
 \end{equation}
 
-which resembles the seesaw mechanism.
+which resembles the seesaw mechanism.  A condensate-specific
+derivation of the right-handed neutrino scale from ECT dynamics
+remains an open problem (OP15).
 
 \subsection{Predicted New States}
 \label{sec:instantons}
 
-ECT predicts several classes of new excitations:
+\textbf{Status (Level~B/C).}  The states below are predicted by
+ECT at various levels of rigour; their relic abundances, stability,
+and dark-matter properties require further analysis.
+
+ECT is compatible with, and in some cases predicts, the following
+classes of new excitations:
 
 \begin{itemize}
 \item ultralight Goldstone bosons ($m\sim10^{-33}$ eV,
@@ -5162,18 +5177,25 @@ The properties and stability of such objects require further analysis.
 
 \subsection{Summary}
 
-The particle spectrum in ECT naturally contains:
+The particle spectrum compatible with ECT includes:
 
 \begin{itemize}
-\item a massless spin–2 graviton,
-\item standard model gauge bosons,
-\item fermions generated from spinor representations,
-\item additional condensate excitations.
+\item a massless spin-2 graviton (Level~A: linearised; full non-linear Level~A via Riemann identity),
+\item Standard Model gauge bosons from condensate phase symmetries
+      (Level~B/C: SM gauge group embedded, not derived),
+\item spinorial excitations of the condensate background
+      (Level~B: structural reconstruction under additional
+      representation-theoretic and first-order-minimality assumptions;
+      fermions are \emph{not} derived as collective excitations of
+      the bare bosonic condensate),
+\item condensate scalar modes (heavy radial, ultralight Goldstone).
 \end{itemize}
 
-Several of these states lead to potential observational signatures, including ultralight scalar dark matter candidates and modifications of gravitational dynamics at cosmological scales.
-
-A full classification of the excitation spectrum requires further analysis of perturbations around the condensate background.
+Several of these states lead to potential observational signatures,
+including ultralight scalar dark-matter candidates and modifications
+of gravitational dynamics at cosmological scales.
+A full classification requires further analysis of perturbations
+around the condensate background.
 
 
 
@@ -5191,8 +5213,10 @@ The fermionic sector is introduced consistently with the full ECT
 action~\eqref{eq:ECT_action}.  The scalar condensate $\Phi$ couples
 to fermions via Yukawa interactions $y\bar\Psi\Phi\Psi$; gauge fields
 arise from the phase symmetries of $\Phi$ (Sections~\ref{sec:gauge}--\ref{sec:fifth_force}).
-The derivation of the Dirac equation below should be read as a
-consequence of the same action principle:
+The \emph{structural reconstruction} of the Dirac form below is written
+as an Euler--Lagrange equation of $S_{\rm ECT+f}$;
+the fermion field $\Psi$ and its couplings are additional
+inputs not contained in the bare scalar condensate action (Level~B/C):
 \begin{enumerate}
 \item The condensate vacuum $\langle\Phi\rangle=v_0$,
 $\langle n_A\rangle=\delta_{Aw}$ is determined by
@@ -5243,13 +5267,16 @@ in the ECT framework.
 
 \subsection{Spinor structure in the condensate background}
 
-\paragraph{Spinors as natural excitations of the condensate}
+\paragraph{Spinors as compatible excitations of the condensate background (Level~B)}
 
 In conventional quantum field theory spinor fields are introduced as
 fundamental objects transforming under the Lorentz group $SO(3,1)$.
-Within the ECT framework, however, spinor degrees of freedom can be
-interpreted as natural excitations of the condensate associated with
-the geometry of rotations in four dimensions.
+Within the ECT framework, spinor degrees of freedom are
+\emph{compatible} with the condensate geometry: after O(4)$\to$O(3)
+breaking the residual group admits spinor representations, and
+Clifford linearisation then yields the Dirac form.
+This is a structural compatibility statement (Level~B),
+not a derivation of spinors as collective condensate excitations.
 
 \paragraph{Rotations in four dimensions}
 
@@ -8979,9 +9006,11 @@ Inflation & Separate inflaton field with ad-hoc potential & Condensate
 Reheating / radiation & Standard; inflaton decays into SM fields &
   Condensate excitations (Goldstone modes, radial mode) thermalise;
   $v_0$ freezes at $\bar{M}_{\rm Pl}$ \\
-Matter domination & Cold dark matter particles & Goldstone bosons
-  ($m\sim 10^{-33}$\,eV) and topological instantons as dark matter
-  candidates; $v_0 \approx \text{const}$, $G_{\rm eff}\approx G_N$ \\
+Matter domination & Cold dark matter particles & Possible condensate excitations
+  (ultralight Goldstone bosons, $m\sim 10^{-33}$\,eV,
+  and topological solitons) as \emph{dark-matter candidates};
+  their relic abundance and stability require further analysis;
+  $v_0 \approx \text{const}$, $G_{\rm eff}\approx G_N$ \\
 Dark energy today & Cosmological constant $\Lambda=\text{const}$,
   $w_0=-1$ & Residual condensate kinetic energy;
   $w_0 \approx -0.83$, compatible with DESI~DR2 2025 \\
@@ -11823,11 +11852,11 @@ Property & GR & Einstein--aether & MOND & CDT & ECT \\
 
 Lorentz signature & Postulate & Postulate & Postulate & Emergent & \textbf{SSB $O(4)\rightarrow O(3)$} \\
 
-$G_N,\hbar,c$ & Constants & Constants & Constants & Constants & \textbf{Condensate matching} \\
+$G_N,\hbar,c$ & Constants & Constants & Constants & Constants & \textbf{Condensate consistency relations (not independent derivations)} \\
 
 Quantum gravity & Not achieved & Not achieved & N/A & Discrete geometry & \textbf{Candidate (open)} \\
 
-Dark matter & Postulate & Postulate & None & None & \textbf{$\phi$-branch (galactic); Goldstone/instantons (cosmological, open)} \\
+Dark matter & Postulate & Postulate & None & None & \textbf{$\phi$-branch (galactic); possible condensate excitations / topological sectors (cosmological, open; not yet derived)} \\
 
 $\Lambda_{\rm eff}$ & Constant & Constant & None & None & \textbf{$V(\Phi_0(X))$} \\
 
