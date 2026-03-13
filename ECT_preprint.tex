@@ -2093,13 +2093,17 @@ phenomena in ECT.
   forbidden regions.  Tunnelling is not a separate postulate but
   a natural consequence of the two-sided $w$-dependence.
 
-\item \textit{Fluctuation asymmetry (Eq.~\eqref{eq:crooks_ECT}).}
-  The Crooks-type ratio $P_{\rm back}/P_{\rm fwd}$ in the
-  Gaussian--Markov reduction follows from the irreversible part of
-  the influence functional $\Delta\Gamma_{\rm irr}$.  The causal
-  kernel $K(\tau)=0$ for $\tau<0$ structurally favours forward
-  traversal, but the full derivation from the bare ECT propagator
-  without coarse-graining assumptions remains open (OP24).
+\item \textit{Directionality and irreversibility.}
+  The two-sided $w$-dependence of the Euclidean propagator does
+  \emph{not} by itself produce an arrow of time: the Euclidean
+  Green's function is symmetric under $w\leftrightarrow -w$ and
+  treats past and future equally.  An effective asymmetry
+  $P_{\rm back}/P_{\rm fwd} \neq 1$ appears only \emph{after}
+  the Gaussian--Markov coarse-graining of the influence functional
+  (Section~\ref{sec:second_law}), which introduces a preferred
+  direction through the irreversible functional $\Gamma_{\rm irr}$.
+  Deriving irreversibility from the bare ECT action without
+  coarse-graining remains open (OP24).
 
 \end{enumerate}
 
@@ -2142,19 +2146,32 @@ back-action of the environment on the system.  For an ohmic
 environment in the
 large-$N_{\rm eff}$ limit,
 $e^{-\Gamma[q,q']}\to \delta_{q,q'}$ for $q\neq q'$, so:
+\textbf{Step~1 (decoherence $\Rightarrow$ diagonal state).}
 \begin{equation}
   \label{eq:rho_diag}
   \rho_{\rm red}[q_f,q_f']
   \;\xrightarrow{N_{\rm eff}\gg1}\;
   p_{q_f}\,\delta(q_f - q_f'),
   \quad
-  p_{q_f} = \left|\int_{q\to q_f}\!\mathcal{D}q\;
-    e^{iS_M[q]/\hbar}\right|^2
-  = |\langle q_f|\psi\rangle|^2.
+  p_{q_f} := \left|\int_{q\to q_f}\!\mathcal{D}q\;
+    e^{iS_M[q]/\hbar}\right|^2.
 \end{equation}
-The squared modulus arises because: (i)~the double path integral
-contributes $e^{+iS_M/\hbar}$ and $e^{-iS_M/\hbar}$; (ii)~in the
-limit $\Gamma\to\infty$ only the diagonal $q=q'$ survives.
+The squared-modulus form of $p_{q_f}$ arises from the double path
+integral: the two copies of the history contribute $e^{+iS_M/\hbar}$
+and $e^{-iS_M/\hbar}$; in the limit $\Gamma\to\infty$ only the
+diagonal $q=q'$ survives.
+\textbf{Caution:} this step establishes that the decoherence functional
+selects a diagonal form with weights $p_{q_f}$ that \emph{happen to
+be} squared-modulus amplitudes.  It does \emph{not} by itself identify
+$p_{q_f}$ as a probability measure.
+
+\textbf{Step~2 (identification with the Born measure).}
+The additional identification $p_{q_f}=|\langle q_f|\psi\rangle|^2$
+requires that $p_{q_f}$ satisfies: positivity, normalisation,
+additivity on orthogonal alternatives, and continuity---conditions
+analogous to Gleason's theorem.  These are \emph{not} consequences
+of decoherence alone; they constitute additional structural assumptions
+(C1--C3 below, plus Gleason-type conditions; open problem OP23).
 
 \textbf{Conditions:}
 \begin{itemize}
@@ -2721,6 +2738,23 @@ through known constants.
 
 \subsubsection{Schrödinger equation: complete
 derivation}
+
+\textbf{Status and scope.}
+The Klein--Gordon equation (Level~A) is derived from the ECT action
+by Osterwalder--Schrader analytic continuation.  The Schrödinger
+equation follows by two additional steps: (i) a standard
+non-relativistic (NR) reduction via a complex envelope ansatz
+$\varphi = \Psi\,e^{-imc^2t/\hbar}$, and (ii) the introduction of
+a positive-frequency complex amplitude $\Psi$.  Step~(i) is a
+standard NR approximation; step~(ii) uses a complex object that
+belongs to the \emph{emergent amplitude sector}
+(Section~\ref{par:real_vs_complex}), not to the minimal real
+pre-metric condensate.  The Schrödinger derivation is therefore
+\textbf{Level~B}: strict within the Lorentzian ordered sector
+plus the NR limit plus the emergent complex envelope representation.
+Note: the imaginary unit does not arise from Wick rotation;
+it enters through the envelope ansatz.
+
 We start from the Klein--Gordon equation~\eqref{eq:KG_dispersion} with
 $c_*\equiv c$. The derivation contains three steps:
 
@@ -3311,18 +3345,22 @@ following order:
   then \emph{calibrates} $v_0$: inserting $G_N^{\rm obs}$ at
   $\alpha=2\beta$, $\beta=1$ gives
   $v_0 = \bar{M}_{\rm Pl}\approx 2.435\times10^{18}$\,GeV.
-\item With this \emph{same} $v_0$ the formula for $\hbar$
-  independently reproduces $\hbar = 1.055\times10^{-34}$\,J\,s
+\item With this \emph{same} $v_0$, the phase-quantisation formula
+  for $\hbar$ reproduces $\hbar = 1.055\times10^{-34}$\,J\,s
   when $\lambda\approx(1.5\times10^{43}\,\text{s}^{-1})^2$.
 \end{enumerate}
-The two independent formulas share one free parameter ($v_0$) and both
-match observation simultaneously at the same $v_0$.  This is
-non-trivial: it is not the same as inverting $\bar{M}_{\rm Pl}^2=1/(8\pi G_N)$,
-because the $\hbar$ formula is derived by a completely different route
-(phase quantisation) and is not a consequence of the definition of
-$\bar{M}_{\rm Pl}$.  The simultaneous reproduction of both $G_N$ and
-$\hbar$ from one condensate parameter $v_0$ constitutes a
-self-consistency test of the ECT framework.
+The two formulas ($G_N$ from graviton matching and $\hbar$ from phase
+quantisation) share one free parameter ($v_0$) and are
+simultaneously satisfied at the same $v_0$.
+\textbf{Status (self-consistency test, not independent prediction):}
+this is non-trivial---the $\hbar$ formula comes from a different
+route than $G_N$---but it is not an independent prediction either,
+because $v_0$ was already fixed by the $G_N$ matching.  Once $v_0$
+is set, $\hbar$ is determined up to $\lambda$; neither constant is
+derived without matching to observations.  The simultaneous
+consistency at one $v_0$ constitutes an internal self-consistency
+test of the ECT parameterisation (see Section~\ref{sec:open_problems},
+OP-$\Lambda$ for the open status of a fully non-circular derivation).
 
 
 
@@ -5179,8 +5217,9 @@ and the fermionic dynamics explicit.
 Fermionic degrees of freedom can be introduced consistently with
 the spinor representations of $SO(4)\simeq SU(2)_L\times SU(2)_R$,
 the double cover of the underlying Euclidean rotation group.
-This section derives the Dirac equation \emph{given} an emergent
-Lorentzian geometry, and discusses chirality.
+This section performs a \emph{structural reconstruction} of the Dirac equation
+\emph{given} an emergent Lorentzian geometry and the spinor representations of
+$SO(4)$; it does not derive fermions as collective excitations of the bare condensate.
 
 \textbf{Honest framing.}
 The symmetry group structure $SO(4)\simeq SU(2)_L\times SU(2)_R$
@@ -5194,7 +5233,7 @@ Second, the present derivation obtains the Dirac equation as an
 effective equation for fluctuations in the Lorentzian background ---
 it does not microscopically derive fermions as collective excitations
 of the condensate.  The latter would require a separate construction.
-This section derives the Dirac equation and discusses chirality
+This section reconstructs the Dirac equation structurally (Level~B) and discusses chirality
 in the ECT framework.
 
 \subsection{Spinor structure in the condensate background}
@@ -11214,7 +11253,7 @@ consistent; when a result's status changes, all instances are updated.
 \midrule
 \endhead
 D1 & Lorentzian phase selected when $\alpha>\beta$; Euclidean otherwise & A & $\alpha>\beta$ is a condition on condensate params & \ref{sec:ssb} \\
-D2 & KG equation from condensate action; Schr\"odinger by NR reduction + analytic continuation & A & Osterwalder--Schrader continuation & 4, 4 \\
+D2 & KG equation from condensate action (Level~A); Schr\"odinger by NR reduction + emergent complex envelope (Level~B) & B & KG: Osterwalder--Schrader; Schr\"odinger additionally requires NR limit + emergent complex amplitude sector & 4, 4 \\
 D3 & $G_N$ from coefficient matching & A & --- & \ref{sec:constants} \\
 D4 & Three Goldstone bosons & A & --- & 8 \\
 D5 & Graviton: Fierz--Pauli, spin-2, ghost-free (linearised) & A & $v_0^2(\alpha-\beta)>0$, TT gauge (OP3 partially resolved) & 8, App.~\ref{app:GN_derivation} \\
