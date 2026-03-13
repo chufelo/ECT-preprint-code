@@ -1068,7 +1068,7 @@ physical speed of light) fixes $\alpha=2\beta$.
 The simplest integer solution is $\alpha=2$, $\beta=1$, which
 satisfies $1<2<4$ and places the working point at the centre of the
 Lorentzian window.  At this normalisation:
-$c_*=1$, $G_N=1/(8\pi v_0^2\chi_\infty)$ ($\chi_\infty\equiv\alpha{-}\beta=1$ at this normalisation), $\hbar=v_0/\sqrt{\lambda}$
+$c_*=1$, $G_N=1/(8\pi v_0^2)$ [canonical: $\alpha=2$, $\beta=1$, so $\chi_\infty\equiv\alpha{-}\beta=1$], $\hbar=v_0/\sqrt{\lambda}$
 (these relations are derived in Section~\ref{sec:constants};
 they are quoted here for orientation).
 This is a phenomenological choice of the simplest solution;
@@ -1078,8 +1078,11 @@ from a deeper principle or explain why other solutions are excluded
 The microscopic correlation length of the heavy radial condensate
 mode is $\xi_{\rm cond}\sim\ell_{\rm Pl}
 \approx 1.6\times10^{-35}$~m; it plays the role of the
-\emph{scale at which Lorentzian geometry breaks down} --- a concrete,
-parameter-free prediction of ECT.
+\emph{scale at which Lorentzian geometry breaks down}.
+This is a \emph{consistency identification} of scales:
+$\xi_{\rm cond}\sim\ell_{\rm Pl}$ follows from matching
+$v_0\approx\bar{M}_{\rm Pl}$ to observation; it is not a
+parameter-free non-circular prediction (OP-$\Lambda$).
 (This microscopic scale should not be confused with the galactic
 critical acceleration scale $g_\dagger(\phi_{\rm env}) \sim 10^{-10}\,$m\,s$^{-2}$, which
 belongs to the soft Lorentz-order-field sector;
@@ -1097,8 +1100,9 @@ phenomenological choice not derived from the condensate action:
     not free choices (OP16 resolved).
     Other solutions are not excluded on symmetry grounds.
   \item[Ph2 --- Microscopic radial-mode correlation length ($\xi_{\rm cond}\sim\ell_{\rm Pl}$).]
-    Identified from the requirement that the quantum-classical
-    transition coincides with the Planck scale; not derived.
+    Consistency identification: $\xi_{\rm cond}\sim\ell_{\rm Pl}$ follows
+    from matching $v_0\approx\bar{M}_{\rm Pl}$; not a non-circular
+    first-principles derivation (OP-$\Lambda$).
     This is the correlation length of the \emph{heavy} radial
     condensate mode, not the galactic transition scale.
   \item[Ph3 --- Galactic $\phi$-sector scale.]
@@ -1263,7 +1267,7 @@ in terms of the two condensate parameters.
 \textbf{Canonical normalisation $\alpha=2\beta$, $\beta=1$.}
 The physical condition $c_*=c=1$ fixes $\alpha=2\beta$ exactly.
 The additional normalisation $\beta=1$ then gives $\alpha=2$,
-$c_*=1$, $\chi_\infty\equiv(\alpha{-}\beta)=1$, and $G_N=1/(8\pi v_0^2\chi_\infty)=1/(8\pi v_0^2)$.
+$c_*=1$, $\alpha{-}\beta=1$ (canonical), and $G_N=1/(8\pi v_0^2)$.
 These two substitutions must always be applied \emph{simultaneously}:
 setting only $\beta=1$ while leaving $\alpha$ free is physically
 inconsistent, because $\alpha$ and $\beta$ are not independent once
@@ -3331,7 +3335,7 @@ self-consistency condition.
 
 \paragraph{Non-trivial self-consistency of $G_N$ and $\hbar$.}
 A potential circularity deserves explicit attention.  One might ask:
-is the relation $G_N=1/(8\pi v_0^2\chi_\infty)$ simply a rewriting of the
+is the relation $G_N=1/(8\pi v_0^2(\alpha-\beta))$ simply a rewriting of the
 definition $\bar{M}_{\rm Pl}^2\equiv 1/(8\pi G_N)$, with $v_0\equiv\bar{M}_{\rm Pl}$ inserted by hand?
 
 The answer is no, provided the derivation is carried out in the
@@ -9677,15 +9681,39 @@ two-point function $N(\tau,\mathbf{r})$ (organizing proposition).
 \section{Emergent Principles of Physics in ECT}
 \label{sec:emergent_principles}
 
+\textbf{Status guide for Part~III.}
+This Part collects results at three distinct levels of rigour;
+each claim is tagged accordingly throughout.
+\begin{description}[leftmargin=3em,style=unboxed,noitemsep]
+  \item[\textbf{Level~A}~(theorem / identity).]
+    Result follows from the ECT action and symmetries without
+    additional physical input (analytic continuation and standard
+    mathematical steps permitted; coarse-graining not permitted).
+    \emph{Examples:} KG equation, CCR from phase single-valuedness,
+    Heisenberg inequality as Cauchy--Schwarz.
+  \item[\textbf{Level~B}~(structural / conditional / effective).]
+    Result follows given one or more additional assumptions stated
+    explicitly (emergent complex sector, Gaussian--Markov reduction,
+    spinorial representations, etc.).
+    \emph{Examples:} Schr\"odinger, Dirac (structural reconstruction),
+    Born rule (conditional uniqueness), second law (effective,
+    Gaussian--Markov), Casimir $3/2$ (condensate boundaries only).
+  \item[\textbf{Level~C}~(open / speculative).]
+    Direction indicated; rigorous derivation not yet available.
+    \emph{Examples:} non-circular Planck-scale derivation, full
+    PLZ spin--statistics theorem, unique outcome selection.
+\end{description}
+
 Several fundamental principles of physics that are normally
-postulated can be derived within the ECT framework from the
-geometry and topology of condensate loop configurations.
+postulated can be related to the ECT framework at Level~A or~B
+from the geometry and topology of condensate loop configurations;
+Level~C items point toward future work.
 
 \subsection{Emergent Principles of Quantum and Cosmological Physics in ECT}
 
-A remarkable feature of the ECT framework is that several fundamental principles of modern physics arise naturally from the geometric and topological structure of condensate configurations. 
+A feature of the ECT framework is that several fundamental principles of modern physics can be related to the geometric and topological structure of condensate configurations, at Level~A or~B (see status guide above).
 
-In particular, the uncertainty principle, the principle of extremal action, quantum statistics, black hole thermodynamics, and cosmological inflation can all be related to properties of closed loop configurations of the Euclidean condensate field.  Beyond these principles, the quantum vacuum structure of the condensate --- Casimir energy, Unruh radiation, and environmental decoherence --- is organised in Section~\ref{sec:quantum_vacuum} around a single Euclidean two-point function (organizing proposition; each effect requires its own boundary, detector, or coarse-graining specification).
+In particular, the uncertainty principle (Level~A), the principle of extremal action (Level~A), quantum statistics (Level~B structural), black hole thermodynamics (Level~B, candidate interpretation), and cosmological inflation (Level~B) can all be related to properties of closed loop configurations of the Euclidean condensate field.  Beyond these principles, the quantum vacuum structure of the condensate --- Casimir energy, Unruh radiation, and environmental decoherence --- is organised in Section~\ref{sec:quantum_vacuum} around a single Euclidean two-point function (organizing proposition; each effect requires its own boundary, detector, or coarse-graining specification).
 
 \subsection{Loop Configurations in ECT}
 
