@@ -5325,9 +5325,10 @@ $\bar\Psi$, evaluated in the condensate background
 Fermionic degrees of freedom can be introduced consistently with
 the spinor representations of $SO(4)\simeq SU(2)_L\times SU(2)_R$,
 the double cover of the underlying Euclidean rotation group.
-This section performs a \emph{structural reconstruction} of the Dirac equation
-\emph{given} an emergent Lorentzian geometry and the spinor representations of
-$SO(4)$; it does not derive fermions as collective excitations of the bare condensate.
+This section performs a \emph{structural reconstruction} of the Dirac form.
+Once (i)~emergent Lorentzian geometry and (ii)~spinorial representations of
+$SO(4)$ are admitted as Level~B inputs, the Dirac form follows algebraically.
+The section does \emph{not} derive fermions from the bare bosonic condensate action.
 
 \textbf{Honest framing.}
 The symmetry group structure $SO(4)\simeq SU(2)_L\times SU(2)_R$
@@ -9800,6 +9801,18 @@ two-point function $N(\tau,\mathbf{r})$ (organizing proposition).
 \section{Emergent Principles of Physics in ECT}
 \label{sec:emergent_principles}
 
+\textbf{Reader orientation.}
+Part~III is the most technically detailed part of this paper.
+Before entering the individual derivations, it is important to note
+that the results here operate at \emph{three distinct levels of rigour}.
+Level~A results are exact consequences of the ECT action and symmetries.
+Level~B results are structural or conditional: they hold given explicitly
+stated additional inputs (emergent complex sector, Gaussian--Markov
+reduction, spinorial field admittance, etc.).
+Level~C items indicate a direction without a completed proof.
+The tag appears next to every claim in this Part; the consolidated
+status table is at the end (Section~\ref{sec:partIII_summary}).
+
 \textbf{Status guide for Part~III.}
 This Part collects results at three distinct levels of rigour;
 each claim is tagged accordingly throughout.
@@ -10792,7 +10805,14 @@ condensate Goldstone sector.  Standard metallic plates are
 electromagnetically selective---the $O(4)\to O(3)$ Goldstone
 bosons carry no electric charge and interact with ordinary
 matter only gravitationally ($\sim v_0^{-2}$), so conducting
-surfaces are transparent to them.  Any claim that ECT is
+surfaces are transparent to them.  This Planck-suppressed coupling
+does \emph{not} imply a tiny but non-zero correction to the metallic
+Casimir force: the Goldstone modes are excluded from the boundary
+energy integral entirely because the geometry imposes no Dirichlet
+conditions on them.  The appropriate question is not
+``how large is the ECT correction to metallic Casimir data?'' but
+``are the right boundary conditions implemented at all?''---and
+the answer for standard metallic plates is no.  Any claim that ECT is
 ruled out by existing metallic Casimir measurements would be
 incorrect; equally, existing measurements do not yet test the
 $3/2$ prediction.  Purpose-designed boundaries (superfluid
@@ -13609,8 +13629,9 @@ functional $\Gamma_{\rm irr}[q]=\kappa\int\dot{q}^2\,dw\geq0$.
 
 The quantum statistics of condensate excitations follows structurally from
 $SO(4)\cong SU(2)_L\times SU(2)_R$ representation theory (tensor
-representations $\to$ bosons; spinor representations $\to$ fermions;
-antisymmetry from the sign of spinor permutation relations).
+representations $\to$ bosonic sectors; spinor representations $\to$
+fermionic-sector compatibility, structural Level~B; not a derivation of
+fermionic degrees of freedom from the bare bosonic condensate action).
 This provides a \emph{structural route} to the Pauli exclusion principle;
 a full Pauli--L\"{u}ders--Zumino theorem has not been obtained, and
 beyond-quadratic corrections at Planck density remain speculative
@@ -16033,10 +16054,19 @@ coincides with $h_{\mu\nu}$ in the TT gauge $h=0$) gives
   \boxed{G_N = \frac{1}{16\pi\, v_0^2(\alpha-\beta)}.}
   \label{eq:GN_derived}
 \end{equation}
-For the canonical choice $\alpha=2\beta,\,\beta=1$ (Section~\ref{sec:ssb})
-this reduces to $G_N = (16\pi v_0^2)^{-1}$, equivalent to
-$v_0 = M_{\rm Pl,reduced}/\sqrt{2}$.  With $v_0 = \bar M_{\rm Pl}$
-one recovers $G_N = (8\pi v_0^2)^{-1}$, matching equation~\eqref{eq:GN_matching}.
+\begin{mdframed}[linewidth=0.5pt,innerleftmargin=6pt,innerrightmargin=6pt,
+  innertopmargin=4pt,innerbottommargin=4pt]
+\textbf{Notation note (factor-of-2).}
+The formula above, $G_N = (16\pi v_0^2(\alpha-\beta))^{-1}$, uses the
+action-level normalisation of $v_0$.  At canonical $\alpha=2\beta$,\,$\beta=1$
+this gives $G_N = (16\pi v_0^2)^{-1}$, equivalent to setting
+$v_0 = \bar{M}_{\rm Pl}/\sqrt{2}$ (where $\bar{M}_{\rm Pl}$ is the
+reduced Planck mass).  The paper body uses the convention $v_0 = \bar{M}_{\rm Pl}$,
+which absorbs the factor $1/\sqrt{2}$ and yields the equivalent expression
+$G_N = (8\pi v_0^2)^{-1}$ (Eq.~\eqref{eq:GN_matching}).  Both formulae
+describe the same physics; the apparent factor-of-2 difference is
+a normalisation convention, not an inconsistency.
+\end{mdframed}
 
 \subsection{Physical interpretation}
 
