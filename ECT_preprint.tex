@@ -1453,10 +1453,12 @@ lattice QFT, instanton calculus, and thermal field theory) can be understood as
 the ECT description of the UV sector.  The passage from Euclidean to Lorentzian
 is not a transformation of coordinates but a phase transition in the condensate.
 The Osterwalder--Schrader theorem~\cite{OsterwalderSchrader1973} provides the
-mathematical bridge: analytic continuation of Euclidean correlation functions
-to Lorentzian signature is well-defined precisely when the Euclidean theory
-satisfies reflection positivity, which is guaranteed by the condensate stability
-($m^2=2\mu^2>0$).
+relevant mathematical bridge between Euclidean and Lorentzian descriptions
+when the Euclidean theory satisfies reflection positivity and the standard
+reconstruction conditions.  \textbf{We do not prove these conditions for
+full ECT here}; we assume that the ordered quadratic sector admits the
+standard analytic continuation (a positive mass $m^2=2\mu^2>0$ is necessary
+but not sufficient for reflection positivity).
 
 \textbf{Level of the derivation.}
 The Klein--Gordon equation obtained below is an \emph{effective
@@ -1783,6 +1785,14 @@ Identifying $S_{\rm loop,min}\equiv 2\pi\hbar_{\rm eff}$:
 \label{eq:hbar_from_loop}
 \boxed{\hbar_{\rm eff} = \frac{\beta\,v_0^2\,m_\varphi}{2}.}
 \end{equation}
+
+\textbf{Status.}
+This is \emph{not} a parameter-free prediction of $\hbar$ from bare ECT.
+It is a \emph{consistency identification}: the minimal loop action
+is matched to $2\pi\hbar$, which fixes the condensate combination
+$\beta v_0^2 m_\varphi/2$ by definition.  The formula should be read as
+$m_\varphi = 2\hbar_{\rm eff}/(\beta v_0^2)$, expressing one condensate
+parameter through the others once $\hbar_{\rm eff}\equiv\hbar$ is identified.
 
 \textbf{Self-consistency condition.}
 Setting $\hbar_{\rm eff}=\hbar$ fixes $m_\varphi$ in terms of
@@ -9912,8 +9922,11 @@ as distinct from new formulas in already-tested limits.
   \item \textbf{New ontology, not just new formulas.}
     Quantum mechanics emerges from the geometry and topology of
     condensate loop configurations on a fixed Euclidean manifold.
-    The Hilbert-space structure, the Planck constant, and the wave
-    equation are consequences of this geometry, not axioms.
+    The ordered quadratic sector naturally leads to an emergent
+    amplitude description with the standard Hilbert-space machinery:
+    the wave equation (Level~A in the ordered sector), $\hbar$ as a
+    consistency identification (Level~B/C), and Hilbert-space structure
+    as an emergent framework (not a full microscopic derivation).
     In tested limits, the predictions of ECT agree with standard QM;
     the novelty is in the microscopic \emph{origin} of those predictions.
   \item \textbf{Single-correlator principle.}
@@ -9940,7 +9953,9 @@ Readers should keep this list in mind when assessing individual claims.
 
 \begin{description}[leftmargin=2.5em,style=unboxed,noitemsep]
   \item[Ordered branch.]
-    The condensate VEV is non-zero: $\langle\Phi\rangle=v_0\delta_{Aw}$.
+    The condensate order parameter is non-zero:
+    $\langle n_A\rangle=\delta_{Aw}$ (the gradient condensate selects
+    the $w$-direction; equivalently $\langle\partial_A\Phi\rangle=v_0\delta_{Aw}$).
     All quantum results require this spontaneously broken phase.
   \item[Quadratic (weak-field) regime.]
     Condensate fluctuations $\chi\ll v_0$ are treated at quadratic order.
@@ -10006,16 +10021,18 @@ This step is purely mathematical---it requires only the Hilbert-space
 structure and the CCR; no further physical input from ECT is needed.
 
 \paragraph{Summary.}
-The Heisenberg uncertainty principle emerges in ECT from the ordered
-condensate sector via the chain:
-\begin{center}
-emergent complex sector (Level~B)
-$\;\Rightarrow\;$ CCR (Level~A)
-$\;\Rightarrow\;$ uncertainty inequality (theorem in $L^2$).
-\end{center}
-The final inequality is a strict theorem given the CCR; the CCR itself
-is Level~A from phase single-valuedness; the ordered complex sector
-is Level~B (requires analytic continuation).
+The Heisenberg uncertainty principle emerges in ECT via a four-step ladder:
+\begin{enumerate}[label=\textit{\arabic*.},noitemsep,leftmargin=2.5em]
+  \item Admit emergent complex ordered sector (Level~B).
+  \item Identify momentum operator $\hat p=-i\hbar\partial_x$ as
+    generator of translations in that sector (Level~B).
+  \item CCR $[\hat x,\hat p]=i\hbar$ follows as operator identity
+    from phase single-valuedness (Level~A \emph{within the ordered sector}).
+  \item Uncertainty inequality $\Delta x\,\Delta p\geq\hbar/2$ follows
+    from Cauchy--Schwarz in $L^2$ (pure mathematics, no ECT input).
+\end{enumerate}
+Level~A in step~3 means ``theorem within the ordered sector'', not
+``unconditional from bare action'' --- the Level~B input of step~1 is required.
 
 \subsection{Principle of Extremal Action}
 
@@ -10181,107 +10198,13 @@ and the horizon criticality condition $\Gamma_{\rm loop}\sim1$
 are discussed in the dedicated section (Section~\ref{sec:bh_information})
 and are not core micro-ECT results used here.
 
-
-
-\paragraph{Inflation as a Condensate Phase Transition}
-
-In ECT cosmological inflation can be interpreted as a phase transition of the condensate field.
-
-At high temperatures
-
-\begin{equation}
-T > T_c
-\end{equation}
-
-the condensate expectation value vanishes
-
-\begin{equation}
-\langle \Phi \rangle = 0.
-\end{equation}
-
-The corresponding vacuum energy density is
-
-\begin{equation}
-\rho = \frac{\mu^4}{4\lambda}.
-\end{equation}
-
-This produces an equation of state
-
-\begin{equation}
-w = -1,
-\end{equation}
-
-corresponding to de Sitter expansion.
-
-After the symmetry breaking transition
-
-\begin{equation}
-\langle \Phi \rangle \neq 0
-\end{equation}
-
-inflation ends.
-
-For a quartic potential
-
-\begin{equation}
-V(\Phi) = \frac{\lambda}{4}(\Phi^2 - v_0^2)^2
-\end{equation}
-
-the spectral index in a slow-roll approximation is approximately
-
-\begin{equation}
-n_s \approx 1 - \frac{2}{N_e}.
-\end{equation}
-
-For $N_e \approx 60$ one obtains
-
-\begin{equation}
-n_s \approx 0.967,
-\end{equation}
-
-consistent with current cosmological observations.
-
-\paragraph{Dark Energy and Slow Condensate Evolution}
-
-The late–time acceleration of the Universe may correspond to slow evolution of the condensate amplitude.
-
-Let
-
-\begin{equation}
-v_0(w) =
-v_{0,\infty}
-\tanh\!\left(\frac{w}{w_*}\right).
-\end{equation}
-
-The corresponding condensate energy density evolves as
-
-\begin{equation}
-\rho_{cond}(w)
-=
-\frac{(v_0^\infty)^2 - v_0^2(w)}{2\xi^2}.
-\end{equation}
-
-The equation of state parameter can be written in the form
-
-\begin{equation}
-w(z) = w_0 + w_a \frac{z}{1+z}.
-\end{equation}
-
-For slow evolution
-
-\begin{equation}
-\rho_{kin} \ll \rho_{cond}
-\end{equation}
-
-one obtains
-
-\begin{equation}
-w_0 \approx -1 + \delta ,
-\qquad
-w_a \approx -2\delta/(1+z_*).
-\end{equation}
-
-Thus ECT predicts a small deviation from a pure cosmological constant that could be probed by future cosmological surveys.
+\textit{Note on inflation and dark energy.}
+Cosmological applications of the condensate ---
+inflation as a phase transition, the spectral index $n_s=1-2/N_e$,
+and slow condensate evolution as dark energy --- are discussed
+separately in the cosmology section
+(Section~\ref{sec:cosmology}) and are not used as inputs
+in the present micro-sector derivations.
 
 
 
