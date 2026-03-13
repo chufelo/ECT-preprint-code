@@ -115,18 +115,20 @@ with the emergent amplitude sector under structural assumptions
 C1--C3 (unique outcome selection remains open);
 a structural embedding of $U(1)$, $SU(2)$, and $SU(3)$ gauge fields
 via condensate phase symmetries (partial; full SM derivation open);
-the Dirac equation from $O(3)$ spinor representations
-(structural reconstruction);
+a structural reconstruction of the Dirac form once
+spinorial excitations of the ordered sector are admitted
+(Level~B; not a microscopic derivation of fermions);
 and a candidate fifth interaction at Planck-suppressed strength.
 
-The quantum statistics of condensate excitations follows
-structurally from the representation theory of $SO(4)\cong SU(2)_L\times SU(2)_R$:
-integer-spin (tensor) representations give bosons; half-integer-spin
-(spinor) representations give fermions.  This provides a \emph{structural
-route} to the Pauli exclusion principle, not a postulate.  A full
-Pauli--L\"{u}ders--Zumino theorem has not been obtained; claims
-about beyond-quadratic corrections at Planck densities remain
-speculative.
+ECT provides a \emph{structural route} toward fermionic
+antisymmetry and the Pauli exclusion principle
+(Level~B): integer-spin representations are compatible with bosonic
+symmetry; half-integer-spin (spinor) representations with fermionic
+antisymmetry in the ordered sector.  This is a structural
+compatibility statement, not a postulate and not a theorem.
+A full Pauli--L\"{u}ders--Zumino theorem has not been obtained;
+claims about beyond-quadratic corrections at Planck densities
+remain speculative.
 
 A structurally suggestive feature is that three quantum vacuum phenomena
 --- the Casimir effect, the Unruh temperature, and environmental
@@ -2164,6 +2166,9 @@ The squared-modulus form of $p_{q_f}$ arises from the double path
 integral: the two copies of the history contribute $e^{+iS_M/\hbar}$
 and $e^{-iS_M/\hbar}$; in the limit $\Gamma\to\infty$ only the
 diagonal $q=q'$ survives.
+\emph{The squared-modulus structure is a representation-theoretic
+consequence of the doubled path integral, not yet a complete
+derivation of physical probabilities.}
 \textbf{Caution:} this step establishes that the decoherence functional
 selects a diagonal form with weights $p_{q_f}$ that \emph{happen to
 be} squared-modulus amplitudes.  It does \emph{not} by itself identify
@@ -2835,6 +2840,21 @@ in detail in Section~\ref{sec:constants}.
 \section{Consistency Relations among Fundamental Constants and Condensate Scales}
 \label{sec:constants}
 
+\textbf{Notation convention for this section.}
+Two distinct symbols for energy / frequency scales appear below;
+their meanings are fixed here and used consistently throughout:
+\begin{description}[leftmargin=3em,style=unboxed,noitemsep]
+  \item[$\lambda$] Quartic self-coupling in the condensate
+    potential $V(\Phi)=\lambda(|\Phi|^2-v_0^2/2)^2$.
+    Numerical value $\lambda\simeq(1.5\times10^{43}\,{\rm s}^{-1})^2$.
+  \item[$\Lambda_\chi$] Condensate stiffness scale governing
+    loop quantisation: $\Lambda_\chi = m_\varphi^2 = 2\lambda v_0^2$.
+    Appears in $G_N\hbar^2 = c_*^4(\alpha-\beta)/(16\pi\Lambda_\chi)$.
+\end{description}
+These two symbols should not be conflated:
+$\lambda$ is a dimensionless coupling (in natural units),
+$\Lambda_\chi$ is an energy-squared / frequency-squared scale.
+
 In the present formulation of ECT, the fundamental constants
 $G_N$, $c_*$, and $\hbar$ are related to the condensate parameters
 $v_0$, $\alpha$, and $\lambda$ through \emph{internal matching and
@@ -3293,9 +3313,9 @@ $G_N = 1/(8\pi v_0^2(\alpha-\beta))$;
 
 \item the Planck constant $\hbar$ is \emph{identified} with (not
 derived independently from) the minimal loop action of the condensate
-phase field:
+phase field---a self-consistency condition (OP-$\Lambda$):
 \[
-S_{\rm loop,min} = 2\pi\hbar_{\rm eff}.
+S_{\rm loop,min} = 2\pi\hbar\quad\text{(consistency identification)}.
 \]
 \end{itemize}
 
@@ -10086,7 +10106,7 @@ and in standard frameworks.}
 \hline
 Aspect & Standard QM / QFT & ECT \\
 \hline
-Origin of antisymmetry & Axiom (postulated) & $SU(2)$ spinor rep sign\\
+Structural route to antisymmetry & Axiom (postulated) & spinorial sign structure in the ordered sector\\
 Mathematical basis & $\{\hat a,\hat a^\dagger\}=1$ postulated & permutation topology + spinorial sign structure of the ordered sector \\
 Pauli principle status & Exact, absolute & Structural (quadratic sector) \\
 Violation predicted? & No & Not derived; speculative beyond quadratic \\
@@ -10733,16 +10753,22 @@ $0.965\pm0.004$ (Planck) & A \\
 \end{tabular}
 \end{table}
 
-\textbf{Note on testability.}
-The Casimir prediction (factor $3/2$ relative to single-field QED) is
-\emph{not} currently tested by standard metallic Casimir experiments,
-since ordinary conductors are not expected to reflect the relevant
-condensate Goldstone modes.  The $3/2$ factor therefore remains an
-ECT-specific conditional prediction awaiting purpose-designed
-boundary configurations.  The Unruh temperature formula coincides with
-the standard QFT result and is consistent with existing experiments;
-the ECT derivation provides a condensate-correlator interpretation,
-not a new numerical prediction.
+\begin{mdframed}[backgroundcolor=yellow!8,linecolor=orange!60!black,linewidth=1pt]
+\textbf{Applicability warning.}
+The factor $3/2$ predicted above is \textbf{not} a prediction for
+ordinary metallic Casimir measurements.  It applies only to
+boundaries that physically couple to (i.e.\ reflect) the massless
+condensate Goldstone sector.  Standard metallic plates are
+electromagnetically selective---the $O(4)\to O(3)$ Goldstone
+bosons carry no electric charge and interact with ordinary
+matter only gravitationally ($\sim v_0^{-2}$), so conducting
+surfaces are transparent to them.  Any claim that ECT is
+ruled out by existing metallic Casimir measurements would be
+incorrect; equally, existing measurements do not yet test the
+$3/2$ prediction.  Purpose-designed boundaries (superfluid
+interfaces, BEC domain walls, or early-Universe phase-transition
+surfaces) are required.  This is an open experimental problem (OP18).
+\end{mdframed}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
