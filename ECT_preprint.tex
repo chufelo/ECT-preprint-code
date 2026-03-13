@@ -1790,19 +1790,26 @@ $m_\varphi = 2\hbar/(\beta v_0^2)$.
 In the minimal case $\beta=1$ this reduces to the earlier result
 $m_\varphi=2\hbar/v_0^2$.
 
-The identification
+\textbf{Identification of emergent action quantum.}
+We \emph{identify} the minimal non-trivial loop action with the
+emergent quantum of action of the ordered sector:
 \begin{equation}
 \label{eq:Sloop_2pihbar}
-S_{\rm loop,min} \equiv 2\pi \hbar
+S_{\rm loop,min} \;\equiv\; 2\pi \hbar_{\rm eff}\,.
 \end{equation}
-therefore follows from single-valuedness~\eqref{eq:single_valuedness}
-of the condensate phase, not from an additional postulate.
-This provides a \emph{physical interpretation candidate} for the Planck
-constant: $\hbar$ is identified with the minimal action of a closed
-condensate configuration with unit winding number,
-analogous to the circulation quantum $\kappa=h/m$ in a superfluid.
-This identification is a consistency relation, not an independent
+This is an \emph{operational definition} of $\hbar_{\rm eff}$,
+not a theorem.  The relation~\eqref{eq:Sloop_2pihbar} defines the
+emergent action quantum as the minimal closed-loop action;
+setting $\hbar_{\rm eff}=\hbar$ (the physical Planck constant)
+is then a \emph{consistency identification}, not an independent
 derivation of $\hbar$ from purely microscopic inputs (OP-$\Lambda$).
+The analogy is the circulation quantum $\kappa=h/m$ in a superfluid:
+one \emph{identifies} the minimal circulation with $h/m$; one does
+not \emph{derive} $h$ from the fluid equations of motion.
+This identification is a consistency relation and a physical
+interpretation candidate; it is not circular because
+$\hbar_{\rm eff}$ enters both sides of the same equation only
+after $v_0$ and $m_\varphi$ are fixed independently from $G_N$.
 
 \paragraph{Quantum fluctuations as loop contributions.}
 
@@ -9818,7 +9825,7 @@ two-point function $N(\tau,\mathbf{r})$ (organizing proposition).
 \label{part:quantum}
 %==============================================================
 
-\section{Emergent Principles of Physics in ECT}
+\section{Emergent Quantum Principles and Vacuum Structure in ECT}
 \label{sec:emergent_principles}
 
 \textbf{Reader orientation.}
@@ -9865,7 +9872,7 @@ Level~C items point toward future work.
 
 A feature of the ECT framework is that several fundamental principles of modern physics can be related to the geometric and topological structure of condensate configurations, at Level~A or~B (see status guide above).
 
-In particular, the uncertainty principle (Level~A), the principle of extremal action (Level~A), quantum statistics (Level~B structural), black hole thermodynamics (Level~B, candidate interpretation), and cosmological inflation (Level~B) can all be related to properties of closed loop configurations of the Euclidean condensate field.  Beyond these principles, the quantum vacuum structure of the condensate --- Casimir energy, Unruh radiation, and environmental decoherence --- is organised in Section~\ref{sec:quantum_vacuum} around a single Euclidean two-point function (organizing proposition; each effect requires its own boundary, detector, or coarse-graining specification).
+In particular, the uncertainty principle (Level~A), the principle of extremal action (Level~A), quantum statistics (Level~B structural), and the three quantum vacuum phenomena (Level~A/B) can all be related to properties of closed loop configurations of the Euclidean condensate field.  Black-hole thermodynamics and inflation are discussed as candidate interpretations (Level~B) within the same framework; they are addressed in separate sections.  Beyond these principles, the quantum vacuum structure of the condensate --- Casimir energy, Unruh radiation, and environmental decoherence --- is organised in Section~\ref{sec:quantum_vacuum} around a single Euclidean two-point function (organizing proposition; each effect requires its own boundary, detector, or coarse-graining specification).
 
 \subsection{Loop Configurations in ECT}
 
@@ -9888,6 +9895,64 @@ S_{\text{loop,min}} = 2\pi \hbar .
 This quantity plays the role of the quantum of action in the theory. 
 The Planck constant therefore appears as an emergent parameter associated with the minimal loop configuration of the condensate field.
 
+\subsection{What is Genuinely New in the ECT Micro-Sector?}
+\label{sec:micro_novel}
+
+Before the individual derivations, it is useful to state explicitly
+what is conceptually new in the ECT treatment of quantum mechanics,
+as distinct from new formulas in already-tested limits.
+
+\begin{enumerate}[label=\textbf{N\arabic*.},leftmargin=2.5em]
+  \item \textbf{New ontology, not just new formulas.}
+    Quantum mechanics emerges from the geometry and topology of
+    condensate loop configurations on a fixed Euclidean manifold.
+    The Hilbert-space structure, the Planck constant, and the wave
+    equation are consequences of this geometry, not axioms.
+    In tested limits, the predictions of ECT agree with standard QM;
+    the novelty is in the microscopic \emph{origin} of those predictions.
+  \item \textbf{Single-correlator principle.}
+    Three apparently unrelated quantum vacuum phenomena ---
+    Casimir energy, Unruh temperature, and environmental decoherence ---
+    are three limits of a \emph{single} Euclidean condensate two-point
+    function $N(\tau,\mathbf{r})$ (Section~\ref{sec:unified_correlator}).
+    This is an organising proposition, not a theorem;
+    each effect still requires its own boundary/detector specification.
+  \item \textbf{Real Euclidean ontology.}
+    ECT treats the Euclidean manifold as physically real, not as a
+    computational trick.  Instantons and closed loops are genuine
+    field configurations; analytic continuation recovers the
+    Lorentzian description as an emergent IR limit.
+\end{enumerate}
+
+% -------------------------------------------------------------------------
+\subsection{Controlled Domain of the ECT Micro-Sector}
+\label{sec:controlled_domain}
+% -------------------------------------------------------------------------
+
+The results of this Part hold within the following controlled domain.
+Readers should keep this list in mind when assessing individual claims.
+
+\begin{description}[leftmargin=2.5em,style=unboxed,noitemsep]
+  \item[Ordered branch.]
+    The condensate VEV is non-zero: $\langle\Phi\rangle=v_0\delta_{Aw}$.
+    All quantum results require this spontaneously broken phase.
+  \item[Quadratic (weak-field) regime.]
+    Condensate fluctuations $\chi\ll v_0$ are treated at quadratic order.
+    Non-linear corrections at Planck densities are not controlled.
+  \item[Gaussian environment (where stated).]
+    The influence-functional and second-law results assume a
+    Gaussian--Markov environment (Section~\ref{sec:influence_functional}).
+    Full microscopic derivation without this assumption is open (OP24).
+  \item[Markov reduction (where stated).]
+    Time-local effective equations require a Markov approximation;
+    non-Markovian corrections are not controlled.
+  \item[Additional inputs for fermions and Born measure.]
+    The Dirac equation requires spinorial fields to be admitted
+    as Level~B inputs.  The Born measure requires structural
+    assumptions C1--C3.  Neither is derived from the bare bosonic action.
+\end{description}
+
+% -------------------------------------------------------------------------
 \subsection{Uncertainty Principle}
 \label{sec:uncertainty}
 
@@ -9985,331 +10050,149 @@ S_{\min} = 2\pi \hbar .
 
 
 \subsection{Conservation Laws}
+\label{sec:conservation_laws}
 
-In standard physics, conservation laws follow from Noether's theorem
-applied to continuous symmetries of the action.  In ECT the same
-structure is available: the emergent Lorentzian action inherits 
-the symmetries of the condensate background.
+\textbf{Scope (controlled domain).}
+The conservation laws below hold within the
+\emph{emergent Lorentzian effective sector} of ECT:
+the homogeneous condensate branch with constant $\chi$
+and the analytic continuation $w\to -ic_*t$ applied.
+Claims going beyond this domain (baryon/lepton number,
+electroweak anomaly, local gauge promotion) are
+standard field-theoretic continuations once the
+corresponding gauge/matter sector is admitted, not
+new ECT derivations; they are noted but not developed here.
 
-\paragraph{General framework.}
-In ECT, conservation laws follow from Noether's theorem applied to
-the symmetries of the effective Lorentzian action obtained by analytic
-continuation $w\to-ic_*t$ of the condensate equations of motion.
-For each continuous symmetry $\delta_\epsilon$ with parameter $\epsilon$,
-the Noether current is
+\paragraph{Energy-momentum conservation (Level~A in homogeneous branch).}
+Four-dimensional translation invariance
+$X^A\to X^A+\epsilon^A$ of the homogeneous condensate background
+yields the Noether energy-momentum tensor
 \begin{equation}
-j^\mu_\epsilon
-= \frac{\partial\mathcal{L}_{\rm eff}}{\partial(\partial_\mu\varphi)}\,
-\delta_\epsilon\varphi,
-\qquad
-\partial_\mu j^\mu_\epsilon = 0\quad\text{(on-shell)}.
+  T^{AB} = \frac{\partial\mathcal{L}}{\partial(\partial_A\varphi)}\,
+  \partial^B\varphi - \delta^{AB}\mathcal{L},\qquad
+  \partial_A T^{AB}=0.
 \end{equation}
+After analytic continuation this becomes $\partial_\mu T^{\mu\nu}=0$.
+\textit{Caveat:} when $\chi(t)$ evolves (cosmological setting),
+exact time-translation invariance is broken and global energy
+conservation does not hold, consistent with GR~\cite{Weinberg1972}.
 
-\paragraph{Energy-momentum conservation.}
-Four-dimensional translation invariance $X^A\to X^A+\epsilon^A$
-(in the homogeneous condensate background) gives the Noether
-energy-momentum tensor
-$T^{AB} = \partial\mathcal{L}/\partial(\partial_A\varphi)\cdot\partial^B\varphi - \delta^{AB}\mathcal{L}$
-with $\partial_A T^{AB}=0$.
-After analytic continuation, this becomes the standard
-$\partial_\mu T^{\mu\nu}=0$ --- energy-momentum conservation.
-
-\textit{Caveat:} in the cosmological setting where $\chi(t)$ evolves,
-the effective coupling $G_{\rm eff}(t)\propto 1/\chi(t)$ breaks
-exact time-translation invariance.  Global energy conservation
-does not hold in an expanding universe, consistent with GR
-\cite{Weinberg1972}.
-
-\paragraph{Angular momentum conservation.}
-The residual $O(3)$ rotational symmetry of the broken-symmetry phase
-gives the conserved angular momentum tensor
-$M^{\mu\nu\lambda}=x^\mu T^{\nu\lambda}-x^\nu T^{\mu\lambda}$,
+\paragraph{Angular momentum conservation (Level~A).}
+The residual $O(3)$ symmetry of the broken phase gives the
+conserved angular momentum tensor
 $\partial_\mu M^{\mu\nu\lambda}=0$.
 
-\paragraph{Electric charge.}
-In the emergent complex ordered sector, the global $U(1)$ phase
-symmetry $\Phi_{\rm eff}\to e^{i\alpha}\Phi_{\rm eff}$ gives
-the Noether current $j^\mu_{\rm em}=\bar\Psi\gamma^\mu\Psi$
-with $\partial_\mu j^\mu_{\rm em}=0$.
-After promoting to a local $U(1)$ gauge symmetry, this becomes
-the covariant charge conservation $\nabla_\mu j^\mu_{\rm em}=0$.
+\paragraph{Phase / $U(1)$ charge (Level~B structural).}
+In the emergent complex ordered sector the global $U(1)$ phase
+symmetry $\Phi_{\rm eff}\to e^{i\alpha}\Phi_{\rm eff}$ yields
+a Noether current $j^\mu$ with $\partial_\mu j^\mu=0$.
+Promotion to a local gauge symmetry and identification with
+the electromagnetic current are \emph{standard field-theoretic
+steps once the $U(1)$ gauge sector is admitted}; they are
+not derived from the bare condensate action.
 
-\paragraph{Baryon and lepton number.}
-In the absence of condensate instantons with non-zero winding number,
-separate $B$ and $L$ currents are conserved.
-Condensate instantons (if present) violate $B+L$ by the standard
-electroweak anomaly but preserve $B-L$.
-
-\paragraph{Condensate particle number (approximately conserved).}
-For a slowly varying condensate amplitude $v_0(t)$, the condensate
-excitation number $N_\varphi=\int j^0_\varphi\,d^3x$ is approximately
-conserved on time scales $\tau\ll v_0/\dot{v}_0$.
+\textit{Note on baryon/lepton number and electroweak anomaly:}
+these are standard SM results that carry over once the SM gauge
+sector is embedded in ECT (structural Level~B/C); they are not
+independently derived from the condensate action.
 
 \subsection{Quantum Statistics}
+\label{sec:quantum_stats}
 
-\textbf{Scope.}
-This subsection establishes the standard topological classification of
-exchange sectors within the ECT condensate configuration space.  It
-provides a \emph{structural route} toward fermionic antisymmetry and
-the Pauli exclusion principle, but does not constitute a proof of the
-full Pauli--L\"{u}ders--Zumino spin-statistics theorem.  In particular,
-the topological argument below reproduces the bosonic/fermionic
-\emph{classification}, not the second-quantisation anticommutation
-structure $\{\hat a,\hat a^\dagger\}=1$.
+\textbf{Status.}
+This subsection provides a \emph{structural route} toward fermionic
+antisymmetry and the Pauli exclusion principle (Level~B).
+It does \emph{not} constitute a proof of the full
+Pauli--L\"uders--Zumino (PLZ) spin-statistics theorem.
+In particular, the arguments below reproduce the bosonic/fermionic
+\emph{classification} but do not derive the second-quantisation
+anticommutation structure $\{\hat a,\hat a^\dagger\}=1$
+from the bare ECT action.
 
-Quantum statistics can also be interpreted topologically within the ECT framework.
+\paragraph{Step 1 --- Topological classification of exchange sectors.}
 
-Consider the configuration space of two identical particles
-
+The configuration space of two identical particles in $\mathbb{R}^3$ is
 \begin{equation}
-(\mathbb{R}^3 \times \mathbb{R}^3 \setminus \Delta)/S_2 .
+  \mathcal{M}_2 = (\mathbb{R}^3\times\mathbb{R}^3\setminus\Delta)/S_2,
 \end{equation}
+whose fundamental group is $\pi_1(\mathcal{M}_2)=\mathbb{Z}_2$.
+This yields exactly two topological classes of exchange loops:
+even (symmetric, bosonic) and odd (antisymmetric, fermionic).
+In two spatial dimensions $\pi_1=\mathbb{Z}$, allowing anyonic statistics.
 
-The fundamental group of this space is
+\paragraph{Step 2 --- Representation-theoretic compatibility (Level~B).}
 
-\begin{equation}
-\pi_1 = \mathbb{Z}_2 .
-\end{equation}
-
-Two topologically distinct classes of exchange loops exist.
-
-Even loops correspond to symmetric wavefunctions (bosons),
-
-\begin{equation}
-\psi(x_1,x_2) = \psi(x_2,x_1).
-\end{equation}
-
-Odd loops correspond to antisymmetric wavefunctions (fermions),
-
-\begin{equation}
-\psi(x_1,x_2) = -\psi(x_2,x_1).
-\end{equation}
-
-This gives the topological dichotomy between symmetric and antisymmetric
-exchange sectors.  Within ECT, once spinorial excitations of the ordered
-condensate sector are admitted, this provides a structural route toward
-the Pauli exclusion principle.  It should not be confused with a full
-Pauli--L\"uders--Zumino theorem, which requires additional input from
-local relativistic QFT and goes beyond the topological classification alone.
-
-In two spatial dimensions the fundamental group becomes
-
-\begin{equation}
-\pi_1 = \mathbb{Z},
-\end{equation}
-
-which allows fractional statistics and anyonic excitations.
-
-\paragraph{Structural derivation from $SO(4)$ representation theory.}
-
-Beyond the topological argument, quantum statistics in ECT
-admits a deeper structural derivation from the representation
-theory of $SO(4) \cong SU(2)_L \times SU(2)_R$.
-
-Under the O(4)$\to$O(3) breaking, condensate excitations fall
-into representations of the residual $O(3)$:
-\begin{itemize}
-  \item \textit{Tensor representations} (integer spin, $j = 0,1,2,\ldots$):
-        the condensate phase field returns to itself under $2\pi$
-        rotation $\to$ provides the representation-theoretic
-        sign structure \emph{compatible with bosonic} symmetric
-        wavefunctions (structural route; not a derivation of
-        second-quantisation commutation relations).
-  \item \textit{Spinor representations} (half-integer spin,
-        $j = 1/2, 3/2,\ldots$): the condensate spinor acquires a
-        minus sign under $2\pi$ rotation (double-cover structure of
-        $SU(2)$) $\to$ provides the sign structure \emph{compatible
-        with fermionic} antisymmetric wavefunctions (structural route;
-        the full spin-statistics theorem requires additional steps).
+Under $O(4)\to O(3)$ symmetry breaking, condensate excitations
+fall into representations of the residual $O(3)\cong SU(2)/\mathbb{Z}_2$:
+\begin{itemize}[noitemsep]
+  \item \textit{Tensor representations} (integer spin):
+    the field returns to itself under $2\pi$ rotation
+    $\Rightarrow$ sign structure \emph{compatible with bosonic}
+    symmetric wavefunctions.
+  \item \textit{Spinor representations} (half-integer spin):
+    the field acquires a $-1$ sign under $2\pi$ rotation
+    (double-cover $SU(2)$)
+    $\Rightarrow$ sign structure \emph{compatible with fermionic}
+    antisymmetric wavefunctions.
 \end{itemize}
-In ECT, fermionic antisymmetry arises from the sign of the permutation
-relations of $SU(2)$ spinor representations---a \emph{structural route}
-toward the Pauli exclusion principle rather than a postulate.
-A full Pauli--L\"uders--Zumino theorem at all orders has not been
-obtained.
+This is a structural compatibility statement (Level~B):
+it holds once spinorial excitations of the ordered sector are
+admitted, and it connects ECT's representation theory to the
+topological dichotomy of Step~1.
 
-\textbf{Status.}  This is a \emph{structural} argument, not
-yet a full derivation of the Pauli--L\"{u}ders--Zumino spin-statistics
-theorem.  The connection between $SU(2)$ spinor representations and
-the full second-quantisation anticommutation relations
-$\{\hat{a},\hat{a}^\dagger\} = 1$ requires additional steps that
-go beyond the current derivation.
+\paragraph{Step 3 --- Honest status.}
 
-\paragraph{Key distinction: ECT versus standard QM.}
-
-In standard quantum field theory, fermionic anticommutation is
-introduced at the operator level as a primitive axiom: two identical
-fermions cannot occupy the same state at all energy scales, exactly.
-In ECT antisymmetry is \emph{not} taken as a primitive axiom but
-is linked to the spinorial representation structure of the ordered
-condensate sector.  This is a conceptual difference even though the
-present construction remains incomplete at theorem level.
-Possible deviations from exact Pauli behaviour, if any, would arise
-\emph{outside} the currently controlled quadratic regime and should
-be regarded as speculative (not a derived prediction of ECT).
-
-In ECT the antisymmetry follows from the sign of $SU(2)$ spinor
-permutation relations within the \emph{quadratic approximation}
-of the condensate action.  ECT therefore offers a \emph{structural
-route} toward fermionic antisymmetry rather than an axiom.
-
-\textbf{Status of beyond-quadratic corrections.}
-A full Pauli--L\"uders--Zumino level theorem has not been obtained
-in ECT.  Whether the quadratic approximation can be extended to all
-orders and whether corrections arise at Planck densities are open
-questions.  Any claim about a specific scaling law
-$\delta P_{\rm same}\sim(\rho/\rho_{\rm Pl})^2$ or its
-implications for neutron-star masses is \emph{speculative} at the
-current stage of ECT development and is not a derived prediction.
-
-\paragraph{Comparison with existing approaches.}
+The two steps above provide a structural route; the following
+important limitations apply:
+\begin{itemize}[noitemsep]
+  \item The full PLZ theorem (requiring local relativistic QFT input)
+    has \emph{not} been obtained from bare ECT.
+  \item The derivation of the canonical anticommutation relations
+    $\{\hat a_i,\hat a^\dagger_j\}=\delta_{ij}$ from ECT is open.
+  \item Beyond-quadratic corrections at Planck densities
+    are speculative; no quantitative prediction is made.
+\end{itemize}
+In standard QFT fermionic anticommutation is an axiom.
+In ECT it is \emph{not} an axiom but a structural consequence
+of the ordered sector's representation theory ---
+a conceptual difference even though theorem-level proof is incomplete.
 
 \begin{table}[h!]
 \centering
 \renewcommand{\arraystretch}{1.3}
-\caption{Comparison of the origin of quantum statistics in ECT
-and in standard frameworks.}
+\caption{Quantum statistics in ECT vs standard frameworks.}
 \label{tab:statistics_comparison}
-\begin{tabular}{@{}p{3cm}p{3.8cm}p{5cm}@{}}
+\begin{tabular}{@{}p{3.2cm}p{4.0cm}p{5.0cm}@{}}
 \hline
-Aspect & Standard QM / QFT & ECT \\
+Aspect & Standard QM/QFT & ECT \\
 \hline
-Structural route to antisymmetry & Axiom (postulated) & spinorial sign structure in the ordered sector\\
-Mathematical basis & $\{\hat a,\hat a^\dagger\}=1$ postulated & permutation topology + spinorial sign structure of the ordered sector \\
-Pauli principle status & Exact, absolute & Structural (quadratic sector) \\
-Violation predicted? & No & Not derived; speculative beyond quadratic \\
-Full spin-statistics thm. & Pauli--L\"uders--Zumino & Open problem in ECT \\
+Route to antisymmetry & Axiom & Structural (ordered sector, Level~B) \\
+Basis & $\{\hat a,\hat a^\dagger\}=1$ postulated & Topology + spinorial sign \\
+Pauli principle & Exact axiom & Structural (quadratic regime) \\
+Full PLZ theorem & Yes & Open \\
+Beyond-quadratic & N/A & Speculative, not predicted \\
 \hline
 \end{tabular}
 \end{table}
 
 
 
-In the standard derivation of Hawking radiation the temperature of a black hole
+\paragraph{Black-hole thermodynamics: loop interpretation (candidate, Level~B).}
 
-\begin{equation}
-T_{BH}=\frac{\hbar c^{3}}{8\pi G_N M}
-\end{equation}
-
-is obtained by quantizing matter fields on a curved Schwarzschild background.
-While mathematically consistent, this approach requires a technically involved
-analysis of quantum field theory in curved spacetime.
-
-Within the ECT framework black hole thermodynamics admits a different
-interpretation based on the dynamics of closed loop configurations of the
-condensate field.
-
-\paragraph{Loop decay probability.}
-
-Consider a closed loop configuration of the condensate field with period
-$\tau$.  Such a configuration can decay with a characteristic rate $\gamma$.
-For a system with $N_{\rm eff}$ effective degrees of freedom the probability
-that the loop decays during one period can be written as
-
-\begin{equation}
-\Gamma_{\mathrm{loop}} = N_{\rm eff}\,\gamma\,\tau .
-\end{equation}
-
-For $\Gamma_{\mathrm{loop}}\ll1$ loops are stable and can repeatedly return to
-their initial configuration.  When $\Gamma_{\mathrm{loop}}\gtrsim1$ the loop
-typically decays before completing a full cycle.
-
-\paragraph{Event horizon condition.}
-
-In the ECT picture the event horizon corresponds to the surface where
-closed loop configurations cease to be stable return trajectories.  This
-occurs when the decay probability during one period becomes of order unity,
-
-\begin{equation}
-\Gamma_{\mathrm{loop}}=1 .
-\end{equation}
-
-Thus the horizon can be interpreted as the critical surface separating
-regions where loop configurations remain coherent from those where they
-irreversibly decay.
-
-\paragraph{Characteristic loop period.}
-
-Near a Schwarzschild black hole the characteristic Euclidean time scale is
-determined by the periodicity required to remove the conical singularity
-of the Euclidean metric.  This periodicity is
-
-\begin{equation}
-\tau_E=\frac{8\pi G_N M}{c^{3}} .
-\end{equation}
-
-In the ECT framework the natural dynamical time scale of loop configurations
-is therefore
-
-\begin{equation}
-\tau_{\mathrm{loop}}=\frac{\tau_E}{4}=\frac{2\pi G_N M}{c^3} .
-\end{equation}
-
-\paragraph{Energy scale of loop excitations.}
-
-A periodic configuration with characteristic time scale $\tau$ defines a
-natural energy scale through the quantum of action
-
-\begin{equation}
-E_{\mathrm{loop}}\sim\frac{\hbar}{\tau}.
-\end{equation}
-
-This relation follows directly from the existence of the minimal loop
-action $S_{\mathrm{loop,min}}=2\pi\hbar$, which implies that fluctuations with
-period $\tau$ carry a characteristic energy $\hbar/\tau$.
-
-Applying this to the loop period near the horizon gives
-
-\begin{equation}
-E_{\mathrm{loop}}\sim
-\frac{\hbar}{\tau_{\mathrm{loop}}}=
-\frac{\hbar c^{3}}{2\pi G_N M}.
-\end{equation}
-
-\paragraph{Thermal interpretation.}
-
-The decay of loop configurations produces stochastic excitations of the
-condensate field.  When $\Gamma_{\mathrm{loop}}\sim1$ the emission spectrum is
-thermal, with the temperature determined by the characteristic energy
-scale of these excitations.
-
-Up to numerical factors of order unity associated with the
-spectrum of loop modes, the resulting temperature becomes
-
-\begin{equation}
-T_{BH}=\frac{\hbar c^{3}}{8\pi G_N M},
-\end{equation}
-
-which coincides with the Hawking temperature to leading order.
-\textbf{Status (ECT microscopic interpretation):} this reproduces
-the Hawking result via a loop-decay picture, but is not a parameter-free
-derivation independent of the identification $\Gamma_{\rm loop}=1$
-at the horizon.  The full derivation from the bare ECT path integral
-without additional assumptions remains a roadmap item
-(Section~\ref{sec:open_problems}).
-
-\paragraph{Entropy.}
-
-The Bekenstein--Hawking entropy
-
-\begin{equation}
-S=\frac{A}{4\ell_{Pl}^{2}}\end{equation}
-
-acquires a \emph{candidate microscopic interpretation} in the ECT framework
-as the number of effective loop degrees of freedom intersecting the horizon
-surface.  Each Planck-scale patch of area is associated with approximately one
-independent loop configuration, leading to the area law.
-\textbf{Status:} this is an ECT-motivated picture, not yet a parameter-free
-derivation of the Bekenstein--Hawking coefficient from the bare condensate
-action.
-
-% ---  Forward pointer  ---
-The thermodynamic derivation above establishes the \emph{leading-order}
-Hawking temperature and Bekenstein--Hawking entropy from loop dynamics.
-The question of whether the associated evaporation process is fundamentally
-unitary---the black-hole \emph{information problem}---is addressed separately
-in Section~\ref{sec:bh_information} and in Appendix~\ref{app:bh_info}.
-
+Within the ECT loop picture, the event horizon corresponds to the
+critical surface where closed condensate-loop configurations
+cease to be stable ($\Gamma_{\rm loop}\gtrsim1$).
+Identifying the loop decay period with the Euclidean periodicity
+$\tau_E=8\pi G_N M/c^3$ reproduces the Hawking temperature
+$T_{\rm BH}=\hbar c^3/(8\pi G_N M)$ up to numerical prefactors.
+The Bekenstein--Hawking entropy $S=A/(4\ell_{\rm Pl}^2)$ acquires
+a candidate microscopic interpretation as the number of effective
+loop degrees of freedom intersecting the horizon.
+\textbf{Status (Level~B):} this is a loop-decay \emph{interpretation},
+not a parameter-free derivation from the bare ECT path integral;
+the identification $\Gamma_{\rm loop}=1$ at the horizon is an
+additional input.  The information problem is addressed separately
+in Section~\ref{sec:bh_information}.
 
 
 
