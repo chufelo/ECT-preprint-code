@@ -2857,6 +2857,26 @@ These two symbols should not be conflated:
 $\lambda$ is a dimensionless coupling (in natural units),
 $\Lambda_\chi$ is an energy-squared / frequency-squared scale.
 
+\medskip
+\textbf{Master formula for $G_N$ and its three equivalent expressions.}
+Throughout this paper $G_N$ appears in three superficially different
+but physically identical forms.  To avoid confusion, they are listed
+here together:
+\begin{equation}
+  G_N \;=\; \frac{1}{8\pi v_0^2(\alpha-\beta)}
+  \;=\; \frac{1}{8\pi v_0^2\chi_\infty}
+  \;\underset{\text{canonical}}{=}\; \frac{1}{8\pi v_0^2}\,,
+  \label{eq:GN_master}
+\end{equation}
+where $\chi_\infty\equiv\alpha{-}\beta$ is the Lorentz-order
+parameter (Section~\ref{sec:ssb}), and the rightmost equality holds
+at the canonical normalisation $\alpha=2$, $\beta=1$ with
+$v_0=\bar{M}_{\rm Pl}$.  A fourth form,
+$G_N=(16\pi v_0^2(\alpha-\beta))^{-1}$, appears in the
+linearised-EFE appendix (Eq.~\eqref{eq:GN_derived}) where $v_0$ is
+defined at the action level; the Notation note
+after that equation explains the factor-of-2 convention.\\
+
 In the present formulation of ECT, the fundamental constants
 $G_N$, $c_*$, and $\hbar$ are related to the condensate parameters
 $v_0$, $\alpha$, and $\lambda$ through \emph{internal matching and
@@ -3567,7 +3587,7 @@ single field connects all three scales without fine-tuning.}
 The condensate potential $V(\Phi) = -\mu^2 \Phi^2/2 + \lambda \Phi^4/4$
 defines a natural energy scale through its vacuum expectation value
 $v_0 = \sqrt{\mu^2/\lambda}$.  In ECT this scale plays a triple role:
-it determines the gravitational coupling ($G_N = 1/(8\pi v_0^2\chi_\infty)$, with $\chi_\infty = 1$ at canonical normalisation),
+it determines the gravitational coupling ($G_N = 1/(8\pi v_0^2\chi_\infty)$, $\chi_\infty\equiv\alpha{-}\beta$; $\chi_\infty = 1$ at canonical $\alpha=2\beta,\,\beta=1$),
 sets the quantum of action ($\hbar \propto v_0^2 m_\varphi$), and
 fixes the causal propagation speed ($c_* = \sqrt{\beta/(\alpha-\beta)}$; $\alpha=2\beta$, $\beta=1$: $c_*=1$).
 
@@ -3655,7 +3675,7 @@ requires $v_0$ to be matched to $G_N$ beforehand (OP-$\Lambda$).  \\
 \medskip
 \noindent\textbf{Honesty note.}\enspace
 Of the three relations, two contain a tautological component:
-$c_*=1$ fixes the time unit, and $G_N = 1/(8\pi v_0^2\chi_\infty)$ identifies $v_0$ with
+$c_*=1$ fixes the time unit, and $G_N = 1/(8\pi v_0^2\chi_\infty)$ [$\chi_\infty\equiv\alpha{-}\beta=1$, canonical] identifies $v_0$ with
 $\bar{M}_{\rm Pl}$ by matching.
 The non-tautological content consists of two statements.
 First, $c_{\rm photon}=c_{\rm condensate\,sound}$ because the photon
@@ -9871,55 +9891,60 @@ The Planck constant therefore appears as an emergent parameter associated with t
 \subsection{Uncertainty Principle}
 \label{sec:uncertainty}
 
-In standard quantum mechanics the uncertainty relation
+\textbf{Status:} Level~A (theorem in the emergent ordered sector).
+The Heisenberg uncertainty relation $\Delta q\,\Delta p\geq\hbar/2$
+follows as a strict mathematical theorem once the emergent momentum
+operator is established.  The derivation proceeds in two steps.
 
+\paragraph{Step 1 --- Emergent momentum operator (Level~B input).}
+
+In the emergent complex ordered sector, the condensate phase field
+$\theta(x)$ generates translations of the position coordinate.
+The operator
 \begin{equation}
-\Delta q \, \Delta p \ge \frac{\hbar}{2}
+  \hat p = -i\hbar\,\partial_x
 \end{equation}
+arises as the generator of spatial translations in $L^2(\mathbb{R}^3)$.
+This is a Level~B identification: it holds once the emergent complex
+sector $\Phi_{\rm eff}=\rho\,e^{i\theta}$ is admitted and
+the analytic continuation $w\to -ic_*t$ is performed
+(Section~\ref{sec:schrodinger}).
 
-is introduced through canonical commutation relations.
+\paragraph{Step 2 --- CCR (Level~A in the ordered sector).}
 
-In ECT the same relation arises from Fourier properties of the condensate field along closed loops.
-
-Consider a Euclidean field configuration $\varphi(x)$ defined on a closed loop of length $L$. 
-Using the Parseval inequality one obtains
-
+Given the emergent complex sector and the identification of $\hat p$
+above, the canonical commutation relation
 \begin{equation}
-\int_0^L |\varphi|^2 dx
-\int_0^L |\partial_x \varphi|^2 dx
-\ge
-\left(
-\int_0^L |\varphi \partial_x \varphi| dx
-\right)^2 .
+  [\hat x,\, \hat p] \;=\; i\hbar
 \end{equation}
+follows from the single-valuedness of the condensate phase
+(Section~\ref{sec:CCR}; Level~A).
 
-Identifying
+\paragraph{Step 3 --- Robertson--Schr\"odinger inequality (pure mathematics).}
 
+For any two self-adjoint operators $\hat A$, $\hat B$ on a Hilbert space $\mathcal{H}$
+and any state $|\psi\rangle$, the Cauchy--Schwarz inequality in $L^2$ gives
 \begin{equation}
-\Delta q^2 \sim \langle q^2 \rangle,
-\qquad
-\Delta p^2 \sim \langle (\partial_x \varphi)^2 \rangle
+  \Delta A\,\Delta B \;\geq\; \tfrac{1}{2}\bigl|\langle[\hat A,\hat B]\rangle\bigr|.
 \end{equation}
-
-yields
-
+Setting $\hat A=\hat x$, $\hat B=\hat p$ and using $[\hat x,\hat p]=i\hbar$:
 \begin{equation}
-\Delta q \, \Delta p
-\ge
-\frac{\hbar_{\text{eff}}}{2}
-=
-\frac{S_{\text{loop,min}}}{4\pi}.
+  \boxed{\Delta x\,\Delta p \;\geq\; \frac{\hbar}{2}.}
 \end{equation}
+This step is purely mathematical---it requires only the Hilbert-space
+structure and the CCR; no further physical input from ECT is needed.
 
-For
-
-\begin{equation}
-S_{\text{loop,min}} = 2\pi \hbar
-\end{equation}
-
-one recovers the standard Heisenberg uncertainty relation.
-
-Thus the uncertainty principle emerges from the existence of minimal loop configurations of the condensate field.
+\paragraph{Summary.}
+The Heisenberg uncertainty principle emerges in ECT from the ordered
+condensate sector via the chain:
+\begin{center}
+emergent complex sector (Level~B)
+$\;\Rightarrow\;$ CCR (Level~A)
+$\;\Rightarrow\;$ uncertainty inequality (theorem in $L^2$).
+\end{center}
+The final inequality is a strict theorem given the CCR; the CCR itself
+is Level~A from phase single-valuedness; the ordered complex sector
+is Level~B (requires analytic continuation).
 
 \subsection{Principle of Extremal Action}
 
@@ -11134,7 +11159,7 @@ C = compatibility check.  $\beta=1$, $\alpha=2$ throughout unless noted.}
 Quantity & ECT formula & ECT value & Observed & St. \\
 \hline
 \multicolumn{5}{l}{\textit{Fundamental constants}} \\
-$G_N$ & $1/(8\pi v_0^2\chi_\infty)$ & $6.67\times10^{-11}$\,m$^3$kg$^{-1}$s$^{-2}$ & $6.674\times10^{-11}$ & C \\
+$G_N$ & $1/(8\pi v_0^2\chi_\infty)$, $\chi_\infty\!\equiv\!\alpha{-}\beta$ & $6.67\times10^{-11}$\,m$^3$kg$^{-1}$s$^{-2}$ & $6.674\times10^{-11}$ & C \\
 $c_*$ & $\sqrt{\beta/(\alpha-\beta)}$ & $3\times10^8$\,m/s (by convention; $=1$ at $\alpha=2,\beta=1$) & $2.998\times10^8$ & A \\
 $\hbar$ & $\beta v_0^2 m_\varphi/2$ & $1.055\times10^{-34}$\,J\,s (self-cons.) & $1.055\times10^{-34}$ & C \\
 $v_0$ & $[8\pi G_N(\alpha{-}\beta)]^{-1/2}$ & $2.435\times10^{18}$\,GeV & --- & A \\
@@ -12056,7 +12081,7 @@ BTFR without a new particle sector.  Second, the effective cosmological
 term $\Lambda_{\rm eff}(X) = V(\Phi_0(X))$ is a dynamical quantity
 determined by the condensate potential, not a fundamental constant.
 Third, the gravitational constant itself becomes a derived quantity
-$G_N = 1/(8\pi v_0^2\chi_\infty)$ rather than a free parameter.
+$G_N = 1/(8\pi v_0^2\chi_\infty)$ [$\chi_\infty\equiv\alpha{-}\beta$] rather than a free parameter.
 
 At the phenomenological level, ECT reproduces the standard cosmological
 expansion history in the limit of a homogeneous condensate, but
@@ -12958,7 +12983,7 @@ Condensate $\Phi$ & Postulate P4 & postulate \\
 Lorentzian metric $g_{\mu\nu}$ & SSB $O(4)\!\to\!O(3)$, $\alpha>1$ & derived \\
 Time (arrow) & Decoherence $\Gamma[q]$, large $N_{\rm eff}$ & derived \\
 Speed of light $c$ & $c_*=\sqrt{\beta/(\alpha-\beta)}$ & identified \\
-Newton's constant $G_N$ & $1/(8\pi v_0^2\chi_\infty)$ & identified \\
+Newton's constant $G_N$ & $1/(8\pi v_0^2\chi_\infty)$, $\chi_\infty\!\equiv\!\alpha{-}\beta$ & identified \\
 Lorentz-order field $\phi$ & $\ln(\chi/\chi_{\rm vac})$, soft sector of SSB & derived \\
 Planck constant $\hbar$ & Min.\ loop action $S_{\rm loop,min}$ & identified \\
 Schr\"odinger equation & $w\!\to\!-ic_*t$ in condensate EOM & derived \\
