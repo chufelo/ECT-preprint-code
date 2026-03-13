@@ -123,11 +123,8 @@ The quantum statistics of condensate excitations follows
 structurally from the representation theory of $SO(4)\cong SU(2)_L\times SU(2)_R$:
 integer-spin (tensor) representations give bosons; half-integer-spin
 (spinor) representations give fermions.  This provides a \emph{structural
-route} to the Pauli exclusion principle, not a postulate; a full
-Pauli--L\"{u}ders--Zumino theorem has not been obtained.
-In ECT the exclusion principle is a structural result from $SU(2)$
-spinor representation signs in the quadratic approximation; a full
-Pauli--L\"{u}ders--Zumino theorem has not been obtained, and claims
+route} to the Pauli exclusion principle, not a postulate.  A full
+Pauli--L\"{u}ders--Zumino theorem has not been obtained; claims
 about beyond-quadratic corrections at Planck densities remain
 speculative.
 
@@ -2813,12 +2810,13 @@ envelope (4.6), \emph{not} from the Wick rotation.
 
 \paragraph{Dirac equation from condensate geometry}
 
-The Dirac equation for fermionic excitations of the condensate can be
-derived from the spinor structure of the underlying Euclidean rotation
-group $SO(4) \simeq SU(2)_L \times SU(2)_R$.  The complete derivation,
-including the emergence of Weyl spinors, the Clifford algebra
-linearization, and ECT-specific deformations, is presented in
-Section~\ref{sec:fermions}.
+A \emph{structural reconstruction} of the Dirac equation can be carried
+out using the spinor representations of the underlying Euclidean rotation
+group $SO(4) \simeq SU(2)_L \times SU(2)_R$ and Clifford linearisation
+of the emergent Lorentzian dispersion relation.  This is not a derivation
+from the bare bosonic condensate action alone; additional structural input
+about spinorial excitations is required.  The full construction is
+presented in Section~\ref{sec:fermions}.
 
 
 \subsection{Identification of the Planck constant}
@@ -3048,7 +3046,8 @@ Identifying $\hbar_{\rm eff}\equiv\hbar$ gives the condensate mass scale
 m_\varphi=\frac{2\hbar}{v_0^2}.
 \end{equation}
 
-Using the relation between the condensate stiffness and Newton's constant
+Using the special-case relation (at $\alpha=2\beta$, $\beta=1$; cf.\ general
+formula $G_N=1/[8\pi v_0^2(\alpha-\beta)]$ in Section~\ref{sec:constants})
 \begin{equation}
 G_N=\frac{\hbar c}{8\pi v_0^2},
 \end{equation}
@@ -3251,7 +3250,8 @@ can arise dynamically from the microscopic structure of the vacuum.
 The previous sections relate the fundamental constants of gravity and
 quantum mechanics to the parameters of the condensate vacuum.
 
-From the matching of the quadratic gravitational sector we obtained
+From the matching of the quadratic gravitational sector (special case
+$\alpha=2\beta$, $\beta=1$; general formula in Section~\ref{sec:constants})
 
 \begin{equation}
 G_N=\frac{\hbar c}{8\pi v_0^2}.
@@ -5352,11 +5352,20 @@ one chiral sector may become dynamically distinguished at low energies.
 
 \paragraph{Dirac equation from condensate geometry}
 
-In relativistic quantum theory the Dirac equation is usually introduced
-as the minimal Lorentz-covariant first-order wave equation whose square
-reproduces the relativistic dispersion relation. Within the ECT
-framework the same structure can be motivated from the geometry of
-excitations propagating on the condensate background.
+\textbf{Status and scope.}
+The derivation below is a \emph{structural reconstruction}, not a
+theorem from the bare bosonic condensate action alone.  Given
+(i)~the emergent Lorentzian kinematics of the ordered branch,
+(ii)~spinorial representations of the broken $SO(4)\to SO(3)$ symmetry,
+and (iii)~first-order minimality (Clifford linearisation), the Dirac
+form follows.  Each of these three inputs goes beyond the minimal
+scalar condensate postulate; the reconstruction is Level~B.
+
+In relativistic quantum theory the Dirac equation is the minimal
+Lorentz-covariant first-order wave equation whose square reproduces
+the relativistic dispersion relation.  ECT reconstructs the same
+structure from the geometry of excitations propagating on the ordered
+condensate branch.
 
 \paragraph{Relativistic dispersion from the emergent metric}
 
@@ -5428,7 +5437,8 @@ becomes
 }
 \end{equation}
 
-This is the Dirac equation describing relativistic fermionic excitations.
+This reproduces the Dirac equation for relativistic fermionic excitations
+on the ordered condensate branch (structural reconstruction, Level~B).
 
 \paragraph{Weyl decomposition}
 
@@ -9940,11 +9950,18 @@ the full second-quantisation anticommutation relations
 $\{\hat{a},\hat{a}^\dagger\} = 1$ requires additional steps that
 go beyond the current derivation.
 
-\paragraph{Key distinction: ECT Pauli principle versus standard QM.}
+\paragraph{Key distinction: ECT versus standard QM.}
 
-In standard quantum mechanics the Pauli exclusion principle is an
-\emph{axiom}: two identical fermions cannot occupy the same state,
-absolutely and exactly, at all energy scales.
+In standard quantum field theory, fermionic anticommutation is
+introduced at the operator level as a primitive axiom: two identical
+fermions cannot occupy the same state at all energy scales, exactly.
+In ECT antisymmetry is \emph{not} taken as a primitive axiom but
+is linked to the spinorial representation structure of the ordered
+condensate sector.  This is a conceptual difference even though the
+present construction remains incomplete at theorem level.
+Possible deviations from exact Pauli behaviour, if any, would arise
+\emph{outside} the currently controlled quadratic regime and should
+be regarded as speculative (not a derived prediction of ECT).
 
 In ECT the antisymmetry follows from the sign of $SU(2)$ spinor
 permutation relations within the \emph{quadratic approximation}
@@ -10591,18 +10608,20 @@ Euclidean rotational symmetry alone.
 
 \begin{table}[H]
 \centering
-\caption{Quantum vacuum effects derived in ECT from the Euclidean condensate
-correlator $G_E=(4\pi^2|X-X'|^2)^{-1}$.
-Status: A = analytically derived; P = programmatic (requires boundary-condition input).}
+\caption{Quantum vacuum effects organized in ECT around the Euclidean condensate
+correlator $G_E=(4\pi^2|X-X'|^2)^{-1}$ (organizing proposition;
+each effect requires its own specification).
+Status: A = analytically derived within ECT; P = programmatic (requires
+boundary-condition or detector-coupling input; conditional prediction).}
 \label{tab:vacuum_predictions}
 \begin{tabular}{@{}lllcc@{}}
 \toprule
 Effect & ECT formula & ECT value & Std.\ result & Status \\
 \midrule
-Casimir (3 Goldstone) &
+Casimir (3 Goldstone modes,\\condensate-reflecting boundaries only) &
 $-\dfrac{3\pi^2\hbar c_*}{240 a^4}$ &
-$3/2\times(F/A)_{\rm QED}$ &
-$-\dfrac{\pi^2\hbar c}{120 a^4}$ & P \\[8pt]
+$3/2\times(F/A)_{\rm QED}$ \emph{conditional} &
+$-\dfrac{\pi^2\hbar c}{120 a^4}$ & P \\
 Unruh temperature &
 $\dfrac{\hbar a}{2\pi c_* k_B}$ &
 $4\times10^{-8}$\,K at LHC &
@@ -10614,6 +10633,17 @@ $0.965\pm0.004$ (Planck) & A \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\textbf{Note on testability.}
+The Casimir prediction (factor $3/2$ relative to single-field QED) is
+\emph{not} currently tested by standard metallic Casimir experiments,
+since ordinary conductors are not expected to reflect the relevant
+condensate Goldstone modes.  The $3/2$ factor therefore remains an
+ECT-specific conditional prediction awaiting purpose-designed
+boundary configurations.  The Unruh temperature formula coincides with
+the standard QFT result and is consistent with existing experiments;
+the ECT derivation provides a condensate-correlator interpretation,
+not a new numerical prediction.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
