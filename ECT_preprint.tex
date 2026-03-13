@@ -2665,9 +2665,12 @@ physically distinct contexts (detailed in Section~\ref{sec:quantum_vacuum}):
 \begin{equation}
   \label{eq:unified_N}
   \underbrace{N(\tau,\mathbf{x})}_{\text{one correlator}}
-  \;\xrightarrow{a=0,\,T>0}\;\text{Casimir effect}
-  \;\xrightarrow{a>0,\,T=0}\;\text{Unruh effect}
-  \;\xrightarrow{\text{coarse-grain}}\;\text{decoherence kernel.}
+  \;\underbrace{\xrightarrow{\text{boundary-modified spectrum}}}_{\text{Casimir}}
+  E_{\rm Cas}
+  \;\underbrace{\xrightarrow{\text{accelerated detector}}}_{\text{Unruh}}
+  T_U
+  \;\underbrace{\xrightarrow{\text{coarse-grained open dynamics}}}_{\text{decoherence}}
+  \Gamma_{\rm dist}.
 \end{equation}
 This unification of three quantum vacuum phenomena through a single
 condensate two-point function is an ECT-specific structural result.
@@ -10082,19 +10085,13 @@ The residual $O(3)$ symmetry of the broken phase gives the
 conserved angular momentum tensor
 $\partial_\mu M^{\mu\nu\lambda}=0$.
 
-\paragraph{Phase / $U(1)$ charge (Level~B structural).}
-In the emergent complex ordered sector the global $U(1)$ phase
-symmetry $\Phi_{\rm eff}\to e^{i\alpha}\Phi_{\rm eff}$ yields
-a Noether current $j^\mu$ with $\partial_\mu j^\mu=0$.
-Promotion to a local gauge symmetry and identification with
-the electromagnetic current are \emph{standard field-theoretic
-steps once the $U(1)$ gauge sector is admitted}; they are
-not derived from the bare condensate action.
-
-\textit{Note on baryon/lepton number and electroweak anomaly:}
-these are standard SM results that carry over once the SM gauge
-sector is embedded in ECT (structural Level~B/C); they are not
-independently derived from the condensate action.
+\textit{Beyond the condensate sector.}
+Once an emergent complex matter sector and additional gauge
+structure are admitted, the corresponding Noether currents
+(electric charge, baryon/lepton number) follow in the standard
+effective-field-theory way.  This is not a new ECT derivation;
+no gauge or anomaly structure is independently derived from
+the bare condensate action.
 
 \subsection{Quantum Statistics}
 \label{sec:quantum_stats}
@@ -10166,7 +10163,7 @@ a conceptual difference even though theorem-level proof is incomplete.
 \hline
 Aspect & Standard QM/QFT & ECT \\
 \hline
-Route to antisymmetry & Axiom & Structural (ordered sector, Level~B) \\
+Route to antisymmetry & Axiom & Compatible sign structure (ordered sector, Level~B) \\
 Basis & $\{\hat a,\hat a^\dagger\}=1$ postulated & Topology + spinorial sign \\
 Pauli principle & Exact axiom & Structural (quadratic regime) \\
 Full PLZ theorem & Yes & Open \\
@@ -10177,22 +10174,12 @@ Beyond-quadratic & N/A & Speculative, not predicted \\
 
 
 
-\paragraph{Black-hole thermodynamics: loop interpretation (candidate, Level~B).}
-
-Within the ECT loop picture, the event horizon corresponds to the
-critical surface where closed condensate-loop configurations
-cease to be stable ($\Gamma_{\rm loop}\gtrsim1$).
-Identifying the loop decay period with the Euclidean periodicity
-$\tau_E=8\pi G_N M/c^3$ reproduces the Hawking temperature
-$T_{\rm BH}=\hbar c^3/(8\pi G_N M)$ up to numerical prefactors.
-The Bekenstein--Hawking entropy $S=A/(4\ell_{\rm Pl}^2)$ acquires
-a candidate microscopic interpretation as the number of effective
-loop degrees of freedom intersecting the horizon.
-\textbf{Status (Level~B):} this is a loop-decay \emph{interpretation},
-not a parameter-free derivation from the bare ECT path integral;
-the identification $\Gamma_{\rm loop}=1$ at the horizon is an
-additional input.  The information problem is addressed separately
-in Section~\ref{sec:bh_information}.
+\textit{Note on black-hole thermodynamics.}
+Black-hole thermodynamic interpretations (Hawking temperature,
+Bekenstein--Hawking entropy) based on condensate loop instability
+and the horizon criticality condition $\Gamma_{\rm loop}\sim1$
+are discussed in the dedicated section (Section~\ref{sec:bh_information})
+and are not core micro-ECT results used here.
 
 
 
@@ -10424,13 +10411,14 @@ influence functional (Section~\ref{sec:influence_functional}).
 
 \paragraph{Summary of the unification.}
 \begin{equation}
-  N(\tau,\mathbf{r}) \;\underbrace{\xrightarrow{a=0,\,T>0,\,\text{boundary}}}_{\text{Casimir}}
+  N(\tau,\mathbf{r})
+  \;\underbrace{\xrightarrow{\text{boundary-modified spectrum}}}_{\text{Casimir}}\;
   E_{\rm Cas}
   \quad
-  \underbrace{\xrightarrow{a>0,\,T_{\rm vac}=0}}_{\text{Unruh}}
+  \underbrace{\xrightarrow{\text{accelerated detector}}}_{\text{Unruh}}
   T_U
   \quad
-  \underbrace{\xrightarrow{N_{\rm eff}\,\text{modes, coarse-grain}}}_{\text{decoherence}}
+  \underbrace{\xrightarrow{\text{coarse-grained open dynamics}}}_{\text{decoherence}}
   \Gamma_{\rm dist}.
 \end{equation}
 In standard QFT the Casimir effect, Unruh effect, and decoherence
@@ -10452,6 +10440,17 @@ structure.
 % -------------------------------------------------------------------------
 \subsection{Vacuum stiffness and the Planck scale}
 \label{sec:vacuum_stiffness}
+
+\textbf{Notation used in this subsection.}
+\begin{description}[noitemsep,leftmargin=2.5em]
+  \item[$\lambda$] Quartic self-coupling in $V(\Phi) = \tfrac{\lambda}{4}(\Phi^2-v_0^2)^2$.
+  \item[$\kappa\equiv V''(v_0)=2\lambda v_0^2$] Local stiffness (curvature at the minimum).
+  \item[$m_\varphi = \sqrt{\kappa} = \sqrt{2\lambda}\,v_0$] Condensate mass.
+  \item[$v_0$] Vacuum expectation value; $v_0 = \bar M_{\rm Pl}$ at canonical normalisation.
+  \item[$\Lambda_\chi \equiv m_\varphi^2 = \kappa$] Effective stiffness scale
+    (used in the $\hbar$-matching relation where retained).
+\end{description}
+
 % -------------------------------------------------------------------------
 
 The ECT condensate potential is
@@ -11445,9 +11444,9 @@ D2 & KG equation from condensate action (Level~A); Schr\"odinger by NR reduction
 D3 & $G_N$ from coefficient matching & A & --- & \ref{sec:constants} \\
 D4 & Three Goldstone bosons & A & --- & 8 \\
 D5 & Graviton: Fierz--Pauli, spin-2, ghost-free (linearised) & A & $v_0^2(\alpha-\beta)>0$, TT gauge (OP3 partially resolved) & 8, App.~\ref{app:GN_derivation} \\
-D6 & Dirac equation & B & O(3) spinor rep. & \ref{sec:fermions} \\
+D6 & Dirac form (structural reconstruction once spinorial fields admitted) & B & O(3) spinor rep.; not from bare bosonic action & \ref{sec:fermions}, \ref{sec:dirac_eq} \\
 D7 & Instanton mass spectrum $m_n=n\times1.6$ GeV & B & $\pi_3({\rm O(3)})=\mathbb{Z}$ & 10 \\
-D8 & Thermodynamic irreversibility & B & Gaussian--Markov approx.; $K(\tau<0)=0$ structural; full microscopic derivation open (OP24) & 4 \\
+D8 & Effective irreversibility (Gaussian--Markov model, ordered branch) & B & Gaussian--Markov approx.; $K(\tau<0)=0$ structural; not derived from bare action (OP24) & 4 \\
 D9 & $\hbar$ identification & B & Phase quantisation & \ref{sec:constants}, \ref{sec:constants} \\
 D10 & Linearised Einstein eqs. + $\Theta_{\mu\nu}$ & B & Linearisation & \ref{sec:gravity} \\
 D11 & Inflation $n_s=0.967$ & B & Slow-roll, $N_e=60$ & \ref{sec:cosmology} \\
@@ -11456,7 +11455,7 @@ D13 & UV safety of graviton & C & Power counting not done & 8, \ref{sec:open_pro
 D14 & Full non-linear Einstein eqs.\ (anisotropic curv.\ term) & A & Riemann commutator identity (OP2 resolved) & \ref{sec:gravity}, App.~\ref{app:curvature_coupling} \\
 D15 & Causality of $K(\tau)$ from ECT & B & Structural: forward light cone of ECT metric; non-circular derivation from bare action not completed & 4, \ref{sec:open_problems} \\
 D16 & SM gauge group from O(4) & C & Embedded, not derived & 7, \ref{sec:open_problems} \\
-D17 & Second law $dS/dw\geq0$ & B & Gaussian--Markov approx.\ + structural initial condition; full derivation open (OP24) & \ref{sec:quantum}, \ref{sec:open_problems} \\
+D17 & Second law $dS/dw\geq0$ (effective Gaussian--Markov result, ordered branch) & B & Gaussian--Markov approx.\ + structural initial condition; not derived from bare action (OP24) & \ref{sec:quantum}, \ref{sec:open_problems} \\
 D18 & Universe domain size $R_{\rm domain}=R_H e^{N_e}$ & A & --- & \ref{sec:universe_size} \\
 D19 & $S_{\rm loop,min}=2\pi\hbar$ from phase quantisation & B & Single-valuedness of $\theta$ & \ref{sec:constants} \\
 D20 & $\beta$ param.: general $c_*=\sqrt{\beta/(\alpha-\beta)}$ & A & --- & \ref{sec:ssb} \\
