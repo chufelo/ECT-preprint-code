@@ -35,6 +35,7 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.16}
 \usepackage{url}
+\usepackage[framemethod=default]{mdframed}
 
 % ---- Metadata ----
 \hypersetup{
@@ -539,9 +540,10 @@ with the existing literature; no separate dark-matter particle
 or cosmological constant is postulated.
 
 Throughout this paper we carefully distinguish three levels of theoretical status:
-results \emph{rigorously derived} within the current framework,
-results \emph{derived at the EFT level},
-and \emph{open theoretical programs}.
+results \emph{derived at theorem or structural level} (Level~A/B in the derivation
+table, Table~\ref{tab:ect-levels}),
+results \emph{derived at the EFT or effective level} (Level~B/C),
+and \emph{open theoretical programs} (Level~C / open problems).
 A summary is given in Table~\ref{tab:ect-levels}.
 
 The paper is organised into four parts.
@@ -1868,10 +1870,11 @@ $T_H=\hbar c/(8\pi GM)$ without additional quantum-field-theoretic input.
 
 \emph{(v) Arrow of time.}
 The monotonic growth of the number of independent loop configurations
-with~$w$ provides a microscopic origin for the second law of
-thermodynamics and the macroscopic arrow of time
-(Section~\ref{sec:second_law}; effective result within the
-Gaussian--Markov reduction; full microscopic derivation open, OP24).
+with~$w$ may serve as an \emph{intuitive microscopic picture} motivating
+coarse-grained irreversibility, but it is not a complete microscopic
+proof of the second law.  The actual entropy-production theorem is
+established only within the Gaussian--Markov effective reduction
+(Section~\ref{sec:second_law}; full microscopic derivation open, OP24).
 
 
 \subsection{Path integral formulation}
@@ -10242,6 +10245,20 @@ unrelated quantum vacuum phenomena --- the Casimir effect, the Unruh
 temperature, and environmental decoherence --- are controlled by
 different \emph{limits of a single condensate two-point function}.
 
+\begin{mdframed}[linewidth=0.8pt,innerleftmargin=8pt,innerrightmargin=8pt,
+    innertopmargin=6pt,innerbottommargin=6pt]
+\textbf{ECT Unified Correlator Principle (organising proposition).}\\
+In ECT, three quantum-vacuum phenomena --- environmental decoherence,
+Casimir-type boundary vacuum shifts, and the Unruh thermal response ---
+are three manifestations of the same underlying condensate two-point
+function $N(\tau,\mathbf{x}-\mathbf{x}')$.  They differ in their
+boundary conditions, detector coupling, and coarse-graining prescription,
+not in their fundamental origin.  This is an \emph{organising proposition}
+of ECT; each effect still requires its own derivation within the
+framework.
+\end{mdframed}
+
+
 \paragraph{The condensate correlator $N(\tau, \mathbf{x}-\mathbf{x}')$.}
 Define the symmetric Euclidean two-point function of the condensate field:
 \begin{equation}
@@ -11225,8 +11242,9 @@ consistent; when a result's status changes, all instances are updated.
 \begin{description}[leftmargin=3.2em,labelsep=0.5em,style=nextline]
   \item[\textit{Theorem.}]
     A result with a complete proof from stated axioms/postulates, without
-    additional physical assumptions.  Used only when the derivation is
-    fully rigorous within the ECT formal system.
+    additional physical assumptions.  Used only when all steps are
+    complete within the ECT formal system without coarse-graining or
+    effective-sector reductions.
   \item[\textit{Structural derivation.}]
     A derivation that follows the correct logic and recovers the right
     structure (equations, symmetries, representation content), but where
@@ -11633,7 +11651,7 @@ required for a definitive comparison
 
 \medskip
 \textit{ECT modified growth equation.}
-The same growth-equation structure also appears in condensate-gravity analogies~\cite{Volovik2003}; ECT arrives at it independently from first principles.
+The same growth-equation structure also appears in condensate-gravity analogies~\cite{Volovik2003}; ECT arrives at the same structure from the condensate-modified gravity sector.
 The cosmological perturbation growth equation in the presence of a
 condensate-modified gravitational coupling is
 \begin{equation}
