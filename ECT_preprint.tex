@@ -87,7 +87,8 @@ the vacuum amplitude~$v_0$, the isotropic stiffness~$\beta$,
 the anisotropy coupling~$\alpha$, and the self-interaction~$\lambda$.
 Lorentzian signature emerges for $\alpha>\beta$, with effective
 speed of light $c_*=\sqrt{\beta/(\alpha-\beta)}$.
-From this single action ECT derives, without additional postulates:
+From this single action ECT derives a range of results at varying levels of rigour
+(the status of each item is specified below):
 the Newton constant $G_N = [8\pi v_0^2(\alpha-\beta)]^{-1}$
 (fixes $v_0\approx\bar{M}_{\rm Pl}$);
 the Planck constant $\hbar = c_*v_0/\sqrt{\Lambda_\chi}$ as a
@@ -577,8 +578,10 @@ Section~\ref{sec:quantum_vacuum}
 derives three quantum vacuum effects --- the Casimir pressure from three
 Goldstone bosons, the Unruh temperature via analytic continuation of the
 Euclidean correlator, and cosmological particle production at the
-$O(4)\to O(3)$ transition --- showing that all three follow from the same
-Euclidean two-point function without additional postulates.
+$O(4)\to O(3)$ transition --- showing that all three are controlled by
+related limits of the same Euclidean two-point function
+(organizing proposition; each effect still requires its own boundary,
+detector, or coarse-graining specification).
 
 A distinctive feature of the present work, developed in
 Section~\ref{sec:lorentz_order_field} and
@@ -1872,44 +1875,54 @@ thermodynamics and the macroscopic arrow of time
 \subsubsection{Thermodynamic irreversibility}
 \label{sec:second_law}
 
-\paragraph{Second Law from ECT: effective derivation and open problems.}
+\textbf{Scope and honest status.}
+This subsection does \emph{not} provide a full microscopic derivation
+of the second law from the bare Euclidean ECT action.  What is
+established is an \emph{effective irreversibility result} within the
+Gaussian--Markov coarse-grained description of the ordered branch.
+The result rests on the ECT influence functional together with the
+Gaussian model for the reduced density matrix and the Markov
+approximation; it is not derived from the ECT postulates alone
+without these additional steps.  A fully microscopic derivation
+remains open (OP24, Section~\ref{sec:open_problems}).
 
-Define the \emph{entanglement entropy} of the system--environment split
-as
+\paragraph{Effective entropy production in the Gaussian--Markov model.}
+
+After integrating out the environmental degrees of freedom in the
+Caldeira--Leggett ohmic model, the reduced density matrix of the
+system takes the Gaussian form:
 \begin{equation}
 \label{eq:S_ent_def}
-S_{\rm ent}(w) \;=\; -\mathrm{Tr}_{\rm sys}\!\left[
-  \rho_{\rm red}(w)\ln\rho_{\rm red}(w)
-\right], \quad
-\rho_{\rm red}(w) \propto e^{-\Gamma_{\rm loop}(w)}.
+\rho_{\rm red}^{\rm G}(w) \;\propto\;
+  \exp\!\bigl(-\Gamma_{\rm irr}(w)\bigr),
 \end{equation}
+where $\Gamma_{\rm irr}$ is the \emph{irreversible part} of the
+influence functional in the Gaussian--Markov approximation.
+\textbf{Important:} Eq.~\eqref{eq:S_ent_def} is a Gaussian model
+ansatz, not a general consequence of ECT; $\Gamma_{\rm irr}$ is
+not the full decoherence functional but its Gaussian reduction.
 
-For a Gaussian reduced density matrix (valid in the Caldeira--Leggett
-model at linear order in $\Gamma_{\rm loop}$):
+Within this model, the von Neumann entropy satisfies
 \begin{equation}
 \label{eq:S_ent_Gamma}
-S_{\rm ent}(w) \;\approx\; \mathrm{const} + \Gamma_{\rm loop}(w).
+S_{\rm ent}(w) \;\approx\; \mathrm{const} + \Gamma_{\rm irr}(w),
 \end{equation}
-
-The rate of entropy increase is then
+and its rate of change is
 \begin{equation}
 \label{eq:2nd_law_ECT}
 \frac{dS_{\rm ent}}{dw}
-= \frac{d\Gamma_{\rm loop}}{dw}
+= \frac{d\Gamma_{\rm irr}}{dw}
 = N_{\rm eff}\,\gamma\!\left(\frac{dq}{dw}\right)^{\!2}
 \;\geq\; 0,
 \end{equation}
 since $N_{\rm eff}>0$, $\gamma>0$, and $(dq/dw)^2\geq0$.
 
-Within the Gaussian (Caldeira--Leggett) approximation and for ohmic
-environments, this gives $dS_{\rm ent}/dw\geq0$ for all macroscopic
-trajectories ($N_{\rm eff}\gg1$), with equality only for static
-configurations ($dq/dw=0$).
-\textbf{Status (effective, not fully derived):} this result holds
-strictly within the Gaussian--Markov reduction of the ECT influence
-functional.  Whether the full non-Markovian ECT path integral implies
-monotone entropy growth without additional coarse-graining assumptions
-is an open problem (OP24, Section~\ref{sec:open_problems}).
+This gives $dS_{\rm ent}/dw\geq0$ for all macroscopic trajectories
+($N_{\rm eff}\gg1$) within the Gaussian--Markov model, with equality
+only for static configurations ($dq/dw=0$).
+Whether the full non-Markovian ECT path integral implies monotone
+entropy growth without the Gaussian--Markov coarse-graining is an
+open problem (OP24, Section~\ref{sec:open_problems}).
 
 In the Markovian (ohmic) reduction, a Crooks-type fluctuation
 relation holds for the effective decoherence action:
@@ -2108,8 +2121,10 @@ the reduced density matrix of system $q$ is:
   \int_{q\to q_f}\!\mathcal{D}q\!\int_{q'\to q_f'}\!\mathcal{D}q'\;
   e^{i(S_M[q]-S_M[q'])/\hbar}\,e^{-\Gamma[q,q']},
 \end{equation}
-where $\Gamma[q,q']$ is the ECT decoherence functional from
-Section~\ref{sec:second_law}.  For an ohmic environment in the
+where $\Gamma[q,q']$ is the ECT influence functional
+(Section~\ref{sec:influence_functional}), which encodes the
+back-action of the environment on the system.  For an ohmic
+environment in the
 large-$N_{\rm eff}$ limit,
 $e^{-\Gamma[q,q']}\to \delta_{q,q'}$ for $q\neq q'$, so:
 \begin{equation}
@@ -3501,7 +3516,7 @@ as opposed to a definition or choice of units.}
 \hline
 $\alpha=2\beta$ & $c$ &
 $c_*=\sqrt{\beta/(\alpha-\beta)}\xrightarrow{\alpha=2\beta}1$ &
-Photon is the Goldstone mode of the same $U(1)$ condensate; hence
+In the emergent complex ordered sector (Section~\ref{par:real_vs_complex}), the photon is the Goldstone mode of the $U(1)$ condensate phase; hence
 $c_{\rm em}=c_{\rm gw}=c_*$ from a single field.
 Confirmed: GW170817, $|\delta c/c|<10^{-15}$.  \\[4pt]
 $v_0$ (matched: $v_0=\bar{M}_{\rm Pl}$) & $G_N$ &
@@ -4367,14 +4382,17 @@ Consider a complex condensate field
 \Phi(X) = v_0(X)\,e^{i\theta(X)} .
 \end{equation}
 
-If the phase is shifted by a constant,
+In the \emph{emergent complex ordered sector} (see
+Section~\ref{par:real_vs_complex}: the minimal ECT field is real;
+phase language belongs to the two-component extension), if the phase
+is shifted by a constant,
 
 \begin{equation}
-\Phi \rightarrow e^{i\alpha}\Phi ,
+\Phi_{\rm eff} \rightarrow e^{i\alpha}\Phi_{\rm eff} ,
 \end{equation}
 
-the Euclidean action remains invariant. This is a global
-$U(1)$ symmetry of the condensate.
+the effective action of the ordered sector remains invariant.
+This is a global $U(1)$ symmetry of the emergent complex condensate.
 
 \paragraph{Physical interpretation of $\theta$.}
 The phase field $\theta(X)$ in $\Phi = v_0\,e^{i\theta}$ is not
@@ -9714,7 +9732,8 @@ $M^{\mu\nu\lambda}=x^\mu T^{\nu\lambda}-x^\nu T^{\mu\lambda}$,
 $\partial_\mu M^{\mu\nu\lambda}=0$.
 
 \paragraph{Electric charge.}
-The global $U(1)$ phase symmetry $\Phi\to e^{i\alpha}\Phi$ gives
+In the emergent complex ordered sector, the global $U(1)$ phase
+symmetry $\Phi_{\rm eff}\to e^{i\alpha}\Phi_{\rm eff}$ gives
 the Noether current $j^\mu_{\rm em}=\bar\Psi\gamma^\mu\Psi$
 with $\partial_\mu j^\mu_{\rm em}=0$.
 After promoting to a local $U(1)$ gauge symmetry, this becomes
@@ -9789,9 +9808,11 @@ into representations of the residual $O(3)$:
         $SU(2)$) $\to$ \emph{fermions} with antisymmetric
         wavefunctions.
 \end{itemize}
-The Pauli exclusion principle follows from the sign of the permutation
-relations of $SU(2)$ spinor representations, not from an independent
-postulate.
+In ECT, fermionic antisymmetry arises from the sign of the permutation
+relations of $SU(2)$ spinor representations---a \emph{structural route}
+toward the Pauli exclusion principle rather than a postulate.
+A full Pauli--L\"uders--Zumino theorem at all orders has not been
+obtained.
 
 \textbf{Status.}  This is a \emph{structural} argument, not
 yet a full derivation of the Pauli--L\"{u}ders--Zumino spin-statistics
@@ -10213,20 +10234,25 @@ The curvature of the potential at the minimum,
 defines the \emph{vacuum stiffness}: the energy cost per unit volume of
 displacing the condensate from its equilibrium.  The condensate mass is
 $m_\varphi = \sqrt{\kappa} = \sqrt{2\lambda}\,v_0$, which sets the
-correlation length $\xi_{\rm cond} = 1/m_\varphi \sim \ell_{\rm Pl}$.
+correlation length $\xi_{\rm cond} = 1/m_\varphi \sim \ell_{\rm Pl}$ (consistency relation; see OP-$\Lambda$).
 
-At canonical normalisation ($\alpha=2$, $\beta=1$), the reduced Planck mass is
-\emph{precisely the phase stiffness of the vacuum condensate}:
+At canonical normalisation ($\alpha=2$, $\beta=1$), the condensate amplitude
+$v_0$ is \emph{identified with} the reduced Planck mass via
 \begin{equation}
-  \boxed{%
-    \bar M_{\rm Pl}^2 \;=\; v_0^2 \;=\; \text{phase stiffness of ECT vacuum}\,.
-  }
+  \bar M_{\rm Pl}^2 \;\stackrel{\rm id}{=}\; v_0^2\,,
   \label{eq:planck_stiffness}
 \end{equation}
-This identification is not an analogy but a direct consequence of the
-condensate action: the same $v_0$ that sets $G_N=1/(8\pi v_0^2\chi_\infty)$
-(with $\chi_\infty = 1$ at canonical normalisation) also
-controls the propagation speed of all condensate excitations.
+so that $v_0$ is numerically the reduced Planck stiffness scale in the
+canonically normalised branch.
+\textbf{Status (consistency relation, not fully non-circular):}
+this is a \emph{definition by normalisation convention}, not a
+first-principles derivation of the Planck scale from the bare ECT action.
+The same $v_0$ enters both $G_N=1/(8\pi v_0^2)$ and the condensate
+dispersion, so the Planck scale and the phase stiffness are identified
+in the same step.  A fully non-circular derivation that fixes
+$v_0/M_{\rm Pl}$ from an independent microscopic calculation
+(without matching $G_N$ as an input) remains open (OP-$\Lambda$,
+Section~\ref{sec:open_problems}).
 In superfluid language, $v_0$ plays the role of the superfluid density:
 it measures how stiff the vacuum is against phase gradients \cite{Volovik2003}.
 
@@ -10270,7 +10296,23 @@ Transverse traceless fluctuations of $n^A$ give the massless spin-2 graviton
 \label{sec:casimir}
 % -------------------------------------------------------------------------
 
-\subsubsection{Prediction}
+\textbf{Scope and applicability (read before the formula).}
+The calculation below is a \emph{conditional prediction}: it applies
+only to boundaries that effectively impose Dirichlet conditions on
+the ECT Goldstone sector.  Standard metallic laboratory plates do
+\emph{not} implement these boundary conditions---the $O(4)\to O(3)$
+Goldstone bosons carry no electric charge and couple to ordinary
+matter only gravitationally ($\sim v_0^{-2}$), so conducting plates
+are transparent to them.  The factor $3/2$ derived below is therefore
+\emph{not} a prediction for the standard laboratory Casimir effect
+between metal plates.  It is a prediction for boundaries that
+physically reflect the gapless condensate sector, such as
+superfluid interfaces, BEC domain walls, or $O(4)\to O(3)$
+phase-transition surfaces in the early Universe.  Whether any
+accessible laboratory system implements such boundary conditions is
+an open problem (OP18, Section~\ref{sec:open_problems}).
+
+\subsubsection{Derivation for condensate-reflecting boundaries}
 
 The Casimir effect arises from vacuum zero-point energy modified by boundary
 conditions \cite{Casimir1948,BirrellDavies1982}.  For two photon polarisations
@@ -10281,7 +10323,8 @@ conditions \cite{Casimir1948,BirrellDavies1982}.  For two photon polarisations
   -\frac{\pi^2}{120}\,\frac{\hbar c}{a^4}\,.
   \label{eq:casimir_qed}
 \end{equation}
-In ECT, three massless Goldstone scalars with Dirichlet boundary conditions
+For boundaries that \emph{do} reflect the ECT Goldstone modes, three
+massless Goldstone scalars with Dirichlet boundary conditions
 contribute independently:
 \begin{equation}
   \boxed{%
@@ -10300,34 +10343,9 @@ regularisation \cite{BirrellDavies1982} of three independent scalar fields:
   \;\implies\;
   \frac{F}{A} = -\frac{\partial E_0^{\rm ren}}{\partial a}\bigg/A\,.
 \end{equation}
-
-\subsubsection{Observational status}
-
-The prediction \eqref{eq:casimir_ect} assumes that the boundaries
-impose Dirichlet conditions on the Goldstone modes.  For ideal
-condensate-domain walls (e.g.\ near the $O(4)\to O(3)$ transition
-in the early Universe), such conditions are natural, and the
-calculation is complete.
-
-For ordinary metallic laboratory plates, however, the situation is
-different.  The $O(4)\to O(3)$ Goldstone bosons are gravitational
-modes: they carry no electric charge and couple to ordinary matter
-only gravitationally ($\sim v_0^{-2}$).  A conducting plate reflects
-electromagnetic modes because free electrons enforce vanishing
-tangential $E$-field at the surface; no analogous mechanism forces
-Goldstone modes to vanish at the plate.
-Consequently, Goldstone modes pass through metallic boundaries
-without reflection, and their contribution to the standard
-laboratory Casimir effect is negligible --- not because of mass
-suppression (the ultra-light mass $m \sim 10^{-33}\,$eV gives a
-Compton wavelength $\lambda_C \sim \mathrm{Mpc} \gg d$, so
-Yukawa suppression is absent), but because the
-\emph{boundary coupling} is effectively zero.
-
-Whether any realistic laboratory configuration (e.g.\ superfluid
-interfaces, Bose--Einstein condensate boundaries) could impose
-effective boundary conditions on the Goldstone sector is an open
-problem (OP18, Section~\ref{sec:open_problems}).
+For ideal condensate-domain walls (e.g.\ near the $O(4)\to O(3)$ transition
+in the early Universe), Dirichlet conditions on the Goldstone modes are
+natural and the calculation is complete.
 
 % -------------------------------------------------------------------------
 \subsection{Cosmological particle production at the $O(4)\to O(3)$ transition}
@@ -11063,6 +11081,52 @@ We classify all key statements in ECT into three confidence levels:
 \item
   {Level C}: Hypothesis / conjecture / open problem.
 \end{itemize}
+
+\paragraph{Glossary of epistemic status labels.}
+\label{par:status_glossary}
+The following labels are used throughout the paper to characterise the
+logical standing of individual results.  The usage is intended to be
+consistent; when a result's status changes, all instances are updated.
+
+\begin{description}[leftmargin=3.2em,labelsep=0.5em,style=nextline]
+  \item[\textit{Theorem.}]
+    A result with a complete proof from stated axioms/postulates, without
+    additional physical assumptions.  Used only when the derivation is
+    fully rigorous within the ECT formal system.
+  \item[\textit{Structural derivation.}]
+    A derivation that follows the correct logic and recovers the right
+    structure (equations, symmetries, representation content), but where
+    one or more steps rely on an ansatz, approximation, or model assumption
+    that is stated explicitly.  Status Level B.
+  \item[\textit{Effective result.}]
+    A result that holds within a specified approximation scheme
+    (e.g.\ Gaussian--Markov, ohmic, large-$N_{\rm eff}$) but whose
+    extension to the full theory is an open problem.  Used for the second
+    law and some decoherence results.
+  \item[\textit{Structural route.}]
+    The ECT framework contains the ingredients necessary to recover a known
+    result (e.g.\ Pauli exclusion, Born measure), and the right structure
+    is reproduced in a leading-order or linearised approximation.  A full
+    theorem-level proof has not been obtained.
+  \item[\textit{Organizing proposition.}]
+    A conceptual observation that several distinct phenomena are controlled
+    by related limits of a single mathematical object.  It is not a theorem
+    because each phenomenon requires its own boundary/detector/coarse-graining
+    specification.  Used for the unified vacuum correlator.
+  \item[\textit{Consistency relation.}]
+    An algebraic relation between ECT parameters that is satisfied when the
+    parameters are matched to observations, but which does not by itself
+    constrain or derive any parameter independently.  Used for
+    $\ell_{\rm Pl}\sim\xi_{\rm cond}$ and $\bar M_{\rm Pl}^2=v_0^2$.
+  \item[\textit{Conditional prediction.}]
+    A prediction that holds under a stated physical condition
+    (e.g.\ condensate-reflecting boundaries for the Casimir ratio $3/2$).
+    If the condition is not met, the prediction does not apply.
+  \item[\textit{Speculative.}]
+    An extension beyond the current derivation whose physical basis is not
+    established.  Results labelled speculative are not predictions of ECT
+    in its current form.
+\end{description}
 
 \begin{longtable}{@{}p{0.05\textwidth}p{0.37\textwidth}p{0.07\textwidth}p{0.27\textwidth}p{0.12\textwidth}@{}}
 \caption{Structured classification of ECT results. Level A = strict derivation; B = derivation with stated assumption; C = conjecture / open problem.}
@@ -12845,14 +12909,16 @@ with closed condensate configurations.
 
 A distinctive feature of ECT, developed in Section~\ref{sec:quantum_vacuum},
 is that three quantum vacuum phenomena --- the Casimir effect, the Unruh
-temperature, and cosmological particle production --- follow from the same
-Euclidean two-point function $G_E=(4\pi^2|X-X'|^2)^{-1}$ via analytic
-continuation, without additional postulates.
-The Casimir pressure from three Goldstone modes is predicted to be
-$(F/A)_{\rm ECT}=3/2\,(F/A)_{\rm QED}$.
+temperature, and cosmological particle production --- are all controlled
+by related limits of the condensate two-point function
+$G_E=(4\pi^2|X-X'|^2)^{-1}$ (organizing proposition;
+each effect still requires its own boundary, detector, or
+coarse-graining specification).
+The Casimir pressure ratio $3/2$ is derived for condensate-reflecting
+boundaries (\emph{not} predicted for standard metallic plates;
+see Section~\ref{sec:casimir}).
 The Unruh temperature $T_U=\hbar a/(2\pi c_* k_B)$ is derived by
-continuing the $O(4)$-invariant correlator onto the Rindler trajectory,
-with no need to invoke QFT in curved spacetime.
+continuing the $O(4)$-invariant correlator onto the Rindler trajectory.
 Cosmological particle production at the $O(4)\to O(3)$ transition yields
 spectral index $n_s=1-2/N_e=0.967$, matching the Planck 2018 value.
 
@@ -13134,9 +13200,11 @@ G_N &= \frac{1}{8\pi v_0^2(\alpha-\beta)}\xrightarrow{\;\alpha=2\beta,\;\beta=1\
 
 \paragraph{Quantum and microscopic sector.}
 
-A major focus of the present work is the derivation of quantum mechanics
-from the condensate action without additional postulates.  The key
-results of the quantum sector are as follows.
+A major focus of the present work is the structural derivation of key
+results of quantum mechanics from the condensate action.  The canonical
+commutation relations and uncertainty principle are derived without
+additional postulates; the second law and Born measure require Gaussian--Markov
+or structural assumptions (see OP24, OP23).  The key results are as follows.
 
 The canonical commutation relations $[\hat x_i, \hat p_j]=i\hbar\delta_{ij}$
 are not postulated but emerge from the single-valuedness of the condensate
