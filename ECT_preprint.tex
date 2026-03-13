@@ -1865,7 +1865,8 @@ $T_H=\hbar c/(8\pi GM)$ without additional quantum-field-theoretic input.
 The monotonic growth of the number of independent loop configurations
 with~$w$ provides a microscopic origin for the second law of
 thermodynamics and the macroscopic arrow of time
-(developed in Section~\ref{sec:second_law}).
+(Section~\ref{sec:second_law}; effective result within the
+Gaussian--Markov reduction; full microscopic derivation open, OP24).
 
 
 \subsection{Path integral formulation}
@@ -1944,11 +1945,17 @@ to the full non-Markovian microscopic ECT path integral remains open.
 The question of why the macroscopic arrow of time points in a definite
 direction can be stated precisely in ECT:
 
-\textbf{Step 1 ($\Gamma$ is monotone).}
-The decoherence functional satisfies $d\Gamma_{\rm loop}/dw\geq0$
-for all trajectories with $N_{\rm eff}\geq1$ (established above).
-Physically, each interaction with the environment adds positive
-entropy to the reduced density matrix.
+\textbf{Step 1 (Effective irreversibility functional is monotone --- Gaussian model).}
+Within the Gaussian--Markov model, the effective irreversibility
+functional satisfies $d\Gamma_{\rm irr}/dw\geq0$
+for all macroscopic trajectories with $N_{\rm eff}\gg1$
+(Eq.~\eqref{eq:2nd_law_ECT} above).
+Note: this is $\Gamma_{\rm irr}$, the coarse-grained entropy-production
+functional, \emph{not} the full decoherence functional
+$\Gamma[q,q']$ (which vanishes on the diagonal,
+Eq.~\eqref{eq:Gamma_diagonal_zero}).
+Physically, each interaction with the Gaussian environment adds positive
+entropy to the coarse-grained reduced density matrix.
 
 \textbf{Step 2 (Initial condition from the phase transition --- structural argument).}
 The $O(4)\!\to\!O(3)$ phase transition provides a natural candidate
@@ -1963,18 +1970,21 @@ $T_c$---remains open (OP24).  The low-entropy initial condition
 is therefore taken as structurally motivated by ECT rather than
 derived from bare postulates alone.
 
-\textbf{Step 3 (Macroscopic irreversibility follows).}
-Since $\Gamma_{\rm loop}(w)$ is monotonically non-decreasing with
-initial value near zero, the entropy $S_{\rm ent}(w)=\Gamma_{\rm
-loop}(w)/\Gamma_{\rm loop,0}$ increases with $w$ for all macroscopic
-systems.  The coordinate $w$ therefore defines a preferred direction
---- the arrow of time --- for any system with $N_{\rm eff}\gg1$.
+\textbf{Step 3 (Macroscopic effective irreversibility).}
+Since $\Gamma_{\rm irr}(w)$ is monotonically non-decreasing
+(Step 1) with initial value near zero (Step 2, structural),
+the effective entropy $S_{\rm ent}(w)\approx\mathrm{const}+\Gamma_{\rm irr}(w)$
+increases with $w$ for all macroscopic systems in the Gaussian--Markov
+model.  The coordinate $w$ therefore defines a preferred direction
+--- the arrow of time --- for any system with $N_{\rm eff}\gg1$,
+\emph{within the Gaussian--Markov reduction}.  Whether this conclusion
+extends to the full non-Markovian path integral remains open (OP24).
 
 \textbf{Step 4 (Quantum exception and reverse $O(3)\!\to\!O(4)$ transitions).}
 For microscopic systems $N_{\rm eff}\sim1$, the change
-$\Delta\Gamma_{\rm loop}$ over a single loop period $\tau_{\rm loop}$
-is of order unity, meaning that individual trajectories can run
-``backwards'' in $w$ without suppression.  Time-reversal symmetry
+$\Delta\Gamma_{\rm irr}$ over a single loop period $\tau_{\rm loop}$
+is of order unity within the Gaussian model, meaning that individual
+trajectories can run ``backwards'' in $w$ without strong suppression.  Time-reversal symmetry
 is approximately restored at the quantum scale, consistent with
 the observed reversibility of quantum dynamics.
 
@@ -2491,10 +2501,14 @@ broken-symmetry phase.
 \subsection{Influence functional and the structure of decoherence}
 \label{sec:influence_functional}
 
-The decoherence functional introduced in Section~\ref{sec:second_law}
-rests on a specific microscopic structure.  Here we make this
-structure explicit and clarify a distinction that is important
-for the quantum-to-classical transition.
+The effective entropy-production framework of
+Section~\ref{sec:second_law} relied on the Gaussian--Markov
+reduction of the influence functional.  Here we present the
+full microscopic structure of that functional and clarify a
+distinction that is essential for both the quantum-to-classical
+transition and the Born-rule derivation: the difference between
+the \emph{decoherence functional} $\Gamma[q,q']$ and the
+\emph{irreversibility functional} $\Gamma_{\rm irr}[q]$.
 
 \textbf{System-environment split.}
 Consider the total condensate field $\Phi = \{\varphi_q, \chi_\eta\}$
@@ -2537,8 +2551,8 @@ condensate environment and $D_R(\tau)$ is the \emph{retarded
     A large $N(\tau)$ means strong environmental monitoring and rapid
     classical behaviour.
   \item $D_R(\tau)$: controls \emph{dissipation}.  It is causal
-    ($D_R = 0$ for $\tau < 0$), reflecting the asymmetry of time
-    derived in Section~\ref{sec:second_law}.  The ohmic form
+    ($D_R = 0$ for $\tau < 0$), reflecting the macroscopic arrow of time
+    (Section~\ref{par:arrow_of_time}).  The ohmic form
     $D_R(\tau) \propto \delta'(\tau)\Theta(\tau)$ corresponds to
     velocity-proportional friction.
 \end{itemize}
@@ -2555,8 +2569,9 @@ the diagonal of the density matrix is preserved by environmental
 coupling and only off-diagonal coherences are suppressed.
 
 \textbf{Irreversibility functional (distinct from $\Gamma_{\rm dec}$).}
-The entropy-increasing quantity used in Section~\ref{sec:second_law}
-is the effective \emph{irreversibility functional}, obtained by
+The effective entropy-production quantity
+(Section~\ref{sec:second_law}, Gaussian--Markov model)
+is the \emph{irreversibility functional}, obtained by
 coarse-graining over environment variables:
 \begin{equation}
   \label{eq:Gamma_irr}
@@ -8318,8 +8333,8 @@ analytic continuation.
 
 The arrow of time emerges from the large-$N_{\rm eff}$ decoherence
 in the symmetry-broken phase: macroscopic systems satisfy
-$\Gamma_{\rm loop} \gg 1$, enforcing the second law
-$dS/dw \geq 0$.
+$\Gamma_{\rm irr} \gg 1$ within the Gaussian--Markov model,
+yielding the effective second law $dS_{\rm ent}/dw \geq 0$ (Level~B, OP24).
 
 This pre-temporal Euclidean phase has no counterpart in $\Lambda$CDM
 and constitutes the most radical conceptual prediction of ECT
@@ -9546,8 +9561,9 @@ amplitude $v_0(r)$ and the anisotropy parameter $\chi = \alpha-\beta$
 on astrophysical and cosmological scales.
 
 Part~III returns to the microscopic quantum structure.
-Whereas Part~I derived quantum mechanics from the condensate
-(Schrödinger equation, CCR, influence functional), Part~III examines
+Whereas Part~I derived key results of quantum mechanics from the condensate
+(Schrödinger equation and CCR strictly; influence functional and second law
+with Gaussian--Markov assumptions), Part~III examines
 what the condensate \emph{additionally} predicts about the foundational
 principles of physics: the uncertainty principle as a theorem,
 the principle of extremal action from saddle-point condensate paths,
@@ -9751,6 +9767,16 @@ excitation number $N_\varphi=\int j^0_\varphi\,d^3x$ is approximately
 conserved on time scales $\tau\ll v_0/\dot{v}_0$.
 
 \subsection{Quantum Statistics}
+
+\textbf{Scope.}
+This subsection establishes the standard topological classification of
+exchange sectors within the ECT condensate configuration space.  It
+provides a \emph{structural route} toward fermionic antisymmetry and
+the Pauli exclusion principle, but does not constitute a proof of the
+full Pauli--L\"{u}ders--Zumino spin-statistics theorem.  In particular,
+the topological argument below reproduces the bosonic/fermionic
+\emph{classification}, not the second-quantisation anticommutation
+structure $\{\hat a,\hat a^\dagger\}=1$.
 
 Quantum statistics can also be interpreted topologically within the ECT framework.
 
@@ -11153,7 +11179,7 @@ D11 & Inflation $n_s=0.967$ & B & Slow-roll, $N_e=60$ & \ref{sec:cosmology} \\
 D12 & Baryogenesis $\eta_B\approx9\times10^{-10}$ & B & Leptogenesis mechanism & \ref{sec:cosmology} \\
 D13 & UV safety of graviton & C & Power counting not done & 8, \ref{sec:open_problems} \\
 D14 & Full non-linear Einstein eqs.\ (anisotropic curv.\ term) & A & Riemann commutator identity (OP2 resolved) & \ref{sec:gravity}, App.~\ref{app:curvature_coupling} \\
-D15 & Causality of $K(\tau)$ from ECT & A & Derived from forward light cone of ECT metric (OP5) & 4, \ref{sec:open_problems} \\
+D15 & Causality of $K(\tau)$ from ECT & B & Structural: forward light cone of ECT metric; non-circular derivation from bare action not completed & 4, \ref{sec:open_problems} \\
 D16 & SM gauge group from O(4) & C & Embedded, not derived & 7, \ref{sec:open_problems} \\
 D17 & Second law $dS/dw\geq0$ & B & Gaussian--Markov approx.\ + structural initial condition; full derivation open (OP24) & \ref{sec:quantum}, \ref{sec:open_problems} \\
 D18 & Universe domain size $R_{\rm domain}=R_H e^{N_e}$ & A & --- & \ref{sec:universe_size} \\
@@ -11162,7 +11188,7 @@ D20 & $\beta$ param.: general $c_*=\sqrt{\beta/(\alpha-\beta)}$ & A & --- & \ref
 D21 & Casimir: $(F/A)_{\rm ECT}=3/2\,(F/A)_{\rm QED}$ (3 Goldstone, \emph{condensate boundaries only}) & B & Dirichlet b.c.\ on Goldstone; not applicable to standard metal plates & \ref{sec:casimir} \\
 D22 & Unruh $T_U=\hbar a/(2\pi c_* k_B)$ from Euclidean correlator & A & --- & \ref{sec:unruh} \\
 D23 & Cosm.\ particle production; Bogoliubov $n_s=0.967$ & B & Slow-roll, $N_e=60$ & \ref{sec:cosm_particle_prod} \\
-D24 & Vacuum stiffness: $\bar M_{\rm Pl}^2=v_0^2(\alpha{-}\beta)$ & A & --- & \ref{sec:vacuum_stiffness} \\
+D24 & Vacuum stiffness: $\bar M_{\rm Pl}^2\stackrel{\rm id}{=}v_0^2(\alpha{-}\beta)$ & B & Consistency identification (matching $G_N$); non-circular microscopic derivation open (OP-$\Lambda$) & \ref{sec:vacuum_stiffness} \\
 D25 & Universal near-horizon critical scale $\rho_c=\ell_{\rm Pl}/\sqrt{3\pi}$ & B & Tolman temperature as control parameter (C2b, open) & \ref{sec:critical_shell} \\
 D26 & Conditional theorem: exact thermality excluded given finite-entropy shell + complete evaporation & B & Unitarity (natural) + finite shell + no infinite remnant & \ref{sec:no_exact_thermality} \\
 D27 & Shell-state dependence of Hawking channel: derived consequence of D26, not assumption & B & Conditions of D26 & \ref{app:conditional_theorem} \\
@@ -12675,17 +12701,22 @@ loop configurations.  The Planck constant $\hbar$ is
 identified with the minimal loop action $S_{\rm loop,min}$.
 Quantum decoherence (the transition from quantum to classical)
 follows from the growth of the decoherence functional
-$\Gamma_{\rm loop}$ with the number of environmental modes.
-\emph{Status: Level~A (Schr\"odinger eq.); Level~A
-(uncertainty principle); Level~A (decoherence functional).}
+$\Gamma_{\rm irr}$ (effective irreversibility functional)
+with the number of environmental modes (Gaussian--Markov model, Level~B).
+\emph{Status: Level~A (Schr\"odinger eq.\ and CCR);
+Level~A (uncertainty principle as Cauchy--Schwarz);
+Level~B (decoherence structure; irreversibility is effective,
+Gaussian--Markov, OP24).}
 
 \paragraph{Thermodynamics and the arrow of time.}
-The second law follows from $d\Gamma/dw \geq 0$ for
+An effective second law $dS_{\rm ent}/dw \geq 0$ follows for
 macroscopic systems with $N_{\rm eff} \gg 1$
+within the Gaussian--Markov reduction of the influence functional
 (Section~\ref{sec:second_law}).  The arrow of time is not
-postulated but emerges from the directionality of the
-decoherence functional in the condensate background.
-\emph{Status: Level~A.}
+postulated but emerges from the directionality of $\Gamma_{\rm irr}$
+in the condensate background.
+\emph{Status: effective (Level~B, Gaussian--Markov); full microscopic
+derivation open (OP24).}
 
 \paragraph{MOND-like dynamics.}
 The baryonic Tully--Fisher relation and flat rotation curves
@@ -14906,8 +14937,8 @@ which is Lorentzian when $\alpha > 1$, with the effective speed of
 light $c_* = \sqrt{\beta/(\alpha-\beta)}$ [$\alpha=2\beta$, $\beta=1$: $c_*=1$].
 The fourth coordinate~$w$ is then identified with $c_*\,t$, and the 
 arrow of time emerges from the large-$N_{\rm eff}$ decoherence:
-$\Gamma_{\rm loop} \gg 1$ macroscopically, enforcing the second law 
-$dS/dw \geq 0$.
+$\Gamma_{\rm irr} \gg 1$ macroscopically within the Gaussian--Markov
+model, yielding the effective second law $dS_{\rm ent}/dw \geq 0$ (Level~B, OP24).
 
 The phase transition occurs at $t \sim t_{\rm Pl} \approx 5.4\times10^{-44}$\,s.
 
