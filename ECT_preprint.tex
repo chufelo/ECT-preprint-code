@@ -3050,23 +3050,13 @@ Identifying $\hbar_{\rm eff}\equiv\hbar$ gives the condensate mass scale
 m_\varphi=\frac{2\hbar}{v_0^2}.
 \end{equation}
 
-Using the special-case relation (at $\alpha=2\beta$, $\beta=1$; cf.\ general
-formula $G_N=1/[8\pi v_0^2(\alpha-\beta)]$ in Section~\ref{sec:constants})
-\begin{equation}
-G_N=\frac{\hbar c}{8\pi v_0^2},
-\end{equation}
-this may be rewritten as
-\begin{equation}
-m_\varphi=\frac{16\pi G_N}{c}.
-\end{equation}
-
-\textbf{Dimensional remark.} In the conventions used in the Euclidean
-action, $m_\varphi$ is the inverse correlation length of the condensate
-fluctuations (i.e. a mass scale in units with $c=\hbar=1$). In SI units
-one should interpret this as the inverse length scale
-$m_\varphi\sim \ell^{-1}$, with the corresponding energy scale
-$E_\varphi\sim \hbar c\, m_\varphi$, which is naturally of order the
-Planck scale.
+\textbf{Natural-units note.} In the conventions of the Euclidean action
+$m_\varphi$ is an inverse correlation length (a mass in units $c=\hbar=1$).
+In SI units the associated energy scale is $E_\varphi\sim\hbar c\,m_\varphi$,
+naturally of order the Planck scale.  No separate SI formula is written
+here because the mixed-convention expression $m_\varphi=16\pi G_N/c$ is
+dimensionally non-transparent and adds no physical content beyond the
+identification $m_\varphi\sim 1/\ell_{\rm Pl}$.
 
 \textbf{Interpretation.} This step should be read as a consistency
 condition linking the parameters of the condensate potential to the
@@ -3294,7 +3284,7 @@ matching, the constants are related to the condensate structure as
 follows:
 
 \begin{itemize}
-\item the propagation speed $c_*=\sqrt{\beta/(\alpha-\beta)}$ (general; $1/\sqrt{\alpha-1}$ for $\beta=1$) follows from the
+\item the propagation speed $c_*=\sqrt{\beta/(\alpha-\beta)}$ (canonical gauge: $\alpha=2$, $\beta=1$ gives $c_*=1$) follows from the
 anisotropic kinetic structure of the condensate;
 
 \item the gravitational constant $G_N$ reflects the stiffness of the
@@ -3620,12 +3610,13 @@ Condensate stiffness controls gravitational coupling.
 $G_N$ and $\hbar$ share a common source $v_0$; Planck length
 $\ell_{\rm Pl}=1/(\sqrt{8\pi}\,v_0)$ is identified with the condensate
 coherence length (consistency relation; non-circular derivation open, OP-$\Lambda$).  \\[4pt]
-$v_0,\,\lambda$ & $\hbar$ &
-$\hbar_{\rm eff}=v_0^2\sqrt{2\lambda}/2$ &
-$\hbar$ equals the action of the topologically minimal condensate excitation
-(phase loop, $n=1$): $S_{\rm loop,min}=2\pi\hbar$.
-This provides a physical mechanism rather than a free input
-(Section~\ref{sec:loops}).  \\
+$v_0,\,\lambda,\,\beta$ & $\hbar$ &
+$\hbar = \beta v_0^2 m_\varphi/2$,\quad$m_\varphi=\sqrt{2\lambda}\,v_0$ &
+Self-consistency relation: $\hbar$ equals the action of the topologically
+minimal condensate excitation (phase loop, $n=1$):
+$S_{\rm loop,min}=2\pi\hbar$.
+This is an internal consistency check, not an independent
+derivation of $\hbar$ from no prior input (OP-$\Lambda$).  \\
 \hline
 \end{tabular}
 \end{table}
@@ -5122,7 +5113,9 @@ down.  It does \emph{not} microscopically derive fermions as collective
 excitations of the condensate, nor does it explain fermionic statistics
 from the condensate structure.  These remain open problems.
 
-Yukawa interactions with the condensate generate fermion masses,
+Fermion masses arise from Yukawa couplings to the electroweak condensate
+(Level~C: the coupling $y$ is not derived; the Higgs mechanism structure
+is assumed from the Standard-Model embedding):
 \begin{equation}
 \mathcal{L}_{\rm Yukawa} = y\,\bar{\Psi}\Phi\Psi
 \quad\Rightarrow\quad
@@ -5350,7 +5343,7 @@ one chiral sector may become dynamically distinguished at low energies.
 
 
 
-\subsection{Emergence of the Dirac equation}
+\subsection{Structural Reconstruction of the Dirac Form}
 \label{sec:dirac_eq}
 
 
@@ -5659,6 +5652,11 @@ requires a nonperturbative analysis analogous to that used in lattice
 QCD.
 
 \subsection{Fermion Masses}
+
+\textbf{Status (Level~C).}  The Yukawa coupling $y$ and the SM gauge
+structure are assumed from the Standard-Model embedding; they are not
+derived from the bare condensate action.  The fermion mass formula below
+is a consistency statement, not a prediction.
 
 Fermions acquire masses through Yukawa couplings to the electroweak
 condensate,
@@ -10018,7 +10016,7 @@ and in standard frameworks.}
 Aspect & Standard QM / QFT & ECT \\
 \hline
 Origin of antisymmetry & Axiom (postulated) & $SU(2)$ spinor rep sign\\
-Mathematical basis & $\{\hat a,\hat a^\dagger\}=1$ postulated & $O(3)$ permutation topology \\
+Mathematical basis & $\{\hat a,\hat a^\dagger\}=1$ postulated & permutation topology + spinorial sign structure of the ordered sector \\
 Pauli principle status & Exact, absolute & Structural (quadratic sector) \\
 Violation predicted? & No & Not derived; speculative beyond quadratic \\
 Full spin-statistics thm. & Pauli--L\"uders--Zumino & Open problem in ECT \\
@@ -10640,7 +10638,9 @@ Euclidean rotational symmetry alone.
 correlator $G_E=(4\pi^2|X-X'|^2)^{-1}$ (organizing proposition;
 each effect requires its own specification).
 Status: A = analytically derived within ECT; P = programmatic (requires
-boundary-condition or detector-coupling input; conditional prediction).}
+boundary-condition or detector-coupling input; conditional prediction).
+The Casimir entry is conditional on boundaries acting on the ECT Goldstone
+sector; it is \emph{not} a prediction for standard metallic-plate experiments.}
 \label{tab:vacuum_predictions}
 \begin{tabular}{@{}lllcc@{}}
 \toprule
@@ -13351,9 +13351,11 @@ Results fall into four categories:
   \item Lorentzian phase is macroscopic only: $\beta<\alpha<4\beta$.
   \item Speed of light: $c_*=\sqrt{\beta/(\alpha-\beta)}$.
   \item Gravitational constant: $G_N=1/(8\pi v_0^2(\alpha-\beta))$.
-  \item Planck constant: $\hbar_{\rm eff}=v_0^2\sqrt{2\lambda}/2$, with consistency
-        relation $G_N\hbar^2 = c_*^4(\alpha-\beta)/(16\pi\Lambda_\chi)$
-        (internal, becomes predictive when $\Lambda_\chi$ determined independently).
+  \item Planck constant (self-consistency): the minimal-loop action
+        $S_{\rm loop,min}=2\pi\hbar$ identifies $\hbar = \beta v_0^2 m_\varphi/2$,
+        where $m_\varphi=\sqrt{2\lambda}\,v_0$ is the radial-mode mass.
+        This is a consistency relation among $(v_0,\lambda,\beta)$,
+        not an independent derivation of $\hbar$ (OP-$\Lambda$).
   \item Canonical commutation relations $[\hat x_i,\hat p_j]=i\hbar\delta_{ij}$
         derived from single-valuedness of condensate phase (not postulated).
   \item Heisenberg uncertainty principle as Cauchy--Schwarz theorem on $L^2$.
@@ -13409,7 +13411,7 @@ Results fall into four categories:
 \noindent\textbf{Condensate constants:}
 \begin{align}
 c_* &= \sqrt{\frac{\beta}{\alpha-\beta}}\xrightarrow{\;\alpha=2\beta,\;\beta=1\;} 1, \\[3pt]
-\hbar_{\rm eff} &= \frac{v_0^2}{2}\sqrt{2\lambda}, \\[3pt]
+\hbar &= \frac{\beta\,v_0^2}{2}\,m_\varphi\quad[m_\varphi\equiv\sqrt{2\lambda}\,v_0],\quad\text{(self-consistency)} \\[3pt]
 G_N &= \frac{1}{8\pi v_0^2(\alpha-\beta)}\xrightarrow{\;\alpha=2\beta,\;\beta=1\;}\frac{1}{8\pi v_0^2}.
 \end{align}
 
