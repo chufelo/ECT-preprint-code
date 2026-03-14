@@ -9051,16 +9051,20 @@ Two mechanisms can contribute to this discrepancy in the ECT framework.
 
 \paragraph{(1) Redshift evolution of $G_{\mathrm{eff}}$.}
 
-If the condensate amplitude evolves slowly with cosmic time,
+In the $\phi$-first framework (Section~\ref{sec:phi_first_strategy}),
+the effective gravitational coupling on the cosmological background
+is controlled by the background order field $\phi_b(z)$:
 
 \begin{equation}
-v_0(z) \propto (1+z)^{-\epsilon},
+G_{\rm eff}(z) = G_N\,e^{-\phi_b(z)}.
 \end{equation}
 
-then the effective gravitational coupling becomes
+For the phenomenological background ansatz
+$\phi_b(z)=-2\varepsilon\ln(1+z)$, $\varepsilon\approx0.01$
+(see Section~\ref{sec:jwst}), this gives
 
 \begin{equation}
-G_{\mathrm{eff}}(z)=G(1+z)^{2\epsilon}.
+G_{\rm eff}(z)=G_N(1+z)^{2\varepsilon}.
 \end{equation}
 
 For $\epsilon\approx0.01$ the present-day value of
@@ -9211,15 +9215,15 @@ MCMC pipeline used for Hubble tension analyses (Section~\ref{sec:hubble}),
 which is left for future work.
 
 \textbf{Connection to JWST.}
-A slightly younger ECT universe makes $500\,\mathrm{Myr}$-old galaxies at
-$z\gtrsim10$ correspond to \emph{less} cosmic time available compared to
-$\Lambda$CDM --- tightening the JWST tension for a naive calculation.
-However, the enhanced gravitational coupling $G_{\rm eff}(z) > G_N$ at high
-redshift accelerates structure formation exponentially (Section~\ref{sec:jwst}),
-more than compensating the shorter formation time.
-The net ECT prediction (enhanced $\times 2$--$3$ halo abundance; shorter
-formation time by 2--3\%) is quantitatively more favourable for early
-galaxy formation than naively estimated from the age shift alone.
+In ECT $\phi$-logic, the effective gravitational coupling
+$G_{\rm eff}(z)=G_N e^{-\phi_b(z)}>G_N$ at high redshift
+accelerates structure formation and boosts the abundance of rare
+early halos by a factor $\times2$--3 for $\nu\sim5$--6 peaks
+(Section~\ref{sec:jwst}).
+The background ansatz $\phi_b(z)=-2\varepsilon\ln(1+z)$,
+$\varepsilon\approx0.01$, is consistent with the cosmological
+$G_{\rm eff}(z)$ fit; the JWST tension is alleviated but not
+fully resolved in the present controlled framework.
 
 \subsection{Cosmological Predictions}
 
@@ -11841,83 +11845,113 @@ The observed stellar masses ($M_\star\sim 10^{9}$--$10^{11}\,M_\odot$) and black
 masses ($M_{\rm BH}\sim 10^{7}$--$10^{9}\,M_\odot$) exceed the expectations of
 standard $\Lambda$CDM by factors of several within the available assembly time.
 
-\textit{ECT mechanisms.}
-ECT provides two mechanisms that enhance early structure formation:
+\textit{ECT mechanism ($\phi$-first).}
+In ECT $\phi$-logic, the effective gravitational coupling on the
+cosmological background is controlled by the background order field
+$\phi_b(z)$ (Section~\ref{sec:phi_first_strategy}):
+\begin{equation}
+  G_{\rm eff}(z) = G_N\,e^{-\phi_b(z)},
+  \qquad
+  M^2_{\rm eff}(z) = \bar M^2_{\rm Pl}\,e^{\phi_b(z)}.
+  \label{eq:Geff_jwst}
+\end{equation}
+This is the same relation that governs the nonlinear gravity and
+galactic-scale $\phi$-branch — a single order field unifies the
+cosmological and galactic gravitational sectors.
 
-\begin{enumerate}
-\item \textbf{Exponential amplification of rare halo abundance.}
-The condensate amplitude evolves as $v_0(z) \propto (1+z)^{-\varepsilon}$
-with $\varepsilon \approx 0.01$, giving
-$G_{\rm eff}(z) = G_N(1+z)^{2\varepsilon}$.
-At $z=10$: $G_{\rm eff}/G_N \approx 1.049$ (+4.9\,\%).
+The full field decomposes as $\phi(X)=\phi_b(z)+\delta\phi(X)$,
+where $\phi_b(z)$ is the slowly evolving cosmological background
+and $\delta\phi(X)$ encodes local deviations.
+The $\phi$-logic suggests qualitatively that dense collapsing
+regions may screen $\delta\phi$, driving the local dynamics back
+toward the GR branch; a derivation of this screening from the
+nonlinear $\phi$-equation remains open.
 
-The dominant effect is not the mass shift itself, but its amplification
-through the exponential tail of the halo mass function.
-JWST galaxies correspond to rare $\nu\sim 5$--6 density peaks
-($n$-$\sigma$ fluctuations in the initial field).
-In the Press-Schechter framework, the halo abundance scales as
-$n(>\!M)\propto\exp(-\nu^2/2)$.
-A stronger gravitational coupling increases the linear growth factor
-$D(z)\propto\sqrt{G_{\rm eff}}$, reducing the effective rarity
-$\nu\to\nu/\sqrt{f}$ where $f=G_{\rm eff}/G_N$.
-The resulting number-density enhancement is
+\textit{Background ansatz.}
+For consistency with the cosmological fit and the running gravitational
+coupling of Section~\ref{sec:lorentz_order_field}, we adopt the
+phenomenological background profile:
+\begin{equation}
+  \phi_b(z) = -2\varepsilon\ln(1+z),
+  \qquad \varepsilon \approx 0.01.
+  \label{eq:phi_b_ansatz}
+\end{equation}
+This is a phenomenological ansatz rewritten in $\phi$-language,
+not a derived solution of the cosmological $\phi$-equation
+(a first-principles derivation of $\phi_b(z)$ from the background
+$\phi$-dynamics remains open).
+With ansatz~\eqref{eq:phi_b_ansatz}, eq.~\eqref{eq:Geff_jwst}
+recovers exactly $G_{\rm eff}(z)=G_N(1+z)^{2\varepsilon}$.
+
+\textit{Structure growth.}
+In the leading sub-horizon approximation, and neglecting explicit
+perturbations of the $\phi$-sector in the growth equation, one may
+write the standard continuity--Euler--Poisson system with the
+effective coupling:
+\begin{equation}
+  \ddot\delta + 2H\dot\delta
+  - 4\pi G_{\rm eff}(z)\,\bar\rho\,\delta = 0.
+\end{equation}
+At leading order in $\varepsilon$ this gives
+\begin{equation}
+  \frac{D_{\rm ECT}(z)}{D_{\Lambda{\rm CDM}}(z)}
+  \approx 1 + \varepsilon\ln(1+z) + O(\varepsilon^2).
+\end{equation}
+At $z=10$: $D_{\rm ECT}/D_{\Lambda{\rm CDM}}\approx 1.024$.
+
+\textit{Halo abundance (Press--Schechter).}
+Setting $f(z)\equiv G_{\rm eff}(z)/G_N = e^{-\phi_b(z)}$,
+the effective rarity of a $\nu$-$\sigma$ peak becomes
+$\nu_{\rm eff}=\nu/\sqrt{f}$, giving
 \begin{equation}
   \frac{n_{\rm ECT}}{n_{\Lambda{\rm CDM}}}
-  = \exp\!\left[\frac{\nu^2}{2}\!\left(1-\frac{1}{f}\right)\right].
+  = \exp\!\left[\frac{\nu^2}{2}\!\left(1-\frac{1}{f(z)}\right)\right].
+  \label{eq:PS_phi}
 \end{equation}
-Table~\ref{tab:jwst_ps} gives numerical values for
-$\varepsilon=0.01$ at several redshifts and rarity levels.
-For the most anomalous JWST objects ($\nu\sim5$--6), ECT predicts a
-factor of $\times 2$--3 more objects at $z\sim10$--12.
+Numerical values for $\varepsilon=0.01$ are given in
+Table~\ref{tab:jwst_ps}; they are \emph{unchanged} from the
+previous estimate --- the improvement here is conceptual
+(unified $\phi$-language with the gravity section) rather than
+numerical.
 
 \begin{table}[H]
 \centering
-\caption{Halo abundance enhancement in ECT vs.\ $\Lambda$CDM
-from the Press-Schechter exponential tail,
-for $\varepsilon=0.01$.
-$\nu$ = peak rarity parameter; JWST anomalies correspond to $\nu\sim5$--6.}
+\caption{Halo abundance enhancement in ECT vs.\ $\Lambda$CDM,
+eq.~\eqref{eq:PS_phi}, for $\varepsilon=0.01$.
+$\nu$ = peak rarity parameter; JWST anomalies correspond to
+$\nu\sim5$--6.
+The ansatz~\eqref{eq:phi_b_ansatz} gives
+$f(z)=(1+z)^{2\varepsilon}$.}
 \label{tab:jwst_ps}
+\renewcommand{\arraystretch}{1.2}
 \begin{tabular}{ccccc}
 \hline
-$z$ & $G_{\rm eff}/G_N$ & $\nu=3.5$ & $\nu=5$ & $\nu=6$ \\
+$z$ & $\phi_b(z)$ & $f=e^{-\phi_b}$ & $\nu=5$ & $\nu=6$ \\
 \hline
- 7 & 1.043 & $\times 1.3$ & $\times 1.7$ & $\times 2.1$ \\
-10 & 1.049 & $\times 1.3$ & $\times 1.8$ & $\times 2.3$ \\
-12 & 1.053 & $\times 1.4$ & $\times 1.9$ & $\times 2.5$ \\
-15 & 1.057 & $\times 1.4$ & $\times 2.0$ & $\times 2.6$ \\
+ 7  & $-0.043$ & 1.043 & $\times 1.7$ & $\times 2.1$ \\
+10  & $-0.048$ & 1.049 & $\times 1.8$ & $\times 2.3$ \\
+12  & $-0.052$ & 1.053 & $\times 1.9$ & $\times 2.5$ \\
+15  & $-0.055$ & 1.057 & $\times 2.0$ & $\times 2.6$ \\
 \hline
 \end{tabular}
 \end{table}
 
-\item \textbf{Ultra-light condensate excitations.}
-ECT may admit ultra-light collective excitations of the condensate,
-including Goldstone-like modes and possibly topological relics.
-However, in the present version of the theory these excitations are
-\emph{not} used to explain the galactic mass discrepancy, which is
-instead attributed to the nonlinear $\phi$-branch of the weak-field
-gravitational sector.
-Whether some condensate excitations could contribute to non-galactic
-dark-sector phenomenology remains an open problem.
-\end{enumerate}
-
 \textit{Quantitative assessment.}
-For the most anomalous JWST sources (rarity $\nu\sim5$--6 in $\Lambda$CDM),
-the $G_{\rm eff}$ mechanism predicts an overabundance of
-$\times 2$--3 relative to $\Lambda$CDM.
-The observed deficit is $\times 10$--100 \cite{BoylanKolchin2023},
-so ECT alone does not fully resolve the JWST tension.
-At present, the part of the JWST tension addressed robustly
-within ECT comes from the cosmological enhancement of structure
-growth through the time-dependent gravitational coupling
-$G_{\rm eff}(z) = G_N(1+z)^{2\varepsilon}$.
-Possible additional contributions from ultra-light condensate
-excitations remain speculative and are not included here as
-established ingredients of the theory.
-With the $G_{\rm eff}$ mechanism alone, ECT reduces the rarity
-deficit by a factor of $\sim\!2$--3, bringing the tension from
-$\sim 2$--$3\sigma$ to $\sim 1.5$--$2.5\sigma$.
-A dedicated simulation with the ECT-modified coupling is
-required for a definitive comparison
+For the most anomalous JWST sources ($\nu\sim5$--6),
+the ECT $\phi$-mechanism predicts an overabundance of $\times2$--3
+relative to $\Lambda$CDM.
+The observed deficit is $\times10$--100~\cite{BoylanKolchin2023},
+so in its present controlled $\phi$-first form ECT \emph{alleviates
+but does not resolve} the JWST early-structure tension.
+With the background ansatz~\eqref{eq:phi_b_ansatz}, no additional
+numerical improvement over the leading-order estimate is obtained.
+
+The $\phi$-logic suggests that early-time global enhancement
+($\phi_b<0$) and local screening in dense proto-galactic cores
+may ultimately be described within a single order-field framework.
+A derivation of this mechanism from the full nonlinear $\phi$-equation,
+and the question of whether a nontrivial background history $\phi_b(z)$
+could provide stronger early enhancement, are left as open problems.
 (Section~\ref{sec:open_problems}).
 
 \medskip
@@ -12689,10 +12723,13 @@ with proper threshold matching is needed for a quantitative claim.
 \textit{Priority: medium (required for three-scale unification).}
 
 \item[\textbf{OP12 --- Early galaxy formation (JWST).}]
-The qualitative argument that $G_{\rm eff}(z)>G_N$ at high redshift
-accelerates structure formation is consistent with JWST observations of
-unexpectedly massive galaxies and black holes at $z>10$
-\cite{Labbe2023,Finkelstein2022}.
+In the $\phi$-first framework,
+$G_{\rm eff}(z)=G_N e^{-\phi_b(z)}>G_N$ at high redshift
+boosts early halo abundance by $\times2$--3 for $\nu\sim5$--6
+peaks (Section~\ref{sec:jwst}), alleviating but not resolving the
+JWST tension.  A stronger enhancement requires a nontrivial
+background profile $\phi_b(z)$, derivable from the full cosmological
+$\phi$-equation --- this derivation remains open.
 A quantitative confrontation requires dedicated N-body and hydrodynamic
 simulations with the ECT-modified gravitational coupling.
 \textit{Priority: high (direct observational test).}
