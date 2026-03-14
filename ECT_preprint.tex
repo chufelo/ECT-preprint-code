@@ -3725,11 +3725,17 @@ mechanism, not a numerical coincidence.
 \section{Gravitational Sector}
 \label{sec:gravity}
 
-This section constructs the effective gravitational field
-equations from the condensate action.  The linearised
-Einstein equations are derived first, followed by the full
-nonlinear generalization including the condensate energy--momentum
-tensor and the characteristic $n_\mu n_\nu R$ coupling term.
+This section derives the gravitational sector of ECT in
+$\phi$-logic.  The linearised Einstein equations are established
+first (Level~A).  The nonlinear sector is then developed as a
+$\phi$-first scalar-tensor IR closure of the ordered branch:
+the condensate stiffness field $\phi(X)$ is the primary object;
+the effective metric is its emergent IR description.  In the
+homogeneous screened limit the system reduces exactly to Einstein
+equations with effective couplings $G_{\rm eff}(\phi_0)$ and
+$\Lambda_{\rm eff}(\phi_0)$.  The complete derivation, theorems,
+and comparison with GR, Brans--Dicke, and Einstein-aether theory
+are given in Appendix~\ref{app:phi_first_EFE}.
 
 \subsection{Effective metric for perturbations}
 
@@ -4044,75 +4050,6 @@ The GW170817 bound~\cite{LIGO_Virgo_GW170817_2017}
 ($|c_{GW}/c-1|<10^{-15}$) requires $|c_1+c_3|<10^{-15}$ and
 $|c_4|<10^{-7}$~\cite{Jacobson2004}.
 
-
-\paragraph{Important correction regarding the vector kinetic sector.}
-A term of the form $F_{AB}n^An^B$, with
-$F_{AB}=\nabla_An_B-\nabla_Bn_A$ antisymmetric in $A,B$, contracted
-with the symmetric product $n^An^B$, vanishes \emph{identically}:
-\[
-F_{AB}n^An^B = (\nabla_An_B - \nabla_Bn_A)n^An^B = 0,
-\]
-because the antisymmetric tensor $F_{AB}$ is fully contracted with the
-symmetric bilinear $n^An^B$.  A term of this form therefore carries no
-dynamics for $n^A$ and cannot appear as a genuine kinetic term.
-
-The physically correct kinetic sector for a dynamical unit vector field
-is spanned by the four independent second-order invariants identified
-in the Einstein--aether framework \cite{Jacobson2004}:
-\begin{equation}
-K^{ABCD}\nabla_A n_B\,\nabla_C n_D,\quad
-K^{ABCD} = c_1 g^{AC}g^{BD}
-           + c_2 g^{AB}g^{CD}
-           + c_3 g^{AD}g^{BC}
-           + c_4 n^An^Cg^{BD}.
-\end{equation}
-
-The full ECT action is therefore
-
-\begin{align}
-S_{\rm ECT} =
-\int d^4X\sqrt{g}\,\Bigg[
-&\frac{M_{\rm Pl}^2}{2}R
- -\frac{\beta}{2}(\nabla_A\Phi)^2
- +\frac{\alpha}{2}(n^A\nabla_A\Phi)^2
- -V(\Phi)
-\nonumber\\
-&-c_1(\nabla_A n_B)(\nabla^A n^B)
- -c_2(\nabla_A n^A)^2
-\nonumber\\
-&-c_3(\nabla_A n_B)(\nabla^B n^A)
- -c_4(n^C\nabla_C n_A)(n^D\nabla_D n^A)
-\nonumber\\
-&+\lambda_n(n_An^A-1)
-\Bigg],
-\end{align}
-
-where $g=\det(g_{AB})$.
-
-\paragraph{Minimal single-parameter limit.}
-For explicit calculations we adopt the minimal reduction
-$c_2=c_3=c_4=0$, $c_1\equiv K_n$:
-\begin{equation}
-\mathcal{L}_n^{\rm min} = -K_n(\nabla_A n_B)(\nabla^A n^B).
-\end{equation}
-The observational constraint from GW170817 \cite{LIGO_Virgo_GW170817_2017}
-($|c_{GW}/c-1|<10^{-15}$) requires $|c_1+c_3|<10^{-15}$
-and $|c_4|<10^{-7}$ \cite{Jacobson2004}, placing tight bounds on the
-aether coefficients.
-
-\paragraph{Why this action is the correct one.}
-Both $\Phi$ and $n^A$ are genuinely dynamical:
-$\Phi$ carries the standard scalar kinetic term
-$\frac{1}{2}(\nabla\Phi)^2$, and $n^A$ now has genuine derivative
-dynamics through $\mathcal{L}_n$.  This is essential:
-without a kinetic term for $n^A$ the vector field would be auxiliary,
-its equation of motion algebraic, and the entire graviton and
-Goldstone-mode analysis would be invalidated.
-
-The scalar field $\Phi$ describes the condensate amplitude;
-the unit vector $n^A$ encodes the preferred direction.
-Together they define the effective metric (see below)
-from which the gravitational sector is derived.
 
 \subsubsection{Variation with Respect to the Metric}
 
