@@ -3880,44 +3880,170 @@ v_0=0$, equations reduce to the standard Einstein equations.
 
 % --- Full nonlinear sector (merged from former §7) ---
 
-\subsection{Einstein-type nonlinear IR completion}
+% ============================================================
+\subsection{$\phi$-first nonlinear IR closure: assumptions and strategy}
+\label{sec:phi_first_strategy}
+% ============================================================
 
-A complete derivation of the full nonlinear gravitational sector
-directly from the microscopic Euclidean condensate dynamics remains
-open and is beyond the scope of the present work.
+A complete first-principles derivation of the full nonlinear
+gravitational sector directly from the bare Euclidean condensate
+dynamics remains open.  This subsection and the next instead develop
+the \emph{maximal rigorous result} available within the present
+framework: a self-consistent $\phi$-first scalar-tensor IR closure
+of the ordered branch, together with a proof that its homogeneous
+pure-metric limit is uniquely of Einstein form (Lovelock theorem).
+The full derivation and comparison with other theories is given in
+Appendix~\ref{app:phi_first_EFE}.
 
-What has been established in the preceding subsections is:
-(i)~the ordered condensate branch selects a Lorentzian causal structure
-for long-wavelength excitations; (ii)~the linearised weak-field sector
-admits an effective metric description; and (iii)~in the homogeneous
-ordered limit the dynamics reduces to the standard GR form at leading
-order.  The natural next step is therefore not a microscopic proof of
-full GR, but the construction of the minimal nonlinear low-energy closure
-compatible with these established IR properties.
+\textbf{Working assumptions.}
+The derivation below rests on four assumptions, listed explicitly:
+\begin{description}[noitemsep,leftmargin=2.5em]
+  \item[A1] Ordered branch exists: $\alpha>\beta$\qquad(derived from $S_E$, Level~A).
+  \item[A2] IR equations are local and at most two-derivative:
+    $E\ll m_\varphi$\qquad(from $(E/m_\varphi)^2$ expansion).
+  \item[A3] Spacetime dimension is four\qquad(by construction).
+  \item[A4] Matter couples universally to $g^{\rm eff}_{\mu\nu}$
+    in the IR.\qquad(IR closure assumption; not proved beyond linear order.)
+\end{description}
+Assumption~A5 ($\phi$, $n^A$ frozen/integrated out) is additionally
+required for the Lovelock uniqueness theorem~F in the appendix.
 
-In the $\phi$-logic of ECT, the primary object is not a fundamental
-metric postulated from the outset, but the ordered condensate sector
-and its branch-dependent stiffness response.
-The effective metric is an \emph{emergent} infrared description of
-this ordered branch.  The nonlinear equations written below should
-therefore be interpreted as the leading Einstein-type closure of the
-ordered branch, valid when locality holds, a single effective light cone
-governs propagation, and higher-derivative condensate corrections
-are subleading.
+\textbf{$\phi$-parameterisation.}
+Let $\chi(X)$ denote the local Lorentz-order / stiffness parameter
+of the ordered branch.  Its vacuum value $\chi_\infty$ is matched
+to the background combination $(\alpha-\beta)$ in the homogeneous
+vacuum sector.  Define:
+\begin{equation}
+  \phi(X) \equiv \ln\frac{\chi(X)}{\chi_\infty},\qquad
+  \bar{M}^2_{\rm Pl} \equiv v_0^2\chi_\infty,\qquad
+  M^2_{\rm eff}(X) = \bar{M}^2_{\rm Pl}\,e^{\phi(X)}.
+  \label{eq:Meff_phi}
+\end{equation}
+The last relation is an exact algebraic reparameterisation (given the
+definitions), not a standalone microscopic derivation.
 
-\subsection{Effective nonlinear completion on the ordered branch}
+\subsection{$\phi$-first IR action and field equations}
 \label{sec:action}
 
-To make the previous statement explicit, we introduce the minimal
-local effective action that reproduces the linearised ordered-branch
-sector and provides its nonlinear IR completion.  The primary objects
-are the condensate order/stiffness variable $\phi$, the local
-orientation field $n^A$, and the emergent IR metric $g_{AB}$;
-the condensate amplitude $\Phi$ sets the overall stiffness scale.
-The metric is not introduced as an independent fundamental field, but
-as the emergent IR packaging of the ordered condensate branch.
-The construction below ($n_An^A=1$, enforced by a Lagrange
-multiplier $\lambda_n$) provides the EFT basis for this IR closure.
+\textbf{IR action (effective ansatz, not uniquely derived from $S_E$).}
+The minimal local two-derivative IR ansatz consistent with the ordered
+branch, the linearised sector, and the $\phi$-parameterisation is:
+\begin{equation}
+  \boxed{
+  S_{\rm IR} = \int d^4x\sqrt{-g}\left[
+    \frac{M^2_{\rm eff}(\phi)}{2}\,R
+    - \frac{Z(\phi)}{2}(\partial\phi)^2
+    - U(\phi)
+    + \mathcal{L}_n[n_A,\phi;g]
+    + \mathcal{L}_{\rm mat}[g,\Psi]
+  \right]}
+  \label{eq:S_IR_phi}
+\end{equation}
+where $M^2_{\rm eff}(\phi)=\bar{M}^2_{\rm Pl}\,e^\phi$;
+$Z(\phi)$ is the kinetic normalisation of the $\phi$-field;
+$U(\phi)$ is the effective ordered-branch potential
+(\emph{not} uniquely derived from $V(\Phi)$; its quadratic term
+$\frac{1}{2}m_\phi^2\phi^2$ is fixed by the stiffness mass);
+$\mathcal{L}_n$ is the Einstein-aether-type derivative basis for $n^A$
+(see below and Appendix~\ref{app:phi_first_EFE}).
+
+The $n^A$-kinetic basis is spanned by the four $O(3)$-invariant
+two-derivative invariants~\cite{Jacobson2004}:
+\begin{equation}
+\label{eq:aether_basis}
+K^{ABCD}\nabla_A n_B\,\nabla_C n_D,\quad
+K^{ABCD} = c_1 g^{AC}g^{BD}
+           + c_2 g^{AB}g^{CD}
+           + c_3 g^{AD}g^{BC}
+           + c_4 n^An^Cg^{BD}.
+\end{equation}
+A term $F_{AB}n^An^B$ (with $F_{AB}$ antisymmetric) vanishes
+identically and cannot appear.
+From partial leading-order matching of the ECT action
+$S_E$~\eqref{eq:ECT_action} to the IR basis~\eqref{eq:aether_basis}:
+\begin{equation}
+  c_1 \sim \frac{v_0^2\beta}{\bar{M}^2_{\rm Pl}},\qquad
+  c_4 \sim -\frac{v_0^2(\alpha{-}\beta)}{\bar{M}^2_{\rm Pl}},\qquad
+  c_2,\,c_3: \text{ not determined (open)}.
+  \label{eq:c_partial}
+\end{equation}
+These are partial leading-order estimates, not a complete
+first-principles determination.
+
+\textbf{Field equations from $\delta S_{\rm IR}/\delta g^{\mu\nu}=0$:}
+\begin{equation}
+  \label{eq:phi_metric_eq}
+  \boxed{M^2_{\rm eff}(\phi)\,G_{\mu\nu}
+  = T^{\rm mat}_{\mu\nu} + T^{(\phi)}_{\mu\nu} + T^{(n)}_{\mu\nu}
+  + \nabla_\mu\nabla_\nu M^2_{\rm eff}
+  - g_{\mu\nu}\,\Box M^2_{\rm eff}
+  - U(\phi)\,g_{\mu\nu}}
+\end{equation}
+where the $\phi$-field stress tensor (kinetic part only; vacuum energy
+in $-U(\phi)g_{\mu\nu}$ separately):
+\begin{equation}
+  T^{(\phi)}_{\mu\nu} = Z(\phi)\!\left[\partial_\mu\phi\,\partial_\nu\phi
+  - \tfrac{1}{2}g_{\mu\nu}(\partial\phi)^2\right].
+\end{equation}
+
+\textbf{Field equation from $\delta S_{\rm IR}/\delta\phi=0$ (general form):}
+\begin{equation}
+  \label{eq:phi_field_eq}
+  \boxed{Z(\phi)\,\Box\phi
+  + \frac{Z'(\phi)}{2}(\partial\phi)^2
+  - U'(\phi)
+  + \frac{(M^2_{\rm eff})'(\phi)}{2}\,R
+  + \frac{\delta\mathcal{L}_n}{\delta\phi} = 0}
+\end{equation}
+For the exponential parametrisation $M^2_{\rm eff}=\bar{M}^2_{\rm Pl}\,e^\phi$
+one has $(M^2_{\rm eff})'=M^2_{\rm eff}$, and the equation simplifies
+accordingly.
+
+\textbf{Field equation from $\delta S_{\rm IR}/\delta n^\nu=0$} (with
+constraint $n_\mu n^\mu=1$, enforced by Lagrange multiplier
+$\lambda_n$):
+\begin{equation}
+  \label{eq:phi_n_eq}
+  \frac{\delta\mathcal{L}_n}{\delta n^\nu} = \lambda_n\,n_\nu.
+\end{equation}
+In the minimal case $c_1=K_n$, $c_2=c_3=c_4=0$:
+\begin{equation}
+  2K_n\,\nabla^B\nabla_B n^A - \alpha(\nabla^A\Phi)(n^B\nabla_B\Phi)
+  + \ldots = \lambda_n\,n^A.
+\end{equation}
+
+The full ECT action in this IR basis becomes:
+\begin{align}
+\label{eq:full_action}
+S_{\rm ECT} =
+\int d^4X\sqrt{g}\,\Bigg[
+&\frac{M_{\rm Pl}^2}{2}R
+ -\frac{\beta}{2}(\nabla_A\Phi)^2
+ +\frac{\alpha}{2}(n^A\nabla_A\Phi)^2
+ -V(\Phi)
+\nonumber\\
+&-c_1(\nabla_A n_B)(\nabla^A n^B)
+ -c_2(\nabla_A n^A)^2
+\nonumber\\
+&-c_3(\nabla_A n_B)(\nabla^B n^A)
+ -c_4(n^C\nabla_C n_A)(n^D\nabla_D n^A)
+\nonumber\\
+&+\lambda_n(n_An^A-1)
+\Bigg],
+\end{align}
+where $g=\det(g_{AB})$.
+
+\paragraph{Minimal single-parameter limit.}
+For explicit calculations we adopt $c_2=c_3=c_4=0$,
+$c_1\equiv K_n$:
+\begin{equation}
+\label{eq:minimal_action}
+\mathcal{L}_n^{\rm min} = -K_n(\nabla_A n_B)(\nabla^A n^B).
+\end{equation}
+The GW170817 bound~\cite{LIGO_Virgo_GW170817_2017}
+($|c_{GW}/c-1|<10^{-15}$) requires $|c_1+c_3|<10^{-15}$ and
+$|c_4|<10^{-7}$~\cite{Jacobson2004}.
+
 
 \paragraph{Important correction regarding the vector kinetic sector.}
 A term of the form $F_{AB}n^An^B$, with
@@ -15946,6 +16072,193 @@ $\chi^2/N=3.51$. MOND (0 parameters): $\chi^2/N=16.48$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Derivation of Newton's Constant from Action Variation}
+% ============================================================
+\section{$\phi$-first nonlinear gravity: full derivation}
+\label{app:phi_first_EFE}
+% ============================================================
+
+This appendix gives the full derivation of the $\phi$-first scalar-tensor
+IR closure, states all theorems precisely, and compares the resulting
+equations with the analogous equations in related theories.
+
+% -----------------------------------------------------------
+\subsection*{A.1 Theorem A: Uniqueness of the quadratic propagator}
+% -----------------------------------------------------------
+
+\textbf{Statement.}
+In the ordered branch of ECT, the leading quadratic $O(3)$-invariant
+symmetric rank-2 kinetic tensor is, up to overall normalisation,
+unique:
+\begin{equation}
+  K^{AB} = \beta\,\delta^{AB} - (\alpha{-}\beta)\,n^An^B.
+  \label{eq:K_unique}
+\end{equation}
+This determines a single effective IR causal cone structure.
+Extending this to universal metric coupling beyond the quadratic regime
+is assumption~A4 (IR closure assumption; not proved beyond linear order).
+
+\textbf{Proof.}
+Any $O(3)$-invariant symmetric rank-2 tensor built from
+$\{\delta^{AB}, n^A\}$ has the form $T^{AB}=a\,\delta^{AB}+b\,n^An^B$
+with two scalars $a,b$. From $S_E$: $a=\beta$, $b=-(\alpha{-}\beta)$.
+No other independent structure exists. $\square$
+
+% -----------------------------------------------------------
+\subsection*{A.2 Theorem B: $\phi$-parameterisation}
+% -----------------------------------------------------------
+
+Let $\chi(X)$ be the local Lorentz-order parameter of the ordered branch.
+Its vacuum value $\chi_\infty$ is matched to
+$(\alpha{-}\beta)$ in the homogeneous vacuum sector.
+Define $\phi\equiv\ln(\chi/\chi_\infty)$,
+$\bar{M}^2_{\rm Pl}\equiv v_0^2\chi_\infty$.
+Since $M^2_{\rm eff}\propto v_0^2\chi$:
+\begin{equation}
+  M^2_{\rm eff}(\phi) = \bar{M}^2_{\rm Pl}\,e^\phi.
+\end{equation}
+This is an exact algebraic reparameterisation. $\square$
+
+% -----------------------------------------------------------
+\subsection*{A.3 Theorem C: Correct IR action (effective ansatz)}
+% -----------------------------------------------------------
+
+$S_{\rm IR}$ (eq.~\eqref{eq:S_IR_phi} in the main text) is the minimal
+local two-derivative IR ansatz consistent with A1--A4.
+It is not derived from $S_E$ without additional assumptions.
+The potential $U(\phi)$ is an effective ordered-branch potential;
+its quadratic coefficient $m_\phi^2$ is fixed by the stiffness mass
+of the $\chi$-field; higher coefficients require loop calculations.
+
+% -----------------------------------------------------------
+\subsection*{A.4 Theorem D: Correct field equations}
+% -----------------------------------------------------------
+
+Variation of $S_{\rm IR}$ gives the self-consistent system
+(eqs.~\eqref{eq:phi_metric_eq}--\eqref{eq:phi_n_eq} in the main text).
+Note that the \emph{metric} equation contains the non-minimal terms
+$\nabla_\mu\nabla_\nu M^2_{\rm eff} - g_{\mu\nu}\Box M^2_{\rm eff}$
+arising from $\delta(M^2_{\rm eff}(\phi)R)/\delta g^{\mu\nu}$;
+these are absent in standard GR and are characteristic of the
+$\phi$-first scalar-tensor closure.
+
+% -----------------------------------------------------------
+\subsection*{A.5 Corollary E: Einstein limit}
+% -----------------------------------------------------------
+
+In the homogeneous screened regime
+$\phi=\phi_0=\mathrm{const}$, $n^A=\bar{n}^A=\mathrm{const}$:
+\begin{equation}
+  \nabla_\mu M^2_{\rm eff}=0,\quad
+  \Box M^2_{\rm eff}=0,\quad
+  T^{(\phi)}_{\mu\nu}\to 0\ (\phi\ \text{constant}),
+\end{equation}
+while the vacuum contribution of the scalar sector is carried by
+$-U(\phi_0)g_{\mu\nu}$ already present in eq.~\eqref{eq:phi_metric_eq}
+(no double counting). The metric equation reduces to:
+\begin{equation}
+  G_{\mu\nu} + \Lambda_{\rm eff}(\phi_0)\,g_{\mu\nu}
+  = 8\pi G_{\rm eff}(\phi_0)\,T^{\rm mat}_{\mu\nu}
+  \label{eq:Einstein_limit}
+\end{equation}
+\begin{equation}
+  G_{\rm eff}(\phi_0) = \frac{G_N}{e^{\phi_0}},\qquad
+  \Lambda_{\rm eff}(\phi_0)
+  = \frac{U(\phi_0)+\rho_{n,{\rm vac}}(\phi_0)}{M^2_{\rm eff}(\phi_0)}.
+\end{equation}
+This is a strict result given A1--A4. $\square$
+
+\textit{Note.} This subsection does not constitute a derivation of
+the galactic / MOND-like branch, which requires additional assumptions
+about non-homogeneous $\phi$-sector solutions
+(Section~\ref{sec:lorentz_order_field}).
+
+% -----------------------------------------------------------
+\subsection*{A.6 Theorem F: Lovelock uniqueness of the pure-metric IR limit}
+% -----------------------------------------------------------
+
+\textbf{Additional assumption A5.}
+$\phi$ and $n^A$ are frozen or integrated out; the remaining
+pure-metric IR theory is local, diffeomorphism-invariant, and
+two-derivative at leading order in 4D.
+
+\textbf{Lovelock theorem (1971)~\cite{Lovelock1971}.}
+Under A5, the leading pure-metric two-derivative IR field equations
+are uniquely of Einstein form:
+\begin{equation}
+  G_{\mu\nu} + \Lambda\,g_{\mu\nu} = 8\pi G\,T_{\mu\nu}.
+  \label{eq:Lovelock_EFE}
+\end{equation}
+\textit{Limitations.} After integrating out $\phi$ and $n^A$,
+corrections $\sim R^2,\,R_{\mu\nu}R^{\mu\nu}$ are generated
+but suppressed as $(E/m_\varphi)^2$ in the IR.
+Theorem~F is a statement about leading IR uniqueness,
+not a completed microscopic derivation from $S_E$. $\square$
+
+% -----------------------------------------------------------
+\subsection*{A.7 Comparison with related theories}
+% -----------------------------------------------------------
+
+Table~\ref{tab:phi_first_comparison} places the ECT $\phi$-first
+closure in context with Einstein-aether theory, scalar-tensor gravity,
+and standard GR.
+
+\begin{table}[H]
+\centering
+\caption{ECT $\phi$-first IR closure compared to related theories.
+$\phi$ = local stiffness/Lorentz-order field;
+$n^A$ = orientation director;
+$G_{\rm eff}$ = effective gravitational coupling.
+Entries in \textbf{bold} indicate ECT-specific features.}
+\label{tab:phi_first_comparison}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{@{}p{3.2cm}p{3.0cm}p{3.0cm}p{3.0cm}p{3.0cm}@{}}
+\toprule
+Feature & GR & Brans-Dicke / ST & Einstein-aether & ECT ($\phi$-first) \\
+\midrule
+Primary object & $g_{\mu\nu}$ (postulated) & $g_{\mu\nu},\,\varphi$ & $g_{\mu\nu},\,u^\mu$ &
+  \textbf{$\phi$ (order field); $g^{\rm eff}$ emergent} \\
+$G_N$ & constant & $G\propto 1/\varphi$ & constant &
+  \textbf{$G_N e^{-\phi(X)}$ from condensate} \\
+$\Lambda$ & constant & constant & constant &
+  \textbf{$\Lambda_{\rm eff}(\phi)$ dynamical} \\
+Metric equation & $G_{\mu\nu}+\Lambda g_{\mu\nu}=8\pi G T_{\mu\nu}$ &
+  $G_{\mu\nu}=\ldots+\nabla\nabla\varphi$ &
+  $G_{\mu\nu}+\Theta_{\mu\nu}=8\pi G T_{\mu\nu}$ &
+  \textbf{eq.~\eqref{eq:phi_metric_eq} with $\nabla\nabla M^2_{\rm eff}$} \\
+Einstein limit & exact & $\varphi=\mathrm{const}$ & $u^\mu=\delta^\mu_0$ &
+  \textbf{$\phi=\phi_0=\mathrm{const}$, eq.~\eqref{eq:Einstein_limit}} \\
+MOND-like sector & absent & absent & absent &
+  \textbf{non-homogeneous $\phi$ branch} \\
+Preferred direction & no & no & yes ($u^\mu$) &
+  \textbf{yes ($n^A$, from SSB)} \\
+Origin of direction & postulated & postulated & postulated &
+  \textbf{$O(4)\to O(3)$ SSB} \\
+Lovelock uniqueness & yes & yes (BD) & yes (aether) &
+  \textbf{yes, in pure-metric limit (Thm.~F)} \\
+Full derivation from condensate & N/A & N/A & N/A &
+  \textbf{open (OP2/OP3)} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Component glossary for eq.~\eqref{eq:phi_metric_eq}.}
+\begin{description}[noitemsep,leftmargin=2.5em]
+  \item[$M^2_{\rm eff}(\phi)G_{\mu\nu}$] Einstein tensor weighted by the
+    effective Planck mass; $G_{\rm eff}(\phi)=G_N/e^\phi$ in the screened limit.
+  \item[$T^{\rm mat}_{\mu\nu}$] Stress tensor of standard-model matter
+    (coupled universally to $g^{\rm eff}_{\mu\nu}$; assumption~A4).
+  \item[$T^{(\phi)}_{\mu\nu}$] Kinetic stress of the $\phi$-field;
+    vanishes in the homogeneous limit.
+  \item[$T^{(n)}_{\mu\nu}$] Stress of the orientation field $n^A$;
+    given by eq.~\eqref{eq:EMT_n} in the minimal case.
+  \item[$\nabla_\mu\nabla_\nu M^2_{\rm eff} - g_{\mu\nu}\Box M^2_{\rm eff}$]
+    Non-minimal coupling terms arising from the $\phi$-dependence of
+    the Planck mass; characteristic of scalar-tensor theories with
+    non-minimal $f(\phi)R$ coupling; absent in standard GR.
+  \item[$-U(\phi)g_{\mu\nu}$] Vacuum energy contribution from the
+    $\phi$-sector; plays the role of a dynamical cosmological term.
+\end{description}
+
 \label{app:GN_derivation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
