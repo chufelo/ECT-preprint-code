@@ -838,6 +838,214 @@ The five postulates are logically independent:
     sector is an independent restriction.
 \end{itemize}
 
+\subsection{Discussion of the postulates}
+\label{sec:postulates_discussion}
+
+\subsubsection*{P1 --- Euclidean arena}
+
+\paragraph{Physical meaning.}
+Space and time are not co-equal primary structures of nature.
+At the fundamental level there exists only a four-dimensional
+geometric arena in which all directions are indistinguishable.
+The notions of ``before'' and ``after'', ``spatial'' and ``temporal''
+are not built into the foundation of the theory: they may emerge
+from it under certain conditions, but are not postulated from the outset.
+
+This fundamentally distinguishes ECT from all theories that start with
+a Lorentzian spacetime $(-,+,+,+)$: in those theories the distinction
+between time and space is encoded from the very beginning in the sign
+of the metric.
+
+\paragraph{Physical motivation.}
+Euclidean geometry as a starting structure appears in physics in
+several independent contexts.
+In quantum field theory the Wick rotation $t\to-i\tau$
+(Matsubara formalism~\cite{Matsubara1955}) converts the Lorentzian
+action into a Euclidean one and renders the path integral mathematically
+well-defined.
+In the Hartle--Hawking no-boundary proposal~\cite{HartleHawking1983}
+Euclidean geometry arises as the natural formulation of the problem
+of initial conditions in cosmology.
+In instanton calculations~\cite{Belavin1975} tunnelling configurations
+are solutions of Euclidean equations of motion.
+In all these cases the Euclidean space is used as a computational tool
+or boundary condition. In ECT it is postulated as physically primary ---
+a qualitatively different position.
+
+\paragraph{On dimensionality.}
+Postulate~P1 does not choose $d=4$ arbitrarily.
+Four-dimensionality is physically motivated: it is the unique dimension
+for which, after symmetry breaking $O(d)\to O(d-1)$, exactly three
+Goldstone modes emerge, corresponding to the observed three spatial dimensions.
+This is an internal consistency check discussed in Section~\ref{sec:dimensionality}.
+The deeper origin of $d=4$ remains an open problem~(OP0).
+
+\paragraph{What P1 forbids.}
+Lorentzian spacetime~$\mathbb{R}^{1,3}$ is not an admissible
+fundamental arena in ECT. It may arise as an effective structure,
+but is not built into the foundation.
+
+\subsubsection*{P2 --- $O(4)$-invariant action}
+
+\paragraph{Physical meaning.}
+The laws of physics in the symmetric phase are identical under any
+rotation in~$\mathcal{M}^4$. No one of the four directions is
+dynamically distinguished.
+
+\paragraph{Physical motivation.}
+$O(4)$ is the isometry group of the Euclidean arena $\mathcal{M}^4$,
+i.e.\ the minimal symmetry group compatible with~P1.
+Invariance of the action under~$O(4)$ means that the theory introduces
+no additional structure beyond what is already present in the arena.
+
+Any smaller group (e.g.\ $O(3)$) would already single out one direction
+explicitly, introducing by hand what should emerge spontaneously in ECT.
+Any larger group would require fields with non-scalar indices,
+contradicting~P3.
+$O(4)$ is the minimal natural choice compatible with the
+four-dimensional Euclidean arena and the absence of preferred directions.
+
+\paragraph{Consequence for the effective sector.}
+Once the vacuum has selected a preferred direction~(P4),
+the most general symmetric rank-2 tensor compatible with the
+residual $O(3)$-symmetry is constructed from $\delta^{AB}$ and $n^A n^B$.
+Its explicit form and uniqueness are established as
+Theorem~\ref{thm:tensor_uniqueness} in Section~\ref{sec:tensor_uniqueness}.
+
+\paragraph{What P2 forbids.}
+Any action that explicitly singles out one of the four directions
+of~$\mathcal{M}^4$. All anisotropy appearing in the theory is
+spontaneous, not explicit.
+
+\subsubsection*{P3 --- Scalar microdynamics}
+
+\paragraph{Physical meaning.}
+The sole fundamental dynamical object of the theory is a real
+scalar~$\Phi$. Everything else --- effective variables, collective
+modes, geometric structures --- arises from this single field.
+
+\paragraph{Why a scalar.}
+A scalar field is the minimal choice compatible with~P2: a scalar
+carries no indices and singles out no direction in the symmetric phase.
+It is the unique choice for which the fundamental degree of freedom
+carries no built-in anisotropy.
+
+\paragraph{Form of the action.}
+The action~\eqref{eq:ECT_action} at the level of P3 contains only
+an isotropic kinetic term and a potential.
+The orientation variable~$n_A$ does not appear in this action.
+Including $n_A$ in the fundamental action would mean implicitly
+introducing a second independent degree of freedom,
+contradicting the minimality of~P3.
+
+\paragraph{On the potential.}
+The double-well $\phi^4$ potential is the standard mechanism for
+spontaneous $\mathbb{Z}_2$-symmetry breaking $\Phi\to-\Phi$.
+Importantly, this potential does not by itself create a continuous
+vacuum manifold nor generate the phase structure of~P5;
+the latter belongs to the effective collective sector.
+The potential specifies the minimal local microdynamics of~$\Phi$
+and defines a local minimum at finite field amplitude
+$\phi_0=\sqrt{\mu^2/\lambda}$ in the microscopic potential.
+However, $V(\Phi)$ alone is not sufficient to produce the
+gradient-ordered vacuum: this is specified separately by~P4.
+The value $\phi_0$ is a technical characteristic of the micro-potential;
+the physically central quantity is the gradient condensate
+amplitude~$u_0$~(P4), which breaks the $O(4)$-symmetry.
+
+\paragraph{What P3 forbids.}
+At the fundamental level: any additional fields.
+There are no fundamental spinors, vectors, or tensors.
+If such objects appear, they do so only as effective excitations
+or collective variables at a higher level of description.
+
+\subsubsection*{P4 --- Gradient-ordered vacuum sector}
+
+\paragraph{Physical meaning.}
+The vacuum of ECT is an ordered state in which the mean gradient
+is non-zero and directed along one of the four Euclidean directions.
+This ordering is what renders the physics of ECT non-trivial.
+
+\paragraph{Why the gradient condenses.}
+The expectation value $\langle\Phi\rangle=\phi_0\neq 0$
+is $O(4)$-invariant: a scalar is unchanged under rotations and does
+not break the symmetry.
+The vector $\partial_A\Phi$ transforms non-trivially.
+A non-zero expectation value
+$\langle\partial_A\Phi\rangle = u_0\,\delta_{Aw}$ selects the
+direction~$w$ and breaks $O(4)$ to $O(3)$.
+Within the present minimal single-field ECT framework,
+the gradient condensate is the natural and essentially unique way to
+obtain a vacuum that lowers the symmetry from $O(4)$ to $O(3)$
+without introducing additional fundamental fields or explicit
+symmetry breaking in the micro-action.
+
+\paragraph{On notation.}
+The expectation values $\langle\Phi\rangle=\phi_0$ and
+$|\langle\partial_A\Phi\rangle|=u_0$ have different physical
+meanings and dimensions:
+$[\phi_0]=\text{GeV}$ and $[u_0]=\text{GeV}^2$ in natural units.
+They are not identified.
+
+\paragraph{Status of P4.}
+The potential $V(\Phi)$ from~P3 does \emph{not} automatically generate
+$\langle\partial_A\Phi\rangle\neq 0$: the minimum of the standard
+$\phi^4$-potential is reached at a spatially homogeneous configuration
+with $\partial_A\Phi=0$.
+Thus P4 is \emph{not} a mathematical consequence of~P3.
+Deriving the gradient condensate from a more fundamental action ---
+for example a $P(X)$-type theory with $X=(\partial_A\Phi)^2$
+and a minimum at $X=u_0^2$ --- is an open problem~(OP-grad).
+At the current stage P4 is accepted as an independent condition
+on the vacuum sector of ECT.
+
+\paragraph{The orientation variable.}
+In the broken phase the collective orientation variable~$n_A$
+describes the local direction of the condensate.
+In the vacuum background $\langle n_A\rangle=\delta_{Aw}$.
+The relation $n_A=\partial_A\Phi/|\partial\Phi|$ is an identification
+in the background solution, not a point-wise algebraic substitution
+acting at the level of the fundamental action.
+
+\subsubsection*{P5 --- Global topological coherence}
+
+\paragraph{Physical meaning.}
+Not all configurations that are solutions of the equations of motion
+under P1--P4 are physically realised. Only those belonging to the
+coherent sector are admissible: the phase variable of the order
+parameter is globally consistent and its winding number is an integer.
+
+\paragraph{Origin of the order parameter.}
+In the coherent IR sector defined by vacuum ordering~P4,
+low-energy excitations above the condensate at $E\ll m_\sigma$
+admit a collective description through an effective order parameter
+$\Phi_{\rm eff}=\rho\,e^{i\theta}$.
+This is not a fundamental variable of the microdynamics but an
+IR collective object arising in the broken phase.
+The phase~$\theta$ belongs to this collective object, not to the
+real field~$\Phi$.
+
+\paragraph{Topological content.}
+The integer winding condition is determined by the homotopy group
+$\pi_1(S^1)=\mathbb{Z}$~\cite{Nakahara2003} and is independent of
+contour shape or dynamics.
+Analogous conditions underlie the quantisation of circulation in
+superfluid helium $\kappa=h/m$~\cite{Donnelly1991} and of magnetic
+flux in superconductors $\Phi_0=h/2e$~\cite{Abrikosov1957}.
+In both cases the physical quantum arises from the integer-valued
+topological invariant, not from a separate quantisation postulate.
+ECT applies the same mathematical structure to the collective phase
+of the vacuum condensate in four Euclidean dimensions.
+
+\paragraph{What P5 forbids.}
+Within the coherent sector: configurations with fractional winding
+numbers of the phase, with discontinuities in~$n_A$, or with zeros
+of the order parameter. All three classes are mathematically
+admissible under~P1--P4 but do not belong to the physically realisable
+coherent vacuum sector of ECT.
+
+
+
 \subsection{Three statement types}
 \label{subsec:statement_types}
 
