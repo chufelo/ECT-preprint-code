@@ -58,6 +58,14 @@ and Gravity from Spontaneous $O(4)$ Symmetry Breaking}
 \author{Valeriy Blagovidov\thanks{Correspondence: \texttt{vblagovidov@gmail.com}.~ORCID: \href{https://orcid.org/0009-0008-6707-7068}{0009-0008-6707-7068}.}}
 \date{March 2026}
 
+
+% Theorem environments for ECT basics
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+
+
 \begin{document}
 \maketitle
 
@@ -83,15 +91,12 @@ when the gradient condensate
 $\langle\partial_A\Phi\rangle = v_0\,\delta_{Aw}$
 selects a preferred Euclidean direction.
 
-The Euclidean action contains four parameters:
-the vacuum amplitude~$v_0$, the isotropic stiffness~$\beta$,
-the anisotropy coupling~$\alpha$, and the self-interaction~$\lambda$.
+ECT is formulated on five postulates. The Euclidean micro-action~(P3) contains two bare parameters: the isotropic stiffness~$\beta$, the anisotropy coupling~$\alpha$ (broken-phase EFT), and the self-interaction~$\lambda$ (bare potential). The gradient condensate amplitude~$u_0$ is introduced separately by postulate~P4.
 Lorentzian signature emerges for $\alpha>\beta$, with effective
 speed of light $c_*=\sqrt{\beta/(\alpha-\beta)}$.
 From this single action ECT derives a range of results at varying levels of rigour
 (the status of each item is specified below):
-the Newton constant $G_N = [8\pi v_0^2(\alpha-\beta)]^{-1}$
-(fixes $v_0\approx\bar{M}_{\rm Pl}$);
+the Newton constant matched via the gravitational stiffness scale: $G_N = c_*^4/(8\pi M_G^2)$, fixing $M_G\equiv\bar{M}_{\rm Pl}\approx 2.435\times 10^{18}$\,GeV (Level~B: geometric EFT matching);
 the Planck constant $\hbar = c_*v_0/\sqrt{\Lambda_\chi}$ as a
 self-consistency condition linking condensate phase quantisation
 to the minimal loop action $S_{\rm loop,min}=2\pi\hbar$;
@@ -529,7 +534,7 @@ spontaneously selects the emergent time direction.
 This requires no new independent fields beyond the single scalar $\Phi$,
 and the orientational and amplitude modes $n_A, \sigma$ arise
 as its polar decomposition $\partial_A\Phi = (v_0+\sigma)n_A$
-(Sec.~\ref{subsec:condensate_nature}).
+(Sec.~\ref{subsec:glossary}).
 
 \paragraph{Terminological note.}
 In ECT, the phenomena conventionally attributed to \emph{dark matter}
@@ -552,35 +557,39 @@ and \emph{open theoretical programs} (Level~C / open problems).
 A summary is given in Table~\ref{tab:ect-levels}.
 
 The paper is organised into four parts.
-\textbf{Part~I (Foundations)} covers the postulates of ECT,
-the O(4)$\to$O(3) symmetry-breaking mechanism and emergence of
-Lorentzian geometry (Sections~2--3), the quantum dynamics of
-condensate excitations including the derivation of the
-Klein--Gordon and Schr\"odinger equations, canonical commutation
-relations from condensate phase single-valuedness, the influence
-functional formalism and the second law as an effective result (Gaussian--Markov approximation; full derivation open)
-(Section~4), fundamental constants and the $G_N$--$\hbar^2$
-consistency relation (Section~5), and the gravitational and
-gauge sectors (Sections~6--9).
+\textbf{Part~I (Foundations)} covers the five postulates of ECT
+organised in three structural layers
+(Sections~\ref{sec:postulates}--\ref{sec:branching}):
+the Euclidean arena and scalar microdynamics (P1--P3);
+the gradient-ordered vacuum sector (P4) and the resulting
+$O(4)\to O(3)$ symmetry breaking, Lorentzian signature,
+and arrow of time (Section~\ref{sec:ssb});
+the broken-phase excitation spectrum and EFT dynamics
+(Section~\ref{sec:broken_spectrum});
+fundamental scales, matching relations, and the parameter hierarchy
+including the pre-quantum action scale~$S_0$ (Section~\ref{sec:constants});
+and the structural branching into the geometric and
+coherent-topological branches (Section~\ref{sec:branching}).
+The quantum dynamics of condensate excitations including the
+derivation of $\hbar$, Klein--Gordon and Schr\"odinger equations,
+canonical commutation relations, the influence functional, and
+the second law (Gaussian--Markov approximation) is developed in
+Section~\ref{sec:quantum}.
+Fundamental constants and the consistency relation for $G_N$
+are covered in Section~\ref{sec:constants}.
+The gravitational and gauge sectors are presented in
+Sections~\ref{sec:gravity}--\ref{sec:particles}.
 \textbf{Part~II (Macroscopic Physics)} covers galactic dynamics
-via the Lorentz-order field (Sections~10--11) and cosmological
-implications including inflation, dark energy, and dark matter
-(Section~12--13).
-\textbf{Part~III (Quantum Sector)} collects the emergent
-principles of physics derived from condensate loop configurations
---- uncertainty principle, extremal action, quantum statistics
-and a structural route toward the Pauli exclusion principle
-(sign structure associated with spinorial representations of the
-ordered sector; full Pauli--L\"{u}ders--Zumino theorem not
-obtained; beyond-quadratic corrections speculative) ---
-and the quantum vacuum structure showing that the conditional
-Goldstone-sector Casimir-type effect, the Unruh temperature, and
-environmental decoherence are three observables controlled by
-related limits of a single condensate two-point function
-(organizing proposition; Sections~14--15).
+via the Lorentz-order field and cosmological implications
+including inflation, dark energy, and dark matter.
+\textbf{Part~III (Quantum Sector)} collects emergent principles
+of physics derived from condensate loop configurations---uncertainty
+principle, extremal action, quantum statistics, and a structural
+route toward the Pauli exclusion principle (Level~B)---and the
+quantum vacuum structure.
 \textbf{Part~IV (Summary and Outlook)} provides predictions,
 comparison with existing approaches, open problems,
-and conclusions (Sections~16--19).
+and conclusions.
 
 Section~\ref{sec:quantum_vacuum}
 organises three quantum vacuum phenomena --- the conditional Goldstone-sector
@@ -644,765 +653,1141 @@ observational studies.
 
 
 
+
+% ============================================================
+% SECTION 2: POSTULATES OF ECT — NEW VERSION (5 postulates)
+% ============================================================
 \section{Postulates of Euclidean Condensate Theory}
 \label{sec:postulates}
 
-Euclidean Condensate Theory (ECT) is formulated as a framework based on
-a small set of structural assumptions about the vacuum. The aim is to
-identify the minimal ingredients from which relativistic spacetime,
-quantum dynamics, and gravitational interactions may emerge.
+Euclidean Condensate Theory (ECT) is formulated on five postulates
+together with one relational operational principle.
+The postulates are organised in three structural layers:
+(i)~the \emph{microscopic} arena and field dynamics (P1--P3);
+(ii)~the \emph{vacuum-ordering} condition (P4);
+(iii)~the \emph{coherent topological} sector (P5).
+All further structures developed in this work arise as
+consequences of these assumptions.
 
-ECT is built on four postulates. All further structures discussed in
-this work arise as consequences of these assumptions.
+\subsection{Glossary of terms}
+\label{subsec:glossary}
 
-
-\subsubsection{P1 --- Four-dimensional Euclidean manifold}
-
-The fundamental arena is a four-dimensional Euclidean manifold
-$\mathcal{M}$ endowed with the metric
-
-\begin{equation}
-ds^2_E =
-\delta_{AB}\,dX^A\,dX^B,\quad
-A,B\in\{1,2,3,4\}.
-\end{equation}
-
-All four directions are initially equivalent. In particular, there is no
-distinguished temporal coordinate at the fundamental level. The
-coordinate $X^4\equiv w$ will acquire the role of an effective time
-coordinate only after spontaneous symmetry breaking
-(Section~\ref{sec:ssb}).
-
-The Euclidean metric is postulated as fundamental rather than obtained
-via Wick rotation from a Lorentzian spacetime. Approaches based on
-Euclidean geometry in quantum gravity provide precedents for such a
-description of the vacuum.
-
-
-\subsubsection{P2 --- $O(4)$-invariant dynamics}
-
-The fundamental dynamics of the vacuum are assumed to be invariant under
-global rotations in the four-dimensional Euclidean space,
-
-\begin{equation}
-X^A \rightarrow \Lambda^A_{\;\;B} X^B,
-\qquad
-\Lambda\in O(4).
-\end{equation}
-
-Consequently, the fundamental action functional satisfies
-
-\begin{equation}
-S_E[\Psi] = S_E[\Lambda\cdot\Psi]
-\end{equation}
-
-for all $\Lambda\in O(4)$. This symmetry expresses the equivalence of
-all four directions in the unbroken phase and represents the minimal
-symmetry compatible with Postulate~P1.
-
-
-\subsubsection{P3 --- Relational observables}
-
-ECT assumes that no external time parameter exists at the fundamental
-level. Physical observables are relational quantities defined through
-comparisons between physical subsystems.
-
-Operationally, an observer corresponds to a world-tube embedded in the
-Euclidean manifold $\mathcal{M}$. Measurable quantities are therefore
-constructed from relations between world-tubes rather than with respect
-to an external time coordinate.
-
-
-\subsubsection{P4 --- Scalar vacuum condensate}
-
-The physical vacuum is described by a scalar condensate field
-$\Phi(X)$ defined on $\mathcal{M}$.
+Before stating the postulates we fix the meaning of terms that
+in the literature are sometimes used interchangeably but carry
+distinct meanings in ECT.
 
 \medskip
-\noindent\textbf{What is the condensate?}
-The term ``condensate'' is used in analogy with Bose--Einstein
-condensation, where a macroscopic fraction of bosons occupies a single
-quantum state so that the expectation value of the field operator
-becomes non-zero: $\langle\hat{\psi}\rangle \neq 0$.  In ECT the
-analogous statement is $\langle\Phi\rangle = v_0 \neq 0$, where the
-vacuum expectation value $v_0$ is a free parameter of the theory
-whose numerical value is determined by matching the emergent
-gravitational coupling to the observed Newton constant~$G_N$
-(Section~\ref{sec:constants}).
+\noindent\textbf{Field~$\Phi$} --- the unique fundamental
+microscopic degree of freedom: a real scalar defined on~$\mathcal{M}^4$.
 
-A crucial distinction must be emphasised: $\Phi$ is \emph{not} a
-condensate of any known particle (not gravitons, not Higgs bosons, not
-Standard Model quanta).  It is a \emph{pre-metric primitive field}---a
-fundamental ingredient of ECT in the same sense that matter fields are
-primitive in General Relativity and the Higgs field is primitive in the
-Standard Model before electroweak symmetry breaking.  The word
-``condensate'' captures two physical properties: (i)~the field carries
-a large vacuum expectation value $v_0$, and
-(ii)~low-energy perturbations around this background propagate
-coherently, in analogy with phonons on a superfluid, and it is these
-perturbations that give rise to the emergent Lorentzian effective field
-theory.
+\medskip
+\noindent\textbf{Vacuum} --- the ground (lowest-energy) state
+of~$\Phi$. In ECT this vacuum is ordered: it carries a non-zero
+gradient condensate, as specified by postulate~P4 (see below).
 
-The microscopic origin of $\Phi$---whether it is elementary, composite,
-or arises from some deeper structure such as string moduli or other
-ultraviolet degrees of freedom---is an open problem and is listed as
-such in Section~\ref{sec:open_problems} (OP0).
+\medskip
+\noindent\textbf{Condensate} --- a physical property of the vacuum:
+$\langle\partial_A\Phi\rangle \neq 0$. Not an object, but a state.
 
-A scalar field represents the minimal choice compatible with the
-symmetry assumptions above. In particular, a scalar order parameter can
-acquire a non-zero vacuum expectation value without introducing
-preferred spatial directions in the symmetric phase.
+\medskip
+\noindent\textbf{Order parameter} --- a collective variable
+of the coherent vacuum sector,
+$\Phi_{\rm eff} = \rho\,e^{i\theta}$,
+describing low-energy excitations above the condensate.
+Introduced at the EFT level after SSB, not at the fundamental level.
 
-The Euclidean action for the condensate takes the form
+\medskip
+\noindent\textbf{Orientation variable~$n_A$} --- a collective
+variable of the broken phase describing the direction of the condensate.
+Introduced at the vacuum level; it does not appear in the fundamental action.
 
+\subsection{List of postulates}
+\label{subsec:postulate_list}
+
+\medskip
+\noindent\textbf{P1 --- Four-dimensional Euclidean arena.}
+The fundamental arena is a four-dimensional Euclidean manifold
+$\mathcal{M}^4$ with metric
 \begin{equation}
-\label{eq:ECT_action}
-S_E[\Phi, n_A] =
-\int d^4X
-\left\{
-\frac{\beta}{2}(\partial_A \Phi)^2
--
-\frac{\alpha}{2}(n^A\partial_A\Phi)^2
-+
-V(\Phi)
-+
-V_n(n^2)
-\right\},
+  \label{eq:P1_metric}
+  ds^2_E = \delta_{AB}\,dX^A\,dX^B,\qquad A,B\in\{1,2,3,4\}.
 \end{equation}
+All four directions are initially equivalent.
+There is no distinguished time coordinate at the fundamental level.
 
-where $n_A$ is a unit vector field ($|n|^2=1$) and $\alpha$, $\beta$
-are dimensionless couplings.
-
-\textbf{Note on the status of $n_A$.}
-Although $n_A$ appears alongside $\Phi$ in
-action~\eqref{eq:ECT_action}, it is \emph{not} an independent
-degree of freedom.  It is identified with the polar decomposition
-of the gradient field,
+\medskip
+\noindent\textbf{P2 --- $O(4)$-invariant action.}
+The fundamental action is invariant under global $O(4)$ rotations:
 \begin{equation}
-  n_A \;\equiv\; \frac{\partial_A\Phi}{|\partial\Phi|},
-  \qquad n_A n^A = 1,
+  \label{eq:P2_symmetry}
+  S_E[\Psi] = S_E[\Lambda\cdot\Psi], \qquad \Lambda\in O(4).
 \end{equation}
-so that $\partial_A\Phi = (v_0+\sigma)\,n_A$ (see
-Section~\ref{subsec:condensate_nature}).  The potential $V_n$
-enforces the unit-vector constraint and is a bookkeeping device;
-all physical degrees of freedom reside in the single real scalar
-$\Phi$.  The notation $S_E[\Phi,n_A]$ is therefore shorthand for
-$S_E[\Phi]$ written in polar-decomposition variables.
+This expresses the equivalence of all four directions in the
+unbroken phase.
 
-\paragraph{Role of the parameters $\alpha$ and $\beta$.}
-The parameter $\beta>0$ sets the isotropic (O(4)-invariant) stiffness
-of the condensate field with respect to fluctuations in all four
-Euclidean directions.  The parameter $\alpha>0$ introduces an
-additional coupling to the preferred direction~$n^A$, which is
-responsible for the spontaneous symmetry breaking $O(4)\to O(3)$.
-In the broken-symmetry vacuum $\langle n_A\rangle=\delta_{Aw}$,
-spatial fluctuations ($i=1,2,3$) carry stiffness $\beta$, while
-fluctuations along $w$ carry net stiffness $\beta-\alpha$.
-The Lorentzian (hyperbolic) regime for $w$-direction propagation
-requires $\alpha>\beta$, which is the generalised
-symmetry-breaking condition (see Section~\ref{sec:ssb}).
-The minimal case $\beta=1$ is used for most explicit calculations
-in this paper; the general $\beta$ is retained in the fundamental
-action to allow for non-minimal kinetic terms and to make the
-physical content of each formula transparent.
-
-A typical symmetry-breaking potential is
-
+\medskip
+\noindent\textbf{P3 --- Scalar microdynamics.}
+\label{eq:P3}
+The fundamental field is a real scalar $\Phi(X)$ on $\mathcal{M}^4$.
+Its bare micro-action takes the standard $\phi^4$ form:
 \begin{equation}
-V(\Phi) =
--\frac{\mu^2}{2}\Phi^2
-+
-\frac{\lambda}{4}\Phi^4,
-\qquad
-\mu^2,\lambda>0.
+  \label{eq:ECT_action}
+  S_E[\Phi] = \int d^4X\!\left\{
+    \frac{1}{2}(\partial_A\Phi)^2 + V(\Phi)
+  \right\},
+  \qquad
+  V(\Phi) = -\frac{\mu^2}{2}\Phi^2 + \frac{\lambda}{4}\Phi^4,
+  \quad \mu^2>0,\;\lambda>0.
 \end{equation}
+This action does not contain the orientation variable~$n_A$
+explicitly; $n_A$ appears only after vacuum ordering.
 
-The vacuum then develops a non-zero expectation value
+The double-well potential in P3 is a \emph{two-well $\phi^4$ potential}
+encoding a discrete $\mathbb{Z}_2$ symmetry $\Phi\to-\Phi$.
+It is not the ``mexican hat'' potential (which applies to a complex or
+multi-component field), and does not by itself create a continuous
+vacuum manifold or the topological structure of P5.
 
+\medskip
+\noindent\textbf{P4 --- Gradient-ordered vacuum sector.}
+\label{eq:P4}
+The physical vacuum is characterised by a non-zero gradient condensate
+selecting a preferred direction:
 \begin{equation}
-\langle\Phi\rangle=v_0=\sqrt{\mu^2/\lambda}.
-\end{equation}
-
-\textbf{Numerical value of $v_0$ (derived in Section~\ref{sec:constants}).}
-The value of $v_0$ is not postulated but determined by matching
-the emergent gravitational sector to observation.  In
-Section~\ref{sec:constants} we derive the gravitational matching
-relation~\eqref{eq:GN_matching},
-$G_N = [8\pi v_0^2(\alpha-\beta)]^{-1}$, by expanding the
-condensate action to quadratic order in metric perturbations.
-Inserting the observed $G_N$ then fixes the condensate scale:
-$v_0^2(\alpha-\beta)=\bar{M}_{\rm Pl}^2\equiv1/(8\pi G_N)$.
-In the minimal case $\beta=1$, $\alpha=2$ (so $\alpha-\beta=1$),
-this gives $v_0=\bar{M}_{\rm Pl}\approx2.435\times10^{18}$\,GeV.
-More generally, $v_0=\bar{M}_{\rm Pl}/\sqrt{\alpha-\beta}$.
-Throughout this paper we use $v_0$ as the fundamental condensate
-scale; the identification $v_0=\bar{M}_{\rm Pl}$ holds at
-$\alpha-\beta=1$ and is otherwise a constraint on the parameter
-combination $v_0\sqrt{\alpha-\beta}$.
-
-The presence of this condensate allows the vacuum to undergo spontaneous
-symmetry breaking
-
-\begin{equation}
-O(4)\rightarrow O(3),
-\end{equation}
-
-selecting a preferred direction in the Euclidean manifold. As will be
-shown in the following sections, perturbations propagating in this
-symmetry-broken background experience an effective Lorentzian metric and
-therefore behave as fields evolving in relativistic spacetime.
-
-\subsection{Nature of the condensate: what condenses in ECT}
-\label{subsec:condensate_nature}
-
-A natural question is: what precisely condenses in ECT?
-The fundamental field $\Phi$ is a real $O(4)$-scalar defined on the
-four-dimensional Euclidean manifold. A uniform vacuum configuration
-$\langle\Phi\rangle = \mathrm{const}$ would be $O(4)$-invariant and
-would produce no symmetry breaking. The symmetry-breaking agent
-is instead the \emph{gradient field} $\partial_A\Phi$, which
-transforms as an $O(4)$ vector. The vacuum acquires the expectation value
-\begin{equation}
-  \langle \partial_A \Phi \rangle = v_0\, \delta_{Aw},
   \label{eq:gradient_condensate}
+  \langle\partial_A\Phi\rangle = u_0\,\delta_{Aw},
+  \qquad u_0 > 0,
 \end{equation}
-spontaneously selecting the preferred Euclidean direction $w$ and
-breaking $O(4)\to O(3)$. The residual $O(3)$ symmetry corresponds to
-arbitrary rotations in the $(x,y,z)$ hyperplane orthogonal to~$w$.
-
-The condensate amplitude $v_0 = |\langle\partial\Phi\rangle|$ is
-related to the potential parameters by $v_0 = \mu/\sqrt{\lambda}$.
-
-\paragraph{Polar decomposition.}
-It is convenient to introduce the unit vector field
+where $w\equiv X^4$ and $u_0$ is the \emph{gradient condensate amplitude}.
+The corresponding integrable background profile is:
 \begin{equation}
-  n_A(X) \equiv \frac{\partial_A\Phi}{|\partial\Phi|},
-  \qquad n_A n^A = 1,
-  \label{eq:n_def_polar}
+  \label{eq:background}
+  \Phi_{\rm bg}(X) = u_0\,w + \Phi_*,\qquad \Phi_*=\text{const}.
 \end{equation}
-and the amplitude fluctuation $\sigma(X) \equiv |\partial\Phi| - v_0$.
-The gradient field then admits the exact polar decomposition
+This background is \emph{not} a stationary point of the bare
+micro-action~P3; it defines the ordered vacuum sector postulated
+by~P4.
+Detailed analysis of the background splitting is given in
+Appendix~\ref{app:background_split}.
+
+This postulate introduces a second mass parameter distinct from $\phi_0$:
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lll}
+\hline
+Symbol & Definition & Level \\
+\hline
+$\phi_0 = \sqrt{\mu^2/\lambda}$ & local minimum of bare $V(\Phi)$ & P3 \\
+$u_0 = |\langle\partial_A\Phi\rangle|$ & gradient condensate amplitude & P4 \\
+\hline
+\end{tabular}
+\end{center}
+These are independent parameters; their relationship requires
+additional matching~(OP-grad).
+
+\medskip
+\noindent\textbf{P5 --- Global topological coherence.}
+\label{eq:P5}
+The physical sector is restricted to coherent configurations
+of the effective order parameter
+$\Phi_{\rm eff} = \rho\,e^{i\theta}$.
+The phase field satisfies an integer winding condition
+for every closed path $\mathcal{C}$ in $\mathcal{M}^4$:
 \begin{equation}
-  \partial_A\Phi = (v_0 + \sigma)\,n_A.
-  \label{eq:polar_decomp}
+  \label{eq:winding_condition}
+  \oint_{\mathcal{C}} \partial_A\theta\,dX^A = 2\pi n,
+  \qquad n\in\mathbb{Z}.
 \end{equation}
-Here $\sigma$ is the \emph{radial (amplitude) mode} and $n_A$
-is the \emph{orientational (Goldstone) mode}.
-This decomposition requires no new independent fields:
-a single real scalar $\Phi$ generates the full symmetry-breaking
-structure through its gradient.
+The orientation variable $n_A$ is smooth in this defect-free
+coherent sector; vortex cores, domain walls, and instantons
+lie outside the present reduction but are not forbidden---they
+constitute a richer space of configurations whose dynamics is
+deferred to later sections.
 
-\paragraph{Radial mode.}
-The mass of the radial excitation is set by the curvature of the potential
-at the minimum:
+This postulate introduces a pre-quantum topological action scale
+$S_0$ through the minimal non-trivial loop:
 \begin{equation}
-  m_\sigma^2 = V''(v_0) = 2\mu^2 > 0.
-  \label{eq:sigma_mass}
+  \label{eq:Sloop_min}
+  S_{\rm loop,min} = 2\pi S_0.
 \end{equation}
-At energies $E \ll m_\sigma \sim \mu$, the radial mode is heavy and
-may be integrated out. The resulting infrared effective theory is
-expressed entirely in terms of the orientational field $n_A$ and
-the condensate amplitude $v_0$, reproducing the ECT framework
-used throughout this paper.
+The identification of $S_0$ with the observed $\hbar$ is discussed
+in Section~\ref{sec:quantum}.
 
-\paragraph{Goldstone modes.}
-The symmetry breaking pattern $O(4)\to O(3)$ produces
-\begin{equation}
-  N_G = \dim O(4) - \dim O(3) = 6 - 3 = 3
-  \label{eq:goldstone_count}
-\end{equation}
-massless Goldstone bosons. These are the three orientational
-fluctuations $\delta n_i$ (satisfying $n_A\,\delta n^A = 0$),
-which in the Lorentzian sector propagate as ultra-light scalar modes.
-In Section~\ref{sec:particles} these modes are further analysed as
-potential dark matter candidates; their mass depends on explicit
-symmetry-breaking effects that have not yet been derived from first
-principles.
+\subsection{Operational principle of relationality}
+\label{subsec:relational}
+
+In the absence of a fundamental time coordinate, as specified by the
+arena~P1, the relational approach provides a natural and operationally
+consistent way to define observables: physical observables are ratios
+between physical subsystems. This is motivated by P1 but does not
+follow from it as a theorem.
+
+\subsection{Independence of postulates}
+\label{subsec:independence}
+
+The five postulates are logically independent:
+\begin{itemize}
+  \item P1 does not follow from P2--P5: any manifold dimension would
+    be consistent with $O(n)$ invariance;
+  \item P2 does not follow from P1: the action need not be $O(4)$-invariant;
+  \item P3 does not follow from P1--P2: the field content
+    and potential must be separately specified;
+  \item P4 does not follow from P1--P3: vacuum ordering is a
+    separate structural assumption;
+  \item P5 does not follow from P1--P4: coherence in the topological
+    sector is an independent restriction.
+\end{itemize}
+
+\subsection{Three statement types}
+\label{subsec:statement_types}
+
+The following sections use three types of assertions:
+\begin{itemize}
+  \item \textit{Theorem} --- a strict consequence of P1--P5 (no additional assumptions);
+  \item \textit{EFT consequence} --- a result valid within the low-energy
+    expansion over the broken vacuum;
+  \item \textit{Additional assumption} --- a statement used to obtain
+    explicit formulae but not a strict consequence of P1--P5
+    (always marked explicitly).
+\end{itemize}
+In this foundational section: vacuum selection is given by~P4;
+the form of $K^{AB}$ is an EFT consequence
+(Theorem~\ref{thm:tensor_uniqueness});
+the upper boundary of the Lorentzian window $\alpha<4\beta$
+requires an additional isotropy assumption.
 
 
 
-
-
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ============================================================
+% SECTION 3: SSB AND EMERGENCE OF TIME
+% ============================================================
 \section{Spontaneous Symmetry Breaking and Emergence of Time}
 \label{sec:ssb}
 
-% Tables of ECT results status, observational predictions,
-% and theoretical comparison are presented in
-% Sections~\ref{sec:predictions_tests} and~\ref{sec:comparison}
-% (Tables~\ref{tab:ECT_predictions}, \ref{tab:numerical},
-% \ref{tab:derivation_status}, and~\ref{tab:comparison_full}).
+The postulates P1--P5 do not yet constitute the full physical theory.
+This section derives the geometric consequences of vacuum ordering~(P4):
+Lorentzian signature, effective time, and the arrow of time.
 
-This section describes how the $O(4)$-symmetric condensate vacuum
-undergoes a phase transition that selects a preferred direction
-in Euclidean space, giving rise to an effective Lorentzian metric
-and the physical notion of time.
+\subsection{Uniqueness of the kinetic tensor after SSB}
+\label{sec:tensor_uniqueness}
 
-\subsection{Classification of metric signatures and the Lorentzian sector}
+\begin{theorem}[Uniqueness of $K^{AB}$]
+\label{thm:tensor_uniqueness}
+Any symmetric rank-2 tensor that is
+(i) symmetric in $A,B$;
+(ii) $O(3)$-invariant under the residual symmetry;
+(iii) built locally and algebraically from
+     $\{\delta^{AB}, n^A\}$ without additional derivatives
+must take the form
+\begin{equation}
+  \label{eq:K_general}
+  K^{AB} = \beta\,\delta^{AB} - \alpha\,n^A n^B,
+  \qquad \alpha,\beta\in\mathbb{R}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+A local algebraic rank-2 tensor compatible with the broken vacuum
+may depend only on $\delta^{AB}$ and $n^A$.
+Symmetry in $A,B$ excludes antisymmetric structures.
+Without additional derivatives or pseudo-tensors
+(Levi-Civita is antisymmetric and excluded),
+the only symmetric rank-2 tensors built from $\{\delta^{AB}, n^A\}$
+are $\delta^{AB}$ and $n^A n^B$.
+Any such tensor is therefore a linear combination
+$K^{AB} = a\,\delta^{AB} + b\,n^A n^B$,
+which gives~\eqref{eq:K_general} with $a=\beta$, $b=-\alpha$.
+Full proof via $O(3)$ representation theory is in
+Appendix~\ref{app:tensor_uniqueness}.
+\end{proof}
+
+The broken-phase kinetic action for fluctuations $\varphi$ is
+\begin{equation}
+  \label{eq:quadratic_action}
+  S^{(2)}_{\rm EFT}[\varphi]
+  = \int d^4X\!\left\{
+    \frac{\beta}{2}(\partial_A\varphi)^2
+    - \frac{\alpha}{2}(n^A\partial_A\varphi)^2
+    + \frac{m_{\rm eff}^2}{2}\varphi^2
+  \right\},
+\end{equation}
+where $m_{\rm eff}^2$ is the EFT fluctuation mass parameter,
+not identified a priori with $V''(\phi_0)$ of the bare potential.
+The canonical normalisation
+$\tilde\varphi = (\sqrt{\alpha-\beta}/c_*)\,\varphi$ gives
+a positive free Hamiltonian~(Level~A):
+\begin{equation}
+  \label{eq:H_free}
+  H = \int d^3x\!\left[
+    \frac{1}{2}\pi_{\tilde\varphi}^2
+    + \frac{c_*^2}{2}(\nabla\tilde\varphi)^2
+    + \frac{M_{\rm eff}^2}{2}\tilde\varphi^2
+  \right] \geq 0,
+\end{equation}
+confirming that the broken-phase EFT is free of tachyon/ghost pathology.
+
+\subsection{Eigenvalue analysis and signature classification}
 \label{sec:metric_classification}
 
-A central question that must be addressed before the formalism is
-developed is the following: does the spontaneous breaking
-$\mathrm{O}(4)\to\mathrm{O}(3)$ \emph{automatically} produce a
-Lorentzian signature, or does Lorentzian spacetime correspond to a
-specific \emph{class} of perturbations? We answer this here, as
-honesty about this point is important for the theory's self-consistency.
-
-\paragraph{Uniqueness of the kinetic tensor from symmetry.}
-
-After $\mathrm{O}(4)\to\mathrm{O}(3)$, the residual symmetry group
-$\mathrm{O}(3)$ acts on the three spatial directions
-$\{1,2,3\}$, leaving the condensate direction $n_A =\delta_{Aw}$
-fixed. Any rank-$2$ tensor $K^{AB}$ that is (i)~symmetric, (ii)
-$\mathrm{O}(3)$-invariant, and (iii) built solely from the available
-background objects $\{\delta^{AB},\,n^A\}$ must take the form
-\begin{equation}
-\label{eq:K_general}
-K^{AB} = a\,\delta^{AB} + b\,n^A n^B ,
-\end{equation}
-with two real parameters $a,b$.  This decomposition into irreducible
-representations of $\mathrm{O}(3)$ is \emph{unique}; no other tensor
-structure is possible \cite[Ch.~2]{Weinberg1996}.  In ECT we identify $a=\beta$ and
-$b=-\alpha$, so that
-\begin{equation}
-K^{AB} = \beta\,\delta^{AB} - \alpha\,n^A n^B .
-\end{equation}
-This is therefore \textbf{not} a phenomenological \textit{Ansatz}: it
-is the most general second-rank tensor allowed by the residual symmetry
-after SSB, as follows from the standard decomposition of symmetric
-rank-2 tensors under $O(3)$ \cite{Weinberg1995Vol2,Landau1986Elasticity}.
-The parameters $\alpha$ and $\beta$ are free and must be
-fixed by phenomenology (or by a future UV completion), but the
-\emph{structure} of the tensor is uniquely determined.
-
-\paragraph{Eigenvalue analysis and signature classes.}
-
-The eigenvalues of $K^{AB}$ in the condensate background are
-\begin{equation}
-\lambda_\perp = \beta \quad (\times 3,\;\text{spatial directions}),
-\qquad
-\lambda_\parallel = \beta - \alpha \quad (\text{along } n_A) .
-\end{equation}
-The metric signature of perturbations is therefore controlled by the
-signs of $\lambda_\perp$ and $\lambda_\parallel$:
+With $n_A = \delta_{Aw}$ (vacuum direction), the tensor~\eqref{eq:K_general}
+becomes diagonal:
+\[
+K^{AB} = \text{diag}(\beta,\beta,\beta,\beta-\alpha).
+\]
+Three signature classes:
 \begin{center}
+\renewcommand{\arraystretch}{1.3}
 \begin{tabular}{lll}
-\hline\hline
-Condition & Signature & Physical interpretation \\
 \hline
-$\beta>0,\;\alpha>\beta$ & $(-,+,+,+)$ Lorentzian & Time emerges; our universe \\
-$\beta>0,\;\alpha<\beta$ & $(+,+,+,+)$ Euclidean & No time, no dynamics \\
-$\beta>0,\;\alpha=\beta$ & degenerate & Critical point \\
-$\beta<0$ & ghost-ridden & Unphysical \\
+Condition & Signature & Propagation \\
+\hline
+$\alpha < \beta$ & Euclidean & all directions equivalent \\
+$\alpha = \beta$ & degenerate & no propagation along $w$ \\
+$\alpha > \beta$ & \textbf{Lorentzian} & $w$ becomes time-like \\
+\hline
+\end{tabular}
+\end{center}
+Lorentzian signature is not postulated but follows from $\alpha>\beta$,
+which is an EFT parameter relation.
+
+\subsection{The Lorentzian window}
+\label{sec:lorentz_window}
+
+The equation of motion from~\eqref{eq:quadratic_action}:
+\begin{equation}
+  \label{eq:eom_broken}
+  \beta\,\partial_i^2\varphi
+  - (\alpha-\beta)\,\partial_w^2\varphi
+  - m_{\rm eff}^2\,\varphi = 0.
+\end{equation}
+Dispersion relation:
+\begin{equation}
+  \label{eq:dispersion}
+  (\alpha-\beta)\,k_w^2 = \beta\,\mathbf{k}^2 + m_{\rm eff}^2.
+\end{equation}
+The effective propagation speed is:
+\begin{equation}
+  \label{eq:c_star_general}
+  c_*^2 = \frac{\beta}{\alpha-\beta}.
+\end{equation}
+The Lorentzian window is $\beta < \alpha < 4\beta$:
+\begin{itemize}
+  \item lower bound $\alpha>\beta$ (Level~A): from hyperbolicity of operator;
+  \item upper bound $\alpha<4\beta$ (additional assumption):
+    from short-distance isotropisation;
+    derivation in Appendix~\ref{app:lorentz_window}.
+\end{itemize}
+
+\paragraph{Benchmark normalisation.}
+The observational constraint that gravitational waves and
+electromagnetic signals propagate at the same speed~\cite{LIGO_Virgo_GW170817_2017}
+motivates the working normalisation $c_*=c$.
+In canonical units ($\beta=1$) this corresponds to $\alpha=2\beta=2$.
+
+\subsection{Effective Lorentzian metric}
+\label{sec:effective_metric}
+
+At this stage Lorentzian signature has already appeared in the
+dispersion relation. The analytic continuation
+$w\to -ic_*\,t$ serves only to parametrise the hyperbolic sector
+in conventional real-time language.
+The Klein--Gordon equation:
+\begin{equation}
+  \label{eq:KG}
+  \partial_t^2\varphi - c_*^2\nabla^2\varphi + M_{\rm eff}^2\varphi = 0,
+  \qquad
+  M_{\rm eff}^2 = \frac{m_{\rm eff}^2 c_*^2}{\beta}.
+\end{equation}
+Fluctuations see the effective Lorentzian metric:
+\begin{equation}
+  \label{eq:eff_metric}
+  g^{\rm eff}_{\mu\nu}\,dx^\mu dx^\nu
+  = -c_*^2\,dt^2 + \delta_{ij}\,dx^i dx^j.
+\end{equation}
+At $\alpha=2$, $\beta=1$: $c_*=1$ and
+$g^{\rm eff}_{\mu\nu}=\eta_{\mu\nu}$.
+
+\paragraph{Free-sector consistency.}
+The quadratic broken-phase sector admits a canonical normalisation
+with positive Hamiltonian~\eqref{eq:H_free} and dispersion
+$\omega^2 = c_*^2 k^2 + M_{\rm eff}^2\geq 0$.
+On the free EFT level the sector is free of tachyonic/ghost pathology
+and is compatible with a positive spectral representation.
+This is \emph{not} yet a full OS-reconstruction of the interacting
+theory, but constitutes a necessary internal consistency check for
+the future development of the Quantum Sector.
+
+\subsection{Physical picture: the condensate as the ``fabric'' of spacetime}
+\label{sec:phys_picture_ssb}
+
+The mathematical results admit a concrete physical interpretation.
+
+\paragraph{What condenses.}
+In superfluid helium-II below the Bose--Einstein condensation
+temperature atoms enter a collective ordered state; the condensate
+carries all characteristic properties of superfluidity~\cite{Donnelly1991}.
+In ECT the analogous object is the gradient condensate
+$\langle\partial_A\Phi\rangle = u_0\,\delta_{Aw}$:
+field~$\Phi$ ``freezes'' into a state with non-zero gradient.
+This is an ordering of the vacuum sector defined by postulate~P4,
+not a condensate in the strict quantum-mechanical sense
+(QM has not yet been derived at this stage).
+
+\paragraph{Origin of time.}
+In the symmetric phase ($u_0=0$) all four directions of $\mathcal{M}^4$
+are equivalent. Upon transition to the ordered phase one direction
+($w$) is singled out. This makes $w$ a candidate for the role of
+``time''. By itself, however, the selection of a direction does not
+yet yield causality or the arrow of time---those require the kinetic
+operator to be hyperbolic ($\alpha>\beta$) and the initial configuration
+to be ordered (P4+P5).
+
+\paragraph{Condensed-matter analogy.}
+An analogous mechanism is well-known for superconductors: below $T_c$
+Cooper pairs condense and the photon acquires an effective mass---Lorentz
+invariance is broken spontaneously, not explicitly~\cite{Nambu1960}.
+In ECT the role of the ``breaking'' is played by the appearance of the
+preferred direction~$w$; the role of the ``effective mass'' is played
+by the different propagation properties along~$w$ and perpendicular to it.
+
+\subsection{Arrow of time from symmetry breaking}
+\label{sec:arrow_of_time}
+
+\begin{center}\small
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{p{5.5cm}ll}
+\hline\hline
+Component & Status & Basis \\
+\hline
+$S_{\rm ent}(w_0)\approx 0$, coherent initial sector
+  & Level~B (strongly motivated)
+  & P4 + P5 + OP24 \\
+$K(\tau<0)=0$ causal kernel
+  & Level~A (quadratic sector)
+  & Contour integral, Cauchy~(App.~\ref{app:retarded_kernel}) \\
+3D bath spectrum (standard coupling)
+  & Level~A (scaling analysis)
+  & Goldstone modes $\Rightarrow J\propto\omega^2$--$\omega^4$ (super-ohmic) \\
+Ohmic bath $J(\omega)\propto\omega$
+  & Level~B (assumption)
+  & Non-standard coupling or reduced effective dimension \\
+Markovianity ($\tau_{\rm env}\ll\tau_{\rm dec}$)
+  & Level~B (heuristics)
+  & $\tau_{\rm env}\sim m_\sigma^{-1}$; strict in weak-coupling limit \\
+$dS/dw\geq 0$ qualitatively
+  & Level~B (quadratic sector)
+  & Conditions (i)--(iii) under working assumptions \\
+$dS/dw = N_{\rm eff}\gamma(\ldots)^2$ explicit
+  & Level~B (under effective assumptions)
+  & Ohmic + Markov as working hypotheses \\
+Full nonlinear theory
+  & Level~B
+  & OP1, OP5, OP24 \\
 \hline\hline
 \end{tabular}
 \end{center}
-\smallskip
-Lorentzian signature is therefore \emph{not} an automatic consequence
-of $\mathrm{O}(4)\to\mathrm{O}(3)$ breaking: it requires specifically
-$\alpha>\beta>0$.  This condition is the physical statement that the
-condensate is stiffer in the spatial directions than in the emergent
-time direction.
 
-The remaining cases in the table are physically rejected for concrete reasons:
-\begin{itemize}\setlength\itemsep{1pt}
-\item $\alpha<\beta$ (Euclidean phase): the kinetic operator is positive
-  definite in all directions; the path integral is real and convergent but
-  no hyperbolic dynamics arise --- perturbations decay rather than oscillate,
-  and no wave equation or causality emerges.
-\item $\alpha=\beta$ (degenerate): the light cone collapses to a line;
-  propagation speed $c_*\to\infty$, causality is lost.
-\item $\beta<0$ (ghost): the spatial kinetic term acquires the wrong sign,
-  making the Hamiltonian unbounded from below and the theory
-  quantum-mechanically unstable.
-\end{itemize}
-The Lorentzian sector $\beta>0$, $\alpha>\beta$ is therefore the unique
-physically viable option after $O(4)\to O(3)$ SSB.
+The action~P2 is symmetric under $w\to-w$: fundamental physics
+does not distinguish the direction of~$w$.
+Yet the arrow of time emerges macroscopically through a three-step mechanism.
 
-\paragraph{Scale-dependent signature: why Lorentzian holds only macroscopically.}
+\paragraph{Step~1. Coherent initial sector (Level~B, strongly motivated).}
+Postulate~P4 selects the ordered vacuum sector of the effective broken phase,
+while postulate~P5 restricts configurations to the coherent topological sector.
+In the quadratic sector the fluctuation spectrum is non-negative~\eqref{eq:dispersion},
+i.e.\ the sector contains no tachyonic instabilities.
+Together P4 and P5 strongly support the choice of a highly ordered
+low-entropy initial sector, naturally associated with a pure or nearly
+pure initial state. However, this is not yet a complete theorem about
+the uniqueness of the pure initial state for the full evolution~(OP24).
+The precise meaning of the initial entropy requires the quantum-mechanical
+formalism, which is established in Section~\ref{sec:quantum}.
 
-At length scales $L\gg\xi_{\rm cond}$ (macroscopic), the condensate
-direction is well-defined and $n_A$ points coherently along $w$.  At
-scales $L\ll\xi_{\rm cond}$ (sub-condensate), fluctuations isotropise
-the director:
-\begin{equation}
-\langle n^A n^B \rangle_{L\ll\xi_{\rm cond}}
-\;=\;\frac{\delta^{AB}}{4} .
-\end{equation}
-Substituting into~\eqref{eq:K_general}, the scale-averaged tensor becomes
-\begin{equation}
-\langle K^{AB}\rangle_{L\ll\xi_{\rm cond}}
-=
-\left(\beta - \frac{\alpha}{4}\right)\delta^{AB} .
-\end{equation}
-This is positive-definite (Euclidean) as long as $\alpha < 4\beta$.
-Combining with the macroscopic Lorentzian condition $\alpha>\beta$, the
-full physical requirement is
-\begin{equation}
-\label{eq:full_lorentz_condition}
-\boxed{\beta < \alpha < 4\beta .}
-\end{equation}
-\noindent\textit{Note on dimensionality.}\;
-In a $d$-dimensional Euclidean space the UV-averaging gives
-$\langle n^An^B\rangle = \delta^{AB}/d$, so the Euclidean condition
-becomes $\alpha/d < \beta$, and the full Lorentzian window is
-$\beta < \alpha < d\beta$.
-The factor $d=4$ in the upper bound is a direct consequence of
-postulate~P1 (four-dimensional Euclidean manifold).  This is not
-a derivation of four dimensions, but an internal self-consistency check:
-a theory that postulates $d=4$ obtains exactly 4 as the coefficient
-in its signature-separation condition.
+\paragraph{Step~2. Qualitative monotonicity (Level~B, quadratic sector).}
+Three conditions used in the qualitative derivation of the arrow of time,
+compatible with postulates~P1--P5:
+\begin{enumerate}[label=(\roman*)]
+  \item \textit{Coherent low-entropy initial sector}~(Step~1, Level~B).
+  \item \textit{Causal structure}~(Level~A, quadratic): the Lorentzian
+    signature~\eqref{eq:dispersion} gives a hyperbolic propagation operator.
+    The retarded Green's function $G_{\rm ret}(t,\mathbf{x})=0$ for $t<0$
+    is proved strictly by contour integration~(Appendix~\ref{app:retarded_kernel}, Level~A).
+    For the full nonlinear causal kernel this remains an open problem~(OP5).
+  \item \textit{Positive spectral density}~(Level~A, quadratic sector):
+    $\rho(\mu^2)\geq 0$ follows from the dispersion relation.
+    The standard fluctuation--dissipation relation in the linear
+    quadratic effective sector then gives non-negative dissipation kernel:
+    $\mathrm{Im}\,G^{\rm ret}(\omega)\geq 0$.
+\end{enumerate}
+Under conditions~(i)--(iii) in the quadratic effective sector
+one obtains $d\Gamma_{\rm irr}/dw\geq 0$, hence qualitative monotonicity
+$dS_{\rm ent}/dw\geq 0$ for macroscopic systems with $N_{\rm eff}\gg 1$.
+The condition of retardedness $K(\tau<0)=0$ is now strictly proved
+in the quadratic sector~(Level~A, Appendix~\ref{app:retarded_kernel}).
+The full strict derivation in the nonlinear theory depends on
+open problems~OP1, OP5, and~OP24.
 
-For the working convention $\beta=1$ this reduces to $1<\alpha<4$.
-Within this window:
+\paragraph{Step~3. Working quantitative formula (Level~B, under effective assumptions).}
+The scaling analysis of the bath spectral density
+(Appendix~\ref{app:ohmic_markov}) shows that standard 3D derivative
+coupling of Goldstone modes gives a super-ohmic contribution
+$J(\omega)\propto\omega^4$, not ohmic.
+For the working formula of the arrow of time two additional
+effective assumptions are adopted:
 \begin{itemize}
-\item macroscopic perturbations ($r\gg\ell_{\rm Pl}$) propagate in a
-  Lorentzian spacetime with speed $c_*=\sqrt{\beta/(\alpha-\beta)}$;
-\item sub-condensate fluctuations ($r\lesssim\ell_{\rm Pl}$) see an
-  effectively isotropic (Euclidean) medium.
+  \item \textit{Effective ohmic regime}: in the phenomenological
+    Markovian reduction $J(\omega)=N_{\rm eff}\gamma\omega$
+    is used~(Level~B, assumption);
+  \item \textit{Markovianity}: $\tau_{\rm env}\sim m_\sigma^{-1}$;
+    $\tau_{\rm dec}\gg m_\sigma^{-1}$ for $N_{\rm eff}\gg 1$
+    in weak coupling~(Level~B, heuristics).
+\end{itemize}
+Under these two effective assumptions the working formula is:
+\begin{equation}
+  \label{eq:dSdw_explicit}
+  \frac{dS_{\rm ent}}{dw}
+  = N_{\rm eff}\,\gamma\!\left(\frac{dq}{dw}\right)^{\!2}
+  \geq 0.
+\end{equation}
+Strict derivation of both assumptions from ECT is deferred
+to Section~\ref{sec:influence_functional}.
+
+\paragraph{Quantum exception.}
+For $N_{\rm eff}\sim 1$ the product $N_{\rm eff}\gamma\tau_{\rm loop}\lesssim 1$:
+reverse motion along~$w$ is not suppressed.
+Reversibility of dynamics with few degrees of freedom is reproduced
+automatically---an internal ECT result, not imported from another theory.
+
+\subsection{Comparison with other theories}
+\label{sec:comparison_theories}
+
+\paragraph{Einstein--aether theory~\cite{Jacobson2004}.}
+In Einstein--aether theory the anisotropy is introduced by a postulated
+aether vector field $u^A$; it does not arise spontaneously.
+In ECT the orientation variable $n_A$ is a collective variable of the
+broken phase---it enters the kinetic EFT tensor, not the bare action P3.
+The anisotropy is entirely spontaneous.
+
+\paragraph{Ho\v{r}ava--Lifshitz gravity.}
+This theory introduces explicit anisotropy between space and time
+by construction, breaking Lorentz invariance explicitly at the
+fundamental level. In ECT Lorentz invariance of the fundamental
+action is preserved (P2) and broken only spontaneously.
+
+\paragraph{CDT (Causal Dynamical Triangulations)~\cite{Ambjorn2005}.}
+In CDT the Lorentzian structure is imposed as a constraint on
+the lattice geometry. In ECT geometry is secondary to the field~$\Phi$
+and the metric is emergent.
+
+\paragraph{Hartle--Hawking no-boundary proposal~\cite{HartleHawking1983}.}
+Both approaches use a Euclidean arena, but for Hartle--Hawking it is a
+computational tool for defining path integrals. In ECT the Euclidean
+manifold is the fundamental arena, not a mathematical device.
+
+\noindent\textbf{Summary.}
+In ECT the Lorentzian signature and physical time arise from the
+$O(4)\to O(3)$ ordering of a single scalar vacuum sector; the arrow
+of time is strongly motivated by the same structure and becomes
+quantitative in the decoherence analysis~(Section~\ref{sec:influence_functional}).
+Unlike Einstein--aether and Horava--Lifshitz, the anisotropy is
+entirely spontaneous. Unlike CDT, geometry is secondary to field~$\Phi$.
+Unlike Hartle--Hawking, the Euclidean arena is fundamental.
+
+
+% ============================================================
+% SECTION 4: SPECTRUM AND EFFECTIVE DYNAMICS OF THE BROKEN PHASE
+% ============================================================
+\section{Spectrum and Effective Dynamics of the Broken Phase}
+\label{sec:broken_spectrum}
+
+After postulate~P4 has selected the gradient-ordered vacuum sector
+and postulate~P5 has identified the coherent topological sector,
+the next step is to determine which excitations exist above this
+vacuum and what their effective dynamics is.
+
+\subsection{Polar decomposition and collective variables}
+\label{sec:polar_decomp}
+
+The background field is given by postulate~P4:
+\begin{equation}
+  \Phi_{\rm bg}(X) = u_0\,w + \Phi_*,\qquad \partial_A\Phi_{\rm bg} = u_0\,\delta_{Aw}.
+\end{equation}
+In the broken phase the polar decomposition of the gradient is:
+\begin{equation}
+  \label{eq:polar}
+  \partial_A\Phi = (u_0 + \sigma)\,n_A,
+\end{equation}
+where $\sigma(X)$ is the amplitude (radial) fluctuation and
+$n_A(X)$ is the orientation collective variable with vacuum value
+$\langle n_A\rangle = \delta_{Aw}$.
+
+\noindent\textbf{Status of $n_A$.}
+The orientation variable belongs to the vacuum level of description~(P4);
+it is not a second fundamental microscopic degree of freedom
+and does not appear in the fundamental action.
+
+\subsection{Mode classes and the Goldstone analysis}
+\label{sec:mode_classes}
+
+The symmetry breaking $O(4)\to O(3)$ produces three classes of excitations.
+
+\paragraph{Radial (amplitude) mode $\sigma$.}
+Describes changes in the gradient condensate amplitude $u_0\to u_0+\sigma$.
+Its mass from the bare potential P3:
+\begin{equation}
+  \label{eq:sigma_mass}
+  m_\sigma^2 = V''(\phi_0) = 2\mu^2.
+\end{equation}
+The correlation length of the ordered sector
+(from the Euclidean propagator, Appendix~\ref{app:corr_length}):
+\begin{equation}
+  \xi_{\rm cond}\sim m_\sigma^{-1}.
+\end{equation}
+This is an EFT matching-scale estimate, not a strict derivation
+from P3: $m_\sigma^2$ belongs to the bare potential while the vacuum
+is specified by the separate postulate~P4.
+
+\paragraph{Orientation (soft Goldstone) modes.}
+The vacuum manifold $O(4)/O(3)\simeq S^3$ supports three soft
+orientation modes associated with the three broken generators.
+In the minimal counting scheme $N_G^{\rm min} = \dim O(4) - \dim O(3) = 3$.
+
+\noindent\textit{Caveat.}
+This breaks a \emph{spacetime} rather than an internal symmetry.
+For such symmetry breaking the naive count may be modified
+by inverse Higgs constraints~\cite{Ivanov1975,McArthur2010},
+whereby some modes become dependent.
+A detailed analysis for the $O(4)\to O(3)$ case is deferred.
+In the present work we use the minimal counting scheme.
+
+The effective action for the orientation field (Appendix~\ref{app:sigma_model}):
+\begin{equation}
+  S_n^{(2)} = \frac{\kappa_n}{2}\int d^4X\,\partial_B\,\delta n_i\,\partial^B\,\delta n_i,
+\end{equation}
+giving equation of motion $\partial_B\partial^B\,\delta n_i=0$ and dispersion
+\begin{equation}
+  \label{eq:n_dispersion}
+  \omega^2 = c_n^2 k^2,\qquad c_n\approx c_*
+  \quad\text{(EFT matching assumption)}.
+\end{equation}
+Three massless orientation modes, no tachyons.
+
+\paragraph{Coherent phase variable $\theta$.}
+Postulate~P5 introduces the effective order parameter
+$\Phi_{\rm eff}=\rho\,e^{i\theta}$ of the coherent IR sector.
+The variable~$\theta$ carries the topological content and is
+not a fluctuation of the real field~$\Phi$~(P3).
+
+\subsection{EFT quadratic action for fluctuations}
+\label{sec:eft_quadratic}
+
+\textit{Status: EFT consequence (Theorem~\ref{thm:tensor_uniqueness}
+applied to the broken-phase EFT).}
+
+After integrating out the heavy radial mode ($E\ll m_\sigma$),
+the effective quadratic action for soft fluctuation~$\varphi$
+takes the form~\eqref{eq:quadratic_action} with the kinetic
+tensor~\eqref{eq:K_general}. The EFT motivation for this form
+via integrating out $\sigma$ is detailed in
+Appendix~\ref{app:eft_derivation}.
+
+\subsection{Mode hierarchy and the branching structure}
+\label{sec:mode_hierarchy}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{p{3cm}p{3.5cm}p{5cm}}
+\hline\hline
+Mode & Scale & Role \\
+\hline
+Radial $\sigma$ & $E\sim m_\sigma$ & UV cutoff of EFT; integrates out for $E\ll m_\sigma$ \\
+Orientation $\delta n_i$ & $E\ll m_\sigma$, massless & Geometric sector; coupled to effective metric \\
+Scalar $\varphi$ & $E\ll m_\sigma$ & Scalar excitations of Lorentzian sector \\
+Phase $\theta$ & Topological sector & Coherent IR; pre-quantum action scale \\
+\hline\hline
+\end{tabular}
+\end{center}
+
+\noindent\textbf{Spin-2 content of the geometric branch.}
+\textit{Note on terminology:} ``spin-2'' is used here in the purely
+classical group-theoretic sense---a rank-2 symmetric tensor under
+the rotation group $O(3)$. This does not require quantisation and
+involves no reference to~$\hbar$.
+
+The three orientation modes $\delta n_i$ form a rank-2 symmetric tensorial
+sector. Through the effective metric $g^{\rm eff}_{AB}(n_A)$,
+small deformations $\delta n_i$ induce metric fluctuations $h_{\mu\nu}$.
+With a massless dispersion $\omega^2=c_n^2 k^2$ at $\alpha=2\beta$,
+the geometric branch contains a tensorial long-wavelength sector
+compatible with a massless rank-2 description.
+
+Furthermore, the existence of this massless tensorial sector and
+its coupling to the conserved stress-energy tensor
+(Appendix~\ref{app:noether_full}) make the geometric branch of ECT
+compatible with a Deser-type route~\cite{Deser1970} to massless spin-2
+gravity. On the ECT basics level this should be understood not as
+a completed derivation of full nonlinear gravitational dynamics,
+but as a structural motivation for why Macroscopic Physics should
+develop precisely the spin-2 geometric branch.
+The complete development---gauge reduction, two physical polarisations,
+linearised and nonlinear gravitational equations---belongs to
+Section~\ref{sec:gravity}.
+
+\subsection{Status of results in this section}
+\label{sec:spectrum_status}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{p{6cm}ll}
+\hline\hline
+Result & Status & Basis \\
+\hline
+Polar decomposition $\partial_A\Phi=(u_0+\sigma)n_A$
+  & Level~A & P4 + Theorem~\ref{thm:tensor_uniqueness} \\
+Minimal soft mode count $N_G^{\rm min}=3$
+  & Level~B (EFT, minimal scheme) & $\dim O(4)/O(3)$; inverse Higgs not analysed \\
+Quadratic EFT action~\eqref{eq:quadratic_action}
+  & Level~A (EFT) & Uniqueness of $K^{AB}$ \\
+Equation of motion~\eqref{eq:eom_broken}
+  & Level~A (EFT) & Variation of~\eqref{eq:quadratic_action} \\
+Lorentzian dispersion~\eqref{eq:dispersion} for $\alpha>\beta$
+  & Level~A (EFT) & Theorem~\ref{thm:tensor_uniqueness} + $\alpha>\beta$ \\
+Klein--Gordon equation~\eqref{eq:KG}
+  & Level~A (EFT) & Interpretational step $w\to -ic_*t$ \\
+Free Hamiltonian $H\geq 0$~\eqref{eq:H_free}
+  & Level~A (quadratic) & Canonical normalisation; no tachyon/ghost \\
+Identification of $m_{\rm eff}^2$ with $V''(\phi_0)$
+  & Open (OP-grad) & Requires explicit EFT matching \\
+\hline\hline
+\end{tabular}
+\end{center}
+
+\medskip
+\noindent\textit{What is intentionally not done here.}
+This section does not introduce $\hbar$, canonical commutation relations,
+or the Born rule. Only the result that broken-phase excitations satisfy
+a Lorentzian wave equation with relativistic dispersion is obtained.
+The quantum regime is developed in Section~\ref{sec:quantum}
+after deriving the corresponding formalism from the condensate structure.
+
+
+% ============================================================
+% SECTION 5: FUNDAMENTAL SCALES, MATCHING RELATIONS, CONSTANTS
+% ============================================================
+\section{Fundamental Scales, Matching Relations, and the Status of Constants}
+\label{sec:constants}
+
+After establishing the postulates and the broken-phase dynamics,
+we systematically distinguish: which parameters are microscopic,
+which are effective, which are fixed by observational matching,
+and which are not yet derived.
+
+\subsection{Parameter hierarchy by level of description}
+\label{sec:param_hierarchy}
+
+\paragraph{Level 1. Bare micro-parameters~(P3).}
+The potential $V(\Phi)$ contains two parameters:
+$\mu^2>0$, $\lambda>0$, with bare radial stiffness:
+\begin{equation}
+  m_\sigma^2 = V''(\phi_0) = 2\mu^2,\qquad
+  \phi_0 = \sqrt{\mu^2/\lambda}.
+\end{equation}
+These characterise the microscopic field dynamics only and
+do not directly fix the ordered vacuum.
+
+\paragraph{Level 2. Vacuum-sector parameters~(P4).}
+Postulate~P4 introduces $u_0>0$, the gradient condensate amplitude
+$\langle\partial_A\Phi\rangle = u_0\,\delta_{Aw}$.
+This is an independent parameter; its relation to $\phi_0$
+and $\lambda$ from the bare theory requires additional
+matching (OP-grad).
+
+\paragraph{Level 3. Broken-phase EFT parameters.}
+The effective kinetic tensor contains $\alpha>\beta>0$ and $m_{\rm eff}^2$,
+where $m_{\rm eff}^2\neq m_\sigma^2$ in general.
+
+\paragraph{Level 4. Coherent-sector parameters~(P5).}
+Postulate~P5 introduces the pre-quantum topological action scale
+$S_0$ via $S_{\rm loop,min}=2\pi S_0$.
+The identification $S_0=\hbar$ is deferred to
+Section~\ref{sec:quantum}.
+
+\subsection{Effective propagation speed $c_*$}
+\label{sec:c_star}
+
+\textit{Status: Level~A in broken-phase EFT.}
+
+From the dispersion relation~\eqref{eq:dispersion}:
+\begin{equation}
+  \label{eq:c_star_def}
+  \boxed{c_*^2 = \frac{\beta}{\alpha-\beta}.}
+\end{equation}
+This is a strict EFT consequence; it requires neither quantum
+formalism nor a gravitational sector.
+
+\paragraph{Observational matching.}
+The constraint that gravitational and electromagnetic signals propagate
+at the same speed~\cite{LIGO_Virgo_GW170817_2017} motivates the
+benchmark $c_*=c$. In canonical units ($\beta=1$) this corresponds
+to $\alpha=2\beta=2$.
+The parameters $(\alpha,\beta)$ are EFT parameters not derivable
+from the bare micro-action P3 in the current formulation.
+
+\subsection{Gravitational stiffness scale and Newton's constant}
+\label{sec:GN_matching}
+
+\textit{Status: Level~B --- geometric EFT sector; $G_N$ fixed by matching.}
+
+In the geometric sector of ECT the orientation modes $\delta n_i$
+produce metric fluctuations. At the quadratic level this leads to
+a Fierz--Pauli-type~\cite{Fierz1939} action for spin-2 excitations
+with stiffness coefficient $M_G^2$:
+\begin{equation}
+  S_{\rm geom}^{(2)}\sim M_G^2\int d^4x\,\partial_\lambda h_{\mu\nu}\,\partial^\lambda h^{\mu\nu}+\ldots
+\end{equation}
+
+\paragraph{Matching to Newton's constant.}
+Comparison with linearised GR (Einstein--Hilbert action in the linear limit):
+\begin{equation}
+  \label{eq:GN_matching}
+  G_N = \frac{c_*^4}{8\pi M_G^2}.
+\end{equation}
+In natural units $c=\hbar=1$ (used as a working convention
+independently of the final status of~$\hbar$):
+\begin{equation}
+  M_G \equiv \bar{M}_{\rm Pl} = \frac{1}{\sqrt{8\pi G_N}}
+  \approx 2.435\times 10^{18}\,{\rm GeV}.
+\end{equation}
+This is a numerical EFT matching, not a first-principles derivation.
+The numerical value in GeV requires $\hbar$ and $c$ for unit conversion;
+strict justification follows from Section~\ref{sec:quantum}.
+
+The relation~\eqref{eq:GN_matching} is geometric EFT matching,
+not a derivation of $G_N$ from the bare micro-action~P3.
+How $M_G$ relates to $(u_0,\alpha,\beta)$ remains an open
+problem~(OP2--OP3). This is developed in Section~\ref{sec:gravity}.
+
+\subsection{Radial-mode scales and the correlation length}
+\label{sec:sigma_scales}
+
+From the bare potential P3 the EFT matching-scale estimate:
+\begin{equation}
+  \xi_{\rm cond}\sim m_\sigma^{-1} = (2\mu^2)^{-1/2}.
+\end{equation}
+This is supported by the exponential decay of the Euclidean propagator
+of the heavy radial mode (Appendix~\ref{app:corr_length}):
+$G_\sigma(r)\sim e^{-m_\sigma r}/r^{3/2}$ for $r\to\infty$.
+
+A natural phenomenological matching hypothesis is $\xi_{\rm cond}\sim\ell_{\rm Pl}$,
+where $\ell_{\rm Pl}=\sqrt{G_N\hbar/c^3}\approx 1.6\times 10^{-35}$\,m.
+This should be understood as a motivated matching hypothesis,
+not a strict derivation: $\ell_{\rm Pl}$ depends on~$\hbar$,
+which is not yet derived at this stage.
+
+\subsection{Pre-quantum action scale and the status of $\hbar$}
+\label{sec:hbar_status}
+
+\textit{Status: existence established by P5; strict identification
+with physical $\hbar$ is deferred to Section~\ref{sec:quantum}.}
+
+Postulate~P5 guarantees the existence of a topologically quantised
+action scale through:
+\begin{equation}
+  S_{\rm loop,min} = 2\pi S_0.
+\end{equation}
+The explicit first-principles estimate of $S_0$ from effective phase
+dynamics requires a reduced loop action in the coherent sector---
+an integral over the transverse profile of the loop and an effective
+1D functional---which does not follow directly from the 4D EFT
+action~\eqref{eq:quadratic_action} without additional construction.
+The explicit calculation is therefore deferred
+(Appendix~\ref{app:Sloop_calc}); $S_0$ is introduced here as
+the \emph{pre-quantum action scale}, whose existence is guaranteed
+by the structure of~P5.
+
+The identification of $S_0$ with the observed $\hbar$ requires:
+(i)~showing that $S_{\rm loop,min}$ sets the unit of action for all
+processes in the coherent sector;
+(ii)~deriving canonical quantisation relations from this structure;
+(iii)~establishing consistency with the observed
+$\hbar=1.055\times 10^{-34}$\,J$\cdot$s.
+These are addressed in Section~\ref{sec:quantum}.
+The question of identifying $S_0$ with observable~$\hbar$ is
+therefore deferred to Section~\ref{sec:quantum}, where it is
+discussed and motivated in the context of the Quantum Sector.
+
+\subsection{Summary table: parameters and constants}
+\label{sec:params_table}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{p{2.8cm}p{3cm}p{2.5cm}p{3.2cm}}
+\hline\hline
+Quantity & Physical meaning & Status & Basis / note \\
+\hline
+$\mu^2$, $\lambda$
+  & Bare micro-parameters~P3
+  & Micro-parameters
+  & P3; not directly linked to P4 \\
+$u_0$
+  & Gradient condensate amplitude
+  & P4 (postulated)
+  & OP-grad for derivation from P3 \\
+$\alpha$, $\beta$
+  & Kinetic tensor parameters
+  & EFT parameters
+  & Theorem~\ref{thm:tensor_uniqueness} \\
+$c_*$
+  & EFT propagation speed
+  & Level~A (EFT)
+  & Eq.~\eqref{eq:c_star_def} \\
+$\alpha=2\beta$
+  & Working normalisation $c_*=c$
+  & Benchmark (matching)
+  & \cite{LIGO_Virgo_GW170817_2017} \\
+$m_\sigma^2=2\mu^2$
+  & Bare radial stiffness
+  & Level~A in P3
+  & $V''(\phi_0)$ from P3 \\
+$m_{\rm eff}^2$
+  & EFT fluctuation mass
+  & EFT parameter
+  & $\neq m_\sigma^2$ in general \\
+$\xi_{\rm cond}$
+  & EFT correlation length
+  & EFT estimate
+  & $\sim m_\sigma^{-1}$; not strict \\
+$M_G$
+  & Gravitational stiffness
+  & Level~B (matching)
+  & $G_N=c_*^4/(8\pi M_G^2)$ \\
+$G_N$
+  & Newton's constant
+  & Matched
+  & Observational input \\
+$\bar{M}_{\rm Pl}$
+  & Reduced Planck mass
+  & Level~B (matching)
+  & $\bar{M}_{\rm Pl}^2=M_G^2$ \\
+$S_0$
+  & Pre-quantum action scale
+  & Existence: P5
+  & Explicit calc.\ $\to$ Sect.~\ref{sec:quantum} \\
+$\hbar$
+  & Planck constant
+  & Not yet complete
+  & Task of Sect.~\ref{sec:quantum} \\
+\hline\hline
+\end{tabular}
+\end{center}
+
+
+\paragraph{Terminological note: $v_0$ vs $u_0$.}
+In sections following this foundational part (Quantum Dynamics,
+Consistency Relations, and onwards), the older notation~$v_0$
+is used for the condensate amplitude, corresponding to
+$\langle\Phi\rangle=v_0$ in the original ECT formulation.
+In the present foundational framework (Sections~\ref{sec:postulates}--\ref{sec:branching})
+we use $u_0=|\langle\partial_A\Phi\rangle|$~(P4) for the
+gradient condensate amplitude and $\phi_0=\sqrt{\mu^2/\lambda}$~(P3)
+for the bare potential minimum.
+The matching $u_0\leftrightarrow v_0$ is established via the
+explicit condensate profile $\Phi_{\rm bg}=u_0 w+\Phi_*$
+(Appendix~\ref{app:background_split}).
+In the updated treatment of subsequent sections this distinction
+will be made precise; for the present paper the two notations
+coexist with this terminological note.
+
+
+
+% ============================================================
+% SECTION 6: BRANCHING STRUCTURE OF ECT
+% ============================================================
+\section{Branching Structure of ECT}
+\label{sec:branching}
+
+The postulates P1--P5, together with the ordered vacuum sector,
+the broken-phase spectrum, and the scale hierarchy,
+define a common condensate framework from which two distinct
+but mutually consistent effective branches emerge.
+
+\subsection{Two classes of observables}
+\label{sec:two_observables}
+
+ECT contains a single fundamental field~$\Phi$~(P3).
+Postulate~P4 introduces the orientation variable~$n_A$ and the
+kinetic tensor~\eqref{eq:K_general}, producing the Lorentzian sector.
+Postulate~P5 introduces the global phase variable~$\theta$
+with the winding condition~\eqref{eq:winding_condition}.
+
+These two steps are structurally distinct and produce two qualitatively
+different classes of observables:
+\begin{enumerate}
+  \item \textit{Phase-insensitive observables}: probe the coarse-grained
+    geometric and stiffness response of the vacuum.
+    Primary variables: $n_A$, $K^{AB}$, $g^{\rm eff}_{AB}$, $M_G$.
+    These constitute the \emph{geometric branch}.
+  \item \textit{Phase-sensitive observables}: probe coherence,
+    winding structure, and non-trivial loop configurations.
+    Primary variables: $\Phi_{\rm eff}$, $\theta$, winding numbers, $S_0$.
+    These constitute the \emph{coherent-topological branch}.
+\end{enumerate}
+
+\subsection{The geometric branch (Macroscopic Physics)}
+\label{sec:geom_branch}
+
+Primary variables: $n_A$, $K^{AB}$, $g^{\rm eff}_{AB}$, $M_G$,
+long-wavelength stiffness fields.
+
+This branch contains in embryo:
+effective Lorentzian geometry; propagation speed $c_*$~(Level~A);
+gravitational stiffness~$M_G$ matched to $G_N$~(Level~B);
+the long-wavelength sector from which gravity, cosmology, and
+astrophysical phenomenology are developed.
+
+\subsection{The coherent-topological branch (Quantum Sector)}
+\label{sec:coh_branch}
+
+Primary variables: $\Phi_{\rm eff}$, $\theta$,
+winding condition~\eqref{eq:winding_condition}, $S_0$.
+
+This branch will later develop:
+identification of $S_0$ with observable~$\hbar$;
+canonical quantisation relations;
+connection between phase single-valuedness, loop quantisation,
+and wave dynamics;
+decoherence, probabilistic interpretation, and the quantum limit of ECT.
+
+\subsection{Why branching is necessary}
+\label{sec:why_branching}
+
+The branching is not a matter of exposition but a structural
+consequence of the condensate framework:
+\begin{enumerate}
+  \item P4 introduces the orientation field---this selects the geometric branch.
+  \item P5 introduces the global phase with integer winding---this selects the topological branch.
+  \item Both branches arise as different coarse-grainings of the same ordered condensate.
+  \item Neither branch reduces to the other without loss of physical content.
+\end{enumerate}
+\textbf{Criterion.}
+In ECT the effective branch is selected not by adding new postulates
+but by the class of observables retained under coarse-graining.
+
+\subsection{Variational principle and Noether structure}
+\label{sec:noether}
+
+\textit{Status: Level~A --- follows from P1--P3 and the
+classical stationarity principle; does not require quantisation.}
+
+On each level of description the admissible configurations are
+determined from the stationarity condition:
+\begin{equation}
+  \label{eq:variational}
+  \frac{\delta S_{\rm level}}{\delta\Phi}\bigg|_{\rm on-shell} = 0.
+\end{equation}
+
+\paragraph{Translational invariance and $T^{AB}$.}
+From the homogeneity of the Euclidean arena~$\mathcal{M}^4$~(P1)
+and the absence of explicit $X^A$-dependence in the action~(P3),
+by Noether's theorem~\cite{Noether1918} for translations
+$X^A\to X^A+\epsilon^A$:
+\begin{equation}
+  T^{AB}_{(\Phi)} = \partial^A\Phi\,\partial^B\Phi
+  - \delta^{AB}\mathcal{L}_\Phi,
+  \qquad \partial_A T^{AB}_{(\Phi)} = 0.
+\end{equation}
+It is \emph{translational invariance} (homogeneity of the arena),
+not $O(4)$ rotational symmetry (P2), that produces conservation of~$T^{AB}$.
+$O(4)$-symmetry produces separate angular Noether currents
+$J^{C,AB} = X^A T^{CB} - X^B T^{CA}$.
+The full derivation with explicit formulae for both sets of currents,
+including the orientation-field sector, is given in
+Appendix~\ref{app:noether_full}.
+
+\paragraph{Inheritance by both branches.}
+Conservation laws for energy-momentum and angular currents are present
+in both branches as a consequence of the common variational foundation
+of ECT---homogeneity of the arena (P1), locality of the action (P3),
+and $O(4)$-symmetry (P2)---not as additional postulates.
+Explicitly: $\partial_A T^{AB}=0$ follows from translational invariance;
+angular currents $J^{C,AB}$ follow from rotational $O(4)$ symmetry.
+
+\subsection{Remark on defect sectors beyond P5}
+\label{sec:defect_sectors}
+
+Postulate~P5 restricts the present section to the \emph{defect-free}
+coherent sector: configurations with integer winding numbers and
+smooth orientation variable~$n_A$.
+This restriction does not forbid defect configurations ontologically.
+Configurations not belonging to the coherent sector include:
+\begin{itemize}
+  \item \textit{Vortex cores}: configurations with $\rho=0$ where
+    phase~$\theta$ is undefined;
+  \item \textit{Domain walls}: configurations with discontinuities
+    or sharp changes of~$n_A$;
+  \item \textit{Instantons}: non-trivial topological configurations
+    in Euclidean space describing tunnelling between different
+    vacuum sectors~\cite{Belavin1975}.
+\end{itemize}
+ECT basics already indicates the existence of this richer space
+of states. Postulate~P5 does not ``artificially eliminate'' any
+physics; it selects a sector and thereby \emph{predicts} the
+existence of a broader structure beyond it.
+
+\subsection{Conclusions of ECT basics}
+\label{sec:basics_summary}
+
+ECT basics establishes the following common foundation for both branches:
+\begin{enumerate}
+  \item Four-dimensional Euclidean arena~(P1);
+  \item $O(4)$-invariant scalar microdynamics~(P2--P3);
+  \item Gradient-ordered vacuum sector with $O(4)\to O(3)$~(P4);
+  \item Coherent topological sector with integer windings~(P5);
+  \item Effective Lorentzian kinetic tensor of the broken phase;
+  \item Spectrum and hierarchy of broken-phase excitations;
+  \item Effective propagation speed~$c_*$;
+  \item Four-level parameter hierarchy: bare, vacuum, EFT, coherent;
+  \item Gravitational stiffness scale~$M_G$ matched to $G_N$;
+  \item Pre-quantum action scale~$S_0$.
+\end{enumerate}
+
+What is \emph{not yet completed} in ECT basics:
+\begin{itemize}
+  \item Full macroscopic gravitational and cosmological dynamics;
+  \item Full quantum kinematics and interpretation;
+  \item Identification $S_0=\hbar$ at the level of a strict derivation;
+  \item Nonlinear closure of each branch.
 \end{itemize}
 
-\paragraph{Canonical ECT normalisation.}
-The condition $c_*=c$ (speed of condensate perturbations equals the
-physical speed of light) fixes $\alpha=2\beta$.
-The simplest integer solution is $\alpha=2$, $\beta=1$, which
-satisfies $1<2<4$ and places the working point at the centre of the
-Lorentzian window.  At this normalisation:
-$c_*=1$, $G_N=1/(8\pi v_0^2)$ [canonical: $\alpha=2$, $\beta=1$, so $\chi_\infty\equiv\alpha{-}\beta=1$], $\hbar=v_0/\sqrt{\lambda}$
-(these relations are derived in Section~\ref{sec:constants};
-they are quoted here for orientation).
-This is a phenomenological choice of the simplest solution;
-a UV completion of ECT should either derive $\alpha=2$, $\beta=1$
-from a deeper principle or explain why other solutions are excluded
-(see Open Problem~OP16, Section~\ref{sec:open_problems}).
-The microscopic correlation length of the heavy radial condensate
-mode is $\xi_{\rm cond}\sim\ell_{\rm Pl}
-\approx 1.6\times10^{-35}$~m; it plays the role of the
-\emph{scale at which Lorentzian geometry breaks down}.
-This is a \emph{consistency identification} of scales:
-$\xi_{\rm cond}\sim\ell_{\rm Pl}$ follows from matching
-$v_0\approx\bar{M}_{\rm Pl}$ to observation; it is not a
-parameter-free non-circular prediction (OP-$\Lambda$).
-(This microscopic scale should not be confused with the galactic
-critical acceleration scale $g_\dagger(\phi_{\rm env}) \sim 10^{-10}\,$m\,s$^{-2}$, which
-belongs to the soft Lorentz-order-field sector;
-see Section~\ref{sec:lorentz_order_field}.)
+\begin{table}[H]
+\centering\small
+\caption{Structural branching of ECT after completion of the basics.}
+\label{tab:ect_branching}
+\begin{tabular}{p{3cm}p{5cm}p{4.5cm}}
+\hline\hline
+\textbf{Branch} & \textbf{Primary variables} & \textbf{Developed in} \\
+\hline
+Geometric\\(Macroscopic Physics)
+  & $g^{\rm eff}_{AB}$, $n_A$, $M_G$, long-wavelength stiffness fields
+  & Gravity, cosmology, galactic phenomenology, observational tests \\
+Coherent-topological\\(Quantum Sector)
+  & $\Phi_{\rm eff}$, $\theta$, $S_0$, winding sectors, coherent correlators
+  & Action scale quantisation, wave dynamics, quantum kinematics, decoherence, probability \\
+\hline\hline
+\end{tabular}
+\end{table}
+
+\paragraph{Roadmap.}
+The two major parts of the theory follow naturally.
+\textit{Macroscopic Physics} (Section~\ref{sec:gravity} onwards):
+effective gravity, vacuum long-wavelength response, cosmology,
+galactic phenomenology, and observational tests.
+\textit{Quantum Sector} (Section~\ref{sec:quantum} onwards):
+action scale quantisation, wave dynamics of coherent excitations,
+canonical quantum structure, decoherence, and the status of
+probabilistic interpretation.
 
-\paragraph{Phenomenological inputs of ECT.}
 
-For clarity, we list explicitly all places where ECT makes a
-phenomenological choice not derived from the condensate action:
-\begin{description}[leftmargin=2em,labelindent=0pt,style=unboxed]
-  \item[Ph1 --- Canonical normalisation ($\alpha=2$, $\beta=1$).]
-    The condition $c_*=c$ (required by GW170817) fixes $\alpha=2\beta$
-    uniquely; $\beta=1$ follows from canonical kinetic normalisation
-    (standard QFT convention).  Both are physical requirements,
-    not free choices (OP16 resolved).
-    Other solutions are not excluded on symmetry grounds.
-  \item[Ph2 --- Microscopic radial-mode correlation length ($\xi_{\rm cond}\sim\ell_{\rm Pl}$).]
-    Consistency identification: $\xi_{\rm cond}\sim\ell_{\rm Pl}$ follows
-    from matching $v_0\approx\bar{M}_{\rm Pl}$; not a non-circular
-    first-principles derivation (OP-$\Lambda$).
-    This is the correlation length of the \emph{heavy} radial
-    condensate mode, not the galactic transition scale.
-  \item[Ph3 --- Galactic $\phi$-sector scale.]
-    The critical acceleration scale $g_\dagger \propto cH_0$
-    is quasi-universal; its connection to $v_0$ via RG running
-    is open (OP17).
-  \item[Ph4 --- Galactic modification of gravity.]
-    ECT derives $G_{\rm eff}=1/(8\pi M_*^2\chi)$ where
-    $\chi = \alpha{-}\beta$ is the Lorentz-order parameter
-    (Level~A).  The galactic-scale modification is described
-    by the dynamics of the Lorentz-order field
-    $\phi = \ln(\chi/\chi_{\rm vac})$
-    (Section~\ref{sec:lorentz_order_field}).
-    The galactic weak-field sector is described by the
-    $\phi$-closure model (Section~\ref{sec:galactic}),
-    in which the environment parameter $\phi_{\rm env}$
-    controls the critical acceleration scale $g_\dagger$.
-  \item[Ph5 --- Standard Model gauge group.]
-    $SU(3)_c\times SU(2)_L\times U(1)_Y$ is postulated;
-    only the $U(1)$ and $SU(2)$ factors are motivated by the
-    phase symmetries of the condensate.
-\end{description}
-All remaining results claimed in this paper follow from the
-condensate action and these five inputs.
-
-\paragraph{Entry point for the main formalism.}
-
-With condition~\eqref{eq:full_lorentz_condition} established, the
-remaining sections of this paper develop the theory within the
-Lorentzian sector $\beta<\alpha<4\beta$ (with $\beta=1$ as working
-convention). The analysis of the condensate vacuum, the explicit
-derivation of the metric, and the phenomenological consequences all
-follow from this starting point.
-
-\subsection{Vacuum structure of the condensate}
-
-
-\paragraph{Critical temperature}
-
-At finite temperature $T$, thermal fluctuations add a Dolan--Jackiw
-one-loop correction \cite{DolanJackiw1974}:
-
-\begin{equation}
-V_{\rm eff}(\Phi,T) =
--\frac{\mu^2}{2}\Phi^2
-+
-\frac{\lambda}{4}\Phi^4
-+ \frac{\lambda
-T^2}{12}\Phi^2
-\end{equation}
-
-The net coefficient of $\Phi^2$ is
-$a(T)=-\mu^2+\lambda T^2/6$.
-The phase transition occurs when $a(T_c)=0$:
-
-\begin{equation}
-T_c =
-v_0\sqrt{6}\,\sim\,v_0.
-\end{equation}
-
-This temperature corresponds to the Planck epoch
-(since $v_0\approx\bar{M}_{\rm Pl}$, as determined in
-Section~\ref{sec:constants}). The relation
-$T_c\sim v_0$ follows directly from thermal field theory.
-
-
-
-
-
-
-\subsection{Spontaneous symmetry breaking and selection of a preferred direction}
-
-
-The vacuum expectation value
-
-\begin{equation}
-\langle n_A\rangle=\delta_{Aw}
-\end{equation}
-
-selects a point on the manifold $S^3$. The residual symmetry group is
-O(3), corresponding to rotations in the spatial directions
-$\{1,2,3\}$.
-
-By the homogeneous space theorem,
-
-\begin{equation}
-{\rm O(4)/O(3)}\cong S^3,
-\qquad
-\dim S^3 = 3 .
-\end{equation}
-
-The three broken generators therefore produce three Goldstone modes.
-The coordinate $w=X^4$ becomes the direction associated with the
-condensate order parameter.
-
-
-
-
-
-
-\subsection{Emergence of the Lorentzian metric}
-
-
-Expand the condensate around the vacuum configuration,
-
-\begin{equation}
-\Phi = v_0 + \varphi,
-\qquad
-n_A = \delta_{Aw} + \xi_A ,
-\end{equation}
-
-with $\xi_4 = 0$. Keeping terms quadratic in the fluctuation
-$\varphi$ gives
-
-\begin{equation}
-\label{eq:quadratic_action}
-S_E^{(2)}[\varphi] =
-\frac{1}{2}\int d^4X
-\left[
-\beta(\partial_i\varphi)^2
--
-(\alpha-\beta)(\partial_w\varphi)^2
-+
-\beta\, m_\varphi^2\varphi^2
-\right],
-\qquad
-m_\varphi^2 = 2\mu^2 .
-\end{equation}
-
-Here $\beta$ is the isotropic condensate stiffness parameter
-introduced in Postulate~P4 (Eq.~\eqref{eq:ECT_action}).
-The coefficient of $(\partial_w\varphi)^2$ is $-(\alpha-\beta)$,
-which is negative when $\alpha>\beta$ --- the generalised
-Lorentzian condition.
-
-\paragraph{Origin of the Lorentzian signature.}
-
-The dispersion relation derived from the quadratic action reads
-
-\begin{equation}
-\beta\,p_i^2
--
-(\alpha-\beta)\,p_w^2
-+
-\beta\,m_\varphi^2
-=
-0 .
-\end{equation}
-
-Identifying the energy as $E=p_w c_*$ and dividing by $\beta$ yields
-the standard relativistic dispersion $E^2 = p^2c_*^2 + m^2c_*^4$
-with
-
-\begin{equation}
-\label{eq:c_star_general}
-\boxed{c_* = \sqrt{\frac{\beta}{\alpha-\beta}}\,.}
-\end{equation}
-
-This is the general formula for the emergent propagation speed
-in terms of the two condensate parameters.
-
-\textbf{Canonical normalisation $\alpha=2\beta$, $\beta=1$.}
-The physical condition $c_*=c=1$ fixes $\alpha=2\beta$ exactly.
-The additional normalisation $\beta=1$ then gives $\alpha=2$,
-$c_*=1$, $\alpha{-}\beta=1$ (canonical), and $G_N=1/(8\pi v_0^2)$.
-These two substitutions must always be applied \emph{simultaneously}:
-setting only $\beta=1$ while leaving $\alpha$ free is physically
-inconsistent, because $\alpha$ and $\beta$ are not independent once
-$c_*=c$ is imposed.
-Specialised ($\alpha=2$, $\beta=1$) formulas are annotated with the
-arrow $\xrightarrow{\;\alpha=2\beta,\;\beta=1\;}$.
-
-\textbf{General formulas.}
-All fundamental formulas in this paper are written with $(\alpha-\beta)$
-and $\sqrt{\beta/(\alpha-\beta)}$.
-Readers interested in the general $(\alpha,\beta)$ parameter space
-can use any values satisfying $\beta<\alpha<4\beta$;
-the canonical point $\alpha=2\beta$ corresponds to $c_*=c=1$.
-The general formulas are collected in the paragraph
-``Condensate parameter relationships'' (ref.~\ref{app:constants})
-and Section~\ref{sec:c_star}.
-
-
-
-
-
-
-\subsection{Physical interpretation of the emergent time coordinate}
-
-
-The parameter $c_*$ represents the effective propagation speed of
-perturbations in the condensate background.
-
-Observations of gravitational waves from GW170817 together with the
-associated gamma-ray burst GRB~170817A \cite{LIGO_Virgo_GW170817_2017} constrain the difference
-between the speed of gravity and the speed of light to
-
-\[
-|c_{GW}/c-1| < 10^{-15}.
-\]
-
-This implies that any deviation of the emergent propagation speed from
-the observed value must be extremely small, placing strong constraints
-on the parameter $\alpha$ of the condensate theory.
-
-\subsection{Universal causal cone and Lorentz-violation suppression}
-\label{subsec:causal_cone}
-
-A key structural prediction of ECT is that all low-energy excitations
-of the condensate --- regardless of their spin, charge, or internal
-symmetry --- share the same emergent causal cone.
-
-\paragraph{Uniqueness of the causal cone.}
-
-The emergent metric $g_{\mu\nu}^{\rm eff}$ is determined entirely by
-the single condensate order parameter $n^A$ and the two scalar
-couplings $\alpha$, $\beta$.  At the quadratic (EFT) level, any
-low-energy field $\psi$ propagating in the condensate background
-couples to the kinetic tensor $K^{AB}$ of Eq.~\eqref{eq:K_general}:
-\begin{equation}
-  \mathcal{L}^{(4)} \supset
-  -\frac{1}{2}\,Z_\psi\,g^{\mu\nu}(n)\,\partial_\mu\psi\,\partial_\nu\psi,
-\end{equation}
-where $Z_\psi$ is a field-strength renormalisation factor and
-$g^{\mu\nu}(n) = K^{\mu\nu}/(\alpha-\beta)$ is the common metric.
-Because $K^{AB}$ is the unique $O(3)$-invariant rank-2 tensor built
-from $\{\delta^{AB}, n^A\}$ (Section~\ref{sec:metric_classification}),
-\emph{every} species couples to the same metric: there is only one
-causal cone.  Species-dependent corrections to $c_*$ would require
-additional condensate fields, which are not present in the minimal ECT
-action~\eqref{eq:ECT_action}.
-
-\paragraph{Power-counting suppression of Lorentz-violating operators.}
-
-Higher-dimensional operators in the condensate EFT can in principle
-break the universality of the causal cone.  The leading correction
-arises at dimension~6:
-\begin{equation}
-  \mathcal{L}^{(6)} \supset \frac{c_{LV}}{M_{\rm Pl}^2}\,
-  (n^\mu\partial_\mu\psi)^2\,(\partial_\nu\psi)^2,
-\end{equation}
-with an order-unity Wilson coefficient $c_{LV}$.  Standard
-power-counting gives a Lorentz-violating speed deviation
-\begin{equation}
-  \frac{\delta c}{c} \sim c_{LV}\left(\frac{E}{M_{\rm Pl}}\right)^2.
-\end{equation}
-For electrons at GeV energies this gives
-$\delta c/c \sim 10^{-36}$, far below the best laboratory bounds
-($\delta c/c < 10^{-17}$ from Cherenkov radiation~\cite{Coleman1999}).
-The suppression is a consequence of the mass gap $m_\sigma \sim v_0$
-for the radial condensate mode (with $v_0\approx\bar{M}_{\rm Pl}$,
-as determined in Section~\ref{sec:constants}): Lorentz violation is generically a
-Planck-scale effect in ECT.
-
-\paragraph{Gravitational-wave constraint.}
-
-The multi-messenger event GW170817~\cite{LIGO_Virgo_GW170817_2017}
-placed the bound $|c_{\rm GW}/c - 1| < 10^{-15}$.
-In ECT, gravitational waves are the transverse-traceless linearised
-perturbations of the effective metric induced by condensate order-sector
-fluctuations; the underlying perturbation is $\delta n^A$, but the
-propagating spin-2 mode is the effective-metric perturbation, not a
-direct spin-2 fluctuation of $n^A$ (see Section~\ref{sec:graviton}).
-At leading order, these propagate at the same $c_*$ as all other modes.  The predicted deviation is
-\begin{equation}
-  \frac{\delta c_{\rm GW}}{c}
-  \sim
-  c_{LV}\left(\frac{E_{\rm GW}}{M_{\rm Pl}}\right)^2
-  \approx
-  c_{LV}\times
-  \left(\frac{100\,{\rm Hz}\cdot h}{M_{\rm Pl}c^2}\right)^2
-  \sim 10^{-62},
-\end{equation}
-which is consistent with the GW170817 bound by 47 orders of magnitude.
-
-\paragraph{Radiative stability.}
-
-Lorentz invariance is radiatively stable in ECT in the sense that
-loop corrections to the emergent metric are proportional to
-$g^{\mu\nu}(n)$ itself at leading order: the single-condensate
-structure forbids the generation of a second metric at one loop.
-Corrections that could distinguish species appear only at
-$(E/M_{\rm Pl})^2$ and higher, as shown by the power-counting
-argument above.  A full one-loop verification at the condensate level
-is listed as an open problem (OP16, Section~\ref{sec:open_problems}).
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Quantum Dynamics of Condensate Excitations}
 \label{sec:quantum}
 
@@ -2716,7 +3101,7 @@ quantisation in superconductors \cite{Abrikosov1957} and
 the Bohr--Sommerfeld rule. It is an \emph{identification} of the
 condensate action scale with the Planck constant, not an independent
 derivation of $\hbar$ from no prior assumptions (see
-also Section~\ref{sec:constants}).
+also Section~\ref{sec:consistency_relations}).
 
 \textbf{U(1) extension.} The real pre-metric condensate $\Phi$
 is extended to a two-component effective field, conveniently written as
@@ -2773,7 +3158,7 @@ eff}=v_0^2 m_\varphi/2$. The identification
 $\hbar_{\rm
 eff}\equiv\hbar$ is a self-consistency
 condition that fixes $m_\varphi$ in terms of $v_0$
-and $\hbar$ (see Section~\ref{sec:constants}). Because
+and $\hbar$ (see Section~\ref{sec:consistency_relations}). Because
 $m_\varphi$ is a free parameter of the potential (2.3),
 this does not constitute a parameter-free prediction of
 $\hbar$; rather it expresses one condensate parameter
@@ -2867,12 +3252,12 @@ presented in Section~\ref{sec:fermions}.
 The identification of $\hbar$ with the minimal loop action of the
 condensate phase field, and the resulting self-consistency relations
 between $\hbar$, $G_N$, and the condensate parameters, are developed
-in detail in Section~\ref{sec:constants}.
+in detail in Section~\ref{sec:consistency_relations}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Consistency Relations among Fundamental Constants and Condensate Scales}
-\label{sec:constants}
+\label{sec:consistency_relations}
 
 \textbf{Notation convention for this section.}
 Two distinct symbols for energy / frequency scales appear below;
@@ -2961,7 +3346,7 @@ Pl}^2=1/(8\pi G_N)$:
 v_0^2(\alpha-\beta)=\bar{M}_{\rm
 Pl}^2\;\;\Longrightarrow\;\;\boxed{G_N=\frac{1}{8\pi
 v_0^2(\alpha-\beta)}}
-\label{eq:GN_matching}\quad(\hbar=c=1;\;\alpha=2\beta,\,\beta=1\Rightarrow v_0^2)
+\label{eq:GN_matching_old}\quad(\hbar=c=1;\;\alpha=2\beta,\,\beta=1\Rightarrow v_0^2)
 \end{equation}
 \begin{equation}
   \bar{M}_{\rm Pl}^2 = v_0^2(\alpha-\beta)
@@ -3149,7 +3534,7 @@ prediction of $\hbar$ from no prior input.
 % --- Moved from former gravity section ---
 
 \subsection{Emergent propagation speed $c$}
-\label{sec:c_star}
+\label{sec:c_star_old}
 
 \textbf{Identification $c \equiv c_*$.}
 Throughout the paper the symbol $c$ denotes the propagation speed of
@@ -3324,7 +3709,7 @@ The previous sections relate the fundamental constants of gravity and
 quantum mechanics to the parameters of the condensate vacuum.
 
 From the matching of the quadratic gravitational sector, the general formula
-(Section~\ref{sec:constants}) is
+(Section~\ref{sec:consistency_relations}) is
 $G_N=1/[8\pi v_0^2(\alpha-\beta)]$.
 In the \emph{canonical normalisation} $\alpha=2\beta$, $\beta=1$,
 this reduces to
@@ -4544,7 +4929,7 @@ value in zero-density space), the effective gravitational constant
 reduces to the usual Newton constant.
 Matching to the observed value $G_N = 6.674\times10^{-11}\,
 \mathrm{m^3\,kg^{-1}\,s^{-2}}$ determines the condensate
-parameters (see Section~\ref{sec:constants} for the full derivation):
+parameters (see Section~\ref{sec:consistency_relations} for the full derivation):
 
 \begin{equation}
 v_0^2\,\chi_\infty = \bar{M}_{\rm Pl}^2 \equiv \frac{1}{8\pi G_N},
@@ -6714,7 +7099,7 @@ Appendix~\ref{app:lof_full_derivation}.
 
 At the macroscopic level, after matching the condensate theory to
 the effective gravitational sector
-(Section~\ref{sec:constants},
+(Section~\ref{sec:consistency_relations},
 Appendix~\ref{app:GN_derivation}), the coefficient of the Ricci
 scalar depends on the local degree of Lorentzian order.
 It is convenient to define
@@ -10960,7 +11345,7 @@ T_c \;=\; v_0\sqrt{6} \;\approx\; 5.96\times10^{18}\,\text{GeV}
 \label{eq:Tc_value}
 \end{equation}
 where $v_0 \approx \bar{M}_{\rm Pl} \approx 2.435\times10^{18}$\,GeV is
-the condensate vacuum expectation value (Section~\ref{sec:constants}).
+the condensate vacuum expectation value (Section~\ref{sec:consistency_relations}).
 
 \paragraph{Critical shell location.}
 Because $T_{\rm loc}(\rho)\to\infty$ as $\rho\to0$, there exists a
@@ -10990,7 +11375,7 @@ by the ECT thermal sector (Section~\ref{sec:quantum_vacuum}).
 It is moreover \emph{universal}: $\rho_c$ is independent of the black-hole
 mass, depending only on the condensate scale $v_0$, which is fixed by
 Newton's constant and Planck's constant simultaneously
-(Section~\ref{sec:constants}).
+(Section~\ref{sec:consistency_relations}).
 
 The value $\rho_c \approx \ell_{\rm Pl}/3$ is consistent with
 the notion of a ``stretched horizon'' in the membrane paradigm
@@ -11567,14 +11952,14 @@ consistent; when a result's status changes, all instances are updated.
 \endhead
 D1 & Lorentzian phase selected when $\alpha>\beta$; Euclidean otherwise & A & $\alpha>\beta$ is a condition on condensate params & \ref{sec:ssb} \\
 D2 & KG equation from condensate action (Level~A); Schr\"odinger equation by NR reduction~+ emergent complex envelope (Level~B) & A/B & KG: Level~A (O-S continuation assumed for quadratic sector); Schr\"odinger: Level~B (additionally requires NR limit + emergent complex sector) & 4, 4 \\
-D3 & $G_N$ from coefficient matching & A & --- & \ref{sec:constants} \\
+D3 & $G_N$ from coefficient matching & A & --- & \ref{sec:consistency_relations} \\
 D4 & Three Goldstone bosons & A & --- & 8 \\
 D5a & Graviton: induced linearised effective-metric perturbation on ordered branch & A & $v_0^2(\alpha-\beta)>0$ & 8 \\
 D5b & Fierz--Pauli form, TT projection, ghost-free counting at linearised level & B & TT gauge; explicit mode-counting from microscopic condensate variables open (OP3 partially resolved) & 8, App.~\ref{app:GN_derivation} \\
 D6 & Dirac form (structural reconstruction once spinorial fields admitted) & B & O(3) spinor rep.; not from bare bosonic action & \ref{sec:fermions}, \ref{sec:dirac_eq} \\
 D7 & Instanton mass spectrum $m_n=n\times1.6$ GeV & B & $\pi_3({\rm O(3)})=\mathbb{Z}$ & 10 \\
 D8 & Effective irreversibility (Gaussian--Markov model, ordered branch) & B & Gaussian--Markov approx.; $K(\tau<0)=0$ structural; not derived from bare action (OP24) & 4 \\
-D9 & $\hbar$ identification & B & Phase quantisation & \ref{sec:constants}, \ref{sec:constants} \\
+D9 & $\hbar$ identification & B & Phase quantisation & \ref{sec:consistency_relations}, \ref{sec:consistency_relations} \\
 D10 & Linearised Einstein eqs. + $\Theta_{\mu\nu}$ & B & Linearisation & \ref{sec:gravity} \\
 D11 & Inflation $n_s=0.967$ & B & Slow-roll, $N_e=60$ & \ref{sec:cosmology} \\
 D12 & Baryogenesis $\eta_B\approx9\times10^{-10}$ & B & Leptogenesis mechanism & \ref{sec:cosmology} \\
@@ -11584,7 +11969,7 @@ D15 & Causality of $K(\tau)$ from ECT & B & Structural: forward light cone of EC
 D16 & SM gauge group from O(4) & C & Embedded, not derived & 7, \ref{sec:open_problems} \\
 D17 & Second law $dS/dw\geq0$ (effective Gaussian--Markov result, ordered branch) & B & Gaussian--Markov approx.\ + structural initial condition; not derived from bare action (OP24) & \ref{sec:quantum}, \ref{sec:open_problems} \\
 D18 & Universe domain size $R_{\rm domain}=R_H e^{N_e}$ & A & --- & \ref{sec:universe_size} \\
-D19 & $S_{\rm loop,min}=2\pi\hbar$ from phase quantisation & B & Single-valuedness of $\theta$ & \ref{sec:constants} \\
+D19 & $S_{\rm loop,min}=2\pi\hbar$ from phase quantisation & B & Single-valuedness of $\theta$ & \ref{sec:consistency_relations} \\
 D20 & $\beta$ param.: general $c_*=\sqrt{\beta/(\alpha-\beta)}$ & A & --- & \ref{sec:ssb} \\
 D21 & Casimir: $(F/A)_{\rm ECT}=3/2\,(F/A)_{\rm QED}$ (3 Goldstone, \emph{condensate boundaries only}) & B & Dirichlet b.c.\ on Goldstone; not applicable to standard metal plates & \ref{sec:casimir} \\
 D22 & Unruh $T_U=\hbar a/(2\pi c_* k_B)$ from Euclidean correlator & A & --- & \ref{sec:unruh} \\
@@ -12057,7 +12442,7 @@ SM gauge group & N/A & N/A & N/A & N/A & \textbf{Embedded (not derived)} \\
 
 \subsubsection{Relation to Sakharov induced
 gravity}
-The derivation of $G_N$ in Section~\ref{sec:constants} via coefficient matching of quadratic
+The derivation of $G_N$ in Section~\ref{sec:consistency_relations} via coefficient matching of quadratic
 actions is structurally equivalent to Sakharov's induced gravity
 \cite{Sakharov1968}: gravity as an effective theory
 arising from integrating out matter fields. The key distinction is that
@@ -12087,7 +12472,7 @@ determined by the condensate potential, not a fundamental constant.
 Third, the gravitational constant is expressed via the coefficient-matching
 relation $G_N = 1/(8\pi v_0^2\chi_\infty)$ [$\chi_\infty\equiv\alpha{-}\beta$]
 (identified rather than freely adjustable, though not a fully non-circular
-first-principles derivation; see Section~\ref{sec:constants}).
+first-principles derivation; see Section~\ref{sec:consistency_relations}).
 
 At the phenomenological level, ECT reproduces the standard cosmological
 expansion history in the limit of a homogeneous condensate, but
@@ -13830,6 +14215,483 @@ $\Lambda$CDM and MOND:
 
 \clearpage
 \appendix
+
+
+% ============================================================
+% APPENDICES FROM ECT BASICS
+% ============================================================
+
+\section{Uniqueness of the Kinetic Tensor $K^{AB}$}
+\label{app:tensor_uniqueness}
+
+\textit{Reference from main text: Theorem~\ref{thm:tensor_uniqueness}
+in Section~\ref{sec:tensor_uniqueness}.}
+
+\subsection*{Setup}
+
+We seek the most general symmetric rank-2 tensor $K^{AB}$ satisfying:
+\begin{enumerate}[label=(\roman*)]
+  \item $K^{AB}=K^{BA}$;
+  \item invariance under $O(3)$ rotations in the hyperplane $\{1,2,3\}$;
+  \item built locally and algebraically from tensors
+    $\{\delta^{AB}, n^A\}$, without additional derivatives,
+    where $n^A=\delta^A{}_w$ is the fixed unit vector along the preferred direction.
+\end{enumerate}
+
+\subsection*{Basis decomposition}
+
+The space of symmetric rank-2 tensors in $\mathbb{R}^4$ has dimension 10.
+Under $O(3)$ the available background objects generate two $O(3)$-invariant
+symmetric rank-2 structures: $\delta^{AB}$ and $n^A n^B$.
+Without additional derivatives or pseudo-tensors (Levi-Civita is
+antisymmetric and excluded), these two span the space of admissible tensors.
+Hence the most general tensor is:
+\[
+  K^{AB} = a\,\delta^{AB} + b\,n^A n^B,\qquad a,b\in\mathbb{R}.
+\]
+Setting $a=\beta$, $b=-\alpha$ gives~\eqref{eq:K_general}.
+
+\subsection*{Connection to the quadratic action}
+
+The kinetic term:
+\begin{align}
+  \tfrac{1}{2}K^{AB}\partial_A\varphi\,\partial_B\varphi
+  &= \tfrac{\beta}{2}(\partial_A\varphi)^2
+     - \tfrac{\alpha}{2}(n^A\partial_A\varphi)^2,
+\end{align}
+which is exactly the action~\eqref{eq:quadratic_action}. $\blacksquare$
+
+See also~\cite[Ch.~2]{Weinberg1996} and~\cite{Landau1986Elasticity}.
+
+% ------------------------------------------------------------
+\section{Background Configuration and Fluctuation Expansion}
+\label{app:background_split}
+
+\textit{Reference from main text: Eq.~\eqref{eq:background}
+and Section~\ref{sec:eft_quadratic}.}
+
+\subsection*{Background solution}
+
+Condition P4 requires $\langle\partial_A\Phi\rangle = u_0\delta_{Aw}$.
+The simplest solution is:
+\[
+  \Phi_{\rm bg}(X) = u_0\,w + \Phi_*,\qquad \Phi_*=\text{const}.
+\]
+Check: $\partial_A\Phi_{\rm bg} = u_0\,\delta_{Aw}$ for all $X^A$. $\checkmark$
+
+\noindent\textbf{Important note.}
+This background is linear in~$w$ and therefore is not a minimum of
+the potential $V(\Phi_{\rm bg})$ which grows without bound for $|w|\to\infty$.
+It does not claim to be a stationary point of the bare micro-action~P3;
+it defines the ordered vacuum sector postulated by~P4.
+Physically this is analogous to a gradient condensate in superfluid
+systems~\cite{Donnelly1991}.
+
+\subsection*{Quadratic expansion of the broken-phase EFT}
+
+The effective broken-phase action $S_{\rm eff}^{\rm broken}$
+expanded around the background:
+\begin{equation}
+  S_{\rm eff}^{\rm broken}[\Phi_{\rm bg}+\varphi]
+  = S_{\rm eff}^{\rm broken}[\Phi_{\rm bg}]
+  + \underbrace{\int d^4X\,
+    \frac{\delta S_{\rm eff}^{\rm broken}}{\delta\Phi}
+    \bigg|_{\rm bg}\varphi}_{=\,0\text{ (stationarity by P4)}}
+  + S^{(2)}[\varphi]+O(\varphi^3).
+\end{equation}
+The quadratic term:
+\begin{equation}
+  S^{(2)}[\varphi] = \int d^4X\!\left\{
+    \frac{1}{2}(\partial_A\varphi)^2 + \frac{m_{\rm eff}^2}{2}\varphi^2
+  \right\},
+\end{equation}
+where $m_{\rm eff}^2$ is the EFT mass parameter of the broken phase
+(not identified a priori with $V''(\Phi_{\rm bg})$ of the bare potential).
+
+% ------------------------------------------------------------
+\section{Derivation of the Lorentzian Window}
+\label{app:lorentz_window}
+
+\textit{Reference from main text: Section~\ref{sec:lorentz_window}.}
+
+\subsection*{Lower bound: $\alpha>\beta$}
+
+From the quadratic action~\eqref{eq:quadratic_action}
+the dispersion relation in momentum space:
+\[
+  \beta\,\mathbf{k}^2 - (\alpha-\beta)\,k_w^2 + m_{\rm eff}^2 = 0.
+\]
+For $\alpha>\beta$ the coefficient of $k_w^2$ is negative, i.e.\
+the operator is hyperbolic along~$w$---Lorentzian signature.
+For $\alpha\leq\beta$ the operator is positive-definite or degenerate---Euclidean
+signature or loss of causality.
+The lower bound follows directly from Theorem~\ref{thm:tensor_uniqueness}
+and the requirement of hyperbolicity.
+
+\subsection*{Upper bound: $\alpha<4\beta$ (under isotropy assumption)}
+
+Assume that at scales $L\ll\xi_{\rm cond}$ the orientation variable
+is isotropically distributed over the four Euclidean directions:
+$\langle n^A n^B\rangle = \delta^{AB}/4$.
+The averaged kinetic tensor:
+\[
+  \langle K^{AB}\rangle = \left(\beta-\frac{\alpha}{4}\right)\delta^{AB}.
+\]
+Positive-definiteness requires $\beta-\alpha/4>0$, i.e.\ $\alpha<4\beta$.
+In $d$-dimensional space this reads $\alpha<d\beta$; for $d=4$ (postulate~P1):
+upper bound $\alpha<4\beta$.
+
+\noindent\textbf{Status.}
+Lower bound $\alpha>\beta$---strict consequence of
+Theorem~\ref{thm:tensor_uniqueness} and Lorentzian requirement.
+Upper bound $\alpha<4\beta$---requires the additional short-distance isotropy
+assumption; not a strict consequence of P1--P5.
+
+% ------------------------------------------------------------
+\section{EFT Motivation via Integrating Out the Radial Mode}
+\label{app:eft_derivation}
+
+\textit{Reference from main text: Section~\ref{sec:eft_quadratic}.}
+
+\noindent\textbf{Status.}
+This appendix provides a schematic EFT motivation within the ordered
+vacuum sector selected by postulate~P4, not a strict derivation of
+the broken-phase action from the bare micro-action~P3 alone.
+The background $\Phi_{\rm bg}$ is not a solution of the equations
+of motion of~P3; the following expansion refers to the EFT of the
+broken phase.
+
+\subsection*{Phase action and heavy-mode integration}
+
+At $E\ll m_\sigma$ the heavy radial mode integrates out,
+leaving the effective action for soft fluctuation~$\varphi$.
+The isotropic kinetic term in the broken phase acquires anisotropic
+$O(3)$-invariant deformation parametrised by~$(\alpha,\beta)$:
+\[
+  S_{\rm EFT}^{(2)}[\varphi]
+  = \int d^4X\!\left\{
+    \frac{1}{2}(\partial_A\varphi)^2 + \frac{m_{\rm eff}^2}{2}\varphi^2
+    + O(\partial^4/m_\sigma^2)
+  \right\}.
+\]
+The anisotropy parameters $(\alpha,\beta)$ are not fixed by this analysis
+and must be determined from physical matching conditions~(OP-grad).
+
+% ------------------------------------------------------------
+\section{Dimensions, Normalisations, and Matching Relations}
+\label{app:dimensions}
+
+\textit{Reference from main text: Section~\ref{sec:consistency_relations}.}
+
+\subsection*{A. Dimensions in natural units ($c=\hbar=1$, provisionally)}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{ll}
+\hline
+Quantity & Dimension \\
+\hline
+$\Phi$ & $[\text{GeV}]$ \\
+$u_0=|\langle\partial_A\Phi\rangle|$ & $[\text{GeV}^2]$ \\
+$\mu$ & $[\text{GeV}]$ \\
+$\lambda$ & dimensionless \\
+$m_\sigma=\sqrt{2}\,\mu$ & $[\text{GeV}]$ \\
+$m_{\rm eff}$ & $[\text{GeV}]$ \\
+$M_G=\bar{M}_{\rm Pl}$ & $[\text{GeV}]$ \\
+$S_0$ & dimensionless in $\hbar=c=1$; status pending identification \\
+$\xi_{\rm cond}$ & $[\text{GeV}^{-1}]$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent\textbf{Note.} $[\phi_0]=\text{GeV}$, $[u_0]=\text{GeV}^2$: these are different objects.
+
+\subsection*{B. Normalisation and benchmark point}
+
+From~\eqref{eq:c_star_def}: $c_*^2=\beta/(\alpha-\beta)$.
+At $c_*=c=1$ and $\beta=1$: $\alpha=2$, $c_*=1$.
+
+\subsection*{C. Distinction between bare and EFT masses}
+
+\begin{align}
+  m_\sigma^2 &= V''(\phi_0)=2\mu^2
+  &&\text{(bare radial scale, level P3)},\\
+  m_{\rm eff}^2 &\neq m_\sigma^2
+  &&\text{(EFT fluctuation mass, broken-phase EFT)}.
+\end{align}
+Their relation appears only after explicit EFT matching through radial-mode integration.
+
+\subsection*{D. Gravitational matching}
+
+\[
+  G_N = \frac{c_*^4}{8\pi M_G^2}
+  \;\Longrightarrow\;
+  M_G = \bar{M}_{\rm Pl} \approx 2.435\times 10^{18}\,\text{GeV}
+  \quad (c=\hbar=1).
+\]
+
+\subsection*{E. Pre-quantum action scale}
+
+From the winding condition~\eqref{eq:winding_condition}:
+$S_{\rm loop,min}=2\pi S_0$.
+The question of identifying $S_0$ with observable~$\hbar$
+is deferred to Section~\ref{sec:quantum}, where it is
+discussed and motivated in the context of the Quantum Sector.
+
+% ------------------------------------------------------------
+\section{Why the Explicit Estimate of $S_0$ Is Deferred}
+\label{app:Sloop_calc}
+
+\textit{Reference from main text: Section~\ref{sec:hbar_status}.}
+
+To obtain~$S_0$ one needs to construct an effective 1D functional
+for a loop in the coherent sector.
+Starting from the 4D phase action
+$S[\theta]\sim\int_{\mathcal{V}}d^4X\,f(\rho)(\partial_A\theta)^2$,
+the transition from the bulk integral over~$\mathcal{V}$ to a
+1D action along~$\mathcal{C}$ requires:
+(i)~choice of transverse profile shape;
+(ii)~integration of $f(\rho)$ over the transverse cross-section;
+(iii)~introduction of an effective line tension $\mathcal{T}$
+     such that $S_{\rm eff}^{\rm 1D}[\mathcal{C}]=\mathcal{T}\cdot|\mathcal{C}|$;
+(iv)~minimisation over contour shape and size under the $n=1$
+     winding constraint.
+Each of these steps requires the nonlinear broken-phase potential
+(beyond the quadratic EFT) and the choice of a vortex profile,
+which are not determined at the ECT basics level.
+The explicit calculation therefore belongs to Section~\ref{sec:quantum}.
+
+% ------------------------------------------------------------
+\section{Effective Action for Orientation Modes: Nonlinear Sigma-Model}
+\label{app:sigma_model}
+
+\textit{Reference from main text: Sections~\ref{sec:mode_classes}
+and~\ref{sec:mode_hierarchy}.
+Status: most general low-energy EFT ansatz for a unit-vector field
+in the broken phase; quantisation not required.}
+
+\subsection*{Setup}
+
+In the ordered vacuum sector (P4) with constraint $n_A n^A=1$,
+the most general local quadratic low-energy action for the orientation field:
+\begin{equation}
+  \label{eq:sigma_model}
+  S_n = \frac{\kappa_n}{2}\int d^4X\,\partial_B n_A\,\partial^B n^A
+  + \int d^4X\,\Lambda(X)(n_A n^A-1),
+\end{equation}
+where $\kappa_n>0$ is the effective stiffness of the orientation sector
+and $\Lambda$ is a Lagrange multiplier.
+This is a nonlinear sigma-model with target $S^3\simeq O(4)/O(3)$.
+
+\subsection*{Linearisation around the vacuum}
+
+Setting $n_A=\bar{n}_A+\delta n_A$, $\bar{n}_A=\delta_{Aw}$ (P4).
+From $n_A n^A=1$ at first order: $\bar{n}_A\delta n^A=0\Rightarrow\delta n_w=0$.
+Physical fluctuations live in three transverse components $\delta n_i$, $i=1,2,3$.
+Quadratic action:
+\begin{equation}
+  \label{eq:Sn2}
+  S_n^{(2)}=\frac{\kappa_n}{2}\int d^4X\,\partial_B\,\delta n_i\,\partial^B\,\delta n_i.
+\end{equation}
+
+\subsection*{Equation of motion and dispersion}
+
+\begin{equation}
+  \partial_B\partial^B\,\delta n_i=0,\qquad i=1,2,3.
+\end{equation}
+In the Lorentzian sector ($w\to -ic_n t$):
+\begin{equation}
+  \label{eq:eon_lorentz}
+  \partial_t^2\,\delta n_i - c_n^2\nabla^2\,\delta n_i=0,\qquad
+  \omega^2=c_n^2 k^2.
+\end{equation}
+Three massless orientation modes, consistent with the Goldstone theorem
+for $O(4)/O(3)$.
+
+% ------------------------------------------------------------
+\section{Noether Currents: Translational and Rotational Sectors}
+\label{app:noether_full}
+
+\textit{Reference from main text: Section~\ref{sec:noether}.
+Status: classical field theory; no quantisation required.}
+
+\subsection*{A. Translational invariance and $T^{AB}$}
+
+\noindent\textbf{Scalar bare sector~(P3):}
+\begin{equation}
+  T^{AB}_{(\Phi)}=\partial^A\Phi\,\partial^B\Phi
+  -\delta^{AB}\!\left[\tfrac{1}{2}(\partial_C\Phi)^2+V(\Phi)\right],
+  \qquad\partial_A T^{AB}_{(\Phi)}=0.
+\end{equation}
+
+\noindent\textbf{Orientation sigma-model~\eqref{eq:sigma_model}:}
+\begin{equation}
+  T^{AB}_{(n)}=\kappa_n\,\partial^A n_C\,\partial^B n^C
+  -\delta^{AB}\tfrac{\kappa_n}{2}(\partial_D n_E)^2,
+  \qquad\partial_A T^{AB}_{(n)}=0.
+\end{equation}
+Conservation $\partial_A T^{AB}=0$ follows from the homogeneity
+of the arena~(P1), not from $O(4)$ rotations~(P2).
+
+\subsection*{B. $O(4)$-invariance and angular currents}
+
+From $O(4)$-symmetry (P2), Noether's theorem~\cite{Noether1918}
+for rotations $\delta X^A=\omega^A{}_B X^B$:
+\begin{equation}
+  J^{C,AB}=X^A T^{CB}_{(\Phi)}-X^B T^{CA}_{(\Phi)},
+  \qquad\partial_C J^{C,AB}=0.
+\end{equation}
+For the orientation field $n_A$ (a vector under $O(4)$),
+a spin contribution is added:
+\begin{equation}
+  J^{C,AB}_{(n)}=X^A T^{CB}_{(n)}-X^B T^{CA}_{(n)}
+  +\kappa_n(n^A\partial^C n^B-n^B\partial^C n^A).
+\end{equation}
+
+\subsection*{C. Inheritance by both branches}
+
+Both sets of currents---translational $T^{AB}$ and rotational $J^{C,AB}$---
+exist at the level of the bare~P3. Both branches of ECT inherit this
+variational foundation.
+
+% ------------------------------------------------------------
+\section{Correlation Length from the Radial-Mode Propagator}
+\label{app:corr_length}
+
+\textit{Reference from main text: Section~\ref{sec:sigma_scales}.
+Status: standard EFT estimate from the massive Euclidean propagator.}
+
+\subsection*{Euclidean propagator}
+
+Quadratic action of the radial mode:
+$S_\sigma^{(2)}=\frac{1}{2}\int d^4X[(\partial_A\sigma)^2+m_\sigma^2\sigma^2]$.
+Fourier propagator: $G_\sigma(k)=1/(k^2+m_\sigma^2)$.
+
+\subsection*{Coordinate representation at large distances}
+
+In $d=4$ Euclidean space for $r\to\infty$:
+\begin{equation}
+  \label{eq:G_coord}
+  G_\sigma(r)\;\xrightarrow{r\to\infty}\;
+  \frac{m_\sigma^{3/2}}{(2\pi)^{3/2}\sqrt{2}}\,
+  \frac{e^{-m_\sigma r}}{r^{3/2}}.
+\end{equation}
+The exponential factor $e^{-m_\sigma r}$ defines the characteristic
+decay length of amplitude correlations:
+\begin{equation}
+  \boxed{\xi_{\rm cond}\sim m_\sigma^{-1}.}
+\end{equation}
+This is a standard EFT estimate; the identification
+$\xi_{\rm cond}\sim\ell_{\rm Pl}$ is a phenomenological matching hypothesis.
+
+% ------------------------------------------------------------
+\section{Scaling Analysis of the Bath Spectral Density}
+\label{app:ohmic_markov}
+
+\textit{Reference from main text: Section~\ref{sec:arrow_of_time},
+Step~3.
+Status: scaling analysis; strict derivation deferred to Section~\ref{sec:influence_functional}.}
+
+\subsection*{Spectral density in 3D with linear dispersion}
+
+Goldstone orientation modes with $\omega_k=c_*k$:
+\begin{equation}
+  J(\omega)\propto N_{\rm eff}\,\omega^2\,|g(\omega/c_*)|^2
+  \quad\text{(up to powers of }c_*\text{)}.
+\end{equation}
+Scaling regimes:
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lll}
+\hline
+Coupling & $J(\omega)$ for $\omega\to 0$ & Regime \\
+\hline
+$|g|^2=\text{const}$ & $\propto\omega^2$ & super-ohmic \\
+$|g|^2\propto k^2$ & $\propto\omega^4$ & super-ohmic \\
+$|g|^2\propto k^{-1}$ & $\propto\omega$ & ohmic \\
+\hline
+\end{tabular}
+\end{center}
+Standard 3D derivative coupling gives a \emph{super-ohmic} contribution
+$J(\omega)\propto\omega^4$, not ohmic.
+Ohmic behaviour requires either a non-standard coupling form,
+a reduced effective bath dimensionality, or additional coarse-graining.
+
+\subsection*{Markovian approximation: heuristics}
+
+$\tau_{\rm env}\sim m_\sigma^{-1}$ (bath memory scale from P3 EFT cutoff).
+Markovianity ($K(\tau)\approx K(0)\delta(\tau)$) requires $\tau_{\rm env}\ll\tau_{\rm dec}$
+where $\tau_{\rm dec}=1/(N_{\rm eff}\gamma)$.
+In the weak-coupling, large-$N_{\rm eff}$ limit this is heuristically consistent
+with the EFT estimate~\eqref{eq:sigma_mass}, but not a strict derivation.
+
+Both ohmic behaviour and Markovianity are adopted as effective phenomenological
+working assumptions for the macroscopic decoherence calculation.
+Strict derivation belongs to Section~\ref{sec:influence_functional}.
+
+% ------------------------------------------------------------
+\section{Retarded Causal Kernel: Proof That $K(\tau<0)=0$}
+\label{app:retarded_kernel}
+
+\textit{Reference from main text: Section~\ref{sec:arrow_of_time},
+condition~(ii), Step~2.
+Status: Level~A in the quadratic Lorentzian sector.}
+
+\subsection*{Setup}
+
+After passing to the effective Lorentzian description
+(Section~\ref{sec:effective_metric}), small fluctuations satisfy:
+\begin{equation}
+  (\partial_t^2-c_*^2\nabla^2+M^2)\,\varphi(t,\mathbf{x})=J(t,\mathbf{x}).
+\end{equation}
+The retarded Green's function:
+\begin{equation}
+  (\partial_t^2-c_*^2\nabla^2+M^2)\,G_{\rm ret}(t,\mathbf{x})
+  =\delta(t)\,\delta^{(3)}(\mathbf{x}).
+\end{equation}
+
+\subsection*{Fourier representation and pole structure}
+
+\begin{equation}
+  \label{eq:Gret_Fourier}
+  G_{\rm ret}(\omega,\mathbf{k})
+  =\frac{1}{(\omega+i0^+)^2-\omega_k^2},
+  \qquad\omega_k=\sqrt{c_*^2k^2+M^2}.
+\end{equation}
+Both poles $\omega=\pm\omega_k-i0^+$ lie in the \emph{lower} half-plane.
+
+\subsection*{Proof that $G_{\rm ret}(t,\mathbf{x})=0$ for $t<0$}
+
+For $t<0$ the integrand $e^{-i\omega t}$ decays for $\text{Im}\,\omega\to+\infty$,
+so the $\omega$-contour closes in the upper half-plane.
+Since both poles lie in the lower half-plane, the Cauchy theorem gives:
+\begin{equation}
+  \label{eq:K_causal}
+  \boxed{G_{\rm ret}(t,\mathbf{x})=0\qquad(t<0).}
+\end{equation}
+
+\subsection*{Explicit form for $t>0$}
+
+\begin{equation}
+  \label{eq:Gret_explicit}
+  G_{\rm ret}(t,\mathbf{x})=\theta(t)\int\frac{d^3k}{(2\pi)^3}\,
+  \frac{\sin(\omega_k t)}{\omega_k}\,e^{i\mathbf{k}\cdot\mathbf{x}}.
+\end{equation}
+The factor $\theta(t)$ explicitly confirms~\eqref{eq:K_causal}.
+
+\subsection*{What follows and what does not}
+
+\textbf{Follows (Level~A, quadratic sector):}
+retarded linear-response kernel $G_{\rm ret}(t,\mathbf{x})=0$ for $t<0$;
+causality of the effective linear kernel in broken-phase EFT is strictly satisfied;
+condition~(ii) in the arrow-of-time argument (Section~\ref{sec:arrow_of_time})
+applies rigorously in the quadratic sector.
+
+\textbf{Does not follow:}
+retardedness of the full nonlinear causal kernel of the interacting theory~(OP5);
+Markovianity, ohmicity, Born rule, Pauli principle, OS reconstruction.
+
+
 \phantomsection
 \addcontentsline{toc}{section}{Appendices}
 {\centering\rule{\linewidth}{0.4pt}\par\vspace{0.5em}{\Large\bfseries Appendices}\par\vspace{0.5em}\rule{\linewidth}{0.4pt}\par}
@@ -15081,7 +15943,7 @@ which is Lorentzian (signature $-{+}{+}{+}$) when $\beta < \alpha < 4\beta$.
   \hbar = v_0\sqrt{\frac{\beta}{\lambda(\alpha-\beta)}}.
 \end{equation}
 \textit{(These are internal consistency relations; $v_0$ is fixed by
-matching $G_N$. See Section~\ref{sec:constants} and OP-$\Lambda$.)}
+matching $G_N$. See Section~\ref{sec:consistency_relations} and OP-$\Lambda$.)}
 
 \item[\textbf{E4 — Lorentzian window (condensate signature condition).}]
 \begin{equation}
