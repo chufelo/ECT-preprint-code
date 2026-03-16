@@ -8112,10 +8112,10 @@ Sakharov conditions \cite{Sakharov1967}: (i)~baryon number violation,
 (ii)~C and CP violation, and (iii)~departure from thermal equilibrium.
 We summarise how each condition can be realised within ECT.
 
-\textit{The discussion below should be read as a
-closure-level route showing how Sakharov-compatible
-ingredients \emph{may} arise in ECT, not as a completed
-microscopic baryogenesis derivation from bare~P3.}
+\textit{The items below should be read as closure-level
+mechanisms that may supply Sakharov-compatible ingredients
+in ECT, not as uniquely established microscopic channels
+of the theory or as a completed derivation from bare~P3.}
 
 \textbf{(i) Baryon number violation.}
 The fifth-force interaction $\mathcal{L}_5=\beta_5\bar\Psi\gamma^A n_A\Psi$
@@ -8309,7 +8309,9 @@ Pre-Planckian & Undefined; initial singularity at $t=0$ marks the
   (Level~B scenario); $O(4)$ symmetry unbroken,
   no Lorentzian metric, no time coordinate \\
 Phase transition & Not present & $O(4)\to O(3)$ SSB; Lorentzian signature
-  and arrow of time emerge (Level~A in broken-phase EFT);
+  emerges at Level~A in the broken-phase EFT;
+  macroscopic arrow of time developed within the ordered
+  retarded branch (overall cosmological scenario: Level~B);
   gradient vacuum $\langle\partial_A\Phi\rangle = u_0\,\delta_{Aw}$
   established (Level~B: pre-transition dynamics open, OP3) \\
 Inflation & Separate inflaton field with ad-hoc potential & Ordering transition as candidate inflation
@@ -8329,8 +8331,10 @@ Dark energy today & Cosmological constant $\Lambda=\text{const}$,
   $w_0=-1$ & Residual condensate kinetic energy;
   $w_0 \approx -0.83$, compatible with DESI~DR2 2025 \\
 Galactic scales & Dark matter halo required for flat rotation curves &
-  $\phi$-branch of condensate activates in low-acceleration
-  environments; RAR and BTFR reproduced without new particle species \\
+  $\phi$-branch activates in low-acceleration environments;
+  RAR and BTFR reproduced within the present $\phi$-branch
+  closure without introducing a standard particle-dark-matter
+  halo~(Level~B) \\
 Far future &
   Scenario A: de~Sitter eternal expansion ($w_{\rm eff}\to-1$) &
   Scenario A ($\chi\to\chi_\infty$): de~Sitter eternal expansion,
@@ -8414,9 +8418,9 @@ theorem from bare~P3~(OP3).}
 In the ECT macroscopic scenario~(Level~B), the physical universe
 is a finite ordered Lorentzian domain in which the macroscopic
 geometric branch is active. Beyond the causal boundary of this domain
-the geometric branch degenerates: the Lorentzian geometric description degenerates:
-the macroscopic closure formally drives $G_{\rm eff}$ upward
-and the Lorentzian metric becomes ill-defined~(Level~B scenario;
+the geometric branch degenerates: the macroscopic closure formally
+drives $G_{\rm eff}$ upward, while the Lorentzian geometric description
+ceases to remain well-defined~(Level~B scenario;
 explicit dynamics requires OP3). The $O(4)$-symmetric
 pre-Lorentzian condensate regime is conjectured to take over.
 
@@ -8534,9 +8538,9 @@ theorem from bare~P3~(OP3).}
 In the ECT macroscopic scenario~(Level~B), the physical universe
 is a finite ordered Lorentzian domain in which the macroscopic
 geometric branch is active. Beyond the causal boundary of this domain
-the geometric branch degenerates: the Lorentzian geometric description degenerates:
-the macroscopic closure formally drives $G_{\rm eff}$ upward
-and the Lorentzian metric becomes ill-defined~(Level~B scenario;
+the geometric branch degenerates: the macroscopic closure formally
+drives $G_{\rm eff}$ upward, while the Lorentzian geometric description
+ceases to remain well-defined~(Level~B scenario;
 explicit dynamics requires OP3). The $O(4)$-symmetric
 pre-Lorentzian condensate regime is conjectured to take over.
 
@@ -14632,6 +14636,11 @@ Markovianity, ohmicity, Born rule, Pauli principle, OS reconstruction.
 \section{From the Basic Physical Premises of ECT to the
 Lorentz-Order-Field Programme: Full Derivation Chain}
 \label{app:lof_full_derivation}
+
+\textit{Status: Level~B (phenomenological $\phi$-first closure).
+All derivations in this appendix are within the macroscopic
+$\phi$-branch EFT, not first-principles results from bare~P3.}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -15253,6 +15262,10 @@ consequence of the ECT action.
 %%% ===========================================================
 \subsection{Branch~4: what does one loop actually provide?}
 \label{app:lof:oneloop_calc}
+
+\textit{Status: Level~B (one-loop EFT estimate).
+The coefficient $a\simeq 1/2$ in $K(\phi)\propto e^{-a\phi}$
+is scheme-dependent and constitutes an open problem~(OP-screen).}
 
 \subsubsection{Setup}
 
@@ -16404,6 +16417,13 @@ repository produces this figure.
 \section{Derivation of the force-law effective dimensionality}
 \label{app:deff_method}
 
+\textit{Status: Level~B (analytic $\phi$-closure for transparency).
+This appendix uses the interpolating function
+$\mu(x)=x/\sqrt{1+x^2}$ for analytical tractability.
+The main observational comparisons in the galactic sector
+use the empirical McGaugh~2016 form; the qualitative
+$d_{\rm force}$ behaviour is closure-independent.}
+
 \subsection{Definition}
 
 For a gravitational force $g(r)$ obeying
@@ -16535,6 +16555,13 @@ The complete Python implementation is available at\\
 \section{Cluster lensing: 2D projected $\phi$-closure}
 \label{app:cluster_lensing}
 
+\textit{Status: Level~B (exploratory algebraic $\phi$-closure).
+The calculations below use the quasi-static spherical
+$\phi$-branch closure as a proxy for a full cluster-scale
+merger simulation. Results are order-of-magnitude estimates;
+quantitative cluster-scale conclusions require a 3D
+merger-scale $\phi$-solver~(OP22).}
+
 This appendix documents the numerical methods, parameters,
 and results for the cluster-merger calculations reported in
 Section~\ref{sec:fifth_force}.
@@ -16558,11 +16585,13 @@ but it already yields two non-trivial results: the
 \emph{position} of the lensing peaks and the \emph{order of
 magnitude} of the lensing enhancement.
 
-In this formulation, the Bullet Cluster becomes a genuine
-numerical \emph{near-match} problem rather than a simple
-yes/no argument: the offset morphology is reproduced
-exactly, and the amplitude deficit is a factor $\sim\!2$--$3$
-that may plausibly be closed by uncomputed corrections.
+In this formulation, the Bullet Cluster becomes a numerical
+near-match problem rather than a simple yes/no argument:
+the observed offset morphology is captured qualitatively
+by the $\phi$-field response, while the amplitude deficit
+remains at the level of a factor $\sim\!2$--$3$ and
+therefore still requires additional cluster-scale dynamics
+beyond the present closure~(Level~B; OP22).
 
 \subsection{Spherical radial $\phi$-closure}
 
@@ -16575,8 +16604,9 @@ $g_{\rm obs}(r)$, giving the enhancement
 $\mu_\phi(r) = g_{\rm obs}/g_{\rm bar}$ and the effective
 mass $M_{\rm ECT}(<r) = \mu_\phi(r)\,M_{\rm bar}(<r)$.
 For spherical symmetry, this algebraic closure is the
-\emph{exact} solution of the AQUAL-type field equation
-(by Gauss's law), so no spatial discretisation is needed.
+\emph{exact} solution of the $\phi$-branch field equation
+for spherical symmetry (by Gauss's law analogy),
+so no spatial discretisation is needed~(Level~B).
 This approach is best suited for \emph{amplitude} estimates
 with realistic baryon profiles.
 Results: Table~\ref{tab:bullet_results}.
@@ -16633,8 +16663,8 @@ and the convergence map is
 
 \paragraph{Important caveat.}
 For spherically symmetric systems this algebraic closure
-is the exact solution of the AQUAL-type field equation
-(by Gauss's law).
+is the exact solution of the $\phi$-branch field equation
+for spherical symmetry (by Gauss's law analogy; Level~B).
 For a non-spherical merger the thin-lens sheet approximation
 $g_N \approx 2\pi G\Sigma_b$ is only a proxy; the full
 calculation requires solving
