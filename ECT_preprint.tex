@@ -8724,116 +8724,61 @@ it is an expected feature of the same underlying mechanism.
 \label{subsec:lof_scales}
 
 \textit{Status: Level~A for the identification of distinct
-physical scales; Level~B for the specific numerical estimates
-based on the $\phi$-first phenomenological closure.}
+physical scales; Level~B for numerical estimates based on the
+$\phi$-first phenomenological closure.}
 
-To avoid confusion between the several length scales that
-appear in ECT, we summarise them here.
+The galactic closure of the macroscopic branch contains several
+physically distinct scales that must not be conflated.
 
-\begin{description}[leftmargin=2em]
-\item[$\xi_{\rm micro} \sim \ell_{\rm Pl}
-  \sim 10^{-35}\,$m.]
-  The microscopic correlation length of the \emph{heavy
-  radial condensate mode}
-  ($m_\sigma \sim M_{\rm Pl}$ (matching condensate parameter $u_0\sim\bar M_{\rm Pl}$, Level~B)).
-  This is the scale at which Lorentzian geometry breaks down
-  and the Euclidean sub-condensate regime begins.
-  It plays no role in galactic dynamics.
+\begin{enumerate}[label=(\roman*)]
+  \item \textbf{Microscopic condensate scale.}
+  The correlation length of the heavy radial mode,
+  $\xi_{\rm cond}\sim m_\sigma^{-1}\sim\ell_{\rm Pl}$,
+  marks the breakdown of the coarse-grained geometric EFT.
+  This scale plays no role in galactic dynamics.
 
-\item[$\lambda_\phi(\rho) = 1/m_\phi(\rho)$.]
-  The medium-dependent screening length of the \emph{soft
-  Lorentz-order field} $\phi$.  In dense environments
-  ($\rho \gg \bar\rho_{\rm cosm}$) this length is short and
-  the fifth force is Yukawa-suppressed; in the cosmological
-  vacuum it can be very large.
-  This is the scale that controls where GR is recovered.
+  \item \textbf{Environmental screening length.}
+  In regions of high baryonic density the $\phi$-branch
+  is driven into the screened Newtonian regime; the
+  corresponding Yukawa screening length $\lambda_\phi(\rho)=m_\phi^{-1}(\rho)$
+  is density-dependent~(Level~B; eq.~\eqref{eq:mphi_main}).
+  This scale governs Solar-System and laboratory suppression
+  of the fifth-force correction.
 
-\item[$g_\dagger(\phi_{\rm env}) \sim 10^{-10}\,$m\,s$^{-2}$.]
-  The critical acceleration scale of the Lorentz-order-field
-  branch, controlled by the ambient background $\phi_{\rm env}$.
-  It is not a fundamental constant but depends on environment.
-  For dimensional orientation: $c^2/g_\dagger \sim 10\,$kpc.
+  \item \textbf{Critical galactic transition scale.}
+  The transition from screened Newtonian behaviour to the
+  critical $\phi$-branch is governed by the acceleration scale
+  $g_\dagger$, or equivalently by the galactic transition
+  radius $r_0=\sqrt{GM_{\rm bar}/g_\dagger}$.
+  This is the characteristic IR scale of the galactic closure.
 
-\item[$g_\dagger(\phi_{\rm gal}) \propto cH_0$.]
-  The MOND-like acceleration scale of the \emph{critical
-  galactic branch}.  It is not a fundamental constant but
-  depends on the ambient degree of Lorentzianness.
-  Its quasi-universality reflects the near-universality of
-  the cosmological $\phi$-background.
-\end{description}
+  \item \textbf{Cosmological reference scale.}
+  In the present closure, $g_\dagger\sim cH_0$, which explains
+  the quasi-universality of the acceleration scale while still
+  allowing environment-dependent deviations~(Level~B).
+\end{enumerate}
 
-These scales play different physical roles and should not be
-identified with one another.  The Planckian microscopic
-radial-mode correlation length $\xi_{\rm micro}$ belongs to
-the heavy condensate-amplitude sector and explains why a
-direct $v_0(r)$-based galactic mechanism fails.  The
-medium-dependent length $\lambda_\phi(\rho) = 1/m_\phi(\rho)$
-is the screening range of the soft Lorentz-order field.
-The physical scale organising galactic weak-field phenomenology
-is $g_\dagger(\phi_{\rm env})$.
+The four scales form a clear hierarchy:
+\begin{equation}
+\label{eq:scale_hierarchy}
+\xi_{\rm cond}
+\;\ll\;
+\lambda_\phi(\rho)
+\;\lesssim\;
+r_0
+\;\ll\;
+H_0^{-1}.
+\end{equation}
 
+\paragraph{Physical significance.}
+This hierarchy explains why ECT can simultaneously exhibit:
+(i)~a strongly ordered microscopic vacuum,
+(ii)~screened Solar-System and laboratory behaviour,
+(iii)~critical galactic $\phi$-branch phenomenology, and
+(iv)~a quasi-universal cosmological acceleration scale.
+The success of the galactic closure depends precisely on keeping
+these scales conceptually distinct.
 
-\paragraph{Interpretation of the regime diagram.}
-
-Figure~\ref{fig:regime_diagram} is the ``phase diagram'' of
-gravity in ECT.  Every astrophysical system occupies a
-definite position in the $(\phi,\,g/g_\dagger)$ plane, and
-the local gravitational dynamics is determined by the regime
-it falls into.
-
-\textit{Newtonian (screened) regime} ($g > g_\dagger$,
-moderate-to-high $\phi$).
-The $\phi$-field is screened by the ambient matter density.
-Gravity is Newtonian: $g_{\rm obs} \approx g_{\rm bar}$.
-The Solar System ($\phi \sim 2$--$3$, $g/g_\dagger \sim 10^2$)
-and laboratory experiments ($\phi \gtrsim 3$) sit here.
-This is why ECT is compatible with all Solar-System tests
-of GR.
-
-\textit{Critical $\phi$-branch} ($g \lesssim g_\dagger$,
-moderate $\phi$).
-Below $g \sim g_\dagger$ the nonlinear $\phi$-closure
-activates: $\mu(g/g_\dagger)\,g = g_{\rm bar}$, producing
-enhanced gravity and flat rotation curves.
-Spiral galaxy discs straddle the transition; their inner
-regions are screened (upper part), while their outskirts
-enter the critical branch (lower part).  A single galaxy
-thus traces a vertical path on this diagram from its
-centre (top) to its edge (bottom).
-
-\textit{Deep-MOND / void regime} ($g \ll g_\dagger$,
-low $\phi$).
-Far from mass and in underdense environments the
-Lorentz-order field approaches its vacuum value.
-Cosmic voids and isolated dwarf galaxies probe this
-regime.  The gravitational enhancement is maximal here.
-
-\textit{Quantum / Planckian regime} ($g \gg g_\dagger$,
-low $\phi$).
-At Planck-scale densities the condensate loses coherence
-and the Lorentzian metric structure breaks down.
-This regime is inaccessible to current observations.
-
-\textit{Screened (dense) region} (high $\phi$, any $g$).
-Dense environments (clusters, laboratories) push $\phi$
-to large values, suppressing the $\phi$-branch
-regardless of the acceleration.
-This is the chameleon-like screening mechanism of ECT.
-
-The diagonal hatching indicates the screening boundary:
-moving rightward (increasing $\phi$) restores GR;
-moving leftward (decreasing $\phi$) activates the
-critical branch.
-The transition is controlled by
-$g_\dagger(\phi_{\rm env})$, which depends on the
-ambient Lorentz-order background --- ECT's distinctive
-environmental prediction (F1 in
-Table~\ref{tab:ECT_predictions}).
-
-
-%%% -----------------------------------------------------------
-%%% -----------------------------------------------------------
-\subsubsection*{One-loop bridge and breakdown near criticality}
 \label{subsec:lof_oneloop}
 
 \textit{Status: Level~B (one-loop EFT estimate within the
@@ -9458,6 +9403,18 @@ the standard MOND EFE. The baryonic modelling uses simplified
 Freeman disc and Hernquist bulge; results are exploratory
 closure fits, not first-principles field solutions.}
 
+\paragraph{Conceptual role of the external-field effect.}
+In ECT the external-field effect is not introduced as an additional
+empirical rule. It appears as a natural consequence of the fact that
+the galactic $\phi$-branch is an environment-sensitive ordered state:
+the same macroscopic closure that produces quasi-universal $g_\dagger$
+also allows the local galactic response to depend on the embedding
+environment through $\phi_{\rm env}$.
+The external-field effect should therefore be read as one of the
+observable manifestations of environment-dependent Lorentz ordering,
+not as a separately postulated correction.
+
+
 In the $\phi$-framework, an ambient gravitational field
 raises $\phi_{\rm env}$, which
 shifts $g_\dagger(\phi_{\rm env})$ upward
@@ -9718,6 +9675,13 @@ the code repository (see Data and Code Availability).
 
 
 
+\paragraph{Status.}
+The external-field effect is a Level~B consequence of the present
+$\phi$-branch closure: structurally well motivated within the
+macroscopic ordered-branch framework, but not yet a first-principles
+theorem from bare~P3. Its detailed amplitude and environmental
+calibration remain part of the open observational closure program.
+
 
 %%% -----------------------------------------------------------
 \subsection{Per-galaxy acceleration scale: a test of
@@ -9729,6 +9693,16 @@ All per-galaxy fits are exploratory algebraic closure fits
 with one free parameter $\phi_{\rm env}$ per galaxy.
 Environmental variation of $g_\dagger$ is a distinctive
 Level~B prediction, testable against full SPARC.}
+
+\paragraph{Interpretive role.}
+The goal of introducing a galaxy-dependent effective $g_\dagger^{(i)}$
+is not to abandon quasi-universality, but to refine it.
+In the ECT closure the reference scale remains cosmologically anchored
+at order $cH_0$, while residual galaxy-to-galaxy variation is interpreted
+as an imprint of environmental embedding and screening history.
+This differs from both a strictly universal MOND constant and a fully
+free halo fit: the scatter is a diagnostic, not a nuisance.
+
 
 A central Level~B prediction of the Lorentz-order-field framework
 is that the effective acceleration scale
@@ -10000,71 +9974,65 @@ currently observed sources.
 \subsection{Dark Sector Phenomenology in ECT}
 \label{sec:dark_sector}
 
-\textit{Status: Level~B throughout. Goldstone modes and
-topological excitations as dark-matter candidates are
-structurally motivated by P4+P5 but not yet quantitatively
-derived from bare~P3. The effective modification of
-gravitational response (dark-matter mimic) follows at Level~B
-from the $\phi$-first macroscopic closure.}
+\textit{Status: Level~B throughout. The primary macroscopic-branch
+result is that galactic mass discrepancy can be addressed by the
+$\phi$-first closure without particle dark matter. Collective and
+topological dark-sector candidates are structurally motivated by
+P4+P5 but require the Quantum Sector for full development.}
 
-The Lorentz-order-field mechanism
-(Section~\ref{sec:mp_galactic}) shows that the galactic
-mass-discrepancy phenomenology of ECT does not require particle
-dark matter: large-scale mass discrepancies can already emerge
-from the environment-dependent nonlinear response of the vacuum
-order parameter $\phi$.  This should be distinguished from the
-separate question of whether ECT also supports \emph{independent
-dark-sector excitations}, such as Goldstone modes, topological
-objects, or other non-baryonic condensate remnants.
+% -------------------------------------------------------
+\subsubsection*{Dark-sector interpretation at the macroscopic level}
+% -------------------------------------------------------
 
-Accordingly, the term ``dark sector'' in ECT refers to two
-conceptually different effects:
-(i)~an \emph{effective} modification of gravitational response
-controlled by the Lorentz-order field $\phi$, which can mimic
-dark-matter phenomenology without introducing new particles; and
-(ii)~possible additional condensate excitations which, if
-present, would behave as ultra-light and extremely weakly
-coupled degrees of freedom.  These two mechanisms have distinct
-observational signatures and should be tested primarily through
-gravitational and astrophysical probes.
+At the macroscopic level, ECT separates two conceptually distinct
+questions often conflated under the name ``dark matter''.
 
-\subsection{Goldstone modes of the condensate as dark-matter candidates}
+\textit{First,} the galactic mass-discrepancy phenomenology can be
+addressed within the present $\phi$-branch closure without introducing
+a standard particle-dark-matter halo~(Level~B;
+Section~\ref{sec:mp_galactic}).
 
-Spontaneous symmetry breaking of the condensate field implies the
-existence of low-energy excitations associated with fluctuations of the
-condensate phase. These excitations behave as Goldstone modes and can
-propagate as extremely light bosonic degrees of freedom.
+\textit{Second,} ECT does not exclude additional dark-sector degrees
+of freedom. Collective condensate excitations, Goldstone-like modes,
+and topological sectors may contribute to the cosmic dark sector.
+These possibilities probe the coherent-topological branch and require
+the Quantum Sector for full treatment.
 
-Depending on the microscopic structure of the condensate sector, such
-modes may acquire a small effective mass through explicit symmetry
-breaking or through environmental effects. In this case they can act as
-a form of ultra-light collisionless excitations (conventionally classified as ``dark matter'') with masses in the range
+Thus the macroscopic branch addresses the \emph{phenomenology} of
+missing gravitational response; the deeper ontology of possible
+dark-sector excitations is developed in the Quantum Sector
+(Section~\ref{sec:qs_dark_sector}).
 
-\[
-m_G \sim 10^{-22}\text{--}10^{-21}\ \mathrm{eV},
-\]
+% -------------------------------------------------------
+\subsubsection*{Collective excitations as possible dark-sector candidates}
+% -------------------------------------------------------
 
-comparable to fuzzy-dark-matter models in the $\Lambda$CDM framework.
+\textit{Status: Level~B structural possibility. Relic abundance,
+stability, and production history not yet computed from bare~P3.}
 
+The ordered branch naturally supports soft collective excitations,
+including Goldstone-like modes with masses $m\sim H_0\sim 10^{-33}$\,eV.
+At the macroscopic level these may be viewed as possible dark-sector
+candidates if sufficiently weakly coupled and long-lived~(Level~B).
+Their relic abundance and phase-space properties are not fixed by
+the present macroscopic closure; a fuller treatment requires the
+coherent-topological analysis in the Quantum Sector.
 
+% -------------------------------------------------------
+\subsubsection*{Topological sectors and the dark sector}
+\label{sec:ds_topological}
+% -------------------------------------------------------
 
-\subsection{Topological condensate configurations as dark-matter candidates}
+\textit{Status: Level~B/C structural possibility; detailed
+treatment deferred to the Quantum Sector.}
 
-\textit{Status: Level~B structural scenario. Instantons and
-vortices are beyond P5 (deferred to Quantum Sector); their
-dark-matter role is speculative~(Level~C).}
-
-The condensate field may also support non-trivial topological
-configurations such as vortices or instanton-like structures. These
-objects correspond to localized regions where the condensate order
-parameter winds in field space.
-
-Such configurations can behave as massive localized excitations of the
-condensate and may contribute to the effective dark sector of the
-theory. Their detailed properties depend on the microscopic structure of
-the condensate potential and are left for future work.
-
-
+ECT also admits the possibility that part of the dark sector is tied
+to coherent topological configurations~(P5): winding sectors,
+vortex-like structures, or instanton-like tunnelling events.
+Their definition and dynamics depend on winding numbers and defect
+stability beyond the coherent approximation. They are noted here
+as a conceptual bridge to the Quantum Sector~(Section~\ref{sec:qs_dark_sector});
+their detailed treatment is deferred.
 
 \subsection{Mass-discrepancy phenomenology in ECT}
 
@@ -10289,6 +10257,14 @@ two-point function $N(\tau,\mathbf{r})$ (organizing proposition).
 
 
 % ============================================================
+
+\paragraph{Bridge to the Quantum Sector.}
+The macroscopic branch addresses gravitational phenomenology. Whenever
+the discussion turns to coherent collective excitations, winding sectors,
+or topological dark-sector configurations, the analysis enters the domain
+of the coherent-topological branch~(P5). Those aspects are developed in
+Section~\ref{sec:qs_dark_sector} of the Quantum Sector.
+
 \subsection{Status table and open problems of the
 macroscopic branch}
 \label{sec:mp_status}
@@ -11278,6 +11254,40 @@ Unique outcome selection (Born) & C & Open (OP23). \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % ============================================================
+%%% =================================================================
+\section{Dark-Sector Candidates: Coherent-Topological Branch}
+\label{sec:qs_dark_sector}
+%%% =================================================================
+
+\begin{mdframed}[backgroundcolor=blue!4,linecolor=blue!40!black,linewidth=1pt]
+\textbf{Scope: placeholder for QS development.}
+The macroscopic branch framing is in Section~\ref{sec:dark_sector}.
+This section develops the complementary coherent-topological perspective
+and will be completed together with the rest of the Quantum Sector.
+\end{mdframed}
+
+\textit{Status: structured placeholder~(Level~B/C). The macroscopic
+dark-sector framing is in Section~\ref{sec:dark_sector}. The full
+coherent-topological treatment is left for the complete Quantum Sector.}
+
+\subsection*{Goldstone modes: coherent-topological perspective}
+
+The Goldstone modes arising from $O(4)\to O(3)$ symmetry breaking
+acquire their full physical interpretation in the coherent-topological
+branch. Their stability, winding-sector counting, and relic abundance
+depend on the phase single-valuedness condition~(P5) and loop
+quantisation. These aspects are developed together with the derivation
+of canonical commutation relations and the identification $S_0=\hbar$.
+
+\subsection*{Topological defect sectors}
+
+Vortex-like structures, domain-wall-like condensate configurations,
+and instanton-like tunnelling events constitute the nontrivial
+topological dark-sector candidates of ECT. Their dynamics and
+contribution to the cosmological dark sector require a full treatment
+of the path-integral sector beyond the coherent approximation.
+This development is deferred to the complete Quantum Sector treatment.
+
 \section{Black-hole information problem: ECT perspective}
 \label{sec:bh_information}
 % ============================================================
@@ -18230,6 +18240,13 @@ The author declares no competing interests and received no external funding for 
 
 \bibliography{references}
 
+\paragraph{Observational output.}
+If the residual variation of $g_\dagger$ correlates with environmental
+indicators (group membership, external-field strength, local density),
+this would favour the ordered-branch interpretation over a strictly
+universal deep-MOND constant.
+The per-galaxy acceleration scale is therefore not merely a fit
+artifact but a potentially discriminating empirical signature of ECT.
 
 
 \end{document}
