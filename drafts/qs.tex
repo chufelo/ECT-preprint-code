@@ -975,3 +975,269 @@ This is the precise setting in which quantum commutation relations can
 emerge.
 The next task is to study the environment of the coherent sector:
 decoherence, irreversibility, and the origin of effective probability.
+
+% ============================================================
+\subsection{Influence functional, decoherence, and the arrow of time}
+\label{sec:qs_decoherence}
+% ============================================================
+
+\textit{Status: Level~A for the causal retarded kernel in the
+quadratic broken-phase sector; Level~A for nonnegative spectral
+density in the quadratic sector; Level~B for the low-entropy initial
+coherent sector, the effective ohmic regime, the Markov approximation,
+and the explicit entropy-production formula.
+Connection to ECT basics: Section~\ref{sec:arrow_of_time},
+Appendix~\ref{app:ohmic_markov}, and Appendix~\ref{app:retarded_kernel}.}
+
+\medskip
+The previous subsections established the coherent branch as a
+phase-sensitive sector with a distinguished action scale, a
+Schr\"odinger-type reduction, and a natural canonical organisation.
+However, none of this yet explains why macroscopic coherent
+superpositions are not generically observed, why effective
+irreversibility appears, or why a preferred thermodynamic arrow of
+time emerges.
+These questions belong to decoherence.
+In ECT they must be addressed inside the coherent branch itself,
+rather than imported from an external quantum framework.
+
+\subsubsection*{Why decoherence belongs to the coherent branch}
+
+Decoherence in ECT is not a correction to the geometric branch.
+It is a process internal to the coherent-topological sector:
+a smooth coherent subsystem interacts with the rest of the ordered
+condensate, whose unresolved modes act as an effective environment.
+The ``system'' is the low-dimensional coherent sector tracked
+explicitly; the ``environment'' is the large set of unresolved
+condensate modes that are integrated out.
+The system--environment split is not fundamental, but branch-dependent
+and scale-dependent.
+
+\subsubsection*{Influence-functional form of the effective description}
+
+After integrating out the unresolved bath modes, the reduced coherent
+sector is described by a reduced effective weight.
+Following the notation of ECT basics (Section~\ref{sec:arrow_of_time}),
+where $q$ and $q'$ label forward and backward coherent histories, the
+influence functional takes the schematic form
+\begin{equation}
+  \label{eq:qs_influence}
+  \mathcal{F}[q,q']
+  =
+  \exp\!\left\{
+    \frac{i}{S_0}\,\Gamma[q,q']
+    - \frac{1}{S_0}\,\Gamma_{\rm irr}[q,q']
+  \right\},
+\end{equation}
+where $\Gamma[q,q']$ is the coherent-sector decoherence functional
+(already prepared in ECT basics; it vanishes on the diagonal $q=q'$)
+and $\Gamma_{\rm irr}[q,q']\ge 0$ is the irreversibility functional
+that suppresses off-diagonal contributions.
+The normalisation by $S_0$---rather than a postulated $\hbar$---is
+required by the internal consistency of the coherent branch:
+$S_0$ is the only available action scale at this stage.
+
+\paragraph{Status.}
+The existence of a reduced influence-functional description is Level~B:
+it is the natural EFT organisation of the coherent branch once a
+subset of condensate modes is integrated out.
+The exact microscopic derivation for the full nonlinear coherent sector
+remains open.
+
+\subsubsection*{Causal retarded kernel: the Level~A result}
+
+A crucial ingredient of the arrow-of-time argument is already
+established at Level~A in the quadratic broken-phase sector.
+The retarded Green kernel satisfies
+\begin{equation}
+  \label{eq:qs_retarded_zero}
+  K(\tau<0) = 0.
+\end{equation}
+This follows from the hyperbolic Lorentzian operator of the broken
+phase: both poles lie in the lower half-plane, so closing the contour
+above for $\tau<0$ gives zero~(Appendix~\ref{app:retarded_kernel}).
+The coherent branch therefore inherits a genuinely causal retarded
+kernel from the same broken-phase structure that underlies macroscopic
+causality in the geometric branch.
+
+\paragraph{Physical meaning.}
+This is one of the structurally strongest points of the Quantum Sector.
+The arrow-of-time analysis does not begin with an arbitrary
+irreversibility rule.
+It begins with a kernel that is already causally retarded in the
+underlying broken-phase EFT.
+Irreversibility is therefore built on top of a causal ordered
+background, not inserted by hand.
+
+\subsubsection*{Low-entropy coherent initial sector}
+
+The second ingredient is the assumption that the initial coherent
+sector is highly ordered and therefore of low effective entropy.
+This should not be overstated.
+The claim is not that $S_{\rm ent}(w_0)=0$ has been proved in the
+full quantum-mechanical sense.
+Rather: P4 selects an ordered vacuum branch and P5 restricts attention
+to the smooth coherent topological sector.
+Together with the non-tachyonic quadratic spectrum, this strongly
+motivates a highly ordered low-entropy initial coherent sector.
+
+\paragraph{Status.}
+This is a Level~B statement, physically well motivated by the ECT
+postulate structure but not yet given a full reduced-density-matrix
+derivation.
+
+\subsubsection*{Positive spectral density and dissipative kernel}
+
+The third ingredient is positivity of the spectral density in the
+quadratic sector.
+As prepared in ECT basics and detailed in Appendix~\ref{app:ohmic_markov},
+the relevant linear effective sector admits a nonnegative spectral
+density:
+\begin{equation}
+  \label{eq:qs_rho_positive}
+  \rho(\mu^2) \ge 0.
+\end{equation}
+This is Level~A in the quadratic sector.
+It implies a nonnegative dissipative part of the retarded response
+kernel in the linearised effective description and is the input that
+makes monotonic entropy growth plausible once the coherent subsystem
+is coupled to an unresolved environment.
+
+\subsubsection*{Effective ohmic regime and Markov approximation}
+
+At this point one reaches the main Level~B closure assumptions of the
+decoherence program.
+The scale analysis of Appendix~\ref{app:ohmic_markov} shows that the
+standard 3D Goldstone-like derivative coupling gives a super-ohmic
+spectral density,
+\begin{equation}
+  \label{eq:qs_super_ohmic}
+  J(\omega) \propto N_{\rm eff}\,\omega^2\,|g(\omega/c_*)|^2
+  \;\sim\; N_{\rm eff}\,\omega^4
+  \qquad (\text{standard 3D bath}),
+\end{equation}
+not an ohmic one.
+The effective working formula therefore does \emph{not} follow
+automatically from the standard broken-phase EFT but requires an
+additional step.
+
+To proceed quantitatively, two effective working assumptions are
+introduced:
+\begin{enumerate}[label=(\roman*)]
+  \item an effective ohmic regime,
+    \begin{equation}
+      \label{eq:qs_ohmic}
+      J(\omega) \approx N_{\rm eff}\,\gamma\,\omega,
+    \end{equation}
+    which is read as a phenomenological reduction rather than a
+    strict first-principles theorem;
+  \item a Markovian regime in which the bath memory time is short
+    compared to the decoherence time,
+    \begin{equation}
+      \label{eq:qs_markov}
+      \tau_{\rm env} \ll \tau_{\rm dec}.
+    \end{equation}
+\end{enumerate}
+Both are Level~B, justified as effective working hypotheses of the
+coherent-sector closure.
+
+\subsubsection*{Qualitative monotonicity of entropy}
+
+Given the three inputs:
+\begin{enumerate}[label=(\roman*)]
+  \item a low-entropy coherent initial sector,
+  \item a retarded causal kernel~\eqref{eq:qs_retarded_zero},
+  \item nonnegative dissipative response~\eqref{eq:qs_rho_positive},
+\end{enumerate}
+the coherent branch admits a qualitative monotonicity statement for the
+entropy of macroscopic reduced sectors:
+\begin{equation}
+  \label{eq:qs_entropy_monotone}
+  \frac{dS_{\rm ent}}{dw} \ge 0
+  \qquad
+  \bigl(\text{qualitatively, for macroscopic reduced sectors;
+  Level~B}\bigr).
+\end{equation}
+This is the central structural arrow-of-time statement of ECT.
+It is not yet the final microscopic theorem for the full nonlinear
+coherent branch, but it is an internally motivated result of the
+ordered condensate framework.
+
+\subsubsection*{Working explicit entropy formula}
+
+If the effective ohmic and Markov
+assumptions~\eqref{eq:qs_ohmic}--\eqref{eq:qs_markov} are accepted,
+the reduced entropy production takes the working form
+\begin{equation}
+  \label{eq:qs_entropy_explicit}
+  \frac{dS_{\rm ent}}{dw}
+  =
+  N_{\rm eff}\,\gamma
+  \left(\frac{dq}{dw}\right)^2
+  \ge 0
+  \qquad
+  (\text{Level~B, effective ohmic/Markov closure}).
+\end{equation}
+This is not a first-principles theorem.
+It is the current quantitative closure formula of the decoherence
+sector, explicitly marked Level~B.
+Its form is familiar from open-system theory~\cite{CaldeiraLeggett1983}; its
+ECT-specific content is that $S_0$ (not postulated $\hbar$) controls
+the normalisation in~\eqref{eq:qs_influence}, and that the bath
+is the unresolved condensate itself.
+
+\subsubsection*{Macroscopic irreversibility versus quantum exception}
+
+A key internal consistency check is that irreversibility is not
+universal:
+\begin{itemize}
+  \item For $N_{\rm eff}\gg 1$: backward coherent contributions are
+    strongly suppressed; entropy grows effectively; macroscopic
+    irreversibility emerges.
+  \item For $N_{\rm eff}\sim 1$: suppression is weak; forward and
+    backward loop contributions remain comparable; the coherent
+    dynamics stays close to reversible.
+\end{itemize}
+This is exactly what one wants: ECT does not destroy reversibility at
+the fundamental level.
+It explains why reversibility survives for small coherent sectors and
+why it fails effectively for macroscopic ones.
+
+\subsubsection*{Status summary}
+
+\textit{Established~(Level~A):}
+\begin{enumerate}[label=(\roman*)]
+  \item the coherent branch admits a reduced influence-functional
+    organisation;
+  \item the retarded kernel is causal in the quadratic broken-phase
+    sector~\eqref{eq:qs_retarded_zero};
+  \item the spectral density is nonnegative in the quadratic
+    sector~\eqref{eq:qs_rho_positive};
+  \item macroscopic entropy growth is qualitatively supported.
+\end{enumerate}
+
+\textit{Not yet established as strict first-principles results~(Level~B):}
+\begin{enumerate}[label=(\roman*)]
+  \item the exact microscopic environment split for the full coherent
+    branch;
+  \item a strict derivation of the effective ohmic regime;
+  \item a strict derivation of the Markov approximation;
+  \item a full nonlinear entropy theorem for all coherent sectors.
+\end{enumerate}
+
+\subsubsection*{Bridge to probability and Born-type interpretation}
+
+Once decoherence suppresses off-diagonal coherent contributions in
+macroscopic sectors, the next question is how effective probability
+weights emerge and whether they admit a Born-type interpretation.
+That question belongs to Section~\ref{sec:qs_born}.
+
+\paragraph{Summary.}
+The arrow of time in ECT is not an external thermodynamic postulate.
+It arises from the interplay of an ordered low-entropy coherent branch,
+a retarded causal kernel inherited from the broken phase, and
+dissipative suppression of unresolved coherent histories.
+The strongest quantitative formula still depends on effective ohmic and
+Markov assumptions, but the qualitative architecture of decoherence and
+macroscopic irreversibility is already present inside the
+coherent-topological branch itself.
