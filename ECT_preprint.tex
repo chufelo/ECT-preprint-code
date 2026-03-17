@@ -9157,10 +9157,20 @@ Vacuum stiffness & $\bar M_{\rm Pl}^2 = v_0^2(\alpha{-}\beta)$ & $2.435\times10^
 }% end resizebox
 \end{table}
 
+\paragraph{Global derivation and status maps.}
+For the reader's convenience, the following tables collect in one place:
+(i)~the derivational architecture of the framework~(Table~\ref{tab:ect_structure}),
+(ii)~the structured classification of results by Level~A / Level~B / Open status~(Table~\ref{tab:ect-levels}),
+and (iii)~the main falsifiable predictions~(Table~\ref{tab:ECT_predictions}).
+These summary tables are subordinate to the detailed section-by-section status
+statements given throughout the paper and should be read in that same disciplined
+sense: status entries reflect the Level~A / Level~B / Open discipline established
+in the revised postulate structure.
+
 \begin{table}[H]
 \centering
-\caption{Derivation map of ECT: physical objects and their origins.
-Entries: ``derived'' = follows from first-principles variation of the ECT action at stated level; ``derived~(Level~B)'' = conditional on additional structural inputs; ``embedded'' = introduced consistently, not derived from bare scalar action; ``identified'' = observational matching; ``open'' = active research direction.}
+\caption{Derivation map of ECT: physical objects and their origins in the new Level~A / Level~B / Open discipline.
+Entries: ``derived'' = structural Level~A consequence; ``structural / effective (Level~A/B)'' = proven in pure-metric limit, Level~B in $\phi$-first closure; ``matched (Level~B)'' = EFT matching relation; ``embedded'' = introduced consistently, not derived from bare scalar action; ``open'' = active research direction.}
 \label{tab:ect_structure}
 \begin{tabular}{llll}
 \hline
@@ -9172,21 +9182,22 @@ Condensate $\Phi$ & Postulate P4 & postulate \\
 Lorentzian metric $g_{\mu\nu}$ & SSB $O(4)\!\to\!O(3)$, $\alpha>1$ & derived \\
 Time (arrow) & Decoherence $\Gamma[q]$, large $N_{\rm eff}$ & derived \\
 Speed of light $c$ & $c_*=\sqrt{\beta/(\alpha-\beta)}$ & identified \\
-Newton's constant $G_N$ & $1/(8\pi v_0^2\chi_\infty)$, $\chi_\infty\!\equiv\!\alpha{-}\beta$ & identified \\
+Gravitational coupling $G_N$ & Geometric EFT matching: $G_N=c_*^4/(8\pi M_G^2)$ & matched (Level~B) \\
 Lorentz-order field $\phi$ & $\ln(\chi/\chi_{\rm vac})$, soft sector of SSB & derived \\
-Planck constant $\hbar$ & Min.\ loop action $S_{\rm loop,min}$ & identified \\
+Pre-quantum action scale $S_0$ & Minimal loop action $S_{\rm loop,min}=2\pi S_0$ & derived (structural Level~A) \\
+Physical Planck constant $\hbar$ & Final identification $S_0=\hbar$ & identified after additional matching (Level~B / open) \\
 Schr\"odinger equation & KG~+~NR limit~+ emergent complex sector & derived (Level~B) \\
-Einstein equations & Variation $\delta S_{\rm ECT}/\delta g^{AB}$ & derived \\
+Macroscopic Einstein-like closure & Pure-metric frozen-order limit + $\phi$-first IR closure & structural / effective (Level~A/B) \\
 Graviton & Linearised effective-metric perturbation induced by $\delta n^A$;
      spin-2 Fierz--Pauli form; massless at linearised effective level & derived (linear) \\
 Photon & $U(1)$ embedding via condensate phase & embedded (Level~B/C) \\
 $W^\pm,Z^0$ & $SU(2)_L$ condensate embedding & embedded (Level~C) \\
 Higgs & Radial mode of $SU(2)$ condensate & embedded (Level~C) \\
 Fermions & $O(3)$ spinor representations & structural route (Level~B) \\
-Dark energy & Residual condensate energy $V(\Phi_0)$ & derived \\
+Dark energy sector & Effective late-time order-field closure & closure-dependent (Level~B) \\
 Dark matter (cand.) & Topological solitons / Goldstone modes & open \\
 Flat rotation curves & $\phi$-field critical IR branch ($G_{\rm eff}=G_N e^{-\phi}$) & derived + hypothesis \\
-2nd law of thermo. & $d\Gamma/dw\geq 0$ for $N_{\rm eff}\gg 1$ & derived \\
+Macroscopic entropy growth & Reduced-state decoherence with effective bath assumptions & effective closure (Level~B) \\
 Universal causal cone & Single $g_{\mu\nu}(n)$ in IR EFT & derived \\
 LV suppression & Higher-dim.\ ops., $\delta c/c\sim(E/\Lambda)^2$ & derived \\
 \hline
@@ -9208,7 +9219,7 @@ LV suppression & Higher-dim.\ ops., $\delta c/c\sim(E/\Lambda)^2$ & derived \\
 \endhead
 D1 & Lorentzian phase selected when $\alpha>\beta$; Euclidean otherwise & A & $\alpha>\beta$ is a condition on condensate params & \ref{sec:ssb} \\
 D2 & KG equation from condensate action (Level~A); Schr\"odinger equation by NR reduction~+ emergent complex envelope (Level~B) & A/B & KG: Level~A (O-S continuation assumed for quadratic sector); Schr\"odinger: Level~B (additionally requires NR limit + emergent complex sector) & 4, 4 \\
-D3 & $G_N$ from coefficient matching & A & --- & \ref{sec:consistency_relations} \\
+D3 & $G_N$ from geometric EFT matching ($G_N=c_*^4/(8\pi M_G^2)$) & B & Matching between ordered-branch tensor EFT and observed gravity; explicit $(u_0,\alpha,\beta)\to M_G$ derivation open~(OP2, OP3) & \ref{sec:mp_matching} \\
 D4 & Three Goldstone bosons & A & --- & 8 \\
 D5a & Graviton: induced linearised effective-metric perturbation on ordered branch & A & $v_0^2(\alpha-\beta)>0$ & 8 \\
 D5b & Fierz--Pauli form, TT projection, ghost-free counting at linearised level & B & TT gauge; explicit mode-counting from microscopic condensate variables open (OP3 partially resolved) & 8, App.~\ref{app:GN_derivation} \\
@@ -9225,13 +9236,14 @@ D15 & Causality of $K(\tau)$ from ECT & B & Structural: forward light cone of EC
 D16 & SM gauge group from O(4) & C & Embedded, not derived & 7, \ref{sec:open_problems} \\
 D17 & Second law $dS/dw\geq0$ (effective Gaussian--Markov result, ordered branch) & B & Gaussian--Markov approx.\ + structural initial condition; not derived from bare action (OP24) & \ref{sec:quantum}, \ref{sec:open_problems} \\
 D18 & Universe domain size $R_{\rm domain}=R_H e^{N_e}$ & B & ECT-inspired cosmological closure scenario~(OP3) & \ref{sec:universe_size} \\
-D19 & $S_{\rm loop,min}=2\pi\hbar$ from phase quantisation & B & Single-valuedness of $\theta$ & \ref{sec:consistency_relations} \\
+D19 & $S_{\rm loop,min}=2\pi S_0$ from phase quantisation & A & Structural consequence of winding sectors~(\S\ref{sec:qs_phase_dynamics}); $S_0=\hbar$ remains Level~B / open~(OP-Q2) & \ref{sec:qs_hbar} \\
 D20 & $\beta$ param.: general $c_*=\sqrt{\beta/(\alpha-\beta)}$ & A & --- & \ref{sec:ssb} \\
 D21 & Casimir: $(F/A)_{\rm ECT}=3/2\,(F/A)_{\rm QED}$ (3 Goldstone, \emph{condensate boundaries only}) & B & Dirichlet b.c.\ on Goldstone; not applicable to standard metal plates & \ref{sec:casimir} \\
 D22 & Unruh $T_U=\hbar a/(2\pi c_* k_B)$ from Euclidean correlator & A & --- & \ref{sec:unruh} \\
-D23 & Cosm.\ particle production; Bogoliubov $n_s=0.967$ & B & Slow-roll, $N_e=60$ & \ref{sec:mp_cosmo} \\
+D23a & Time-dependent ordered backgrounds admit Bogoliubov-type mode mixing & B & Structural analogy established; explicit rates remain closure-dependent & \ref{sec:qs_particle_production} \\
+D23b & Inflationary benchmark values ($n_s=0.967$, $r$) in effective ordering closure & B & Closure-dependent cosmological ansatz; slow-roll, $N_e=60$ & \ref{sec:mp_cosmo} \\
 D24 & Gravitational stiffness matching: $G_N=c_*^4/(8\pi M_G^2)$; direct microscopic relation to ordered-branch parameters remains open & B & Geometric EFT matching; explicit $(u_0,\alpha,\beta)\to M_G$ derivation open~(OP2, OP3) & \ref{sec:mp_matching} \\
-D25 & Universal near-horizon critical scale $\rho_c=\ell_{\rm Pl}/\sqrt{3\pi}$ & B & Tolman temperature as control parameter (C2b, open) & \ref{sec:critical_shell} \\
+D25 & Near-horizon critical scale in the present shell closure: $\rho_c=\ell_{\rm Pl}/\sqrt{3\pi}$ & B & Shell/interface ansatz; Tolman temperature as control parameter (C2b, open); not a universal first-principles theorem & \ref{sec:critical_shell} \\
 D26 & Conditional theorem: exact thermality excluded given finite-entropy shell + complete evaporation & B & Unitarity (natural) + finite shell + no infinite remnant & \ref{sec:no_exact_thermality} \\
 D27 & Shell-state dependence of Hawking channel: derived consequence of D26, not assumption & B & Conditions of D26 & \ref{app:conditional_theorem} \\
 D28 & Effective shell Hamiltonian structure (form, not coefficients) & C & GL criticality + Rindler geometry; coefficients open & \ref{app:chi_dynamics} \\
@@ -9240,7 +9252,7 @@ D29 & Minimal shell--radiation coupling form $\mathcal{L}_{\rm int}=-\tfrac{g}{2
 \end{longtable}
 
 \begin{longtable}{@{}p{0.05\textwidth}p{0.26\textwidth}p{0.24\textwidth}p{0.22\textwidth}p{0.20\textwidth}@{}}
-\caption{Falsifiable predictions of the ECT framework. F1 (environmental modulation of $g_\dagger$) is the most distinctive new prediction; F4 is satisfied at the effective scalar--tensor level.}
+\caption{Falsifiable predictions of the ECT framework. F1 (environmental modulation of $g_\dagger$) is the most distinctive new prediction; F3 is satisfied at the effective scalar--tensor level.}
 \label{tab:ECT_predictions}\\
 
 \toprule
@@ -9262,37 +9274,37 @@ Lorentz-order-field mechanism disfavoured \\
 
 
 
-F3 & Screening: GR restored at $a > g_\dagger$ &
+F2 & Screening: GR restored at $a > g_\dagger$ &
 No anomaly in Solar System &
 Cassini, MICROSCOPE-2, LLR &
 Chameleon screening excluded \\
 
-F4 & GW speed $c_T = c$ (at effective scalar--tensor level) &
+F3 & GW speed $c_T = c$ (at effective scalar--tensor level) &
 $|c_T/c - 1| < 10^{-15}$ &
 GW170817 &
 $\checkmark$ Already satisfied \\
 
-F5 & Fifth force $\eta_{\rm Eot}\sim10^{-20}$ &
+F4 & Fifth force $\eta_{\rm Eot}\sim10^{-20}$ &
 EP violation $\eta<10^{-20}$ &
 MICROSCOPE-2 \cite{MICROSCOPE2022} &
 $\mathcal{L}_5$ coupling excluded \\
 
-F6 & $w_0>-1$ (kinetic dark energy) &
+F5 & $w_0>-1$ (kinetic dark energy) &
 $w_0\in(-1,-0.95)$ &
 DESI DR2, Euclid &
 Condensate DE disfavoured \\
 
-F7 & Instanton spectrum $m_n=n\times1.6\,$GeV &
+F6 & Instanton spectrum $m_n=n\times1.6\,$GeV &
 Resonances at 1.6, 3.2, 4.8 GeV &
 LHC / future collider &
 Topological model excluded \\
 
-F8 & Lorentzian window $1<\alpha<4$ ($\beta=1$) &
+F7 & Lorentzian window $1<\alpha<4$ ($\beta=1$) &
 LIV bounds &
 CMB+GW multi-messenger &
 Kinetic tensor structure refuted \\
 
-F9 & Casimir ratio $3/2$ (Section~\ref{sec:casimir}) &
+F8 & Casimir ratio $3/2$ (Section~\ref{sec:casimir}) &
 $(F/A)_{\rm ECT}/(F/A)_{\rm QED}=3/2$, \emph{conditional} on
 boundaries reflecting ECT Goldstone modes (e.g.\ BEC/superfluid
 interfaces); \emph{not} predicted for standard metallic plates &
@@ -9300,7 +9312,7 @@ Casimir experiment with condensate/superfluid boundaries &
 Goldstone vacuum excluded if ratio measured $\neq 3/2$ at
 appropriate condensate boundaries \\
 
-F10 & Redshift dependence $g_\dagger(z)$ &
+F9 & Redshift dependence $g_\dagger(z)$ &
 RAR intercept shift at $z > 0.5$ &
 JWST, SKA high-$z$ &
 Cosmological $\phi$-evolution excluded \\
