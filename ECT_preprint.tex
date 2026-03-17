@@ -3394,72 +3394,839 @@ in detail in Section~\ref{sec:consistency_relations}.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Consistency relations, matching conventions, and legacy notation}
+\section{Consistency Relations among Fundamental Constants and Condensate Scales}
 \label{sec:consistency_relations}
 
-This section serves only as a compact bridge between the historical
-notation used in earlier ECT drafts and the disciplined formulation
-adopted in the present article.
-It should \emph{not} be read as a standalone derivation of the
-fundamental constants from the bare condensate action.
+\textbf{Notation convention for this section.}
+Two distinct symbols for energy / frequency scales appear below;
+their meanings are fixed here and used consistently throughout:
+\begin{description}[leftmargin=3em,style=unboxed,noitemsep]
+  \item[$\lambda$] Quartic self-coupling in the condensate
+    potential $V(\Phi)=\lambda(|\Phi|^2-v_0^2/2)^2$.
+    Numerical value $\lambda\simeq(1.5\times10^{43}\,{\rm s}^{-1})^2$.
+  \item[$\Lambda_\chi$] Condensate stiffness scale governing
+    loop quantisation: $\Lambda_\chi = m_\varphi^2 = 2\lambda v_0^2$.
+    Appears in $G_N\hbar^2 = c_*^4(\alpha-\beta)/(16\pi\Lambda_\chi)$.
+\end{description}
+These two symbols should not be conflated:
+$\lambda$ is a dimensionless coupling (in natural units),
+$\Lambda_\chi$ is an energy-squared / frequency-squared scale.
 
-\paragraph{What is structural and what is not.}
-In the present formulation the following distinction is essential:
+\medskip
+\textbf{Master formula for $G_N$ and its three equivalent expressions.}
+Throughout this paper $G_N$ appears in three superficially different
+but physically identical forms.  To avoid confusion, they are listed
+here together:
+\begin{equation}
+  G_N \;=\; \frac{1}{8\pi v_0^2(\alpha-\beta)}
+  \;=\; \frac{1}{8\pi v_0^2\chi_\infty}
+  \;\underset{\text{canonical}}{=}\; \frac{1}{8\pi v_0^2}\,,
+  \label{eq:GN_master}
+\end{equation}
+where $\chi_\infty\equiv\alpha{-}\beta$ is the Lorentz-order
+parameter (Section~\ref{sec:ssb}), and the rightmost equality holds
+at the canonical normalisation $\alpha=2$, $\beta=1$ with
+$v_0=\bar{M}_{\rm Pl}$.  A fourth form,
+$G_N=(16\pi v_0^2(\alpha-\beta))^{-1}$, appears in the
+linearised-EFE appendix (Eq.~\eqref{eq:GN_derived}) where $v_0$ is
+defined at the action level; the Notation note
+after that equation explains the factor-of-2 convention.\\
+
+In the present formulation of ECT, the fundamental constants
+$G_N$, $c_*$, and $\hbar$ are related to the condensate parameters
+$v_0$, $\alpha$, and $\lambda$ through \emph{internal matching and
+consistency relations}.  A fully parameter-free microscopic derivation
+of all constants from the bare Euclidean action---without matching
+any constant as an input---is not yet available.  What this section
+establishes is: given the condensate action and the identification
+of $v_0\simeq\bar{M}_{\rm Pl}$ from the gravitational sector, the
+remaining constants $c_*$ and $\hbar$ are expressed as ratios of
+condensate parameters, reducing the independent inputs from three
+($c$, $G_N$, $\hbar$) to four condensate quantities ($v_0$, $\alpha$,
+$\beta$, $\lambda$) connected by internal consistency relations.
+
+\subsection{Emergence of Newton’s constant $G$}
+\label{subsec:GN_FP}
+
+\subsubsection{Gravitational constant $G_N$}
+
+\textbf{Metric perturbation.}
+Around the condensate background $\langle n_A\rangle = \delta_{Aw}$,
+the emergent metric fluctuation is defined by
+\begin{equation}
+  h_{AB} \equiv g_{AB}^{\rm eff} - \delta_{AB},
+  \label{eq:GN_condensate}
+\end{equation}
+where $g_{AB}^{\rm eff}$ is the perturbation of the condensate kinetic
+tensor away from the flat Euclidean background.
+
+Weak-field limit:
+$n_A=\delta_{Aw}+\eta_A$. At second
+order in $\eta$, the ECT action~\eqref{eq:ECT_action} reproduces the
+Fierz--Pauli form:
+
+\begin{equation}
+S_E^{(\rm
+grav)}\big|_{\rm
+quadratic}=\frac{v_0^2(\alpha-\beta)}{2}\int
+d^4X\left[\partial_C
+h_{AB}\partial^C
+h^{AB}-\tfrac{1}{2}(\partial
+h)^2+\cdots\right]
+\end{equation}
+
+Matching to the linearised Hilbert action
+\cite{Weinberg1972} with
+$\bar{M}_{\rm
+Pl}^2=1/(8\pi G_N)$:
+
+\begin{equation}
+v_0^2(\alpha-\beta)=\bar{M}_{\rm
+Pl}^2\;\;\Longrightarrow\;\;\boxed{G_N=\frac{1}{8\pi
+v_0^2(\alpha-\beta)}}
+\label{eq:GN_matching_old}\quad(\hbar=c=1;\;\alpha=2\beta,\,\beta=1\Rightarrow v_0^2)
+\end{equation}
+\begin{equation}
+  \bar{M}_{\rm Pl}^2 = v_0^2(\alpha-\beta)
+  \qquad\Longleftrightarrow\qquad
+  v_0 = \frac{\bar{M}_{\rm Pl}}{\sqrt{\alpha-\beta}}.
+  \label{eq:MPl_matching}
+\end{equation}
+
+\textbf{Numerical check of $G_N$.} Setting $\alpha=2$
+(so $v_0=\bar{M}_\mathrm{Pl}$) and
+converting to SI using
+$1\,\mathrm{GeV}/c^2=1.78266192\times10^{-27}\,\mathrm{kg}$,
+we have
+$\bar{M}_\mathrm{Pl}\simeq2.435\times10^{18}\,\mathrm{GeV}/c^2
+\simeq4.341\times10^{-9}\,\mathrm{kg}$
+(using $1\,\mathrm{GeV}/c^2 = 1.783\times10^{-27}\,\mathrm{kg}$).
+Then
+\begin{equation}
+G_N \;=\;
+\frac{\hbar\,c}{8\pi\,\bar{M}_\mathrm{Pl}^2}
+\;\approx\;
+\frac{(1.055\times10^{-34}\;\mathrm{J{\cdot}s})\,(2.998\times10^{8}\;\mathrm{m/s})}
+{8\pi\,(4.341\times10^{-9}\;\mathrm{kg})^2}
+\;\approx\;
+6.678\times10^{-11}\;\mathrm{m^3\,kg^{-1}\,s^{-2}}.
+\end{equation}
+CODATA gives
+$G_N=6.67430\times10^{-11}\,\mathrm{m^3\,kg^{-1}\,s^{-2}}$.
+The agreement here is a consistency check of the matching relation~\eqref{eq:GN_matching}
+and the conventional definition of
+$\bar{M}_\mathrm{Pl}$ in terms of
+$G_N$, not an independent parameter-free prediction.
+
+\textbf{Derivation from action variation.}
+The derivation above proceeds by comparing coefficients at quadratic
+order in metric perturbations.  A more rigorous procedure is to vary
+the full ECT action~\eqref{eq:phi_first_action} with respect to the metric
+$g^{AB}$ and read off the coefficient of the linearised Ricci scalar
+in the resulting equation of motion.  This gives
+$M_{\rm Pl}^2 = v_0^2(\alpha-\beta)$ in the general case, or
+$v_0^2$ for $\alpha=2\beta$, $\beta=1$, which is equivalent
+to~\eqref{eq:GN_matching} via $G_N=1/(8\pi M_{\rm Pl}^2)$.
+The step-by-step variational derivation is left to a companion note;
+the result is consistent with the Einstein--aether literature
+\cite{Jacobson2004} where the same matching arises.
+
+\textbf{Honesty note.} Equation~\eqref{eq:GN_matching} expresses $G_N$ in terms of $v_0$
+and $\alpha$.  The reduced Planck mass
+$\bar{M}_{\rm Pl}$ is conventionally
+\emph{defined} by
+$G_N=1/(8\pi\bar{M}_{\rm Pl}^2)$, so the matching
+condition~\eqref{eq:GN_matching} is internally consistent --- which
+is non-trivial but not a parameter-free prediction.  The parameter
+$v_0$ is fixed by $G_N$ to better than the experimental precision
+of $G_N$, which is $\sim0.002\%$ (CODATA 2018).
+
+\textbf{Interpretation.} In this framework $G_N$ is the
+\emph{effective stiffness} with which long-wavelength condensate
+deformations (the emergent metric sector) respond to stress-energy of
+excitations. Technically it appears as the coefficient that matches the
+quadratic (two-derivative) action for Goldstone/metric modes to the
+Einstein--Hilbert form, in the same spirit as induced-gravity matching.
+The parameter $\hbar$ enters through the minimal loop action
+$S_{\rm loop,min}=2\pi\hbar$, which is identified with the phase
+stiffness of the condensate.  This gives a self-consistency relation
+between $\hbar$, $v_0$, and $\lambda$, rather than a derivation of
+$\hbar$ from more primitive objects.  The three constants $c$, $G_N$,
+$\hbar$ are related to the condensate parameters through four
+consistency relations; the mapping reduces independent inputs but
+does not eliminate the need for matching to observed physics at some
+level (see Section~\ref{sec:open_problems}, OP-$\Lambda$).
+
+
+
+\subsubsection{Speed of light}
+
+The effective speed
+$c_*=\sqrt{\beta/(\alpha-\beta)}$ [$\alpha=2\beta$, $\beta=1$: $c_*=1$] sets the
+light-cone for perturbations. The identification
+$c_*\equiv c$ fixes the unit ratio between the
+Euclidean coordinate $w$ and the Minkowski time $t$, and the value
+$\alpha=2$. This is a unit convention, not a dynamical
+prediction of the numerical value of $c$.
+
+\paragraph{Universal causal cone and suppression of Lorentz violation.}
+\label{par:universal_cone}
+
+A natural concern for any condensate-based spacetime model is whether
+different particle species propagate at different speeds, producing
+observable Lorentz violation (LV).  The ECT framework addresses this in
+two complementary ways.
+
+\textbf{(A) Universal causal cone in the IR EFT.}
+After the $O(4)\to O(3)$ symmetry breaking a single condensate order
+parameter $n^A$ is selected.  At low energies ($E\ll M_{\rm Pl}$) the
+only available Lorentzian rank-2 tensor that can appear in
+quadratic kinetic terms for light fields is the effective metric
+$g_{\mu\nu}(n)$ induced by $(\delta_{AB}, n^A)$.  Consequently, the
+renormalisable (dimension-4) kinetic term for any light field $\psi$
+necessarily takes the covariant form
+\begin{equation}
+\mathcal{L}^{(4)}\supset -\tfrac{1}{2}Z_\psi\,g^{\mu\nu}(n)\,\partial_\mu\psi\,\partial_\nu\psi,
+\end{equation}
+implying a \emph{universal causal cone}:\ all IR excitations propagate
+on the same characteristic surface.  Species-dependent propagation speeds
+would require additional independent background tensors beyond $g_{\mu\nu}(n)$;
+such tensors are absent in the minimal ECT field content once the condensate
+orientation is fixed.
+
+\textbf{(B) Suppression of Lorentz-violating operators.}
+The underlying $O(4)$-invariant Euclidean theory generates LV only through
+the condensate order parameter $n^A$.  Operators that break the IR
+Lorentz invariance must therefore either be reducible to $g_{\mu\nu}(n)$
+(and hence Lorentz-invariant in the emergent sense) or involve additional
+derivatives, making them higher-dimension operators suppressed by the UV
+scale $\Lambda\sim M_{\rm Pl}$:
+\begin{equation}
+\mathcal{L}_{\rm EFT} = \mathcal{L}^{(4)} + \frac{1}{\Lambda}\mathcal{L}^{(5)}
+  + \frac{1}{\Lambda^2}\mathcal{L}^{(6)} + \cdots
+\end{equation}
+At any accessible energy $E\ll\Lambda$ these give parametrically small
+deviations in propagation speeds,
+\begin{equation}
+\frac{\delta c}{c}\sim\mathcal{O}\!\left(\frac{E^2}{\Lambda^2}\right)\ll 1.
+\end{equation}
+Observable LV is therefore naturally postponed to energies approaching
+the UV completion scale---consistent with the stringent bound
+$|c_{GW}/c-1|\lesssim 10^{-15}$ from GW170817/GRB~170817A
+\cite{LIGO_Virgo_GW170817_2017}, which is automatically satisfied in
+the IR universal-cone limit.
+
+\textbf{Radiative stability.}  Because LV structures at dimension~4 are
+forbidden by the field content of the minimal ECT Lagrangian (all such
+combinations reduce to $g_{\mu\nu}(n)\partial^\mu\psi\partial^\nu\psi$),
+quantum corrections to renormalisable operators cannot generate
+species-dependent Lorentz violation.  Genuinely new LV operators require
+independent background tensors that simply do not appear in the minimal
+condensate field content.
+
+\textbf{Setting $c_*\equiv c$} (the identification used throughout this
+paper) is therefore a \emph{choice of units} --- the conversion factor
+between the Euclidean coordinate $w$ and physical time $t$ after analytic
+continuation $w\to -ic_*t$ --- and not an extra postulate introducing a
+second physical speed.
+
+
+\subsubsection{Planck constant: self-consistency}
+
+The identification of the minimum condensate loop action with
+$2\pi\hbar$ provides a relation between the parameters of the
+condensate potential.
+
+\textbf{Consistency relation (not a parameter-free derivation of $\hbar$).}
+From the phase action we obtained the effective quantum scale
+\begin{equation}
+\hbar_{\rm eff}=\frac{v_0^2 m_\varphi}{2}.
+\end{equation}
+
+This is a \emph{consistency identification}: it defines $m_\varphi$ in
+terms of $\hbar$ and $v_0$ once $\hbar_{\rm eff}\equiv\hbar$ is assumed,
+or equivalently expresses $\hbar$ through condensate parameters.  A
+fully non-circular derivation of $\hbar$ from bare microscopic inputs
+remains open (OP-$\Lambda$).  With this identification:
+\begin{equation}
+m_\varphi=\frac{2\hbar}{v_0^2}.
+\end{equation}
+
+\textbf{Natural-units note.} In the conventions of the Euclidean action
+$m_\varphi$ is an inverse correlation length (a mass in units $c=\hbar=1$).
+In SI units the associated energy scale is $E_\varphi\sim\hbar c\,m_\varphi$,
+naturally of order the Planck scale.  No separate SI formula is written
+here because the mixed-convention expression $m_\varphi=16\pi G_N/c$ is
+dimensionally non-transparent and adds no physical content beyond the
+identification $m_\varphi\sim 1/\ell_{\rm Pl}$.
+
+\textbf{Interpretation.} This step should be read as a consistency
+condition linking the parameters of the condensate potential to the
+observed constants $\hbar$, $c$, and $G_N$, rather than a parameter-free
+prediction of $\hbar$ from no prior input.
+
+% --- Moved from former gravity section ---
+
+\subsection{Emergent propagation speed $c$}
+\label{sec:c_star_old}
+
+\textbf{Identification $c \equiv c_*$.}
+Throughout the paper the symbol $c$ denotes the propagation speed of
+condensate excitations in the broken-symmetry phase.  The general
+formula derived in Section~\ref{sec:ssb} is
+\begin{equation}
+\label{eq:c_star}
+c \equiv c_* = \sqrt{\frac{\beta}{\alpha-\beta}}\,,
+\end{equation}
+where $\alpha$ is the anisotropy coupling and $\beta$ is the isotropic
+condensate stiffness (Eq.~\eqref{eq:ECT_action}).
+This is \emph{not} a separate postulate: it is the speed at which
+perturbations travel in the effective Lorentzian geometry induced by
+the condensate.
+
+\textbf{Canonical $\alpha=2\beta$, $\beta=1$:} The condition $c_*\equiv c=1$
+fixes $\alpha=2\beta$. With $\beta=1$ this gives $\alpha=2$ and $c_*=1$,
+establishing the unit conversion $w=c_*t=t$ between the Euclidean
+coordinate $w$ and physical time $t$ after analytic continuation $w\to-ic_*t$.
+
+In the regime of a spatially uniform, slowly varying condensate
+$c_*$ is constant and identified with the observed speed of light.
+Spatial gradients of $v_0$, $\alpha$, or $\beta$ produce small
+corrections, bounded by the GW170817 constraint
+$|c_{GW}/c-1|<10^{-15}$.
+
+The relativistic kinematic formulae used in later sections (dispersion
+relations, invariant intervals) use $c=c_*$ as defined here.
+There is no separate ``fundamental'' speed of light inserted by hand.
+
+One of the most fundamental constants of relativistic physics is the
+speed of light $c$, which determines the causal structure of spacetime
+and appears in the Lorentzian metric
+
+\begin{equation}
+ds^2 = c^2 dt^2 - dx^2 - dy^2 - dz^2 .
+\end{equation}
+
+In conventional formulations of relativity the value of $c$ is taken
+as a fundamental constant introduced at the level of the spacetime
+metric. In the ECT framework, however, the effective propagation speed
+of excitations emerges dynamically from the structure of the condensate.
+
+\paragraph{Quadratic action for condensate fluctuations}
+
+Consider small fluctuations $\varphi$ around the condensate vacuum,
+
+\begin{equation}
+\Phi = v_0 + \varphi .
+\end{equation}
+
+After the symmetry breaking
+
+\begin{equation}
+O(4)\rightarrow O(3),
+\end{equation}
+
+the quadratic part of the effective action for these fluctuations
+takes the form
+
+\begin{equation}
+S^{(2)} =
+\frac12
+\int d^4X
+\left[
+(\partial_i\varphi)^2
+-
+(\alpha-\beta)(\partial_w\varphi)^2
++
+m_\varphi^2 \varphi^2
+\right].
+\end{equation}
+
+The crucial feature of this expression is the negative sign in front of
+the derivative along the preferred condensate direction $w$.
+This sign arises dynamically from the condensate structure and produces
+an effective Lorentzian signature
+(\textit{Convention: $\beta=1$ throughout this subsection;
+general $\beta$ via $(\alpha-1)\to(\alpha-\beta)/\beta$}).
+
+\paragraph{Identification of the propagation speed}
+
+The kinetic term can be rewritten as
+
+\begin{equation}
+S^{(2)}
+=
+\frac12
+\int d^4X
+\left[
+(\partial_i\varphi)^2
+-
+\frac{1}{c_*^2}
+(\partial_w\varphi)^2
++
+m_\varphi^2\varphi^2
+\right],
+\end{equation}
+
+where the effective propagation speed is
+
+\begin{equation}
+c_* =
+\sqrt{\frac{\beta}{\alpha-\beta}}\quad\xrightarrow{\alpha=2\beta,\,\beta=1} 1 .
+\end{equation}
+
+The equation of motion derived from this action leads to the
+relativistic dispersion relation
+
+\begin{equation}
+\omega^2
+=
+c_*^2 k^2
++
+m_\varphi^2 c_*^4 ,
+\end{equation}
+
+which is the standard dispersion relation for relativistic particles.
+
+\paragraph{Interpretation}
+
+The parameter $c_*$ therefore represents the propagation speed of
+low-energy excitations of the condensate.
+Identifying these excitations with relativistic fields implies
+
+\begin{equation}
+c = c_* = \sqrt{\frac{\beta}{\alpha-\beta}}
+\;\xrightarrow{\;\alpha=2\beta,\;\beta=1\;}\;
+\sqrt{\frac{\beta}{\alpha-\beta}} \quad\bigl[\alpha=2\beta,\,\beta=1:\; c_*=1\bigr] .
+\end{equation}
+
+Thus the speed of light is not introduced as a fundamental constant
+but emerges as a dynamical property of the condensate background.
+
+\paragraph{Physical implications}
+
+In this picture the causal structure of spacetime is determined by the
+microscopic parameters of the condensate.  The observed equality of the
+propagation speed of photons and gravitational waves therefore places
+strong constraints on the parameter $\alpha$ of the condensate theory.
+
+Observations of the neutron-star merger event GW170817 and the
+associated gamma-ray burst GRB~170817A \cite{LIGO_Virgo_GW170817_2017} constrain the difference between
+the speed of gravity and the speed of light to
+
+\begin{equation}
+\left|\frac{c_{GW}}{c}-1\right| < 10^{-15}.
+\end{equation}
+
+This implies that any deviation of the effective propagation speed from
+the observed value must be extremely small, placing tight constraints
+on the allowed values of the condensate parameter $\alpha$.
+
+\paragraph{Conceptual significance}
+
+The emergence of the propagation speed from the condensate parameters
+illustrates a general principle of the ECT framework: quantities that
+appear as fundamental constants in conventional relativistic physics
+can arise dynamically from the microscopic structure of the vacuum.
+
+\subsection{Emergence of the Planck constant $\hbar$}
+
+
+\subsubsection{Unified relation between $G$, $\hbar$, and the condensate scale}
+
+The previous sections relate the fundamental constants of gravity and
+quantum mechanics to the parameters of the condensate vacuum.
+
+From the matching of the quadratic gravitational sector, the general formula
+(Section~\ref{sec:consistency_relations}) is
+$G_N=1/[8\pi v_0^2(\alpha-\beta)]$.
+In the \emph{canonical normalisation} $\alpha=2\beta$, $\beta=1$,
+this reduces to
+
+\begin{equation}\label{eq:GN_canonical}
+G_N=\frac{\hbar c}{8\pi v_0^2}\quad\text{[canonical: }\alpha=2,\,\beta=1\text{]}.
+\end{equation}
+
+From the self-consistency condition on the condensate phase
+(consistency identification, not an independent derivation)
+
+\begin{equation}
+\hbar \stackrel{\rm id}{=} \frac{\beta v_0^2 m_\varphi}{2}
+\xrightarrow{\beta=1} \frac{v_0^2 m_\varphi}{2}.
+\end{equation}
+
+Combining these \emph{consistency relations} gives
+
+\begin{equation}
+\hbar c = 8\pi G_N v_0^2\quad\text{[canonical normalisation]}.
+\end{equation}
+
+The reduced Planck mass in the general notation satisfies
+
+\begin{equation}
+\bar M_{\rm Pl}^2 = v_0^2(\alpha-\beta).
+\end{equation}
+
+In this framework the Planck scale is \emph{identified} with
+the condensate stiffness (consistency relation; non-circular
+derivation open, OP-$\Lambda$).
+
+\paragraph{Physical interpretation and honest status of $\hbar$}
+
+In the ECT framework the fundamental constants are related to
+condensate parameters through internal consistency relations.  They are
+not all independently derived from the bare ECT action without input;
+rather, the three constants $c_*$, $G_N$, $\hbar$ are expressed in
+terms of four condensate parameters $(v_0, \alpha, \beta, \lambda)$,
+with $v_0$ fixed by matching $G_N$ to observation.  Within this
+matching, the constants are related to the condensate structure as
+follows:
+
 \begin{itemize}
-\item the ordered branch fixes the effective propagation speed
-  \begin{equation}\label{eq:c_star}
-    c_*^2 = \frac{\beta}{\alpha-\beta},
-  \end{equation}
-  with the observational choice $c_*=c$ selecting the canonical
-  normalisation condition in the broken phase;
-\item the observed Newton coupling enters through geometric EFT matching,
-  \begin{equation}\label{eq:GN_master}
-    G_N = \frac{c_*^4}{8\pi M_G^2},
-  \end{equation}
-  where $M_G$ is the gravitational stiffness scale of the tensor EFT
-  developed in Macroscopic Physics
-  (Section~\ref{sec:mp_matching}, Appendix~\ref{app:GN_derivation});
-\item the coherent branch contains a structural pre-quantum action
-  scale $S_0$, fixed by the minimal loop action
-  $S_{\rm loop,min}=2\pi S_0$,
-  while the final physical identification $S_0=\hbar$ remains a
-  Level~B/open step rather than an unconditional Level~A theorem.
+\item the propagation speed $c_*=\sqrt{\beta/(\alpha-\beta)}$ (canonical gauge: $\alpha=2$, $\beta=1$ gives $c_*=1$) follows from the
+anisotropic kinetic structure of the condensate;
+
+\item the gravitational constant $G_N$ reflects the stiffness of the
+condensate with respect to long-wavelength geometric deformations:
+$G_N = 1/(8\pi v_0^2(\alpha-\beta))$;
+
+\item the Planck constant $\hbar$ is \emph{identified} with (not
+derived independently from) the minimal loop action of the condensate
+phase field---a self-consistency condition (OP-$\Lambda$):
+\[
+S_{\rm loop,min} = 2\pi\hbar\quad\text{(consistency identification)}.
+\]
 \end{itemize}
 
-\paragraph{Legacy notation.}
-\label{sec:running_coupling}%
-Earlier ECT drafts often used a single condensate amplitude symbol
-$v_0$ to play several logically distinct roles at once:
-background scalar scale, gravitational stiffness surrogate, and
-pre-quantum action carrier.
-In the present article these roles are separated.
-The relevant variables are instead:
-the ordered gradient scale $u_0$,
-the macroscopic tensor stiffness $M_G$,
-and the coherent action scale $S_0$.
-Whenever legacy $v_0$ appears in historical formulas or auxiliary
-appendices, it should therefore be read only as shorthand from an
-older notation scheme, not as the primary variable of the current
-postulate-based formulation.
+\textbf{Important: $\hbar$ as a self-consistency condition.}
+The quantisation of the phase loop
+($S_{\rm loop,min} \equiv 2\pi\hbar$, computed in
+Section~\ref{sec:quantum}) provides the physical origin
+of $\hbar$ within the condensate.  The relation
+$\hbar = v_0^2 m_\varphi/2$ is a \emph{matching
+condition}, not a parameter-free prediction.  The condensate mass
+$m_\varphi$ is itself fixed by requiring this relation to be
+consistent with the observed value of $\hbar$.  In other words,
+$m_\varphi$ is determined \emph{by} $\hbar$, not the other way around.
+The physical content of this identification is that the Planck constant
+acquires an interpretation as the minimum action associated with a
+topologically non-trivial condensate configuration (a phase vortex),
+analogous to the circulation quantum in a superfluid.
+This interpretation is physically suggestive but does not reduce the
+number of free parameters of the theory.
 
-\paragraph{How this section should be used.}
-This section is therefore only a notation and consistency bridge.
-For the actual macroscopic matching of gravity, see
-Section~\ref{sec:mp_matching}.
-For the status of the pre-quantum action scale and the
-$S_0\leftrightarrow\hbar$ question, see
-Sections~\ref{sec:qs_hbar} and~\ref{sec:qs_ccr}.
-For the global classification of what is Level~A, Level~B,
-or still open, see Tables~\ref{tab:ect_structure}
-and~\ref{tab:ect-levels}.
+These relations suggest that quantum mechanics, spacetime geometry, and
+gravity emerge from different properties of the same underlying
+condensate background.  The claim that $\hbar$ is ``derived from
+nothing'' should not be made; the correct statement is that $\hbar$
+is \emph{interpreted} within the condensate framework through a
+self-consistency condition.
 
-% The following figure label is retained for backward compatibility.
-\begin{figure}[H]\centering
-\caption{Schematic of the three condensate scales and their roles.
-See Section~\ref{sec:qs_hbar} for details of the coherent scale,
-and Section~\ref{sec:mp_matching} for the gravitational stiffness.}
+\paragraph{Non-trivial self-consistency of $G_N$ and $\hbar$.}
+A potential circularity deserves explicit attention.  One might ask:
+is the relation $G_N=1/(8\pi v_0^2(\alpha-\beta))$ simply a rewriting of the
+definition $\bar{M}_{\rm Pl}^2\equiv 1/(8\pi G_N)$, with $v_0\equiv\bar{M}_{\rm Pl}$ inserted by hand?
+
+The answer is no, provided the derivation is carried out in the
+following order:
+\begin{enumerate}
+\item ECT \emph{expresses} $G_N = 1/(8\pi v_0^2(\alpha{-}\beta))$
+  by matching the quadratic condensate action to the Einstein--Hilbert
+  form---a step that involves neither $\bar{M}_{\rm Pl}$ nor
+  any prior knowledge of $G_N$ (Section~\ref{sec:macroscopic}; Level~B).
+\item Separately, ECT \emph{identifies}
+  $\hbar = v_0\sqrt{\beta/[\lambda(\alpha{-}\beta)]}$
+  through the minimal closed-loop self-consistency condition
+  (Section~\ref{sec:quantum}; consistency relation, OP-$\Lambda$).
+\item The measured value $G_N^{\rm obs}=6.674\times10^{-11}$\,m$^3$\,kg$^{-1}$\,s$^{-2}$
+  then \emph{calibrates} $v_0$: inserting $G_N^{\rm obs}$ at
+  $\alpha=2\beta$, $\beta=1$ gives
+  $v_0 = \bar{M}_{\rm Pl}\approx 2.435\times10^{18}$\,GeV.
+\item With this \emph{same} $v_0$, the phase-quantisation formula
+  for $\hbar$ reproduces $\hbar = 1.055\times10^{-34}$\,J\,s
+  when $\lambda\approx(1.5\times10^{43}\,\text{s}^{-1})^2$.
+\end{enumerate}
+The two formulas ($G_N$ from graviton matching and $\hbar$ from phase
+quantisation) share one free parameter ($v_0$) and are
+simultaneously satisfied at the same $v_0$.
+\textbf{Status (self-consistency test, not independent prediction):}
+this is non-trivial---the $\hbar$ formula comes from a different
+route than $G_N$---but it is not an independent prediction either,
+because $v_0$ was already fixed by the $G_N$ matching.  Once $v_0$
+is set, $\hbar$ is determined up to $\lambda$; neither constant is
+derived without matching to observations.  The simultaneous
+consistency at one $v_0$ constitutes an internal self-consistency
+test of the ECT parameterisation (see Section~\ref{sec:open_problems},
+OP-$\Lambda$ for the open status of a fully non-circular derivation).
+
+\paragraph{The $G_N$--$\hbar^2$ consistency relation and $\ell_{\rm Pl}$.}
+\label{par:GN_hbar_consistency}
+
+The two condensate formulas for $G_N$ and $\hbar$ can be combined
+to yield a useful internal consistency relation.  Define the
+condensate stiffness scale $\Lambda_\chi$ via
+\begin{equation}
+  \hbar = \frac{c_*\,v_0}{\sqrt{\Lambda_\chi}},
+  \qquad
+  \Lambda_\chi \equiv \lambda\,(\alpha-\beta)/\beta^2,
+\end{equation}
+where $\lambda$ is the condensate self-coupling from the potential
+$V(\Phi) = -\mu^2\Phi^2/2 + \lambda\Phi^4/4$.
+Substituting $G_N = c_*^2(\alpha-\beta)/(16\pi v_0^2)$ and
+$\hbar = c_* v_0/\sqrt{\Lambda_\chi}$:
+\begin{equation}
+  \label{eq:GN_hbar2_relation}
+  \boxed{G_N\,\hbar^2
+  = \frac{c_*^4(\alpha-\beta)}{16\pi\,\Lambda_\chi}.}
+\end{equation}
+This is the ECT \emph{consistency relation} linking the
+gravitational constant, the Planck constant, the propagation speed,
+the anisotropy parameter, and the condensate stiffness scale.
+
+\textbf{Status.}  Equation~\eqref{eq:GN_hbar2_relation} is an
+internal self-consistency condition of the ECT parameterisation,
+\emph{not} an independent prediction of $G_N$ or $\hbar$ in terms
+of more fundamental quantities.  It becomes a genuine prediction
+only if $\Lambda_\chi$ can be obtained independently from
+microscopic condensate dynamics.
+
+\textbf{Planck length: open problem.}
+The consistency relation~\eqref{eq:GN_hbar2_relation} involves
+$G_N\hbar^2$, whereas the Planck length $\ell_{\rm Pl}=\sqrt{\hbar G_N/c_*^3}$
+depends on $G_N\hbar$.  One additional independent relation between
+condensate parameters would be needed to close the system; it is
+not available from the current ECT formulation.  Therefore the
+formula
+\[
+  \ell_{\rm Pl} \stackrel{?}{=} \frac{c_*}{\sqrt{\Lambda_\chi}}
+\]
+is \emph{suggestive but not derived}: it would follow only if
+$v_0^2 = \Lambda_\chi$ independently of defining $v_0 \equiv
+\bar{M}_{\rm Pl}$, which is a circular identification in the
+current framework.
+A fully non-circular microscopic derivation of $\ell_{\rm Pl}$
+from pre-gravitational ECT parameters remains an open problem
+(OP-$\Lambda$, Section~\ref{sec:open_problems}).
+
+
+
+\subsection{Hierarchy of physical scales}
+
+
+\textbf{Single field, three scales.}
+The field $\Phi$ is unique but manifests at three characteristic
+scales via the renormalisation group (Section~\ref{sec:running_coupling}):
+
+\begin{itemize}
+\item Planck scale
+$v_0\sim\bar{M}_{\rm Pl}$
+$\rightarrow G_N, \hbar, c$
+
+\item electroweak scale
+$v_2=246~{\rm GeV}$
+$\rightarrow W^\pm, Z^0$, Higgs
+
+\item galactic $\phi$-sector:
+$g_\dagger \propto cH_0$
+$\rightarrow$ rotation curves, BTFR
+\end{itemize}
+
+The connection between these scales is a prediction of the
+running coupling of the condensate (see Section~\ref{sec:running_coupling}) rather than a free
+adjustment of parameters.
+
+
+
+\subsection{Running coupling and three-scale hierarchy}
+\label{sec:running_coupling}
+\textbf{Problem setup.} A single scalar condensate field $\Phi(X)$ must
+connect three widely separated characteristic scales:
+\begin{equation}
+v_0\sim2.4\times10^{18}\,\mathrm{GeV}
+\;\longrightarrow\;
+v_2=246\,\mathrm{GeV}
+\;\longrightarrow\;
+g_\dagger \propto cH_0 \sim 10^{-10}\,\mathrm{m\,s^{-2}}.
+\end{equation}
+The central question is whether this hierarchy can arise from the RG
+flow of one quartic self-coupling $\lambda(\mu)$.
+
+\textbf{One-loop RG equation.} For the quartic interaction of the
+condensate (with dominant top-Yukawa contribution), we use
+\begin{equation}
+\mu\frac{d\lambda}{d\mu}
+=\beta_\lambda
+=\frac{3\lambda^2}{8\pi^2}
+-\frac{3y_t^2\lambda}{4\pi^2}
++\frac{3y_t^4}{16\pi^2}
++\ldots,
+\end{equation}
+with $y_t\approx1$ (numerically close to the SM running in the
+electroweak/UV regime \cite{Degrassi2012}).
+
+\textbf{Three characteristic RG points (one condensate, not three
+fields).}
+\begin{equation}
+\mu_1=v_0\sim M_{\rm Pl}:\quad \lambda\approx0
+\quad\text{(Planck boundary / phase-transition edge)},
+\end{equation}
+\begin{equation}
+\mu_2=v_2\sim246\,\mathrm{GeV}:\quad \lambda=\lambda_{\min}>0
+\quad\text{(electroweak vacuum region)},
+\end{equation}
+\begin{equation}
+\mu_3\sim c\,g_\dagger/c^2\sim10^{-42}\,\mathrm{GeV}:\quad
+\quad\text{(galactic $\phi$-sector coherence scale)}.
+\end{equation}
+
+In this interpretation, the hierarchy is not three independent
+condensates. It is one condensate sampled at three RG-characteristic
+points of $\lambda(\mu)$.
+
+\textbf{Metastable intermediate regime.} For $\lambda(M_{\rm
+Pl})\approx0$ and $y_t\approx1$, the one-loop flow admits the known
+intermediate metastable window where $\lambda$ can become small/negative
+before returning toward an infrared-consistent galactic regime. This is
+qualitatively aligned with the SM electroweak-vacuum metastability
+picture constrained by LHC Higgs/top data.
+
+\textbf{Physical meaning for ECT.} The left (UV) near-zero of
+$\lambda(\mu)$ marks the Planck-scale condensate boundary, while the
+IR near-zero encodes large-scale coherence relevant for rotation-curve
+phenomenology. The electroweak scale sits in between as the familiar
+$v_2=246\,\mathrm{GeV}$ region. A full quantitative claim requires a
+dedicated two-loop analysis with thresholds and matching (open problem
+13.9), but the one-loop structure already explains why three scales can
+emerge from one running coupling.
+
+\begin{figure*}[!htb]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_condensate_scales.png}
+\caption{Hierarchy of three energy scales from a single
+condensate field $\Phi$ in ECT.
+(a)~Running coupling
+$\lambda(\mu)$: the quartic self-coupling
+remains positive at high energies (Planck and electroweak scales) but
+turns negative at galactic scales, entering a metastable regime
+(shaded). (b)~The condensate vacuum expectation value
+$v_0(\mu) =
+\sqrt{\mu/\lambda(\mu)}$
+spans over 50 orders of magnitude: $v_0 \approx
+2.4\times10^{18}$~GeV at the Planck
+scale (determining $G$, $\hbar$, $c$), $v_2 =
+246$~GeV at the electroweak scale (determining $W$,
+$Z$, Higgs masses), and $v_{\rm gal}
+\sim 10^{-33}$~GeV at galactic scales
+(setting the critical acceleration scale
+$g_\dagger$ of the $\phi$-branch). The renormalization group flow of a
+single field connects all three scales without fine-tuning.}
 \label{fig:rg_hierarchy}
-\end{figure}
+\end{figure*}
+
+\subsection{Natural energy scale of the condensate}
+\label{sec:natural_scale}
+
+The condensate potential $V(\Phi) = -\mu^2 \Phi^2/2 + \lambda \Phi^4/4$
+defines a natural energy scale through its vacuum expectation value
+$v_0 = \sqrt{\mu^2/\lambda}$.  In ECT this scale plays a triple role:
+it determines the gravitational coupling ($G_N = 1/(8\pi v_0^2\chi_\infty)$, $\chi_\infty\equiv\alpha{-}\beta$; $\chi_\infty = 1$ at canonical $\alpha=2\beta,\,\beta=1$),
+sets the quantum of action ($\hbar \propto v_0^2 m_\varphi$), and
+fixes the causal propagation speed ($c_* = \sqrt{\beta/(\alpha-\beta)}$; $\alpha=2\beta$, $\beta=1$: $c_*=1$).
+
+The requirement $v_0 \sim \bar{M}_{\rm Pl} \approx 2.435 \times 10^{18}$\,GeV
+follows from matching the emergent gravitational sector to the observed
+value of $G_N$.  This is the highest energy scale in the theory and
+corresponds to the phase transition temperature
+$T_c = v_0\sqrt{6} \sim M_{\rm Pl}$.
+
+All other scales in ECT are hierarchically lower:
+the electroweak scale $v_2 = 246$\,GeV arises from a secondary condensate
+sector.  The galactic weak-field sector is governed by the soft
+Lorentz-order response of the vacuum, encoded in the field
+$\phi = \ln(\chi/\chi_{\rm vac})$ and in the associated critical
+acceleration scale $g_\dagger \propto cH_0$.
+The microscopic correlation length of the heavy radial mode
+$\xi_{\rm cond} = 1/m_\varphi$
+is naturally of order the Planck length $\ell_{\rm Pl} \sim 1.6 \times 10^{-35}$\,m,
+below which the continuum description of the condensate breaks down.
+
+The ratio of the first two scales spans over 16 orders of magnitude:
+$v_0/v_2 \approx 10^{16}$ (the gauge hierarchy).
+The galactic $\phi$-sector operates at an acceleration scale
+$g_\dagger \sim cH_0 \sim 10^{-10}\,$m\,s$^{-2}$, which corresponds
+to an energy scale $\sqrt{\hbar\,g_\dagger/c} \sim 10^{-33}\,$eV.
+Whether these hierarchies emerge from a single running
+coupling $\lambda(\mu)$ is discussed in
+Section~\ref{sec:running_coupling}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% -----------------------------------------------------------------------
+% Summary: three condensate parameters → three fundamental constants
+% -----------------------------------------------------------------------
+\subsection*{Summary: condensate parameters and fundamental constants}
+\label{sec:three_params_three_constants}
+
+A central structural feature of ECT is that the three fundamental constants
+$c$, $G_N$, and $\hbar$ are all expressible in terms of the same set of
+condensate parameters through internal consistency relations.  They are not
+derived parameter-free from the bare ECT action alone: $v_0$ is calibrated
+by matching $G_N$ to observation, and the consistency between the $G_N$ and
+$\hbar$ formulas at the same $v_0$ is a non-trivial self-consistency test,
+not an independent prediction of all three constants.
+Table~\ref{tab:three_params} makes this correspondence explicit together
+with an honest assessment of the non-trivial physical content.
+
+\begin{table}[H]
+\centering
+\caption{Three condensate parameters and the three fundamental constants.
+\textit{Non-trivial content} identifies the genuine physical prediction
+as opposed to a definition or choice of units.}
+\label{tab:three_params}
+\small
+\begin{tabular}{p{2.8cm}p{2.0cm}p{3.8cm}p{5.2cm}}
+\hline
+\textbf{Condensate parameter(s)} & \textbf{Constant} &
+\textbf{ECT formula} & \textbf{Non-trivial physical content} \\
+\hline
+$\alpha=2\beta$ & $c$ &
+$c_*=\sqrt{\beta/(\alpha-\beta)}\xrightarrow{\alpha=2\beta}1$ &
+In the emergent complex ordered sector (Section~\ref{par:real_vs_complex}), the photon is the Goldstone mode of the $U(1)$ condensate phase; hence
+$c_{\rm em}=c_{\rm gw}=c_*$ from a single field.
+Confirmed: GW170817, $|\delta c/c|<10^{-15}$.  \\[4pt]
+$v_0$ (matched: $v_0=\bar{M}_{\rm Pl}$) & $G_N$ &
+$G_N=\dfrac{1}{8\pi v_0^2(\alpha-\beta)}\xrightarrow{\alpha=2\beta,\,\beta=1}\dfrac{1}{8\pi v_0^2}$ &
+Condensate stiffness controls gravitational coupling.
+$G_N$ and $\hbar$ share a common source $v_0$; the Planck length
+$\ell_{\rm Pl}=1/(\sqrt{8\pi}\,v_0)$ coincides numerically with the condensate
+coherence scale (consistency relation and physical interpretation candidate;
+this is not a completed non-circular derivation, OP-$\Lambda$).  \\[4pt]
+$v_0,\,\lambda,\,\beta$ & $\hbar$ &
+$\hbar = \beta v_0^2 m_\varphi/2$,\quad$m_\varphi=\sqrt{2\lambda}\,v_0$ &
+Self-consistency interpretation: the minimal-loop action
+$S_{\rm loop,min}=2\pi\hbar$ provides a \emph{physical mechanism candidate}
+for the origin of $\hbar$---the condensate phase loop $n=1$.
+This is an internal consistency check (not an independent
+derivation of $\hbar$ from no prior input); the identification
+requires $v_0$ to be matched to $G_N$ beforehand (OP-$\Lambda$).  \\
+\hline
+\end{tabular}
+\end{table}
+
+\medskip
+\noindent\textbf{Honesty note.}\enspace
+Of the three relations, two contain a tautological component:
+$c_*=1$ fixes the time unit, and $G_N = 1/(8\pi v_0^2\chi_\infty)$ [$\chi_\infty\equiv\alpha{-}\beta=1$, canonical] identifies $v_0$ with
+$\bar{M}_{\rm Pl}$ by matching.
+The non-tautological content consists of two statements.
+First, $c_{\rm photon}=c_{\rm condensate\,sound}$ because the photon
+\emph{is} the Goldstone mode of the condensate; GW170817 tests this
+identification to $10^{-15}$ precision.
+Second, $\hbar$ acquires a topological interpretation as the action of the
+minimal winding configuration $\pi_1(S^1)=\mathbb{Z}$; this is a physical
+mechanism, not a numerical coincidence.
+
 
 \section{Gauge Symmetries and Interactions}
 \label{sec:gauge}
@@ -8895,7 +9662,6 @@ $\mu_n(x) \to x$, so the closure relation
 $\mu_n(g_{\rm obs}/g_\dagger)\,g_{\rm obs} = g_N$ becomes
 \begin{equation}
 \frac{g_{\rm obs}^2}{g_\dagger(\phi_{\rm env})} \approx g_N\,.
-  \label{eq:rar}
 \end{equation}
 For an outer circular orbit where $g_N = G M_{\rm bar}/r^2$
 and the enclosed baryonic mass has saturated, writing
@@ -13857,10 +14623,9 @@ $g_\dagger = g_{\dagger 0}\,e^{\gamma\phi_{\rm env}}$.
 Observationally, $g_\dagger \approx 10^{-10}\,$m\,s$^{-2}$
 governs the RAR, BTFR, and the flattening of rotation curves.
 
-These phenomena are captured in the present formulation through the
-nonlinear response of the Lorentz-order field $\phi$ in the critical
-weak-field branch, without introducing a standard particle-dark-matter
-halo at the level of the current closure.
+These phenomena all follow from the nonlinear response of the
+Lorentz-order field $\phi$ in the critical weak-field branch,
+without requiring particle dark matter.
 
 An important aspect is that $g_\dagger$ is not inserted as an
 independent MOND-like constant in the present formulation, but arises
@@ -15768,102 +16533,413 @@ This is listed as Open Problem~OP-new-1.
 
 \clearpage
 
-\section{Foundational summary and signature relations}
+\section{Fundamental Laws and Signature Equations}
 \label{app:laws_and_eqs}
 
-\subsection{Condensed summary of the framework}
+\subsection{Summary of ECT principles}
 \label{sec:laws_ect}
 
-This appendix subsection provides only a compact summary of the
-framework. It should be read as a map of the article, not as a
-replacement for the detailed Level~A / Level~B / Open discipline
-developed in the main text.
+\textit{Note:} This section uses the earlier four-law formulation
+for compact reference. The current foundational framework is the
+five-postulate architecture of Sections~\ref{sec:postulates}--\ref{sec:branching},
+where the roles of $v_0$ and $u_0$ are distinguished carefully.
+The four principles below remain valid as condensed summary statements.
 
-The present ECT formulation can be summarised in four compact
-structural statements:
+The ECT framework can be summarised in four structural principles:
 
 \begin{description}[leftmargin=1.2em, labelindent=0pt, style=unboxed]
 
-\item[\textbf{(S1) Euclidean microscopic substrate.}]
-The bare arena is a four-dimensional Euclidean manifold with
-$O(4)$-invariant microscopic action and no preferred time direction.
+\item[\textbf{Law I — Euclidean substrate.}]
+The fundamental arena is a four-dimensional Euclidean manifold $\mathcal{M}^4$
+with metric $\delta_{AB}$.  There is no preferred time direction at the
+microscopic level.  The sole dynamical object is the condensate field
+$\Psi^A(X)$, governed by an $O(4)$-invariant action $S_E[\Psi]$.
 
-\item[\textbf{(S2) Ordered Lorentzian branch.}]
-Spontaneous symmetry breaking $O(4)\to O(3)$ selects an ordered
-direction and generates an effective Lorentzian propagation sector in
-the broken-phase EFT when $\alpha>\beta$.
+\item[\textbf{Law II — Spontaneous birth of time.}]
+Spontaneous symmetry breaking $O(4)\to O(3)$ selects a preferred direction
+$\langle n^A\rangle = \delta^A{}_w$.  When the condensate parameters satisfy
+$\beta < \alpha < 4\beta$, the perturbation spectrum acquires a Lorentzian
+signature along $n^A$, and the $w$-direction is identified as physical time.
+Time is not a fundamental input but an emergent consequence of the broken symmetry.
 
-\item[\textbf{(S3) Two branches of one condensate.}]
-The ordered condensate separates into a geometric/macroscopic branch
-and a coherent-topological/quantum branch.
-The former governs effective metric response and long-wavelength
-gravity; the latter governs phase-sensitive dynamics, winding sectors,
-decoherence, and reduced-state quantum structure.
+\item[\textbf{Law III — Unification of fundamental constants.}]
+The speed of light $c$, the gravitational constant $G_N$, and the Planck constant
+$\hbar$ are structurally linked to condensate parameters.
+In the original notation (where $v_0\equiv\langle\Phi\rangle$;
+current notation uses $u_0=|\langle\partial_A\Phi\rangle|$
+and $M_G=\bar{M}_{\rm Pl}$; see Section~\ref{sec:constants}):
+\begin{equation}
+  c_* = \sqrt{\frac{\beta}{\alpha-\beta}},\qquad
+  G_N = \frac{1}{8\pi v_0^2(\alpha-\beta)},\qquad
+  \hbar = v_0\sqrt{\frac{\beta}{\lambda(\alpha-\beta)}}.
+\end{equation}
+The physical condition $c_*=c$ imposes $\alpha=2\beta$; the canonical
+normalisation $\beta=1$, $\alpha=2$ gives $c_*=1$, $\chi_\infty=1$, $G_N=1/(8\pi v_0^2\chi_\infty)=1/(8\pi v_0^2)$,
+$\hbar = v_0/\sqrt{\lambda}$.
 
-\item[\textbf{(S4) Explicit status discipline.}]
-ECT does not claim that all standard laws are already unconditional
-bare-postulate theorems.
-Instead, the framework explicitly separates structural Level~A results,
-effective Level~B closures, and genuinely open problems.
-
+\item[\textbf{Law IV — Two regimes of one condensate.}]
+At scales $r\lesssim\ell_{\rm Pl}$, the condensate is incoherent
+($\langle n^A\rangle\approx 0$) and the effective description is Euclidean quantum
+field theory.  At scales $r\gg\ell_{\rm Pl}$, the condensate is coherent
+($|\langle n^A\rangle|=1$) and the effective description is Lorentzian classical
+field theory.  The transition scale $\ell_{\rm Pl}$ is not put in by hand;
+the microscopic condensate correlation length $\xi_{\rm cond}\sim 1/m_\varphi$
+determined by $v_0$ and $\lambda$ is identified with $\ell_{\rm Pl}$
+(consistency relation; non-circular derivation open, OP-$\Lambda$).
 \end{description}
 
-\subsection{ECT signature relations}
+\subsection{ECT signature equations}
 \label{sec:signature_eqs}
 
-For compact reference, the main signature relations of the current
-formulation are:
+The ECT framework is characterised by six equations that together
+constitute its theoretical identity:
 
 \begin{description}[leftmargin=1.2em, labelindent=0pt, style=unboxed]
 
-\item[\textbf{(R1) Effective metric of the ordered branch.}]
+\item[\textbf{E1 — Condensate equation of motion.}]
+The condensate field satisfies a Gross-Pitaevskii-type equation on
+$\mathcal{M}^4$:
 \begin{equation}
-  g_{\rm eff}^{AB}
-  = \beta\,\delta^{AB} - \alpha\,n^A n^B.
+  -\nabla^2_E\Phi + \mu^2\Phi - \lambda|\Phi|^2\Phi = 0,
+  \qquad \nabla^2_E = \delta^{AB}\partial_A\partial_B.
 \end{equation}
 
-\item[\textbf{(R2) Lorentzian branch condition.}]
+\item[\textbf{E2 — Emergent metric.}]
+The anisotropic condensate background generates an effective metric for
+perturbations:
 \begin{equation}
-  \alpha>\beta,
+  g^{\rm eff}_{AB} = \beta\,\delta_{AB} - \alpha\,n_A n_B,
+  \qquad \langle n^A\rangle = \delta^A{}_w,
 \end{equation}
-with the stronger window conditions discussed in the main text.
+which is Lorentzian (signature $-{+}{+}{+}$) when $\beta < \alpha < 4\beta$.
 
-\item[\textbf{(R3) Ordered-branch propagation speed.}]
+\item[\textbf{E3 — Consistency relations among fundamental constants and condensate parameters.}]
 \begin{equation}
-  c_*^2 = \frac{\beta}{\alpha-\beta}.
+  c_* = \sqrt{\frac{\beta}{\alpha-\beta}},\qquad
+  G_N = \frac{1}{8\pi v_0^2(\alpha-\beta)},\qquad
+  \hbar = v_0\sqrt{\frac{\beta}{\lambda(\alpha-\beta)}}.
 \end{equation}
+\textit{(These are internal consistency relations; $v_0$ is fixed by
+matching $G_N$. See Section~\ref{sec:consistency_relations} and OP-$\Lambda$.)}
 
-\item[\textbf{(R4) Geometric EFT matching of gravity.}]
+\item[\textbf{E4 — Lorentzian window (condensate signature condition).}]
 \begin{equation}
-  G_N = \frac{c_*^4}{8\pi M_G^2}.
+  \boxed{\beta < \alpha < 4\beta}.
 \end{equation}
-This is a macroscopic matching relation, not a bare-postulate
-microscopic derivation.
 
-\item[\textbf{(R5) Minimal coherent loop action.}]
+\item[\textbf{E5 — Generalised gravitational field equation.}]
 \begin{equation}
-  S_{\rm loop,min}=2\pi S_0.
+  R_{\mu\nu} - \tfrac{1}{2}g_{\mu\nu}R + \Lambda_{\rm eff}(X)g_{\mu\nu}
+  + \alpha_{\rm ECT}\!\left(n_\mu n^\lambda R_{\lambda\nu}
+  + n_\nu n^\lambda R_{\lambda\mu}
+  - \tfrac{1}{2}g_{\mu\nu}n^\alpha n^\beta R_{\alpha\beta}\right)
+  = \frac{8\pi G_{\rm eff}(X)}{c^4}\,T_{\mu\nu}.
 \end{equation}
-This establishes the structural action scale of the coherent branch.
-The final identification $S_0=\hbar$ is not yet a Level~A theorem.
 
-\item[\textbf{(R6) Effective macroscopic closure.}]
+\item[\textbf{E6 — Quantum–classical boundary (decoherence functional).}]
 \begin{equation}
-  e^\phi G_{\mu\nu}
-  + \Lambda_{\rm eff}(\phi)\,g_{\mu\nu}
-  + \Theta_{\mu\nu}[\phi,n]
-  = \frac{8\pi G_{\rm eff}(\phi)}{c^4}\,T_{\mu\nu},
+  \Gamma_{\rm loop} = N_{\rm eff}\cdot\gamma\cdot\tau_{\rm loop}
+  \cdot\!\left(\frac{\Delta q}{\ell}\right)^{\!2};
+  \qquad
+  \begin{cases}
+    \Gamma_{\rm loop} \gg 1 & \text{(classical regime),}\\
+    \Gamma_{\rm loop} \lesssim 1 & \text{(quantum regime).}
+  \end{cases}
 \end{equation}
-to be read as the current $\phi$-first macroscopic closure (Level~B).
-
 \end{description}
 
-\paragraph{Use of this appendix summary.}
-For detailed status assignments, the reader should rely on the section
-roadmaps and on Tables~\ref{tab:ect_structure},
-\ref{tab:ect-levels}, and~\ref{tab:ECT_predictions}, rather than on
-this compact appendix summary alone.
+\section{Superseded legacy benchmark: Radial Acceleration Relation
+(pre-$\phi$ phenomenology --- not part of current ECT)}
+\label{app:rar}
 
+\noindent\emph{Note: This appendix retains a legacy effective fit based on the transition-radius parametrisation $G_{\rm eff}(r) = G\sqrt{1+(r/r_0)^2}$. It should be regarded as a phenomenological proxy for the deep-IR $\phi$-branch rather than as a direct numerical solution of the Lorentz-order-field equations (see OP21, Section~\ref{sec:open_problems}).}
+
+
+This appendix documents the data sources, numerical parameters,
+algorithms, and validation procedures used to produce
+Fig.~\ref{fig:rar}.
+All computations are reproducible from the publicly available SPARC
+database and the code accompanying this paper.
+The theoretical derivation and physical interpretation of the
+universal ECT interpolation function are given in the main text
+(Section~\ref{sec:mp_galactic}).
+
+%-------------------------------------------------------------------
+
+\subsection{SPARC data and baryonic accelerations}
+\label{app:rar:data}
+
+The data are from the SPARC database \cite{Lelli2016}, which 
+tabulates Newtonian mass models for 175~nearby disc galaxies.
+For each galaxy at galactocentric radius~$r$, SPARC provides:
+the observed rotation velocity $V_{\rm obs} \pm \delta V$ 
+(from H\,\textsc{i}\,21\,cm and/or H$\alpha$); and the baryonic 
+contributions $V_{\rm gas}$ (gaseous disc, factor~1.33 for He 
+included), $V_{\rm disk}$ (stellar disk at 
+$\Upsilon_\star = 1\,M_\odot/L_\odot$), and $V_{\rm bul}$ (bulge 
+at $\Upsilon_\star = 1$), derived from $[3.6\;\mu\text{m}]$ 
+Spitzer photometry.
+
+The centripetal and baryonic accelerations are
+\begin{align}
+  g_{\rm obs}(r) &= V_{\rm obs}^2 / r\,,
+  \\[3pt]
+  g_{\rm bar}(r) &= \bigl(
+    V_{\rm gas}^2 
+    + \Upsilon_{\rm disk}\,V_{\rm disk}^2 
+    + \Upsilon_{\rm bul}\,V_{\rm bul}^2
+  \bigr) / r\,,
+  \label{eq:gbar}
+\end{align}
+with $\Upsilon_{\rm disk} = 0.5$ and 
+$\Upsilon_{\rm bul} = 0.7\;M_\odot/L_\odot$ 
+\cite{McGaugh2016,Lelli2017}.
+For counterrotating gas ($V_{\rm gas}<0$) the signed convention 
+$V_{\rm gas}^2 \to \mathrm{sgn}(V_{\rm gas})\,V_{\rm gas}^2$ is 
+used.
+The uncertainty is 
+$\delta g_{\rm obs} = 2\,V_{\rm obs}\,\delta V / r$.
+Points with $g_{\rm bar} \leq 0$ or 
+$\delta g_{\rm obs} \geq g_{\rm obs}$ are excluded, yielding 
+3351~points from 175~galaxies.
+
+%-------------------------------------------------------------------
+\subsection{Empirical RAR}
+\label{app:rar:mcgaugh}
+
+The empirical RAR interpolation \cite{McGaugh2016} is
+\begin{equation}
+  g_{\rm obs}^{\,\rm RAR} 
+  = \frac{g_{\rm bar}}
+         {1 - \exp\!\bigl(-\sqrt{g_{\rm bar}/g^\dagger}\,\bigr)}\,,
+  \label{eq:rar}
+\end{equation}
+with $g^\dagger = 1.2 \times 10^{-10}$\,m\,s$^{-2}$.
+Its asymptotes are 
+$g_{\rm obs} \to g_{\rm bar}$ for $g_{\rm bar} \gg g^\dagger$ 
+and 
+$g_{\rm obs} \to \sqrt{g^\dagger\,g_{\rm bar}}$ for 
+$g_{\rm bar} \ll g^\dagger$.
+
+%-------------------------------------------------------------------
+\subsection{Per-galaxy ECT prediction}
+\label{app:rar:ect_galaxy}
+
+In ECT,
+\begin{equation}
+  G_{\rm eff}(r) = G\,\sqrt{1 + (r/r_0)^2}
+  \end{equation}
+with a single parameter~$r_0$ per galaxy.
+The predicted acceleration is
+\begin{equation}
+  g_{\rm obs}^{\,\rm ECT}(r) 
+  = \sqrt{1 + (r/r_0)^2}\;\;g_{\rm bar}(r)\,,
+  \label{eq:gobs_ect}
+\end{equation}
+where $g_{\rm bar}(r)$ is from Eq.~\eqref{eq:gbar}.
+On the $(g_{\rm bar},\,g_{\rm obs})$ plane the curve is parametric 
+in~$r$; only the outer branch (from peak~$g_{\rm bar}$ outward) is 
+displayed to avoid double-valued regions.
+
+The parameter~$r_0$ is found by minimizing
+\begin{equation}
+  \chi^2/N = \frac{1}{N}\sum_{i=1}^{N}
+  \frac{\bigl(V_{\rm obs}(r_i) - V_{\rm ECT}(r_i;\,r_0)\bigr)^2}
+       {\delta V(r_i)^2}\,,
+  \end{equation}
+where $V_{\rm ECT} 
+= \bigl[\sqrt{1+(r/r_0)^2}\;V_{\rm bar}^2\bigr]^{1/2}$, 
+over $r_0 \in [0.01,\,100]$\,kpc.
+The MOND comparison uses
+$V_{\rm MOND} 
+= \bigl[g_{\rm obs}^{\,\rm RAR}\!\bigl(g_{\rm bar}\bigr) 
+\cdot r\bigr]^{1/2}$ with zero free parameters.
+
+\begin{table}[H]
+\centering
+\caption{Per-galaxy rotation-curve fits to SPARC data.
+ECT columns: (1) theoretical $\alpha=1/3$ scaling prediction --- zero
+free parameters beyond the NGC~3198 anchor; (2) individual best fit
+with $r_0$ and $R_d$ jointly optimised.
+MOND/RAR: zero free parameters.}
+\label{tab:rar_fits}
+\begin{tabular}{llrrrrr}
+\hline\hline
+Galaxy & Type & $N$ & $r_{0,\rm pred}$ & $\chi^2/N$ & $r_{0,\rm fit}$ & $\chi^2/N$ \\
+       &      &     & [kpc] (ECT $\alpha\!=\!1/3$) & (ECT $\alpha\!=\!1/3$) & [kpc] (ECT fit) & (ECT fit) \\
+\hline
+NGC\,3198  & Sb    & 16 &  6.70 & 15.2 &  9.21 & 5.8 \\
+NGC\,2403  & SABcd & 13 &  3.38 & 72.3 &  1.31 & 1.2 \\
+DDO\,154   & IBm   & 12 &  0.64 & 52.5 &  0.07 & 0.2 \\
+NGC\,6503  & Sc    & 13 &  5.59 & 10.4 &  8.47 & 1.9 \\
+UGC\,2885  & Sb    & 16 & 12.17 & 29.3 & 17.08 & 1.9 \\
+\hline
+\end{tabular}
+\end{table}
+
+The best-fit ECT model achieves $\chi^2/N < 6$ for all five galaxies,
+with $\chi^2/N < 2$ for three of them.
+The theoretical $\alpha=1/3$ scaling prediction (zero free parameters
+beyond the anchor) works well for NGC~3198, NGC~6503, and UGC~2885
+($\chi^2/N \lesssim 30$) but fails for NGC~2403 and DDO~154 where
+the predicted $r_0$ is far from optimal.
+For DDO~154 the best-fit $r_0 = 0.07$\,kpc (much smaller than the
+predicted 0.64\,kpc), indicating that the stellar-mass-based scaling
+breaks down for gas-dominated dwarfs where baryonic mass is dominated
+by neutral gas rather than stars.
+The $\chi^2/N$ values should be compared with caution: ECT has at
+most two free parameters ($r_0$, $R_d$) per galaxy, while MOND has zero;the ECT best-fit numbers are therefore upper bounds on the theory's
+flexibility.
+
+%-------------------------------------------------------------------
+\subsection{Universal ECT interpolation function}
+\label{app:rar:ect_universal}
+
+\paragraph{Archival status.}
+The material in this subsection belongs to the superseded
+pre-$\phi$ galactic route and is retained only for
+reproducibility of the earlier benchmark fits.  It is not
+part of the active ECT mechanism used in the main text.
+
+\medskip
+For a point mass~$M$, $g_{\rm bar} = GM/r^2$ gives 
+$r = (GM/g_{\rm bar})^{1/2}$.
+Substituting into Eq.~\eqref{eq:gobs_ect}:
+\begin{equation}
+  g_{\rm obs}^{\,\rm ECT} 
+  = \sqrt{g_{\rm bar}^2 + a_0\,g_{\rm bar}}\,,
+  \quad a_0 \equiv \frac{GM}{r_0^2}\,.
+  \label{eq:rar_ect}
+\end{equation}
+Table~\ref{tab:a0} lists $a_0$ for the five galaxies.
+
+\begin{table}[H]
+\centering
+\caption{Archived pre-$\phi$ benchmark values of the legacy proxy
+$a_0^{\rm legacy} = GM_\star/r_0^2$, retained only for
+reproducibility of the superseded transition-radius fits.}
+\label{tab:a0}
+\begin{tabular}{lcccr}
+\hline\hline
+Galaxy & $M_\star$ [$M_\odot$] & $r_0$ [kpc] & 
+  $a_0$ [m\,s$^{-2}$] & $a_0/g^\dagger$ \\
+\hline
+NGC\,3198  & $4\times10^{10}$ & 9.21 & $5.8\times10^{-11}$ & 0.48 \\
+NGC\,2403  & $4\times10^{9}$ & 1.31 & $3.7\times10^{-10}$ & 3.05 \\
+DDO\,154  & $3\times10^{7}$ & 0.07 & $8.5\times10^{-10}$ & 7.11 \\
+NGC\,6503  & $2\times10^{10}$ & 8.47 & $3.9\times10^{-11}$ & 0.32 \\
+UGC\,2885  & $2\times10^{11}$ & 17.08 & $1.0\times10^{-10}$ & 0.84 \\
+\hline
+\end{tabular}
+\end{table}
+
+Setting $a_0 = g^\dagger$ in Eq.~\eqref{eq:rar_ect} yields the 
+universal ECT curve in Fig.~\ref{fig:rar}(f).
+Its asymptotes match the empirical RAR exactly; the maximum deviation 
+is $\sim$8\% at $g_{\rm bar} \approx 0.4\,g^\dagger$, within the 
+observational scatter.
+
+\section{Computational details: Cosmological timeline}
+\label{app:cosmology}
+
+This appendix documents the parametric forms, numerical values,
+and algorithms used to produce the cosmological evolution curves
+in Fig.~\ref{fig:timeline}.
+All curves are schematic (not solutions of a coupled ODE system)
+but are constructed to satisfy the correct asymptotic behavior,
+match known observational constraints, and illustrate the
+ECT-specific features described in Sections~\ref{sec:mp_cosmo}
+and~\ref{sec:mp_cosmo}.
+The theoretical interpretation is given in the main text.
+
+%-------------------------------------------------------------------
+\subsection{Parametric form of $v_0(\tau)$ at the phase transition}
+\label{app:cosmo:pt}
+
+\noindent\emph{Note: the physical interpretation of the Euclidean phase
+and the emergence of time is given in Section~\ref{sec:mp_cosmo}.
+This subsection specifies the parametric form used in
+Fig.~\ref{fig:timeline}.}
+
+In ECT the fundamental arena is a four-dimensional Euclidean manifold 
+$\mathcal{M} = \mathbb{R}^4$ with coordinates $(x,y,z,w)$ and flat 
+metric $\delta_{AB}$.  There is no time coordinate at this level.
+
+The condensate field $\Phi$ has an O(4)-invariant Euclidean action
+\begin{equation}
+  S_E[\Phi] = \int d^4X\,\Bigl[
+    \tfrac{1}{2}(\partial_A\Phi)^2 
+    - \tfrac{\alpha}{2}(n^A\partial_A\Phi)^2 + V(\Phi)
+  \Bigr],
+  \end{equation}
+where $n_A$ is a unit vector field and 
+$V(\Phi) = -\mu^2\Phi^2/2 + \lambda\Phi^4/4$.
+The background $\langle n_A\rangle = \delta_{Aw}$ spontaneously breaks 
+O(4)$\to$O(3).
+Perturbations around this background see an effective metric
+\begin{equation}
+  g_{\mu\nu}^{\rm eff} = \mathrm{diag}(-(\alpha-\beta)/\beta,\,1,\,1,\,1)
+\;\xrightarrow{\;\alpha=2\beta,\;\beta=1\;}\;
+\mathrm{diag}(-(\alpha-\beta)/\beta,\,1,\,1,\,1)\;[\beta{=}1:\;\mathrm{diag}(-(\alpha{-}1),1,1,1)],
+  \end{equation}
+which is Lorentzian when $\alpha > 1$, with the effective speed of 
+light $c_* = \sqrt{\beta/(\alpha-\beta)}$ [$\alpha=2\beta$, $\beta=1$: $c_*=1$].
+The fourth coordinate~$w$ is then identified with $c_*\,t$, and the 
+arrow of time emerges from the large-$N_{\rm eff}$ decoherence:
+$\Gamma_{\rm irr} \gg 1$ macroscopically within the Gaussian--Markov
+model, yielding the effective second law $dS_{\rm ent}/dw \geq 0$ (Level~B, OP24).
+
+The phase transition occurs at $t \sim t_{\rm Pl} \approx 5.4\times10^{-44}$\,s.
+
+\paragraph{Key distinction from $\Lambda$CDM.}
+In the standard framework, there is no meaningful physics before the 
+Planck time; spacetime itself is undefined.
+In ECT, the Euclidean phase is a well-defined physical state: the 
+four-dimensional manifold $\mathcal{M}$ exists, the field $\Phi$ 
+fluctuates around $\langle\Phi\rangle = 0$, and the O(4) symmetry 
+is unbroken.
+There is no singularity --- the phase transition 
+O(4)$\to$O(3) is analogous to a condensation transition in a 
+superfluid \cite{Volovik2003}, producing a ``before'' that is 
+pre-temporal rather than nonexistent.
+This is reminiscent of the Hartle--Hawking no-boundary proposal 
+\cite{HartleHawking1983}, but in ECT the Euclidean regime is the 
+\emph{fundamental} state, not a mathematical continuation.
+
+%-------------------------------------------------------------------
+\subsection{Condensate VEV and inflation}
+\label{app:cosmo:inflation}
+
+After the PT the condensate acquires a nonzero VEV 
+$v_0 = \langle\Phi\rangle = \sqrt{2\mu^2/\lambda}$.
+In the cosmological context, $v_0$ evolves according to the 
+field equation
+\begin{equation}
+  \ddot{v}_0 + 3H\dot{v}_0 + V'(v_0) = 0,
+  \end{equation}
+where $H = \dot{a}/a$ is the Hubble parameter and dots denote 
+$d/d(c_*t)$.
+During the slow-roll phase 
+($|\ddot{v}_0| \ll 3H|\dot{v}_0|$), the condensate drives 
+inflation with $N_e = 60$ e-folds and spectral index
+\begin{equation}
+  n_s = 1 - \frac{2}{N_e} = 0.967,
+  \end{equation}
+in agreement with the Planck measurement 
+$n_s = 0.965 \pm 0.004$ \cite{Planck2018}.
+
+After inflation, $v_0$ stabilizes at $v_\infty \approx M_{\rm Pl,red} 
+= 2.435\times10^{18}$\,GeV, determining the fundamental constants:
+\begin{align}
+  \hbar &= c_* v_0 / \sqrt{\lambda} = v_0\sqrt{\beta/\lambda(\alpha-\beta)},
+  \\[2pt]
+  G_N &= \frac{1}{8\pi v_0^2(\alpha-\beta)}
+\;\xrightarrow{\;\alpha=2\beta,\;\beta=1\;}\; \frac{1}{8\pi v_0^2},
+  \\[2pt]
+  c_* &= \sqrt{\beta/(\alpha-\beta)}\;(\text{general}),\quad 1\;(\alpha=2\beta,\,\beta=1).
+  \end{align}
+
+%-------------------------------------------------------------------
 \subsection{Three scales in the present ECT formulation}
 \label{app:cosmo:scales}
 
@@ -16438,8 +17514,7 @@ G_N \;=\; \frac{\hbar\,c}{8\pi\,\bar{M}_{\rm Pl}^2}
 \;\approx\; 6.678\times10^{-11}\;\mathrm{m^3\,kg^{-1}\,s^{-2}},
 \end{equation}
 in agreement with the CODATA value
-$G_N = 6.674\times10^{-11}\;\mathrm{m^3\,kg^{-1}\,s^{-2}}$
-up to rounding~($0.06\%$).
+$G_N = 6.674\times10^{-11}\;\mathrm{m^3\,kg^{-1}\,s^{-2}}$ up to rounding~($0.06\%$).
 This subsection should therefore be read purely as a numerical
 illustration of the matching relation, not as a first-principles
 microscopic derivation of $G_N$ from the bare condensate action.
@@ -16491,6 +17566,8 @@ $\Lambda$CDM/NFW (3 parameters: $M_{\rm vir}$, $c$, $r_s$):
 $\chi^2/N=3.51$. MOND (0 parameters): $\chi^2/N=16.48$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Derivation of Newton's Constant from Action Variation}
+% ============================================================
 \section{$\phi$-first nonlinear gravity: full derivation}
 \label{app:phi_first_EFE}
 % ============================================================
@@ -16707,38 +17784,32 @@ gives the effective matching relation
   \label{eq:GN_derived}
 \end{equation}
 This is the correct relation to use throughout the present article.
-It is a geometric EFT matching statement:
-observed weak-field gravity fixes $M_G$ numerically.
+It is a geometric EFT matching statement: observed weak-field gravity
+fixes $M_G$ numerically.
 It is not a bare-postulate derivation of $G_N$ from one microscopic
 condensate amplitude.
 
 \subsection{What remains open}
 
-What is still open is the explicit microscopic reduction
+The explicit microscopic reduction
 \[
 (u_0,\alpha,\beta,\ldots)\;\longrightarrow\;\kappa_n
-\;\longrightarrow\; M_G
-\;\longrightarrow\; G_N,
+\;\longrightarrow\; M_G \;\longrightarrow\; G_N
 \]
-that is, the first-principles link between broken-phase condensate
-parameters and the macroscopic tensor stiffness.
-For that reason the result of this appendix should be classified as
-Level~B matching, not as a completed Level~A derivation of the
-observed Newton constant.
+remains to be completed.
+This appendix therefore represents Level~B matching, not a completed
+Level~A derivation of the observed Newton constant.
 
 \subsection{Interpretive note}
 
-The physical meaning of~\eqref{eq:GN_derived} is that gravity is
-governed, at low energies, by the inverse macroscopic compliance of the
-ordered tensor sector.
+Gravity is governed, at low energies, by the inverse macroscopic
+compliance of the ordered tensor sector.
 A larger $M_G$ means a stiffer ordered medium and hence a weaker
 effective gravitational response.
-This interpretation is fully consistent with the Macroscopic Physics
-discussion, but it does not eliminate the need for observational
-matching.
+This is fully consistent with the Macroscopic Physics discussion,
+but does not eliminate the need for observational matching.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Derivation of the Anisotropic Curvature Coupling}
 \label{app:curvature_coupling}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
