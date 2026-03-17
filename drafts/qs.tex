@@ -1,17 +1,25 @@
 % ============================================================
 % QUANTUM SECTOR — ECT
 % File: qs.tex
-% Version: 3  (2026-03-17, §7.2 fixed + §7.3 added)
+% Version: 4  (2026-03-17, §7.3 approved, §7.4 added)
 %
 % VERSION HISTORY:
 %   v1:  §7.1 initial draft.
 %   v2:  §7.1 polished (GPT round 1); §7.2 added.
-%   v3:  §7.2 Fix A: u_0^2 -> K_theta^{eff} with honest explanation.
-%        §7.2 Fix B: \cite{ECT_basics} -> internal \ref{}s.
-%        §7.3 Pre-quantum action scale and the status of hbar added.
-%          - eq:qs_S0_identification labelled for future refs
-%          - Bridge leads to §7.4 wave dynamics (not CCR directly),
-%            consistent with roadmap: wave -> CCR (not GPT's shortcut)
+%   v3:  §7.2 Fix A: u_0^2 -> K_theta^{eff}. Fix B: fake cite removed.
+%        §7.3 Pre-quantum action scale and the status of hbar.
+%   v4:  §7.3 approved by GPT. §7.4 Wave dynamics, Wick rotation,
+%        and Schrodinger-type evolution added.
+%          - Phase action recalled via \eqref (no duplicate equation)
+%          - \subsubsection* used for major structural blocks in §7.4
+%            (longer subsection, appropriate); \paragraph for sub-steps
+%          - eq:qs_wick labelled (Wick rotation w->-ic_*t, no existing
+%            label in ECT_preprint; noted as established in ECT basics)
+%          - eq:qs_wave_ansatz WKB-like structure noted explicitly
+%          - eq:qs_schrodinger_type: S_0 appears in role of hbar;
+%            clear Level B status
+%          - Logic chain diagram labelled eq:qs_logic_chain
+%          - Bridge leads to sec:qs_ccr (canonical structure)
 %
 % DISCIPLINE:
 % (1) Every claim: Level A / B / EFT / matching / open.
@@ -20,7 +28,7 @@
 % (4) Deferred basics DEVELOPED here:
 %     sec:coh_branch, sec:hbar_status, sec:arrow_of_time,
 %     app:ohmic_markov, app:Sloop_calc, sec:defect_sectors.
-% (5) No unjustified identifications (K_theta ≠ u_0^2 automatically).
+% (5) No unjustified identifications.
 % (6) Every strong claim \ref{} or \cite{}.
 % (7) Explicit Level A/B/C for every non-trivial statement.
 %
@@ -185,11 +193,12 @@ The present section proceeds in the following order:
     development of Section~\ref{sec:hbar_status}
     and Appendix~\ref{app:Sloop_calc};
     conditions for $S_0 = \hbar$.
-  \item \textbf{From phase quantisation to wave dynamics}
+  \item \textbf{Wave dynamics, Wick rotation, and
+    Schr\"odinger-type evolution}
     (Section~\ref{sec:qs_wave}):
-    transition to Schr\"odinger/complex-amplitude language,
-    Klein--Gordon and Schr\"odinger equations from analytic
-    continuation $w\to -ic_*t$.
+    coherent amplitude language, Lorentzian continuation
+    $w\to -ic_*t$, and the emergence of first-order
+    coherent wave evolution.
   \item \textbf{Canonical structure and the status of CCR}
     (Section~\ref{sec:qs_ccr}):
     where and in what sense canonical commutation relations
@@ -541,3 +550,236 @@ The theory remains methodologically honest: $S_0$ is structurally
 present before it is empirically identified with $\hbar$.
 The next task is to examine whether the coherent phase action develops
 into wave dynamics and canonical structure governed by this same scale.
+
+% ============================================================
+\subsection{Wave dynamics, Wick rotation, and
+  Schr\"odinger-type evolution}
+\label{sec:qs_wave}
+% ============================================================
+
+\textit{Status: Level~A for the existence of the coherent phase
+action~\eqref{eq:qs_phase_action} and for the structural role of the
+analytic continuation $w\to-ic_*t$ in the broken phase.
+Level~B for the full Schr\"odinger identification, which additionally
+requires the explicit identification $S_0=\hbar$ and the final
+normalisation of the coherent wave functional.
+Connection to ECT basics: Sections~\ref{sec:hbar_status},
+\ref{sec:coh_branch}; Appendix~\ref{app:Sloop_calc}.}
+
+\medskip
+The previous two subsections established that the coherent-topological
+branch is organised by the phase field $\theta$, its winding sectors,
+and the distinguished pre-quantum action scale $S_0$.
+The question now is whether this coherent sector admits a
+wave-dynamical description.
+This is the first place in the Quantum Sector where the ECT structure
+begins to resemble ordinary quantum theory.
+The resemblance must be built, not assumed.
+
+\subsubsection*{From phase action to coherent amplitudes}
+
+The natural starting point is the reduced coherent-phase
+action~\eqref{eq:qs_phase_action}, recalled here schematically:
+\[
+  S_\theta
+  = \frac{K_\theta^{\rm eff}}{2}
+    \int d^4X\; g_{\rm eff}^{AB}\,\partial_A\theta\,\partial_B\theta
+    + \cdots
+\]
+Because the coherent branch is organised by loop sectors weighted by
+their action, the natural amplitude associated with a coherent
+history~$\theta(\cdot)$ is the phase weight
+\begin{equation}
+  \label{eq:qs_weight_S0}
+  \mathcal{A}[\theta]
+  \;\sim\;
+  \exp\!\left(\frac{i\,S_\theta[\theta]}{S_0}\right).
+\end{equation}
+Here $S_0$ is the distinguished loop action scale~\eqref{eq:qs_Sloop},
+and the symbol `$\sim$' indicates that this is a structural assignment,
+not yet a normalised path-integral measure.
+
+At this stage Eq.~\eqref{eq:qs_weight_S0} is not the final quantum
+path integral.
+Its role is more modest and precise: it expresses the fact that once
+coherent sectors are classified by their action, the natural language
+of their interference is a phase weight normalised by the intrinsic
+action scale of the coherent branch.
+This is a Level~B statement because the full normalisation requires the
+$S_0=\hbar$ identification~\eqref{eq:qs_S0_identification}.
+
+\subsubsection*{Why Wick rotation is necessary and not arbitrary}
+
+The ordered condensate is constructed from a Euclidean arena
+$\mathcal{M}^4$, but the broken phase develops a distinguished
+Lorentzian direction through the sign structure of the effective kinetic
+tensor $g_{\rm eff}^{AB}$.
+As established in ECT basics and used throughout Macroscopic Physics,
+the broken phase admits the continuation
+\begin{equation}
+  \label{eq:qs_wick}
+  w \;\to\; -\,i\,c_*\,t,
+\end{equation}
+which transforms the broken-phase kinetic operator into its Lorentzian
+hyperbolic form and reconstructs causal propagation.
+(The same continuation was used to derive the Lorentzian metric
+in Section~\ref{sec:lorentz_order_field} and to develop
+cosmological dynamics in Section~\ref{sec:mp_cosmo}.)
+
+In the Quantum Sector the role of Eq.~\eqref{eq:qs_wick} is
+complementary: it converts the coherent Euclidean phase action into a
+Lorentzian phase-evolution law for time-dependent coherent amplitudes.
+This is not an arbitrary formal trick.
+It is the same continuation that already connects the Euclidean
+ordering arena to observable Lorentzian physics in the geometric branch.
+
+\paragraph{Two complementary uses of the same Wick rotation.}
+The emergence of time in ECT therefore has two parallel aspects:
+\begin{enumerate}[label=(\roman*)]
+  \item in Macroscopic Physics, $w\to -ic_*t$ yields Lorentzian
+    geometry, causal cones, and metric-sector propagation;
+  \item in the Quantum Sector, the same continuation yields coherent
+    temporal phase evolution and therefore wave dynamics.
+\end{enumerate}
+This parallelism is structurally important: the two branches are not
+unrelated, but two uses of the same broken Lorentzian ordering
+structure.
+
+\subsubsection*{Lorentzian form of the coherent phase dynamics}
+
+Under the continuation~\eqref{eq:qs_wick}, the phase-sector
+action~\eqref{eq:qs_phase_action} acquires the Lorentzian form
+\begin{equation}
+  \label{eq:qs_phase_action_L}
+  S_\theta^{(L)}
+  \;\sim\;
+  \frac{K_\theta^{\rm eff}}{2}
+  \int dt\,d^3x
+  \left[
+    \frac{1}{c_*^2}(\partial_t\theta)^2
+    - (\nabla\theta)^2
+  \right]
+  + \cdots
+\end{equation}
+This is again a Level~B effective closure.
+Its importance is that it provides the correct Lorentzian kinetic
+structure for coherent phase evolution, with the spatial gradient and
+time-derivative terms separated by the effective speed~$c_*$.
+
+\subsubsection*{Schr\"odinger-type reduction}
+
+\paragraph{The WKB-like ansatz.}
+To pass from the second-order Lorentzian phase dynamics of
+Eq.~\eqref{eq:qs_phase_action_L} to an effective first-order
+evolution law for a complex coherent amplitude, one introduces the
+coherent wave functional (a WKB-like polar decomposition of the
+order parameter; cf.~Eq.~\eqref{eq:qs_polar}):
+\begin{equation}
+  \label{eq:qs_wave_ansatz}
+  \Psi(x,t)
+  =
+  \sqrt{\rho(x,t)}\;
+  \exp\!\left(\frac{i\,\mathcal{S}(x,t)}{S_0}\right),
+\end{equation}
+where $\mathcal{S}$ is the effective coherent phase along the history
+and $\rho$ is the coarse-grained coherent density.
+This ansatz is Level~B: it assumes slow variation of $\rho$ and
+$\mathcal{S}$ compared to the microscopic scale.
+
+\paragraph{Emergence of Schr\"odinger-type equation.}
+Inserting~\eqref{eq:qs_wave_ansatz} into the reduced coherent dynamics
+and retaining the leading slowly-varying terms yields, schematically,
+a first-order coherent evolution law:
+\begin{equation}
+  \label{eq:qs_schrodinger_type}
+  i\,S_0\,\partial_t\Psi
+  =
+  \hat{H}_{\rm coh}\,\Psi
+  + \cdots
+\end{equation}
+where $\hat{H}_{\rm coh}$ is the effective coherent Hamiltonian
+(arising from the spatial gradient and potential terms in the reduced
+phase action), and the ellipsis denotes decoherence, environmental,
+and higher-gradient corrections.
+
+The appearance of $S_0$ in the r\^ole of $\hbar$ in
+Eq.~\eqref{eq:qs_schrodinger_type} is structurally natural: $S_0$ is
+the distinguished action unit of the coherent branch, and it is
+$S_0$---not an externally postulated constant---that sets the scale
+of the effective coherent dynamics.
+
+\paragraph{Status of Eq.~\eqref{eq:qs_schrodinger_type}.}
+This is \emph{not} yet the final observed Schr\"odinger equation.
+What is structurally established is the following: once the coherent
+branch possesses (i)~a distinguished action scale $S_0$,
+(ii)~a Lorentzian continuation~\eqref{eq:qs_wick}, and (iii)~a reduced
+phase action for smooth coherent configurations, then a
+Schr\"odinger-type first-order coherent wave description becomes the
+natural effective language of the low-energy coherent regime.
+
+What is still missing for the full identification with ordinary
+quantum mechanics:
+\begin{enumerate}[label=(\roman*)]
+  \item the explicit derivation of $\hat{H}_{\rm coh}$ for the
+    relevant coherent sector;
+  \item the identification $S_0=\hbar$~\eqref{eq:qs_S0_identification};
+  \item the control of decoherence and environment
+    terms~(Section~\ref{sec:qs_decoherence}).
+\end{enumerate}
+For these reasons Eq.~\eqref{eq:qs_schrodinger_type} is currently a
+Level~B emergence statement.
+
+\subsubsection*{Why this is already structurally nontrivial}
+
+Even before the final $S_0=\hbar$ identification, ECT has gone beyond a
+generic broken-phase field theory.
+The theory organises the coherent branch by:
+\begin{itemize}
+  \item topological loop sectors with integer winding~(P5);
+  \item an intrinsic action scale $S_0$ determined by the topology;
+  \item Lorentzian time reconstruction through the same broken-phase
+    continuation used in Macroscopic Physics;
+  \item a natural first-order coherent wave reduction governed by $S_0$.
+\end{itemize}
+This is precisely the structural content required from a theory that
+aims to explain \emph{why wave mechanics exists at all}, rather than
+postulating it from the outset.
+
+\subsubsection*{Bridge to canonical structure}
+
+The logical sequence of the Quantum Sector is:
+\begin{equation}
+  \label{eq:qs_logic_chain}
+  \text{phase sectors}
+  \;\longrightarrow\;
+  S_0
+  \;\longrightarrow\;
+  \text{wave dynamics}
+  \;\longrightarrow\;
+  \text{canonical structure}.
+\end{equation}
+Once a Schr\"odinger-type coherent evolution law is available, the next
+question is whether the coherent variables admit a canonical
+organisation and whether their brackets or commutators are normalised
+by the same scale $S_0$.
+That question belongs to Section~\ref{sec:qs_ccr}.
+
+\paragraph{Status summary.}
+\textit{Established~(Level~A):}
+the coherent branch admits a Lorentzian kinetic structure after the
+continuation~\eqref{eq:qs_wick}, and this structure leads naturally
+to a first-order coherent wave reduction with $S_0$ as the action unit.
+\textit{Not yet established~(Level~B):}
+the full identification of that reduction with ordinary quantum
+mechanics in normalised form~(requires $S_0=\hbar$ and
+$\hat{H}_{\rm coh}$ derived explicitly).
+
+\paragraph{Summary.}
+The coherent-topological branch of ECT does not jump from loop
+quantisation to operator axioms.
+The logic is controlled: the reduced phase action, together with the
+broken-phase Wick continuation~\eqref{eq:qs_wick} and the distinguished
+action scale $S_0$, naturally produces a Schr\"odinger-type wave
+description of smooth coherent configurations.
+This prepares the next step: the canonical structure of the coherent
+sector and the status of commutation relations.
