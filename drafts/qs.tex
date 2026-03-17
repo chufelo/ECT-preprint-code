@@ -1,0 +1,426 @@
+% ============================================================
+% QUANTUM SECTOR — ECT
+% File: qs.tex
+% Version: 2  (2026-03-17, §7.1 polished + §7.2 added)
+%
+% VERSION HISTORY:
+%   v1:  §7.1 Quantum Sector intro — initial draft.
+%   v2:  §7.1 polished (GPT feedback round 1):
+%          A. Section->Appendix for app:Sloop_calc
+%          B. Semicolons removed from displayed equations
+%          C. S_0=hbar framing softened
+%          D. sec:coh_branch verified present in ECT_preprint, kept
+%          E. Item (iii) status formulation improved
+%        §7.2 Coherent phase dynamics and loop sectors added.
+%          - K_theta connected to existing u_0^2 phase action notation
+%          - g_coh^{AB} clarified as g_eff^{AB} from broken-phase EFT
+%          - Duplicate winding equation kept with explicit cross-ref
+%          - Double established/not-established lists consolidated
+%            into single compact status paragraph
+%
+% DISCIPLINE (identical to ECT_basics.tex and mp.tex):
+% (1) Every claim: Level A / B / EFT / matching / phenomenological / open.
+% (2) Two parallel lines: mathematical + physical.
+% (3) No import of hbar, Born rule, full QM without derivation.
+% (4) Deferred basics subsections DEVELOPED here:
+%     sec:coh_branch, sec:hbar_status, sec:arrow_of_time,
+%     app:ohmic_markov, app:Sloop_calc, sec:defect_sectors.
+% (5) Old content preserved, improved, not shrunk.
+% (6) Every strong claim \ref{} or \cite{}.
+% (7) Explicit Level A/B/C for every non-trivial statement.
+% (8) No circular use of hbar, Schrodinger, Born rule before derivation.
+%
+% INTEGRATION NOTE:
+%   This file will replace the legacy sections
+%   \section{Emergent Quantum Principles and Vacuum Structure in ECT}
+%   and \section{Quantum Vacuum Structure of the ECT Condensate}
+%   in ECT_preprint.tex.  Cross-references: sec:quantum is the
+%   main label; subsection labels:
+%     sec:qs_intro, sec:qs_phase_dynamics, sec:qs_hbar, sec:qs_wave,
+%     sec:qs_ccr, sec:qs_decoherence, sec:qs_born,
+%     sec:qs_dark_sector, sec:qs_defects, sec:qs_status.
+%   During development: sec:quantum_new to avoid label conflict.
+% ============================================================
+
+\section{Quantum Sector}
+\label{sec:quantum_new}
+% NOTE: upon integration this becomes \label{sec:quantum}
+
+% ============================================================
+\subsection{Quantum Sector as the development of the
+coherent-topological branch}
+\label{sec:qs_intro}
+% ============================================================
+
+\textit{Connection to ECT basics:
+Sections~\ref{sec:branching}, \ref{sec:coh_branch},
+\ref{sec:hbar_status}.
+Status: conceptual bridge; all structural ingredients were
+prepared in ECT basics and are now developed dynamically.}
+
+\medskip
+After ECT basics and Macroscopic Physics, the logical structure
+of ECT has separated into two effective branches from the same
+ordered condensate.
+The first branch---developed in Macroscopic Physics
+(Section~\ref{sec:macroscopic})---describes those observables
+governed by the phase-insensitive, coarse-grained geometric
+response: long-wavelength metric fluctuations, gravitational
+stiffness, cosmological dynamics, and galactic phenomenology.
+In that branch the global phase of the effective order parameter
+is irrelevant to the observables of interest and can be averaged away.
+
+The second branch---developed here---treats the same ordered
+condensate through observables that \emph{remain sensitive} to
+global phase structure, winding sectors, loop configurations,
+and coherent correlators.
+This is the coherent-topological branch of ECT, and its systematic
+development is the task of the Quantum Sector.
+
+\paragraph{Why a separate Quantum Sector is needed.}
+The geometric branch is sufficient whenever local phase information
+is washed out under coarse-graining.
+It is not sufficient for phenomena in which the global phase of
+the effective order parameter, the topology of loop sectors, and the
+coherent structure of amplitudes remain physically active.
+Those phenomena require a different effective description---one that
+retains global phase data rather than discarding it.
+The Quantum Sector provides this description.
+
+\paragraph{Primary variables of the coherent-topological branch.}
+In the coherent branch the ordered condensate is described by
+variables that retain global phase information.
+The primary objects are:
+\begin{itemize}
+  \item the effective order parameter
+    \begin{equation}
+      \Phi_{\rm eff} = \rho\,e^{i\theta}
+      \label{eq:qs_order_parameter}
+    \end{equation}
+  \item the phase variable $\theta$, which is \emph{not}
+    coarse-grained away;
+  \item the winding quantisation condition,
+    \begin{equation}
+      \oint_\gamma \partial_A\theta\,dX^A = 2\pi n,
+      \qquad n\in\mathbb{Z}
+      \label{eq:qs_winding}
+    \end{equation}
+  \item the pre-quantum action scale $S_0$, introduced through
+    the minimal nontrivial loop action
+    \begin{equation}
+      S_{\rm loop,min} = 2\pi S_0
+      \label{eq:qs_Sloop}
+    \end{equation}
+  \item coherent correlators and loop amplitudes of the ordered sector.
+\end{itemize}
+These objects were already structurally prepared in ECT basics:
+the coherent-topological branch was identified
+(Section~\ref{sec:coh_branch}), the pre-quantum scale $S_0$ was
+introduced (Section~\ref{sec:hbar_status}), and the existence
+of winding sectors was established~(P5).
+None of them was fully developed dynamically; that development
+belongs to the present section.
+
+\paragraph{What ECT basics already established.}
+The following structural ingredients are available before
+entering the Quantum Sector:
+\begin{enumerate}[label=(\roman*)]
+  \item The ordered phase admits a genuine phase-sensitive sector,
+    distinct from the geometric branch~(Level~A within the
+    broken-phase EFT).
+  \item Topologically quantised winding sectors exist in the
+    coherent order parameter as a consequence of P5~(Level~A).
+  \item A pre-quantum action scale $S_0$ is structurally
+    introduced by the loop quantisation condition~\eqref{eq:qs_Sloop}
+    (Level~A for the structural existence of the scale;
+    its explicit first-principles evaluation is deferred,
+    see Appendix~\ref{app:Sloop_calc}).
+  \item The variational/Noether foundation is common to both
+    branches, so the Quantum Sector is not an independent add-on
+    but a second effective development of the same condensate
+    theory (Level~A: follows from the shared P1--P3 action).
+\end{enumerate}
+
+\paragraph{What has not yet been established at this point.}
+ECT basics and Macroscopic Physics did \emph{not} yet prove:
+\begin{enumerate}[label=(\roman*)]
+  \item That $S_0 = \hbar$.
+    This is one of the first central tasks of the Quantum Sector:
+    it requires an explicit calculation and identification,
+    not merely the structural existence of $S_0$.
+  \item That canonical commutation relations follow in their
+    standard form.
+  \item That the Born rule has been derived.
+  \item That decoherence, probability interpretation, and
+    measurement theory are complete.
+  \item That topological defect sectors (vortices, domain walls,
+    instantons) have been fully developed.
+\end{enumerate}
+All these belong to the present section or to its explicitly
+listed open problems.
+
+\paragraph{Why the phase is not coarse-grained away here.}
+In Macroscopic Physics, local phase information was irrelevant
+because the observables under study were governed by the coarse-grained
+metric response and long-wavelength stiffness.
+In the coherent-topological branch the relevant observables are
+different: the global consistency of the phase, the existence of
+nontrivial loop sectors, and the quantisation of winding numbers
+carry direct physical content.
+Therefore the phase variable $\theta$ is not discarded under
+coarse-graining; it becomes one of the principal dynamical variables
+of the effective description.
+
+\paragraph{Physical meaning of the Quantum Sector.}
+The Quantum Sector should \emph{not} be understood as importing
+ordinary quantum mechanics into ECT from outside.
+Its role is precisely the opposite: to show how phase-sensitive and
+topological features of the ordered condensate can \emph{reproduce,
+motivate, or constrain} the structures that ordinary quantum theory
+usually postulates.
+Both branches---geometric and coherent-topological---are consequences
+of the same five postulates P1--P5; they differ only in which class
+of observables they target.
+
+\paragraph{Logical structure of the Quantum Sector.}
+The present section proceeds in the following order:
+\begin{enumerate}[label=(\arabic*)]
+  \item \textbf{Coherent phase dynamics and loop sectors}
+    (Section~\ref{sec:qs_phase_dynamics}):
+    the dynamics of $\theta$, loop configurations, and why
+    phase dynamics is the correct effective language of the
+    coherent branch.
+  \item \textbf{Pre-quantum action scale and the status of $\hbar$}
+    (Section~\ref{sec:qs_hbar}):
+    development of the deferred basics material on $S_0$
+    (Section~\ref{sec:hbar_status} and Appendix~\ref{app:Sloop_calc}),
+    conditions for $S_0 = \hbar$.
+  \item \textbf{From phase quantisation to wave dynamics}
+    (Section~\ref{sec:qs_wave}):
+    transition to Schr\"odinger/complex-amplitude language,
+    Klein--Gordon and Schr\"odinger equations from analytic
+    continuation.
+  \item \textbf{Canonical structure and the status of CCR}
+    (Section~\ref{sec:qs_ccr}):
+    where and in what sense canonical commutation relations
+    appear; what is already established and what is not.
+  \item \textbf{Influence functional, decoherence, and the
+    arrow of time}
+    (Section~\ref{sec:qs_decoherence}):
+    development of the deferred basics material
+    (Section~\ref{sec:arrow_of_time} and
+    Appendix~\ref{app:ohmic_markov});
+    causal kernel, entropy growth, Ohmic/Markov assumptions,
+    classical/quantum split.
+  \item \textbf{Probability, Born-type interpretation, and
+    measurement status}
+    (Section~\ref{sec:qs_born}):
+    what can be established; what remains Level~B or open.
+  \item \textbf{Dark sector from the coherent-topological branch}
+    (Section~\ref{sec:qs_dark_sector}):
+    full development of the MP bridge to collective and
+    topological dark-sector candidates.
+  \item \textbf{Defect sectors beyond the smooth coherent branch}
+    (Section~\ref{sec:qs_defects}):
+    development of Section~\ref{sec:defect_sectors}:
+    vortices, domain walls, instantons; why P5 chooses the smooth
+    coherent sector but does not exclude defect ontology.
+  \item \textbf{Status table and open problems}
+    (Section~\ref{sec:qs_status}).
+\end{enumerate}
+
+\paragraph{Bridge from Macroscopic Physics.}
+Macroscopic Physics answered the question:
+\emph{how does the ordered condensate appear to a large-scale
+observer insensitive to coherent phase data?}
+The Quantum Sector asks the complementary question:
+\emph{what effective dynamics remains when that phase data is
+retained rather than averaged away?}
+These are not two different theories but two branches of the
+same ordered condensate, selected by two different classes of
+observables.
+The bridge between them is the branching structure established
+in ECT basics (Section~\ref{sec:branching}).
+
+\paragraph{Summary.}
+The Quantum Sector is the systematic development of the
+coherent-topological branch of ECT.
+Its task is to turn the structural ingredients prepared in
+ECT basics---phase variable $\theta$, winding sectors~(P5),
+loop quantisation, and the pre-quantum action scale $S_0$---into
+a controlled framework for wave dynamics, decoherence,
+probability, and topological dark-sector physics.
+All results carry explicit Level~A/B/C markers.
+
+% ============================================================
+\subsection{Coherent phase dynamics and loop sectors}
+\label{sec:qs_phase_dynamics}
+% ============================================================
+
+\textit{Status: Level~A for the existence of the phase variable,
+winding sectors, and the topological loop classification inside the
+coherent branch; Level~B for the specific effective dynamical closure
+used to connect these structures to wave dynamics.
+Connection to ECT basics: P5, Section~\ref{sec:hbar_status},
+Appendix~\ref{app:Sloop_calc}.}
+
+\medskip
+The first task of the Quantum Sector is to identify the correct
+effective variables of the coherent-topological branch and to show
+why their natural language is the language of phase dynamics.
+This is not yet ordinary quantum mechanics.
+Rather, it is the phase-sensitive effective description of the ordered
+condensate in the regime where coherent loop sectors remain
+physically relevant.
+
+\paragraph{Phase as the natural variable of the coherent branch.}
+Once the ordered condensate is written as
+\begin{equation}
+  \Phi_{\rm eff}(X) = \rho(X)\,e^{i\theta(X)},
+  \label{eq:qs_polar}
+\end{equation}
+the phase field $\theta$ becomes physically meaningful whenever
+configurations with nontrivial winding are retained.
+In the geometric branch, such information is averaged away.
+In the coherent branch, it is exactly this global phase structure that
+distinguishes one sector from another.
+
+The phase is not merely a convenient reparametrisation of the scalar
+field.
+It is the variable that remembers the global consistency conditions of
+the condensate: single-valuedness, winding, and loop topology.
+That is why the coherent branch is naturally organised around $\theta$.
+
+\paragraph{Reduced phase action.}
+At wavelengths large compared to the microscopic core scale, and within
+the smooth coherent sector selected by P5, the radial mode $\rho$ is
+approximately frozen near its ordered value $\rho\approx u_0$ and the
+effective dynamics is dominated by the phase field.
+At $\rho=u_0$ the quadratic phase action already derived in ECT basics
+reads~\cite{ECT_basics}:
+\begin{equation}
+  \label{eq:qs_phase_action}
+  S_\theta
+  = \frac{u_0^2}{2}
+    \int d^4X\; g_{\rm eff}^{AB}(X)\,\partial_A\theta\,\partial_B\theta
+  + S_{\rm higher},
+\end{equation}
+where $g_{\rm eff}^{AB}$ is the effective Lorentzian metric tensor
+of the broken phase~(the same metric that enters the geometric branch
+at macroscopic scales; Section~\ref{sec:lorentz_order_field}),
+and $S_{\rm higher}$ denotes higher-gradient, interaction, and
+environment-induced corrections.
+The stiffness coefficient $u_0^2$ is the same condensate parameter
+that enters the gravitational matching relation~(Section~\ref{sec:mp_matching}).
+Equation~\eqref{eq:qs_phase_action} is a Level~B effective closure:
+it assumes $\rho\approx u_0$ and that radial fluctuations decouple
+at the scales of interest; it is not yet the full microscopic
+derivation from bare~P3.
+
+\paragraph{Why this action is natural.}
+Equation~\eqref{eq:qs_phase_action} is the phase-sector analogue of
+the sigma-model and tensor EFT structures already used in ECT basics
+and Macroscopic Physics.
+Its role is to capture the lowest-order dynamics of smooth coherent
+configurations once the heavy radial mode has been integrated out and
+the phase is retained as a genuine dynamical degree of freedom.
+The phase action is therefore not an extra postulate but the natural
+effective continuation of the broken ordered phase into its
+coherent-topological branch.
+
+\paragraph{Winding sectors and topological classification.}
+The coherent branch is partitioned into sectors classified by the
+winding number of the phase around any closed loop $\gamma$
+in~$\mathcal{M}$ (cf.~\eqref{eq:qs_winding}):
+\begin{equation}
+  \label{eq:qs_winding_sector}
+  n[\gamma] \;=\; \frac{1}{2\pi}
+  \oint_\gamma \partial_A\theta\,dX^A \;\in\; \mathbb{Z}.
+\end{equation}
+This is a Level~A structural statement: it follows directly from the
+single-valuedness of $\Phi_{\rm eff}$ in the smooth coherent sector
+selected by P5.
+The trivial sector $n=0$ contains contractible smooth configurations;
+nontrivial sectors $n\neq0$ correspond to coherent configurations with
+topologically nontrivial phase winding that cannot be eliminated by
+a smooth deformation.
+
+\paragraph{Minimal loop action and the appearance of $S_0$.}
+The existence of nontrivial winding sectors immediately implies a
+minimal nontrivial loop contribution to the action.
+From the phase action~\eqref{eq:qs_phase_action}, the
+$n=1$ minimal loop carries action
+\begin{equation}
+  \label{eq:qs_loop_min}
+  S_{\rm loop,min} = 2\pi S_0,
+\end{equation}
+where the pre-quantum action scale $S_0$ depends on the condensate
+parameters~(see Appendix~\ref{app:Sloop_calc} for the detailed
+calculation).
+At this stage $S_0$ is \emph{not} yet identified with $\hbar$.
+What is established is only that the coherent branch carries a
+distinguished action scale associated with the first nontrivial loop
+sector~(Level~A for existence; Level~B for explicit value).
+This is the structural bridge between topological phase quantisation
+and quantum-like action quantisation.
+
+\paragraph{Physical meaning of the loop sectors.}
+A nontrivial loop sector represents more than a mathematical winding
+number.
+Physically, it means that the condensate admits coherent histories that
+cannot be continuously deformed into the trivial sector without leaving
+the smooth coherent branch.
+That is why loop sectors are the natural place where quantum-like
+notions of amplitude, interference between sectors, and eventually
+action quantisation can first arise in ECT---not from operator axioms,
+but from the topology of the ordered condensate itself.
+
+\paragraph{Smooth coherent branch versus defect sectors.}
+The present discussion is restricted to the smooth coherent sector
+chosen by P5.
+Configurations with singular cores, vanishing $\rho$, or
+discontinuous orientation data belong to the wider defect sector
+and are treated in Section~\ref{sec:qs_defects}.
+The role of P5 is not to deny the existence of defects, but to define
+the branch in which smooth phase dynamics can first be developed
+cleanly and without singular-core ambiguities.
+
+\paragraph{From loop sectors to wave dynamics.}
+Once the condensate admits coherent sectors weighted by their phase
+action, the next question is how these sectors combine into an
+effective wave description.
+This step requires showing:
+(a) how the phase-sector path integral leads to a
+Schr\"odinger-like amplitude language;
+(b) under what conditions the Wick rotation $w\to -ic_*t$
+(already established for the geometric branch;
+Section~\ref{sec:lorentz_order_field}) carries the phase action into
+a standard kinetic term;
+(c) when the distinguished action scale $S_0$ becomes identifiable
+with the observed quantum of action $\hbar$.
+Those questions belong to Sections~\ref{sec:qs_hbar}
+and~\ref{sec:qs_wave}.
+
+\paragraph{Status summary.}
+\textit{Established at this stage}~(Level~A unless noted):
+(i) the coherent branch is naturally described by $\theta$;
+(ii) smooth coherent sectors are classified by integer winding~(P5);
+(iii) nontrivial sectors imply a distinguished action scale $S_0$.
+\textit{Not yet established}:
+(iv) the explicit first-principles value of $S_0$~(open, Appendix~\ref{app:Sloop_calc});
+(v) the identification $S_0=\hbar$~(Section~\ref{sec:qs_hbar});
+(vi) the full wave-dynamical superposition rule between sectors;
+(vii) the role of singular defect sectors~(Section~\ref{sec:qs_defects}).
+
+\paragraph{Summary.}
+The coherent-topological branch is naturally organised by phase
+dynamics.
+Its primary data are the phase field $\theta$, the winding
+condition~\eqref{eq:qs_winding_sector}, and the loop-sector
+classification of the ordered condensate.
+This already gives ECT something structurally stronger than a generic
+broken-phase field theory: a distinguished coherent action scale and
+a topological organisation of physically admissible sectors.
+The next question---whether this pre-quantum action scale can be
+identified with the observed $\hbar$---is addressed in the following
+subsection.
