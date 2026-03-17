@@ -203,6 +203,23 @@ The present section proceeds in the following order:
     (Section~\ref{sec:qs_ccr}):
     where and in what sense canonical commutation relations
     appear; what is already established and what is not.
+  \item \textbf{Uncertainty principle in the coherent branch}
+    (Section~\ref{sec:qs_uncertainty}):
+    derived as a mathematical consequence of the canonical
+    structure, not postulated.
+  \item \textbf{Principle of extremal action and saddle dominance}
+    (Section~\ref{sec:qs_extremal_action}):
+    classicality as the large-action saddle limit of coherent
+    amplitude weighting.
+  \item \textbf{Conservation laws in the coherent sector}
+    (Section~\ref{sec:qs_conservation}):
+    Noether currents inherited from the variational structure;
+    open: topological current algebra.
+  \item \textbf{Quantum statistics: exchange sectors and
+    spinorial compatibility}
+    (Section~\ref{sec:qs_statistics}):
+    structural route from exchange topology to the
+    bosonic/fermionic dichotomy.
   \item \textbf{Influence functional, decoherence, and the
     arrow of time}
     (Section~\ref{sec:qs_decoherence}):
@@ -976,6 +993,305 @@ The next task is to study the environment of the coherent sector:
 decoherence, irreversibility, and the origin of effective probability.
 
 % ============================================================
+\subsection{Uncertainty principle in the coherent branch}
+\label{sec:qs_uncertainty}
+% ============================================================
+
+\textit{Status: Level~A for the mathematical uncertainty inequality
+once the canonical commutator structure of the smooth coherent branch
+is admitted; Level~B for the physical normalisation of that inequality
+by the observed $\hbar$, which depends on
+Eq.~\eqref{eq:qs_S0_identification}.}
+
+\medskip
+The uncertainty principle is not introduced in ECT as an independent
+axiom.
+If the coherent branch already admits (i)~a wave-dynamical
+representation, (ii)~a canonical organisation, and (iii)~a commutator
+candidate normalised by the intrinsic action scale $S_0$
+(Section~\ref{sec:qs_ccr}), then the uncertainty relation follows as
+a standard mathematical consequence.
+
+\subsubsection*{Operator input}
+
+From Section~\ref{sec:qs_ccr}, the natural commutator candidate of the
+coherent branch is~\eqref{eq:qs_commutator_candidate}:
+\begin{equation}
+  \label{eq:qs_unc_comm}
+  [\hat q,\hat p]
+  = i\,S_0.
+\end{equation}
+After the final empirical identification~\eqref{eq:qs_S0_identification},
+this becomes the observed canonical commutator:
+\begin{equation}
+  \label{eq:qs_unc_comm_hbar}
+  [\hat q,\hat p]
+  = i\,\hbar
+  \qquad (\text{Level~B; requires }S_0=\hbar).
+\end{equation}
+
+\subsubsection*{Robertson--Schr\"odinger inequality}
+
+For any pair of self-adjoint operators $\hat A$, $\hat B$ and any
+state $|\psi\rangle$, the Cauchy--Schwarz inequality gives
+\begin{equation}
+  \label{eq:qs_robertson}
+  \Delta A\,\Delta B
+  \;\ge\;
+  \tfrac{1}{2}\bigl|\langle[\hat A,\hat B]\rangle\bigr|.
+\end{equation}
+Setting $\hat A=\hat q$ and $\hat B=\hat p$ with~\eqref{eq:qs_unc_comm}
+gives the coherent-branch uncertainty relation
+\begin{equation}
+  \label{eq:qs_uncertainty_S0}
+  \Delta q\,\Delta p
+  \;\ge\;
+  \frac{S_0}{2}
+  \qquad (\text{Level~A given~\eqref{eq:qs_unc_comm}}).
+\end{equation}
+After the $S_0=\hbar$ identification this reduces to the standard
+Heisenberg form
+\begin{equation}
+  \label{eq:qs_uncertainty_hbar}
+  \Delta q\,\Delta p
+  \;\ge\;
+  \frac{\hbar}{2}
+  \qquad (\text{Level~B; requires~\eqref{eq:qs_S0_identification}}).
+\end{equation}
+
+\subsubsection*{Interpretation}
+
+ECT does not postulate uncertainty at the foundation.
+Uncertainty appears only after the coherent branch has already
+developed the structures that ordinary quantum theory usually assumes:
+wave amplitudes, canonical variables, and commutator normalisation.
+The uncertainty relation is therefore not primitive; it is derivative.
+
+\paragraph{Status summary.}
+\textit{Level~A:} given the canonical structure~\eqref{eq:qs_unc_comm},
+the inequality~\eqref{eq:qs_uncertainty_S0} is pure mathematics.
+\textit{Level~B:} the physical Heisenberg form
+$\Delta q\,\Delta p\ge\hbar/2$ depends on the completion of
+$S_0=\hbar$~\eqref{eq:qs_S0_identification}.
+
+\paragraph{Summary.}
+In ECT the uncertainty principle is not an axiom of nature imposed from
+the outset.
+It is the mathematical consequence of the canonical organisation of the
+smooth coherent branch.
+
+% ============================================================
+\subsection{Principle of extremal action and saddle dominance}
+\label{sec:qs_extremal_action}
+% ============================================================
+
+\textit{Status: Level~A for the saddle-point principle inside the
+coherent amplitude language; Level~B for the physical interpretation
+of finite-$S_0$ corrections as the source of quantum fluctuations in
+specific reduced systems.}
+
+\medskip
+The principle of extremal action is not an independent postulate in
+ECT.
+It follows directly from the coherent amplitude structure already
+established in Sections~\ref{sec:qs_phase_dynamics}
+and~\ref{sec:qs_wave}.
+
+\subsubsection*{Coherent amplitude weighting}
+
+The coherent branch is weighted by amplitudes of the
+form~\eqref{eq:qs_weight_S0}:
+\[
+  \mathcal{A}[q] \sim \exp\!\bigl(i\,S[q]/S_0\bigr).
+\]
+In the Euclidean preparatory language the corresponding weight is
+\begin{equation}
+  \label{eq:qs_extremal_weight_E}
+  \mathcal{W}[q]
+  \sim
+  \exp\!\left(-\frac{S_E[q]}{S_0}\right).
+\end{equation}
+When the relevant action satisfies $S[q]\gg S_0$ (or $S_E[q]\gg S_0$),
+the path weight is dominated by saddle configurations.
+
+\subsubsection*{Saddle-point conditions}
+
+In the Lorentzian branch the dominant contributions satisfy
+\begin{equation}
+  \label{eq:qs_saddle}
+  \delta S[q] = 0;
+\end{equation}
+in the Euclidean preparatory branch:
+\begin{equation}
+  \label{eq:qs_saddle_E}
+  \delta S_E[q] = 0.
+\end{equation}
+This is the emergent principle of extremal action~(Level~A).
+
+\subsubsection*{Why this matters}
+
+Classicality does not require a second independent principle.
+Classical extremal trajectories and finite-$S_0$ coherent fluctuations
+are two limits of a single ordered-branch framework: the large-action
+saddle regime and the near-$S_0$ quantum regime respectively.
+
+\subsubsection*{Finite-$S_0$ corrections}
+
+When $S[q]$ is not large compared with $S_0$, saddle-point dominance
+fails and neighbouring histories contribute appreciably.
+Finite-$S_0$ corrections are therefore the origin of the coherent
+non-classical regime in ECT.
+
+\paragraph{Status.}
+The saddle principle is Level~A.
+Its detailed implementation in specific reduced coherent systems is
+Level~B, depending on the wave-dynamical and $S_0=\hbar$ programme.
+
+\paragraph{Summary.}
+In ECT the principle of extremal action is not an additional law.
+It is the saddle-dominance limit of the coherent amplitude weighting
+already present in the Quantum Sector.
+
+% ============================================================
+\subsection{Conservation laws in the coherent sector}
+\label{sec:qs_conservation}
+% ============================================================
+
+\textit{Status: Level~A for the existence of Noether currents inherited
+from the variational structure of the ordered condensate; Level~B for
+their full interpretation in reduced coherent-sector language.
+Connection to ECT basics and Macroscopic Physics:
+Section~\ref{sec:noether}, Appendix~\ref{app:noether_full}, and
+Section~\ref{sec:mp_noether}.}
+
+\medskip
+The Quantum Sector does not introduce conservation laws from outside.
+They are inherited from the same variational condensate structure that
+already produced conserved quantities in ECT basics and Macroscopic
+Physics.
+What changes in QS is not the existence of the currents, but their
+interpretation inside the coherent-topological branch.
+
+\subsubsection*{Translational Noether current}
+
+From translational invariance of the underlying action, the condensate
+admits the conserved Noether tensor
+\begin{equation}
+  \label{eq:qs_noether_T}
+  \partial_A T^{AB} = 0
+\end{equation}
+(Level~A; follows from P1--P3 and the Noether procedure,
+Appendix~\ref{app:noether_full}).
+This holds regardless of which effective branch is studied.
+
+\subsubsection*{Rotational and topological sector}
+
+Likewise, the ordered condensate carries conserved rotational currents,
+\begin{equation}
+  \label{eq:qs_noether_J}
+  \partial_C J^{C,AB} = 0,
+\end{equation}
+already developed in Appendix~\ref{app:noether_full}.
+In the coherent-topological sector these currents acquire an additional
+interpretive rôle: they organise how loop sectors, winding sectors, and
+defect sectors are embedded into the same ordered medium.
+
+\subsubsection*{Why conservation laws look different in QS}
+
+In the geometric branch the natural observables are stress-energy,
+source tensors, and large-scale response.
+In the Quantum Sector the natural observables are amplitudes, reduced
+phase variables, winding sectors, and coherent histories.
+The same underlying conserved structures are therefore seen through a
+different coarse-graining.
+
+\subsubsection*{Open point: topological currents}
+
+A fully explicit development of topological Noether currents in the
+coherent branch has not yet been completed.
+The deferred Noether material~(Section~\ref{sec:noether}) flagged this
+as a shared MP/QS target.
+The coherent branch clearly suggests a conserved topological
+organisation, but its final current algebra remains open.
+
+\paragraph{Summary.}
+Conservation laws are not missing from the Quantum Sector; they are
+inherited from the same variational foundation as ECT basics and MP.
+Their specifically coherent-topological interpretation is still only
+partially developed.
+
+% ============================================================
+\subsection{Quantum statistics: exchange sectors and spinorial compatibility}
+\label{sec:qs_statistics}
+% ============================================================
+
+\textit{Status: Level~B throughout.
+This subsection provides a structural route to bosonic/fermionic
+classification inside the coherent-topological branch.
+It does not yet constitute a first-principles derivation of the full
+spin-statistics theorem or of second-quantised anticommutation
+relations from bare~P3.}
+
+\medskip
+If the Quantum Sector of ECT is to reproduce more than one-particle
+coherent kinematics, it must also explain why exchange sectors split
+into bosonic and fermionic classes.
+At the present stage the strongest justified result is structural: ECT
+naturally reproduces the topological dichotomy of exchange sectors and
+shows its compatibility with the representation content of the ordered
+branch.
+
+\subsubsection*{Exchange topology}
+
+For two identical excitations in three spatial dimensions, the reduced
+configuration space is
+\begin{equation}
+  \label{eq:qs_exchange_space}
+  \mathcal{M}_2
+  =
+  \bigl(\mathbb{R}^3\times\mathbb{R}^3\setminus\Delta\bigr)/S_2,
+\end{equation}
+whose fundamental group is
+\begin{equation}
+  \label{eq:qs_exchange_pi1}
+  \pi_1(\mathcal{M}_2) = \mathbb{Z}_2.
+\end{equation}
+This yields exactly two topological exchange classes: symmetric and
+antisymmetric~(Level~A as a topological fact; the connection to
+specific condensate sectors is Level~B).
+
+\subsubsection*{Representation-theoretic compatibility}
+
+After $O(4)\to O(3)$ breaking, excitations of the ordered sector fall
+into representations of the residual rotational structure.
+Integer-spin tensorial sectors are compatible with symmetric exchange;
+half-integer spinorial sectors are compatible with antisymmetric
+exchange.
+This is not yet the full Pauli--L\"uders--Zumino theorem, but it is
+the correct structural compatibility statement: exchange topology and
+representation sign fit together naturally in the ordered branch.
+
+\subsubsection*{What is and is not claimed}
+
+ECT at the present stage does \emph{not} yet derive:
+\begin{enumerate}[label=(\roman*)]
+  \item the full relativistic spin-statistics theorem;
+  \item the full operator anticommutation algebra
+    $\{\hat a_i,\hat a_j^\dagger\}=\delta_{ij}$;
+  \item the complete many-body fermionic Fock-space construction
+    from bare condensate dynamics~(Open; OP-Q11).
+\end{enumerate}
+What it does provide is a structurally natural route from
+coherent-topological exchange sectors to the bosonic/fermionic
+dichotomy.
+
+\paragraph{Summary.}
+Quantum statistics in ECT is presently a Level~B structural result:
+exchange topology and ordered-branch representation theory already
+point toward the standard bosonic/fermionic classification, but the
+full spin-statistics theorem remains open~(OP-Q11).
+
+% ============================================================
 \subsection{Influence functional, decoherence, and the arrow of time}
 \label{sec:qs_decoherence}
 % ============================================================
@@ -1700,7 +2016,7 @@ This subsection plays for QS the same role that the final status table
 plays for Macroscopic Physics.}
 
 \medskip
-The Quantum Sector has now been developed through nine subsections:
+The Quantum Sector has now been developed through thirteen subsections:
 \begin{enumerate}[noitemsep,label=(\roman*)]
   \item separation of the coherent-topological branch from the
     geometric branch;
@@ -1837,6 +2153,28 @@ Topological/defect dark-sector candidates
 Quantitative dominant dark-matter identification
   & Open (OP-Q10)
   & No unique first-principles candidate established yet \\
+Uncertainty inequality $\Delta q\,\Delta p\ge S_0/2$
+  & Level~A
+  & Eqs.~\eqref{eq:qs_robertson}, \eqref{eq:qs_uncertainty_S0};
+    follows from canonical structure \\
+Heisenberg form $\Delta q\,\Delta p\ge\hbar/2$
+  & Level~B
+  & Requires $S_0=\hbar$~\eqref{eq:qs_S0_identification} \\
+Extremal-action principle as saddle dominance
+  & Level~A
+  & Eqs.~\eqref{eq:qs_saddle}, \eqref{eq:qs_saddle_E} \\
+Conservation laws inherited by coherent branch
+  & Level~A
+  & Eqs.~\eqref{eq:qs_noether_T}, \eqref{eq:qs_noether_J} \\
+Topological exchange-sector dichotomy ($\mathbb{Z}_2$)
+  & Level~A (topological)
+  & Eq.~\eqref{eq:qs_exchange_pi1} \\
+Bosonic/fermionic structural compatibility
+  & Level~B
+  & Section~\ref{sec:qs_statistics} \\
+Full spin-statistics theorem
+  & Open (OP-Q11)
+  & Requires operator completion beyond current closure \\
 \hline\hline
 \end{tabular}
 \end{table}
@@ -1867,6 +2205,9 @@ Quantitative dominant dark-matter identification
     (Section~\ref{sec:qs_defects}).
   \item[OP-Q10] Quantitative link between coherent-topological dark
     candidates and observed dark-sector phenomenology.
+  \item[OP-Q11] Full operator derivation of spin-statistics and
+    many-body second-quantised structure from the coherent-topological
+    branch~(Section~\ref{sec:qs_statistics}).
 \end{description}
 
 \paragraph{What has been achieved.}
