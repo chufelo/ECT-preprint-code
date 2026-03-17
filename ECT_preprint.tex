@@ -14712,9 +14712,10 @@ $g_\dagger = g_{\dagger 0}\,e^{\gamma\phi_{\rm env}}$.
 Observationally, $g_\dagger \approx 10^{-10}\,$m\,s$^{-2}$
 governs the RAR, BTFR, and the flattening of rotation curves.
 
-These phenomena all follow from the nonlinear response of the
-Lorentz-order field $\phi$ in the critical weak-field branch,
-without requiring particle dark matter.
+These phenomena are captured in the present formulation through the
+nonlinear response of the Lorentz-order field $\phi$ in the critical
+weak-field branch, without introducing a standard particle-dark-matter
+halo at the level of the current closure.
 
 An important aspect is that $g_\dagger$ is not inserted as an
 independent MOND-like constant in the present formulation, but arises
@@ -17555,19 +17556,30 @@ estimates.
 \label{app:supplementary}
 
 \subsection{$G_N$ in SI}
-The reduced Planck mass in SI units is
-$\bar{M}_{\rm Pl} = 2.435\times10^{18}\;\mathrm{GeV}/c^2
-= 2.435\times10^{18}\times1.783\times10^{-27}\;\mathrm{kg}
-= 4.341\times10^{-9}\;\mathrm{kg}$.
-Then (canonical normalisation $\alpha=2$, $\beta=1$, so $v_0=\bar{M}_{\rm Pl}$)
+In the present ECT formulation the observed Newton coupling enters through
+geometric EFT matching rather than through a direct algebraic identification
+with a single condensate amplitude.
+The relevant relation is
+\begin{equation}
+  G_N \;=\; \frac{c_*^4}{8\pi M_G^2},
+\end{equation}
+where $M_G$ is the gravitational stiffness scale of the ordered tensor EFT.
+At canonical matching one sets $c_*=c$ and identifies
+$M_G=\bar M_{\rm Pl}$ observationally.
+With $\bar{M}_{\rm Pl}=2.435\times10^{18}\;\mathrm{GeV}/c^2
+=4.341\times10^{-9}\;\mathrm{kg}$ this gives
 \begin{equation}
 G_N \;=\; \frac{\hbar\,c}{8\pi\,\bar{M}_{\rm Pl}^2}
 \;=\; \frac{1.055\times10^{-34}\times2.998\times10^{8}}
 {8\pi\times(4.341\times10^{-9})^2}
-\;\approx\; 6.678\times10^{-11}\;\mathrm{m^3\,kg^{-1}\,s^{-2}}.
+\;\approx\; 6.678\times10^{-11}\;\mathrm{m^3\,kg^{-1}\,s^{-2}},
 \end{equation}
-CODATA value: $G_N = 6.674\times10^{-11}\;\mathrm{m^3\,kg^{-1}\,s^{-2}}$.
-The $0.06\%$ discrepancy reflects rounding in the input constants.
+in agreement with the CODATA value
+$G_N = 6.674\times10^{-11}\;\mathrm{m^3\,kg^{-1}\,s^{-2}}$
+up to rounding~($0.06\%$).
+This subsection should therefore be read purely as a numerical
+illustration of the matching relation, not as a first-principles
+microscopic derivation of $G_N$ from the bare condensate action.
 
 \begin{longtable}{@{}llll@{}}
 \caption{Predicted suppression of the condensate scale due to the external field effect (EFE).}
@@ -18390,9 +18402,9 @@ Eq.~\eqref{eq:Tolman_app}:
 \frac{\hbar c}{2\pi\sqrt{6}\,k_B v_0}\,.
 \label{eq:rho_c_app}
 \end{equation}
-Using $v_0=\bar{M}_{\rm Pl}$ and $G_N=c^2/(16\pi v_0^2)$
-[canonical: $\alpha=2$, $\beta=1$]
-one can show algebraically that
+Using the observational matching
+$M_G=\bar M_{\rm Pl}$ together with the current shell closure,
+one obtains
 \begin{equation}
 \rho_c
 =
@@ -18401,15 +18413,20 @@ one can show algebraically that
 \approx 0.33\,\ell_{\rm Pl}\,.
 \label{eq:rho_c_analytic}
 \end{equation}
-This is a parameter-free prediction.
+In the present article this should be read as a closure-level
+strong-field result rather than as a universal parameter-free theorem.
+Its significance is that the shell/interface construction selects a
+characteristic near-horizon scale at which the macroscopic Lorentzian
+description may cease to remain complete and coherent-sector dynamics
+may become relevant.
 Figure~\ref{fig:bh_information}(a) illustrates the Tolman temperature
 profile and marks $\rho_c$.
 
 The result $\rho_c=\ell_{\rm Pl}/\sqrt{3\pi}$ is close to the phenomenological
 ``stretched horizon'' thickness introduced in the membrane paradigm
-\cite{PriceThorne1986}, but here it follows from the condensate
-microphysics via the Tolman law (structural result, conditional on
-identification of local Tolman heating as the control parameter).
+\cite{PriceThorne1986}, but here it follows within the present Tolman-heating / critical-shell
+closure, conditional on identifying local Tolman heating as the relevant
+control parameter.
 
 \subsection{Shell entropy and the area law}
 \label{app:shell_entropy}
