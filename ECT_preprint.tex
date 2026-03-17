@@ -9055,7 +9055,7 @@ Entries: ``derived'' = structural Level~A consequence; ``structural / effective 
 4D Euclidean space & Postulate P1 & postulate \\
 $O(4)$ symmetry & Postulate P2 & postulate \\
 Condensate $\Phi$ & Postulate P4 & postulate \\
-Lorentzian metric $g_{\mu\nu}$ & SSB $O(4)\!\to\!O(3)$, $\alpha>1$ & derived \\
+Lorentzian metric $g_{\mu\nu}$ & SSB $O(4)\!\to\!O(3)$ with $\alpha>\beta$ & derived \\
 Macroscopic arrow of time & Reduced-state decoherence plus low-entropy coherent initial sector & effective / closure-dependent (Level~A/B) \\
 Speed of light $c$ & $c_*=\sqrt{\beta/(\alpha-\beta)}$ & identified \\
 Gravitational coupling $G_N$ & Geometric EFT matching: $G_N=c_*^4/(8\pi M_G^2)$ & matched (Level~B) \\
@@ -9102,7 +9102,7 @@ D5b & Fierz--Pauli form, TT projection, ghost-free counting at linearised level 
 D6 & Dirac form (structural reconstruction once spinorial fields admitted) & B & O(3) spinor rep.; not from bare bosonic action & \ref{sec:fermions}, \ref{sec:dirac_eq} \\
 D7 & Instanton mass spectrum $m_n=n\times1.6$ GeV & B & $\pi_3({\rm O(3)})=\mathbb{Z}$ & 10 \\
 D8 & Effective irreversibility (Gaussian--Markov model, ordered branch) & B & Gaussian--Markov approx.; $K(\tau<0)=0$ structural; not derived from bare action (OP24) & 4 \\
-D9 & $\hbar$ identification & B & Phase quantisation & \ref{sec:consistency_relations}, \ref{sec:consistency_relations} \\
+D9 & Physical identification $S_0=\hbar$ & B & Structural action scale $S_0$ exists~(Level~A); its final physical identification with $\hbar$ requires additional matching / closure~(OP-Q2) & \ref{sec:qs_hbar}, \ref{sec:qs_ccr} \\
 D10 & Linearised Einstein eqs. + $\Theta_{\mu\nu}$ & B & Linearisation & \ref{sec:macroscopic} \\
 D11 & Inflation $n_s=0.967$ & B & Slow-roll, $N_e=60$ & \ref{sec:mp_cosmo} \\
 D12 & Baryogenesis $\eta_B\approx9\times10^{-10}$ & B & Leptogenesis mechanism & \ref{sec:mp_cosmo} \\
@@ -14716,9 +14716,10 @@ These phenomena all follow from the nonlinear response of the
 Lorentz-order field $\phi$ in the critical weak-field branch,
 without requiring particle dark matter.
 
-An important aspect is that $g_\dagger$ was not
-imposed by construction but emerges from the condensate
-structure of the vacuum.  The characteristic galactic acceleration
+An important aspect is that $g_\dagger$ is not inserted as an
+independent MOND-like constant in the present formulation, but arises
+within the current critical $\phi$-branch closure as a secondary scale
+associated with the ordered vacuum background.  The characteristic galactic acceleration
 scale arises as a secondary consequence of this framework. The agreement
 between the predicted and observed magnitude of $g_\dagger$ therefore
 provides a nontrivial consistency test of the theory.
@@ -14841,253 +14842,6 @@ ordinary matter and could appear as ultra-light dark-sector degrees of
 freedom. Conversely, it is also possible that the condensate dynamics
 suppresses these excitations so strongly that they remain effectively
 undetectable.
-
-\paragraph{ECT: postulates, derived results, and phenomenological inputs.}
-\label{app:constants}
-
-For clarity we collect the logical structure of the theory.
-Results fall into four categories:
-(P)~\emph{Postulates};
-(D)~\emph{Derived} (strict consequences of postulates);
-(Ph)~\emph{Phenomenological} (free parameters matched to observations);
-(O)~\emph{Open} (plausible but not yet rigorously derived).
-
-\medskip
-\noindent\textbf{Postulates~(P):}
-\begin{enumerate}[label=P\theenumi.,leftmargin=2.2em,itemsep=1pt]
-  \item 4D Euclidean manifold with metric $\delta_{AB}$; no preferred time.
-  \item $O(4)$-invariant action $S_E[\Psi]$ for a scalar condensate.
-  \item SSB $O(4)\to O(3)$ via gradient condensate $\langle n_A\rangle=\delta_{Aw}$.
-  \item Kinetic sector: most general $O(3)$-invariant rank-$2$ tensor
-        $K^{AB}=\beta\,\delta^{AB}-\alpha\,n^A n^B$.
-\end{enumerate}
-
-\medskip
-\noindent\textbf{Key derived results~(D):}
-\begin{enumerate}[label=D\theenumi.,leftmargin=2.2em,itemsep=1pt]
-  \item Lorentzian signature iff $\alpha>\beta>0$; Euclidean iff $\alpha<\beta$.
-  \item Lorentzian phase is macroscopic only: $\beta<\alpha<4\beta$.
-  \item Speed of light: $c_*=\sqrt{\beta/(\alpha-\beta)}$.
-  \item Gravitational constant: $G_N=1/(8\pi v_0^2(\alpha-\beta))$.
-  \item Planck constant (self-consistency): the minimal-loop action
-        $S_{\rm loop,min}=2\pi\hbar$ identifies $\hbar = \beta v_0^2 m_\varphi/2$,
-        where $m_\varphi=\sqrt{2\lambda}\,v_0$ is the radial-mode mass.
-        This is a consistency relation among $(v_0,\lambda,\beta)$,
-        not an independent derivation of $\hbar$ (OP-$\Lambda$).
-  \item Canonical commutation relations $[\hat x_i,\hat p_j]=i\hbar\delta_{ij}$
-        derived from single-valuedness of condensate phase (not postulated).
-  \item Heisenberg uncertainty principle as Cauchy--Schwarz theorem on $L^2$.
-  \item Second law $dS/dt\geq0$: effective result within Gaussian--Markov
-        approximation; structurally motivated low-entropy initial condition
-        from condensate phase transition; full microscopic derivation open (OP24).
-  \item Born measure: unique probability assignment consistent with emergent
-        amplitude sector under structural assumptions C1--C3; unique outcome
-        selection remains open.
-  \item Structural route toward Pauli exclusion principle via $SU(2)$
-        spinor representation sign structure (compatible with fermionic
-        antisymmetry in the ordered sector; full PLZ theorem not obtained;
-        beyond-quadratic corrections speculative).
-  \item Conditional Goldstone-sector Casimir-type effect ($\times 3/2$ at condensate/superfluid boundaries only;
-        not a prediction for standard metallic plates), Unruh temperature,
-        and environmental decoherence as three observables controlled by
-        related limits of one condensate two-point function
-        $N(\tau,\mathbf{r})\propto v_0^2 C_{\rm sym}(\tau,r)$
-        (organizing proposition, not theorem-level unification).
-  \item Arrow of time: emergent from $dS_{\rm ent}/dw\geq0$ within
-        Gaussian--Markov approximation ($\Gamma_{\rm irr}\gg1$ macroscopically);
-        quantum time-reversal at $\Gamma_{\rm irr}\lesssim1$; full microscopic
-        derivation open (OP24).
-  \item Galactic acceleration scale: $g_\dagger \propto c^2\phi_*(\phi_{\rm gal}) \propto cH_0$
-        (structural; $\mathcal{O}(1)$ coefficient undetermined).
-  \item Inflation: $n_s=1-2/N_e=0.967$ at $N_e=60$.
-  \item Universal near-horizon critical scale:
-        $\rho_c = \ell_{\rm Pl}/\sqrt{3\pi}\approx 0.33\,\ell_{\rm Pl}$,
-        mass-independent (conditional on Tolman control).
-  \item Conditional theorem: exact Hawking thermality excluded by unitarity
-        + finite shell entropy + complete evaporation.
-\end{enumerate}
-
-\medskip
-\noindent\textbf{Phenomenological inputs~(Ph):}
-\begin{enumerate}[label=Ph\theenumi.,leftmargin=2.2em,itemsep=1pt]
-  \item $\beta=1$ (working convention; see Section~\ref{sec:metric_classification}).
-  \item $v_0\simeq\bar{M}_{\rm Pl}$ (matching $G_N$).
-  \item $\alpha=2\beta$ (physical constraint $c_*\equiv c=1$); canonical $\beta=1$, $\alpha=2$ --- see Section~\ref{sec:metric_classification}.
-  \item $\phi_{\rm env}$: one environment parameter per galaxy.
-  \item SM gauge group embedded via condensate phase symmetries (derivation: open).
-\end{enumerate}
-
-\medskip
-\noindent\textbf{Open / conjectured~(O):}
-\begin{enumerate}[label=O\theenumi.,leftmargin=2.2em,itemsep=1pt]
-  \item Full renormalisability on fixed Euclidean background.
-  \item Three fermion generations from condensate topology.
-  \item RG connection of three condensate scales ($M_{\rm Pl}$, $246$\,GeV, kpc).
-  \item Baryogenesis: $\eta_B\sim9\times10^{-10}$ (observed: $6\times10^{-10}$).
-\end{enumerate}
-
-\medskip
-\noindent\textbf{Condensate constants:}
-\begin{align}
-c_* &= \sqrt{\frac{\beta}{\alpha-\beta}}\xrightarrow{\;\alpha=2\beta,\;\beta=1\;} 1, \\[3pt]
-\hbar &= \frac{\beta\,v_0^2}{2}\,m_\varphi\quad[m_\varphi\equiv\sqrt{2\lambda}\,v_0],\quad\text{(self-consistency)} \\[3pt]
-G_N &= \frac{1}{8\pi v_0^2(\alpha-\beta)}\xrightarrow{\;\alpha=2\beta,\;\beta=1\;}\frac{1}{8\pi v_0^2}.
-\end{align}
-
-\paragraph{Quantum and microscopic sector.}
-
-A major focus of the present work is the structural derivation of key
-results of quantum mechanics from the condensate action.  The canonical
-commutation relations and uncertainty principle are derived without
-additional postulates; the second law and Born measure require Gaussian--Markov
-or structural assumptions (see OP24, OP23).  The key results are as follows.
-
-The canonical commutation relations $[\hat x_i, \hat p_j]=i\hbar\delta_{ij}$
-are not postulated but emerge from the single-valuedness of the condensate
-phase field on closed loops (Section~\ref{sec:CCR}).  The imaginary unit
-$i$ enters through the phase factor $e^{i\theta}$ of the polar condensate,
-not from the Wick rotation.  The Heisenberg uncertainty principle
-$\Delta x\,\Delta p\geq\hbar/2$ then follows as a Cauchy--Schwarz
-inequality in $L^2(\mathbb{R}^3)$.
-
-The influence functional structure (Section~\ref{sec:influence_functional})
-clarifies the system--environment partition of the condensate: the
-symmetric correlator $N(\tau)=\langle\chi(\tau)\chi(0)\rangle_{\rm sym}$
-controls decoherence, while the retarded kernel $D_R(\tau)=\Theta(\tau)
-\langle[\chi(\tau),\chi(0)]\rangle$ controls dissipation.  A critical
-identity is $\Gamma[q,q]\equiv 0$ (the decoherence functional vanishes on
-the diagonal), which must not be confused with the entropy-production
-functional $\Gamma_{\rm irr}[q]=\kappa\int\dot{q}^2\,dw\geq0$.
-
-The quantum statistics of condensate excitations follows structurally from
-$SO(4)\cong SU(2)_L\times SU(2)_R$ representation theory (tensor
-representations $\to$ bosonic sectors; spinor representations $\to$
-fermionic-sector compatibility, structural Level~B; not a derivation of
-fermionic degrees of freedom from the bare bosonic condensate action).
-This provides a \emph{structural route} to the Pauli exclusion principle;
-a full Pauli--L\"{u}ders--Zumino theorem has not been obtained, and
-beyond-quadratic corrections at Planck density remain speculative
-(Section~\ref{sec:emergent_principles}).
-
-The three quantum vacuum phenomena --- conditional Goldstone-sector
-Casimir-type effect, Unruh temperature, and environmental decoherence ---
-are three observables controlled by related limits of the condensate
-two-point function $N(\tau,\mathbf{r})$,
-an organizing proposition of the ECT vacuum sector
-(Section~\ref{sec:unified_correlator}).  This is not a reformulation
-in new notation: it is a structural unification in which all three
-phenomena are controlled by the same condensate vacuum amplitude $v_0^2$.
-
-\paragraph{Scope of ECT: what is unified and what remains open.}
-\label{par:scope_ect}
-
-ECT achieves a specific and well-defined unification: the causal structure
-of spacetime, the quantum of action, and Newton's gravitational constant are
-\emph{parametrically linked} within a single scalar condensate framework.
-In precise terms, $c_*$, $G_N$, and $\hbar$ are related to condensate
-parameters $(\alpha,\,v_0,\,\lambda)$ through \emph{internal consistency
-relations} in a common field theory: once $v_0$ is calibrated from $G_N$,
-both $c_*$ and $\hbar$ follow self-consistently from the same parameter set.
-This is a non-trivial structural economy, though it does not yet constitute
-a fully non-circular microscopic derivation of the Planck scale (OP-$\Lambda$).
-
-At the same time, ECT is not a Theory of Everything.  The following elements
-remain beyond the current framework:
-
-\begin{itemize}[itemsep=2pt]
-  \item \textbf{Standard Model gauge group.}
-        The gauge structure $SU(3)\times SU(2)\times U(1)$ is embedded
-        into ECT as a postulate; it is not derived from the condensate action.
-  \item \textbf{Fine structure constant.}
-        $\alpha_{\rm fs}\approx1/137$ is not predicted; the $Z_A$-normalisation
-        route (Open Problem OP11) is the most tractable avenue.
-  \item \textbf{Three fermion generations.}
-        ECT provides spinor representations after $O(4)\to O(3)$ SSB but does
-        not explain why exactly three generations exist.
-  \item \textbf{Yukawa mass hierarchy.}
-        Fermion mass ratios spanning six orders of magnitude are not explained.
-  \item \textbf{Quantitative RG link between scales.}
-        The three condensate VEVs ($v_0\sim\bar{M}_{\rm Pl}$,
-        $v_2\sim246\,\mathrm{GeV}$, galactic $\phi$-sector)
-        are connected qualitatively by the running coupling $\lambda(\mu)$
-        but a quantitative two-loop analysis is not yet available.
-\end{itemize}
-
-We therefore describe ECT as a \emph{unified source of spacetime geometry,
-quantum mechanics, and gravity} --- not a Theory of Everything.
-This honest characterisation is consistent with the theory's derivational
-achievements while acknowledging the substantial programme of further work
-that remains.
-
-\paragraph{Cluster mergers.}
-
-The $\phi$-branch was tested on four merging clusters
-(Bullet~\cite{Clowe2006,Paraficz2016},
-MACS~J0025~\cite{Bradac2008},
-El~Gordo~\cite{Diego2023},
-Abell~520~\cite{Mahdavi2007})
-using a 2D projected thin-lens $\phi$-closure.
-\emph{Qualitatively}, all four offset morphologies are
-correctly reproduced: in Bullet, MACS~J0025, and El~Gordo
-the lensing peaks follow the compact stellar component,
-while in Abell~520 they follow the dense gas core ---
-exactly as predicted by a $\phi$-field that responds to
-local density contrast rather than to a universal
-collisionless species.
-This dual morphology (stellar-tracking \emph{and}
-gas-tracking) is a distinctive ECT signature that neither
-$\Lambda$CDM nor MOND can naturally accommodate.
-\emph{Quantitatively}, the $\phi$-branch produces
-15--45\% of the observed lensing mass (deficit factor
-$\sim\!2$--$3$, comparable to the MOND cluster problem).
-Three uncomputed effects --- environmental $g_\dagger$
-modulation, gravitational slip, and non-equilibrium
-merger dynamics --- may individually contribute at
-order unity.
-The cluster mass discrepancy remains an honest open
-problem (OP22, OP23).
-
-\paragraph{Falsifiability and key tests.}
-\label{par:falsifiability}
-
-ECT makes concrete, falsifiable predictions that distinguish it from both
-$\Lambda$CDM and MOND:
-
-\begin{enumerate}[itemsep=2pt]
-  \item \textbf{Environmental modulation of $g_\dagger$:}
-        the Lorentz-order-field framework predicts that the effective
-        acceleration scale $g_\dagger(\phi_{\rm env})$ varies weakly
-        with galactic environment.  A positive correlation between
-        the fitted $\phi_{\rm env}$ and independently measured
-        local cosmic density, detectable with the full SPARC sample
-        ($\sim\!175$ galaxies) cross-matched against large-scale-structure
-        catalogues, would constitute direct evidence for the $\phi$-branch
-        mechanism.
-  \item \textbf{Gravitational-wave speed:} $\delta c_{\rm GW}/c \sim 10^{-62}$,
-        consistent with GW170817 bound by 47 orders; future signals from
-        BNS mergers with sub-microsecond timing will probe $\delta c/c \sim 10^{-17}$.
-  \item \textbf{Fifth force:} spin precession $\omega_5 \sim 10^{-10}$~rad/s,
-        E\"otv\"os parameter $\eta \sim 10^{-15}$ (MICROSCOPE-2 sensitivity).
-  \item \textbf{Inflation tensor-to-scalar ratio:} leading-order prediction
-        $r \approx 0.267$ (exceeds current bounds; resolved only by non-minimal
-        condensate coupling or multi-field extension).
-  \item \textbf{Dark energy EOS:} $w_0 \approx -0.83$, $w_a \neq 0$;
-        distinguishable from $\Lambda$CDM ($w=-1$) at $>2\sigma$ with
-        DESI Year-5 data.
-  \item \textbf{Universal near-horizon critical scale $\rho_c$:}
-        the ECT black-hole sector predicts that \emph{all} non-extremal
-        black holes carry a critical shell at universal proper distance
-        $\rho_c = \ell_{\rm Pl}/\sqrt{3\pi}\approx0.33\,\ell_{\rm Pl}$
-        from the horizon, independent of mass.
-        This scale controls corrections to quasinormal-mode spectra
-        at relative order $\rho_c/r_s \sim M_{\rm Pl}^2/M^2$,
-        and sets the characteristic frequency of any near-horizon
-        boundary-condition deviation.
-        A detection of a \emph{universal} (mass-independent) near-horizon
-        scale in ringdown data from gravitational-wave events of different
-        masses would constitute direct evidence for the ECT shell picture;
-        conversely, a mass-dependent deviation would falsify it.
-\end{enumerate}
 
 
 \subsection*{Final assessment, comparative status, and future strengthening}
