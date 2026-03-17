@@ -7932,7 +7932,7 @@ backgrounds~(Level~B; OP-c1).
 
 % ============================================================
 \subsection{Cosmological branch of the macroscopic sector}
-\label{sec:mp_cosmo}\label{sec:jwst}
+\label{sec:mp_cosmo}
 % ============================================================
 
 \textit{Status: the whole subsection is Level~B unless stated
@@ -8933,6 +8933,136 @@ rather than near dense sources.
 
 
 %%% -----------------------------------------------------------
+
+\subsection{Early galaxy and black hole formation (JWST anomalies)}
+\label{sec:jwst}
+
+\textit{Observational context.}
+The James Webb Space Telescope has revealed a population of unexpectedly massive
+galaxies and supermassive black holes at redshifts $z>10$, corresponding to
+cosmic ages $<500$\,Myr after the Big Bang \cite{Labbe2023,Finkelstein2022}.
+The observed stellar masses ($M_\star\sim 10^{9}$--$10^{11}\,M_\odot$) and black-hole
+masses ($M_{\rm BH}\sim 10^{7}$--$10^{9}\,M_\odot$) exceed the expectations of
+standard $\Lambda$CDM by factors of several within the available assembly time.
+
+\textit{ECT mechanism ($\phi$-first).}
+In ECT $\phi$-logic, the effective gravitational coupling on the
+cosmological background is controlled by the background order field
+$\phi_b(z)$ (Section~\ref{sec:mp_nonlinear}):
+\begin{equation}
+  G_{\rm eff}(z) = G_N\,e^{-\phi_b(z)},
+  \qquad
+  M^2_{\rm eff}(z) = \bar M^2_{\rm Pl}\,e^{\phi_b(z)}.
+  \label{eq:Geff_jwst}
+\end{equation}
+This is the same relation that governs the nonlinear gravity and
+galactic-scale $\phi$-branch — a single order field unifies the
+cosmological and galactic gravitational sectors.
+
+The full field decomposes as $\phi(X)=\phi_b(z)+\delta\phi(X)$,
+where $\phi_b(z)$ is the slowly evolving cosmological background
+and $\delta\phi(X)$ encodes local deviations.
+The $\phi$-logic suggests qualitatively that dense collapsing
+regions may screen $\delta\phi$, driving the local dynamics back
+toward the GR branch; a derivation of this screening from the
+nonlinear $\phi$-equation remains open.
+
+\textit{Background ansatz.}
+For consistency with the cosmological fit and the running gravitational
+coupling of Section~\ref{sec:mp_galactic}, we adopt the
+phenomenological background profile:
+\begin{equation}
+  \phi_b(z) = -2\varepsilon\ln(1+z),
+  \qquad \varepsilon \approx 0.01.
+  \label{eq:phi_b_ansatz}
+\end{equation}
+This is a phenomenological ansatz rewritten in $\phi$-language,
+not a derived solution of the cosmological $\phi$-equation
+(a first-principles derivation of $\phi_b(z)$ from the background
+$\phi$-dynamics remains open).
+With ansatz~\eqref{eq:phi_b_ansatz}, eq.~\eqref{eq:Geff_jwst}
+recovers exactly $G_{\rm eff}(z)=G_N(1+z)^{2\varepsilon}$.
+
+\textit{Structure growth.}
+In the leading sub-horizon approximation, and neglecting explicit
+perturbations of the $\phi$-sector in the growth equation, one may
+write the standard continuity--Euler--Poisson system with the
+effective coupling:
+\begin{equation}
+  \ddot\delta + 2H\dot\delta
+  - 4\pi G_{\rm eff}(z)\,\bar\rho\,\delta = 0.
+\end{equation}
+At leading order in $\varepsilon$ this gives
+\begin{equation}
+  \frac{D_{\rm ECT}(z)}{D_{\Lambda{\rm CDM}}(z)}
+  \approx 1 + \varepsilon\ln(1+z) + O(\varepsilon^2).
+\end{equation}
+At $z=10$: $D_{\rm ECT}/D_{\Lambda{\rm CDM}}\approx 1.024$.
+
+\textit{Halo abundance (Press--Schechter).}
+Setting $f(z)\equiv G_{\rm eff}(z)/G_N = e^{-\phi_b(z)}$,
+the effective rarity of a $\nu$-$\sigma$ peak becomes
+$\nu_{\rm eff}=\nu/\sqrt{f}$, giving
+\begin{equation}
+  \frac{n_{\rm ECT}}{n_{\Lambda{\rm CDM}}}
+  = \exp\!\left[\frac{\nu^2}{2}\!\left(1-\frac{1}{f(z)}\right)\right].
+  \label{eq:PS_phi}
+\end{equation}
+Numerical values for $\varepsilon=0.01$ are given in
+Table~\ref{tab:jwst_ps}; they are \emph{unchanged} from the
+previous estimate --- the improvement here is conceptual
+(unified $\phi$-language with the gravity section) rather than
+numerical.
+
+\begin{table}[H]
+\centering
+\caption{Halo abundance enhancement in ECT vs.\ $\Lambda$CDM,
+eq.~\eqref{eq:PS_phi}, for $\varepsilon=0.01$.
+$\nu$ = peak rarity parameter; JWST anomalies correspond to
+$\nu\sim5$--6.
+The ansatz~\eqref{eq:phi_b_ansatz} gives
+$f(z)=(1+z)^{2\varepsilon}$.}
+\label{tab:jwst_ps}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{ccccc}
+\hline
+$z$ & $\phi_b(z)$ & $f=e^{-\phi_b}$ & $\nu=5$ & $\nu=6$ \\
+\hline
+ 7  & $-0.043$ & 1.043 & $\times 1.7$ & $\times 2.1$ \\
+10  & $-0.048$ & 1.049 & $\times 1.8$ & $\times 2.3$ \\
+12  & $-0.052$ & 1.053 & $\times 1.9$ & $\times 2.5$ \\
+15  & $-0.055$ & 1.057 & $\times 2.0$ & $\times 2.6$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\textit{Quantitative assessment.}
+For the most anomalous JWST sources ($\nu\sim5$--6),
+the ECT $\phi$-mechanism predicts an overabundance of $\times2$--3
+relative to $\Lambda$CDM.
+The observed deficit is $\times10$--100~\cite{BoylanKolchin2023},
+so in its present controlled $\phi$-first form ECT \emph{alleviates
+but does not resolve} the JWST early-structure tension.
+With the background ansatz~\eqref{eq:phi_b_ansatz}, no additional
+numerical improvement over the leading-order estimate is obtained.
+
+The $\phi$-logic suggests that early-time global enhancement
+($\phi_b<0$) and local screening in dense proto-galactic cores
+may ultimately be described within a single order-field framework.
+A derivation of this mechanism from the full nonlinear $\phi$-equation,
+and the question of whether a nontrivial background history $\phi_b(z)$
+could provide stronger early enhancement, are left as open problems.
+(Section~\ref{sec:open_problems}).
+
+
+
+\section{Comparison with Existing Approaches}
+\label{sec:comparison}
+
+This section compares ECT with several alternative approaches
+to gravity and cosmology, highlighting structural differences
+and shared features.
+
 \subsection{Baryonic Tully--Fisher relation}
 
 
@@ -14876,6 +15006,122 @@ $\Lambda$CDM and MOND:
         masses would constitute direct evidence for the ECT shell picture;
         conversely, a mass-dependent deviation would falsify it.
 \end{enumerate}
+
+
+\subsection*{Final assessment, comparative status, and future strengthening}
+
+The most accurate final assessment is that ECT is not yet a completed
+exact theory deriving all standard physical laws from bare postulates
+alone, but neither is it a loose speculative hypothesis.
+Its present status is stronger and more precise:
+ECT has matured into a unified research framework in which both
+macroscopic geometry and coherent quantum dynamics are organised as two
+branches of one ordered condensate description.
+This does not yet close all open problems, but it provides a common
+ontological language in which a wide range of previously disconnected
+structures can now be expressed, compared, and constrained inside one
+theoretical architecture.
+
+The main achievement of the revised postulate structure is not that it
+automatically converts every important physical law into an
+unconditional Level~A theorem.
+Its achievement is that it sharply separates what is already
+structurally proved, what is closure-dependent but highly constrained,
+and what remains genuinely open.
+In that sense, the gain is methodological as well as physical:
+the framework no longer hides phenomenological assumptions behind
+theorem-like language, and it makes explicit which statements belong to
+Level~A, which belong to Level~B, and which still require additional
+microscopic completion.
+That explicit discipline is itself a major strengthening of the theory.
+
+ECT is also not unique merely because it attempts to unify
+microphysics and macrophysics.
+Other major programmes---including string-theoretic, loop-based,
+pregeometric, causal, analogue-gravity, induced-gravity, and related
+emergent-spacetime approaches---also aim to connect quantum structure
+and gravitational or spacetime physics.
+The distinctive feature of ECT lies elsewhere:
+it attempts to connect, in one continuous chain, Euclidean microscopic
+starting data, spontaneous ordering, emergent Lorentzian structure,
+gravitational dynamics, coherent phase kinematics, decoherence,
+vacuum-response phenomena, dark-sector logic, and horizon thermality.
+The correct claim is therefore not that ECT has already exceeded all
+competing approaches in formal completion or empirical precision, but
+that it offers an unusually broad and internally linked architecture
+with explicit status control across both micro- and macrophysics.
+
+Several results are already genuinely nontrivial.
+Among the strongest are:
+the emergence of the ordered Lorentzian branch;
+the unique macroscopic rank-2 tensor compatible with the broken
+symmetry pattern;
+the existence of a coherent phase branch with winding sectors;
+the structural existence of a pre-quantum action scale;
+the canonical organisation of coherent dynamics;
+the subsystem--environment logic of decoherence;
+the unified interpretation of vacuum-response effects;
+and the incompatibility of fundamental non-unitary information
+destruction with the ECT postulate structure.
+These results do not yet constitute a final derivation of all known
+physics, but they already exclude classes of interpretation that would
+otherwise remain admissible.
+Such exclusion results are scientifically meaningful:
+a theory becomes stronger not only by computing numbers, but also by
+narrowing the space of logically possible explanations.
+
+At the same time, several central outputs remain Level~B or Open:
+the physical identification $S_0=\hbar$,
+the completed observational Schr\"odinger equation,
+the full physical Dirac sector beyond the structural spinor route,
+the full spin--statistics/Pauli theorem,
+the Born rule as an unconditional bare-postulate theorem,
+and the constructive strong-field shell/interface mechanism needed for
+an explicit Page-curve computation.
+These limitations are real and should not be minimised.
+They mark the current frontier of the theory.
+But they do not reduce ECT to a mere guess.
+Rather, they show that the framework has reached a scientifically
+useful stage: the unfinished steps are now localised, named, and
+technically attackable instead of remaining vague conceptual gaps.
+
+An important future question is whether some of these Level~B results
+can be promoted to Level~A.
+In some cases this may require only further derivation from the present
+postulates; in other cases it may require one or more additional
+microscopic assumptions that constrain the condensate more tightly.
+Natural candidates for such strengthening assumptions could include:
+\begin{enumerate}[label=(\roman*),noitemsep]
+\item a \emph{spectral-normalisation postulate} fixing the absolute
+normalisation of the minimal coherent action cycle and thereby
+potentially determining $S_0$ rather than merely proving its existence;
+\item a \emph{coherent-Hamiltonian closure postulate} selecting a unique
+real-time generator of the ordered branch compatible with the same
+action scale $S_0$;
+\item a \emph{spinorial-sector postulate} specifying which condensate
+representation sector realises physical fermionic excitations;
+\item a \emph{projector/probability completeness postulate} sharpening
+the route from decohered alternatives to a probability assignment;
+\item a \emph{strong-field shell regularity postulate} sufficient to
+derive near-horizon purification dynamics and Page-curve behaviour
+constructively.
+\end{enumerate}
+Whether such additions would be elegant consequences of the ordered
+medium picture or merely ad hoc repairs must be judged carefully.
+But the important point is that the present framework now makes this
+question precise:
+it identifies not only which results remain below Level~A, but also
+what kind of additional input would be needed to push them upward.
+
+The fairest conclusion is therefore this:
+ECT is not yet a finished final theory, but it is already a serious and
+unusually broad unification programme.
+Its strength lies in the combination of a common ontological language
+for quantum and gravitational/macroscopic physics, a growing set of
+Level~A structural results, explicit observational and falsifiability
+targets, and an honest map of what remains closure-dependent or open.
+That is already a substantial scientific achievement, and it defines a
+clear route for the next stage of development.
 
 % =============================================================================
 % Appendix: ECT prediction for the Radial Acceleration Relation
