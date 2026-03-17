@@ -266,6 +266,9 @@ The present section proceeds in the following order:
 \end{enumerate}
 A final consistency map of the Quantum Sector is shown in
 Fig.~\ref{fig:qs_consistency}.
+Figures~\ref{fig:qs_quantization_chain}, \ref{fig:qs_vacuum_unified},
+\ref{fig:qs_decoherence_regimes}, and~\ref{fig:qs_bh_shell}
+provide complementary schematic maps of the main QS logic.
 
 \paragraph{Bridge from Macroscopic Physics.}
 Macroscopic Physics answered the question:
@@ -1016,6 +1019,34 @@ emerge.
 The next task is to study the environment of the coherent sector:
 decoherence, irreversibility, and the origin of effective probability.
 
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[
+  node distance=0.9cm and 1.0cm,
+  box/.style={draw, rounded corners, align=center, minimum width=3.0cm,
+    minimum height=0.95cm, font=\small},
+  arrow/.style={->, thick}
+]
+\node[box] (phase) {phase action\\$\theta,\;n[\gamma]$};
+\node[box, right=of phase] (s0) {pre-quantum scale\\$S_0$};
+\node[box, right=of s0] (wave) {wave reduction\\$\Psi\sim e^{i\theta/S_0}$};
+\node[box, below=of s0] (ccr) {canonical pair\\$(\theta,\pi_\theta)$};
+\node[box, below=of wave] (born) {probability /\\Born-type sector};
+\draw[arrow] (phase) -- (s0);
+\draw[arrow] (s0) -- (wave);
+\draw[arrow] (phase) -- (ccr);
+\draw[arrow] (ccr) -- (born);
+\draw[arrow] (wave) -- (born);
+\end{tikzpicture}
+\caption{Quantization logic in the coherent-topological branch of ECT~(Level~B).
+Phase dynamics and loop quantization prepare the action scale $S_0$,
+which supports wave reduction, canonical structure, and eventually the
+Born-type reduced probability sector.
+The figure is a structural roadmap of Sections~\ref{sec:qs_phase_dynamics}--\ref{sec:qs_born};
+it is not a closed derivation of $S_0=\hbar$.}
+\label{fig:qs_quantization_chain}
+\end{figure}
+
 % ============================================================
 \subsection{Uncertainty principle in the coherent branch}
 \label{sec:qs_uncertainty}
@@ -1608,10 +1639,12 @@ coherent-topological branch, with a single underlying mechanism
 expressed in four different physical settings.
 
 \paragraph{Status.}
-The unifying interpretation is Level~B: a strong organisational
-statement supported by the coherent-vacuum formalism, but the
-detailed first-principles derivation of each individual effect is
-not yet complete at the same level.
+The unified reading of Casimir response, particle production,
+Unruh-type detector response, and horizon thermality as manifestations
+of one ordered coherent vacuum is Level~B.
+It is a coherent interpretive closure supported by the structure of
+the Quantum Sector, but the detailed first-principles derivation of
+each effect is not yet complete at the same level.
 
 \subsubsection*{Analogue-gravity continuity of the QS vacuum picture}
 
@@ -1639,6 +1672,48 @@ unrelated mechanisms.
 \paragraph{Status.}
 The analogue-gravity continuity argument is Level~B: a conceptual
 strengthening of the ECT interpretation, not a standalone derivation.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[
+  node distance=1.0cm and 1.0cm,
+  box/.style={draw, rounded corners, align=center, minimum width=3.0cm,
+    minimum height=0.95cm, font=\small},
+  arrow/.style={->, thick}
+]
+\node[box] (vac) {ordered coherent\\vacuum};
+\node[box, below left=of vac] (casimir) {boundary response\\(Casimir)};
+\node[box, below=of vac] (prod) {time-dependent response\\(particle production)};
+\node[box, below right=of vac] (unruh) {observer response\\(Unruh)};
+\node[box, below=2.2cm of prod] (bh) {strong-field interface\\response (Hawking/horizon)};
+\node[box, right=2.0cm of bh] (ag) {analogue-gravity\\continuity};
+\draw[arrow] (vac) -- (casimir);
+\draw[arrow] (vac) -- (prod);
+\draw[arrow] (vac) -- (unruh);
+\draw[arrow] (casimir) -- (bh);
+\draw[arrow] (prod) -- (bh);
+\draw[arrow] (unruh) -- (bh);
+\draw[arrow] (bh) -- (ag);
+\draw[arrow] (vac) to[bend left=40] (ag);
+\end{tikzpicture}
+\caption{Unified response logic of the ordered coherent vacuum
+in the Quantum Sector of ECT~(Level~B).
+Boundary conditions, time-dependent backgrounds, accelerated observers,
+and strong-field causal interfaces probe one and the same ordered vacuum
+in different ways.
+The analogue-gravity continuity shows that none of these effects requires
+a fundamental spacetime ontology; they emerge from the coherent-vacuum
+response structure.
+This is a structural interpretation map, not a quantitative derivation.}
+\label{fig:qs_vacuum_unified}
+\end{figure}
+
+% INTEGRATION NOTE (sec:qs_vacuum_unified):
+% add future appendix label app:qs_vacuum_response with:
+% - unified coherent-vacuum response logic,
+% - boundary / time-dependent / accelerated / horizon probes,
+% - relation between Casimir, particle production, Unruh, and
+%   horizon thermality within one ordered-vacuum framework.
 
 % ============================================================
 \subsection{Summary of coherent-vacuum predictions}
@@ -1696,6 +1771,18 @@ Unified vacuum-response logic (Casimir/production/Unruh/horizon)
 Analogue-gravity continuity of the ECT vacuum interpretation
   & Level~B
   & Section~\ref{sec:qs_vacuum_unified} \\
+Unified coherent-vacuum response map
+  & Level~B
+  & Fig.~\ref{fig:qs_vacuum_unified};
+    Section~\ref{sec:qs_vacuum_unified} \\
+Decoherence regime split ($N_{\rm eff}\sim1$ vs $N_{\rm eff}\gg1$)
+  & Level~B
+  & Fig.~\ref{fig:qs_decoherence_regimes};
+    Section~\ref{sec:qs_decoherence} \\
+Phase--action--quantization structural chain
+  & Level~B
+  & Sections~\ref{sec:qs_phase_dynamics}--\ref{sec:qs_born};
+    Fig.~\ref{fig:qs_quantization_chain} \\
 Unified vacuum/coherent/geometry interpretation
   & Level~B
   & Shared MP--QS condensate foundation \\
@@ -2004,6 +2091,40 @@ Its qualitative form is strongly supported by the influence-functional
 logic, but a full quantitative interpolation between $N_{\rm eff}\sim1$
 and $N_{\rm eff}\gg1$ remains open~(OP-Q15).
 
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[
+  box/.style={draw, rounded corners, align=center,
+    minimum width=3.8cm, minimum height=1.1cm, font=\small},
+  arrow/.style={->, thick}
+]
+\node[box] (left) at (-3.2,0)
+  {$N_{\rm eff}\sim 1$\\weak monitoring\\long-lived coherence\\possible recoherence};
+\node[box] (mid) at (0,0)
+  {coherent subsystem\\+ effective bath};
+\node[box] (right) at (3.4,0)
+  {$N_{\rm eff}\gg 1$\\strong monitoring\\rapid decoherence\\classical alternatives};
+\draw[arrow] (mid) -- (left);
+\draw[arrow] (mid) -- (right);
+\node[font=\small] at (-3.2,-1.6) {quantum-coherent regime};
+\node[font=\small] at (3.4,-1.6) {macroscopic regime};
+\end{tikzpicture}
+\caption{Qualitative regime split in the decoherence sector of ECT~(Level~B).
+When only a few effective environment channels are active
+($N_{\rm eff}\sim1$), coherence can survive for long times
+and recoherence is not excluded.
+When many channels effectively monitor the subsystem
+($N_{\rm eff}\gg1$), the reduced dynamics becomes strongly
+irreversible and classical-looking.
+This figure is schematic and summarises the logic developed in
+Section~\ref{sec:qs_decoherence}.}
+\label{fig:qs_decoherence_regimes}
+\end{figure}
+
+Figure~\ref{fig:qs_decoherence_regimes} is schematic; the quantitative
+interpolation between the two regimes remains part of OP-Q15 and the
+effective bath analysis of Appendix~\ref{app:ohmic_markov}.
+
 \subsubsection*{Status summary}
 
 \textit{Established~(Level~A):}
@@ -2025,6 +2146,14 @@ and $N_{\rm eff}\gg1$ remains open~(OP-Q15).
   \item a strict derivation of the Markov approximation;
   \item a full nonlinear entropy theorem for all coherent sectors.
 \end{enumerate}
+
+% INTEGRATION NOTE (sec:qs_decoherence):
+% add future appendix label app:qs_bath_regimes with:
+% - effective spectral-density hierarchy,
+% - transition between N_eff ~ 1 and N_eff >> 1,
+% - scope and limitations of the ohmic/Markov closure,
+% - relation of Eq.~\eqref{eq:qs_entropy_explicit} to the
+%   qualitative monotonicity discussion.
 
 \subsubsection*{Bridge to probability and Born-type interpretation}
 
