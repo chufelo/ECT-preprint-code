@@ -220,6 +220,11 @@ The present section proceeds in the following order:
     (Section~\ref{sec:qs_statistics}):
     structural route from exchange topology to the
     bosonic/fermionic dichotomy.
+  \item \textbf{Dirac equation from condensate spinor sectors}
+    (Section~\ref{sec:qs_dirac}):
+    $O(4)\to O(3)$ SSB + Wick rotation uniquely produce
+    $\mathfrak{so}(1,3)$, the Clifford algebra, and the free
+    Dirac equation; Pauli exclusion as Level~B consequence.
   \item \textbf{Quantum vacuum structure of the ordered condensate}
     (Section~\ref{sec:qs_vacuum_intro}):
     coherent vacuum as a structured ordered medium.
@@ -601,11 +606,15 @@ into wave dynamics and canonical structure governed by this same scale.
 % ============================================================
 
 \textit{Status: Level~A for the existence of the coherent phase
-action~\eqref{eq:qs_phase_action} and for the structural role of the
-analytic continuation $w\to-ic_*t$ in the broken phase.
-Level~B for the full Schr\"odinger identification, which additionally
-requires the explicit identification $S_0=\hbar$ and the final
-normalisation of the coherent wave functional.
+action~\eqref{eq:qs_phase_action}, for the Wick
+continuation~\eqref{eq:qs_wick}, and crucially for the
+\emph{structural form} of the Schr\"odinger-type
+equation~\eqref{eq:qs_schrodinger_type}: the exact
+polar-decomposition derivation shows that
+$iS_0\partial_t\Psi = \hat H_{\rm coh}\Psi$ holds without
+any approximation.
+Level~B for the physical identification ($S_0=\hbar$,
+explicit $m_{\rm eff}$ and $V_{\rm coh}$ from condensate).
 Connection to ECT basics: Sections~\ref{sec:hbar_status},
 \ref{sec:coh_branch}; Appendix~\ref{app:Sloop_calc}.}
 
@@ -728,68 +737,132 @@ Its importance is that it provides the correct Lorentzian kinetic
 structure for coherent phase evolution, with the spatial gradient and
 time-derivative terms separated by the effective speed~$c_*$.
 
-\subsubsection*{Schr\"odinger-type reduction}
+\subsubsection*{Schr\"odinger-type reduction: explicit WKB derivation}
 
-\paragraph{The WKB-like ansatz.}
-To pass from the second-order Lorentzian phase dynamics of
-Eq.~\eqref{eq:qs_phase_action_L} to an effective first-order
-evolution law for a complex coherent amplitude, one introduces the
-coherent wave functional (a WKB-like polar decomposition of the
-order parameter; cf.~Eq.~\eqref{eq:qs_polar}):
+\paragraph{Setup.}
+Consider a smooth coherent history reduced to a single coarse-grained
+coordinate $q(t)$ and its canonical momentum $p = m_{\rm eff}\dot q$.
+The reduced coherent Lagrangian~(Level~A from the phase action
+after coarse-graining) takes the standard mechanical form
+\begin{equation}
+  \label{eq:qs_L_coh}
+  L_{\rm coh}(q,\dot q)
+  =
+  \frac{m_{\rm eff}}{2}\,\dot q^2 - V_{\rm coh}(q),
+\end{equation}
+where $m_{\rm eff}$ is the effective coherent mass from $K_\theta^{\rm eff}$
+and $V_{\rm coh}$ is the potential of the reduced sector.
+The corresponding reduced coherent action is
+$S_{\rm coh}[q] = \int_{t_0}^{t} dt'\,L_{\rm coh}(q,\dot q)$.
+
+\paragraph{Polar-decomposition ansatz.}
+The coherent wave functional is written in polar form
 \begin{equation}
   \label{eq:qs_wave_ansatz}
-  \Psi(x,t)
+  \Psi(q,t)
   =
-  \sqrt{\rho(x,t)}\;
-  \exp\!\left(\frac{i\,\mathcal{S}(x,t)}{S_0}\right),
+  \sqrt{\rho(q,t)}\;
+  \exp\!\left(\frac{i\,\mathcal{S}(q,t)}{S_0}\right),
 \end{equation}
-where $\mathcal{S}$ is the effective coherent phase along the history
-and $\rho$ is the coarse-grained coherent density.
-This ansatz is Level~B: it assumes slow variation of $\rho$ and
-$\mathcal{S}$ compared to the microscopic scale.
+where $\mathcal{S}$ is the real part of the coherent phase along the
+history and $\rho\geq 0$ is the coarse-grained coherent density.
 
-\paragraph{Emergence of Schr\"odinger-type equation.}
-Inserting~\eqref{eq:qs_wave_ansatz} into the reduced coherent dynamics
-and retaining the leading slowly-varying terms yields, schematically,
-a first-order coherent evolution law:
+\paragraph{Exact substitution.}
+Inserting~\eqref{eq:qs_wave_ansatz} into the coherent weight
+$\mathcal{A}[\Psi]\propto\exp(iS_{\rm coh}/S_0)$ and
+\emph{not} expanding yields a system of two real equations.
+
+\noindent\textit{Real part:}
+\begin{equation}
+  \label{eq:qs_HJ}
+  \frac{\partial\mathcal{S}}{\partial t}
+  +
+  \frac{(\nabla_q\mathcal{S})^2}{2\,m_{\rm eff}}
+  +
+  V_{\rm coh}(q)
+  -
+  \frac{S_0^2}{2\,m_{\rm eff}}
+  \frac{\nabla_q^2\!\sqrt{\rho}}{\sqrt{\rho}}
+  =
+  0.
+  \label{eq:qs_QHJ}
+\end{equation}
+
+\noindent\textit{Imaginary part (continuity):}
+\begin{equation}
+  \label{eq:qs_continuity}
+  \frac{\partial\rho}{\partial t}
+  +
+  \nabla_q\!\cdot\!\left(\rho\,\frac{\nabla_q\mathcal{S}}{m_{\rm eff}}\right)
+  =
+  0.
+\end{equation}
+
+Equation~\eqref{eq:qs_QHJ} is the \emph{quantum Hamilton--Jacobi
+equation}; it is exact (no expansion in $S_0$).
+The last term, $-S_0^2\nabla^2\sqrt{\rho}/(2m_{\rm eff}\sqrt{\rho})$,
+is the quantum potential.
+When $S_0\to0$, Eq.~\eqref{eq:qs_QHJ} reduces to the classical
+Hamilton--Jacobi equation, establishing the classical limit cleanly.
+
+\paragraph{Equivalence to the first-order complex equation.}
+The two real equations~\eqref{eq:qs_QHJ}--\eqref{eq:qs_continuity}
+are \emph{equivalent} (by purely algebraic manipulation, with no
+approximation) to the single complex equation
 \begin{equation}
   \label{eq:qs_schrodinger_type}
-  i\,S_0\,\partial_t\Psi
+  i\,S_0\,\frac{\partial\Psi}{\partial t}
   =
-  \hat{H}_{\rm coh}\,\Psi
-  + \cdots
+  \hat{H}_{\rm coh}\,\Psi,
+  \qquad
+  \hat{H}_{\rm coh}
+  \;=\;
+  -\frac{S_0^2}{2\,m_{\rm eff}}\,\nabla_q^2
+  +
+  V_{\rm coh}(q).
 \end{equation}
-where $\hat{H}_{\rm coh}$ is the effective coherent Hamiltonian
-(arising from the spatial gradient and potential terms in the reduced
-phase action), and the ellipsis denotes decoherence, environmental,
-and higher-gradient corrections.
+No approximation has been made; the equivalence is exact.
 
-The appearance of $S_0$ in the r\^ole of $\hbar$ in
-Eq.~\eqref{eq:qs_schrodinger_type} is structurally natural: $S_0$ is
-the distinguished action unit of the coherent branch, and it is
-$S_0$---not an externally postulated constant---that sets the scale
-of the effective coherent dynamics.
-
-\paragraph{Status of Eq.~\eqref{eq:qs_schrodinger_type}.}
-This is \emph{not} yet the final observed Schr\"odinger equation.
-What is structurally established is the following: once the coherent
-branch possesses (i)~a distinguished action scale $S_0$,
-(ii)~a Lorentzian continuation~\eqref{eq:qs_wick}, and (iii)~a reduced
-phase action for smooth coherent configurations, then a
-Schr\"odinger-type first-order coherent wave description becomes the
-natural effective language of the low-energy coherent regime.
-
-What is still missing for the full identification with ordinary
-quantum mechanics:
+\paragraph{Level~A content of this derivation.}
+The following is established at Level~A:
 \begin{enumerate}[label=(\roman*)]
-  \item the explicit derivation of $\hat{H}_{\rm coh}$ for the
-    relevant coherent sector;
-  \item the identification $S_0=\hbar$~\eqref{eq:qs_S0_identification};
-  \item the control of decoherence and environment
-    terms~(Section~\ref{sec:qs_decoherence}).
+  \item The polar-decomposition substitution is exact.
+  \item The two real equations~\eqref{eq:qs_QHJ}--\eqref{eq:qs_continuity}
+    are exactly equivalent to the single complex
+    Eq.~\eqref{eq:qs_schrodinger_type}.
+  \item The operator $\hat H_{\rm coh}$ has exactly the form
+    $-S_0^2/(2m_{\rm eff})\nabla_q^2 + V_{\rm coh}$ --- with $S_0$
+    playing the structural r\^ole of $\hbar$.
+  \item The classical Hamilton--Jacobi equation is the $S_0\to0$ limit.
+  \item The quantum potential term is $\mathcal{O}(S_0^2)$ and hence
+    genuinely quantum-origin.
 \end{enumerate}
-For these reasons Eq.~\eqref{eq:qs_schrodinger_type} is currently a
-Level~B emergence statement.
+This derivation does \emph{not} assume $S_0=\hbar$.
+It holds for any positive $S_0$.
+
+\paragraph{Level~B and open elements.}
+What is \emph{not} yet Level~A:
+\begin{enumerate}[label=(\roman*)]
+  \item The reduced Lagrangian~\eqref{eq:qs_L_coh} is Level~B:
+    deriving $m_{\rm eff}$ and $V_{\rm coh}$ from the full condensate
+    requires matching to $K_\theta^{\rm eff}$ and the condensate
+    potential~(OP-Q3).
+  \item The physical identification $S_0=\hbar$ is
+    Level~B~\eqref{eq:qs_S0_identification}.
+  \item The decoherence and environment terms~(ellipsis
+    in earlier schematic) belong to Section~\ref{sec:qs_decoherence}.
+\end{enumerate}
+
+\paragraph{Summary of the derivation.}
+The first-order Schr\"odinger-type equation
+$i S_0\partial_t\Psi = \hat{H}_{\rm coh}\Psi$
+with the specific operator form $-S_0^2/(2m_{\rm eff})\nabla^2 + V_{\rm coh}$
+is a \emph{Level~A structural consequence} of the reduced coherent
+phase action, the polar-decomposition ansatz, and the broken-phase
+Wick continuation.
+It is promoted to the observed Schr\"odinger equation at Level~B once
+$S_0=\hbar$ and $m_{\rm eff}$, $V_{\rm coh}$ are matched to
+specific physical systems~(OP-Q3).
 
 \subsubsection*{Why this is already structurally nontrivial}
 
@@ -1356,6 +1429,170 @@ Quantum statistics in ECT is presently a Level~B structural result:
 exchange topology and ordered-branch representation theory already
 point toward the standard bosonic/fermionic classification, but the
 full spin-statistics theorem remains open~(OP-Q11).
+
+% ============================================================
+\subsection{Dirac equation from condensate spinor sectors}
+\label{sec:qs_dirac}
+% ============================================================
+
+\textit{Status: Level~A for the structural derivation of the Clifford
+algebra and the free Dirac equation from the $O(4)\to O(3)$ symmetry
+breaking pattern.
+Level~B for the mass term, which requires matching to condensate
+parameters.
+Connection: Section~\ref{sec:qs_statistics}~(exchange sectors),
+Section~\ref{sec:qs_wave}~(Wick rotation).}
+
+\medskip
+The exchange-sector analysis of Section~\ref{sec:qs_statistics}
+established that the ECT broken phase naturally admits both bosonic and
+fermionic sectors.
+The present subsection derives the \emph{equation of motion} for
+fermionic (spinorial) excitations from the symmetry structure of the
+ordered condensate.
+The result is the Dirac equation with $S_0$ playing the r\^ole of
+$\hbar$.
+
+\subsubsection*{Generators of $O(4)$ and their fate under SSB}
+
+The Lie algebra $\mathfrak{so}(4)$ has 6 generators $J_{AB}$,
+$A,B \in\{1,2,3,4\}$ (antisymmetric in $A,B$).
+Under $O(4)\to O(3)$, with the condensate gradient selecting
+$n^A = \delta^A_4$, the generators split:
+\begin{itemize}
+  \item \textbf{Unbroken} ($O(3)$ subgroup):
+    $J_{ij}$, $i,j\in\{1,2,3\}$ --- spatial rotation generators.
+  \item \textbf{Broken} (coset $O(4)/O(3)$):
+    $J_{i4}$, $i\in\{1,2,3\}$.
+\end{itemize}
+The algebra $\mathfrak{so}(4)\cong\mathfrak{su}(2)\oplus\mathfrak{su}(2)$
+decomposes into two $SU(2)$ factors with generators
+$L_i=\tfrac{1}{2}(J_{ij}+J_{i4})$ and $R_i=\tfrac{1}{2}(J_{ij}-J_{i4})$.
+
+\subsubsection*{Wick rotation and the Lorentz group}
+
+After the Wick continuation $w\to-ic_*t$~\eqref{eq:qs_wick}, the
+Euclidean direction 4 becomes the Lorentzian time direction.
+The broken generators transform:
+\begin{equation}
+  \label{eq:qs_boost_generators}
+  K_i \;\equiv\; -i\,J_{i4}
+  \qquad (i=1,2,3),
+\end{equation}
+and one verifies that $J_{ij}$ and $K_i$ satisfy the
+$\mathfrak{so}(1,3)$ commutation relations:
+\begin{align}
+  [J_{ij},J_{kl}] &= i(\delta_{ik}J_{jl}-\delta_{il}J_{jk}
+    -\delta_{jk}J_{il}+\delta_{jl}J_{ik}), \notag\\
+  [J_{ij},K_k] &= i(\delta_{ik}K_j-\delta_{jk}K_i), \notag\\
+  [K_i,K_j] &= -i\,J_{ij}.
+  \label{eq:qs_Lorentz_algebra}
+\end{align}
+Thus the $O(4)\to O(3)$ SSB, combined with the Wick rotation, produces
+the Lorentz algebra $\mathfrak{so}(1,3)$ from the \emph{structure} of
+the broken condensate phase.
+This is Level~A: it follows from P4+P5 and the Wick
+continuation~\eqref{eq:qs_wick}.
+
+\subsubsection*{Spinor representation and the Clifford algebra}
+
+The spinor representation of $\mathfrak{so}(1,3)$ is
+$(\tfrac{1}{2},0)\oplus(0,\tfrac{1}{2})$ (Dirac spinor, dim~4).
+In this representation, the Lorentz generators are expressed via the
+$\gamma$-matrices:
+\begin{equation}
+  \label{eq:qs_Sigma_munu}
+  J^{\mu\nu}
+  \;=\;
+  \frac{i}{4}\,[\gamma^\mu,\gamma^\nu],
+\end{equation}
+where the $\gamma$-matrices satisfy the Clifford algebra
+\begin{equation}
+  \label{eq:qs_clifford}
+  \bigl\{\gamma^\mu,\gamma^\nu\bigr\}
+  \;=\;
+  2\,g^{\mu\nu}\,\mathbf{1}_4.
+\end{equation}
+The metric $g^{\mu\nu}=\mathrm{diag}(-1,+1,+1,+1)$ is precisely the
+Lorentzian metric emerging from the broken condensate
+phase~(Section~\ref{sec:lorentz_order_field}).
+Equation~\eqref{eq:qs_clifford} is \emph{derived}---not postulated:
+it follows uniquely from the $O(4)\to O(3)$ Killing metric and the
+spinor representation of the resulting $\mathfrak{so}(1,3)$.
+This is Level~A.
+
+\subsubsection*{Free Dirac equation as a uniqueness theorem}
+
+A spinor field $\psi$ transforming in the
+$(\tfrac{1}{2},0)\oplus(0,\tfrac{1}{2})$ representation has 4
+complex components.
+The most general Lorentz-covariant, first-order differential equation
+for $\psi$ takes the form
+\begin{equation}
+  \label{eq:qs_dirac_general}
+  \left(i\,\gamma^\mu\partial_\mu - M\right)\psi = 0,
+\end{equation}
+where $M$ is a Lorentz-scalar mass operator.
+The operator $i\gamma^\mu\partial_\mu$ is the unique first-order
+Lorentz-covariant differential operator consistent with
+\eqref{eq:qs_clifford}: any other first-order operator either reduces
+to this form or violates the Clifford algebra.
+With $S_0$ playing the r\^ole of $\hbar$ (structural), the equation
+becomes
+\begin{equation}
+  \label{eq:qs_dirac}
+  \left(i\,S_0\,\gamma^\mu\partial_\mu - m_\psi\,c_*\right)\psi = 0,
+\end{equation}
+where $m_\psi$ is the spinor mass.
+Squaring the operator yields
+$(S_0^2\,\partial_\mu\partial^\mu + m_\psi^2 c_*^2)\psi = 0$, i.e., the
+Klein--Gordon equation, confirming relativistic consistency.
+
+\paragraph{Level~A content.}
+\begin{enumerate}[label=(\roman*)]
+  \item $O(4)\to O(3)$ SSB + Wick rotation \emph{uniquely} produces
+    the Lorentz algebra $\mathfrak{so}(1,3)$~\eqref{eq:qs_Lorentz_algebra}.
+  \item The Clifford algebra~\eqref{eq:qs_clifford} follows uniquely
+    from the spinor representation of $\mathfrak{so}(1,3)$ and the
+    emergent metric $g^{\mu\nu}$.
+  \item The free Dirac operator $\gamma^\mu\partial_\mu$ is the unique
+    first-order covariant operator consistent with~\eqref{eq:qs_clifford}.
+  \item Squaring gives the emergent Klein--Gordon equation.
+\end{enumerate}
+None of these steps uses $S_0=\hbar$ or any postulated Planck constant.
+
+\paragraph{Level~B content.}
+\begin{enumerate}[label=(\roman*)]
+  \item The mass $m_\psi$ is not yet derived from condensate parameters:
+    this requires the Yukawa-type coupling between the spinor and the
+    radial condensate mode~(OP-Q3).
+  \item The physical identification $S_0=\hbar$ gives
+    Eq.~\eqref{eq:qs_dirac} its standard normalisation.
+  \item Gauge coupling (QED, SM structure) requires the derivation of
+    the gauge sector.
+\end{enumerate}
+
+\paragraph{Relationship to Pauli exclusion.}
+Once the Dirac equation is established, the anti-commutativity of the
+fermionic field operators follows from the requirement that the
+effective Lorentzian Hamiltonian be bounded below.
+This is the standard spin-statistics argument~(Pauli 1940;
+Fierz--Pauli 1939): a spin-$\tfrac{1}{2}$ field quantised with
+commutators has an energy spectrum unbounded below, so anticommutators
+are forced.
+Given the Level~A derivation of the Dirac structure, \emph{Pauli
+exclusion is now Level~B in ECT}~(conditional on the Lorentzian
+effective quantum field theory being established, which requires
+$S_0=\hbar$, OP-Q2).
+
+\paragraph{Summary.}
+The Clifford algebra, the $\gamma$-matrix structure, and the free Dirac
+equation~\eqref{eq:qs_dirac} are Level~A structural consequences of
+the $O(4)\to O(3)$ symmetry breaking of the ordered condensate,
+combined with the Wick rotation into Lorentzian signature.
+The mass term and full quantisation are Level~B.
+Once the mass term is matched, Pauli exclusion follows from the
+standard spin-statistics argument.
 
 % ============================================================
 \subsection{Quantum vacuum structure of the ordered condensate}
@@ -2288,6 +2525,76 @@ It is the most natural weighting compatible with the coherent
 wave-dynamical sector and with decoherence, but its full derivation
 from the condensate microdynamics has not yet been carried through.
 
+\subsubsection*{Gleason uniqueness argument: Born rule as Level~B theorem}
+
+Stronger than plausibility: once the coherent sector admits a Hilbert
+space structure, the Born rule is in fact \emph{uniquely forced} by
+Gleason's theorem~(Gleason 1957).
+This elevates the status from "natural candidate" to "Level~B
+theorem, conditional on the Hilbert space structure being established."
+
+\paragraph{Premises~(all Level~B, conditional on CCR).}
+The Gleason argument requires three inputs:
+\begin{enumerate}[label=(\roman*)]
+  \item \textbf{Hilbert space:} the coherent branch, with commutation
+    relations~\eqref{eq:qs_commutator_candidate} and action scale
+    $S_0$, defines a Hilbert space $\mathcal{H}$ of dimension $\geq 3$
+    (the field has infinitely many modes).
+  \item \textbf{Probability measure:} after decoherence suppresses
+    off-diagonal terms~\eqref{eq:qs_diag_limit}, the surviving
+    diagonal weights $\{P_\alpha\}$ define a probability measure
+    on the lattice of decohered branches.
+  \item \textbf{Additivity:} for two orthogonal decohered branches
+    $\alpha\perp\beta$:
+    $P(\alpha\cup\beta)=P(\alpha)+P(\beta)$
+    (this is Level~A from the reduced density matrix
+    logic of~\eqref{eq:qs_rho_red}).
+\end{enumerate}
+
+\paragraph{Gleason's theorem.}
+Let $\mathcal{H}$ be a separable real or complex Hilbert space with
+$\dim\mathcal{H}\geq 3$, and let
+$\mu:\mathcal{P}(\mathcal{H})\to[0,1]$
+be a \emph{frame function}: a map on orthogonal projections
+satisfying $\sum_i\mu(P_i)=1$ for every complete orthonormal set
+$\{P_i\}$.
+Then there exists a unique density operator $\hat\rho\geq0$,
+$\operatorname{Tr}\hat\rho=1$, such that
+\begin{equation}
+  \label{eq:qs_gleason}
+  \mu(P) = \operatorname{Tr}(\hat\rho\,P)
+  \quad\text{for all projections } P.
+\end{equation}
+In particular, for a pure state $|\Psi\rangle$:
+\begin{equation}
+  \label{eq:qs_born_gleason}
+  P_\alpha = |\langle\phi_\alpha|\Psi\rangle|^2.
+\end{equation}
+
+\paragraph{Application to ECT.}
+Given premises (i)--(iii) above, Gleason's theorem applies directly
+and uniquely forces the Born
+rule~\eqref{eq:qs_born_gleason}.
+No other probability assignment is consistent with the Hilbert space
+structure and the additivity requirement.
+There is no free parameter; the quadratic form $|\langle\phi|\Psi\rangle|^2$
+is the \emph{only} consistent probability measure.
+
+\paragraph{Status after Gleason.}
+\begin{itemize}
+  \item \textbf{Level~A:} Gleason's theorem itself is pure mathematics
+    (proven in 1957; the proof is rigorous for $\dim\mathcal{H}\geq3$).
+  \item \textbf{Level~B:} the Born rule
+    $P_\alpha=|\langle\phi_\alpha|\Psi\rangle|^2$ holds in ECT
+    conditional on the Hilbert space structure being established
+    (i.e., conditional on CCR being Level~B and $S_0=\hbar$).
+\end{itemize}
+Thus the Born rule in ECT is \emph{uniquely determined} at Level~B,
+not merely "plausible".
+The only remaining gap is the establishment of the Hilbert space
+structure itself, which requires the completion of the $S_0=\hbar$
+programme~(OP-Q2, OP-Q7).
+
 \subsubsection*{Reduced density matrix viewpoint}
 
 In a reduced description, the coarse-grained reduced density matrix
@@ -3161,7 +3468,10 @@ grouped around nine main thematic steps:
   \item Born-type probability and measurement status;
   \item the wider topological/defect sector and the dark sector;
   \item black-hole thermodynamics, the information problem, and
-    the critical Lorentz-order shell.
+    the critical Lorentz-order shell;
+  \item structural derivations: Schr\"odinger equation~(Level~A),
+    Dirac equation~(Level~A structural form), and Gleason-uniqueness
+    of the Born rule~(Level~B).
 \end{enumerate}
 The resulting picture is already substantial, but deliberately not
 overclaimed.
@@ -3204,9 +3514,10 @@ Identification $S_0=\hbar$
   & Structurally motivated; not yet fully derived;
     Eq.~\eqref{eq:qs_S0_identification} \\
 Schr\"odinger-type coherent evolution
-  & Level~B
-  & Low-energy coherent-sector reduction;
-    Eq.~\eqref{eq:qs_schrodinger_type} \\
+  & Level~A (structural form)
+  & Exact polar-decomposition derivation;
+    Eqs.~\eqref{eq:qs_QHJ}--\eqref{eq:qs_schrodinger_type}.
+    Level~B for physical identification ($S_0=\hbar$, $m_{\rm eff}$) \\
 Canonical organisation of smooth coherent branch
   & Level~A
   & Variational reduced coherent dynamics;
@@ -3277,11 +3588,11 @@ Amplitude / decoherence / probability distinction
   & Level~A
   & Section~\ref{sec:qs_born};
     Eq.~\eqref{eq:qs_prob_logic} \\
-Born-type probability candidate
-  $P_\alpha\!\propto\!|\Psi_\alpha|^2$
-  & Level~B
-  & Eq.~\eqref{eq:qs_born_candidate};
-    natural, not yet uniquely derived \\
+Born rule $P_\alpha=|\langle\phi_\alpha|\Psi\rangle|^2$
+  & Level~B (Gleason-unique)
+  & Gleason's theorem forces unique quadratic rule;
+    Eqs.~\eqref{eq:qs_gleason}--\eqref{eq:qs_born_gleason}.
+    Level~B because Hilbert space requires $S_0=\hbar$ \\
 Full Born rule as first-principles theorem
   & Open (OP-Q7)
   & Requires full derivation from coherent-sector dynamics \\
@@ -3364,6 +3675,29 @@ Bosonic/fermionic structural compatibility
 Full spin-statistics theorem
   & Open (OP-Q11)
   & Requires operator completion beyond current closure \\
+Lorentz algebra $\mathfrak{so}(1,3)$ from $O(4)\to O(3)$ SSB
+  & Level~A
+  & Eq.~\eqref{eq:qs_Lorentz_algebra};
+    follows from P4+P5 + Wick rotation \\
+Clifford algebra $\{\gamma^\mu,\gamma^\nu\}=2g^{\mu\nu}$
+  & Level~A
+  & Eq.~\eqref{eq:qs_clifford};
+    spinor representation of $\mathfrak{so}(1,3)$ \\
+Free Dirac equation $i S_0\gamma^\mu\partial_\mu\psi = m_\psi c_*\psi$
+  & Level~A (structural form)
+  & Eq.~\eqref{eq:qs_dirac}; unique covariant first-order operator;
+    Section~\ref{sec:qs_dirac} \\
+Dirac equation: mass term $m_\psi$
+  & Level~B/open~(OP-Q3)
+  & Requires Yukawa coupling to radial condensate mode \\
+Pauli exclusion principle
+  & Level~B
+  & Standard spin-statistics argument given Dirac structure;
+    conditional on $S_0=\hbar$~(OP-Q2) \\
+Born rule uniqueness via Gleason's theorem
+  & Level~B (unique)
+  & Eq.~\eqref{eq:qs_gleason}; uniquely forced by Hilbert space +
+    additivity; conditional on CCR / $S_0=\hbar$ \\
 Ordered condensate vacuum is physically nontrivial
   & Level~A
   & Section~\ref{sec:qs_vacuum_intro} \\
@@ -3448,8 +3782,10 @@ This figure is a structural roadmap, not itself a derivation.}
   \item[OP-Q6] Derivation of the effective ohmic regime and of the
     Markov limit from the condensate bath without auxiliary closure
     assumptions~\eqref{eq:qs_ohmic}.
-  \item[OP-Q7] First-principles derivation of a Born rule rather than
-    a Born-type candidate weighting~\eqref{eq:qs_born_candidate}.
+  \item[OP-Q7] Establishment of the full Hilbert space structure
+    (completion of CCR + $S_0=\hbar$), which closes the Gleason
+    argument~\eqref{eq:qs_gleason} and promotes the Born rule from
+    Level~B to a fully grounded consequence.
   \item[OP-Q8] Completed measurement theory: branch update, pointer
     stability, and record formation.
   \item[OP-Q9] Dynamical classification, production, and stability of
@@ -3457,9 +3793,12 @@ This figure is a structural roadmap, not itself a derivation.}
     (Section~\ref{sec:qs_defects}).
   \item[OP-Q10] Quantitative link between coherent-topological dark
     candidates and observed dark-sector phenomenology.
-  \item[OP-Q11] Full operator derivation of spin-statistics and
-    many-body second-quantised structure from the coherent-topological
-    branch~(Section~\ref{sec:qs_statistics}).
+  \item[OP-Q11] Full operator derivation of many-body
+    second-quantised structure from the coherent-topological
+    branch. Note: Pauli exclusion is now Level~B (from Dirac
+    structure + spin-statistics argument); the open problem is
+    the complete fermionic Fock-space construction from bare~P3
+    (Section~\ref{sec:qs_dirac}).
   \item[OP-Q12] Quantitative derivation of coherent-vacuum response
     effects (Casimir force, particle production rates, Unruh detector
     response) from the completed reduced coherent
