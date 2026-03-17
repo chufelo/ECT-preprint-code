@@ -234,10 +234,10 @@ The present section proceeds in the following order:
   \item \textbf{Influence functional, decoherence, and the
     arrow of time}
     (Section~\ref{sec:qs_decoherence}):
-    development of Section~\ref{sec:arrow_of_time} and
-    Appendix~\ref{app:ohmic_markov};
-    causal kernel, entropy growth, Ohmic/Markov assumptions,
-    classical/quantum split.
+    reduced-state decoherence, low-entropy coherent initial sector,
+    qualitative entropy monotonicity~\eqref{eq:qs_entropy_monotone},
+    the $N_{\rm eff}\gg1$ versus $N_{\rm eff}\sim1$ distinction,
+    and the emergence of classical alternatives from coherent dynamics.
   \item \textbf{Probability, Born-type interpretation, and
     measurement status}
     (Section~\ref{sec:qs_born}):
@@ -1731,10 +1731,27 @@ to the smooth coherent topological sector.
 Together with the non-tachyonic quadratic spectrum, this strongly
 motivates a highly ordered low-entropy initial coherent sector.
 
+\paragraph{Structure of the initial sector.}
+The key point is not that vanishing initial entropy has already been
+derived as a theorem from bare~P3.
+Rather, the ordered condensate together with the coherent-topological
+restriction strongly motivates an initially low-entropy sector:
+\begin{enumerate}[label=(\roman*)]
+  \item the ordered branch selects a non-generic vacuum structure;
+  \item the coherent sector restricts attention to phase-correlated
+    configurations rather than arbitrary mixtures;
+  \item the quadratic fluctuation spectrum is non-tachyonic, so this
+    sector is dynamically viable.
+\end{enumerate}
+The natural QS starting point is therefore not a maximally disordered
+state but a highly ordered coherent one---exactly the initial condition
+needed for an emergent arrow of time.
+
 \paragraph{Status.}
-This is a Level~B statement, physically well motivated by the ECT
-postulate structure but not yet given a full reduced-density-matrix
-derivation.
+The existence of an ordered coherent sector is structural~(Level~A).
+Its interpretation as a low-entropy initial condition is Level~B:
+strongly motivated by P4--P5 and the ordered vacuum, but not yet a
+first-principles microscopic entropy theorem.
 
 \subsubsection*{Positive spectral density and dissipative kernel}
 
@@ -1813,6 +1830,18 @@ It is not yet the final microscopic theorem for the full nonlinear
 coherent branch, but it is an internally motivated result of the
 ordered condensate framework.
 
+\paragraph{Why this is enough.}
+This is already sufficient for the physical arrow of time.
+The second law in practice is not a statement about fundamental
+microscopic asymmetry of the bare action, but about the directed
+irreversible behaviour of suitable reduced macroscopic sectors.
+
+\paragraph{Status.}
+The causal-kernel ingredient is Level~A in the quadratic broken-phase
+sector~(\eqref{eq:qs_retarded_zero} and~\eqref{eq:qs_rho_positive}).
+The full monotonicity statement remains Level~B: it depends on the
+effective reduced-state assumptions and on the bath closure.
+
 \subsubsection*{Working explicit entropy formula}
 
 If the effective ohmic and Markov
@@ -1834,6 +1863,16 @@ ECT-specific content is that $S_0$ (not postulated $\hbar$) controls
 the normalisation in~\eqref{eq:qs_influence}, and that the bath
 is the unresolved condensate itself.
 
+\paragraph{Role of the explicit formula.}
+Equation~\eqref{eq:qs_entropy_explicit} is not a universal entropy law.
+Its rôle is to give the more explicit closure-level version of the
+qualitative monotonicity statement~\eqref{eq:qs_entropy_monotone}:
+once the ohmic/Markov assumptions are granted, entropy production
+acquires a definite sign and a concrete rate.
+The formula should therefore be read as a quantitative working form
+within the Level~B closure, not as a first-principles derivation of
+the arrow of time.
+
 \subsubsection*{Macroscopic irreversibility versus quantum exception}
 
 A key internal consistency check is that irreversibility is not
@@ -1850,6 +1889,20 @@ This is exactly what one wants: ECT does not destroy reversibility at
 the fundamental level.
 It explains why reversibility survives for small coherent sectors and
 why it fails effectively for macroscopic ones.
+
+\paragraph{Interpretive consequence.}
+This resolves a potential tension: ECT can support a macroscopic arrow
+of time and still allow genuinely quantum behaviour in carefully isolated
+systems.
+Decoherence strength depends on how many external channels effectively
+monitor the coherent subsystem.
+The theory therefore does not collapse all dynamics into classicality.
+
+\paragraph{Status.}
+The regime distinction is Level~B.
+Its qualitative form is strongly supported by the influence-functional
+logic, but a full quantitative interpolation between $N_{\rm eff}\sim1$
+and $N_{\rm eff}\gg1$ remains open~(OP-Q15).
 
 \subsubsection*{Status summary}
 
@@ -1878,6 +1931,15 @@ why it fails effectively for macroscopic ones.
 Once decoherence suppresses off-diagonal coherent contributions in
 macroscopic sectors, the next question is how effective probability
 weights emerge and whether they admit a Born-type interpretation.
+The logical chain is now complete at the structural level:
+coherent amplitudes define the underlying dynamics;
+environment tracing produces reduced decoherence;
+reduced decoherence generates effective classical alternatives;
+and only then does a Born-type probabilistic interpretation become
+physically appropriate.
+Thus probability in ECT is not more primitive than coherence.
+It is a reduced-description outcome of coherent dynamics plus
+environmental selection.
 That question belongs to Section~\ref{sec:qs_born}.
 
 \paragraph{Summary.}
@@ -2768,6 +2830,9 @@ be parameterised as
 where $\delta_G(E)$ is an energy-dependent correction arising from the
 coherent-sector EFT near the shell; its form is not yet derived from
 bare~P3.
+Here $\delta_G(E)$ is a phenomenological shell-scale correction;
+its explicit functional form is not yet derived from bare~P3 and
+should be treated as a Level~B strong-field parameterisation.
 Equations~\eqref{eq:qs_bh_dispersion}--\eqref{eq:qs_bh_Geff} are
 Level~B parameterisations, not first-principles predictions.
 
@@ -2960,6 +3025,24 @@ Macroscopic irreversibility ($N_{\rm eff}\!\gg\!1$)
 Near-reversible coherent dynamics ($N_{\rm eff}\!\sim\!1$)
   & Level~B
   & Same decoherence logic; quantum exception regime \\
+Low-entropy coherent initial sector
+  & Level~B
+  & Section~\ref{sec:qs_decoherence};
+    motivated by ordered-branch initial condition \\
+Qualitative monotonicity $dS_{\rm irr}/dw\ge0$
+  & Level~B
+  & Eq.~\eqref{eq:qs_entropy_monotone};
+    reduced macroscopic dynamics \\
+Macroscopic/classical regime ($N_{\rm eff}\gg1$)
+  & Level~B
+  & Section~\ref{sec:qs_decoherence} \\
+Quantum-coherent exception ($N_{\rm eff}\sim1$)
+  & Level~B
+  & Section~\ref{sec:qs_decoherence} \\
+Explicit entropy production~\eqref{eq:qs_entropy_explicit}
+  & Level~B
+  & Ohmic/Markov closure;
+    Eq.~\eqref{eq:qs_entropy_explicit} \\
 Amplitude / decoherence / probability distinction
   & Level~A
   & Section~\ref{sec:qs_born};
@@ -3156,6 +3239,11 @@ This figure is a structural roadmap, not itself a derivation.}
     the completed critical-shell dynamics;
     fixing the closure parameters $\eta_1,\eta_2$ in
     Eq.~\eqref{eq:qs_bh_dispersion} from first principles.
+  \item[OP-Q15] Quantitative interpolation between the weakly
+    monitored quantum-coherent regime $N_{\rm eff}\sim1$ and the
+    strongly monitored macroscopic regime $N_{\rm eff}\gg1$,
+    including a first-principles derivation of the effective bath
+    structure beyond the simple ohmic/Markov closure.
 \end{description}
 
 \paragraph{What has been achieved.}
