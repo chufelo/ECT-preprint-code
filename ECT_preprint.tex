@@ -8551,14 +8551,33 @@ The derivation is given in Appendix~\ref{app:deff_method}.
 For the ECT closure function
 $\mu(x) = x/\sqrt{1+x^2}$ one finds
 $d\ln\mu/d\ln x = 1/(1+x^2)$, and therefore
-iverse_size}
+\begin{equation}
+\boxed{
+d_{\rm force}(x)
+=
+1 + 2\,\frac{1+x^2}{2+x^2}
+}
+\label{eq:dforce_closed}
+\end{equation}
+for a point-mass Newtonian source $p_N=2$.
+Thus:
+\begin{itemize}
+  \item in the screened Newtonian regime $x\gg1$:
+    $d_{\rm force}\to 3$, corresponding to $g\propto 1/r^2$;
+  \item in the deep critical regime $x\ll1$:
+    $d_{\rm force}\to 2$, corresponding to $g\propto 1/r$
+    and asymptotically flat rotation curves;
+  \item at the transition point $x=1$:
+    $d_{\rm force}(1)=1+\tfrac{4}{3}=\tfrac{7}{3}\approx2.33$.
+\end{itemize}
 
-\textit{Status: Level~B (ECT-inspired cosmological scenario).
-The discussion below concerns a possible large-scale completion
-of the macroscopic closure in which the ordered Lorentzian domain
-is finite and may be embedded in a pre-Lorentzian Euclidean regime.
-This is a structurally motivated scenario, not a first-principles
-theorem from bare~P3~(OP3).}
+This force-law dimensionality is a macroscopic closure diagnostic
+(Level~B), not a theorem about the microscopic topological dimension
+of the arena.  It measures how the effective gravitational response
+interpolates between Newtonian and critical-branch behaviour.
+
+
+
 
 \paragraph{Size of the ECT domain.}
 
@@ -9900,8 +9919,32 @@ condensate-based route to a lensing--gas offset
 without relying on the standard particle-dark-matter
 interpretation~(Level~B qualitative scenario; OP22).
 
-
-
+\begin{table}[h]
+\centering
+\small
+\caption{Bullet Cluster: ECT $\phi$-closure amplitude results
+(Level~B; spherical $\beta$-model approximation).
+Baryonic profile: isothermal $\beta$-model gas
+($M_{\rm gas}\approx 1.2\times10^{14}\,M_\odot$)
+plus compact stellar component
+($M_\star\approx 8\times10^{12}\,M_\odot$).
+The algebraic $\phi$-closure is used as a proxy for the full
+field solution; a factor $\sim\!2$ systematic uncertainty is
+inherent in the spherical approximation~(OP22).
+Code: \url{https://github.com/chufelo/ECT-preprint-code}.}
+\label{tab:bullet_results}
+\begin{tabular}{rccccc}
+\toprule
+$R$ (kpc) & $M_{\rm bar}(<R)$ ($M_\odot$) & $g_{\rm bar}/g_\dagger$ &
+  $\mu_\phi$ & $M_{\rm ECT}$ ($M_\odot$) & $M_{\rm ECT}/M_{\rm obs}$ \\
+\midrule
+250  & $8.7\times10^{13}$ & 1.6  & 1.14 & $9.9\times10^{13}$  & 0.45 \\
+500  & $1.2\times10^{14}$ & 0.56 & 1.53 & $1.9\times10^{14}$  & 0.37 \\
+1000 & $1.3\times10^{14}$ & 0.15 & 2.70 & $3.4\times10^{14}$  & 0.34 \\
+1500 & $1.3\times10^{14}$ & 0.07 & 3.96 & $5.1\times10^{14}$  & 0.34 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -11930,13 +11973,13 @@ D14 & Full non-linear Einstein eqs.\ (anisotropic curv.\ term); $\phi$-first sca
 D15 & Causality of $K(\tau)$ from ECT & B & Structural: forward light cone of ECT metric; non-circular derivation from bare action not completed & 4, \ref{sec:open_problems} \\
 D16 & SM gauge group from O(4) & C & Embedded, not derived & 7, \ref{sec:open_problems} \\
 D17 & Second law $dS/dw\geq0$ (effective Gaussian--Markov result, ordered branch) & B & Gaussian--Markov approx.\ + structural initial condition; not derived from bare action (OP24) & \ref{sec:quantum}, \ref{sec:open_problems} \\
-D18 & Universe domain size $R_{\rm domain}=R_H e^{N_e}$ & A & --- & \ref{sec:universe_size} \\
+D18 & Universe domain size $R_{\rm domain}=R_H e^{N_e}$ & B & ECT-inspired cosmological closure scenario~(OP3) & \ref{sec:universe_size} \\
 D19 & $S_{\rm loop,min}=2\pi\hbar$ from phase quantisation & B & Single-valuedness of $\theta$ & \ref{sec:consistency_relations} \\
 D20 & $\beta$ param.: general $c_*=\sqrt{\beta/(\alpha-\beta)}$ & A & --- & \ref{sec:ssb} \\
 D21 & Casimir: $(F/A)_{\rm ECT}=3/2\,(F/A)_{\rm QED}$ (3 Goldstone, \emph{condensate boundaries only}) & B & Dirichlet b.c.\ on Goldstone; not applicable to standard metal plates & \ref{sec:casimir} \\
 D22 & Unruh $T_U=\hbar a/(2\pi c_* k_B)$ from Euclidean correlator & A & --- & \ref{sec:unruh} \\
 D23 & Cosm.\ particle production; Bogoliubov $n_s=0.967$ & B & Slow-roll, $N_e=60$ & \ref{sec:mp_cosmo} \\
-D24 & Vacuum stiffness: $\bar M_{\rm Pl}^2\stackrel{\rm id}{=}v_0^2(\alpha{-}\beta)$ & B & Consistency identification (matching $G_N$); non-circular microscopic derivation open (OP-$\Lambda$) & \ref{sec:vacuum_stiffness} \\
+D24 & Gravitational stiffness matching: $G_N=c_*^4/(8\pi M_G^2)$; direct microscopic relation to ordered-branch parameters remains open & B & Geometric EFT matching; explicit $(u_0,\alpha,\beta)\to M_G$ derivation open~(OP2, OP3) & \ref{sec:mp_matching} \\
 D25 & Universal near-horizon critical scale $\rho_c=\ell_{\rm Pl}/\sqrt{3\pi}$ & B & Tolman temperature as control parameter (C2b, open) & \ref{sec:critical_shell} \\
 D26 & Conditional theorem: exact thermality excluded given finite-entropy shell + complete evaporation & B & Unitarity (natural) + finite shell + no infinite remnant & \ref{sec:no_exact_thermality} \\
 D27 & Shell-state dependence of Hawking channel: derived consequence of D26, not assumption & B & Conditions of D26 & \ref{app:conditional_theorem} \\
