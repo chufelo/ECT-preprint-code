@@ -299,6 +299,15 @@ a controlled framework for wave dynamics, decoherence,
 probability, and topological dark-sector physics.
 All results carry explicit Level~A/B/C markers.
 
+The gain of the new postulate structure is not that it automatically
+turns all quantum laws into unconditional Level~A theorems.
+Its real gain is subtler: it sharpens the structural logic of the
+Quantum Sector, removes earlier overclaims, excludes some
+interpretations that were previously left open, and upgrades several
+heuristic claims into stronger conditional statements.
+The framework distinguishes clearly between structural emergence,
+effective closure, and still-open microscopic completion.
+
 % ============================================================
 \subsection{Coherent phase dynamics and loop sectors}
 \label{sec:qs_phase_dynamics}
@@ -1848,12 +1857,8 @@ This is a structural interpretation map, not a quantitative derivation.}
 \label{fig:qs_vacuum_unified}
 \end{figure}
 
-% INTEGRATION NOTE (sec:qs_vacuum_unified):
-% add future appendix label app:qs_vacuum_response with:
-% - unified coherent-vacuum response logic,
-% - boundary / time-dependent / accelerated / horizon probes,
-% - relation between Casimir, particle production, Unruh, and
-%   horizon thermality within one ordered-vacuum framework.
+For a detailed discussion of the unified vacuum-response logic,
+see Appendix~\ref{app:qs_vacuum_response}.
 
 % ============================================================
 \subsection{Summary of coherent-vacuum predictions}
@@ -2287,13 +2292,8 @@ effective bath analysis of Appendix~\ref{app:ohmic_markov}.
   \item a full nonlinear entropy theorem for all coherent sectors.
 \end{enumerate}
 
-% INTEGRATION NOTE (sec:qs_decoherence):
-% add future appendix label app:qs_bath_regimes with:
-% - effective spectral-density hierarchy,
-% - transition between N_eff ~ 1 and N_eff >> 1,
-% - scope and limitations of the ohmic/Markov closure,
-% - relation of Eq.~\eqref{eq:qs_entropy_explicit} to the
-%   qualitative monotonicity discussion.
+For the effective spectral-density hierarchy and the scope of the
+ohmic/Markov closure, see Appendix~\ref{app:qs_bath_regimes}.
 
 \subsubsection*{Bridge to probability and Born-type interpretation}
 
@@ -3300,13 +3300,9 @@ The paradox is not fully solved, but its logically strongest
 branch---that information is fundamentally destroyed---is ruled
 out within the ECT framework.
 
-% INTEGRATION NOTE (sec:qs_black_holes):
-% After integration into ECT_preprint.tex, add:
-% \appendix-style section app:bh_reduced_thermality with:
-% - explicit H_total decomposition, reduced density matrix logic,
-% - thermal rho_ext compatible with global purity derivation,
-% - schematic Page-curve discussion.
-% Then reference it here with Appendix~\ref{app:bh_reduced_thermality}.
+For a more explicit derivational sketch of the reduced-thermality logic,
+the Hilbert-space factorisation, and the Page-curve discussion,
+see Appendix~\ref{app:bh_reduced_thermality}.
 
 \paragraph{Summary.}
 Black-hole thermodynamics in ECT belongs to the Quantum Sector because
@@ -3491,7 +3487,8 @@ Reduced-state thermality $\neq$ fundamental information loss
   & Level~A
   & General QS reduced-state logic;
     Eq.~\eqref{eq:qs_rho_ext} \\
-Fundamental non-unitary information destruction excluded
+Fundamental non-unitary information destruction incompatible
+  with the ECT postulate structure
   & Level~A
   & P2 + reduced-state logic; Section~\ref{sec:qs_black_holes} \\
 Critical Lorentz-order shell near the horizon
@@ -3736,6 +3733,19 @@ The present section develops the phase-sensitive coherent branch.
 Later comparison and outlook sections can therefore assess ECT as a
 two-branch theory with one common ordered-condensate foundation.
 
+\paragraph{What ECT does and does not establish in the Quantum Sector.}
+The Quantum Sector of ECT should not be read as a complete derivation
+of all standard quantum laws from the bare postulates.
+Its present strength lies elsewhere: it organises the
+coherent-topological branch into a unified structure, clarifies which
+results are already structural, which are closure-dependent, and which
+remain open, and substantially narrows the space of admissible
+interpretations.
+In several places the gain is not a full derivation, but a strong
+exclusion result: some options that would remain logically possible
+in a looser framework are no longer compatible with ECT once its
+postulate structure is taken seriously.
+
 \paragraph{Summary.}
 The Quantum Sector is now structurally complete enough to stand beside
 Macroscopic Physics as the second major developed branch of ECT.
@@ -3743,3 +3753,240 @@ It is not yet finished in the strongest first-principles sense, but it
 is already sufficiently articulated, internally organised, and
 self-critical to support the later comparison, prediction, and outlook
 sections of the paper.
+
+% ============================================================
+% QS APPENDICES
+% ============================================================
+
+% ============================================================
+\section{Bath regimes, effective spectral structure, and the limits
+of the ohmic/Markov closure}
+\label{app:qs_bath_regimes}
+% ============================================================
+
+\textit{Status: Level~A for the general subsystem--environment reduced-state
+logic; Level~B for the specific ohmic/Markov closure used in the main text.
+Open~(OP-Q15): quantitative interpolation between the two bath regimes.}
+
+\medskip
+This appendix clarifies the status of the effective bath description used
+in Section~\ref{sec:qs_decoherence}.
+The main text employs a reduced influence-functional language in which a
+subsystem of coherent variables interacts with an effective environment.
+This is structurally natural in ECT once one coarse-grains over
+inaccessible coherent and topological degrees of freedom, but the detailed
+bath model remains an effective closure rather than a first-principles
+theorem from bare~P3.
+
+\subsection*{Effective spectral density}
+
+The central quantity is the effective spectral density $J(\omega)$,
+which determines dissipation and noise kernels in the reduced dynamics.
+In the simplest closure one assumes a smooth positive spectral density
+and, in the many-mode regime, an effectively Markovian coarse-grained
+behaviour.
+For a three-dimensional Goldstone-like environment a super-ohmic scaling
+$J(\omega)\propto\omega^4$ is structurally natural~(Level~A from the
+geometry of the mode density).
+What is Level~B is the specific low-frequency closure used in the main
+text, including the effective ohmic/Markov approximation and the
+corresponding explicit entropy-growth formula~\eqref{eq:qs_entropy_explicit}.
+
+\subsection*{Two regimes}
+
+Two regimes must be kept distinct:
+
+\paragraph{Strong bath: $N_{\rm eff}\gg 1$.}
+When the effective number of active environmental modes is large, the
+subsystem experiences strong phase randomisation and approximately
+monotone growth of coarse-grained entropy.
+Classical alternatives emerge effectively and the reduced-state
+description becomes macroscopically robust.
+This regime supports the macroscopic arrow of time in
+Section~\ref{sec:qs_decoherence}.
+
+\paragraph{Weak bath: $N_{\rm eff}\sim 1$.}
+When only very few effective environmental channels are active, coherent
+recurrences, partial reversibility, and incomplete decoherence remain
+possible.
+This is the regime in which the subsystem retains recognisably quantum
+behaviour~(Section~\ref{sec:qs_decoherence}).
+
+\begin{table}[h]
+\centering\small
+\renewcommand{\arraystretch}{1.3}
+\caption{Bath regime summary.}
+\label{tab:bath_regimes}
+\begin{tabular}{p{2.8cm}p{4.0cm}p{3.5cm}p{2.5cm}}
+\hline\hline
+Regime & Effective condition & Behaviour & Status \\
+\hline
+Weak bath & $N_{\rm eff}\sim 1$ & recoherence / partial reversibility possible
+  & Level~A (structural) \\
+Strong bath & $N_{\rm eff}\gg 1$ & robust decoherence / entropy growth
+  & Level~A (structural) \\
+Ohmic/Markov law & closure-specific & working formula for $dS/dw$
+  & Level~B \\
+\hline\hline
+\end{tabular}
+\end{table}
+
+\subsection*{Open problem}
+
+The open problem is not whether subsystem--environment logic exists in
+ECT --- it does --- but how to derive the detailed spectral hierarchy of
+bath sectors directly from the coherent-topological microstructure of the
+condensate.
+That quantitative interpolation between the two regimes is part of
+OP-Q15.
+
+% ============================================================
+\section{Unified vacuum-response logic: boundaries, acceleration,
+time dependence, and horizons}
+\label{app:qs_vacuum_response}
+% ============================================================
+
+\textit{Status: Level~B for the unified interpretive closure.
+Level~A for the structural statement that the ordered vacuum supports
+nontrivial coherent correlators.
+Open~(OP-Q12): quantitative derivation of all four effects from the
+completed reduced coherent EFT.}
+
+\medskip
+The four effects discussed in
+Sections~\ref{sec:qs_casimir}--\ref{sec:qs_unruh}
+and~\ref{sec:qs_black_holes}---Casimir-type boundary response, particle
+production in time-dependent backgrounds, Unruh-type thermality, and
+Hawking-type horizon thermality---should be understood in ECT as
+different probes of the same ordered coherent vacuum, not as four
+unrelated phenomena.
+
+\subsection*{The unifying logic}
+
+In each case the physical question is how the coherent vacuum responds
+when one changes the accessibility structure of coherent modes:
+\begin{enumerate}[label=(\roman*)]
+  \item \textbf{Boundary problems:} part of the mode spectrum is
+    excluded geometrically; the vacuum response appears as a
+    boundary-dependent shift in effective energy~(Casimir-type).
+  \item \textbf{Time-dependent backgrounds:} mode definitions at early
+    and late times no longer coincide; the mismatch appears as
+    Bogoliubov-type particle production.
+  \item \textbf{Accelerated observers:} kinematic access to the coherent
+    vacuum is restricted observer-dependently; the reduced state takes
+    an approximately thermal form~(Unruh-type).
+  \item \textbf{Horizons:} division into exterior, shell, and inaccessible
+    sectors yields reduced-state thermality without requiring the global
+    state to be mixed~(Hawking-type).
+\end{enumerate}
+
+\subsection*{What is and is not claimed}
+
+ECT does not treat these effects as independent axioms of vacuum physics.
+It treats them as different manifestations of one ordered coherent vacuum
+under different restrictions on mode accessibility and coarse-graining.
+
+This appendix does not elevate the quantitative formulas of all four
+effects to Level~A.
+The precise temperatures, spectra, and amplitudes remain
+closure-dependent in several places.
+What it does support at a stronger structural level is the unified
+interpretation: the ordered coherent vacuum is the common object being
+probed in all four cases.
+
+\subsection*{Analogue-gravity connection}
+
+In this sense the analogue-gravity perspective is not merely illustrative
+in ECT.
+It is conceptually aligned with the coherent-topological branch:
+thermality need not signal fundamental microscopic randomness, but can
+arise from reduced access to an ordered underlying medium.
+This is a Level~B interpretive closure~(Section~\ref{sec:qs_vacuum_unified}).
+
+% ============================================================
+\section{Reduced thermality, generalized entropy, and the
+black-hole information problem}
+\label{app:bh_reduced_thermality}
+% ============================================================
+
+\textit{Status: Level~A for the structural negative result (fundamental
+information destruction incompatible with ECT).
+Level~B for the shell/interface closure and the generalized entropy
+bookkeeping.
+Open~(OP-Q13): explicit shell dynamics, Page curve, and purification
+mechanism.}
+
+\medskip
+This appendix clarifies the precise status of the black-hole discussion
+in Section~\ref{sec:qs_black_holes}.
+The central point is not that the full black-hole information problem
+has been solved dynamically.
+The central point is more limited and more secure: reduced-state
+thermality does not imply fundamental destruction of information.
+
+\subsection*{Hilbert-space factorisation}
+
+In the ECT framework the relevant Hilbert-space decomposition is
+organised schematically as
+\begin{equation}
+  \label{eq:app_H_total}
+  \mathcal{H}_{\rm total}
+  =
+  \mathcal{H}_{\rm ext}
+  \otimes
+  \mathcal{H}_{\rm shell}
+  \otimes
+  \mathcal{H}_{\rm int},
+\end{equation}
+the same decomposition as~\eqref{eq:qs_H_total}.
+The state seen by an exterior observer is obtained by tracing over
+inaccessible sectors:
+\begin{equation}
+  \label{eq:app_rho_ext}
+  \rho_{\rm ext}
+  =
+  \mathrm{Tr}_{{\rm shell,int}}
+  \bigl(|\Psi_{\rm total}\rangle\langle\Psi_{\rm total}|\bigr).
+\end{equation}
+Such a reduced state may be approximately thermal even when the global
+state remains pure.
+
+\subsection*{Level~A negative result}
+
+ECT strengthens this observation by embedding it into a theory whose
+coherent structure is globally unitary by construction (P2).
+For that reason, genuine non-unitary destruction of information is not
+one admissible resolution among many; it is incompatible with the
+postulate structure of the theory.
+
+\subsection*{Generalized entropy and the Page problem}
+
+The appropriate entropy variable for the exterior observer is the
+generalised entropy~\eqref{eq:qs_generalized_entropy}:
+\[
+  S_{\rm gen}
+  = S_{\rm BH} + S_{\rm ext}^{\rm coarse},
+\]
+rather than the Bekenstein--Hawking term alone.
+
+ECT supports the structural plausibility of a Page-curve-type evolution,
+because approximate thermality and hidden correlations are not mutually
+exclusive in reduced-state language.
+However, the explicit Page curve remains open: it requires a completed
+strong-field shell closure and a quantitative evolution law for
+$S_{\rm gen}$~(OP-Q13).
+
+\subsection*{Summary of what is established}
+
+\begin{enumerate}[label=(\roman*)]
+  \item Apparent exterior thermality is structurally compatible with
+    global purity~(Level~A; reduced-state logic).
+  \item Fundamental information destruction is incompatible with
+    ECT~(Level~A; from P2).
+  \item The detailed purification mechanism is still an open strong-field
+    problem~(Open; OP-Q13).
+\end{enumerate}
+
+ECT weakens the traditional information paradox substantially---one
+branch of resolution is excluded---but does not yet eliminate the need
+for a completed strong-field dynamical model.
