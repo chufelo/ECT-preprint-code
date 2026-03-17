@@ -2394,6 +2394,45 @@ they can be written in the equivalent ECT form
 This rewriting is Level~B since it depends on the final
 $S_0=\hbar$ identification~\eqref{eq:qs_S0_identification}.
 
+\subsubsection*{First law and generalized entropy bookkeeping}
+
+At the effective thermodynamic level, the horizon sector should also
+satisfy the first-law structure
+\begin{equation}
+  \label{eq:qs_BH_first_law}
+  dM = T_H\,dS_{BH} + \Omega_H\,dJ + \Phi_H\,dQ,
+\end{equation}
+where the angular-momentum and charge terms are included for generality.
+Within ECT this equation is an effective consistency target, not a
+first-principles derivation from bare~P3~(Level~B).
+
+The important conceptual point is the entropy bookkeeping.
+The relevant entropy for the information problem is not the horizon
+entropy alone, but the \emph{generalized} coarse-grained entropy of the
+external description:
+\begin{equation}
+  \label{eq:qs_generalized_entropy}
+  S_{\rm gen}
+  = S_{BH} + S_{\rm ext}^{\rm coarse},
+\end{equation}
+where $S_{\rm ext}^{\rm coarse}$ is the coarse-grained entropy of the
+outside radiation sector.
+In ECT this is the natural quantity because the external observer never
+has access to the full condensate state
+$\mathcal{H}_{\rm total}$~\eqref{eq:qs_H_total}.
+
+Thus the correct thermodynamic question is not whether $S_{BH}$ alone
+changes, but whether the external coarse-grained description evolves
+consistently once horizon, shell, and radiation sectors are treated
+together.
+
+\paragraph{Status.}
+Equation~\eqref{eq:qs_BH_first_law} is a Level~B effective target.
+Equation~\eqref{eq:qs_generalized_entropy} is the natural ECT entropy
+bookkeeping variable for the reduced observer.
+Its exact dynamical evolution in the completed evaporation problem
+remains open~(OP-Q13).
+
 \subsubsection*{The paradox in brief}
 
 The information paradox arises from three apparently simultaneous
@@ -2536,6 +2575,36 @@ a reduced state:
 A reduced state of this form can be approximately thermal even when
 the total state remains pure and the total evolution remains unitary.
 
+\subsubsection*{Page-curve logic in ECT language}
+
+A useful way to formulate the information problem operationally is through
+the Page-curve question: does the entropy of the outgoing radiation
+continue to rise until the end of evaporation, or does it eventually turn
+over as required by global unitarity?
+
+In ECT the sharpest current statement is structural.
+If the total ordered-condensate evolution remains unitary on
+$\mathcal{H}_{\rm total}$~\eqref{eq:qs_H_total}, then the radiation
+entropy seen by the external observer is the entanglement entropy of a
+reduced sector, not a fundamental entropy of the full state.
+Therefore a Page-like turnover is not forbidden in principle.
+On the contrary, it is the behaviour one should expect once the shell and
+interior bookkeeping are treated consistently
+(see~\eqref{eq:qs_generalized_entropy}).
+
+What is still missing is the explicit strong-field evolution law needed to
+compute a concrete Page curve from the ECT shell dynamics:
+\begin{itemize}
+  \item the \emph{possibility} of Page-curve-compatible unitary
+    evaporation is structurally supported~(Level~B);
+  \item the \emph{explicit Page curve} is still open~(OP-Q13).
+\end{itemize}
+
+\paragraph{Summary.}
+ECT already changes the logic of the Page problem: the radiation entropy
+is that of a reduced observer sector, so its apparent thermality does not
+by itself imply the destruction of the full coherent-state information.
+
 \subsubsection*{Why this already weakens the paradox structurally}
 
 This point is stronger than a phenomenological analogy.
@@ -2560,7 +2629,7 @@ The strongest honest statement currently available is the following
 conditional result.
 
 \begin{quote}
-\textbf{Conditional theorem (ECT horizon thermality, Level~A/B).}
+\textbf{Conditional theorem (ECT horizon thermality).}
 If the total ordered-condensate evolution across
 $\mathcal{H}_{\rm total}$ remains unitary, and if the near-horizon
 critical shell acts as an effective environment for the exterior
@@ -2578,6 +2647,27 @@ Status:
   \item \textbf{Level~B}: the specific critical Lorentz-order shell
     closure used to realise this logic for a black-hole horizon.
 \end{itemize}
+
+\subsubsection*{Why the paradox is weaker in ECT than in semiclassical gravity}
+
+The information problem appears especially sharp in frameworks that assume
+the semiclassical spacetime description is exact all the way through the
+evaporation process.
+ECT does not make that assumption.
+
+The reason is structural: the macroscopic Lorentzian branch is itself an
+emergent ordered phase.
+Near a sufficiently strong-field horizon, one should expect the purely
+macroscopic description to become incomplete and to require the
+coherent-topological completion provided by the Quantum Sector.
+ECT therefore naturally predicts a domain in which naive semiclassical
+coarse-graining ceases to be the full story.
+
+This does not automatically solve the full evaporation dynamics.
+But it removes the \emph{expectation} that a strictly semiclassical
+horizon description must remain exact in the strong-field regime.
+That is why the paradox is structurally weaker in ECT than in a framework
+that treats the semiclassical geometry as always complete.
 
 \subsubsection*{Black-hole entropy in the ECT reading}
 
@@ -2600,6 +2690,26 @@ evidence for fundamental information loss, but for the fact that the
 exterior observer is coupling to a reduced, effectively thermal sector
 of the total ordered condensate.
 
+\subsubsection*{Thermality versus exact thermality}
+
+The black-hole information problem becomes most severe if the outgoing
+radiation is assumed to be \emph{exactly} thermal at all stages.
+ECT does not require such exact thermality.
+What the current shell-based closure supports is approximate thermality
+of the reduced external state~\eqref{eq:qs_rho_ext}.
+
+This distinction matters.
+Approximate thermality is perfectly compatible with hidden correlations,
+late-time purification effects, and a Page-curve turnover.
+Exact thermality would be much harder to reconcile with global unitarity.
+
+Therefore the correct ECT statement is: the external observer can see an
+approximately thermal spectrum, while the total ordered-condensate
+evolution can still remain pure.
+This dissolves the strongest form of the paradox at the structural level,
+even though the completed quantitative evaporation problem remains
+open~(OP-Q13).
+
 \subsubsection*{Status summary}
 
 \textit{Established or strongly constrained~(Level~A):}
@@ -2621,6 +2731,14 @@ of the total ordered condensate.
   \item the first-principles derivation of horizon thermodynamic
     coefficients from bare~P3~(OP-Q13).
 \end{enumerate}
+
+% INTEGRATION NOTE (sec:qs_black_holes):
+% After integration into ECT_preprint.tex, add:
+% \appendix-style section app:bh_reduced_thermality with:
+% - explicit H_total decomposition, reduced density matrix logic,
+% - thermal rho_ext compatible with global purity derivation,
+% - schematic Page-curve discussion.
+% Then reference it here with Appendix~\ref{app:bh_reduced_thermality}.
 
 \paragraph{Summary.}
 Black-hole thermodynamics in ECT belongs to the Quantum Sector because
@@ -2780,6 +2898,16 @@ Critical Lorentz-order shell near the horizon
 Full strong-field evaporation completion~(Page curve)
   & Open (OP-Q13)
   & Global nonlinear horizon solution not yet complete \\
+Generalized entropy $S_{\rm gen}=S_{BH}+S_{\rm ext}^{\rm coarse}$
+  & Level~B
+  & Eq.~\eqref{eq:qs_generalized_entropy};
+    natural reduced-observer bookkeeping \\
+Page-curve-compatible unitary evaporation logic
+  & Level~B
+  & Structural support in Section~\ref{sec:qs_black_holes} \\
+Explicit Page-curve computation
+  & Open (OP-Q13)
+  & Requires global nonlinear shell dynamics \\
 Wider defect sector beyond smooth P5 branch
   & Level~A
   & Section~\ref{sec:qs_defects} + \ref{sec:defect_sectors} \\
@@ -2914,9 +3042,11 @@ This figure is a structural roadmap, not itself a derivation.}
     EFT~(Sections~\ref{sec:qs_casimir}--\ref{sec:qs_unruh}).
   \item[OP-Q13] Global nonlinear completion of the black-hole
     evaporation problem in the presence of a critical Lorentz-order
-    shell, including a Page-curve-type analysis and explicit
-    horizon-response dynamics from the ECT
-    closure~(Section~\ref{sec:qs_black_holes}).
+    shell, including
+    (i) explicit shell dynamics and profile,
+    (ii) generalized-entropy evolution~\eqref{eq:qs_generalized_entropy},
+    and (iii) a Page-curve-type computation for the reduced radiation
+    sector~(Section~\ref{sec:qs_black_holes}).
 \end{description}
 
 \paragraph{What has been achieved.}
