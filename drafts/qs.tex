@@ -1030,19 +1030,27 @@ influence functional takes the schematic form
   \right\},
 \end{equation}
 where $\Gamma[q,q']$ is the coherent-sector decoherence functional
-(already prepared in ECT basics; it vanishes on the diagonal $q=q'$)
-and $\Gamma_{\rm irr}[q,q']\ge 0$ is the irreversibility functional
-that suppresses off-diagonal contributions.
+(already prepared in ECT basics; Section~\ref{sec:arrow_of_time})
+and $\Gamma_{\rm irr}[q,q']\ge 0$ is the irreversible suppression
+part. Consistency requires
+\[
+  \Gamma_{\rm irr}[q,q] = 0,
+\]
+so that no decoherence penalty is assigned on the diagonal,
+while the phase-sensitive part of the reduced effective action
+$\Gamma[q,q']$ may remain nontrivial for $q\neq q'$.
 The normalisation by $S_0$---rather than a postulated $\hbar$---is
-required by the internal consistency of the coherent branch:
+required by internal consistency:
 $S_0$ is the only available action scale at this stage.
 
 \paragraph{Status.}
 The existence of a reduced influence-functional description is Level~B:
 it is the natural EFT organisation of the coherent branch once a
 subset of condensate modes is integrated out.
-The exact microscopic derivation for the full nonlinear coherent sector
-remains open.
+What is structural is the system--environment logic itself;
+what remains open is the exact microscopic derivation of
+the full nonlinear decoherence functional $\Gamma[q,q']$
+for the complete coherent sector.
 
 \subsubsection*{Causal retarded kernel: the Level~A result}
 
@@ -1241,3 +1249,207 @@ The strongest quantitative formula still depends on effective ohmic and
 Markov assumptions, but the qualitative architecture of decoherence and
 macroscopic irreversibility is already present inside the
 coherent-topological branch itself.
+
+% ============================================================
+\subsection{Probability, Born-type interpretation, and measurement status}
+\label{sec:qs_born}
+% ============================================================
+% NOTE: GPT draft used label sec:qs_probability; changed to sec:qs_born
+% for consistency with the roadmap in Section~\ref{sec:qs_intro}.
+
+\textit{Status: Level~A for the distinction between coherent amplitudes
+and decohered reduced sectors; Level~B for the emergence of effective
+probability weights and for any Born-type interpretation.
+A full first-principles derivation of the Born rule and measurement
+update remains open.
+Connection to previous subsections:
+Sections~\ref{sec:qs_wave}, \ref{sec:qs_ccr},
+\ref{sec:qs_decoherence}.}
+
+\medskip
+The previous subsections established three ingredients of the coherent
+branch: (i) a wave-dynamical description, (ii) a canonical
+organisation, and (iii) decoherence of macroscopic reduced sectors.
+The natural next question is whether these ingredients are sufficient
+to produce probabilities, and in particular whether ECT can justify a
+Born-type rule.
+This question must be handled with unusual care.
+Decoherence alone does not produce probability.
+It only suppresses phase interference between macroscopically distinct
+reduced sectors.
+
+\subsubsection*{Amplitude versus probability}
+
+The coherent branch of ECT is fundamentally organised in terms of
+amplitudes.
+The natural objects are coherent sector weights of the
+form~\eqref{eq:qs_weight_S0},
+\[
+  \mathcal{A}[\theta]
+  \sim
+  \exp\!\left(\frac{i\,S_\theta[\theta]}{S_0}\right),
+\]
+together with their superposition over admissible coherent histories.
+As long as different coherent sectors interfere significantly, the
+appropriate description remains amplitude-based.
+
+Probability enters only after one passes to a reduced description in
+which interference between relevant coarse-grained sectors has been
+suppressed.
+Thus the logical order is:
+\begin{equation}
+  \label{eq:qs_prob_logic}
+  \text{amplitudes}
+  \;\longrightarrow\;
+  \text{decoherence}
+  \;\longrightarrow\;
+  \text{effective probabilities}.
+\end{equation}
+ECT does not begin with probability as a primitive notion.
+
+\subsubsection*{Why decoherence is not yet the Born rule}
+
+Decoherence makes off-diagonal reduced contributions small, but it
+does not by itself explain why diagonal sector weights should be
+interpreted as probabilities, nor why they should be given precisely
+by the squared modulus of a wave amplitude.
+A reduced density matrix that becomes approximately diagonal is not yet
+a derivation of Born's rule.
+It is only the precondition for a Born-type interpretation to become
+consistent.
+
+This distinction must remain explicit.
+Many discussions conflate four conceptually separate steps:
+\begin{enumerate}[label=(\roman*)]
+  \item suppression of interference;
+  \item emergence of classical alternatives;
+  \item assignment of probabilities;
+  \item the specific quadratic weighting rule.
+\end{enumerate}
+In ECT these four steps are kept conceptually distinct.
+
+\subsubsection*{Why a Born-type rule is plausible in ECT}
+
+Although not yet proved, a Born-type rule is strongly suggested by the
+internal structure of the coherent branch.
+ECT already contains:
+\begin{enumerate}[label=(\roman*)]
+  \item complex coherent amplitudes weighted by $S_0$;
+  \item a Schr\"odinger-type reduction~\eqref{eq:qs_schrodinger_type}
+    for smooth coherent sectors;
+  \item decoherence of macroscopic reduced sectors~\eqref{eq:qs_influence};
+  \item a natural reduced density matrix description~(see below).
+\end{enumerate}
+Once these ingredients are present, the natural candidate for the
+weight of an effectively decohered branch is
+\begin{equation}
+  \label{eq:qs_born_candidate}
+  P_\alpha \propto |\Psi_\alpha|^2,
+\end{equation}
+where $\Psi_\alpha$ is the effective amplitude of the decohered
+branch~$\alpha$.
+
+\paragraph{Status of Eq.~\eqref{eq:qs_born_candidate}.}
+This is currently a \emph{Born-type candidate rule}~(Level~B), not
+a completed theorem.
+It is the most natural weighting compatible with the coherent
+wave-dynamical sector and with decoherence, but its full derivation
+from the condensate microdynamics has not yet been carried through.
+
+\subsubsection*{Reduced density matrix viewpoint}
+
+In a reduced description, the coarse-grained reduced density matrix
+takes the schematic form
+\begin{equation}
+  \label{eq:qs_rho_red}
+  \rho_{\rm red}(q,q')
+  =
+  \sum_{\alpha,\beta}
+  \Psi_\alpha(q)\,\Psi_\beta^*(q')\,
+  \mathcal{D}_{\alpha\beta},
+\end{equation}
+where $\mathcal{D}_{\alpha\beta}$ is the decoherence matrix of the
+coarse-grained sectors.
+When decoherence is effective,
+\begin{equation}
+  \label{eq:qs_diag_limit}
+  \mathcal{D}_{\alpha\beta} \approx 0
+  \qquad (\alpha\neq\beta),
+\end{equation}
+the reduced description becomes approximately diagonal.
+At that point the diagonal weights $\rho_{\alpha\alpha}$ are the
+natural probability candidates.
+
+\paragraph{What this does and does not show.}
+This shows why a probability interpretation becomes natural after
+decoherence.
+It still does not prove uniquely that the correct weights are
+$|\Psi_\alpha|^2$ in all regimes.
+That final uniqueness statement remains open.
+
+\subsubsection*{Measurement status}
+
+ECT does not yet contain a completed first-principles measurement
+theory.
+What it does contain is the following structural chain:
+\begin{enumerate}[label=(\roman*)]
+  \item coherent amplitudes for smooth ordered sectors;
+  \item environment-induced suppression of off-diagonal reduced terms;
+  \item effective branching into macroscopically distinct sectors;
+  \item a natural Born-type candidate weighting of those sectors.
+\end{enumerate}
+This is already a substantial structural framework.
+But it is not yet a finished account of state-update, outcome
+selection, or observer-conditioned measurement records.
+
+\paragraph{What remains open.}
+A full measurement theory would require:
+\begin{enumerate}[label=(\roman*)]
+  \item a precise branch-selection and state-update rule;
+  \item an explicit derivation of Born weights from the condensate
+    dynamics, rather than their adoption as the preferred candidate;
+  \item a treatment of pointer sectors and stable macroscopic records;
+  \item control of the r\^ole of defect and topological sectors during
+    measurement-like processes~(Section~\ref{sec:qs_defects}).
+\end{enumerate}
+
+\subsubsection*{Why the current result is still meaningful}
+
+Even without a final theorem, ECT has advanced beyond a purely formal
+restatement of ordinary quantum mechanics.
+The theory explains why probability should arise only \emph{after}
+decoherence, why probabilities are not fundamental primitives, and why
+a quadratic amplitude weighting is the natural candidate once the
+coherent branch has been reduced to effectively classical alternatives.
+ECT thereby provides the right \emph{architecture} of the Born
+problem, even if it has not yet fully solved it.
+
+\subsubsection*{Bridge to topological and dark-sector extensions}
+
+The probability and measurement discussion concerns the smooth
+coherent branch selected by P5.
+The full coherent-topological sector of ECT is wider: it also includes
+nontrivial defect and topological configurations that may contribute
+to dark-sector ontology and to non-perturbative coherent processes.
+Those sectors are the subject of the next subsection.
+
+\paragraph{Status summary.}
+\textit{Established~(Level~A):}
+ECT distinguishes clearly between coherent amplitudes, decohered
+reduced sectors, and effective probability candidates.
+\textit{Plausible but not yet final~(Level~B):}
+a Born-type weighting $P_\alpha\propto|\Psi_\alpha|^2$ for decohered
+branch sectors.
+\textit{Not yet established:}
+a full first-principles derivation of the Born rule and a completed
+measurement-update theory.
+
+\paragraph{Summary.}
+ECT does not postulate probability at the foundation.
+Probability appears only after coherent amplitudes are reduced by
+decoherence to effectively classical alternatives.
+This makes a Born-type rule structurally natural but not yet fully
+derived.
+The next step is to widen the Quantum Sector beyond the smooth
+coherent branch and examine the r\^ole of topological and defect
+sectors.
