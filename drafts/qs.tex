@@ -259,6 +259,8 @@ The present section proceeds in the following order:
   \item \textbf{Status table and open problems}
     (Section~\ref{sec:qs_status}).
 \end{enumerate}
+A final consistency map of the Quantum Sector is shown in
+Fig.~\ref{fig:qs_consistency}.
 
 \paragraph{Bridge from Macroscopic Physics.}
 Macroscopic Physics answered the question:
@@ -2332,9 +2334,9 @@ and the information problem}
 \label{sec:qs_black_holes}
 % ============================================================
 
-\textit{Status: Level~A for the structural claim that fundamental
-information loss is incompatible with global coherent unitarity of the
-ordered condensate.
+\textit{Status: Level~A for the structural claim that the Quantum
+Sector of ECT does not require fundamental information loss once global
+coherent unitarity and reduced-state logic are maintained.
 Level~B for the concrete critical Lorentz-order shell closure used to
 model apparent thermality and observer-dependent mixedness near a
 black-hole horizon.
@@ -2472,22 +2474,55 @@ The decomposition~\eqref{eq:qs_H_total} is itself Level~B: it
 depends on the critical-shell closure and not yet on a first-principles
 derivation from bare~P3.
 
-% --- Figure placeholder for BH shell schematic ---
-% When the figure file is available, uncomment and adjust:
-% \begin{figure}[h]
-% \centering
-% \includegraphics[width=0.65\textwidth]{figures/fig_qs_bh_shell.pdf}
-% \caption{Schematic ECT picture of the near-horizon strong-field region.
-% The exterior observer has access only to an effective reduced sector,
-% while a critical Lorentz-order shell mediates between the asymptotic
-% region and deeper strong-field degrees of freedom.
-% In this picture, approximate Hawking thermality is interpreted as a
-% reduced-state phenomenon rather than as fundamental information
-% destruction.
-% This is a Level~B strong-field closure schematic, not a completed
-% global solution of the evaporating black-hole problem.}
-% \label{fig:qs_bh_shell}
-% \end{figure}
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=1.0]
+  % Outer circle (H_ext)
+  \draw[thick] (0,0) circle (2.9cm);
+  % Shell boundary (dashed)
+  \draw[thick, dashed] (0,0) circle (2.1cm);
+  % Inner circle (H_int)
+  \draw[thick] (0,0) circle (1.2cm);
+
+  % Region labels
+  \node[font=\small] at (0, 3.4) {$\mathcal{H}_{\rm ext}$: asymptotically accessible exterior};
+  \node[font=\footnotesize] at (0, 2.5) {--- critical shell boundary ---};
+  \node[font=\small] at (0, 1.6) {$\mathcal{H}_{\rm shell}$: Lorentz-order shell};
+  \node[font=\small] at (0, 0.0) {$\mathcal{H}_{\rm int}$: inaccessible};
+  \node[font=\small] at (0,-0.4) {strong-field sector};
+
+  % Side annotations
+  \draw[->, thick] (3.3, 1.1) -- (2.2, 1.1);
+  \node[font=\small, align=left] at (5.5, 1.1)
+    {strong-field coupling of\\coherent \& topological modes};
+
+  \draw[->, thick] (3.3,-0.8) -- (2.7,-0.8);
+  \node[font=\small, align=left] at (5.5,-0.8)
+    {observer traces over\\shell + interior sectors};
+
+  % Reduced state formula box
+  \draw[rounded corners, thick] (3.8,-2.9) rectangle (8.2,-1.9);
+  \node[font=\small] at (6.0,-2.4)
+    {$\rho_{\rm ext}=\mathrm{Tr}_{{\rm sh,int}}|\Psi\rangle\langle\Psi|$};
+
+  % Arrow from circle bottom to box
+  \draw[->, thick] (2.5,-1.8) -- (3.75,-2.2);
+\end{tikzpicture}
+\caption{Schematic ECT picture of the near-horizon strong-field region~(Level~B).
+The exterior observer has access only to an effective reduced sector, while a
+critical Lorentz-order shell mediates between the asymptotic region and deeper
+strong-field degrees of freedom.
+In this picture, approximate Hawking thermality is interpreted as a reduced-state
+phenomenon rather than as fundamental information destruction.
+The dashed circle marks the effective boundary of the critical Lorentz-order shell.
+This is a Level~B strong-field closure schematic, not a completed global solution
+of the evaporating black-hole problem.}
+\label{fig:qs_bh_shell}
+\end{figure}
+
+Figure~\ref{fig:qs_bh_shell} is schematic: it visualises the current
+Level~B strong-field closure and should not be read as a solved global
+metric profile.
 
 The physically observed radiation state is not the total state but
 a reduced state:
@@ -2791,15 +2826,58 @@ Ordered condensate vacuum is physically nontrivial
 Casimir-type boundary response
   & Level~B
   & Section~\ref{sec:qs_casimir} \\
-Cosmological particle production in time-dependent backgrounds
+Time-dependent ordered backgrounds admit Bogoliubov-type mode mixing
   & Level~B
-  & Section~\ref{sec:qs_particle_production} \\
+  & Section~\ref{sec:qs_particle_production};
+    structurally natural; explicit coherent-vacuum implementation
+    remains closure-dependent \\
+Quantitative production rates $|\beta_k|^2$
+  & Open (OP-Q12)
+  & Requires completed time-dependent coherent-vacuum calculation \\
 Unruh-type accelerated-vacuum response
   & Level~B
   & Section~\ref{sec:qs_unruh}; requires $S_0=\hbar$~\eqref{eq:qs_S0_identification} \\
 \hline\hline
 \end{tabular}
 \end{table}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[
+  node distance=0.85cm and 0.9cm,
+  box/.style={draw, rounded corners, align=center, minimum width=3.0cm,
+    minimum height=0.85cm, font=\small},
+  arrow/.style={->, thick}
+]
+\node[box] (phase) {coherent phase\\\& winding sectors};
+\node[box, right=of phase] (s0) {pre-quantum action\\scale $S_0$};
+\node[box, right=of s0] (wave) {wave reduction\\\& Schr\"odinger-type};
+\node[box, below=of phase] (ccr) {canonical structure\\\& commutator candidate};
+\node[box, below=of s0] (unc) {uncertainty principle\\\& saddle dominance};
+\node[box, below=of wave] (decoh) {decoherence\\\& arrow of time};
+\node[box, below=of ccr] (born) {Born-type probability\\\& measurement status};
+\node[box, below=of unc] (vac) {ordered vacuum:\\Casimir / Unruh / PP};
+\node[box, below=of decoh] (bh) {black-hole thermality\\\& information problem};
+\draw[arrow] (phase) -- (s0);
+\draw[arrow] (s0) -- (wave);
+\draw[arrow] (phase) -- (ccr);
+\draw[arrow] (s0) -- (unc);
+\draw[arrow] (wave) -- (decoh);
+\draw[arrow] (ccr) -- (born);
+\draw[arrow] (unc) -- (born);
+\draw[arrow] (wave) -- (vac);
+\draw[arrow] (decoh) -- (bh);
+\draw[arrow] (vac) -- (bh);
+\draw[arrow] (born) -- (bh);
+\end{tikzpicture}
+\caption{Consistency map of the Quantum Sector of ECT.
+The coherent-topological branch is organised around phase dynamics, the
+pre-quantum action scale $S_0$, wave reduction, canonical structure, decoherence,
+Born-type probability, ordered-vacuum response, and the strong-field horizon problem.
+Arrows indicate logical dependencies between results.
+This figure is a structural roadmap, not itself a derivation.}
+\label{fig:qs_consistency}
+\end{figure}
 
 \paragraph{Open problems of the Quantum Sector.}
 \begin{description}[leftmargin=2.2em]
