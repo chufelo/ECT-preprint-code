@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-ECT galactic-sector fitting pipeline v3 — phi-branch closure.
+ECT galactic-sector fitting pipeline v3d — phi-branch closure.
 
 Variational basis (GPT 2025):
     Gamma_gal[Phi] = int d^3x [ K(|grad Phi|/g†, phi_env)/(8pi G_N) - rho_b Phi ]
@@ -9,48 +9,57 @@ Variational basis (GPT 2025):
     mu_phi(x) = x/(x+1)  <->  g = 0.5*(gN + sqrt(gN^2 + 4*gN*g†))
     Deep regime: g = sqrt(gN * g†)  ->  BTFR v^4 = G_N M_bar g†
 
-IMPORTANT: All fits use TWO MODES:
-  fixed_ml : Upsilon_disk=0.5, Upsilon_bul=0.7 fixed; fit only g†
-  free_ml  : Upsilon_disk free [0.1,2.5]; fit g† + Upsilon_disk
-
-Quality flags are added to all output tables. Scatter in g†_eff is
-reported without over-interpretation until fixed/free ML split is done.
-
-OUTPUTS (all in --output-dir, default=figures/sparc_v3/):
-  ect_sparc_results.csv           — full results table with flags
-  five_galaxies_comparison.csv    — DDO154 NGC2403 NGC3198 NGC6503 UGC2885
-  summary_report.txt              — text summary
-  set1_milky_way.pdf              — Milky Way rotation curve
-  set2_sparc_sample.pdf           — SPARC best-fit gallery (N panels)
-  set3_efe_curves.pdf             — EFE band curves for selected galaxies
-  diag_gdag_scatter4.pdf          — 2x2 diagnostic scatter plots (165 galaxies)
-  diag_gdag_vs_mbar.pdf           — diagnostic: g† vs baryonic mass
-  diag_gdag_vs_sigma.pdf          — diagnostic: g† vs surface density
-  diag_gdag_vs_mldisk.pdf         — diagnostic: g† vs fitted M/L
-  diag_gdag_vs_chi2.pdf           — diagnostic: g† vs chi2
-  diag_chi2_comparison.pdf        — ECT vs MOND vs LCDM chi2 comparison
-  diag_gdag_histogram.pdf         — g†/(cH0/2pi) distribution
+WHAT'S NEW IN v3d (per GPT review):
+  1. UGC02885 restored in five_galaxies_comparison.csv (name normalization added)
+  2. AIC and BIC added to all model comparisons (ECT/MOND/ΛCDM)
+  3. --error-floor parameter (default 2.0 km/s) — sensitivity analysis
+  4. "EFE band" renamed to "g† sensitivity band" — reflects true meaning
+  5. --efe-mode proxy mode with g†_eff = g†_0/(1+α·gext/g†_0)
+  6. Clean-sample CSV export (ect_sparc_results_clean.csv)
+  7. New diagnostic plots: fixed-vs-free g† scatter, fixed-vs-free chi2, R_last
+  8. Summary report: AIC/BIC stats, clean-sample stats, honest interpretation
 
 DESIGN RULES:
   - fit_sample() is called EXACTLY ONCE on the full dataset.
   - CSV + diagnostics are written BEFORE any rotation-curve plots.
-    This guarantees statistics always reflect the full dataset,
-    regardless of --selected filter used for visualisation.
   - --selected only controls which galaxies appear in SET 2 and SET 3.
+  - Physical formula NOT changed:
+      g = 0.5*(gN + sqrt(gN^2 + 4*gN*g†))
+
+OUTPUTS (all in --output-dir, default=figures/sparc_v3/):
+  ect_sparc_results.csv           — full results table with AIC/BIC
+  ect_sparc_results_clean.csv     — clean-sample only (no quality flags)
+  five_galaxies_comparison.csv    — DDO154 NGC2403 NGC3198 NGC6503 UGC02885
+  summary_report.txt              — honest text summary with AIC/BIC
+  set1_milky_way.pdf
+  set2_sparc_sample.pdf
+  set3_gdag_sensitivity.pdf       — g† sensitivity band (was "EFE")
+  diag_gdag_scatter4.pdf          — 2x2 scatter (165 galaxies)
+  diag_gdag_vs_mbar.pdf
+  diag_gdag_vs_sigma.pdf
+  diag_gdag_vs_mldisk.pdf
+  diag_gdag_vs_chi2.pdf
+  diag_gdag_vs_rlast.pdf          — NEW: g† vs R_last
+  diag_fixed_vs_free_gdag.pdf     — NEW: fixed-ML vs free-ML g†
+  diag_fixed_vs_free_chi2.pdf     — NEW: fixed-ML vs free-ML chi2
+  diag_chi2_comparison.pdf        — 4-panel chi2 histograms
+  diag_aic_comparison.pdf         — NEW: AIC comparison
+  diag_gdag_histogram.pdf
 
 All figures in GRAYSCALE (publication-ready).
 
 Usage:
     python ect_sparc_fit_phi_branch.py MassModels_Lelli2016c.mrt
+    python ect_sparc_fit_phi_branch.py MassModels_Lelli2016c.mrt --error-floor 0
     python ect_sparc_fit_phi_branch.py MassModels_Lelli2016c.mrt \\
-           --selected NGC3198 NGC2403 DDO154 NGC6503 UGC2885
+           --selected NGC3198 NGC2403 DDO154 NGC6503 UGC02885
     python ect_sparc_fit_phi_branch.py MassModels_Lelli2016c.mrt \\
-           --n-best 20 --output-dir /path/to/out/
+           --efe-mode proxy --gext-file gext_table.csv --alpha-ext 1.0
 """
 from __future__ import annotations
 import argparse, math, os, warnings
 from dataclasses import dataclass
-from typing import List
+from typing import List, Optional
 
 import numpy as np
 import pandas as pd
@@ -70,12 +79,23 @@ A0_SI    = 1.20e-10            # MOND/McGaugh+2016 [m/s^2]
 UPS_DISK_FIXED = 0.5           # Schombert+2019 photometric default
 UPS_BUL_FIXED  = 0.7
 
+# Number of free parameters per model (for AIC/BIC)
+K_ECT_FIXED = 1   # only g†
+K_ECT_FREE  = 2   # g† + Υ_disk
+K_MOND      = 1   # only Υ_disk (a0 fixed)
+K_LCDM      = 3   # Υ_disk, ρ_s, r_s
+
 def cH0_si(h0: float = 70.0) -> float:
     return C_SI * h0 * 1e3 / MPC_TO_M
 
 def gdag_baseline(h0: float = 70.0):
     ch0 = cH0_si(h0)
     return {'cH0': ch0, 'cH0_2pi': ch0 / (2 * math.pi)}
+
+# ── Galaxy name normalisation (prevents UGC02885 vs UGC2885 mismatch) ────────
+def normalize_name(name: str) -> str:
+    """Strip spaces and upper-case for robust name matching."""
+    return str(name).replace(' ', '').upper()
 
 # ── Grayscale style ───────────────────────────────────────────────────────────
 GS = {
@@ -85,23 +105,19 @@ GS = {
     'text.color': 'black', 'axes.labelcolor': 'black',
     'xtick.color': 'black', 'ytick.color': 'black',
 }
-BK   = '#000000'   # observations / ECT field best-fit / MOND
-DG   = '#333333'   # ECT EFE variants / LCDM
-MG   = '#666666'   # ECT baseline cH0/2pi
-LG   = '#999999'   # lighter reference lines
-VLG  = '#bbbbbb'   # very light reference
-EFE  = '#cccccc'   # EFE band fill
-BAR  = '#555555'   # baryons (dashed)
+BK  = '#000000'   # observations / ECT field best-fit / MOND
+DG  = '#333333'   # ECT variants / LCDM
+MG  = '#666666'   # ECT baseline cH0/2pi
+LG  = '#999999'   # lighter reference lines
+VLG = '#bbbbbb'   # very light reference
+SBD = '#cccccc'   # sensitivity band fill (was EFE)
+BAR = '#555555'   # baryons (dashed)
 
-# Linestyle strings for MOND and LCDM.
-# Must be plain strings (not tuples) when used as positional args in ax.plot().
-# MOND: dashed black thick line — maximally visible
-# LCDM: dotted dark gray
-LS_MOND = '--'   # dashed (thick black line makes it distinct from ECT dashed variants)
-LS_LCDM = ':'    # dotted
+LS_MOND = '--'   # thick black dashed — maximally visible
+LS_LCDM = ':'    # dotted dark gray
 
 # ── Data loading ──────────────────────────────────────────────────────────────
-def load_sparc(path: str) -> pd.DataFrame:
+def load_sparc(path: str, error_floor: float = 2.0) -> pd.DataFrame:
     rows = []
     with open(path, encoding='utf-8', errors='ignore') as f:
         for line in f:
@@ -126,12 +142,24 @@ def load_sparc(path: str) -> pd.DataFrame:
                 continue
     df = pd.DataFrame(rows)
     df['e_Vobs_raw'] = df['e_Vobs'].copy()
-    df['e_Vobs'] = df['e_Vobs'].clip(lower=2.0)
+    if error_floor > 0:
+        df['e_Vobs'] = df['e_Vobs'].clip(lower=error_floor)
+    n_floored = (df['e_Vobs_raw'] < error_floor).sum() if error_floor > 0 else 0
     print(f"Loaded {len(df)} data points, {df['Galaxy'].nunique()} galaxies.")
-    n_floored = (df['e_Vobs_raw'] < 2.0).sum()
-    if n_floored:
-        print(f"  Note: {n_floored} error values below 2 km/s floored to 2 km/s")
+    print(f"  Error floor: {error_floor:.1f} km/s  ({n_floored} values raised)")
     return df
+
+# ── Optional: load external-field proxy table ─────────────────────────────────
+def load_gext(path: Optional[str]) -> Optional[dict]:
+    """Load external-field proxy CSV with columns: galaxy, gext_m_s2.
+    Returns dict {normalized_name: gext_si} or None."""
+    if path is None:
+        return None
+    df = pd.read_csv(path)
+    if 'galaxy' not in df.columns or 'gext_m_s2' not in df.columns:
+        raise ValueError("gext_file must have columns: galaxy, gext_m_s2")
+    return {normalize_name(row['galaxy']): float(row['gext_m_s2'])
+            for _, row in df.iterrows()}
 
 # ── Physics functions ──────────────────────────────────────────────────────────
 def baryonic_velocity_squared(vgas, vdisk, vbul,
@@ -144,12 +172,21 @@ def g_newton_from_vbar2(vbar2_kms2, R_kpc):
     return vbar2_kms2 / np.maximum(R_kpc, 1e-9)
 
 def ect_g_obs(gN_kpc, gdagger_kpc):
-    """ECT phi-branch: g = 0.5*(gN + sqrt(gN^2 + 4*gN*g†)). (km/s)^2/kpc"""
+    """ECT phi-branch: g = 0.5*(gN + sqrt(gN^2 + 4*gN*g†)). (km/s)^2/kpc
+    IMPORTANT: This formula must not be changed."""
     return 0.5 * (gN_kpc +
                   np.sqrt(np.maximum(gN_kpc**2 + 4.0*gN_kpc*gdagger_kpc, 0.0)))
 
 def ect_vmod(R_kpc, gN_kpc, gdagger_kpc):
     return np.sqrt(np.maximum(ect_g_obs(gN_kpc, gdagger_kpc) * R_kpc, 0.0))
+
+def ect_gdag_eff_proxy(gdag0_si: float, gext_si: float, alpha_ext: float) -> float:
+    """EFE proxy: g†_eff = g†_0 / (1 + α·g_ext/g†_0).
+    Physical motivation: external condensate field suppresses internal g†.
+    NOTE: This is a phenomenological ansatz, not a derived ECT result."""
+    if gdag0_si <= 0 or gext_si <= 0:
+        return gdag0_si
+    return gdag0_si / (1.0 + alpha_ext * gext_si / gdag0_si)
 
 def mond_g_obs(gN_kpc, a0_kpc):
     """MOND RAR: g = gN / (1 - exp(-sqrt(gN/a0))). McGaugh+2016."""
@@ -169,6 +206,12 @@ def nfw_g(R_kpc, rho_s_Msun_kpc3, r_s_kpc):
 def lcdm_vmod(R_kpc, gN_kpc, rho_s, r_s_kpc):
     return np.sqrt(np.maximum((gN_kpc + nfw_g(R_kpc, rho_s, r_s_kpc)) * R_kpc, 0.0))
 
+def compute_aic_bic(chi2_raw: float, k: int, N: int):
+    """AIC = χ² + 2k,  BIC = χ² + k·ln(N)."""
+    aic = chi2_raw + 2 * k
+    bic = chi2_raw + k * math.log(max(N, 1))
+    return aic, bic
+
 # ── Baryonic mass proxy ───────────────────────────────────────────────────────
 def baryonic_mass_proxy(sub, ml_disk=UPS_DISK_FIXED, ml_bul=UPS_BUL_FIXED):
     last = sub.iloc[-1]
@@ -187,28 +230,49 @@ class GalaxyFit:
     R_last:              float
     Mbar_proxy:          float
     Sigma_bar_proxy:     float
+    # FIXED M/L
     gdag_fixed_si:       float
     gdag_fixed_kpc:      float
-    chi2_fixed:          float
+    chi2_fixed:          float      # raw chi2
     chi2_red_fixed:      float
+    aic_fixed:           float
+    bic_fixed:           float
     sigma_lo_fixed_si:   float
     sigma_hi_fixed_si:   float
+    # FREE M/L
     gdag_free_si:        float
     gdag_free_kpc:       float
     ml_disk_best:        float
-    chi2_free:           float
+    chi2_free:           float      # raw chi2
     chi2_red_free:       float
+    aic_free:            float
+    bic_free:            float
+    # BASELINES
     chi2_red_base_cH0:   float
     chi2_red_base_cH0_2pi: float
+    # MOND
     ml_mond:             float
+    chi2_mond:           float      # raw chi2
     chi2_red_mond:       float
+    aic_mond:            float
+    bic_mond:            float
+    # ΛCDM NFW
     ml_lcdm:             float
     rho_s:               float
     r_s_kpc:             float
+    chi2_lcdm:           float      # raw chi2
     chi2_red_lcdm:       float
+    aic_lcdm:            float
+    bic_lcdm:            float
+    # EFE proxy (populated only if --efe-mode proxy and galaxy in gext table)
+    gext_si:             float      # 0.0 if not available
+    gdag_proxy_si:       float      # 0.0 if not available
+    chi2_red_proxy:      float      # 0.0 if not available
+    # Ratios
     ratio_cH0:           float
     ratio_cH0_2pi:       float
     ratio_a0:            float
+    # Quality flags
     flag_ml_edge:        bool
     flag_bad_fit:        bool
     flag_low_points:     bool
@@ -233,7 +297,6 @@ def _fit_gdag_fixed(R, Vob, eVo, Vg, Vd, Vb, h0, log_bounds=(0, 7)):
         return float(np.sum(((Vob - ect_vmod(R, gN, 10**log10g)) / eVo)**2))
     centre = math.log10(ch0_2pi_kpc)
     lo, hi = max(log_bounds[0], centre-3), min(log_bounds[1], centre+3)
-    grid = np.linspace(lo, hi, 120)
     res = minimize_scalar(chi2, bounds=(lo, hi), method='bounded', options={'xatol': 1e-10})
     g_kpc, chi2_min = 10**res.x, float(res.fun)
     g2   = np.linspace(res.x-1.5, res.x+1.5, 400)
@@ -293,50 +356,86 @@ def _fit_lcdm(R, Vob, eVo, Vg, Vd, Vb):
     res = minimize(chi2, best_x, bounds=[(0.1,2.5),(3,11),(-1,2.5)], method='L-BFGS-B')
     return float(res.x[0]), 10**float(res.x[1]), 10**float(res.x[2]), float(res.fun)
 
-def fit_one(sub: pd.DataFrame, h0: float = 70.0) -> GalaxyFit:
+def fit_one(sub: pd.DataFrame, h0: float = 70.0,
+            gext_table: Optional[dict] = None,
+            alpha_ext: float = 1.0) -> GalaxyFit:
     R, Vob, eVo, Vg, Vd, Vb = _get_arrays(sub)
-    dof2 = max(len(sub) - 2, 1)
-    dof1 = max(len(sub) - 1, 1)
-    dof3 = max(len(sub) - 3, 1)
+    N    = len(sub)
+    dof2 = max(N - K_ECT_FREE, 1)
+    dof1 = max(N - K_MOND,     1)
+    dof3 = max(N - K_LCDM,     1)
     BL = gdag_baseline(h0)
 
+    # Fixed ML
     gf_kpc, chi2_f, slo, shi = _fit_gdag_fixed(R, Vob, eVo, Vg, Vd, Vb, h0)
     gf_si = gf_kpc * ACC_CONV
+    aic_f, bic_f = compute_aic_bic(chi2_f, K_ECT_FIXED, N)
+
+    # Free ML
     gv_kpc, ml_best, chi2_v = _fit_gdag_free(R, Vob, eVo, Vg, Vd, Vb, h0)
     gv_si = gv_kpc * ACC_CONV
+    aic_v, bic_v = compute_aic_bic(chi2_v, K_ECT_FREE, N)
 
+    # Baselines
     chi2_base_cH0     = _baseline_chi2(R, Vob, eVo, Vg, Vd, Vb, BL['cH0']     / ACC_CONV)
     chi2_base_cH0_2pi = _baseline_chi2(R, Vob, eVo, Vg, Vd, Vb, BL['cH0_2pi'] / ACC_CONV)
-    ml_mond, chi2_mond = _fit_mond(R, Vob, eVo, Vg, Vd, Vb)
-    ml_lcdm, rho_s, r_s_kpc, chi2_lcdm = _fit_lcdm(R, Vob, eVo, Vg, Vd, Vb)
 
+    # MOND (1 free param: Υ_disk)
+    ml_mond, chi2_mond = _fit_mond(R, Vob, eVo, Vg, Vd, Vb)
+    aic_mond, bic_mond = compute_aic_bic(chi2_mond, K_MOND, N)
+
+    # ΛCDM (3 free params)
+    ml_lcdm, rho_s, r_s_kpc, chi2_lcdm = _fit_lcdm(R, Vob, eVo, Vg, Vd, Vb)
+    aic_lcdm, bic_lcdm = compute_aic_bic(chi2_lcdm, K_LCDM, N)
+
+    # EFE proxy (optional)
+    gex_si = 0.0; gdag_proxy_si = 0.0; chi2r_proxy = 0.0
+    gal_norm = normalize_name(str(sub['Galaxy'].iloc[0]))
+    if gext_table and gal_norm in gext_table:
+        gex_si        = gext_table[gal_norm]
+        gdag_p_si     = ect_gdag_eff_proxy(gf_si, gex_si, alpha_ext)
+        gdag_p_kpc    = gdag_p_si / ACC_CONV
+        gN_fix        = g_newton_from_vbar2(
+            baryonic_velocity_squared(Vg, Vd, Vb, UPS_DISK_FIXED, UPS_BUL_FIXED), R)
+        chi2_p        = float(np.sum(((Vob - ect_vmod(R, gN_fix, gdag_p_kpc)) / eVo)**2))
+        gdag_proxy_si = gdag_p_si
+        chi2r_proxy   = chi2_p / max(N - K_ECT_FIXED, 1)
+
+    # Baryonic mass proxy
     Mbar   = baryonic_mass_proxy(sub, UPS_DISK_FIXED, UPS_BUL_FIXED)
     R_last = float(sub['R_kpc'].max())
     Sigma  = Mbar / (math.pi * R_last**2) if R_last > 0 else 0.0
 
+    # Quality flags
     flag_ml_edge = (ml_best < 0.15) or (ml_best > 2.3)
-    flag_bad_fit = (chi2_f / dof2) > 5.0
-    flag_low_pts = len(sub) < 8
+    flag_bad_fit = (chi2_f / max(N - K_ECT_FIXED, 1)) > 5.0
+    flag_low_pts = N < 8
     vbul2_mean   = float(np.mean(UPS_BUL_FIXED * np.sign(Vb) * np.maximum(Vb**2, 0)))
     vbar2_mean   = float(np.mean(baryonic_velocity_squared(Vg, Vd, Vb)))
     flag_bulge   = (vbul2_mean / max(vbar2_mean, 1e-9)) > 0.2
     flag_low_q   = flag_ml_edge or flag_bad_fit or flag_low_pts
 
     ch0, ch0_2pi = BL['cH0'], BL['cH0_2pi']
+    dof_fix = max(N - K_ECT_FIXED, 1)
     return GalaxyFit(
-        galaxy=str(sub['Galaxy'].iloc[0]), n_points=len(sub),
+        galaxy=str(sub['Galaxy'].iloc[0]), n_points=N,
         D_Mpc=float(sub['D_Mpc'].iloc[0]),
         R_last=R_last, Mbar_proxy=Mbar, Sigma_bar_proxy=Sigma,
         gdag_fixed_si=gf_si, gdag_fixed_kpc=gf_kpc,
-        chi2_fixed=chi2_f, chi2_red_fixed=chi2_f/dof2,
+        chi2_fixed=chi2_f, chi2_red_fixed=chi2_f/dof_fix,
+        aic_fixed=aic_f, bic_fixed=bic_f,
         sigma_lo_fixed_si=slo*ACC_CONV, sigma_hi_fixed_si=shi*ACC_CONV,
         gdag_free_si=gv_si, gdag_free_kpc=gv_kpc, ml_disk_best=ml_best,
         chi2_free=chi2_v, chi2_red_free=chi2_v/dof2,
-        chi2_red_base_cH0=chi2_base_cH0/dof1,
-        chi2_red_base_cH0_2pi=chi2_base_cH0_2pi/dof1,
-        ml_mond=ml_mond, chi2_red_mond=chi2_mond/dof1,
+        aic_free=aic_v, bic_free=bic_v,
+        chi2_red_base_cH0=chi2_base_cH0/max(N-1,1),
+        chi2_red_base_cH0_2pi=chi2_base_cH0_2pi/max(N-1,1),
+        ml_mond=ml_mond, chi2_mond=chi2_mond, chi2_red_mond=chi2_mond/dof1,
+        aic_mond=aic_mond, bic_mond=bic_mond,
         ml_lcdm=ml_lcdm, rho_s=rho_s, r_s_kpc=r_s_kpc,
-        chi2_red_lcdm=chi2_lcdm/dof3,
+        chi2_lcdm=chi2_lcdm, chi2_red_lcdm=chi2_lcdm/dof3,
+        aic_lcdm=aic_lcdm, bic_lcdm=bic_lcdm,
+        gext_si=gex_si, gdag_proxy_si=gdag_proxy_si, chi2_red_proxy=chi2r_proxy,
         ratio_cH0=gf_si/ch0, ratio_cH0_2pi=gf_si/ch0_2pi,
         ratio_a0=gf_si/A0_SI,
         flag_ml_edge=flag_ml_edge, flag_bad_fit=flag_bad_fit,
@@ -344,7 +443,8 @@ def fit_one(sub: pd.DataFrame, h0: float = 70.0) -> GalaxyFit:
         flag_low_quality=flag_low_q,
     )
 
-def fit_sample(df, h0=70.0, min_pts=6):
+def fit_sample(df, h0=70.0, min_pts=6,
+               gext_table=None, alpha_ext=1.0):
     fits = []
     gals = sorted(df['Galaxy'].unique())
     for i, gal in enumerate(gals):
@@ -352,19 +452,20 @@ def fit_sample(df, h0=70.0, min_pts=6):
         if len(sub) < min_pts:
             continue
         try:
-            f = fit_one(sub, h0)
+            f = fit_one(sub, h0, gext_table=gext_table, alpha_ext=alpha_ext)
             fits.append(f)
             flag = 'EDGE' if f.flag_ml_edge else ('POOR' if f.flag_bad_fit else 'ok')
             print(f"  [{i+1:3d}/{len(gals)}] {gal:<14} "
                   f"chi2_fix={f.chi2_red_fixed:.2f}  "
                   f"chi2_free={f.chi2_red_free:.2f}  "
                   f"g†/(cH0/2pi)={f.ratio_cH0_2pi:.3f}  "
-                  f"ML={f.ml_disk_best:.2f}  [{flag}]")
+                  f"ML={f.ml_disk_best:.2f}  "
+                  f"AIC_fix={f.aic_fixed:.1f}  [{flag}]")
         except Exception as ex:
             print(f"  [{i+1:3d}] skip {gal}: {ex}")
     return sorted(fits, key=lambda f: f.chi2_red_fixed)
 
-# ── Smooth baryonic acceleration for model curves ─────────────────────────────
+# ── Smooth baryonic acceleration ──────────────────────────────────────────────
 def _smooth_gN(R_data, Vg, Vd, Vb, R_mod, ml_disk=UPS_DISK_FIXED):
     return g_newton_from_vbar2(
         baryonic_velocity_squared(
@@ -375,7 +476,7 @@ def _smooth_gN(R_data, Vg, Vd, Vb, R_mod, ml_disk=UPS_DISK_FIXED):
 
 # ── Rotation curve plotting (GRAYSCALE) ───────────────────────────────────────
 def plot_rotation_curve(ax, sub, fit: GalaxyFit, h0=70.0,
-                        show_efe=True, show_mond=True, show_lcdm=True,
+                        show_sens_band=True, show_mond=True, show_lcdm=True,
                         show_free=True):
     plt.rcParams.update(GS)
     R, Vob, eVo, Vg, Vd, Vb = _get_arrays(sub)
@@ -391,22 +492,26 @@ def plot_rotation_curve(ax, sub, fit: GalaxyFit, h0=70.0,
         gN_free    = _smooth_gN(R, Vg, Vd, Vb, Rmod, fit.ml_disk_best)
         V_ect_free = ect_vmod(Rmod, gN_free, fit.gdag_free_kpc)
 
-    if show_efe:
+    # g† sensitivity band (×0.5 – ×2): shows how curve shifts with g†
+    # NOTE: this is NOT a computed external-field effect; it is an illustration
+    # of the sensitivity of the fit to order-unity variation in g†_eff.
+    if show_sens_band:
         V_lo = ect_vmod(Rmod, gN_fix, fit.gdag_fixed_kpc * 0.5)
         V_hi = ect_vmod(Rmod, gN_fix, fit.gdag_fixed_kpc * 2.0)
-        ax.fill_between(Rmod, V_lo, V_hi, color=EFE, alpha=0.6, label='EFE band (×0.5–×2)')
+        ax.fill_between(Rmod, V_lo, V_hi, color=SBD, alpha=0.6,
+                        label=r'$g^\dagger$ sensitivity band ($\times$0.5–2)')
 
     if show_mond:
         gN_mond = _smooth_gN(R, Vg, Vd, Vb, Rmod, fit.ml_mond)
         V_mond  = mond_vmod(Rmod, gN_mond, A0_SI/ACC_CONV)
         ax.plot(Rmod, V_mond, LS_MOND, color=MG, lw=1.4,
-                label=f'MOND  χ²={fit.chi2_red_mond:.1f}')
+                label=f'MOND  χ²={fit.chi2_red_mond:.1f}  AIC={fit.aic_mond:.0f}')
 
     if show_lcdm:
         gN_lcdm = _smooth_gN(R, Vg, Vd, Vb, Rmod, fit.ml_lcdm)
         V_lcdm  = lcdm_vmod(Rmod, gN_lcdm, fit.rho_s, fit.r_s_kpc)
         ax.plot(Rmod, V_lcdm, LS_LCDM, color=VLG, lw=1.4,
-                label=f'ΛCDM  χ²={fit.chi2_red_lcdm:.1f}')
+                label=f'ΛCDM  χ²={fit.chi2_red_lcdm:.1f}  AIC={fit.aic_lcdm:.0f}')
 
     ax.plot(Rmod, Vbar,    '--', color=BAR, lw=1.0, label=f'Baryons (Υ={UPS_DISK_FIXED})')
     ax.plot(Rmod, V_2pi,   '-',  color=MG,  lw=1.0, label=r'ECT $g^\dagger_0=cH_0/2\pi$')
@@ -414,7 +519,7 @@ def plot_rotation_curve(ax, sub, fit: GalaxyFit, h0=70.0,
         ax.plot(Rmod, V_ect_free, '-', color=DG, lw=1.2, alpha=0.6,
                 label=f'ECT free Υ={fit.ml_disk_best:.2f}  χ²={fit.chi2_red_free:.1f}')
     ax.plot(Rmod, V_ect_fix, '-', color=BK, lw=1.8,
-            label=f'ECT fixed Υ  χ²={fit.chi2_red_fixed:.1f}')
+            label=f'ECT fixed Υ  χ²={fit.chi2_red_fixed:.1f}  AIC={fit.aic_fixed:.0f}')
     ax.errorbar(R, Vob, yerr=eVo, fmt='o', ms=2.5, color=BK,
                 elinewidth=0.7, capsize=1.2, label='Obs', zorder=5)
 
@@ -425,7 +530,7 @@ def plot_rotation_curve(ax, sub, fit: GalaxyFit, h0=70.0,
     ax.set_xlabel('R (kpc)', fontsize=7)
     ax.set_ylabel('V (km/s)', fontsize=7)
     ax.tick_params(labelsize=6)
-    ax.legend(fontsize=4.5, loc='lower right', framealpha=0.8)
+    ax.legend(fontsize=4.0, loc='lower right', framealpha=0.8)
     ax.set_xlim(left=0); ax.set_ylim(bottom=0)
 
 # ── SET 1: Milky Way ──────────────────────────────────────────────────────────
@@ -478,8 +583,9 @@ def plot_milky_way(out_path, h0=70.0):
     V_lcdm_MW = lcdm_vmod(Rmod, gN_MW, rho_s=8.5e6, r_s_kpc=20.0)
 
     fig, ax = plt.subplots(figsize=(6.0, 4.2))
-    ax.fill_between(Rmod, V_lo, V_hi, color=EFE, alpha=0.65, zorder=1,
-                    label='ECT EFE band (x0.5 to x2)')
+    # NOTE: sensitivity band, NOT a computed EFE
+    ax.fill_between(Rmod, V_lo, V_hi, color=SBD, alpha=0.65, zorder=1,
+                    label=r'$g^\dagger$ sensitivity band ($\times$0.5–2)')
     ax.plot(Rmod, Vbar_MW,   '--', color=BAR, lw=1.2, zorder=2,
             label='Baryons disk (McMillan 2017)')
     ax.plot(Rmod, V_mond_MW, LS_MOND, color=BK, lw=1.8, zorder=5,
@@ -513,7 +619,8 @@ def plot_sparc_gallery(df, fits, out_path, ncols=4, h0=70.0):
     axes_flat = np.array(axes).reshape(-1)
     for i, fit in enumerate(fits):
         sub = df[df['Galaxy']==fit.galaxy].sort_values('R_kpc').reset_index(drop=True)
-        plot_rotation_curve(axes_flat[i], sub, fit, h0=h0, show_efe=False, show_free=False)
+        plot_rotation_curve(axes_flat[i], sub, fit, h0=h0,
+                            show_sens_band=False, show_free=False)
     for j in range(i+1, len(axes_flat)):
         axes_flat[j].set_visible(False)
     fig.suptitle('ECT φ-branch rotation curves vs MOND vs ΛCDM  (fixed Υ_disk=0.5)',
@@ -522,21 +629,15 @@ def plot_sparc_gallery(df, fits, out_path, ncols=4, h0=70.0):
     fig.savefig(out_path, dpi=150, bbox_inches='tight')
     print(f"Saved: {out_path}"); plt.close(fig)
 
-# ── SET 3: EFE curves ─────────────────────────────────────────────────────────
-# ECT EFE context explanation:
-#   ECT predicts g†_eff = g†_0 * exp(γ * φ_env) where φ_env is the local
-#   condensate field from the galaxy's environment. Four curves show how the
-#   rotation curve changes if the galaxy sits in different environments:
-#     void (×0.25):      g† much lower than best-fit → flatter curve
-#     underdense (×0.5): moderately lower g†
-#     field (×1.0):      best-fit g† = "ECT field" value for this galaxy
-#     group (×2.0):      g† higher → steeper curve
-#   The "field" curve is the one that best matches observations.
-#   Note: g†_eff is NOT zero-external-field — it is the effective value already
-#   incorporating the mean environmental condensate at the galaxy's location.
-#   MOND and LCDM are shown for direct comparison on the SAME plot.
-def plot_efe_set(df, fits, out_path, h0=70.0, ncols=3):
-    """EFE environment curves + MOND + LCDM on each panel."""
+# ── SET 3: g† sensitivity curves ─────────────────────────────────────────────
+# IMPORTANT TERMINOLOGY:
+#   These are NOT computed external-field-effect (EFE) curves.
+#   They show how the rotation curve changes if the effective g† differs
+#   from the best-fit value by factors ×0.25, ×0.5, ×1, ×2.
+#   This illustrates sensitivity to g†_eff, not a computed EFE.
+#   A true EFE computation would require g_ext from environment catalogs.
+def plot_sensitivity_set(df, fits, out_path, h0=70.0, ncols=3):
+    """g† sensitivity curves + MOND + LCDM on each panel."""
     plt.rcParams.update(GS)
     n = len(fits); nrows = math.ceil(n / ncols)
     fig, axes = plt.subplots(nrows, ncols, figsize=(ncols*3.5, nrows*3.2))
@@ -549,31 +650,29 @@ def plot_efe_set(df, fits, out_path, h0=70.0, ncols=3):
         gN   = _smooth_gN(R, Vg, Vd, Vb, Rmod, UPS_DISK_FIXED)
         ax   = axes_flat[i]
 
-        # ── ECT EFE bands (draw first, lowest zorder) ──────────────────────
-        ECT_EFE = [
-            (0.25, ':',              'ECT void (×0.25)',       DG, 0.9),
-            (0.5,  '--',             'ECT underdense (×0.5)', DG, 1.0),
-            (1.0,  '-',              'ECT field (×1, best)',  BK, 2.2),
-            (2.0,  '-.',             'ECT group (×2)',         DG, 1.0),
+        # ECT sensitivity curves (draw first, lowest zorder)
+        ECT_SENS = [
+            (0.25, ':',  'ECT g†×0.25  (void)',      DG, 0.9),
+            (0.5,  '--', 'ECT g†×0.5   (underdense)', DG, 1.0),
+            (1.0,  '-',  'ECT g†×1.0   (best-fit)',  BK, 2.2),
+            (2.0,  '-.', 'ECT g†×2.0   (group)',      DG, 1.0),
         ]
-        for factor, ls, lbl, col, lw in ECT_EFE:
+        for factor, ls, lbl, col, lw in ECT_SENS:
             V = ect_vmod(Rmod, gN, fit.gdag_fixed_kpc * factor)
             ax.plot(Rmod, V, color=col, lw=lw, linestyle=ls, zorder=3, label=lbl)
 
-        # ── LCDM (zorder=4, drawn above ECT) ──────────────────────────────
+        # LCDM
         gN_lcdm = _smooth_gN(R, Vg, Vd, Vb, Rmod, fit.ml_lcdm)
         V_lcdm  = lcdm_vmod(Rmod, gN_lcdm, fit.rho_s, fit.r_s_kpc)
         ax.plot(Rmod, V_lcdm, LS_LCDM, color=DG, lw=1.5, zorder=4,
-                label=f'LCDM  χ²={fit.chi2_red_lcdm:.1f}')
+                label=f'ΛCDM  χ²={fit.chi2_red_lcdm:.1f}')
 
-        # ── MOND: BLACK long-dash, highest zorder — always on top ──────────
-        # Uses LS_MOND = (0,(8,3)) which is visually distinct from '--' ECT underdense
+        # MOND: always on top
         gN_mond = _smooth_gN(R, Vg, Vd, Vb, Rmod, fit.ml_mond)
         V_mond  = mond_vmod(Rmod, gN_mond, A0_SI/ACC_CONV)
         ax.plot(Rmod, V_mond, LS_MOND, color=BK, lw=2.2, zorder=8,
                 label=f'MOND  χ²={fit.chi2_red_mond:.1f}')
 
-        # ── Observations ───────────────────────────────────────────────────
         ax.errorbar(R, Vob, yerr=eVo, fmt='o', ms=2.8, color=BK,
                     elinewidth=0.8, capsize=1.5, zorder=9, label='Obs')
 
@@ -581,22 +680,25 @@ def plot_efe_set(df, fits, out_path, h0=70.0, ncols=3):
                      f'({fit.ratio_cH0_2pi:.2f}·cH₀/2π)', fontsize=6.5)
         ax.set_xlabel('R (kpc)', fontsize=7); ax.set_ylabel('V (km/s)', fontsize=7)
         ax.tick_params(labelsize=6)
-        ax.legend(fontsize=4.5, loc='lower right', framealpha=0.85)
+        ax.legend(fontsize=4.0, loc='lower right', framealpha=0.85)
         ax.set_xlim(left=0); ax.set_ylim(bottom=0)
 
     for j in range(i+1, len(axes_flat)):
         axes_flat[j].set_visible(False)
 
-    fig.suptitle('ECT EFE curves: g†_eff varies with environment φ_env\n'
-                 'g†_eff = g†_0·exp(γ φ_env)  |  MOND and ΛCDM shown for comparison',
-                 fontsize=9, y=1.002)
+    fig.suptitle(
+        r'ECT $g^\dagger$ sensitivity curves  |  MOND and $\Lambda$CDM for comparison' '\n'
+        r'NOTE: curves show sensitivity to $g^\dagger_{\rm eff}$ variation, '
+        'not computed external-field effect',
+        fontsize=8, y=1.002)
     fig.tight_layout()
     fig.savefig(out_path, dpi=150, bbox_inches='tight')
     print(f"Saved: {out_path}"); plt.close(fig)
 
-# ── Diagnostic scatter plots ──────────────────────────────────────────────────
+# ── Diagnostic scatter helper ─────────────────────────────────────────────────
 def _scatter_gray(ax, x, y, flags, xlabel, ylabel, title,
-                  ref_y=None, ref_label=None, log_x=False, log_y=False):
+                  ref_y=None, ref_label=None, log_x=False, log_y=False,
+                  ref_y2=None, ref_label2=None):
     good = np.array([not f for f in flags])
     bad  = np.array(flags)
     if good.any():
@@ -605,12 +707,15 @@ def _scatter_gray(ax, x, y, flags, xlabel, ylabel, title,
         ax.scatter(x[bad],  y[bad],  s=12, color=MG, alpha=0.5, marker='x', label='flagged')
     if ref_y is not None:
         ax.axhline(ref_y, color=BK, lw=1.2, ls='--', label=ref_label)
+    if ref_y2 is not None:
+        ax.axhline(ref_y2, color=MG, lw=0.8, ls=':', label=ref_label2)
     ax.set_xlabel(xlabel, fontsize=8); ax.set_ylabel(ylabel, fontsize=8)
     ax.set_title(title, fontsize=8)
     if log_x: ax.set_xscale('log')
     if log_y: ax.set_yscale('log')
     ax.legend(fontsize=7)
 
+# ── Diagnostics ───────────────────────────────────────────────────────────────
 def plot_diagnostics(fits: List[GalaxyFit], out_dir: str, h0=70.0):
     """Generate all diagnostic figures. MUST be called with the full fits list."""
     N = len(fits)
@@ -619,15 +724,26 @@ def plot_diagnostics(fits: List[GalaxyFit], out_dir: str, h0=70.0):
 
     ratios   = np.array([f.ratio_cH0_2pi  for f in fits])
     gdag_si  = np.array([f.gdag_fixed_si   for f in fits])
+    gdag_fr  = np.array([f.gdag_free_si    for f in fits])
     chi2_fix = np.array([f.chi2_red_fixed  for f in fits])
+    chi2_fre = np.array([f.chi2_red_free   for f in fits])
     chi2_mon = np.array([f.chi2_red_mond   for f in fits])
     chi2_lcd = np.array([f.chi2_red_lcdm   for f in fits])
-    chi2_fre = np.array([f.chi2_red_free   for f in fits])
+    aic_fix  = np.array([f.aic_fixed        for f in fits])
+    aic_fre  = np.array([f.aic_free         for f in fits])
+    aic_mon  = np.array([f.aic_mond         for f in fits])
+    aic_lcd  = np.array([f.aic_lcdm         for f in fits])
+    bic_fix  = np.array([f.bic_fixed        for f in fits])
+    bic_fre  = np.array([f.bic_free         for f in fits])
+    bic_mon  = np.array([f.bic_mond         for f in fits])
+    bic_lcd  = np.array([f.bic_lcdm         for f in fits])
     ml_free  = np.array([f.ml_disk_best    for f in fits])
     Mbar     = np.array([f.Mbar_proxy      for f in fits])
     Sigma    = np.array([f.Sigma_bar_proxy for f in fits])
+    R_last   = np.array([f.R_last          for f in fits])
     flags    = [f.flag_low_quality         for f in fits]
     ch0_ref  = cH0_si(h0)/(2*math.pi)
+    ch0_val  = cH0_si(h0)
 
     # ── 2×2 combined scatter ──────────────────────────────────────────────
     r_ml_corr = np.corrcoef(ml_free, np.log10(gdag_si))[0,1]
@@ -635,7 +751,7 @@ def plot_diagnostics(fits: List[GalaxyFit], out_dir: str, h0=70.0):
     ax4s = ax4s.reshape(-1)
     _scatter_gray(ax4s[0], Mbar, gdag_si, flags, 'Mbar proxy (Msun)', 'g_dagger (m/s^2)',
                   '(A) g† vs baryonic mass', ref_y=ch0_ref, ref_label='cH0/2pi',
-                  log_x=True, log_y=True)
+                  ref_y2=ch0_val, ref_label2='cH0', log_x=True, log_y=True)
     _scatter_gray(ax4s[1], Sigma, gdag_si, flags, 'Sigma_bar (Msun/kpc^2)', 'g_dagger (m/s^2)',
                   '(B) g† vs surface density', ref_y=ch0_ref, ref_label='cH0/2pi',
                   log_x=True, log_y=True)
@@ -646,12 +762,13 @@ def plot_diagnostics(fits: List[GalaxyFit], out_dir: str, h0=70.0):
                   '(D) g† vs fit quality', ref_y=ch0_ref, ref_label='cH0/2pi', log_y=True)
     ax4s[3].axvline(5, color=MG, lw=1, ls=':', label='chi2=5 cut')
     ax4s[3].legend(fontsize=7)
-    fig4.suptitle(f'ECT g†_eff diagnostic scatter plots ({N} galaxies)', fontsize=9)
+    fig4.suptitle(f'ECT g†_eff diagnostic scatter plots ({N} galaxies)\n'
+                  'Dashed line = cH₀/2π baseline; dotted = cH₀', fontsize=9)
     fig4.tight_layout()
     fig4.savefig(os.path.join(out_dir,'diag_gdag_scatter4.pdf'), dpi=150, bbox_inches='tight')
     plt.close(fig4)
 
-    # ── Individual scatter files (legacy) ─────────────────────────────────
+    # ── Individual scatter files ───────────────────────────────────────────
     for arr, xl, yl, ttl, lx, ly, fname in [
         (Mbar,    r'$M_{\rm bar}$ (proxy, $M_\odot$)', r'$g^\dagger$ (m/s²)',
          r'$g^\dagger$ vs baryonic mass', True, True, 'diag_gdag_vs_mbar'),
@@ -661,6 +778,8 @@ def plot_diagnostics(fits: List[GalaxyFit], out_dir: str, h0=70.0):
          r'$g^\dagger$ vs $\Upsilon_{\rm disk}$', False, True, 'diag_gdag_vs_mldisk'),
         (chi2_fix,r'$\chi^2_{\rm red}$ (ECT fixed ML)', r'$g^\dagger$ (m/s²)',
          r'$g^\dagger$ vs fit quality', False, True, 'diag_gdag_vs_chi2'),
+        (R_last,  r'$R_{\rm last}$ (kpc)', r'$g^\dagger$ (m/s²)',
+         r'$g^\dagger$ vs outermost radius', False, True, 'diag_gdag_vs_rlast'),
     ]:
         fig, ax = plt.subplots(figsize=(5, 3.8))
         _scatter_gray(ax, arr, gdag_si, flags, xl, yl, ttl,
@@ -671,6 +790,41 @@ def plot_diagnostics(fits: List[GalaxyFit], out_dir: str, h0=70.0):
         fig.tight_layout()
         fig.savefig(os.path.join(out_dir, fname+'.pdf'), dpi=150, bbox_inches='tight')
         plt.close(fig)
+
+    # ── Fixed vs free g† scatter ──────────────────────────────────────────
+    fig, ax = plt.subplots(figsize=(5, 4.2))
+    ax.scatter(gdag_si, gdag_fr, s=12, color=DG, alpha=0.6, label='galaxies')
+    lim = [min(gdag_si.min(), gdag_fr.min())*0.8,
+           max(gdag_si.max(), gdag_fr.max())*1.2]
+    ax.plot(lim, lim, '-', color=BK, lw=0.8, label='y=x')
+    ax.set_xlabel(r'$g^\dagger$ fixed $\Upsilon$ (m/s²)', fontsize=8)
+    ax.set_ylabel(r'$g^\dagger$ free $\Upsilon$ (m/s²)', fontsize=8)
+    ax.set_title(r'Fixed-ML vs free-ML $g^\dagger$ (M/L degeneracy check)', fontsize=8)
+    ax.set_xscale('log'); ax.set_yscale('log')
+    r_val = np.corrcoef(np.log10(gdag_si), np.log10(gdag_fr))[0,1]
+    ax.text(0.05, 0.95, f'log–log Pearson r = {r_val:.3f}',
+            transform=ax.transAxes, fontsize=8, va='top')
+    ax.legend(fontsize=7)
+    fig.tight_layout()
+    fig.savefig(os.path.join(out_dir,'diag_fixed_vs_free_gdag.pdf'), dpi=150, bbox_inches='tight')
+    plt.close(fig)
+
+    # ── Fixed vs free chi2 scatter ────────────────────────────────────────
+    fig, ax = plt.subplots(figsize=(5, 4.2))
+    ax.scatter(chi2_fix, chi2_fre, s=12, color=DG, alpha=0.6, label='galaxies')
+    lim2 = [0, min(chi2_fix.max(), 15)]
+    ax.plot([0, 15], [0, 15], '-', color=BK, lw=0.8, label='y=x')
+    ax.set_xlabel(r'$\chi^2_{\rm red}$ fixed $\Upsilon$', fontsize=8)
+    ax.set_ylabel(r'$\chi^2_{\rm red}$ free $\Upsilon$', fontsize=8)
+    ax.set_title(r'Fixed-ML vs free-ML $\chi^2_{\rm red}$', fontsize=8)
+    ax.set_xlim(0, 12); ax.set_ylim(0, 12)
+    frac_better = np.mean(chi2_fre < chi2_fix) * 100
+    ax.text(0.05, 0.95, f'Free ML improves chi2: {frac_better:.0f}% of galaxies',
+            transform=ax.transAxes, fontsize=7, va='top')
+    ax.legend(fontsize=7)
+    fig.tight_layout()
+    fig.savefig(os.path.join(out_dir,'diag_fixed_vs_free_chi2.pdf'), dpi=150, bbox_inches='tight')
+    plt.close(fig)
 
     # ── chi2 comparison: 4 panels ─────────────────────────────────────────
     fig_c, axc = plt.subplots(1, 4, figsize=(13, 3.8), sharey=True)
@@ -696,12 +850,46 @@ def plot_diagnostics(fits: List[GalaxyFit], out_dir: str, h0=70.0):
         ax_c.legend(fontsize=6, loc='upper right')
         ax_c.tick_params(labelsize=7)
     axc[0].set_ylabel('N galaxies', fontsize=8)
-    fig_c.suptitle(f'Fit quality comparison — {N} SPARC galaxies\n'
-                   'χ²_red histogram per model; χ²=1 = perfect fit given errors',
-                   fontsize=9)
+    fig_c.suptitle(
+        f'Fit quality comparison — {N} SPARC galaxies\n'
+        'χ²_red histogram per model  |  NOTE: ΛCDM has 3 free params vs 1 for ECT/MOND',
+        fontsize=9)
     fig_c.tight_layout()
     fig_c.savefig(os.path.join(out_dir,'diag_chi2_comparison.pdf'), dpi=150, bbox_inches='tight')
     plt.close(fig_c)
+
+    # ── AIC comparison: 4 panels ──────────────────────────────────────────
+    # AIC correctly penalises extra parameters → honest comparison
+    fig_a, axa = plt.subplots(1, 4, figsize=(13, 3.8), sharey=True)
+    for ax_a, vals_a, ttl_a, hatch_a in zip(
+        axa,
+        [aic_fix, aic_fre, aic_mon, aic_lcd],
+        ['ECT fixed Υ=0.5\n(k=1)', 'ECT free Υ\n(k=2)',
+         'MOND\n(k=1)', 'ΛCDM NFW\n(k=3)'],
+        ['/', '\\', 'x', '.']
+    ):
+        clipped = np.clip(vals_a, -50, 300)
+        ax_a.hist(clipped, bins=30, color=DG, alpha=0.65,
+                  edgecolor=BK, lw=0.4, hatch=hatch_a)
+        ax_a.axvline(np.median(vals_a), color=BK, lw=1.5, ls='-',
+                     label=f'Median={np.median(vals_a):.0f}')
+        pct_a = np.mean(vals_a < np.median(aic_fix))*100
+        ax_a.set_title(ttl_a + f'\nBelow ECT-fixed median: {pct_a:.0f}%', fontsize=7.5)
+        ax_a.set_xlabel('AIC (clipped)', fontsize=8)
+        ax_a.legend(fontsize=6, loc='upper right')
+        ax_a.tick_params(labelsize=7)
+    axa[0].set_ylabel('N galaxies', fontsize=8)
+    # wins: galaxies where ECT fixed beats MOND and ΛCDM by AIC
+    ect_beats_mond_aic = np.mean(aic_fix < aic_mon)*100
+    ect_beats_lcdm_aic = np.mean(aic_fix < aic_lcd)*100
+    fig_a.suptitle(
+        f'AIC comparison (accounts for model complexity) — {N} galaxies\n'
+        f'ECT fixed beats MOND by AIC: {ect_beats_mond_aic:.0f}%  |  '
+        f'beats ΛCDM by AIC: {ect_beats_lcdm_aic:.0f}%',
+        fontsize=9)
+    fig_a.tight_layout()
+    fig_a.savefig(os.path.join(out_dir,'diag_aic_comparison.pdf'), dpi=150, bbox_inches='tight')
+    plt.close(fig_a)
 
     # ── g†/(cH0/2pi) histogram: fixed vs free M/L ─────────────────────────
     ratios_free = np.array([f.gdag_free_si/ch0_ref for f in fits])
@@ -721,112 +909,215 @@ def plot_diagnostics(fits: List[GalaxyFit], out_dir: str, h0=70.0):
     plt.close(fig)
     print(f"  Diagnostics saved to {out_dir}")
 
-# ── Five-galaxy comparison table ──────────────────────────────────────────────
-FIVE_GALS = ['DDO154', 'NGC2403', 'NGC3198', 'NGC6503', 'UGC2885']
+# ── Five-galaxy comparison ────────────────────────────────────────────────────
+FIVE_GALS_NORM = [normalize_name(g) for g in
+                  ['DDO154', 'NGC2403', 'NGC3198', 'NGC6503', 'UGC02885']]
 
 def save_five_comparison(fits, out_path, h0=70.0):
     ch0_2pi = cH0_si(h0)/(2*math.pi)
-    fit_map = {f.galaxy: f for f in fits}
+    # Build map using normalized names to avoid UGC02885 vs UGC2885 mismatch
+    fit_map = {normalize_name(f.galaxy): f for f in fits}
     rows = []
-    for gal in FIVE_GALS:
-        if gal not in fit_map: continue
-        f = fit_map[gal]
+    for gal_norm in FIVE_GALS_NORM:
+        if gal_norm not in fit_map:
+            print(f"  WARNING: {gal_norm} not found in fit results. "
+                  f"Available (sample): {list(fit_map.keys())[:10]}")
+            continue
+        f = fit_map[gal_norm]
         rows.append({
-            'galaxy': gal, 'N_pts': f.n_points,
+            'galaxy': f.galaxy, 'N_pts': f.n_points,
             'gdag_fixed_si': f.gdag_fixed_si,
             'gdag_fixed/a0': f.gdag_fixed_si/A0_SI,
             'gdag_fixed/(cH0/2pi)': f.ratio_cH0_2pi,
             'chi2_red_fixed': f.chi2_red_fixed,
+            'aic_fixed': f.aic_fixed, 'bic_fixed': f.bic_fixed,
             'gdag_free_si': f.gdag_free_si,
             'gdag_free/(cH0/2pi)': f.gdag_free_si/ch0_2pi,
             'chi2_red_free': f.chi2_red_free,
+            'aic_free': f.aic_free, 'bic_free': f.bic_free,
             'ML_disk_best': f.ml_disk_best,
             'chi2_red_mond': f.chi2_red_mond,
+            'aic_mond': f.aic_mond, 'bic_mond': f.bic_mond,
             'chi2_red_lcdm': f.chi2_red_lcdm,
-            'flag_ml_edge': f.flag_ml_edge,
-            'flag_bad_fit': f.flag_bad_fit,
+            'aic_lcdm': f.aic_lcdm, 'bic_lcdm': f.bic_lcdm,
+            'flag_ml_edge': f.flag_ml_edge, 'flag_bad_fit': f.flag_bad_fit,
         })
     pd.DataFrame(rows).to_csv(out_path, index=False, float_format='%.4e')
-    print(f"Saved: {out_path}")
-    print(f"\n{'Galaxy':<12} {'g†(m/s²)':>12} {'g†/a0':>7} {'g†/(cH0/2pi)':>13} {'chi2_r':>7} {'chi2_mond':>10}")
-    print('-'*65)
+    print(f"Saved: {out_path}  ({len(rows)}/5 galaxies)")
+    print(f"\n{'Galaxy':<12} {'g†(m/s²)':>12} {'g†/a0':>7} {'g†/(cH0/2pi)':>13} "
+          f"{'chi2_r':>7} {'AIC_fix':>9} {'chi2_mond':>10} {'AIC_mond':>9}")
+    print('-'*80)
     for r in rows:
         print(f"{r['galaxy']:<12} {r['gdag_fixed_si']:>12.3e} "
               f"{r['gdag_fixed/a0']:>7.3f} {r['gdag_fixed/(cH0/2pi)']:>13.3f} "
-              f"{r['chi2_red_fixed']:>7.2f} {r['chi2_red_mond']:>10.2f}")
+              f"{r['chi2_red_fixed']:>7.2f} {r['aic_fixed']:>9.1f} "
+              f"{r['chi2_red_mond']:>10.2f} {r['aic_mond']:>9.1f}")
 
-# ── Summary text report ───────────────────────────────────────────────────────
-def write_summary(fits, out_path, h0=70.0, mw_result=None):
+# ── Summary report ─────────────────────────────────────────────────────────────
+def write_summary(fits, out_path, h0=70.0, mw_result=None, error_floor=2.0):
     ch0_2pi = cH0_si(h0)/(2*math.pi)
     ratios_fix  = [f.ratio_cH0_2pi        for f in fits]
     ratios_free = [f.gdag_free_si/ch0_2pi for f in fits]
     chi2_fix    = [f.chi2_red_fixed        for f in fits]
     chi2_mond   = [f.chi2_red_mond         for f in fits]
     chi2_lcdm   = [f.chi2_red_lcdm         for f in fits]
+    chi2_fre    = [f.chi2_red_free         for f in fits]
+    aic_fix     = [f.aic_fixed             for f in fits]
+    aic_fre     = [f.aic_free              for f in fits]
+    aic_mond    = [f.aic_mond              for f in fits]
+    aic_lcdm    = [f.aic_lcdm             for f in fits]
+    bic_fix     = [f.bic_fixed             for f in fits]
+    bic_fre     = [f.bic_free              for f in fits]
+    bic_mond    = [f.bic_mond              for f in fits]
+    bic_lcdm    = [f.bic_lcdm             for f in fits]
     ml_free     = [f.ml_disk_best          for f in fits]
     good        = [not f.flag_low_quality  for f in fits]
-    ect_beats   = sum(1 for e,m in zip(chi2_fix,chi2_mond) if e<m)
+
+    # clean sample: no quality flags AND chi2_r < 5
+    clean = [not f.flag_low_quality and f.chi2_red_fixed < 5.0 for f in fits]
+    ratios_clean = [r for r, c in zip(ratios_fix, clean) if c]
+    chi2_clean   = [c2 for c2, c in zip(chi2_fix, clean) if c]
+
+    ect_beats_mond_chi2 = sum(1 for e,m in zip(chi2_fix, chi2_mond) if e<m)
+    ect_beats_mond_aic  = sum(1 for e,m in zip(aic_fix, aic_mond) if e<m)
+    ect_beats_lcdm_aic  = sum(1 for e,m in zip(aic_fix, aic_lcdm) if e<m)
+
     with open(out_path, 'w') as fp:
         def w(s=''): fp.write(s + '\n')
-        w('ECT SPARC Rotation Curve Analysis — Summary Report'); w('='*60)
+        w('ECT SPARC Rotation Curve Analysis — Summary Report (v3d)'); w('='*60)
         w(f'H0 assumed: {h0:.1f} km/s/Mpc')
         w(f'cH0       = {cH0_si(h0):.3e} m/s^2')
         w(f'cH0/(2pi) = {ch0_2pi:.3e} m/s^2')
-        w(f'a0 (MOND) = {A0_SI:.3e} m/s^2'); w()
+        w(f'a0 (MOND) = {A0_SI:.3e} m/s^2')
+        w(f'Error floor: {error_floor:.1f} km/s'); w()
+
         w('DATA')
         w(f'  Total galaxies fitted          : {len(fits)}')
         w(f'  Clean fits (no quality flags)  : {sum(good)} / {len(fits)}')
+        w(f'  Clean + chi2<5 (used below)    : {sum(clean)} / {len(fits)}')
         w(f'  Galaxies with N_pts < 8        : {sum(f.flag_low_points for f in fits)}')
         w(f'  Galaxies with ML at edge       : {sum(f.flag_ml_edge for f in fits)}')
         w(f'  Galaxies with chi2_r > 5       : {sum(f.flag_bad_fit for f in fits)}'); w()
-        w('ECT FIXED M/L (Upsilon_disk=0.5, only g† fitted — no ML degeneracy)')
+
+        w('ECT FIXED M/L  (Υ_disk=0.5, only g† fitted — k=1, no ML degeneracy)')
         w(f'  Median g†/(cH0/2pi)   = {np.median(ratios_fix):.3f}')
         w(f'  Mean   g†/(cH0/2pi)   = {np.mean(ratios_fix):.3f}')
         w(f'  Std    g†/(cH0/2pi)   = {np.std(ratios_fix):.3f}')
         w(f'  Frac in [0.5, 2.0]    = {np.mean([(0.5<=r<=2) for r in ratios_fix])*100:.0f}%')
         w(f'  Median chi2_red       = {np.median(chi2_fix):.2f}')
-        w(f'  Good fits chi2_r < 5  = {sum(c<5 for c in chi2_fix)}/{len(fits)}  '
-          f'= {sum(c<5 for c in chi2_fix)/len(fits)*100:.0f}%'); w()
-        w('ECT FREE M/L (g† + Upsilon_disk both fitted — includes ML degeneracy)')
+        w(f'  Good fits chi2_r < 5  = {sum(c<5 for c in chi2_fix)}/{len(fits)} '
+          f'= {sum(c<5 for c in chi2_fix)/len(fits)*100:.0f}%')
+        w(f'  Median AIC            = {np.median(aic_fix):.1f}')
+        w(f'  Median BIC            = {np.median(bic_fix):.1f}'); w()
+
+        w('ECT FIXED M/L — CLEAN SUBSAMPLE (no flags, chi2<5)')
+        w(f'  N clean               = {sum(clean)}')
+        if ratios_clean:
+            w(f'  Median g†/(cH0/2pi)   = {np.median(ratios_clean):.3f}')
+            w(f'  Std    g†/(cH0/2pi)   = {np.std(ratios_clean):.3f}')
+            w(f'  Median chi2_red       = {np.median(chi2_clean):.2f}'); w()
+
+        w('ECT FREE M/L  (g† + Υ_disk both fitted — k=2, includes ML degeneracy)')
         w(f'  Median g†/(cH0/2pi)   = {np.median(ratios_free):.3f}')
         w(f'  Std    g†/(cH0/2pi)   = {np.std(ratios_free):.3f}')
-        w(f'  Median Upsilon_disk   = {np.median(ml_free):.3f}'); w()
-        w('COMPARISON')
-        w(f'  Median MOND chi2_r    = {np.median(chi2_mond):.2f}')
-        w(f'  Median LCDM chi2_r    = {np.median(chi2_lcdm):.2f}')
-        w(f'  ECT better than MOND  = {ect_beats}/{len(fits)} = {ect_beats/len(fits)*100:.0f}%'); w()
+        w(f'  Median Υ_disk         = {np.median(ml_free):.3f}')
+        w(f'  (photometric reference ~0.5, Schombert+2019)')
+        w(f'  Median chi2_red       = {np.median(chi2_fre):.2f}')
+        w(f'  Median AIC            = {np.median(aic_fre):.1f}')
+        w(f'  Median BIC            = {np.median(bic_fre):.1f}'); w()
+
+        w('COMPARISON  (chi2_red)')
+        w(f'  Median ECT fixed chi2_r = {np.median(chi2_fix):.2f}')
+        w(f'  Median MOND chi2_r      = {np.median(chi2_mond):.2f}')
+        w(f'  Median LCDM chi2_r      = {np.median(chi2_lcdm):.2f}')
+        w(f'  ECT better than MOND    = {ect_beats_mond_chi2}/{len(fits)} '
+          f'= {ect_beats_mond_chi2/len(fits)*100:.0f}%  [by chi2_r]')
+        w()
+        w('COMPARISON  (AIC — penalises extra parameters)')
+        w(f'  Median ECT fixed AIC    = {np.median(aic_fix):.1f}  (k=1)')
+        w(f'  Median ECT free  AIC    = {np.median(aic_fre):.1f}  (k=2)')
+        w(f'  Median MOND AIC         = {np.median(aic_mond):.1f}  (k=1)')
+        w(f'  Median LCDM AIC         = {np.median(aic_lcdm):.1f}  (k=3)')
+        w(f'  ECT fixed beats MOND    = {ect_beats_mond_aic}/{len(fits)} '
+          f'= {ect_beats_mond_aic/len(fits)*100:.0f}%  [by AIC]')
+        w(f'  ECT fixed beats LCDM    = {ect_beats_lcdm_aic}/{len(fits)} '
+          f'= {ect_beats_lcdm_aic/len(fits)*100:.0f}%  [by AIC]')
+        w(f'  NOTE: AIC < 0 for perfectly-fitting models; '
+          f'relative ΔAIC is what matters.')
+        w()
+        w('COMPARISON  (BIC — stronger penalty for parameters)')
+        w(f'  Median ECT fixed BIC    = {np.median(bic_fix):.1f}')
+        w(f'  Median MOND BIC         = {np.median(bic_mond):.1f}')
+        w(f'  Median LCDM BIC         = {np.median(bic_lcdm):.1f}'); w()
+
         w('MILKY WAY')
         if mw_result:
             g_mw, chi2_mw = mw_result
-            w(f'  Best-fit g†           = {g_mw:.3e} m/s^2')
-            w(f'  g†/(cH0/2pi)         = {g_mw/ch0_2pi:.3f}')
-            w(f'  chi2_red              = {chi2_mw:.2f}')
+            w(f'  Best-fit g†      = {g_mw:.3e} m/s^2')
+            w(f'  g†/(cH0/2pi)    = {g_mw/ch0_2pi:.3f}')
+            w(f'  chi2_red         = {chi2_mw:.2f}')
         else:
             w('  (not computed)')
-        w(); w('INTERPRETATION NOTE')
-        w('  Scatter in g†_eff present in BOTH fixed and free M/L modes.')
-        w('  Physical interpretation premature until:')
-        w('    (a) M/L degeneracy resolved, (b) EFE sector added,')
-        w('    (c) correlation with environment proxies tested.')
+        w()
+
+        w('SENSITIVITY BAND NOTE')
+        w('  The grey band on rotation-curve plots (×0.5–×2) is a')
+        w('  g†-sensitivity band, NOT a computed external-field effect.')
+        w('  It shows how the predicted rotation curve changes if g†_eff')
+        w('  varies by a factor of two in either direction.')
+        w('  A genuine EFE computation would require g_ext from environment')
+        w('  catalogs (HyperLeda, AMIGA group membership).')
+        w()
+        w('INTERPRETATION NOTE (honest assessment)')
+        w('  The present results are a first-pass test of the ECT galactic')
+        w('  closure. Key findings:')
+        w('  - The preferred baseline cH_0/(2π) is numerically plausible')
+        w('    (median ratio ~0.86 for fixed ML) but not yet proven.')
+        w('  - Scatter in g†_eff is present in both fixed and free ML modes,')
+        w('    suggesting it is not purely a fitting artefact.')
+        w('  - ECT (k=1) and MOND (k=1) are on equal footing by parameter count.')
+        w('    AIC comparison is therefore the honest comparison vs ΛCDM (k=3).')
+        w('  - A decisive interpretation requires:')
+        w('    (i)   explicit EFE/environment modelling with real g_ext,')
+        w('    (ii)  photometric M/L constraints (Schombert+2019 SPS),')
+        w('    (iii) bulge-dominated galaxy treatment improvement.')
+        w('  - The scatter in g†_eff may reflect environmental variation')
+        w('    (physical) and/or residual M/L systematics.')
     print(f"Saved: {out_path}")
 
 # ── Save full CSV ─────────────────────────────────────────────────────────────
-def save_results(fits, out_path):
-    pd.DataFrame([f.__dict__ for f in fits]).to_csv(out_path, index=False)
+def save_results(fits, out_path, clean_path=None):
+    df_all = pd.DataFrame([f.__dict__ for f in fits])
+    df_all.to_csv(out_path, index=False)
     print(f"Saved: {out_path}  (N={len(fits)} rows)")
+    if clean_path:
+        df_clean = df_all[~df_all['flag_low_quality'] & (df_all['chi2_red_fixed'] < 5.0)]
+        df_clean.to_csv(clean_path, index=False)
+        print(f"Saved: {clean_path}  (N={len(df_clean)} clean rows)")
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 def main():
-    ap = argparse.ArgumentParser(description='ECT SPARC rotation curve fitting — phi-branch v3')
-    ap.add_argument('input')
-    ap.add_argument('--h0',        type=float, default=70.0)
-    ap.add_argument('--min-pts',   type=int,   default=6)
-    ap.add_argument('--selected',  nargs='+',  default=None,
-                    help='Galaxies shown in SET 2/3 rotation-curve plots (diagnostics always use ALL)')
-    ap.add_argument('--n-best',    type=int,   default=20)
-    ap.add_argument('--n-efe',     type=int,   default=6)
-    ap.add_argument('--ncols',     type=int,   default=4)
-    ap.add_argument('--output-dir',default=None)
+    ap = argparse.ArgumentParser(
+        description='ECT SPARC rotation curve fitting — phi-branch v3d')
+    ap.add_argument('input',
+                    help='SPARC mass-model table (MassModels_Lelli2016c.mrt)')
+    ap.add_argument('--h0',         type=float, default=70.0)
+    ap.add_argument('--min-pts',    type=int,   default=6)
+    ap.add_argument('--error-floor',type=float, default=2.0,
+                    help='Error floor in km/s (default 2.0; use 0 to disable)')
+    ap.add_argument('--selected',   nargs='+',  default=None,
+                    help='Galaxies for SET 2/3 plots only (diagnostics always use ALL)')
+    ap.add_argument('--n-best',     type=int,   default=20)
+    ap.add_argument('--n-sens',     type=int,   default=6,
+                    help='Galaxies for sensitivity-band plot (was --n-efe)')
+    ap.add_argument('--ncols',      type=int,   default=4)
+    ap.add_argument('--output-dir', default=None)
+    ap.add_argument('--efe-mode',   choices=['none','proxy'], default='none',
+                    help='EFE proxy mode (requires --gext-file)')
+    ap.add_argument('--gext-file',  default=None,
+                    help='CSV with columns: galaxy, gext_m_s2')
+    ap.add_argument('--alpha-ext',  type=float, default=1.0,
+                    help='EFE coupling constant α (default 1.0)')
     args = ap.parse_args()
 
     if args.output_dir:
@@ -837,36 +1128,49 @@ def main():
     os.makedirs(out_dir, exist_ok=True)
     print(f"Output directory: {out_dir}")
 
-    # ── Step 1: Load ALL data ─────────────────────────────────────────────
-    df_all = load_sparc(args.input)
+    # ── Step 1: Load data ─────────────────────────────────────────────────
+    df_all = load_sparc(args.input, error_floor=args.error_floor)
 
-    # ── Step 2: Fit ALL galaxies ONCE ────────────────────────────────────
-    # DESIGN RULE: fit_sample() is called exactly ONCE on the full dataset.
-    # --selected has NO effect on fitting; it only controls which plots are drawn.
-    print(f"\nFitting ALL {df_all['Galaxy'].nunique()} galaxies...")
-    fits_full = list(fit_sample(df_all, h0=args.h0, min_pts=args.min_pts))
+    # ── Step 2: Load optional EFE proxy table ─────────────────────────────
+    gext_table = None
+    if args.efe_mode == 'proxy':
+        if args.gext_file is None:
+            print("WARNING: --efe-mode proxy requires --gext-file. Skipping EFE proxy.")
+        else:
+            gext_table = load_gext(args.gext_file)
+            print(f"Loaded g_ext table: {len(gext_table)} galaxies")
+
+    # ── Step 3: Fit ALL galaxies ONCE ─────────────────────────────────────
+    # DESIGN RULE: fit_sample() called exactly once on full dataset.
+    print(f"\nFitting ALL {df_all['Galaxy'].nunique()} galaxies "
+          f"(error_floor={args.error_floor} km/s)...")
+    fits_full = list(fit_sample(df_all, h0=args.h0, min_pts=args.min_pts,
+                                gext_table=gext_table, alpha_ext=args.alpha_ext))
     N_full = len(fits_full)
     print(f"\nFitted: {N_full} galaxies total\n")
-    assert N_full > 10, f"ERROR: only {N_full} fits — something went wrong!"
+    assert N_full > 10, f"ERROR: only {N_full} fits — something is wrong!"
 
-    # ── Step 3: Save CSV + diagnostics IMMEDIATELY (before any plots) ────
-    # This guarantees statistics reflect the full dataset regardless of --selected.
+    # ── Step 4: Save CSV + diagnostics BEFORE any rotation-curve plots ────
     print("Saving CSV and diagnostics...")
-    save_results(fits_full, os.path.join(out_dir, 'ect_sparc_results.csv'))
-    save_five_comparison(fits_full, os.path.join(out_dir, 'five_galaxies_comparison.csv'), h0=args.h0)
+    csv_path   = os.path.join(out_dir, 'ect_sparc_results.csv')
+    clean_path = os.path.join(out_dir, 'ect_sparc_results_clean.csv')
+    save_results(fits_full, csv_path, clean_path=clean_path)
+    save_five_comparison(fits_full, os.path.join(out_dir, 'five_galaxies_comparison.csv'),
+                         h0=args.h0)
     plot_diagnostics(fits_full, out_dir, h0=args.h0)
 
-    # ── Step 4: Determine which galaxies to show in rotation-curve plots ──
+    # ── Step 5: Determine plot subset ─────────────────────────────────────
     if args.selected:
-        df_plot = df_all[df_all['Galaxy'].isin(args.selected)]
-        fit_map = {f.galaxy: f for f in fits_full}
-        fits_plot = [fit_map[g] for g in args.selected if g in fit_map]
-        print(f"Plot subset: {len(fits_plot)} selected galaxies ({args.selected})")
+        df_plot  = df_all[df_all['Galaxy'].isin(args.selected)]
+        fit_map  = {normalize_name(f.galaxy): f for f in fits_full}
+        fits_plot = [fit_map[normalize_name(g)]
+                     for g in args.selected if normalize_name(g) in fit_map]
+        print(f"Plot subset: {len(fits_plot)} selected galaxies")
     else:
-        df_plot  = df_all
+        df_plot   = df_all
         fits_plot = fits_full
 
-    # ── Step 5: Rotation-curve plots ─────────────────────────────────────
+    # ── Step 6: Rotation-curve plots ──────────────────────────────────────
     mw_path = os.path.join(out_dir, 'set1_milky_way.pdf')
     mw_result = plot_milky_way(mw_path, h0=args.h0)
 
@@ -876,42 +1180,59 @@ def main():
                            os.path.join(out_dir, 'set2_sparc_sample.pdf'),
                            ncols=args.ncols, h0=args.h0)
 
-    efe_gals = fits_plot[:args.n_efe]
-    if efe_gals:
-        plot_efe_set(df_plot, efe_gals,
-                     os.path.join(out_dir, 'set3_efe_curves.pdf'),
-                     h0=args.h0, ncols=3)
+    sens_gals = fits_plot[:args.n_sens]
+    if sens_gals:
+        plot_sensitivity_set(df_plot, sens_gals,
+                             os.path.join(out_dir, 'set3_gdag_sensitivity.pdf'),
+                             h0=args.h0, ncols=3)
 
-    # ── Step 6: Summary report ────────────────────────────────────────────
+    # ── Step 7: Summary report ─────────────────────────────────────────────
     write_summary(fits_full, os.path.join(out_dir, 'summary_report.txt'),
-                  h0=args.h0, mw_result=mw_result)
+                  h0=args.h0, mw_result=mw_result,
+                  error_floor=args.error_floor)
 
-    # ── Console summary ───────────────────────────────────────────────────
+    # ── Console summary ────────────────────────────────────────────────────
     ch0_2pi     = cH0_si(args.h0)/(2*math.pi)
-    ratios      = [f.ratio_cH0_2pi            for f in fits_full]
-    ratios_free = [f.gdag_free_si/ch0_2pi     for f in fits_full]
-    chi2s       = [f.chi2_red_fixed            for f in fits_full]
-    chi2_m      = [f.chi2_red_mond             for f in fits_full]
-    chi2_l      = [f.chi2_red_lcdm             for f in fits_full]
-    ml_free     = [f.ml_disk_best              for f in fits_full]
-    print(f"\n{'─'*60}")
-    print(f"cH0/(2π)            = {ch0_2pi:.3e} m/s²")
-    print(f"a0 (MOND)           = {A0_SI:.3e} m/s²")
-    print(f"\n── FIXED M/L (Υ=0.5) ──")
-    print(f"Median g†/(cH0/2π)  = {np.median(ratios):.3f}")
-    print(f"Std    g†/(cH0/2π)  = {np.std(ratios):.3f}")
-    print(f"In EFE band [0.5,2] = {np.mean([(0.5<=r<=2) for r in ratios])*100:.0f}%")
-    print(f"Median ECT χ²_r     = {np.median(chi2s):.2f}")
-    print(f"\n── FREE M/L ──")
-    print(f"Median g†/(cH0/2π)  = {np.median(ratios_free):.3f}")
-    print(f"Std    g†/(cH0/2π)  = {np.std(ratios_free):.3f}")
-    print(f"Median Υ_disk       = {np.median(ml_free):.3f}")
-    print(f"\n── COMPARISON ──")
-    print(f"Median MOND χ²_r    = {np.median(chi2_m):.2f}")
-    print(f"Median ΛCDM χ²_r    = {np.median(chi2_l):.2f}")
-    ect_beats = sum(1 for e,m in zip(chi2s,chi2_m) if e<m)
-    print(f"ECT > MOND          = {ect_beats}/{N_full} = {ect_beats/N_full*100:.0f}%")
-    print(f"\n[!] Scatter premature: M/L degeneracy + EFE not fully resolved.")
+    ratios      = [f.ratio_cH0_2pi        for f in fits_full]
+    ratios_free = [f.gdag_free_si/ch0_2pi for f in fits_full]
+    chi2s       = [f.chi2_red_fixed        for f in fits_full]
+    chi2_m      = [f.chi2_red_mond         for f in fits_full]
+    chi2_l      = [f.chi2_red_lcdm         for f in fits_full]
+    aic_f_arr   = [f.aic_fixed             for f in fits_full]
+    aic_m_arr   = [f.aic_mond              for f in fits_full]
+    aic_l_arr   = [f.aic_lcdm             for f in fits_full]
+    ml_free     = [f.ml_disk_best          for f in fits_full]
+    clean_mask  = [not f.flag_low_quality and f.chi2_red_fixed < 5.0 for f in fits_full]
+
+    print(f"\n{'─'*65}")
+    print(f"cH0/(2π)              = {ch0_2pi:.3e} m/s²  (ECT baseline)")
+    print(f"a0 (MOND)             = {A0_SI:.3e} m/s²")
+    print(f"\n── FIXED M/L (Υ=0.5, k=1) ──")
+    print(f"Median g†/(cH0/2π)    = {np.median(ratios):.3f}")
+    print(f"Std    g†/(cH0/2π)    = {np.std(ratios):.3f}")
+    print(f"In band [0.5,2.0]     = {np.mean([(0.5<=r<=2) for r in ratios])*100:.0f}%")
+    print(f"Median ECT χ²_r       = {np.median(chi2s):.2f}")
+    print(f"Median ECT AIC        = {np.median(aic_f_arr):.1f}")
+    print(f"Clean sample N        = {sum(clean_mask)}/{N_full}")
+    print(f"Clean median g†/(cH₀/2π) = "
+          f"{np.median([r for r,c in zip(ratios,clean_mask) if c]):.3f}")
+    print(f"\n── FREE M/L (k=2) ──")
+    print(f"Median g†/(cH0/2π)    = {np.median(ratios_free):.3f}")
+    print(f"Median Υ_disk         = {np.median(ml_free):.3f}")
+    print(f"\n── COMPARISON (χ²_r, note different k) ──")
+    print(f"Median MOND χ²_r      = {np.median(chi2_m):.2f}")
+    print(f"Median ΛCDM χ²_r      = {np.median(chi2_l):.2f}")
+    ect_beats_chi2 = sum(1 for e,m in zip(chi2s,chi2_m) if e<m)
+    print(f"ECT > MOND (chi2_r)   = {ect_beats_chi2}/{N_full} = {ect_beats_chi2/N_full*100:.0f}%")
+    print(f"\n── COMPARISON (AIC, accounts for k) ──")
+    ect_beats_mond_a = sum(1 for e,m in zip(aic_f_arr,aic_m_arr) if e<m)
+    ect_beats_lcdm_a = sum(1 for e,m in zip(aic_f_arr,aic_l_arr) if e<m)
+    print(f"Median MOND AIC       = {np.median(aic_m_arr):.1f}")
+    print(f"Median ΛCDM AIC       = {np.median(aic_l_arr):.1f}")
+    print(f"ECT > MOND (AIC)      = {ect_beats_mond_a}/{N_full} = {ect_beats_mond_a/N_full*100:.0f}%")
+    print(f"ECT > ΛCDM (AIC)      = {ect_beats_lcdm_a}/{N_full} = {ect_beats_lcdm_a/N_full*100:.0f}%")
+    print(f"\n[!] g† band = SENSITIVITY band, not computed EFE.")
+    print(f"[!] Scatter interpretation premature: M/L + environment not resolved.")
 
 if __name__ == '__main__':
     main()
