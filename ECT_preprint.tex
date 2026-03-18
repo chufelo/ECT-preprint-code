@@ -7279,7 +7279,8 @@ This section compares ECT with several alternative approaches
 to gravity and cosmology, highlighting structural differences
 and shared features.
 
-\subsection{Baryonic Tully--Fisher relation}
+\subsection{Galactic dynamics: BTFR, rotation curves, and the effective critical scale}
+\label{sec:galactic_dynamics}
 
 
 \subsubsection*{Matter stabilises the Lorentzian phase}
@@ -7336,79 +7337,6 @@ $cH_0/(2\pi)$, with the residual scatter interpreted as an effective
 environmental renormalisation rather than a failure of the critical
 branch itself.
 
-\subsubsection*{Screening and practical formulas}
-
-The crossover between the locally screened regime and the deep
-weak-field critical regime is controlled by a characteristic radius:
-\begin{equation}
-  \label{eq:screening}
-  r_0\sim\left(\frac{G_N M_{\rm bar}}{c^2 g_\dagger}\right)^{1/2}
-  \sim 1\text{--}20\,\text{kpc}
-  \quad\text{(typical SPARC galaxies, Level~B)}.
-\end{equation}
-In quasistatic applications:
-\[
-\mathbf{a}_{\rm tot}
-= -\frac{G_{\rm eff}M_{\rm bar}}{r^2}\hat r - \nabla\phi.
-\]
-For observational comparison, the Radial Acceleration Relation in the
-empirical McGaugh-type fit:
-\begin{equation}
-  \label{eq:RAR}
-  g_{\rm obs}
-  = \frac{g_{\rm bar}}{1-e^{-\sqrt{g_{\rm bar}/g_\dagger}}},
-  \qquad
-  g_\dagger\approx 1.2\times10^{-10}\,\text{m\,s}^{-2}.
-\end{equation}
-
-
-% --- fig:rar ---
-\begin{figure*}[!htb]
-\centering
-\includegraphics[width=\textwidth]{figures/gif6_ECT_RAR_6panel.png}
-\caption{Radial Acceleration Relation (RAR) from the SPARC
-database~\cite{Lelli2016} and the ECT $\phi$-closure prediction.
-Thin diagonal: $g_{\rm obs}=g_{\rm bar}$ (Newtonian); thin dashed:
-deep-MOND asymptote $g_{\rm obs}=\sqrt{g_\dagger g_{\rm bar}}$.
-\textbf{Panels~(a)--(e):} individual galaxies (SPARC data with error
-bars); \textbf{dashed grey}: MOND with universal $a_0$;
-\textbf{solid black}: ECT $\phi$-closure (1~parameter $\phi_{\rm env}$
-per galaxy).
-\textbf{Panel~(f):} full SPARC sample~\cite{McGaugh2016}.
-The ECT interpolation function~\eqref{eq:RAR} recovers the empirical
-relation at Level~B.}
-\label{fig:rar}
-\end{figure*}
-
-
-\textit{Note on interpolating function: the $\phi$-closure
-computations above use the empirical McGaugh~2016
-form~\cite{McGaugh2016} for observational comparison.
-The effective dimensionality calculation
-(Section~\ref{sec:universe_size}) uses the analytic
-closure $\mu(x)=x/\sqrt{1+x^2}$ for analytical
-transparency only; the qualitative $d_{\rm force}$
-behaviour is closure-independent.}
-
-\subsubsection*{Quasi-universality and environmental dependence
-of $g_\dagger$}
-
-In the minimal critical-branch closure the characteristic acceleration
-scale $g_\dagger$ is quasi-universal, explaining why the BTFR and RAR
-appear tight across many galaxies.
-However, ECT does not require exact universality.
-Since the macroscopic order field is sensitive to the surrounding
-condensate environment, weak environmental dependence of $g_\dagger$
-is natural:
-\[
-g_\dagger = g_\dagger(\text{environment}),
-\]
-with small shifts induced by background order, screening history, or
-embedding in denser or lower-density large-scale structure.
-This is a genuine new prediction of the ECT macroscopic branch, distinct
-from standard MOND-like approaches that treat $g_\dagger$ as exactly
-universal~(Level~B, testable).
-
 \subsubsection*{Practical ECT closure for rotation curves}
 
 The galactic sector of the $\phi$-first formulation is treated as a
@@ -7463,10 +7391,12 @@ mass-to-light ratio $\Upsilon_{\rm d}$.
 \subsubsection*{SPARC sample fits and model comparison}
 
 We fitted the closure~\eqref{eq:ect_rotation_closure_main} to the SPARC
-mass-model sample.  Representative fits are shown in
-Fig.~\ref{fig:sparc_sample_new}, while the Milky Way fit is shown in
-Fig.~\ref{fig:mw_new}.  A compact summary of the sample-level results is
-given in Table~\ref{tab:sparc_summary_main}.
+mass-model sample.  The resulting representative fits are shown in
+Fig.~\ref{fig:sparc_sample_new}, while the sample-level summary is given
+in Table~\ref{tab:sparc_summary_main}.  The Milky Way is shown
+separately in Fig.~\ref{fig:mw_new} because it provides a particularly
+useful anchor case for comparing the fitted critical scale with the
+cosmological baseline.
 
 The fixed-$M/L$ mode provides the cleaner test of the ECT galactic
 closure because it removes the strongest stellar disk $M/L$ degeneracy.
@@ -7572,16 +7502,86 @@ retaining a significant galaxy-to-galaxy scatter.}
 \label{fig:gdag_hist_new}
 \end{figure}
 
+\subsubsection*{Milky Way as a representative case}
+
+The Milky Way deserves separate display because it combines a precise
+local rotation-curve reconstruction with particular relevance for
+testing whether the effective critical scale must be exactly universal.
+The fit shown in Fig.~\ref{fig:mw_new} gives
+\[
+g^\dagger_{\rm eff}\approx 1.72\,(cH_0/2\pi),
+\]
+illustrating that the ECT galactic scale need not be strictly
+universal even when the cosmological baseline is fixed.
+
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.8\linewidth]{figures/set1_milky_way.pdf}
 \caption{Milky Way rotation-curve fit in the new ECT galactic closure.
 The best-fit effective critical scale is
-$g^\dagger_{\rm eff}\approx1.72\,(cH_0/2\pi)$, illustrating that the
-ECT galactic critical scale need not be strictly universal even when the
-cosmological baseline is fixed.}
+$g^\dagger_{\rm eff}\approx1.72\,(cH_0/2\pi)$.}
 \label{fig:mw_new}
 \end{figure}
+
+\subsubsection*{RAR benchmark (legacy empirical comparison)}
+
+The following RAR block is retained as a legacy empirical comparison.
+It is not yet recomputed from the new galactic fitting pipeline and
+should therefore be read as an auxiliary observational benchmark rather
+than as the primary numerical result of the present galactic sector.
+
+The crossover between the locally screened regime and the deep
+weak-field critical regime is controlled by a characteristic radius:
+\begin{equation}
+  \label{eq:screening}
+  r_0\sim\left(\frac{G_N M_{\rm bar}}{c^2 g_\dagger}\right)^{1/2}
+  \sim 1\text{--}20\,\text{kpc}
+  \quad\text{(typical SPARC galaxies, Level~B)}.
+\end{equation}
+In quasistatic applications:
+\[
+\mathbf{a}_{\rm tot}
+= -\frac{G_{\rm eff}M_{\rm bar}}{r^2}\hat r - \nabla\phi.
+\]
+For observational comparison, the Radial Acceleration Relation in the
+empirical McGaugh-type fit:
+\begin{equation}
+  \label{eq:RAR}
+  g_{\rm obs}
+  = \frac{g_{\rm bar}}{1-e^{-\sqrt{g_{\rm bar}/g_\dagger}}},
+  \qquad
+  g_\dagger\approx 1.2\times10^{-10}\,\text{m\,s}^{-2}.
+\end{equation}
+
+
+% --- fig:rar ---
+\begin{figure*}[!htb]
+\centering
+\includegraphics[width=\textwidth]{figures/gif6_ECT_RAR_6panel.png}
+\caption{Radial Acceleration Relation (RAR) from the SPARC
+database~\cite{Lelli2016} and the ECT $\phi$-closure prediction.
+Thin diagonal: $g_{\rm obs}=g_{\rm bar}$ (Newtonian); thin dashed:
+deep-MOND asymptote $g_{\rm obs}=\sqrt{g_\dagger g_{\rm bar}}$.
+\textbf{Panels~(a)--(e):} individual galaxies (SPARC data with error
+bars); \textbf{dashed grey}: MOND with universal $a_0$;
+\textbf{solid black}: ECT $\phi$-closure (1~parameter $\phi_{\rm env}$
+per galaxy).
+\textbf{Panel~(f):} full SPARC sample~\cite{McGaugh2016}.
+The ECT interpolation function~\eqref{eq:RAR} recovers the empirical
+relation at Level~B.}
+\label{fig:rar}
+\end{figure*}
+
+
+\textit{Note on interpolating function: the $\phi$-closure
+computations above use the empirical McGaugh~2016
+form~\cite{McGaugh2016} for observational comparison.
+The effective dimensionality calculation
+(Section~\ref{sec:universe_size}) uses the analytic
+closure $\mu(x)=x/\sqrt{1+x^2}$ for analytical
+transparency only; the qualitative $d_{\rm force}$
+behaviour is closure-independent.}
+
 
 A preliminary nearest-neighbour EFE proxy was tested, but for the
 currently available environment inputs it produces numerically
