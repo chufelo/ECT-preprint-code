@@ -7340,15 +7340,29 @@ branch itself.
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.90\linewidth]{figures/ect_btfr_new_bw.pdf}
-\caption{ECT Baryonic Tully--Fisher test from the new SPARC closure.
-Solid circles: clean sample; open circles: flagged galaxies.
-Solid line: ECT theoretical prediction $v_{\rm flat}^4 = G_N M_{\rm bar,eff}\,g^\dagger_0$
-at the cosmological baseline $g^\dagger_0=cH_0/(2\pi)$.
-Dashed line: equivalent MOND prediction at universal $a_0$.
-The effective baryonic mass $M_{\rm bar,eff}=R_{\rm tail}^2 g_N(R_{\rm tail})/G$
-is an ECT-internal proxy; see Appendix~\ref{app:sparc_computation}.}
-\label{fig:btfr_new}
+\caption{ECT BTFR test from the new SPARC galactic closure.  The points
+show the effective outer baryonic mass proxy
+$M_{\rm bar,eff}=R_{\rm tail}^2 g_N(R_{\rm tail})/G_N$ inferred from the
+same baryonic decomposition used in the rotation-curve fits, plotted
+against the observed outer-tail velocity estimator $V_{\rm flat}$.
+The solid line shows the ECT baseline relation
+$V_{\rm flat}^4=G_N M_{\rm bar,eff} g^\dagger_0$ with
+$g^\dagger_0=cH_0/(2\pi)$, while the dashed line shows the MOND
+reference line with $a_0$.  This figure should be read as an
+internally consistent BTFR test of the new ECT closure, not yet as a
+replacement for the standard catalogue-level BTFR built from an
+independent global baryonic-mass table.}
+\label{fig:btfr_new_main}
 \end{figure}
+
+The resulting BTFR test shows that the new galactic closure reproduces
+the expected quartic scaling in a numerically stable way.  Because the
+present implementation uses an internal outer-mass proxy
+$M_{\rm bar,eff}$ derived from the same fitted SPARC decomposition, this
+plot should be interpreted as a self-consistency test of the new ECT
+galactic machinery rather than as the final catalogue-level BTFR
+benchmark.  The latter can be added later by replacing
+$M_{\rm bar,eff}$ with an independently tabulated total baryonic mass.
 
 \subsubsection*{Practical ECT closure for rotation curves}
 
@@ -7505,44 +7519,30 @@ and the still incomplete implementation of an external-field sector.
 
 \begin{figure*}[htb]
 \centering
-\includegraphics[width=\textwidth]{figures/diag_gdag_scatter4.pdf}
-\caption{Diagnostic scatter plots for the fitted effective critical
-scale across the SPARC sample. The panels show correlations with a
-baryonic mass proxy, a baryonic surface-density proxy, the fitted disk
-mass-to-light ratio, and the fit quality itself. Clean and flagged
-systems are shown separately. These diagnostics help disentangle the
-possible physical non-universality of $g^\dagger_{\rm eff}$ from
-residual modelling systematics.}
-\label{fig:gdag_scatter_main}
-\end{figure*}
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.82\linewidth]{figures/diag_gdag_histogram.pdf}
-\caption{Distribution of fitted effective critical scales
-$g^\dagger_{\rm eff}$ across the SPARC sample. The vertical markers
-indicate the two natural ECT baselines $cH_0$ and $cH_0/(2\pi)$. The
-sample clusters around the loop-motivated baseline $cH_0/(2\pi)$ while
-retaining a significant galaxy-to-galaxy scatter.}
-\label{fig:gdag_hist_new}
-\end{figure}
-
-\begin{figure*}[htb]
-\centering
 \includegraphics[width=\textwidth]{figures/fig_gdagger_analysis_new_bw.pdf}
-\caption{Fitted effective critical scale $g^\dagger_{\rm eff}$ from
-the new SPARC pipeline.
-\textbf{Panel~(a):} $g^\dagger_{\rm eff}$ vs.\ effective outer baryonic
-mass proxy for all fitted galaxies. Filled circles: clean sample;
-open circles: flagged systems.
-The horizontal lines mark the MOND universal $a_0$ (dashed) and the
-ECT cosmological baseline $cH_0/(2\pi)$ (solid); the shaded band shows
-the clean-sample interquartile range.
-\textbf{Panel~(b):} ratio $g^\dagger_{\rm eff}/a_0$ for five
-representative galaxies, showing that the ECT scale need not coincide
-with the strictly universal MOND $a_0$.}
-\label{fig:gdagger_analysis_new}
+\caption{Summary analysis of the fitted effective critical scale in the
+new ECT galactic pipeline.  Panel~(a) shows the fitted
+$g^\dagger_{\rm eff}$ values against the effective outer baryonic-mass
+proxy, together with the MOND reference $a_0$ and the ECT baseline
+$cH_0/(2\pi)$.  Panel~(b) shows selected representative systems and
+their deviation from a strictly universal MOND acceleration scale.  The
+figure summarises the central galactic conclusion of the present ECT
+analysis: a cosmological baseline scale is preferred, but strict
+universality is not required.}
+\label{fig:gdagger_analysis_new_main}
 \end{figure*}
+
+
+The two-panel $g^\dagger$ analysis condenses the sample-level result
+into a more transparent diagnostic than the earlier legacy
+$\phi_{\rm env}$ plot.  The left panel shows that the fitted critical
+scale clusters around a cosmological baseline rather than around a
+strictly universal MOND constant, while the right panel visualises how
+representative galaxies deviate from the universal-$a_0$ picture by
+different amounts.  This should not yet be over-read as a completed
+environment theory, but it strongly motivates the ECT interpretation in
+which $g^\dagger_{\rm eff}$ is an effective branch-dependent quantity
+rather than a fundamental universal constant.
 
 \subsubsection*{Milky Way as a representative case}
 
@@ -7574,76 +7574,54 @@ $g^\dagger_{\rm eff}\approx1.72\,(cH_0/2\pi)$.}
 \label{fig:mw_new}
 \end{figure}
 
-\subsubsection*{RAR benchmark (legacy empirical comparison)}
+\subsection{Radial Acceleration Relation}
 
-The following RAR block is retained as a legacy empirical comparison.
-It is not yet recomputed from the new galactic fitting pipeline and
-should therefore be read as an auxiliary observational benchmark rather
-than as the primary numerical result of the present galactic sector.
-
-The crossover between the locally screened regime and the deep
-weak-field critical regime is controlled by a characteristic radius:
-\begin{equation}
-  \label{eq:screening}
-  r_0\sim\left(\frac{G_N M_{\rm bar}}{c^2 g_\dagger}\right)^{1/2}
-  \sim 1\text{--}20\,\text{kpc}
-  \quad\text{(typical SPARC galaxies, Level~B)}.
-\end{equation}
-In quasistatic applications:
+The RAR provides a complementary representation of the same galactic
+closure tested in the rotation-curve analysis.  Instead of plotting
+$V(R)$ directly, it compares the observed acceleration
 \[
-\mathbf{a}_{\rm tot}
-= -\frac{G_{\rm eff}M_{\rm bar}}{r^2}\hat r - \nabla\phi.
+g_{\rm obs}(R)=\frac{V_{\rm obs}^2(R)}{R}
 \]
-For observational comparison, the Radial Acceleration Relation in the
-empirical McGaugh-type fit:
+with the baryonic Newtonian acceleration
+\[
+g_{\rm bar}(R)=\frac{V_{\rm gas}^2(R)+\Upsilon_{\rm d}V_{\rm disk}^2(R)+
+\Upsilon_{\rm b}V_{\rm bul}^2(R)}{R}.
+\]
+In the present ECT closure the corresponding predicted relation is
 \begin{equation}
-  \label{eq:RAR}
-  g_{\rm obs}
-  = \frac{g_{\rm bar}}{1-e^{-\sqrt{g_{\rm bar}/g_\dagger}}},
-  \qquad
-  g_\dagger\approx 1.2\times10^{-10}\,\text{m\,s}^{-2}.
+g_{\rm ECT}(R)=\frac{1}{2}\left[g_{\rm bar}(R)+
+\sqrt{g_{\rm bar}^2(R)+4\,g_{\rm bar}(R)\,g^\dagger_{\rm eff}}\right],
+\label{eq:rar_ect_new}
 \end{equation}
+to be compared with the universal-$a_0$ MOND relation obtained by the
+replacement $g^\dagger_{\rm eff}\to a_0$.
 
+Figure~\ref{fig:rar_new_main} shows the new six-panel RAR diagnostic.
+Panels (a)--(e) display representative galaxies spanning dwarf, spiral,
+edge-on, and giant-spiral systems.  Panel~(f) shows the full SPARC cloud
+together with the same selected galaxies and the baseline ECT branch.
 
-% --- fig:rar (updated to new closure) ---
-\begin{figure*}[!htb]
+\begin{figure*}[htb]
 \centering
 \includegraphics[width=\textwidth]{figures/ect_rar_new_6panel_bw.pdf}
-\caption{Radial Acceleration Relation (RAR) from the SPARC
-database~\cite{Lelli2016} computed with the new ECT algebraic closure
-$g = \frac{1}{2}[g_N + \sqrt{g_N^2 + 4g_N g^\dagger_{\rm eff}}]$.
-\textbf{Panels~(a)--(e):} five representative galaxies (SPARC data
-with error bars); \textbf{dashed}: MOND with universal $a_0$;
-\textbf{solid black}: ECT with fitted $g^\dagger_{\rm eff}$.
-The Newtonian diagonal and deep-critical asymptote
-$\sqrt{g_{\rm bar}\,a_0}$ are shown as guides.
-\textbf{Panel~(f):} full SPARC cloud with the ECT
-baseline $g^\dagger_0 = cH_0/(2\pi)$ (solid).
-Unlike the legacy version, these panels use the new algebraic
-closure~\eqref{eq:ect_rotation_closure_main}, not the empirical
-McGaugh~2016 interpolation~\cite{McGaugh2016}.}
-\label{fig:rar_new}
+\caption{RAR from the new ECT galactic closure.  Panels~(a)--(e) show
+representative galaxies; panel~(f) shows the full SPARC cloud together
+with the selected systems.  Black solid lines denote the fitted ECT
+closure, dashed lines denote MOND with universal $a_0$, and the grey
+diagonal marks the Newtonian limit $g_{\rm obs}=g_{\rm bar}$.  The ECT
+curves are computed from the new practical closure
+\eqref{eq:ect_rotation_closure_main} using the same fitted
+$g^\dagger_{\rm eff}$ values as in the rotation-curve analysis.}
+\label{fig:rar_new_main}
 \end{figure*}
 
-
-\textit{Note on interpolating function: the $\phi$-closure
-computations above use the empirical McGaugh~2016
-form~\cite{McGaugh2016} for observational comparison.
-The effective dimensionality calculation
-(Section~\ref{sec:universe_size}) uses the analytic
-closure $\mu(x)=x/\sqrt{1+x^2}$ for analytical
-transparency only; the qualitative $d_{\rm force}$
-behaviour is closure-independent.}
-
-
-A preliminary nearest-neighbour EFE proxy was tested, but for the
-currently available environment inputs it produces numerically
-negligible corrections.  Accordingly, EFE-sensitive curves are not used
-here as a primary discriminator between models and are not assigned an
-independent physical interpretation in the present version of the
-galactic sector.
-
-
+The RAR representation confirms the same structural picture seen in the
+rotation curves: the ECT branch reduces to the Newtonian regime at large
+$g_{\rm bar}$, approaches the critical square-root branch at small
+$g_{\rm bar}$, and naturally allows galaxy-to-galaxy variation through
+$g^\dagger_{\rm eff}$.  In this sense the RAR is not an independent fit
+law added on top of the theory, but a different projection of the same
+galactic closure already used in the SPARC velocity analysis.
 % ============================================================
 \subsection{Astrophysical predictions and observational tests}
 \label{sec:mp_tests}
@@ -17210,6 +17188,26 @@ V_{\rm ECT}(R)=\sqrt{R\,g(R)}.
 \label{eq:app_vect}
 \end{equation}
 
+\subsection{RAR representation of the same closure}
+
+The radial acceleration relation is not an independent phenomenological
+law added on top of the velocity fit.  It is simply the same galactic
+closure expressed in acceleration variables:
+\begin{equation}
+g_{\rm obs}(R)=\frac{V_{\rm obs}^2(R)}{R},
+\qquad
+g_{\rm bar}(R)=\frac{V_{\rm gas}^2(R)+\Upsilon_{\rm d}V_{\rm disk}^2(R)+
+\Upsilon_{\rm b}V_{\rm bul}^2(R)}{R}.
+\end{equation}
+The corresponding ECT prediction is therefore
+\begin{equation}
+g_{\rm ECT}(R)=\frac{1}{2}\left[g_{\rm bar}(R)+
+\sqrt{g_{\rm bar}^2(R)+4\,g_{\rm bar}(R)\,g^\dagger_{\rm eff}}\right].
+\label{eq:app_rar_ect}
+\end{equation}
+Thus the RAR plots are only a different projection of the same fitted
+galactic closure already used in the rotation-curve analysis.
+
 \subsection{Deep branch and BTFR}
 
 In the low-acceleration branch, eq.~\eqref{eq:app_final_g_law}
@@ -17225,6 +17223,21 @@ v_c^4 = G_N M_{\rm bar} g^\dagger_{\rm eff}.
 \end{equation}
 Thus the BTFR slope is structural, while its normalisation is governed
 by the effective critical scale.
+
+In the present numerical implementation we use an internal outer
+baryonic-mass proxy
+\begin{equation}
+M_{\rm bar,eff}
+=
+\frac{R_{\rm tail}^2\,g_N(R_{\rm tail})}{G_N},
+\label{eq:app_btfr_proxy_mass}
+\end{equation}
+where $R_{\rm tail}$ is an outer-tail radius estimator constructed from
+the last measured SPARC points.  This provides a self-consistent BTFR
+test inside the same galactic closure pipeline.  It should be read as an
+internal ECT BTFR diagnostic, not yet as a substitute for the standard
+catalogue-level BTFR constructed from an independent total baryonic-mass
+table.
 
 
 % ============================================================
@@ -17296,15 +17309,47 @@ AIC and BIC are computed in addition to reduced $\chi^2$.
 
 The main text uses:
 \begin{itemize}
-\item a representative SPARC sample plot (Fig.~\ref{fig:sparc_sample_new}),
-\item a Milky Way plot (Fig.~\ref{fig:mw_new}),
-\item the histogram of fitted $g^\dagger_{\rm eff}$ (Fig.~\ref{fig:gdag_hist_new}),
-\item a compact summary table over the SPARC sample (Table~\ref{tab:sparc_summary_main}).
+\item a representative SPARC rotation-curve figure (Fig.~\ref{fig:sparc_sample_new}),
+\item a compact sample-level fit-quality comparison figure (Fig.~\ref{fig:chi2_comparison_main}),
+\item the updated effective critical-scale summary figure (Fig.~\ref{fig:gdagger_analysis_new_main}),
+\item a Milky Way comparison figure (Fig.~\ref{fig:mw_new}),
+\item a compact summary table over the SPARC sample (Table~\ref{tab:sparc_summary_main}),
+\item an internal BTFR diagnostic figure (Fig.~\ref{fig:btfr_new_main}),
+\item a six-panel RAR figure derived from the same closure (Fig.~\ref{fig:rar_new_main}).
 \end{itemize}
 
-Additional diagnostic plots (AIC comparison, fixed/free-$M/L$
-comparison, and scatter plots against mass, radius, and baryonic
-surface-density proxies) are retained as supplementary material.
+Additional scatter diagnostics, fixed/free-$M/L$ comparisons, and
+further machine-readable tables are retained as supplementary material.
+
+\subsection{Derived plot quantities: BTFR, RAR, and effective critical-scale diagnostics}
+
+Three additional observational representations are generated from the
+same fitted galactic closure.
+
+\paragraph{BTFR.}
+The BTFR plot uses the outer-tail velocity estimator $V_{\rm flat}$
+constructed from the outer SPARC points together with the internal
+effective baryonic-mass proxy
+\[
+M_{\rm bar,eff}=R_{\rm tail}^2 g_N(R_{\rm tail})/G_N.
+\]
+This yields a self-consistent ECT BTFR diagnostic based on the same
+pipeline as the rotation-curve fits.
+
+\paragraph{RAR.}
+The RAR figure is produced by plotting
+$g_{\rm obs}=V_{\rm obs}^2/R$ against
+$g_{\rm bar}=(V_{\rm gas}^2+\Upsilon_{\rm d}V_{\rm disk}^2+\Upsilon_{\rm b}V_{\rm bul}^2)/R$
+for the same galaxies.  The ECT and MOND curves shown there are not
+separate empirical fit functions, but direct projections of the same
+closure used in the velocity analysis.
+
+\paragraph{Effective critical-scale analysis.}
+The updated $g^\dagger$ figure is built directly from the fitted
+per-galaxy values of $g^\dagger_{\rm eff}$ produced by the new SPARC
+pipeline.  It replaces the earlier legacy $\phi_{\rm env}$ plot and is
+therefore the correct summary diagnostic for the present version of the
+galactic sector.
 
 \subsection{Diagnostic interpretation and the current EFE proxy}
 
@@ -17327,6 +17372,31 @@ result.
 
 
 \subsection{Additional diagnostic outputs}
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[width=\textwidth]{figures/diag_gdag_scatter4.pdf}
+\caption{Additional scatter diagnostics for the fitted effective
+critical scale $g^\dagger_{\rm eff}$ across the SPARC sample: dependence
+on a baryonic mass proxy, a baryonic surface-density proxy, the fitted
+disk mass-to-light ratio, and the fit quality itself.  These plots are
+retained as supplementary diagnostics rather than promoted to the main
+text, because the more compact summary is now given by
+Fig.~\ref{fig:gdagger_analysis_new_main}.}
+\label{fig:app_gdag_scatter}
+\end{figure*}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.78\linewidth]{figures/diag_gdag_histogram.pdf}
+\caption{Histogram of fitted effective critical scales
+$g^\dagger_{\rm eff}$ across the SPARC sample.  The vertical markers
+indicate the two natural ECT baselines $cH_0$ and $cH_0/(2\pi)$.  In
+the present manuscript the compact two-panel summary of this information
+is shown in Fig.~\ref{fig:gdagger_analysis_new_main}; the histogram is
+retained here as a supplementary diagnostic.}
+\label{fig:app_gdag_hist}
+\end{figure}
 
 The full numerical pipeline also produces additional machine-readable
 outputs and diagnostic figures, including fixed/free-$M/L$ comparison
