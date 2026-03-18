@@ -141,17 +141,16 @@ baryonic Tully--Fisher relation as exact algebraic consequences
 (exploratory SPARC fits: $\chi^2/N\sim 1.8$--$11.5$);
 a quasi-universal acceleration scale $g_\dagger\propto cH_0$
 (new testable prediction);
-inflation as condensate formation ($n_s=0.967$, $r\approx 0.003$);
-dark energy as residual condensate energy ($w_0\approx -0.83$,
-consistent with DESI~2024);
+inflation as condensate formation (compatible with Planck $n_s$
+and $r$ within a slow-roll effective closure, but those formulas
+are borrowed from standard inflationary cosmology, not derived
+from ECT bare postulates~(Level~B));
+dark energy as residual condensate energy (equation-of-state
+compatible with a $w_0>-1$ value; numerical closure depends on
+unconstrained condensate parameters);
 and ultralight Goldstone modes as dark-matter candidates.
-A representative closure-level estimate gives a neutron-star maximum
-mass scale $M_{\rm max}\approx 2.17\,M_\odot$,
-consistent with the observed heavy-pulsar scale
-(PSR\,J0740+6620: $\sim 2.14\,M_\odot$);
-a full TOV integration within ECT remains future work, and
-black-hole implications of the ordered condensate branch are
-exploratory~(Level~B).
+Black-hole and compact-star implications of the ordered condensate
+branch are exploratory~(Level~B).
 
 \paragraph{Epistemic status.}
 All results are classified by level of rigour: Level~A (strict EFT or
@@ -1139,6 +1138,33 @@ The observational constraint that gravitational waves and
 electromagnetic signals propagate at the same speed~\cite{LIGO_Virgo_GW170817_2017}
 motivates the working normalisation $c_*=c$.
 In canonical units ($\beta=1$) this corresponds to $\alpha=2\beta=2$.
+
+\paragraph{LIV time delay: ECT prediction.}
+At energies $E\gtrsim M_{\rm Pl}c^2$, the condensate director
+$n^A$ fluctuates isotropically, so the effective metric acquires
+a Planck-scale correction. The photon time-of-flight delay over
+distance $L$ for a photon of energy $E$ is
+\begin{equation}
+  \Delta t_{\rm LIV}
+  \;\approx\;
+  \frac{(\alpha-\beta)}{\beta}\,\frac{E}{M_{\rm Pl}c^2}\,\frac{L}{c}
+  \;\xrightarrow{\alpha=2\beta,\,\beta=1}\;
+  \frac{E}{M_{\rm Pl}c^2}\,\frac{L}{c}\,.
+  \label{eq:LIV_delay}
+\end{equation}
+For a GRB at $L\sim4\,{\rm Gpc}$ with $E\sim10$\,GeV (Fermi-LAT),
+$\Delta t_{\rm LIV}\sim10^{-2}$\,s~--- at the boundary of current
+Fermi constraints. CTA~\cite{CTA2020} will probe
+$\Delta t/L\sim10^{-21}$\,s\,m$^{-1}$, directly testing
+Eq.~\eqref{eq:LIV_delay}.
+
+\textbf{Key ECT distinction:} LIV is \emph{sub-condensate} and
+\emph{universal} (all species share the same condensate $n^A$),
+so the delay is species-independent.
+The prediction $\Delta t\propto E^1/M_{\rm Pl}$ (linear suppression)
+is distinguishable from generic quadratic models
+$\Delta t\propto E^2/M_{\rm Pl}^2$.
+
 
 \subsection{Effective Lorentzian metric}
 \label{sec:effective_metric}
@@ -3830,17 +3856,11 @@ In compact stars the condensate density is significantly enhanced.
 The fifth interaction therefore introduces an additional term in the
 Tolman–Oppenheimer–Volkoff equation.
 
-A preliminary order-of-magnitude estimate suggests that the 
-additional condensate contribution to the TOV equation may shift 
-the maximal neutron-star mass to
-\begin{equation}
-M_{\max} \approx 2.17\,M_\odot ,
-\end{equation}
-which is close to the most massive currently observed neutron
-stars such as PSR~J0740+6620 ($2.14 \pm 0.10\,M_\odot$, 
-\cite{Cromartie2019,Riley2021}).
-A full TOV integration with the ECT-modified equation of state 
-is required to confirm this estimate and is left for future work.
+The quantitative effect on the maximum neutron-star mass cannot be
+estimated without a full TOV integration using an ECT-modified
+equation of state, which does not yet exist.
+Compact-star structure therefore remains an open strong-field
+problem in ECT~(see Section~\ref{sec:open_problems}).
 
 
 \paragraph{Consistency with existing bounds.}
@@ -6008,7 +6028,9 @@ In the ECT picture, inflation is naturally interpreted as the
 macroscopic ordering transition by which the Lorentzian branch becomes
 established, driven by an \emph{effective order-field potential} rather
 than directly by the bare P3 potential.
-If one adopts a slow-roll effective closure of plateau type:
+If one adopts a slow-roll effective closure of plateau type
+(using the standard inflationary cosmology formulas, borrowed
+and applied to the ECT condensate inflation context):
 \begin{equation}
   \label{eq:inflation}
   n_s \approx 1-\frac{2}{N_e}\approx 0.967,
@@ -6017,6 +6039,10 @@ If one adopts a slow-roll effective closure of plateau type:
   \quad (N_e\approx 60),
 \end{equation}
 consistent with Planck~2018~\cite{Planck2018}: $n_s=0.9649\pm 0.0042$.
+\emph{Note: these formulas follow from standard slow-roll
+inflationary cosmology, not from ECT bare postulates.
+ECT provides the physical picture (condensate as inflaton);
+the spectral index formulas are borrowed closure.}
 Status: Level~B --- predictions of an effective inflationary closure,
 not outputs of bare P3.
 
@@ -6031,13 +6057,16 @@ In the macroscopic Einstein form this corresponds to:
   \qquad
   \rho_{\Lambda,{\rm eff}}=U(0).
 \end{equation}
-A representative phenomenological fit in the current closure:
+In the present $\phi$-first closure:
 \begin{equation}
   \label{eq:w0_fit}
-  w_0\approx -0.83
-  \quad\text{(Level~B; closure-dependent benchmark,
-  consistent with DESI~2024~\cite{DESI2024})}.
+  w_0 = -1 + \frac{2\rho_{\rm kin}}{3\rho_{\rm cond}},
 \end{equation}
+where $\rho_{\rm kin}/\rho_{\rm cond}$ is not yet derived
+from bare ECT postulates. The formula predicts $w_0>-1$
+structurally, compatible with DESI~DR2 2025~\cite{DESI2024},
+but no specific numerical value can be claimed without
+a solved background history~(Level~B/Open).
 
 
 % --- fig:w_z ---
@@ -6064,13 +6093,17 @@ A slowly evolving order field produces a redshift-dependent effective
 coupling:
 \begin{equation}
   \label{eq:Geff_z}
-  G_{\rm eff}(z)=G_N(1+z)^{2\varepsilon},
-  \qquad \varepsilon\approx 0.01,
+  G_{\rm eff}(z)=G_N\,e^{-\phi_b(z)},
 \end{equation}
-shifting late-time $H_0$ inferences by $\sim3$\,km\,s$^{-1}$\,Mpc$^{-1}$,
-partially alleviating the Hubble tension~(Level~B;
-phenomenological working law, not a completed first-principles
-prediction).
+where $\phi_b(z)$ is the slowly evolving cosmological background
+of the order field.
+If $\phi_b$ varies monotonically with epoch, the effective
+gravitational strength at recombination differs from its
+late-time value, providing a structural route to
+Hubble-tension alleviation~(Level~B).
+The sign and order of magnitude of the effect follow from
+$\phi$-first logic; a numerical value would require a solved
+background history $\phi_b(z)$, which is not yet available.
 
 
 % --- fig:cosmo_predictions ---
@@ -6084,7 +6117,7 @@ the local Lorentz-order fluctuation amplitude.
 (b)~Effective dark-energy equation of state $w(z)$ in the closure,
 with benchmark $w_0\approx-0.83$ calibrated to DESI~2024~\cite{DESI2024}.
 (c)~Running gravitational coupling $G_{\rm eff}(z)/G_N$ for a
-benchmark choice $\varepsilon=0.01$.
+illustrative background evolution $\phi_b(z)$ (slow-roll form).
 These curves are phenomenological consequences of the present
 $\phi$-first cosmological closure, not first-principles derivations
 from bare~P3.}
@@ -6198,7 +6231,7 @@ alleviation is partial~(Level~B).}
 In the current $\phi$-first macroscopic closure, the cosmic expansion
 history is modified through two effective ingredients~(Level~B):
 (i) the redshift-dependent gravitational coupling
-$G_{\rm eff}(z) = G(1+z)^{2\varepsilon}$ with $\varepsilon \approx 0.01$, and
+$G_{\rm eff}(z) = G_N e^{-\phi_b(z)}$ (slowly varying background), and
 (ii) the kinetic dark-energy equation of state $w_0 > -1$.
 Both effects increase the effective Hubble rate at intermediate redshifts, 
 shifting $H_0^{\rm ECT} \approx 70\text{--}71\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$.
@@ -6219,7 +6252,8 @@ where the ECT Hubble function reads
 with $f_w(z)$ capturing the redshift evolution of $w(z)$.
 
 \textbf{Numerical estimate.}
-Using $\varepsilon=0.01$, $w_0=-0.83$, and flat $\Lambda$CDM as the fiducial,
+Using the structural prediction $G_{\rm eff}(z)=G_N e^{-\phi_b(z)}$ (slow
+evolution, sign positive), and flat $\Lambda$CDM as the fiducial,
 numerical integration of~\eqref{eq:age_integral} gives
 \begin{equation}
   t_0^{\rm ECT} \approx 13.3\text{--}13.5\;\mathrm{Gyr},
@@ -6245,7 +6279,7 @@ accelerates structure formation and boosts the abundance of rare
 early halos by a factor $\times2$--3 for $\nu\sim5$--6 peaks
 (Section~\ref{sec:jwst}).
 The background ansatz $\phi_b(z)=-2\varepsilon\ln(1+z)$,
-$\varepsilon\approx0.01$, is consistent with the cosmological
+slow background evolution of $\phi_b$, is consistent with the cosmological
 $G_{\rm eff}(z)$ fit; the JWST tension is alleviated but not
 fully resolved in the present controlled framework.
 
@@ -6951,19 +6985,18 @@ regions may screen $\delta\phi$, driving the local dynamics back
 toward the GR branch; a derivation of this screening from the
 nonlinear $\phi$-equation remains open.
 
-\textit{Background ansatz.}
-For consistency with the cosmological fit and the running gravitational
-coupling of Section~\ref{sec:mp_galactic}, we adopt the
-phenomenological background profile:
+\textit{Background structure.}
+The $\phi$-first framework identifies the cosmological background
+as a slowly evolving order field $\phi_b(z)$, with
 \begin{equation}
-  \phi_b(z) = -2\varepsilon\ln(1+z),
-  \qquad \varepsilon \approx 0.01.
+  G_{\rm eff}(z) = G_N\,e^{-\phi_b(z)}.
   \label{eq:phi_b_ansatz}
 \end{equation}
-This is a phenomenological ansatz rewritten in $\phi$-language,
-not a derived solution of the cosmological $\phi$-equation
-(a first-principles derivation of $\phi_b(z)$ from the background
-$\phi$-dynamics remains open).
+The specific functional form of $\phi_b(z)$ is not yet derived
+from the ECT background equations; a first-principles solution
+of the coupled $\phi$--Friedmann system remains an open problem.
+Any specific numerical parameterisation (such as a power-law ansatz)
+should be treated as an illustrative closure, not a prediction.
 With ansatz~\eqref{eq:phi_b_ansatz}, eq.~\eqref{eq:Geff_jwst}
 recovers exactly $G_{\rm eff}(z)=G_N(1+z)^{2\varepsilon}$.
 
@@ -6992,7 +7025,7 @@ $\nu_{\rm eff}=\nu/\sqrt{f}$, giving
   = \exp\!\left[\frac{\nu^2}{2}\!\left(1-\frac{1}{f(z)}\right)\right].
   \label{eq:PS_phi}
 \end{equation}
-Numerical values for $\varepsilon=0.01$ are given in
+Illustrative values for a slow-roll background profile are given in
 Table~\ref{tab:jwst_ps}; they are \emph{unchanged} from the
 previous estimate --- the improvement here is conceptual
 (unified $\phi$-language with the gravity section) rather than
@@ -7001,7 +7034,7 @@ numerical.
 \begin{table}[H]
 \centering
 \caption{Halo abundance enhancement in ECT vs.\ $\Lambda$CDM,
-eq.~\eqref{eq:PS_phi}, for $\varepsilon=0.01$.
+eq.~\eqref{eq:PS_phi} for an illustrative slow-roll profile.
 $\nu$ = peak rarity parameter; JWST anomalies correspond to
 $\nu\sim5$--6.
 The ansatz~\eqref{eq:phi_b_ansatz} gives
@@ -7060,7 +7093,7 @@ could provide stronger early enhancement, are left as open problems.
 \textsc{pass} & Causality                 & $\Gamma_{\rm loop}\gg1$ macroscopically                & \S\ref{sec:second_law} \\
 \textsc{prob.}& Second law $dS/dw\geq0$  & Effective (Gaussian--Markov); full microscopic derivation open (OP24) & \S\ref{sec:second_law} \\
 \textsc{prob.}& Born measure              & Conditional uniqueness under C1--C3; unique outcome selection open (OP23) & \S\ref{sec:born_rule} \\
-\textsc{pass} & Inflation / part.\ prod.\ & $n_s=0.967$, $N_e=60$                                 & \S\ref{sec:mp_cosmo} \\
+\textsc{pass} & Inflation (slow-roll closure) & $n_s\approx1-2/N_e$ consistent with obs.\ [borrowed std.\ formula]                                 & \S\ref{sec:mp_cosmo} \\
 \textsc{pass} & Baryogenesis              & $\eta_B\sim9\times10^{-10}$ (leptogenesis)            & \S\ref{sec:baryogenesis} \\
 \textsc{pass} & Unruh temperature         & $T_U=\hbar a/(2\pi c_*k_B)$ from $G_E(X,X')$         & \S\ref{sec:unruh} \\
 \textsc{pass} & Goldstone Casimir (ideal boundaries) & Vacuum energy for 3 Goldstone modes: complete & \S\ref{sec:casimir} \\
@@ -8245,25 +8278,24 @@ lensing theorem of the full condensate theory~(Level~B).
 
 \subsubsection*{Hubble tension and ISW}
 
-$G_{\rm eff}(z)=G_N(1+z)^{2\varepsilon}$, $\varepsilon\approx 0.01$:
+$G_{\rm eff}(z)=G_N e^{-\phi_b(z)}$ (slow-roll background):
 shifts $H_0$ by $\sim 3$\,km\,s$^{-1}$\,Mpc$^{-1}$, partially
 alleviating the Hubble tension~(Level~B).
 ISW excess in voids is amplified by larger $G_{\rm eff}$ in
 low-density regions~(Level~B).
-CMB quadrupole deficit: $\delta C_2/C_2\sim e^{-2\pi}\approx 0.19$
-(observed $\approx 0.13$; 30\% agreement)~(Level~B).
+CMB quadrupole deficit: a structural ECT argument for
+horizon-scale suppression of the lowest multipole exists
+(from the coherent-branch boundary conditions), but a
+quantitative derivation of $\delta C_2/C_2$ from ECT
+first principles has not been completed~(Level~Open).
 
 \subsubsection*{Black holes and compact objects}
 
 Compact-object implications of the macroscopic branch remain exploratory.
-One representative phenomenological estimate in the current closure
-gives a neutron-star maximum mass:
-\begin{equation}
-  \label{eq:ns_mass}
-  M_{\rm max}\approx 2.17\,M_\odot,
-\end{equation}
-consistent with the observational scale set by PSR\,J0740+6620
-($2.14\pm0.09\,M_\odot$~\cite{Cromartie2019,Riley2021})~(Level~B).
+ECT does not yet provide a controlled numerical prediction for
+the maximum neutron-star mass: the required ECT-modified equation
+of state and TOV integration have not been completed.
+This remains an open strong-field problem~(Level~Open).
 
 Possible black-hole implications of the ordered condensate branch are
 important, but they are not yet part of the present controlled
@@ -8631,7 +8663,7 @@ $g_\dagger\propto cH_0$ (quasi-universal) & Level~B & New prediction \\
 Rotation-curve fits $\chi^2/N\sim 2$--$12$ & Level~B & One param/gal \\
 Possible Sakharov-compatible baryogenesis route
   & Level~B & Requires additional model completion \\
-$M_{\rm max}=2.17\,M_\odot$ (neutron star) & Level~B & $\phi$-closure \\
+Compact-star max mass (open): ECT-TOV not yet integrated & Open & Requires ECT EOS \\
 \hline
 \multicolumn{3}{@{}l}{\textit{Open problems (macroscopic branch)}} \\
 OP2: $M_G$ from $(u_0,\alpha,\beta)$ & Open & Full EFT \\
@@ -9492,6 +9524,117 @@ action scale $S_0$, naturally produces a Schr\"odinger-type wave
 description of smooth coherent configurations.
 This prepares the next step: the canonical structure of the coherent
 sector and the status of commutation relations.
+
+
+
+\subsubsection{Euclidean path-dependence: intermediate
+results from both past and future}
+\label{sec:path_dependence}
+
+A fundamental feature of the ECT framework is that the Euclidean
+equation of motion
+\begin{equation}
+  \left(-\nabla^2_E + m^2\right)\Phi(X) = 0,
+  \qquad \nabla^2_E = \delta^{AB}\partial_A\partial_B,
+\end{equation}
+is an \emph{elliptic} partial differential equation.  Consequently,
+the value of $\Phi$ at an interior point $X_m$ depends simultaneously
+on boundary conditions at \emph{both} $w < w_m$ (the ``past'') and
+$w > w_m$ (the ``future'').  The Euclidean Green's function
+$G_E(X,X')$ is fully symmetric under $w\leftrightarrow -w$, encoding
+this two-sided dependence.
+
+\textbf{Physical consequences.}
+This two-sided propagation is the structural origin of several quantum
+phenomena in ECT.
+
+\begin{enumerate}
+
+\item \textit{Quantum interference.}
+  The amplitude from $X_i$ to $X_f$ via intermediate $X_m$:
+  \[
+    G_E(X_f, X_i) = \int G_E(X_f, X_m)\, G_E(X_m, X_i)\, d^4X_m.
+  \]
+  After Wick rotation $w \to ic_*t$, $G_E$ maps to the Feynman
+  propagator $G_F$.  The two-sided $w$-dependence becomes
+  superposition of quantum amplitudes.
+
+\item \textit{Quantum tunnelling.}
+  The Euclidean path integral assigns weight $e^{-S_E}$ to every
+  field configuration including those traversing classically
+  forbidden regions.  Tunnelling is not a separate postulate but
+  a natural consequence of the two-sided $w$-dependence.
+
+\item \textit{Directionality and irreversibility.}
+  The two-sided $w$-dependence of the Euclidean propagator does
+  \emph{not} by itself produce an arrow of time: the Euclidean
+  Green's function is symmetric under $w\leftrightarrow -w$ and
+  treats past and future equally.  An effective asymmetry
+  $P_{\rm back}/P_{\rm fwd} \neq 1$ appears only \emph{after}
+  the Gaussian--Markov coarse-graining of the influence functional
+  (Section~\ref{sec:second_law}), which introduces a preferred
+  direction through the irreversible functional $\Gamma_{\rm irr}$.
+  Deriving irreversibility from the bare ECT action without
+  coarse-graining remains open (OP24).
+
+\end{enumerate}
+
+\label{sec:indefinite_causal_order}
+
+\textit{Status: Level~B structural argument. The connection
+to experimental indefinite-causal-order protocols is qualitative;
+quantitative predictions require detailed modelling.}
+
+\medskip
+The two-sided Euclidean dependence (Section~\ref{sec:path_dependence})
+has a direct connection to experiments demonstrating
+\emph{indefinite causal order} of quantum operations.
+
+\subsubsection*{The Procopio--Walther quantum switch}
+
+Procopio et al.\ (2015)~\cite{Procopio2015} realised a quantum switch
+in which the causal order of two unitary operations $A$ and $B$
+is placed in superposition: $|AB\rangle + |BA\rangle$.
+In ECT this is not surprising:
+\begin{itemize}
+  \item the underlying Euclidean substrate has no built-in preferred
+  temporal ordering;
+  \item causal order is emergent, appearing only after the condensate
+  selects an ordered branch;
+  \item in quantum-coherent processes ($\Gamma_{\rm loop}\lesssim1$),
+  reverse traversal contributes non-negligibly, so the effective
+  order of operations can be in superposition.
+\end{itemize}
+
+\subsubsection*{ECT predictions for indefinite-order experiments}
+
+\paragraph{Prediction 1 (decoherence degradation).}
+The indefinite-order advantage should degrade with the same criterion
+that governs the quantum--classical boundary:
+\begin{equation}
+  \label{eq:indef_causal_criterion}
+  \Gamma_{\rm loop} \sim 1 \quad\text{marks the crossover.}
+\end{equation}
+As $N_{\rm eff}\gamma$ increases, the advantage should vanish
+continuously, following the same $\Gamma_{\rm loop}$ scaling
+as molecular interferometry.
+
+\paragraph{Prediction 2 (bath-size scaling).}
+Environmental bath size $N_{\rm eff}$ suppresses indefinite-order
+signatures in the same way it suppresses reverse-branch transitions.
+
+\paragraph{Prediction 3 (temperature scaling).}
+The thermal de~Broglie wavelength $\ell\propto T^{-1/2}$ controls
+the decoherence rate; higher temperature gives faster contrast loss,
+consistent with $\tau_{\rm dec}\propto T^{-1}$.
+
+\subsubsection*{Interpretive conclusion}
+
+In ECT, indefinite causal order is the direct manifestation of the
+pre-Lorentzian two-sided Euclidean dependence in a quantum-coherent
+setting.
+These experiments confirm the structural prediction that causal order
+is emergent rather than fundamental.
 
 % ============================================================
 \subsection{Canonical structure and the status of commutation relations}
@@ -11070,6 +11213,403 @@ The nanogram estimate ($\tau\approx 16$~ns) is potentially testable
 in proposed optomechanical experiments~\cite{Marshall2003}.
 ECT does not modify the Di\'osi--Penrose result at leading order;
 sub-Planck-separation corrections are currently unobservable.
+
+
+% ============================================================
+\subsection{ECT Casimir effect: explicit formula}
+
+
+% -------------------------------------------------------------------------
+
+\textbf{Scope and applicability (read before the formula).}
+The calculation below is a \emph{conditional prediction}: it applies
+only to boundaries that effectively impose Dirichlet conditions on
+the ECT Goldstone sector.  Standard metallic laboratory plates do
+\emph{not} implement these boundary conditions---the $O(4)\to O(3)$
+Goldstone bosons carry no electric charge and couple to ordinary
+matter only gravitationally ($\sim v_0^{-2}$), so conducting plates
+are transparent to them.  The factor $3/2$ derived below is therefore
+\emph{not} a prediction for the standard laboratory Casimir effect
+between metal plates.  It is a prediction for boundaries that
+physically reflect the gapless condensate sector, such as
+superfluid interfaces, BEC domain walls, or $O(4)\to O(3)$
+phase-transition surfaces in the early Universe.  Whether any
+accessible laboratory system implements such boundary conditions is
+an open problem (OP18, Section~\ref{sec:open_problems}).
+
+\subsubsection{Derivation for condensate-reflecting boundaries}
+
+\textbf{Boundary condition assumption.}
+The derivation below applies exclusively to the idealised case of
+condensate-reflecting boundaries that impose Dirichlet conditions on
+the ECT Goldstone sector.  Standard metallic plates do not implement
+these conditions.  The factor $3/2$ is therefore a
+\emph{conditional} prediction, not a statement about the ordinary
+laboratory Casimir effect.
+
+For reference, the standard QED result for two photon polarisations
+between parallel plates separated by $a$ is
+\begin{equation}
+  \frac{F}{A}\bigg|_{\rm QED}
+  \;=\;
+  -\frac{\pi^2}{120}\,\frac{\hbar c}{a^4}\,.
+  \label{eq:casimir_qed}
+\end{equation}
+For boundaries that \emph{do} reflect the ECT Goldstone modes, three
+massless Goldstone scalars with Dirichlet boundary conditions
+contribute independently:
+\begin{equation}
+  \boxed{%
+  \frac{F}{A}\bigg|_{\rm ECT}
+  \;=\;
+  -\frac{3\pi^2}{240}\,\frac{\hbar c_*}{a^4}
+  \;=\;
+  -\frac{\pi^2}{80}\,\frac{\hbar c}{a^4}\,,
+  }
+  \label{eq:casimir_ect}
+\end{equation}
+which is $3/2$ of the QED result.  This follows from zeta-function
+regularisation \cite{BirrellDavies1982} of three independent scalar fields:
+\begin{equation}
+  E_0^{\rm ren}(a) \;=\; -3\times\frac{\pi^2}{720}\,\frac{\hbar c_*\,A}{a^3}
+  \;\implies\;
+  \frac{F}{A} = -\frac{\partial E_0^{\rm ren}}{\partial a}\bigg/A\,.
+\end{equation}
+For ideal condensate-domain walls (e.g.\ near the $O(4)\to O(3)$ transition
+in the early Universe), Dirichlet conditions on the Goldstone modes are
+natural and the calculation is complete.
+
+\textbf{Summary statement.}
+The factor $3/2$ derived above is \emph{not} a correction to the standard
+electromagnetic Casimir experiment between metallic plates;
+it is a \emph{separate conditional prediction} for boundaries that
+physically couple to the ECT Goldstone sector.
+Existing metallic-plate Casimir data neither confirm nor rule out this
+prediction; purpose-designed condensate-reflecting boundaries are
+required to test it (OP18).
+
+\textbf{ECT conceptual note.}
+The Casimir energy computed here is one boundary-sensitive manifestation
+of the same condensate two-point correlator $N(\tau,\mathbf{x}-\mathbf{x}')$
+that also governs decoherence in the influence-functional sector and
+the thermal response in the Unruh construction
+(Section~\ref{sec:unified_correlator}).  In ECT these are not
+independent ingredients but different regimes of a single condensate
+two-point structure: boundary conditions (Casimir), detector trajectory
+(Unruh), and coarse-grained environment coupling (decoherence).
+
+% -------------------------------------------------------------------------
+
+% ============================================================
+\subsection{Crooks-type fluctuation relation and effective entropy production}
+\label{sec:crooks_ect}
+
+\textit{Status: Level~B --- Gaussian--Markov reduction of the ECT
+influence functional; not derived from bare postulates alone.}
+
+
+
+\textbf{Scope and honest status.}
+This subsection does \emph{not} provide a full microscopic derivation
+of the second law from the bare Euclidean ECT action.  What is
+established is an \emph{effective irreversibility result} within the
+Gaussian--Markov coarse-grained description of the ordered branch.
+The result rests on the ECT influence functional together with the
+Gaussian model for the reduced density matrix and the Markov
+approximation; it is not derived from the ECT postulates alone
+without these additional steps.  A fully microscopic derivation
+remains open (OP24, Section~\ref{sec:open_problems}).
+
+\paragraph{Effective entropy production in the Gaussian--Markov model.}
+
+After integrating out the environmental degrees of freedom in the
+Caldeira--Leggett ohmic model, the reduced density matrix of the
+system takes the Gaussian form:
+\begin{equation}
+\label{eq:S_ent_def}
+\rho_{\rm red}^{\rm G}(w) \;\propto\;
+  \exp\!\bigl(-\Gamma_{\rm irr}(w)\bigr),
+\end{equation}
+where $\Gamma_{\rm irr}$ is the \emph{irreversible part} of the
+influence functional in the Gaussian--Markov approximation.
+\textbf{Important:} Eq.~\eqref{eq:S_ent_def} is a Gaussian model
+ansatz, not a general consequence of ECT; $\Gamma_{\rm irr}$ is
+not the full decoherence functional but its Gaussian reduction.
+
+Within this model, the von Neumann entropy satisfies
+\begin{equation}
+\label{eq:S_ent_Gamma}
+S_{\rm ent}(w) \;\approx\; \mathrm{const} + \Gamma_{\rm irr}(w),
+\end{equation}
+and its rate of change is
+\begin{equation}
+\label{eq:2nd_law_ECT}
+\frac{dS_{\rm ent}}{dw}
+= \frac{d\Gamma_{\rm irr}}{dw}
+= N_{\rm eff}\,\gamma\!\left(\frac{dq}{dw}\right)^{\!2}
+\;\geq\; 0,
+\end{equation}
+since $N_{\rm eff}>0$, $\gamma>0$, and $(dq/dw)^2\geq0$.
+
+This gives $dS_{\rm ent}/dw\geq0$ for all macroscopic trajectories
+($N_{\rm eff}\gg1$) within the Gaussian--Markov model, with equality
+only for static configurations ($dq/dw=0$).
+Whether the full non-Markovian ECT path integral implies monotone
+entropy growth without the Gaussian--Markov coarse-graining is an
+open problem (OP24, Section~\ref{sec:open_problems}).
+
+In the Markovian (ohmic) reduction, a Crooks-type fluctuation
+relation holds for the effective decoherence action:
+\begin{equation}
+  \label{eq:crooks_ECT}
+  \frac{P_{\rm back}}{P_{\rm fwd}}
+  = \exp\!\left(-\Delta\Gamma_{\rm irr}[\Delta q]\right),
+\end{equation}
+where $\Delta\Gamma_{\rm irr}$ is the irreversible part of the
+influence functional after the Markov coarse-graining.
+\textbf{Status:} this is a Crooks-type relation derived within the
+Gaussian--Markov reduction of ECT; it is not derived directly from
+the bare Euclidean action without coarse-graining.  The extension
+to the full non-Markovian microscopic ECT path integral remains open.
+
+\paragraph{Why $w$ is traversed in one direction macroscopically.}
+\label{par:arrow_of_time}
+
+The question of why the macroscopic arrow of time points in a definite
+direction can be stated precisely in ECT:
+
+\textbf{Step 1 (Effective irreversibility functional is monotone --- Gaussian model).}
+Within the Gaussian--Markov model, the effective irreversibility
+functional satisfies $d\Gamma_{\rm irr}/dw\geq0$
+for all macroscopic trajectories with $N_{\rm eff}\gg1$
+(Eq.~\eqref{eq:2nd_law_ECT} above).
+Note: this is $\Gamma_{\rm irr}$, the coarse-grained entropy-production
+functional, \emph{not} the full decoherence functional
+$\Gamma[q,q']$ (which vanishes on the diagonal,
+the diagonal condition $\Gamma[q,q]=0$).
+Physically, each interaction with the Gaussian environment adds positive
+entropy to the coarse-grained reduced density matrix.
+
+\textbf{Step 2 (Initial condition from the phase transition --- structural argument).}
+The $O(4)\!\to\!O(3)$ phase transition provides a natural candidate
+for a low-entropy initial state: when the condensate forms in its
+ground state $|\Phi|=v_0$, the system is in a pure state and
+$S_{\rm ent}(w_0)\approx0$ by energy minimisation.
+\textbf{Status (structural, not fully derived):}  this argument is
+plausible within the mean-field treatment of the transition, but a
+rigorous derivation of a pure initial state from the full many-body
+Euclidean path integral---without assuming thermal equilibration at
+$T_c$---remains open (OP24).  The low-entropy initial condition
+is therefore taken as structurally motivated by ECT rather than
+derived from bare postulates alone.
+
+\textbf{Step 3 (Macroscopic effective irreversibility).}
+Since $\Gamma_{\rm irr}(w)$ is monotonically non-decreasing
+(Step 1) with initial value near zero (Step 2, structural),
+the effective entropy $S_{\rm ent}(w)\approx\mathrm{const}+\Gamma_{\rm irr}(w)$
+increases with $w$ for all macroscopic systems in the Gaussian--Markov
+model.  The coordinate $w$ therefore defines a preferred direction
+--- the arrow of time --- for any system with $N_{\rm eff}\gg1$,
+\emph{within the Gaussian--Markov reduction}.  Whether this conclusion
+extends to the full non-Markovian path integral remains open (OP24).
+
+
+% ============================================================
+\subsection{ECT vacuum predictions: unified Casimir, Unruh, and particle production}
+\label{sec:vacuum_summary_tables}
+
+\begin{table}[H]
+\centering
+\caption{Quantum vacuum effects organized in ECT around the Euclidean condensate
+correlator $G_E=(4\pi^2|X-X'|^2)^{-1}$ (organizing proposition;
+each effect requires its own specification).
+Status: A = analytically derived within ECT; P = programmatic (requires
+boundary-condition or detector-coupling input; conditional prediction).
+The Casimir entry is conditional on boundaries acting on the ECT Goldstone
+sector; it is \emph{not} a prediction for standard metallic-plate experiments.}
+\label{tab:vacuum_predictions}
+\begin{tabular}{@{}lllcc@{}}
+\toprule
+Effect & ECT formula & ECT value & Std.\ result & Status \\
+\midrule
+Casimir (3 Goldstone modes,\\condensate-reflecting boundaries only) &
+$-\dfrac{3\pi^2\hbar c_*}{240 a^4}$ &
+$3/2\times(F/A)_{\rm QED}$ \emph{conditional} &
+$-\dfrac{\pi^2\hbar c}{120 a^4}$ & P \\
+Unruh temperature &
+$\dfrac{\hbar a}{2\pi c_* k_B}$ &
+$4\times10^{-8}$\,K at LHC &
+$\dfrac{\hbar a}{2\pi c k_B}$ & A \\[8pt]
+Decoherence rate (ohmic) &
+$\Gamma_{\rm dist}\sim N_{\rm eff}\gamma(\Delta q/\ell)^2$ &
+Matches Caldeira--Leggett & Standard CL & A \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+% -------------------------------------------------------------------------
+
+Parker \cite{Parker1969} showed that time-varying spacetime geometry produces
+particle pairs from the vacuum.  In ECT, the $O(4)\to O(3)$ phase transition
+is a non-adiabatic event: the ordered Lorentzian branch becomes established on the Planck time scale
+$\tau_{\rm PT}\sim\ell_{\rm Pl}/c$~(Level~B; explicit transition dynamics, OP3).
+
+The Goldstone mode $\pi^i_{\boldsymbol{k}}$ satisfies the mode equation
+\cite{Parker1969,BirrellDavies1982}:
+\begin{equation}
+  \ddot{v}_k + \Omega_k^2(t)\,v_k \;=\; 0\,,
+  \qquad
+  \Omega_k^2(t) \;=\; c_*^2(t)\,k^2 + m_{\rm eff}^2(t)\,,
+  \label{eq:mode_equation}
+\end{equation}
+where $m_{\rm eff}^2(t) = \lambda[v_0^2(\infty) - v_0^2(t)]$.
+
+The expected particle number per mode is
+$\mathcal{N}_k = |\beta_k|^2$,
+where $\beta_k$ are Bogoliubov coefficients \cite{BirrellDavies1982}.
+For the quartic condensate potential with $N_e=60$ e-folds of inflation,
+the spectral index is:
+\begin{equation}
+  n_s \;=\; 1 - \frac{2}{N_e} \;=\; 0.967\,,
+  \label{eq:ns_cosm}
+\end{equation}
+consistent with Planck 2018 \cite{Planck2018}.
+
+% -------------------------------------------------------------------------
+\subsection{Unruh effect from the Euclidean correlator}
+
+% -------------------------------------------------------------------------
+
+\subsubsection{Derivation}
+
+The Unruh effect \cite{Unruh1976,Fulling1973,Davies1975} states that a
+uniformly accelerated observer detects the Minkowski vacuum as a thermal
+bath at $T_U = \hbar a/(2\pi k_B c)$.  In ECT this follows automatically
+from the Euclidean correlator via analytic continuation.
+
+The Euclidean two-point function for a massless Goldstone boson is
+\cite{BirrellDavies1982}:
+\begin{equation}
+  G_E(X,X')
+  \;=\;
+  \frac{1}{4\pi^2\,|X-X'|^2}\,,
+  \qquad
+  |X-X'|^2 \;=\; (\boldsymbol{x}-\boldsymbol{x}')^2 + (w-w')^2\,.
+  \label{eq:green_euclidean}
+\end{equation}
+
+The analytic continuation $w\to -ic_*\,t - \varepsilon$ yields:
+\begin{equation}
+  G^+_M(x,x')
+  \;=\;
+  -\frac{1}{4\pi^2 c_*^2}
+  \cdot
+  \frac{1}{(t-t'-i\varepsilon)^2 - |\boldsymbol{x}-\boldsymbol{x}'|^2/c_*^2}\,,
+  \label{eq:wightman}
+\end{equation}
+the standard Wightman function, confirming consistency with the
+Osterwalder--Schrader theorem \cite{OsterwalderSchrader1973}.
+
+Along the Rindler trajectory with proper acceleration $a$,
+$G^+_M$ becomes periodic in imaginary proper time with period
+$\beta_U = 2\pi c_*/a$ --- a thermal distribution.
+The Unruh--DeWitt detector response gives a Planck spectrum with:
+\begin{equation}
+  \boxed{%
+    T_U \;=\; \frac{\hbar\,a}{2\pi c_*\,k_B}\,,
+  }
+  \label{eq:unruh_ect}
+\end{equation}
+reducing to the standard result at $c_*=c$.
+For an LHC proton with $a\simeq10^{23}$\,m\,s$^{-2}$:
+$T_U\approx4\times10^{-8}$\,K.
+
+\subsubsection{Physical interpretation}
+
+In the ECT interpretation, the Unruh effect is not a postulate but a
+consequence of the $O(4)$-invariance o
+
+% ============================================================
+\subsection{Topological loop quantisation: analogies table}
+\label{sec:loops_analogy_section}
+
+\begin{table}[h]
+\centering
+\caption{Topological loop quantisation in different physical systems.
+All share the homotopy group $\pi_1(S^1)=\mathbb{Z}$.}
+\label{tab:loops_analogy}
+\begin{tabular}{llll}
+\hline\hline
+System & Object & Topological origin & Quantum \\
+\hline
+Superfluid $^4$He~\cite{Donnelly1991} & Quantised vortex & $\pi_1(S^1)=\mathbb{Z}$ & $\kappa=h/m$ \\
+Type-II superconductor & Flux quantum & $\pi_1(S^1)=\mathbb{Z}$ & $\Phi_0=h/2e$ \\
+Early QM (de Broglie) & Bohr--Sommerfeld orbit & $\pi_1(S^1)=\mathbb{Z}$ & $\oint p\,dq=n\hbar$ \\
+ECT condensate & Condensate loop & $\pi_1(S^1)=\mathbb{Z}$ & $S_{\min}=2\pi\hbar$ \\
+\hline\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\caption{Comparison of Born-rule derivations.}
+\label{tab:born_comparison}
+\small
+\begin{tabular}{@{}p{2.5cm}p{3.2cm}p{3.2cm}p{4.2cm}@{}}
+\hline
+Aspect & Deutsch (1999)~\cite{Deutsch1999} &
+  Wallace (2012)~\cite{Wallace2012} &
+  ECT (this work) \\
+\hline
+Framework
+  & MWI + decision theory
+  & MWI + decoherence
+  & Euclidean path integral \\
+Source of weights
+  & Rationality axioms
+  & Rationality + branch structure
+  & Decoherence structure from $e^{-\Gamma[q,q']}$; probability
+    assignment additionally requires Gleason-type conditions \\
+Decoherence
+  & Not used
+  & Postulated
+  & Derived from $S_E$ \\
+Extra assumptions
+  & Rationality
+  & Rationality + separability
+  & C2 ($N_{\rm eff}\gg1$), C3 \\
+Known limitations
+  & Circularity~\cite{Barker2000}
+  & Albert (2010) objection
+  & C1--C3 necessary but not sufficient; Gleason-type
+    conditions required; unique outcome selection open (OP23) \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\caption{Quantum statistics in ECT vs standard frameworks.}
+\label{tab:statistics_comparison}
+\begin{tabular}{@{}p{3.2cm}p{4.0cm}p{5.0cm}@{}}
+\hline
+Aspect & Standard QM/QFT & ECT \\
+\hline
+Route to antisymmetry & Axiom & Sign structure \emph{associated with} spinorial reps.\ of the ordered sector (Level~B; not a full PLZ theorem) \\
+Basis & $\{\hat a,\hat a^\dagger\}=1$ postulated & Topology + spinorial sign \\
+Pauli principle & Exact axiom & Structural (quadratic regime) \\
+Full PLZ theorem & Yes & Open \\
+Beyond-quadratic & N/A & Speculative, not predicted \\
+\hline
+\end{tabular}
+\end{table}
+
 
 % ============================================================
 \subsection{Quantum--classical boundary: reverse $O(3)\to O(4)$ transitions}
