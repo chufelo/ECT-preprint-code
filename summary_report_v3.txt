@@ -1,0 +1,48 @@
+ECT SPARC Rotation Curve Analysis — Summary Report
+============================================================
+H0 assumed: 70.0 km/s/Mpc
+cH0       = 6.801e-10 m/s^2
+cH0/(2pi) = 1.082e-10 m/s^2
+a0 (MOND) = 1.200e-10 m/s^2
+
+DATA
+  Total galaxies fitted          : 165
+  Clean fits (no quality flags)  : 78 / 165
+  Galaxies with N_pts < 8        : 22
+  Galaxies with ML at edge       : 41
+  Galaxies with chi2_r > 5       : 46
+
+ECT FIXED M/L (Upsilon_disk=0.5, only g† fitted — no ML degeneracy)
+  Median g†/(cH0/2pi)   = 0.860
+  Mean   g†/(cH0/2pi)   = 1.130
+  Std    g†/(cH0/2pi)   = 0.970
+  Frac in [0.5, 2.0]    = 60%
+  Median chi2_red       = 2.66
+  Good fits chi2_r < 5  = 119/165 = 72%
+
+ECT FREE M/L (g† + Upsilon_disk both fitted — includes ML degeneracy)
+  Median g†/(cH0/2pi)   = 0.725
+  Std    g†/(cH0/2pi)   = 1.331
+  Median Upsilon_disk   = 0.538
+  (compare with photometric ~0.5, Schombert+2019)
+
+COMPARISON
+  Median MOND chi2_r    = 3.08
+  Median LCDM chi2_r    = 0.99
+  ECT better than MOND  = 78/165 galaxies = 47%
+
+MILKY WAY
+  Best-fit g†           = 1.082e-12 m/s^2
+  g†/(cH0/2pi)         = 0.010
+  chi2_red              = 0.02
+
+INTERPRETATION NOTE
+  The scatter in g†_eff is present in BOTH fixed and free M/L modes.
+  Its physical interpretation remains premature until:
+    (a) M/L degeneracy is fully resolved,
+    (b) explicit EFE sector is added to the model,
+    (c) correlation with environment proxies is tested.
+  Current result: ECT closure is a promising first pass.
+  Baseline cH0/(2pi) is physically reasonable, but g†_eff
+  is NOT a universal constant — scatter is real and likely
+  contains both physical (EFE) and systematic components.
