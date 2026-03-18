@@ -106,7 +106,7 @@ def main():
     ax.set_xlabel(r"$\log_{10}(M_\mathrm{bar,eff}/M_\odot)$", fontsize=13)
     ax.set_ylabel(r"$\log_{10}(V_\mathrm{flat}/\mathrm{km\,s^{-1}})$", fontsize=13)
     ax.set_title("ECT Baryonic Tully–Fisher Relation (new closure)", fontsize=13)
-    ax.legend(frameon=True, fontsize=10)
+    ax.legend(frameon=True, fontsize=10, loc='lower right')
     fig.tight_layout()
     fig.savefig(outdir / "ect_btfr_new_bw.pdf", dpi=300)
     fig.savefig(outdir / "ect_btfr_new_bw.png", dpi=200)
