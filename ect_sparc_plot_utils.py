@@ -52,8 +52,8 @@ def load_sparc_mrt(path):
             if len(parts)<10: continue
             galaxy=parts[0]
             try:
-                R_kpc=float(parts[4]); Vobs=float(parts[5]); eV=float(parts[6])
-                Vgas=float(parts[7]); Vdisk=float(parts[8]); Vbul=float(parts[9])
+                R_kpc=float(parts[2]); Vobs=float(parts[3]); eV=float(parts[4])
+                Vgas=float(parts[5]); Vdisk=float(parts[6]); Vbul=float(parts[7])
             except: continue
             rows.append({'galaxy':galaxy,'galaxy_norm':normalize_name(galaxy),
                          'R_kpc':R_kpc,'Vobs_kms':Vobs,'e_Vobs_kms':eV,

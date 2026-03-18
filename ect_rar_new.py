@@ -84,7 +84,7 @@ def main():
         g_ect  = ect_g_from_gbar(xs, gdag_fit)
         g_mond = mond_g_from_gbar(xs, A0_MOND)
 
-        yerr = np.abs((2*np.maximum(eV,0.5)/np.maximum(Vobs,0.1)) / np.log(10))
+        yerr = np.clip(np.abs((2*np.maximum(eV,0.5)/np.maximum(Vobs,0.1)) / np.log(10)), 0, 0.35)
         ax.errorbar(np.log10(gbar), np.log10(gobs), yerr=yerr,
                     fmt=MARKERS.get(gal,"o"), color="0.45", mfc="0.45", mec="0.45",
                     ms=6, lw=0.8, capsize=2, label=f"SPARC (N={len(gdf)})")
