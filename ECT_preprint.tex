@@ -8608,12 +8608,22 @@ macroscopic branch}
 \label{sec:mp_status}
 % ============================================================
 
-\begin{center}
-\renewcommand{\arraystretch}{1.35}\small
-\begin{tabular}{p{6.2cm}p{2.4cm}p{3.4cm}}
+\renewcommand{\arraystretch}{1.35}
+{\small
+\begin{longtable}{p{6.2cm}p{2.4cm}p{3.4cm}}
+\caption*{Status table and open problems of the macroscopic branch}\\
 \hline\hline
 Result & Status & Basis / OP \\
 \hline
+\endfirsthead
+\hline\hline
+Result (cont.) & Status & Basis / OP \\
+\hline
+\endhead
+\hline
+\endfoot
+\hline\hline
+\endlastfoot
 \multicolumn{3}{@{}l}{\textit{Metric structure and tensor sector}} \\
 Coarse-graining criterion~\eqref{eq:macro_regime} & Level~A & EFT \\
 Effective metric uniqueness~\eqref{eq:geff_contra} & Level~A & Thm~\ref{thm:tensor_uniqueness} \\
@@ -8674,9 +8684,8 @@ OP-gauge: 2 TT modes in ECT language & Open & OP-gauge \\
 OP-matter: matter universality & Open & OP-matter \\
 OP-c1: coefficient $c_1$ in $\Theta_{\mu\nu}$ & Open & OP-c1 \\
 OP-screen: screening from bare P3 & Open & OP-screen \\
-\hline\hline
-\end{tabular}
-\end{center}
+\end{longtable}
+}
 \part{Quantum Sector: Coherent-Topological Branch}
 \label{part:quantum}
 
