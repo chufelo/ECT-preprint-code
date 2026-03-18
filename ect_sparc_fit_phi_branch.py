@@ -505,23 +505,34 @@ def plot_milky_way(out_path, h0=70.0):
     Vbar_MW = v_disk_kms(Rmod)
     gN_MW   = Vbar_MW**2 / Rmod
 
-    # ECT fits: fixed g† = cH0/2pi and best-fit
+    # ECT: baseline g† = cH0/2pi
     g2pi_kpc = cH0_si(h0)/(2*math.pi)/ACC_CONV
     V_2pi_MW = ect_vmod(Rmod, gN_MW, g2pi_kpc)
 
-    # Simple chi2 scan for best-fit g†
-    gN_obs = Vob**2 / R
+    # Fit g† using BARYONIC gN from disk model (NOT gN_obs = Vobs^2/R).
+    # Correct: ECT formula explains excess over baryons.
+    # gN_at_data = baryonic Newtonian acceleration at observed radii.
+    from scipy.special import i0 as _i0, i1 as _i1, k0 as _k0, k1 as _k1
+    def _vd_sq(r, M=M_disk, Rd=R_d):
+        y = np.clip(r/(2*Rd), 1e-9, 50)
+        t = y**2*(_i0(y)*_k0(y)-_i1(y)*_k1(y))
+        return np.maximum(2*G_KPC*M/Rd*t, 0)
+    gN_at_data = _vd_sq(R) / np.maximum(R, 1e-9)
+
     def chi2_mw(log10g):
-        Vm = ect_vmod(R, gN_obs, 10**log10g)
+        Vm = ect_vmod(R, gN_at_data, 10**log10g)
         return float(np.sum(((Vob - Vm)/eVo)**2))
     c0 = math.log10(g2pi_kpc)
-    grid = np.linspace(c0-2, c0+2, 200)
-    vals = [chi2_mw(x) for x in grid]
-    g_best_kpc = 10**grid[np.argmin(vals)]
-    chi2_min_mw = min(vals)
-    chi2_r_mw = chi2_min_mw / max(len(R)-1, 1)
-    g_best_si = g_best_kpc * ACC_CONV
-    V_ect_MW  = ect_vmod(Rmod, gN_MW, g_best_kpc)
+    grid = np.linspace(c0-2, c0+2, 300)
+    vals = np.array([chi2_mw(x) for x in grid])
+    best_c = grid[np.argmin(vals)]
+    from scipy.optimize import minimize_scalar as _ms
+    res_mw = _ms(chi2_mw, bounds=(best_c-0.4, best_c+0.4), method='bounded')
+    g_best_kpc  = 10**res_mw.x
+    chi2_min_mw = float(res_mw.fun)
+    chi2_r_mw   = chi2_min_mw / max(len(R)-1, 1)
+    g_best_si   = g_best_kpc * ACC_CONV
+    V_ect_MW    = ect_vmod(Rmod, gN_MW, g_best_kpc)
 
     # EFE band
     V_lo = ect_vmod(Rmod, gN_MW, g_best_kpc*0.5)
@@ -530,24 +541,35 @@ def plot_milky_way(out_path, h0=70.0):
     # MOND
     V_mond_MW = mond_vmod(Rmod, gN_MW, A0_SI/ACC_CONV)
 
-    fig, ax = plt.subplots(figsize=(5.5, 3.8))
-    ax.fill_between(Rmod, V_lo, V_hi, color=EFE, alpha=0.7,
-                    label='ECT EFE band (×0.5–×2)')
-    ax.plot(Rmod, Vbar_MW, '--', color=BAR, lw=1.0, label='Disk (McMillan 2017)')
-    ax.plot(Rmod, V_mond_MW, '-.', color=LG, lw=1.2, label='MOND (a₀ fixed)')
-    ax.plot(Rmod, V_2pi_MW, '-', color=MG, lw=1.2,
-            label=r'ECT $g^\dagger=cH_0/2\pi$')
-    ax.plot(Rmod, V_ect_MW, '-', color=BK, lw=1.8,
-            label=f'ECT best-fit  g†={g_best_si:.2e} m/s²  χ²_r={chi2_r_mw:.2f}')
-    ax.errorbar(R, Vob, yerr=eVo, fmt='o', ms=3.5, color=BK,
-                elinewidth=0.8, capsize=2, label='Eilers+2019', zorder=5)
-    ax.set_xlabel('R (kpc)'); ax.set_ylabel('V (km/s)')
-    ax.set_title(f'Milky Way rotation curve  —  ECT φ-branch\n'
-                 f'g†_fit={g_best_si:.2e} m/s²  '
-                 f'({g_best_si/(cH0_si(h0)/(2*math.pi)):.2f}·cH₀/2π)  '
-                 f'χ²_r={chi2_r_mw:.2f}')
-    ax.legend(fontsize=7, loc='upper right')
-    ax.set_xlim(0, 32); ax.set_ylim(0, 280)
+    # LCDM: approximate MW NFW (Bland-Hawthorn+2016)
+    V_lcdm_MW = lcdm_vmod(Rmod, gN_MW, rho_s=8.5e6, r_s_kpc=20.0)
+
+    fig, ax = plt.subplots(figsize=(6.0, 4.2))
+    ax.fill_between(Rmod, V_lo, V_hi, color=EFE, alpha=0.65, zorder=1,
+                    label='ECT EFE band (x0.5 to x2)')
+    ax.plot(Rmod, Vbar_MW,    '--', color=BAR, lw=1.2, zorder=2,
+            label='Baryons disk (McMillan 2017)')
+    ax.plot(Rmod, V_mond_MW,  '-.', color=LG,  lw=1.3, zorder=3,
+            label='MOND (a0 fixed, McGaugh+2016)')
+    ax.plot(Rmod, V_lcdm_MW,  ':',  color=VLG, lw=1.5, zorder=3,
+            label='LCDM NFW (Bland-Hawthorn+2016)')
+    ax.plot(Rmod, V_2pi_MW,   '-',  color=MG,  lw=1.3, zorder=4,
+            label='ECT g†=cH0/2pi')
+    ax.plot(Rmod, V_ect_MW,   '-',  color=BK,  lw=2.0, zorder=5,
+            label=f'ECT best-fit g†={g_best_si:.2e} m/s^2  chi2_r={chi2_r_mw:.2f}')
+    ax.errorbar(R, Vob, yerr=eVo, fmt='o', ms=4.0, color=BK,
+                elinewidth=0.9, capsize=2.5, zorder=6, label='Eilers+2019')
+    ax.set_xlabel('R (kpc)', fontsize=9)
+    ax.set_ylabel('V (km/s)', fontsize=9)
+    ax.set_title(
+        f'Milky Way rotation curve  ECT phi-branch\n'
+        f'g†_fit={g_best_si:.2e} m/s²  '
+        f'= {g_best_si/(cH0_si(h0)/(2*math.pi)):.2f} x cH0/2pi  '
+        f'chi2_r = {chi2_r_mw:.2f}',
+        fontsize=9)
+    ax.legend(fontsize=7.5, loc='lower left', framealpha=0.9)
+    ax.tick_params(labelsize=8)
+    ax.set_xlim(0, 30); ax.set_ylim(0, 270)
     fig.tight_layout()
     fig.savefig(out_path, dpi=200, bbox_inches='tight')
     print(f"Saved: {out_path}"); plt.close(fig)
@@ -587,18 +609,26 @@ def plot_efe_set(df, fits, out_path, h0=70.0, ncols=3):
         gN   = _smooth_gN(R, Vg, Vd, Vb, Rmod, UPS_DISK_FIXED)
         ax   = axes_flat[i]
 
-        # EFE bands at 4 environment levels
-        for factor, ls, label in [(0.25,':', 'void (×0.25)'),
-                                   (0.5, '--','underdense (×0.5)'),
-                                   (1.0, '-', 'field (×1)'),
-                                   (2.0, '-.','group (×2)')]:
+        # MOND and LCDM for reference
+        gN_mond = _smooth_gN(R, Vg, Vd, Vb, Rmod, fit.ml_mond)
+        V_mond  = mond_vmod(Rmod, gN_mond, A0_SI/ACC_CONV)
+        ax.plot(Rmod, V_mond, '-.', color=LG, lw=1.2, zorder=2,
+                label=f'MOND  chi2={fit.chi2_red_mond:.1f}')
+        gN_lcdm = _smooth_gN(R, Vg, Vd, Vb, Rmod, fit.ml_lcdm)
+        V_lcdm  = lcdm_vmod(Rmod, gN_lcdm, fit.rho_s, fit.r_s_kpc)
+        ax.plot(Rmod, V_lcdm, ':', color=VLG, lw=1.4, zorder=2,
+                label=f'LCDM  chi2={fit.chi2_red_lcdm:.1f}')
+        # ECT EFE bands at 4 environment levels
+        for factor, ls, label in [(0.25,':', 'ECT void (x0.25)'),
+                                   (0.5, '--','ECT underdense (x0.5)'),
+                                   (1.0, '-', 'ECT field (x1, best-fit)'),
+                                   (2.0, '-.','ECT group (x2)')]:
             V = ect_vmod(Rmod, gN, fit.gdag_fixed_kpc*factor)
             lw = 2.0 if factor == 1.0 else 1.0
             col = BK if factor == 1.0 else DG
-            ax.plot(Rmod, V, ls, color=col, lw=lw,
-                    label=f'ECT {label}')
+            ax.plot(Rmod, V, ls, color=col, lw=lw, label=label)
         ax.errorbar(R, Vob, yerr=eVo, fmt='o', ms=2.5, color=BK,
-                    elinewidth=0.7, capsize=1.2, label='Obs', zorder=5)
+                    elinewidth=0.7, capsize=1.2, label='Obs', zorder=6)
         ax.set_title(f'{fit.galaxy}  g†={fit.gdag_fixed_si:.2e} m/s²\n'
                      f'({fit.ratio_cH0_2pi:.2f}·cH₀/2π)', fontsize=6.5)
         ax.set_xlabel('R (kpc)', fontsize=7)
@@ -646,6 +676,38 @@ def plot_diagnostics(fits: List[GalaxyFit], out_dir: str, h0=70.0):
     R_last   = np.array([f.R_last            for f in fits])
     flags    = [f.flag_low_quality           for f in fits]
 
+    # g† diagnostics — combined 2x2 figure
+    ch0_ref = cH0_si(h0)/(2*math.pi)
+    r_ml_corr = np.corrcoef(ml_free, np.log10(gdag_si))[0,1]
+
+    fig4, ax4s = plt.subplots(2, 2, figsize=(10, 7))
+    ax4s = ax4s.reshape(-1)
+    _scatter_gray(ax4s[0], Mbar, gdag_si, flags,
+                  'Mbar proxy (Msun)', 'g_dagger (m/s^2)',
+                  '(A) g† vs baryonic mass',
+                  ref_y=ch0_ref, ref_label='cH0/2pi', log_x=True, log_y=True)
+    _scatter_gray(ax4s[1], Sigma, gdag_si, flags,
+                  'Sigma_bar (Msun/kpc^2)', 'g_dagger (m/s^2)',
+                  '(B) g† vs surface density',
+                  ref_y=ch0_ref, ref_label='cH0/2pi', log_x=True, log_y=True)
+    _scatter_gray(ax4s[2], ml_free, gdag_si, flags,
+                  'Fitted Upsilon_disk', 'g_dagger (m/s^2)',
+                  f'(C) g† vs M/L  (Pearson r={r_ml_corr:.2f})',
+                  ref_y=ch0_ref, ref_label='cH0/2pi', log_y=True)
+    _scatter_gray(ax4s[3], chi2_fix, gdag_si, flags,
+                  'chi2_red (ECT fixed ML)', 'g_dagger (m/s^2)',
+                  '(D) g† vs fit quality',
+                  ref_y=ch0_ref, ref_label='cH0/2pi', log_y=True)
+    ax4s[3].axvline(5, color=MG, lw=1, ls=':', label='chi2=5 cut')
+    ax4s[3].legend(fontsize=7)
+    fig4.suptitle(
+        f'ECT g†_eff diagnostic scatter plots ({len(fits)} galaxies)',
+        fontsize=9)
+    fig4.tight_layout()
+    fig4.savefig(os.path.join(out_dir,'diag_gdag_scatter4.pdf'), dpi=150, bbox_inches='tight')
+    plt.close(fig4)
+
+    # Individual files (legacy)
     # g† vs Mbar
     fig, ax = plt.subplots(figsize=(5, 3.8))
     _scatter_gray(ax, Mbar, gdag_si, flags,
@@ -699,26 +761,37 @@ def plot_diagnostics(fits: List[GalaxyFit], out_dir: str, h0=70.0):
     fig.savefig(os.path.join(out_dir,'diag_gdag_vs_chi2.pdf'), dpi=150, bbox_inches='tight')
     plt.close(fig)
 
-    # chi2 comparison (ECT fixed, ECT free, MOND, LCDM)
+    # chi2 comparison — 4 separate panels (easier to read)
     chi2_free = np.array([f.chi2_red_free for f in fits])
-    fig, ax = plt.subplots(figsize=(6, 4))
-    bins = np.linspace(0, 15, 31)
-    for vals, ls, lbl in [
-        (chi2_fix,  '-',  f'ECT fixed Υ  med={np.median(chi2_fix):.1f}'),
-        (chi2_free, '--', f'ECT free Υ   med={np.median(chi2_free):.1f}'),
-        (chi2_mon,  '-.', f'MOND          med={np.median(chi2_mon):.1f}'),
-        (chi2_lcd,  ':',  f'ΛCDM NFW      med={np.median(chi2_lcd):.1f}'),
-    ]:
-        ax.hist(np.clip(vals, 0, 15), bins=bins, histtype='step',
-                lw=1.5, ls=ls, color=BK if '-' == ls else DG if '--' == ls
-                else MG if '-.' == ls else LG, alpha=0.85, label=lbl)
-    ax.axvline(1.0, color=BK, lw=0.8, ls=':')
-    ax.set_xlabel(r'$\chi^2_{\rm red}$ (clipped at 15)'); ax.set_ylabel('N galaxies')
-    ax.set_title('Fit quality: ECT fixed Υ  vs  ECT free Υ  vs  MOND  vs  ΛCDM')
-    ax.legend(fontsize=7)
-    fig.tight_layout()
-    fig.savefig(os.path.join(out_dir,'diag_chi2_comparison.pdf'), dpi=150, bbox_inches='tight')
-    plt.close(fig)
+    fig_c, axc = plt.subplots(1, 4, figsize=(13, 3.8), sharey=True)
+    bins_c = np.linspace(0, 12, 25)
+    panel_data = [
+        (chi2_fix,  'ECT fixed Upsilon=0.5\n(1 free param: g†)'),
+        (chi2_free, 'ECT free Upsilon\n(2 free params: g†, Upsilon)'),
+        (chi2_mon,  'MOND  a0 fixed\n(1 free param: Upsilon)'),
+        (chi2_lcd,  'LCDM NFW\n(3 free params: Upsilon, rho_s, r_s)'),
+    ]
+    hatches = ['/', '\\', 'x', '.']
+    for i, (ax_c, (vals_c, ttl_c), hatch_c) in enumerate(zip(axc, panel_data, hatches)):
+        ax_c.hist(np.clip(vals_c,0,12), bins=bins_c, color=DG, alpha=0.65,
+                  edgecolor=BK, lw=0.4, hatch=hatch_c)
+        ax_c.axvline(1.0, color=BK, lw=1.2, ls='--', label='chi2=1')
+        ax_c.axvline(np.median(vals_c), color=BK, lw=1.5, ls='-',
+                     label=f'Median={np.median(vals_c):.1f}')
+        ax_c.axvline(5.0, color=MG, lw=0.8, ls=':', label='chi2=5 cut')
+        pct_c = np.mean(vals_c<5)*100
+        ax_c.set_title(ttl_c + f'\nGood (chi2<5): {pct_c:.0f}%', fontsize=7.5)
+        ax_c.set_xlabel('chi2_red (clipped at 12)', fontsize=8)
+        ax_c.legend(fontsize=6, loc='upper right')
+        ax_c.tick_params(labelsize=7)
+    axc[0].set_ylabel('N galaxies', fontsize=8)
+    fig_c.suptitle(
+        f'Fit quality comparison — {len(fits)} SPARC galaxies\n'
+        'Histogram of reduced chi^2 values per model; chi^2=1 = perfect fit given errors',
+        fontsize=9)
+    fig_c.tight_layout()
+    fig_c.savefig(os.path.join(out_dir,'diag_chi2_comparison.pdf'), dpi=150, bbox_inches='tight')
+    plt.close(fig_c)
 
     # g†/(cH0/2pi) histogram — fixed vs free ML to show degeneracy
     ratios_free = np.array([f.gdag_free_si/(cH0_si(h0)/(2*math.pi)) for f in fits])
