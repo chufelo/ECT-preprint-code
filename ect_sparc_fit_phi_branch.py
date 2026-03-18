@@ -33,7 +33,7 @@ OUTPUTS (all in --output-dir, default=figures/sparc_v3/):
   summary_report.txt              — honest text summary with AIC/BIC
   set1_milky_way.pdf
   set2_sparc_sample.pdf
-  set3_gdag_sensitivity.pdf       — g† sensitivity band (was "EFE")
+  set3_gdag_sensitivity.pdf       — ECT best-fit + MOND + ΛCDM + EFE proxy
   diag_gdag_scatter4.pdf          — 2x2 scatter (165 galaxies)
   diag_gdag_vs_mbar.pdf
   diag_gdag_vs_sigma.pdf
@@ -679,7 +679,7 @@ def plot_sparc_gallery(df, fits, out_path, ncols=4, h0=70.0):
 #   This illustrates sensitivity to g†_eff, not a computed EFE.
 #   A true EFE computation would require g_ext from environment catalogs.
 def plot_sensitivity_set(df, fits, out_path, h0=70.0, ncols=3):
-    """g† sensitivity curves + MOND + LCDM on each panel."""
+    """ECT best-fit + ECT baseline + MOND + ΛCDM on each panel. EFE proxy if available."""
     plt.rcParams.update(GS)
     n = len(fits); nrows = math.ceil(n / ncols)
     fig, axes = plt.subplots(nrows, ncols, figsize=(ncols*3.5, nrows*3.2))
@@ -692,16 +692,15 @@ def plot_sensitivity_set(df, fits, out_path, h0=70.0, ncols=3):
         gN   = _smooth_gN(R, Vg, Vd, Vb, Rmod, UPS_DISK_FIXED)
         ax   = axes_flat[i]
 
-        # ECT sensitivity curves (draw first, lowest zorder)
-        ECT_SENS = [
-            (0.25, ':',  'ECT g†×0.25  (void)',      DG, 0.9),
-            (0.5,  '--', 'ECT g†×0.5   (underdense)', DG, 1.0),
-            (1.0,  '-',  'ECT g†×1.0   (best-fit)',  BK, 2.2),
-            (2.0,  '-.', 'ECT g†×2.0   (group)',      DG, 1.0),
-        ]
-        for factor, ls, lbl, col, lw in ECT_SENS:
-            V = ect_vmod(Rmod, gN, fit.gdag_fixed_kpc * factor)
-            ax.plot(Rmod, V, color=col, lw=lw, linestyle=ls, zorder=3, label=lbl)
+        # ECT best-fit curve (fixed Υ)
+        V_best = ect_vmod(Rmod, gN, fit.gdag_fixed_kpc)
+        ax.plot(Rmod, V_best, '-', color=BK, lw=2.2, zorder=3,
+                label=f'ECT best-fit  χ²={fit.chi2_red_fixed:.1f}  AIC={fit.aic_fixed:.0f}')
+        # ECT baseline cH0/2π
+        g2pi_kpc_s = cH0_si(h0) / (2 * math.pi) / ACC_CONV
+        V_base = ect_vmod(Rmod, gN, g2pi_kpc_s)
+        ax.plot(Rmod, V_base, '-', color=MG, lw=1.2, zorder=3,
+                label=r'ECT $g^\dagger_0 = cH_0/2\pi$')
 
         # LCDM
         gN_lcdm = _smooth_gN(R, Vg, Vd, Vb, Rmod, fit.ml_lcdm)
@@ -736,9 +735,9 @@ def plot_sensitivity_set(df, fits, out_path, h0=70.0, ncols=3):
         axes_flat[j].set_visible(False)
 
     fig.suptitle(
-        r'ECT $g^\dagger$ sensitivity curves  |  MOND and $\Lambda$CDM for comparison' '\n'
-        r'NOTE: curves show sensitivity to $g^\dagger_{\rm eff}$ variation, '
-        'not computed external-field effect',
+        r'ECT $g^\dagger$ best-fit curves vs MOND vs $\Lambda$CDM' '\n'
+        r'ECT+EFE proxy shown where $g_{\rm ext}$ data available  '
+        r'(Level-1: $g_{\rm ext} \ll cH_0/2\pi$)',
         fontsize=8, y=1.002)
     fig.tight_layout()
     fig.savefig(out_path, dpi=150, bbox_inches='tight')
