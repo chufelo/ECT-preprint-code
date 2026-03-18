@@ -7437,10 +7437,13 @@ MOND on comparable parameter footing. In the fixed-$M/L$ mode the
 median reduced $\chi^2$ is lower than in the MOND benchmark fits,
 whereas $\Lambda$CDM still performs better in a purely numerical sense,
 as expected for a more flexible halo family with more parameters.
-The correct conclusion is therefore not that ECT has already surpassed
-all competing models, but that the minimal $\phi$-branch closure is
-numerically viable, competitive with MOND, and naturally tied to a
-cosmological acceleration scale.
+Allowing the disk $M/L$ ratio to vary improves the ECT fit further, but
+this improvement must be interpreted cautiously because it partly tracks
+the reintroduction of the strongest nuisance degeneracy in the galactic
+problem.  The correct conclusion is therefore not that ECT has already
+surpassed all competing models, but that the minimal $\phi$-branch
+closure is numerically viable, competitive with MOND, and naturally
+tied to a cosmological acceleration scale.
 
 \begin{figure*}[htb]
 \centering
@@ -7477,9 +7480,10 @@ Median $g^\dagger_{\rm eff}/(cH_0/2\pi)$ (fixed $M/L$) & 0.860 \\
 Median $g^\dagger_{\rm eff}/(cH_0/2\pi)$ (free $M/L$) & 0.725 \\
 Median $g^\dagger_{\rm eff}/(cH_0/2\pi)$ (clean sample) & 0.936 \\
 Median reduced $\chi^2$ (ECT, fixed $M/L$) & 2.66 \\
+Median reduced $\chi^2$ (ECT, free $M/L$)  & 1.36 \\
 Median reduced $\chi^2$ (MOND) & 3.08 \\
 Median reduced $\chi^2$ ($\Lambda$CDM) & 0.99 \\
-ECT better than MOND by reduced $\chi^2$ & 78 / 165 (47\%) \\
+ECT better than MOND by reduced $\chi^2$ & 88 / 165 (53\%) \\
 \hline\hline
 \end{tabular}
 \end{table}
@@ -17398,13 +17402,50 @@ retained here as a supplementary diagnostic.}
 \label{fig:app_gdag_hist}
 \end{figure}
 
-The full numerical pipeline also produces additional machine-readable
-outputs and diagnostic figures, including fixed/free-$M/L$ comparison
-plots, AIC/BIC comparison plots, and scatter diagnostics against
-baryonic mass, radius, surface-density proxies, and fit quality.  Since
-the most informative summary diagnostics are already displayed in the
-main text, these additional outputs are retained as supplementary
-material rather than duplicated here.
+\begin{figure*}[htb]
+\centering
+\includegraphics[width=0.82\textwidth]{figures/diag_fixed_vs_free_chi2.pdf}
+\caption{Fixed-$M/L$ versus free-$M/L$ comparison of fit quality across
+the SPARC sample.  Each point corresponds to one galaxy, with the
+horizontal axis showing the reduced $\chi^2$ of the fixed-$M/L$ ECT fit
+and the vertical axis showing the reduced $\chi^2$ of the free-$M/L$
+ECT fit.  The diagonal $y=x$ marks equal fit quality.  The dominant
+population lies below this line, showing that allowing $\Upsilon_{\rm d}$
+to vary improves the fit for most galaxies.  This figure is retained in
+the appendix because it diagnoses the strength of the $M/L$ degeneracy
+rather than introducing a new physical prediction.}
+\label{fig:app_fixed_vs_free_chi2}
+\end{figure*}
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[width=0.82\textwidth]{figures/diag_fixed_vs_free_gdag.pdf}
+\caption{Fixed-$M/L$ versus free-$M/L$ comparison of the fitted
+effective critical scale $g^\dagger_{\rm eff}$.  The diagonal $y=x$
+marks identical recovered values.  The moderate correlation indicates
+that part of the scatter in $g^\dagger_{\rm eff}$ is robust under
+changes in the disk mass-to-light treatment, while another part is
+clearly entangled with the $M/L$ degeneracy.  This is why the fixed-$M/L$
+mode is used in the main text as the cleaner test of the ECT galactic
+closure, whereas the free-$M/L$ mode is interpreted as a robustness
+check rather than as the primary physical result.}
+\label{fig:app_fixed_vs_free_gdag}
+\end{figure*}
+
+The moderate fixed/free correlation (Pearson $r\approx0.54$ in the
+present run) confirms that the effective critical scale is neither fully
+determined by the stellar $M/L$ choice nor fully independent of it.
+
+The full numerical pipeline produces several diagnostics that are useful
+for interpreting the galactic fits but are too methodological to occupy
+main-text space.  The figures collected here serve three distinct
+purposes: they document the residual scatter of the fitted effective
+critical scale, they show how that scatter changes between fixed-$M/L$
+and free-$M/L$ fitting modes, and they quantify the extent to which the
+apparent improvement of the free-$M/L$ mode should be attributed to
+extra nuisance freedom rather than to a deeper physical closure.
+Accordingly, these plots are retained in the appendix as robustness and
+degeneracy diagnostics rather than as headline physical results.
 
 
 
