@@ -7326,280 +7326,207 @@ In the critical branch:
 with $g_\dagger\propto cH_0$: BTFR as exact algebraic consequence of the
 critical branch~(Level~B).
 
-\subsubsection*{Screening and practical formulas}
+\paragraph{Numerical bridge to the SPARC fits.}
+The SPARC analysis (Section~\ref{sec:comparison}) provides a direct
+numerical realisation of this analytic result.
+The BTFR slope remains structural in the present closure language,
+while the normalisation is governed by $g^\dagger_{\rm eff}$.
+The sample-level fits show the preferred baseline $\approx cH_0/(2\pi)$,
+with residual scatter interpreted as environmental renormalisation
+rather than a failure of the critical branch.
 
-The crossover between the locally screened regime and the deep
-weak-field critical regime is controlled by a characteristic radius:
+
+% === NEW GALACTIC BLOCK (v3f) ===
+\subsubsection*{Practical ECT closure for rotation curves}
+
+\textit{Status: Level~B phenomenological closure, not a first-principles
+theorem from bare~P3.}
+
+The galactic sector of the $\phi$-first formulation is treated as a
+nonlinear static response problem for the effective gravitational
+potential $\Phi$.  In the screened regime the theory reduces to ordinary
+Newtonian/GR dynamics, whereas in the dilute critical regime the infrared
+free-energy density is controlled by the non-quadratic term
+$\mathcal{F}_{\rm IR}\propto Y_\phi^{3/2}$, $Y_\phi=(\nabla\phi)^2$.
+A full first-principles derivation of the interpolation family from the
+bare condensate action is not yet available (OP2, OP-new-1).  The present
+work therefore adopts the phenomenologically simplest smooth closure
+compatible with both required asymptotic branches.
+
+For practical rotation-curve fitting we use the effective acceleration law
 \begin{equation}
-  \label{eq:screening}
-  r_0\sim\left(\frac{G_N M_{\rm bar}}{c^2 g_\dagger}\right)^{1/2}
-  \sim 1\text{--}20\,\text{kpc}
-  \quad\text{(typical SPARC galaxies, Level~B)}.
+g(R)=\frac{1}{2}\left[g_N(R)+\sqrt{g_N^2(R)+4\,g_N(R)\,g^\dagger_{\rm eff}}\right],
+\label{eq:ect_rotation_closure_main}
 \end{equation}
-In quasistatic applications:
-\[
-\mathbf{a}_{\rm tot}
-= -\frac{G_{\rm eff}M_{\rm bar}}{r^2}\hat r - \nabla\phi.
-\]
-For observational comparison, the Radial Acceleration Relation in the
-empirical McGaugh-type fit:
+where $g_N(R)$ is the baryonic Newtonian acceleration inferred from the
+SPARC mass model and $g^\dagger_{\rm eff}$ is the fitted effective critical
+scale.  This closure is a Level~B interpolation: it satisfies
+$g\to g_N$ when $g_N\gg g^\dagger_{\rm eff}$ (screened Newtonian limit) and
+$g\to\sqrt{g_N g^\dagger_{\rm eff}}$ when $g_N\ll g^\dagger_{\rm eff}$
+(deep critical branch), the latter yielding the BTFR directly.
+The full variational derivation is in Appendix~\ref{app:galactic_phi_closure}.
+
+The baryonic input is
 \begin{equation}
-  \label{eq:RAR}
-  g_{\rm obs}
-  = \frac{g_{\rm bar}}{1-e^{-\sqrt{g_{\rm bar}/g_\dagger}}},
-  \qquad
-  g_\dagger\approx 1.2\times10^{-10}\,\text{m\,s}^{-2}.
+g_N(R)=
+\frac{V_{\rm gas}^2(R)+\Upsilon_{\rm d}V_{\rm disk}^2(R)+
+\Upsilon_{\rm b}V_{\rm bul}^2(R)}{R},
+\label{eq:gn_sparc_main}
 \end{equation}
+with fixed $\Upsilon_{\rm d}=0.5$, $\Upsilon_{\rm b}=0.7$
+(fixed-$M/L$ mode) or free $\Upsilon_{\rm d}$ (free-$M/L$ mode).
 
 
-% --- fig:rar ---
-\begin{figure*}[!htb]
-\centering
-\includegraphics[width=\textwidth]{figures/gif6_ECT_RAR_6panel.png}
-\caption{Radial Acceleration Relation (RAR) from the SPARC
-database~\cite{Lelli2016} and the ECT $\phi$-closure prediction.
-Thin diagonal: $g_{\rm obs}=g_{\rm bar}$ (Newtonian); thin dashed:
-deep-MOND asymptote $g_{\rm obs}=\sqrt{g_\dagger g_{\rm bar}}$.
-\textbf{Panels~(a)--(e):} individual galaxies (SPARC data with error
-bars); \textbf{dashed grey}: MOND with universal $a_0$;
-\textbf{solid black}: ECT $\phi$-closure (1~parameter $\phi_{\rm env}$
-per galaxy).
-\textbf{Panel~(f):} full SPARC sample~\cite{McGaugh2016}.
-The ECT interpolation function~\eqref{eq:RAR} recovers the empirical
-relation at Level~B.}
-\label{fig:rar}
-\end{figure*}
+\subsubsection*{SPARC sample fits and model comparison}
 
+We fitted the closure~\eqref{eq:ect_rotation_closure_main} to the SPARC
+mass-model sample~\cite{Lelli2016SPARC}.  Representative rotation curves
+are shown in Fig.~\ref{fig:sparc_sample_new}; the Milky Way fit is in
+Fig.~\ref{fig:mw_new}; and the distribution of fitted
+$g^\dagger_{\rm eff}$ is in Fig.~\ref{fig:gdag_hist_new}.
+Summary statistics are in Table~\ref{tab:sparc_summary_main} and a
+selection of individual galaxies in Table~\ref{tab:sparc_selected_main}.
+The numerical procedure is documented in Appendix~\ref{app:sparc_computation}.
 
-\textit{Note on interpolating function: the $\phi$-closure
-computations above use the empirical McGaugh~2016
-form~\cite{McGaugh2016} for observational comparison.
-The effective dimensionality calculation
-(Section~\ref{sec:universe_size}) uses the analytic
-closure $\mu(x)=x/\sqrt{1+x^2}$ for analytical
-transparency only; the qualitative $d_{\rm force}$
-behaviour is closure-independent.}
-
-\subsubsection*{Quasi-universality and environmental dependence
-of $g_\dagger$}
-
-In the minimal critical-branch closure the characteristic acceleration
-scale $g_\dagger$ is quasi-universal, explaining why the BTFR and RAR
-appear tight across many galaxies.
-However, ECT does not require exact universality.
-Since the macroscopic order field is sensitive to the surrounding
-condensate environment, weak environmental dependence of $g_\dagger$
-is natural:
+In the fixed-$M/L$ mode (one free parameter $g^\dagger_{\rm eff}$) the
+165-galaxy SPARC sample gives
 \[
-g_\dagger = g_\dagger(\text{environment}),
+\mathrm{median}\!\left(\frac{g^\dagger_{\rm eff}}{cH_0/2\pi}\right)\approx0.86,
 \]
-with small shifts induced by background order, screening history, or
-embedding in denser or lower-density large-scale structure.
-This is a genuine new prediction of the ECT macroscopic branch, distinct
-from standard MOND-like approaches that treat $g_\dagger$ as exactly
-universal~(Level~B, testable).
+while the clean sub-sample (no quality flags, $\chi^2_{\rm red}<5$,
+$N=78$) yields $\approx0.94$.  This does not prove the coefficient
+$1/(2\pi)$, but it shows that the preferred ECT acceleration scale is
+of order $cH_0/(2\pi)$ rather than $cH_0$.
+
+At the sample level ECT is numerically competitive with MOND on the
+same parameter footing ($k=1$ free parameter).  AIC and BIC
+comparisons~(Appendix~\ref{app:sparc_computation}), which penalise the
+extra parameters in $\Lambda$CDM, show ECT and MOND statistically
+equivalent, while $\Lambda$CDM wins on raw $\chi^2$ as expected.
+The conclusion is that the minimal $\phi$-branch closure is numerically
+viable, competitive with MOND, and naturally tied to a cosmological
+acceleration scale~(Level~B).
 
 \begin{table}[htb]
 \centering
-\caption{Exploratory $\phi$-closure fit results for representative
-galaxies. Each galaxy is fitted with one effective environment
-parameter $\phi_{\rm env}$ controlling the ambient Lorentz-order
-background. The resulting $g_\dagger/a_0$ indicates how the effective
-critical acceleration departs from strict MOND universality.
-These are algebraic closure fits, not yet full boundary-value
-solutions of the $\phi$-field equation.}
-\label{tab:phi_fits}
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{llcccc}
+\caption{Summary of the SPARC sample analysis with the new ECT
+galactic closure (165 galaxies, error floor $2\,\mathrm{km\,s^{-1}}$).
+Fixed-$M/L$ mode: $\Upsilon_{\rm d}=0.5$, $\Upsilon_{\rm b}=0.7$,
+$k=1$ free parameter.}
+\label{tab:sparc_summary_main}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lc}
 \hline\hline
-Galaxy & Environment & $\phi_{\rm env}$ & $g_\dagger/a_0$
-& $\chi^2/N$ (ECT, 1p) & $\chi^2/N$ (MOND, 1p) \\
+Quantity & Value \\
 \hline
-NGC~6503  & void        & $-2.44$ & 0.48 & 1.8  & 4.4 \\
-NGC~3198  & field       & $-0.77$ & 0.79 & 11.5 & 12.7 \\
-UGC~2885  & field       & $+0.59$ & 1.19 & 8.9  & 7.9 \\
-Milky Way & Local Group & $+2.15$ & 1.9  & 3.9  & 8.1 \\
-NGC~2403  & M81 group   & $+4.64$ & 2.5  & 2.6  & 0.7 \\
-DDO~154   & M81 group   & $+5.00$ & 2.5  & 2.8  & 2.5 \\
+Galaxies fitted & 165 \\
+Clean fits ($\chi^2_{\rm red}<5$, no flags) & 78 / 165 \\
+Median $g^\dagger_{\rm eff}/(cH_0/2\pi)$, fixed $M/L$ & 0.860 \\
+Median $g^\dagger_{\rm eff}/(cH_0/2\pi)$, clean sample & 0.936 \\
+Median $\chi^2_{\rm red}$, ECT fixed $M/L$ ($k=1$) & 2.39 \\
+Median $\chi^2_{\rm red}$, MOND ($k=1$) & 3.08 \\
+Median $\chi^2_{\rm red}$, $\Lambda$CDM NFW ($k=3$) & 0.99 \\
+ECT better than MOND by $\chi^2_{\rm red}$ & 88/165 (53\%) \\
+Median AIC, ECT fixed $M/L$ & 39.3 \\
+Median AIC, MOND & 47.2 \\
+Median AIC, $\Lambda$CDM NFW & 20.7 \\
+ECT beats MOND by AIC & 88/165 (53\%) \\
+ECT beats $\Lambda$CDM by AIC & 40/165 (24\%) \\
 \hline\hline
 \end{tabular}
 \end{table}
 
-\subsubsection*{Baryonic modelling and fitting procedure}
-
-In the current exploratory galactic closure, the baryonic mass
-distribution is represented by standard simplified components:
-an exponential stellar disc, a bulge component where applicable,
-and a gaseous contribution scaled to include helium.
-The purpose is not to claim a final reconstruction of individual
-galaxies, but to provide a controlled low-parameter test of the
-macroscopic ECT closure against standard benchmark datasets such as
-SPARC~\cite{Lelli2016}.
-
-For the ECT $\phi$-closure fits used in this section, the model
-has one effective galactic parameter, $\phi_{\rm env}$, which controls
-the environmental shift of the ordered branch and thereby modifies the
-effective acceleration scale~$g_\dagger$.
-This should be compared with one-parameter MOND fits (through
-$\Upsilon_\star$) and two-parameter halo fits in $\Lambda$CDM.
-Accordingly, the comparison shown here is best interpreted as a
-proof-of-principle test of closure efficiency rather than a final
-field-theoretic galaxy solver~(Level~B).
-
-
-% --- fig:EFE ---
-\begin{figure}[H]
+\begin{table}[htb]
 \centering
-\includegraphics[width=\textwidth]{figures/fig2_EFE_bw.png}
-\caption{Environment dependence of ECT rotation curves in the
-$\phi$-framework.
-Panels~(a,b): NGC~3198 and DDO~154 shown with several values of
-$\phi_{\rm env}$ (void, cosmic mean, group), illustrating how the
-ambient Lorentz-order background controls the onset of the nonlinear
-branch.
-Panel~(c): the critical acceleration scale
-$g_\dagger(\phi_{\rm env})=g_{\dagger 0}e^{\gamma\phi_{\rm env}}$
-with fitted galaxies marked.
-Panel~(d): correlation of fitted $\phi_{\rm env}$ with independently
-expected environmental proxies.
-The environmental dependence of $g_\dagger$ is a distinctive
-prediction of the ECT macroscopic branch relative to strict
-MOND-universality~(Level~B).}
-\label{fig:EFE}
-\end{figure}
+\caption{Representative galaxy fits (fixed-$M/L$ mode).
+$g^\dagger_{\rm eff}$ is quoted relative to $cH_0/(2\pi)$.
+AIC uses $k=1$ for ECT and MOND, $k=3$ for $\Lambda$CDM.}
+\label{tab:sparc_selected_main}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lccccc}
+\hline\hline
+Galaxy & $N$ &
+$\frac{g^\dagger_{\rm eff}}{cH_0/2\pi}$ &
+$\chi^2_{\rm red}$ (ECT) & AIC (ECT) &
+$\chi^2_{\rm red}$ (MOND) \\
+\hline
+DDO154   & 12 & 0.755 & 1.77 & 21.5  & 1.19 \\
+NGC2403  & 73 & 1.348 & 3.26 & 236.7 & 4.67 \\
+NGC3198  & 43 & 0.861 & 4.50 & 191.1 & 9.45 \\
+NGC6503  & 31 & 1.055 & 2.76 &  84.7 & 2.16 \\
+UGC02885 & 19 & 1.199 & 2.24 &  42.3 & 2.67 \\
+\hline\hline
+\end{tabular}
+\end{table}
 
 
-% --- fig:gdagger_analysis ---
+\begin{figure*}[htb]
+\centering
+\includegraphics[width=\textwidth]{figures/set2_sparc_sample.pdf}
+\caption{Representative SPARC rotation curves fitted with the ECT
+closure~\eqref{eq:ect_rotation_closure_main}.
+Points with error bars: observed velocities~\cite{Lelli2016SPARC}.
+Dashed: baryons-only contribution (fixed $\Upsilon_d$).
+Thin solid (grey): ECT baseline $g^\dagger_0=cH_0/(2\pi)$.
+Thick solid (black): ECT best-fit $g^\dagger_{\rm eff}$.
+Long-dashed: MOND with free $\Upsilon_d$; dotted: $\Lambda$CDM NFW.
+$\chi^2_{\rm red}$ and AIC in legend; panel statistics in
+Table~\ref{tab:sparc_selected_main}.}
+\label{fig:sparc_sample_new}
+\end{figure*}
+
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\textwidth]{figures/fig_gdagger_analysis.png}
-\caption{Per-galaxy effective acceleration scale
-$g_\dagger(\phi_{\rm env})$ from ECT $\phi$-closure fits.
-\textbf{(a)}~$g_\dagger^{\rm eff}$ versus stellar mass; the shaded
-band shows the MOND intrinsic scatter ($0.13$\,dex) around $a_0$.
-\textbf{(b)}~Ratio $g_\dagger^{\rm eff}/a_0$; MOND predicts all bars
-at unity.
-The large scatter, especially for dwarf galaxies, is consistent with
-the $\phi$-framework prediction that $g_\dagger$ is
-environment-dependent~(Level~B).}
-\label{fig:gdagger_analysis}
+\includegraphics[width=0.82\linewidth]{figures/set1_milky_way.pdf}
+\caption{Milky Way rotation-curve fit.
+Data: Eilers~et~al.~(2019)~\cite{Eilers2019}.
+Thick solid (black): ECT best-fit,
+$g^\dagger_{\rm eff}\approx1.72\,cH_0/(2\pi)$.
+Grey band: $g^\dagger$ sensitivity ($\times0.5$--$\times2$),
+not a computed EFE.  Also shown: MOND and $\Lambda$CDM NFW.}
+\label{fig:mw_new}
 \end{figure}
 
-\subsubsection*{Methodological caveats of the current galactic closure fits}
 
-The current ECT galactic fits are exploratory algebraic closure fits.
-They do not yet solve the full boundary-value problem for the
-Lorentz-order field $\phi(x)$ in realistic galactic geometry, and
-should therefore be interpreted as phenomenological tests of the
-macroscopic branch rather than final self-consistent solutions.
+\subsubsection*{Interpretation of the effective critical scale}
 
-This caveat matters when comparing ECT against MOND or $\Lambda$CDM.
-The ECT closure shown here uses one effective galactic parameter,
-while NFW halo fits in $\Lambda$CDM use two halo parameters and MOND
-absorbs flexibility differently through stellar-mass modelling.
-The scientific point of the present comparison is therefore not that
-the current one-parameter ECT closure is the final theory of galaxy
-rotation curves, but that the ordered-branch mechanism can reproduce
-the main empirical regularities with very limited freedom and with the
-distinctive possibility of environmental dependence in~$g_\dagger$~(Level~B).
+The SPARC fits are best interpreted as
+$g^\dagger_{\rm eff}=g^\dagger_0 Z_{\rm env}$,
+where $g^\dagger_0$ is the cosmological baseline and $Z_{\rm env}$
+captures residual environmental and branch-state dependence.
+The histogram (Fig.~\ref{fig:gdag_hist_new}) shows the fitted values
+cluster around $cH_0/(2\pi)$ but retain substantial scatter.
+This scatter should not be over-interpreted: it may contain both
+genuine environmental dependence and modelling systematics
+($M/L$ choices, bulge treatment, incomplete EFE sector).
 
-%%% -----------------------------------------------------------
-\subsubsection*{Status of the galactic closure model}
-\label{subsec:lof_relation}
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.82\linewidth]{figures/diag_gdag_histogram.pdf}
+\caption{Distribution of fitted $g^\dagger_{\rm eff}/(cH_0/2\pi)$
+across the SPARC sample.
+Left: fixed $M/L$ ($k=1$, no degeneracy);
+right: free $M/L$ ($k=2$, includes degeneracy).
+Dashed line: ECT baseline $cH_0/(2\pi)$.}
+\label{fig:gdag_hist_new}
+\end{figure}
 
-\textit{Status: Level~B throughout. The galactic closure is
-a phenomenological $\phi$-first approximation, not a
-first-principles solution from bare~P3. One free parameter
-($\phi_{\rm env}$) per galaxy.}
+The correct present statement is twofold:
+ECT supports a cosmological baseline $g^\dagger_0\sim cH_0/(2\pi)$,
+and simultaneously allows $g^\dagger_{\rm eff}$ to depart from strict
+universality.  This is a structural difference from standard MOND and
+may become a diagnostic of environment and criticality in future work.
 
-Galactic phenomenology in ECT is formulated in terms of the
-$\phi$-sector and its effective closure relation
-(Section~\ref{sec:mp_galactic}).
-The present algebraic closure is an exploratory Level~B
-approximation; a full boundary-value solution for $\phi(x)$
-in realistic galactic geometry is the next computational
-step~(OP-new-5). Nevertheless, the one-parameter fits already
-demonstrate that the ordered-branch mechanism can reproduce
-the main empirical regularities of rotation curves, BTFR, and
-RAR with comparable or better economy than MOND or
-$\Lambda$CDM at galactic scales.
+\paragraph{Note on the EFE proxy.}
+A preliminary nearest-neighbour EFE proxy
+($g_{\rm ext}\approx G M_{\rm neigh}/d_{\rm neigh}^2$) was tested
+for 20 SPARC galaxies.  The typical ratio $g_{\rm ext}/(cH_0/2\pi)
+\lesssim10^{-3}$, so Level-1 EFE corrections to $g^\dagger_{\rm eff}$
+are negligible and are not promoted to a main result.
+A meaningful test requires Level-2 environment data
+(summing contributions over all group members).
 
-
-%%% -----------------------------------------------------------
-\subsubsection*{Proposed test: $g_\dagger$ variation across SPARC
-galaxies}
-\label{subsec:lof_gdagger_test}
-
-\textit{Status: Level~B prediction of the macroscopic
-ECT branch. Environmental variation of $g_\dagger$ is a
-direct consequence of the $\phi$-first critical-branch
-closure (Level~B, testable).}
-
-A distinctive prediction of the Lorentz-order-field framework
-is that $g_\dagger$ should vary weakly but systematically~(Level~B) with
-the galactic environment
-(Section~\ref{sec:mp_galactic}).  Unlike standard MOND,
-where $a_0$ is a fundamental constant, ECT predicts
-$g_\dagger = g_\dagger(\phi_{\rm gal})$, with $\phi_{\rm gal}$
-set by the ambient density.
-
-This prediction can be tested directly on the SPARC sample as
-follows:
-
-\paragraph{Step~1: extract $g_\dagger$ per galaxy.}
-For each SPARC galaxy, the effective $g_\dagger$ is obtained
-directly from the $\phi$-closure fit: the best-fit
-$\phi_{\rm env}$ determines
-$g_\dagger = g_{\dagger 0}\,e^{\gamma\phi_{\rm env}}$.
-Equivalently, one fits the BTFR form
-$v_{\rm flat}^4 = G M_{\rm bar}\,g_\dagger^{(i)}$ directly,
-extracting $g_\dagger^{(i)}$ as a per-galaxy quantity.
-
-\paragraph{Step~2: assign environmental density.}
-Using large-scale-structure catalogues (e.g.\ 2MRS, SDSS),
-assign to each SPARC galaxy a local density
-$\rho_{\rm env}^{(i)}$ (or equivalently a tidal-field
-estimate, or a distance to the nearest cluster).
-
-\paragraph{Step~3: test for correlation.}
-Plot $g_\dagger^{(i)}$ versus $\rho_{\rm env}^{(i)}$ and test
-for a positive correlation.  ECT predicts:
-\begin{equation}
-g_\dagger^{(i)} = g_0\bigl(1 + \gamma\,\delta\phi_{\rm env}^{(i)}\bigr)\,,
-\qquad
-\delta\phi_{\rm env}^{(i)} \propto \delta\rho_{\rm env}^{(i)}\,.
-\end{equation}
-
-\paragraph{Expected signal.}
-The magnitude of the predicted modulation depends on the
-parameter $\gamma$ and on the density contrast
-$\delta\rho/\bar\rho$ between the galactic environment and
-the cosmic mean.  As an illustrative estimate, for
-$\gamma \sim 1$ and
-$\delta\rho/\bar\rho \sim 1$--$10$ (cluster vs.\ void),
-the modulation could be
-$\delta g_\dagger/g_\dagger \sim 10\%$ or larger;
-however, this number should be treated as an order-of-magnitude
-indication, not a firm prediction, because $\gamma$ is not yet
-derived from first principles.
-The observed RAR intrinsic scatter of $0.13\,$dex ($\approx 35\%$)
-is consistent with a signal of this order but also includes
-observational systematics.
-A positive correlation at the $\gtrsim\!2\sigma$ level would
-constitute evidence for the Lorentz-order-field mechanism;
-absence of correlation at $\lesssim\!5\%$ would place a
-meaningful constraint on $\gamma$.
-
-\paragraph{Distinction from MOND and $\Lambda$CDM.}
-In MOND, $a_0$ is universal by construction and no
-environmental correlation is expected.
-In $\Lambda$CDM, there is no characteristic acceleration scale
-at all; any apparent $g_\dagger$ extracted from rotation curves
-should correlate with halo concentration, not with
-large-scale density.
-The ECT prediction is therefore qualitatively distinct from
-both alternatives.
-
+% === END NEW GALACTIC BLOCK (v3f) ===
 
 %%% -----------------------------------------------------------
 \subsubsection*{Open problems}
@@ -7664,7 +7591,7 @@ within the new ECT postulate framework.}
 \item[OP-new-5.]
   \textbf{Rotation-curve refits.}
   Replace the algebraic closure with direct numerical solutions
-  of~\eqref{eq:RAR} and compare $\chi^2/N$ values.
+  of~\eqref{eq:ect_rotation_closure_main} and compare $\chi^2/N$ values.
 \end{description}
 
 
@@ -7678,111 +7605,12 @@ within the new ECT postulate framework.}
 
 \subsubsection*{Galaxy rotation curves}
 
-One-parameter ($r_0$) fits to SPARC galaxies~\cite{Lelli2016}:
-NGC\,3198: $r_0=6.7$\,kpc, $\chi^2/N=1.38$;
-NGC\,2403: $r_0=2.3$\,kpc, $\chi^2/N=1.40$;
-sample range $\chi^2/N\sim 1.8$--$11.5$;
-vs.\ $\Lambda$CDM: $\chi^2/N=6.55$~(Level~B).
-
-
-% --- fig:sparc_ect ---
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{figures/fig1_SPARC_ECT_bw.png}
-\caption{Rotation curves of five representative SPARC
-galaxies~\cite{Lelli2016}. Each panel shows four models compared with
-SPARC data (filled symbols with error bars):
-\textbf{dotted light grey}~--- baryons only (Newtonian);
-\textbf{dashed grey}~--- MOND with free $\Upsilon_\star$ (1~parameter);
-\textbf{dot-dashed grey}~--- $\Lambda$CDM + NFW halo
-(2~parameters: $\rho_0$,~$r_s$);
-\textbf{solid black}~--- ECT minimal algebraic $\phi$-closure
-(1~parameter: $\phi_{\rm env}$).
-All fits are exploratory closure fits, not yet full field solutions
-derived from bare~P3.}
-\label{fig:sparc_ect}
-\end{figure}
-
-
-
-The Milky Way provides a useful single-galaxy benchmark for the same
-closure logic, combining an inner baryon-dominated region with an
-extended outer rotation-curve dataset.
-A representative exploratory fit is shown in Fig.~\ref{fig:MW}.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\textwidth]{figures/fig_MW_rotation.png}
-\caption{Milky Way rotation curve from the exploratory ECT
-$\phi$-closure model.
-Data: Sofue~(2012) for $r<5$\,kpc (grey squares) and
-Eilers~et~al.~(2019) for $5$--$26$\,kpc (dark circles).
-Models:
-\textbf{dotted}~--- baryons only;
-\textbf{dashed}~--- MOND (1p, free $\Upsilon_\star$);
-\textbf{dot-dashed}~--- $\Lambda$CDM+NFW (2p);
-\textbf{solid}~--- ECT $\phi$-closure (1p, $\phi_{\rm env}$).
-All $\chi^2/N$ values shown in legend.
-This is an exploratory fit within the current macroscopic closure,
-not a first-principles derivation from bare~P3.}
-\label{fig:MW}
-\end{figure}
-
+The new ECT closure~\eqref{eq:ect_rotation_closure_main} fitted to 165 SPARC galaxies~\cite{Lelli2016SPARC} yields median $\chi^2_{\rm red}\approx2.4$ at $k=1$ free parameter (fixed $M/L$), competitive with MOND ($\chi^2_{\rm red}\approx3.1$, same $k=1$). See Table~\ref{tab:sparc_summary_main} and Figs.~\ref{fig:sparc_sample_new}--\ref{fig:gdag_hist_new} in Section~\ref{sec:comparison}; the numerical procedure is in Appendix~\ref{app:sparc_computation}.
 
 \subsubsection*{Radial Acceleration Relation}
 
-RAR~\eqref{eq:RAR} with $g_\dagger=1.2\times10^{-10}$\,m\,s$^{-2}$
-matches McGaugh+2016~\cite{McGaugh2016} across $>150$ SPARC galaxies.
-Quasi-universality $g_\dagger\propto cH_0$ with weak environmental
-modulation is a \emph{new testable prediction} of ECT~(Level~B).
+The deep-critical limit of closure~\eqref{eq:ect_rotation_closure_main} gives $g\to\sqrt{g_N g^\dagger_{\rm eff}}$ analytically, reproducing the RAR asymptote. Quasi-universality $g^\dagger_{\rm eff}\sim cH_0/(2\pi)$ with galaxy-to-galaxy scatter is a testable prediction of ECT, distinct from strict universality of $a_0$ in standard MOND~(Level~B).
 
-
-\subsubsection{External-field effect in $\phi$-language}
-\label{sec:efe_phi}
-
-\textit{Status: Level~B (phenomenological $\phi$-first closure).
-The external-field effect is a natural consequence of the
-environment-dependent Lorentz-order condensate, distinct from
-the standard MOND EFE. The baryonic modelling uses simplified
-Freeman disc and Hernquist bulge; results are exploratory
-closure fits, not first-principles field solutions.}
-
-\paragraph{Conceptual role of the external-field effect.}
-In ECT the external-field effect is not introduced as an additional
-empirical rule. It appears as a natural consequence of the fact that
-the galactic $\phi$-branch is an environment-sensitive ordered state:
-the same macroscopic closure that produces quasi-universal $g_\dagger$
-also allows the local galactic response to depend on the embedding
-environment through $\phi_{\rm env}$.
-The external-field effect should therefore be read as one of the
-observable manifestations of environment-dependent Lorentz ordering,
-not as a separately postulated correction.
-
-
-In the $\phi$-framework, an ambient gravitational field
-raises $\phi_{\rm env}$, which
-shifts $g_\dagger(\phi_{\rm env})$ upward
-(eq.~\eqref{eq:BTFR}).
-This makes the galaxy more Newtonian (more screened), reducing
-the discrepancy between $g_{\rm obs}$ and $g_N$ in the
-outskirts.  The effect is illustrated in Fig.~\ref{fig:EFE},
-where the same galaxy is shown for several values of
-$\phi_{\rm env}$~(Level~B; exploratory closure fit).
-
-\subsubsection*{Baryonic models and fitting procedure}
-
-The baryonic mass distribution is modelled using an
-exponential disc (Freeman~1970) with Bessel-function
-rotation curve, plus a Hernquist (1990) bulge where
-applicable.  The gaseous component is scaled by a factor
-of 1.33 to account for helium.
-
-For each galaxy the $\phi$-closure model has
-\emph{one free parameter}: $\phi_{\rm env}$.
-The baryonic profile is fixed from SPARC photometry.
-MOND fits additionally allow $\Upsilon_\star$ to vary (1~parameter).
-$\Lambda$CDM/NFW fits have two free halo parameters
-($\log\rho_0$,~$\log r_s$).
 
 \subsubsection*{Baryonic Tully--Fisher Relation}
 
@@ -7902,7 +7730,7 @@ consistent with the empirical scale \eqref{eq:BTFR}.
 
 \paragraph{ECT interpretation of the RAR.}
 
-The $\phi$-closure (eq.~\eqref{eq:RAR})
+The $\phi$-closure (eq.~\eqref{eq:ect_rotation_closure_main})
 directly determines the observed acceleration from
 $g_{\rm bar}(r)$ and $g_\dagger(\phi_{\rm env})$,
 with one environment parameter $\phi_{\rm env}$ per galaxy.
@@ -7952,17 +7780,17 @@ Within the revised ECT framework, the key predictive question is
 whether the fitted environment parameter $\phi_{\rm env}$ correlates
 with independently inferred environment measures and whether a single
 $\phi$-closure can simultaneously account for rotation curves, BTFR,
-and RAR.  This is illustrated in Fig.~\ref{fig:rar}.
+and RAR.  This is illustrated in Figs.~\ref{fig:sparc_sample_new}--\ref{fig:gdag_hist_new}.
 
 \paragraph{Universal ECT interpolation function.}
 
 The per-galaxy ECT prediction
-$g_{\rm obs} = \mathcal{G}(g_{\rm bar};\,g_\dagger(\phi_{\rm env}))$ (see eq.~\eqref{eq:RAR})
+$g_{\rm obs} = \mathcal{G}(g_{\rm bar};\,g_\dagger(\phi_{\rm env}))$ (eq.~\eqref{eq:ect_rotation_closure_main})
 can be cast as a universal interpolation function on the
 $(g_{\rm bar},\,g_{\rm obs})$ plane.
 In the $\phi$-closure framework the per-galaxy RAR follows
 directly from the closure relation
-(eq.~\eqref{eq:RAR}):
+(eq.~\eqref{eq:ect_rotation_closure_main}):
 \begin{equation}
 \label{eq:rar_ect_universal}
 g_{\rm obs}
@@ -7977,8 +7805,8 @@ MOND acceleration scale.
 
 \paragraph{Comparison of interpolation functions.}
 
-The ECT interpolation~\eqref{eq:RAR} and the empirical
-RAR~\eqref{eq:RAR} share the same asymptotic behavior:
+The ECT closure~\eqref{eq:ect_rotation_closure_main} and the empirical
+RAR~\eqref{eq:RAR_empirical} share the same asymptotic behavior:
 $g_{\rm obs} \to g_{\rm bar}$ for $g_{\rm bar} \gg g^\dagger$
 (Newtonian) and
 $g_{\rm obs} \to \sqrt{g^\dagger\,g_{\rm bar}}$ for
@@ -7996,7 +7824,7 @@ postulated phenomenologically.
 \paragraph{Honest assessment.}
 
 A quantitative comparison with the SPARC database
-\cite{Lelli2016} is summarised in Table~\ref{tab:phi_fits}.
+\cite{Lelli2016SPARC} is summarised in Tables~\ref{tab:sparc_summary_main} and \ref{tab:sparc_selected_main}.
 At equal parameter count (one per galaxy), ECT and MOND
 perform comparably overall:
 ECT ($\chi^2/N \sim 1.8$--$11.5$, one parameter $\phi_{\rm env}$)
@@ -8103,7 +7931,7 @@ the ambient density environment.  The prediction is:
 show systematically higher $g_\dagger$ than void dwarfs.}
 This test can be performed on the full 148-galaxy SPARC
 sample cross-matched with large-scale-structure catalogues
-(Section~\ref{subsec:lof_gdagger_test}).
+(Section~\ref{sec:comparison}).
 
 
 \paragraph{Reading the figure.}
@@ -13776,6 +13604,146 @@ clear route for the next stage of development.
 
 \clearpage
 \appendix
+
+
+% ============================================================
+% APPENDIX: Galactic phi-closure derivation (NEW, v3f)
+% ============================================================
+
+\section{Derivation of the galactic $\phi$-closure and the practical fitting law}
+\label{app:galactic_phi_closure}
+
+This appendix derives the practical galactic fitting law used in the SPARC analysis.
+
+\subsection*{Variational structure}
+
+The galactic sector is treated as a nonlinear static response problem
+for the effective potential $\Phi$.  The minimal effective functional is
+\begin{equation}
+\Gamma_{\rm gal}[\Phi]
+=
+\int d^3x\,
+\left[
+\frac{g_0^{\dagger\,2}}{8\pi G_N}
+F\!\left(\frac{|\nabla\Phi|}{g^\dagger_0}\right)
+-\rho_b(\mathbf{x})\,\Phi
+\right],
+\label{eq:app_gal_functional}
+\end{equation}
+where $g^\dagger_0$ is the cosmological baseline critical acceleration scale
+and $\rho_b$ is the baryonic source density.
+
+The corresponding Euler--Lagrange equation reads
+\begin{equation}
+\nabla\!\cdot\!\left[
+\mu_\phi\!\left(\frac{|\nabla\Phi|}{g^\dagger_0}\right)\nabla\Phi
+\right]
+=
+4\pi G_N \rho_b,
+\label{eq:app_gal_mu_eq}
+\end{equation}
+with $\mu_\phi(x)=\frac{1}{2x}\frac{dF}{dx}$.
+
+\subsection*{Required asymptotic branches}
+
+\paragraph{Screened Newtonian branch.}
+$\mu_\phi(x)\to1$ as $x\gg1$.
+
+\paragraph{Deep critical branch.}
+$\mu_\phi(x)\to x$ as $x\ll1$, yielding $g\to\sqrt{g_N g^\dagger}$.
+
+\subsection*{Minimal interpolation choice}
+
+A full first-principles derivation of the interpolation family is not yet
+available (OP2, OP-new-1).  The present work adopts
+\begin{equation}
+\mu_\phi(x)=\frac{x}{1+x},
+\label{eq:app_mu_choice}
+\end{equation}
+which is a Level~B closure assumption, not a Level~A theorem.
+This gives $F(x)=x^2-2x+2\ln(1+x)$, interpolating between the
+quadratic screened branch and the critical $Y^{3/2}$ branch.
+
+\subsection*{Practical algebraic fitting law}
+
+In the quasi-radial approximation the modified Poisson equation reduces to
+$\mu_\phi(g/g^\dagger_{\rm eff})\,g=g_N$, hence
+$g^2-g_N g-g_N g^\dagger_{\rm eff}=0$.
+Selecting the positive branch yields
+\begin{equation}
+g(R)=\frac{1}{2}\left[g_N(R)+\sqrt{g_N^2(R)+4\,g_N(R)\,g^\dagger_{\rm eff}}\right],
+\label{eq:app_final_g_law}
+\end{equation}
+which is eq.~\eqref{eq:ect_rotation_closure_main} of the main text.
+
+\subsection*{Baryonic input and BTFR}
+
+The Newtonian input is
+$g_N(R)=[V_{\rm gas}^2(R)+\Upsilon_{\rm d}V_{\rm disk}^2(R)+\Upsilon_{\rm b}V_{\rm bul}^2(R)]/R$,
+and the predicted velocity is $V_{\rm ECT}(R)=\sqrt{R\,g(R)}$.
+In the low-acceleration branch, $g\simeq\sqrt{g_N g^\dagger_{\rm eff}}$,
+which gives $v_c^4=G_N M_{\rm bar} g^\dagger_{\rm eff}$~(BTFR).
+
+
+% ============================================================
+% APPENDIX: Computational procedure for SPARC fits (NEW, v3f)
+% ============================================================
+
+\section{Computational procedure for the SPARC galactic fits}
+\label{app:sparc_computation}
+
+\subsection*{Input data}
+
+The analysis uses the SPARC mass-model catalogue~\cite{Lelli2016SPARC},
+providing $R$, $V_{\rm obs}$, $\sigma_V$, $V_{\rm gas}$,
+$V_{\rm disk}$, and $V_{\rm bul}$ for 175 galaxies.
+A minimum error floor of $2\,{\rm km\,s}^{-1}$ is imposed.
+
+\subsection*{Fit modes}
+
+\paragraph{Fixed-$M/L$ mode ($k=1$).}
+$\Upsilon_{\rm d}=0.5$, $\Upsilon_{\rm b}=0.7$ fixed;
+only $g^\dagger_{\rm eff}$ is fitted.
+This is the cleaner ECT test, removing disk $M/L$ degeneracy.
+
+\paragraph{Free-$M/L$ mode ($k=2$).}
+$\Upsilon_{\rm d}$ is fitted jointly with $g^\dagger_{\rm eff}$;
+$\Upsilon_{\rm b}=0.7$ fixed.
+
+\subsection*{Optimisation and quality flags}
+
+Each galaxy minimises $\chi^2=\sum_i[(V_{\rm obs}(R_i)-V_{\rm ECT}(R_i))/\sigma_i]^2$.
+Quality flags are assigned for: too few points ($N<8$),
+poor fit ($\chi^2_{\rm red}>5$), $M/L$ at scan boundary,
+and bulge sensitivity.
+A clean sub-sample is defined by excluding all flagged galaxies.
+
+\subsection*{Model comparison: AIC and BIC}
+
+Because the number of free parameters differs between models,
+AIC $=\chi^2+2k$ and BIC $=\chi^2+k\ln N$ are computed alongside
+reduced $\chi^2$.  Parameter counts: ECT fixed ($k=1$), ECT free ($k=2$),
+MOND ($k=1$, $a_0$ fixed), $\Lambda$CDM NFW ($k=3$).
+
+\subsection*{Outputs used in the paper}
+
+Main text uses: SPARC sample plot (Fig.~\ref{fig:sparc_sample_new}),
+Milky Way plot (Fig.~\ref{fig:mw_new}),
+$g^\dagger_{\rm eff}$ histogram (Fig.~\ref{fig:gdag_hist_new}),
+and summary Table~\ref{tab:sparc_summary_main}.
+Additional diagnostic plots (AIC comparison, fixed/free-$M/L$ comparison,
+scatter against mass, radius, and surface-density proxies) are
+retained as supplementary material.
+
+\subsection*{Note on the EFE proxy}
+
+A preliminary nearest-neighbour proxy
+$g_{\rm ext}\approx G M_{\rm neigh}/d_{\rm neigh}^2$
+was tested for 20 SPARC galaxies~(sparc\_environment.csv).
+The typical ratio $g_{\rm ext}/(cH_0/2\pi)\lesssim10^{-3}$,
+so Level-1 EFE corrections are numerically negligible and are not
+promoted to a main result.  A meaningful EFE test requires
+Level-2 data (summing over all group members).
 
 
 % ============================================================
