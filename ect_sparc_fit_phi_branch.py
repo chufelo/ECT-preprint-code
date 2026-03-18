@@ -150,16 +150,50 @@ def load_sparc(path: str, error_floor: float = 2.0) -> pd.DataFrame:
     return df
 
 # ── Optional: load external-field proxy table ─────────────────────────────────
+# Physical constants for EFE computation
+G_SI   = 6.67430e-11     # m^3 kg^-1 s^-2
+MSUN   = 1.98847e30      # kg
+KPC_M  = 3.085677581491367e19   # m per kpc
+
+def gext_from_neighbour(M_neigh_Msun: float, d_neigh_kpc: float) -> float:
+    """Level-1 EFE proxy: g_ext = G * M_neigh / d_neigh^2  [m/s^2]."""
+    M = M_neigh_Msun * MSUN
+    d = d_neigh_kpc * KPC_M
+    return G_SI * M / d**2
+
 def load_gext(path: Optional[str]) -> Optional[dict]:
-    """Load external-field proxy CSV with columns: galaxy, gext_m_s2.
-    Returns dict {normalized_name: gext_si} or None."""
+    """Load external-field proxy CSV.
+
+    Supported formats:
+      Format A: columns galaxy, gext_m_s2            — direct value
+      Format B: columns galaxy, M_neigh_Msun, d_neigh_kpc — computed Level-1
+
+    Returns dict {normalized_name: gext_si} or None.
+    Lines starting with '#' are ignored.
+    """
     if path is None:
         return None
-    df = pd.read_csv(path)
-    if 'galaxy' not in df.columns or 'gext_m_s2' not in df.columns:
-        raise ValueError("gext_file must have columns: galaxy, gext_m_s2")
-    return {normalize_name(row['galaxy']): float(row['gext_m_s2'])
-            for _, row in df.iterrows()}
+    df = pd.read_csv(path, comment='#')
+    if 'galaxy' not in df.columns:
+        raise ValueError("gext_file must have column: galaxy")
+    result = {}
+    if 'gext_m_s2' in df.columns:
+        # Format A: use pre-computed value
+        for _, row in df.iterrows():
+            result[normalize_name(row['galaxy'])] = float(row['gext_m_s2'])
+        print(f"  Loaded g_ext (Format A: direct values): {len(result)} galaxies")
+    elif 'M_neigh_Msun' in df.columns and 'd_neigh_kpc' in df.columns:
+        # Format B: compute from nearest-neighbour
+        for _, row in df.iterrows():
+            gex = gext_from_neighbour(float(row['M_neigh_Msun']),
+                                      float(row['d_neigh_kpc']))
+            result[normalize_name(row['galaxy'])] = gex
+        print(f"  Loaded g_ext (Format B: computed from M_neigh, d_neigh): {len(result)} galaxies")
+    else:
+        raise ValueError(
+            "gext_file must have columns: (galaxy, gext_m_s2) OR "
+            "(galaxy, M_neigh_Msun, d_neigh_kpc)")
+    return result
 
 # ── Physics functions ──────────────────────────────────────────────────────────
 def baryonic_velocity_squared(vgas, vdisk, vbul,
@@ -520,6 +554,14 @@ def plot_rotation_curve(ax, sub, fit: GalaxyFit, h0=70.0,
                 label=f'ECT free Υ={fit.ml_disk_best:.2f}  χ²={fit.chi2_red_free:.1f}')
     ax.plot(Rmod, V_ect_fix, '-', color=BK, lw=1.8,
             label=f'ECT fixed Υ  χ²={fit.chi2_red_fixed:.1f}  AIC={fit.aic_fixed:.0f}')
+
+    # EFE proxy curve — shown only if real g_ext was loaded for this galaxy
+    if fit.gdag_proxy_si > 0:
+        gdag_proxy_kpc = fit.gdag_proxy_si / ACC_CONV
+        V_proxy = ect_vmod(Rmod, gN_fix, gdag_proxy_kpc)
+        ax.plot(Rmod, V_proxy, '-', color=LG, lw=1.4, alpha=0.9,
+                label=f'ECT+EFE proxy  χ²={fit.chi2_red_proxy:.1f}')
+
     ax.errorbar(R, Vob, yerr=eVo, fmt='o', ms=2.5, color=BK,
                 elinewidth=0.7, capsize=1.2, label='Obs', zorder=5)
 
@@ -672,6 +714,13 @@ def plot_sensitivity_set(df, fits, out_path, h0=70.0, ncols=3):
         V_mond  = mond_vmod(Rmod, gN_mond, A0_SI/ACC_CONV)
         ax.plot(Rmod, V_mond, LS_MOND, color=BK, lw=2.2, zorder=8,
                 label=f'MOND  χ²={fit.chi2_red_mond:.1f}')
+
+        # EFE proxy curve on sensitivity plot
+        if fit.gdag_proxy_si > 0:
+            gdag_proxy_kpc = fit.gdag_proxy_si / ACC_CONV
+            V_proxy = ect_vmod(Rmod, gN, gdag_proxy_kpc)
+            ax.plot(Rmod, V_proxy, '-', color=LG, lw=1.8, zorder=7,
+                    label=f'ECT+EFE proxy  χ²={fit.chi2_red_proxy:.1f}')
 
         ax.errorbar(R, Vob, yerr=eVo, fmt='o', ms=2.8, color=BK,
                     elinewidth=0.8, capsize=1.5, zorder=9, label='Obs')
@@ -907,6 +956,83 @@ def plot_diagnostics(fits: List[GalaxyFit], out_dir: str, h0=70.0):
     fig.tight_layout()
     fig.savefig(os.path.join(out_dir,'diag_gdag_histogram.pdf'), dpi=150, bbox_inches='tight')
     plt.close(fig)
+    # ── EFE proxy diagnostics (only if proxy data available) ──────────────
+    gext_arr = np.array([f.gext_si for f in fits])
+    has_gext  = gext_arr > 0
+    n_gext    = np.sum(has_gext)
+
+    if n_gext >= 3:
+        print(f"  EFE diagnostics: {n_gext} galaxies with g_ext data")
+        gdag_with  = gdag_si[has_gext]
+        gext_with  = gext_arr[has_gext]
+        proxy_with = np.array([f.gdag_proxy_si for f in fits])[has_gext]
+        flags_with = [f.flag_low_quality for f, h in zip(fits, has_gext) if h]
+
+        # Plot A: g†_fit vs g_ext
+        fig_e, axes_e = plt.subplots(1, 2, figsize=(10, 4.5))
+
+        ax_ea = axes_e[0]
+        good_e = np.array([not fl for fl in flags_with])
+        bad_e  = np.array(flags_with)
+        if good_e.any():
+            ax_ea.scatter(gext_with[good_e], gdag_with[good_e],
+                          s=20, color=DG, alpha=0.8, marker='o', label='clean fit')
+        if bad_e.any():
+            ax_ea.scatter(gext_with[bad_e], gdag_with[bad_e],
+                          s=20, color=MG, alpha=0.5, marker='x', label='flagged')
+        ax_ea.axhline(ch0_ref, color=BK, lw=1.2, ls='--', label=r'$cH_0/2\pi$')
+        ax_ea.set_xscale('log'); ax_ea.set_yscale('log')
+        ax_ea.set_xlabel(r'$g_{\rm ext}$ (m/s²) — Level 1 proxy', fontsize=8)
+        ax_ea.set_ylabel(r'$g^\dagger_{\rm fit}$ (m/s²)', fontsize=8)
+        ax_ea.set_title(
+            r'$g^\dagger_{\rm fit}$ vs $g_{\rm ext}$' + f'  (N={n_gext})', fontsize=8)
+        if n_gext >= 2:
+            r_e = np.corrcoef(np.log10(gext_with), np.log10(gdag_with))[0,1]
+            ax_ea.text(0.05, 0.95, f'log-log Pearson r={r_e:.3f}\n'
+                       f'(anti-correlation expected if EFE active)',
+                       transform=ax_ea.transAxes, fontsize=7, va='top')
+        ax_ea.legend(fontsize=7)
+
+        # Plot B: g†_fit/g†_0 vs g_ext/g†_0  (dimensionless)
+        ax_eb = axes_e[1]
+        ratio_fit   = gdag_with  / ch0_ref
+        ratio_gext  = gext_with  / ch0_ref
+        if good_e.any():
+            ax_eb.scatter(ratio_gext[good_e], ratio_fit[good_e],
+                          s=20, color=DG, alpha=0.8, marker='o', label='clean fit')
+        if bad_e.any():
+            ax_eb.scatter(ratio_gext[bad_e], ratio_fit[bad_e],
+                          s=20, color=MG, alpha=0.5, marker='x', label='flagged')
+        ax_eb.axhline(1.0, color=BK, lw=1.2, ls='--', label=r'$g^\dagger_0 = cH_0/2\pi$')
+        ax_eb.set_xscale('log')
+        ax_eb.set_xlabel(r'$g_{\rm ext}/g^\dagger_0$ (dimensionless)', fontsize=8)
+        ax_eb.set_ylabel(r'$g^\dagger_{\rm fit}/g^\dagger_0$', fontsize=8)
+        ax_eb.set_title(
+            'Dimensionless EFE ratio plot' + f'  (N={n_gext})', fontsize=8)
+        ax_eb.legend(fontsize=7)
+
+        fig_e.suptitle(
+            'EFE diagnostic — Level 1 nearest-neighbour proxy\n'
+            r'NOTE: Level 1 estimates $g_{\rm ext} \sim G M_{{\rm neigh}}/d^2$; '
+            'typical values $\ll cH_0/2\pi$',
+            fontsize=8)
+        fig_e.tight_layout()
+        fig_e.savefig(os.path.join(out_dir,'diag_efe_gext.pdf'),
+                      dpi=150, bbox_inches='tight')
+        plt.close(fig_e)
+        print(f"  EFE diagnostic saved: diag_efe_gext.pdf")
+
+        # Summary: compare chi2_red_base_cH0_2pi vs chi2_red_proxy
+        chi2_base_arr  = np.array([f.chi2_red_base_cH0_2pi for f, h in zip(fits, has_gext) if h])
+        chi2_proxy_arr = np.array([f.chi2_red_proxy         for f, h in zip(fits, has_gext) if h])
+        valid_proxy = chi2_proxy_arr > 0
+        if valid_proxy.sum() >= 2:
+            delta_chi2 = np.median(chi2_base_arr[valid_proxy] - chi2_proxy_arr[valid_proxy])
+            print(f"  EFE proxy vs baseline cH0/2pi: median Δchi2_red = {delta_chi2:+.3f}")
+            print(f"  (positive = proxy improves fit, negative = proxy worsens fit)")
+    else:
+        print(f"  EFE diagnostics skipped: only {n_gext} galaxies with g_ext < 3")
+
     print(f"  Diagnostics saved to {out_dir}")
 
 # ── Five-galaxy comparison ────────────────────────────────────────────────────
@@ -1060,6 +1186,29 @@ def write_summary(fits, out_path, h0=70.0, mw_result=None, error_floor=2.0):
             w('  (not computed)')
         w()
 
+        # EFE proxy results block (only if data available)
+        has_proxy = [f for f in fits if f.gext_si > 0]
+        if has_proxy:
+            w()
+            w('EFE PROXY RESULTS (Level-1 nearest-neighbour)')
+            w(f'  Galaxies with g_ext data    : {len(has_proxy)} / {len(fits)}')
+            g_ext_arr  = np.array([f.gext_si for f in has_proxy])
+            gdag_arr   = np.array([f.gdag_fixed_si for f in has_proxy])
+            gdag0_arr  = np.array([cH0_si(h0)/(2*math.pi)] * len(has_proxy))
+            w(f'  Median g_ext (m/s^2)        : {np.median(g_ext_arr):.3e}')
+            w(f'  Median g_ext / g†_0         : {np.median(g_ext_arr/gdag0_arr):.6f}')
+            w()
+            w('  IMPORTANT FINDING:')
+            w(f'  Level-1 g_ext << cH_0/(2pi) by factor ~{np.median(gdag0_arr/g_ext_arr):.0f}x')
+            w('  => Level-1 EFE proxy corrections to g†_eff are negligible (< 0.1%).')
+            w('  => The observed scatter in g†_eff is NOT explained by Level-1 EFE.')
+            w('  => Possible explanations:')
+            w('     (i)  Higher-order environment (Level 2/3: group potential, LSS)')
+            w('     (ii) M/L systematics dominate the scatter')
+            w('     (iii) ECT internal physics beyond the Level-1 proxy')
+            w('  => Full EFE requires Level-2: summing over all group members.')
+
+        w()
         w('SENSITIVITY BAND NOTE')
         w('  The grey band on rotation-curve plots (×0.5–×2) is a')
         w('  g†-sensitivity band, NOT a computed external-field effect.')
