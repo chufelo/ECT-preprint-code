@@ -6115,7 +6115,7 @@ macroscopic closure.
 (a)~Redshift anomaly $\delta z=\tfrac{1}{2}\delta\phi$ as a function of
 the local Lorentz-order fluctuation amplitude.
 (b)~Effective dark-energy equation of state $w(z)$ in the closure,
-with benchmark $w_0\approx-0.83$ calibrated to DESI~2024~\cite{DESI2024}.
+showing $w_0>-1$ structure (illustrative closure; specific value not derived from ECT).
 (c)~Running gravitational coupling $G_{\rm eff}(z)/G_N$ for a
 illustrative background evolution $\phi_b(z)$ (slow-roll form).
 These curves are phenomenological consequences of the present
@@ -6252,17 +6252,17 @@ where the ECT Hubble function reads
 with $f_w(z)$ capturing the redshift evolution of $w(z)$.
 
 \textbf{Numerical estimate.}
-Using the structural prediction $G_{\rm eff}(z)=G_N e^{-\phi_b(z)}$ (slow
-evolution, sign positive), and flat $\Lambda$CDM as the fiducial,
-numerical integration of~\eqref{eq:age_integral} gives
+Using an illustrative power-law background $\phi_b(z)=-2\varepsilon\ln(1+z)$
+with $\varepsilon\sim 0.01$ (closure-level, not derived), and flat
+$\Lambda$CDM as the fiducial, numerical integration gives an indicative range
 \begin{equation}
-  t_0^{\rm ECT} \approx 13.3\text{--}13.5\;\mathrm{Gyr},
+  t_0^{\rm ECT} \approx 13.3\text{--}13.5\;\mathrm{Gyr}
+  \quad\text{(illustrative closure)},
   \label{eq:t0_ECT}
 \end{equation}
 compared to the Planck $\Lambda$CDM value $t_0^{\Lambda{\rm CDM}} = 13.80 \pm 0.02\,\mathrm{Gyr}$.
-The ECT universe is slightly younger by $\Delta t_0 \approx 0.3\text{--}0.5\,\mathrm{Gyr}$,
-a $\sim 2\text{--}3\%$ decrease well within current observational
-uncertainties on $H_0$ and $w_0$.
+The ECT mechanism generically shifts $t_0$ by $\mathcal{O}(\varepsilon)$ relative
+to $\Lambda$CDM; the specific range above is illustrative.
 
 \textbf{Honesty note.}
 This estimate uses the ECT-corrected $H_0$ and $w_0$ but does not
@@ -6304,10 +6304,11 @@ zero-parameter first-principles computation.
 \textit{Benchmark of an effective inflationary ordering-transition
 closure~(Level~B); $N_e=60$ is a free input, not derived from~P3.}
 
-\item $w_0 = -1+2\rho_{\rm kin}/(3\rho_{\rm cond}) \approx -0.83$
-(DESI~DR2~2024: $-0.827\pm0.059$).
-\textit{Benchmark of a late-time order-field vacuum-energy closure~(Level~B);
-the kinetic fraction $\rho_{\rm kin}/\rho_{\rm cond}$ is not derived from bare~P3.}
+\item $w_0 = -1+2\rho_{\rm kin}/(3\rho_{\rm cond})$ (structural formula;
+specific value not derived from ECT bare postulates).
+\textit{Level~B: $\rho_{\rm kin}/\rho_{\rm cond}$ is a free closure parameter.
+The formula predicts $w_0>-1$ structurally, compatible with
+DESI~DR2~2024 ($-0.827\pm0.059$)~\cite{DESI2024}.}
 
 \item $\eta_B \approx 9\times10^{-10}$
 (observed: $6\times10^{-10}$; factor $\sim\!1.5$).
@@ -6357,7 +6358,7 @@ Matter domination & Cold dark matter particles & Possible dark-sector candidates
   $G_{\rm eff}\approx G_N$ (Level~B) \\
 Dark energy today & Cosmological constant $\Lambda=\text{const}$,
   $w_0=-1$ & Residual condensate kinetic energy;
-  $w_0 \approx -0.83$, compatible with DESI~DR2 2025 \\
+  $w_0>-1$ (structural; no numerical ECT prediction currently) \\
 Galactic scales & Dark matter halo required for flat rotation curves &
   $\phi$-branch activates in low-acceleration environments;
   RAR and BTFR reproduced within the present $\phi$-branch
@@ -6447,7 +6448,7 @@ cosmological epochs can be summarised schematically as follows
   \item \textit{From reheating to today:} ordering variables
     approximately stationary; $G_{\rm eff}\approx G_N$;
     residual kinetic energy in the order field acts as dark-energy
-    source with $w_0\approx-0.83$~(Level~B closure).
+    source with $w_0>-1$ (ECT structural prediction; specific value open)~(Level~B closure).
   \item \textit{Far future:} Scenario~A or Scenario~B as above.
 \end{itemize}
 The three-scale structure of the macroscopic closure
@@ -6997,8 +6998,9 @@ from the ECT background equations; a first-principles solution
 of the coupled $\phi$--Friedmann system remains an open problem.
 Any specific numerical parameterisation (such as a power-law ansatz)
 should be treated as an illustrative closure, not a prediction.
-With ansatz~\eqref{eq:phi_b_ansatz}, eq.~\eqref{eq:Geff_jwst}
-recovers exactly $G_{\rm eff}(z)=G_N(1+z)^{2\varepsilon}$.
+A power-law profile $\phi_b(z)=-2\varepsilon\ln(1+z)$ would recover
+$G_{\rm eff}(z)=G_N(1+z)^{2\varepsilon}$, but any specific $\varepsilon$
+should be treated as an illustrative closure only.
 
 \textit{Structure growth.}
 In the leading sub-horizon approximation, and neglecting explicit
@@ -7037,8 +7039,8 @@ numerical.
 eq.~\eqref{eq:PS_phi} for an illustrative slow-roll profile.
 $\nu$ = peak rarity parameter; JWST anomalies correspond to
 $\nu\sim5$--6.
-The ansatz~\eqref{eq:phi_b_ansatz} gives
-$f(z)=(1+z)^{2\varepsilon}$.}
+The ansatz $\phi_b(z)=-2\varepsilon\ln(1+z)$ gives $f(z)=e^{-\phi_b}$;
+specific $\varepsilon$ is illustrative only.}
 \label{tab:jwst_ps}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{ccccc}
@@ -8657,7 +8659,7 @@ Pre-Lorentzian Euclidean cosmological scenario
   & Level~B & Structurally motivated by P1--P4 \\
 Inflation, $n_s\approx 0.967$~(effective closure) & Level~B & OP3 \\
 Inflationary $r\approx 0.003$~(tensor-to-scalar) & Level~B & Effective inflationary closure \\
-Dark energy ($w_0\approx -0.83$) & Level~B & OP3 \\
+Dark energy ($w_0>-1$ structural; no ECT value) & Level~B/Open & OP3 \\
 BTFR (algebraic consequence) & Level~B & Critical branch \\
 $g_\dagger\propto cH_0$ (quasi-universal) & Level~B & New prediction \\
 Rotation-curve fits $\chi^2/N\sim 2$--$12$ & Level~B & One param/gal \\
@@ -9628,6 +9630,33 @@ The thermal de~Broglie wavelength $\ell\propto T^{-1/2}$ controls
 the decoherence rate; higher temperature gives faster contrast loss,
 consistent with $\tau_{\rm dec}\propto T^{-1}$.
 
+\subsubsection*{Quantitative estimates for photonic switch experiments}
+
+For a photonic quantum-switch setup (photon path $L\sim1$\,m,
+vacuum propagation, minimal leakage:
+$N_{\rm eff}\gamma\sim10^{-3}$\,s$^{-1}$), the ECT decoherence time is:
+\begin{equation}
+  \tau_{\rm dec}^{\rm photonic}
+  \sim \frac{1}{N_{\rm eff}\gamma}
+  \sim 10^{3}\,\text{s}
+  \quad(\Gamma_{\rm loop}\ll 1).
+  \label{eq:indef_tau}
+\end{equation}
+Since $\tau_{\rm flight}\sim10^{-9}$\,s $\ll\tau_{\rm dec}$,
+we have $\Gamma_{\rm loop}\ll1$: the indefinite-order advantage
+is fully visible~--- consistent with Procopio et al.\ (2015).
+
+If the photon is deliberately coupled to a thermal bath with
+$N_{\rm eff}\sim10^{6}$ environmental modes, ECT predicts the
+advantage should vanish when
+$\Gamma_{\rm loop}\equiv N_{\rm eff}\gamma\,\tau_{\rm flight}\sim1$.
+This crossover is a \emph{testable} ECT prediction.
+
+\textbf{Historical note.}
+The theoretical quantum-switch framework was developed by Brukner et al.\
+starting 2011--2012~\cite{Chiribella2012}; the first photonic
+realisation is Procopio et al.\ (2015)~\cite{Procopio2015}.
+
 \subsubsection*{Interpretive conclusion}
 
 In ECT, indefinite causal order is the direct manifestation of the
@@ -9635,6 +9664,9 @@ pre-Lorentzian two-sided Euclidean dependence in a quantum-coherent
 setting.
 These experiments confirm the structural prediction that causal order
 is emergent rather than fundamental.
+The criterion $\Gamma_{\rm loop}\lesssim1$ as the quantum--classical
+boundary is a quantitative ECT prediction for the degradation of
+indefinite-order resources under environmental noise.
 
 % ============================================================
 \subsection{Canonical structure and the status of commutation relations}
