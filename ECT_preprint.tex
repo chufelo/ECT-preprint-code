@@ -8667,6 +8667,28 @@ $t_0$ and $t_U(z)$, the galaxy-lifetime grids
 $t_{\rm gal}(z_{\rm obs};z_{\rm form})$, and the growth proxy used in
 the current JWST discussion.
 
+A first code-level robustness check has already been performed for a
+mild admissible deformation of the benchmark closure, for example
+\[
+k_1=0.2,\qquad \lambda_3=0.1,
+\qquad k_2=\lambda_4=0.
+\]
+In this test the late-time Hubble shift remains close to the benchmark
+value:
+the benchmark run gives
+\[
+\Delta H_0/H_0 \approx 2.90\%,
+\]
+while the deformed run gives
+\[
+\Delta H_0/H_0 \approx 2.85\%.
+\]
+The present-age and JWST-age quantities change only weakly at the same
+level of deformation.
+This does not yet establish full robustness of the late-time closure,
+but it already shows that the benchmark result is not destroyed by mild
+admissible amplitude-sector deformations.
+
 \textit{ISW excess.}
 In voids, larger $G_{\rm eff}$ in low-density regions amplifies the
 ISW effect~(Level~B).  The CMB quadrupole deficit has a structural
@@ -18760,6 +18782,23 @@ Conversely, if a claimed effect disappears under mild admissible
 deformation, it should be interpreted only as a property of the
 benchmark truncation and not yet as a robust ECT feature.
 
+As an initial numerical check, a mild deformed member of the admissible
+family has been compared directly against the benchmark closure.
+For example, taking
+\[
+k_1=0.2,\qquad \lambda_3=0.1,
+\qquad k_2=\lambda_4=0,
+\]
+the code finds only a small change in the late-time Hubble shift:
+from approximately $2.90\%$ in the benchmark member to approximately
+$2.85\%$ in the deformed run.
+The induced changes in $t_0$, $t_U(z)$, and
+$t_{\rm gal}(z_{\rm obs};z_{\rm form})$ are correspondingly small at the
+current benchmark level.
+Thus the first benchmark conclusion appears numerically stable under at
+least mild admissible deformations, although a broader scan is still
+required before claiming full robustness.
+
 This robustness programme is now directly supported by the code-level
 interface and artefact layers introduced in
 Appendices~\ref{sec:late_cosmo_interface} and
@@ -19106,6 +19145,8 @@ At minimum this artefact should report
 \Delta t_U(z),
 \]
 and the corresponding changes in the benchmark summary outputs.
+In the current code implementation this role is played by a benchmark--
+deformed comparison table exported on the common redshift grid.
 
 \paragraph{Convergence and sensitivity report.}
 The solver should also emit a small diagnostic report containing:
@@ -19241,6 +19282,10 @@ Appendix~\ref{sec:late_cosmo_artefacts}.
 The same benchmark implementation is also intended to support the
 robustness programme under admissible late-time closure deformations
 described in Appendix~\ref{sec:late_closure_robustness}.
+The current repository version already supports direct benchmark--deformed
+comparisons within the admissible late-time closure family, so that the
+first numerical robustness checks can be reproduced directly from code
+outputs.
 
 \noindent
 The repository contains: the full-SPARC rotation-curve fitting pipeline
