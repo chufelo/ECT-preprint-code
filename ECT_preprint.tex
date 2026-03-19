@@ -8615,27 +8615,25 @@ Fig.~\ref{fig:ect_hubble_jwst_background} shows both the growth proxy
 $G_{\rm eff}/H^2$ and the ratio $g^\dagger_{\rm bg}(z)/g^\dagger_{\rm bg}(0)=E(z)$,
 confirming that in the critical-branch picture the effective acceleration
 scale at early times was much larger than today.
+Figure~\ref{fig:ect_hubble_jwst_background} should be interpreted as the
+benchmark control figure; the non-benchmark derived-parent results are
+summarised in Figures~\ref{fig:ect_condensate_param_scan}--\ref{fig:ect_jwst_anchor_budget}.
 
 \begin{figure*}[htb]
 \centering
 \includegraphics[width=\textwidth]{figures/ect_hubble_jwst_background_bw.pdf}
-\caption{Late-time ECT background solution for the benchmark
-$\phi$-first cosmological closure
-($\beta=0.8$, $\mu=1.5$, $\kappa=15$, $\phi_0=-0.12$).
+\caption{\textbf{Benchmark control figure.}
+Late-time ECT background solution for the benchmark screened-branch
+truncation ($\beta=0.8$, $\mu=1.5$, $\kappa=15$, $\phi_0=-0.12$).
 \textbf{Panel~(a):} dimensionless expansion history $E(z)=H(z)/H_*$
-compared to the reference $\Lambda$CDM.
+compared to the screened reference background.
 \textbf{Panel~(b):} relative shift in the luminosity distance.
-\textbf{Panel~(c):} lookback-time shift; the inset gives the
-ECT and reference present ages of the Universe.
-A future extension should also display the epoch-dependent age
-$t_U(z)$ directly, since this is the quantity that controls the
-formation-time budget of JWST galaxies.
-\textbf{Panel~(d):} the growth proxy $G_{\rm eff}/H^2$ (left axis,
-solid) and the ratio $g^\dagger_{\rm bg}(z)/g^\dagger_{\rm bg}(0)=E(z)$
-(right axis, dash-dotted), showing that the effective galactic critical
-scale $g^\dagger_{\rm bg}\propto H(z)$ was much larger in the past.
-The same background drift that shifts the late inferred $H_0$ also
-alters the distance and time scales entering JWST inferences.}
+\textbf{Panel~(c):} lookback-time shift and present-age comparison.
+\textbf{Panel~(d):} benchmark growth proxy $G_{\rm eff}/H^2$ (benchmark only)
+and the ratio $g^\dagger_{\rm bg}(z)/g^\dagger_{\rm bg}(0)=E(z)$.
+This figure serves as the control benchmark layer; the non-benchmark
+derived-parent results are given in
+Figures~\ref{fig:ect_condensate_param_scan}--\ref{fig:ect_jwst_anchor_budget}.}
 \label{fig:ect_hubble_jwst_background}
 \end{figure*}
 
@@ -8814,6 +8812,8 @@ This should be interpreted as a concrete partial result rather than a
 complete resolution.
 The corresponding numerical pipeline is recorded explicitly in
 Appendix~\ref{sec:derived_parent_pipeline}.
+The representative JWST cases are also summarised visually in
+Figure~\ref{fig:ect_jwst_anchor_budget}.
 
 \begin{table}[htb]
 \centering
@@ -8832,6 +8832,86 @@ Age-priority & 25 & $-0.08$ & $+1.59\%$ & $0.390$ & $1.53$ & $0.980$ \\
 \hline\hline
 \end{tabular}
 \end{table}
+
+The corresponding visual summary of the parameter scan and the
+working-point selection is given in
+Figures~\ref{fig:ect_condensate_param_scan} and
+\ref{fig:ect_derived_parent_comparison}.
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[width=\textwidth]{figures/ect_condensate_param_scan_bw.pdf}
+\caption{First derived-parent parameter scan in the $(\omega_0,\phi_0)$
+plane at fixed $\beta=0.8$, $\mu=1.5$, $A_2=\mu^2/(6\beta^2)$, $A_3=A_4=0$.
+Panels show (top-left) the late inferred Hubble shift, (top-right) the
+derived-parent cosmic age, (bottom-left) $t_U(z=10)$, and
+(bottom-right) the effective gravitational coupling at $z=10$.
+Navy boxes indicate the first Hubble-compatible corridor.
+The labelled points \textbf{B} (balanced), \textbf{H} (Hubble-priority),
+and \textbf{A} (age-priority) are the working points used in the
+linear-growth and JWST maturity analysis
+(Table~\ref{tab:derived_parent_working_points}).}
+\label{fig:ect_condensate_param_scan}
+\end{figure*}
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[width=\textwidth]{figures/ect_derived_parent_comparison_bw.pdf}
+\caption{Comparison between the benchmark control mode and the
+preferred derived-parent working points.
+\textbf{Panel~(a):} expansion history.
+\textbf{Panel~(b):} effective gravitational coupling $G_{\rm eff}/G_N$.
+\textbf{Panel~(c):} solved linear growth factor $D(z)/D_{\rm ref}(z)$
+(not a heuristic proxy): the enhancement at $z=10$ is near-neutral once
+Hubble friction is included.
+\textbf{Panel~(d):} local maturity-channel acceleration factors
+$t_{\rm ff}^{\rm ref}/t_{\rm ff}^{\rm ECT}\propto\sqrt{G_{\rm eff}/G_N}$
+(collapse) and
+$t_{\rm BH}^{\rm ref}/t_{\rm BH}^{\rm ECT}\propto G_{\rm eff}/G_N$
+(BH-growth-like).
+This figure makes explicit that the ECT mechanism for early maturity is
+not driven by linear growth alone, but by the combination of background
+evolution and accelerated local development channels.}
+\label{fig:ect_derived_parent_comparison}
+\end{figure*}
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[width=\textwidth]{figures/ect_universe_condensate_evolution_bw.pdf}
+\caption{Schematic evolution of the ordered condensate and the observable
+Universe in the present ECT derived-parent picture.
+After the emergence of the Lorentzian ordered branch the condensate
+amplitude is far from the screened late-time state ($\phi\ll 0$,
+$u/u_\infty=e^{\beta\phi}\ll 1$), implying $G_{\rm eff}=G_N e^{-\beta\phi}>G_N$.
+This accelerates local collapse ($t_{\rm ff}\propto G_{\rm eff}^{-1/2}$)
+and BH-growth-like timescales ($t_{\rm BH}\propto G_{\rm eff}^{-1}$),
+while linear growth alone is not sufficient because Hubble friction also
+increases.
+At late times the condensate approaches the screened branch $\phi\to 0$
+where the benchmark truncation becomes valid.
+This is a schematic consistent with the derived-parent analysis; it
+should not be read as a fully established early-Universe history.}
+\label{fig:ect_universe_condensate_evolution}
+\end{figure*}
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[width=\textwidth]{figures/ect_jwst_anchor_budget_bw.pdf}
+\caption{Age-budget and maturity-budget comparison for representative
+JWST anchor cases, evaluated at the Hubble-priority working point
+($\omega_0=30$, $\phi_0=-0.10$).
+\textbf{Panel~(a):} age of the Universe at the redshift of observation
+in the reference ($\Lambda$CDM) and ECT derived-parent backgrounds.
+\textbf{Panel~(b):} required speed-up $\mathcal R_{\rm req}$, and the
+achieved semi-analytic maturity factors $\mathcal R_{\rm gal}$ (galaxy
+assembly) and $\mathcal R_{\rm BH}$ (BH-assisted channel).
+The comparison shows that the present ECT corridor achieves
+$\mathcal R_{\rm gal}\approx\mathcal R_{\rm req}$ for most cases and
+$\mathcal R_{\rm BH}>\mathcal R_{\rm req}$ for all cases.
+These factors are semi-analytic development budgets, not morphology-level
+predictions.}
+\label{fig:ect_jwst_anchor_budget}
+\end{figure*}
 
 \subsubsection*{Observational signatures compatible with accelerated early development}
 \label{sec:jwst_observational_signatures}
@@ -19919,6 +19999,19 @@ parameter corridor and the astrophysical maturity requirements of the
 observed high-redshift systems.
 Together these artefacts define the machine-readable counterpart of the
 pipeline described in Appendix~\ref{sec:derived_parent_pipeline}.
+
+\paragraph{Derived-parent comparison and anchor-case figures.}
+The current article also requires visual artefacts for:
+(i)~benchmark-versus-derived-parent background comparison
+(Fig.~\ref{fig:ect_derived_parent_comparison}),
+(ii)~the derived-parent parameter scan with labelled working points
+(Fig.~\ref{fig:ect_condensate_param_scan}),
+(iii)~the JWST anchor-case budget comparison
+(Fig.~\ref{fig:ect_jwst_anchor_budget}),
+and (iv)~the schematic evolution of the condensate and the Universe
+(Fig.~\ref{fig:ect_universe_condensate_evolution}).
+These figures form the article-facing visual presentation layer of the
+current numerical and conceptual results.
 
 \paragraph{Convergence and sensitivity report.}
 The solver should also emit a small diagnostic report containing:
