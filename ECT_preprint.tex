@@ -6311,7 +6311,7 @@ underlying ordered structure.
     and $U(\phi)$ from the branch potential $W(u)$
     (bridge principle; explicit final forms remain Level~B).
   \item In the late-time cosmological specialisation, the exponential
-    response factor is structurally anchored by $u/u_\infty=e^\phi$,
+    response factor is structurally anchored by $u/u_\infty=e^{\beta\phi}$,
     whereas the constant kinetic coefficient and quadratic potential are
     the simplest benchmark truncations rather than unique ECT outputs
     (bridge + Level~B distinction).
@@ -8438,12 +8438,12 @@ e^{\beta \phi}
 },
 \label{eq:ect_late_friedmann_main}
 \end{equation}
-where $E(N)=H/H_*$, $\phi(N)=\ln(u/u_\infty)$,
+where $E(N)=H/H_*$, $\phi(N)=\frac{1}{\beta}\ln(u/u_\infty)$,
 $q(N)=d\phi/dN$, and the benchmark Level~B closure is
 $f(\phi)=f_0 e^{\beta\phi}$,
 $K(\phi)=K_0$, $V(\phi)=V_0+\frac12 m_\phi^2\phi^2$.
 Here the exponential factor is structurally tied to the amplitude ratio
-$u/u_\infty=e^\phi$, while the constant kinetic coefficient and the
+$u/u_\infty=e^{\beta\phi}$, while the constant kinetic coefficient and the
 quadratic potential are the simplest local late-time benchmark choices.
 
 At the present-epoch level, the late-time Hubble shift is controlled by
@@ -18672,6 +18672,9 @@ The current benchmark closure corresponds to the $\phi\to 0$ local
 truncation; the full derived system~\eqref{eq:condensate_E2_N} is
 required for a self-consistent high-$z$ background branch
 that does not rely on an interim matter+radiation tail.
+The benchmark late-time closure introduced below should therefore be read
+as the local screened-branch truncation of the derived system above,
+rather than as an independently chosen scalar--tensor ans\"{a}tz.
 
 \subsection{Effective action and FRW reduction}
 
@@ -18727,7 +18730,7 @@ Setting $N\equiv \ln a$ and
 \[
 q(N)\equiv \frac{d\phi}{dN},
 \qquad
-\phi(N)=\ln\!\frac{u(N)}{u_\infty},
+\phi(N)=\frac{1}{\beta}\ln\!\frac{u(N)}{u_\infty},
 \]
 one has $\dot\phi=Hq$ and $\dot f=Hf_{,\phi}q$. Equation~\eqref{eq:app_late_fried1}
 then gives the exact algebraic relation
@@ -18743,7 +18746,10 @@ H^2
 
 Guided by the ordered-branch EFT-to-macroscopic mapping discussed in
 Section~\ref{sec:closure_function_mapping}, we specialise the late-time
-closure to the following benchmark form:
+closure to the following benchmark form.
+In particular, the benchmark closure should be understood as a small-$\phi$
+truncation of the derived condensate background dynamics recorded in
+Section~\ref{sec:late_condensate_dynamics}.
 \begin{equation}
 f(\phi)=f_0 e^{\beta \phi},
 \qquad
@@ -18754,7 +18760,7 @@ V(\phi)=V_0+\tfrac12 m_\phi^2 \phi^2,
 \end{equation}
 Here the three choices do not have the same status.
 The exponential response factor is structurally motivated by
-$u/u_\infty=e^\phi$.
+$u/u_\infty=e^{\beta\phi}$.
 By contrast, the constant kinetic coefficient $K(\phi)=K_0$ is the
 simplest benchmark truncation of the amplitude-sector stiffness, and
 the quadratic potential is the leading local expansion of the effective
@@ -18785,7 +18791,7 @@ E(N)\equiv \frac{H(N)}{H_*},
 The benchmark closure therefore combines one structurally motivated
 ingredient and two simplest local benchmark choices:
 \[
-f(\phi)\sim e^\phi \quad \text{(structural/bridge-level)},\qquad
+f(\phi)\sim e^{\beta\phi} \quad \text{(structural/bridge-level)},\qquad
 K(\phi)=K_0,\quad
 V(\phi)=V_0+\tfrac12 m_\phi^2\phi^2
 \quad \text{(benchmark Level~B truncations)}.
@@ -18799,7 +18805,7 @@ dimensionless background variables.
 
 The macroscopic variable used in this late-time closure is
 \[
-\phi(N)=\ln\!\frac{u(N)}{u_\infty},
+\phi(N)=\frac{1}{\beta}\ln\!\frac{u(N)}{u_\infty},
 \]
 where $u(N)$ is the ordered-branch condensate amplitude introduced in
 Section~\ref{sec:ordered_branch_eft}. In the late-time scalar--tensor
@@ -19030,12 +19036,26 @@ ECT closure.
 \section{Numerical algorithm for late-time ECT cosmology: Hubble tension, age, and JWST background}
 \label{app:late_cosmo_algorithm}
 
+\paragraph{Algorithm flow.}
+At the algorithmic level, the logic is therefore:
+\[
+\text{derived condensate background system}
+\;\longrightarrow\;
+\text{benchmark late-time truncation}
+\;\longrightarrow\;
+\text{self-consistent numerical solver}.
+\]
+The present implementation still uses the benchmark truncation together
+with an interim high-redshift completion, but the parent system to be
+solved more fully in future work is already given in
+Section~\ref{sec:late_condensate_dynamics}.
+
 \subsection{Self-consistent fixed-point solver design}
 
 The target numerical background solver is a self-consistent fixed-point
 scheme for the late-time specialisation of the ECT macroscopic
 scalar--tensor background closure.
-It evolves the macroscopic amplitude variable $\phi(N)=\ln(u/u_\infty)$
+It evolves the macroscopic amplitude variable $\phi(N)=\frac{1}{\beta}\ln(u/u_\infty)$
 and computes the corresponding background expansion history $E(N)=H/H_*$.
 
 Rather than importing a $\Lambda$CDM background as physical input, the
@@ -19094,7 +19114,7 @@ The following ingredients are already fixed at the structural or
 bridge level:
 \begin{itemize}
   \item the ordered-branch origin of the macroscopic amplitude variable
-  $\phi=\ln(u/u_\infty)$;
+  $\phi=\frac{1}{\beta}\ln(u/u_\infty)$, i.e.\ $u/u_\infty=e^{\beta\phi}$;
   \item the amplitude-dominated macroscopic reduction;
   \item the existence of a coupled scalar--tensor background system for
   $(H,\phi)$ under isotropic FRW reduction;
@@ -19115,7 +19135,7 @@ V(\phi)=V_0+\tfrac12 m_\phi^2\phi^2
 should be understood as the first benchmark specialisation of the
 structurally anchored closure functions.
 Only the exponential response factor is directly tied to the amplitude
-ratio $u/u_\infty=e^\phi$.
+ratio $u/u_\infty=e^{\beta\phi}$.
 The constant kinetic coefficient and quadratic potential remain the
 simplest local Level~B benchmark truncations.
 A broader admissible family of late-time closures is described in
