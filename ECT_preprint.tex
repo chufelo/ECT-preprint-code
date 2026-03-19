@@ -6319,6 +6319,10 @@ underlying ordered structure.
     explicit member of a wider admissible family of amplitude-sector
     closures inherited from the ordered-branch EFT
     (structural/bridge-level distinction; coefficients remain Level~B).
+  \item The late-time article--code comparison must respect an explicit
+    interface contract: required inputs, required outputs, and required
+    validation checks are part of the benchmark numerical layer, not of
+    the structural core of the theory.
 \end{enumerate}
 
 \textbf{Not yet established as first-principles theorems:}
@@ -8453,7 +8457,9 @@ background solver is used throughout.
 The numerical implementation roadmap corresponding to this closure is
 summarised in Appendix~\ref{sec:late_cosmo_roadmap}, where structural
 inputs, benchmark closure choices, interim numerical completions, and
-target solver outputs are explicitly separated.
+target solver outputs are explicitly separated, while the explicit
+article--solver interface contract is stated in
+Appendix~\ref{sec:late_cosmo_interface}.
 The corresponding analytic benchmark window is shown in
 Appendix~\ref{app:late_cosmo_algorithm},
 Fig.~\ref{fig:app_h0_scan}.
@@ -18670,7 +18676,8 @@ $|\beta q|\ll 1$), eq.~\eqref{eq:app_late_E2} simplifies to
 $H^2\approx (\rho+V)/(3f)$.
 Within the benchmark closure \eqref{eq:app_late_closure}, this yields a
 transparent analytic estimate for the present-epoch Hubble shift.
-Comparing with a reference background at constant $f_0,V_0$:
+Comparing with the screened reference branch of the same closure,
+defined by $\phi=0$ and therefore constant $f_0,V_0$:
 \begin{equation}
 \frac{\Delta H_0}{H_0}
 \approx
@@ -18850,6 +18857,87 @@ implemented function were already an equally fundamental output of ECT.
 It also makes clear which future code upgrades correspond to genuine
 theoretical progress (improved closure functions and high-$z$ branch
 completion) and which correspond only to numerical refinement.
+The explicit article--solver contract is stated in
+Section~\ref{sec:late_cosmo_interface}.
+
+\subsection{Article--solver interface contract}
+\label{sec:late_cosmo_interface}
+
+To keep the late-time code and the theoretical text synchronised, it is
+useful to state explicitly what the numerical solver is expected to take
+as input, what it must return as output, and what constitutes a
+successful implementation of the benchmark closure.
+
+\paragraph{Required solver inputs.}
+At minimum, the benchmark late-time solver should accept:
+\begin{enumerate}
+  \item the closure parameters
+  \[
+  \beta,\qquad K_0,\qquad m_\phi,\qquad V_0,
+  \]
+  or equivalently the dimensionless combinations used in
+  Eq.~\eqref{eq:app_late_defs};
+  \item the calibration scale $H_*$;
+  \item the present-epoch background data
+  \[
+  \phi_0,\qquad q_0=\left.\frac{d\phi}{dN}\right|_{N=0};
+  \]
+  \item the matter and radiation background normalisations
+  \[
+  \Omega_{m*},\qquad \Omega_{r*},\qquad \Omega_{V*};
+  \]
+  \item the redshift grid on which the solution is to be reported;
+  \item if used, the interim high-$z$ completion settings
+  (such as $z_{\rm match}$), which must be recorded explicitly as
+  numerical rather than structural inputs.
+\end{enumerate}
+
+\paragraph{Required solver outputs.}
+A benchmark implementation consistent with the present article should
+return, at minimum:
+\begin{enumerate}
+  \item the converged background fields
+  \[
+  H(z),\qquad \phi(z),\qquad G_{\rm eff}(z);
+  \]
+  \item the direct Hubble shift and low-$z$ inferred Hubble shift;
+  \item the standard distance/time observables
+  \[
+  D_L(z),\qquad t_{\rm lookback}(z),\qquad t_U(z);
+  \]
+  \item JWST-oriented galaxy lifetime grids
+  \[
+  t_{\rm gal}(z_{\rm obs};z_{\rm form});
+  \]
+  \item the growth proxy
+  \[
+  \mathcal{G}(z)=G_{\rm eff}(z)/H^2(z);
+  \]
+  \item convergence diagnostics of the fixed-point iteration.
+\end{enumerate}
+
+\paragraph{Required validation checks.}
+A solver run should not be considered article-consistent unless it also
+reports:
+\begin{enumerate}
+  \item convergence of the fixed-point iteration from more than one
+  initial seed;
+  \item sensitivity of the solution to numerical resolution and redshift
+  grid choice;
+  \item explicit dependence of age-related quantities on the interim
+  high-$z$ completion, if such a completion is still used;
+  \item sensitivity of the benchmark outputs to admissible deformations
+  of $K(\phi)$ and $V(\phi)$ once those are implemented.
+\end{enumerate}
+
+\paragraph{Interpretive rule.}
+This contract is meant to prevent confusion between three different
+levels:
+the structural background system of the theory,
+the benchmark closure chosen for the present article,
+and the current numerical implementation.
+A code result should only be interpreted as an ECT prediction to the
+extent that all three levels are kept conceptually distinct.
 
 \subsection{Benchmark parameter window}
 
@@ -18961,6 +19049,9 @@ For the late-time cosmology block, the currently released code should be
 read as the benchmark implementation corresponding to the Level~B
 closure and interim high-$z$ numerical completion described in
 Appendix~\ref{app:late_cosmo_algorithm}.
+The expected article-level numerical inputs, outputs, and validation
+checks are summarised in
+Appendix~\ref{sec:late_cosmo_interface}.
 
 \noindent
 The repository contains: the full-SPARC rotation-curve fitting pipeline
