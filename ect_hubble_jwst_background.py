@@ -265,11 +265,13 @@ def make_figure(df: pd.DataFrame, summary: pd.DataFrame, outpath: Path, p: Param
     # (b) DL shift
     ax = axs[1]
     dl_frac = (df["DL"] - df["DL_ref"]) / df["DL_ref"].replace(0, np.nan)
-    ax.plot(z[mask], dl_frac.to_numpy()[mask], color="black", lw=2.2)
-    ax.axhline(0, color="0.55", ls="--", lw=1.2)
+    ax.plot(z[mask], dl_frac.to_numpy()[mask], color="black", lw=2.2,
+            label=r"ECT $\phi$-closure")
+    ax.axhline(0, color="0.55", ls="--", lw=1.2, label=r"reference $\Lambda$CDM")
     ax.set_xlabel("$z$")
     ax.set_ylabel(r"$\Delta D_L / D_L^{\rm ref}$")
     ax.set_title("(b) Luminosity-distance shift", fontweight="bold", loc="left")
+    ax.legend(frameon=True, fontsize=9, loc="lower right")
 
     # (c) Lookback time shift
     ax = axs[2]
@@ -285,7 +287,7 @@ def make_figure(df: pd.DataFrame, summary: pd.DataFrame, outpath: Path, p: Param
 
     # annotate age
     age_e = s["age_ect_Gyr"]; age_r = s["age_lcdm_Gyr"]
-    ax.text(0.97, 0.05,
+    ax.text(0.97, 0.97,
             rf"Age ECT: {age_e:.2f} Gyr" "\n"
             rf"Age ref: {age_r:.2f} Gyr",
             transform=ax.transAxes, va="bottom", ha="right", fontsize=9,
@@ -294,12 +296,15 @@ def make_figure(df: pd.DataFrame, summary: pd.DataFrame, outpath: Path, p: Param
     # (d) Growth proxy
     ax = axs[3]
     grow_ratio = df["grow"] / df["grow_ref"].replace(0, np.nan)
-    ax.plot(z[mask], grow_ratio.to_numpy()[mask], color="black", lw=2.2)
-    ax.axhline(1.0, color="0.55", ls="--", lw=1.2)
+    ax.plot(z[mask], grow_ratio.to_numpy()[mask], color="black", lw=2.2,
+            label=r"ECT: $G_{\rm eff}/H^2$ ratio")
+    ax.axhline(1.0, color="0.55", ls="--", lw=1.2,
+               label=r"reference $\Lambda$CDM")
     ax.set_xlabel("$z$")
     ax.set_ylabel(r"$\mathcal{G}_{\rm ECT}/\mathcal{G}_{\rm ref}$")
     ax.set_title(r"(d) Growth proxy $G_{\rm eff}/H^2$ (normalised)",
                  fontweight="bold", loc="left")
+    ax.legend(frameon=True, fontsize=9, loc="upper right")
 
     fig.suptitle(
         "ECT late-time background: Hubble tension, age, and JWST implications",
