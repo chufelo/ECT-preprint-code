@@ -8480,6 +8480,8 @@ The corresponding full derived condensate background system is recorded
 in Appendix~\ref{app:late_cosmo_background},
 Eqs.~\eqref{eq:condensate_friedmann1}--\eqref{eq:condensate_scalar_N};
 the present benchmark closure is their local late-time truncation.
+The current numerical solver therefore tests only the benchmark member
+of the derived condensate family, not yet the full parent system.
 
 At the present-epoch level, the late-time Hubble shift is controlled by
 \begin{equation}
@@ -18643,8 +18645,8 @@ S_{\rm full}
 =
 \int d^4x\,\sqrt{-g}\,
 \Bigl[
-\tfrac12 e^{\beta\phi}R
--\tfrac{\omega_0}{2}\,e^{2\beta\phi}(\nabla\phi)^2
+\frac{\bar M_{\rm Pl}^2}{2}\,e^{\beta\phi}R
+-\frac{\bar M_{\rm Pl}^2\,\omega_0}{2}\,e^{2\beta\phi}(\nabla\phi)^2
 -U(\phi)
 \Bigr]
 +S_m+S_r.
@@ -18655,19 +18657,21 @@ For homogeneous FRW with $\phi=\phi(t)$ this gives the
 \begin{align}
 3e^{\beta\phi}H^2
 &=
-\rho_m+\rho_r+\tfrac12\omega(\phi)\dot\phi^2+U(\phi)
+\frac{\rho_m+\rho_r+U(\phi)}{\bar M_{\rm Pl}^2}
++\frac12\omega(\phi)\dot\phi^2
 -3H\,\beta e^{\beta\phi}\dot\phi,
 \label{eq:condensate_friedmann1}
 \\
 -2e^{\beta\phi}\dot H
 &=
-\rho_m+\tfrac43\rho_r+\omega(\phi)\dot\phi^2
+\frac{\rho_m+\tfrac43\rho_r}{\bar M_{\rm Pl}^2}
++\omega(\phi)\dot\phi^2
 +\beta^2 e^{\beta\phi}\dot\phi^2+\beta e^{\beta\phi}\ddot\phi
 -H\,\beta e^{\beta\phi}\dot\phi,
 \label{eq:condensate_friedmann2}
 \\
 \omega(\phi)\bigl(\ddot\phi+3H\dot\phi+\beta\dot\phi^2\bigr)
-&+U_{,\phi}
+&+\frac{U_{,\phi}}{\bar M_{\rm Pl}^2}
 -3\beta e^{\beta\phi}(2H^2+\dot H)=0.
 \label{eq:condensate_scalar}
 \end{align}
@@ -18701,6 +18705,15 @@ The scalar equation in $N$-variables is
 -3\beta e^{\beta\phi}(2+E'/E)=0.
 \label{eq:condensate_scalar_N}
 \end{equation}
+
+The benchmark late-time equations used in the current numerical section
+are obtained by replacing the full derived functions
+\[
+\omega(\phi)=\omega_0 e^{2\beta\phi},
+\qquad
+U(\phi)=W(u_\infty e^{\beta\phi})
+\]
+by their local screened-branch truncations around $\phi=0$.
 
 \paragraph{Status.}
 Equations~\eqref{eq:condensate_E2_N}--\eqref{eq:condensate_scalar_N}
@@ -19113,13 +19126,74 @@ with an interim high-redshift completion, but the parent system to be
 solved more fully in future work is already given in
 Section~\ref{sec:late_condensate_dynamics}.
 
+\subsubsection*{Algorithmic form of the derived condensate solver}
+\label{sec:late_derived_solver_algorithm}
+
+For the full derived condensate background system,
+the natural numerical unknowns are
+\[
+E(N)=\frac{H(N)}{H_*},
+\qquad
+\phi(N),
+\qquad
+q(N)\equiv \frac{d\phi}{dN}.
+\]
+The parent fixed-point structure is then defined by the coupled pair:
+
+\paragraph{(i) Algebraic background update.}
+Given a current iterate $\phi^{(k)}(N)$ and $q^{(k)}(N)$,
+compute
+\[
+E^{2\,(k)}(N)
+=
+\frac{
+\Omega_{m*}e^{-3N}
++\Omega_{r*}e^{-4N}
++\Omega_U(\phi^{(k)})
+}{
+e^{\beta\phi^{(k)}}(1+\beta q^{(k)})
+-\tfrac{\omega_0}{6}e^{2\beta\phi^{(k)}}(q^{(k)})^2
+}.
+\]
+
+\paragraph{(ii) Differential scalar update.}
+Using
+\[
+\left(\frac{E'}{E}\right)^{(k)}
+=
+\frac12\frac{d\ln(E^{2\,(k)})}{dN},
+\]
+update $\phi^{(k+1)}(N)$ from the scalar equation
+\eqref{eq:condensate_scalar_N},
+or equivalently update $q^{(k+1)}$ and then integrate
+\[
+\frac{d\phi^{(k+1)}}{dN}=q^{(k+1)}(N)
+\]
+with the chosen present-epoch boundary data $(\phi_0, q_0)$.
+
+\paragraph{(iii) Iterate to convergence.}
+Repeat steps (i) and (ii) until the background fields
+$E(N)$, $\phi(N)$, and $q(N)$ converge under a chosen tolerance.
+
+\paragraph{Benchmark relation.}
+The current benchmark solver follows exactly the same fixed-point logic,
+but with the local benchmark replacements
+\[
+\omega(\phi)\to K_0,
+\qquad
+U(\phi)\to V_0+\frac12 m_\phi^2\phi^2.
+\]
+Thus the benchmark code is not conceptually separate from the full
+derived solver; it is its simplest local truncation.
+
 \subsection{Self-consistent fixed-point solver design}
 
 The target numerical background solver described in this subsection is a
 self-consistent fixed-point scheme for the benchmark late-time
 specialisation of the ECT macroscopic scalar--tensor background closure.
-A future full solver must instead be built directly for the derived
-condensate system recorded in Section~\ref{sec:late_condensate_dynamics}.
+Its full parent algorithm is given immediately above; the present
+subsection records only the benchmark truncation used in current code
+and figures.
 It evolves the macroscopic amplitude variable $\phi(N)=\frac{1}{\beta}\ln(u/u_\infty)$
 and computes the corresponding background expansion history $E(N)=H/H_*$.
 
@@ -19217,6 +19291,8 @@ replace the benchmark truncation by a solver built directly on the
 derived condensate background system
 (Section~\ref{sec:late_condensate_dynamics}),
 especially for the high-redshift branch relevant to cosmic-age and JWST applications.
+The parent fixed-point structure of such a solver is already written
+explicitly in Section~\ref{sec:late_derived_solver_algorithm}.
 
 \paragraph{Layer 4: target solver outputs.}
 A fully synchronised article--code pipeline should produce, at minimum:
