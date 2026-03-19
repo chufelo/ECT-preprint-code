@@ -6519,12 +6519,12 @@ In the homogeneous $\phi$-first closure:
   \label{eq:FLRW}
   H^2
   = \frac{8\pi G_N}{3}\,\rho_{\rm mat}
-  + \frac{\Lambda_{\rm eff}(\phi_0)}{3},
+  + \frac{\Lambda_{\rm eff}(0)}{3},
   \qquad
-  \Lambda_{\rm eff}(\phi_0)=\frac{U(\phi_0)}{\bar M_{\rm Pl}^2}.
+  \Lambda_{\rm eff}(0)=\frac{U(0)}{\bar M_{\rm Pl}^2}.
 \end{equation}
 Equivalently, defining the effective vacuum energy density
-$\rho_{\Lambda,{\rm eff}}=U(\phi_0)$:
+$\rho_{\Lambda,{\rm eff}}=U(0)$:
 \[
 H^2=\frac{8\pi G_N}{3}\!\left(\rho_{\rm mat}+\rho_{\Lambda,{\rm eff}}\right).
 \]
@@ -8186,9 +8186,9 @@ In the variable $N=\ln a$, the ECT Friedmann relation takes the form
 E^2(N)
 =
 \frac{
-\Omega_{m0}e^{-3N}
-+\Omega_{r0}e^{-4N}
-+\Omega_{V0}
+\Omega_{m*}e^{-3N}
++\Omega_{r*}e^{-4N}
++\Omega_{V*}
 +\frac{\mu^2}{6}u^2
 }{
 e^{\beta u}
@@ -8197,7 +8197,7 @@ e^{\beta u}
 },
 \label{eq:ect_late_friedmann_main}
 \end{equation}
-where $E(N)=H/H_0^{\rm ref}$, $u(N)=\phi(N)$, $q(N)=d\phi/dN$,
+where $E(N)=H/H_*$, $u(N)=\phi(N)$, $q(N)=d\phi/dN$,
 and the Level~B closure is $f(\phi)=f_0 e^{\beta\phi}$,
 $K(\phi)=K_0$, $V(\phi)=V_0+\frac12 m_\phi^2\phi^2$.
 
@@ -8212,20 +8212,39 @@ At the present-epoch level, the late-time Hubble shift is controlled by
 For benchmark parameters $\beta=0.8$, $\mu=1.5$, $\kappa=15$, $u_0=-0.12$
 this yields $\Delta H_0/H_0\approx 2.9\%$,
 corresponding to $H_0^{\rm late}\approx 69.3$\,km\,s$^{-1}$\,Mpc$^{-1}$.
-This numerical value is the output of the present semi-numerical
-quasi-static benchmark solver and should not yet be read as the result
-of a fully self-consistent ECT background integration.
+At the present stage this numerical value should be read as the output
+of a late-time Level~B ECT background closure.
+The intended background system is self-consistent at the level of the
+ECT scalar--tensor equations written below and in
+Appendix~\ref{app:late_cosmo_background}, but the detailed numerical
+implementation remains benchmark-level until the full fixed-point
+background solver is used throughout.
 The corresponding analytic benchmark window is shown in
 Appendix~\ref{app:late_cosmo_algorithm},
 Fig.~\ref{fig:app_h0_scan}.
 
+Crucially, the late-time ECT background is not defined by assuming a
+$\Lambda$CDM expansion history as physical input.
+The role of any reference background is only comparative or, in interim
+numerical implementations, as an initial seed for convergence tests.
+The physical background of the closure is the solution of the ECT
+scalar--tensor system itself.
+
 The same background drift also changes the distance--redshift
 relation and available lookback time:
 \begin{equation}
-D_L(z)=(1+z)\int_0^z \frac{dz'}{H(z')},
+D_L(z)=(1+z)c_*\int_0^z \frac{dz'}{H(z')},
 \qquad
 t_{\rm lookback}(z)=\int_0^z \frac{dz'}{(1+z')H(z')}.
 \label{eq:ect_dist_time_main}
+\end{equation}
+\begin{equation}
+t_U(z)=\int_z^\infty \frac{dz'}{(1+z')H(z')},
+\qquad
+t_{\rm gal}(z_{\rm obs};z_{\rm form})
+=
+t_U(z_{\rm obs})-t_U(z_{\rm form}).
+\label{eq:ect_age_gal_main}
 \end{equation}
 The benchmark run gives an ECT age of $13.1$\,Gyr vs.\ the
 reference LCDM age of $13.8$\,Gyr, with luminosity-distance
@@ -8298,11 +8317,14 @@ scale at early times was much larger than today.
 \caption{Late-time ECT background solution for the benchmark
 $\phi$-first cosmological closure
 ($\beta=0.8$, $\mu=1.5$, $\kappa=15$, $u_0=-0.12$).
-\textbf{Panel~(a):} dimensionless expansion history $E(z)=H(z)/H_0^{\rm ref}$
+\textbf{Panel~(a):} dimensionless expansion history $E(z)=H(z)/H_*$
 compared to the reference $\Lambda$CDM.
 \textbf{Panel~(b):} relative shift in the luminosity distance.
 \textbf{Panel~(c):} lookback-time shift; the inset gives the
-ECT and reference ages of the Universe.
+ECT and reference present ages of the Universe.
+A future extension should also display the epoch-dependent age
+$t_U(z)$ directly, since this is the quantity that controls the
+formation-time budget of JWST galaxies.
 \textbf{Panel~(d):} the growth proxy $G_{\rm eff}/H^2$ (left axis,
 solid) and the ratio $g^\dagger_{\rm bg}(z)/g^\dagger_{\rm bg}(0)=E(z)$
 (right axis, dash-dotted), showing that the effective galactic critical
@@ -18240,23 +18262,27 @@ V(\phi)=V_0+\tfrac12 m_\phi^2 u^2,
 \end{equation}
 with dimensionless parameters
 \begin{equation}
-E(N)\equiv \frac{H(N)}{H_0^{\rm ref}},
+E(N)\equiv \frac{H(N)}{H_*},
 \quad
 \kappa\equiv \frac{K_0}{f_0},
 \quad
-\mu^2\equiv \frac{m_\phi^2}{H_0^2},
+\mu^2\equiv \frac{m_\phi^2}{H_*^2},
 \quad
-\Omega_{V0}\equiv \frac{V_0}{3f_0H_0^2}.
+\Omega_{V*}\equiv \frac{V_0}{3f_0H_*^2}.
 \label{eq:app_late_defs}
 \end{equation}
+Here $H_*$ is an external calibration scale of the late-time closure.
+It should not be read as a privileged $\Lambda$CDM-inferred value of
+$H_0$, but simply as the normalization used to construct the
+dimensionless background variables.
 The dimensionless Friedmann equation becomes
 \begin{equation}
 E^2(N)
 =
 \frac{
-\Omega_{m0}e^{-3N}
-+\Omega_{r0}e^{-4N}
-+\Omega_{V0}
+\Omega_{m*}e^{-3N}
++\Omega_{r*}e^{-4N}
++\Omega_{V*}
 +\frac{\mu^2}{6}u^2
 }{
 e^{\beta u}
@@ -18300,18 +18326,35 @@ and the kinetic stiffness $\kappa$.
 
 Once $E(z)$ is solved, one obtains
 \begin{align}
-D_L(z)&=(1+z)\int_0^z \frac{dz'}{H(z')},
+D_L(z)&=(1+z)c_*\int_0^z \frac{dz'}{H(z')},
 \quad
-D_A(z)=\frac{1}{1+z}\int_0^z \frac{dz'}{H(z')},
+D_A(z)=\frac{c_*}{1+z}\int_0^z \frac{dz'}{H(z')},
 \label{eq:app_late_dist}\\
 t_{\rm lookback}(z)&=\int_0^z \frac{dz'}{(1+z')H(z')},
 \quad
-t_0=\int_0^\infty \frac{dz}{(1+z)H(z)}.
-\label{eq:app_late_time}
+t_0=\int_0^\infty \frac{dz}{(1+z)H(z)},
+\label{eq:app_late_time}\\
+t_U(z)&=\int_z^\infty \frac{dz'}{(1+z')H(z')},
+\quad
+t_{\rm gal}(z_{\rm obs};z_{\rm form})
+=
+t_U(z_{\rm obs})-t_U(z_{\rm form}).
+\label{eq:app_late_agegal}
 \end{align}
-These background quantities control the JWST background layer: the
-same $\phi$-drift that shifts $H_0$ also changes inferred distances to
-high-$z$ galaxies and the available formation time.
+These background quantities control the JWST background layer.
+The same condensate-amplitude drift that shifts the late inferred
+$H_0$ also changes inferred luminosity distances, the age of the
+Universe at the epoch of observation,
+\[
+t_U(z),
+\]
+and therefore the available formation time of an observed galaxy,
+\[
+t_{\rm gal}(z_{\rm obs};z_{\rm form}).
+\]
+This makes the Hubble shift, cosmic age, and JWST-related early-structure
+inference parts of a single coupled background problem in the late-time
+ECT closure.
 
 % ============================================================
 % APPENDIX: Numerical algorithm
@@ -18319,21 +18362,47 @@ high-$z$ galaxies and the available formation time.
 \section{Numerical algorithm for late-time ECT cosmology: Hubble tension, age, and JWST background}
 \label{app:late_cosmo_algorithm}
 
-\subsection{Solver design}
+\subsection{Self-consistent fixed-point solver design}
 
-The solver evolves $u(N)$ forward (in $N$) from $N=0$ ($z=0$)
-to $N_{\min}=\ln(1/(1+z_{\max}))$ using SciPy \texttt{solve\_ivp} (RK45)
-with the quasi-static field equation
-\begin{equation}
-\frac{du}{dN}=q(N,u),
-\label{eq:app_algo_dudn}
-\end{equation}
-where $q$ is evaluated from~\eqref{eq:app_late_q} with $E'/E$ taken
-from the reference $\Lambda$CDM background for computational stability.
-The Friedmann equation~\eqref{eq:app_late_E2} is evaluated algebraically
-at each step.  The initial condition is self-consistently iterated:
-$q_0$ is obtained by one iteration of~\eqref{eq:app_late_q} with an
-initial ECT-based estimate of $E'/E$.
+The target numerical background solver is a self-consistent fixed-point
+scheme for the late-time ECT scalar--tensor closure.
+It evolves the ordered-branch amplitude variable $u(N)=\phi(N)$ and
+computes the corresponding background expansion history $E(N)=H/H_*$.
+
+Rather than importing a $\Lambda$CDM background as physical input, the
+solver iterates the ECT system on itself:
+
+\begin{enumerate}
+  \item choose the present-epoch data $(u_0,q_0)$ and a calibration
+  scale $H_*$;
+  \item start from a zeroth approximation $q^{(0)}(N)$ (for example the
+  slow-drift seed or $q^{(0)}=0$);
+  \item compute $E^{(k)}(N)$ algebraically from
+  Eq.~\eqref{eq:app_late_E2};
+  \item obtain $(E'/E)^{(k)}$ from the current iterate
+  \[
+    \left(\frac{E'}{E}\right)^{(k)}
+    = \frac{1}{2}\frac{d\ln[(E^{(k)})^2]}{dN};
+  \]
+  \item update $q^{(k+1)}(N)$ from the scalar slow-drift balance
+  Eq.~\eqref{eq:app_late_q};
+  \item integrate
+  \[
+    \frac{du^{(k+1)}}{dN}=q^{(k+1)}(N)
+  \]
+  with the chosen present-epoch boundary condition;
+  \item recompute $E^{(k+1)}(N)$ and iterate until convergence.
+\end{enumerate}
+
+In this way the ECT background is determined by the closure equations
+themselves.
+A comparison to $\Lambda$CDM may still be shown at the level of plots or
+diagnostics, but not used as the defining physical background of the
+solver.
+
+The earlier $\Lambda$CDM-seeded quasi-static implementation should
+therefore be regarded as an interim benchmark algorithm, not as the
+intended final numerical realisation of the late-time ECT background.
 
 \subsection{Benchmark parameter window}
 
@@ -18348,13 +18417,15 @@ u_0\sim -(0.08\text{--}0.12),\quad
 \end{equation}
 For Benchmark~B ($\beta=0.8$, $\mu=1.5$, $\kappa=15$, $u_0=-0.12$)
 the analytic estimate~\eqref{eq:app_late_deltaH} gives
-$\Delta H_0/H_0\approx 5.1\%$, while the present semi-numerical quasi-static benchmark
-(which includes the $q$-dependent corrections to $E^2$ but evaluates
-$E'/E$ using the reference $\Lambda$CDM background for numerical
-stability) gives $2.9\%$.
-The difference reflects the fact that the quasi-static $q$ is not
-strictly self-consistent in $E^2$; see the discussion of Level~B
-closure status in the main text.
+$\Delta H_0/H_0\approx 5.1\%$.
+Interim numerical runs of the late-time benchmark closure typically give
+a somewhat smaller shift, of order a few percent, once the $q$-dependent
+corrections to $E^2$ are included.
+A definitive numerical value should be quoted only from the converged
+self-consistent fixed-point solver described above.
+The difference between the analytic estimate and interim benchmark runs
+reflects the sensitivity of the Level~B closure to the detailed
+background iteration procedure.
 
 The analytic parameter-window scan (Fig.~\ref{fig:h0_scan_main} in the
 main text) shows that the benchmark points lie inside a finite parameter
