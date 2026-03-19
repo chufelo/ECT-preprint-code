@@ -114,7 +114,7 @@ the parameter hierarchy across four levels (bare, vacuum, EFT, coherent);
 the gravitational stiffness scale $M_G\equiv\bar M_{\rm Pl}$
 matched to Newton's constant via $G_N=c_*^4/(8\pi M_G^2)$~(Level~B: EFT matching);
 the pre-quantum action scale $S_0$ from the winding condition
-$S_{\rm loop,min}=2\pi S_0$~(existence guaranteed by P5);
+$S_{\rm loop,min}=2\pi S_0$~(existence established within the smooth coherent branch D1);
 and the retarded causal kernel $G_{\rm ret}(t,\mathbf x)=0$ for $t<0$
 strictly proved in the quadratic sector~(Level~A).
 
@@ -127,7 +127,7 @@ quantisation~(Level~B; self-consistency condition, not zero-parameter prediction
 An internal consistency relation linking $G_N$ and $\hbar$ follows at Level~B.
 The second law of thermodynamics arises as an effective result within
 the Gaussian--Markov approximation, with a structurally motivated
-low-entropy initial condition from P4+P5.
+low-entropy initial condition from P4+D1.
 The Born measure is established under structural assumptions~C1--C3
 (Level~B; unique outcome selection remains open).
 Linearised and generalised Einstein equations are established in the
@@ -218,7 +218,7 @@ black-hole thermodynamics
 % =============================================================================
 
 \begin{longtable}{@{}p{3.2cm} p{9.5cm} p{2.8cm}@{}}
-\caption{Principal symbols. Foundational symbols (P1--P5 level) are
+\caption{Principal symbols. Foundational symbols (P1--P4 level) are
 defined in Sections~\ref{sec:postulates}--\ref{sec:branching}.
 Legacy notation $v_0$ used in Sections~\ref{sec:quantum}--\ref{sec:consistency_relations}
 is the condensate amplitude; see terminological note in Section~\ref{sec:constants}.}
@@ -245,10 +245,10 @@ $\beta$ & Isotropic stiffness; canonical $\beta=1$ & 1 (canonical) \\
 $c_*$ & Effective propagation speed: $c_*=\sqrt{\beta/(\alpha-\beta)}$, Level~A & $=c$ (canonical) \\
 $m_{\rm eff}^2$ & EFT fluctuation mass parameter; $m_{\rm eff}^2\neq m_\sigma^2$ in general & GeV$^2$ \\
 $\xi_{\rm cond}$ & EFT correlation length: $\xi_{\rm cond}\sim m_\sigma^{-1}$; matching hypothesis $\sim\ell_{\rm Pl}$ & $\sim\ell_{\rm Pl}$ \\[4pt]
-\multicolumn{3}{@{}l}{\textit{Coherent topological sector (P5)}} \\[2pt]
+\multicolumn{3}{@{}l}{\textit{Derived smooth coherent sector (D1)}} \\[2pt]
 $\Phi_{\rm eff}=\rho e^{i\theta}$ & Effective order parameter of coherent IR sector & --- \\
 $\theta$ & Phase of $\Phi_{\rm eff}$; winding condition $\oint\partial_A\theta\,dX^A=2\pi n$ & rad \\
-$S_0$ & Pre-quantum action scale: $S_{\rm loop,min}=2\pi S_0$; guaranteed by P5 & $[\hbar]$ \\[4pt]
+$S_0$ & Pre-quantum action scale: $S_{\rm loop,min}=2\pi S_0$; introduced within the smooth coherent branch D1 & $[\hbar]$ \\[4pt]
 \multicolumn{3}{@{}l}{\textit{Gravitational matching --- Macroscopic Physics (Level~B)}} \\[2pt]
 $M_G$ & Gravitational stiffness: $M_G\equiv\bar M_{\rm Pl}$ by matching & GeV \\
 $G_N$ & Newton constant; $G_N=c_*^4/(8\pi M_G^2)$, observational input & $6.674\times10^{-11}$\,m$^3$kg$^{-1}$s$^{-2}$ \\
@@ -727,7 +727,7 @@ The double-well potential in P3 is a \emph{two-well $\phi^4$ potential}
 encoding a discrete $\mathbb{Z}_2$ symmetry $\Phi\to-\Phi$.
 It is not the ``mexican hat'' potential (which applies to a complex or
 multi-component field), and does not by itself create a continuous
-vacuum manifold or the topological structure of P5.
+vacuum manifold or the coherent topological structure later isolated as D1.
 
 This minimal bare action should not be confused with the most general
 effective Euclidean functional compatible with P1--P2. Additional
@@ -1057,7 +1057,7 @@ topological invariant, not from a separate quantisation postulate.
 ECT applies the same mathematical structure to the collective phase
 of the vacuum condensate in four Euclidean dimensions.
 
-\paragraph{What P5 forbids.}
+\paragraph{What D1 excludes from the present reduction.}
 Within the coherent sector: configurations with fractional winding
 numbers of the phase, with discontinuities in~$n_A$, or with zeros
 of the order parameter. All three classes are mathematically
@@ -1097,7 +1097,8 @@ requires an additional isotropy assumption.
 \section{Spontaneous Symmetry Breaking and Emergence of Time}
 \label{sec:ssb}
 
-The postulates P1--P5 do not yet constitute the full physical theory.
+The foundational assumptions P1--P4, together with the derived
+coherent-sector rule~D1, do not yet constitute the full physical theory.
 This section develops the geometric consequences of vacuum ordering~(P4)
 in three stages.
 First, we recall the dynamical motivation for gradient condensation
@@ -1412,7 +1413,7 @@ are equivalent. Upon transition to the ordered phase one direction
 ``time''. By itself, however, the selection of a direction does not
 yet yield causality or the arrow of time---those require the kinetic
 operator to be hyperbolic ($\alpha>\beta$) and the initial configuration
-to be ordered (P4+P5).
+to belong to an ordered and smooth coherent branch (P4 + D1).
 
 \paragraph{Condensed-matter analogy.}
 An analogous mechanism is well-known for superconductors: below $T_c$
@@ -1433,7 +1434,7 @@ Component & Status & Basis \\
 \hline
 $S_{\rm ent}(w_0)\approx 0$, coherent initial sector
   & Level~B (strongly motivated)
-  & P4 + P5 + OP24 \\
+  & P4 + D1 + OP24 \\
 $K(\tau<0)=0$ causal kernel
   & Level~A (quadratic sector)
   & Contour integral, Cauchy~(App.~\ref{app:retarded_kernel}) \\
@@ -1465,10 +1466,11 @@ Yet the arrow of time emerges macroscopically through a three-step mechanism.
 
 \paragraph{Step~1. Coherent initial sector (Level~B, strongly motivated).}
 Postulate~P4 selects the ordered vacuum sector of the effective broken phase,
-while postulate~P5 restricts configurations to the coherent topological sector.
+while the derived smooth coherent-sector rule~D1 restricts attention
+to the defect-free coherent topological branch.
 In the quadratic sector the fluctuation spectrum is non-negative~\eqref{eq:dispersion},
 i.e.\ the sector contains no tachyonic instabilities.
-Together P4 and P5 strongly support the choice of a highly ordered
+Together P4 and D1 strongly support the choice of a highly ordered
 low-entropy initial sector, naturally associated with a pure or nearly
 pure initial state. However, this is not yet a complete theorem about
 the uniqueness of the pure initial state for the full evolution~(OP24).
@@ -1477,7 +1479,8 @@ formalism, which is established in Section~\ref{sec:quantum}.
 
 \paragraph{Step~2. Qualitative monotonicity (Level~B, quadratic sector).}
 Three conditions used in the qualitative derivation of the arrow of time,
-compatible with postulates~P1--P5:
+compatible with the foundational assumptions P1--P4 and the derived
+coherent-sector rule~D1:
 \begin{enumerate}[label=(\roman*)]
   \item \textit{Coherent low-entropy initial sector}~(Step~1, Level~B).
   \item \textit{Causal structure}~(Level~A, quadratic): the Lorentzian
@@ -1573,9 +1576,9 @@ Unlike Hartle--Hawking, the Euclidean arena is fundamental.
 \label{sec:broken_spectrum}
 
 After postulate~P4 has selected the gradient-ordered vacuum sector
-and postulate~P5 has identified the coherent topological sector,
-the next step is to determine which excitations exist above this
-vacuum and what their effective dynamics is.
+and the derived coherent-sector rule~D1 has identified the smooth
+coherent topological sector, the next step is to determine which
+excitations exist above this vacuum and what their effective dynamics is.
 
 \subsection{Polar decomposition and collective variables}
 \label{sec:polar_decomp}
@@ -1645,8 +1648,8 @@ giving equation of motion $\partial_B\partial^B\,\delta n_i=0$ and dispersion
 Three massless orientation modes, no tachyons.
 
 \paragraph{Coherent phase variable $\theta$.}
-Postulate~P5 introduces the effective order parameter
-$\Phi_{\rm eff}=\rho\,e^{i\theta}$ of the coherent IR sector.
+Within the smooth coherent branch~(D1), the effective order parameter
+$\Phi_{\rm eff}=\rho\,e^{i\theta}$ of the coherent IR sector is introduced.
 The variable~$\theta$ carries the topological content and is
 not a fluctuation of the real field~$\Phi$~(P3).
 
@@ -1778,9 +1781,9 @@ matching (OP-grad).
 The effective kinetic tensor contains $\alpha>\beta>0$ and $m_{\rm eff}^2$,
 where $m_{\rm eff}^2\neq m_\sigma^2$ in general.
 
-\paragraph{Level 4. Coherent-sector parameters~(P5).}
-Postulate~P5 introduces the pre-quantum topological action scale
-$S_0$ via $S_{\rm loop,min}=2\pi S_0$.
+\paragraph{Level 4. Coherent-sector parameters~(D1).}
+Within the smooth coherent branch~(D1), the pre-quantum topological
+action scale $S_0$ is introduced via $S_{\rm loop,min}=2\pi S_0$.
 The identification $S_0=\hbar$ is deferred to
 Section~\ref{sec:quantum}.
 
@@ -1859,11 +1862,11 @@ which is not yet derived at this stage.
 \subsection{Pre-quantum action scale and the status of $\hbar$}
 \label{sec:hbar_status}
 
-\textit{Status: existence established by P5; strict identification
+\textit{Status: existence established within the smooth coherent branch D1; strict identification
 with physical $\hbar$ is deferred to Section~\ref{sec:quantum}.}
 
-Postulate~P5 guarantees the existence of a topologically quantised
-action scale through:
+The smooth coherent-sector rule~D1 establishes the existence of a
+topologically quantised action scale through:
 \begin{equation}
   S_{\rm loop,min} = 2\pi S_0.
 \end{equation}
@@ -2087,12 +2090,13 @@ and $O(4)$-symmetry (P2)---not as additional postulates.
 Explicitly: $\partial_A T^{AB}=0$ follows from translational invariance;
 angular currents $J^{C,AB}$ follow from rotational $O(4)$ symmetry.
 
-\subsection{Remark on defect sectors beyond P5}
+\subsection{Remark on defect sectors beyond the smooth coherent sector}
 \label{sec:defect_sectors}
 
-Postulate~P5 restricts the present section to the \emph{defect-free}
-coherent sector: configurations with integer winding numbers and
-smooth orientation variable~$n_A$.
+The derived coherent-sector rule~D1 restricts the present section to the
+\emph{defect-free} smooth coherent sector: configurations with integer
+winding numbers, non-vanishing amplitude~$\rho$, and smooth orientation
+variable~$n_A$.
 This restriction does not forbid defect configurations ontologically.
 Configurations not belonging to the coherent sector include:
 \begin{itemize}
@@ -2105,8 +2109,8 @@ Configurations not belonging to the coherent sector include:
     vacuum sectors~\cite{Belavin1975}.
 \end{itemize}
 ECT basics already indicates the existence of this richer space
-of states. Postulate~P5 does not ``artificially eliminate'' any
-physics; it selects a sector and thereby \emph{predicts} the
+of states. The smooth coherent-sector restriction does not ``artificially eliminate''
+any physics; it selects a sector and thereby \emph{predicts} the
 existence of a broader structure beyond it.
 
 \subsection{Conclusions of ECT basics}
@@ -2117,7 +2121,7 @@ ECT basics establishes the following common foundation for both branches:
   \item Four-dimensional Euclidean arena~(P1);
   \item $O(4)$-invariant scalar microdynamics~(P2--P3);
   \item Gradient-ordered vacuum sector with $O(4)\to O(3)$~(P4);
-  \item Coherent topological sector with integer windings~(P5);
+  \item Smooth coherent topological sector with integer windings~(D1);
   \item Effective Lorentzian kinetic tensor of the broken phase;
   \item Spectrum and hierarchy of broken-phase excitations;
   \item Effective propagation speed~$c_*$;
@@ -8113,7 +8117,7 @@ currently observed sources.
 result is that galactic mass discrepancy can be addressed by the
 $\phi$-first closure without particle dark matter. Collective and
 topological dark-sector candidates are structurally motivated by
-P4+P5 but require the Quantum Sector for full development.}
+P4, D1, and the ordered vacuum, but require the Quantum Sector for full development.}
 
 % -------------------------------------------------------
 \subsubsection*{Dark-sector interpretation at the macroscopic level}
@@ -8577,7 +8581,7 @@ entering the Quantum Sector:
     distinct from the geometric branch~(Level~A within the
     broken-phase EFT).
   \item Topologically quantised winding sectors exist in the
-    coherent order parameter as a consequence of P5~(Level~A).
+    coherent order parameter as a consequence of the smooth coherent-sector rule D1~(Level~A).
   \item A pre-quantum action scale $S_0$ is structurally
     introduced by the loop quantisation condition~\eqref{eq:qs_Sloop}
     (Level~A for the structural existence of the scale;
@@ -8796,7 +8800,7 @@ condensate---single-valuedness, winding, and loop topology.
 
 \paragraph{Reduced phase action.}
 At wavelengths large compared to the microscopic core scale, and within
-the smooth coherent sector selected by P5, the radial mode $\rho$ is
+the smooth coherent sector selected by D1, the radial mode $\rho$ is
 approximately frozen and the effective dynamics is dominated by the
 phase field.
 The quadratic phase action in this regime takes the generic form
@@ -8853,7 +8857,7 @@ number (cf.~\eqref{eq:qs_winding}):
 \end{equation}
 This is a Level~A structural statement: it follows from the
 single-valuedness of $\Phi_{\rm eff}$ in the smooth coherent sector
-selected by P5.
+selected by D1.
 The trivial sector $n=0$ contains contractible smooth configurations;
 nontrivial sectors $n\neq0$ correspond to configurations with
 topologically nontrivial phase winding that cannot be eliminated by
@@ -8885,12 +8889,11 @@ quantisation can first arise in ECT---not from operator axioms, but
 from the topology of the ordered condensate itself.
 
 \paragraph{Smooth coherent branch versus defect sectors.}
-The present discussion is restricted to the smooth coherent sector
-chosen by P5.
+The present discussion is restricted to the smooth coherent sector defined by D1.
 Configurations with singular cores, vanishing $\rho$, or
 discontinuous orientation data belong to the wider defect sector
 and are treated in Section~\ref{sec:qs_defects}.
-The role of P5 is not to deny the existence of defects, but to define
+The role of D1 is not to deny the existence of defects, but to define
 the branch in which smooth phase dynamics can first be developed
 cleanly.
 
@@ -9499,7 +9502,7 @@ assumes from the outset.
 
 \subsubsection*{Canonical organisation of the reduced coherent sector}
 
-Consider the reduced coherent-phase action of the smooth P5 sector.
+Consider the reduced coherent-phase action of the smooth coherent sector.
 At the level of the effective Lorentzian coherent dynamics, the phase
 field $\theta$ and its conjugate momentum density
 \begin{equation}
@@ -10027,7 +10030,7 @@ A direct calculation then confirms that $J_{ij}$ and $K_i$ satisfy
 the Lorentz algebra $\mathfrak{so}(1,3)$,
 with $[K_i,K_j]=-i\,J_{ij}$.
 Thus the Lorentz algebra emerges from the broken-phase structure
-and the Wick rotation.~(Level~A: follows from P4+P5+\eqref{eq:qs_wick}.)
+and the Wick rotation.~(Level~A: follows from P4+D1+\eqref{eq:qs_wick}.)
 
 \subsubsection*{Representation-theoretic route to Clifford structure~(Level~A)}
 
@@ -10656,7 +10659,7 @@ sector is highly ordered and therefore of low effective entropy.
 This should not be overstated.
 The claim is not that $S_{\rm ent}(w_0)=0$ has been proved in the
 full quantum-mechanical sense.
-Rather: P4 selects an ordered vacuum branch and P5 restricts attention
+Rather: P4 selects an ordered vacuum branch and D1 restricts attention
 to the smooth coherent topological sector.
 Together with the non-tachyonic quadratic spectrum, this strongly
 motivates a highly ordered low-entropy initial coherent sector.
@@ -10680,7 +10683,7 @@ needed for an emergent arrow of time.
 \paragraph{Status.}
 The existence of an ordered coherent sector is structural~(Level~A).
 Its interpretation as a low-entropy initial condition is Level~B:
-strongly motivated by P4--P5 and the ordered vacuum, but not yet a
+strongly motivated by P4, D1, and the ordered vacuum, but not yet a
 first-principles microscopic entropy theorem.
 
 \subsubsection*{Positive spectral density and dissipative kernel}
@@ -11627,7 +11630,7 @@ structure emerges, no other probability assignment survives.
 
 \textit{What this does not establish:}
 ECT has not yet derived the full Hilbert-space projector and
-probability-measure structure from bare~P1--P5.
+probability-measure structure from bare P1--P4.
 The Gleason uniqueness applies \emph{conditional} on that emergence.
 The Born rule therefore remains Level~B~(conditional uniqueness),
 not an unconditional Level~A theorem~(OP-Q7).
@@ -11710,7 +11713,7 @@ problem, even if it has not yet fully solved it.
 \subsubsection*{Bridge to topological and dark-sector extensions}
 
 The probability and measurement discussion concerns the smooth
-coherent branch selected by P5.
+coherent branch selected by D1.
 The full coherent-topological sector of ECT is wider: it also includes
 nontrivial defect and topological configurations that may contribute
 to dark-sector ontology and to non-perturbative coherent processes.
@@ -11745,7 +11748,7 @@ sectors.
 % ============================================================
 
 \textit{Status: Level~A for the existence of a wider state space
-beyond the smooth P5 coherent branch, including topologically
+beyond the smooth coherent branch, including topologically
 nontrivial configurations with singular cores or discontinuous
 ordering data.
 Level~B for their effective dynamical r\^ole in the Quantum Sector
@@ -11757,21 +11760,21 @@ Section~\ref{sec:dark_sector} (macroscopic dark-sector bridge in MP).}
 
 \medskip
 So far the Quantum Sector has been developed inside the smooth coherent
-branch selected by P5.
+branch selected by D1.
 This restriction was deliberate: it allowed the phase-sensitive sector
 to be constructed cleanly in terms of $\Phi_{\rm eff}=\rho e^{i\theta}$,
 winding sectors, loop actions, wave dynamics, canonical structure,
 and decoherence.
 However, the coherent-topological ontology of ECT is wider than the
-smooth P5 branch.
+smooth coherent branch.
 The present subsection develops that wider sector.
 
-\subsubsection*{Why defect sectors are not excluded by P5}
+\subsubsection*{Why defect sectors are not excluded by D1}
 
-P5 does not state that only smooth coherent configurations exist.
-Rather, it restricts the \emph{current constructive branch} of the
-theory to smooth coherent configurations with well-defined phase and
-integer winding numbers.
+The smooth coherent-sector rule~D1 does not state that only smooth
+coherent configurations exist. Rather, it identifies the current
+constructive branch of the theory as the smooth coherent sector with
+well-defined phase and integer winding numbers.
 This leaves open a broader space of configurations outside the smooth
 branch, including singular cores, discontinuous ordering data, and
 nontrivial Euclidean topological transitions.
@@ -11789,7 +11792,7 @@ but to state clearly:
 
 \subsubsection*{Types of defect and topological configurations}
 
-The main classes of configurations outside the smooth P5 sector are:
+The main classes of configurations outside the smooth coherent sector are:
 
 \paragraph{Vortex-core configurations.}
 Configurations in which the condensate modulus vanishes on a line or
@@ -12569,7 +12572,9 @@ coherent-sector closure, and what remains open.
 \renewcommand{\arraystretch}{1.35}
 \begin{longtable}{p{6.0cm}p{2.4cm}p{4.5cm}}
 \caption{Status map of the Quantum Sector of ECT.
-Level~A = strict structural consequence of P1--P5.
+Level~A = strict structural consequence of the foundational assumptions
+P1--P4 together with any explicitly stated derived branch rules
+(such as D1).
 Level~B = closure-level result, stated additional assumptions
 listed.
 Open = not yet derived; explicit open-problem reference given.}
@@ -12590,7 +12595,7 @@ Result & Status & Basis / comment \\
 \hline
 Coherent-topological branch exists as phase-sensitive sector
   & Level~A
-  & P5 + ordered broken phase; Section~\ref{sec:qs_intro} \\
+  & D1 + ordered broken phase; Section~\ref{sec:qs_intro} \\
 Phase variable $\theta$ is natural variable of the coherent branch
   & Level~A
   & Section~\ref{sec:qs_phase_dynamics} \\
@@ -12735,7 +12740,7 @@ Ringdown and late-time echo signatures of the shell
 Primordial-black-hole constraints on the strong-field closure
   & Level~B
   & Section~\ref{sec:qs_black_holes}; cosmological bridge \\
-Wider defect sector beyond smooth P5 branch
+Wider defect sector beyond smooth coherent branch
   & Level~A
   & Section~\ref{sec:qs_defects} + \ref{sec:defect_sectors} \\
 Defect sectors: structural existence
@@ -12877,13 +12882,13 @@ This figure is a structural roadmap, not itself a derivation.}
     Markov limit from the condensate bath without auxiliary closure
     assumptions~\eqref{eq:qs_ohmic}.
   \item[OP-Q7] Full first-principles emergence of the Hilbert-space
-    projector and probability-measure structure from bare P1--P5,
+    projector and probability-measure structure from bare P1--P4,
     which would close the Gleason argument and ground the Born rule
     as more than a conditional Level~B uniqueness statement.
   \item[OP-Q8] Completed measurement theory: branch update, pointer
     stability, and record formation.
   \item[OP-Q9] Dynamical classification, production, and stability of
-    topological defect sectors outside the smooth P5 branch
+    topological defect sectors outside the smooth coherent branch
     (Section~\ref{sec:qs_defects}).
   \item[OP-Q10] Quantitative link between coherent-topological dark
     candidates and observed dark-sector phenomenology.
@@ -13697,7 +13702,8 @@ upper bound $\alpha<4\beta$.
 Lower bound $\alpha>\beta$---strict consequence of
 Theorem~\ref{thm:tensor_uniqueness} and Lorentzian requirement.
 Upper bound $\alpha<4\beta$---requires the additional short-distance isotropy
-assumption; not a strict consequence of P1--P5.
+assumption; not a strict consequence of the foundational assumptions
+P1--P4 alone.
 
 % ------------------------------------------------------------
 \section{EFT Motivation via Integrating Out the Radial Mode}
