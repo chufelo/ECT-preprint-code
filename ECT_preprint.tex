@@ -6315,6 +6315,10 @@ underlying ordered structure.
     whereas the constant kinetic coefficient and quadratic potential are
     the simplest benchmark truncations rather than unique ECT outputs
     (bridge + Level~B distinction).
+  \item The benchmark late-time closure is not unique: it is the first
+    explicit member of a wider admissible family of amplitude-sector
+    closures inherited from the ordered-branch EFT
+    (structural/bridge-level distinction; coefficients remain Level~B).
 \end{enumerate}
 
 \textbf{Not yet established as first-principles theorems:}
@@ -6328,6 +6332,12 @@ underlying ordered structure.
     $V(\phi)=V_0+\tfrac12 m_\phi^2\phi^2$ are sufficient beyond the
     simplest late-time branch, or must be replaced by more general
     amplitude-sector closures inherited from $W(u)$.
+  \item Whether the benchmark truncation
+    $K(\phi)=K_0$ and
+    $V(\phi)=V_0+\tfrac12 m_\phi^2\phi^2$
+    is quantitatively stable under admissible amplitude-sector
+    deformations
+    \eqref{eq:app_late_general_K}--\eqref{eq:app_late_general_V}.
 \end{enumerate}
 
 
@@ -18480,8 +18490,13 @@ R=6(2H^2+\dot H).
 
 \subsection{Convenient form in $N=\ln a$}
 
-Setting $N\equiv \ln a$, $u(N)\equiv\phi(N)$, $q(N)\equiv d\phi/dN$, one has
-$\dot\phi=Hq$ and $\dot f=Hf_{,\phi}q$. Equation~\eqref{eq:app_late_fried1}
+Setting $N\equiv \ln a$ and
+\[
+q(N)\equiv \frac{d\phi}{dN},
+\qquad
+\phi(N)=\ln\!\frac{u(N)}{u_\infty},
+\]
+one has $\dot\phi=Hq$ and $\dot f=Hf_{,\phi}q$. Equation~\eqref{eq:app_late_fried1}
 then gives the exact algebraic relation
 \begin{equation}
 H^2
@@ -18574,6 +18589,79 @@ e^{\beta \phi}
 }.
 \label{eq:app_late_E2}
 \end{equation}
+
+\subsection{Admissible late-time closure family beyond the benchmark}
+\label{sec:late_closure_family}
+
+The benchmark closure
+\eqref{eq:app_late_closure}
+is useful because it provides the simplest explicit late-time
+specialisation of the ordered-branch macroscopic system.
+However, it should not be mistaken for the unique admissible closure.
+The ordered-branch EFT-to-macroscopic mapping of
+Section~\ref{sec:closure_function_mapping}
+already suggests a broader family of late-time closures.
+
+The structural part is the response factor
+\[
+f(\phi)\propto e^\phi,
+\]
+since this is directly tied to the amplitude ratio $u/u_\infty$.
+By contrast, the kinetic and potential sectors admit more general
+late-time benchmark expansions:
+\begin{equation}
+  \label{eq:app_late_general_K}
+  K(\phi)=K_0\Bigl(1+k_1\phi+k_2\phi^2+\cdots\Bigr),
+\end{equation}
+\begin{equation}
+  \label{eq:app_late_general_V}
+  V(\phi)=V_0+\frac12 m_\phi^2\phi^2
+  +\frac{\lambda_3}{3!}\phi^3
+  +\frac{\lambda_4}{4!}\phi^4+\cdots.
+\end{equation}
+
+These extensions should be interpreted carefully.
+
+\paragraph{(i) Why they are natural.}
+From the ordered-branch EFT perspective, $K(\phi)$ is the macroscopic
+image of amplitude-sector stiffness and $V(\phi)$ is the macroscopic
+image of the branch potential $W(u_\infty e^\phi)$.
+A constant $K$ and a purely quadratic $V$ are therefore not expected to
+be exact in full generality; they are simply the leading local
+benchmark truncation around the screened late-time branch.
+
+\paragraph{(ii) Why the benchmark remains useful.}
+The benchmark closure
+\eqref{eq:app_late_closure}
+is the first nontrivial member of the admissible family
+\eqref{eq:app_late_general_K}--\eqref{eq:app_late_general_V}.
+It isolates the minimal late-time effect of amplitude drift without
+introducing a large parameter space too early.
+
+\paragraph{(iii) What future code should generalise.}
+Once the fixed-point solver is stabilised for the benchmark closure, the
+next natural code-level upgrade is to replace the hard-coded
+\[
+K(\phi)=K_0,
+\qquad
+V(\phi)=V_0+\tfrac12 m_\phi^2\phi^2
+\]
+by parameterisable families such as
+\eqref{eq:app_late_general_K}--\eqref{eq:app_late_general_V}.
+This would allow the article and code to test whether the benchmark
+truncation is quantitatively robust or merely the simplest illustrative
+realisation.
+
+\paragraph{Status.}
+The existence of an admissible closure family is structural/bridge-level,
+because it follows from the ordered-branch EFT origin of the closure
+functions.
+The explicit coefficients $k_i,\lambda_i$ are Level~B.
+
+This immediately defines one of the central late-time open problems of
+ECT: to determine which cosmological outputs are robust under
+admissible deformations of the benchmark closure, and which are artefacts
+of the simplest truncation.
 
 \subsection{Slow-drift regime and present-epoch Hubble shift}
 
@@ -18693,8 +18781,8 @@ intended final numerical realisation of the late-time ECT background.
 Accordingly, future code revisions should be judged against the
 structural roadmap above: improvement of the fixed-point background
 solver, replacement of interim high-$z$ completion, and possible
-generalisation of the benchmark functions $K(\phi)$ and $V(\phi)$ are
-the three main directions of progress.
+implementation of admissible generalisations of the benchmark functions
+$K(\phi)$ and $V(\phi)$ are the three main directions of progress.
 
 \subsection{Implementation roadmap from benchmark closure to solver}
 \label{sec:late_cosmo_roadmap}
@@ -18732,6 +18820,8 @@ Only the exponential response factor is directly tied to the amplitude
 ratio $u/u_\infty=e^\phi$.
 The constant kinetic coefficient and quadratic potential remain the
 simplest local Level~B benchmark truncations.
+A broader admissible family of late-time closures is described in
+Section~\ref{sec:late_closure_family}.
 
 \paragraph{Layer 3: interim numerical completion.}
 The present numerical age extension above $z_{\rm match}=10$ is still an
@@ -18772,6 +18862,11 @@ slow-drift parameter window that gives a few-percent Hubble shift is
 \kappa\sim 10\text{--}20.
 \label{eq:app_algo_window}
 \end{equation}
+The window above refers specifically to the benchmark truncation.
+One of the next tasks is to determine how stable it remains under the
+admissible closure deformations described in
+Section~\ref{sec:late_closure_family}.
+
 For Benchmark~B ($\beta=0.8$, $\mu=1.5$, $\kappa=15$, $\phi_0=-0.12$)
 the analytic estimate~\eqref{eq:app_late_deltaH} gives
 $\Delta H_0/H_0\approx 5.1\%$.
