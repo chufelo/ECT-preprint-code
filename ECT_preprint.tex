@@ -8546,6 +8546,9 @@ This distinction is essential for the JWST discussion.
 The benchmark run gives an ECT age of $13.1$\,Gyr, compared with the
 reference $\Lambda$CDM value $13.8$\,Gyr, with luminosity-distance
 shifts of $\Delta D_L/D_L\approx-5\%$ at $z=5$--12.
+These numbers refer to the benchmark screened-branch truncation and
+serve as the control late-time solution against which the
+derived-parent condensate runs are compared below.
 
 The quoted age-related numbers should still be read as interim
 late-time closure estimates, because the present numerical
@@ -8655,7 +8658,7 @@ $t_0^{\rm ECT}$ & $13.1$\,Gyr \\
 $\Delta t_0/t_0$ & $-4.8\%$ \\
 $\Delta D_L/D_L$ at $z=10$ & $-5.4\%$ \\
 Inferred $\Delta L/L$ at $z=10$ & $\approx -10\%$ \\
-Growth proxy $\mathcal{G}$ at $z=10$ & $1.016$ \\
+Growth proxy $\mathcal{G}$ at $z=10$ (benchmark only) & $1.016$ \\
 $g^\dagger_{\rm bg}(z=10)/g^\dagger_{\rm bg}(0)$ & $21.5$ \\
 $t_{\rm U}(z=10)^{\rm ECT}$ (benchmark) & $0.44$\,Gyr \\
 $t_{\rm U}(z=10)^{\Lambda{\rm CDM}}$ (reference) & $0.47$\,Gyr \\
@@ -8736,6 +8739,136 @@ background dynamics.
 This does not yet establish full robustness of the late-time closure,
 but it already shows that the benchmark result is not destroyed by mild
 admissible amplitude-sector deformations.
+
+\subsubsection*{Derived-parent condensate: parameter corridor, linear growth, and JWST maturity budget}
+\label{sec:derived_parent_jwst_main}
+
+Beyond the benchmark truncation, the next numerical layer is the
+full derived-parent condensate background with
+\[
+\omega(\phi)=\omega_0 e^{2\beta\phi},
+\qquad
+\Omega_U(\phi)=\Omega_{V*}+A_2\bigl(e^{\beta\phi}-1\bigr)^2,
+\]
+keeping $\beta=0.8$, $\mu=1.5$, $A_2=\mu^2/(6\beta^2)$, $A_3=A_4=0$.
+A first systematic scan over the $(\omega_0,\phi_0)$ plane identifies a
+Hubble-compatible corridor with
+\[
+\omega_0\sim 25\text{--}40,
+\qquad
+\phi_0\sim -0.10\text{ to }-0.08,
+\]
+in which the late inferred Hubble shift is positive and the
+derived-parent background remains numerically viable.
+Three representative working points are summarised in
+Table~\ref{tab:derived_parent_working_points}.
+The most useful current point (Hubble-priority) is
+\[
+\omega_0=30,\qquad \phi_0=-0.10,
+\]
+for which
+\[
+\Delta H_0/H_0\approx 2.73\%,
+\qquad
+t_0\approx 13.02~{\rm Gyr},
+\qquad
+t_U(z=10)\approx 0.394~{\rm Gyr}.
+\]
+
+For these same backgrounds, the full linear growth equation
+\[
+D^{\prime\prime}+\Bigl(2+\tfrac{H^{\prime}}{H}\Bigr)D^{\prime}
+-\frac{3}{2}\Omega_m(z)\frac{G_{\rm eff}(z)}{G_N}D=0
+\]
+has been solved numerically on the derived-parent background
+(not replaced by a heuristic proxy).
+The result is that the derived-parent corridor does \emph{not} resolve the
+JWST tension through linear growth alone: for the representative working
+points, $D(z=10)/D_{\rm ref}(z=10)\approx 0.98$--$0.99$,
+so growth is nearly neutral once Hubble friction is included.
+
+The combined maturity budget for the representative JWST anchor cases
+(JADES-GS-z14-0 at $z=14.32$, GN-z11 at $z=10.60$, a mini-quenched
+system at $z=7.3$, and RUBIES-EGS-QG-1 at $z=4.90$) shows:
+\begin{enumerate}
+  \item the background age of the Universe at observation is smaller
+  than in the reference history, requiring a minimum speed-up factor
+  $\mathcal R_{\rm req}\sim 1.19$--$1.22$ depending on the case;
+  \item the semi-analytic galaxy-assembly maturity factor
+  $\mathcal R_{\rm gal}\equiv (D_{\rm ECT}/D_{\rm ref})\cdot(t_{\rm ff}^{\rm ref}/t_{\rm ff}^{\rm ECT})\approx 1.21$--$1.23$
+  is close to and in several cases above the required threshold;
+  \item the BH-assisted maturity factor
+  $\mathcal R_{\rm BH}\equiv (D_{\rm ECT}/D_{\rm ref})\cdot(t_{\rm BH}^{\rm ref}/t_{\rm BH}^{\rm ECT})\approx 1.48$--$1.54$
+  is clearly above the required threshold.
+\end{enumerate}
+Therefore the present derived-parent ECT corridor already provides a
+quantitatively plausible mechanism for BH-assisted and compact-core
+driven early maturity, while for ordinary galaxy-assembly channels the
+compensation is close to but not yet unambiguously above the required level.
+This should be interpreted as a concrete partial result rather than a
+complete resolution.
+
+\begin{table}[htb]
+\centering
+\caption{Representative derived-parent working points from the first
+Hubble-compatible $(\omega_0,\phi_0)$ scan
+($\beta=0.8$, $\mu=1.5$, $A_2=\mu^2/(6\beta^2)$, $A_3=A_4=0$).}
+\label{tab:derived_parent_working_points}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lcccccc}
+\hline\hline
+Point & $\omega_0$ & $\phi_0$ & $\Delta H_0/H_0$ & $t_U(z=10)$ [Gyr] & $G_{\rm eff}(10)/G_N$ & $D(10)/D_{\rm ref}(10)$ \\
+\hline
+Balanced    & 25 & $-0.10$ & $+2.43\%$ & $0.386$ & $1.57$ & $0.979$ \\
+Hubble-priority & 30 & $-0.10$ & $+2.73\%$ & $0.394$ & $1.49$ & $0.993$ \\
+Age-priority & 25 & $-0.08$ & $+1.59\%$ & $0.390$ & $1.53$ & $0.980$ \\
+\hline\hline
+\end{tabular}
+\end{table}
+
+\subsubsection*{Observational signatures compatible with accelerated early development}
+\label{sec:jwst_observational_signatures}
+
+The present ECT maturity mechanism suggests a set of qualitative
+observational signatures, some already discussed in the literature
+and others remaining as predictions.
+
+\paragraph{Already discussed observationally.}
+JWST has revealed early candidates for overmassive SMBHs relative to
+their stellar host galaxies, very early luminous and massive galaxy
+systems (including confirmed objects at $z\gtrsim 14$), and massive
+quiescent galaxies at unexpectedly high redshifts.
+A notable signature is the displacement of some early objects along the
+$M_{\rm BH}$--$M_\star$ relation while remaining closer to the local
+$M_{\rm BH}$--$\sigma$ relation, which is qualitatively consistent with
+a maturity channel where central compact objects develop faster than
+the stellar host component.
+These observations do not prove ECT, but they motivate precisely the
+accelerated maturity channels identified here.
+
+\paragraph{Qualitatively consistent with the present ECT mechanism.}
+The current derived-parent maturity budget particularly favours
+BH-assisted and compact-core driven maturity channels rather than a
+purely linear-growth solution.
+Objects that appear unusually mature or quiescent at high redshift are
+thus the most natural testing ground for the present mechanism.
+
+\paragraph{Predictions still to be tested.}
+The framework also predicts possible systematic shifts in velocity
+dispersions or virial speeds at fixed host mass, compact rapidly
+assembled massive hosts, and a potential dependence on environment
+through the background condensate history.
+These remain predictions rather than established results at the
+present stage.
+
+\paragraph{Status.}
+The present derived-parent results constitute the first non-benchmark
+numerical layer of the theory: they go beyond the earlier heuristic
+proxy analysis, but fall short of a full morphology-level calculation.
+Full linear growth has been solved on the derived-parent background;
+semi-analytic maturity factors have been combined with the background
+age budget; but a complete N-body or hydrodynamical structure-formation
+program remains an open next step.
 
 \textit{ISW excess.}
 In voids, larger $G_{\rm eff}$ in low-density regions amplifies the
@@ -19011,10 +19144,71 @@ Thus the first benchmark conclusion appears numerically stable under at
 least mild admissible deformations, although a broader scan is still
 required before claiming full robustness.
 
+The present derived-parent scan goes beyond the earlier benchmark-only
+robustness check: it solves the full linear growth equation on the
+derived-parent background and combines this with semi-analytic maturity
+factors for collapse and BH-assisted development.
+This is the first stage at which the ECT late-time programme can be
+tested simultaneously against Hubble-shift, age-budget, and JWST
+maturity requirements.
+
 This robustness programme is now directly supported by the code-level
 interface and artefact layers introduced in
 Appendices~\ref{sec:late_cosmo_interface} and
 \ref{sec:late_cosmo_artefacts}.
+
+\subsection{Derived-parent working corridor and JWST object budgets}
+\label{sec:late_jwst_object_budgets}
+
+A first systematic scan of the derived-parent condensate background was
+performed over
+$\omega_0\in\{15,20,25,30,40,50\}$,
+$\phi_0\in\{-0.15,-0.12,-0.10,-0.08,-0.05\}$,
+with $\beta=0.8$, $\mu=1.5$, $A_2=\mu^2/(6\beta^2)$, $A_3=A_4=0$.
+The scan identifies the Hubble-compatible corridor described in the
+main text (Section~\ref{sec:derived_parent_jwst_main}) and selects
+three representative working points.
+
+For the four JWST anchor cases considered in the main text, the
+derived-parent age of the Universe at observation is smaller than in
+the reference background by an amount ranging from several tens of Myr
+(highest-redshift cases) to a few hundred Myr (lower-redshift quiescent
+case at $z=4.9$).
+The minimum required maturity speed-up is therefore
+\[
+\mathcal R_{\rm req}(z_{\rm obs})
+=
+\frac{t_U^{\rm ref}(z_{\rm obs})}{t_U^{\rm ECT}(z_{\rm obs})}.
+\]
+In the preferred working points this factor is typically
+$\mathcal R_{\rm req}\sim 1.19$--$1.22$.
+
+The two semi-analytic maturity factors used are
+\[
+\mathcal R_{\rm gal}
+=
+\frac{D_{\rm ECT}}{D_{\rm ref}}
+\frac{t_{\rm ff}^{\rm ref}}{t_{\rm ff}^{\rm ECT}},
+\qquad
+\mathcal R_{\rm BH}
+=
+\frac{D_{\rm ECT}}{D_{\rm ref}}
+\frac{t_{\rm BH}^{\rm ref}}{t_{\rm BH}^{\rm ECT}},
+\]
+where free-fall time scales as
+$t_{\rm ff}\propto (G_{\rm eff}\rho)^{-1/2}$
+and BH growth time as
+$t_{\rm BH}\propto G_{\rm eff}^{-1}$ (Salpeter-like estimate).
+For the representative working points one finds
+\[
+\mathcal R_{\rm gal}\approx 1.21\text{--}1.23,
+\qquad
+\mathcal R_{\rm BH}\approx 1.48\text{--}1.54.
+\]
+This shows that the current derived-parent ECT corridor is close to
+the required level for ordinary galaxy-assembly channels and clearly
+above it for BH-assisted maturity channels.
+This is a concrete partial result rather than a full resolution.
 
 \subsection{Slow-drift regime and present-epoch Hubble shift}
 
@@ -19468,6 +19662,15 @@ At minimum this artefact should report
 and the corresponding changes in the benchmark summary outputs.
 In the current code implementation this role is played by a benchmark--
 deformed comparison table exported on the common redshift grid.
+
+\paragraph{Derived-parent scan and JWST maturity tables.}
+For the derived-parent programme the code should also emit machine-readable
+tables for the first $(\omega_0,\phi_0)$ scan, the selected working points,
+the JWST object age budgets, and the combined maturity budgets
+($\mathcal R_{\rm gal}$, $\mathcal R_{\rm BH}$, $\mathcal R_{\rm req}$).
+These artefacts support direct comparison between the Hubble-compatible
+parameter corridor and the astrophysical maturity requirements of the
+observed high-redshift systems.
 
 \paragraph{Convergence and sensitivity report.}
 The solver should also emit a small diagnostic report containing:
