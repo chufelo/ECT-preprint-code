@@ -5759,7 +5759,9 @@ macroscopic closure once the geometric branch contains
 and (iii) a conserved source tensor.
 The identification of $\phi$ as a reparameterisation of the
 ordered-branch amplitude is structural/bridge-level.
-Level~B for the explicit $\phi$-first nonlinear closure.
+The mapping of $F(\phi)$, $\omega(\phi)$, and $U(\phi)$ to the
+ordered-branch EFT is likewise structural/bridge-level.
+Level~B for the explicit final nonlinear $\phi$-first closure.
 Lovelock uniqueness is Level~A only under assumptions A1--A5.
 A first-principles derivation of the full nonlinear gravitational
 sector directly from bare~P3 remains open~(OP2, OP3, OP-matter).}
@@ -5926,6 +5928,92 @@ isolated phenomenological scalar-tensor ansatz.
 It is the first amplitude-dominated coarse-grained realisation of the
 ordered condensate branch.
 
+\subsubsection*{From ordered-branch EFT coefficients to closure functions}
+\label{sec:closure_function_mapping}
+
+The amplitude-dominated reduction identifies the ordered-branch
+amplitude as the natural scalar carrier of the first macroscopic
+closure.
+What remains is to explain why the functions entering the $\phi$-first
+action,
+\[
+F(\phi),\qquad \omega(\phi),\qquad U(\phi),
+\]
+are not arbitrary insertions but infrared images of structures already
+present in the ordered-branch EFT.
+
+The starting point is the Euclidean ordered-branch functional
+\eqref{eq:ordered_branch_euclidean_eft},
+\[
+S_{\rm ord}^{(E)}[u,n]
+=
+\int d^4X\,
+\left[
+\frac{Z_u}{2}(\partial u)^2
++\frac{Z_n}{2}u^2(\partial n)^2
++W(u)
++\Lambda_n(n_A n_A-1)
++\cdots
+\right].
+\]
+After amplitude-dominated coarse-graining and the logarithmic
+reparameterisation
+\[
+\phi=\ln(u/u_\infty),
+\qquad
+u=u_\infty e^\phi,
+\]
+three structural correspondences become natural.
+
+\paragraph{(i) Gravitational response factor.}
+Since the ordered-branch amplitude measures the local strength of the
+condensate relative to its asymptotic screened state, the simplest
+dimensionless response factor is
+\[
+F(\phi)=\frac{u}{u_\infty}=e^\phi.
+\]
+Thus the multiplicative factor in front of the macroscopic curvature
+term is not chosen independently; it is the direct amplitude ratio of
+the ordered branch.
+
+\paragraph{(ii) Kinetic closure function.}
+The amplitude-gradient term in the ordered-branch EFT,
+\[
+\frac{Z_u}{2}(\partial u)^2,
+\]
+becomes, after $u=u_\infty e^\phi$,
+\[
+\frac{Z_u u_\infty^2}{2}e^{2\phi}(\partial\phi)^2.
+\]
+After macroscopic field redefinitions and normalisation matching, this
+naturally gives rise to a positive kinetic closure function
+$\omega(\phi)$ in the $\phi$-first action.
+Its explicit final form is still closure-dependent, but its origin in
+the amplitude-sector stiffness is structural.
+
+\paragraph{(iii) Effective potential.}
+The branch potential $W(u)$ of the ordered condensate becomes
+\[
+U(\phi)\equiv W(u_\infty e^\phi)
+\]
+up to macroscopic normalisation and possible coarse-graining shifts.
+Therefore the effective scalar potential of the macroscopic closure is
+not a new independent potential; it is the amplitude-sector branch
+potential rewritten in the logarithmic variable $\phi$.
+
+\paragraph{What is and is not fixed here.}
+This mapping does not yet derive the full final nonlinear closure from
+first principles.
+It does, however, fix the logic of the closure:
+\[
+F(\phi)\ \text{comes from the amplitude ratio }u/u_\infty,\qquad
+\omega(\phi)\ \text{from amplitude-sector stiffness},\qquad
+U(\phi)\ \text{from the branch potential }W(u).
+\]
+The precise renormalised coefficients and the final phenomenological
+closure ansatz remain Level~B, but the functions themselves are no
+longer conceptually free-floating.
+
 \subsubsection*{Working assumptions of the $\phi$-first macroscopic closure}
 
 The assumptions below should be read on top of the
@@ -5954,9 +6042,10 @@ A4 is open but well-motivated; A5 is used only for the pure-metric limit.
 
 \subsubsection*{The $\phi$-first effective IR action}
 
-Under A1--A4 and the amplitude-dominated macroscopic reduction above,
-the most developed currently available nonlinear macroscopic closure is
-the amplitude-first (equivalently $\phi$-first) parameterisation:
+Under A1--A4, the amplitude-dominated macroscopic reduction above, and
+the coefficient mapping just described, the most developed currently
+available amplitude-dominated completion is the $\phi$-first
+scalar-tensor closure
 \begin{equation}
   \label{eq:phi_first_action}
   S_{\rm IR}
@@ -6041,8 +6130,9 @@ background degree of freedom while remaining compatible with homogeneous
 and isotropic FRW kinematics.
 
 Under this isotropic background reduction, the $\phi$-first action
-\eqref{eq:phi_first_action} yields a coupled system for the scale factor
-$a(t)$ and the macroscopic amplitude variable $\phi(t)$.
+\eqref{eq:phi_first_action} yields the schematic parent coupled system
+for the scale factor $a(t)$ and the macroscopic amplitude variable
+$\phi(t)$.
 Writing
 \[
 F(\phi)\equiv e^\phi,
@@ -6105,7 +6195,8 @@ theory.
 
 \paragraph{(iv) Observational outputs.}
 Once the background solution $H(z),\phi(z)$ is known, the cosmological
-observables used later in the paper follow in the standard way:
+observables used later in the paper follow through the standard FRW
+integral relations:
 \[
 D_L(z),\qquad
 t_{\rm lookback}(z),\qquad
@@ -6213,6 +6304,12 @@ underlying ordered structure.
     sector is frozen into the homogeneous causal background; the
     resulting FRW system is the parent structure of the later
     cosmological closure~(structural/bridge level).
+  \item The closure functions of the first macroscopic scalar--tensor
+    reduction are structurally anchored in the ordered-branch EFT:
+    $F(\phi)$ comes from the amplitude ratio $u/u_\infty$,
+    $\omega(\phi)$ from amplitude-sector stiffness,
+    and $U(\phi)$ from the branch potential $W(u)$
+    (bridge principle; explicit final forms remain Level~B).
 \end{enumerate}
 
 \textbf{Not yet established as first-principles theorems:}
@@ -18311,7 +18408,9 @@ degeneracy diagnostics rather than as headline physical results.
 
 This appendix records the benchmark late-time specialisation of the
 macroscopic background reduction derived in
-Section~\ref{sec:background_reduction_macro}.
+Section~\ref{sec:background_reduction_macro}, with closure functions
+understood in the sense of the ordered-branch EFT-to-macroscopic mapping
+described in Section~\ref{sec:closure_function_mapping}.
 It derives the minimal ECT background apparatus used for the
 late-time cosmology calculations in Section~\ref{sec:hubble_jwst}.
 
