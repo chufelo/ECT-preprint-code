@@ -6328,6 +6328,11 @@ underlying ordered structure.
     JWST age grids, benchmark summaries, and convergence diagnostics
     belong to the benchmark numerical framework, not to the structural
     core of the theory.
+  \item Numerical robustness under admissible late-time closure
+    deformations is now part of the explicit programme of the theory:
+    benchmark outputs are not to be treated as fully robust until they
+    have been compared against the wider admissible closure family
+    (benchmark numerical layer; not structural core).
 \end{enumerate}
 
 \textbf{Not yet established as first-principles theorems:}
@@ -8462,9 +8467,11 @@ background solver is used throughout.
 The numerical implementation roadmap corresponding to this closure is
 summarised in Appendix~\ref{sec:late_cosmo_roadmap}, the explicit
 article--solver interface contract is stated in
-Appendix~\ref{sec:late_cosmo_interface}, and the expected reproducible
+Appendix~\ref{sec:late_cosmo_interface}, the expected reproducible
 numerical artefacts are listed in
-Appendix~\ref{sec:late_cosmo_artefacts}.
+Appendix~\ref{sec:late_cosmo_artefacts}, and the numerical robustness
+programme for admissible late-time deformations is outlined in
+Appendix~\ref{sec:late_closure_robustness}.
 The corresponding analytic benchmark window is shown in
 Appendix~\ref{app:late_cosmo_algorithm},
 Fig.~\ref{fig:app_h0_scan}.
@@ -8593,7 +8600,7 @@ alters the distance and time scales entering JWST inferences.}
 
 \begin{table}[htb]
 \centering
-\caption{Summary of the minimal late-time ECT cosmology benchmark.}
+\caption{Summary of the benchmark late-time ECT cosmology closure.}
 \label{tab:ect_hubble_jwst_summary}
 \renewcommand{\arraystretch}{1.15}
 \begin{tabular}{lc}
@@ -8619,6 +8626,46 @@ Galaxy age (obs $z=10$, form $z=20$)$^{\Lambda{\rm CDM}}$ & $0.29$\,Gyr \\
 \hline\hline
 \end{tabular}
 \end{table}
+
+\subsubsection*{Numerical robustness under admissible late-time deformations}
+\label{sec:late_cosmo_robustness_main}
+
+The benchmark results above should not be interpreted as if they were
+attached to a unique final late-time closure.
+As explained in Appendix~\ref{sec:late_closure_family}, the benchmark
+choice
+\[
+K(\phi)=K_0,
+\qquad
+V(\phi)=V_0+\frac12 m_\phi^2\phi^2
+\]
+is only the first explicit member of a wider admissible family of
+late-time amplitude-sector closures.
+
+For this reason, the relevant numerical question is not only whether the
+benchmark closure produces a few-percent Hubble shift, but also whether
+its qualitative outputs remain stable under admissible deformations of
+the kinetic and potential sectors.
+The current article therefore distinguishes three layers:
+
+\begin{enumerate}
+  \item the structural late-time background system inherited from the
+  macroscopic ordered-branch reduction;
+  \item the benchmark closure used for the present figures and tables;
+  \item the wider admissible family of deformed closures to be tested
+  numerically against that benchmark.
+\end{enumerate}
+
+The present benchmark remains useful because it isolates the leading
+effect of condensate-amplitude drift with minimal parameter freedom.
+However, future numerical comparisons between the benchmark and deformed
+closures are required to determine which outputs are robust features of
+the ordered-branch logic and which are artefacts of the simplest
+truncation.
+This applies especially to the late inferred $H_0$, the age quantities
+$t_0$ and $t_U(z)$, the galaxy-lifetime grids
+$t_{\rm gal}(z_{\rm obs};z_{\rm form})$, and the growth proxy used in
+the current JWST discussion.
 
 \textit{ISW excess.}
 In voids, larger $G_{\rm eff}$ in low-density regions amplifies the
@@ -18674,6 +18721,50 @@ ECT: to determine which cosmological outputs are robust under
 admissible deformations of the benchmark closure, and which are artefacts
 of the simplest truncation.
 
+\subsection{Numerical robustness programme for the admissible closure family}
+\label{sec:late_closure_robustness}
+
+The existence of the admissible closure family
+\eqref{eq:app_late_general_K}--\eqref{eq:app_late_general_V}
+immediately raises a numerical robustness question:
+which late-time outputs are stable under admissible deformations of the
+benchmark closure, and which are sensitive to the particular truncation
+\eqref{eq:app_late_closure}?
+
+At the present stage, the role of the benchmark closure is clear:
+it is the first explicit late-time realisation of the ordered-branch
+macroscopic system, and therefore the natural starting point for code
+development.
+But the next stage is equally clear:
+the code must compare that benchmark against deformed closures of the
+admissible family.
+
+The most relevant observables for such robustness tests are:
+\begin{enumerate}
+  \item the direct and low-$z$ inferred Hubble shifts;
+  \item the present cosmic age $t_0$;
+  \item the epoch-dependent age $t_U(z)$;
+  \item the galaxy-lifetime grids
+  $t_{\rm gal}(z_{\rm obs};z_{\rm form})$;
+  \item the distance shift $\Delta D_L/D_L$;
+  \item the growth proxy $\mathcal{G}(z)$;
+  \item the background critical scale
+  $g^\dagger_{\rm bg}(z)$.
+\end{enumerate}
+
+A late-time output should therefore be regarded as
+\emph{numerically robust} only if it persists, at least qualitatively
+and preferably quantitatively, under admissible deformations of
+$K(\phi)$ and $V(\phi)$.
+Conversely, if a claimed effect disappears under mild admissible
+deformation, it should be interpreted only as a property of the
+benchmark truncation and not yet as a robust ECT feature.
+
+This robustness programme is now directly supported by the code-level
+interface and artefact layers introduced in
+Appendices~\ref{sec:late_cosmo_interface} and
+\ref{sec:late_cosmo_artefacts}.
+
 \subsection{Slow-drift regime and present-epoch Hubble shift}
 
 In the slow-drift branch ($|q|\ll 1$, $\kappa q^2\ll 1$,
@@ -18795,6 +18886,9 @@ structural roadmap above: improvement of the fixed-point background
 solver, replacement of interim high-$z$ completion, and possible
 implementation of admissible generalisations of the benchmark functions
 $K(\phi)$ and $V(\phi)$ are the three main directions of progress.
+A fourth direction is numerical robustness testing:
+benchmark outputs should be compared systematically against admissible
+closure deformations rather than reported only for the benchmark member.
 
 \subsection{Implementation roadmap from benchmark closure to solver}
 \label{sec:late_cosmo_roadmap}
@@ -18936,7 +19030,10 @@ reports:
   \item explicit dependence of age-related quantities on the interim
   high-$z$ completion, if such a completion is still used;
   \item sensitivity of the benchmark outputs to admissible deformations
-  of $K(\phi)$ and $V(\phi)$ once those are implemented.
+  of $K(\phi)$ and $V(\phi)$ once those are implemented;
+  \item where implemented, direct comparison of benchmark and deformed
+  admissible-closure runs, with explicit reporting of the induced shifts
+  in $H(z)$, $\phi(z)$, $t_U(z)$, and the benchmark summary observables.
 \end{enumerate}
 
 \paragraph{Interpretive rule.}
@@ -18997,6 +19094,18 @@ g^\dagger_{\rm bg}(z)/g^\dagger_{\rm bg}(0),
 \]
 together with explicit metadata recording which closure functions and
 which high-$z$ completion settings were used.
+
+\paragraph{Benchmark--deformed comparison table.}
+Whenever admissible closure deformations are enabled, the code should
+also emit a comparison artefact showing the difference between the
+deformed run and the benchmark member on the same redshift grid.
+At minimum this artefact should report
+\[
+\Delta\phi(z),\qquad
+\Delta E(z),\qquad
+\Delta t_U(z),
+\]
+and the corresponding changes in the benchmark summary outputs.
 
 \paragraph{Convergence and sensitivity report.}
 The solver should also emit a small diagnostic report containing:
@@ -19129,6 +19238,9 @@ Appendix~\ref{sec:late_cosmo_interface}.
 The expected machine-readable artefacts of such a benchmark
 implementation are listed in
 Appendix~\ref{sec:late_cosmo_artefacts}.
+The same benchmark implementation is also intended to support the
+robustness programme under admissible late-time closure deformations
+described in Appendix~\ref{sec:late_closure_robustness}.
 
 \noindent
 The repository contains: the full-SPARC rotation-curve fitting pipeline
