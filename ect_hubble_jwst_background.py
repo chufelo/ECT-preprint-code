@@ -64,6 +64,11 @@ class Params:
     mu:     float = 1.5
     kappa:  float = 15.0
     phi0:   float = -0.12
+    # admissible closure-family deformations beyond benchmark
+    k1:      float = 0.0
+    k2:      float = 0.0
+    lambda3: float = 0.0
+    lambda4: float = 0.0
     zmax_solver: float = 15.0
     zplot:       float = 15.0
     z_match:     float = 10.0
@@ -74,24 +79,49 @@ class Params:
         if self.omega_V_star is None:
             self.omega_V_star = 1.0 - self.omega_m_star - self.omega_r_star
 
+def F_response(phi, p: Params):
+    """Structural response factor: F(phi) = exp(beta*phi)."""
+    return np.exp(p.beta * phi)
+
+def K_closure(phi, p: Params):
+    """Admissible kinetic closure: K(phi) = K0*(1+k1*phi+k2*phi^2). Benchmark: k1=k2=0."""
+    return p.kappa * (1.0 + p.k1*phi + p.k2*phi**2)
+
+def V_closure(phi, p: Params):
+    """Admissible potential closure (dimensionless E^2 form):
+    V0 encoded by omega_V_star; mu^2/6*phi^2 + lambda3/18*phi^3 + lambda4/72*phi^4.
+    Benchmark: lambda3=lambda4=0."""
+    return (p.omega_V_star
+            + (p.mu**2/6.0)*phi**2
+            + (p.lambda3/18.0)*phi**3
+            + (p.lambda4/72.0)*phi**4)
+
 def E_ref_sq(N, p: Params):
     return (p.omega_m_star*np.exp(-3*N)
             + p.omega_r_star*np.exp(-4*N)
             + p.omega_V_star)
 
 def E_sq_ect(N, phi, q, p: Params):
-    num = (p.omega_m_star*np.exp(-3*N) + p.omega_r_star*np.exp(-4*N)
-           + p.omega_V_star + (p.mu**2/6)*phi*phi)
-    den = (np.exp(p.beta*phi) - (p.kappa/6)*q*q + p.beta*np.exp(p.beta*phi)*q)
-    den = np.where(den>1e-10, den, 1e-10) if np.ndim(den)>0 else max(den, 1e-10)
+    """ECT Friedmann E^2 — benchmark or admissible-family closure."""
+    num = (p.omega_m_star*np.exp(-3*N)
+           + p.omega_r_star*np.exp(-4*N)
+           + V_closure(phi, p))
+    Kphi = K_closure(phi, p)
+    Fphi = F_response(phi, p)
+    den  = Fphi - (Kphi/6.0)*q*q + p.beta*Fphi*q
+    den  = np.where(den>1e-10, den, 1e-10) if np.ndim(den)>0 else max(den, 1e-10)
     return num / den
 
 def dlnE_from_array(N_arr, E_arr):
     return np.gradient(np.log(E_arr), N_arr)
 
 def q_from_balance(N, phi, E2, dlnE_dN, p: Params):
-    return ((p.beta*np.exp(p.beta*phi)/p.kappa)*(2.0+dlnE_dN)
-            - (p.mu**2/(3.0*p.kappa))*(phi/max(E2,1e-20)))
+    """Slow-drift balance; admissible K(phi) used. Benchmark: k1=k2=0."""
+    Kphi = K_closure(phi, p)
+    Fphi = F_response(phi, p)
+    Ks   = max(float(Kphi), 1e-20)
+    return ((p.beta/Ks)*Fphi*(2.0+dlnE_dN)
+            - (p.mu**2/(3.0*Ks))*(phi/max(E2,1e-20)))
 
 def solve_background_selfconsistent(p: Params, seed_mode: str = "ref"):
     N0   = 0.0
@@ -191,10 +221,13 @@ def derived_quantities(df: pd.DataFrame, p: Params):
                 ("Geff_ratio",Geff_ratio),("grow",grow),("grow_ref",growref)]:
         df[k] = v
     # summary
+    _is_bench = (p.k1==0.0 and p.k2==0.0 and p.lambda3==0.0 and p.lambda4==0.0)
     S = {"beta":p.beta,"mu":p.mu,"kappa":p.kappa,"phi0_input":p.phi0,
+         "k1":p.k1,"k2":p.k2,"lambda3":p.lambda3,"lambda4":p.lambda4,
+         "closure_member":"benchmark" if _is_bench else "deformed",
          "H_star":p.H_star,"omega_m_star":p.omega_m_star,
          "omega_r_star":p.omega_r_star,"omega_V_star":p.omega_V_star,
-         "z_match":p.z_match,"closure_name":"benchmark_phi_first",
+         "z_match":p.z_match,"closure_name":"admissible_phi_first",
          "high_z_completion":"interim_matter_radiation_tail",
          "seed_mode":"ref",
          "zmax_solver":p.zmax_solver,
@@ -260,14 +293,17 @@ def derived_quantities(df: pd.DataFrame, p: Params):
     panel_cd_df["grow_ratio"]=df["grow"]/df["grow_ref"].replace(0,float("nan"))
 
     # metadata
-    meta_df=pd.DataFrame([{"closure_name":"benchmark_phi_first",
+    meta_df=pd.DataFrame([{"closure_name":"admissible_phi_first",
+        "closure_family":"admissible_phi_first",
+        "closure_member":"benchmark" if _is_bench else "deformed",
         "response_factor":"f(phi)=f0*exp(beta*phi)",
-        "kinetic_closure":"K(phi)=K0",
-        "potential_closure":"V(phi)=V0+0.5*m_phi^2*phi^2",
+        "kinetic_closure":"K(phi)=K0*(1+k1*phi+k2*phi^2)",
+        "potential_closure":"V(phi)=V0+0.5*m_phi^2*phi^2+lambda3/3!*phi^3+lambda4/4!*phi^4",
         "high_z_completion":"interim_matter_radiation_tail",
         "z_match":p.z_match,"zmax_solver":p.zmax_solver,
         "npts":p.npts,"n_iter":p.n_iter,"H_star":p.H_star,
         "beta":p.beta,"mu":p.mu,"kappa":p.kappa,"phi0":p.phi0,
+        "k1":p.k1,"k2":p.k2,"lambda3":p.lambda3,"lambda4":p.lambda4,
         "omega_m_star":p.omega_m_star,"omega_r_star":p.omega_r_star,
         "omega_V_star":p.omega_V_star,
         "article_figure_background":   "ect_hubble_jwst_background_bw.pdf",
@@ -441,6 +477,12 @@ def main():
     ap.add_argument("--z_match", type=float,default=10.0)
     ap.add_argument("--npts",    type=int,  default=3000)
     ap.add_argument("--n_iter",  type=int,  default=3)
+    ap.add_argument("--k1",      type=float, default=0.0)
+    ap.add_argument("--k2",      type=float, default=0.0)
+    ap.add_argument("--lambda3", type=float, default=0.0)
+    ap.add_argument("--lambda4", type=float, default=0.0)
+    ap.add_argument("--compare_to_benchmark", action="store_true",
+                    help="Run and compare against pure benchmark (k1=k2=lambda3=lambda4=0)")
     ap.add_argument("--scan",    action="store_true")
     ap.add_argument("--validate_multiseed", action="store_true",
                     help="Run solver twice (ref+zero seeds) and save comparison CSV")
@@ -450,16 +492,24 @@ def main():
     omega_V_star=args.oV0 if args.oV0 is not None else 1.0-args.om0-args.or0
     p=Params(H_star=args.H_star,omega_m_star=args.om0,omega_r_star=args.or0,
              omega_V_star=omega_V_star,beta=args.beta,mu=args.mu,kappa=args.kappa,
-             phi0=args.u0,zmax_solver=args.zmax,zplot=args.zplot,
+             phi0=args.u0,k1=args.k1,k2=args.k2,
+             lambda3=args.lambda3,lambda4=args.lambda4,
+             zmax_solver=args.zmax,zplot=args.zplot,
              z_match=args.z_match,npts=args.npts,n_iter=args.n_iter)
     outdir=Path(args.outdir); outdir.mkdir(parents=True,exist_ok=True)
-    print(f"ECT solver v3: beta={p.beta}, mu={p.mu}, kappa={p.kappa}, phi0={p.phi0}, seed={args.seed_mode}")
+    print(f"ECT solver v3 (admissible-family): "
+          f"beta={p.beta}, mu={p.mu}, kappa={p.kappa}, phi0={p.phi0}, "
+          f"k1={p.k1}, k2={p.k2}, lambda3={p.lambda3}, lambda4={p.lambda4}, "
+          f"seed={args.seed_mode}")
     df,diagnostics=solve_background_selfconsistent(p,seed_mode=args.seed_mode)
     full,summary,distance_time,jwst_grid,jwst_key,panel_ab,panel_cd,metadata,manifest=derived_quantities(df,p)
     metadata["seed_mode"]=args.seed_mode
     summary["seed_mode"]=args.seed_mode
     metadata["validate_multiseed"]=bool(args.validate_multiseed)
     summary["validate_multiseed"]=bool(args.validate_multiseed)
+    _ib=(p.k1==0.0 and p.k2==0.0 and p.lambda3==0.0 and p.lambda4==0.0)
+    summary["is_benchmark_member"]=bool(_ib)
+    metadata["is_benchmark_member"]=bool(_ib)
 
     full.to_csv(         outdir/"ect_background_profile.csv",      index=False)
     distance_time.to_csv(outdir/"ect_distance_time_table.csv",     index=False)
@@ -493,6 +543,8 @@ def main():
         saved_files+=["ect_h0_scan_bw.pdf","ect_h0_scan_bw.png"]
     if args.validate_multiseed:
         saved_files.append("ect_multiseed_comparison.csv")
+    if args.compare_to_benchmark and not summary["is_benchmark_member"].iloc[0]:
+        saved_files.append("ect_benchmark_comparison.csv")
     for fn in saved_files:
         print(f"  - {fn}")
     # multiseed validation (builds manifest entry if needed)
@@ -521,6 +573,31 @@ def main():
     # save manifest (after optional multiseed entry)
     manifest.to_csv(outdir/"ect_output_manifest.csv",index=False)
 
+    # 23.11 optional comparison against pure benchmark
+    if args.compare_to_benchmark and not summary["is_benchmark_member"].iloc[0]:
+        p_bench=Params(H_star=p.H_star,omega_m_star=p.omega_m_star,
+                       omega_r_star=p.omega_r_star,omega_V_star=p.omega_V_star,
+                       beta=p.beta,mu=p.mu,kappa=p.kappa,phi0=p.phi0,
+                       k1=0.0,k2=0.0,lambda3=0.0,lambda4=0.0,
+                       zmax_solver=p.zmax_solver,z_match=p.z_match,
+                       npts=p.npts,n_iter=p.n_iter)
+        df_b,_=solve_background_selfconsistent(p_bench,seed_mode=args.seed_mode)
+        comp_df=pd.DataFrame({
+            "z":df["z"].to_numpy(),
+            "phi_run":df["phi"].to_numpy(),"phi_benchmark":df_b["phi"].to_numpy(),
+            "E_run":df["E"].to_numpy(),"E_benchmark":df_b["E"].to_numpy(),
+            "delta_phi_vs_benchmark":df["phi"].to_numpy()-df_b["phi"].to_numpy(),
+            "delta_E_vs_benchmark":df["E"].to_numpy()-df_b["E"].to_numpy(),
+        })
+        comp_df.to_csv(outdir/"ect_benchmark_comparison.csv",index=False)
+        manifest=pd.concat([manifest,pd.DataFrame([{
+            "filename":"ect_benchmark_comparison.csv",
+            "artifact_type":"comparison_table",
+            "description":"Deformed vs pure-benchmark closure: phi/E deltas",
+            "supports_article_section":"app:late_closure_family, app:late_cosmo_interface",
+            "supports_figure_or_table":"closure-family robustness"
+        }])],ignore_index=True)
+
     # 22.5 consistency check for required artefacts
     expected_files=[
         outdir/"ect_background_profile.csv",
@@ -539,6 +616,9 @@ def main():
         raise RuntimeError(f"Missing required artefacts: {missing}")
     if args.validate_multiseed and not (outdir/"ect_multiseed_comparison.csv").exists():
         raise RuntimeError("Missing required artefact: ect_multiseed_comparison.csv")
+    if (args.compare_to_benchmark and not summary["is_benchmark_member"].iloc[0]
+            and not (outdir/"ect_benchmark_comparison.csv").exists()):
+        raise RuntimeError("Missing required artefact: ect_benchmark_comparison.csv")
 
     make_figure(full,summary,outdir/"ect_hubble_jwst_background_bw",p)
     if args.scan:
