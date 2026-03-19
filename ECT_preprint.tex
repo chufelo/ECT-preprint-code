@@ -6310,6 +6310,11 @@ underlying ordered structure.
     $\omega(\phi)$ from amplitude-sector stiffness,
     and $U(\phi)$ from the branch potential $W(u)$
     (bridge principle; explicit final forms remain Level~B).
+  \item In the late-time cosmological specialisation, the exponential
+    response factor is structurally anchored by $u/u_\infty=e^\phi$,
+    whereas the constant kinetic coefficient and quadratic potential are
+    the simplest benchmark truncations rather than unique ECT outputs
+    (bridge + Level~B distinction).
 \end{enumerate}
 
 \textbf{Not yet established as first-principles theorems:}
@@ -6319,6 +6324,10 @@ underlying ordered structure.
   \item Universality of matter coupling~(OP-matter).
   \item Exact nonlinear role of $\Theta_{\mu\nu}[n]$ in all
     regimes~(OP-c1).
+  \item Whether the benchmark choices $K(\phi)=K_0$ and
+    $V(\phi)=V_0+\tfrac12 m_\phi^2\phi^2$ are sufficient beyond the
+    simplest late-time branch, or must be replaced by more general
+    amplitude-sector closures inherited from $W(u)$.
 \end{enumerate}
 
 
@@ -8406,9 +8415,12 @@ e^{\beta \phi}
 \label{eq:ect_late_friedmann_main}
 \end{equation}
 where $E(N)=H/H_*$, $\phi(N)=\ln(u/u_\infty)$,
-$q(N)=d\phi/dN$, and the Level~B closure is
+$q(N)=d\phi/dN$, and the benchmark Level~B closure is
 $f(\phi)=f_0 e^{\beta\phi}$,
 $K(\phi)=K_0$, $V(\phi)=V_0+\frac12 m_\phi^2\phi^2$.
+Here the exponential factor is structurally tied to the amplitude ratio
+$u/u_\infty=e^\phi$, while the constant kinetic coefficient and the
+quadratic potential are the simplest local late-time benchmark choices.
 
 At the present-epoch level, the late-time Hubble shift is controlled by
 \begin{equation}
@@ -18475,9 +18487,11 @@ H^2
 \label{eq:app_late_H2_exact}
 \end{equation}
 
-\subsection{Minimal late-time closure (Level~B)}
+\subsection{Benchmark late-time closure (Level~B)}
 
-We adopt
+Guided by the ordered-branch EFT-to-macroscopic mapping discussed in
+Section~\ref{sec:closure_function_mapping}, we specialise the late-time
+closure to the following benchmark form:
 \begin{equation}
 f(\phi)=f_0 e^{\beta \phi},
 \qquad
@@ -18486,6 +18500,25 @@ K(\phi)=K_0,
 V(\phi)=V_0+\tfrac12 m_\phi^2 \phi^2,
 \label{eq:app_late_closure}
 \end{equation}
+Here the three choices do not have the same status.
+The exponential response factor is structurally motivated by
+$u/u_\infty=e^\phi$.
+By contrast, the constant kinetic coefficient $K(\phi)=K_0$ is the
+simplest benchmark truncation of the amplitude-sector stiffness, and
+the quadratic potential is the leading local expansion of the effective
+branch potential around the screened late-time regime $\phi=0$.
+Thus Eq.~\eqref{eq:app_late_closure} should be read as the simplest
+benchmark realisation of the structurally anchored closure functions,
+not as their unique final ECT form.
+
+\paragraph{Status.}
+The existence of a late-time macroscopic background closure is inherited
+from the background reduction of the geometric branch.
+The explicit benchmark choice~\eqref{eq:app_late_closure} is Level~B:
+its exponential response factor is structurally motivated, while its
+kinetic and potential terms are the simplest local benchmark
+specialisations.
+
 with dimensionless parameters
 \begin{equation}
 E(N)\equiv \frac{H(N)}{H_*},
@@ -18497,6 +18530,16 @@ E(N)\equiv \frac{H(N)}{H_*},
 \Omega_{V*}\equiv \frac{V_0}{3f_0H_*^2}.
 \label{eq:app_late_defs}
 \end{equation}
+The benchmark closure therefore combines one structurally motivated
+ingredient and two simplest local benchmark choices:
+\[
+f(\phi)\sim e^\phi \quad \text{(structural/bridge-level)},\qquad
+K(\phi)=K_0,\quad
+V(\phi)=V_0+\tfrac12 m_\phi^2\phi^2
+\quad \text{(benchmark Level~B truncations)}.
+\]
+This distinction is essential when interpreting numerical outputs.
+
 Here $H_*$ is an external calibration scale of the late-time closure.
 It should not be read as a privileged $\Lambda$CDM-inferred value of
 $H_0$, but simply as the normalization used to construct the
@@ -18532,8 +18575,10 @@ e^{\beta \phi}
 
 In the slow-drift branch ($|q|\ll 1$, $\kappa q^2\ll 1$,
 $|\beta q|\ll 1$), eq.~\eqref{eq:app_late_E2} simplifies to
-$H^2\approx (\rho+V)/(3f)$.  Comparing with a reference background
-at constant $f_0,V_0$:
+$H^2\approx (\rho+V)/(3f)$.
+Within the benchmark closure \eqref{eq:app_late_closure}, this yields a
+transparent analytic estimate for the present-epoch Hubble shift.
+Comparing with a reference background at constant $f_0,V_0$:
 \begin{equation}
 \frac{\Delta H_0}{H_0}
 \approx
@@ -18643,8 +18688,8 @@ intended final numerical realisation of the late-time ECT background.
 
 \subsection{Benchmark parameter window}
 
-The natural window for the slow-drift regime that gives a few-percent
-Hubble shift is
+Within the benchmark closure \eqref{eq:app_late_closure}, the natural
+slow-drift parameter window that gives a few-percent Hubble shift is
 \begin{equation}
 \beta\sim 0.7\text{--}1.0,\quad
 \phi_0\sim -(0.08\text{--}0.12),\quad
@@ -18661,13 +18706,23 @@ corrections to $E^2$ are included.
 A definitive numerical value should be quoted only from the converged
 self-consistent fixed-point solver described above.
 The difference between the analytic estimate and interim benchmark runs
-reflects the sensitivity of the Level~B closure to the detailed
-background iteration procedure.
+reflects both the sensitivity of the Level~B closure to the detailed
+background iteration procedure and the fact that the benchmark closure
+itself is only the simplest late-time truncation of the ordered-branch
+macroscopic system.
 
 The analytic parameter-window scan (Fig.~\ref{fig:h0_scan_main} in the
 main text) shows that the benchmark points lie inside a finite parameter
 region producing a few-percent late-time Hubble shift, confirming that
 the benchmark is representative rather than finely tuned.
+
+What this benchmark window establishes is therefore modest but useful:
+a few-percent late-time Hubble shift is readily obtainable within the
+first amplitude-dominated closure without extreme tuning.
+What it does not yet establish is uniqueness.
+Different admissible Level~B benchmark choices for $K(\phi)$ and
+$V(\phi)$ may lead to quantitatively different background histories even
+while preserving the same structural ordered-branch logic.
 
 \subsection{Derived outputs}
 
