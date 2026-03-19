@@ -5025,7 +5025,8 @@ structure is instead read off from the coarse-grained ordered condensate.
 Since $K^{AB}$~\eqref{eq:K_macro_projector} controls the principal
 part of long-wavelength equations of motion, it defines the causal and
 metric structure of the macroscopic sector.
-The effective inverse metric is identified as:
+In the viable Lorentzian coarse-grained regime, the unique
+inverse-metric candidate is therefore read as:
 \begin{equation}
   \label{eq:geff_contra}
   g_{\rm eff}^{AB}
@@ -5749,6 +5750,8 @@ $G_N$ from bare P3 without EFT input
 macroscopic closure once the geometric branch contains
 (i) an effective Lorentzian metric, (ii) a tensor propagation sector,
 and (iii) a conserved source tensor.
+The identification of $\phi$ as a reparameterisation of the
+ordered-branch amplitude is structural/bridge-level.
 Level~B for the explicit $\phi$-first nonlinear closure.
 Lovelock uniqueness is Level~A only under assumptions A1--A5.
 A first-principles derivation of the full nonlinear gravitational
@@ -5789,8 +5792,9 @@ It emerges from an ordered condensate that carries additional collective
 information at the macroscopic level:
 \begin{itemize}
   \item the orientation field $n_A$,
-  \item the Lorentz-order field $\phi=\ln(\chi/\chi_\infty)$
-    describing slow variations of the degree of ordering,
+  \item the amplitude-derived order variable
+    $\phi=\ln(u/u_\infty)$ describing slow variations of the degree
+    of condensate ordering,
   \item anisotropic correction tensors $\Theta_{\mu\nu}[n]$
     from the rotational Noether sector~\eqref{eq:Theta_n}.
 \end{itemize}
@@ -5802,6 +5806,66 @@ ECT does not claim that nonlinear GR has already been derived from P3.
 What it claims is that the geometric branch narrows the admissible
 closure to a very restricted class, and that the current best-developed
 closure in that class is the $\phi$-first one.
+
+\subsubsection*{From the ordered-branch amplitude to the $\phi$-field}
+
+The ordered-branch infrared EFT introduced in
+Section~\ref{sec:ordered_branch_eft} already identifies two distinct
+collective variables of the condensate:
+the amplitude $u(x)$ and the orientation field $n_A(x)$.
+At macroscopic scales these variables need not enter symmetrically.
+The causal tensor structure of the geometric branch is controlled
+primarily by the ordered orientation sector, whereas slow departures
+from homogeneous gravitational response are naturally carried by the
+condensate amplitude.
+
+This motivates the following organisational step.
+Let $u_\infty$ denote the asymptotic screened value of the ordered
+branch in the homogeneous large-scale limit.
+It is then natural to introduce a dimensionless amplitude variable
+\begin{equation}
+  \label{eq:phi_from_u}
+  \phi(x) \equiv \ln\!\frac{u(x)}{u_\infty}.
+\end{equation}
+By construction,
+\[
+\phi = 0
+\]
+corresponds to the screened Einstein-like regime, while
+$\phi\neq0$ measures a local departure of the condensate amplitude from
+that asymptotic ordered background.
+
+Several points are important.
+
+\paragraph{(i) $\phi$ is not a new fundamental field.}
+It is a macroscopic reparameterisation of the ordered-branch amplitude.
+Thus the $\phi$-first closure is not introducing an extra scalar by hand;
+it is choosing a convenient infrared variable for the amplitude sector
+already present in the ordered condensate EFT.
+
+\paragraph{(ii) Why a logarithmic variable is natural.}
+The logarithmic form makes the screened limit multiplicative rather than
+additive, and it turns local relative changes of the condensate response
+into additive fluctuations of $\phi$.
+It also makes exponential factors such as $e^\phi=u/u_\infty$ appear
+naturally in the later macroscopic closure.
+
+\paragraph{(iii) Why the amplitude can modulate gravity macroscopically.}
+Within the ordered-branch EFT, $u(x)$ is the only scalar collective
+variable measuring the local strength of ordering itself.
+It is therefore the natural candidate to modulate the stiffness or
+gravitational response of the geometric branch once one passes to a
+coarse-grained macroscopic description.
+
+\paragraph{(iv) Status.}
+The existence of an ordered-branch amplitude variable is part of the
+collective EFT structure of Section~\ref{sec:ordered_branch_eft}.
+The specific nonlinear macroscopic closure written in terms of $\phi$
+remains Level~B.
+What this subsection provides is the missing conceptual bridge:
+the $\phi$-field is now explicitly anchored in the amplitude sector of
+the ordered condensate, rather than appearing as an isolated
+phenomenological scalar.
 
 \subsubsection*{Working assumptions of the $\phi$-first macroscopic closure}
 
@@ -5826,8 +5890,9 @@ A4 is open but well-motivated; A5 is used only for the pure-metric limit.
 
 \subsubsection*{The $\phi$-first effective IR action}
 
-Under A1--A4, the strongest currently available nonlinear macroscopic
-closure is:
+Under A1--A4, the most developed currently available nonlinear
+macroscopic closure is the amplitude-first (equivalently $\phi$-first)
+parameterisation:
 \begin{equation}
   \label{eq:phi_first_action}
   S_{\rm IR}
@@ -5839,10 +5904,12 @@ closure is:
     + \mathcal{L}_{\rm mat}[g_{\mu\nu},\Psi]
   \right\},
 \end{equation}
-where $e^\phi R$ expresses local modulation of gravitational response
-by the degree of Lorentzian ordering; $\omega(\phi)(\partial\phi)^2$
-governs slow dynamics of the order field; $U(\phi)$ is the macroscopic
-effective potential; and $\mathcal{L}_{\rm mat}$ encodes matter sectors.
+where $e^\phi=u/u_\infty$ expresses the local modulation of gravitational
+response by the condensate amplitude relative to its asymptotic screened
+value; $\omega(\phi)(\partial\phi)^2$ governs slow dynamics of the
+macroscopic amplitude variable; $U(\phi)$ is the corresponding
+macroscopic effective potential; and $\mathcal{L}_{\rm mat}$ encodes
+matter sectors.
 This action is Level~B.
 Full derivation, comparison with GR/Brans--Dicke/Einstein-aether/Ho\v{r}ava--Lifshitz,
 and Theorems A--F: Appendix~\ref{app:phi_first_EFE}.
@@ -5859,9 +5926,10 @@ Varying~\eqref{eq:phi_first_action} w.r.t.\ $g^{\mu\nu}$:
 \end{equation}
 where $\Lambda_{\rm eff}(\phi)=U(\phi)/\bar M_{\rm Pl}^2$,
 $G_{\rm eff}(\phi)=G_N e^{-\phi}$~\eqref{eq:Geff_phi},
-and $\Theta_{\mu\nu}[\phi,n]$~\eqref{eq:Theta_n} collects derivative
-and anisotropic correction terms from the order field and orientation
-sector.
+so that the effective coupling is inversely modulated by the condensate
+amplitude relative to $u_\infty$; and
+$\Theta_{\mu\nu}[\phi,n]$~\eqref{eq:Theta_n} collects derivative and
+anisotropic correction terms from the amplitude and orientation sectors.
 Equation~\eqref{eq:gen_EE} is the current best nonlinear field equation
 of the geometric branch~(Level~B).
 
@@ -5929,8 +5997,8 @@ where $\phi$ and $n_A$ become dynamically invisible at macroscopic scales.
 
 \paragraph{Brans--Dicke scalar-tensor theories.}
 ECT shares an effective scalar modulating gravitational response.
-But $\phi$ is not a new fundamental field; it is the macroscopic
-Lorentz-order variable of the condensate branch.
+But $\phi$ is not a new fundamental field; it is the logarithmic
+macroscopic amplitude variable of the ordered condensate branch.
 
 \paragraph{Einstein--aether theory~\cite{Jacobson2004}.}
 ECT shares a preferred-direction variable and anisotropic correction
@@ -5956,8 +6024,9 @@ anisotropic condensate structure on the emergent geometry.
 
 Spacetime curvature is not an autonomous primitive field; it is the
 nonlinear macroscopic deformation pattern of the ordered condensate.
-The Einstein limit corresponds to the regime where the order field is
-frozen and the medium appears purely metric.
+The Einstein limit corresponds to the regime where the condensate
+amplitude and orientation sectors are effectively frozen and the medium
+appears purely metric.
 Deviations from GR correspond to residual macroscopic signatures of the
 underlying ordered structure.
 
@@ -5971,6 +6040,9 @@ underlying ordered structure.
     Einstein--Hilbert~+~$\Lambda$ in $d=4$~(Level~A under A1--A5).
   \item The current best-developed closure is the $\phi$-first one,
     Eq.~\eqref{eq:phi_first_action}~(Level~B).
+  \item The macroscopic scalar variable $\phi$ is interpreted as a
+    reparameterisation of the ordered-branch amplitude $u/u_\infty$,
+    not as an extra fundamental field~(bridge principle; structural).
 \end{enumerate}
 
 \textbf{Not yet established as first-principles theorems:}
