@@ -1076,8 +1076,94 @@ requires an additional isotropy assumption.
 \label{sec:ssb}
 
 The postulates P1--P5 do not yet constitute the full physical theory.
-This section derives the geometric consequences of vacuum ordering~(P4):
-Lorentzian signature, effective time, and the arrow of time.
+This section develops the geometric consequences of vacuum ordering~(P4)
+in three stages.
+First, we recall the dynamical motivation for gradient condensation
+and what the ordered branch means at the level of the Euclidean
+functional (Section~\ref{sec:condensate_dynamics}).
+Second, we derive the unique kinetic tensor of the broken phase and
+classify all possible metric signatures that can emerge from it
+(Sections~\ref{sec:tensor_uniqueness}--\ref{sec:lorentz_window}).
+Third, we identify the Lorentzian hyperbolic branch as the physically
+admissible causal regime and derive the emergent effective metric and
+arrow of time (Sections~\ref{sec:effective_metric}--\ref{sec:arrow_of_time}).
+
+% ────────────────────────────────────────────────────────────────────────
+\subsection{Dynamic motivation for gradient condensation}
+\label{sec:condensate_dynamics}
+
+The minimal bare micro-action~P3 does not itself select a gradient-ordered
+branch: its $\phi^4$ potential is minimised by homogeneous configurations
+with $\partial_A\Phi=0$.  P4 therefore introduces the ordered branch as a
+structural property of the physically realised vacuum sector.
+
+A deeper motivation arises naturally if one considers the most general
+$O(4)$-invariant local Euclidean functional compatible with P1--P2.
+Among the independent $O(4)$-scalars built from $\Phi$ and its
+first derivatives, the combination
+\begin{equation}
+  X \equiv \partial_A\Phi\,\partial_A\Phi
+  \label{eq:X_def}
+\end{equation}
+is the lowest-dimensional gradient invariant.  Allowing a local
+functional $P(X)$ in the Euclidean action,
+\begin{equation}
+  S_E[\Phi]
+  \;\supset\;
+  \int d^4X\,P\!\left(\partial_A\Phi\,\partial_A\Phi\right),
+  \label{eq:PX_action}
+\end{equation}
+is the minimal $O(4)$-invariant extension that couples the action to the
+gradient magnitude rather than solely to the field amplitude.
+
+If $P(X)$ has a stationary point at $X = u_*^2 > 0$,
+\begin{equation}
+  P_X(u_*^2) = 0,\qquad P_{XX}(u_*^2) > 0,
+  \label{eq:PX_minimum}
+\end{equation}
+then the equations of motion admit stationary configurations with
+\begin{equation}
+  \partial_A\Phi\,\partial_A\Phi = u_*^2.
+  \label{eq:gradient_branch}
+\end{equation}
+A representative integrable member of this solution family is
+exactly the background assumed by P4:
+\begin{equation}
+  \Phi_0(X) = u_A\,X^A + \Phi_c,
+  \qquad
+  u_A u_A = u_*^2.
+  \label{eq:gradient_vac}
+\end{equation}
+Since the action depends only on $u_A u_A$ and not on the direction
+of $u_A$, the family of solutions~\eqref{eq:gradient_vac} forms a
+three-sphere of energetically equivalent states.  Choosing one
+particular $u_A$ spontaneously breaks $O(4)\to O(3)$.
+
+It is natural to decompose the gradient into amplitude and orientation,
+\begin{equation}
+  \partial_A\Phi = u\,n_A,
+  \qquad
+  u \equiv \sqrt{\partial_B\Phi\,\partial_B\Phi} \geq 0,
+  \qquad
+  n_A n_A = 1.
+  \label{eq:amplitude_orientation}
+\end{equation}
+The scalar field $u(x)$ describes the \emph{amplitude} of the gradient
+condensate; the unit vector $n_A(x)$ describes its local
+\emph{orientation}.  At the background level $u = u_*$ and
+$n_A = \delta_{Aw}$.
+
+\paragraph{Status of this section.}
+The $P(X)$-extension of the bare action and the gradient-branch
+condition~\eqref{eq:PX_minimum} are presented here as the minimal
+dynamical motivation for P4, not as a derived consequence of P1--P3.
+The specific functional form of $P(X)$, the numerical value of $u_*$,
+and the relation between $u_*$ and the bare parameters $(\mu,\lambda)$
+remain open problems of the ECT foundational program~(OP-grad,
+Level~Open).  The subsequent broken-phase analysis
+(Sections~\ref{sec:tensor_uniqueness}--\ref{sec:arrow_of_time})
+is independent of these open points: it depends only on the ordered
+vacuum~P4 and the broken-phase EFT parameters $(\alpha,\beta)$.
 
 \subsection{Uniqueness of the kinetic tensor after SSB}
 \label{sec:tensor_uniqueness}
@@ -1140,6 +1226,15 @@ confirming that the broken-phase EFT is free of tachyon/ghost pathology.
 \subsection{Eigenvalue analysis and signature classification}
 \label{sec:metric_classification}
 
+The ordered vacuum~P4 singles out one direction $n_A=\delta_{Aw}$, but
+it does not by itself determine the kinetic properties of fluctuations.
+The kinetic tensor $K^{AB}$ is fixed only by the additional EFT
+parameters $(\alpha,\beta)$.  For different values of these parameters
+the broken-phase kinetic operator can be elliptic, degenerate, or
+hyperbolic.  We now classify all three possibilities and identify the
+physical selection criterion that singles out the Lorentzian
+hyperbolic branch as the macroscopically admissible causal regime.
+
 With $n_A = \delta_{Aw}$ (vacuum direction), the tensor~\eqref{eq:K_general}
 becomes diagonal:
 \[
@@ -1160,6 +1255,19 @@ $\alpha > \beta$ & \textbf{Lorentzian} & $w$ becomes time-like \\
 \end{center}
 Lorentzian signature is not postulated but follows from $\alpha>\beta$,
 which is an EFT parameter relation.
+
+\paragraph{Physical viability criterion.}
+The Euclidean and degenerate cases are excluded on physical grounds:
+the Euclidean case ($\alpha<\beta$) admits no causal propagation and
+no arrow of time; the degenerate case ($\alpha=\beta$) loses the
+$w$-direction entirely.  Only the Lorentzian case ($\alpha>\beta$)
+admits a hyperbolic kinetic operator, a well-posed initial-value
+problem, and a notion of causal propagation consistent with the
+macroscopic branch of ECT.  This selection is a consequence of the
+broken-phase EFT structure and the physical admissibility requirement;
+it is \emph{not} an additional axiom.  The quantitative upper bound
+on $\alpha$ from short-distance isotropisation is derived in
+the following section.
 
 \subsection{The Lorentzian window}
 \label{sec:lorentz_window}
