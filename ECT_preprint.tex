@@ -83,19 +83,27 @@ $O(4)\to O(3)$ symmetry breaking of a scalar condensate field~$\Phi$
 on a four-dimensional Euclidean manifold.
 
 \paragraph{Five-postulate foundations.}
-ECT is built on five postulates in three structural layers.
-\textbf{P1--P3} (microscopic layer): Euclidean arena with metric $\delta_{AB}$;
-$O(4)$-invariant dynamics; real scalar microdynamics with bare parameters
-$(\mu^2,\lambda)$.
-\textbf{P4} (vacuum layer): gradient-ordered vacuum sector
-$\langle\partial_A\Phi\rangle = u_0\,\delta_{Aw}$, breaking $O(4)\to O(3)$
-and singling out a preferred direction~$w$.
-\textbf{P5} (coherent topological layer): the coherent sector of the
-effective order parameter $\Phi_{\rm eff}=\rho e^{i\theta}$ is restricted
-to integer winding numbers $\oint\partial_A\theta\,dX^A=2\pi n$.
+ECT is not formulated by postulating the observed macroscopic world
+directly. Instead, it starts from a more primitive Euclidean
+$\Phi$-medium and formalises a minimal set of structural assumptions
+about that medium. These assumptions are organised into three layers.
+\textbf{P1--P3} define the microscopic level: a four-dimensional
+Euclidean arena, an $O(4)$-invariant local action, and a minimal
+real-scalar microdynamics.
+\textbf{P4} specifies that the physical vacuum belongs to an ordered
+branch with nonzero gradient structure, thereby allowing the spontaneous
+breaking $O(4)\to O(3)$ without introducing explicit anisotropy into
+the bare micro-action.
+\textbf{P5} restricts the low-energy coherent sector of the effective
+order parameter $\Phi_{\rm eff}=\rho e^{i\theta}$ to integer winding.
 These five postulates define the common condensate framework from which
-two effective branches emerge: the \emph{geometric branch} (Macroscopic
-Physics) and the \emph{coherent-topological branch} (Quantum Sector).
+two effective branches are then developed: the geometric branch
+(macroscopic causal and gravitational physics) and the
+coherent-topological branch (the pre-quantum sector). The physical
+viability of the macroscopic branch is not imposed as a separate axiom,
+but analysed through the broken-phase kinetic structure, signature
+classification, and the Lorentzian viability window developed later
+in Part~I.
 
 \paragraph{ECT basics: what is established.}
 The foundational sections establish:
@@ -509,13 +517,15 @@ and \emph{open theoretical programs} (Level~C / open problems).
 A summary is given in Table~\ref{tab:ect-levels}.
 
 The paper is organised into four parts.
-\textbf{Part~I (Foundations)} covers the five postulates of ECT
-organised in three structural layers
+\textbf{Part~I (Foundations)} develops the ECT framework from a
+minimal set of postulates about an underlying Euclidean $\Phi$-medium
 (Sections~\ref{sec:postulates}--\ref{sec:branching}):
 the Euclidean arena and scalar microdynamics (P1--P3);
-the gradient-ordered vacuum sector (P4) and the resulting
-$O(4)\to O(3)$ symmetry breaking, Lorentzian signature,
-and arrow of time (Section~\ref{sec:ssb});
+the ordered vacuum branch (P4) and the resulting
+$O(4)\to O(3)$ symmetry breaking;
+the analysis of broken-phase kinetic tensors, signature classes,
+the Lorentzian viability window, and the emergent causal branch
+(Section~\ref{sec:ssb});
 the broken-phase excitation spectrum and EFT dynamics
 (Section~\ref{sec:broken_spectrum});
 fundamental scales, matching relations, and the parameter hierarchy
@@ -608,14 +618,24 @@ observational studies.
 \section{Postulates of Euclidean Condensate Theory}
 \label{sec:postulates}
 
-Euclidean Condensate Theory (ECT) is formulated on five postulates
-together with one relational operational principle.
+Euclidean Condensate Theory (ECT) starts not from already formed
+spacetime, matter, or energy in their familiar late-physics sense,
+but from a more primitive Euclidean $\Phi$-medium.
+The role of the foundational postulates is not to impose
+the observed macroscopic world by hand, but to formalise the minimal
+structural properties that such a medium must possess if causal
+structure, geometry, and gravitational dynamics are to emerge from it.
+
 The postulates are organised in three structural layers:
-(i)~the \emph{microscopic} arena and field dynamics (P1--P3);
-(ii)~the \emph{vacuum-ordering} condition (P4);
+(i)~the \emph{microscopic} arena and local field dynamics (P1--P3);
+(ii)~the \emph{ordered vacuum branch} (P4);
 (iii)~the \emph{coherent topological} sector (P5).
-All further structures developed in this work arise as
-consequences of these assumptions.
+The later analysis of kinetic tensors, signature classes, and the
+Lorentzian window~(Section~\ref{sec:metric_classification}) is not
+an extra postulate but the dynamical branch-selection analysis of the
+broken phase.
+All further structures developed in this work arise as consequences
+of these postulates combined with that analysis.
 
 \subsection{Glossary of terms}
 \label{subsec:glossary}
@@ -629,25 +649,31 @@ distinct meanings in ECT.
 microscopic degree of freedom: a real scalar defined on~$\mathcal{M}^4$.
 
 \medskip
-\noindent\textbf{Vacuum} --- the ground (lowest-energy) state
-of~$\Phi$. In ECT this vacuum is ordered: it carries a non-zero
-gradient condensate, as specified by postulate~P4 (see below).
+\noindent\textbf{Vacuum} --- a stationary, physically admissible
+background branch of the fundamental $\Phi$-medium.
+In the present ECT construction the physically relevant vacuum branch
+is ordered: it carries a non-zero gradient condensate, as specified
+by postulate~P4.
 
 \medskip
-\noindent\textbf{Condensate} --- a physical property of the vacuum:
-$\langle\partial_A\Phi\rangle \neq 0$. Not an object, but a state.
+\noindent\textbf{Condensate} --- a property of an ordered branch of
+the $\Phi$-medium, here characterised by
+$\langle\partial_A\Phi\rangle \neq 0$.
+It is not an additional object but a state of the underlying medium.
 
 \medskip
-\noindent\textbf{Order parameter} --- a collective variable
-of the coherent vacuum sector,
+\noindent\textbf{Order parameter} --- a collective infrared variable
+of the coherent broken phase,
 $\Phi_{\rm eff} = \rho\,e^{i\theta}$,
-describing low-energy excitations above the condensate.
-Introduced at the EFT level after SSB, not at the fundamental level.
+describing low-energy excitations above the ordered branch.
+It is introduced only at the effective level after symmetry breaking,
+not at the level of the bare micro-action.
 
 \medskip
-\noindent\textbf{Orientation variable~$n_A$} --- a collective
-variable of the broken phase describing the direction of the condensate.
-Introduced at the vacuum level; it does not appear in the fundamental action.
+\noindent\textbf{Orientation variable~$n_A$} --- a collective variable
+of the broken phase describing the local direction of the condensate.
+It is part of the ordered-branch description and does not appear as an
+independent field in the bare micro-action.
 
 \subsection{List of postulates}
 \label{subsec:postulate_list}
@@ -674,21 +700,23 @@ This expresses the equivalence of all four directions in the
 unbroken phase.
 
 \medskip
-\noindent\textbf{P3 --- Scalar microdynamics.}
+\noindent\textbf{P3 --- Minimal scalar microdynamics.}
 \label{eq:P3}
 The fundamental field is a real scalar $\Phi(X)$ on $\mathcal{M}^4$.
-Its bare micro-action takes the standard $\phi^4$ form:
+At the bare microscopic level we adopt the minimal local real-scalar
+realisation:
 \begin{equation}
   \label{eq:ECT_action}
-  S_E[\Phi] = \int d^4X\!\left\{
+  S_E^{\rm bare}[\Phi] = \int d^4X\!\left\{
     \frac{1}{2}(\partial_A\Phi)^2 + V(\Phi)
   \right\},
   \qquad
   V(\Phi) = -\frac{\mu^2}{2}\Phi^2 + \frac{\lambda}{4}\Phi^4,
   \quad \mu^2>0,\;\lambda>0.
 \end{equation}
-This action does not contain the orientation variable~$n_A$
-explicitly; $n_A$ appears only after vacuum ordering.
+This is the minimal isotropic bare micro-action used throughout the
+foundational construction. It does not contain the orientation
+variable~$n_A$ explicitly; $n_A$ appears only after vacuum ordering.
 
 The double-well potential in P3 is a \emph{two-well $\phi^4$ potential}
 encoding a discrete $\mathbb{Z}_2$ symmetry $\Phi\to-\Phi$.
@@ -696,29 +724,48 @@ It is not the ``mexican hat'' potential (which applies to a complex or
 multi-component field), and does not by itself create a continuous
 vacuum manifold or the topological structure of P5.
 
+This minimal bare action should not be confused with the most general
+effective Euclidean functional compatible with P1--P2. Additional
+gradient-sensitive structures of the type
+$P(X)$, $X\equiv(\partial_A\Phi)^2$, may arise in the ordered-sector
+analysis and provide the dynamical origin of gradient condensation;
+they are not inserted into the bare microscopic starting point
+(see the foundational program described in
+Section~\ref{sec:postulates} and open problem~OP-grad).
+
 \medskip
-\noindent\textbf{P4 --- Gradient-ordered vacuum sector.}
+\noindent\textbf{P4 --- Ordered vacuum branch.}
 \label{eq:P4}
-The physical vacuum is characterised by a non-zero gradient condensate
-selecting a preferred direction:
+The physically relevant vacuum sector of ECT belongs to an ordered
+branch of the $\Phi$-medium characterised by a non-zero gradient
+condensate selecting a preferred direction:
 \begin{equation}
   \label{eq:gradient_condensate}
   \langle\partial_A\Phi\rangle = u_0\,\delta_{Aw},
   \qquad u_0 > 0,
 \end{equation}
 where $w\equiv X^4$ and $u_0$ is the \emph{gradient condensate amplitude}.
-The corresponding integrable background profile is:
+A representative integrable background of this ordered branch is
 \begin{equation}
   \label{eq:background}
   \Phi_{\rm bg}(X) = u_0\,w + \Phi_*,\qquad \Phi_*=\text{const}.
 \end{equation}
+Thus the physical vacuum is not specified by a homogeneous field value
+alone but by an ordered branch with nontrivial gradient structure.
 This background is \emph{not} a stationary point of the bare
-micro-action~P3; it defines the ordered vacuum sector postulated
-by~P4.
-Detailed analysis of the background splitting is given in
-Appendix~\ref{app:background_split}.
+micro-action~P3; detailed analysis of the background splitting is given
+in Appendix~\ref{app:background_split}.
 
-This postulate introduces a second mass parameter distinct from $\phi_0$:
+This ordered branch breaks $O(4)\to O(3)$ spontaneously and thereby
+supplies the order parameter needed for the later causal and geometric
+development. In the minimal bare micro-action~P3 this branch is not
+generated automatically; at the present stage it is introduced as a
+structural property of the physically realised vacuum sector. Its
+deeper dynamical origin from a gradient-sensitive Euclidean functional
+$P(X)$, $X=(\partial_A\Phi)^2$, is part of the foundational program
+(Level~Open; OP-grad).
+
+P4 introduces a second amplitude scale distinct from $\phi_0$:
 \begin{center}
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{lll}
@@ -726,12 +773,12 @@ This postulate introduces a second mass parameter distinct from $\phi_0$:
 Symbol & Definition & Level \\
 \hline
 $\phi_0 = \sqrt{\mu^2/\lambda}$ & local minimum of bare $V(\Phi)$ & P3 \\
-$u_0 = |\langle\partial_A\Phi\rangle|$ & gradient condensate amplitude & P4 \\
+$u_0 = |\langle\partial_A\Phi\rangle|$ & gradient condensate amplitude of the ordered branch & P4 \\
 \hline
 \end{tabular}
 \end{center}
-These are independent parameters; their relationship requires
-additional matching~(OP-grad).
+These are independent parameters; their relation is not imposed
+kinematically and requires separate dynamical matching~(OP-grad).
 
 \medskip
 \noindent\textbf{P5 --- Global topological coherence.}
@@ -780,8 +827,9 @@ The five postulates are logically independent:
   \item P2 does not follow from P1: the action need not be $O(4)$-invariant;
   \item P3 does not follow from P1--P2: the field content
     and potential must be separately specified;
-  \item P4 does not follow from P1--P3: vacuum ordering is a
-    separate structural assumption;
+  \item P4 does not follow from P1--P3: the existence of a physically
+    realised ordered vacuum branch is an additional structural assumption
+    beyond the minimal bare micro-action;
   \item P5 does not follow from P1--P4: coherence in the topological
     sector is an independent restriction.
 \end{itemize}
@@ -865,7 +913,7 @@ Any action that explicitly singles out one of the four directions
 of~$\mathcal{M}^4$. All anisotropy appearing in the theory is
 spontaneous, not explicit.
 
-\subsubsection*{P3 --- Scalar microdynamics}
+\subsubsection*{P3 --- Minimal scalar microdynamics}
 
 \paragraph{Physical meaning.}
 The sole fundamental dynamical object of the theory is a real
@@ -907,53 +955,60 @@ There are no fundamental spinors, vectors, or tensors.
 If such objects appear, they do so only as effective excitations
 or collective variables at a higher level of description.
 
-\subsubsection*{P4 --- Gradient-ordered vacuum sector}
+\subsubsection*{P4 --- Ordered vacuum branch}
 
 \paragraph{Physical meaning.}
-The vacuum of ECT is an ordered state in which the mean gradient
-is non-zero and directed along one of the four Euclidean directions.
-This ordering is what renders the physics of ECT non-trivial.
+The vacuum of ECT is not specified merely by a homogeneous amplitude
+of the fundamental scalar. The physically relevant sector belongs to
+an ordered branch in which the mean gradient is non-zero and directed
+along one of the four Euclidean directions. This ordering is what
+makes the subsequent broken-phase physics non-trivial.
 
-\paragraph{Why the gradient condenses.}
-The expectation value $\langle\Phi\rangle=\phi_0\neq 0$
-is $O(4)$-invariant: a scalar is unchanged under rotations and does
-not break the symmetry.
-The vector $\partial_A\Phi$ transforms non-trivially.
+\paragraph{Why the gradient is the relevant order parameter.}
+The expectation value $\langle\Phi\rangle=\phi_0\neq 0$ is
+$O(4)$-invariant: a scalar does not distinguish directions and therefore
+does not by itself break the Euclidean symmetry.
+By contrast, $\partial_A\Phi$ transforms as a vector under $O(4)$.
 A non-zero expectation value
-$\langle\partial_A\Phi\rangle = u_0\,\delta_{Aw}$ selects the
-direction~$w$ and breaks $O(4)$ to $O(3)$.
-Within the present minimal single-field ECT framework,
-the gradient condensate is the natural and essentially unique way to
-obtain a vacuum that lowers the symmetry from $O(4)$ to $O(3)$
-without introducing additional fundamental fields or explicit
-symmetry breaking in the micro-action.
+$\langle\partial_A\Phi\rangle = u_0\,\delta_{Aw}$
+selects the direction~$w$ and breaks $O(4)$ to $O(3)$.
+Within the present minimal single-field ECT framework, the gradient
+condensate is therefore the minimal order parameter capable of producing
+directional ordering without introducing additional fundamental fields
+or explicit anisotropy into the bare micro-action.
+
+\paragraph{On the status of P4.}
+In the minimal bare action~P3 the standard $\phi^4$ potential reaches
+its minimum on homogeneous configurations with $\partial_A\Phi=0$.
+Therefore the ordered branch of ECT is not yet a theorem of the bare
+micro-action alone.
+At this stage P4 is a structural statement about which vacuum branch
+of the $\Phi$-medium is physically realised.
+This is already more informative than simply postulating a preferred
+direction by hand: the preferred direction appears only through the
+ordered branch, not through explicit anisotropy in the microscopic
+action.
+A deeper derivation of the ordered branch from a more general
+gradient-sensitive Euclidean functional $P(X)$,
+$X\equiv(\partial_A\Phi)^2$, with a minimum at $X=u_*^2>0$ is
+an open foundational problem~(OP-grad) and is part of the ongoing
+development of ECT.
 
 \paragraph{On notation.}
 The expectation values $\langle\Phi\rangle=\phi_0$ and
-$|\langle\partial_A\Phi\rangle|=u_0$ have different physical
-meanings and dimensions:
-$[\phi_0]=\text{GeV}$ and $[u_0]=\text{GeV}^2$ in natural units.
-They are not identified.
-
-\paragraph{Status of P4.}
-The potential $V(\Phi)$ from~P3 does \emph{not} automatically generate
-$\langle\partial_A\Phi\rangle\neq 0$: the minimum of the standard
-$\phi^4$-potential is reached at a spatially homogeneous configuration
-with $\partial_A\Phi=0$.
-Thus P4 is \emph{not} a mathematical consequence of~P3.
-Deriving the gradient condensate from a more fundamental action ---
-for example a $P(X)$-type theory with $X=(\partial_A\Phi)^2$
-and a minimum at $X=u_0^2$ --- is an open problem~(OP-grad).
-At the current stage P4 is accepted as an independent condition
-on the vacuum sector of ECT.
+$|\langle\partial_A\Phi\rangle|=u_0$ have different physical meanings
+and different dimensions:
+$[\phi_0]=\mathrm{GeV}$ and $[u_0]=\mathrm{GeV}^2$ in natural units.
+They should not be identified.
 
 \paragraph{The orientation variable.}
 In the broken phase the collective orientation variable~$n_A$
 describes the local direction of the condensate.
 In the vacuum background $\langle n_A\rangle=\delta_{Aw}$.
 The relation $n_A=\partial_A\Phi/|\partial\Phi|$ is an identification
-in the background solution, not a point-wise algebraic substitution
-acting at the level of the fundamental action.
+valid on the ordered branch and in its long-wavelength description;
+it is not a point-wise algebraic substitution acting at the level of
+the bare microscopic action.
 
 \subsubsection*{P5 --- Global topological coherence}
 
