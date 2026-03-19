@@ -8619,13 +8619,20 @@ $\Delta D_L/D_L$ at $z=10$ & $-5.4\%$ \\
 Inferred $\Delta L/L$ at $z=10$ & $\approx -10\%$ \\
 Growth proxy $\mathcal{G}$ at $z=10$ & $1.016$ \\
 $g^\dagger_{\rm bg}(z=10)/g^\dagger_{\rm bg}(0)$ & $21.5$ \\
-$t_{\rm U}(z=10)^{\rm ECT}$ & $0.44$\,Gyr \\
-$t_{\rm U}(z=10)^{\Lambda{\rm CDM}}$ & $0.47$\,Gyr \\
-Galaxy age (obs $z=10$, form $z=20$)$^{\rm ECT}$ & $0.27$\,Gyr \\
-Galaxy age (obs $z=10$, form $z=20$)$^{\Lambda{\rm CDM}}$ & $0.29$\,Gyr \\
+$t_{\rm U}(z=10)^{\rm ECT}$ (benchmark) & $0.44$\,Gyr \\
+$t_{\rm U}(z=10)^{\Lambda{\rm CDM}}$ (reference) & $0.47$\,Gyr \\
+Galaxy age (obs $z=10$, form $z=20$)$^{\rm ECT}$ (benchmark) & $0.27$\,Gyr \\
+Galaxy age (obs $z=10$, form $z=20$)$^{\Lambda{\rm CDM}}$ (reference) & $0.29$\,Gyr \\
 \hline\hline
 \end{tabular}
 \end{table}
+
+\noindent
+\textit{Status note.}
+The age-related entries in Table~\ref{tab:ect_hubble_jwst_summary}
+should be read as benchmark-level late-time closure outputs,
+because the present high-redshift continuation is not yet the final
+self-consistent ECT completion of the background branch.
 
 \subsubsection*{Numerical robustness under admissible late-time deformations}
 \label{sec:late_cosmo_robustness_main}
@@ -18519,6 +18526,152 @@ understood in the sense of the ordered-branch EFT-to-macroscopic mapping
 described in Section~\ref{sec:closure_function_mapping}.
 It derives the minimal ECT background apparatus used for the
 late-time cosmology calculations in Section~\ref{sec:hubble_jwst}.
+
+\subsection{Derived condensate amplitude dynamics}
+\label{sec:late_condensate_dynamics}
+
+Before specialising to the benchmark late-time closure, it is useful
+to record what the ordered-branch EFT already fixes at the structural
+level.
+The ordered-branch amplitude field $u(x)$ satisfies the Euclidean EFT
+\begin{equation}
+S_{\rm ord}^{(E)}[u,n]
+=
+\int d^4X\,
+\left[
+\frac{Z_u}{2}(\partial u)^2
++\frac{Z_n}{2}u^2(\partial n)^2
++W(u)
++\cdots
+\right],
+\label{eq:ordered_branch_eft_full}
+\end{equation}
+where $W(u)$ is the branch potential and $u_\infty$ is the late-time
+screened amplitude satisfying $W_u(u_\infty)=0$.
+
+The macroscopic amplitude variable is defined by the amplitude ratio:
+\begin{equation}
+\boxed{
+\phi \equiv \frac{1}{\beta}\ln\!\frac{u}{u_\infty}}
+\qquad\Longleftrightarrow\qquad
+\boxed{u = u_\infty\, e^{\beta\phi}.}
+\label{eq:phi_amplitude_relation}
+\end{equation}
+This gives the response factor its structural origin:
+$F(\phi)=u/u_\infty=e^{\beta\phi}$.
+
+\paragraph{Derived kinetic function.}
+Substituting $u=u_\infty e^{\beta\phi}$ into the kinetic term:
+\begin{equation}
+\frac{Z_u}{2}(\partial u)^2
+=
+\frac{Z_u \beta^2 u_\infty^2}{2}\,e^{2\beta\phi}(\partial\phi)^2
+\equiv
+\frac{\omega_0}{2}\,e^{2\beta\phi}(\partial\phi)^2.
+\label{eq:derived_kinetic}
+\end{equation}
+The derived kinetic closure is therefore
+\begin{equation}
+\boxed{\omega(\phi) = \omega_0\,e^{2\beta\phi}},
+\label{eq:derived_omega}
+\end{equation}
+not a constant $K_0$.  The benchmark $K(\phi)=K_0$ arises only as
+the leading local approximation of $\omega(\phi)$ around $\phi=0$.
+
+\paragraph{Derived potential.}
+The branch potential maps directly to the macroscopic potential via:
+\begin{equation}
+\boxed{U(\phi) = W(u_\infty\,e^{\beta\phi}).}
+\label{eq:derived_potential}
+\end{equation}
+Near the screened branch $\phi=0$, expanding $W(u)$ around $u_\infty$:
+\begin{equation}
+U(\phi)
+=
+W_\infty
++\frac{m_u^2 u_\infty^2}{2}(e^{\beta\phi}-1)^2
++\frac{c_3 u_\infty^3}{3!}(e^{\beta\phi}-1)^3
++\frac{c_4 u_\infty^4}{4!}(e^{\beta\phi}-1)^4+\cdots,
+\label{eq:derived_potential_expanded}
+\end{equation}
+which reduces to the benchmark quadratic $V_0+\frac12 m_\phi^2\phi^2$
+at leading order in $\phi$, while encoding the full nonlinear amplitude
+dependence at larger $|\phi|$.
+
+\paragraph{Full derived condensate background system.}
+The full macroscopic action with derived closure functions is:
+\begin{equation}
+S_{\rm full}
+=
+\int d^4x\,\sqrt{-g}\,
+\Bigl[
+\tfrac12 e^{\beta\phi}R
+-\tfrac{\omega_0}{2}\,e^{2\beta\phi}(\nabla\phi)^2
+-U(\phi)
+\Bigr]
++S_m+S_r.
+\label{eq:full_condensate_action}
+\end{equation}
+For homogeneous FRW with $\phi=\phi(t)$ this gives the
+\emph{derived condensate background system}:
+\begin{align}
+3e^{\beta\phi}H^2
+&=
+\rho_m+\rho_r+\tfrac12\omega(\phi)\dot\phi^2+U(\phi)
+-3H\,\beta e^{\beta\phi}\dot\phi,
+\label{eq:condensate_friedmann1}
+\\
+-2e^{\beta\phi}\dot H
+&=
+\rho_m+\tfrac43\rho_r+\omega(\phi)\dot\phi^2
++\beta^2 e^{\beta\phi}\dot\phi^2+\beta e^{\beta\phi}\ddot\phi
+-H\,\beta e^{\beta\phi}\dot\phi,
+\label{eq:condensate_friedmann2}
+\\
+\omega(\phi)\bigl(\ddot\phi+3H\dot\phi+\beta\dot\phi^2\bigr)
+&+U_{,\phi}
+-3\beta e^{\beta\phi}(2H^2+\dot H)=0.
+\label{eq:condensate_scalar}
+\end{align}
+
+In the $N=\ln a$ form with $q\equiv d\phi/dN$, the Friedmann equation
+becomes the algebraic relation
+\begin{equation}
+\boxed{
+E^2(N)=
+\frac{
+\Omega_{m*}e^{-3N}
++\Omega_{r*}e^{-4N}
++\Omega_U(\phi)
+}{
+e^{\beta\phi}(1+\beta q)
+-\tfrac{\omega_0}{6}e^{2\beta\phi}q^2
+}},
+\label{eq:condensate_E2_N}
+\end{equation}
+where $\Omega_U(\phi)\equiv U(\phi)/(3\bar M_{\rm Pl}^2 H_*^2)$.
+The benchmark $K(\phi)=K_0$ denominator is the $\phi\to 0$ limit
+of this expression.
+The scalar equation in $N$-variables is
+\begin{equation}
+\omega_0 e^{2\beta\phi}
+\Bigl[
+\phi''+(3+E'/E)\phi'+\beta(\phi')^2
+\Bigr]
++
+\frac{3\,\Omega_{U,\phi}}{E^2}
+-3\beta e^{\beta\phi}(2+E'/E)=0.
+\label{eq:condensate_scalar_N}
+\end{equation}
+
+\paragraph{Status.}
+Equations~\eqref{eq:condensate_E2_N}--\eqref{eq:condensate_scalar_N}
+are structurally derived from the ordered-branch EFT (Level~A/bridge),
+with $\omega_0$, $m_u$, and $c_3,c_4$ remaining Level~B coefficients.
+The current benchmark closure corresponds to the $\phi\to 0$ local
+truncation; the full derived system~\eqref{eq:condensate_E2_N} is
+required for a self-consistent high-$z$ background branch
+that does not rely on an interim matter+radiation tail.
 
 \subsection{Effective action and FRW reduction}
 
