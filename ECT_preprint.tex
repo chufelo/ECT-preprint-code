@@ -8781,7 +8781,8 @@ D^{\prime\prime}+\Bigl(2+\tfrac{H^{\prime}}{H}\Bigr)D^{\prime}
 -\frac{3}{2}\Omega_m(z)\frac{G_{\rm eff}(z)}{G_N}D=0
 \]
 has been solved numerically on the derived-parent background
-(not replaced by a heuristic proxy).
+(not replaced by a heuristic proxy);
+its derivation is given in Appendix~\ref{sec:ect_linear_growth_derivation}.
 The result is that the derived-parent corridor does \emph{not} resolve the
 JWST tension through linear growth alone: for the representative working
 points, $D(z=10)/D_{\rm ref}(z=10)\approx 0.98$--$0.99$,
@@ -8801,6 +8802,10 @@ system at $z=7.3$, and RUBIES-EGS-QG-1 at $z=4.90$) shows:
   $\mathcal R_{\rm BH}\equiv (D_{\rm ECT}/D_{\rm ref})\cdot(t_{\rm BH}^{\rm ref}/t_{\rm BH}^{\rm ECT})\approx 1.48$--$1.54$
   is clearly above the required threshold.
 \end{enumerate}
+The precise definitions and status of these semi-analytic maturity
+factors are recorded in Appendix~\ref{sec:ect_maturity_factors}.
+These factors should be read as semi-analytic development budgets rather
+than direct morphology-level predictions.
 Therefore the present derived-parent ECT corridor already provides a
 quantitatively plausible partial mechanism for BH-assisted and compact-core
 driven early maturity, while for ordinary galaxy-assembly channels the
@@ -8840,7 +8845,7 @@ JWST has revealed early candidates for overmassive SMBHs relative to
 their stellar host galaxies~\cite{Juodzbalis2024,Maiolino2024},
 very early luminous and massive galaxy
 systems (including spectroscopically confirmed objects at
-$z\gtrsim 14$~\cite{Carniani2024,Finkelstein2022}),
+$z\gtrsim 14$~\cite{Carniani2024}),
 and massive quiescent galaxies at unexpectedly high
 redshifts~\cite{deGraaff2024,Nanayakkara2024,BoylanKolchin2023}.
 A notable signature is the displacement of some early objects along the
@@ -8848,6 +8853,8 @@ $M_{\rm BH}$--$M_\star$ relation while remaining closer to the local
 $M_{\rm BH}$--$\sigma$ relation~\cite{Juodzbalis2024}, which is
 qualitatively consistent with a maturity channel where central compact
 objects develop faster than the stellar host component.
+This complements earlier evidence of unusually luminous and active
+objects at $z\sim 10$--$11$, such as GN-z11~\cite{Maiolino2024,Bunker2023}.
 These observations do not prove ECT, but they motivate precisely the
 accelerated maturity channels identified here.
 
@@ -19259,6 +19266,7 @@ D''+\left(2+\frac{H'}{H}\right)D'
 is solved on the already-determined derived-parent background.
 This replaces the earlier use of the proxy
 $\mathcal G(z)=G_{\rm eff}(z)/H^2(z)$ as the sole indicator of growth.
+Its derivation is recorded in Appendix~\ref{sec:ect_linear_growth_derivation}.
 
 \paragraph{(iv) JWST object age budgets.}
 The age of the Universe at the redshift of observation is then computed
@@ -19290,6 +19298,8 @@ In the current implementation this is done through
 where $t_{\rm ff}\propto (G_{\rm eff}\rho)^{-1/2}$ and
 $t_{\rm BH}\propto G_{\rm eff}^{-1}$ are the present semi-analytic
 collapse and BH-growth proxies.
+Their status and derivation are recorded in
+Appendix~\ref{sec:ect_maturity_factors}.
 This pipeline does not yet constitute a full morphology-level treatment,
 but it already provides a quantitatively structured test of whether one
 and the same ECT parameter corridor can simultaneously address the
@@ -19301,6 +19311,146 @@ The present pipeline reaches the level of a solved background, solved
 linear growth, and semi-analytic maturity accounting.
 It does not yet include full morphology-level calculations, hydrodynamic
 structure formation, or direct SMBH--host coevolution simulations.
+In the present code implementation this pipeline is represented by
+machine-readable outputs for the derived-parent scan, the selected
+working points, the JWST object age budgets, the solved linear-growth
+table, and the combined maturity budgets.
+
+\subsection{Derivation of the linear growth equation on the ECT background}
+\label{sec:ect_linear_growth_derivation}
+
+The linear-growth layer used in the present JWST analysis is not
+introduced independently of the background dynamics.
+Rather, it is the first perturbative extension of the derived-parent ECT
+background in the pressureless subhorizon regime.
+
+\paragraph{Assumptions.}
+We work in the matter-dominated perturbation sector, neglect pressure and
+anisotropic stress, and restrict attention to subhorizon scales for
+which the dominant effect of the modified background is captured by the
+time-dependent effective gravitational coupling
+\[
+G_{\rm eff}(z)=G_N e^{-\beta\phi(z)}.
+\]
+At this level the ECT modification enters primarily through:
+\begin{enumerate}
+  \item the modified background expansion $H(z)$;
+  \item the modified source strength $G_{\rm eff}(z)$.
+\end{enumerate}
+
+\paragraph{Perturbation equations.}
+For the matter overdensity $\delta=\delta\rho_m/\rho_m$, the continuity
+and Euler equations combine with the modified Poisson equation to give
+\[
+\ddot{\delta}+2H\dot{\delta}
+=
+4\pi G_{\rm eff}(z)\rho_m\,\delta.
+\]
+Using
+\[
+\rho_m(z)=3\bar M_{\rm Pl}^2 H^2(z)\,\Omega_m(z),
+\]
+this becomes
+\[
+\ddot{\delta}+2H\dot{\delta}
+=
+\frac{3}{2}H^2(z)\,\Omega_m(z)\frac{G_{\rm eff}(z)}{G_N}\,\delta.
+\]
+
+\paragraph{Conversion to $N=\ln a$.}
+Writing
+\[
+D(N)\equiv \delta(N),
+\qquad
+{}' \equiv \frac{d}{dN},
+\]
+one has
+\[
+\dot{\delta}=H D',
+\qquad
+\ddot{\delta}=H^2 D''+\dot H\,D'.
+\]
+Dividing the perturbation equation by $H^2$ and using
+$\dot H/H^2=H'/H$ gives
+\begin{equation}
+D''+\left(2+\frac{H'}{H}\right)D'
+-\frac{3}{2}\Omega_m(z)\frac{G_{\rm eff}(z)}{G_N}D=0.
+\label{eq:ect_linear_growth}
+\end{equation}
+For numerical work,
+\[
+\Omega_m(z)=\frac{\Omega_{m*}(1+z)^3}{E^2(z)},
+\qquad
+E(z)\equiv \frac{H(z)}{H_*}.
+\]
+
+\paragraph{Status.}
+Equation~\eqref{eq:ect_linear_growth} is a derived perturbative layer on
+top of the already solved ECT background.
+Its validity is limited to the linear, pressureless, subhorizon regime.
+It should therefore be interpreted as the first non-background test of
+structure development in ECT, not as a full morphology-level treatment.
+
+\subsection{Semi-analytic maturity factors for collapse and BH-assisted development}
+\label{sec:ect_maturity_factors}
+
+The present JWST analysis does not yet attempt a full morphology-level
+simulation of galaxy or SMBH formation.
+Instead, it supplements the solved background and solved linear growth
+with two semi-analytic local development factors.
+
+\paragraph{Free-fall / collapse factor.}
+For a self-gravitating region of characteristic density $\rho$, the
+free-fall timescale scales as
+\[
+t_{\rm ff}\sim (G_{\rm eff}\rho)^{-1/2}.
+\]
+Hence the relative collapse acceleration between the ECT background and
+the reference background is estimated through
+\[
+\frac{t_{\rm ff}^{\rm ref}}{t_{\rm ff}^{\rm ECT}}
+=
+\sqrt{\frac{G_{\rm eff}^{\rm ECT}}{G_N}}
+=
+e^{-\beta\phi(z)/2}.
+\]
+
+\paragraph{BH-growth-like factor.}
+For BH-assisted maturity channels, the present implementation uses a
+Salpeter-like local estimate in which the characteristic growth time is
+taken to scale as $t_{\rm BH}\propto G_{\rm eff}^{-1}$, giving
+\[
+\frac{t_{\rm BH}^{\rm ref}}{t_{\rm BH}^{\rm ECT}}
+=
+\frac{G_{\rm eff}^{\rm ECT}}{G_N}
+=
+e^{-\beta\phi(z)}.
+\]
+
+\paragraph{Combined maturity factors.}
+The current article defines
+\begin{equation}
+\mathcal R_{\rm gal}
+=
+\frac{D_{\rm ECT}}{D_{\rm ref}}
+\frac{t_{\rm ff}^{\rm ref}}{t_{\rm ff}^{\rm ECT}},
+\qquad
+\mathcal R_{\rm BH}
+=
+\frac{D_{\rm ECT}}{D_{\rm ref}}
+\frac{t_{\rm BH}^{\rm ref}}{t_{\rm BH}^{\rm ECT}}.
+\label{eq:ect_maturity_factors}
+\end{equation}
+
+\paragraph{Status.}
+These factors are not a substitute for full structure-formation
+simulations.
+They are controlled first-order development proxies whose purpose is to
+test whether the same ECT parameter corridor that improves the Hubble
+shift can also plausibly compensate the tighter high-redshift age
+budget.
+These factors should be read as semi-analytic development budgets rather
+than direct morphology-level predictions.
 
 \subsection{Slow-drift regime and present-epoch Hubble shift}
 
