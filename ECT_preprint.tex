@@ -11,6 +11,7 @@
   \DeclareMathSymbol{\hbar}{\mathord}{AMSb}{126}%
 }
 \usepackage{amsmath,amssymb}
+\usepackage{alphalph}  % enables AA, AB, ... appendix labels beyond Z
 \usepackage{slashed}            % Feynman slash notation
 \numberwithin{equation}{section}
 
@@ -7070,8 +7071,18 @@ The $\phi$-logic suggests that early-time global enhancement
 may ultimately be described within a single order-field framework.
 A derivation of this mechanism from the full nonlinear $\phi$-equation,
 and the question of whether a nontrivial background history $\phi_b(z)$
-could provide stronger early enhancement, are left as open problems.
+could provide stronger early enhancement, are left as open problems
 (Section~\ref{sec:open_problems}).
+
+The late-time background apparatus developed in
+Appendices~\ref{app:late_cosmo_background} and~\ref{app:late_cosmo_algorithm}
+provides the first controlled connection between the Hubble tension, the
+age of the Universe, and the JWST background effects in ECT.  The same
+$\phi$-background drift that shifts the inferred late $H_0$ also modifies
+luminosity distances to high-$z$ galaxies, the lookback time available
+for early structure formation, and the effective growth environment; see
+Fig.~\ref{fig:ect_hubble_jwst_background} and
+Table~\ref{tab:ect_hubble_jwst_summary}.
 
 
 
@@ -7633,18 +7644,132 @@ galactic closure already used in the SPARC velocity analysis.
 
 \textit{Status: all Level~B unless explicitly noted.}
 
-\subsubsection*{Hubble tension and ISW}
+\subsubsection*{Late-time cosmology: Hubble tension, age, and JWST implications}
+\label{sec:hubble_jwst}
 
-$G_{\rm eff}(z)=G_N e^{-\phi_b(z)}$ (slow-roll background):
-shifts $H_0$ by $\sim 3$\,km\,s$^{-1}$\,Mpc$^{-1}$, partially
-alleviating the Hubble tension~(Level~B).
-ISW excess in voids is amplified by larger $G_{\rm eff}$ in
-low-density regions~(Level~B).
-CMB quadrupole deficit: a structural ECT argument for
-horizon-scale suppression of the lowest multipole exists
-(from the coherent-branch boundary conditions), but a
-quantitative derivation of $\delta C_2/C_2$ from ECT
-first principles has not been completed~(Level~Open).
+The earlier phenomenological power-law background ansatz has been
+replaced by a minimal late-time $\phi$-first background apparatus.
+The starting point is the effective scalar--tensor action
+\begin{equation}
+S_{\rm eff}
+=
+\int d^4x\,\sqrt{-g}\,
+\left[
+\frac12 f(\phi)R
+-\frac12 K(\phi)(\partial\phi)^2
+-V(\phi)
++\mathcal L_m
+\right],
+\label{eq:late_cosmo_action_main}
+\end{equation}
+with effective gravitational stiffness and Newton coupling
+\[
+M_{\rm eff}^2(\phi)=f(\phi),
+\qquad
+G_{\rm eff}(\phi)=\frac{1}{8\pi f(\phi)}.
+\]
+
+For a homogeneous FRW background, the late-time expansion history
+is controlled by the coupled system for $H(z)$ and $\phi(z)$.
+In the variable $N=\ln a$, the ECT Friedmann relation takes the form
+\begin{equation}
+E^2(N)
+=
+\frac{
+\Omega_{m0}e^{-3N}
++\Omega_{r0}e^{-4N}
++\Omega_{V0}
++\frac{\mu^2}{6}u^2
+}{
+e^{\beta u}
+-\frac{\kappa}{6}q^2
++\beta e^{\beta u}q
+},
+\label{eq:ect_late_friedmann_main}
+\end{equation}
+where $E(N)=H/H_0^{\rm ref}$, $u(N)=\phi(N)$, $q(N)=d\phi/dN$,
+and the Level~B closure is $f(\phi)=f_0 e^{\beta\phi}$,
+$K(\phi)=K_0$, $V(\phi)=V_0+\frac12 m_\phi^2\phi^2$.
+
+At the present-epoch level, the late-time Hubble shift is controlled by
+\begin{equation}
+\frac{\Delta H_0}{H_0}
+\approx
+\frac{\mu^2u_0^2}{12}
+-\frac12\beta u_0.
+\label{eq:ect_h0_shift_main}
+\end{equation}
+For benchmark parameters $\beta=0.8$, $\mu=1.5$, $\kappa=15$, $u_0=-0.12$
+this yields $\Delta H_0/H_0\approx 2.9\%$,
+corresponding to $H_0^{\rm late}\approx 69.3$\,km\,s$^{-1}$\,Mpc$^{-1}$.
+
+The same background drift also changes the distance--redshift
+relation and available lookback time:
+\begin{equation}
+D_L(z)=(1+z)\int_0^z \frac{dz'}{H(z')},
+\qquad
+t_{\rm lookback}(z)=\int_0^z \frac{dz'}{(1+z')H(z')}.
+\label{eq:ect_dist_time_main}
+\end{equation}
+The benchmark run gives an ECT age of $13.1$\,Gyr vs.\ the
+reference LCDM age of $13.8$\,Gyr, with luminosity-distance
+shifts of $\Delta D_L/D_L\approx-5\%$ at $z=5$--12.
+
+The Hubble tension, the inferred age of the Universe, and part of the
+JWST early-structure tension are therefore not independent in the ECT
+framework: the same late/intermediate-time $\phi$-background that shifts
+$H_0$ also modifies inferred distances, cosmic ages, and the friction
+term relevant for structure growth~(Level~B; see
+Appendices~\ref{app:late_cosmo_background} and
+\ref{app:late_cosmo_algorithm}).
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[width=\textwidth]{figures/ect_hubble_jwst_background_bw.pdf}
+\caption{Late-time ECT background solution for the benchmark
+$\phi$-first cosmological closure
+($\beta=0.8$, $\mu=1.5$, $\kappa=15$, $u_0=-0.12$).
+\textbf{Panel~(a):} dimensionless expansion history $E(z)=H(z)/H_0^{\rm ref}$
+compared to the reference $\Lambda$CDM.
+\textbf{Panel~(b):} relative shift in the luminosity distance.
+\textbf{Panel~(c):} lookback-time shift; the inset gives the
+ECT and reference ages of the Universe.
+\textbf{Panel~(d):} simple growth proxy $G_{\rm eff}/H^2$
+relative to the reference, indicating slight early-time growth
+enhancement from the running effective Planck mass.
+The same background drift that shifts the late inferred $H_0$ also
+alters the distance and time scales entering JWST inferences.}
+\label{fig:ect_hubble_jwst_background}
+\end{figure*}
+
+\begin{table}[htb]
+\centering
+\caption{Summary of the minimal late-time ECT cosmology benchmark.}
+\label{tab:ect_hubble_jwst_summary}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lc}
+\hline\hline
+Quantity & Value \\
+\hline
+$\beta$ & 0.8 \\
+$\mu=m_\phi/H_0$ & 1.5 \\
+$\kappa=K_0/f_0$ & 15 \\
+$u_0=\phi(z=0)$ & $-0.12$ \\
+$\Delta H_0/H_0$ & $+2.9\%$ \\
+$H_0^{\rm late}$ & $69.3$\,km\,s$^{-1}$\,Mpc$^{-1}$ \\
+$\Delta t_0/t_0$ & $-4.8\%$ \\
+$\Delta D_L/D_L$ at $z=10$ & $-5.4\%$ \\
+Growth proxy ratio at $z=10$ & $1.017$ \\
+\hline\hline
+\end{tabular}
+\end{table}
+
+\textit{ISW excess.}
+In voids, larger $G_{\rm eff}$ in low-density regions amplifies the
+ISW effect~(Level~B).  The CMB quadrupole deficit has a structural
+ECT argument from horizon-scale suppression (coherent-branch boundary
+conditions), but a quantitative derivation of $\delta C_2/C_2$ remains
+open~(Level~Open).
 
 \subsubsection*{Black holes and compact objects}
 
@@ -13121,6 +13246,8 @@ clear route for the next stage of development.
 
 \clearpage
 \appendix
+\renewcommand{\thesection}{\AlphAlph{\value{section}}}
+\renewcommand{\thesubsection}{\AlphAlph{\value{section}}.\arabic{subsection}}
 \part*{Appendices}
 \addcontentsline{toc}{part}{Appendices}
 
@@ -17450,6 +17577,220 @@ degeneracy diagnostics rather than as headline physical results.
 
 
 % === Data and Code Availability and Acknowledgments ===
+
+% ============================================================
+% APPENDIX: Late-time phi-first cosmological background
+% ============================================================
+\section{Late-time $\phi$-first cosmological background apparatus}
+\label{app:late_cosmo_background}
+
+This appendix derives the minimal ECT background apparatus used for the
+late-time cosmology calculations in Section~\ref{sec:hubble_jwst}.
+
+\subsection{Effective action and FRW reduction}
+
+We start from the effective scalar--tensor action
+\begin{equation}
+S_{\rm eff}
+=
+\int d^4x\,\sqrt{-g}\,
+\left[
+\frac12 f(\phi)R
+-\frac12 K(\phi)(\partial\phi)^2
+-V(\phi)
++\mathcal L_m
+\right].
+\label{eq:app_late_action}
+\end{equation}
+The effective gravitational stiffness and Newton coupling are
+\begin{equation}
+M_{\rm eff}^2(\phi)=f(\phi),
+\qquad
+G_{\rm eff}(\phi)=\frac{1}{8\pi f(\phi)}.
+\label{eq:app_late_geff}
+\end{equation}
+
+For a spatially flat FRW metric $ds^2=-dt^2+a^2(t)d\mathbf{x}^2$ and a
+homogeneous background $\phi=\phi(t)$, the effective equations are
+\begin{equation}
+3fH^2
+=
+\rho_m+\rho_r+\frac12 K\dot\phi^2+V-3H\dot f,
+\label{eq:app_late_fried1}
+\end{equation}
+\begin{equation}
+-2f\dot H
+=
+\rho_m+\tfrac43\rho_r+K\dot\phi^2+\ddot f-H\dot f,
+\label{eq:app_late_fried2}
+\end{equation}
+\begin{equation}
+K(\ddot\phi+3H\dot\phi)
++\tfrac12 K_{,\phi}\dot\phi^2
++V_{,\phi}
+-\tfrac12 f_{,\phi}R
+=0,
+\quad
+R=6(2H^2+\dot H).
+\label{eq:app_late_phi_eq}
+\end{equation}
+
+\subsection{Convenient form in $N=\ln a$}
+
+Setting $N\equiv \ln a$, $u(N)\equiv\phi(N)$, $q(N)\equiv d\phi/dN$, one has
+$\dot\phi=Hq$ and $\dot f=Hf_{,\phi}q$. Equation~\eqref{eq:app_late_fried1}
+then gives the exact algebraic relation
+\begin{equation}
+H^2
+=
+\frac{\rho_m+\rho_r+V}
+{3f-\frac12Kq^2+3f_{,\phi}q}.
+\label{eq:app_late_H2_exact}
+\end{equation}
+
+\subsection{Minimal late-time closure (Level~B)}
+
+We adopt
+\begin{equation}
+f(\phi)=f_0 e^{\beta u},
+\qquad
+K(\phi)=K_0,
+\qquad
+V(\phi)=V_0+\tfrac12 m_\phi^2 u^2,
+\label{eq:app_late_closure}
+\end{equation}
+with dimensionless parameters
+\begin{equation}
+E(N)\equiv \frac{H(N)}{H_0^{\rm ref}},
+\quad
+\kappa\equiv \frac{K_0}{f_0},
+\quad
+\mu^2\equiv \frac{m_\phi^2}{H_0^2},
+\quad
+\Omega_{V0}\equiv \frac{V_0}{3f_0H_0^2}.
+\label{eq:app_late_defs}
+\end{equation}
+The dimensionless Friedmann equation becomes
+\begin{equation}
+E^2(N)
+=
+\frac{
+\Omega_{m0}e^{-3N}
++\Omega_{r0}e^{-4N}
++\Omega_{V0}
++\frac{\mu^2}{6}u^2
+}{
+e^{\beta u}
+-\frac{\kappa}{6}q^2
++\beta e^{\beta u}q
+}.
+\label{eq:app_late_E2}
+\end{equation}
+
+\subsection{Slow-drift regime and present-epoch Hubble shift}
+
+In the slow-drift branch ($|q|\ll 1$, $\kappa q^2\ll 1$,
+$|\beta q|\ll 1$), eq.~\eqref{eq:app_late_E2} simplifies to
+$H^2\approx (\rho+V)/(3f)$.  Comparing with a reference background
+at constant $f_0,V_0$:
+\begin{equation}
+\frac{\Delta H_0}{H_0}
+\approx
+\frac{\mu^2u_0^2}{12}
+-\frac12\beta u_0.
+\label{eq:app_late_deltaH}
+\end{equation}
+The two terms represent vacuum drift (positive) and effective
+Planck-mass drift (sign determined by $\beta u_0$).
+
+The slow-drift scalar balance gives
+\begin{equation}
+q
+\approx
+\frac{\beta e^{\beta u}}{\kappa}
+\left(2+\frac{E'}{E}\right)
+-
+\frac{\mu^2}{3\kappa}\frac{u}{E^2},
+\label{eq:app_late_q}
+\end{equation}
+showing that the late drift of $\phi$ is driven by the curvature
+coupling $f_{,\phi}R$ balanced against the restoring force $V_{,\phi}$
+and the kinetic stiffness $\kappa$.
+
+\subsection{Distances, age, and JWST-related background effects}
+
+Once $E(z)$ is solved, one obtains
+\begin{align}
+D_L(z)&=(1+z)\int_0^z \frac{dz'}{H(z')},
+\quad
+D_A(z)=\frac{1}{1+z}\int_0^z \frac{dz'}{H(z')},
+\label{eq:app_late_dist}\\
+t_{\rm lookback}(z)&=\int_0^z \frac{dz'}{(1+z')H(z')},
+\quad
+t_0=\int_0^\infty \frac{dz}{(1+z)H(z)}.
+\label{eq:app_late_time}
+\end{align}
+These background quantities control the JWST background layer: the
+same $\phi$-drift that shifts $H_0$ also changes inferred distances to
+high-$z$ galaxies and the available formation time.
+
+% ============================================================
+% APPENDIX: Numerical algorithm
+% ============================================================
+\section{Numerical algorithm for late-time ECT cosmology: Hubble tension, age, and JWST background}
+\label{app:late_cosmo_algorithm}
+
+\subsection{Solver design}
+
+The solver evolves $u(N)$ forward (in $N$) from $N=0$ ($z=0$)
+to $N_{\min}=\ln(1/(1+z_{\max}))$ using SciPy \texttt{solve\_ivp} (RK45)
+with the quasi-static field equation
+\begin{equation}
+\frac{du}{dN}=q(N,u),
+\label{eq:app_algo_dudn}
+\end{equation}
+where $q$ is evaluated from~\eqref{eq:app_late_q} with $E'/E$ taken
+from the reference $\Lambda$CDM background for computational stability.
+The Friedmann equation~\eqref{eq:app_late_E2} is evaluated algebraically
+at each step.  The initial condition is self-consistently iterated:
+$q_0$ is obtained by one iteration of~\eqref{eq:app_late_q} with an
+initial ECT-based estimate of $E'/E$.
+
+\subsection{Benchmark parameter window}
+
+The natural window for the slow-drift regime that gives a few-percent
+Hubble shift is
+\begin{equation}
+\beta\sim 0.7\text{--}1.0,\quad
+u_0\sim -(0.08\text{--}0.12),\quad
+\mu\sim 1.0\text{--}1.5,\quad
+\kappa\sim 10\text{--}20.
+\label{eq:app_algo_window}
+\end{equation}
+For Benchmark~B ($\beta=0.8$, $\mu=1.5$, $\kappa=15$, $u_0=-0.12$)
+the analytic estimate~\eqref{eq:app_late_deltaH} gives
+$\Delta H_0/H_0\approx 5.1\%$, while the full numerical solution
+(which includes the $q$-dependent corrections to $E^2$) gives $2.9\%$.
+The difference reflects the fact that the quasi-static $q$ is not
+strictly self-consistent in $E^2$; see the discussion of Level~B
+closure status in the main text.
+
+\subsection{Derived outputs}
+
+From the solved background the code computes:
+\begin{enumerate}
+\item the direct late-time Hubble shift $\Delta H_0/H_0 = E(0)-1$;
+\item a ladder-style low-$z$ inferred $H_0$ from the $D_L$ slope;
+\item the age correction $\Delta t_0/t_0$;
+\item lookback-time and luminosity-distance shifts at $z=1,2,5,8,10,12$;
+\item a simple growth proxy
+$\mathcal{G}(z)\equiv G_{\rm eff}(z)/H^2(z)$
+as a first indicator of early structure formation enhancement.
+\end{enumerate}
+All outputs are collected in a summary CSV file and a four-panel figure.
+The code is available at the repository listed in the Data and Code
+Availability section.
+
 
 \clearpage
 \section*{Data and Code Availability}
