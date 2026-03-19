@@ -6133,6 +6133,12 @@ Under this isotropic background reduction, the $\phi$-first action
 \eqref{eq:phi_first_action} yields the schematic parent coupled system
 for the scale factor $a(t)$ and the macroscopic amplitude variable
 $\phi(t)$.
+The full derived condensate background system obtained from the
+ordered-branch EFT is recorded later in
+Appendix~\ref{app:late_cosmo_background},
+Section~\ref{sec:late_condensate_dynamics}.
+The benchmark scalar--tensor action used for present numerical work is a
+late-time local truncation of that parent system.
 Writing
 \[
 F(\phi)\equiv e^\phi,
@@ -8394,11 +8400,35 @@ galactic closure already used in the SPARC velocity analysis.
 \label{sec:hubble_jwst}
 
 The earlier phenomenological power-law background ansatz has been
-replaced by a minimal late-time $\phi$-first background apparatus.
-This apparatus should be read as the late-time FRW specialisation of the
-amplitude-dominated macroscopic reduction developed in
-Section~\ref{sec:mp_nonlinear}.
-The starting point is the effective scalar--tensor action
+replaced by a benchmark late-time truncation of the derived condensate
+background dynamics.
+At the structural level, the parent system is the macroscopic
+ordered-branch background derived from the condensate amplitude
+$u=u_\infty e^{\beta\phi}$ and recorded in
+Appendix~\ref{app:late_cosmo_background},
+Section~\ref{sec:late_condensate_dynamics}.
+The present numerical results use the first late-time screened-branch
+truncation of that parent system, not an independently chosen scalar--
+tensor ansatz.
+
+At the parent-system level, the macroscopic condensate dynamics is
+controlled by the amplitude relation
+\[
+u=u_\infty e^{\beta\phi},
+\]
+so that
+\[
+F(\phi)=\frac{u}{u_\infty}=e^{\beta\phi},
+\qquad
+\omega(\phi)\propto e^{2\beta\phi},
+\qquad
+U(\phi)=W(u_\infty e^{\beta\phi}).
+\]
+The benchmark closure used below is the local screened-branch
+approximation of this derived system near $\phi=0$.
+
+The benchmark late-time truncation is then written in the effective
+scalar--tensor form
 \begin{equation}
 S_{\rm eff}
 =
@@ -8422,7 +8452,8 @@ For a homogeneous FRW background, the late-time expansion history
 is controlled by the coupled system for $H(z)$ and $\phi(z)$ obtained
 from the background reduction of the macroscopic closure
 (Section~\ref{sec:background_reduction_macro}).
-In the variable $N=\ln a$, the ECT Friedmann relation takes the form
+In the variable $N=\ln a$, the benchmark truncation of the derived ECT
+background system takes the form
 \begin{equation}
 E^2(N)
 =
@@ -8445,6 +8476,10 @@ $K(\phi)=K_0$, $V(\phi)=V_0+\frac12 m_\phi^2\phi^2$.
 Here the exponential factor is structurally tied to the amplitude ratio
 $u/u_\infty=e^{\beta\phi}$, while the constant kinetic coefficient and the
 quadratic potential are the simplest local late-time benchmark choices.
+The corresponding full derived condensate background system is recorded
+in Appendix~\ref{app:late_cosmo_background},
+Eqs.~\eqref{eq:condensate_friedmann1}--\eqref{eq:condensate_scalar_N};
+the present benchmark closure is their local late-time truncation.
 
 At the present-epoch level, the late-time Hubble shift is controlled by
 \begin{equation}
@@ -8692,6 +8727,9 @@ while the deformed run gives
 \]
 The present-age and JWST-age quantities change only weakly at the same
 level of deformation.
+All robustness statements in the present subsection refer to the
+benchmark late-time truncation, not yet to the full derived condensate
+background dynamics.
 This does not yet establish full robustness of the late-time closure,
 but it already shows that the benchmark result is not destroyed by mild
 admissible amplitude-sector deformations.
@@ -19036,6 +19074,31 @@ ECT closure.
 \section{Numerical algorithm for late-time ECT cosmology: Hubble tension, age, and JWST background}
 \label{app:late_cosmo_algorithm}
 
+\subsubsection*{Two algorithmic levels: parent system and benchmark solver}
+
+The theoretical structure discussed above naturally defines two distinct
+algorithmic levels.
+
+\paragraph{(i) Parent derived system.}
+The full condensate background dynamics is governed by
+Eqs.~\eqref{eq:condensate_friedmann1}--\eqref{eq:condensate_scalar_N},
+with
+\[
+\omega(\phi)=\omega_0 e^{2\beta\phi},
+\qquad
+U(\phi)=W(u_\infty e^{\beta\phi}).
+\]
+This is the system that should ultimately be solved for a fully
+self-consistent ECT treatment of the high-redshift branch.
+
+\paragraph{(ii) Current benchmark solver.}
+The present code implementation instead solves the local late-time
+screened-branch truncation
+\eqref{eq:app_late_closure}.
+This benchmark solver is therefore a valid numerical layer of the
+current article, but it should not yet be confused with the final solver
+for the full derived condensate dynamics.
+
 \paragraph{Algorithm flow.}
 At the algorithmic level, the logic is therefore:
 \[
@@ -19052,9 +19115,11 @@ Section~\ref{sec:late_condensate_dynamics}.
 
 \subsection{Self-consistent fixed-point solver design}
 
-The target numerical background solver is a self-consistent fixed-point
-scheme for the late-time specialisation of the ECT macroscopic
-scalar--tensor background closure.
+The target numerical background solver described in this subsection is a
+self-consistent fixed-point scheme for the benchmark late-time
+specialisation of the ECT macroscopic scalar--tensor background closure.
+A future full solver must instead be built directly for the derived
+condensate system recorded in Section~\ref{sec:late_condensate_dynamics}.
 It evolves the macroscopic amplitude variable $\phi(N)=\frac{1}{\beta}\ln(u/u_\infty)$
 and computes the corresponding background expansion history $E(N)=H/H_*$.
 
@@ -19147,6 +19212,11 @@ interim matter+radiation completion.
 Therefore outputs that depend strongly on the high-redshift continuation
 must be marked as interim benchmark outputs until the full
 self-consistent ECT high-$z$ background branch is implemented.
+Beyond the present benchmark implementation, the central next step is to
+replace the benchmark truncation by a solver built directly on the
+derived condensate background system
+(Section~\ref{sec:late_condensate_dynamics}),
+especially for the high-redshift branch relevant to cosmic-age and JWST applications.
 
 \paragraph{Layer 4: target solver outputs.}
 A fully synchronised article--code pipeline should produce, at minimum:
