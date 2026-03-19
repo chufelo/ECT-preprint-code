@@ -1102,8 +1102,8 @@ coherent-sector rule~BR1, do not yet constitute the full physical theory.
 This section develops the geometric consequences of vacuum ordering~(P4)
 in three stages.
 First, we recall the dynamical motivation for gradient condensation
-and what the ordered branch means at the level of the Euclidean
-functional (Section~\ref{sec:condensate_dynamics}).
+and introduce the collective infrared variables of the ordered branch
+(Sections~\ref{sec:condensate_dynamics}--\ref{sec:ordered_branch_eft}).
 Second, we derive the unique kinetic tensor of the broken phase and
 classify all possible metric signatures that can emerge from it
 (Sections~\ref{sec:tensor_uniqueness}--\ref{sec:lorentz_window}).
@@ -1157,10 +1157,10 @@ exactly the background assumed by P4:
   u_A u_A = u_*^2.
   \label{eq:gradient_vac}
 \end{equation}
-Since the action depends only on $u_A u_A$ and not on the direction
-of $u_A$, the family of solutions~\eqref{eq:gradient_vac} forms a
-three-sphere of energetically equivalent states.  Choosing one
-particular $u_A$ spontaneously breaks $O(4)\to O(3)$.
+Since the Euclidean functional depends only on $u_A u_A$ and not on
+the direction of $u_A$, the family of solutions~\eqref{eq:gradient_vac}
+forms a three-sphere of degenerate stationary ordered states.  Choosing
+one particular $u_A$ spontaneously breaks $O(4)\to O(3)$.
 
 It is natural to decompose the gradient into amplitude and orientation,
 \begin{equation}
@@ -1184,9 +1184,101 @@ The specific functional form of $P(X)$, the numerical value of $u_*$,
 and the relation between $u_*$ and the bare parameters $(\mu,\lambda)$
 remain open problems of the ECT foundational program~(OP-grad,
 Level~Open).  The subsequent broken-phase analysis
-(Sections~\ref{sec:tensor_uniqueness}--\ref{sec:arrow_of_time})
-is independent of these open points: it depends only on the ordered
-vacuum~P4 and the broken-phase EFT parameters $(\alpha,\beta)$.
+(Sections~\ref{sec:ordered_branch_eft}--\ref{sec:arrow_of_time})
+does not require the microscopic form of $P(X)$ to be fixed completely.
+It depends only on the existence of the ordered branch, its collective
+infrared variables, and the broken-phase EFT parameters $(\alpha,\beta)$.
+
+\subsection{Collective variables and the ordered-branch infrared EFT}
+\label{sec:ordered_branch_eft}
+
+The gradient-sensitive motivation above clarifies why an ordered branch
+with $\partial_A\Phi\neq 0$ is natural, but it does not yet specify
+the appropriate long-wavelength variables of that branch.
+For the subsequent development of both the geometric and coherent sectors,
+it is useful to separate the ordered condensate into its amplitude and
+orientation components:
+\begin{equation}
+  \partial_A\Phi = u\,n_A,
+  \qquad
+  u \ge 0,
+  \qquad
+  n_A n_A = 1.
+  \label{eq:ordered_branch_decomposition}
+\end{equation}
+Here $u(x)$ measures the local amplitude of the gradient condensate,
+while $n_A(x)$ specifies its local orientation in the underlying
+Euclidean medium.
+
+At wavelengths large compared with the microscopic condensate scale,
+the ordered branch admits a local derivative expansion in terms of
+these collective variables.
+Before any geometric interpretation is imposed, the minimal Euclidean
+infrared functional of the ordered branch may be written in the
+schematic form
+\begin{equation}
+  \label{eq:ordered_branch_euclidean_eft}
+  S_{\rm ord}^{(E)}[u,n]
+  =
+  \int d^4X\,
+  \left[
+    \frac{Z_u}{2}\,(\partial_A u)(\partial_A u)
+    + \frac{Z_n}{2}\,u^2\,(\partial_A n_B)(\partial_A n_B)
+    + W(u)
+    + \Lambda_n\,(n_A n_A - 1)
+    + \cdots
+  \right].
+\end{equation}
+Here $W(u)$ is the effective branch potential for the condensate
+amplitude, $\Lambda_n$ is a Lagrange multiplier enforcing the unit
+constraint on $n_A$, and the ellipsis denotes higher-derivative or
+higher-order operators suppressed in the infrared expansion.
+
+Several comments are important.
+
+\paragraph{(i) This is not yet the geometric branch action.}
+Equation~\eqref{eq:ordered_branch_euclidean_eft} is a pre-geometric
+infrared description of the ordered condensate branch itself.
+It does not yet assume the existence of an effective metric, and it
+does not yet identify gravity with any particular operator.
+Rather, it provides the minimal collective-variable layer that should
+exist between the microscopic Euclidean $\Phi$-medium and the later
+macroscopic geometric realisation.
+
+\paragraph{(ii) Why these variables are natural.}
+Once the branch condition $\partial_A\Phi\neq 0$ holds, the
+decomposition into amplitude $u$ and orientation $n_A$ is not an
+extra postulate but a natural rewriting of the ordered phase.
+This makes explicit that two qualitatively different kinds of
+long-wavelength excitations may exist: amplitude fluctuations of the
+condensate and orientational distortions of the preferred direction.
+
+\paragraph{(iii) Relation to the subsequent signature analysis.}
+For a uniform ordered background
+\[
+u = u_*,
+\qquad
+n_A = \delta_{Aw},
+\]
+the infrared ordered-branch EFT reduces to the background on which
+the broken-phase kinetic tensor is classified in the following subsections.
+The symmetry-based uniqueness theorem for $K^{AB}$ and the Lorentzian
+viability analysis therefore do not depend on the detailed microscopic
+form of $W(u)$, but only on the existence of the ordered branch and
+its collective orientation variable.
+
+\paragraph{(iv) Status.}
+At the present stage~\eqref{eq:ordered_branch_euclidean_eft} should
+be read as the minimal infrared organisational principle of the ordered
+branch, not yet as a fully derived theorem from the bare microscopic
+action~P3.
+Its detailed coefficients $(Z_u,Z_n)$, the precise form of $W(u)$,
+and its matching to the later macroscopic gravitational closure remain
+part of the open foundational programme.
+Nevertheless, introducing this intermediate ordered-branch EFT removes
+an important conceptual gap: the theory no longer jumps directly from
+the bare Euclidean scalar action to macroscopic geometry, but passes
+through a well-defined collective condensate layer.
 
 \subsection{Uniqueness of the kinetic tensor after SSB}
 \label{sec:tensor_uniqueness}
@@ -4757,6 +4849,10 @@ probability measures are deferred to the Quantum Sector.
 
 \paragraph{What is already established in ECT basics.}
 From ECT basics the following is available for the geometric branch:
+the ordered branch has already been resolved into its collective
+infrared variables~(Section~\ref{sec:ordered_branch_eft}), and the
+residual-symmetry analysis has identified the unique viable
+coarse-grained tensor structure.
 \begin{enumerate}[label=(\roman*)]
   \item three massless orientation modes $\delta n_i$ with dispersion
     $\omega^2=c_n^2 k^2$~(Section~\ref{sec:mode_classes},
