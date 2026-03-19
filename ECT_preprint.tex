@@ -82,28 +82,28 @@ quantum mechanics, and gravitational dynamics emerge from spontaneous
 $O(4)\to O(3)$ symmetry breaking of a scalar condensate field~$\Phi$
 on a four-dimensional Euclidean manifold.
 
-\paragraph{Five-postulate foundations.}
+\paragraph{Foundational architecture.}
 ECT is not formulated by postulating the observed macroscopic world
 directly. Instead, it starts from a more primitive Euclidean
 $\Phi$-medium and formalises a minimal set of structural assumptions
-about that medium. These assumptions are organised into three layers.
+about that medium. These assumptions are organised into two layers.
 \textbf{P1--P3} define the microscopic level: a four-dimensional
 Euclidean arena, an $O(4)$-invariant local action, and a minimal
 real-scalar microdynamics.
-\textbf{P4} specifies that the physical vacuum belongs to an ordered
-branch with nonzero gradient structure, thereby allowing the spontaneous
-breaking $O(4)\to O(3)$ without introducing explicit anisotropy into
-the bare micro-action.
-\textbf{P5} restricts the low-energy coherent sector of the effective
-order parameter $\Phi_{\rm eff}=\rho e^{i\theta}$ to integer winding.
-These five postulates define the common condensate framework from which
-two effective branches are then developed: the geometric branch
-(macroscopic causal and gravitational physics) and the
-coherent-topological branch (the pre-quantum sector). The physical
-viability of the macroscopic branch is not imposed as a separate axiom,
-but analysed through the broken-phase kinetic structure, signature
-classification, and the Lorentzian viability window developed later
-in Part~I.
+\textbf{P4} specifies that the physically realised vacuum belongs to
+an ordered branch with nonzero gradient structure, thereby allowing the
+spontaneous breaking $O(4)\to O(3)$ without introducing explicit
+anisotropy into the bare micro-action.
+From this ordered branch there emerge two effective developments:
+the \emph{geometric branch} (macroscopic causal and gravitational
+physics) and the \emph{coherent-topological branch} (the pre-quantum
+sector). The smooth coherent topological sector is not introduced as an
+independent fundamental postulate; rather, its winding structure is a
+derived consequence of the existence of a single-valued collective phase
+field in the ordered broken phase. Likewise, the physical viability of
+the macroscopic branch is not imposed as a separate axiom, but analysed
+through the broken-phase kinetic structure, signature classification,
+and the Lorentzian viability window developed later in Part~I.
 
 \paragraph{ECT basics: what is established.}
 The foundational sections establish:
@@ -626,14 +626,19 @@ the observed macroscopic world by hand, but to formalise the minimal
 structural properties that such a medium must possess if causal
 structure, geometry, and gravitational dynamics are to emerge from it.
 
-The postulates are organised in three structural layers:
+The foundational assumptions are organised in two structural layers:
 (i)~the \emph{microscopic} arena and local field dynamics (P1--P3);
-(ii)~the \emph{ordered vacuum branch} (P4);
-(iii)~the \emph{coherent topological} sector (P5).
-The later analysis of kinetic tensors, signature classes, and the
-Lorentzian window~(Section~\ref{sec:metric_classification}) is not
-an extra postulate but the dynamical branch-selection analysis of the
+(ii)~the \emph{ordered vacuum branch} (P4).
+From the ordered broken phase there then develop two effective sectors:
+the geometric macroscopic branch and the coherent-topological branch.
+The smooth coherent-topological sector is not introduced here as an
+independent fundamental postulate: its winding structure is derived once
+a smooth single-valued collective phase field exists in the coherent
 broken phase.
+The later analysis of kinetic tensors, signature classes, and the
+Lorentzian window~(Section~\ref{sec:metric_classification}) is likewise
+not an extra postulate but the dynamical branch-selection analysis of
+the broken phase.
 All further structures developed in this work arise as consequences
 of these postulates combined with that analysis.
 
@@ -781,32 +786,41 @@ These are independent parameters; their relation is not imposed
 kinematically and requires separate dynamical matching~(OP-grad).
 
 \medskip
-\noindent\textbf{P5 --- Global topological coherence.}
-\label{eq:P5}
-The physical sector is restricted to coherent configurations
-of the effective order parameter
-$\Phi_{\rm eff} = \rho\,e^{i\theta}$.
-The phase field satisfies an integer winding condition
-for every closed path $\mathcal{C}$ in $\mathcal{M}^4$:
+\noindent\textbf{D1 --- Smooth coherent topological sector (derived branch rule).}
+\label{sec:D1_coherent_sector}
+In the smooth infrared coherent sector of the ordered branch selected
+by~P4, low-energy excitations admit a collective description through
+an effective order parameter
+\[
+\Phi_{\rm eff}=\rho\,e^{i\theta},
+\qquad \rho>0.
+\]
+If $\Phi_{\rm eff}$ is single-valued on a closed contour
+$\mathcal{C}$ that does not intersect a defect core, then the phase
+defines a map $\mathcal{C}\to S^1$, and therefore the winding number
+is necessarily integer:
 \begin{equation}
   \label{eq:winding_condition}
-  \oint_{\mathcal{C}} \partial_A\theta\,dX^A = 2\pi n,
+  \oint_{\mathcal{C}}\partial_A\theta\,dX^A = 2\pi n,
   \qquad n\in\mathbb{Z}.
 \end{equation}
-The orientation variable $n_A$ is smooth in this defect-free
-coherent sector; vortex cores, domain walls, and instantons
-lie outside the present reduction but are not forbidden---they
-constitute a richer space of configurations whose dynamics is
-deferred to later sections.
+Thus the integer winding condition is not an independent fundamental
+postulate but a topological consequence of the smooth coherent branch
+of the broken phase.
 
-This postulate introduces a pre-quantum topological action scale
-$S_0$ through the minimal non-trivial loop:
+Configurations with zeros of $\rho$, discontinuities of $n_A$,
+vortex cores, domain walls, or instantons are not forbidden by the
+full theory; they simply lie outside the present smooth coherent
+reduction and must be analysed separately in the defect sector.
+
+Within the smooth coherent branch, the minimal non-trivial loop
+introduces a pre-quantum topological action scale
 \begin{equation}
   \label{eq:Sloop_min}
-  S_{\rm loop,min} = 2\pi S_0.
+  S_{\rm loop,min}=2\pi S_0.
 \end{equation}
 The identification of $S_0$ with the observed $\hbar$ is discussed
-in Section~\ref{sec:quantum}.
+later in Section~\ref{sec:quantum}.
 
 \subsection{Operational principle of relationality}
 \label{subsec:relational}
@@ -820,19 +834,22 @@ follow from it as a theorem.
 \subsection{Independence of postulates}
 \label{subsec:independence}
 
-The five postulates are logically independent:
+The four foundational postulates are logically independent:
 \begin{itemize}
-  \item P1 does not follow from P2--P5: any manifold dimension would
+  \item P1 does not follow from P2--P4: any manifold dimension would
     be consistent with $O(n)$ invariance;
   \item P2 does not follow from P1: the action need not be $O(4)$-invariant;
   \item P3 does not follow from P1--P2: the field content
     and potential must be separately specified;
   \item P4 does not follow from P1--P3: the existence of a physically
     realised ordered vacuum branch is an additional structural assumption
-    beyond the minimal bare micro-action;
-  \item P5 does not follow from P1--P4: coherence in the topological
-    sector is an independent restriction.
+    beyond the minimal bare micro-action.
 \end{itemize}
+
+The smooth coherent topological sector discussed below is not an
+additional independent postulate. Its integer winding condition follows
+once one restricts attention to a smooth single-valued collective phase
+field in the coherent broken phase.
 
 \subsection{Discussion of the postulates}
 \label{sec:postulates_discussion}
@@ -1010,7 +1027,7 @@ valid on the ordered branch and in its long-wavelength description;
 it is not a point-wise algebraic substitution acting at the level of
 the bare microscopic action.
 
-\subsubsection*{P5 --- Global topological coherence}
+\subsubsection*{D1 --- Smooth coherent topological sector}
 
 \paragraph{Physical meaning.}
 Not all configurations that are solutions of the equations of motion
@@ -1054,14 +1071,19 @@ coherent vacuum sector of ECT.
 
 The following sections use three types of assertions:
 \begin{itemize}
-  \item \textit{Theorem} --- a strict consequence of P1--P5 (no additional assumptions);
+  \item \textit{Theorem} --- a strict consequence of the foundational
+    assumptions P1--P4 together with any explicitly stated branch
+    conditions used in the theorem;
   \item \textit{EFT consequence} --- a result valid within the low-energy
     expansion over the broken vacuum;
   \item \textit{Additional assumption} --- a statement used to obtain
-    explicit formulae but not a strict consequence of P1--P5
+    explicit formulae but not a strict consequence of the foundational
+    assumptions and explicitly stated branch conditions
     (always marked explicitly).
 \end{itemize}
 In this foundational section: vacuum selection is given by~P4;
+the smooth coherent topological branch is introduced as the derived
+sector rule~D1;
 the form of $K^{AB}$ is an EFT consequence
 (Theorem~\ref{thm:tensor_uniqueness});
 the upper boundary of the Lorentzian window $\alpha<4\beta$
@@ -1268,6 +1290,10 @@ broken-phase EFT structure and the physical admissibility requirement;
 it is \emph{not} an additional axiom.  The quantitative upper bound
 on $\alpha$ from short-distance isotropisation is derived in
 the following section.
+
+This does not mean that non-Lorentzian branches are mathematically
+forbidden in the full Euclidean medium. Rather, they are not selected
+as the macroscopic causal branch relevant to the observed universe.
 
 \subsection{The Lorentzian window}
 \label{sec:lorentz_window}
@@ -1952,19 +1978,22 @@ coexist with this terminological note.
 \section{Branching Structure of ECT}
 \label{sec:branching}\label{sec:roadmap}
 
-The postulates P1--P5, together with the ordered vacuum sector,
-the broken-phase spectrum, and the scale hierarchy,
-define a common condensate framework from which two distinct
-but mutually consistent effective branches emerge.
+The four foundational postulates P1--P4, together with the ordered
+vacuum sector, the broken-phase spectrum, the scale hierarchy, and the
+derived smooth coherent-sector rule~D1, define a common condensate
+framework from which two distinct but mutually consistent effective
+branches emerge.
 
 \subsection{Two classes of observables}
 \label{sec:two_observables}
 
 ECT contains a single fundamental field~$\Phi$~(P3).
-Postulate~P4 introduces the orientation variable~$n_A$ and the
-kinetic tensor~\eqref{eq:K_general}, producing the Lorentzian sector.
-Postulate~P5 introduces the global phase variable~$\theta$
-with the winding condition~\eqref{eq:winding_condition}.
+Postulate~P4 introduces the ordered branch and, through the broken-phase
+EFT analysis, the orientation variable~$n_A$ and the kinetic
+tensor~\eqref{eq:K_general}, producing the geometric causal sector.
+The derived smooth coherent-sector rule~D1 introduces the collective
+phase variable~$\theta$ with the winding condition
+\eqref{eq:winding_condition}.
 
 These two steps are structurally distinct and produce two qualitatively
 different classes of observables:
@@ -2010,8 +2039,8 @@ decoherence, probabilistic interpretation, and the quantum limit of ECT.
 The branching is not a matter of exposition but a structural
 consequence of the condensate framework:
 \begin{enumerate}
-  \item P4 introduces the orientation field---this selects the geometric branch.
-  \item P5 introduces the global phase with integer winding---this selects the topological branch.
+  \item P4 introduces the ordered branch and thereby the orientation field---this opens the geometric branch.
+  \item D1 identifies the smooth coherent phase sector with integer winding---this opens the coherent-topological branch.
   \item Both branches arise as different coarse-grainings of the same ordered condensate.
   \item Neither branch reduces to the other without loss of physical content.
 \end{enumerate}
@@ -2133,6 +2162,64 @@ action scale quantisation, wave dynamics of coherent excitations,
 canonical quantum structure, decoherence, and the status of
 probabilistic interpretation.
 
+
+% ────────────────────────────────────────────────────────────────────────
+\subsection{Foundational consequences and branch-selection rules}
+\label{sec:foundational_consequences}
+
+For later use it is convenient to collect the main consequences of the
+foundational construction developed in Part~I.
+
+\begin{enumerate}
+  \item \textbf{Ordered-branch rule.}
+  The physically realised vacuum belongs to an ordered branch with
+  non-zero gradient condensate,
+  $\langle \partial_A\Phi\rangle \neq 0$,
+  which spontaneously breaks $O(4)\to O(3)$.
+
+  \item \textbf{Amplitude--orientation decomposition.}
+  On the ordered branch the condensate gradient admits the decomposition
+  \[
+  \partial_A\Phi = u\,n_A,
+  \qquad
+  u\ge 0,
+  \qquad
+  n_A n_A = 1.
+  \]
+
+  \item \textbf{Uniqueness of the broken-phase kinetic tensor.}
+  Local symmetric rank-2 tensors compatible with the residual $O(3)$
+  symmetry take the form
+  \[
+  K^{AB}=\beta\,\delta^{AB}-\alpha\,n^A n^B.
+  \]
+
+  \item \textbf{Signature classification rule.}
+  Depending on $(\alpha,\beta)$, the broken-phase kinetic operator has
+  Euclidean, degenerate, or Lorentzian signature.
+
+  \item \textbf{Macroscopic viability rule.}
+  Only the hyperbolic Lorentzian branch ($\alpha>\beta$) is admissible
+  as the macroscopic causal branch of the observed universe; this is
+  selected by physical viability, not imposed as an extra postulate.
+
+  \item \textbf{Smooth coherent-sector rule (D1).}
+  In the defect-free coherent infrared branch with single-valued
+  collective phase, the winding number is necessarily integer:
+  \[
+  \oint_{\mathcal{C}}\partial_A\theta\,dX^A = 2\pi n,
+  \qquad n\in\mathbb{Z}.
+  \]
+
+  \item \textbf{Two-branch rule.}
+  The ordered condensate framework supports two effective developments:
+  the geometric macroscopic branch and the coherent-topological branch.
+  They arise from the same underlying medium but retain different
+  classes of observables under coarse-graining.
+\end{enumerate}
+
+These statements will be used repeatedly in the subsequent development
+of the gravitational, cosmological, astrophysical, and quantum sectors.
 
 \section{From legacy quantum language to the coherent-topological branch}
 \label{sec:quantum_old}
@@ -8540,8 +8627,8 @@ topological features of the ordered condensate can \emph{reproduce,
 motivate, or constrain} the structures that ordinary quantum theory
 usually postulates.
 Both branches---geometric and coherent-topological---are consequences
-of the same five postulates P1--P5; they differ only in which class
-of observables they target.
+of the same foundational postulates P1--P4 and the derived coherent-sector
+rule~D1; they differ only in which class of observables they target.
 
 \paragraph{Logical structure of the Quantum Sector.}
 The present section proceeds in the following order:
