@@ -6323,6 +6323,11 @@ underlying ordered structure.
     interface contract: required inputs, required outputs, and required
     validation checks are part of the benchmark numerical layer, not of
     the structural core of the theory.
+  \item Reproducible comparison between article and code requires a
+    standard artefact layer: background tables, distance--time tables,
+    JWST age grids, benchmark summaries, and convergence diagnostics
+    belong to the benchmark numerical framework, not to the structural
+    core of the theory.
 \end{enumerate}
 
 \textbf{Not yet established as first-principles theorems:}
@@ -8455,11 +8460,11 @@ Appendix~\ref{app:late_cosmo_background}, but the detailed numerical
 implementation remains benchmark-level until the full fixed-point
 background solver is used throughout.
 The numerical implementation roadmap corresponding to this closure is
-summarised in Appendix~\ref{sec:late_cosmo_roadmap}, where structural
-inputs, benchmark closure choices, interim numerical completions, and
-target solver outputs are explicitly separated, while the explicit
+summarised in Appendix~\ref{sec:late_cosmo_roadmap}, the explicit
 article--solver interface contract is stated in
-Appendix~\ref{sec:late_cosmo_interface}.
+Appendix~\ref{sec:late_cosmo_interface}, and the expected reproducible
+numerical artefacts are listed in
+Appendix~\ref{sec:late_cosmo_artefacts}.
 The corresponding analytic benchmark window is shown in
 Appendix~\ref{app:late_cosmo_algorithm},
 Fig.~\ref{fig:app_h0_scan}.
@@ -8493,8 +8498,8 @@ available lifetime of a galaxy observed at $z_{\rm obs}$ if it formed at
 $z_{\rm form}$.
 This distinction is essential for the JWST discussion.
 
-The benchmark run gives an ECT age of $13.1$\,Gyr vs.\ the
-reference $\Lambda$CDM age of $13.8$\,Gyr, with luminosity-distance
+The benchmark run gives an ECT age of $13.1$\,Gyr, compared with the
+reference $\Lambda$CDM value $13.8$\,Gyr, with luminosity-distance
 shifts of $\Delta D_L/D_L\approx-5\%$ at $z=5$--12.
 
 The quoted age-related numbers should still be read as interim
@@ -8598,7 +8603,7 @@ Quantity & Value \\
 $\beta$ & 0.8 \\
 $\mu=m_\phi/H_0$ & 1.5 \\
 $\kappa=K_0/f_0$ & 15 \\
-$u_0=\phi(z=0)$ & $-0.12$ \\
+$\phi_0=\phi(z=0)$ & $-0.12$ \\
 $\Delta H_0/H_0$ & $+2.9\%$ \\
 $H_0^{\rm late}$ & $69.4$\,km\,s$^{-1}$\,Mpc$^{-1}$ \\
 $t_0^{\rm ECT}$ & $13.1$\,Gyr \\
@@ -18851,6 +18856,10 @@ A fully synchronised article--code pipeline should produce, at minimum:
   \item convergence diagnostics for the fixed-point iteration.
 \end{enumerate}
 
+These outputs should be emitted in standard tabular form so that the
+article figures and benchmark tables can be regenerated directly from
+solver products rather than from manually transferred values.
+
 \paragraph{Purpose of this roadmap.}
 This separation prevents the code from being interpreted as if every
 implemented function were already an equally fundamental output of ECT.
@@ -18937,7 +18946,72 @@ the structural background system of the theory,
 the benchmark closure chosen for the present article,
 and the current numerical implementation.
 A code result should only be interpreted as an ECT prediction to the
-extent that all three levels are kept conceptually distinct.
+extent that all three levels are kept conceptually distinct and the
+required numerical artefacts are exported in reproducible form.
+
+\subsection{Expected numerical artefacts for article synchronisation}
+\label{sec:late_cosmo_artefacts}
+
+To keep the late-time figures, tables, and numerical claims reproducible,
+the solver should not only converge internally but also emit a standard
+set of machine-readable artefacts.
+
+\paragraph{Core background table.}
+For each benchmark run, the code should produce a background table on a
+common redshift grid containing at least
+\[
+z,\qquad H(z),\qquad E(z),\qquad \phi(z),\qquad G_{\rm eff}(z).
+\]
+This table is the primary source for all later derived observables.
+
+\paragraph{Distance--time table.}
+From the converged background, the code should produce a second table
+containing
+\[
+z,\qquad D_L(z),\qquad t_{\rm lookback}(z),\qquad t_U(z).
+\]
+This table is the direct numerical support for the late-time cosmology
+plots and age statements in the main text.
+
+\paragraph{JWST age grid.}
+For selected observation and formation redshifts, the code should output
+a grid of galaxy-lifetime estimates
+\[
+(z_{\rm obs},\,z_{\rm form},\,t_{\rm gal}),
+\]
+with at least the benchmark combinations discussed in the paper.
+This artefact is required if the JWST discussion is to remain directly
+traceable to code outputs rather than to hand-entered numbers.
+
+\paragraph{Benchmark summary table.}
+Each benchmark run should emit a compact summary table containing, at
+minimum,
+\[
+\Delta H_0/H_0,\quad
+H_0^{\rm late},\quad
+t_0,\quad
+\Delta t_0/t_0,\quad
+\Delta D_L/D_L,\quad
+\mathcal{G}(z),\quad
+g^\dagger_{\rm bg}(z)/g^\dagger_{\rm bg}(0),
+\]
+together with explicit metadata recording which closure functions and
+which high-$z$ completion settings were used.
+
+\paragraph{Convergence and sensitivity report.}
+The solver should also emit a small diagnostic report containing:
+\begin{itemize}
+  \item iteration count and convergence tolerance;
+  \item dependence on initial seed;
+  \item dependence on redshift-grid resolution;
+  \item dependence on interim $z_{\rm match}$ if high-$z$ completion is used.
+\end{itemize}
+
+\paragraph{Purpose.}
+These artefacts define the practical synchronisation layer between the
+article and the code repository.
+Without them, even a numerically converged solver is not yet fully
+article-reproducible.
 
 \subsection{Benchmark parameter window}
 
@@ -19052,6 +19126,9 @@ Appendix~\ref{app:late_cosmo_algorithm}.
 The expected article-level numerical inputs, outputs, and validation
 checks are summarised in
 Appendix~\ref{sec:late_cosmo_interface}.
+The expected machine-readable artefacts of such a benchmark
+implementation are listed in
+Appendix~\ref{sec:late_cosmo_artefacts}.
 
 \noindent
 The repository contains: the full-SPARC rotation-curve fitting pipeline
