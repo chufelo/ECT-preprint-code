@@ -8440,6 +8440,10 @@ ECT scalar--tensor equations written below and in
 Appendix~\ref{app:late_cosmo_background}, but the detailed numerical
 implementation remains benchmark-level until the full fixed-point
 background solver is used throughout.
+The numerical implementation roadmap corresponding to this closure is
+summarised in Appendix~\ref{sec:late_cosmo_roadmap}, where structural
+inputs, benchmark closure choices, interim numerical completions, and
+target solver outputs are explicitly separated.
 The corresponding analytic benchmark window is shown in
 Appendix~\ref{app:late_cosmo_algorithm},
 Fig.~\ref{fig:app_h0_scan}.
@@ -18686,6 +18690,77 @@ The earlier $\Lambda$CDM-seeded quasi-static implementation should
 therefore be regarded as an interim benchmark algorithm, not as the
 intended final numerical realisation of the late-time ECT background.
 
+Accordingly, future code revisions should be judged against the
+structural roadmap above: improvement of the fixed-point background
+solver, replacement of interim high-$z$ completion, and possible
+generalisation of the benchmark functions $K(\phi)$ and $V(\phi)$ are
+the three main directions of progress.
+
+\subsection{Implementation roadmap from benchmark closure to solver}
+\label{sec:late_cosmo_roadmap}
+
+For practical code development it is useful to separate clearly which
+parts of the late-time cosmology apparatus are already fixed by the
+present article and which parts remain provisional benchmark choices.
+
+\paragraph{Layer 1: structural input already fixed by the theory.}
+The following ingredients are already fixed at the structural or
+bridge level:
+\begin{itemize}
+  \item the ordered-branch origin of the macroscopic amplitude variable
+  $\phi=\ln(u/u_\infty)$;
+  \item the amplitude-dominated macroscopic reduction;
+  \item the existence of a coupled scalar--tensor background system for
+  $(H,\phi)$ under isotropic FRW reduction;
+  \item the standard FRW integral outputs
+  $D_L(z)$, $t_{\rm lookback}(z)$, $t_U(z)$, and
+  $t_{\rm gal}(z_{\rm obs};z_{\rm form})$ once the background is known.
+\end{itemize}
+
+\paragraph{Layer 2: benchmark late-time closure.}
+The present code-facing closure
+\[
+f(\phi)=f_0 e^{\beta\phi},
+\qquad
+K(\phi)=K_0,
+\qquad
+V(\phi)=V_0+\tfrac12 m_\phi^2\phi^2
+\]
+should be understood as the first benchmark specialisation of the
+structurally anchored closure functions.
+Only the exponential response factor is directly tied to the amplitude
+ratio $u/u_\infty=e^\phi$.
+The constant kinetic coefficient and quadratic potential remain the
+simplest local Level~B benchmark truncations.
+
+\paragraph{Layer 3: interim numerical completion.}
+The present numerical age extension above $z_{\rm match}=10$ is still an
+interim matter+radiation completion.
+Therefore outputs that depend strongly on the high-redshift continuation
+must be marked as interim benchmark outputs until the full
+self-consistent ECT high-$z$ background branch is implemented.
+
+\paragraph{Layer 4: target solver outputs.}
+A fully synchronised article--code pipeline should produce, at minimum:
+\begin{enumerate}
+  \item the converged background solution
+  $H(z)$ and $\phi(z)$;
+  \item the direct and low-$z$ inferred Hubble shifts;
+  \item $D_L(z)$ and $t_{\rm lookback}(z)$ on the observational grid;
+  \item the epoch-dependent cosmic age $t_U(z)$;
+  \item galaxy-lifetime grids
+  $t_{\rm gal}(z_{\rm obs};z_{\rm form})$
+  for JWST-relevant $(z_{\rm obs},z_{\rm form})$ pairs;
+  \item convergence diagnostics for the fixed-point iteration.
+\end{enumerate}
+
+\paragraph{Purpose of this roadmap.}
+This separation prevents the code from being interpreted as if every
+implemented function were already an equally fundamental output of ECT.
+It also makes clear which future code upgrades correspond to genuine
+theoretical progress (improved closure functions and high-$z$ branch
+completion) and which correspond only to numerical refinement.
+
 \subsection{Benchmark parameter window}
 
 Within the benchmark closure \eqref{eq:app_late_closure}, the natural
@@ -18747,13 +18822,30 @@ From the solved macroscopic background branch the code computes:
 \item a ladder-style low-$z$ inferred $H_0$ from the $D_L$ slope;
 \item the age correction $\Delta t_0/t_0$;
 \item lookback-time and luminosity-distance shifts at $z=1,2,5,8,10,12$;
+\item the epoch-dependent cosmic age $t_U(z)$ on the same redshift grid;
+\item JWST-relevant galaxy-lifetime estimates
+$t_{\rm gal}(z_{\rm obs};z_{\rm form})$ for selected
+$(z_{\rm obs},z_{\rm form})$ pairs;
 \item a simple growth proxy
 $\mathcal{G}(z)\equiv G_{\rm eff}(z)/H^2(z)$
-as a first indicator of early structure formation enhancement.
+as a first indicator of early structure formation enhancement;
+\item convergence diagnostics of the fixed-point background iteration.
 \end{enumerate}
 All outputs are collected in a summary CSV file and a four-panel figure.
 The code is available at the repository listed in the Data and Code
 Availability section.
+
+In particular, the JWST discussion should no longer rely only on
+present-age or lookback summaries.
+The solver should explicitly expose the two distinct quantities
+\[
+t_U(z)
+\quad\text{and}\quad
+t_{\rm gal}(z_{\rm obs};z_{\rm form}),
+\]
+since they answer different physical questions: the age of the Universe
+at the epoch of observation, and the available lifetime of a galaxy
+between formation and observation.
 
 
 \clearpage
@@ -18768,6 +18860,12 @@ are publicly available at:
 \begin{center}
   \url{https://github.com/chufelo/ECT-preprint-code}
 \end{center}
+
+\noindent
+For the late-time cosmology block, the currently released code should be
+read as the benchmark implementation corresponding to the Level~B
+closure and interim high-$z$ numerical completion described in
+Appendix~\ref{app:late_cosmo_algorithm}.
 
 \noindent
 The repository contains: the full-SPARC rotation-curve fitting pipeline
