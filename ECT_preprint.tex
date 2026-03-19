@@ -6009,11 +6009,106 @@ Compatibility with the contracted Bianchi identity requires:
 When $\phi$ or $n_A$ vary, this does not imply ordinary matter
 conservation alone; it implies conservation of the \emph{total}
 macroscopic source structure.
-This is physically natural: matter, order-field gradients, and
+This is physically natural: matter, amplitude-sector gradients, and
 anisotropic condensate contributions exchange energy-momentum
 among themselves.
 Ordinary GR appears only when the additional ordered-branch variables
 are effectively frozen.
+
+\subsubsection*{Background reduction of the macroscopic closure}
+\label{sec:background_reduction_macro}
+
+For cosmological applications one needs the isotropic background
+reduction of the macroscopic closure.
+The relevant approximation is not the fully frozen Einstein limit,
+but the weaker regime in which the orientation sector is absorbed into
+the homogeneous causal background while the amplitude sector remains
+slowly dynamical:
+\[
+n_A \to \bar n_A,
+\qquad
+\phi=\phi(t),
+\qquad
+ds^2=-c_*^2dt^2+a^2(t)\delta_{ij}dx^idx^j.
+\]
+In this regime the geometric branch retains a nontrivial scalar
+background degree of freedom while remaining compatible with homogeneous
+and isotropic FRW kinematics.
+
+Under this isotropic background reduction, the $\phi$-first action
+\eqref{eq:phi_first_action} yields a coupled system for the scale factor
+$a(t)$ and the macroscopic amplitude variable $\phi(t)$.
+Writing
+\[
+F(\phi)\equiv e^\phi,
+\]
+the background equations take the schematic scalar--tensor form
+\begin{equation}
+  \label{eq:bg_reduction_friedmann}
+  3F(\phi)H^2
+  =
+  \frac{\rho_m+\rho_r+U(\phi)}{\bar M_{\rm Pl}^2}
+  + \frac12 \omega(\phi)\dot\phi^2
+  - 3H\dot F,
+\end{equation}
+\begin{equation}
+  \label{eq:bg_reduction_raychaudhuri}
+  -2F(\phi)\dot H
+  =
+  \frac{\rho_m+\tfrac43\rho_r}{\bar M_{\rm Pl}^2}
+  + \omega(\phi)\dot\phi^2
+  + \ddot F - H\dot F,
+\end{equation}
+together with the scalar background equation
+\begin{equation}
+  \label{eq:bg_reduction_scalar}
+  \omega(\phi)\bigl(\ddot\phi+3H\dot\phi\bigr)
+  + \frac12 \omega_{,\phi}\dot\phi^2
+  + \frac{1}{\bar M_{\rm Pl}^2}U_{,\phi}
+  - 3\bigl(2H^2+\dot H\bigr)F_{,\phi}
+  = 0.
+\end{equation}
+
+Several remarks are important.
+
+\paragraph{(i) Derived status.}
+These equations are not a new phenomenological layer added after the
+fact. They are the isotropic background reduction of the macroscopic
+closure already introduced above.
+What remains Level~B is the explicit choice of the closure functions
+$F(\phi)=e^\phi$, $\omega(\phi)$, and $U(\phi)$, not the existence of a
+coupled background system itself.
+
+\paragraph{(ii) Role of the orientation sector.}
+The orientation field does not disappear conceptually.
+Rather, in the isotropic background reduction it is frozen into the
+homogeneous causal branch and therefore no longer contributes independent
+anisotropic background degrees of freedom.
+Its effects reappear beyond FRW homogeneity through anisotropic or
+weak-field corrections.
+
+\paragraph{(iii) Relation to late-time cosmology.}
+The late-time background apparatus used in
+Section~\ref{sec:hubble_jwst} and in
+Appendix~\ref{app:late_cosmo_background}
+should be read as a benchmark specialisation of
+Eqs.~\eqref{eq:bg_reduction_friedmann}--\eqref{eq:bg_reduction_scalar}
+to the present amplitude-first closure.
+Thus the cosmological sector is no longer an isolated add-on: it is the
+background branch of the same macroscopic system used in the geometric
+theory.
+
+\paragraph{(iv) Observational outputs.}
+Once the background solution $H(z),\phi(z)$ is known, the cosmological
+observables used later in the paper follow in the standard way:
+\[
+D_L(z),\qquad
+t_{\rm lookback}(z),\qquad
+t_U(z),\qquad
+t_{\rm gal}(z_{\rm obs};z_{\rm form}).
+\]
+In ECT these are therefore not independent phenomenological inserts, but
+derived outputs of the macroscopic background reduction.
 
 \subsubsection*{Homogeneous limit and recovery of Einstein gravity}
 
@@ -6108,6 +6203,11 @@ underlying ordered structure.
     amplitude sector, reparameterised by $\phi=\ln(u/u_\infty)$,
     while the orientation sector survives through causal-background
     selection and anisotropic corrections~(bridge principle; structural).
+  \item The geometric branch admits an isotropic background reduction in
+    which the amplitude sector remains dynamical while the orientation
+    sector is frozen into the homogeneous causal background; the
+    resulting FRW system is the parent structure of the later
+    cosmological closure~(structural/bridge level).
 \end{enumerate}
 
 \textbf{Not yet established as first-principles theorems:}
@@ -6159,8 +6259,9 @@ which is structurally similar to $T_{AB}^{(n)}$ but with free coupling constants
 \subsubsection*{Summary}
 
 The geometric branch of ECT requires a nonlinear completion.
-The strongest currently available completion is the $\phi$-first
-scalar-tensor closure~\eqref{eq:phi_first_action}--\eqref{eq:gen_EE},
+The most developed currently available amplitude-dominated completion is
+the $\phi$-first scalar-tensor closure
+\eqref{eq:phi_first_action}--\eqref{eq:gen_EE},
 whose homogeneous frozen-order limit reduces to standard Einstein
 gravity with cosmological constant.
 The full first-principles derivation of this nonlinear sector from
@@ -8159,6 +8260,9 @@ galactic closure already used in the SPARC velocity analysis.
 
 The earlier phenomenological power-law background ansatz has been
 replaced by a minimal late-time $\phi$-first background apparatus.
+This apparatus should be read as the late-time FRW specialisation of the
+amplitude-dominated macroscopic reduction developed in
+Section~\ref{sec:mp_nonlinear}.
 The starting point is the effective scalar--tensor action
 \begin{equation}
 S_{\rm eff}
@@ -8180,7 +8284,9 @@ G_{\rm eff}(\phi)=\frac{1}{8\pi f(\phi)}.
 \]
 
 For a homogeneous FRW background, the late-time expansion history
-is controlled by the coupled system for $H(z)$ and $\phi(z)$.
+is controlled by the coupled system for $H(z)$ and $\phi(z)$ obtained
+from the background reduction of the macroscopic closure
+(Section~\ref{sec:background_reduction_macro}).
 In the variable $N=\ln a$, the ECT Friedmann relation takes the form
 \begin{equation}
 E^2(N)
@@ -8247,6 +8353,12 @@ t_{\rm gal}(z_{\rm obs};z_{\rm form})
 t_U(z_{\rm obs})-t_U(z_{\rm form}).
 \label{eq:ect_age_gal_main}
 \end{equation}
+The quantity $t_U(z)$ is the age of the Universe at the epoch of
+observation, while $t_{\rm gal}(z_{\rm obs};z_{\rm form})$ is the
+available lifetime of a galaxy observed at $z_{\rm obs}$ if it formed at
+$z_{\rm form}$.
+This distinction is essential for the JWST discussion.
+
 The benchmark run gives an ECT age of $13.1$\,Gyr vs.\ the
 reference $\Lambda$CDM age of $13.8$\,Gyr, with luminosity-distance
 shifts of $\Delta D_L/D_L\approx-5\%$ at $z=5$--12.
@@ -18191,7 +18303,10 @@ degeneracy diagnostics rather than as headline physical results.
 \section{Late-time $\phi$-first cosmological background apparatus}
 \label{app:late_cosmo_background}
 
-This appendix derives the minimal ECT background apparatus used for the
+This appendix records the benchmark late-time specialisation of the
+macroscopic background reduction derived in
+Section~\ref{sec:background_reduction_macro}.
+It derives the minimal ECT background apparatus used for the
 late-time cosmology calculations in Section~\ref{sec:hubble_jwst}.
 
 \subsection{Effective action and FRW reduction}
@@ -18381,7 +18496,8 @@ ECT closure.
 \subsection{Self-consistent fixed-point solver design}
 
 The target numerical background solver is a self-consistent fixed-point
-scheme for the late-time ECT scalar--tensor closure.
+scheme for the late-time specialisation of the ECT macroscopic
+scalar--tensor background closure.
 It evolves the macroscopic amplitude variable $\phi(N)=\ln(u/u_\infty)$
 and computes the corresponding background expansion history $E(N)=H/H_*$.
 
@@ -18465,7 +18581,7 @@ $t_{\rm gal}(z_{\rm obs};z_{\rm form})$ with large $z_{\rm form}$---must
 still be interpreted as interim Level~B numerical estimates rather than
 as final ECT predictions.
 
-From the solved background the code computes:
+From the solved macroscopic background branch the code computes:
 \begin{enumerate}
 \item the direct late-time Hubble shift $\Delta H_0/H_0 = E(0)-1$;
 \item a ladder-style low-$z$ inferred $H_0$ from the $D_L$ slope;
