@@ -7731,9 +7731,17 @@ two effects are comparable in magnitude ($\approx 5\%$ each),
 so the overall JWST improvement is partial: distance inference
 softens, growth is slightly enhanced (growth proxy $\approx 1.017$
 at $z=10$), but the time budget worsens.  A stronger JWST
-improvement would require a non-trivial early-time $\phi$-background
-history with a localized growth enhancement that does not simultaneously
-compress the formation time-window~(Level~Open).
+improvement would require either a non-trivial early-time $\phi$-background
+history that localises the growth enhancement without compressing the
+formation time-window, or a full perturbation-level growth-equation
+analysis beyond the present heuristic $G_{\rm eff}/H^2$ proxy~(Level~Open):
+\begin{equation}
+D'' + \left(2+\frac{H'}{H}\right)D'
+-\frac{3}{2}\Omega_m(z)\frac{G_{\rm eff}(z)}{G_N}D = 0.
+\label{eq:growth_ode}
+\end{equation}
+Solving~\eqref{eq:growth_ode} with the ECT background is a natural
+next step for a more definitive JWST assessment.
 
 \begin{figure}[htb]
 \centering
@@ -7812,10 +7820,13 @@ $H_0^{\rm late}$ & $69.4$\,km\,s$^{-1}$\,Mpc$^{-1}$ \\
 $t_0^{\rm ECT}$ & $13.1$\,Gyr \\
 $\Delta t_0/t_0$ & $-4.8\%$ \\
 $\Delta D_L/D_L$ at $z=10$ & $-5.4\%$ \\
+Inferred $\Delta L/L$ at $z=10$ & $\approx -10\%$ \\
 Growth proxy $\mathcal{G}$ at $z=10$ & $1.016$ \\
 $g^\dagger_{\rm bg}(z=10)/g^\dagger_{\rm bg}(0)$ & $21.5$ \\
 $t_{\rm U}(z=10)^{\rm ECT}$ & $0.44$\,Gyr \\
+$t_{\rm U}(z=10)^{\Lambda{\rm CDM}}$ & $0.47$\,Gyr \\
 Galaxy age (obs $z=10$, form $z=20$)$^{\rm ECT}$ & $0.27$\,Gyr \\
+Galaxy age (obs $z=10$, form $z=20$)$^{\Lambda{\rm CDM}}$ & $0.29$\,Gyr \\
 \hline\hline
 \end{tabular}
 \end{table}
@@ -17839,6 +17850,12 @@ region producing a few-percent late-time Hubble shift, confirming that
 the benchmark is representative rather than finely tuned.
 
 \subsection{Derived outputs}
+
+For age estimates, the numerical integration is extended to a
+sufficiently high redshift (effectively to $z\sim 10^6$ via a
+matter+radiation-dominated tail matched at $z_{\rm match}=10$), so that
+the quoted ages approximate the full cosmological lookback integral
+rather than a truncated low-$z$ contribution.
 
 From the solved background the code computes:
 \begin{enumerate}

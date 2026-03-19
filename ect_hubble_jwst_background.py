@@ -59,7 +59,8 @@ class Params:
     kappa:  float = 15.0   # K0 / f0
     u0:     float = -0.12  # phi(z=0)
 
-    zmax_solver: float = 15.0    # ECT solver range
+    zmax_solver: float = 15.0    # ECT solver (also used as plot range)
+    zplot:       float = 15.0    # plot window upper limit
     z_match:     float = 10.0    # match to tail here
     z_inf:       float = 1e6     # effective infinity for age integral
     npts:        int   = 3000
@@ -275,16 +276,20 @@ def derived_quantities(df: pd.DataFrame, p: Params):
     S["age_lcdm_Gyr"]  = t0_lcdm
     S["Delta_age_frac"]= (t0_ect - t0_lcdm) / t0_lcdm
 
-    # low-z H0 ladder
-    mask = z <= 0.1
-    if mask.sum() >= 5:
-        slope = np.polyfit(z[mask], DL[mask], 1)[0]
-        S["H0_lowz"] = float(C_LIGHT / slope)
+    # low-z H0 ladder (diagnostic CSV only — not used in main text results
+    # due to instability of low-z slope extraction in the quasi-static closure)
+    mask_lowz = z <= 0.1
+    if mask_lowz.sum() >= 5:
+        slope = np.polyfit(z[mask_lowz], DL[mask_lowz], 1)[0]
+        S["H0_lowz_diagnostic"] = float(C_LIGHT / slope)
 
     # per-redshift outputs
+    # luminosity shift: ΔL/L = (1 + ΔDL/DL)^2 - 1 ≈ 2*ΔDL/DL
     for zt in [1, 2, 5, 8, 10, 12]:
         j = int(np.argmin(np.abs(z - zt)))
-        S[f"DL_frac_z{zt}"]    = float((DL[j]-DL_ref[j])/max(DL_ref[j],1e-10))
+        dl_frac = float((DL[j]-DL_ref[j])/max(DL_ref[j],1e-10))
+        S[f"DL_frac_z{zt}"]    = dl_frac
+        S[f"DL_lum_frac_z{zt}"] = float((1+dl_frac)**2 - 1)  # ΔL/L
         S[f"tlook_frac_z{zt}"] = float((tlook[j]-tlookref[j])/max(tlookref[j],1e-10))
         S[f"grow_ratio_z{zt}"] = float(grow[j]/max(growref[j],1e-20))
         S[f"gdag_ratio_z{zt}"] = float(df["gdag_ratio"].iloc[j])
@@ -306,7 +311,7 @@ def derived_quantities(df: pd.DataFrame, p: Params):
 # ── four-panel figure ───────────────────────────────────────────────────────────
 def make_figure(df: pd.DataFrame, summary: pd.DataFrame, outpath: Path, p: Params):
     apply_bw_style()
-    z = df["z"].to_numpy(); mask = z <= 15
+    z = df["z"].to_numpy(); mask = z <= p.zplot
 
     fig, axes = plt.subplots(2, 2, figsize=(13, 10))
     axs = axes.ravel()
@@ -423,7 +428,8 @@ def main():
     ap.add_argument("--mu",       type=float, default=1.5)
     ap.add_argument("--kappa",    type=float, default=15.0)
     ap.add_argument("--u0",       type=float, default=-0.12)
-    ap.add_argument("--zmax",     type=float, default=15.0)
+    ap.add_argument("--zmax",     type=float, default=15.0, help="ECT solver upper z")
+    ap.add_argument("--zplot",    type=float, default=15.0, help="plot window upper z")
     ap.add_argument("--z_match",  type=float, default=10.0)
     ap.add_argument("--npts",     type=int,   default=3000)
     ap.add_argument("--n_iter",   type=int,   default=3)
@@ -433,7 +439,7 @@ def main():
     oV0 = args.oV0 if args.oV0 is not None else 1.0 - args.om0 - args.or0
     p = Params(H_star=args.H_star, om0=args.om0, or0=args.or0, oV0=oV0,
                beta=args.beta, mu=args.mu, kappa=args.kappa, u0=args.u0,
-               zmax_solver=args.zmax, z_match=args.z_match,
+               zmax_solver=args.zmax, zplot=args.zplot, z_match=args.z_match,
                npts=args.npts, n_iter=args.n_iter)
 
     outdir = Path(args.outdir); outdir.mkdir(parents=True, exist_ok=True)
