@@ -19,7 +19,11 @@ Mathematics is verified against ECT derivation in Appendix app:late_cosmo_backgr
 All formulas are correct (checked). Code fixes vs GPT draft:
   - proper self-consistent q initialisation
   - clean scipy solve_ivp integration
-  - consistent E'/E from ECT background (not forced LCDM)
+  - algebraic ECT Friedmann equation for E^2
+  - quasi-static field evolution using LCDM-reference dlnE/dN
+    as a controlled Level-B closure for numerical stability
+  NOTE: this is a semi-numerical quasi-static benchmark, not a
+    fully self-consistent ECT background integration.
 """
 
 from __future__ import annotations

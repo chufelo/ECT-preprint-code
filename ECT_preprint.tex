@@ -7702,6 +7702,12 @@ At the present-epoch level, the late-time Hubble shift is controlled by
 For benchmark parameters $\beta=0.8$, $\mu=1.5$, $\kappa=15$, $u_0=-0.12$
 this yields $\Delta H_0/H_0\approx 2.9\%$,
 corresponding to $H_0^{\rm late}\approx 69.3$\,km\,s$^{-1}$\,Mpc$^{-1}$.
+This numerical value is the output of the present semi-numerical
+quasi-static benchmark solver and should not yet be read as the result
+of a fully self-consistent ECT background integration.
+The corresponding analytic benchmark window is shown in
+Appendix~\ref{app:late_cosmo_algorithm},
+Fig.~\ref{fig:app_h0_scan}.
 
 The same background drift also changes the distance--redshift
 relation and available lookback time:
@@ -7714,6 +7720,20 @@ t_{\rm lookback}(z)=\int_0^z \frac{dz'}{(1+z')H(z')}.
 The benchmark run gives an ECT age of $13.1$\,Gyr vs.\ the
 reference LCDM age of $13.8$\,Gyr, with luminosity-distance
 shifts of $\Delta D_L/D_L\approx-5\%$ at $z=5$--12.
+
+The net effect on the JWST early-structure tension is mixed.
+Smaller luminosity distances ($\Delta D_L<0$) reduce the required
+intrinsic luminosities and stellar masses, partially softening the
+tension.  However, the same background also reduces the cosmic age
+at any fixed redshift ($\Delta t_{\rm lookback}<0$), leaving less
+time for early galaxy formation.  In the present benchmark these
+two effects are comparable in magnitude ($\approx 5\%$ each),
+so the overall JWST improvement is partial: distance inference
+softens, growth is slightly enhanced (growth proxy $\approx 1.017$
+at $z=10$), but the time budget worsens.  A stronger JWST
+improvement would require a non-trivial early-time $\phi$-background
+history with a localized growth enhancement that does not simultaneously
+compress the formation time-window~(Level~Open).
 
 The Hubble tension, the inferred age of the Universe, and part of the
 JWST early-structure tension are therefore not independent in the ECT
@@ -17769,11 +17789,36 @@ u_0\sim -(0.08\text{--}0.12),\quad
 \end{equation}
 For Benchmark~B ($\beta=0.8$, $\mu=1.5$, $\kappa=15$, $u_0=-0.12$)
 the analytic estimate~\eqref{eq:app_late_deltaH} gives
-$\Delta H_0/H_0\approx 5.1\%$, while the full numerical solution
-(which includes the $q$-dependent corrections to $E^2$) gives $2.9\%$.
+$\Delta H_0/H_0\approx 5.1\%$, while the present semi-numerical quasi-static benchmark
+(which includes the $q$-dependent corrections to $E^2$ but evaluates
+$E'/E$ using the reference $\Lambda$CDM background for numerical
+stability) gives $2.9\%$.
 The difference reflects the fact that the quasi-static $q$ is not
 strictly self-consistent in $E^2$; see the discussion of Level~B
 closure status in the main text.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\linewidth]{figures/ect_h0_scan_bw.pdf}
+\caption{Analytic parameter-window scan for the late-time Hubble shift
+in the minimal ECT closure, based on
+$\Delta H_0/H_0 \approx \mu^2 u_0^2/12 - \beta u_0/2$
+at fixed $\mu=1.5$ and $\kappa=15$.
+The shaded contours show the expected fractional Hubble shift in the
+$(\beta,u_0)$-plane.  Benchmarks~B and~C are overlaid for reference.
+A few-percent late-time Hubble shift arises not at an isolated tuned
+point but in a finite and reasonably natural region of parameter space.
+This scan is analytic and serves as a guide to the benchmark window,
+not as a replacement for the semi-numerical background solver.}
+\label{fig:app_h0_scan}
+\end{figure}
+
+The purpose of Fig.~\ref{fig:app_h0_scan} is methodological: it shows
+that the benchmark points used in the main text lie inside a finite
+parameter region producing a few-percent late-time Hubble shift.  This
+makes the benchmark physically less ad hoc than a single tuned point,
+while still remaining only a Level~B late-time closure rather than a
+first-principles cosmological derivation.
 
 \subsection{Derived outputs}
 
