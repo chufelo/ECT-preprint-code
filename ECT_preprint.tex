@@ -4759,7 +4759,9 @@ of the geometric branch}
 \textit{Connection to ECT basics:
 Sections~\ref{sec:branching}, \ref{sec:geom_branch},
 and the summary rules collected in
-Section~\ref{sec:foundational_consequences}.
+Section~\ref{sec:foundational_consequences}, especially the
+amplitude--orientation decomposition rule and the macroscopic
+viability rule.
 Status: conceptual bridge; all claims structural.}
 
 \medskip
@@ -5867,7 +5869,64 @@ the $\phi$-field is now explicitly anchored in the amplitude sector of
 the ordered condensate, rather than appearing as an isolated
 phenomenological scalar.
 
+\subsubsection*{Amplitude-dominated macroscopic reduction}
+
+The ordered-branch infrared EFT of
+Section~\ref{sec:ordered_branch_eft} contains both the condensate
+amplitude $u(x)$ and the orientation field $n_A(x)$.
+However, the macroscopic geometric branch need not retain both sectors
+on an equal footing.
+At large scales there is a natural reduction in which the dominant
+scalar response is carried by the condensate amplitude, while the
+orientation sector either freezes into the background causal structure
+or contributes only through subleading anisotropic corrections.
+
+This motivates the amplitude-dominated macroscopic reduction:
+\begin{equation}
+  \label{eq:amplitude_dominated_reduction}
+  S_{\rm ord}^{(E)}[u,n]
+  \;\longrightarrow\;
+  S_{\rm macro}[g,\phi,n],
+  \qquad
+  \phi=\ln\!\frac{u}{u_\infty},
+\end{equation}
+where the effective metric $g_{\mu\nu}$ is read off from the viable
+Lorentzian tensor structure of the coarse-grained ordered branch,
+$\phi$ parameterises the amplitude sector, and $n_A$ survives only
+through the residual anisotropic/macroscopic orientation sector.
+
+\paragraph{Why this reduction is natural.}
+The amplitude $u(x)$ is the only scalar collective variable measuring
+the local strength of ordering itself.
+If the large-scale gravitational response is modulated by how strongly
+the condensate is ordered relative to its asymptotic screened state,
+then the amplitude sector is the unique scalar carrier of that
+modulation.
+By contrast, the orientation sector primarily determines the causal
+tensor structure and therefore enters either through the background
+selection of the Lorentzian branch or through anisotropic corrections.
+
+\paragraph{What is being assumed and what is not.}
+This reduction does not yet assume the explicit $\phi$-first action
+\eqref{eq:phi_first_action}.
+It only states that, among the collective variables of the ordered
+branch, the amplitude sector is the natural scalar degree of freedom
+to retain in the first macroscopic closure.
+The detailed coefficients of that closure, the functions $\omega(\phi)$
+and $U(\phi)$, and the exact coupling of $n_A$ remain Level~B.
+
+\paragraph{Consequence.}
+The nonlinear macroscopic closure used below is therefore not an
+isolated phenomenological scalar-tensor ansatz.
+It is the first amplitude-dominated coarse-grained realisation of the
+ordered condensate branch.
+
 \subsubsection*{Working assumptions of the $\phi$-first macroscopic closure}
+
+The assumptions below should be read on top of the
+amplitude-dominated macroscopic reduction introduced above.
+They do not create the $\phi$-sector from nothing; they specify the
+first nonlinear closure built on that reduction.
 
 \begin{description}[noitemsep,leftmargin=2.2em]
   \item[A1] \textbf{Ordered branch condition.}
@@ -5890,9 +5949,9 @@ A4 is open but well-motivated; A5 is used only for the pure-metric limit.
 
 \subsubsection*{The $\phi$-first effective IR action}
 
-Under A1--A4, the most developed currently available nonlinear
-macroscopic closure is the amplitude-first (equivalently $\phi$-first)
-parameterisation:
+Under A1--A4 and the amplitude-dominated macroscopic reduction above,
+the most developed currently available nonlinear macroscopic closure is
+the amplitude-first (equivalently $\phi$-first) parameterisation:
 \begin{equation}
   \label{eq:phi_first_action}
   S_{\rm IR}
@@ -5970,7 +6029,7 @@ cosmological constant:
   + \Lambda_{\rm eff}\,g_{\mu\nu}
   = \frac{8\pi G_N}{c^4}\,T_{\mu\nu}^{\rm mat},
 \end{equation}
-with $\Lambda_{\rm eff}=U(\phi_0)/\bar M_{\rm Pl}^2$.
+with $\Lambda_{\rm eff}=U(0)/\bar M_{\rm Pl}^2$.
 This shows that the ECT postulate structure does not push the theory
 away from GR at large homogeneous scales; GR is the special regime
 where additional macroscopic order variables are frozen or screened.
@@ -6025,8 +6084,9 @@ anisotropic condensate structure on the emergent geometry.
 Spacetime curvature is not an autonomous primitive field; it is the
 nonlinear macroscopic deformation pattern of the ordered condensate.
 The Einstein limit corresponds to the regime where the condensate
-amplitude and orientation sectors are effectively frozen and the medium
-appears purely metric.
+amplitude is screened to its asymptotic value and the orientation sector
+is effectively frozen into the background causal structure, so that the
+medium appears purely metric.
 Deviations from GR correspond to residual macroscopic signatures of the
 underlying ordered structure.
 
@@ -6043,6 +6103,11 @@ underlying ordered structure.
   \item The macroscopic scalar variable $\phi$ is interpreted as a
     reparameterisation of the ordered-branch amplitude $u/u_\infty$,
     not as an extra fundamental field~(bridge principle; structural).
+  \item The first macroscopic nonlinear reduction is amplitude-dominated:
+    the scalar variable retained in the closure is the condensate
+    amplitude sector, reparameterised by $\phi=\ln(u/u_\infty)$,
+    while the orientation sector survives through causal-background
+    selection and anisotropic corrections~(bridge principle; structural).
 \end{enumerate}
 
 \textbf{Not yet established as first-principles theorems:}
@@ -7132,7 +7197,8 @@ dynamics of the Lorentz-order field~$\phi$.
 field $\phi$ and local acceleration $g/g_\dagger$.  Different
 physical regimes --- Quantum/Planckian, Newtonian (GR),
 MOND-like critical branch, and deep-MOND / void ---
-are controlled by the local degree of Lorentzian ordering.
+are controlled by the local condensate amplitude relative to its
+asymptotic screened value.
 Dense environments (high $\phi$) are screened and recover
 standard GR; dilute outskirts and voids approach the critical
 boundary where the nonlinear $\phi$-branch activates.
