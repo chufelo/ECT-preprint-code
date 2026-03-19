@@ -153,17 +153,17 @@ def cosmic_age_from_bigbang(z_obs, df: pd.DataFrame, p: Params):
     age1 = 0.0
     if z_obs <= p.z_match:
         mask = (z>=z_obs)&(z<=p.z_match)
-        age1 = np.trapz(age_fac/((1.0+z[mask])*H[mask]), z[mask])
+        age1 = np.trapezoid(age_fac/((1.0+z[mask])*H[mask]), z[mask])
     z_start = max(z_obs, p.z_match)
     z2 = np.logspace(np.log10(1.0+z_start), np.log10(1.0+p.z_inf), 6000)-1.0
     H2 = H_tail(z2, p.z_match, H_match, p.omega_m_star, p.omega_r_star)
-    age2 = np.trapz(age_fac/((1.0+z2)*H2), z2)
+    age2 = np.trapezoid(age_fac/((1.0+z2)*H2), z2)
     return age1+age2
 
 def reference_cosmic_age(z_obs, p: Params):
     z2 = np.logspace(np.log10(1.0+z_obs), np.log10(1.0+p.z_inf), 6000)-1.0
     H2 = p.H_star*np.sqrt(E_ref_sq(-np.log1p(z2), p))
-    return np.trapz(MPC_IN_KM/SEC_IN_GYR/((1.0+z2)*H2), z2)
+    return np.trapezoid(MPC_IN_KM/SEC_IN_GYR/((1.0+z2)*H2), z2)
 
 def derived_quantities(df: pd.DataFrame, p: Params):
     z   = df["z"].to_numpy(); E = df["E"].to_numpy()
@@ -196,6 +196,10 @@ def derived_quantities(df: pd.DataFrame, p: Params):
          "omega_r_star":p.omega_r_star,"omega_V_star":p.omega_V_star,
          "z_match":p.z_match,"closure_name":"benchmark_phi_first",
          "high_z_completion":"interim_matter_radiation_tail",
+         "seed_mode":"ref",
+         "zmax_solver":p.zmax_solver,
+         "npts":p.npts,
+         "n_iter":p.n_iter,
          "E0":float(E[0]),"H0_late":float(p.H_star*E[0]),
          "DeltaH0_over_H0":float(E[0]-1.0)}
     t0_ect=cosmic_age_from_bigbang(0.0,df,p); t0_ref=reference_cosmic_age(0.0,p)
@@ -238,6 +242,23 @@ def derived_quantities(df: pd.DataFrame, p: Params):
                     "t_U_form_ect_Gyr":t_f,"t_U_form_ref_Gyr":t_fr,
                     "t_gal_ect_Gyr":t_o-t_f,"t_gal_ref_Gyr":t_or-t_fr})
     jwst_df=pd.DataFrame(jwst_rows)
+
+    # JWST key rows (compact subset for main-text numbers)
+    key_pairs={(10,12),(10,15),(10,20),(10,30),(12,15),(12,20)}
+    jwst_key_df=jwst_df[
+        jwst_df.apply(lambda r:(int(r.z_obs),int(r.z_form)) in key_pairs,axis=1)
+    ].reset_index(drop=True)
+
+    # panel CSV: panels (a)+(b)
+    panel_ab_df=df[["z","E","E_ref"]].copy()
+    panel_ab_df["DL_frac"]=(df["DL"]-df["DL_ref"])/df["DL_ref"].replace(0,float("nan"))
+
+    # panel CSV: panels (c)+(d)
+    tref_s=df["tlook_ref"].copy(); tref_s[tref_s<0.01]=float("nan")
+    panel_cd_df=df[["z","t_U","t_U_ref","grow","grow_ref","gdag_ratio"]].copy()
+    panel_cd_df["tlook_frac"]=(df["tlook"]-df["tlook_ref"])/tref_s
+    panel_cd_df["grow_ratio"]=df["grow"]/df["grow_ref"].replace(0,float("nan"))
+
     # metadata
     meta_df=pd.DataFrame([{"closure_name":"benchmark_phi_first",
         "response_factor":"f(phi)=f0*exp(beta*phi)",
@@ -248,8 +269,74 @@ def derived_quantities(df: pd.DataFrame, p: Params):
         "npts":p.npts,"n_iter":p.n_iter,"H_star":p.H_star,
         "beta":p.beta,"mu":p.mu,"kappa":p.kappa,"phi0":p.phi0,
         "omega_m_star":p.omega_m_star,"omega_r_star":p.omega_r_star,
-        "omega_V_star":p.omega_V_star}])
-    return df, summary_df, dt_df, jwst_df, meta_df
+        "omega_V_star":p.omega_V_star,
+        "article_figure_background":   "ect_hubble_jwst_background_bw.pdf",
+        "article_figure_h0_scan":      "ect_h0_scan_bw.pdf",
+        "article_table_summary":       "ect_benchmark_summary.csv",
+        "article_table_distance_time": "ect_distance_time_table.csv",
+        "article_table_jwst":          "ect_jwst_age_grid.csv",
+    }])
+    # ── output manifest ───────────────────────────────────────────────────
+    manifest_rows = [
+      {"filename":"ect_background_profile.csv",
+       "artifact_type":"background_table",
+       "description":"Full background: z,H,E,phi,q,E_ref and derived cols",
+       "supports_article_section":"sec:hubble_jwst, app:late_cosmo_background",
+       "supports_figure_or_table":"fig:ect_hubble_jwst_background"},
+      {"filename":"ect_distance_time_table.csv",
+       "artifact_type":"distance_time_table",
+       "description":"D_L,D_A,t_lookback,t_U,G_eff,g_dag on redshift grid",
+       "supports_article_section":"sec:hubble_jwst, app:late_cosmo_background",
+       "supports_figure_or_table":"eq:app_late_dist, eq:app_late_agegal"},
+      {"filename":"ect_jwst_age_grid.csv",
+       "artifact_type":"jwst_age_grid",
+       "description":"t_gal(z_obs;z_form) for all benchmark (z_obs,z_form) pairs",
+       "supports_article_section":"sec:hubble_jwst",
+       "supports_figure_or_table":"JWST discussion numbers"},
+      {"filename":"ect_jwst_key_rows.csv",
+       "artifact_type":"jwst_key_rows",
+       "description":"Compact JWST grid: key (z_obs,z_form) pairs for main text",
+       "supports_article_section":"sec:hubble_jwst",
+       "supports_figure_or_table":"main text JWST numbers"},
+      {"filename":"ect_benchmark_summary.csv",
+       "artifact_type":"benchmark_summary",
+       "description":"Compact summary: DH0/H0, ages, DL/t_U shifts per redshift",
+       "supports_article_section":"sec:hubble_jwst",
+       "supports_figure_or_table":"main text numbers"},
+      {"filename":"ect_run_metadata.csv",
+       "artifact_type":"run_metadata",
+       "description":"Closure functions, parameters, high-z completion, seed mode",
+       "supports_article_section":"app:late_cosmo_artefacts, sec:late_cosmo_roadmap",
+       "supports_figure_or_table":"metadata"},
+      {"filename":"ect_convergence_diagnostics.csv",
+       "artifact_type":"convergence_diagnostics",
+       "description":"max |delta_E| and |delta_phi| per iteration",
+       "supports_article_section":"app:late_cosmo_algorithm",
+       "supports_figure_or_table":"convergence report"},
+      {"filename":"ect_panel_ab_background.csv",
+       "artifact_type":"figure_panel_data",
+       "description":"Panels (a)+(b): z, E, E_ref, DL_frac",
+       "supports_article_section":"sec:hubble_jwst",
+       "supports_figure_or_table":"fig:ect_hubble_jwst_background panels a+b"},
+      {"filename":"ect_panel_cd_growth_age.csv",
+       "artifact_type":"figure_panel_data",
+       "description":"Panels (c)+(d): z, tlook_frac, grow_ratio, gdag_ratio, t_U",
+       "supports_article_section":"sec:hubble_jwst",
+       "supports_figure_or_table":"fig:ect_hubble_jwst_background panels c+d"},
+      {"filename":"ect_hubble_jwst_background_bw.pdf",
+       "artifact_type":"figure",
+       "description":"Four-panel background figure",
+       "supports_article_section":"sec:hubble_jwst",
+       "supports_figure_or_table":"fig:ect_hubble_jwst_background"},
+      {"filename":"ect_h0_scan_bw.pdf",
+       "artifact_type":"figure",
+       "description":"Parameter window scan (beta, phi_0)",
+       "supports_article_section":"sec:hubble_jwst",
+       "supports_figure_or_table":"fig:h0_scan_main"},
+    ]
+    manifest_df = pd.DataFrame(manifest_rows)
+
+    return df, summary_df, dt_df, jwst_df, jwst_key_df, panel_ab_df, panel_cd_df, meta_df, manifest_df
 
 def make_figure(df, summary, outpath, p):
     apply_bw_style()
@@ -345,6 +432,8 @@ def main():
     ap.add_argument("--npts",    type=int,  default=3000)
     ap.add_argument("--n_iter",  type=int,  default=3)
     ap.add_argument("--scan",    action="store_true")
+    ap.add_argument("--validate_multiseed", action="store_true",
+                    help="Run solver twice (ref+zero seeds) and save comparison CSV")
     ap.add_argument("--seed_mode",choices=["ref","zero"],default="ref",
                     help="Solver seed: ref=screened reference branch, zero=zero dlnE")
     args=ap.parse_args()
@@ -356,14 +445,35 @@ def main():
     outdir=Path(args.outdir); outdir.mkdir(parents=True,exist_ok=True)
     print(f"ECT solver v3: beta={p.beta}, mu={p.mu}, kappa={p.kappa}, phi0={p.phi0}, seed={args.seed_mode}")
     df,diagnostics=solve_background_selfconsistent(p,seed_mode=args.seed_mode)
-    full,summary,distance_time,jwst_grid,metadata=derived_quantities(df,p)
+    full,summary,distance_time,jwst_grid,jwst_key,panel_ab,panel_cd,metadata,manifest=derived_quantities(df,p)
     metadata["seed_mode"]=args.seed_mode
+    summary["seed_mode"]=args.seed_mode
+
+    # multiseed validation (21.5)
+    if args.validate_multiseed:
+        df2,diag2=solve_background_selfconsistent(p,seed_mode="zero")
+        ms_df=pd.DataFrame({
+            "z": df["z"].to_numpy(),
+            "phi_refseed": df["phi"].to_numpy(),
+            "phi_zeroseed": df2["phi"].to_numpy(),
+            "E_refseed": df["E"].to_numpy(),
+            "E_zeroseed": df2["E"].to_numpy(),
+            "delta_phi": df["phi"].to_numpy()-df2["phi"].to_numpy(),
+            "delta_E":   df["E"].to_numpy()-df2["E"].to_numpy(),
+        })
+        ms_df.to_csv(outdir/"ect_multiseed_comparison.csv",index=False)
+        print(f"  max|delta_phi|={ms_df.delta_phi.abs().max():.2e}  "
+              f"max|delta_E|={ms_df.delta_E.abs().max():.2e}")
     full.to_csv(         outdir/"ect_background_profile.csv",      index=False)
     distance_time.to_csv(outdir/"ect_distance_time_table.csv",     index=False)
     jwst_grid.to_csv(    outdir/"ect_jwst_age_grid.csv",           index=False)
     summary.to_csv(      outdir/"ect_benchmark_summary.csv",       index=False)
     metadata.to_csv(     outdir/"ect_run_metadata.csv",            index=False)
     diagnostics.to_csv(  outdir/"ect_convergence_diagnostics.csv", index=False)
+    panel_ab.to_csv(     outdir/"ect_panel_ab_background.csv",     index=False)
+    panel_cd.to_csv(     outdir/"ect_panel_cd_growth_age.csv",     index=False)
+    jwst_key.to_csv(     outdir/"ect_jwst_key_rows.csv",           index=False)
+    manifest.to_csv(     outdir/"ect_output_manifest.csv",         index=False)
     s=summary.iloc[0]
     print(f"\n=== SUMMARY ===")
     print(f"  DH0/H0  = {s['DeltaH0_over_H0']*100:.2f}%")
@@ -374,8 +484,11 @@ def main():
               f"tU={s.get(f't_U_ect_z{zt}',0):.3f} Gyr")
     print("\nSaved artefacts:")
     for fn in ["ect_background_profile.csv","ect_distance_time_table.csv",
-               "ect_jwst_age_grid.csv","ect_benchmark_summary.csv",
-               "ect_run_metadata.csv","ect_convergence_diagnostics.csv"]:
+               "ect_jwst_age_grid.csv","ect_jwst_key_rows.csv",
+               "ect_benchmark_summary.csv","ect_run_metadata.csv",
+               "ect_convergence_diagnostics.csv",
+               "ect_panel_ab_background.csv","ect_panel_cd_growth_age.csv",
+               "ect_output_manifest.csv"]:
         print(f"  - {fn}")
     make_figure(full,summary,outdir/"ect_hubble_jwst_background_bw",p)
     if args.scan:
