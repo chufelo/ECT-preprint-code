@@ -325,12 +325,22 @@ def derived_quantities(df: pd.DataFrame, p: Params):
        "supports_figure_or_table":"fig:ect_hubble_jwst_background panels c+d"},
       {"filename":"ect_hubble_jwst_background_bw.pdf",
        "artifact_type":"figure",
-       "description":"Four-panel background figure",
+       "description":"Four-panel background figure (PDF)",
+       "supports_article_section":"sec:hubble_jwst",
+       "supports_figure_or_table":"fig:ect_hubble_jwst_background"},
+      {"filename":"ect_hubble_jwst_background_bw.png",
+       "artifact_type":"figure",
+       "description":"Four-panel background figure (PNG)",
        "supports_article_section":"sec:hubble_jwst",
        "supports_figure_or_table":"fig:ect_hubble_jwst_background"},
       {"filename":"ect_h0_scan_bw.pdf",
        "artifact_type":"figure",
-       "description":"Parameter window scan (beta, phi_0)",
+       "description":"Parameter window scan (beta, phi_0) (PDF)",
+       "supports_article_section":"sec:hubble_jwst",
+       "supports_figure_or_table":"fig:h0_scan_main"},
+      {"filename":"ect_h0_scan_bw.png",
+       "artifact_type":"figure",
+       "description":"Parameter window scan (beta, phi_0) (PNG)",
        "supports_article_section":"sec:hubble_jwst",
        "supports_figure_or_table":"fig:h0_scan_main"},
     ]
@@ -448,8 +458,44 @@ def main():
     full,summary,distance_time,jwst_grid,jwst_key,panel_ab,panel_cd,metadata,manifest=derived_quantities(df,p)
     metadata["seed_mode"]=args.seed_mode
     summary["seed_mode"]=args.seed_mode
+    metadata["validate_multiseed"]=bool(args.validate_multiseed)
+    summary["validate_multiseed"]=bool(args.validate_multiseed)
 
-    # multiseed validation (21.5)
+    full.to_csv(         outdir/"ect_background_profile.csv",      index=False)
+    distance_time.to_csv(outdir/"ect_distance_time_table.csv",     index=False)
+    jwst_grid.to_csv(    outdir/"ect_jwst_age_grid.csv",           index=False)
+    summary.to_csv(      outdir/"ect_benchmark_summary.csv",       index=False)
+    metadata.to_csv(     outdir/"ect_run_metadata.csv",            index=False)
+    diagnostics.to_csv(  outdir/"ect_convergence_diagnostics.csv", index=False)
+    panel_ab.to_csv(     outdir/"ect_panel_ab_background.csv",     index=False)
+    panel_cd.to_csv(     outdir/"ect_panel_cd_growth_age.csv",     index=False)
+    jwst_key.to_csv(     outdir/"ect_jwst_key_rows.csv",           index=False)
+    s=summary.iloc[0]
+    print(f"\n=== SUMMARY ===")
+    print(f"  DH0/H0  = {s['DeltaH0_over_H0']*100:.2f}%")
+    print(f"  H0 late = {s['H0_late']:.2f} km/s/Mpc")
+    print(f"  Age ECT = {s['age_ect_Gyr']:.2f} Gyr  (ref = {s['age_ref_Gyr']:.2f} Gyr)")
+    for zt in [5,10,12]:
+        print(f"  z={zt:2d}: DL/DL={s.get(f'DL_frac_z{zt}',0)*100:.2f}%  "
+              f"tU={s.get(f't_U_ect_z{zt}',0):.3f} Gyr")
+    print("\nSaved artefacts:")
+    saved_files=[
+        "ect_background_profile.csv","ect_distance_time_table.csv",
+        "ect_jwst_age_grid.csv","ect_jwst_key_rows.csv",
+        "ect_benchmark_summary.csv","ect_run_metadata.csv",
+        "ect_convergence_diagnostics.csv",
+        "ect_panel_ab_background.csv","ect_panel_cd_growth_age.csv",
+        "ect_output_manifest.csv",
+        "ect_hubble_jwst_background_bw.pdf",
+        "ect_hubble_jwst_background_bw.png",
+    ]
+    if args.scan:
+        saved_files+=["ect_h0_scan_bw.pdf","ect_h0_scan_bw.png"]
+    if args.validate_multiseed:
+        saved_files.append("ect_multiseed_comparison.csv")
+    for fn in saved_files:
+        print(f"  - {fn}")
+    # multiseed validation (builds manifest entry if needed)
     if args.validate_multiseed:
         df2,diag2=solve_background_selfconsistent(p,seed_mode="zero")
         ms_df=pd.DataFrame({
@@ -464,32 +510,36 @@ def main():
         ms_df.to_csv(outdir/"ect_multiseed_comparison.csv",index=False)
         print(f"  max|delta_phi|={ms_df.delta_phi.abs().max():.2e}  "
               f"max|delta_E|={ms_df.delta_E.abs().max():.2e}")
-    full.to_csv(         outdir/"ect_background_profile.csv",      index=False)
-    distance_time.to_csv(outdir/"ect_distance_time_table.csv",     index=False)
-    jwst_grid.to_csv(    outdir/"ect_jwst_age_grid.csv",           index=False)
-    summary.to_csv(      outdir/"ect_benchmark_summary.csv",       index=False)
-    metadata.to_csv(     outdir/"ect_run_metadata.csv",            index=False)
-    diagnostics.to_csv(  outdir/"ect_convergence_diagnostics.csv", index=False)
-    panel_ab.to_csv(     outdir/"ect_panel_ab_background.csv",     index=False)
-    panel_cd.to_csv(     outdir/"ect_panel_cd_growth_age.csv",     index=False)
-    jwst_key.to_csv(     outdir/"ect_jwst_key_rows.csv",           index=False)
-    manifest.to_csv(     outdir/"ect_output_manifest.csv",         index=False)
-    s=summary.iloc[0]
-    print(f"\n=== SUMMARY ===")
-    print(f"  DH0/H0  = {s['DeltaH0_over_H0']*100:.2f}%")
-    print(f"  H0 late = {s['H0_late']:.2f} km/s/Mpc")
-    print(f"  Age ECT = {s['age_ect_Gyr']:.2f} Gyr  (ref = {s['age_ref_Gyr']:.2f} Gyr)")
-    for zt in [5,10,12]:
-        print(f"  z={zt:2d}: DL/DL={s.get(f'DL_frac_z{zt}',0)*100:.2f}%  "
-              f"tU={s.get(f't_U_ect_z{zt}',0):.3f} Gyr")
-    print("\nSaved artefacts:")
-    for fn in ["ect_background_profile.csv","ect_distance_time_table.csv",
-               "ect_jwst_age_grid.csv","ect_jwst_key_rows.csv",
-               "ect_benchmark_summary.csv","ect_run_metadata.csv",
-               "ect_convergence_diagnostics.csv",
-               "ect_panel_ab_background.csv","ect_panel_cd_growth_age.csv",
-               "ect_output_manifest.csv"]:
-        print(f"  - {fn}")
+        manifest=pd.concat([manifest,pd.DataFrame([{
+            "filename":"ect_multiseed_comparison.csv",
+            "artifact_type":"validation_table",
+            "description":"Comparison of ref/zero-seed runs: phi/E deltas on common z-grid",
+            "supports_article_section":"app:late_cosmo_interface, app:late_cosmo_algorithm",
+            "supports_figure_or_table":"validation checks"
+        }])],ignore_index=True)
+
+    # save manifest (after optional multiseed entry)
+    manifest.to_csv(outdir/"ect_output_manifest.csv",index=False)
+
+    # 22.5 consistency check for required artefacts
+    expected_files=[
+        outdir/"ect_background_profile.csv",
+        outdir/"ect_distance_time_table.csv",
+        outdir/"ect_jwst_age_grid.csv",
+        outdir/"ect_jwst_key_rows.csv",
+        outdir/"ect_benchmark_summary.csv",
+        outdir/"ect_run_metadata.csv",
+        outdir/"ect_convergence_diagnostics.csv",
+        outdir/"ect_panel_ab_background.csv",
+        outdir/"ect_panel_cd_growth_age.csv",
+        outdir/"ect_output_manifest.csv",
+    ]
+    missing=[fp.name for fp in expected_files if not fp.exists()]
+    if missing:
+        raise RuntimeError(f"Missing required artefacts: {missing}")
+    if args.validate_multiseed and not (outdir/"ect_multiseed_comparison.csv").exists():
+        raise RuntimeError("Missing required artefact: ect_multiseed_comparison.csv")
+
     make_figure(full,summary,outdir/"ect_hubble_jwst_background_bw",p)
     if args.scan:
         make_scan_figure(outdir/"ect_h0_scan_bw",p)
