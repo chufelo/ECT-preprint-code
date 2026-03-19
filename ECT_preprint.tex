@@ -8802,11 +8802,13 @@ system at $z=7.3$, and RUBIES-EGS-QG-1 at $z=4.90$) shows:
   is clearly above the required threshold.
 \end{enumerate}
 Therefore the present derived-parent ECT corridor already provides a
-quantitatively plausible mechanism for BH-assisted and compact-core
+quantitatively plausible partial mechanism for BH-assisted and compact-core
 driven early maturity, while for ordinary galaxy-assembly channels the
 compensation is close to but not yet unambiguously above the required level.
 This should be interpreted as a concrete partial result rather than a
 complete resolution.
+The corresponding numerical pipeline is recorded explicitly in
+Appendix~\ref{sec:derived_parent_pipeline}.
 
 \begin{table}[htb]
 \centering
@@ -8835,14 +8837,17 @@ and others remaining as predictions.
 
 \paragraph{Already discussed observationally.}
 JWST has revealed early candidates for overmassive SMBHs relative to
-their stellar host galaxies, very early luminous and massive galaxy
-systems (including confirmed objects at $z\gtrsim 14$), and massive
-quiescent galaxies at unexpectedly high redshifts.
+their stellar host galaxies~\cite{Juodzbalis2024,Maiolino2024},
+very early luminous and massive galaxy
+systems (including spectroscopically confirmed objects at
+$z\gtrsim 14$~\cite{Carniani2024,Finkelstein2022}),
+and massive quiescent galaxies at unexpectedly high
+redshifts~\cite{deGraaff2024,Nanayakkara2024,BoylanKolchin2023}.
 A notable signature is the displacement of some early objects along the
 $M_{\rm BH}$--$M_\star$ relation while remaining closer to the local
-$M_{\rm BH}$--$\sigma$ relation, which is qualitatively consistent with
-a maturity channel where central compact objects develop faster than
-the stellar host component.
+$M_{\rm BH}$--$\sigma$ relation~\cite{Juodzbalis2024}, which is
+qualitatively consistent with a maturity channel where central compact
+objects develop faster than the stellar host component.
 These observations do not prove ECT, but they motivate precisely the
 accelerated maturity channels identified here.
 
@@ -8869,6 +8874,9 @@ Full linear growth has been solved on the derived-parent background;
 semi-analytic maturity factors have been combined with the background
 age budget; but a complete N-body or hydrodynamical structure-formation
 program remains an open next step.
+These signatures should therefore be interpreted as a mixture of
+already-discussed observational tendencies and explicit ECT predictions,
+not as a closed confirmation set.
 
 \textit{ISW excess.}
 In voids, larger $G_{\rm eff}$ in low-density regions amplifies the
@@ -19209,6 +19217,90 @@ This shows that the current derived-parent ECT corridor is close to
 the required level for ordinary galaxy-assembly channels and clearly
 above it for BH-assisted maturity channels.
 This is a concrete partial result rather than a full resolution.
+The detailed numerical logic used to obtain this result is summarised in
+Appendix~\ref{sec:derived_parent_pipeline}.
+
+\subsection{Current computational pipeline for the derived-parent JWST analysis}
+\label{sec:derived_parent_pipeline}
+
+The present numerical programme for the JWST problem proceeds in five
+explicit stages.
+
+\paragraph{(i) Background scan.}
+A first scan is performed over the parameter rectangle
+\[
+\omega_0\in\{15,20,25,30,40,50\},
+\qquad
+\phi_0\in\{-0.15,-0.12,-0.10,-0.08,-0.05\},
+\]
+at fixed
+\[
+\beta=0.8,\qquad
+\mu=1.5,\qquad
+A_2=\frac{\mu^2}{6\beta^2},\qquad
+A_3=A_4=0.
+\]
+For each point the derived-parent background is solved and the late
+inferred Hubble shift, age quantities, and high-redshift background
+outputs are recorded.
+
+\paragraph{(ii) Selection of representative working points.}
+From the Hubble-compatible corridor, three representative points are
+selected:
+a balanced point, a Hubble-priority point, and an age-priority point.
+These serve as the working points for the next numerical layers.
+
+\paragraph{(iii) Linear growth solution.}
+For each representative point, the full linear growth equation
+\[
+D''+\left(2+\frac{H'}{H}\right)D'
+-\frac{3}{2}\Omega_m(z)\frac{G_{\rm eff}(z)}{G_N}D=0
+\]
+is solved on the already-determined derived-parent background.
+This replaces the earlier use of the proxy
+$\mathcal G(z)=G_{\rm eff}(z)/H^2(z)$ as the sole indicator of growth.
+
+\paragraph{(iv) JWST object age budgets.}
+The age of the Universe at the redshift of observation is then computed
+for a set of representative JWST anchor cases, together with the
+available galaxy lifetime between an assumed formation redshift and the
+epoch of observation.
+The minimum required maturity speed-up is
+\[
+\mathcal R_{\rm req}(z_{\rm obs})
+=
+\frac{t_U^{\rm ref}(z_{\rm obs})}{t_U^{\rm ECT}(z_{\rm obs})}.
+\]
+
+\paragraph{(v) Semi-analytic maturity accounting.}
+Finally, the age-budget deficit is combined with the numerically solved
+linear growth and with local acceleration factors.
+In the current implementation this is done through
+\[
+\mathcal R_{\rm gal}
+=
+\frac{D_{\rm ECT}}{D_{\rm ref}}
+\frac{t_{\rm ff}^{\rm ref}}{t_{\rm ff}^{\rm ECT}},
+\qquad
+\mathcal R_{\rm BH}
+=
+\frac{D_{\rm ECT}}{D_{\rm ref}}
+\frac{t_{\rm BH}^{\rm ref}}{t_{\rm BH}^{\rm ECT}},
+\]
+where $t_{\rm ff}\propto (G_{\rm eff}\rho)^{-1/2}$ and
+$t_{\rm BH}\propto G_{\rm eff}^{-1}$ are the present semi-analytic
+collapse and BH-growth proxies.
+This pipeline does not yet constitute a full morphology-level treatment,
+but it already provides a quantitatively structured test of whether one
+and the same ECT parameter corridor can simultaneously address the
+Hubble shift, the cosmic-age layer, and the observed maturity of JWST
+systems.
+
+\paragraph{Status.}
+The present pipeline reaches the level of a solved background, solved
+linear growth, and semi-analytic maturity accounting.
+It does not yet include full morphology-level calculations, hydrodynamic
+structure formation, or direct SMBH--host coevolution simulations.
 
 \subsection{Slow-drift regime and present-epoch Hubble shift}
 
@@ -19309,17 +19401,19 @@ current article, but it should not yet be confused with the final solver
 for the full derived condensate dynamics.
 
 \paragraph{Algorithm flow.}
-At the algorithmic level, the logic is therefore:
+At the algorithmic level, the logic is now:
 \[
 \text{derived condensate background system}
 \;\longrightarrow\;
-\text{benchmark late-time truncation}
+\text{benchmark truncation and derived-parent implementation}
 \;\longrightarrow\;
-\text{self-consistent numerical solver}.
+\text{linear-growth and maturity-budget layers}.
 \]
-The present implementation still uses the benchmark truncation together
-with an interim high-redshift completion, but the parent system to be
-solved more fully in future work is already given in
+The benchmark truncation remains the control mode of the numerical
+programme, but the present implementation also includes a derived-parent
+background solver together with a solved linear-growth layer and the
+semi-analytic maturity accounting used in the current JWST analysis.
+The parent system itself is recorded in
 Section~\ref{sec:late_condensate_dynamics}.
 
 \subsubsection*{Algorithmic form of the derived condensate solver}
@@ -19384,12 +19478,14 @@ derived solver; it is its simplest local truncation.
 
 \subsection{Self-consistent fixed-point solver design}
 
-The target numerical background solver described in this subsection is a
-self-consistent fixed-point scheme for the benchmark late-time
-specialisation of the ECT macroscopic scalar--tensor background closure.
-Its full parent algorithm is given immediately above; the present
-subsection records only the benchmark truncation used in current code
-and figures.
+The numerical background solver architecture described in this subsection
+originates from the benchmark late-time truncation of the ECT
+macroscopic scalar--tensor background closure.
+Its full parent algorithm is given immediately above.
+The benchmark solver remains the control numerical layer of the article,
+but the current code also implements a derived-parent background mode,
+a solved linear-growth layer, and the semi-analytic maturity accounting
+used for the JWST discussion.
 It evolves the macroscopic amplitude variable $\phi(N)=\frac{1}{\beta}\ln(u/u_\infty)$
 and computes the corresponding background expansion history $E(N)=H/H_*$.
 
@@ -19671,6 +19767,8 @@ the JWST object age budgets, and the combined maturity budgets
 These artefacts support direct comparison between the Hubble-compatible
 parameter corridor and the astrophysical maturity requirements of the
 observed high-redshift systems.
+Together these artefacts define the machine-readable counterpart of the
+pipeline described in Appendix~\ref{sec:derived_parent_pipeline}.
 
 \paragraph{Convergence and sensitivity report.}
 The solver should also emit a small diagnostic report containing:
