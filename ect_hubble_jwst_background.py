@@ -271,7 +271,7 @@ def make_figure(df: pd.DataFrame, summary: pd.DataFrame, outpath: Path, p: Param
     ax.set_xlabel("$z$")
     ax.set_ylabel(r"$\Delta D_L / D_L^{\rm ref}$")
     ax.set_title("(b) Luminosity-distance shift", fontweight="bold", loc="left")
-    ax.legend(frameon=True, fontsize=9, loc="lower right")
+    ax.legend(frameon=True, fontsize=9, loc="upper right")
 
     # (c) Lookback time shift
     ax = axs[2]
