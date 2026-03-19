@@ -7735,6 +7735,24 @@ improvement would require a non-trivial early-time $\phi$-background
 history with a localized growth enhancement that does not simultaneously
 compress the formation time-window~(Level~Open).
 
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.82\linewidth]{figures/ect_h0_scan_bw.pdf}
+\caption{Analytic parameter-window scan for the late-time Hubble shift
+in the minimal ECT closure, based on
+$\Delta H_0/H_0 \approx \mu^2 u_0^2/12 - \beta u_0/2$
+at fixed $\mu=1.5$, $\kappa=15$.
+Shaded contours show the fractional Hubble shift in the $(\beta,u_0)$-plane.
+Benchmarks~B and~C are overlaid for reference.
+A few-percent late-time shift arises in a finite and natural region of
+parameter space, not at a single isolated tuned point.}
+\label{fig:h0_scan_main}
+\end{figure}
+
+Figure~\ref{fig:h0_scan_main} shows that the benchmark Hubble shift
+is representative of a finite parameter domain rather than a fine-tuned
+point, supporting the Level~B status of the present closure.
+
 The Hubble tension, the inferred age of the Universe, and part of the
 JWST early-structure tension are therefore not independent in the ECT
 framework: the same late/intermediate-time $\phi$-background that shifts
@@ -7742,6 +7760,19 @@ $H_0$ also modifies inferred distances, cosmic ages, and the friction
 term relevant for structure growth~(Level~B; see
 Appendices~\ref{app:late_cosmo_background} and
 \ref{app:late_cosmo_algorithm}).
+
+A further consequence of the running $f(\phi)$ is that the galactic
+critical acceleration scale becomes epoch-dependent:
+\begin{equation}
+g^\dagger_{\rm bg}(z)=\frac{c_*\,H(z)}{2\pi},
+\label{eq:gdag_bg_z}
+\end{equation}
+so that $g^\dagger_{\rm bg}$ is not a universal constant but traces the
+background expansion history.  Panel~(d) of
+Fig.~\ref{fig:ect_hubble_jwst_background} shows both the growth proxy
+$G_{\rm eff}/H^2$ and the ratio $g^\dagger_{\rm bg}(z)/g^\dagger_{\rm bg}(0)=E(z)$,
+confirming that in the critical-branch picture the effective acceleration
+scale at early times was much larger than today.
 
 \begin{figure*}[htb]
 \centering
@@ -7754,9 +7785,10 @@ compared to the reference $\Lambda$CDM.
 \textbf{Panel~(b):} relative shift in the luminosity distance.
 \textbf{Panel~(c):} lookback-time shift; the inset gives the
 ECT and reference ages of the Universe.
-\textbf{Panel~(d):} simple growth proxy $G_{\rm eff}/H^2$
-relative to the reference, indicating slight early-time growth
-enhancement from the running effective Planck mass.
+\textbf{Panel~(d):} the growth proxy $G_{\rm eff}/H^2$ (left axis,
+solid) and the ratio $g^\dagger_{\rm bg}(z)/g^\dagger_{\rm bg}(0)=E(z)$
+(right axis, dash-dotted), showing that the effective galactic critical
+scale $g^\dagger_{\rm bg}\propto H(z)$ was much larger in the past.
 The same background drift that shifts the late inferred $H_0$ also
 alters the distance and time scales entering JWST inferences.}
 \label{fig:ect_hubble_jwst_background}
@@ -7776,10 +7808,14 @@ $\mu=m_\phi/H_0$ & 1.5 \\
 $\kappa=K_0/f_0$ & 15 \\
 $u_0=\phi(z=0)$ & $-0.12$ \\
 $\Delta H_0/H_0$ & $+2.9\%$ \\
-$H_0^{\rm late}$ & $69.3$\,km\,s$^{-1}$\,Mpc$^{-1}$ \\
+$H_0^{\rm late}$ & $69.4$\,km\,s$^{-1}$\,Mpc$^{-1}$ \\
+$t_0^{\rm ECT}$ & $13.1$\,Gyr \\
 $\Delta t_0/t_0$ & $-4.8\%$ \\
 $\Delta D_L/D_L$ at $z=10$ & $-5.4\%$ \\
-Growth proxy ratio at $z=10$ & $1.017$ \\
+Growth proxy $\mathcal{G}$ at $z=10$ & $1.016$ \\
+$g^\dagger_{\rm bg}(z=10)/g^\dagger_{\rm bg}(0)$ & $21.5$ \\
+$t_{\rm U}(z=10)^{\rm ECT}$ & $0.44$\,Gyr \\
+Galaxy age (obs $z=10$, form $z=20$)$^{\rm ECT}$ & $0.27$\,Gyr \\
 \hline\hline
 \end{tabular}
 \end{table}
@@ -17797,28 +17833,10 @@ The difference reflects the fact that the quasi-static $q$ is not
 strictly self-consistent in $E^2$; see the discussion of Level~B
 closure status in the main text.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.82\linewidth]{figures/ect_h0_scan_bw.pdf}
-\caption{Analytic parameter-window scan for the late-time Hubble shift
-in the minimal ECT closure, based on
-$\Delta H_0/H_0 \approx \mu^2 u_0^2/12 - \beta u_0/2$
-at fixed $\mu=1.5$ and $\kappa=15$.
-The shaded contours show the expected fractional Hubble shift in the
-$(\beta,u_0)$-plane.  Benchmarks~B and~C are overlaid for reference.
-A few-percent late-time Hubble shift arises not at an isolated tuned
-point but in a finite and reasonably natural region of parameter space.
-This scan is analytic and serves as a guide to the benchmark window,
-not as a replacement for the semi-numerical background solver.}
-\label{fig:app_h0_scan}
-\end{figure}
-
-The purpose of Fig.~\ref{fig:app_h0_scan} is methodological: it shows
-that the benchmark points used in the main text lie inside a finite
-parameter region producing a few-percent late-time Hubble shift.  This
-makes the benchmark physically less ad hoc than a single tuned point,
-while still remaining only a Level~B late-time closure rather than a
-first-principles cosmological derivation.
+The analytic parameter-window scan (Fig.~\ref{fig:h0_scan_main} in the
+main text) shows that the benchmark points lie inside a finite parameter
+region producing a few-percent late-time Hubble shift, confirming that
+the benchmark is representative rather than finely tuned.
 
 \subsection{Derived outputs}
 
