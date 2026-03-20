@@ -1,7 +1,8 @@
-# ECT Preprint — Numerical Code
+# ECT Preprint — Code & Notebooks
 
-> **Paper:** *Euclidean Condensate Theory (ECT): Emergence of Spacetime, Quantum Mechanics, and Gravity from Spontaneous O(4) Symmetry Breaking*  
-> **Author:** Valeriy Blagovidov | vblagovidov@gmail.com  
+> **Paper:** *Euclidean Condensate Theory (ECT): Emergence of Spacetime, Quantum Mechanics,
+> and Gravity from Spontaneous O(4) Symmetry Breaking*
+> **Author:** Valeriy Blagovidov | vblagovidov@gmail.com
 > **Preprint:** [10.5281/zenodo.18917930](https://doi.org/10.5281/zenodo.18917930)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18917930.svg)](https://doi.org/10.5281/zenodo.18917930)
@@ -12,27 +13,52 @@
 
 ## ▶ Interactive Mode
 
-Click the Binder badge above to launch a **live Jupyter environment** in your browser — no installation required. You get interactive sliders for:
-- Rotation curve parameter r₀ (per galaxy selector)
-- Hubble tension parameter ε
-- Inflation e-folds N_e
-- Fifth force coupling β̃
+Click the Binder badge to launch a **live Jupyter environment** — no installation needed.
+Three interactive notebooks:
+
+| Notebook | Topic | Key slider |
+|---|---|---|
+| `01_rotation_curves_interactive.ipynb` | SPARC rotation curves (φ-first IR) | r₀ per galaxy |
+| `02_cosmology_interactive.ipynb` | Hubble tension, JWST, primordial perturbations | ε, H₀, N_e |
+| `03_fundamental_constants_interactive.ipynb` | G_N, ℏ, c from condensate parameters | α, v₀ |
 
 ---
 
 ## What is ECT?
 
-Euclidean Condensate Theory (ECT) proposes that Lorentzian spacetime, quantum mechanics and gravitational dynamics all emerge from spontaneous O(4)→O(3) symmetry breaking of a scalar condensate field in **4D Euclidean space** (no time coordinate).
+**Euclidean Condensate Theory (ECT)** derives Lorentzian spacetime, quantum mechanics,
+and gravitational dynamics from **spontaneous O(4)→O(3) symmetry breaking** of a real
+scalar condensate field Φ on a 4D Euclidean manifold — with no time coordinate assumed.
+
+### Core mechanism
+
+The Euclidean action
+$$\mathcal{L}_E = \tfrac{1}{2}(\partial\Phi)^2 - \tfrac{\alpha}{2}(n^A\partial_A\Phi)^2 + V(n^2)$$
+admits a gradient condensate ⟨∂_AΦ⟩ = v₀ δ_{Aw} that breaks O(4)→O(3).
+Perturbations around this background see the effective metric diag(−(α−1), 1, 1, 1),
+which is **Lorentzian when α > 1**. Effective speed: c* = 1/√(α−1).
 
 ### Three condensate parameters → three fundamental constants
 
-| Condensate params | ECT formula | Constant | Non-trivial content |
+| Condensate | ECT relation | Constant | Status |
 |---|---|---|---|
-| α = 2β | c∗ = √(β/(α−β)) → 1 | Speed of light *c* | Photon = U(1) Goldstone of same condensate → c_em = c_gw |
-| v₀ = M̄_Pl | G_N = 1/(8π v₀²(α−β)) | Newton's constant G_N | Condensate stiffness controls gravitational coupling |
-| v₀, λ | ℏ_eff = v₀²√(2λ)/2 | Planck constant ℏ | ℏ = action of minimal topological loop S_loop,min = 2πℏ |
+| α > 1 | c* = 1/√(α−1) | Speed of light *c* | Level B (parameter matching) |
+| v₀ = M̄_Pl | G_N = c*²(α−1)/(16πv₀²) | Newton's G_N | Level B |
+| v₀, λ | ℏ_eff = v₀² m_φ/2 | Planck's ℏ | Level B (self-consistency) |
 
-*Confirmed:* GW170817 tests c_em = c_gw to |δc/c| < 10⁻¹⁵.
+> **Honest note:** these are parameter-matching relations, not zero-parameter predictions.
+> ECT reduces the number of independent inputs but does not eliminate free parameters.
+> GW170817 confirms c_em = c_gw to |δc/c| < 10⁻¹⁵, consistent with α=2.
+
+### Three condensate scales — one field
+
+| Scale | Value | Physical sector |
+|---|---|---|
+| v₀ ~ M̄_Pl | ≈ 2.43×10¹⁸ GeV | Gravity, ℏ, c |
+| v₂ ~ v_EW | ≈ 246 GeV | W, Z, Higgs |
+| v_gal ~ 1/r₀ | ~ kpc⁻¹ | Flat rotation curves |
+
+The RG running connecting these three scales is an **open problem**.
 
 ---
 
@@ -40,166 +66,150 @@ Euclidean Condensate Theory (ECT) proposes that Lorentzian spacetime, quantum me
 
 ### Fig. 1 — SPARC Rotation Curves
 
-ECT fits 5 SPARC galaxies with one free parameter r₀ per galaxy.  
-ECT prediction: **r₀ ∝ M★^(1/3)** (zero-parameter exponent).
+ECT φ-first closure fits SPARC galaxies with **one free parameter r₀** per galaxy.
+ECT dimensional prediction: **r₀ ∝ M★^(1/3)** (Level A — zero-parameter exponent).
 
 ![SPARC ECT fit](SPARC_ECT_fit.png)
 
-**Fit results:**
+**Sample fit results** (full 175-galaxy results: `ect_sparc_results_v3.csv`):
 
-| Galaxy | r₀ [kpc] | χ²/N (ECT) | χ²/N (ΛCDM/NFW) | log M★/M☉ |
-|---|---|---|---|---|
-| DDO 154 | 0.10 | 3.55 | — | 7.47 |
-| NGC 2403 | 2.3 | 1.40 | — | 9.65 |
-| NGC 3198 | 6.7 | **1.38** | 3.51 | 10.54 |
-| NGC 6503 | 7.8 | 12.75 | — | 10.28 |
-| UGC 2885 | 17.7 | 8.08 | — | 11.28 |
+| Galaxy | r₀ [kpc] | χ²/N (ECT, 1 param) | log M★/M☉ |
+|---|---|---|---|
+| DDO 154 | 0.10 | 3.55 | 7.47 |
+| NGC 2403 | 2.3 | 1.40 | 9.65 |
+| NGC 3198 | 6.7 | **1.38** | 10.54 |
+| NGC 6503 | 7.8 | 12.75 | 10.28 |
+| UGC 2885 | 17.7 | 8.08 | 11.28 |
 
-Milky Way: r₀ = 5.7 kpc, χ²/N = 2.84 (ECT) vs 16.48 (MOND) vs 3.51 (ΛCDM/NFW 3 params).
+Milky Way: r₀ = 5.7 kpc, χ²/N = 2.84 (ECT, 1 param) vs 3.51 (ΛCDM/NFW, 3 params).
 
-### Fig. 2 — External Field Effect
+### Fig. 2 — External Field Effect (EFE)
 
-![EFE rotation curves](ECT_EFE_rotation_curves.png)
+Condensate φ-field sourced by a neighbouring mass modifies the local effective G_eff,
+producing an external field effect analogous to (but mechanistically distinct from) MOND.
 
-### Fig. 3 — Three Condensate Scales
+![EFE](ECT_EFE_rotation_curves.png)
 
-![Condensate scales](ECT_condensate_scales.png)
+### Fig. 3 — Condensate Scales
 
-Three scales of one field:
-- v₀ ~ M̄_Pl ~ 2.4×10¹⁸ GeV → G, ℏ, c
-- v₂ ~ 246 GeV → W, Z, Higgs masses
-- v_gal ~ kpc⁻¹ → galactic rotation curves
+Three-scale structure of the single condensate field: Planck, electroweak, galactic.
+
+![Scales](ECT_condensate_scales.png)
 
 ### Fig. 4 — Level-4 Self-Consistency
 
-![Self-consistency](ECT_level4_selfconsistency.png)
+Internal consistency check: condensate stability, ghost-freedom, LIV bound, causality,
+baryogenesis, 2nd law.
 
-### Fig. 5 — Cosmological Timeline
+![Level4](ECT_level4_selfconsistency.png)
 
-![ΛCDM vs ECT timeline](ECT_vs_LCDM_timeline.png)
+### Fig. 5 — Cosmological Timeline: ECT vs ΛCDM
 
----
-
-## Key numerical predictions
-
-### Hubble tension
-```
-G_eff(z) = G_N · (1+z)^{2ε},   ε ≈ 0.01
-ΔH₀ ≈ +3 km/s/Mpc
-```
-Partially resolves the Planck–local tension (~5 km/s/Mpc).
-
-### Inflation
-```
-n_s = 1 − 2/N_e = 0.967   (N_e = 60)
-```
-Observed: n_s = 0.965 ± 0.004 (Planck 2018) — within 1σ.  
-⚠ Tensor ratio r = 8/N_e = 0.133 > current bound r < 0.036 → needs non-minimal inflaton sector (Open Problem OP4).
-
-### JWST early galaxy enhancement
-
-Press–Schechter tail:  
-n_ECT / n_ΛCDM = exp[ν²/2 · (1 − 1/f)],  f = G_eff/G_N
-
-| ν | z | Enhancement |
-|---|---|---|
-| 5 | 12 | ×2.3 |
-| 6 | 12 | ×4.2 |
-
-ΛCDM deficit vs JWST: ×10–100; ECT accounts for ×2–4 at high ν.
-
-### Fifth force
-| Observable | ECT prediction | Bound |
-|---|---|---|
-| Spin precession ω₅ | ~10⁻¹⁰ rad/s | ~10⁻⁸ (GNOME) |
-| Eötvös η | ~10⁻¹⁵ | ~10⁻¹⁵ (MICROSCOPE) |
+![Timeline](ECT_vs_LCDM_timeline.png)
 
 ---
 
-## Repository contents
+## Key observational results
 
-| File | Description |
+### Galactic dynamics
+- **RAR:** Radial Acceleration Relation reproduced with g† ≈ c²H₀/(2π) (6–13% deviation from McGaugh+2016)
+- **BTFR:** Baryonic Tully-Fisher slope 1/4 reproduced algebraically (Level A)
+- **Milky Way:** χ²/N = 2.84 vs ΛCDM/NFW 3.51 (1 vs 3 parameters)
+
+### Cosmology
+- **Hubble tension:** G_eff(z) = G_N(1+z)^{2ε}, ε ≈ 0.01 (phenomenological) shifts H₀ by ~3 km/s/Mpc
+- **JWST:** Alleviates but does not resolve the high-redshift massive halo abundance
+- **CMB quadrupole:** δC₂/C₂ ~ e^{−2π} ≈ 0.19 (observed ~0.13; qualitative)
+- **LIV:** Δt_gw ~ 10⁻⁵² s from GW170817 (unobservable, consistent)
+- **Inflation:** n_s = 0.967 (N_e = 60) matches Planck 2018 within 1σ — *note: this is a slow-roll formula, not a first-principles ECT derivation*
+
+### Fundamental constants
+- **Baryogenesis:** leptogenesis via right-handed neutrino M_R ~ 10⁹ GeV gives η_B ~ 9×10⁻¹⁰ vs observed 6×10⁻¹⁰ (factor 1.5×; nearly resolved)
+- **5th force:** predicted spin precession ω₅ ~ 10⁻¹⁰ rad/s; Eötvös η ~ 10⁻¹⁵ (MICROSCOPE-2 sensitivity)
+- **Neutron star max mass:** M_max = 2.17 M☉ (PSR J0740+6620: 2.14 M☉)
+
+---
+
+## Claim levels
+
+All claims in the paper are classified:
+
+| Level | Meaning |
 |---|---|
-| `ECT_interactive_dashboard.ipynb` | **Main interactive notebook** (Binder-ready, 5 sections with sliders) |
-| `fig1_SPARC_rotation_curves.py` | Fig. 1: ECT vs MOND/RAR for 5 SPARC galaxies + scaling |
-| `fig2_EFE_external_field.py` | Fig. 2: External Field Effect |
-| `fig3_condensate_scales.py` | Fig. 3: RG hierarchy of three condensate scales |
-| `fig4_level4_selfconsistency.py` | Fig. 4: Six Level-4 self-consistency diagnostics |
-| `fig5_cosmological_timeline.py` | Fig. 5: ΛCDM vs ECT cosmological timeline |
-| `calc_fundamental_constants.py` | §5: Derives c, G, ℏ from condensate parameters |
-| `calc_universe_age.py` | §12: Universe age integral |
-| `calc_JWST_halo_abundance.py` | §12.1: Press–Schechter enhancement |
-| `calc_hubble_tension.py` | §12: ΔH₀ from G_eff(z) |
-| `calc_inflation_spectral_index.py` | §12: n_s, r vs Planck 2018 |
-| `calc_leptogenesis_eta_B.py` | §18: Baryon asymmetry η_B |
-| `calc_fifth_force_bounds.py` | §10: Fifth force constraints |
-| `environment.yml` | Conda environment for Binder |
-| `requirements.txt` | pip requirements |
+| **A** | Strictly derived from postulates P1–P7 |
+| **B** | Derived under stated additional assumptions |
+| **C** | Conjecture / research programme |
 
 ---
 
-## How to run
+## Cosmological problems — current ECT status
 
-### Option A: Interactive in browser (no install)
-Click the **Binder badge** at the top. Takes ~1 min to build.
-
-### Option B: Local
-```bash
-git clone https://github.com/chufelo/ECT-preprint-code.git
-cd ECT-preprint-code
-pip install numpy matplotlib scipy ipywidgets
-jupyter notebook ECT_interactive_dashboard.ipynb
-```
-
-### Option C: Run all figures
-```bash
-for f in fig*.py; do python $f; done
-```
+| Problem | ΛCDM/Inflation | ECT | Level |
+|---|---|---|---|
+| Horizon | Inflation (Level B) | Coherent branch selection from O(4) postulate | **A** |
+| Flatness | Inflation suppresses Ω_K (Level B) | k=0 from P1 + macrocoherence | **A** |
+| Relic monopoles | Inflation dilutes (Level B) | O(4)→O(3) does not topologically require monopoles | **A** |
+| Primordial spectrum | Quantitative (inflation leads) | Candidate variables identified; scale-free hint | **C** |
 
 ---
 
-## Physical constants
+## Scripts
 
-| Constant | Value | Source |
+### Main figure scripts
+| Script | Figure | Description |
 |---|---|---|
-| G | 4.302×10⁻⁶ (km/s)² kpc/M☉ | IAU 2012 |
-| ℏ | 1.055×10⁻³⁴ J·s | CODATA 2018 |
-| c | 2.998×10⁸ m/s | CODATA 2018 |
-| M̄_Pl | 2.435×10¹⁸ GeV | G_N = 1/(8π M̄_Pl²) |
-| H₀ (Planck) | 67.4 km/s/Mpc | Planck 2018 |
-| H₀ (local) | 73.0 km/s/Mpc | Riess et al. 2022 |
+| `fig1_SPARC_rotation_curves.py` | Fig. 1 | 5 SPARC galaxies + Milky Way |
+| `fig2_EFE_external_field.py` | Fig. 2 | External field effect |
+| `fig3_condensate_scales.py` | Fig. 3 | Three-scale condensate |
+| `fig4_level4_selfconsistency.py` | Fig. 4 | Self-consistency radar |
+| `fig5_cosmological_timeline.py` | Fig. 5 | ECT vs ΛCDM timeline |
+
+### Analysis scripts
+| Script | Purpose |
+|---|---|
+| `ect_sparc_fit_phi_branch.py` | Full φ-branch SPARC fit (175 galaxies) |
+| `ect_hubble_jwst_background.py` | Hubble tension + JWST + linear growth |
+| `ect_btfr_new.py` | BTFR slope derivation |
+| `ect_rar_new.py` | RAR from condensate |
+| `ect_gdagger_analysis_new.py` | g† scale analysis |
+| `calc_leptogenesis_eta_B.py` | Baryogenesis via leptogenesis |
+| `calc_fifth_force_bounds.py` | 5th force experimental bounds |
+| `calc_fundamental_constants.py` | G_N, ℏ, c matching |
+| `calc_hubble_tension.py` | Hubble tension estimate |
+| `calc_inflation_spectral_index.py` | Slow-roll n_s comparison |
+| `draw_derivation_logic.py` | Derivation logic diagram |
+
+### Data files
+| File | Contents |
+|---|---|
+| `ect_sparc_results_v3.csv` | φ-branch fit results for 175 SPARC galaxies |
+| `ect_sparc_phi_all175.csv` | Full SPARC φ-profile data |
+| `sparc_environment.csv` | Galaxy environment data |
 
 ---
 
-## Data sources
+## Installation
 
-- **SPARC**: Lelli, McGaugh & Schombert (2016), AJ 152, 157 — http://astroweb.cwru.edu/SPARC/
-- **MW rotation**: Eilers et al. (2019), ApJ 871, 120
-- **RAR**: McGaugh, Lelli & Schombert (2016), ApJL 836, L2
-- **Planck CMB**: Planck Collaboration (2018), A&A 641, A6
-- **GW170817**: Abbott et al. (2017), ApJL 848, L13
-- **JWST**: Labbé et al. (2023), Nature 616, 266
+```bash
+git clone https://github.com/chufelo/ECT-preprint-code
+cd ECT-preprint-code
+conda env create -f environment.yml
+conda activate ect
+```
+
+Or use the Binder badge above for zero-install interactive mode.
 
 ---
 
 ## Citation
 
 ```bibtex
-@article{Blagovidov2026ECT,
-  author = {Blagovidov, Valeriy},
-  title  = {Euclidean Condensate Theory ({ECT}): Emergence of Spacetime,
-            Quantum Mechanics, and Gravity from Spontaneous $O(4)$
-            Symmetry Breaking},
-  year   = {2026},
-  publisher = {Zenodo},
-  version   = {1.0},
-  doi    = {10.5281/zenodo.18917930},
-  url    = {https://doi.org/10.5281/zenodo.18917930}
+@software{blagovidov2026ect,
+  author  = {Blagovidov, Valeriy},
+  title   = {{Euclidean Condensate Theory (ECT): Emergence of Spacetime,
+              Quantum Mechanics, and Gravity from Spontaneous O(4) Symmetry Breaking}},
+  year    = {2026},
+  doi     = {10.5281/zenodo.18917930},
+  url     = {https://doi.org/10.5281/zenodo.18917930}
 }
 ```
-
----
-
-## License
-
-MIT. See [LICENSE](LICENSE).

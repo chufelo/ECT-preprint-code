@@ -1,276 +1,329 @@
 #!/usr/bin/env python3
 """
-fig5_cosmological_timeline.py  v7
-ECT preprint - Figure 5: Cosmological Evolution Timeline
-
-Fixes v7:
-  1. Removed arrow <--> and "ΛCDM=ECT Euclidean" annotation from panel (b) — redundant
-  2. Scenario A box moved far left (x~8, above log-a plateau) — no overlap with curves
-  3. t_Pl and NOW lines drawn as continuous figure-level connectors across all 3 panels
-  4. v0 ~ M_Pl annotation kept (it is meaningful)
-
-Author: Valeriy Blagovidov  |  DOI: 10.5281/zenodo.18917930
+fig5_cosmological_timeline_v2.py
+=================================
+Updated timeline figure for ECT preprint.
+Same format as the original fig5_ECT_timeline_condensate.png, but
+updated with derived-parent ECT numerical results:
+  - t0(ECT) = 13.02 Gyr  (Hubble-priority: omega0=30, phi0=-0.10)
+  - H0(ECT) = 69.2 km/s/Mpc  (DeltaH0/H0 = +2.73%)
+  - G_eff(z=10)/G_N = 1.49,  G_eff(z=14)/G_N ~ 1.7
+  - phi(z=0) = -0.10,  phi(z=10) ~ -0.38  (derived-parent)
+  - R_gal ~ 1.21,  R_BH ~ 1.48-1.51  at z=10
+  - Benchmark truncation valid near screened branch (phi -> 0)
 """
+
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from matplotlib.patches import Rectangle
-from matplotlib.ticker import NullFormatter, AutoMinorLocator
+import matplotlib.patches as mpatches
+from matplotlib.patches import Rectangle, FancyArrowPatch
 from matplotlib.lines import Line2D
-import matplotlib.gridspec as gridspec
 
-# ── Font sizes ───────────────────────────────────────────────────────────────
-FS_BASE   = 10.0
-FS_TITLE  = 12.0
-FS_BLOCK  = 8.5
-FS_VLINE  = 7.0
-FS_ANN    = 9.0
-FS_CURVE  = 9.5
-FS_LEGEND = 9.0
-FS_AXIS   = 11.0
-FS_TICK   = 9.0
-FS_NOTE   = 6.5
-
+# ── Style ──────────────────────────────────────────────────────────────────
 plt.rcParams.update({
-    'font.family': 'serif', 'font.size': FS_BASE, 'axes.linewidth': 0.8,
-    'xtick.direction': 'in', 'ytick.direction': 'in',
-    'xtick.major.size': 4, 'ytick.major.size': 4,
-    'xtick.minor.size': 2, 'ytick.minor.size': 2,
-    'xtick.minor.visible': True,
+    'font.family': 'serif',
+    'font.size': 9,
+    'axes.linewidth': 0.8,
+    'figure.facecolor': 'white',
+    'axes.facecolor':   'white',
 })
 
-GS = {
-    'undef': '#BEBEBE', 'planck': '#888888', 'inflate': '#999999',
-    'rad': '#C8C8C8', 'ew': '#AAAAAA', 'qcd': '#B8B8B8',
-    'recomb': '#D4D4D4', 'struct': '#BDBDBD', 'de': '#969696',
-    'fut_lcdm': '#DEDEDE', 'futA': '#E8E8E8', 'futB': '#CCCCCC',
-}
-BLK = '#000000'; MID = '#555555'; LGT = '#999999'
+# Grayscale palette (matching original)
+G = dict(
+    undefined = '#999999',
+    planck    = '#666666',
+    inflation = '#888888',
+    radiation = '#bbbbbb',
+    ew        = '#aaaaaa',
+    qcd       = '#999999',
+    bbn       = '#cccccc',
+    recomb    = '#dddddd',
+    structure = '#e8e8e8',
+    dark_en   = '#d0d0d0',
+    scen_a    = '#e0e0e0',
+    scen_b    = '#c0c0c0',
+)
 
-T_PT=-43.27; T_EINFL=-32.0; T_EW=-10.0; T_QCD=-5.0
-T_BBN=2.0;   T_REC=12.85;   T_NOW=17.64
-X_MIN=-50.0; X_MAX=22.0
+# ── Time conversions ───────────────────────────────────────────────────────
+# log10(t/s):
+#   Planck time   ~ 5.4e-44 s → -43.3
+#   Phase trans   ~ 1e-42 s
+#   End inflation ~ 1e-32 s → -32
+#   EW transition ~ 1e-10 s → -10
+#   QCD/BBN       ~ 1e-4..1 s → -4..0
+#   Recombination ~ 380 kyr = 1.2e13 s → 13.1
+#   JWST z=14     ~ 0.239 Gyr = 7.5e15 s → 15.88
+#   JWST z=10     ~ 0.394 Gyr = 1.24e16 s → 16.09
+#   NOW (LCDM)    ~ 13.8 Gyr = 4.35e17 s → 17.64
+#   NOW (ECT)     ~ 13.02 Gyr = 4.11e17 s → 17.61
+#   Future        up to 20
 
-# Vertical reference lines.  t_Pl and NOW use solid black (thicker); others dashed grey.
-# "span_all=True" marks the two lines that will also get figure-level connectors.
-VLINES = [
-    (T_PT,    r'$t_\mathrm{Pl}$', BLK, '-',  1.6, True),   # birth of universe
-    (T_EINFL, 'end infl.',         MID, '--', 0.75, False),
-    (T_EW,    'EW',                MID, '--', 0.75, False),
-    (T_QCD,   'QCD+BBN',           MID, '--', 0.75, False),
-    (T_REC,   'Recomb.',           MID, '--', 0.75, False),
-    (T_NOW,   'NOW',               BLK, '-',  1.6, True),   # present moment
+LOG_PT      = -42.0
+LOG_END_INF = -32.0
+LOG_EW      = -10.0
+LOG_QCD     = -4.0
+LOG_BBN     = -1.0
+LOG_RECOMB  = 13.1
+LOG_JWST14  = 15.88   # z=14.32, t=0.239 Gyr
+LOG_JWST10  = 16.09   # z=10.60, t=0.394 Gyr
+LOG_NOW_LCDM= 17.64   # 13.8 Gyr
+LOG_NOW_ECT = 17.61   # 13.02 Gyr (Hubble-priority)
+LOG_MAX     = 20.5
+
+def make_epoch_bar(ax, x0, x1, label, color, y0=0.10, y1=0.90, fs=7.5, bold=True):
+    rect = Rectangle((x0, y0), x1-x0, y1-y0,
+                     facecolor=color, edgecolor='black', lw=0.5)
+    ax.add_patch(rect)
+    xm = (x0+x1)/2
+    ax.text(xm, (y0+y1)/2, label, ha='center', va='center',
+            fontsize=fs, fontweight='bold' if bold else 'normal',
+            wrap=True, multialignment='center')
+
+def add_vline(ax, x, label='', y_label=0.93, fs=6, color='black', ls='--', lw=0.8):
+    ax.axvline(x, color=color, ls=ls, lw=lw)
+    if label:
+        ax.text(x, y_label, label, ha='center', va='bottom', fontsize=fs, color=color)
+
+# ══════════════════════════════════════════════════════════════════════════
+# Figure layout: 3 tall panels + note row
+# ══════════════════════════════════════════════════════════════════════════
+fig = plt.figure(figsize=(16, 12.5))
+gs = fig.add_gridspec(3, 1, height_ratios=[1.0, 1.0, 1.7], hspace=0.32)
+
+XMIN, XMAX = -44, 21.5
+
+# ══════════════════════════════════════════════════════════════════════════
+# Panel (a) — Standard ΛCDM
+# ══════════════════════════════════════════════════════════════════════════
+ax1 = fig.add_subplot(gs[0])
+ax1.set_xlim(XMIN, XMAX); ax1.set_ylim(0, 1); ax1.set_yticks([])
+ax1.text(-0.01, 1.01, r'(a) Standard $\Lambda$CDM',
+         transform=ax1.transAxes, fontsize=11, fontweight='bold', va='bottom')
+
+lcdm_epochs = [
+    (XMIN,     LOG_PT,      'Undefined\n(no spacetime)',          G['undefined']),
+    (LOG_PT,   LOG_END_INF, 'Planck+\nInflation',                 G['planck']),
+    (LOG_END_INF, LOG_EW,   'Radiation\n(quarks, leptons)',        G['radiation']),
+    (LOG_EW,   LOG_QCD,     'EW\ntransition',                     G['ew']),
+    (LOG_QCD,  LOG_RECOMB,  'QCD+BBN',                            G['qcd']),
+    (LOG_RECOMB, LOG_NOW_LCDM-0.5, 'Radiation/Matter\ndomination', G['bbn']),
+    (LOG_NOW_LCDM-0.5, LOG_NOW_LCDM, 'Structure\nformation',     G['structure']),
+    (LOG_NOW_LCDM, LOG_MAX, 'Future\n(de Sitter)',                 G['scen_a']),
 ]
+for x0,x1,lbl,col in lcdm_epochs:
+    make_epoch_bar(ax1, x0, x1, lbl, col)
 
-def add_vlines(ax, label_y=None, fs=FS_VLINE):
-    for xt, lbl, col, ls, lw, _span in VLINES:
-        ax.axvline(xt, color=col, ls=ls, lw=lw, alpha=0.85, zorder=10)
-        if label_y is not None:
-            ax.text(xt, label_y, lbl, ha='center', va='bottom',
-                    fontsize=fs, color=col, clip_on=True)
+# Epoch boundary markers
+for xl, lbl in [(LOG_PT,r'$t_{\rm Pl}$'), (LOG_END_INF,''), (LOG_EW,'EW'),
+                (LOG_QCD,'QCD+BBN'), (LOG_RECOMB,'Recomb.'), (LOG_NOW_LCDM,'Now')]:
+    add_vline(ax1, xl, lbl, y_label=0.92, fs=6.5)
 
-def epoch_block(ax, x0, x1, label, key, y0=0.05, h=0.88, fs=FS_BLOCK, alt_pos='mid'):
-    r = Rectangle((x0, y0), x1-x0, h, facecolor=GS[key], edgecolor=BLK, linewidth=0.5)
-    ax.add_patch(r)
-    ty = {'hi': y0+h*0.75, 'lo': y0+h*0.25, 'mid': y0+h*0.50}[alt_pos]
-    ax.text((x0+x1)/2, ty, label, ha='center', va='center',
-            fontsize=fs, fontweight='bold', color='#111111', clip_on=True)
+ax1.text(LOG_NOW_LCDM+0.1, 0.50, '13.8 Gyr', fontsize=7, va='center', rotation=90)
+ax1.set_xticks([])
 
-# ── Figure layout ────────────────────────────────────────────────────────────
-fig = plt.figure(figsize=(14, 13))
-gs_fig = gridspec.GridSpec(3, 1, height_ratios=[1.0, 1.15, 2.8], hspace=0.22)
-ax_a = fig.add_subplot(gs_fig[0])
-ax_b = fig.add_subplot(gs_fig[1], sharex=ax_a)
-ax_c = fig.add_subplot(gs_fig[2], sharex=ax_a)
-for ax in [ax_a, ax_b]:
-    ax.set_xlim(X_MIN, X_MAX); ax.set_ylim(0, 1)
-    ax.set_yticks([]); ax.yaxis.set_minor_formatter(NullFormatter())
-ax_c.set_xlim(X_MIN, X_MAX)
+# ══════════════════════════════════════════════════════════════════════════
+# Panel (b) — ECT
+# ══════════════════════════════════════════════════════════════════════════
+ax2 = fig.add_subplot(gs[1])
+ax2.set_xlim(XMIN, XMAX); ax2.set_ylim(0, 1); ax2.set_yticks([])
+ax2.text(-0.01, 1.01, '(b) ECT (Euclidean Condensate Theory)',
+         transform=ax2.transAxes, fontsize=11, fontweight='bold', va='bottom')
 
-ax_a.set_title(r'(a) Standard $\Lambda$CDM',
-               fontsize=FS_TITLE, fontweight='bold', loc='left', pad=6)
-ax_b.set_title('(b) ECT (Euclidean Condensate Theory)',
-               fontsize=FS_TITLE, fontweight='bold', loc='left', pad=6)
-ax_c.set_title('(c) Condensate dynamics and cosmological observables',
-               fontsize=FS_TITLE, fontweight='bold', loc='left', pad=6)
+LOG_ECT_PT_END = LOG_PT + 0.8  # end of O(4)->O(3) transition
 
-# ════════════════════════════════════════════════════════════════════════════
-# Panel (a): ΛCDM
-# ════════════════════════════════════════════════════════════════════════════
-for x0, x1, lbl, key, pos in [
-    (X_MIN,   T_PT,    'Undefined\n(no spacetime)',   'undef',    'mid'),
-    (T_PT,    T_EINFL, 'Planck+\nInflation',           'planck',   'hi'),
-    (T_EINFL, T_EW,    'Radiation\n(quarks, leptons)', 'rad',      'lo'),
-    (T_EW,    T_QCD,   'EW\ntransition',               'ew',       'hi'),
-    (T_QCD,   T_BBN,   'QCD+BBN',                      'qcd',      'lo'),
-    (T_BBN,   T_REC,   'Radiation/Matter\ndomination', 'recomb',   'hi'),
-    (T_REC,   T_NOW,   'Structure\nformation',          'struct',   'lo'),
-    (T_NOW,   X_MAX,   'Future\n(de Sitter)',            'fut_lcdm', 'hi'),
-]:
-    epoch_block(ax_a, x0, x1, lbl, key, alt_pos=pos)
-add_vlines(ax_a, label_y=0.97)
-plt.setp(ax_a.get_xticklabels(), visible=False)
+ect_epochs = [
+    (XMIN,         LOG_PT,          'Euclidean phase\nO(4)-symmetric\nno time, $v_0=0$', G['undefined']),
+    (LOG_PT,       LOG_ECT_PT_END,  'PT\nO(4)$\\to$O(3)',                                  G['planck']),
+    (LOG_ECT_PT_END, LOG_END_INF,   'Inflation $N_e=60$\n$n_s=0.967$',                    G['inflation']),
+    (LOG_END_INF,  LOG_EW,          'Radiation\n(as in SM)',                               G['radiation']),
+    (LOG_EW,       LOG_QCD,         'EW: $v_2=246$ GeV\nW,Z,H',                           G['ew']),
+    (LOG_QCD,      LOG_RECOMB,      'QCD+BBN',                                             G['qcd']),
+    # Structure formation: G_eff > G_N → accelerated early maturity
+    (LOG_RECOMB,   LOG_JWST14,      'Rad./Matter\ndomination',                             G['bbn']),
+    (LOG_JWST14,   LOG_JWST10,      'JWST $z{\\sim}14$\n$G_{\\rm eff}/G_N{\\approx}1.7$', G['structure']),
+    (LOG_JWST10,   LOG_NOW_ECT-0.1, 'Structure +\n$v_0$-condensate\n(residual DE)',        '#d8d8d8'),
+    (LOG_NOW_ECT,  LOG_NOW_ECT+1.5, 'Scen. A\n$v_0{\\to}v_\\infty$',                      G['scen_a']),
+    (LOG_NOW_ECT+1.5, LOG_MAX,      'Scen. B\n$v_0{\\to}0$\nCrunch',                       G['scen_b']),
+]
+for x0,x1,lbl,col in ect_epochs:
+    make_epoch_bar(ax2, x0, x1, lbl, col, fs=7.0)
 
-# ════════════════════════════════════════════════════════════════════════════
-# Panel (b): ECT
-# REMOVED: <-> arrow and "ΛCDM=ECT" redundant annotation
-# ════════════════════════════════════════════════════════════════════════════
-epoch_block(ax_b, X_MIN, T_PT,
-            'Euclidean phase\n(O(4)-symmetric\nno time, $v_0{=}0$)',
-            'undef', y0=0.05, h=0.88, fs=FS_BLOCK, alt_pos='lo')
-PT_W = 1.5
-epoch_block(ax_b, T_PT, T_PT+PT_W, 'PT\nO(4)$\\to$O(3)',
-            'planck', y0=0.05, h=0.88, fs=FS_BLOCK-0.5, alt_pos='hi')
-for x0, x1, lbl, key, pos in [
-    (T_PT+PT_W, T_EINFL, r'Inflation $N_e{=}60$'+'\n'+r'$n_s{=}0.967$', 'inflate', 'hi'),
-    (T_EINFL,  T_EW,  'Radiation\n(as in SM)',                            'rad',    'lo'),
-    (T_EW,     T_QCD, r'EW: $v_2{=}246$ GeV'+'\nW,Z,H',                 'ew',     'hi'),
-    (T_QCD,    T_BBN, 'QCD+BBN',                                          'qcd',    'lo'),
-    (T_BBN,    T_REC, 'Rad./Matter\ndomination',                          'recomb', 'hi'),
-    (T_REC,    T_NOW, 'Structure +\n$v_0$-condensate\n(residual DE)',     'struct', 'lo'),
-    (T_NOW,    T_NOW+2, 'Scen. A\n$v_0{\\to}v_\\infty$',                  'futA',   'hi'),
-    (T_NOW+2,  X_MAX, 'Scen. B\n$v_0{\\to}0$\nCrunch',                   'futB',   'lo'),
-]:
-    epoch_block(ax_b, x0, x1, lbl, key, y0=0.05, h=0.88, fs=FS_BLOCK-0.5, alt_pos=pos)
+# Epoch boundary markers
+for xl, lbl in [(LOG_PT,''), (LOG_ECT_PT_END,''), (LOG_END_INF,''),
+                (LOG_EW,'EW'), (LOG_QCD,''), (LOG_RECOMB,''),
+                (LOG_JWST14,'JWST\n$z{\\sim}14$'), (LOG_JWST10,'JWST\n$z{\\sim}10$'),
+                (LOG_NOW_ECT,'Now')]:
+    add_vline(ax2, xl, lbl, y_label=0.93, fs=6.0)
 
-# Bottom annotation strip — kept (v0~M_Pl is meaningful), removed redundant ones
-for xt, note in [
-    (T_PT+0.5,  r'$\alpha{>}1$, time emerges, $c_*{=}1/\!\sqrt{\alpha-1}$'),
-    (T_EINFL-5, r'$v_0{\sim}M_\mathrm{Pl}$ frozen'),   # KEPT — physically meaningful
-    (T_EW-1.8,  r'$v_2{=}246$ GeV'),
-    (T_NOW-1.8, r'$w_0{\approx}{-}0.83$ (DESI)'),
-]:
-    ax_b.text(xt, 0.01, note, ha='center', va='bottom', fontsize=6.5,
-              bbox=dict(fc='white', ec='#999999', lw=0.4, pad=1.5), clip_on=True)
+ax2.text(LOG_NOW_ECT+0.05, 0.65, '13.02 Gyr', fontsize=7, va='center', rotation=90, color='#222222')
 
-add_vlines(ax_b, label_y=None)
-plt.setp(ax_b.get_xticklabels(), visible=False)
+# Bottom annotation strip
+notes = [
+    (XMIN+1,          r'$O(4)$-symm.'),
+    (LOG_PT+0.2,       r'$\alpha>1$, time emerges, $c_*=1/\sqrt{\alpha-1}$, $v_0{\sim}M_{\rm Pl}$ frozen'),
+    ((LOG_EW+LOG_QCD)/2, r'$v_2=246$ GeV'),
+    ((LOG_RECOMB+LOG_NOW_ECT)/2, r'$w_0\approx -0.83$ (DESI); $\Delta H_0/H_0{=}+2.73\%$'),
+]
+for xt, lbl in notes:
+    ax2.text(xt, 0.02, lbl, ha='center', va='bottom', fontsize=5.5,
+             bbox=dict(fc='white', ec='none', pad=1))
+ax2.set_xticks([])
 
-# ════════════════════════════════════════════════════════════════════════════
-# Panel (c): Condensate dynamics
-# ════════════════════════════════════════════════════════════════════════════
-t = np.linspace(X_MIN, X_MAX, 5000)
-ax_c.axvspan(X_MIN, T_PT, color='#CCCCCC', alpha=0.50, zorder=0)
-ax_c.text((X_MIN+T_PT)/2, 0.55, 'Euclidean\nphase\n(no time)',
-          ha='center', va='center', fontsize=9, color='#555555', style='italic')
+# ══════════════════════════════════════════════════════════════════════════
+# Panel (c) — Condensate dynamics
+# ══════════════════════════════════════════════════════════════════════════
+ax3 = fig.add_subplot(gs[2])
+ax3.text(-0.01, 1.01, '(c) Condensate dynamics and cosmological observables',
+         transform=ax3.transAxes, fontsize=11, fontweight='bold', va='bottom')
 
-# v0 Scenario A
-v0 = np.zeros_like(t)
-v0[t >= T_PT] = np.tanh(2.0 * (t[t >= T_PT] - T_PT))
-v0 = np.clip(v0, 0, 1)
-im = (t >= T_PT) & (t < T_EINFL)
-v0[im] *= 0.97 + 0.03 * np.cos(np.pi * (t[im] - T_PT) / (T_EINFL - T_PT))
+t = np.linspace(XMIN, LOG_MAX, 5000)
 
-# v0 Scenario B
-v0_B = v0.copy()
-B_start = T_NOW + 2.0
-fm = t > B_start
-v0_B[fm] = 1.0 - 0.18 * np.tanh(1.5 * (t[fm] - B_start))
-v0_B = np.clip(v0_B, 0, 1)
+# ── v0(t)/v∞  Scenario A ────────────────────────────────────────────────
+# Rises sharply at phase transition, stays at 1
+v0_A = np.zeros_like(t)
+mask_pre = t < LOG_PT
+v0_A[mask_pre] = 0.0
+mask_rise = (t >= LOG_PT) & (t < LOG_ECT_PT_END+1)
+v0_A[mask_rise] = 0.5*(1 + np.tanh(3.5*(t[mask_rise] - (LOG_PT+0.5))))
+mask_post = t >= LOG_ECT_PT_END+1
+v0_A[mask_post] = 1.0
+# small inflationary dip then recovery
+mask_inf2 = (t >= LOG_ECT_PT_END) & (t < LOG_END_INF)
+v0_A[mask_inf2] = 0.95 + 0.05*np.tanh(2*(t[mask_inf2]-(-36)))
 
-# v2: EW condensate
+# ── v0(t)/v∞  Scenario B ────────────────────────────────────────────────
+v0_B = v0_A.copy()
+mask_fut = t > LOG_NOW_ECT + 0.5
+v0_B[mask_fut] = np.exp(-0.55*(t[mask_fut] - (LOG_NOW_ECT+0.5)))
+
+# ── v2(t)/v2_EW  (electroweak condensate, rises at EW transition) ────────
 v2 = np.zeros_like(t)
-v2[t >= T_EW] = 0.22 * (1 - np.exp(-3.0 * (t[t >= T_EW] - T_EW)))
+mask_ew = t >= LOG_EW
+v2[mask_ew] = 0.20*(1 + np.tanh(4*(t[mask_ew] - LOG_EW + 0.3)))
+v2 = np.clip(v2, 0, 0.25)
 
-# log a
-loga = np.zeros_like(t)
-im2 = (t >= T_PT) & (t < T_EINFL)
-loga[im2] = 0.03 + 0.57 * (t[im2] - T_PT) / (T_EINFL - T_PT)
-pm = t >= T_EINFL
-loga[pm] = 0.60 + 0.40 * np.sqrt((t[pm]-T_EINFL)/(T_NOW-T_EINFL))
-loga = np.clip(loga, 0, 1.05)
+# ── log a(t)  (scale factor, normalized) ─────────────────────────────────
+# Before inflation: nothing; inflation: exponential; after: power law
+log_a = np.zeros_like(t)
+mask_inf3 = (t >= LOG_ECT_PT_END) & (t < LOG_END_INF)
+log_a[mask_inf3] = 60*(t[mask_inf3]-LOG_ECT_PT_END)/(LOG_END_INF-LOG_ECT_PT_END)
+mask_rad = (t >= LOG_END_INF) & (t < LOG_RECOMB)
+log_a[mask_rad] = 60 + 0.48*(t[mask_rad]-LOG_END_INF)
+mask_mat = t >= LOG_RECOMB
+log_a[mask_mat] = 60 + 0.48*(LOG_RECOMB-LOG_END_INF) + 0.33*(t[mask_mat]-LOG_RECOMB)
+log_a = np.clip(log_a, 0, None)
+a_norm = log_a / np.max(log_a)   # normalize to [0,1]
 
-# G_eff / G — Scenario B, normalised to 1.0 at B_start
-with np.errstate(divide='ignore', invalid='ignore'):
-    G_raw = np.where(v0_B[fm] > 0.005, 1.0 / (v0_B[fm]**2), 400.0)
-G_norm = G_raw / G_raw[0]
-G_eff_plot = np.clip(G_norm, 0, 1.62)
-G_x = t[(t > B_start) & (t <= X_MAX)]
+# ── φ(t) = (1/β)·ln(u/u∞)  — derived-parent ─────────────────────────────
+# At phase transition φ starts very negative, rises toward 0
+# phi0(today) = -0.10, phi(z=10) ~ -0.38, phi(z=14) ~ -0.50
+# Map time to approximate redshift behaviour
+phi = np.zeros_like(t)
+mask_phi = t >= LOG_PT
+# Simple model: phi rises from -0.8 to -0.10 between PT and now
+t_now = LOG_NOW_ECT; t_pt = LOG_PT
+phi_now = -0.10; phi_early = -0.60
+phi[mask_phi] = phi_now + (phi_early - phi_now)*(1 - np.tanh(1.2*(t[mask_phi]-t_pt+2)/(t_now-t_pt)))
+phi[~mask_phi] = 0.0   # Euclidean phase: no phi
 
-pm2 = t >= T_PT; lw = 2.0
-ax_c.plot(t[pm2], v0[pm2],   '-',  color=BLK, lw=lw+0.5,
-          label=r'$v_0(t)/v_\infty$ — Planck condensate (Scen. A)')
-ax_c.plot(t[pm2], v0_B[pm2], ':',  color=BLK, lw=lw,
-          label=r'$v_0(t)/v_\infty$ — Planck condensate (Scen. B)')
-ax_c.plot(t[pm2], v2[pm2],   '--', color=MID, lw=lw-0.4,
-          label=r'$v_2(t)/v_{2,\mathrm{EW}}$ — EW condensate (SU(2))')
-ax_c.plot(t[pm2], loga[pm2], '-.', color=LGT, lw=lw,
-          label=r'$\log a(t)$ (scale factor, normalised)')
-ax_c.plot(G_x, G_eff_plot,   '-',  color=MID, lw=lw+0.2, alpha=0.85,
-          label=r'$G_\mathrm{eff}/G$ (Scen. B, $\propto v_0^{-2}\to\infty$)')
+# ── G_eff(t)/G_N = exp(-β·φ), β=0.8 ─────────────────────────────────────
+beta = 0.8
+G_eff = np.where(t >= LOG_PT, np.exp(-beta*phi), 1.0)
+# Scenario B future: G_eff diverges as v0->0
+G_eff_B = G_eff.copy()
+mask_futB = t > LOG_NOW_ECT + 0.5
+G_eff_B[mask_futB] = G_eff[np.where(mask_futB)[0][0]] * np.exp(1.0*(t[mask_futB]-(LOG_NOW_ECT+0.5)))
+G_eff_B = np.clip(G_eff_B, 1, 2.2)
 
-# Curve labels
-ax_c.text(T_PT+0.8,  1.02, r'$v_0$ (A)',  fontsize=FS_CURVE)
-ax_c.text(T_NOW+0.2, 0.74, r'$v_0$ (B)',  fontsize=FS_CURVE)
-ax_c.text(T_EINFL+4, 0.63, r'$\log a$',   fontsize=FS_CURVE, color=LGT)
-ax_c.text(T_EW+0.4,  0.24, r'$v_2$',      fontsize=FS_CURVE, color=MID)
-ax_c.text(T_NOW+2.2, 1.30, r'$G_\mathrm{eff}$'+'\n(Scen. B)',
-          fontsize=FS_CURVE, color=MID, ha='center')
+# ── Plot ──────────────────────────────────────────────────────────────────
+YMAX = 1.75
+ax3.plot(t, v0_A,  '-',  color='black', lw=2.2, label=r'$v_0(t)/v_\infty$ — Planck condensate (Scen. A)')
+ax3.plot(t, v0_B,  ':',  color='black', lw=1.8, label=r'$v_0(t)/v_\infty$ — Planck condensate (Scen. B)')
+ax3.plot(t, v2,    '--', color='0.45',  lw=1.6, label=r'$v_2(t)/v_{2,\rm EW}$ — EW condensate (SU(2))')
+ax3.plot(t, a_norm,'-.', color='0.60',  lw=1.5, label=r'$\log a(t)$ (scale factor, normalised)')
+ax3.plot(t, G_eff_B, '-', color='0.30', lw=1.4, label=r'$G_{\rm eff}/G$ (Scen. B,  $\propto v_0^{-2}\to\infty$)')
 
-# Scenario A box — far left, above log-a plateau
-# Arrow points DOWN to the flat v0(A) = 1 solid line (same as red arrow in sketch)
-# Tip on the flat plateau just before NOW line
-ax_c.annotate('Scenario A:\n$v_0 \\to v_\\infty$\neternal expansion',
-              xy=(15.0, 1.0),              # tip: flat v0(A) solid line, before NOW
-              xytext=(8.0, 1.22),          # box position
-              fontsize=FS_ANN,
-              arrowprops=dict(arrowstyle='->', color='#555555', lw=1.0,
-                              connectionstyle='arc3,rad=0.0'),  # straight
-              bbox=dict(fc='#F0F0F0', ec='#AAAAAA', lw=0.7, pad=5))
+# G_eff annotation: JWST epochs
+jw14_idx = np.argmin(np.abs(t - LOG_JWST14))
+jw10_idx = np.argmin(np.abs(t - LOG_JWST10))
+ax3.annotate('', xy=(LOG_JWST14, G_eff[jw14_idx]),
+             xytext=(LOG_JWST14, G_eff[jw14_idx]+0.15),
+             arrowprops=dict(arrowstyle='->', lw=1.0))
+ax3.text(LOG_JWST14-0.1, G_eff[jw14_idx]+0.23, r'$G_{\rm eff}/G_N{\approx}1.7$'+r', $z{\sim}14$',
+         ha='center', va='bottom', fontsize=7.5)
+ax3.annotate('', xy=(LOG_JWST10, G_eff[jw10_idx]),
+             xytext=(LOG_JWST10, G_eff[jw10_idx]+0.15),
+             arrowprops=dict(arrowstyle='->', lw=1.0))
+ax3.text(LOG_JWST10+0.1, G_eff[jw10_idx]+0.23, r'$G_{\rm eff}/G_N{\approx}1.5$'+r', $z{\sim}10$',
+         ha='center', va='bottom', fontsize=7.5)
 
-# Scenario B box — arrow points UP to the declining v0(B) dotted curve
-# v0_B at T_NOW+2.4 ~ 0.90 (from tanh)  — early decline, clearly visible
-ax_c.annotate('Scenario B:\n$v_0$ slowly $\\to 0$\n$G_\\mathrm{eff}\\to\\infty$\n'
-              'Big Crunch $\\sim 10^{100}$ yr',
-              xy=(T_NOW+2.4, 0.90),        # tip: dotted v0(B) line during decline
-              xytext=(T_NOW+0.5, 0.38),    # box position
-              fontsize=FS_ANN,
-              arrowprops=dict(arrowstyle='->', color='#555555', lw=1.0,
-                              connectionstyle='arc3,rad=-0.25'),  # arc up-right
-              bbox=dict(fc='#E8E8E8', ec='#AAAAAA', lw=0.7, pad=5))
+# Epoch vertical markers
+for xl, lbl, clr in [
+    (LOG_PT,       'PT',      'black'),
+    (LOG_END_INF,  '',        '0.6'),
+    (LOG_EW,       'EW',      '0.5'),
+    (LOG_QCD,      'QCD+BBN', '0.5'),
+    (LOG_RECOMB,   'Recomb.', '0.5'),
+    (LOG_JWST14,   '',        '0.4'),
+    (LOG_JWST10,   '$z\\!\\sim\\!10$', '0.35'),
+    (LOG_NOW_LCDM, 'NOW\n(ΛCDM)', '0.5'),
+    (LOG_NOW_ECT,  'NOW\n(ECT)',  'black'),
+]:
+    ax3.axvline(xl, color=clr, ls='--', lw=0.7, alpha=0.7)
+    if lbl:
+        ax3.text(xl, YMAX*0.96, lbl, ha='center', va='top', fontsize=6.5, color=clr)
 
-ax_c.text(0.005, 0.005,
-    r'Note: curves are schematic ($\tanh$-approximations to '
-    r'$\ddot{v}_0+3H\dot{v}_0+V^\prime(v_0)=0$); '
-    r'quantitative solutions require numerical integration.',
-    transform=ax_c.transAxes, fontsize=FS_NOTE, color='#666666',
-    va='bottom', style='italic')
+# Scenario A/B boxes
+ax3.text(LOG_NOW_ECT+0.8, 1.30,
+         'Scenario A:\n$v_0\\to v_\\infty$\neternal expansion',
+         ha='center', fontsize=7.5, va='center',
+         bbox=dict(fc='white', ec='0.4', lw=0.8, pad=3))
+ax3.text(LOG_NOW_ECT+2.2, 0.38,
+         'Scenario B:\n$v_0$ slowly $\\to0$\n$G_{\\rm eff}\\to\\infty$\nBig Crunch $\\sim10^{100}$ yr',
+         ha='center', fontsize=7.5, va='center',
+         bbox=dict(fc='#f0f0f0', ec='0.4', lw=0.8, pad=3))
 
-add_vlines(ax_c, label_y=1.51, fs=FS_VLINE)
-ax_c.set_ylim(-0.04, 1.68)
-ax_c.set_ylabel('Normalised value', fontsize=FS_AXIS)
-ax_c.legend(fontsize=FS_LEGEND, loc='upper left', bbox_to_anchor=(0.005, 0.99),
-            framealpha=0.95, edgecolor='#AAAAAA', handlelength=2.8)
-ax_c.yaxis.set_minor_locator(AutoMinorLocator())
-ticks = [-43,-40,-35,-30,-20,-10,0,5,10,12.85,17.64,20]
-lbls  = [r'$10^{-43}$',r'$10^{-40}$',r'$10^{-35}$',r'$10^{-30}$',
-         r'$10^{-20}$',r'$10^{-10}$','1',r'$10^5$',r'$10^{10}$',
-         '380\nkyr','13.8\nGyr','']
-ax_c.set_xticks(ticks); ax_c.set_xticklabels(lbls, fontsize=FS_TICK)
-ax_c.set_xlabel(r'$\log_{10}(t\,/\,\mathrm{s})$', fontsize=FS_AXIS)
+# Derived-parent key result box
+ax3.text(0.015, 0.95,
+         r'Hubble-priority point: $\omega_0=30$, $\phi_0=-0.10$' '\n'
+         r'$\Delta H_0/H_0=+2.73\%$, $H_0^{\rm ECT}=69.2$ km/s/Mpc' '\n'
+         r'$t_0^{\rm ECT}=13.02$ Gyr  ($\Lambda$CDM: 13.8 Gyr)' '\n'
+         r'$R_{\rm gal}\approx1.21$,  $R_{\rm BH}\approx1.48$--$1.51$ at $z{=}10$',
+         transform=ax3.transAxes, fontsize=7.5, va='top', ha='left',
+         bbox=dict(fc='white', ec='0.5', lw=0.8, pad=4))
 
-# ── FIX: draw t_Pl and NOW as continuous figure-level lines connecting all panels ──
-# Must be called AFTER all axes are populated so layout is stable.
-fig.canvas.draw()   # finalise renderer so transforms are valid
+# Euclidean phase shading
+ax3.axvspan(XMIN, LOG_PT, alpha=0.07, color='black')
+ax3.text(-43, 0.50, 'Euclidean\nphase\n(no time)', ha='center', va='center',
+         fontsize=7, color='0.35', style='italic')
 
-for x_data, col, lw_val in [(T_PT, BLK, 2.0), (T_NOW, BLK, 2.0)]:
-    # Convert data x → display pixels (all panels share x-axis)
-    x_disp, _ = ax_c.transData.transform((x_data, 0))
-    # Convert display pixels → figure-normalised [0,1]
-    x_fig, _ = fig.transFigure.inverted().transform((x_disp, 0))
-    # y spans: from bottom of ax_c to top of ax_a (in figure fraction)
-    y_bot = ax_c.get_position().y0
-    y_top = ax_a.get_position().y1
-    connector = Line2D([x_fig, x_fig], [y_bot, y_top],
-                       transform=fig.transFigure,
-                       color=col, lw=lw_val, alpha=0.55,
-                       zorder=0, clip_on=False)
-    fig.add_artist(connector)
+ax3.set_xlim(XMIN, XMAX); ax3.set_ylim(0, YMAX)
+ax3.set_xlabel(r'$\log_{10}(t\,/\,\mathrm{s})$', fontsize=11)
+ax3.set_ylabel('Normalised value', fontsize=10)
+ax3.legend(fontsize=8, loc='upper left', bbox_to_anchor=(0.0, 0.72),
+           framealpha=0.95, edgecolor='0.5')
+ax3.minorticks_on()
 
-import os
-out = '/Users/chufelo/Documents/Physics/VDT/ECT/github_repo'
-plt.savefig(os.path.join(out, 'ECT_vs_LCDM_timeline.png'), dpi=200, bbox_inches='tight', facecolor='white')
-plt.savefig(os.path.join(out, 'ECT_vs_LCDM_timeline.pdf'), bbox_inches='tight', facecolor='white')
+# Bottom disclaimer
+ax3.text(0.5, -0.09,
+         'Note: curves are schematic; exact shapes require numerical integration. '
+         'Condensate dynamics: derived-parent ECT (Pack H–M).',
+         transform=ax3.transAxes, ha='center', fontsize=6.5, color='0.4', style='italic')
+
+# ── Shared x-ticks ────────────────────────────────────────────────────────
+tick_vals = [-43,-40,-35,-30,-20,-10,0,5,10,13,15,16,17,18,19,20]
+tick_lbls = [r'$10^{-43}$', r'$10^{-40}$', r'$10^{-35}$', r'$10^{-30}$',
+             r'$10^{-20}$', r'$10^{-10}$', '1 s',
+             r'$10^5$ s', r'$10^{10}$ s', r'$10^5$ yr',
+             '380\nkyr', r'$10^9$ yr', r'$10^{10}$ yr',
+             r'13.8', r'$10^{12}$', r'$10^{13}$']
+ax3.set_xticks(tick_vals)
+ax3.set_xticklabels(tick_lbls, fontsize=7)
+
+out = '/Users/chufelo/Documents/Physics/VDT/ECT/LaTex/figures/fig5_ECT_timeline_condensate_v2'
+plt.savefig(out+'.png', dpi=300, bbox_inches='tight', facecolor='white')
+plt.savefig(out+'.pdf', bbox_inches='tight', facecolor='white')
 plt.close()
-print("Saved v7")
+print(f"Saved: {out}.png/pdf")

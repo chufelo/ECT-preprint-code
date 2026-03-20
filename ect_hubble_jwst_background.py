@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-ECT late-time cosmology solver (v4 — benchmark + derived-parent modes).
+ECT late-time cosmology solver (v5 — benchmark + derived-parent modes + linear growth).
 
 Two closure modes are supported:
 
@@ -274,6 +274,186 @@ def solve_background_selfconsistent(p: Params, seed_mode: str = "ref"):
                            "q": q_sol, "E": E_sol, "E_ref": E_ref})
     return bg_df, pd.DataFrame(diagnostics)
 
+
+
+def solve_linear_growth(df: pd.DataFrame, p: Params):
+    """
+    Solve the linear growth equation on the solved background:
+        delta'' + (2 + dlnH/dN) delta' - 1.5 * mu_eff * Omega_m(a) * delta = 0
+    with N = ln a. The same initial conditions are used for ECT and reference
+    runs at the highest redshift available in the solved background.
+    """
+    N_desc = df["N"].to_numpy()
+    z_desc = df["z"].to_numpy()
+    E_desc = df["E"].to_numpy()
+    Eref_desc = df["E_ref"].to_numpy()
+    Geff_desc = np.exp(np.clip(-p.beta * df["phi"].to_numpy(), -50, 50))
+
+    N = N_desc[::-1]
+    z = z_desc[::-1]
+    E = E_desc[::-1]
+    Eref = Eref_desc[::-1]
+    Geff = Geff_desc[::-1]
+
+    dlnE = dlnE_from_array(N, E)
+    dlnE_ref = dlnE_from_array(N, Eref)
+
+    def omega_m_of_N(Nv, Ev):
+        return p.omega_m_star * np.exp(-3.0 * Nv) / np.maximum(Ev**2, 1e-20)
+
+    def rhs_ect(Nv, y):
+        delta, ddelta = y
+        Ev = float(np.interp(Nv, N, E))
+        dlnEv = float(np.interp(Nv, N, dlnE))
+        mu_eff = float(np.interp(Nv, N, Geff))
+        Om = omega_m_of_N(Nv, Ev)
+        d2 = -(2.0 + dlnEv) * ddelta + 1.5 * mu_eff * Om * delta
+        return [ddelta, d2]
+
+    def rhs_ref(Nv, y):
+        delta, ddelta = y
+        Ev = float(np.interp(Nv, N, Eref))
+        dlnEv = float(np.interp(Nv, N, dlnE_ref))
+        Om = omega_m_of_N(Nv, Ev)
+        d2 = -(2.0 + dlnEv) * ddelta + 1.5 * Om * delta
+        return [ddelta, d2]
+
+    Nini = float(N[0])
+    delta_ini = np.exp(Nini)
+    ddelta_ini = delta_ini
+
+    sol_ect = solve_ivp(rhs_ect, [Nini, 0.0], [delta_ini, ddelta_ini],
+                        method="RK45", dense_output=True, rtol=1e-8, atol=1e-10, max_step=0.05)
+    sol_ref = solve_ivp(rhs_ref, [Nini, 0.0], [delta_ini, ddelta_ini],
+                        method="RK45", dense_output=True, rtol=1e-8, atol=1e-10, max_step=0.05)
+
+    if (not sol_ect.success) or (not sol_ref.success) or (sol_ect.sol is None) or (sol_ref.sol is None):
+        nan = np.full_like(N, np.nan, dtype=float)
+        return pd.DataFrame({
+            "z": z[::-1], "N": N[::-1],
+            "delta_ect": nan[::-1], "delta_ref": nan[::-1],
+            "D_ect": nan[::-1], "D_ref": nan[::-1],
+            "delta_ratio": nan[::-1], "D_ratio": nan[::-1],
+            "f_ect": nan[::-1], "f_ref": nan[::-1], "f_ratio": nan[::-1],
+        })
+
+    delta_ect = sol_ect.sol(N)[0]
+    ddelta_ect = sol_ect.sol(N)[1]
+    delta_ref = sol_ref.sol(N)[0]
+    ddelta_ref = sol_ref.sol(N)[1]
+
+    D_ect = delta_ect / np.maximum(delta_ect[-1], 1e-30)
+    D_ref = delta_ref / np.maximum(delta_ref[-1], 1e-30)
+    f_ect = ddelta_ect / np.maximum(delta_ect, 1e-30)
+    f_ref = ddelta_ref / np.maximum(delta_ref, 1e-30)
+
+    return pd.DataFrame({
+        "z": z[::-1],
+        "N": N[::-1],
+        "delta_ect": delta_ect[::-1],
+        "delta_ref": delta_ref[::-1],
+        "D_ect": D_ect[::-1],
+        "D_ref": D_ref[::-1],
+        "delta_ratio": (delta_ect / np.maximum(delta_ref, 1e-30))[::-1],
+        "D_ratio": (D_ect / np.maximum(D_ref, 1e-30))[::-1],
+        "f_ect": f_ect[::-1],
+        "f_ref": f_ref[::-1],
+        "f_ratio": (f_ect / np.maximum(f_ref, 1e-30))[::-1],
+    })
+
+
+def semi_analytic_structure_proxies(df: pd.DataFrame):
+    """Simple semi-analytic JWST/BH development proxies from the solved background."""
+    out = pd.DataFrame({"z": df["z"].to_numpy()})
+    geff = df["Geff_ratio"].to_numpy()
+    out["tff_ratio"] = 1.0 / np.sqrt(np.maximum(geff, 1e-30))
+    out["virial_speed_ratio"] = np.sqrt(np.maximum(geff, 1e-30))
+    out["bh_growth_time_ratio"] = 1.0 / np.maximum(geff, 1e-30)
+    out["jeans_mass_ratio"] = 1.0 / np.maximum(geff, 1e-30)**1.5
+    return out
+
+
+def parse_float_grid(spec: str):
+    return [float(x.strip()) for x in spec.split(",") if x.strip()]
+
+
+def run_derived_grid_scan(base_params: Params, omega0_values, phi0_values, seed_mode="ref"):
+    rows = []
+    scan_npts = min(base_params.npts, 1200)
+    scan_n_iter = min(base_params.n_iter, 3)
+    for omega0 in omega0_values:
+        for phi0 in phi0_values:
+            p = Params(
+                H_star=base_params.H_star,
+                omega_m_star=base_params.omega_m_star,
+                omega_r_star=base_params.omega_r_star,
+                omega_V_star=base_params.omega_V_star,
+                beta=base_params.beta,
+                mu=base_params.mu,
+                kappa=base_params.kappa,
+                k1=base_params.k1,
+                k2=base_params.k2,
+                lambda3=base_params.lambda3,
+                lambda4=base_params.lambda4,
+                omega0=omega0,
+                A2=base_params.A2,
+                A3=base_params.A3,
+                A4=base_params.A4,
+                phi0=phi0,
+                closure_mode="derived_parent",
+                zmax_solver=base_params.zmax_solver,
+                zplot=base_params.zplot,
+                z_match=base_params.z_match,
+                npts=scan_npts,
+                n_iter=scan_n_iter,
+            )
+            try:
+                bg, _ = solve_background_selfconsistent(p, seed_mode=seed_mode)
+                full, summary, *_ = derived_quantities(bg, p)
+                growth = solve_linear_growth(full, p)
+                s = summary.iloc[0]
+            except Exception:
+                rows.append({
+                    "omega0": omega0, "phi0": phi0,
+                    "DeltaH0_over_H0": np.nan, "H0_late": np.nan, "age_ect_Gyr": np.nan,
+                    "t_U_ect_z10": np.nan, "t_gal_z10_formed_z15_ect": np.nan, "DL_frac_z10": np.nan,
+                    "Geff_ratio_z10": np.nan, "grow_proxy_ratio_z10": np.nan,
+                    "linear_delta_ratio_z10": np.nan, "linear_D_ratio_z10": np.nan,
+                    "tff_ratio_z10": np.nan, "virial_speed_ratio_z10": np.nan,
+                    "bh_growth_time_ratio_z10": np.nan,
+                    "hubble_candidate": False, "age_candidate": False,
+                    "balanced_candidate": False, "status": "failed"
+                })
+                continue
+
+            def near(frame, col, zt):
+                j = int(np.argmin(np.abs(frame["z"].to_numpy() - zt)))
+                return float(frame.iloc[j][col])
+
+            rows.append({
+                "omega0": omega0,
+                "phi0": phi0,
+                "DeltaH0_over_H0": float(s["DeltaH0_over_H0"]),
+                "H0_late": float(s["H0_late"]),
+                "age_ect_Gyr": float(s["age_ect_Gyr"]),
+                "t_U_ect_z10": float(s.get("t_U_ect_z10", np.nan)),
+                "t_gal_z10_formed_z15_ect": float(s.get("t_gal_z10_formed_z15_ect", np.nan)),
+                "DL_frac_z10": float(s.get("DL_frac_z10", np.nan)),
+                "Geff_ratio_z10": near(full, "Geff_ratio", 10.0),
+                "grow_proxy_ratio_z10": near(full, "grow", 10.0) / max(near(full, "grow_ref", 10.0), 1e-30),
+                "linear_delta_ratio_z10": near(growth, "delta_ratio", 10.0),
+                "linear_D_ratio_z10": near(growth, "D_ratio", 10.0),
+                "tff_ratio_z10": 1.0 / np.sqrt(max(near(full, "Geff_ratio", 10.0), 1e-30)),
+                "virial_speed_ratio_z10": np.sqrt(max(near(full, "Geff_ratio", 10.0), 1e-30)),
+                "bh_growth_time_ratio_z10": 1.0 / max(near(full, "Geff_ratio", 10.0), 1e-30),
+                "hubble_candidate": bool(0.02 <= float(s["DeltaH0_over_H0"]) <= 0.05),
+                "age_candidate": bool(float(s["age_ect_Gyr"]) >= 12.5),
+                "status": "ok",
+            })
+    scan_df = pd.DataFrame(rows)
+    scan_df["balanced_candidate"] = scan_df["hubble_candidate"] & scan_df["age_candidate"]
+    return scan_df
+
 # ── age functions ────────────────────────────────────────────────────────────
 def H_tail(z, z_match, H_match, om, orad):
     num = om*(1+z)**3 + orad*(1+z)**4
@@ -331,6 +511,11 @@ def derived_quantities(df: pd.DataFrame, p: Params):
                  ("Geff_ratio",Geff_ratio),("grow",grow),("grow_ref",growref)]:
         df[k] = v
 
+    growth_df = solve_linear_growth(df, p)
+    struct_df = semi_analytic_structure_proxies(df)
+    df = df.merge(growth_df[["z","delta_ect","delta_ref","D_ect","D_ref","delta_ratio","D_ratio","f_ect","f_ref","f_ratio"]], on="z", how="left")
+    df = df.merge(struct_df, on="z", how="left")
+
     # closure member tag
     _is_bench = (p.closure_mode == "benchmark"
                  and p.k1==0.0 and p.k2==0.0 and p.lambda3==0.0 and p.lambda4==0.0)
@@ -373,6 +558,12 @@ def derived_quantities(df: pd.DataFrame, p: Params):
         S[f"DL_lum_frac_z{zt}"] = float((1+dl_frac)**2-1)
         S[f"tlook_frac_z{zt}"]  = float((tlook[j]-tlookref[j])/max(tlookref[j],1e-10))
         S[f"grow_ratio_z{zt}"]  = float(grow[j]/max(growref[j],1e-20))
+        S[f"linear_delta_ratio_z{zt}"] = float(df["delta_ratio"].iloc[j])
+        S[f"linear_D_ratio_z{zt}"] = float(df["D_ratio"].iloc[j])
+        S[f"f_ratio_z{zt}"] = float(df["f_ratio"].iloc[j])
+        S[f"tff_ratio_z{zt}"] = float(df["tff_ratio"].iloc[j])
+        S[f"virial_speed_ratio_z{zt}"] = float(df["virial_speed_ratio"].iloc[j])
+        S[f"bh_growth_time_ratio_z{zt}"] = float(df["bh_growth_time_ratio"].iloc[j])
         S[f"gdag_ratio_z{zt}"]  = float(df["gdag_ratio"].iloc[j])
         S[f"t_U_ect_z{zt}"]     = tU
         S[f"t_U_ref_z{zt}"]     = tUr
@@ -414,7 +605,7 @@ def derived_quantities(df: pd.DataFrame, p: Params):
     panel_ab_df["DL_frac"] = (df["DL"]-df["DL_ref"])/df["DL_ref"].replace(0, float("nan"))
 
     tref_s = df["tlook_ref"].copy(); tref_s[tref_s < 0.01] = float("nan")
-    panel_cd_df = df[["z","t_U","t_U_ref","grow","grow_ref","gdag_ratio"]].copy()
+    panel_cd_df = df[["z","t_U","t_U_ref","grow","grow_ref","gdag_ratio","delta_ratio","D_ratio","f_ratio","tff_ratio","virial_speed_ratio","bh_growth_time_ratio"]].copy()
     panel_cd_df["tlook_frac"] = (df["tlook"]-df["tlook_ref"])/tref_s
     panel_cd_df["grow_ratio"] = df["grow"]/df["grow_ref"].replace(0, float("nan"))
 
@@ -484,9 +675,17 @@ def derived_quantities(df: pd.DataFrame, p: Params):
        "supports_article_section":"sec:hubble_jwst",
        "supports_figure_or_table":"fig:ect_hubble_jwst_background panels a+b"},
       {"filename":"ect_panel_cd_growth_age.csv","artifact_type":"figure_panel_data",
-       "description":"Panels (c)+(d): z, tlook_frac, grow_ratio, gdag_ratio, t_U",
+       "description":"Panels (c)+(d): z, tlook_frac, grow_ratio, gdag_ratio, t_U, linear-growth and structure proxies",
        "supports_article_section":"sec:hubble_jwst",
        "supports_figure_or_table":"fig:ect_hubble_jwst_background panels c+d"},
+      {"filename":"ect_linear_growth_table.csv","artifact_type":"linear_growth_table",
+       "description":"Linear growth solution: delta, D, f and ratios to reference on common z-grid",
+       "supports_article_section":"sec:hubble_jwst, app:late_cosmo_artefacts",
+       "supports_figure_or_table":"linear growth diagnostics"},
+      {"filename":"ect_structure_proxies.csv","artifact_type":"structure_proxy_table",
+       "description":"Semi-analytic structure proxies: free-fall, virial speed, BH growth time, Jeans-mass ratios",
+       "supports_article_section":"sec:hubble_jwst, app:late_cosmo_artefacts",
+       "supports_figure_or_table":"semi-analytic JWST/BH development estimates"},
       {"filename":"ect_hubble_jwst_background_bw.pdf","artifact_type":"figure",
        "description":"Four-panel background figure (PDF)",
        "supports_article_section":"sec:hubble_jwst",
@@ -506,7 +705,9 @@ def derived_quantities(df: pd.DataFrame, p: Params):
     ]
     manifest_df = pd.DataFrame(manifest_rows)
 
-    return df, summary_df, dt_df, jwst_df, jwst_key_df, panel_ab_df, panel_cd_df, meta_df, manifest_df
+    linear_growth_df = growth_df.copy()
+    structure_df = struct_df.copy()
+    return df, summary_df, dt_df, jwst_df, jwst_key_df, panel_ab_df, panel_cd_df, linear_growth_df, structure_df, meta_df, manifest_df
 
 # ── figures ──────────────────────────────────────────────────────────────────
 def make_figure(df, summary, outpath, p):
@@ -597,7 +798,7 @@ def make_scan_figure(outpath, p):
 # ── main ─────────────────────────────────────────────────────────────────────
 def main():
     ap = argparse.ArgumentParser(
-        description="ECT cosmology solver v4: benchmark and derived-parent modes")
+        description="ECT cosmology solver v5: benchmark/derived-parent modes + linear growth")
     ap.add_argument("--outdir",       required=True)
     ap.add_argument("--H_star",       type=float, default=67.4)
     ap.add_argument("--om0",          type=float, default=0.315)
@@ -634,6 +835,10 @@ def main():
     ap.add_argument("--compare_to_benchmark", action="store_true",
                     help="Also run pure benchmark and save comparison CSV")
     ap.add_argument("--seed_mode", choices=["ref","zero"], default="ref")
+    ap.add_argument("--scan_derived_grid", action="store_true",
+                    help="Run a small derived-parent grid scan over omega0 and phi0")
+    ap.add_argument("--omega0_grid", type=str, default="15,20,25,30,40,50")
+    ap.add_argument("--phi0_grid", type=str, default="-0.15,-0.12,-0.10,-0.08,-0.05")
     args = ap.parse_args()
 
     omega_V_star = args.oV0 if args.oV0 is not None else 1.0 - args.om0 - args.or0
@@ -649,14 +854,14 @@ def main():
     )
 
     outdir = Path(args.outdir); outdir.mkdir(parents=True, exist_ok=True)
-    print(f"ECT solver v4: mode={p.closure_mode}, "
+    print(f"ECT solver v5: mode={p.closure_mode}, "
           f"beta={p.beta}, mu={p.mu}, phi0={p.phi0}, "
           f"kappa={p.kappa}, omega0={p.omega0}, "
           f"k1={p.k1}, k2={p.k2}, lambda3={p.lambda3}, lambda4={p.lambda4}, "
           f"A2={p.A2:.4f}, A3={p.A3}, A4={p.A4}, seed={args.seed_mode}")
 
     df, diagnostics = solve_background_selfconsistent(p, seed_mode=args.seed_mode)
-    full, summary, distance_time, jwst_grid, jwst_key, panel_ab, panel_cd, metadata, manifest = \
+    full, summary, distance_time, jwst_grid, jwst_key, panel_ab, panel_cd, linear_growth, structure_df, metadata, manifest = \
         derived_quantities(df, p)
 
     metadata["seed_mode"]           = args.seed_mode
@@ -677,6 +882,8 @@ def main():
     diagnostics.to_csv(   outdir/"ect_convergence_diagnostics.csv", index=False)
     panel_ab.to_csv(      outdir/"ect_panel_ab_background.csv",     index=False)
     panel_cd.to_csv(      outdir/"ect_panel_cd_growth_age.csv",     index=False)
+    linear_growth.to_csv( outdir/"ect_linear_growth_table.csv",     index=False)
+    structure_df.to_csv(  outdir/"ect_structure_proxies.csv",       index=False)
     jwst_key.to_csv(      outdir/"ect_jwst_key_rows.csv",           index=False)
 
     s = summary.iloc[0]
@@ -685,8 +892,11 @@ def main():
     print(f"  H0 late = {s['H0_late']:.2f} km/s/Mpc")
     print(f"  Age ECT = {s['age_ect_Gyr']:.2f} Gyr  (ref = {s['age_ref_Gyr']:.2f} Gyr)")
     for zt in [5, 10, 12]:
+        j = int(np.argmin(np.abs(full["z"].to_numpy()-zt)))
         print(f"  z={zt:2d}: DL/DL={s.get(f'DL_frac_z{zt}',0)*100:.2f}%  "
-              f"tU={s.get(f't_U_ect_z{zt}',0):.3f} Gyr")
+              f"tU={s.get(f't_U_ect_z{zt}',0):.3f} Gyr  "
+              f"delta_ratio={s.get(f'linear_delta_ratio_z{zt}',0):.3f}  "
+              f"Geff/GN={full.iloc[j]['Geff_ratio']:.3f}")
 
     # multiseed validation
     if args.validate_multiseed:
@@ -741,6 +951,32 @@ def main():
             "supports_article_section": "app:late_closure_robustness",
             "supports_figure_or_table": "closure-family robustness"}])], ignore_index=True)
 
+
+    if args.scan_derived_grid:
+        omega0_values = parse_float_grid(args.omega0_grid)
+        phi0_values = parse_float_grid(args.phi0_grid)
+        scan_df = run_derived_grid_scan(p, omega0_values, phi0_values, seed_mode=args.seed_mode)
+        scan_df.to_csv(outdir/"ect_derived_grid_scan.csv", index=False)
+        candidates = scan_df[scan_df["balanced_candidate"]].copy()
+        candidates.to_csv(outdir/"ect_derived_candidate_points.csv", index=False)
+        print(f"  Derived grid scan: {len(scan_df)} points, {len(candidates)} balanced candidates")
+        manifest = pd.concat([manifest, pd.DataFrame([
+            {
+                "filename": "ect_derived_grid_scan.csv",
+                "artifact_type": "parameter_scan",
+                "description": "Derived-parent scan over omega0 and phi0 with Hubble/age/growth metrics",
+                "supports_article_section": "sec:hubble_jwst, app:late_closure_robustness",
+                "supports_figure_or_table": "parameter-corridor selection"
+            },
+            {
+                "filename": "ect_derived_candidate_points.csv",
+                "artifact_type": "candidate_table",
+                "description": "Subset of derived-parent scan satisfying simple Hubble+age candidate filters",
+                "supports_article_section": "sec:hubble_jwst, app:late_closure_robustness",
+                "supports_figure_or_table": "working points"
+            }
+        ])], ignore_index=True)
+
     # save manifest (after all optional entries)
     manifest.to_csv(outdir/"ect_output_manifest.csv", index=False)
 
@@ -751,6 +987,7 @@ def main():
         "ect_benchmark_summary.csv","ect_run_metadata.csv",
         "ect_convergence_diagnostics.csv",
         "ect_panel_ab_background.csv","ect_panel_cd_growth_age.csv",
+        "ect_linear_growth_table.csv","ect_structure_proxies.csv",
         "ect_output_manifest.csv"]]
     missing = [f.name for f in required if not f.exists()]
     if missing:
@@ -770,6 +1007,7 @@ def main():
         "ect_benchmark_summary.csv","ect_run_metadata.csv",
         "ect_convergence_diagnostics.csv",
         "ect_panel_ab_background.csv","ect_panel_cd_growth_age.csv",
+        "ect_linear_growth_table.csv","ect_structure_proxies.csv",
         "ect_output_manifest.csv",
         "ect_hubble_jwst_background_bw.pdf","ect_hubble_jwst_background_bw.png",
     ]
@@ -779,6 +1017,8 @@ def main():
         saved_files.append("ect_multiseed_comparison.csv")
     if args.compare_to_benchmark and not is_pure_bench:
         saved_files.append("ect_benchmark_comparison.csv")
+    if args.scan_derived_grid:
+        saved_files += ["ect_derived_grid_scan.csv", "ect_derived_candidate_points.csv"]
     print("\nSaved artefacts:")
     for fn in saved_files:
         print(f"  - {fn}")
