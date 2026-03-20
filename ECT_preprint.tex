@@ -24,6 +24,7 @@
 
 % ---- Tables and figures ----
 \usepackage{float}           % For [H] forced placement
+\usepackage{placeins}        % For \FloatBarrier
 \usepackage{longtable,booktabs,array}
 \usepackage{graphicx}
 \usepackage[font=small,labelfont=bf]{caption}
@@ -6729,29 +6730,40 @@ not fundamental; therefore a cosmological history in which
 time-bearing Lorentzian geometry appears only after the ordering
 transition is natural in ECT in a way it is not in standard
 GR-based cosmology.
+The corresponding full conceptual picture is summarised in
+Figure~\ref{fig:timeline}, which separates the ordering /
+Lorentzian-branch layer from the gravitational condensate amplitude
+sector and the later electroweak condensate sector.
+The cosmological history is therefore no longer represented by a
+single effective condensate line.
 
 
-% --- fig:timeline ---
-\begin{figure}[H]
+% --- fig:timeline — replaced by full 4-band ECT diagram (Pack P) ---
+\begin{figure*}[htb]
 \centering
-\includegraphics[width=\textwidth]{figures/fig5_ECT_timeline_condensate.png}
-\caption{Schematic cosmological history in the ECT macroscopic branch.
-\textbf{Top row~(a):} standard $\Lambda$CDM-style timeline.
-\textbf{Bottom row~(b):} ECT-inspired ordering scenario in which a
-pre-Lorentzian Euclidean regime precedes the emergence of the ordered
-Lorentzian branch.
-The transition $O(4)\to O(3)$ is shown schematically as the stage at
-which macroscopic temporal direction and Lorentzian causal structure
-become established.
-Inflation is interpreted here as an effective ordering transition,
-not yet as a first-principles theorem from bare~P3.
-\textbf{Panel~(c):} schematic evolution of coarse-grained ordering and
-macroscopic cosmological quantities.
-If legacy notation appears inside the plot, it should be read as
-historical shorthand rather than as the new postulate-level parameter
-hierarchy.}
+\includegraphics[width=\textwidth]{figures/ect_full_condensate_universe_evolution_bw.pdf}
+\caption{Schematic full ECT picture of the evolution of the observable
+Universe and the main condensate sectors.
+The figure separates four horizontal bands:
+(i)~the ordering / Lorentzian-branch emergence layer,
+showing the Euclidean pre-Lorentzian regime, the O(4)$\to$O(3)
+transition ($\alpha>1$, $c_*=1/\sqrt{\alpha-1}$), and the causal
+macroscopic Lorentzian regime;
+(ii)~the gravitational condensate amplitude sector with
+$u/u_\infty=e^{\beta\phi}$ and $G_{\rm eff}/G_N=e^{-\beta\phi}$
+($G_{\rm eff}>G_N$ in the early derived-parent epoch);
+(iii)~the electroweak condensate sector, showing EW condensation at
+$v_2=246$\,GeV;
+and
+(iv)~the observable Universe layer with key cosmological epochs.
+Only sector~(ii) is presently resolved quantitatively in the
+late-time Hubble--JWST analysis; the other layers represent the
+current conceptual ECT picture rather than equally resolved
+numerical sectors.
+This figure is schematic and does not represent a fully established
+quantitative cosmic history.}
 \label{fig:timeline}
-\end{figure}
+\end{figure*}
 
 \subsubsection*{Homogeneous FLRW branch after ordering}
 
@@ -14137,6 +14149,8 @@ transition, not just the asymptotic $g_\dagger$) may provide
 a further high-quality diagnostic.
 
 
+\FloatBarrier
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
 \label{sec:conclusion}
@@ -17336,7 +17350,7 @@ n_A n^C R_{CB}
 \end{equation}
 identically the form that appears in eq.~\eqref{eq:gen_EE}.
 
-\subsection{Conclusion}
+\subsection{Result of the derivation}
 
 The anisotropic curvature term~\eqref{eq:anis_full} is not a
 postulate or an ansatz: it follows by algebraic manipulation
