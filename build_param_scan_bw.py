@@ -139,6 +139,11 @@ for ax, (data, title, fmt, _, vmin, vmax, div_cen) in zip(axes.ravel(), panels):
         cbar = plt.colorbar(im, ax=ax, shrink=0.88)
         cbar.set_label(title, fontsize=9.5)
 
+    # Thin grid lines between all cells
+    for xi in np.arange(-0.5, len(omega0_vals), 1):
+        ax.axvline(xi, color='black', lw=0.35, zorder=2)
+    for yi in np.arange(-0.5, len(phi0_vals), 1):
+        ax.axhline(yi, color='black', lw=0.35, zorder=2)
     ax.set_xticks(np.arange(len(omega0_vals)))
     ax.set_xticklabels([f"{v:.0f}" for v in omega0_vals], fontsize=9.5)
     ax.set_yticks(np.arange(len(phi0_vals)))
@@ -147,26 +152,31 @@ for ax, (data, title, fmt, _, vmin, vmax, div_cen) in zip(axes.ravel(), panels):
     ax.set_ylabel(r"$\phi_0$", fontsize=11)
     ax.set_title(title, fontweight="bold", fontsize=11, pad=6)
 
-    # ── Cell annotations ─────────────────────────────────────────────────
+    # ── Cell annotations — proper luminance-based contrast ───────────────
+    # Get actual RGBA values from the colormap+norm to compute real luminance
     for ii in range(len(phi0_vals)):
         for jj in range(len(omega0_vals)):
             if np.isnan(data[ii, jj]):
                 continue
             v = data[ii, jj]
-            # Determine background brightness to pick text color
+            # Get the actual background color rendered by matplotlib
             if div_cen is not None:
-                norm_v = abs(v - div_cen) / max(abs(vmin), abs(vmax))
+                mapped_val = abs(v - div_cen) / max(abs(vmin), abs(vmax))
+                rgba = plt.cm.Greys(np.clip(mapped_val, 0, 1))
+            elif cmap == plt.cm.Greys_r:
+                norm_v = (v - vmin) / (vmax - vmin + 1e-9)
+                rgba = plt.cm.Greys_r(np.clip(norm_v, 0, 1))
             else:
                 norm_v = (v - vmin) / (vmax - vmin + 1e-9)
-            # For Greys_r: norm_v=0 → white, norm_v=1 → black
-            # text should be black on light, white on dark
-            if cmap == plt.cm.Greys_r:
-                text_dark = norm_v > 0.55
-            else:
-                text_dark = norm_v < 0.50
-            col = 'white' if text_dark else 'black'
+                rgba = cmap(np.clip(norm_v, 0, 1))
+            # Relative luminance (WCAG formula)
+            r, g, b = rgba[0], rgba[1], rgba[2]
+            lum = 0.2126*r + 0.7152*g + 0.0722*b
+            # Use white text on dark bg, black text on light bg
+            # Threshold 0.45 ensures good contrast in both directions
+            col = 'white' if lum < 0.45 else 'black'
             ax.text(jj, ii, fmt.format(v), ha='center', va='center',
-                    fontsize=9, color=col, fontweight='bold')
+                    fontsize=9.5, color=col, fontweight='bold')
 
     # ── Corridor boxes ────────────────────────────────────────────────────
     for ii in range(len(phi0_vals)):
