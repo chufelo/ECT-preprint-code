@@ -6881,8 +6881,98 @@ What remains for further development is not the existence of the
 mechanism itself, but its sharpening: a fuller nonequilibrium treatment
 of branch-selection dynamics, a more explicit semiclassical comparison
 between coherent and fragmented sectors, a tighter phenomenological
-bridge through the effective pseudo-Goldstone sector, and the separate
-question of flatness in the ECT cosmological programme.
+bridge through the effective pseudo-Goldstone sector.
+The flatness problem is addressed in the following subsection
+(Section~\ref{sec:flatness_ect}).
+
+\subsubsection*{Flatness problem in ECT}
+\label{sec:flatness_ect}
+
+In standard Lorentzian FLRW cosmology the flatness problem is the question
+of why the spatial curvature parameter satisfies $|\Omega_K(t_0)|\ll 1$
+today, given that without a special mechanism the departure from flatness
+grows during matter and radiation domination and would therefore require
+extremely fine-tuned initial conditions.
+
+In ECT this formulation is not fundamental.
+The observable Lorentzian Universe is not primordial but emergent.
+The flatness problem is therefore reformulated as a
+\emph{branch-geometry selection problem}: which spatial geometry does the
+emergent Lorentzian branch inherit from the pre-Lorentzian stage?
+
+The answer follows directly from two already established facts.
+
+\textbf{(i)~Structural flatness from P1.}
+According to Postulate~P1, the pre-Lorentzian background is a flat
+Euclidean space with metric
+\[
+ds_E^2 = \delta_{AB}\,dX^A dX^B
+= dw^2 + dx^2 + dy^2 + dz^2.
+\]
+The macrocoherent $O(4)\to O(3)$ ordering transition (whose coherence is
+already established in Section~\ref{sec:horizon_ect_main}) selects a
+globally aligned ordering direction $n_A(x)=\mathrm{const}$, which can
+without loss of generality be taken as $n_A = \delta_{Aw}$.
+The spatial sections orthogonal to this direction then inherit the
+induced metric
+\[
+h_{ij} = \delta_{ij}.
+\]
+Since $\delta_{ij}$ is the exact Euclidean metric on $\mathbb{R}^3$, its
+three-dimensional Ricci scalar vanishes identically,
+${}^{(3)}R[h]=0$.
+In FLRW notation ${}^{(3)}R = 6k/a^2$, so
+\[
+\boxed{k = 0.}
+\]
+This is not a preference or a fine-tuning: it is a direct structural
+consequence of P1 together with the macrocoherence of the ordering
+transition.
+
+\textbf{(ii)~Preservation under homogeneous branch evolution.}
+After branch emergence the large-scale homogeneous and isotropic
+evolution rescales the spatial metric:
+\[
+ds^2 = -dt^2 + a^2(t)\,\delta_{ij}\,dx^i dx^j.
+\]
+The spatial geometry at each constant-$t$ slice is $a^2(t)\delta_{ij}$,
+which is a time-dependent conformal rescaling of the flat metric.
+Homogeneous expansion changes $a(t)$ and $H(t)$ but does not convert
+a $k=0$ branch into a $k=\pm 1$ branch; the curvature parameter $k$
+is a topological property of the spatial sections, not a dynamical
+field.
+Hence, for the exact baseline branch,
+\[
+\Omega_K(t)
+= -\frac{k}{a^2 H^2}
+= 0
+\quad \text{for all } t.
+\]
+The observed bound $|\Omega_K(t_0)| < 0.004$ (Planck 2018) is therefore
+naturally satisfied; subleading departures from exact flatness may arise
+from perturbations, imperfect coherence, or backreaction, but these lie
+beyond the idealised baseline branch.
+
+\textbf{Topology caveat.}
+The above establishes local spatial flatness.
+Under the assumption of a simply connected progenitor domain the flat
+spatial sections correspond to the standard $\mathbb{R}^3$ FLRW branch.
+Non-trivial spatial topology is not excluded by this argument but lies
+outside the scope of the baseline branch analysis.
+
+\textbf{Comparison with inflation.}
+Standard inflation solves the flatness problem dynamically: it takes a
+branch with pre-existing $k\neq 0$ and suppresses $|\Omega_K|$ by making
+$aH$ large.
+This is a Level~B mechanism operating \emph{inside} an already existing
+Lorentzian spacetime.
+ECT instead solves the problem \emph{structurally}: the emergent branch is
+born flat as a direct consequence of P1 and the macrocoherent ordering
+transition.
+Flatness in ECT is therefore a Level~A result, requiring no
+fine-tuning of initial conditions and no inflationary expansion
+to produce it.
+
 
 \subsubsection*{Homogeneous FLRW branch after ordering}
 
@@ -7270,6 +7360,14 @@ Inflation & Separate inflaton field with ad-hoc potential &
   $n_s = 0.967$, $r \approx 0.003$, $N_e \approx 60$
   (one-parameter closure, Level~B; not yet a full first-principles
   replacement for inflation) \\
+Flatness problem & Separate mechanism (inflation) required to suppress
+  $|\Omega_K|$ dynamically; without inflation, extreme fine-tuning
+  of initial conditions needed &
+  Structurally solved: flat Euclidean background P1 with
+  macrocoherent $O(4)\to O(3)$ ordering gives $k=0$ as a direct
+  inheritance (Level~A); $\Omega_K(t)=0$ for the exact baseline
+  branch; no fine-tuning or inflation required
+  (see Section~\ref{sec:flatness_ect}) \\
 Reheating / radiation & Standard; inflaton decays into SM fields &
   Ordered branch stabilises; condensate excitations
   (Goldstone and radial modes) thermalise into SM plasma
