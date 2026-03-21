@@ -14859,15 +14859,24 @@ The effective convergence is (Appendix~\ref{app:cluster_lensing}):
   = \nu\!\left(\frac{g_N}{g_\dagger^{\rm cl}}\right)\Sigma_b(x,y)\,,
   \label{eq:Sigma_eff_cluster}
 \end{equation}
-where $g_N = 2\pi G\Sigma_b$ is the projected Newtonian field
-and $\nu(y)=\sqrt{(1+\sqrt{1+4/y^2})/2}$~\eqref{eq:nu_cluster}
-is the algebraic $\phi$-closure enhancement.
-Because $\nu$ depends on the \emph{local} surface density
-rather than on enclosed mass, the ECT lensing signal
-preferentially traces compact BCG cores over diffuse shocked gas.
-This is not a post-hoc adjustment: the same $\nu$ that reproduces
-galactic rotation curves and the Radial Acceleration Relation is
-applied unchanged to the cluster geometry.
+where $g_N = 2\pi G\Sigma_b$ is the projected Newtonian field,
+$\nu(y)=\sqrt{(1+\sqrt{1+4/y^2})/2}$~\eqref{eq:nu_cluster}
+is the algebraic $\phi$-closure enhancement, and
+$g_\dagger^{\rm cl}$ is the cluster-scale critical acceleration.
+In the present analysis $g_\dagger^{\rm cl}$ is treated as the
+cluster counterpart of the same critical-branch threshold that
+governs the galactic sector, held fixed across the four-cluster
+suite rather than fitted per system (the numerical values used
+are listed in Table~\ref{tab:cluster_params}).
+Because $\nu$ depends on local surface density rather than on
+total enclosed mass, the ECT lensing signal preferentially
+traces the more compact component.  In Bullet, MACS~J0025, and
+El~Gordo this is the BCG/stellar core, whereas in Abell~520 it
+is the central gas core.
+This is not a post-hoc adjustment: the same functional form of
+$\nu$ that reproduces galactic rotation curves and the Radial
+Acceleration Relation is applied to the cluster geometry without
+retuning its shape.
 
 \paragraph{Four-cluster suite.}
 The same protocol is applied without modification to four
@@ -14876,18 +14885,23 @@ post-collision systems spanning $z=0.20$--$0.87$
 The key numerical results are
 (Figures~\ref{fig:bullet_main},~\ref{fig:cluster_suite_budget}):
 \begin{enumerate}[label=(\roman*)]
-\item \textbf{All four morphologies are reproduced correctly.}
+\item \textbf{All four systems are reproduced at the qualitative
+  morphological level}, with the correct identification of the
+  peak-bearing component (BCG-peaked or gas-peaked, depending on
+  which component is locally more compact).
   For Bullet, MACS~J0025~\cite{Bradac2008}, and
-  El~Gordo~\cite{Diego2023} the $\kappa$-peaks follow the
-  compact BCG concentrations
+  El~Gordo~\cite{Diego2023} the $\kappa$-peaks are associated with
+  the compact BCG concentrations
   ($d_\star^{\rm ECT}\lesssim37\,$kpc;
-  observed $d_\star^{\rm obs}<25$--$35\,$kpc).
-  For Abell~520~\cite{Mahdavi2007,Jee2012} the $\kappa$-peak
-  automatically falls on the \emph{gas core}, because in this
-  system the central gas is more compact than the dispersed BCG
-  distribution.
+  observed $d_\star^{\rm obs}<25$--$35\,$kpc; order-of-magnitude
+  consistent).
+  For Abell~520~\cite{Mahdavi2007,Jee2012} the $\kappa$-peak falls
+  on the \emph{gas core}, because in this system the central gas is
+  more compact than the dispersed BCG distribution.
   Both morphological regimes arise from the single
   function~\eqref{eq:Sigma_eff_cluster} with no per-system tuning.
+  We therefore regard the four-cluster suite as a qualitative
+  morphology test rather than a precision fit.
 
 \item \textbf{Abell~520 as a unified discriminant.}
   Abell~520 is challenging for collisionless dark-matter models
@@ -14906,8 +14920,11 @@ The key numerical results are
   $M_{\rm ECT}/M_{\rm obs}\approx0.42$--$0.71$, depending on
   baryonic concentration.
   After applying uniform ECT-specific corrections
-  (Table~\ref{tab:bullet_corrections}), the estimates reach
+  (Table~\ref{tab:cluster_corrections}), the estimates reach
   $\approx0.54$--$0.87$.
+  These numbers are order-of-magnitude estimates from a projected
+  algebraic closure; they should be read as rough indicators, not
+  precision predictions.
   In particular, MACS~J0025 and Abell~520 reach
   $M_{\rm ECT}/M_{\rm obs}\approx0.86$ and $0.87$ respectively,
   approaching full closure within the accuracy of these
@@ -14922,6 +14939,18 @@ The key numerical results are
   scales rather than a failure specific to ECT.
 \end{enumerate}
 
+\paragraph{Summary.}
+Taken together, the cluster-merger suite supports the following
+picture: ECT already reproduces the observed qualitative merger
+morphologies in both BCG-peaked and gas-peaked systems through a
+single universal surface-density response rule.
+What remains open is the full amplitude problem at the level of
+a factor $\sim1.1$--$1.9$, depending on the system.
+We therefore regard cluster mergers not as a no-go result for ECT,
+but as a sharply defined Level~B qualitative success in morphology
+together with a concrete quantitative target for the next
+generation of 3D metric--$\phi$ calculations~(OP22).
+
 \paragraph{Observational corrections.}
 Four ECT-specific effects partially reduce the apparent amplitude
 deficit (derivations in Appendix~\ref{app:cluster_slip}):
@@ -14934,12 +14963,12 @@ deficit (derivations in Appendix~\ref{app:cluster_slip}):
     uncertainties contribute $+15$--$25\%$ to the inferred gas
     mass~(observational~systematics).
   \item The anisotropic orientation stress
-    $\Theta_{\mu\nu}[n]$~\eqref{eq:Theta_n} generates
-    gravitational slip
-    $\gamma_{\rm PPN}=(1-c_1/2)/(1+c_1/2)>1$ when
-    $c_1(\bar\phi)=-a\bar\phi<0$, yielding
-    $E_3\approx+0.3$--$+8.5\%$ for $a\sim0.5$--$2$~(Level~B,
-    OP-c1).
+    $\Theta_{\mu\nu}[n]$~\eqref{eq:Theta_n} provides a natural
+    ECT source of gravitational slip.
+    A minimal Einstein-aether-like mapping with density-dependent
+    $c_1(\bar\phi)=-a\bar\phi<0$ yields a rough Level~B estimate
+    $E_3\approx+0.3$--$+8.5\%$ for $a\sim0.5$--$2$
+    (parametrised, not derived; OP-c1).
 \end{enumerate}
 
 \begin{figure}[htb]
@@ -14981,7 +15010,7 @@ deficit (derivations in Appendix~\ref{app:cluster_slip}):
     Abell~520~\cite{Mahdavi2007}.
   \textbf{(i)} Amplitude budget: light bars = baseline $A_0$;
     dark bars = $A_{\rm fin}$ after corrections
-    (Table~\ref{tab:bullet_corrections}); solid line = observed
+    (Table~\ref{tab:cluster_corrections}); solid line = observed
     target.
   \textbf{(j)} Summary table: ECT predicted and observed
     $\kappa$-peak offsets and amplitude ratios.
@@ -17409,10 +17438,13 @@ The complete Python implementation is available at\\
 \section{Cluster-merger lensing: methods and results}
 \label{app:cluster_lensing}
 
-\textit{Status: Level~B (algebraic $\phi$-closure; 3D FFT-Poisson
-geometry; order-of-magnitude estimates).
-Quantitative cluster-scale conclusions require a full 3D
-metric--$\phi$ solver (OP22).}
+\textit{Status: Level~B. The present analysis uses a projected
+algebraic $\phi$-closure applied to order-of-magnitude Gaussian
+representations of the cluster baryonic distributions.
+It is intended as a morphology-oriented qualitative test and
+amplitude estimate, not yet as a full 3D metric--$\phi$
+merger simulation.  A full 3D solver remains part of the future
+programme~(OP22).}
 
 This appendix documents the numerical methods, cluster parameters,
 corrections, and results for the four-cluster merger analysis
@@ -17517,13 +17549,15 @@ adjustment.
 \begin{table}[htb]
 \centering
 \small
-\caption{ECT observational corrections for the cluster-merger
-amplitude.  Applied multiplicatively and uniformly across all four
-systems.  The shear-to-$\kappa$ reinterpretation ($E_5$) is not
-an independent correction: it is already incorporated in the
-baseline $\Sigma_{\rm eff}=\nu\Sigma_b$ calculation (applying it
-again would double-count; see Section~\ref{app:cluster_doublecounting}).}
-\label{tab:bullet_corrections}
+\caption{Uniform ECT correction protocol for the four-cluster
+merging-system suite.  All entries are order-of-magnitude
+corrections applied multiplicatively on top of the baseline
+$\nu$-closure.  The shear-to-$\kappa$ reinterpretation sometimes
+labelled $E_5$ is not listed separately: it is already built into
+the baseline effective convergence $\Sigma_{\rm eff}=\nu\Sigma_b$;
+applying it again would double-count
+(Section~\ref{app:cluster_doublecounting}).}
+\label{tab:cluster_corrections}
 \begin{tabular}{llrl}
 \toprule
 Label & Physical mechanism & Magnitude & Status \\
@@ -17573,8 +17607,9 @@ The scalar sector therefore contributes negligibly to lensing slip.
 
 \subsubsection*{Slip from the orientation sector}
 
-A positive slip ($\gamma>1$) arises from the anisotropic
-orientation stress (Section~\ref{sec:mp_noether}):
+A positive slip ($\gamma>1$) is not naturally generated by the
+scalar $\phi$-sector alone; the more natural ECT candidate is the
+anisotropic orientation stress (Section~\ref{sec:mp_noether}):
 \begin{equation}
   \Theta_{\mu\nu}[n] = c_1\!\left(
     n_\mu n^\lambda R_{\lambda\nu}
@@ -17583,36 +17618,47 @@ orientation stress (Section~\ref{sec:mp_noether}):
   \right)\,,
   \label{eq:Theta_n_cluster}
 \end{equation}
-which modifies the PPN parameter to~\cite{Jacobson2004}
+which provides the appropriate tensor structure for $\Phi\neq\Psi$.
+A minimal Einstein-aether-like mapping then suggests the Level~B
+estimate~\cite{Jacobson2004}
 \begin{equation}
-  \gamma_{\rm PPN} = \frac{1-c_1/2}{1+c_1/2}\,.
+  \gamma_{\rm PPN} \approx \frac{1-c_1/2}{1+c_1/2}\,,
   \label{eq:gamma_Theta}
 \end{equation}
+to be interpreted here as a phenomenological proxy rather than a
+first-principles derivation from the ECT action.
 A positive slip requires $c_1<0$.
 The minimal ECT-consistent ansatz is
 \begin{equation}
   c_1(\bar\phi) = -a\,\bar\phi\,,\qquad a > 0\,,
   \label{eq:c1_ansatz}
 \end{equation}
-which vanishes in vacuum ($\bar\phi\to0$) and is therefore
-automatically consistent with the GW170817 gravitational-wave
-speed bound~\cite{LIGO_Virgo_GW170817_2017} and the Cassini
-bound~\cite{Bertotti2003}.\footnote{The GW speed constraint
-$|c_T^2-1|<5\times10^{-16}$ applies to the vacuum tensor sector;
-if $c_1\propto\bar\phi\to0$ in vacuum, the bound is
-automatically satisfied.  A first-principles derivation of
-$c_1(\bar\phi)$ from the ECT action is an open problem~(OP-c1).}
+which tends to switch off in the vacuum Lorentzian regime
+($\bar\phi\to0$).  In that case compatibility with the
+GW170817 gravitational-wave speed
+bound~\cite{LIGO_Virgo_GW170817_2017} and the Cassini
+bound~\cite{Bertotti2003} becomes plausible, although a complete
+proof requires a first-principles derivation of the tensor-sector
+coefficients from the ECT action~(OP-c1).\footnote{The GW speed
+constraint $|c_T^2-1|<5\times10^{-16}$ applies to the vacuum
+tensor sector.  If $c_1\propto\bar\phi\to0$ in the vacuum, the
+bound may be satisfied, but demonstrating this rigorously requires
+knowing the full tensor kinetic structure of the ECT action---an
+open problem~(OP-c1).}
 
-With $a\in[0.5,\,2]$ and
+With the phenomenologically motivated but not yet derived ansatz
+$c_1(\bar\phi)=-a\bar\phi$, $a\in[0.5,\,2]$, and a cluster range
 $\bar\phi_{\rm cluster}\simeq0.03$--$0.08$
 (from $\rho_{\rm cluster}/\rho_*$,
 $\rho_*\simeq3\times10^{-21}\,\mathrm{kg\,m^{-3}}$),
-the slip correction is
+one finds a rough Level~B estimate
 \begin{equation}
-  E_3 = \frac{1+\gamma_{\rm PPN}}{2}-1 \approx +0.3\%\text{--}+8.5\%\,.
+  E_3 \approx +0.3\%\text{--}+8.5\%\,.
 \end{equation}
-This is a parametrised estimate pending derivation of
-$c_1(\bar\phi)$ from the ECT action~(OP-c1, OP-new-4).
+This should be read as an order-of-magnitude parametrised estimate,
+not yet as a derived prediction.
+A first-principles determination of $c_1(\bar\phi)$ from the ECT
+action remains open~(OP-c1, OP-new-4).
 
 \subsection{Note on double-counting}
 \label{app:cluster_doublecounting}
