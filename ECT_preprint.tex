@@ -14866,17 +14866,16 @@ $g_\dagger^{\rm cl}$ is the cluster-scale critical acceleration.
 In the present analysis $g_\dagger^{\rm cl}$ is treated as the
 cluster counterpart of the same critical-branch threshold that
 governs the galactic sector, held fixed across the four-cluster
-suite rather than fitted per system (the numerical values used
-are listed in Table~\ref{tab:cluster_params}).
+suite rather than fitted per system.
 Because $\nu$ depends on local surface density rather than on
 total enclosed mass, the ECT lensing signal preferentially
 traces the more compact component.  In Bullet, MACS~J0025, and
 El~Gordo this is the BCG/stellar core, whereas in Abell~520 it
 is the central gas core.
 This is not a post-hoc adjustment: the same functional form of
-$\nu$ that reproduces galactic rotation curves and the Radial
-Acceleration Relation is applied to the cluster geometry without
-retuning its shape.
+$\nu$ that organises the galactic sector is carried over to the
+cluster geometry, with the cluster-scale threshold
+$g_\dagger^{\rm cl}$ held fixed across the four-cluster suite.
 
 \paragraph{Four-cluster suite.}
 The same protocol is applied without modification to four
@@ -14944,8 +14943,9 @@ Taken together, the cluster-merger suite supports the following
 picture: ECT already reproduces the observed qualitative merger
 morphologies in both BCG-peaked and gas-peaked systems through a
 single universal surface-density response rule.
-What remains open is the full amplitude problem at the level of
-a factor $\sim1.1$--$1.9$, depending on the system.
+What remains open is the quantitative amplitude problem at the
+level of a residual factor $\sim1.1$--$1.9$, depending on the
+system.
 We therefore regard cluster mergers not as a no-go result for ECT,
 but as a sharply defined Level~B qualitative success in morphology
 together with a concrete quantitative target for the next
@@ -14953,7 +14953,8 @@ generation of 3D metric--$\phi$ calculations~(OP22).
 
 \paragraph{Observational corrections.}
 Four ECT-specific effects partially reduce the apparent amplitude
-deficit (derivations in Appendix~\ref{app:cluster_slip}):
+deficit (summarised and discussed in
+Appendix~\ref{app:cluster_lensing}):
 \begin{enumerate}[label=(\alph*)]
   \item $G_{\rm eff}(z)$ modifies $\Sigma_{\rm crit}$ by
     $\approx+0.5\%$ at $z=0.30$~(Level~B).
@@ -17563,7 +17564,7 @@ applying it again would double-count
 Label & Physical mechanism & Magnitude & Status \\
 \midrule
 Baseline
-  & $\Sigma_{\rm eff}=\nu(g_N/g_\dagger)\Sigma_b$
+  & $\Sigma_{\rm eff}=\nu(g_N/g_\dagger^{\rm cl})\Sigma_b$
   & $A_0=0.42$--$0.71$ & Level~B \\
 $E_1$: $G_{\rm eff}(z)$
   & $(1{+}z)^{2\varepsilon}$ shifts $\Sigma_{\rm crit}$,
@@ -17575,7 +17576,7 @@ $E_2$: $\delta z$
 $E_4$: post-merger gas
   & Non-equilibrium $T_X$, non-thermal pressure
   & $+15$--$25\%$ & observational \\
-$E_3$: slip $\gamma_{\rm PPN}$
+$E_3$: cluster slip $\gamma_{\rm cl}$
   & $\Theta_{\mu\nu}[n]$, $c_1(\bar\phi)=-a\bar\phi$, $a\sim1$
   & $+0.3$--$+8.5\%$ & Level~B (OP-c1) \\
 \midrule
@@ -17596,13 +17597,13 @@ Residual
 
 In the scalar sector alone the PPN parameter satisfies
 \begin{equation}
-  \gamma_{\rm PPN} = \frac{\omega_{\rm BD}+1}{\omega_{\rm BD}+2}
+  \gamma_{\rm cl}^{(\phi)} \approx \frac{\omega_{\rm BD}+1}{\omega_{\rm BD}+2}
   \leq 1\,,\qquad
   \omega_{\rm BD} = \frac{K(\bar\phi)}{\beta^2 M_{\rm Pl}^2}\,.
 \end{equation}
 At cluster densities $\bar\phi\sim0.03$--$0.08\ll1$, so
 $K\approx1$ and $\omega_{\rm BD}\gg1$ for Planck-suppressed $\beta$,
-giving $\gamma_{\rm PPN}\approx1$.
+giving $\gamma_{\rm cl}^{(\phi)}\approx1$.
 The scalar sector therefore contributes negligibly to lensing slip.
 
 \subsubsection*{Slip from the orientation sector}
@@ -17622,7 +17623,7 @@ which provides the appropriate tensor structure for $\Phi\neq\Psi$.
 A minimal Einstein-aether-like mapping then suggests the Level~B
 estimate~\cite{Jacobson2004}
 \begin{equation}
-  \gamma_{\rm PPN} \approx \frac{1-c_1/2}{1+c_1/2}\,,
+  \gamma_{\rm cl} \approx \frac{1-c_1/2}{1+c_1/2}\,,
   \label{eq:gamma_Theta}
 \end{equation}
 to be interpreted here as a phenomenological proxy rather than a
