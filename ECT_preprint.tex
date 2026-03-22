@@ -2479,19 +2479,28 @@ which is not yet derived at this stage.
 \subsection{Action scale $S_0$ as the ECT precursor of $\hbar$}
 \label{sec:hbar_status}
 
-\textit{Status: the coherent branch structurally singles out a
-distinguished action scale $S_0$ through phase periodicity and winding
-logic; its role as the ECT precursor of $\hbar$ is Level~B, while any
-strict physical identification with $\hbar$ is deferred to
-Section~\ref{sec:qs_hbar}.}
+\textit{Status: layered.
+The existence of a distinguished pre-quantum action scale $S_0$
+in the coherent branch is Level~B.
+The identification $S_0\leftrightarrow\hbar$ is the strongest
+structural bridge to quantum mechanics, but not yet an ultimate theorem.
+Full quantum reconstruction belongs to the later quantum programme.}
 
-One of the central basic questions of ECT is whether the quantum action
-scale must be postulated externally, or whether it can arise from the
-coherent branch of the $\Phi$-medium itself.
-Within the present ECT-basics framework, the coherent sector already
-singles out a distinguished action scale $S_0$.
-The role of this subsection is to clarify why $S_0$ is the natural
-ECT precursor of $\hbar$.
+A central question for ECT is whether quantum mechanics requires the
+external introduction of Planck\'s constant, or whether a distinguished
+action scale already emerges within the coherent-topological branch of
+the condensate.
+The present framework supports the second interpretation:
+before identifying $\hbar$ itself, ECT already contains a natural
+\emph{pre-quantum action scale} $S_0$.
+What follows clarifies why $S_0$ arises structurally, what it means
+for the classical--quantum divide, and where the boundary between
+established and open results lies.
+
+ECT does not insert $S_0$ by hand to imitate quantum mechanics.
+It is the action scale associated with the smallest nontrivial
+coherent-topological cycle of the condensate, forced by phase
+single-valuedness and BR1.
 
 \paragraph{Role of S6 (multiplicity) in motivating $S_0$.}
 Ontological property~S6 states that no configuration of the
@@ -2579,31 +2588,103 @@ or, as a working identification,
 (Level~B: strongly motivated structural identification, not yet a
 strict theorem).
 
-\paragraph{What is achieved here.}
-This subsection establishes:
-\begin{itemize}
-  \item the coherent branch naturally carries a phase variable defined
-    modulo $2\pi$;
-  \item phase single-valuedness implies an elementary action scale $S_0$;
-  \item winding sectors imply the minimal non-trivial loop
-    $S_{\rm loop,min}=2\pi S_0$;
-  \item $S_0$ is therefore the natural ECT origin of the quantum
-    action scale.
-\end{itemize}
+\paragraph{Relation to the classical limit and variational dynamics.}
+The emergence of $S_0$ is fully compatible with the variational principle.
+At the fundamental level, realised configurations remain extremals of
+$S_E[\Phi]$~(D1; Section~\ref{sec:noether}).
+What $S_0$ adds is a sensitivity scale for coherent phase relations:
+when action differences satisfy $|\Delta S|\gg S_0$, relative phase
+oscillations become rapidly varying and an extremal, effectively classical
+description dominates; when $|\Delta S|\sim S_0$, phase differences cannot
+be ignored and interference between coherent histories becomes structurally
+relevant.
+Thus $S_0$ separates the extremal/classical regime from the phase-sensitive
+quantum regime of the branch, without contradicting the underlying
+variational dynamics.
 
-\paragraph{What remains open.}
-The following are not derived here and belong to the later quantum-sector
-development (Section~\ref{sec:quantum}):
-\begin{itemize}
-  \item the Born rule;
-  \item operator commutation relations;
-  \item full Hilbert-space reconstruction;
-  \item complete path-integral measure;
-  \item strict identification $S_0 = \hbar$ as a theorem.
-\end{itemize}
-The present result is more modest but fundamental: ECT explains why a
-distinguished action scale appears from the coherent branch rather
-than being imposed as an external primitive.
+\paragraph{Coarse graining and emergent classicality.}
+If branch histories are tracked at a resolution comparable to $S_0$,
+relative phases matter and quantum interference is expected.
+If the description is coarse-grained over many branch sectors---for
+instance when the environment has many degrees of freedom~($N_{\rm eff}\gg1$)
+as in Section~\ref{sec:arrow_of_time}---those relative phases are
+effectively washed out.
+ECT interprets classicality not as the absence of $S_0$, but as the loss
+of access to $S_0$-sensitive phase information through coarse graining.
+
+\paragraph{Path-integral hint.}
+The most natural amplitude assignment suggested by the coherent-topological
+branch structure is
+\begin{equation}
+  \mathcal{A} \sim e^{iS/S_0}.
+  \label{eq:path_integral_hint}
+\end{equation}
+This is the direct analogue of the usual quantum phase factor, arising here
+as a structural consequence of coherent phase periodicity and topological
+winding.
+Equation~\eqref{eq:path_integral_hint} should be read as a strong
+ECT motivation for the path-integral phase, not yet as a complete
+derivation of the quantum measure or of the Born rule.
+
+\paragraph{Comparison with familiar quantisation ideas.}
+The role of $S_0$ in ECT is close in spirit to several well-known
+quantisation mechanisms, but is not identical to any of them.
+
+\emph{Bohr--Sommerfeld quantisation:}
+in semiclassical mechanics one has $\oint p\,dq = 2\pi n\hbar$.
+ECT leads instead to $\Delta S = 2\pi n S_0$~\eqref{eq:action_quantisation_loops},
+but the origin is coherent-topological phase winding of the condensate
+branch, not orbital quantisation of particle trajectories.
+
+\emph{Flux quantisation and superfluid winding:}
+this is perhaps the closest analogy.
+In superfluids and superconductors, compact phase plus single-valuedness
+forces quantised circulation or flux~\cite{Volovik2003}.
+ECT uses the same structural logic, applied to the action-phase relation
+of the coherent branch rather than to a material superfluid.
+
+\emph{Path-integral phase assignment:}
+standard quantum theory uses $e^{iS/\hbar}$ as its fundamental phase
+weighting and takes $\hbar$ as primitive.
+ECT does not assume $\hbar$ from the outset; it explains why a
+distinguished action scale should appear first from the coherent branch,
+and only then motivates identifying that scale with $\hbar$.
+
+\paragraph{Status summary.}
+The correct reading is layered: ECT already explains why a
+distinguished action scale should exist and strongly motivates
+identifying it with $\hbar$; but the whole formal structure of quantum
+mechanics is not yet derived from this fact alone.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
+\hline
+Statement & Status & Comment \\
+\hline
+Coherent branch admits a compact phase variable
+  & A & Coherent-topological branch / BR1 \\
+Single-valuedness on closed loops
+  & A & Topological consistency \\
+Nontrivial winding sectors exist
+  & A & BR1 and loop structure \\
+Minimal nonzero action scale $S_0$ structurally natural
+  & B & Distinguished by minimal winding; S6 \\
+$\theta \sim S/S_0$ (action-phase bridge)
+  & B & Structural identification \\
+$S_0$ separates classical and phase-sensitive regimes
+  & B & Variational + coarse-graining argument \\
+Phase factor $\mathcal{A}\sim e^{iS/S_0}$ motivated
+  & B & Path-integral logic \\
+$S_0$ as precursor of $\hbar$
+  & B & Strongest quantum matching \\
+Exact identification $S_0=\hbar$
+  & Open/B & Strongly motivated; not ultimate closure \\
+Born rule / operator algebra / Hilbert space
+  & Open & Later quantum programme \\
+\hline
+\end{tabular}
+\end{center}
 
 \subsection{Summary table: parameters and constants}
 \label{sec:params_table}
@@ -2902,7 +2983,13 @@ ECT basics establishes the following common foundation for both branches:
     ordered state and the structural naturalness of entropy growth
     follow at Level~B from multiplicity~S6, inhomogeneous
     ordering~S8, and coarse-grained branch evolution
-    (Section~\ref{sec:arrow_of_time}).
+    (Section~\ref{sec:arrow_of_time});
+  \item \textbf{A pre-quantum action scale $S_0$:}
+    the coherent-topological branch naturally generates a distinguished
+    action scale through phase single-valuedness and minimal winding~(BR1),
+    providing the strongest current bridge between ECT and the quantum
+    sector, and separating the classical from the phase-sensitive regime
+    (Section~\ref{sec:hbar_status}).
 \end{enumerate}
 
 What is \emph{not yet completed} in ECT basics:
@@ -2933,7 +3020,12 @@ What is \emph{not yet completed} in ECT basics:
     and a geometric time orientation at Level~A, but a complete
     first-principles derivation of the microscopic decoherence
     kernel, H-theorem, and irreversible thermodynamics remains
-    open~(OP1, OP5, OP24; Section~\ref{sec:arrow_of_time}).
+    open~(OP1, OP5, OP24; Section~\ref{sec:arrow_of_time});
+  \item \textbf{Full quantum reconstruction from $S_0$:}
+    ECT motivates $S_0$ as a precursor of $\hbar$ and suggests
+    the phase factor $e^{iS/S_0}$, but the full derivation of the
+    quantum measure, Born rule, operator algebra, and Hilbert-space
+    structure remains open~(Section~\ref{sec:hbar_status}).
 \end{itemize}
 
 \begin{table}[H]
