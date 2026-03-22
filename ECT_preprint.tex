@@ -1232,81 +1232,6 @@ requires an additional isotropy assumption.
 
 
 
-\subsection{Variational selection and the origin of extremal dynamics}
-\label{sec:variational_extremal_dynamics}
-
-The ECT framework does not introduce the principle of extremal action
-as an external law imposed on an already existing spacetime.
-Instead, extremality enters at the level of the $\Phi$-medium itself.
-By the dynamical principle~D1, physically realised configurations are
-selected as extrema of a local functional $S_E[\Phi]$ compatible with
-the basic symmetries of the medium, subject to the regularity
-conditions required for a well-posed variational problem.
-
-\paragraph{Variational selection at the medium level.}
-At the most basic level, ECT therefore assumes neither particles nor
-trajectories, but only admissible configurations of the $\Phi$-medium.
-The primary extremality statement is
-\begin{equation}
-  \delta S_E[\Phi] = 0,
-  \label{eq:delta_SE_zero}
-\end{equation}
-with the understanding that the allowed variations preserve the
-structural conditions of the theory (regularity where appropriate,
-admissible defect sectors, and the branch conditions under
-consideration).
-This is a Level~A statement within the present ECT-basics framework:
-it is part of the defining dynamical layer of the theory.
-
-\paragraph{From medium extremality to effective dynamics.}
-Once a specific ordered branch is selected, the same variational logic
-is inherited by the effective fields describing that branch.
-In particular, after reduction to the broken-phase EFT or to the
-macroscopic geometric sector, the effective dynamics is again organised
-by extremality of the corresponding reduced functional.
-Schematically,
-\begin{equation}
-  \delta S_E[\Phi]=0
-  \quad\Longrightarrow\quad
-  \delta S_{\rm eff}=0
-  \label{eq:delta_Seff_zero}
-\end{equation}
-after the relevant coarse-graining, projection, or EFT matching.
-This does not mean that the full effective action is already known in
-closed form for every sector; rather, it means that extremality is not
-a new postulate at the emergent level but the inherited consequence of
-the underlying variational selection principle.
-
-\paragraph{Origin of the extremal-action principle.}
-In this sense, ECT explains why extremal dynamics appears at all.
-The familiar principle of extremal action in effective physics is not
-fundamental but emergent: it is the branch-level manifestation of the
-more primitive statement that the physically realised $\Phi$-configurations
-are variationally selected.
-The classical extremal principle is therefore reinterpreted in ECT as
-a descendant of medium-level extremality rather than as an independent
-axiom of spacetime physics.
-
-\paragraph{Status of the result.}
-The variational selection principle itself is part of the basic
-definition of the theory~(Level~A, from D1a).
-The statement that effective branch dynamics inherits an extremal form
-is a strong structural consequence of ECT~(Level~B), because it depends
-on the reduction from the full $\Phi$-medium to the ordered branch and
-its effective variables.
-What is not yet established at theorem level is the full derivation of
-all later forms of extremal dynamics---for example, the detailed saddle
-structure of the coherent quantum sector, or a complete derivation of
-all effective Lorentzian actions from the microscopic Euclidean functional.
-
-\paragraph{What this does and does not claim.}
-This subsection does \emph{not} claim that ECT has already derived the
-entire classical or quantum action formalism in final form.
-It establishes the more basic and more important point:
-extremality is built into the ontology of physical realisation itself,
-and all later extremal principles in the emergent sectors must descend
-from that common variational origin.
-
 % ============================================================
 % SECTION 3: SSB AND EMERGENCE OF TIME
 % ============================================================
@@ -2639,6 +2564,45 @@ of ECT---homogeneity of the arena (P1), locality of the action (P3),
 and $O(4)$-symmetry (P2)---not as additional postulates.
 Explicitly: $\partial_A T^{AB}=0$ follows from translational invariance;
 angular currents $J^{C,AB}$ follow from rotational $O(4)$ symmetry.
+\paragraph{Origin of the extremal-action principle.}
+The ECT framework does not introduce the principle of extremal action
+as an external law imposed on an already existing spacetime.
+Instead, extremality enters at the level of the $\Phi$-medium itself
+through~D1.
+In this sense ECT explains why extremal dynamics appears at all:
+the familiar principle of extremal action in effective physics is not
+fundamental but emergent---it is the branch-level manifestation of the
+more primitive statement that physically realised $\Phi$-configurations
+are variationally selected.
+The classical extremal principle is therefore reinterpreted in ECT as
+a descendant of medium-level extremality rather than as an independent
+axiom of spacetime physics.
+
+\paragraph{Inheritance by effective sectors (Level~B).}
+Once a specific ordered branch is selected, the same variational logic
+is inherited by the effective fields of that branch.
+After reduction to the broken-phase EFT or to the macroscopic geometric
+sector, the effective dynamics is again organised by extremality of the
+corresponding reduced functional:
+\begin{equation}
+  \delta S_E[\Phi]=0
+  \quad\Longrightarrow\quad
+  \delta S_{\rm eff}=0
+  \label{eq:delta_Seff_zero}
+\end{equation}
+after the relevant coarse-graining, projection, or EFT matching.
+The schematic reduction chain is made explicit in
+Appendix~\ref{app:variational_reduction}.
+This inheritance is a Level~B structural consequence: it depends on the
+reduction from the full $\Phi$-medium to the ordered branch and its
+effective variables, whose explicit form is determined by EFT matching.
+
+\paragraph{What is not yet established.}
+The present subsection does not derive the full effective action in
+closed form for any branch, the saddle-point dominance structure of the
+coherent quantum sector, or a complete derivation of all effective
+Lorentzian actions from the microscopic Euclidean functional.
+These belong to the later macroscopic and quantum-sector development.
 
 \subsection{Remark on defect sectors beyond the smooth coherent sector}
 \label{sec:defect_sectors}
@@ -2677,7 +2641,7 @@ ECT basics establishes the following common foundation for both branches:
     variational realisation of the $\Phi$-medium~(P2--P3, D1);
   \item Variational selection of physically realised $\Phi$-configurations
     and the origin of emergent extremal dynamics~(D1,
-    Section~\ref{sec:variational_extremal_dynamics});
+    Section~\ref{sec:noether});
   \item Gradient-ordered vacuum branch with spontaneous
     $O(4)\to O(3)$ breaking~(P4);
   \item Admissibility of non-trivial and non-uniform ordered
@@ -16126,7 +16090,7 @@ discussed and motivated in the context of the Quantum Sector.
 \label{app:variational_reduction}
 
 \textit{Reference from main text:
-Section~\ref{sec:variational_extremal_dynamics}.
+Section~\ref{sec:noether}.
 Status: schematic reduction argument at Level~B.}
 
 This appendix records the schematic chain from medium-level extremality
