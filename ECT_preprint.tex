@@ -1839,130 +1839,162 @@ it is not a second fundamental microscopic degree of freedom
 and does not appear in the fundamental action.
 
 
-\subsection{Sector map: amplitude, orientation, and macroscopic
+\subsection{Sector map: amplitude, soft orientation, and macroscopic
 \texorpdfstring{$\phi$}{phi}-sector}
 \label{sec:sector_map}
 
-Three qualitatively distinct objects must be kept clearly separate
-throughout the rest of the development.
+Three qualitatively distinct structures must be kept separate throughout
+the rest of the theory.
 
 \paragraph{Amplitude mode $\sigma$ (radial fluctuation).}
-A fluctuation of $|\partial\Phi|$ around the uniform vacuum $u_0$.
+A fluctuation of $|\partial\Phi|$ around the uniform ordered background $u_0$.
 \begin{itemize}
-  \item Nature: fluctuation of the condensate amplitude in the UV.
-  \item Mass scale: heavy, with the characteristic radial scale
-    set by the bare condensate potential
-    ($m_\sigma^2 \sim V''(\phi_0)$; cf.~\eqref{eq:sigma_mass}).
-    Its precise matching to the ordered branch remains EFT-level.
-  \item Role: integrates out at $E \ll m_\sigma$; sets the UV cutoff
-    of the condensate EFT; analogue of a ``Planck-scale Higgs''.
-  \item Not observed directly; stabilises the vacuum.
+  \item Nature: UV fluctuation of the condensate amplitude.
+  \item Mass scale: heavy, with characteristic radial scale set by the
+    bare condensate potential ($m_\sigma^2\sim V''(\phi_0)$;
+    cf.~\eqref{eq:sigma_mass}).
+  \item Role: integrates out at $E\ll m_\sigma$; stabilises the ordered
+    branch and sets the UV cutoff of the broken-phase EFT.
+  \item It is not the Standard-Model Higgs boson.
 \end{itemize}
 
-\paragraph{Orientation modes $\pi^i$ (Goldstone sector).}
-Soft fluctuations of the direction $n_A$ on the vacuum manifold
-$S^3 \simeq O(4)/O(3)$.
-\begin{itemize}
-  \item Nature: in the minimal broken-generator counting,
-    three soft orientation modes are expected from $O(4)\to O(3)$
-    (Level~B, minimal scheme).
-  \item Mass: massless in the minimal broken-phase EFT at the present level
-    of analysis; whether all such modes remain independent requires the
-    deferred inverse-Higgs analysis (open).
-  \item Dispersion: relativistic linear dispersion in the minimal
-    sigma-model EFT, $\omega^2=c_\pi^2k^2$, with $c_\pi\approx c_*$
-    at the level of EFT matching assumption~(Level~B).
-  \item Statistics: bosonic in the present broken-phase EFT description.
-  \item Role: candidate long-wavelength soft sector associated with
-    orientational distortions of the ordered branch; any dark-matter
-    interpretation requires an additional mass-generation mechanism
-    beyond P1--P5~(open).
-\end{itemize}
+\paragraph{Soft orientation sector.}
+A broken-branch orientation sector can be introduced by writing
+\begin{equation}
+  Q_A \equiv \partial_A\Phi = u\,n_A,
+  \qquad u = |Q|, \qquad n_A n^A = 1.
+  \label{eq:QA_un_decomp}
+\end{equation}
+At the purely geometric level the ordered branch selects a preferred
+direction and breaks $O(4)\to O(3)$, so that the vacuum manifold is
+$O(4)/O(3)\simeq S^3$.
+However, in the present scalar-only ECT basis $Q_A$ is not an arbitrary
+vector field but an exact one-form, $Q_A=\partial_A\Phi$.
+Therefore the orientation sector is subject to the integrability
+constraint
+\begin{equation}
+  \partial_A Q_B - \partial_B Q_A = 0.
+  \label{eq:integrability_main}
+\end{equation}
+This sharply reduces the naive Goldstone counting;
+see Section~\ref{sec:goldstone_integrability_main} and
+Appendix~\ref{app:goldstone_integrability}.
 
-\paragraph{Macroscopic $\phi$-sector (condensate background variation).}
+\paragraph{Macroscopic $\phi$-sector.}
 Slow classical spatial variations of the ordered background on galactic
 and cosmological scales.
 \begin{itemize}
-  \item Nature: a slow classical infrared background sector rather
-    than a UV quantum excitation.
-  \item Characteristic scale: kpc--Gpc (galactic to cosmological).
-  \item Role: gives rise to $G_{\rm eff}(\mathbf{x})$ and the
+  \item Nature: classical infrared background variation rather than a
+    UV quantum excitation.
+  \item Characteristic scale: kpc--Gpc.
+  \item Role: gives rise to $G_{\rm eff}(\mathbf{x})$ and to the
     macroscopic gravitational closure~(Section~\ref{sec:macroscopic}).
-  \item Relation to $\sigma$: distinct---$\sigma$ is a UV condensate
-    fluctuation; the $\phi$-sector is a classical IR background
-    variation. They must not be identified.
+  \item Relation to $\sigma$: distinct---$\sigma$ is a UV fluctuation of
+    the condensate amplitude, whereas the macroscopic $\phi$-sector is a
+    slow classical variation of the ordered background itself.
 \end{itemize}
 
 \medskip
 \noindent\textbf{Key consequence.}
-The rotation-curve success of ECT~(Section~\ref{sec:macroscopic})
-uses only the $\phi$-sector; it makes no assumption about Goldstone
-modes $\pi^i$.
-Conversely, any dark-matter or cluster phenomenology invoking $\pi^i$
-must not be conflated with the $\phi$-sector.
-The two sectors are physically, kinematically, and scale-wise distinct.
+The rotation-curve and RAR/BTFR success of ECT~(Section~\ref{sec:macroscopic})
+uses only the macroscopic $\phi$-sector.
+It does not rely on the Goldstone/soft-orientation discussion below.
+Conversely, the soft orientation sector must not be used as a
+dark-matter patch for phenomena already explained by the macroscopic
+$\phi$-closure.
 
-\subsection{Mode classes and the Goldstone analysis}
-\label{sec:mode_classes}
+\subsection{Integrability and the status of the orientation sector}
+\label{sec:goldstone_integrability_main}
 
-The symmetry breaking $O(4)\to O(3)$ produces three classes of excitations.
-
-\paragraph{Radial (amplitude) mode $\sigma$.}
-Describes changes in the gradient condensate amplitude $u_0\to u_0+\sigma$.
-Its mass from the bare potential P3:
+The crucial point is that in the current ECT basis the ordered quantity
+is $Q_A=\partial_A\Phi$, so the decomposition $Q_A=u\,n_A$ does
+\emph{not} define independent fields $u$ and $n_A$.
+Instead they must satisfy the exact integrability condition
 \begin{equation}
-  \label{eq:sigma_mass}
-  m_\sigma^2 = V''(\phi_0) = 2\mu^2.
+  \partial_A(u n_B)-\partial_B(u n_A)=0.
+  \label{eq:integrability_un}
 \end{equation}
-The correlation length of the ordered sector
-(from the Euclidean propagator, Appendix~\ref{app:corr_length}):
-\begin{equation}
-  \xi_{\rm cond}\sim m_\sigma^{-1}.
-\end{equation}
-This is an EFT matching-scale estimate, not a strict derivation
-from P3: $m_\sigma^2$ belongs to the bare potential while the vacuum
-is specified by the separate postulate~P4.
 
-\paragraph{Orientation (soft Goldstone) modes.}
-The vacuum manifold $O(4)/O(3)\simeq S^3$ supports three soft
-orientation modes associated with the three broken generators.
-In the minimal counting scheme $N_G^{\rm min} = \dim O(4) - \dim O(3) = 3$.
-
-\noindent\textit{Caveat.}
-This breaks a \emph{spacetime} rather than an internal symmetry.
-For such symmetry breaking the naive count may be modified
-by inverse Higgs constraints~\cite{Ivanov1975,McArthur2010},
-whereby some modes become dependent.
-A detailed analysis for the $O(4)\to O(3)$ case is deferred.
-In the present work we use the minimal counting scheme.
-
-\paragraph{Stiffness of the orientation sector.}
-\label{sec:goldstone_stiffness}
-From the ordered-branch infrared EFT~\eqref{eq:ordered_branch_euclidean_eft},
-the coefficient $Z_n$ of the $(\partial_A n_B)^2$ term at the uniform
-background $u=u_0$ defines the orientation stiffness:
+Linearising around the ordered background $Q_A^{(0)} = u_0\,\delta_{Aw}$
+and writing
 \begin{equation}
-  \kappa_n = Z_n\,u_0^2.
+  u=u_0+\sigma, \qquad
+  n_A=(\pi_i,\;1)+\mathcal{O}(\pi^2),
 \end{equation}
-The effective action for the orientation fluctuations is then
+one finds $\delta Q_i = u_0\,\pi_i$, $\delta Q_w = \sigma$.
+Since $\delta Q_A$ must itself be a gradient, there exists a scalar
+fluctuation $\chi$ such that $\delta Q_A = \partial_A\chi$, hence
 \begin{equation}
-  \label{eq:Sn_quadratic}
-  S_n^{(2)} = \frac{\kappa_n}{2}\int d^4X\,\partial_B\,\delta n_i\,\partial^B\,\delta n_i,
+  u_0\,\pi_i = \partial_i\chi, \qquad \sigma = \partial_w\chi.
+  \label{eq:goldstone_reduction_main}
 \end{equation}
-giving equation of motion $\partial_B\partial^B\,\delta n_i=0$ and dispersion
-\begin{equation}
-  \label{eq:n_dispersion}
-  \omega^2 = c_n^2 k^2,\qquad c_n\approx c_*
-  \quad\text{(EFT matching assumption)}.
-\end{equation}
-At the present stage, $Z_n$ is an EFT coefficient of the ordered branch.
-Its explicit matching to the bare condensate parameters of~P3 remains open.
+Therefore the apparent orientation triplet is not an independent set of
+three propagating microscopic modes: at the linear scalar-only level it
+reduces to \emph{one longitudinal soft scalar degree of freedom~$\chi$}.
+Equivalently, $\epsilon_{ijk}\,\partial_j\pi_k = 0$, so the
+transverse/vortical part of the naive orientation sector is eliminated.
 
-\paragraph{Coherent phase variable $\theta$.}
-Within the smooth coherent branch~(BR1), the effective order parameter
-$\Phi_{\rm eff}=\rho\,e^{i\theta}$ of the coherent IR sector is introduced.
-The variable~$\theta$ carries the topological content and is
-not a fluctuation of the real field~$\Phi$~(P3).
+\paragraph{Interpretation: inverse-Higgs-type reduction.}
+This is an inverse-Higgs-type
+reduction~\cite{Ivanov1975,McArthur2010} characteristic of spacetime
+symmetry breaking: the broken object $Q_A=\partial_A\Phi$ is a
+geometric gradient rather than an internal multiplet.
+One must therefore distinguish two statements:
+\begin{enumerate}
+  \item the ordered branch geometrically breaks $O(4)\to O(3)$ and
+    admits a minimal $O(4)/O(3)\simeq S^3$ orientation description;
+  \item in the strict scalar-only microscopic theory, the independent
+    soft content surviving at the linear level is only
+    \emph{one longitudinal scalar mode~$\chi$}.
+\end{enumerate}
+The full technical derivation is given in
+Appendix~\ref{app:goldstone_integrability}.
+
+\subsection{Minimal soft orientation EFT and phenomenological status}
+\label{sec:goldstone_soft_eft}
+
+Although the strict scalar-only microscopic content is reduced by
+integrability, it remains useful to organise the broken branch by a
+minimal orientation EFT.
+In that effective description the vacuum manifold
+$O(4)/O(3)\simeq S^3$ supports a three-component orientation map,
+but this must be understood as an \emph{effective parametrisation},
+not as a theorem about three independent physical Goldstone particles.
+
+\paragraph{Quadratic soft-sector EFT.}
+If the broken-phase EFT contains the local orientation-elastic term
+$\frac{Z_n(u)}{2}u^2(\partial_B n_A)(\partial^B n^A)$,
+then at uniform background $u=u_0$ the effective stiffness is
+\begin{equation}
+  \kappa_n = Z_n(u_0)\,u_0^2.
+  \label{eq:kappa_n_main}
+\end{equation}
+This is a Level~B EFT identity.
+The coefficient $Z_n$ is not yet derived from bare postulates P1--P5.
+
+In the minimal EFT the surviving mode $\chi$ has a linear soft
+dispersion relation
+\begin{equation}
+  \omega^2 = c_\chi^2\,k^2, \qquad
+  c_\chi^2 = \frac{K_s}{K_w}\,c_*^2,
+  \label{eq:chi_dispersion_main}
+\end{equation}
+where $K_w, K_s$ are EFT stiffness coefficients along $w$ and spatial
+directions respectively.
+The stronger statement $c_\chi=c_*$ requires $K_s=K_w$, which is not
+yet established.
+
+\paragraph{What remains true, and what does not.}
+At the P1--P5 level there is no local $O(3)$ gauge structure, hence no
+Higgs-type eating mechanism in the foundational
+sector~\cite{GoldstoneSalamWeinberg1962}.
+Any electroweak interpretation requires an additional scale
+$v_2\sim246$~GeV and a second dynamical step~(OP-EW).
+
+The soft orientation sector must \emph{not} be used as a dark-matter
+replacement for macroscopic phenomena already explained by the
+$\phi$-sector. At most, the broken phase contains a constrained soft
+longitudinal mode whose phenomenological role remains open.
 
 \subsection{EFT quadratic action for fluctuations}
 \subsection{Physical roles of the Goldstone sector}
@@ -2082,14 +2114,26 @@ Free Hamiltonian $H\geq 0$~\eqref{eq:H_free}
   & Level~A (quadratic) & Canonical normalisation; no tachyon/ghost \\
 Identification of $m_{\rm eff}^2$ with $V''(\phi_0)$
   & Open (OP-grad) & Requires explicit EFT matching \\
-Orientation-sector stiffness $\kappa_n = Z_n u_0^2$
-  & Level~B (EFT) & Ordered-branch EFT~\eqref{eq:Sn_quadratic} \\
-Soft orientation mode count: minimal scheme $N_G^{\rm min}=3$
-  & Level~B (minimal scheme) & $O(4)/O(3)$ counting; inverse Higgs not analysed \\
-Orientation-mode dispersion $\omega^2=c_\pi^2k^2$, $c_\pi\approx c_*$
-  & Level~B (EFT) & Sigma-model EFT + matching assumption \\
+Integrability of $Q_A=\partial_A\Phi$
+  & Level~A & Scalar-only basis of P3 \\
+Linear reduction $\pi_i=\partial_i\chi/u_0$, $\sigma=\partial_w\chi$
+  & Level~A & Integrability around the ordered background \\
+Minimal 3-component orientation EFT on $O(4)/O(3)\simeq S^3$
+  & Level~B (effective description) & Broken-branch parametrisation only \\
+Independent soft mode in scalar-only broken phase: one longitudinal scalar $\chi$
+  & Level~B & Inverse-Higgs-type reduction~\cite{Ivanov1975,McArthur2010} \\
+Orientation-sector stiffness $\kappa_n = Z_n(u_0)\,u_0^2$
+  & Level~B (EFT) & Ordered-branch EFT identity \\
+Derivation of $Z_n$ from bare P1--P5
+  & Open & EFT matching not completed \\
+Linear soft dispersion $\omega^2=c_\chi^2 k^2$
+  & Level~B (EFT) & Minimal reduced EFT \\
+Equality $c_\chi=c_*$
+  & Open & Requires $K_s=K_w$; not yet derived \\
+Three independent physical Goldstone particles
+  & Not established & Reduced by integrability in scalar-only basis \\
 No Higgs-type eating at the P1--P5 level
-  & Level~B (structural) & No local gauge structure in foundational sector \\
+  & Level~B (structural) & No local $O(3)$ gauge structure \\
 Pseudo-Goldstone mass mechanism
   & Open (OP-GM) & Requires explicit breaking source beyond P1--P5 \\
 Relation to electroweak gauge/Higgs sector
@@ -3538,7 +3582,7 @@ microscopic condensate dynamics is left for future work.
 The material below spans three levels of rigour:
 \begin{description}[leftmargin=3em,style=unboxed,noitemsep]
   \item[Core ECT (Level~A/B).]
-    Graviton (linearised, Level~A), Goldstone bosons (Level~A),
+    Graviton (linearised, Level~A), soft orientation sector (Level~B, minimal EFT),
     radial condensate scalar (Level~A/B).
     These follow directly from the condensate action.
   \item[Structural extensions (Level~B).]
@@ -3577,62 +3621,50 @@ Level~B structural reconstruction; Goldstone modes: Level~A/B).
 
 
 
-\subsection{Goldstone Modes of the Condensate}
+\subsection{Soft Orientation Sector of the Condensate}
+\label{sec:particle_soft_orientation}
 
-The ECT vacuum is assumed to undergo spontaneous symmetry breaking
+\textit{Status: minimal orientation EFT is Level~B.
+Three independent physical Goldstone particles are \textbf{not} claimed
+in the present scalar-only basis; see Section~\ref{sec:goldstone_integrability_main}
+and Appendix~\ref{app:goldstone_integrability}.}
 
+The ordered branch breaks $O(4)\to O(3)$, so the vacuum manifold is
 \begin{equation}
-O(4) \rightarrow O(3).
+  O(4)/O(3)\simeq S^3.
+\end{equation}
+In a generic internal-symmetry breaking this would yield three
+independent Goldstone bosons.
+However, in the present scalar-only ECT basis the ordered quantity is
+$Q_A=\partial_A\Phi$, which is an exact one-form.
+The integrability constraint $\partial_A Q_B-\partial_B Q_A=0$ implies
+that the orientation triplet reduces to one longitudinal soft scalar
+mode~$\chi$ at linear order~\cite{Ivanov1975,McArthur2010}:
+\begin{equation}
+  \pi_i = \frac{1}{u_0}\partial_i\chi, \qquad \sigma = \partial_w\chi.
 \end{equation}
 
-According to Goldstone's theorem \cite{GoldstoneSalamWeinberg1962}, the number of massless modes equals the dimension of the coset space
+\paragraph{Minimal orientation EFT.}
+A three-component orientation parametrisation of $S^3$ remains a useful
+effective language for the broken branch, but it should be understood
+as a minimal EFT organisation, not as three independent propagating
+particles.
+The broken-generator counting $\dim O(4)-\dim O(3)=3$ is a
+geometric statement; the actual independent propagating soft content
+in the scalar-only basis at linear order is $N_G^{\rm phys}=1$.
 
-\begin{equation}
-N_{Goldstone} = \dim(O(4)/O(3)) = 3 .
-\end{equation}
+\paragraph{Mass of the surviving soft mode.}
+In the minimal broken-phase EFT there is no orientation potential, so
+the surviving scalar mode $\chi$ is massless at tree level.
+A pseudo-Goldstone mass could arise from explicit $O(4)$-breaking,
+but no such mechanism is present in P1--P5~(open; OP-GM).
 
-Thus three Goldstone bosons appear as low--energy excitations of the condensate.
-
-One of these modes may be absorbed by gauge degrees of freedom through a Higgs-type mechanism, leaving two potentially propagating scalar modes.
-
-\paragraph{Mass of Goldstone modes.}
-In the exact $O(4)$-symmetric vacuum, Goldstone's theorem guarantees
-these modes are strictly massless.  However, the cosmological
-background breaks the exact $O(4)$ symmetry through spacetime curvature.
-For a light scalar in de~Sitter space with Hubble constant $H_0$,
-the Ricci scalar $R\approx 12H_0^2$ induces an effective mass
-(see, e.g., \cite{BirrellDavies1982}):
-\begin{equation}
-m_G^2 \sim \frac{R}{6} \sim H_0^2.
-\end{equation}
-At the canonical ECT normalisation ($v_0 = \bar{M}_{\rm Pl}$)
-this gives
-
-\begin{equation}
-m_G \sim H_0 \sim 10^{-33} \, \text{eV}.
-\end{equation}
-
-For $m_G \sim H_0 \sim 10^{-33}$\,eV, the de~Broglie 
-wavelength is $\lambda_{\rm dB} = \hbar/(m_G c) \sim 6$\,Mpc, 
-comparable to the scale of cosmic large-scale structure.
-
-\paragraph{Possible heavier masses from explicit breaking.}
-Additional sources of explicit symmetry breaking --- such as
-non-perturbative condensate effects or coupling to Standard Model
-fields --- could raise the Goldstone mass beyond the minimal
-curvature-induced value.
-If such effects bring the mass to 
-$m_G \sim 10^{-22}$\,eV, the de~Broglie wavelength shrinks to 
-$\sim\!1$\,kpc, comparable to galactic core sizes.  In such a regime the Goldstone modes would be
-phenomenologically similar to fuzzy-dark-matter candidates
-\cite{HuBarkanaGruzinov2000}.
-However, this possibility is not derived within the present
-version of ECT and is not used in this paper as the active
-explanation of the galactic mass discrepancy, which is instead
-attributed entirely to the $\phi$-branch
-(Section~\ref{sec:mp_galactic}).
-The value $m_G \sim 10^{-22}$\,eV is borrowed from fuzzy
-dark-sector phenomenology, not predicted by ECT.
+\paragraph{No dark-matter role.}
+The macroscopic sector of ECT already explains galactic rotation curves,
+the RAR, and BTFR through the $\phi$-sector without invoking any
+Goldstone-like dark matter.
+The soft orientation sector must \emph{not} be repurposed as a
+dark-matter patch for phenomena already explained by the $\phi$-closure.
 
 \subsection{Radial Condensate Mode}
 
@@ -16262,74 +16294,209 @@ Each of these steps requires the nonlinear broken-phase potential
 which are not determined at the ECT basics level.
 The explicit calculation therefore belongs to Section~\ref{sec:quantum}.
 
+
+% ------------------------------------------------------------
+\section{Goldstone sector in scalar-only ECT: integrability,
+inverse-Higgs reduction, and EFT status}
+\label{app:goldstone_integrability}
+
+\textit{Status: mixed.
+Scalar-only microscopic statements are Level~A.
+Reduced soft-orientation EFT statements are Level~B.
+No claim is made that the present ECT basis proves three independent
+physical Goldstone particles.}
+
+\subsection*{A.\ Microscopic starting point}
+
+In the present ECT basis the fundamental field is a single real scalar
+$\Phi(X)$ on $\mathcal{M}^4$.
+The ordered quantity is therefore not an independent vector multiplet
+but the exact one-form
+\begin{equation}
+  Q_A \equiv \partial_A\Phi.
+  \label{eq:app_QA_def}
+\end{equation}
+In the ordered branch one writes $Q_A=u\,n_A$ with $u=|Q|$,
+$n_A n^A=1$.
+However, $u$ and $n_A$ are \emph{not independent microscopic variables}
+because $Q_A$ is an exact gradient.
+
+\subsection*{B.\ Integrability constraint}
+
+Exactness of $Q_A=\partial_A\Phi$ gives identically
+\begin{equation}
+  \partial_A Q_B - \partial_B Q_A = 0.
+  \label{eq:app_exactness}
+\end{equation}
+Substituting the decomposition:
+\begin{equation}
+  \partial_A(u n_B)-\partial_B(u n_A)=0.
+  \label{eq:app_un_integrability}
+\end{equation}
+This is the integrability condition constraining the orientation sector.
+The ordered branch in scalar-only ECT is \emph{not} equivalent to a
+generic unconstrained $O(4)/O(3)$ sigma model.
+
+\subsection*{C.\ Linearised broken phase}
+
+Take uniform ordered background $Q_A^{(0)}=u_0\,\delta_{Aw}$ and write
+$\Phi(X)=u_0\,w+\chi(X)$, so $\delta Q_A=\partial_A\chi$.
+In the $u\,n_A$ language with $u=u_0+\sigma$,
+$n_A=(\pi_i,1)+\mathcal{O}(\pi^2)$:
+\begin{equation}
+  \delta Q_i=u_0\,\pi_i, \qquad \delta Q_w=\sigma.
+  \label{eq:app_deltaQ_components}
+\end{equation}
+Comparing with $\delta Q_A=\partial_A\chi$ gives the exact linear relations
+\begin{equation}
+  u_0\,\pi_i = \partial_i\chi, \qquad \sigma = \partial_w\chi.
+  \label{eq:app_pi_sigma_chi}
+\end{equation}
+Hence the apparent orientation triplet is determined by a single scalar $\chi$.
+
+\subsection*{D.\ Immediate consequences}
+
+Equation~\eqref{eq:app_pi_sigma_chi} implies
+\begin{equation}
+  \pi_i = \frac{1}{u_0}\,\partial_i\chi,
+  \label{eq:app_pi_gradchi}
+\end{equation}
+so the linearised orientation fluctuation is purely longitudinal:
+\begin{equation}
+  \epsilon_{ijk}\,\partial_j\pi_k = 0.
+  \label{eq:app_no_vorticity}
+\end{equation}
+At linear order, one independent longitudinal soft scalar mode $\chi$
+survives in the scalar-only broken phase.
+
+\subsection*{E.\ Relation to inverse-Higgs reduction}
+
+This reduction is the inverse-Higgs
+phenomenon~\cite{Ivanov1975,McArthur2010} for spacetime symmetry
+breaking.
+The broken object $Q_A=\partial_A\Phi$ is a geometric gradient field,
+not an internal multiplet.
+The broken-generator counting for $O(4)\to O(3)$ gives three, but the
+integrability condition~\eqref{eq:app_un_integrability} eliminates two of
+them as independent propagating modes.
+
+\subsection*{F.\ Minimal soft-orientation EFT}
+
+One may still organise the broken branch through a minimal orientation
+EFT on $O(4)/O(3)\simeq S^3$.
+In that effective description the effective stiffness is
+\begin{equation}
+  \kappa_n = Z_n(u_0)\,u_0^2 \quad\text{(Level~B, EFT identity)},
+  \label{eq:app_kappan}
+\end{equation}
+where $Z_n$ is an EFT matching coefficient not yet derived from P1--P5.
+After the reduction $\pi_i=\partial_i\chi/u_0$, the dispersion of the
+surviving mode is
+\begin{equation}
+  \omega^2=c_\chi^2\,k^2, \qquad
+  c_\chi^2=\frac{K_s}{K_w}\,c_*^2 \quad\text{(Level~B)}.
+  \label{eq:app_chi_dispersion}
+\end{equation}
+The statement $c_\chi=c_*$ remains open.
+
+\subsection*{G.\ Status summary}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{0.48\textwidth} p{0.13\textwidth} p{0.28\textwidth}}
+\hline
+Statement & Status & Comment \\
+\hline
+$O(4)\to O(3)$ from ordered background & A & Background geometry \\
+$Q_A=\partial_A\Phi$ implies integrability & A & Exact scalar-only \\
+$\pi_i=\partial_i\chi/u_0$ at linear order & A & Longitudinal reduction \\
+One independent soft mode $\chi$ survives & B & Physical mode at linear level \\
+Minimal 3-component orientation EFT & B & Effective parametrisation \\
+$\kappa_n=Z_n(u_0)u_0^2$ & B & EFT identity \\
+$Z_n$ from bare P1--P5 & Open & Not derived \\
+$\omega^2=c_\chi^2k^2$ & B & Reduced EFT \\
+$c_\chi=c_*$ & Open & Matching not proved \\
+Three physical Goldstone particles & Not established & Reduced by integrability \\
+Dark-matter role of soft sector & Removed & Not needed by ECT \\
+\hline
+\end{tabular}
+\end{center}
+
 % ------------------------------------------------------------
 \section{Effective Action for Orientation Modes: Nonlinear Sigma-Model}
 \label{app:sigma_model}
 
-\textit{Reference from main text: Sections~\ref{sec:mode_classes}
-and~\ref{sec:mode_hierarchy}.
-Status: most general low-energy EFT ansatz for a unit-vector field
-in the broken phase; quantisation not required.}
+\textit{Reference from main text:
+Sections~\ref{sec:goldstone_soft_eft} and~\ref{sec:mode_hierarchy}.
+Status: minimal orientation EFT on the broken branch; Level~B.
+This appendix does not claim three independent physical Goldstone particles;
+see Appendix~\ref{app:goldstone_integrability} for the integrability analysis.}
 
-\subsection*{Setup}
+\subsection*{Setup and caution}
 
-In the ordered vacuum sector (P4) with constraint $n_A n^A=1$,
-the most general local quadratic low-energy action for the orientation field:
+In the ordered branch one may introduce the orientation field $n_A$ with
+$n_A n^A=1$ and write the most general local quadratic broken-branch EFT:
 \begin{equation}
   \label{eq:sigma_model}
   S_n = \frac{\kappa_n}{2}\int d^4X\,\partial_B n_A\,\partial^B n^A
   + \int d^4X\,\Lambda(X)(n_A n^A-1),
 \end{equation}
-where $\kappa_n>0$ is the effective stiffness of the orientation sector
-and $\Lambda$ is a Lagrange multiplier.
+where $\kappa_n>0$ is the effective stiffness and $\Lambda$ is a
+Lagrange multiplier enforcing the unit constraint.
 This is a nonlinear sigma-model with target $S^3\simeq O(4)/O(3)$.
 
-\subsection*{Linearisation around the vacuum}
+\textbf{Important caveat.}
+In the scalar-only ECT basis $n_A = Q_A/|Q| = \partial_A\Phi/|\partial\Phi|$,
+so the decomposition $Q_A=u\,n_A$ is subject to the integrability
+constraint $\partial_A Q_B-\partial_B Q_A=0$.
+This means the three ``transverse'' components $\delta n_i$ are not
+fully independent in the underlying scalar-only theory.
+The minimal orientation EFT is a useful effective description, but must
+not be interpreted as a theorem about three independent propagating
+physical particles.
+
+\subsection*{Linearisation and reduced content}
 
 Setting $n_A=\bar{n}_A+\delta n_A$, $\bar{n}_A=\delta_{Aw}$ (P4).
-From $n_A n^A=1$ at first order: $\bar{n}_A\delta n^A=0\Rightarrow\delta n_w=0$.
-Physical fluctuations live in three transverse components $\delta n_i$, $i=1,2,3$.
+From $n_A n^A=1$: $\delta n_w=0$ at linear order.
 Quadratic action:
 \begin{equation}
-  \label{eq:Sn2}
+  \label{eq:Sn_quadratic_v2}
   S_n^{(2)}=\frac{\kappa_n}{2}\int d^4X\,\partial_B\,\delta n_i\,\partial^B\,\delta n_i.
 \end{equation}
+After imposing the integrability reduction $\delta n_i=\partial_i\chi/u_0$
+(Appendix~\ref{app:goldstone_integrability}), the action becomes an
+effective action for the one surviving longitudinal scalar mode $\chi$.
 
-\subsection*{Derivation of $\kappa_n$ from the ordered-branch EFT}
+\subsection*{Stiffness coefficient $\kappa_n$}
 
-Starting from the ordered-branch infrared EFT~\eqref{eq:ordered_branch_euclidean_eft}
-at uniform background $u=u_0$, $n_A=\delta_{Aw}$, we expand
-$n_A = \delta_{Aw} + \delta n_A$ with $|\delta n_A| \ll 1$.
-The unit constraint $n_A n_A = 1$ gives
-$\delta n_w = -\frac{1}{2}(\delta n_i)^2 + \mathcal{O}(|\delta n|^3)$
-at quadratic order, leaving three independent components $\delta n_i$, $i=1,2,3$.
-
-Substituting into the $Z_n$-term of~\eqref{eq:ordered_branch_euclidean_eft}:
+From the ordered-branch EFT~\eqref{eq:ordered_branch_euclidean_eft}
+at uniform background $u=u_0$:
 \begin{equation}
   \frac{Z_n}{2}u_0^2(\partial_A n_B)(\partial_A n_B)
-  \;\xrightarrow{\text{quadratic}}\;
+  \;\to\;
   \frac{\kappa_n}{2}\,(\partial_A \delta n_i)(\partial_A \delta n_i),
-  \qquad \kappa_n = Z_n u_0^2.
+  \qquad \kappa_n = Z_n(u_0)\,u_0^2 \quad\text{(Level~B)}.
 \end{equation}
-At the present stage $Z_n$ is an EFT coefficient of the ordered branch;
-its explicit matching to the bare parameters $(\mu,\lambda)$ of~P3
-remains an open problem.
+The coefficient $Z_n$ is an EFT matching coefficient; its derivation
+from bare parameters $(\mu,\lambda)$ of P3 remains open.
 
-\subsection*{Equation of motion and dispersion}
+\subsection*{Dispersion of the surviving soft mode}
 
+After the integrability reduction, the equation of motion
+$\partial_B\partial^B\,\delta n_i=0$ becomes an equation for $\chi$:
 \begin{equation}
-  \partial_B\partial^B\,\delta n_i=0,\qquad i=1,2,3.
+  (\partial_w^2+c_\chi^2\nabla^2)\nabla^2\chi=0,
+  \qquad
+  c_\chi^2=\frac{K_s}{K_w}\,c_*^2.
 \end{equation}
-In the Lorentzian sector ($w\to -ic_n t$):
+For non-trivial modes ($k\neq 0$):
 \begin{equation}
   \label{eq:eon_lorentz}
-  \partial_t^2\,\delta n_i - c_n^2\nabla^2\,\delta n_i=0,\qquad
-  \omega^2=c_n^2 k^2.
+  \omega^2=c_\chi^2\,k^2 \quad\text{(Level~B)}.
 \end{equation}
-The identification $c_n \approx c_*$ is used at the level of EFT
-matching, but is not yet a strict theorem of the present derivation.
-Three massless orientation modes, consistent with the Goldstone theorem
-for $O(4)/O(3)$ in the minimal counting scheme.
+The identification $c_\chi=c_*$ would require $K_s=K_w$; this is not
+yet derived~(open).
 
 \subsection*{Coherent branch selection and the horizon problem}
 \label{app:horizon_ect_appendix}
