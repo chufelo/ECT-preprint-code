@@ -7781,7 +7781,7 @@ For a point mass $p_N = 2$.
 The derivation is given in Appendix~\ref{app:deff_method}.
 
 \paragraph{Closed-form result.}
-For the ECT closure function
+For the illustrative ECT-compatible closure
 $\mu(x) = x/\sqrt{1+x^2}$ one finds
 $d\ln\mu/d\ln x = 1/(1+x^2)$, and therefore
 \begin{equation}
@@ -17480,47 +17480,13 @@ g_N(R)=
 The numerical fitting procedure, quality flags, and model-comparison
 protocol are documented in Appendix~\ref{app:sparc_computation}.
 
-The baryonic rotation velocity entering $g_N$ is constructed from three
-components.
-
-\paragraph{Stellar disk.}
-The Freeman~(1970) \cite{Freeman1970} exact formula for an exponential
-disc of mass $M_\star$ and scale length $R_d$:
-\begin{equation}
-v_{\rm disc}^2(r) = \frac{G M_\star\, r^2}{2 R_d^3}
-  \bigl[I_0(x)\,K_0(x) - I_1(x)\,K_1(x)\bigr],
-  \qquad x = \frac{r}{2R_d}\,,
-\end{equation}
-where $I_n$ and $K_n$ are modified Bessel functions of the first and
-second kind.
-
-\paragraph{Bulge.}
-The Hernquist~(1990) \cite{Hernquist1990} profile with mass $M_b$ and
-scale radius $r_b$:
-\begin{equation}
-v_{\rm bul}^2(r) = \frac{G M_b\, r}{(r + r_b)^2}\,.
-\end{equation}
-
-\paragraph{Gas disc.}
-Treated as an independent exponential disk with mass $M_{\rm gas}$
-(including a factor 1.33 for He).
-
-\subsection{Fitting procedure}
-
-The effective critical scale $g^\dagger_{\rm eff}$ is determined by
-bounded scalar minimisation (Brent's method) of
-\begin{equation}
-\chi^2(g^\dagger_{\rm eff}) = \sum_{i=1}^{N}
-  \frac{\bigl(V_{\rm obs}(r_i) - V_{\rm ECT}(r_i;\,g^\dagger_{\rm eff})\bigr)^2}
-       {\delta V_i^2}\,,
-\end{equation}
-with $g^\dagger_{\rm eff}$ searched over a physically motivated range.
-Quality control and the fixed-$M/L$ vs free-$M/L$ modes are described
-in Appendix~\ref{app:sparc_computation}.
-
-The MOND comparison uses the zero-parameter interpolation
-function~\eqref{eq:rar_ect_new} with the universal constant
-$a_0 = 1.2 \times 10^{-10}$\,m\,s$^{-2}$.
+The detailed construction of the baryonic input velocity
+($V_{\rm gas},V_{\rm disk},V_{\rm bul}$), the adopted
+mass-to-light ratios, the SPARC quality cuts, and the
+per-galaxy fitting workflow are all documented in
+Appendix~\ref{app:sparc_computation}.  They are not repeated
+here in order to avoid duplication between the generic
+algorithm appendix and the dedicated SPARC appendix.
 
 \subsection{RG running of $\lambda(\mu)$}
 
