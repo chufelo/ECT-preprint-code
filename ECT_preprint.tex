@@ -1715,8 +1715,32 @@ In the quadratic sector the fluctuation spectrum is non-negative~\eqref{eq:dispe
 i.e.\ the sector contains no tachyonic instabilities.
 Together P4 and BR1 strongly support the choice of a highly ordered
 low-entropy initial sector, naturally associated with a pure or nearly
-pure initial state. However, this is not yet a complete theorem about
-the uniqueness of the pure initial state for the full evolution~(OP24).
+pure initial state.
+
+Two additional ontological properties~S6 and S8 strengthen this argument:
+\begin{itemize}
+  \item \textbf{S6 (multiplicity of configurations):} no configuration
+    of the $\Phi$-medium is privileged a priori. In a
+    configuration-space counting, the overwhelmingly dominant
+    configurations are disordered ($u_0\approx0$). The ordered branch
+    selected by P4 is therefore statistically exceptional:
+    it corresponds to the minimal-entropy configurations of the medium.
+    This provides a structural reason why the physically realised
+    Lorentzian branch starts from near-zero entropy~(Level~B).
+  \item \textbf{S8 (admissibility of inhomogeneous ordering):}
+    the medium admits spatial domains with different orientation $n_A$.
+    The entropy associated with domain-boundary growth is
+    non-decreasing in $w$: as ordered domains expand or merge, the
+    domain-wall configuration space grows monotonically.
+    This provides a second, independent ECT-internal argument
+    for $dS/dw\geq 0$ at the domain-structure level~(Level~B).
+\end{itemize}
+
+These S6/S8 arguments are structural and independent of decoherence;
+they reinforce the P4+BR1 motivation for a low-entropy initial sector
+without requiring the quantum formalism.
+However, neither argument constitutes a complete theorem about
+the uniqueness of the initial state for the full evolution~(OP24).
 The precise meaning of the initial entropy requires the quantum-mechanical
 formalism, which is established in Section~\ref{sec:quantum}.
 
@@ -3379,6 +3403,12 @@ of the condensate, not an independent field introduced by hand.
 
 \subsection{Emergence of $U(1)$ gauge symmetry}
 
+\textit{Status: Level~A/B structural.  The $U(1)$ phase symmetry
+of the emergent complex condensate sector (BR1) gives rise to a
+gauge structure when the global symmetry is promoted to a local one.
+The identification of the resulting gauge boson with the physical photon
+is Level~B (matching); the photon as the massless phase Goldstone mode is
+the most structurally motivated gauge boson in ECT.}
 
 \paragraph{Local symmetry and gauge connection.}
 
@@ -3769,44 +3799,79 @@ The soft orientation sector must \emph{not} be repurposed as a
 dark-matter patch for phenomena already explained by the $\phi$-closure.
 
 \subsection{Radial Condensate Mode}
+\label{sec:radial_mode}
 
-Fluctuations of the condensate amplitude correspond to a radial scalar excitation
+\textit{Status: two distinct radial modes arise at two condensate scales.
+Their identification with observable particles differs in level of rigour.}
 
+\paragraph{First radial mode: amplitude fluctuation of the ordered branch.}
+Fluctuations of the condensate amplitude around the ordered background
+$u_0 = |\partial\Phi|$ define the radial (amplitude) mode~$\sigma$:
 \begin{equation}
-\Phi = v_0 + \sigma .
+  u = u_0 + \sigma, \qquad
+  m_\sigma^2 = V''(u_0) \sim 2\lambda\,u_0^2.
+  \label{eq:sigma_mass_radial}
 \end{equation}
-
-The mass of this mode is determined by the curvature of the potential
-
+For a generic quartic potential $V = \lambda(|\partial\Phi|^2 - u_0^2)^2$
+and with the gravitational matching $u_0\sim\bar{M}_{\rm Pl}$
+(Section~\ref{sec:three_scales}):
 \begin{equation}
-m_\sigma^2 = V''(v_0).
+  m_\sigma \sim \sqrt{2\lambda}\,\bar{M}_{\rm Pl} \sim \bar{M}_{\rm Pl}
+  \qquad\text{(Level~B: consistency-scale identification).}
+  \label{eq:sigma_planck}
 \end{equation}
+This mode is Planck-heavy, integrates out at $E\ll m_\sigma$,
+and sets the UV cutoff of the broken-phase EFT.
+It is \emph{not} the Standard Model Higgs boson.
 
-For a generic quartic potential
-
+\paragraph{Second radial mode: candidate from the electroweak-like transition.}
+If the second condensate transition $O(3)\to O(2)$ is realised at
+scale $v_2$ (Appendix~\ref{app:second_transition}, assumptions A1--A2),
+the corresponding condensate develops its own radial fluctuation:
 \begin{equation}
-V(\Phi) = \lambda (\Phi^2 - v_0^2)^2
+  \Phi_2 = v_2 + h, \qquad
+  m_h^2 = V_2''(v_2) = 2\lambda_2\,v_2^2,
+  \label{eq:higgs_mass_candidate}
 \end{equation}
+where $\lambda_2$ is the quartic coupling of the second condensate
+at scale~$v_2$.
 
-one obtains
+This mode is \emph{structurally analogous} to the Standard Model
+Higgs boson in the following sense:
+\begin{itemize}
+  \item it is the radial excitation of the second-condensate VEV
+    (formally analogous to the Higgs field);
+  \item the spontaneous breaking of the internal symmetry at $v_2$
+    gives mass to the orientation modes
+    (formally analogous to the Higgs mechanism);
+  \item the relation $m_h = \sqrt{2\lambda_2}\,v_2$ has the same
+    structure as the SM Higgs mass formula.
+\end{itemize}
 
-\begin{equation}
-m_\sigma \sim \sqrt{2\lambda} \, v_0 .
-\end{equation}
+\paragraph{Honest status of the Higgs-like mode.}
+Three levels must be distinguished:
+\begin{enumerate}
+  \item \textbf{Level B/C (structural):} if the second transition
+    exists and the internal symmetry $O(3)\to O(2)$ is localised,
+    a radial mode $h$ at scale $v_2\approx246$\,GeV is structurally
+    present.
+  \item \textbf{Matching constraint:} the SM Higgs mass
+    $m_H\approx125.1$\,GeV~\cite{ATLAS2012Higgs,CMS2012Higgs}
+    would require $\lambda_2(v_2)\approx0.13$.
+    This value is not derived from ECT postulates P1--P5; it is a
+    matching input if one demands consistency with the measured Higgs mass.
+  \item \textbf{Open (OP-EW):} the dynamical mechanism producing
+    $v_2$, the origin of $\lambda_2$, and the localisation of the
+    $O(3)$ symmetry at scale $v_2$ are not derived from the minimal
+    scalar condensate and remain open problems.
+\end{enumerate}
 
-If the condensate scale is near the Planck scale ($v_0 \sim M_{Pl}$) the radial excitation becomes extremely heavy
-
-\begin{equation}
-m_\sigma \sim M_{Pl}.
-\end{equation}
-
-\textbf{Note (consistency-scale identification):}
-the relation $m_\sigma \sim M_{\rm Pl}$ follows from matching
-$v_0 \simeq \bar{M}_{\rm Pl}$; it is a consistency-scale identification
-within the gravitational matching, not an independent microscopic
-derivation.
-
-Such a particle would not be directly observable but could generate suppressed higher--dimension operators in the low--energy effective theory.
+\noindent\textbf{Relation to the three-scale hierarchy.}
+The two radial modes define the two UV condensate scales:
+$m_{\sigma}\sim\bar{M}_{\rm Pl}$ (first condensate) and
+$m_h\sim v_2$ (second condensate, if it exists).
+The IR galactic scale $v_{\rm gal}$ is not a UV condensate VEV
+and has no associated radial mode~(Section~\ref{sec:three_scales}).
 
 \subsection{Emergence of the Graviton}
 \label{sec:graviton}
@@ -4819,88 +4884,47 @@ Lorentz-violation frameworks and will be presented elsewhere.
 
 \subsection{Origin of the Fifth Interaction Coupling}
 
-The coupling strength of the fifth interaction can be derived directly
-from the structure of the condensate field in the ECT framework.
+\textit{Status: Level~B dimensional analysis. The Planck suppression
+$\beta\sim m_f/\bar{M}_{\rm Pl}$ follows from the UV scale matching;
+the fermion mass $m_f$ enters as an external input, not derived from ECT.}
 
-After the symmetry breaking
-
+After the first SSB $O(4)\to O(3)$, the ordered branch introduces
+the derived orientation variable $n_A=\partial_A\Phi/|\partial\Phi|$
+(not an independent field; Section~\ref{sec:sector_map}).
+Fermions propagating in this ordered-branch background can couple
+to $n_A$ through the leading symmetry-allowed operator:
 \begin{equation}
-O(4) \rightarrow O(3)
+  \mathcal{L}_5 = \frac{1}{u_0}\,\bar{\Psi}\gamma^A n_A \Psi,
 \end{equation}
+where $u_0\sim\bar{M}_{\rm Pl}$ is the UV condensate amplitude
+(Section~\ref{sec:three_scales}, equation~\eqref{eq:u0_Mpl}).
 
-the condensate field selects a preferred direction in Euclidean
-spacetime,
-
+Fermion masses enter through the electroweak-like sector.
+If the second condensate transition exists~(OP-EW), fermions
+acquire masses via Yukawa coupling to the second condensate:
 \begin{equation}
-n_A n^A = 1 .
+  m_f = y_f\,v_2,
 \end{equation}
-
-Fermions propagate in this condensate background and their kinetic
-term can be written as
-
+where $v_2\approx246$\,GeV is the electroweak matching
+scale~\eqref{eq:v2_GF} and $y_f$ is an external SM input.
+The effective fifth-force coupling then becomes
 \begin{equation}
-\mathcal{L}_{\text{fermion}}
-=
-\bar{\Psi}\, i\gamma^A D_A \Psi .
+  \beta \sim \frac{m_f}{u_0} \sim \frac{m_f}{\bar{M}_{\rm Pl}},
+  \label{eq:fifth_coupling}
 \end{equation}
-
-where the covariant derivative contains the interaction with the
-condensate field.
-
-Expanding the effective interaction terms allowed by symmetry, the
-leading operator involving the condensate orientation $n_A$ is
-
+giving
 \begin{equation}
-\mathcal{L}_5
-=
-\frac{1}{v_0}
-\bar{\Psi}\gamma^A n_A \Psi .
+  \boxed{\beta \sim \frac{m_f}{\bar{M}_{\rm Pl}}}
+  \qquad\text{(Level~B: dimensional analysis).}
 \end{equation}
+For electrons: $\beta_e\sim m_e/\bar{M}_{\rm Pl}\sim2\times10^{-22}$.
 
-Here $v_0$ represents the fundamental condensate scale.
-
-After electroweak symmetry breaking fermions acquire masses
-
-\begin{equation}
-m_f = y_f v_2 ,
-\end{equation}
-
-where $v_2 = 246\,\mathrm{GeV}$ is the electroweak scale.
-
-Expressing the interaction in terms of physical fermion fields
-introduces a proportionality between the coupling strength and the
-fermion mass.  The effective coupling therefore becomes
-
-\begin{equation}
-\beta \sim \frac{m_f}{v_0}.
-\end{equation}
-
-Since the fundamental condensate scale is of order
-
-\begin{equation}
-v_0 \sim M_{Pl},
-\end{equation}
-
-the interaction strength takes the form
-
-\begin{equation}
-\boxed{
-\beta \sim \frac{m_f}{M_{Pl}}
-}
-\end{equation}
-
-which is extremely small for all known particles.
-
-For electrons this gives
-
-\begin{equation}
-\beta_e \sim 2\times10^{-22}.
-\end{equation}
-
-Thus the fifth interaction is naturally Planck-suppressed and
-therefore extremely weak in laboratory experiments, while potentially
-becoming relevant in environments with very high densities or strong
-condensate gradients.
+The fifth interaction is therefore naturally Planck-suppressed for
+all known particles, consistent with all current experimental bounds.
+Two caveats must be noted: (i) the fermion masses $m_f$ are
+SM-matched inputs, not derived from ECT; (ii) the electroweak
+scale $v_2$ is a matching constraint, not a first-principles
+result~(Section~\ref{sec:three_scales}).
 
 \subsection{Fifth Interaction and the Lorentz-Order Weak-Field Sector}
 
@@ -4971,19 +4995,20 @@ Within the ECT framework the known fundamental interactions of the
 Standard Model are \emph{compatible with} different symmetry sectors
 of the condensate field (Level~B/C: SM gauge group embedded, not derived).
 
-The electroweak interaction is reproduced through a doublet condensate
-with spontaneous symmetry breaking
-
+The electroweak-like interaction is currently treated as a
+\emph{structural embedding} of an $SU(2)\times U(1)$ condensate EFT.
+If a second condensate transition is realised in ECT, the breaking pattern
 \begin{equation}
-SU(2)\times U(1)\rightarrow U(1)_{\mathrm{EM}},
+SU(2)\times U(1)\rightarrow U(1)_{\mathrm{EM}}
 \end{equation}
-
-yielding the observed $W^\pm$, $Z$ and photon fields with the
-electroweak scale
-
+would be associated with a scale fixed by electroweak low-energy matching:
 \begin{equation}
-v_2 = 246\,\mathrm{GeV}.
+v_2 = \left(\sqrt{2}\,G_F\right)^{-1/2} \approx 246\,\mathrm{GeV}.
 \end{equation}
+The physical $W^\pm$, $Z$ and photon fields and the Higgs-like radial mode
+are not yet derived from the minimal ECT postulates; they represent the
+correct IR target of the electroweak embedding~(OP-EW;
+Section~\ref{sec:three_scales}, Appendix~\ref{app:second_transition}).
 
 The strong interaction corresponds to an unbroken $SU(3)$ sector of the
 condensate (Level~C: embedded, not derived); this accommodates the
@@ -4996,8 +5021,10 @@ In addition to the Standard Model gauge sectors the symmetry breaking
 O(4)\rightarrow O(3)
 \end{equation}
 
-introduces the condensate orientation $n_A \equiv \partial_A\Phi/|\partial\Phi|$
-as a preferred direction in the condensate background.
+introduces the derived orientation variable
+$n_A \equiv \partial_A\Phi/|\partial\Phi|$
+as a preferred direction in the condensate background
+(not an independent microscopic field; Section~\ref{sec:sector_map}).
 This allows a new interaction term
 
 \begin{equation}
