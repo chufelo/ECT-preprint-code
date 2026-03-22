@@ -8703,6 +8703,83 @@ Appendix~\ref{app:cluster_lensing}):
 \subsection{Galactic dynamics: BTFR, rotation curves, and the effective critical scale}
 \label{sec:galactic_dynamics}
 
+\textit{Status overview: the AQUAL/MOND field-equation structure and its
+two asymptotics ($\mu\to1$ at high acceleration, $\mu\to y$ at low
+acceleration) are strong Level~B results from the new ECT postulates.
+The exact global interpolation law and the exact numerical value of
+$g_\dagger$ are not yet uniquely fixed~(Level~B/Open, OP3).}
+
+\subsubsection*{Derivation chain: from ECT postulates to RAR and BTFR}
+\label{sec:galactic_rar}
+
+The galactic sector of ECT follows a logical chain that should be
+distinguished from a postulated MOND interpolation law:
+
+\begin{enumerate}[label=(\Roman*)]
+\item \textbf{Effective galactic functional.}
+  In the quasi-static weak-field galactic regime the branch response
+  is described by an effective nonlinear functional:
+  \begin{equation}
+    S_{\rm gal}=\int d^3x
+    \left[-\rho_b\,\Phi
+    -\frac{1}{8\pi G_N}\,\mathcal{F}(Y)\right],\quad
+    Y\equiv\frac{(\nabla\Phi)^2}{g_\dagger^2}.
+    \label{eq:gal_effective_action}
+  \end{equation}
+
+\item \textbf{Deep-branch scale invariance.}
+  On the critical branch no new scale may appear beyond $g_\dagger$,
+  which forces~(Level~B; scale-invariance argument):
+  \begin{equation}
+    \mathcal{F}(Y)\propto Y^{3/2}.
+    \label{eq:F_deep}
+  \end{equation}
+
+\item \textbf{General AQUAL field equation.}
+  Varying~\eqref{eq:gal_effective_action} gives:
+  \begin{equation}
+    \nabla\!\cdot\!\left[
+      \mu\!\left(\frac{|\nabla\Phi|}{g_\dagger}\right)\nabla\Phi
+    \right]=4\pi G_N\rho_b,
+    \label{eq:ect_aqual_main}
+  \end{equation}
+  with ECT-derived asymptotic limits:
+  \begin{equation}
+    \mu(y)\to 1\quad(y\gg1),\qquad
+    \mu(y)\to y\quad(y\ll1).
+    \label{eq:mu_asymptotics_main}
+  \end{equation}
+  These are the ECT-native content; the exact global form of $\mu(y)$
+  across the transition region is a representative member of the
+  ECT-compatible class and is not yet uniquely fixed~(OP3).
+
+\item \textbf{RAR asymptotics.}
+  For near-spherical symmetry, $g=|\nabla\Phi|$,
+  $g_N=GM_b(<r)/r^2$, the field equation gives:
+  \begin{equation}
+    \mu\!\left(\frac{g}{g_\dagger}\right)g=g_N.
+    \label{eq:rar_algebraic}
+  \end{equation}
+  Newtonian limit: $g\gg g_\dagger\Rightarrow g\simeq g_N$.
+  Deep branch: $g\ll g_\dagger\Rightarrow g\simeq\sqrt{g_N g_\dagger}$.
+
+\item \textbf{BTFR.}
+  On the flat part of a rotation curve the deep-branch limit gives
+  directly $v_\infty^4=G_N M_b\,g_\dagger$
+  (see Section~\ref{sec:btfr_ect_updated} for the derivation).
+
+\item \textbf{Status of $g_\dagger$.}
+  ECT does not predict a strictly universal MOND constant.  Instead:
+  \begin{equation}
+    g_\dagger = g_{\dagger,0}\,\Xi(\rho_{\rm env},\bar\phi_{\rm env},\ldots),
+    \label{eq:gdagger_env_full}
+  \end{equation}
+  where $g_{\dagger,0}\sim cH_0$ is the cosmological baseline
+  (Section~\ref{sec:gdagger_hierarchy}) and $\Xi$ encodes
+  environment dependence.  The galaxy-to-galaxy scatter in fitted
+  $g_\dagger^{\rm eff}$ is therefore an ECT \emph{prediction},
+  not a shortcoming.
+\end{enumerate}
 
 \subsubsection*{Matter stabilises the Lorentzian phase}
 
@@ -8736,27 +8813,45 @@ In the critical branch $\mathcal{F}=A_{\rm ECT}Y_\phi^{3/2}$:
 producing MOND-like dynamics in deep weak fields without a fifth force
 in the screened limit.
 
-\subsubsection*{Baryonic Tully--Fisher Relation}
+\subsubsection*{Baryonic Tully--Fisher relation as a corollary of the deep ECT branch}
+\label{sec:btfr_ect_updated}
 
-In the critical branch:
+\textit{Status: Level~B.  The slope 4 is a strong structural result;
+the normalisation depends on $g_\dagger$ and is therefore currently
+Level~B pending the full derivation of $g_\dagger(\rho_{\rm env})$.}
+
+In ECT the baryonic Tully--Fisher relation is not an independent
+phenomenological input.  It follows directly from the deep-branch
+limit of the galactic field equation (Section~\ref{sec:galactic_rar}).
+In the low-acceleration regime $g\simeq\sqrt{g_N g_\dagger}$, and
+for the asymptotically flat part of a rotation curve:
+\begin{equation}
+  \frac{v_\infty^2}{r}
+  =
+  \sqrt{\frac{G_N M_b}{r^2}\,g_\dagger}.
+\end{equation}
+Hence
 \begin{equation}
   \label{eq:BTFR}
-  v_{\rm flat}^4 = G_N M_{\rm bar}\,g_\dagger,
-  \qquad
-  g_\dagger \equiv c^2\sqrt{\frac{A_{\rm ECT}}{M_\phi^4\bar M_{\rm Pl}^2}},
+  v_\infty^4 = G_N M_b\,g_\dagger.
 \end{equation}
-with $g_\dagger\propto cH_0$: BTFR as exact algebraic consequence of the
-critical branch~(Level~B).
+The observed BTFR slope of $4$ is a direct consequence of the deep ECT
+branch and requires no additional assumption~(Level~B structural result).
+
+The overall normalisation is Level~B at present, because it passes
+through $g_\dagger$.  In the simplest baseline picture
+$g_\dagger\sim cH_0$, while in the fuller ECT interpretation
+$g_\dagger = g_{\dagger,0}\,\Xi(\rho_{\rm env},\bar\phi_{\rm env},\ldots)$.
+ECT therefore predicts not only the BTFR itself, but also a physically
+meaningful residual scatter around the mean relation, rather than an
+exactly universal MOND constant.
 
 \paragraph{Numerical bridge to the SPARC fits.}
 The galactic SPARC analysis below provides a direct numerical
-realisation of this analytic result.  In the present closure language
-the BTFR slope remains structural, while the normalisation is governed
-by the effective galactic critical scale $g^\dagger_{\rm eff}$.  The
-sample-level fits show that the preferred baseline value is of order
-$cH_0/(2\pi)$, with the residual scatter interpreted as an effective
-environmental renormalisation rather than a failure of the critical
-branch itself.
+realisation of this analytic result.  The BTFR slope remains
+structural~(Level~B), while the scatter in the normalisation is
+interpreted as an ECT prediction of environment-dependent
+$g_\dagger(\rho_{\rm env})$ rather than a failure of the framework.
 
 \begin{figure}[htb]
 \centering
@@ -9086,26 +9181,39 @@ $g^\dagger_{\rm eff}\approx1.72\,(cH_0/2\pi)$.}
 \end{figure}
 
 \subsection{Radial Acceleration Relation}
+\label{sec:rar_subsection}
 
-The RAR provides a complementary representation of the same galactic
-closure tested in the rotation-curve analysis.  Instead of plotting
-$V(R)$ directly, it compares the observed acceleration
-\[
-g_{\rm obs}(R)=\frac{V_{\rm obs}^2(R)}{R}
-\]
-with the baryonic Newtonian acceleration
-\[
-g_{\rm bar}(R)=\frac{V_{\rm gas}^2(R)+\Upsilon_{\rm d}V_{\rm disk}^2(R)+
-\Upsilon_{\rm b}V_{\rm bul}^2(R)}{R}.
-\]
-In the present ECT closure the corresponding predicted relation is
+\textit{Status: the two RAR asymptotics are strong Level~B results
+derived from the ECT field equation~\eqref{eq:ect_aqual_main}.
+The interpolation formula~\eqref{eq:rar_ect_new} is a representative
+algebraic closure from the ECT-compatible family; the exact form
+across the transition region is Level~B~(OP3).}
+
+The RAR provides a complementary representation of the galactic
+closure. The ECT field equation~\eqref{eq:ect_aqual_main} already
+fixes the two observationally relevant limits:
+\begin{equation}
+  g \simeq g_{\rm bar}\qquad(g\gg g_\dagger),
+\end{equation}
+\begin{equation}
+  g \simeq \sqrt{g_{\rm bar}\,g_\dagger}\qquad(g\ll g_\dagger).
+  \label{eq:rar_deep_ect}
+\end{equation}
+These asymptotics are \emph{derived}, not postulated.
+The observed crossover from Newtonian to critical-branch behaviour
+at $g\sim g_\dagger$ is the ECT-predicted transition scale.
+
+For the full rotation-curve comparison, the algebraic interpolating
+function used in the SPARC analysis is:
 \begin{equation}
 g_{\rm ECT}(R)=\frac{1}{2}\left[g_{\rm bar}(R)+
 \sqrt{g_{\rm bar}^2(R)+4\,g_{\rm bar}(R)\,g^\dagger_{\rm eff}}\right],
 \label{eq:rar_ect_new}
 \end{equation}
-to be compared with the universal-$a_0$ MOND relation obtained by the
-replacement $g^\dagger_{\rm eff}\to a_0$.
+which is the minimal representative of the ECT-compatible interpolation
+class and matches the derived asymptotics exactly.
+The MOND formula is recovered by the replacement
+$g^\dagger_{\rm eff}\to a_0$ everywhere.
 
 Figure~\ref{fig:rar_new_main} shows the new six-panel RAR diagnostic.
 Panels (a)--(e) display representative galaxies spanning dwarf, spiral,
@@ -19390,6 +19498,63 @@ firmly in the sub-Planckian regime.
 % ============================================================
 % APPENDIX: Derivation of galactic phi-closure (new, v3f)
 % ============================================================
+
+\section{ECT derivation status for the galactic interpolation law}
+\label{app:rar_derivation_status}
+
+\textit{Status: Level~B.  The AQUAL field-equation structure and its
+two asymptotics are the strongest currently derived results.  The exact
+interpolation function and the exact environment law for $g_\dagger$
+remain open~(OP3).}
+
+In the current version of ECT, the strongest first-principles result
+in the galactic sector is the derivation of the \emph{field-equation
+structure and its asymptotic limits}, not yet a unique global
+interpolation function.
+
+\paragraph{Effective galactic functional.}
+In the quasi-static weak-field limit the ECT condensate produces the
+effective functional \eqref{eq:gal_effective_action}.
+Varying with respect to $\Phi$ gives:
+\begin{equation}
+  \nabla\!\cdot\!\left[
+    \mu\!\left(\frac{|\nabla\Phi|}{g_\dagger}\right)\nabla\Phi
+  \right]=4\pi G_N\rho_b.
+\end{equation}
+
+\paragraph{Scale-invariance argument.}
+The deep-branch scale invariance of the ordered ECT phase forces the
+infrared nonlinear term to scale as $\mathcal{F}(Y)\propto Y^{3/2}$~(Level~B).
+This implies $\mu(y)\propto y$ for $y\ll1$, while recovery of the
+Newtonian branch gives $\mu(y)\to1$ for $y\gg1$.
+
+\paragraph{RAR asymptotics as ECT consequences.}
+\begin{equation}
+  g\simeq g_N \quad(g\gg g_\dagger),\qquad
+  g\simeq\sqrt{g_N g_\dagger}\quad(g\ll g_\dagger).
+\end{equation}
+
+\paragraph{BTFR as corollary.}
+\begin{equation}
+  v_\infty^4 = G_N M_b\,g_\dagger.
+\end{equation}
+
+\paragraph{What remains open.}
+Two elements are not yet uniquely derived:
+\begin{itemize}
+\item \emph{Exact global interpolation function.}
+  The functional form $\mu(y)=y/\sqrt{1+y^2}$ used in the SPARC
+  analysis has the correct ECT-derived asymptotics but is not the
+  unique choice; other functions with the same limits are also
+  ECT-compatible.  The exact member of this class must follow from
+  the full OP3 completion of $U(\phi)$.
+\item \emph{Exact environment law for $g_\dagger$.}
+  ECT predicts $g_\dagger=g_{\dagger,0}\,\Xi(\rho_{\rm env},\bar\phi_{\rm env},\ldots)$
+  with $g_{\dagger,0}\sim cH_0$, but the function $\Xi$ is not yet
+  derived from bare P3~(Level~B/Open, OP3).
+  The galaxy-to-galaxy scatter in $g_\dagger^{\rm eff}$ is a physical
+  ECT prediction, not a shortcoming.
+\end{itemize}
 
 \section{Derivation of the galactic $\phi$-closure and the practical fitting law}
 \label{app:galactic_phi_closure}
