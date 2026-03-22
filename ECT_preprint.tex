@@ -158,7 +158,8 @@ $n_s$ and $r$ is in progress~(Open, OP3);
 dark energy as residual condensate energy (equation-of-state
 compatible with a $w_0>-1$ value; numerical closure depends on
 unconstrained condensate parameters);
-and ultralight Goldstone modes as dark-matter candidates.
+and a soft orientation sector whose dark-matter role remains open
+(no particle dark matter is required by the present formulation).
 Black-hole implications of the ordered condensate
 branch are exploratory~(Level~B).
 
@@ -199,7 +200,7 @@ baryonic Tully--Fisher relation;
 dark matter;
 dark energy;
 inflation;
-Goldstone bosons;
+soft orientation sector;
 cosmology;
 modified gravity;
 SPARC;
@@ -500,9 +501,9 @@ as its polar decomposition $\partial_A\Phi = (v_0+\sigma)n_A$
 \paragraph{Terminological note.}
 In ECT, the phenomena conventionally attributed to \emph{dark matter}
 arise from the nonlinear response of the ordered-branch amplitude variable $\phi$
-(the ``$\phi$-branch''), supplemented on cosmological scales by
-ultralight Goldstone modes and topological excitations of the
-condensate.
+(the ``$\phi$-branch''). The Goldstone/soft orientation sector is not used
+as a dark-matter component in the present formulation; its independent
+phenomenological role remains an open question.
 \emph{Dark energy} is identified with the residual vacuum energy
 of the condensate potential $V(\Phi_0)$.
 Throughout this paper we use the standard terms ``dark matter''
@@ -555,7 +556,7 @@ comparison with existing approaches, open problems,
 and conclusions.
 
 Section~\ref{sec:quantum_vacuum}
-organises three quantum vacuum phenomena --- the conditional Goldstone-sector
+organises three quantum vacuum phenomena --- the orientation-sector
 Casimir-type pressure, the Unruh temperature via analytic continuation,
 and cosmological particle production at the $O(4)\to O(3)$ transition ---
 showing that all three are controlled by related limits of the same Euclidean
@@ -1000,8 +1001,9 @@ a qualitatively different position.
 \paragraph{On dimensionality.}
 Postulate~P1 does not choose $d=4$ arbitrarily.
 Four-dimensionality is physically motivated: it is the unique dimension
-for which, after symmetry breaking $O(d)\to O(d-1)$, exactly three
-Goldstone modes emerge, corresponding to the observed three spatial dimensions.
+for which, after symmetry breaking $O(d)\to O(d-1)$, the coset
+$O(d)/O(d-1)$ is three-dimensional, corresponding to the observed
+three spatial dimensions.
 This is an internal consistency check discussed in Section~\ref{sec:universe_size}.
 The deeper origin of $d=4$ remains an open problem~(OP0).
 
@@ -1997,45 +1999,6 @@ $\phi$-sector. At most, the broken phase contains a constrained soft
 longitudinal mode whose phenomenological role remains open.
 
 \subsection{EFT quadratic action for fluctuations}
-\subsection{Physical roles of the Goldstone sector}
-\label{sec:goldstone_roles}
-
-\paragraph{Are the Goldstone modes eaten?}
-In the Standard Model, Goldstone modes acquire mass by being ``eaten''
-by gauge bosons (Higgs mechanism), which requires the Goldstone modes
-to be charged under a \emph{local} (gauge) symmetry.
-In ECT the residual symmetry $O(3)$ is \emph{global} by postulates
-P1--P5: no local gauge structure is introduced at the foundational
-level. Therefore no Higgs-type eating mechanism is present at the
-foundational P1--P5 level.
-Within the minimal broken-phase EFT, the soft orientation modes remain
-explicit degrees of freedom rather than being absorbed by gauge fields.
-A complete counting of independent propagating modes is deferred
-pending the inverse-Higgs analysis.
-
-The connection to electroweak gauge bosons $W^\pm$, $Z$ requires
-a second condensate scale $v_2 \sim 246$~GeV and the localisation
-of $O(3)\cong SU(2)$ at that scale. This is structurally motivated
-by the algebraic isomorphism $\mathfrak{o}(3)\cong\mathfrak{su}(2)$,
-but the dynamical mechanism remains an open problem~(OP-EW).
-
-\paragraph{Goldstone modes and ultra-light dark sectors.}
-The soft orientation sector of ECT naturally suggests an ultra-light
-bosonic sector.
-However, the minimal broken-phase EFT leaves these modes massless.
-A fuzzy-dark-matter interpretation would require a specific
-pseudo-Goldstone mass-generation mechanism producing an ultra-light
-scale (observationally of order $10^{-22}$~eV for kpc coherence).
-Such a mechanism is not contained in P1--P5 and remains open~(OP-GM).
-
-\paragraph{Coupling to matter.}
-Through the fifth-force sector $\mathcal{L}_5 = \beta\bar\Psi\gamma^A n_A\Psi$,
-orientation fluctuations couple to fermionic matter in a Planck-suppressed
-way~(Level~B).
-This coupling is too weak to affect rotation curves directly, but may
-be relevant for precision fifth-force tests
-(Section~\ref{sec:fifth_force}).
-
 
 \label{sec:eft_quadratic}
 
@@ -3603,7 +3566,10 @@ This section catalogues these excitations, labelled by level of rigour.
 
 \subsection{General Structure of Particle Excitations}
 
-In the ECT framework the fundamental degrees of freedom are the metric $g_{AB}$, the condensate scalar field $\Phi$, and the unit vector field $n^A$. 
+In the ECT framework the fundamental degree of freedom in the microscopic scalar-only ECT basis
+is the condensate scalar field $\Phi$. The orientation field $n_A$ is introduced
+only as a derived ordered-branch variable through $Q_A=\partial_A\Phi=u\,n_A$,
+and is not an independent microscopic field in the present formulation. 
 Elementary particles arise as excitations of the condensate sector and of the associated gauge fields.
 
 Two general classes of excitations are \emph{structurally motivated} within ECT:
@@ -3617,7 +3583,8 @@ In addition, the gravitational field itself emerges as collective excitations of
 
 The resulting spectrum \emph{is compatible with} Standard Model particles
 and new condensate excitations (gauge bosons: Level~B/C; fermions:
-Level~B structural reconstruction; Goldstone modes: Level~A/B).
+Level~B structural reconstruction; soft orientation sector: Level~B minimal EFT
+    (see Appendix~\ref{app:goldstone_integrability})).
 
 
 
@@ -3933,13 +3900,12 @@ ECT is compatible with, and in some cases predicts, the following
 classes of new excitations:
 
 \begin{itemize}
-\item ultralight Goldstone bosons ($m\sim10^{-33}$ eV,
-  de~Broglie wavelength $\sim$\,Mpc --- a cosmological,
-  not galactic, scale; these are \emph{not} the fuzzy dark
-  matter of the kpc-scale galactic phenomenology, which in
-  ECT is attributed entirely to the $\phi$-branch),
-\item heavy radial condensate scalar ($m\sim M_{Pl}$),
-\item possible topological soliton states of the condensate.
+\item one surviving longitudinal soft scalar mode $\chi$ in the
+  linear scalar-only broken phase~(Level~B;
+  see Appendix~\ref{app:goldstone_integrability}),
+\item heavy radial condensate scalar ($m\sim M_{\rm Pl}$),
+\item possible topological soliton states of the condensate
+  allowed by the topological completeness property~S9.
 \end{itemize}
 
 The properties and stability of such objects require further analysis.
@@ -3961,14 +3927,15 @@ The particle spectrum compatible with ECT includes:
       representation-theoretic and first-order-minimality assumptions;
       fermions are \emph{not} derived as collective excitations of
       the bare bosonic condensate),
-\item condensate scalar modes (heavy radial, ultralight Goldstone).
+\item condensate scalar modes: heavy radial mode $\sigma$ and one surviving longitudinal soft scalar mode $\chi$ in the scalar-only broken phase~(Level~B).
 \end{itemize}
 
-Several of these states lead to potential observational signatures,
-including ultralight scalar dark-matter candidates and modifications
-of gravitational dynamics at cosmological scales.
-A full classification requires further analysis of perturbations
-around the condensate background.
+Several of these sectors may lead to observational signatures,
+including modified gravitational behaviour, weak fifth-force effects,
+and condensate-sector excitations whose precise phenomenological role
+remains open.
+The main astrophysical successes of ECT (rotation curves, RAR, BTFR)
+do not require any particle dark matter.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Fermionic Sector}
@@ -5141,7 +5108,7 @@ baryonic matter and, in the critical infrared regime where the condensate
 stiffness becomes nonlinear, produces MOND-like dynamics and the
 baryonic Tully--Fisher relation as exact algebraic consequences.
 On cosmological scales the condensate provides a natural mechanism
-for inflation, dark energy, and ultralight dark-matter candidates.
+for inflation, dark energy, and possible condensate-sector excitations.
 The observational outputs throughout Part~II remain linked to the same
 underlying condensate framework, but in the present disciplined reading
 the relevant parameters are no longer compressed into one legacy
@@ -5334,9 +5301,10 @@ infrared variables~(Section~\ref{sec:ordered_branch_eft}), and the
 residual-symmetry analysis has identified the unique viable
 coarse-grained tensor structure.
 \begin{enumerate}[label=(\roman*)]
-  \item three massless orientation modes $\delta n_i$ with dispersion
-    $\omega^2=c_n^2 k^2$~(Section~\ref{sec:mode_classes},
-    Appendix~\ref{app:sigma_model});
+  \item a constrained soft orientation sector (reduced by integrability
+    to one longitudinal scalar mode $\chi$ in the scalar-only basis;
+    Level~B minimal EFT; see Section~\ref{sec:goldstone_integrability_main}
+    and Appendix~\ref{app:goldstone_integrability});
   \item Lorentzian window $\beta<\alpha<4\beta$~(Section~\ref{sec:lorentz_window});
   \item conserved $T^{AB}$ from translational invariance
     and angular currents $J^{C,AB}$ from $O(4)$-invariance
@@ -5706,11 +5674,12 @@ The resulting sector is a symmetric rank-2 tensor under $O(3)$
 propagating at $c_n=c_*$~(Level~A in broken-phase EFT).
 
 \paragraph{Physical meaning.}
-The orientation modes $\delta n_i$ are the Goldstone bosons
-of the spontaneous $O(4)\to O(3)$ breaking.
+The orientation modes $\delta n_i$ arise from the broken $O(4)\to O(3)$
+symmetry of the ordered branch.
 Their long-wavelength limit becomes gravitational wave propagation.
-Gravity is the IR limit of the Goldstone sector of the broken
-condensate, not a new ingredient.
+Gravity emerges as the IR limit of the orientation sector of the broken
+condensate (Level~B; the exact independent mode content is constrained
+by integrability, see Appendix~\ref{app:goldstone_integrability}).
 
 \subsubsection*{Fierz--Pauli-like structure at linearised level}
 
@@ -8048,11 +8017,11 @@ Primordial perturbations & Quantum inflaton fluctuations seed
   is a major next step (Open) \\
 Reheating / radiation & Standard; inflaton decays into SM fields &
   Ordered branch stabilises; condensate excitations
-  (Goldstone and radial modes) thermalise into SM plasma
+  (radial mode and soft orientation sector) thermalise into SM plasma
   (Level~B; reheating mechanism requires OP3) \\
 Matter domination & Cold dark matter particles & Possible dark-sector candidates within the macroscopic closure
-  (e.g.~ultralight Goldstone modes, $m\sim 10^{-33}$\,eV,
-  and topological configurations);
+  (e.g.~topological configurations; no independent Goldstone-sector DM
+  is claimed in the present formulation);
   relic abundance and stability are open problems~(Level~B/C);
   macroscopic ordering variables approximately stationary,
   $G_{\rm eff}\approx G_N$ (Level~B) \\
@@ -8800,7 +8769,7 @@ Table~\ref{tab:ect_hubble_jwst_summary}.
 \textsc{open} & Primordial perturbations $n_s$, $r$ & ECT-native formula pending; branch-selection mechanism identified; borrowed slow-roll formula removed & \S\ref{sec:mp_cosmo} \\
 \textsc{pass} & Baryogenesis              & $\eta_B\sim9\times10^{-10}$ (leptogenesis)            & \S\ref{sec:baryogenesis} \\
 \textsc{pass} & Unruh temperature         & $T_U=\hbar a/(2\pi c_*k_B)$ from $G_E(X,X')$         & \S\ref{sec:unruh} \\
-\textsc{pass} & Goldstone Casimir (ideal boundaries) & Vacuum energy for 3 Goldstone modes: complete & \S\ref{sec:casimir} \\
+\textsc{pass} & Orientation-sector Casimir (ideal boundaries) & Vacuum response from soft orientation sector: computed in minimal EFT & \S\ref{sec:casimir} \\
 \textsc{open} & Casimir: lab applicability & Material boundaries $\to$ Goldstone sector: not derived & \S\ref{sec:casimir} \\
 \textsc{open} & Tensor ratio $r$ & ECT-native derivation pending; removed borrowed slow-roll formula & \S\ref{sec:mp_cosmo} \\
 \textsc{prob.}& Renormalisability         & Fixed Euclidean background avoids GR non-renorm.; full loop closure pending & \S\ref{sec:open_problems} \\
@@ -8856,7 +8825,7 @@ $W^\pm,Z^0$ & $SU(2)_L$ condensate embedding & embedded (Level~C) \\
 Higgs & Radial mode of $SU(2)$ condensate & embedded (Level~C) \\
 Fermions & $O(3)$ spinor representations & structural route (Level~B) \\
 Dark energy sector & Effective late-time amplitude-sector closure & closure-dependent (Level~B) \\
-Dark matter (cand.) & Topological solitons / Goldstone modes & open \\
+Dark-sector role & No particle DM required; soft orientation sector and topological sectors are open questions & open \\
 Flat rotation curves and RAR/BTFR phenomenology & Critical $\phi$-branch closure in the galactic weak-field sector & effective closure (Level~B) \\
 Macroscopic entropy growth & Reduced-state decoherence with effective bath assumptions & effective closure (Level~B) \\
 Universal causal cone & Single $g_{\mu\nu}(n)$ in IR EFT & derived \\
@@ -8881,7 +8850,11 @@ LV suppression & Higher-dim.\ ops., $\delta c/c\sim(E/\Lambda)^2$ & derived \\
 D1 & Lorentzian phase selected when $\alpha>\beta$; Euclidean otherwise & A & $\alpha>\beta$ is a condition on condensate params & \ref{sec:ssb} \\
 D2 & KG equation from condensate action (Level~A); Schr\"odinger equation by NR reduction~+ emergent complex envelope (Level~B) & A/B & KG: Level~A (O-S continuation assumed for quadratic sector); Schr\"odinger: Level~B (additionally requires NR limit + emergent complex sector) & 4, 4 \\
 D3 & $G_N$ from geometric EFT matching ($G_N=c_*^4/(8\pi M_G^2)$) & B & Matching between ordered-branch tensor EFT and observed gravity; explicit $(u_0,\alpha,\beta)\to M_G$ derivation open~(OP2, OP3) & \ref{sec:mp_matching} \\
-D4 & Three Goldstone bosons & A & --- & 8 \\
+D4a & Ordered branch breaks $O(4)\to O(3)$; vacuum manifold $S^3$ & A & --- & \ref{sec:sector_map} \\
+D4b & $Q_A=\partial_A\Phi$ implies integrability; $\pi_i=\partial_i\chi/u_0$ & A & Scalar-only basis & App.~\ref{app:goldstone_integrability} \\
+D4c & One surviving longitudinal scalar mode $\chi$ & B & Linear level; inverse-Higgs reduction & App.~\ref{app:goldstone_integrability} \\
+D4d & Minimal 3-component orientation EFT & B & Effective parametrisation & \ref{sec:goldstone_soft_eft} \\
+D4e & Three independent physical Goldstone particles & Open/Not established & Reduced by integrability & \ref{sec:goldstone_integrability_main} \\
 D5a & Graviton: induced linearised effective-metric perturbation on ordered branch & A & $v_0^2(\alpha-\beta)>0$ & 8 \\
 D5b & Fierz--Pauli form, TT projection, ghost-free counting at linearised level & B & TT gauge; explicit mode-counting from microscopic condensate variables open (OP3 partially resolved) & 8, App.~\ref{app:GN_derivation} \\
 D6 & Dirac form (structural reconstruction once spinorial fields admitted) & B & O(3) spinor rep.; not from bare bosonic action & \ref{sec:fermions}, \ref{sec:dirac_eq} \\
@@ -10430,13 +10403,13 @@ dark-sector excitations is developed in the Quantum Sector
 \textit{Status: Level~B structural possibility. Relic abundance,
 stability, and production history not yet computed from bare~P3.}
 
-The ordered branch naturally supports soft collective excitations,
-including Goldstone-like modes with masses $m\sim H_0\sim 10^{-33}$\,eV.
-At the macroscopic level these may be viewed as possible dark-sector
-candidates if sufficiently weakly coupled and long-lived~(Level~B).
-Their relic abundance and phase-space properties are not fixed by
-the present macroscopic closure; a fuller treatment requires the
-coherent-topological analysis in the Quantum Sector.
+The ordered branch supports a constrained soft orientation sector
+(one longitudinal scalar mode $\chi$ in the scalar-only basis at
+linear order; Level~B).
+Its role as a dark-sector candidate is not established in the
+present formulation; the main astrophysical successes of ECT
+do not require any particle dark matter~(see
+Section~\ref{sec:goldstone_integrability_main}).
 
 % -------------------------------------------------------
 \subsubsection*{Topological sectors and the dark sector}
@@ -16555,12 +16528,13 @@ in the main text remains a Level~B statement.
 
 A further quantitative support comes from the effective
 pseudo-Goldstone interpretation already used elsewhere in ECT.
-If the ordering sector carries an effective pseudo-Goldstone mass scale
+If one assigns an effective mass scale to the soft orientation sector
+(e.g.~from a pseudo-Goldstone mechanism; this is not derived from P1--P5
+and is introduced here only as an illustrative estimate):
 \[
 m_G\sim 10^{-33}\,\mathrm{eV},
 \]
-independently motivated and phenomenologically tied to the galactic
-sector within ECT~\cite{McGaugh2016}, then the associated correlation length is
+where this value is a phenomenological assumption, not an ECT prediction~\cite{McGaugh2016}, then the associated correlation length is
 \[
 \xi_G \sim \frac{\hbar c}{m_G}\sim 2\times 10^{26}\,\mathrm{m},
 \]
@@ -17424,7 +17398,7 @@ is scheme-dependent and constitutes an open problem~(OP-screen).}
 
 \subsubsection{Setup}
 
-The three Goldstone modes $\delta n_i$ ($i = 1,2,3$) propagate
+The three orientation modes $\delta n_i$ ($i = 1,2,3$) of the minimal EFT propagate
 on the anisotropic condensate background with inverse propagator
 \begin{equation}
 G^{-1}(k)
