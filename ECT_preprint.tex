@@ -2180,8 +2180,8 @@ OP-EW). \emph{Right:} the three characteristic scales $u_0\sim\bar{M}_{\rm Pl}$,
 $v_2\sim246$\,GeV, and the galactic IR scale, separated by large
 logarithms. The intermediate scale $v_2$ is fixed by electroweak
 low-energy matching~\eqref{eq:v2_GF}, not derived from the condensate
-action. The figure is a structural illustration, not a quantitative
-ECT prediction.}
+action. The figure is a structural illustration of scale separation and possible
+RG logic, not a quantitative ECT derivation of the intermediate scale.}
 \label{fig:three_condensate_scales}
 \end{figure}
 
@@ -2278,7 +2278,7 @@ Statement & Status & Comment \\
 \hline
 Existence of UV scale $u_0$ from P4 & A & \\
 $u_0\sim\bar{M}_{\rm Pl}$ & B & Requires $Z_n\sim1$; OP2 \\
-$v_2=(\sqrt{2}G_F)^{-1/2}$ as matching constraint & B & If second transition exists \\
+$v_2=(\sqrt{2}G_F)^{-1/2}$ as IR matching constraint & Constraint & If second transition exists \\
 Galactic scale is emergent IR branch variation & B & Via $\phi$-sector and RAR \\
 $\mathfrak{o}(3)\cong\mathfrak{su}(2)$: structural compatibility
   with EW-like second transition & A & Algebra only \\
@@ -3475,25 +3475,30 @@ from first principles within the current framework):
 \item $U(1)$ symmetry of the condensate phase produces the
 electromagnetic interaction.
 
-\item An $SU(2)$ doublet condensate leads to the weak interaction.
+\item An $SU(2)$ doublet condensate provides a structural embedding
+for a weak-interaction-like sector, if a second condensate transition
+exists.
 
-\item A triplet structure gives rise to the $SU(3)$ gauge symmetry of
-the strong interaction.
+\item A triplet structure provides a possible embedding of an
+$SU(3)$-like strong-interaction sector; this remains a model-level
+extension rather than a first-principles ECT derivation.
 
 \end{itemize}
 
-Thus gauge interactions can be accommodated as connections required to
-maintain local symmetry of the condensate field.
+Thus gauge interactions can be \emph{embedded} as connections required
+to maintain local symmetry of extended condensate sectors.
+This is a structural compatibility statement, not yet a derivation of
+the full Standard-Model gauge structure from minimal ECT.
 
-\subsection{Electroweak symmetry breaking}
+\subsection{Electroweak-like embedding and its current status}
+\label{sec:ew_embedding}
 
-In addition to Abelian gauge symmetry, the condensate may possess
-internal multiplet structure leading to non-Abelian gauge interactions.
-In particular, a doublet condensate naturally gives rise to an
-$SU(2)$ gauge sector analogous to the electroweak interaction.
+Beyond the Abelian phase sector, one may ask whether the ordered
+condensate admits an additional non-Abelian sector analogous to the
+electroweak interaction.
+At the present stage this must be formulated cautiously.
 
-Consider a condensate doublet
-
+A convenient \emph{embedding model} is to introduce a condensate doublet
 \begin{equation}
 \Phi =
 \begin{pmatrix}
@@ -3501,9 +3506,7 @@ Consider a condensate doublet
 \Phi_2
 \end{pmatrix},
 \end{equation}
-
-with dynamics governed by the gauge-invariant action
-
+with gauge-covariant dynamics
 \begin{equation}
 S_{\text{weak}}=
 \int d^4X
@@ -3512,70 +3515,44 @@ S_{\text{weak}}=
 +
 \frac{\lambda_2}{4}
 \left(\Phi^\dagger\Phi - v_2^2\right)^2
-\right].
+\right],
 \end{equation}
-
-The covariant derivative is
-
+where
 \begin{equation}
-D_A
-=
-\partial_A
--
-i g
-\frac{\tau^a}{2}
-W_A^a ,
+D_A = \partial_A - i g\,\frac{\tau^a}{2}\,W_A^a.
 \end{equation}
+This construction is \emph{not} derived from the minimal scalar ECT
+postulates P1--P5.
+Rather, it provides a low-energy \emph{structural embedding} showing how
+an electroweak-like EFT could be accommodated if a second condensate
+transition exists.
 
-where $\tau^a$ are the Pauli matrices and $W_A^a$ are the
-$SU(2)$ gauge fields.
-
-The potential has a minimum for
-
+If such an intermediate transition is realised, the associated scale is
+fixed by low-energy matching:
 \begin{equation}
-\langle \Phi \rangle =
-\begin{pmatrix}
-0 \\
-v_2
-\end{pmatrix}.
+  v_2 = \left(\sqrt{2}\,G_F\right)^{-1/2} \approx 246.22\,\text{GeV},
 \end{equation}
-
-This vacuum expectation value spontaneously breaks the
-$SU(2)$ symmetry and generates masses for the gauge bosons
-through the Higgs mechanism.
-
-Expanding the kinetic term around the vacuum yields mass terms
-
+equivalently by the observed relations
 \begin{equation}
-m_W = \frac{g v_2}{2}.
+  m_W = \frac{g v_2}{2},
+  \qquad
+  m_Z = \frac{\sqrt{g^2+g'^2}}{2}\,v_2.
 \end{equation}
+Thus 246\,GeV is not a free choice once the electroweak EFT is matched.
 
-Using the experimentally measured values
-
-\[
-m_W \approx 80.4\ \text{GeV}, 
-\qquad
-g \approx 0.65 ,
-\]
-
-one obtains
-
-\begin{equation}
-v_2 \approx 246\ \text{GeV}.
-\end{equation}
-
-Within the ECT framework this value is fixed by low-energy electroweak
-matching~\eqref{eq:v2_GF}, not derived from the condensate functional.
-The hierarchy $v_2 \ll u_0 \sim \bar{M}_{\rm Pl}$ is a structural
-open problem~(OP-EW; Appendix~\ref{app:second_transition}).
-
-Thus the electroweak sector can be interpreted as a lower-energy
-manifestation of the same underlying condensate dynamics that
-governs the Planck-scale structure of spacetime.
-
-In this picture the gauge interactions of the Standard Model appear
-as emergent structures associated with internal symmetries of the
-condensate.
+At the current level of ECT this should be read only as follows:
+\begin{itemize}
+  \item the residual symmetry structure is \emph{compatible} with an
+    electroweak-like embedding;
+  \item the value of $v_2$ is a \emph{matching constraint} if that
+    embedding is realised;
+  \item the dynamical origin of the second transition remains open
+    (OP-EW; see Section~\ref{sec:three_scales} and
+    Appendix~\ref{app:second_transition}).
+\end{itemize}
+Accordingly, the electroweak-like sector is currently a
+Level~B/C structural embedding, not a first-principles derivation from
+the bare scalar condensate action.
 
 \subsection{Internal symmetry structure and possible Standard Model sectors}
 
@@ -3943,13 +3920,22 @@ is not derived from the scalar condensate alone.
 
 \subsection{Electroweak Sector}
 
-The electroweak sector of ECT is \emph{embedded} in Section~7 via a condensate
-doublet with $SU(2) \times U(1)$ symmetry (Level~B/C; the electroweak gauge
-group is an additional input, not derived from the minimal scalar condensate).  Spontaneous symmetry breaking
-gives masses $m_W = gv_2/2 \approx 80.4$\,GeV, $m_Z \approx 91.2$\,GeV,
-and $m_H = v_2\sqrt{2\lambda} \approx 125.1$\,GeV,
-with the electroweak scale $v_2 = 246$\,GeV.  The radial excitation of
-the doublet condensate corresponds to the Higgs boson.
+The electroweak sector of ECT is currently treated as a
+\emph{structural embedding} via an effective condensate doublet with
+$SU(2)\times U(1)$ symmetry (Level~B/C).
+This means:
+\begin{itemize}
+  \item the symmetry pattern is compatible with an electroweak-like EFT;
+  \item the scale $v_2=246$\,GeV is fixed by low-energy matching if the
+    second transition exists;
+  \item the dynamical origin of this doublet sector is not yet derived
+    from the minimal scalar condensate.
+\end{itemize}
+Accordingly, the Higgs boson is represented here only at the level of
+the embedded low-energy EFT as the radial excitation of the
+electroweak condensate.
+Its emergence from first-principles ECT remains open
+(Section~\ref{sec:three_scales}, Appendix~\ref{app:second_transition}).
 
 \subsection{Fermions (Level~B: structural route)}
 
@@ -7648,8 +7634,12 @@ The remaining relic questions are therefore sector-specific model-building
 issues rather than built-in structural catastrophes.
 
 \textbf{Further development.}
-The electroweak sector involves $SU(2)\times U(1)\to U(1)_{\rm em}$ at
+If the electroweak-like condensate embedding is physically realised,
+it would involve a transition of the form
+$SU(2)\times U(1)\to U(1)_{\rm em}$ at the matched scale
 $v_2=246$\,GeV.
+At present this sector should be treated as a structural candidate
+rather than an established part of the derived ECT core.
 A naive global-symmetry analysis gives $\pi_2(SU(2)/U(1))\neq 0$, which
 may admit monopole-like configurations at this scale; however, in gauge
 theory this analysis is more subtle and the precise topological status of
@@ -16465,27 +16455,20 @@ of the electroweak sector.
 
 \subsection*{C.\ Formal analogy with the electroweak sector}
 
-Under the breaking~\eqref{eq:app_O3_O2}, the three orientation
-modes of the minimal EFT at scale $v_2$ split as:
+Under the breaking~\eqref{eq:app_O3_O2}, the minimal orientation EFT
+admits a decomposition formally analogous to the electroweak pattern:
 \begin{itemize}
-  \item two modes formally analogous to $W^\pm$
-    (absorbed if a local gauge structure is present);
-  \item one mode formally analogous to $Z^0$;
-  \item one radial mode at scale $v_2$, formally analogous
-    to the Higgs boson;
-  \item residual $O(2)\cong\text{U}(1)_{\rm res}$ associated
-    with a massless boson, formally analogous to the photon.
+  \item two broken directions associated with a charged pair in an
+    electroweak-like interpretation;
+  \item one broken neutral direction;
+  \item one radial excitation at the intermediate scale;
+  \item one residual unbroken $O(2)\cong U(1)_{\rm res}$ direction.
 \end{itemize}
 
-\textbf{This is a formal analogy, not a derivation.}
-In particular:
-\begin{itemize}
-  \item the actual gauge structure (local vs.\ global $O(3)$
-    at scale $v_2$) is not established;
-  \item the coupling constants $g, g'$ are not derived;
-  \item the identification with physical $W^\pm, Z^0, \gamma$
-    requires those couplings and the full electroweak EFT.
-\end{itemize}
+Only if a genuine local gauge structure is shown to emerge could these
+be identified with physical $W^\pm$, $Z^0$, Higgs, and photon sectors.
+At the present stage they should be regarded purely as elements of a
+formal symmetry-breaking analogy.
 
 \subsection*{D.\ Scale $v_2$: matching constraint, not derivation}
 
