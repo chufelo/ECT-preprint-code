@@ -8835,8 +8835,10 @@ Hence
   \label{eq:BTFR}
   v_\infty^4 = G_N M_b\,g_\dagger.
 \end{equation}
-The observed BTFR slope of $4$ is a direct consequence of the deep ECT
+The asymptotic BTFR slope of $4$ is a direct consequence of the deep ECT
 branch and requires no additional assumption~(Level~B structural result).
+The observed normalisation and residual scatter then probe the
+still-open environment dependence of $g_\dagger$~(OP3).
 
 The overall normalisation is Level~B at present, because it passes
 through $g_\dagger$.  In the simplest baseline picture
@@ -9085,19 +9087,20 @@ predicted hierarchy of descriptions for the critical acceleration scale:
   well within the galaxy-to-galaxy scatter of the fitted values.
 
 \item \textbf{Environment-dependent correction (Level~B, one global parameter):}
-  The background condensate amplitude $\bar\phi(\rho_{\rm env})$ is
-  shifted by the ambient large-scale density, modifying the
-  critical threshold:
+  A minimal Level~B ansatz for the environment dependence is
   \begin{equation}
     g_\dagger(\rho_{\rm env})
     = \frac{g_{\dagger,0}}{\sqrt{1+\rho_{\rm env}/\rho_*}}\,,
     \label{eq:gdag_env}
   \end{equation}
-  where $\rho_*$ is a single global scale set by the condensate
-  potential~(Level~B; $\rho_*$ not yet derived from bare~P3,~OP3).
-  This predicts: isolated void galaxies have $g_\dagger>g_{\dagger,0}$,
-  group/cluster members have $g_\dagger<g_{\dagger,0}$, in direct
-  contrast to the universal-constant assumption of MOND.
+  where $\rho_*$ is a single global scale associated with the
+  condensate potential.  This formula should be read as the
+  simplest representative member of the ECT-compatible class of
+  environment laws, not yet as a unique first-principles derivation
+  from bare~P3~(OP3).  It predicts: isolated void galaxies have
+  $g_\dagger>g_{\dagger,0}$, group/cluster members have
+  $g_\dagger<g_{\dagger,0}$, in direct contrast to the
+  universal-constant assumption of MOND.
 
 \item \textbf{Per-galaxy effective scale (current SPARC fits):}
   The existing SPARC analysis fits $g^\dagger_{\rm eff}$ independently
@@ -17448,50 +17451,24 @@ SciPy, and Matplotlib) is publicly available at
 
 \subsection{Galaxy rotation curves}
 
-The baryonic rotation velocity is constructed from three components:
-
-\paragraph{Stellar disk.}
-The Freeman~(1970) \cite{Freeman1970} exact formula for an exponential
-disc of mass $M_\star$ and scale length $R_d$:
+The galactic rotation-curve pipeline used in the present version of the
+paper is no longer based on the legacy one-parameter $r_0$ closure.
+Instead it uses the practical ECT closure introduced in
+Section~\ref{sec:galactic_dynamics} and derived in
+Appendix~\ref{app:galactic_phi_closure}:
 \begin{equation}
-v_{\rm disc}^2(r) = \frac{G M_\star\, r^2}{2 R_d^3}
-  \bigl[I_0(x)\,K_0(x) - I_1(x)\,K_1(x)\bigr],
-  \qquad x = \frac{r}{2R_d}\,,
+g(R)=\frac{1}{2}\left[g_N(R)+\sqrt{g_N^2(R)+4\,g_N(R)\,g^\dagger_{\rm eff}}\right],
 \end{equation}
-where $I_n$ and $K_n$ are modified Bessel functions of the first and
-second kind.
-
-\paragraph{Bulge.}
-The Hernquist~(1990) \cite{Hernquist1990} profile with mass $M_b$ and
-scale radius $r_b$:
+with baryonic input acceleration
 \begin{equation}
-v_{\rm bul}^2(r) = \frac{G M_b\, r}{(r + r_b)^2}\,.
+g_N(R)=
+\frac{V_{\rm gas}^2(R)+\Upsilon_{\rm d}V_{\rm disk}^2(R)+
+\Upsilon_{\rm b}V_{\rm bul}^2(R)}{R}.
 \end{equation}
-
-\paragraph{Gas disc.}
-Treated as an independent exponential disk with mass $M_{\rm gas}$
-(including a factor 1.33 for He).
-
-\paragraph{ECT total velocity.}
-\begin{equation}
-v_{\rm ECT}^2(r) = \sqrt{1 + (r/r_0)^2}
-  \;\bigl(v_{\rm disc}^2 + v_{\rm gas}^2 + v_{\rm bul}^2\bigr).
-\end{equation}
-
-\subsection{Fitting procedure}
-
-The single free parameter $r_0$ is determined by bounded scalar
-minimisation (Brent's method) of
-\begin{equation}
-\chi^2(r_0) = \sum_{i=1}^{N}
-  \frac{\bigl(V_{\rm obs}(r_i) - V_{\rm ECT}(r_i;\,r_0)\bigr)^2}
-       {\delta V_i^2}\,,
-  \qquad r_0 \in [0.01,\,100]\;\text{kpc}.
-\end{equation}
-
-The MOND comparison uses the zero-parameter interpolation
-function~\eqref{eq:RAR} with
-$g^\dagger = 1.2 \times 10^{-10}$\,m\,s$^{-2}$.
+The numerical fitting procedure, quality flags, and model-comparison
+protocol are documented in Appendix~\ref{app:sparc_computation}.
+This appendix therefore records only the remaining generic numerical
+algorithms not already superseded by the dedicated SPARC appendix.
 
 \subsection{RG running of $\lambda(\mu)$}
 
@@ -17526,12 +17503,15 @@ repository produces this figure.
 \section{Derivation of the force-law effective dimensionality}
 \label{app:deff_method}
 
-\textit{Status: Level~B (analytic $\phi$-closure for transparency).
-This appendix uses the interpolating function
-$\mu(x)=x/\sqrt{1+x^2}$ for analytical tractability.
-The main observational comparisons in the galactic sector
-use the empirical McGaugh~2016 form; the qualitative
-$d_{\rm force}$ behaviour is closure-independent.}
+\textit{Status: Level~B (illustrative analytic closure).
+This appendix uses the convenient interpolating function
+$\mu(x)=x/\sqrt{1+x^2}$ purely for analytical tractability in the
+derivation of $d_{\rm force}(r)$.  It should be read as an
+illustrative member of the broader ECT-compatible interpolation class,
+not as the unique fitting law used in the updated SPARC analysis.
+The qualitative behaviour of $d_{\rm force}$ is closure-independent
+provided the required ECT asymptotics $\mu\to1$ and $\mu\to x$ are
+satisfied.}
 
 \subsection{Definition}
 
@@ -19502,6 +19482,12 @@ firmly in the sub-Planckian regime.
 \section{ECT derivation status for the galactic interpolation law}
 \label{app:rar_derivation_status}
 
+This appendix is a \emph{status appendix}: it summarises what is
+already structurally derived in the galactic sector and what remains
+open.  It is not the place where the practical fitting closure is
+constructed; that construction is given separately in
+Appendix~\ref{app:galactic_phi_closure}.
+
 \textit{Status: Level~B.  The AQUAL field-equation structure and its
 two asymptotics are the strongest currently derived results.  The exact
 interpolation function and the exact environment law for $g_\dagger$
@@ -19549,15 +19535,23 @@ Two elements are not yet uniquely derived:
   ECT-compatible.  The exact member of this class must follow from
   the full OP3 completion of $U(\phi)$.
 \item \emph{Exact environment law for $g_\dagger$.}
-  ECT predicts $g_\dagger=g_{\dagger,0}\,\Xi(\rho_{\rm env},\bar\phi_{\rm env},\ldots)$
-  with $g_{\dagger,0}\sim cH_0$, but the function $\Xi$ is not yet
-  derived from bare P3~(Level~B/Open, OP3).
+  ECT predicts
+  $g_\dagger=g_{\dagger,0}\,\Xi(\rho_{\rm env},\bar\phi_{\rm env},\ldots)$
+  with $g_{\dagger,0}\sim cH_0$.  The specific form
+  \eqref{eq:gdag_env} used in the present text is only a minimal
+  Level~B ansatz for $\Xi$; the exact function remains open
+  at the level of bare~P3~(OP3).
   The galaxy-to-galaxy scatter in $g_\dagger^{\rm eff}$ is a physical
   ECT prediction, not a shortcoming.
 \end{itemize}
 
 \section{Derivation of the galactic $\phi$-closure and the practical fitting law}
 \label{app:galactic_phi_closure}
+
+Unlike Appendix~\ref{app:rar_derivation_status}, which discusses the
+derivation status at a conceptual level, the present appendix records
+the concrete Level~B closure actually used in the SPARC fitting
+pipeline.
 
 This appendix derives the practical galactic fitting law used in the
 SPARC analysis.
@@ -19621,14 +19615,18 @@ g\to \sqrt{g_N g^\dagger}.
 \subsection{Minimal interpolation choice}
 
 A full first-principles derivation of the interpolation family from the
-microscopic condensate is not yet available.  The present work
-therefore adopts the phenomenologically simplest smooth choice
+microscopic condensate is not yet available.  The present work therefore adopts the phenomenologically simplest
+smooth representative of the ECT-compatible interpolation class,
 consistent with both asymptotic branches:
 \begin{equation}
 \mu_\phi(x)=\frac{x}{1+x}.
 \label{eq:app_mu_choice}
 \end{equation}
-This is a Level~B closure assumption, not a Level~A theorem.
+This is a Level~B closure assumption, not a unique first-principles
+derivation.  Other smooth functions satisfying $\mu\to x$ ($x\ll1$)
+and $\mu\to 1$ ($x\gg1$) are equally ECT-compatible at the present
+stage; the exact member of this class must follow from the
+full OP3 completion of $U(\phi)$.
 
 Using eq.~\eqref{eq:app_mu_from_F}, one obtains
 \begin{equation}
