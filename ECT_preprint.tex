@@ -3223,9 +3223,9 @@ and its single-valuedness on closed loops quantises the action
 (Section~\ref{sec:quantum}).  When the global symmetry is
 promoted to a local one, the gradient $\partial_A\theta$ is
 precisely what gets ``eaten'' by the gauge connection $A_A$
-in the Goldstone mechanism.
+in the phase Goldstone mechanism.
 The identification $\theta \equiv$ photon phase is therefore
-not a choice: it is the unique Goldstone mode of the $U(1)$ sub-symmetry
+not a choice: it is the unique phase Goldstone mode of the $U(1)$ sub-symmetry
 of the condensate, not an independent field introduced by hand.
 
 \subsection{Emergence of $U(1)$ gauge symmetry}
@@ -8770,7 +8770,7 @@ Table~\ref{tab:ect_hubble_jwst_summary}.
 \textsc{pass} & Baryogenesis              & $\eta_B\sim9\times10^{-10}$ (leptogenesis)            & \S\ref{sec:baryogenesis} \\
 \textsc{pass} & Unruh temperature         & $T_U=\hbar a/(2\pi c_*k_B)$ from $G_E(X,X')$         & \S\ref{sec:unruh} \\
 \textsc{pass} & Orientation-sector Casimir (ideal boundaries) & Vacuum response from soft orientation sector: computed in minimal EFT & \S\ref{sec:casimir} \\
-\textsc{open} & Casimir: lab applicability & Material boundaries $\to$ Goldstone sector: not derived & \S\ref{sec:casimir} \\
+\textsc{open} & Casimir: lab applicability & Material boundaries $\to$ soft orientation sector: not derived & \S\ref{sec:casimir} \\
 \textsc{open} & Tensor ratio $r$ & ECT-native derivation pending; removed borrowed slow-roll formula & \S\ref{sec:mp_cosmo} \\
 \textsc{prob.}& Renormalisability         & Fixed Euclidean background avoids GR non-renorm.; full loop closure pending & \S\ref{sec:open_problems} \\
 \textsc{open} & 3 fermion generations     & Origin not yet derived                                & \S\ref{sec:open_problems} \\
@@ -8872,7 +8872,7 @@ D17 & Second law $dS/dw\geq0$ (effective Gaussian--Markov result, ordered branch
 D18 & Universe domain size $R_{\rm domain}\gtrsim R_H$ (amplified by pre-Lorentzian ordering) & B/Open & Scale depends on ordering dynamics (OP3); $e^{N_e}$ factor from inflation removed & \ref{sec:universe_size} \\
 D19 & $S_{\rm loop,min}=2\pi S_0$ from phase quantisation & A & Structural consequence of winding sectors~(\S\ref{sec:qs_phase_dynamics}); $S_0=\hbar$ remains Level~B / open~(OP-Q2) & \ref{sec:qs_hbar} \\
 D20 & $\beta$ param.: general $c_*=\sqrt{\beta/(\alpha-\beta)}$ & A & --- & \ref{sec:ssb} \\
-D21 & Casimir: $(F/A)_{\rm ECT}=3/2\,(F/A)_{\rm QED}$ (3 Goldstone, \emph{condensate boundaries only}) & B & Dirichlet b.c.\ on Goldstone; not applicable to standard metal plates & \ref{sec:casimir} \\
+D21 & Casimir: conditional $3/2$ estimate from minimal reduced soft-orientation EFT (not a proof of three physical Goldstone particles; condensate-reflecting boundaries only) & B & Conditional on minimal EFT boundary assumption & \ref{sec:casimir} \\
 D22 & Unruh-type temperature from Euclidean/Rindler coherent-vacuum response; standard $\hbar$ form after $S_0=\hbar$ identification & A/B & Structural Euclidean/Rindler response is Level~A; observational $\hbar$ form requires Level~B identification~(OP-Q2) & \ref{sec:qs_unruh} \\
 D23a & Time-dependent ordered backgrounds admit Bogoliubov-type mode mixing & B & Structural analogy established; explicit rates remain closure-dependent & \ref{sec:qs_particle_production} \\
 D23b & Primordial spectral parameters ($n_s$, $r$): ECT-native derivation open & Open & Branch-selection mechanism identified; explicit perturbation calculation pending (OP3) & \ref{sec:mp_cosmo} \\
@@ -13524,14 +13524,16 @@ correlator $G_E=(4\pi^2|X-X'|^2)^{-1}$ (organizing proposition;
 each effect requires its own specification).
 Status: A = analytically derived within ECT; P = programmatic (requires
 boundary-condition or detector-coupling input; conditional prediction).
-The Casimir entry is conditional on boundaries acting on the ECT Goldstone
-sector; it is \emph{not} a prediction for standard metallic-plate experiments.}
+The Casimir entry is conditional on boundaries acting on the minimal
+reduced soft-orientation EFT sector; it is \emph{not} a prediction
+for standard metallic-plate experiments, and it does not establish
+three independent physical Goldstone particles.}
 \label{tab:vacuum_predictions}
 \begin{tabular}{@{}lllcc@{}}
 \toprule
 Effect & ECT formula & ECT value & Std.\ result & Status \\
 \midrule
-Casimir (3 Goldstone modes,\\condensate-reflecting boundaries only) &
+Casimir (minimal 3-comp.\ soft-orientation EFT,\\cond.-reflecting boundaries) &
 $-\dfrac{3\pi^2\hbar c_*}{240 a^4}$ &
 $3/2\times(F/A)_{\rm QED}$ \emph{conditional} &
 $-\dfrac{\pi^2\hbar c}{120 a^4}$ & P \\
@@ -15637,12 +15639,12 @@ acceleration relation, and the baryonic Tully--Fisher relation without
 invoking collisionless particle dark matter.
 
 In addition to this effective mechanism, the condensate sector may
-support further degrees of freedom such as Goldstone-like modes or
-topological configurations. These excitations could behave as extremely
-weakly interacting or ultra-light components and therefore contribute to
-dark-sector phenomenology. Determining whether such excitations are
-observable or effectively hidden requires a detailed analysis of the
-microscopic condensate dynamics.
+support additional collective sectors, such as constrained soft
+orientation excitations or topological configurations, whose
+independent phenomenological role remains open and is not required
+for the main macroscopic successes of ECT.
+Determining the physical properties of such sectors requires a
+detailed analysis of the microscopic condensate dynamics.
 
 
 \paragraph{Cluster-merger lensing as a dual test.}
@@ -15693,7 +15695,7 @@ that produces BCG-peaked morphology in Bullet-like systems
 (Section~\ref{sec:bullet_cluster}).
 
 If the condensate sector supports additional weakly coupled excitations
-(Goldstone-like modes or topological configurations), these would behave
+(constrained soft orientation excitations or topological configurations), these would behave
 as an ultra-light and extremely feebly interacting component. Their most
 promising observational signatures would then be astrophysical
 structure effects (core sizes, interference patterns, small-scale
@@ -16405,6 +16407,13 @@ Status: minimal orientation EFT on the broken branch; Level~B.
 This appendix does not claim three independent physical Goldstone particles;
 see Appendix~\ref{app:goldstone_integrability} for the integrability analysis.}
 
+\paragraph{Status note.}
+Any three-component orientation language used in this appendix refers
+only to the minimal reduced EFT description of the broken branch.
+In the scalar-only microscopic ECT basis, integrability of
+$Q_A=\partial_A\Phi$ reduces the linear soft sector to one longitudinal
+scalar mode; see Appendix~\ref{app:goldstone_integrability}.
+
 \subsection*{Setup and caution}
 
 In the ordered branch one may introduce the orientation field $n_A$ with
@@ -17014,10 +17023,14 @@ additional nonlinear screening were introduced.
 Five alternative sub-routes within the amplitude sector were
 examined, all failing by many orders of magnitude:
 
-\emph{(a) Goldstone modes.} The three massless Goldstone
-modes $\delta n_i$ are long-ranged, but their coupling to a
-static point mass gives $\delta n_i \propto GMx_i/(v_0^2 r^3)$
---- a correction proportional to $1/r^2$ that falls off
+\emph{(a) Soft orientation sector.}
+In the present scalar-only ECT basis $Q_A=\partial_A\Phi$,
+so the orientation sector is constrained by integrability.
+At linear order, the orientation fluctuation reduces to one
+longitudinal soft scalar mode $\chi$ with $\pi_i=\partial_i\chi/u_0$
+(Appendix~\ref{app:goldstone_integrability}).
+This mode is long-ranged in the minimal EFT, but its coupling to a
+static point mass gives a correction proportional to $1/r^2$ that falls off
 \emph{faster} than Newton, not slower.
 
 \emph{(b) Brans--Dicke limit.} The perturbation
