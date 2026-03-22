@@ -2850,80 +2850,181 @@ but by the class of observables retained under coarse-graining.
 \subsection{Variational principle and Noether structure}
 \label{sec:noether}
 
-\textit{Status: Level~A --- follows from P1--P3 and the
-classical stationarity principle; does not require quantisation.}
+\textit{Status: layered.
+Physical configuration selection via extremality is Level~A (D1).
+Noether structure from action symmetries is Level~A.
+Inheritance by the ordered branches is Level~A/B.
+Compatibility with the arrow of time and with the classical/quantum
+divide is Level~B.
+Full derivation of all effective branch functionals and late-time
+charge reconstruction remains open.}
 
-On each level of description the admissible configurations are
-determined from the stationarity condition:
+The variational principle in ECT is more than a formal device for
+writing field equations.
+Within the ontology of the $\Phi$-medium, it is the mathematical
+criterion that selects \emph{physically realised configurations} from
+the much larger set of ontologically admissible ones.
+Extremality is therefore the bridge from the ontological layer of the
+theory to its dynamical content.
+
+\paragraph{From admissibility to realisation.}
+The structural properties S1--S9 of the $\Phi$-medium specify what
+kinds of configurations are admissible: regular or defect-adjacent,
+homogeneous or inhomogeneous, coherent or topologically nontrivial.
+The dynamical principle~D1 then states that physically realised
+configurations are extremals of a local action functional compatible
+with the basic symmetries of the medium:
 \begin{equation}
   \label{eq:variational}
-  \frac{\delta S_{\rm level}}{\delta\Phi}\bigg|_{\rm on-shell} = 0.
+  \delta S_E[\Phi]\bigg|_{\rm on\text{-}shell} = 0.
 \end{equation}
+ECT thus separates two logically distinct notions:
+\begin{itemize}
+  \item \emph{admissibility} --- governed by the ontology of the medium;
+  \item \emph{realisation} --- governed by variational selection.
+\end{itemize}
+This is why extremality is not merely a calculational convention in ECT:
+it is the criterion by which physical histories are selected from the
+space of possible configurations.
 
-\paragraph{Translational invariance and $T^{AB}$.}
-From the homogeneity of the Euclidean arena~$\mathcal{M}^4$~(P1)
-and the absence of explicit $X^A$-dependence in the action~(P3),
-by Noether's theorem~\cite{Noether1918} for translations
-$X^A\to X^A+\epsilon^A$:
+\paragraph{Noether structure.}
+From the homogeneity of the Euclidean arena~$\mathcal{M}^4$~(P1) and
+the absence of explicit $X^A$-dependence in the action~(P3), Noether's
+theorem~\cite{Noether1918} gives a conserved energy-momentum tensor:
 \begin{equation}
   T^{AB}_{(\Phi)} = \partial^A\Phi\,\partial^B\Phi
   - \delta^{AB}\mathcal{L}_\Phi,
   \qquad \partial_A T^{AB}_{(\Phi)} = 0.
 \end{equation}
-It is \emph{translational invariance} (homogeneity of the arena),
-not $O(4)$ rotational symmetry (P2), that produces conservation of~$T^{AB}$.
-$O(4)$-symmetry produces separate angular Noether currents
-$J^{C,AB} = X^A T^{CB} - X^B T^{CA}$.
+$O(4)$ rotational symmetry~(P2) additionally produces angular Noether
+currents $J^{C,AB} = X^A T^{CB} - X^B T^{CA}$.
+Conserved structures do not appear as separate postulates: they follow
+necessarily from the symmetry-compatible extremal principle.
 The full derivation with explicit formulae for both sets of currents,
 including the orientation-field sector, is given in
 Appendix~\ref{app:noether_full}.
 
-\paragraph{Inheritance by both branches.}
-Conservation laws for energy-momentum and angular currents are present
-in both branches as a consequence of the common variational foundation
-of ECT---homogeneity of the arena (P1), locality of the action (P3),
-and $O(4)$-symmetry (P2)---not as additional postulates.
-Explicitly: $\partial_A T^{AB}=0$ follows from translational invariance;
-angular currents $J^{C,AB}$ follow from rotational $O(4)$ symmetry.
-\paragraph{Origin of the extremal-action principle.}
-The ECT framework does not introduce the principle of extremal action
-as an external law imposed on an already existing spacetime.
-Instead, extremality enters at the level of the $\Phi$-medium itself
-through~D1.
-In this sense ECT explains why extremal dynamics appears at all:
-the familiar principle of extremal action in effective physics is not
-fundamental but emergent---it is the branch-level manifestation of the
-more primitive statement that physically realised $\Phi$-configurations
-are variationally selected.
-The classical extremal principle is therefore reinterpreted in ECT as
-a descendant of medium-level extremality rather than as an independent
-axiom of spacetime physics.
+\paragraph{Sector dependence of physical interpretation.}
+The same variational backbone underlies multiple effective descriptions.
+What depends on the later development of the theory is not the
+existence of Noether structure, but the physical interpretation of the
+resulting currents and charges in particular sectors.
+In some sectors the corresponding observables already admit a clear
+physical reading; in others --- especially the gauge and particle
+sectors --- the exact mapping to late-time observed charges and
+couplings remains incomplete.
 
-\paragraph{Inheritance by effective sectors (Level~B).}
-Once a specific ordered branch is selected, the same variational logic
-is inherited by the effective fields of that branch.
-After reduction to the broken-phase EFT or to the macroscopic geometric
-sector, the effective dynamics is again organised by extremality of the
-corresponding reduced functional:
+\paragraph{Inheritance by the ordered branches.}
+Spontaneous symmetry breaking $O(4)\to O(3)$ reorganises the medium
+into reduced sectors but does not destroy the variational backbone.
+Both the geometric and the coherent-topological branch inherit
+variational logic from the underlying medium; their effective equations
+of motion are reductions of~\eqref{eq:variational}, not independent
+postulates:
 \begin{equation}
   \delta S_E[\Phi]=0
   \quad\Longrightarrow\quad
   \delta S_{\rm eff}=0
   \label{eq:delta_Seff_zero}
 \end{equation}
-after the relevant coarse-graining, projection, or EFT matching.
-The schematic reduction chain is made explicit in
-Appendix~\ref{app:variational_reduction}.
-This inheritance is a Level~B structural consequence: it depends on the
-reduction from the full $\Phi$-medium to the ordered branch and its
-effective variables, whose explicit form is determined by EFT matching.
+after branch reduction, coarse-graining, or EFT matching.
+This is Level~A/B: the reduction scheme is structural, but the explicit
+form of $S_{\rm eff}$ for each branch must still be determined by EFT
+matching~(Appendix~\ref{app:variational_reduction}).
 
-\paragraph{What is not yet established.}
-The present subsection does not derive the full effective action in
-closed form for any branch, the saddle-point dominance structure of the
-coherent quantum sector, or a complete derivation of all effective
-Lorentzian actions from the microscopic Euclidean functional.
-These belong to the later macroscopic and quantum-sector development.
+\paragraph{Relation to the arrow of time.}
+The variational principle does not conflict with the emergence of
+a thermodynamic arrow of time~(Section~\ref{sec:arrow_of_time}).
+At the fine-grained level the dynamics remains extremal.
+Irreversibility arises only at the coarse-grained level, where the full
+microscopic branch information is no longer tracked.
+ECT therefore does not obtain entropy growth by breaking extremality;
+rather, it obtains effective irreversibility by combining extremal
+fine-grained dynamics with multiplicity~(S6), inhomogeneous
+ordering~(S8), and coarse graining of branch evolution~(Level~B).
+
+\paragraph{Relation to \texorpdfstring{$S_0$}{S0} and the classical/quantum divide.}
+The variational backbone also links naturally to the pre-quantum action
+scale $S_0$~(Section~\ref{sec:hbar_status}).
+Extremality determines which histories are dynamically selected;
+$S_0$ controls when action differences remain phase-sensitive.
+When $|\Delta S|\gg S_0$, relative phases oscillate rapidly and an
+effectively classical, extremal description dominates.
+When $|\Delta S|\sim S_0$, phase sensitivity cannot be neglected and
+nearby histories contribute nontrivially.
+ECT therefore relates classical extremality and quantum behaviour
+through the same action framework, with $S_0$ governing the transition
+between the two regimes~(Level~B; Section~\ref{sec:hbar_status}).
+
+\paragraph{Coarse graining and effective extremality.}
+Coarse graining does not eliminate the fundamental variational
+principle; it changes the level of description.
+Many distinct fine-grained extremal configurations correspond to the
+same effective coarse-grained state, and this is precisely why
+macroscopic irreversibility and entropy growth can coexist with
+an underlying variational dynamics.
+Some effective sectors of ECT can still be written in extremal form
+even when their exact derivation from the bare action has not yet
+been completed~(Level~B closure).
+
+\paragraph{Defect and topological sectors.}
+Because S8 and S9 allow inhomogeneous ordering and topological sectors,
+defects, domain walls, and defect-adjacent configurations must also be
+regarded as admissible members of the overall variational framework.
+What changes is not whether they are governed by extremality, but
+whether a simple smooth effective reduction is available.
+Defect sectors can therefore be structurally natural in ECT without
+being fully integrated into the present smooth low-energy EFT.
+
+\paragraph{Comparison with other variational frameworks.}
+
+\emph{Ordinary classical field theory~\cite{Landau1987Fields}:}
+the action principle is usually taken as the formal starting point of
+dynamics on a pre-existing spacetime.
+In ECT the role of the action is deeper: it selects realised
+configurations of a pre-spacetime medium.
+
+\emph{Condensed-matter effective actions~\cite{Volovik2003}:}
+in condensed matter, collective modes are described by effective actions
+inherited from a more microscopic substrate.
+ECT follows the same structural logic, but with the medium more
+fundamental than spacetime itself.
+
+\emph{Stationary phase and path-integral logic~\cite{FeynmanHibbs1965}:}
+the relation between extremality and $S_0$ mirrors stationary-phase
+dominance in the path integral.
+ECT reproduces this logic structurally: extremality governs the
+backbone of realised histories, while $S_0$ controls when neighbouring
+histories remain phase-relevant.
+
+\paragraph{Status summary.}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{6.3cm}p{2.0cm}p{5.0cm}}
+\hline
+Statement & Status & Comment \\
+\hline
+Physical configurations selected variationally
+  & A & D1 \\
+Symmetry-compatible action implies Noether structure
+  & A & Standard variational logic \\
+Ordered branch inherits variational structure
+  & A/B & Via reduced effective description \\
+Coherent branch inherits variational structure
+  & B & In reduced branch EFT \\
+Defect sectors compatible with variational framework
+  & B & Not fully reduced to smooth EFT \\
+Irreversibility compatible with extremality
+  & B & Through coarse graining~(\S\ref{sec:arrow_of_time}) \\
+Classical limit as extremal dominance ($|\Delta S|\gg S_0$)
+  & B & Linked to \S\ref{sec:hbar_status} \\
+Full derivation of all effective branch functionals
+  & Open & Not yet completed \\
+Late-time charge reconstruction in all sectors
+  & Open & Depends on gauge/quantum programme \\
+\hline
+\end{tabular}
+\end{center}
 
 \subsection{Remark on defect sectors beyond the smooth coherent sector}
 \label{sec:defect_sectors}
@@ -2990,7 +3091,14 @@ ECT basics establishes the following common foundation for both branches:
     action scale through phase single-valuedness and minimal winding~(BR1),
     providing the strongest current bridge between ECT and the quantum
     sector, and separating the classical from the phase-sensitive regime
-    (Section~\ref{sec:hbar_status}).
+    (Section~\ref{sec:hbar_status});
+  \item \textbf{A variational backbone for realised physics:}
+    ECT distinguishes ontological admissibility from physical
+    realisation, and selects realised configurations through a
+    symmetry-compatible extremal principle; the ordered branches
+    inherit this structure in reduced form, and it remains compatible
+    with both the arrow of time and the classical/quantum divide
+    (Section~\ref{sec:noether}).
 \end{enumerate}
 
 What is \emph{not yet completed} in ECT basics:
@@ -3026,7 +3134,12 @@ What is \emph{not yet completed} in ECT basics:
     ECT motivates $S_0$ as a precursor of $\hbar$ and suggests
     the phase factor $e^{iS/S_0}$, but the full derivation of the
     quantum measure, Born rule, operator algebra, and Hilbert-space
-    structure remains open~(Section~\ref{sec:hbar_status}).
+    structure remains open~(Section~\ref{sec:hbar_status});
+  \item \textbf{Full reduction of all effective extremal sectors:}
+    while the variational backbone is fundamental, a complete
+    first-principles derivation of every effective branch functional
+    and every late-time observable Noether charge remains open
+    (Section~\ref{sec:noether}).
 \end{itemize}
 
 \begin{table}[H]
