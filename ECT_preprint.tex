@@ -1661,6 +1661,10 @@ invariance is broken spontaneously, not explicitly~\cite{Nambu1960}.
 In ECT the role of the ``breaking'' is played by the appearance of the
 preferred direction~$w$; the role of the ``effective mass'' is played
 by the different propagation properties along~$w$ and perpendicular to it.
+Note that in the scalar-only ECT basis, the orientation variable~$n_A$
+arising from this breaking is not an independent field but a derived
+collective variable, subject to integrability constraints
+(Section~\ref{sec:goldstone_integrability_main}).
 
 \subsection{Arrow of time from symmetry breaking}
 \label{sec:arrow_of_time}
@@ -1679,7 +1683,7 @@ $K(\tau<0)=0$ causal kernel
   & Contour integral, Cauchy~(App.~\ref{app:retarded_kernel}) \\
 3D bath spectrum (standard coupling)
   & Level~A (scaling analysis)
-  & Goldstone modes $\Rightarrow J\propto\omega^2$--$\omega^4$ (super-ohmic) \\
+  & soft orientation modes $\Rightarrow J\propto\omega^2$--$\omega^4$ (super-ohmic; Level~B in minimal EFT) \\
 Ohmic bath $J(\omega)\propto\omega$
   & Level~B (assumption)
   & Non-standard coupling or reduced effective dimension \\
@@ -1744,8 +1748,8 @@ open problems~OP1, OP5, and~OP24.
 \paragraph{Step~3. Working quantitative formula (Level~B, under effective assumptions).}
 The scaling analysis of the bath spectral density
 (Appendix~\ref{app:ohmic_markov}) shows that standard 3D derivative
-coupling of Goldstone modes gives a super-ohmic contribution
-$J(\omega)\propto\omega^4$, not ohmic.
+coupling of soft orientation modes in the minimal EFT gives a
+super-ohmic contribution $J(\omega)\propto\omega^4$, not ohmic.
 For the working formula of the arrow of time two additional
 effective assumptions are adopted:
 \begin{itemize}
@@ -2022,7 +2026,9 @@ Appendix~\ref{app:eft_derivation}.
 Mode & Scale & Role \\
 \hline
 Radial $\sigma$ & $E\sim m_\sigma$ & UV cutoff of EFT; integrates out for $E\ll m_\sigma$ \\
-Orientation $\delta n_i$ & $E\ll m_\sigma$, massless & Geometric sector; coupled to effective metric \\
+Orientation $\delta n_i$ & $E\ll m_\sigma$, soft & Geometric sector; in scalar-only ECT reduced by
+integrability to one longitudinal scalar $\chi$~(Level~B; see
+Section~\ref{sec:goldstone_integrability_main}) \\
 Scalar $\varphi$ & $E\ll m_\sigma$ & Scalar excitations of Lorentzian sector \\
 Phase $\theta$ & Topological sector & Coherent IR; pre-quantum action scale \\
 \hline\hline
@@ -2786,8 +2792,10 @@ ECT basics establishes the following common foundation for both branches:
   \item Smooth coherent branch rule~BR1 as a derived restriction within
     the broader topologically complete configuration space~(S9);
   \item Effective Lorentzian kinetic tensor of the broken phase;
-  \item Clear sector separation between the heavy amplitude mode,
-    soft orientation sector, and macroscopic $\phi$-sector;
+  \item Clear sector separation between the heavy amplitude mode~$\sigma$,
+    the constrained soft orientation sector (one longitudinal scalar~$\chi$
+    at Level~B; Section~\ref{sec:goldstone_integrability_main}),
+    and the macroscopic $\phi$-sector~(Section~\ref{sec:sector_map});
   \item Effective propagation speed~$c_*$ in the minimal broken-phase EFT;
   \item Four-level parameter hierarchy: bare, vacuum, EFT, coherent;
   \item Gravitational stiffness scale~$M_G$ matched to $G_N$;
@@ -2876,6 +2884,11 @@ foundational construction developed in Part~I.
   \qquad
   n_A n_A = 1.
   \]
+  Because $Q_A=\partial_A\Phi$ is an exact one-form, $u$ and $n_A$
+  are not independent: they satisfy the integrability condition
+  $\partial_A(u n_B)-\partial_B(u n_A)=0$, which reduces the
+  orientation sector to one longitudinal soft scalar at linear order
+  (Level~B; Appendix~\ref{app:goldstone_integrability}).
 
   \item \textbf{Uniqueness of the broken-phase kinetic tensor.}
   Local symmetric rank-2 tensors compatible with the residual $O(3)$
@@ -2883,6 +2896,8 @@ foundational construction developed in Part~I.
   \[
   K^{AB}=\beta\,\delta^{AB}-\alpha\,n^A n^B.
   \]
+  Here $n_A$ is the derived ordered-branch orientation variable,
+  not an independent microscopic field (Section~\ref{sec:sector_map}).
 
   \item \textbf{Signature classification rule.}
   Depending on $(\alpha,\beta)$, the broken-phase kinetic operator has
@@ -3404,40 +3419,45 @@ D_A \Phi \rightarrow e^{i\alpha(X)} D_A\Phi .
 
 Thus the action remains invariant under local phase transformations.
 
-\subsection{Emergence of $SU(2)$ gauge symmetry}
+\subsection{Non-Abelian gauge structure: structural embedding}
+\label{sec:nonabelian_embedding}
 
+\textit{Status: structural embedding, Level~B/C.
+The non-Abelian gauge sector is not derived from the minimal scalar
+ECT postulates P1--P5; it is shown to be structurally admissible
+if the condensate possesses internal multiplet structure.}
 
-\paragraph{Non-Abelian generalization.}
+\paragraph{General non-Abelian framework.}
 
-More generally the condensate may possess internal degrees of freedom
+If the condensate possesses internal degrees of freedom
 forming a multiplet
 
 \begin{equation}
-\Phi = (\Phi_1,\Phi_2,\dots,\Phi_N)^T .
+\Phi = (\Phi_1,\Phi_2,\dots,\Phi_N)^T ,
 \end{equation}
 
-If the action is invariant under global transformations
-
-\begin{equation}
-\Phi \rightarrow U\Phi,
-\qquad
-U \in SU(N),
-\end{equation}
-
-then requiring invariance under local transformations
-$U(X)$ again necessitates the introduction of gauge connections.
-
-The covariant derivative becomes
+and the action is invariant under global $SU(N)$ rotations
+$\Phi \to U\Phi$, then promoting these to local transformations
+$U(X)$ requires the introduction of gauge connections.
+The covariant derivative is
 
 \begin{equation}
 D_A = \partial_A - i g A_A^a T^a ,
 \end{equation}
 
-where $T^a$ are the generators of the group and $A_A^a$ are the
-associated gauge fields.
+where $T^a$ are the generators and $A_A^a$ are the associated
+gauge fields.
+This construction shows structural compatibility of ECT with
+non-Abelian gauge theories; it does not derive the specific
+gauge group from the condensate.
 
-\subsection{Emergence of $SU(3)$ gauge symmetry}
+\subsection{$SU(3)$-like gauge structure: structural embedding}
+\label{sec:su3_embedding}
 
+\textit{Status: structural embedding, Level~C.
+A colour-triplet condensate sector provides a structural host
+for an $SU(3)$-like gauge sector; this is not derived from the
+minimal scalar postulates P1--P5.}
 
 The corresponding field strength tensor is
 
@@ -3556,8 +3576,13 @@ the bare scalar condensate action.
 
 \subsection{Internal symmetry structure and possible Standard Model sectors}
 
+\textit{Status: structural compatibility statement, Level~B/C.
+The Standard Model gauge group $U(1)\times SU(2)\times SU(3)$
+is not derived from minimal ECT; it is shown to be embeddable
+if the condensate carries the appropriate internal multiplet structure.
+A full first-principles derivation remains open~(OP-SM).}
 
-The gauge structures derived above suggest a natural correspondence
+The gauge structures discussed above suggest a structural correspondence
 with the symmetry structure of the Standard Model.
 
 In the ECT framework, gauge interactions can be embedded via internal
@@ -3644,7 +3669,9 @@ while the Lorentzian spacetime structure is associated with the
 condensate orientation in the Euclidean manifold (in the phase $\alpha>\beta$).
 
 A full derivation of the Standard Model gauge group from the
-microscopic condensate dynamics is left for future work.
+microscopic condensate dynamics remains an open problem~(OP-SM).
+The present discussion establishes only structural compatibility,
+not a first-principles derivation.
 
 \section{Elementary Particles and Field Excitations in ECT}
 \label{sec:particles}
