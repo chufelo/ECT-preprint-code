@@ -2095,6 +2095,10 @@ Pseudo-Goldstone mass mechanism
   & Open (OP-GM) & Requires explicit breaking source beyond P1--P5 \\
 Relation to electroweak gauge/Higgs sector
   & Open (OP-EW) & Requires second condensate scale and localisation \\
+Action scale $S_0$ as ECT precursor of $\hbar$
+  & Level~B & Phase periodicity + coherent winding sectors~(BR1) \\
+Strict identification $S_0=\hbar$
+  & Open & Requires full quantum-sector reconstruction \\
 \hline\hline
 \end{tabular}
 \end{center}
@@ -2249,37 +2253,113 @@ This should be understood as a motivated matching hypothesis,
 not a strict derivation: $\ell_{\rm Pl}$ depends on~$\hbar$,
 which is not yet derived at this stage.
 
-\subsection{Pre-quantum action scale and the status of $\hbar$}
+\subsection{Action scale $S_0$ as the ECT precursor of $\hbar$}
 \label{sec:hbar_status}
 
-\textit{Status: existence established within the smooth coherent branch BR1; strict identification
-with physical $\hbar$ is deferred to Section~\ref{sec:quantum}.}
+\textit{Status: existence of $S_0$ established within the smooth coherent
+branch~BR1~(Level~B); strict identification with physical $\hbar$ is
+deferred to Section~\ref{sec:quantum}.}
 
-The smooth coherent-sector rule~BR1 establishes the existence of a
-topologically quantised action scale through:
+One of the central basic questions of ECT is whether the quantum action
+scale must be postulated externally, or whether it can arise from the
+coherent branch of the $\Phi$-medium itself.
+Within the present ECT-basics framework, the coherent sector already
+singles out a distinguished action scale $S_0$.
+The role of this subsection is to clarify why $S_0$ is the natural
+ECT precursor of $\hbar$.
+
+\paragraph{Coherent phase variable.}
+In the smooth coherent branch~(BR1), the collective state is
+characterised not only by an amplitude but also by a phase-like
+variable~$\theta$.
+Because the coherent state is physically single-valued, this phase is
+defined only modulo a full winding:
+\begin{equation}
+  \theta \sim \theta + 2\pi.
+  \label{eq:theta_periodicity}
+\end{equation}
+This is a structural property of the coherent branch and its winding
+sectors, not yet a full quantum-mechanical postulate~(Level~B).
+
+\paragraph{Dimensionless phase and the action scale.}
+If the coherent phase is controlled by an action-like functional, the
+natural dimensionless combination takes the form
+\begin{equation}
+  \exp\!\left(i\,\frac{S}{S_0}\right),
+  \label{eq:phase_action_ratio}
+\end{equation}
+where $S_0$ is the characteristic action scale of the coherent sector.
+This identification of phase with action-ratio is a structural
+assumption at Level~B, not yet derived from P1--P5 alone;
+see Appendix~\ref{app:action_scale_S0} for the explicit chain.
+The single-valuedness condition~\eqref{eq:theta_periodicity} then
+implies
+\begin{equation}
+  \Delta S = 2\pi n\,S_0, \qquad n\in\mathbb{Z}.
+  \label{eq:action_quantisation_loops}
+\end{equation}
+The coherent branch therefore naturally organises non-trivial phase
+cycles into integer winding sectors of the action.
+
+\paragraph{Minimal non-trivial action cycle.}
+The smallest non-trivial coherent loop corresponds to $n=1$:
 \begin{equation}
   S_{\rm loop,min} = 2\pi S_0.
+  \label{eq:Sloop_min_hbar}
 \end{equation}
-The explicit first-principles estimate of $S_0$ from effective phase
-dynamics requires a reduced loop action in the coherent sector---
-an integral over the transverse profile of the loop and an effective
-1D functional---which does not follow directly from the 4D EFT
-action~\eqref{eq:quadratic_action} without additional construction.
-The explicit calculation is therefore deferred
-(Appendix~\ref{app:Sloop_calc}); $S_0$ is introduced here as
-the \emph{pre-quantum action scale}, whose existence is guaranteed
-by the structure of the smooth coherent branch~BR1.
+This is consistent with the minimal winding sector of the coherent
+branch as stated in~BR1.
+In this sense $S_0$ is not an arbitrary parameter, but the elementary
+action scale associated with phase periodicity and winding
+structure~(Level~B).
 
-The identification of $S_0$ with the observed $\hbar$ requires:
-(i)~showing that $S_{\rm loop,min}$ sets the unit of action for all
-processes in the coherent sector;
-(ii)~deriving canonical quantisation relations from this structure;
-(iii)~establishing consistency with the observed
-$\hbar=1.055\times 10^{-34}$\,J$\cdot$s.
-These are addressed in Section~\ref{sec:quantum}.
-The question of identifying $S_0$ with observable~$\hbar$ is
-therefore deferred to Section~\ref{sec:quantum}, where it is
-discussed and motivated in the context of the Quantum Sector.
+The explicit first-principles estimate of $S_0$ from the effective
+phase dynamics requires a reduced 1D loop action whose construction
+goes beyond the present quadratic EFT; the calculation is deferred
+to Appendix~\ref{app:Sloop_calc}.
+
+\paragraph{Relation to $\hbar$.}
+In ordinary quantum theory, $\hbar$ is the quantity that renders the
+action dimensionless in the phase factor.
+ECT reproduces the same structural role through $S_0$.
+The natural identification is therefore
+\begin{equation}
+  S_0 \;\text{ is the ECT precursor of }\; \hbar,
+  \label{eq:S0_precursor_hbar}
+\end{equation}
+or, as a working identification,
+\begin{equation}
+  \hbar \;\leftrightarrow\; S_0
+  \label{eq:hbar_S0_identification}
+\end{equation}
+(Level~B: strongly motivated structural identification, not yet a
+strict theorem).
+
+\paragraph{What is achieved here.}
+This subsection establishes:
+\begin{itemize}
+  \item the coherent branch naturally carries a phase variable defined
+    modulo $2\pi$;
+  \item phase single-valuedness implies an elementary action scale $S_0$;
+  \item winding sectors imply the minimal non-trivial loop
+    $S_{\rm loop,min}=2\pi S_0$;
+  \item $S_0$ is therefore the natural ECT origin of the quantum
+    action scale.
+\end{itemize}
+
+\paragraph{What remains open.}
+The following are not derived here and belong to the later quantum-sector
+development (Section~\ref{sec:quantum}):
+\begin{itemize}
+  \item the Born rule;
+  \item operator commutation relations;
+  \item full Hilbert-space reconstruction;
+  \item complete path-integral measure;
+  \item strict identification $S_0 = \hbar$ as a theorem.
+\end{itemize}
+The present result is more modest but fundamental: ECT explains why a
+distinguished action scale appears from the coherent branch rather
+than being imposed as an external primitive.
 
 \subsection{Summary table: parameters and constants}
 \label{sec:params_table}
@@ -2534,7 +2614,10 @@ What is \emph{not yet completed} in ECT basics:
 \begin{itemize}
   \item Full macroscopic gravitational and cosmological dynamics;
   \item Full quantum kinematics and interpretation;
-  \item Identification $S_0=\hbar$ at the level of a strict derivation;
+  \item Identification $S_0=\hbar$ at the level of a strict derivation
+    (present status: strongly motivated at Level~B via phase periodicity
+    and winding sectors; full derivation deferred to
+    Appendix~\ref{app:action_scale_S0} and Section~\ref{sec:quantum});
   \item Exact inverse-Higgs analysis and the final counting of
     independent propagating soft modes;
   \item Explicit matching of the orientation-sector stiffness
@@ -15949,6 +16032,94 @@ $S_{\rm loop,min}=2\pi S_0$.
 The question of identifying $S_0$ with observable~$\hbar$
 is deferred to Section~\ref{sec:quantum}, where it is
 discussed and motivated in the context of the Quantum Sector.
+
+
+% ------------------------------------------------------------
+\section{Phase Periodicity, Winding Sectors, and the Action Scale $S_0$}
+\label{app:action_scale_S0}
+
+\textit{Reference from main text: Section~\ref{sec:hbar_status}.
+Status: explicit derivation chain at Level~B.}
+
+This appendix makes explicit the chain of reasoning behind the
+identification of $S_0$ as the ECT precursor of $\hbar$.
+Its purpose is not to derive the full quantum formalism, but to
+show how the coherent branch naturally introduces an elementary
+action scale.
+
+\subsection*{A.\ Phase variable on the coherent branch}
+
+Let the coherent collective state be described by a phase-like
+variable $\theta$.
+Because physically equivalent coherent states are identified after
+a full winding, the phase lives on a circle:
+\begin{equation}
+  \theta \in S^1, \qquad \theta \sim \theta + 2\pi.
+  \label{eq:app_theta_circle}
+\end{equation}
+This is the minimal topological statement behind the coherent winding
+sector~(BR1).
+
+\subsection*{B.\ Dimensionless parametrisation}
+
+A phase must be dimensionless.
+If it is controlled by an action-like functional $S$, the natural
+parametrisation is
+\begin{equation}
+  \theta = \frac{S}{S_0},
+  \label{eq:app_theta_S_ratio}
+\end{equation}
+where $S_0$ has the dimensions of action.
+The coherent phase factor then takes the form
+\begin{equation}
+  e^{i\theta} = \exp\!\left(i\frac{S}{S_0}\right).
+  \label{eq:app_phase_factor}
+\end{equation}
+The identification~\eqref{eq:app_theta_S_ratio} is a structural
+assumption: it links the geometric phase variable to the action
+functional and thereby imports the action scale into the phase
+description. This step is at Level~B.
+
+\subsection*{C.\ Single-valuedness and winding number}
+
+For a closed coherent loop, single-valuedness requires
+\begin{equation}
+  \oint d\theta = 2\pi n, \qquad n\in\mathbb{Z}.
+  \label{eq:app_winding_number}
+\end{equation}
+Using~\eqref{eq:app_theta_S_ratio}, this gives
+\begin{equation}
+  \oint dS = 2\pi n\,S_0.
+  \label{eq:app_action_loop_quantisation}
+\end{equation}
+Hence the minimal non-trivial loop satisfies
+\begin{equation}
+  S_{\rm loop,min} = 2\pi S_0.
+  \label{eq:app_min_action_loop}
+\end{equation}
+
+\subsection*{D.\ Status of the identification with $\hbar$}
+
+The correspondence $\hbar \leftrightarrow S_0$ should be understood
+as follows.
+What has been established is that the coherent branch naturally
+introduces a distinguished action scale which makes the phase
+dimensionless and organises winding sectors.
+This is precisely the structural role played by $\hbar$ in ordinary
+quantum theory.
+The full identification $S_0 = \hbar$ remains at Level~B rather than
+Level~A because the complete reconstruction of quantum kinematics and
+the Born rule is not derived here.
+
+\subsection*{E.\ Summary}
+
+The coherent branch provides:
+\begin{enumerate}
+  \item a periodic phase variable~\eqref{eq:app_theta_circle};
+  \item integer winding sectors~\eqref{eq:app_winding_number};
+  \item a minimal non-trivial action loop~\eqref{eq:app_min_action_loop};
+  \item a fundamental action scale $S_0$ as the ECT precursor of $\hbar$.
+\end{enumerate}
 
 % ------------------------------------------------------------
 \section{Why the Explicit Estimate of $S_0$ Is Deferred}
