@@ -2134,32 +2134,161 @@ which are effective, which are fixed by observational matching,
 and which are not yet derived.
 
 
-\subsection{Three condensate scales: structural open problem}
+\subsection{Three condensate scales: structure, hierarchy, and open problems}
 \label{sec:three_scales}
 
-ECT involves three qualitatively distinct characteristic scales:
+ECT involves three qualitatively distinct characteristic scales.
+They are \emph{not} of the same type: the first is a UV condensate
+amplitude, the second a required low-energy matching parameter
+(if a second transition exists), and the third an emergent IR
+variation scale.
+
 \begin{center}
 \renewcommand{\arraystretch}{1.3}
-\begin{tabular}{lll}
+\begin{tabular}{p{2.0cm}p{3.3cm}p{4.5cm}p{2.6cm}}
 \hline
-Scale & Characteristic value & Emergent physics \\
+Scale & Value & Physical origin in ECT & Status \\
 \hline
-$u_0$ & Planck-scale condensate amplitude & $G_N$, $\hbar$, $c_*$ \\
-$v_2$ & electroweak-scale second condensate & $W^\pm$, $Z$, Higgs (SM) \\
-galactic IR scale & kpc-scale variation length & rotation curves, $G_{\rm eff}(r)$ \\
+$u_0$ & ${\sim}\,\bar{M}_{\rm Pl}\approx2.44\times10^{18}$\,GeV
+  & UV condensate amplitude; gravity and phase normalisation
+  & Level~B (matching) \\
+$v_2$ & $\approx246.22$\,GeV
+  & Low-energy matching to electroweak EFT; structural candidate
+    for second transition
+  & Constraint / Level~B structural \\
+$v_{\rm gal}$ & kpc-scale variation length
+  & Emergent IR scale of ordered-branch amplitude variation;
+    $\phi$-sector
+  & Level~B (structural) \\
 \hline
 \end{tabular}
 \end{center}
 
 The multiplicity~S6 and topological completeness~S9 of the
 $\Phi$-medium make a multi-scale structure structurally admissible,
-but do not by themselves explain the specific hierarchy between these
-scales.
+but do not by themselves explain the specific hierarchy between
+these scales.
 
-\medskip
-\noindent\textbf{Status:}
-the three-scale hierarchy is a structural open problem~(OP-scales) of ECT.
-It is not resolved by P1--P5 alone.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{figures/fig3_scales_bw.png}
+\caption{Illustrative schematic of the three condensate scale hierarchy
+in ECT. \emph{Left:} running coupling $\lambda(\mu)$ as a function of
+scale $\mu$ --- shown as a schematic estimate only; the actual RG
+running in ECT has not yet been derived from first principles~(open;
+OP-EW). \emph{Right:} the three characteristic scales $u_0\sim\bar{M}_{\rm Pl}$,
+$v_2\sim246$\,GeV, and the galactic IR scale, separated by large
+logarithms. The intermediate scale $v_2$ is fixed by electroweak
+low-energy matching~\eqref{eq:v2_GF}, not derived from the condensate
+action. The figure is a structural illustration, not a quantitative
+ECT prediction.}
+\label{fig:three_condensate_scales}
+\end{figure}
+
+\paragraph{High scale: $u_0\sim\bar{M}_{\rm Pl}$.}
+The gradient condensate amplitude $u_0$ sets the UV stiffness
+of the ordered branch.
+In the geometric sector of ECT, orientation modes $\delta n_i$
+acquire a kinetic term with effective stiffness
+$\kappa_n = Z_n(u_0)\,u_0^2$~(Section~\ref{sec:goldstone_soft_eft}).
+Matching to linearised gravity~(Section~\ref{sec:GN_matching}):
+\begin{equation}
+  M_G^2 \sim Z_n(u_0)\,u_0^2,
+  \label{eq:MG_u0}
+\end{equation}
+with $M_G\equiv\bar{M}_{\rm Pl}=(8\pi G_N)^{-1/2}
+\approx2.44\times10^{18}$\,GeV.
+Under the natural assumption $Z_n\sim1$:
+\begin{equation}
+  \boxed{u_0 \;\sim\; \bar{M}_{\rm Pl}}
+  \qquad\text{(Level~B: requires }Z_n\sim1\text{; pending OP2).}
+  \label{eq:u0_Mpl}
+\end{equation}
+A sub-Planckian $u_0$ would require an anomalously large $Z_n$
+suppression; a trans-Planckian $u_0$ would conflict with EFT
+validity. The identification $u_0\sim\bar{M}_{\rm Pl}$ is
+therefore the unique natural matching.
+
+\paragraph{Galactic IR scale: emergent branch-variation scale.}
+The galactic-scale physics in ECT does not arise from a separate
+microscopic VEV.
+It is the scale at which slow spatial variations
+$u_0\to u_0(\mathbf{x})$ of the ordered-branch amplitude become
+dynamically important in the $\phi$-sector~(Section~\ref{sec:sector_map}).
+The characteristic galactic radius is
+\begin{equation}
+  r_0 \sim \left(\frac{G_N M_\star}{g^\dagger}\right)^{1/2},
+  \label{eq:r0_gal}
+\end{equation}
+where $g^\dagger\approx1.2\times10^{-10}$\,m\,s$^{-2}$ is
+the RAR acceleration scale~\cite{McGaugh2016RAR}.
+For $M_\star\sim10^{10}\,M_\odot$ this gives $r_0\sim5$--$20$\,kpc
+(Level~B; Section~\ref{sec:mp_galactic}).
+\begin{equation}
+  \boxed{v_{\rm gal} \text{ is an emergent IR scale, not a second UV condensate VEV.}}
+\end{equation}
+
+\paragraph{Intermediate scale $v_2$ and the electroweak matching.}
+If the ECT condensate undergoes a second ordering step, the
+intermediate scale is fully fixed by low-energy matching:
+\begin{equation}
+  v_2 = \left(\sqrt{2}\,G_F\right)^{-1/2}
+  \approx 246.22\,\text{GeV},
+  \label{eq:v2_GF}
+\end{equation}
+where $G_F=1.1664\times10^{-5}$\,GeV$^{-2}$
+is the measured Fermi constant~\cite{ParticleDataGroup2022}.
+This is not a free parameter: any deviation would give wrong
+$W$ and $Z$ masses. A structural candidate mechanism for the
+second transition $O(3)\to O(2)$ is discussed in
+Appendix~\ref{app:second_transition}; it remains an open
+problem of ECT.
+
+\paragraph{Hierarchy and two distinct open problems.}
+The three scales obey
+\begin{equation}
+  u_0 \sim \bar{M}_{\rm Pl} \gg v_2 \gg v_{\rm gal},
+  \qquad
+  \frac{v_2}{u_0} \approx 10^{-16}.
+  \label{eq:hierarchy}
+\end{equation}
+Since $v_2$ and $v_{\rm gal}$ are qualitatively different
+objects, the three-scale structure contains two distinct open
+problems:
+\begin{description}
+  \item[OP-EW (electroweak hierarchy).]
+    Why does a second condensate scale arise at $v_2\ll u_0$?
+    A structural candidate mechanism is described in
+    Appendix~\ref{app:second_transition}; its realisation
+    within ECT remains open.
+  \item[OP-galactic (IR closure).]
+    What determines the precise value of $g^\dagger$ in
+    terms of $u_0$ and cosmological parameters?
+    Structurally $g^\dagger\sim cH_0$~(Level~B), but a
+    first-principles derivation from the condensate
+    functional is not yet available.
+\end{description}
+
+\noindent\textbf{Status summary:}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{5.8cm}p{2.0cm}p{4.0cm}}
+\hline
+Statement & Status & Comment \\
+\hline
+Existence of UV scale $u_0$ from P4 & A & \\
+$u_0\sim\bar{M}_{\rm Pl}$ & B & Requires $Z_n\sim1$; OP2 \\
+$v_2=(\sqrt{2}G_F)^{-1/2}$ as matching constraint & B & If second transition exists \\
+Galactic scale is emergent IR branch variation & B & Via $\phi$-sector and RAR \\
+$\mathfrak{o}(3)\cong\mathfrak{su}(2)$: structural compatibility
+  with EW-like second transition & A & Algebra only \\
+Second transition $O(3)\to O(2)$ as structural candidate & B & Requires phase--orientation coupling \\
+Phase--orientation coupling as dynamical driver & Open (OP-EW) & \\
+First-principles derivation of $v_2$ & Open (OP-EW) & \\
+First-principles derivation of $g^\dagger$ & Open (OP-galactic) & \\
+\hline
+\end{tabular}
+\end{center}
 
 \subsection{Parameter hierarchy by level of description}
 \label{sec:param_hierarchy}
@@ -16269,6 +16398,133 @@ Each of these steps requires the nonlinear broken-phase potential
 which are not determined at the ECT basics level.
 The explicit calculation therefore belongs to Section~\ref{sec:quantum}.
 
+
+
+% ------------------------------------------------------------
+\section{Structural candidate mechanism for the second condensate
+transition $O(3)\to O(2)$}
+\label{app:second_transition}
+
+\textit{Status: structural Level~B/C.
+This appendix describes a structural candidate mechanism, not a
+derived result.
+It does not prove that the second transition occurs, does not
+derive $v_2$ from first principles, and does not establish
+the electroweak gauge sector from ECT postulates P1--P5.}
+
+\subsection*{A.\ What is already true at Level~A}
+
+After the first transition $O(4)\to O(3)$, the ECT broken phase
+contains two coexisting sectors whose existence follows from the
+current postulates:
+\begin{itemize}
+  \item a coherent phase sector with U(1) structure
+    (the winding variable $\theta$; derived from BR1);
+  \item a residual orientation sector with symmetry group $O(3)$.
+\end{itemize}
+The Lie algebras satisfy the exact isomorphism
+\begin{equation}
+  \mathfrak{o}(3) \cong \mathfrak{su}(2).
+  \label{eq:app_o3_su2}
+\end{equation}
+Furthermore, $\text{U}(1)$ embeds into $O(3)$ as a maximal torus:
+any choice of U(1) axis in $O(3)$ selects a preferred direction,
+leaving $O(2)$ as the stabiliser.
+These are mathematical facts, independent of dynamics~(Level~A).
+
+\subsection*{B.\ Structural mechanism candidate~(Level~B/C)}
+
+The following scenario is structurally admissible within ECT
+but requires two additional assumptions not yet derived from P1--P5.
+
+\begin{description}
+  \item[Assumption A1.]
+    At some intermediate scale $v_2\ll u_0$, a coupling
+    between the coherent phase sector and the residual
+    orientation sector becomes operative.
+  \item[Assumption A2.]
+    The minimum of the condensate functional at scale $v_2$
+    aligns the U(1) axis of the phase sector with a preferred
+    direction in $O(3)$.
+\end{description}
+
+Under A1 and A2, the residual $O(3)$ is broken to its $O(2)$
+stabiliser:
+\begin{equation}
+  O(3) \xrightarrow{\;\text{phase--orientation alignment}\;}
+  O(2).
+  \label{eq:app_O3_O2}
+\end{equation}
+This breaking pattern is \emph{formally analogous} to the
+electroweak transition in the Standard Model.
+The analogy is structural; it does not constitute a derivation
+of the electroweak sector.
+
+\subsection*{C.\ Formal analogy with the electroweak sector}
+
+Under the breaking~\eqref{eq:app_O3_O2}, the three orientation
+modes of the minimal EFT at scale $v_2$ split as:
+\begin{itemize}
+  \item two modes formally analogous to $W^\pm$
+    (absorbed if a local gauge structure is present);
+  \item one mode formally analogous to $Z^0$;
+  \item one radial mode at scale $v_2$, formally analogous
+    to the Higgs boson;
+  \item residual $O(2)\cong\text{U}(1)_{\rm res}$ associated
+    with a massless boson, formally analogous to the photon.
+\end{itemize}
+
+\textbf{This is a formal analogy, not a derivation.}
+In particular:
+\begin{itemize}
+  \item the actual gauge structure (local vs.\ global $O(3)$
+    at scale $v_2$) is not established;
+  \item the coupling constants $g, g'$ are not derived;
+  \item the identification with physical $W^\pm, Z^0, \gamma$
+    requires those couplings and the full electroweak EFT.
+\end{itemize}
+
+\subsection*{D.\ Scale $v_2$: matching constraint, not derivation}
+
+If A1 and A2 hold, the scale of the second transition is fixed
+by low-energy matching to the observed Fermi interaction:
+\begin{equation}
+  v_2 = \left(\sqrt{2}\,G_F\right)^{-1/2}
+  \approx 246.22\,\text{GeV},
+  \label{eq:app_v2_matching}
+\end{equation}
+where $G_F=1.1664\times10^{-5}$\,GeV$^{-2}$.
+This value is a \emph{matching constraint}, not a first-principles
+prediction.
+
+As an order-of-magnitude estimate, dimensional transmutation
+gives
+\begin{equation}
+  v_2 \sim u_0\,e^{-\mathcal{C}},
+  \qquad
+  \mathcal{C} \approx \ln\!\frac{u_0}{v_2} \approx 37.
+  \label{eq:app_transmut}
+\end{equation}
+For a one-loop running with coefficient $b_0$, this requires
+$b_0\,\lambda\approx8\pi^2/37\approx2.1$, which is numerically
+plausible but does not constitute a derivation.
+
+\subsection*{E.\ What remains open}
+
+\begin{enumerate}
+  \item Does assumption A1 hold in ECT?
+    Is there a phase--orientation coupling in the condensate action?
+  \item Is the $O(3)$ orientation symmetry local or global
+    at scale $v_2$? Locality is required for the massive vector
+    boson interpretation.
+  \item What is the explicit dynamical mechanism generating
+    the scale $v_2$ (RG running, topological instanton, or other)?
+  \item How do SM fermion charges and Yukawa couplings arise?
+\end{enumerate}
+
+Until these are answered, the second transition $O(3)\to O(2)$
+remains a \emph{structural candidate mechanism} of ECT at
+Level~B/C, not an established result.
 
 % ------------------------------------------------------------
 \section{Goldstone sector in scalar-only ECT: integrability,
