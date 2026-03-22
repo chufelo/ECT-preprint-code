@@ -1669,136 +1669,177 @@ collective variable, subject to integrability constraints
 \subsection{Arrow of time from symmetry breaking}
 \label{sec:arrow_of_time}
 
-\begin{center}\small
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{p{5.5cm}p{4.0cm}p{4.5cm}}
-\hline\hline
-Component & Status & Basis \\
-\hline
-$S_{\rm ent}(w_0)\approx 0$, coherent initial sector
-  & Level~B (strongly motivated)
-  & P4 + BR1 + OP24 \\
-$K(\tau<0)=0$ causal kernel
-  & Level~A (quadratic sector)
-  & Contour integral, Cauchy~(App.~\ref{app:retarded_kernel}) \\
-3D bath spectrum (standard coupling)
-  & Level~A (scaling analysis)
-  & soft orientation modes $\Rightarrow J\propto\omega^2$--$\omega^4$ (super-ohmic; Level~B in minimal EFT) \\
-Ohmic bath $J(\omega)\propto\omega$
-  & Level~B (assumption)
-  & Non-standard coupling or reduced effective dimension \\
-Markovianity ($\tau_{\rm env}\ll\tau_{\rm dec}$)
-  & Level~B (heuristics)
-  & $\tau_{\rm env}\sim m_\sigma^{-1}$; strict in weak-coupling limit \\
-$dS/dw\geq 0$ qualitatively
-  & Level~B (quadratic sector)
-  & Conditions (i)--(iii) under working assumptions \\
-$dS/dw = N_{\rm eff}\gamma(\ldots)^2$ explicit
-  & Level~B (under effective assumptions)
-  & Ohmic + Markov as working hypotheses \\
-Full nonlinear theory
-  & Level~B
-  & OP1, OP5, OP24 \\
-\hline\hline
-\end{tabular}
-\end{center}
+The emergence of a preferred temporal orientation in ECT is one of the
+most important consequences of the ordered branch, but it must be stated
+carefully.
+What follows directly from the symmetry-breaking pattern is not yet the
+full thermodynamic second law.
+Rather, ECT yields a \emph{layered} picture in which geometric time
+orientation is established first, while thermodynamic irreversibility
+appears at the coarse-grained level as a further structural consequence
+of the ordered phase.
 
-The action~P2 is symmetric under $w\to-w$: fundamental physics
-does not distinguish the direction of~$w$.
-Yet the arrow of time emerges macroscopically through a three-step mechanism.
+\paragraph{Geometric arrow: branch selection.}
+Before ordering, the Euclidean $\Phi$-medium possesses no distinguished
+time direction: all four directions of $\mathcal{M}^4$ are equivalent.
+After the transition $O(4)\to O(3)$, the ordered branch selects a
+preferred direction $w$ through
+$\langle \partial_A \Phi \rangle = u_0\,\delta_{Aw} \neq 0$.
+This breaks the full Euclidean isotropy and provides the geometric basis
+for the effective Lorentzian branch.
+In this sense, ECT explains the \emph{orientation} of effective time
+as a direct consequence of spontaneous ordering~(Level~A).
 
-\paragraph{Step~1. Coherent initial sector (Level~B, strongly motivated).}
-Postulate~P4 selects the ordered vacuum sector of the effective broken phase,
-while the derived smooth coherent-sector rule~BR1 restricts attention
-to the defect-free coherent topological branch.
-In the quadratic sector the fluctuation spectrum is non-negative~\eqref{eq:dispersion},
-i.e.\ the sector contains no tachyonic instabilities.
-Together P4 and BR1 strongly support the choice of a highly ordered
-low-entropy initial sector, naturally associated with a pure or nearly
-pure initial state.
+\paragraph{Why this is not yet the full thermodynamic arrow.}
+The mere existence of a preferred branch direction does not by itself
+establish entropy growth, dissipation, or a microscopic H-theorem.
+It gives a distinguished direction of effective evolution, but not yet
+a complete derivation of irreversibility.
+To go further one must use the enlarged ontology of the $\Phi$-medium:
+the multiplicity of admissible configurations~(S6), the admissibility
+of non-uniform ordering~(S8), and the topological completeness~(S9).
 
-Two additional ontological properties~S6 and S8 strengthen this argument:
-\begin{itemize}
-  \item \textbf{S6 (multiplicity of configurations):} no configuration
-    of the $\Phi$-medium is privileged a priori. In a
-    configuration-space counting, the overwhelmingly dominant
-    configurations are disordered ($u_0\approx0$). The ordered branch
-    selected by P4 is therefore statistically exceptional:
-    it corresponds to the minimal-entropy configurations of the medium.
-    This provides a structural reason why the physically realised
-    Lorentzian branch starts from near-zero entropy~(Level~B).
-  \item \textbf{S8 (admissibility of inhomogeneous ordering):}
-    the medium admits spatial domains with different orientation $n_A$.
-    The entropy associated with domain-boundary growth is
-    non-decreasing in $w$: as ordered domains expand or merge, the
-    domain-wall configuration space grows monotonically.
-    This provides a second, independent ECT-internal argument
-    for $dS/dw\geq 0$ at the domain-structure level~(Level~B).
-\end{itemize}
+\paragraph{Statistical speciality of the ordered branch via S6.}
+The structural property~S6 states that the configuration space of the
+$\Phi$-medium is non-trivial and that no configuration is privileged
+\emph{a priori}.
+Against that background, the coherent ordered branch is statistically
+special: it is a highly organised and constrained subset of the full
+configuration space.
+In a configuration-space counting, overwhelmingly dominant configurations
+are disordered ($u_0\approx 0$); the ordered branch selected by P4
+corresponds to the minimal-entropy configurations of the medium.
+This gives ECT a natural interpretation of the low-entropy initial
+condition: the initial ordered branch does not need to be imposed from
+outside as an ad hoc boundary condition, but appears as a dynamically
+selected, statistically exceptional state of the medium~(Level~B).
 
-These S6/S8 arguments are structural and independent of decoherence;
-they reinforce the P4+BR1 motivation for a low-entropy initial sector
-without requiring the quantum formalism.
-However, neither argument constitutes a complete theorem about
-the uniqueness of the initial state for the full evolution~(OP24).
-The precise meaning of the initial entropy requires the quantum-mechanical
-formalism, which is established in Section~\ref{sec:quantum}.
+\paragraph{Entropy growth from inhomogeneous ordering via S8.}
+The structural property~S8 states that ordering need not be globally
+uniform: ordered domains, transition regions, local misalignments, and
+slowly varying branch backgrounds are all admissible.
+As the branch evolves, coarse-grained descriptions generically explore
+a larger class of such partially ordered configurations than the
+initially coherent state.
+This makes entropy growth structurally natural: the ordered branch
+begins in a statistically exceptional configuration, while subsequent
+inhomogeneous evolution opens access to a much larger coarse-grained
+state space, giving $dS_{\rm ent}/dw\geq 0$ at the domain-structure
+level~(Level~B).
 
-\paragraph{Step~2. Qualitative monotonicity (Level~B, quadratic sector).}
-Three conditions used in the qualitative derivation of the arrow of time,
-compatible with the working postulates P1--P5 and the derived
-coherent-sector rule~BR1:
-\begin{enumerate}[label=(\roman*)]
-  \item \textit{Coherent low-entropy initial sector}~(Step~1, Level~B).
-  \item \textit{Causal structure}~(Level~A, quadratic): the Lorentzian
-    signature~\eqref{eq:dispersion} gives a hyperbolic propagation operator.
-    The retarded Green's function $G_{\rm ret}(t,\mathbf{x})=0$ for $t<0$
-    is proved strictly by contour integration~(Appendix~\ref{app:retarded_kernel}, Level~A).
-    For the full nonlinear causal kernel this remains an open problem~(OP5).
-  \item \textit{Positive spectral density}~(Level~A, quadratic sector):
-    $\rho(\mu^2)\geq 0$ follows from the dispersion relation.
-    The standard fluctuation--dissipation relation in the linear
-    quadratic effective sector then gives non-negative dissipation kernel:
-    $\mathrm{Im}\,G^{\rm ret}(\omega)\geq 0$.
-\end{enumerate}
-Under conditions~(i)--(iii) in the quadratic effective sector
-one obtains $d\Gamma_{\rm irr}/dw\geq 0$, hence qualitative monotonicity
-$dS_{\rm ent}/dw\geq 0$ for macroscopic systems with $N_{\rm eff}\gg 1$.
-The condition of retardedness $K(\tau<0)=0$ is now strictly proved
-in the quadratic sector~(Level~A, Appendix~\ref{app:retarded_kernel}).
-The full strict derivation in the nonlinear theory depends on
-open problems~OP1, OP5, and~OP24.
-
-\paragraph{Step~3. Working quantitative formula (Level~B, under effective assumptions).}
-The scaling analysis of the bath spectral density
-(Appendix~\ref{app:ohmic_markov}) shows that standard 3D derivative
-coupling of soft orientation modes in the minimal EFT gives a
-super-ohmic contribution $J(\omega)\propto\omega^4$, not ohmic.
-For the working formula of the arrow of time two additional
-effective assumptions are adopted:
-\begin{itemize}
-  \item \textit{Effective ohmic regime}: in the phenomenological
-    Markovian reduction $J(\omega)=N_{\rm eff}\gamma\omega$
-    is used~(Level~B, assumption);
-  \item \textit{Markovianity}: $\tau_{\rm env}\sim m_\sigma^{-1}$;
-    $\tau_{\rm dec}\gg m_\sigma^{-1}$ for $N_{\rm eff}\gg 1$
-    in weak coupling~(Level~B, heuristics).
-\end{itemize}
-Under these two effective assumptions the working formula is:
+\paragraph{Relation to decoherence and coarse graining.}
+This picture aligns naturally with decoherence.
+A perfectly coherent ordered branch is an idealisation.
+In practice, local subsystems interact with soft collective modes,
+inhomogeneous backgrounds, domain interfaces, and defect-adjacent
+regions.
+When fine-grained phase information is not tracked, a reduced
+description emerges, and effective irreversibility becomes visible
+at the coarse-grained level.
+ECT therefore does not need to postulate decoherence as an entirely
+foreign ingredient: the ordered branch provides a structural environment
+in which decoherence is expected and is naturally aligned with the
+branch-selected time orientation.
+The working quantitative formula, under the effective ohmic and
+Markovian assumptions of Section~\ref{sec:influence_functional}, is
 \begin{equation}
   \label{eq:dSdw_explicit}
   \frac{dS_{\rm ent}}{dw}
   = N_{\rm eff}\,\gamma\!\left(\frac{dq}{dw}\right)^{\!2}
   \geq 0.
 \end{equation}
-Strict derivation of both assumptions from ECT is deferred
-to Section~\ref{sec:influence_functional}.
+What is not yet established is the full microscopic decoherence kernel
+or a first-principles H-theorem~(OP1, OP5, OP24).
+
+\paragraph{Compatibility with variational dynamics.}
+There is no contradiction between this emergent irreversibility and the
+variational principle of the underlying medium.
+At the fundamental level, physically realised configurations of the
+$\Phi$-medium remain extremals of $S_E[\Phi]$~(D1;
+Section~\ref{sec:noether}).
+The same extremality is inherited by the ordered-branch effective
+dynamics after branch reduction~(Level~B,
+Section~\ref{sec:noether}, equation~\eqref{eq:delta_Seff_zero}).
+Irreversibility arises not from a breakdown of variational dynamics, but
+from coarse graining: many microscopically distinct branch configurations
+correspond to the same effective macroscopic description, and the larger
+coarse-grained state space is naturally explored as order becomes less
+perfectly coherent.
+
+\paragraph{Topological defects and domain production via S8/S9.}
+The topological completeness property~S9 further strengthens this
+picture.
+The ordered branch may contain or generate domain walls, textures,
+defect cores, or other transition structures.
+Such objects are not external additions to the theory but admissible
+configurations of the $\Phi$-medium itself~(Section~\ref{sec:defect_sectors}).
+Their formation, interaction, and coarse-grained proliferation provide
+natural channels through which an initially coherent ordered state can
+lose ideal uniformity and populate a broader macroscopic ensemble,
+thereby supporting the thermodynamic arrow~(Level~B from S8+S9).
 
 \paragraph{Quantum exception.}
 For $N_{\rm eff}\sim 1$ the product $N_{\rm eff}\gamma\tau_{\rm loop}\lesssim 1$:
 reverse motion along~$w$ is not suppressed.
 Reversibility of dynamics with few degrees of freedom is reproduced
 automatically---an internal ECT result, not imported from another theory.
+
+\paragraph{Comparison with other approaches.}
+
+\emph{Penrose-type low-entropy cosmology:}
+Penrose argues that the universe must begin in an extraordinarily
+special low-entropy gravitational state~\cite{Penrose2010}.
+ECT agrees with the need for an exceptional initial state, but differs
+in interpretation: the ordered branch itself provides the natural
+candidate for such a state, so the low-entropy condition is tied to the
+onset of condensate ordering rather than imposed from outside.
+
+\emph{Spontaneous symmetry breaking in condensed matter:}
+In condensed-matter systems an ordered phase is likewise highly special
+relative to a disordered phase, while domains, defects, and relaxation
+towards mixed macrostates naturally generate effective
+irreversibility~\cite{Volovik2003}.
+ECT follows the same broad structural logic, but with a deeper role for
+the order parameter: ordering is not merely a property of matter inside
+spacetime, but part of the very origin of effective spacetime structure
+itself.
+
+\emph{Cosmological arrow without external time:}
+Many cosmological frameworks struggle to explain how a temporal arrow
+can arise if no external time parameter is available.
+ECT is naturally suited to this problem: the ordered branch generates
+an internal time orientation from within the Euclidean medium, while
+S6 and S8 make it structurally plausible that this orientation becomes
+thermodynamically meaningful under coarse graining.
+
+\paragraph{Status summary.}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
+\hline
+Statement & Status & Comment \\
+\hline
+Ordered branch selects preferred direction $w$
+  & A & Direct consequence of $O(4)\to O(3)$ \\
+Effective Lorentzian time orientation emerges
+  & A & Geometric branch result \\
+Ordered branch is statistically special
+  & B & Uses S6 (multiplicity) \\
+Entropy growth is structurally natural
+  & B & Uses S8 + coarse graining \\
+Causal kernel $K(\tau<0)=0$ in quadratic sector
+  & A & Contour integral~(App.~\ref{app:retarded_kernel}) \\
+Decoherence aligns with branch-selected arrow
+  & B & Structural compatibility \\
+Defect/domain production supports irreversibility
+  & B & Uses S8 + S9 \\
+Compatibility with variational dynamics
+  & B & Coarse-graining of extremal dynamics \\
+Full microscopic second law / H-theorem
+  & Open & OP1, OP5, OP24 \\
+\hline
+\end{tabular}
+\end{center}
 
 \subsection{Comparison with other theories}
 \label{sec:comparison_theories}
@@ -2850,7 +2891,14 @@ ECT basics establishes the following common foundation for both branches:
   \item Effective propagation speed~$c_*$ in the minimal broken-phase EFT;
   \item Four-level parameter hierarchy: bare, vacuum, EFT, coherent;
   \item Gravitational stiffness scale~$M_G$ matched to $G_N$;
-  \item Pre-quantum action scale~$S_0$.
+  \item Pre-quantum action scale~$S_0$;
+  \item \textbf{A layered origin of the arrow of time:}
+    the ordered branch selects a preferred geometric time direction
+    (Level~A), while the low-entropy interpretation of the initial
+    ordered state and the structural naturalness of entropy growth
+    follow at Level~B from multiplicity~S6, inhomogeneous
+    ordering~S8, and coarse-grained branch evolution
+    (Section~\ref{sec:arrow_of_time}).
 \end{enumerate}
 
 What is \emph{not yet completed} in ECT basics:
@@ -2875,7 +2923,13 @@ What is \emph{not yet completed} in ECT basics:
   \item Full derivation of all effective extremal principles in the
     emergent Lorentzian and coherent sectors from the microscopic
     Euclidean functional;
-  \item Nonlinear closure of each branch.
+  \item Nonlinear closure of each branch;
+  \item \textbf{Microscopic irreversibility and the full second law:}
+    ECT provides a structural Level~B account of entropy growth
+    and a geometric time orientation at Level~A, but a complete
+    first-principles derivation of the microscopic decoherence
+    kernel, H-theorem, and irreversible thermodynamics remains
+    open~(OP1, OP5, OP24; Section~\ref{sec:arrow_of_time}).
 \end{itemize}
 
 \begin{table}[H]
