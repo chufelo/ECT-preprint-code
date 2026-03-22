@@ -9193,7 +9193,17 @@ algebraic closure from the ECT-compatible family; the exact form
 across the transition region is Level~B~(OP3).}
 
 The RAR provides a complementary representation of the galactic
-closure. The ECT field equation~\eqref{eq:ect_aqual_main} already
+closure.  Instead of plotting $V(R)$ directly, it compares the
+observed acceleration
+\[
+g_{\rm obs}(R)=\frac{V_{\rm obs}^2(R)}{R}
+\]
+with the baryonic Newtonian acceleration
+\[
+g_{\rm bar}(R)=\frac{V_{\rm gas}^2(R)+\Upsilon_{\rm d}V_{\rm disk}^2(R)+
+\Upsilon_{\rm b}V_{\rm bul}^2(R)}{R}.
+\]
+The ECT field equation~\eqref{eq:ect_aqual_main} already
 fixes the two observationally relevant limits:
 \begin{equation}
   g \simeq g_{\rm bar}\qquad(g\gg g_\dagger),
@@ -17451,9 +17461,7 @@ SciPy, and Matplotlib) is publicly available at
 
 \subsection{Galaxy rotation curves}
 
-The galactic rotation-curve pipeline used in the present version of the
-paper is no longer based on the legacy one-parameter $r_0$ closure.
-Instead it uses the practical ECT closure introduced in
+The present SPARC pipeline uses the practical ECT closure introduced in
 Section~\ref{sec:galactic_dynamics} and derived in
 Appendix~\ref{app:galactic_phi_closure}:
 \begin{equation}
@@ -17467,8 +17475,48 @@ g_N(R)=
 \end{equation}
 The numerical fitting procedure, quality flags, and model-comparison
 protocol are documented in Appendix~\ref{app:sparc_computation}.
-This appendix therefore records only the remaining generic numerical
-algorithms not already superseded by the dedicated SPARC appendix.
+
+The baryonic rotation velocity entering $g_N$ is constructed from three
+components.
+
+\paragraph{Stellar disk.}
+The Freeman~(1970) \cite{Freeman1970} exact formula for an exponential
+disc of mass $M_\star$ and scale length $R_d$:
+\begin{equation}
+v_{\rm disc}^2(r) = \frac{G M_\star\, r^2}{2 R_d^3}
+  \bigl[I_0(x)\,K_0(x) - I_1(x)\,K_1(x)\bigr],
+  \qquad x = \frac{r}{2R_d}\,,
+\end{equation}
+where $I_n$ and $K_n$ are modified Bessel functions of the first and
+second kind.
+
+\paragraph{Bulge.}
+The Hernquist~(1990) \cite{Hernquist1990} profile with mass $M_b$ and
+scale radius $r_b$:
+\begin{equation}
+v_{\rm bul}^2(r) = \frac{G M_b\, r}{(r + r_b)^2}\,.
+\end{equation}
+
+\paragraph{Gas disc.}
+Treated as an independent exponential disk with mass $M_{\rm gas}$
+(including a factor 1.33 for He).
+
+\subsection{Fitting procedure}
+
+The effective critical scale $g^\dagger_{\rm eff}$ is determined by
+bounded scalar minimisation (Brent's method) of
+\begin{equation}
+\chi^2(g^\dagger_{\rm eff}) = \sum_{i=1}^{N}
+  \frac{\bigl(V_{\rm obs}(r_i) - V_{\rm ECT}(r_i;\,g^\dagger_{\rm eff})\bigr)^2}
+       {\delta V_i^2}\,,
+\end{equation}
+with $g^\dagger_{\rm eff}$ searched over a physically motivated range.
+Quality control and the fixed-$M/L$ vs free-$M/L$ modes are described
+in Appendix~\ref{app:sparc_computation}.
+
+The MOND comparison uses the zero-parameter interpolation
+function~\eqref{eq:rar_ect_new} with the universal constant
+$a_0 = 1.2 \times 10^{-10}$\,m\,s$^{-2}$.
 
 \subsection{RG running of $\lambda(\mu)$}
 
