@@ -1231,6 +1231,82 @@ requires an additional isotropy assumption.
 
 
 
+
+\subsection{Variational selection and the origin of extremal dynamics}
+\label{sec:variational_extremal_dynamics}
+
+The ECT framework does not introduce the principle of extremal action
+as an external law imposed on an already existing spacetime.
+Instead, extremality enters at the level of the $\Phi$-medium itself.
+By the dynamical principle~D1, physically realised configurations are
+selected as extrema of a local functional $S_E[\Phi]$ compatible with
+the basic symmetries of the medium, subject to the regularity
+conditions required for a well-posed variational problem.
+
+\paragraph{Variational selection at the medium level.}
+At the most basic level, ECT therefore assumes neither particles nor
+trajectories, but only admissible configurations of the $\Phi$-medium.
+The primary extremality statement is
+\begin{equation}
+  \delta S_E[\Phi] = 0,
+  \label{eq:delta_SE_zero}
+\end{equation}
+with the understanding that the allowed variations preserve the
+structural conditions of the theory (regularity where appropriate,
+admissible defect sectors, and the branch conditions under
+consideration).
+This is a Level~A statement within the present ECT-basics framework:
+it is part of the defining dynamical layer of the theory.
+
+\paragraph{From medium extremality to effective dynamics.}
+Once a specific ordered branch is selected, the same variational logic
+is inherited by the effective fields describing that branch.
+In particular, after reduction to the broken-phase EFT or to the
+macroscopic geometric sector, the effective dynamics is again organised
+by extremality of the corresponding reduced functional.
+Schematically,
+\begin{equation}
+  \delta S_E[\Phi]=0
+  \quad\Longrightarrow\quad
+  \delta S_{\rm eff}=0
+  \label{eq:delta_Seff_zero}
+\end{equation}
+after the relevant coarse-graining, projection, or EFT matching.
+This does not mean that the full effective action is already known in
+closed form for every sector; rather, it means that extremality is not
+a new postulate at the emergent level but the inherited consequence of
+the underlying variational selection principle.
+
+\paragraph{Origin of the extremal-action principle.}
+In this sense, ECT explains why extremal dynamics appears at all.
+The familiar principle of extremal action in effective physics is not
+fundamental but emergent: it is the branch-level manifestation of the
+more primitive statement that the physically realised $\Phi$-configurations
+are variationally selected.
+The classical extremal principle is therefore reinterpreted in ECT as
+a descendant of medium-level extremality rather than as an independent
+axiom of spacetime physics.
+
+\paragraph{Status of the result.}
+The variational selection principle itself is part of the basic
+definition of the theory~(Level~A, from D1a).
+The statement that effective branch dynamics inherits an extremal form
+is a strong structural consequence of ECT~(Level~B), because it depends
+on the reduction from the full $\Phi$-medium to the ordered branch and
+its effective variables.
+What is not yet established at theorem level is the full derivation of
+all later forms of extremal dynamics---for example, the detailed saddle
+structure of the coherent quantum sector, or a complete derivation of
+all effective Lorentzian actions from the microscopic Euclidean functional.
+
+\paragraph{What this does and does not claim.}
+This subsection does \emph{not} claim that ECT has already derived the
+entire classical or quantum action formalism in final form.
+It establishes the more basic and more important point:
+extremality is built into the ontology of physical realisation itself,
+and all later extremal principles in the emergent sectors must descend
+from that common variational origin.
+
 % ============================================================
 % SECTION 3: SSB AND EMERGENCE OF TIME
 % ============================================================
@@ -2093,6 +2169,10 @@ Pseudo-Goldstone mass mechanism
   & Open (OP-GM) & Requires explicit breaking source beyond P1--P5 \\
 Relation to electroweak gauge/Higgs sector
   & Open (OP-EW) & Requires second condensate scale and localisation \\
+Variational selection of realised $\Phi$-configurations
+  & Level~A & D1a/D1b (basic definition of the theory) \\
+Emergent extremal dynamics in reduced effective sectors
+  & Level~B & Inherited from variational selection after branch reduction \\
 Action scale $S_0$ as ECT precursor of $\hbar$
   & Level~B & Phase periodicity + coherent winding sectors~(BR1) \\
 Strict identification $S_0=\hbar$
@@ -2595,6 +2675,9 @@ ECT basics establishes the following common foundation for both branches:
     equivalent directions and points~(P1; ontology layer S1--S3);
   \item Local $O(4)$-invariant scalar microdynamics and the minimal
     variational realisation of the $\Phi$-medium~(P2--P3, D1);
+  \item Variational selection of physically realised $\Phi$-configurations
+    and the origin of emergent extremal dynamics~(D1,
+    Section~\ref{sec:variational_extremal_dynamics});
   \item Gradient-ordered vacuum branch with spontaneous
     $O(4)\to O(3)$ breaking~(P4);
   \item Admissibility of non-trivial and non-uniform ordered
@@ -2628,6 +2711,9 @@ What is \emph{not yet completed} in ECT basics:
     electroweak localisation mechanism~(OP-EW);
   \item Three-scale hierarchy as a derived result rather than a
     structural open problem~(OP-scales);
+  \item Full derivation of all effective extremal principles in the
+    emergent Lorentzian and coherent sectors from the microscopic
+    Euclidean functional;
   \item Nonlinear closure of each branch.
 \end{itemize}
 
@@ -16033,6 +16119,74 @@ The question of identifying $S_0$ with observable~$\hbar$
 is deferred to Section~\ref{sec:quantum}, where it is
 discussed and motivated in the context of the Quantum Sector.
 
+
+
+% ------------------------------------------------------------
+\section{Variational Selection and Reduced Extremal Dynamics}
+\label{app:variational_reduction}
+
+\textit{Reference from main text:
+Section~\ref{sec:variational_extremal_dynamics}.
+Status: schematic reduction argument at Level~B.}
+
+This appendix records the schematic chain from medium-level extremality
+to branch-level extremal dynamics.
+It is not a fully constructive derivation but clarifies the logical
+structure.
+
+\paragraph{Step 1. Medium extremality.}
+By D1, all physically realised configurations satisfy
+\begin{equation}
+  \delta S_E[\Phi] = 0.
+  \label{eq:app_medium_ext}
+\end{equation}
+
+\paragraph{Step 2. Branch decomposition.}
+In the ordered branch, decompose the full field into background and
+fluctuations:
+\begin{equation}
+  \Phi = \Phi_{\rm branch} + \delta\Phi,
+\end{equation}
+where $\Phi_{\rm branch}$ specifies the ordered background~(P4) and
+$\delta\Phi$ denotes fluctuations over it.
+
+\paragraph{Step 3. Reduction to effective functional.}
+Projecting $\delta S_E = 0$ onto the collective variables $\psi_i$
+of the branch (e.g.\ the orientation modes $\delta n_i$, the amplitude
+fluctuation $\sigma$, or the macroscopic background variation
+$\phi \sim \delta v_0/v_0$) gives a reduced effective functional
+$S_{\rm eff}[\psi_i]$ such that
+\begin{equation}
+  \delta S_E[\Phi]\big|_{\rm branch} = 0
+  \quad\Longrightarrow\quad
+  \delta S_{\rm eff}[\psi_i] = 0.
+  \label{eq:app_branch_ext}
+\end{equation}
+The effective functional $S_{\rm eff}$ depends on the specific branch
+and its collective variables; its explicit form is determined by EFT
+matching, not by the schematic argument alone.
+
+\paragraph{Step 4. Interpretation.}
+Equation~\eqref{eq:app_branch_ext} is the reduction statement behind
+the claim that extremal dynamics is not an independent postulate at
+the emergent level.
+The familiar principle of extremal action for effective fields
+(classical trajectories, EFT equations of motion, or macroscopic
+field equations) is inherited from~\eqref{eq:app_medium_ext}, not
+independently postulated.
+
+\paragraph{Status and limitations.}
+This chain is a Level~B structural argument, not a Level~A theorem,
+because:
+\begin{enumerate}
+  \item The explicit form of $S_{\rm eff}[\psi_i]$ must still be
+    determined for each branch;
+  \item The saddle-point dominance structure (which physical extrema
+    are selected in the coherent or macroscopic sector) requires
+    additional analysis beyond the quadratic EFT.
+\end{enumerate}
+The full constructive derivation of all later extremal principles
+from the microscopic Euclidean functional remains an open problem.
 
 % ------------------------------------------------------------
 \section{Phase Periodicity, Winding Sectors, and the Action Scale $S_0$}
