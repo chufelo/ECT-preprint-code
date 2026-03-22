@@ -1835,6 +1835,14 @@ Unlike Einstein--aether and Horava--Lifshitz, the anisotropy is
 entirely spontaneous. Unlike CDT, geometry is secondary to field~$\Phi$.
 Unlike Hartle--Hawking, the Euclidean arena is fundamental.
 
+An additional ECT-specific feature distinguishes it from generic
+internal-symmetry-breaking theories: because the ordered quantity
+$Q_A=\partial_A\Phi$ is an exact one-form rather than an independent
+multiplet, the orientation sector is subject to an integrability
+constraint that reduces the naive $O(4)/O(3)$ Goldstone content
+(Appendix~\ref{app:goldstone_integrability}).  This has no analogue
+in standard internal SSB frameworks.
+
 
 % ============================================================
 % SECTION 4: SPECTRUM AND EFFECTIVE DYNAMICS OF THE BROKEN PHASE
@@ -2439,6 +2447,25 @@ Within the present ECT-basics framework, the coherent sector already
 singles out a distinguished action scale $S_0$.
 The role of this subsection is to clarify why $S_0$ is the natural
 ECT precursor of $\hbar$.
+
+\paragraph{Role of S6 (multiplicity) in motivating $S_0$.}
+Ontological property~S6 states that no configuration of the
+$\Phi$-medium is privileged a priori.
+Among all configurations compatible with the ordered branch~(P4)
+and the smooth coherent sector~(BR1), there is therefore no
+preferred action scale except those singled out by
+\emph{structural necessity}.
+The phase periodicity $\theta\sim\theta+2\pi$ of the coherent
+phase variable (derived from BR1 and single-valuedness) forces
+exactly one preferred action quantum:
+\begin{equation}
+  S_0 = \frac{S_{\rm loop,min}}{2\pi},
+\end{equation}
+the minimal loop action per $2\pi$ winding.
+Because no smaller non-zero loop action is consistent with
+single-valuedness~(BR1), and because S6 forbids privileging
+any larger multiple, $S_0$ is the \emph{unique} distinguished
+action scale in the coherent sector~(Level~B).
 
 \paragraph{Coherent phase variable.}
 In the smooth coherent branch~(BR1), the collective state is
@@ -4179,9 +4206,11 @@ as an Euler--Lagrange equation of $S_{\rm ECT+f}$;
 the fermion field $\Psi$ and its couplings are additional
 inputs not contained in the bare scalar condensate action (Level~B/C):
 \begin{enumerate}
-\item The condensate vacuum $\langle\Phi\rangle=v_0$,
-$\langle n_A\rangle=\delta_{Aw}$ is determined by
-Eqs.~\eqref{eq:ECT_action}--\eqref{eq:EMT_n}.
+\item The ordered-branch vacuum is characterised by
+$\langle\partial_A\Phi\rangle=u_0\,\delta_{Aw}$,
+where $u_0\sim\bar{M}_{\rm Pl}$ is the UV condensate amplitude
+(Section~\ref{sec:three_scales}; note that $n_A=\partial_A\Phi/|\partial\Phi|$
+is a derived variable, not an independent field).
 \item Fermions $\Psi$ are introduced as additional fields transforming
 under the spinor representation of the residual O(3) symmetry
 (or its Lorentzian continuation $SL(2,\mathbb{C})$).
@@ -13537,9 +13566,10 @@ between parallel plates separated by $a$ is
   -\frac{\pi^2}{120}\,\frac{\hbar c}{a^4}\,.
   \label{eq:casimir_qed}
 \end{equation}
-For boundaries that \emph{do} reflect the ECT Goldstone modes, three
-massless Goldstone scalars with Dirichlet boundary conditions
-contribute independently:
+For boundaries that reflect the minimal ECT soft-orientation sector,
+the three components of the minimal orientation EFT with Dirichlet
+boundary conditions contribute independently~(Level~B, minimal EFT;
+see Appendix~\ref{app:goldstone_integrability}):
 \begin{equation}
   \boxed{%
   \frac{F}{A}\bigg|_{\rm ECT}
@@ -13551,7 +13581,8 @@ contribute independently:
   \label{eq:casimir_ect}
 \end{equation}
 which is $3/2$ of the QED result.  This follows from zeta-function
-regularisation \cite{BirrellDavies1982} of three independent scalar fields:
+regularisation~\cite{BirrellDavies1982} of three scalar field components
+of the minimal soft-orientation EFT:
 \begin{equation}
   E_0^{\rm ren}(a) \;=\; -3\times\frac{\pi^2}{720}\,\frac{\hbar c_*\,A}{a^3}
   \;\implies\;
@@ -19525,9 +19556,9 @@ which determines dissipation and noise kernels in the reduced dynamics.
 In the simplest closure one assumes a smooth positive spectral density
 and, in the many-mode regime, an effectively Markovian coarse-grained
 behaviour.
-For a three-dimensional Goldstone-like environment a super-ohmic scaling
-$J(\omega)\propto\omega^4$ is structurally natural~(Level~A from the
-geometry of the mode density).
+For a three-dimensional soft-orientation-like environment a super-ohmic
+scaling $J(\omega)\propto\omega^4$ is structurally natural~(Level~A from
+the geometry of the mode density in the minimal orientation EFT).
 What is Level~B is the specific low-frequency closure used in the main
 text, including the effective ohmic/Markov approximation and the
 corresponding explicit entropy-growth formula~\eqref{eq:qs_entropy_explicit}.
