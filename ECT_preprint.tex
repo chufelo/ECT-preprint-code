@@ -1328,6 +1328,10 @@ Level~Open).  The subsequent broken-phase analysis
 does not require the microscopic form of $P(X)$ to be fixed completely.
 It depends only on the existence of the ordered branch, its collective
 infrared variables, and the broken-phase EFT parameters $(\alpha,\beta)$.
+The admissibility of the ordered branch as a physical realisation
+is guaranteed by the structural property~S7 of the $\Phi$-medium,
+while non-uniform ordered backgrounds are structurally admissible
+by~S8 and~P5.
 
 \subsection{Collective variables and the ordered-branch infrared EFT}
 \label{sec:ordered_branch_eft}
@@ -1833,6 +1837,70 @@ The orientation variable belongs to the vacuum level of description~(P4);
 it is not a second fundamental microscopic degree of freedom
 and does not appear in the fundamental action.
 
+
+\subsection{Sector map: amplitude, orientation, and macroscopic
+\texorpdfstring{$\phi$}{phi}-sector}
+\label{sec:sector_map}
+
+Three qualitatively distinct objects must be kept clearly separate
+throughout the rest of the development.
+
+\paragraph{Amplitude mode $\sigma$ (radial fluctuation).}
+A fluctuation of $|\partial\Phi|$ around the uniform vacuum $u_0$.
+\begin{itemize}
+  \item Nature: fluctuation of the condensate amplitude in the UV.
+  \item Mass scale: heavy, with the characteristic radial scale
+    set by the bare condensate potential
+    ($m_\sigma^2 \sim V''(\phi_0)$; cf.~\eqref{eq:sigma_mass}).
+    Its precise matching to the ordered branch remains EFT-level.
+  \item Role: integrates out at $E \ll m_\sigma$; sets the UV cutoff
+    of the condensate EFT; analogue of a ``Planck-scale Higgs''.
+  \item Not observed directly; stabilises the vacuum.
+\end{itemize}
+
+\paragraph{Orientation modes $\pi^i$ (Goldstone sector).}
+Soft fluctuations of the direction $n_A$ on the vacuum manifold
+$S^3 \simeq O(4)/O(3)$.
+\begin{itemize}
+  \item Nature: in the minimal broken-generator counting,
+    three soft orientation modes are expected from $O(4)\to O(3)$
+    (Level~B, minimal scheme).
+  \item Mass: massless in the minimal broken-phase EFT at the present level
+    of analysis; whether all such modes remain independent requires the
+    deferred inverse-Higgs analysis (open).
+  \item Dispersion: relativistic linear dispersion in the minimal
+    sigma-model EFT, $\omega^2=c_\pi^2k^2$, with $c_\pi\approx c_*$
+    at the level of EFT matching assumption~(Level~B).
+  \item Statistics: bosonic in the present broken-phase EFT description.
+  \item Role: candidate long-wavelength soft sector associated with
+    orientational distortions of the ordered branch; any dark-matter
+    interpretation requires an additional mass-generation mechanism
+    beyond P1--P5~(open).
+\end{itemize}
+
+\paragraph{Macroscopic $\phi$-sector (condensate background variation).}
+Slow classical spatial variations of the ordered background on galactic
+and cosmological scales.
+\begin{itemize}
+  \item Nature: a slow classical infrared background sector rather
+    than a UV quantum excitation.
+  \item Characteristic scale: kpc--Gpc (galactic to cosmological).
+  \item Role: gives rise to $G_{\rm eff}(\mathbf{x})$ and the
+    macroscopic gravitational closure~(Section~\ref{sec:macroscopic}).
+  \item Relation to $\sigma$: distinct---$\sigma$ is a UV condensate
+    fluctuation; the $\phi$-sector is a classical IR background
+    variation. They must not be identified.
+\end{itemize}
+
+\medskip
+\noindent\textbf{Key consequence.}
+The rotation-curve success of ECT~(Section~\ref{sec:macroscopic})
+uses only the $\phi$-sector; it makes no assumption about Goldstone
+modes $\pi^i$.
+Conversely, any dark-matter or cluster phenomenology invoking $\pi^i$
+must not be conflated with the $\phi$-sector.
+The two sectors are physically, kinematically, and scale-wise distinct.
+
 \subsection{Mode classes and the Goldstone analysis}
 \label{sec:mode_classes}
 
@@ -1867,8 +1935,17 @@ whereby some modes become dependent.
 A detailed analysis for the $O(4)\to O(3)$ case is deferred.
 In the present work we use the minimal counting scheme.
 
-The effective action for the orientation field (Appendix~\ref{app:sigma_model}):
+\paragraph{Stiffness of the orientation sector.}
+\label{sec:goldstone_stiffness}
+From the ordered-branch infrared EFT~\eqref{eq:ordered_branch_euclidean_eft},
+the coefficient $Z_n$ of the $(\partial_A n_B)^2$ term at the uniform
+background $u=u_0$ defines the orientation stiffness:
 \begin{equation}
+  \kappa_n = Z_n\,u_0^2.
+\end{equation}
+The effective action for the orientation fluctuations is then
+\begin{equation}
+  \label{eq:Sn_quadratic}
   S_n^{(2)} = \frac{\kappa_n}{2}\int d^4X\,\partial_B\,\delta n_i\,\partial^B\,\delta n_i,
 \end{equation}
 giving equation of motion $\partial_B\partial^B\,\delta n_i=0$ and dispersion
@@ -1877,7 +1954,8 @@ giving equation of motion $\partial_B\partial^B\,\delta n_i=0$ and dispersion
   \omega^2 = c_n^2 k^2,\qquad c_n\approx c_*
   \quad\text{(EFT matching assumption)}.
 \end{equation}
-Three massless orientation modes, no tachyons.
+At the present stage, $Z_n$ is an EFT coefficient of the ordered branch.
+Its explicit matching to the bare condensate parameters of~P3 remains open.
 
 \paragraph{Coherent phase variable $\theta$.}
 Within the smooth coherent branch~(BR1), the effective order parameter
@@ -1886,6 +1964,46 @@ The variable~$\theta$ carries the topological content and is
 not a fluctuation of the real field~$\Phi$~(P3).
 
 \subsection{EFT quadratic action for fluctuations}
+\subsection{Physical roles of the Goldstone sector}
+\label{sec:goldstone_roles}
+
+\paragraph{Are the Goldstone modes eaten?}
+In the Standard Model, Goldstone modes acquire mass by being ``eaten''
+by gauge bosons (Higgs mechanism), which requires the Goldstone modes
+to be charged under a \emph{local} (gauge) symmetry.
+In ECT the residual symmetry $O(3)$ is \emph{global} by postulates
+P1--P5: no local gauge structure is introduced at the foundational
+level. Therefore no Higgs-type eating mechanism is present at the
+foundational P1--P5 level.
+Within the minimal broken-phase EFT, the soft orientation modes remain
+explicit degrees of freedom rather than being absorbed by gauge fields.
+A complete counting of independent propagating modes is deferred
+pending the inverse-Higgs analysis.
+
+The connection to electroweak gauge bosons $W^\pm$, $Z$ requires
+a second condensate scale $v_2 \sim 246$~GeV and the localisation
+of $O(3)\cong SU(2)$ at that scale. This is structurally motivated
+by the algebraic isomorphism $\mathfrak{o}(3)\cong\mathfrak{su}(2)$,
+but the dynamical mechanism remains an open problem~(OP-EW).
+
+\paragraph{Goldstone modes and ultra-light dark sectors.}
+The soft orientation sector of ECT naturally suggests an ultra-light
+bosonic sector.
+However, the minimal broken-phase EFT leaves these modes massless.
+A fuzzy-dark-matter interpretation would require a specific
+pseudo-Goldstone mass-generation mechanism producing an ultra-light
+scale (observationally of order $10^{-22}$~eV for kpc coherence).
+Such a mechanism is not contained in P1--P5 and remains open~(OP-GM).
+
+\paragraph{Coupling to matter.}
+Through the fifth-force sector $\mathcal{L}_5 = \beta\bar\Psi\gamma^A n_A\Psi$,
+orientation fluctuations couple to fermionic matter in a Planck-suppressed
+way~(Level~B).
+This coupling is too weak to affect rotation curves directly, but may
+be relevant for precision fifth-force tests
+(Section~\ref{sec:fifth_force}).
+
+
 \label{sec:eft_quadratic}
 
 \textit{Status: EFT consequence (Theorem~\ref{thm:tensor_uniqueness}
@@ -1965,6 +2083,18 @@ Free Hamiltonian $H\geq 0$~\eqref{eq:H_free}
   & Level~A (quadratic) & Canonical normalisation; no tachyon/ghost \\
 Identification of $m_{\rm eff}^2$ with $V''(\phi_0)$
   & Open (OP-grad) & Requires explicit EFT matching \\
+Orientation-sector stiffness $\kappa_n = Z_n u_0^2$
+  & Level~B (EFT) & Ordered-branch EFT~\eqref{eq:Sn_quadratic} \\
+Soft orientation mode count: minimal scheme $N_G^{\rm min}=3$
+  & Level~B (minimal scheme) & $O(4)/O(3)$ counting; inverse Higgs not analysed \\
+Orientation-mode dispersion $\omega^2=c_\pi^2k^2$, $c_\pi\approx c_*$
+  & Level~B (EFT) & Sigma-model EFT + matching assumption \\
+No Higgs-type eating at the P1--P5 level
+  & Level~B (structural) & No local gauge structure in foundational sector \\
+Pseudo-Goldstone mass mechanism
+  & Open (OP-GM) & Requires explicit breaking source beyond P1--P5 \\
+Relation to electroweak gauge/Higgs sector
+  & Open (OP-EW) & Requires second condensate scale and localisation \\
 \hline\hline
 \end{tabular}
 \end{center}
@@ -1988,6 +2118,34 @@ After establishing the postulates and the broken-phase dynamics,
 we systematically distinguish: which parameters are microscopic,
 which are effective, which are fixed by observational matching,
 and which are not yet derived.
+
+
+\subsection{Three condensate scales: structural open problem}
+\label{sec:three_scales}
+
+ECT involves three qualitatively distinct characteristic scales:
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lll}
+\hline
+Scale & Characteristic value & Emergent physics \\
+\hline
+$u_0$ & Planck-scale condensate amplitude & $G_N$, $\hbar$, $c_*$ \\
+$v_2$ & electroweak-scale second condensate & $W^\pm$, $Z$, Higgs (SM) \\
+galactic IR scale & kpc-scale variation length & rotation curves, $G_{\rm eff}(r)$ \\
+\hline
+\end{tabular}
+\end{center}
+
+The multiplicity~S6 and topological completeness~S9 of the
+$\Phi$-medium make a multi-scale structure structurally admissible,
+but do not by themselves explain the specific hierarchy between these
+scales.
+
+\medskip
+\noindent\textbf{Status:}
+the three-scale hierarchy is a structural open problem~(OP-scales) of ECT.
+It is not resolved by P1--P5 alone.
 
 \subsection{Parameter hierarchy by level of description}
 \label{sec:param_hierarchy}
@@ -2329,7 +2487,10 @@ The derived coherent-sector rule~BR1 restricts the present section to the
 \emph{defect-free} smooth coherent sector: configurations with integer
 winding numbers, non-vanishing amplitude~$\rho$, and smooth orientation
 variable~$n_A$.
-This restriction does not forbid defect configurations ontologically.
+This restriction does not forbid defect configurations ontologically:
+the topological completeness property~S9 ensures that all topological
+sectors compatible with the vacuum manifold $O(4)/O(3)\simeq S^3$
+remain admissible parts of the theory.
 Configurations not belonging to the coherent sector include:
 \begin{itemize}
   \item \textit{Vortex cores}: configurations with $\rho=0$ where
@@ -15823,6 +15984,26 @@ Quadratic action:
   S_n^{(2)}=\frac{\kappa_n}{2}\int d^4X\,\partial_B\,\delta n_i\,\partial^B\,\delta n_i.
 \end{equation}
 
+\subsection*{Derivation of $\kappa_n$ from the ordered-branch EFT}
+
+Starting from the ordered-branch infrared EFT~\eqref{eq:ordered_branch_euclidean_eft}
+at uniform background $u=u_0$, $n_A=\delta_{Aw}$, we expand
+$n_A = \delta_{Aw} + \delta n_A$ with $|\delta n_A| \ll 1$.
+The unit constraint $n_A n_A = 1$ gives
+$\delta n_w = -\frac{1}{2}(\delta n_i)^2 + \mathcal{O}(|\delta n|^3)$
+at quadratic order, leaving three independent components $\delta n_i$, $i=1,2,3$.
+
+Substituting into the $Z_n$-term of~\eqref{eq:ordered_branch_euclidean_eft}:
+\begin{equation}
+  \frac{Z_n}{2}u_0^2(\partial_A n_B)(\partial_A n_B)
+  \;\xrightarrow{\text{quadratic}}\;
+  \frac{\kappa_n}{2}\,(\partial_A \delta n_i)(\partial_A \delta n_i),
+  \qquad \kappa_n = Z_n u_0^2.
+\end{equation}
+At the present stage $Z_n$ is an EFT coefficient of the ordered branch;
+its explicit matching to the bare parameters $(\mu,\lambda)$ of~P3
+remains an open problem.
+
 \subsection*{Equation of motion and dispersion}
 
 \begin{equation}
@@ -15834,8 +16015,10 @@ In the Lorentzian sector ($w\to -ic_n t$):
   \partial_t^2\,\delta n_i - c_n^2\nabla^2\,\delta n_i=0,\qquad
   \omega^2=c_n^2 k^2.
 \end{equation}
+The identification $c_n \approx c_*$ is used at the level of EFT
+matching, but is not yet a strict theorem of the present derivation.
 Three massless orientation modes, consistent with the Goldstone theorem
-for $O(4)/O(3)$.
+for $O(4)/O(3)$ in the minimal counting scheme.
 
 \subsection*{Coherent branch selection and the horizon problem}
 \label{app:horizon_ect_appendix}
