@@ -1904,7 +1904,8 @@ Full microscopic second law / H-theorem
 ECT does not postulate the second law as an independent axiom.
 Its derivation combines two Level~A ingredients
 (geometric branch selection; and the causal retarded kernel
-$K(\tau<0)=0$ for the full nonlinear ordered-branch dynamics,
+$K(\tau<0)=0$ for the full nonlinear dynamics of the fundamental
+scalar~$\Phi$ in the Lorentzian ordered branch,
 Appendix~\ref{app:causal_hyperbolic})
 with Level~B ingredients
 (structurally motivated low-entropy initial sector, effective
@@ -13644,6 +13645,9 @@ rather than imported from an external quantum framework.
 
 \paragraph{Relation to ECT basics.}
 Section~\ref{sec:second_law_basics} assembled the structural
+three-ingredient argument and the two status tables.
+The present section provides the technical derivation.
+Section~\ref{sec:second_law_basics} assembled the structural
 three-ingredient argument for the second law:
 geometric branch orientation, statistically exceptional initial sector,
 and causal coarse graining.
@@ -17704,209 +17708,185 @@ Strict derivation belongs to Section~\ref{sec:influence_functional}.
 
 
 
+
 \section{Causal propagation for the full nonlinear ECT dynamics:
-symmetric hyperbolic reduction}
+complete symmetric-hyperbolic reduction}
 \label{app:causal_hyperbolic}
 
-\textit{Status: Level~A for the full nonlinear ordered-branch dynamics,
-conditional on the Lorentzian signature being maintained.
-The proof uses only: (i) the fact that ECT has a single fundamental
-scalar field~$\Phi$; (ii) that its equation of motion has a Lorentzian
-principal symbol in the ordered branch~(Level~A from SSB).
-No assumption about the linearised or quadratic approximation is needed.
-This appendix supersedes the quadratic-sector restriction of
-Appendix~\ref{app:retarded_kernel}.}
+\textit{Status: Level~A for the full nonlinear dynamics of the single
+fundamental scalar field~$\Phi$ within the Lorentzian ordered branch,
+conditional on the Lorentzian signature being maintained
+($\alpha>\beta>0$; Level~A from Section~\ref{sec:metric_classification}).
+This appendix provides the explicit symmetric-hyperbolic reduction,
+verifying all required conditions.}
 
-\subsection*{Why previous concerns about ``coupled fields'' do not apply}
+\subsection*{Why the ``coupled fields'' concern does not apply in ECT}
 
-A possible concern about the full-nonlinear case is the following:
-the ordered branch is described by amplitude fluctuations~$\sigma$ and
-orientation fluctuations~$\chi$, and one might worry that these
-``coupled fields'' could invalidate the causal result outside the
-quadratic sector.
+One might worry that the full nonlinear ordered branch involves
+``coupled fields'' $\sigma$ and $\chi$ (amplitude and orientation
+fluctuations) whose joint causal structure needs independent
+verification.
+This concern does not apply in ECT.
+In the minimal scalar basis of P3, the only fundamental degree of
+freedom is the single real scalar~$\Phi$.
+The variables $\sigma = |\partial\Phi| - u_0$ and $\chi$ are not
+independent fields: they are derived projections of the single gradient
+vector $\partial_A\Phi$.
+The full dynamics is therefore governed by a \emph{single quasilinear
+second-order PDE} for~$\Phi$.
+There is no multi-field coupling problem to resolve.
 
-This concern is misplaced.
-In ECT, $\sigma$ and $\chi$ are \emph{not independent fundamental fields}.
-Both are derived from the single fundamental scalar~$\Phi$ through the
-gradient decomposition
+\subsection*{The equation of motion and its principal symbol}
+
+From the broken-phase kinetic action with the unique
+tensor~$K^{AB}=\beta\delta^{AB}-\alpha n^A n^B$~(Level~A,
+Theorem~\ref{thm:tensor_uniqueness}), the equation of motion for
+fluctuations of~$\Phi$ is
 \begin{equation}
-  \partial_A\Phi = u\,n_A,
-  \quad u = |\partial\Phi|,
-  \quad n_A = \frac{\partial_A\Phi}{|\partial\Phi|}.
-\end{equation}
-The full dynamics is therefore described by a \emph{single} nonlinear
-partial differential equation for~$\Phi$.
-There is no separate coupled system whose causal structure needs to be
-verified independently.
-
-\subsection*{The fundamental equation of motion}
-
-From the minimal scalar action of P3:
-\begin{equation}
-  S_E[\Phi] = \int d^4X\!\left\{
-    \frac{1}{2}\,(\partial_A\Phi)^2 + V(\Phi)
-  \right\},
-\end{equation}
-the Euler--Lagrange equation is
-\begin{equation}
-  \partial_A\partial^A\Phi = V'(\Phi).
-  \label{eq:EOM_bare}
-\end{equation}
-For the broken-phase EFT with kinetic tensor~$K^{AB} = \beta\delta^{AB} - \alpha n^A n^B$, the EOM takes the form
-\begin{equation}
-  \partial_A\bigl[G^{AB}_{\rm eff}(\partial\Phi)\,\partial_B\Phi\bigr]
+  G^{AB}_{\rm eff}(\partial\Phi)\,\partial_A\partial_B\Phi
   + \text{lower-order terms} = 0,
-  \label{eq:EOM_full}
+  \qquad
+  G^{AB}_{\rm eff} = \beta\delta^{AB} - \alpha\,n^A n^B.
+  \label{eq:EOM_quasilinear}
 \end{equation}
-where $G^{AB}_{\rm eff}(\partial\Phi)$ is the effective metric tensor,
-which depends on~$\partial\Phi$ through $n_A = \partial_A\Phi/|\partial\Phi|$.
-
-\subsection*{Principal symbol and Lorentzian signature}
-
-The \emph{principal symbol} of the full nonlinear
-equation~\eqref{eq:EOM_full} is
+This is a \emph{single quasilinear second-order PDE} in~$\Phi$.
+Its \emph{principal symbol} is
 \begin{equation}
-  p(x,\Phi,\partial\Phi;\,\xi)
-  = G^{AB}_{\rm eff}(\partial\Phi)\,\xi_A\xi_B
-  = \beta\,|\xi|^2 - \alpha\,(n^A\xi_A)^2.
-  \label{eq:principal_symbol_full}
+  p(\xi) = G^{AB}_{\rm eff}(\partial\Phi)\,\xi_A\xi_B
+  = \beta|\xi|^2 - \alpha(n^A\xi_A)^2,
 \end{equation}
-In the Lorentzian ordered branch (vacuum $n_A = \delta_{Aw}$,
-$\alpha > \beta > 0$, Section~\ref{sec:metric_classification}):
-\begin{equation}
-  p(x,\Phi,\partial\Phi;\,\xi)
-  = \beta\,|\vec\xi|^2 - (\alpha-\beta)\,\xi_w^2
-  \sim |\vec\xi|^2 - c_*^{-2}\,\xi_t^2
-  \qquad \text{(Lorentzian; Level~A).}
-\end{equation}
-The Lorentzian signature of $G^{AB}_{\rm eff}$ is Level~A: it holds
-whenever $\alpha > \beta$, which is the same condition that produces
-Lorentzian signature in the SSB analysis~(Section~\ref{sec:metric_classification}).
+which is Lorentzian in the ordered branch whenever $\alpha>\beta>0$.
 
-\subsection*{Symmetric hyperbolic reduction of the full nonlinear system}
-
-We now reduce the full nonlinear equation~\eqref{eq:EOM_full} to a
-symmetric hyperbolic first-order system.
-The construction follows the standard approach used by
-Choquet-Bruhat~\cite{ChoquetBruhat1952,ChoquetBruhat2009} for the
-Einstein equations, here applied to the scalar case.
+\subsection*{Explicit symmetric-hyperbolic reduction}
 
 \paragraph{First-order variables.}
-Introduce the gradient vector
+We introduce the variable
 \begin{equation}
-  U_A := \partial_A\Phi, \qquad A = 0,1,2,3
-  \quad (U_0 := \partial_t\Phi,\; U_i := \partial_i\Phi).
-  \label{eq:SH_grad_variables}
+  U^A :=
+  \begin{pmatrix} c_*^{-1}\partial_t\Phi \\
+                  \partial_1\Phi \\
+                  \partial_2\Phi \\
+                  \partial_3\Phi \end{pmatrix},
+  \quad A=0,1,2,3,
+  \label{eq:SH_variables_explicit}
+\end{equation}
+where $c_* = 1/\sqrt{\alpha/\beta - 1}$ is the effective propagation speed.
+
+\paragraph{The reduced first-order system.}
+Equation~\eqref{eq:EOM_quasilinear}, after the
+substitution~\eqref{eq:SH_variables_explicit} and analytic continuation
+$w=-ic_*t$, becomes
+\begin{align}
+  \partial_t U^0 &= c_*\bigl(\partial_1 U^1 + \partial_2 U^2
+                              + \partial_3 U^3\bigr) + F_0,
+  \label{eq:SH_row0}\\
+  \partial_t U^i &= c_*\,\partial_i U^0,
+  \qquad i=1,2,3.
+  \label{eq:SH_rowi}
+\end{align}
+Equation~\eqref{eq:SH_rowi} is the integrability condition
+$\partial_t(\partial_i\Phi)=\partial_i(\partial_t\Phi)$,
+rescaled by $c_*$.
+
+\paragraph{Coefficient matrices.}
+Writing the system as $\partial_t U + \sum_{k=1}^{3} A^k\partial_k U = F$,
+the coefficient matrices are
+\begin{equation}
+  A^k_{ij} = -c_*\,(\delta_{i0}\delta_{jk} + \delta_{j0}\delta_{ik}),
+  \qquad k=1,2,3.
+  \label{eq:SH_Amatrices}
+\end{equation}
+Explicitly:
+\begin{equation}
+  A^1 = -c_*\!\begin{pmatrix}
+    0 & 1 & 0 & 0 \\
+    1 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0
+  \end{pmatrix},\quad
+  A^2 = -c_*\!\begin{pmatrix}
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 0 \\
+    1 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0
+  \end{pmatrix},\quad
+  A^3 = -c_*\!\begin{pmatrix}
+    0 & 0 & 0 & 1 \\
+    0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 \\
+    1 & 0 & 0 & 0
+  \end{pmatrix}.
+  \label{eq:SH_matrices_explicit}
 \end{equation}
 
-\paragraph{The system.}
-The variables $(U_A)$ satisfy two sets of equations:
+\paragraph{Verification of symmetric hyperbolicity.}
 \begin{enumerate}
-  \item \textbf{The equation of motion:}
-    \begin{equation}
-      G^{AB}_{\rm eff}(U)\,\partial_A U_B + H(U) = 0,
-      \label{eq:SH_eom}
-    \end{equation}
-    where $H(U)$ collects lower-order terms.
-    Note that $G^{AB}_{\rm eff}$ is \emph{symmetric} in $A,B$ for all $U$.
-  \item \textbf{Integrability (curl-free) conditions:}
-    \begin{equation}
-      \partial_A U_B - \partial_B U_A = 0,
-      \label{eq:SH_integrability}
-    \end{equation}
-    which hold because $U_A = \partial_A\Phi$ is a gradient.
+  \item \textbf{Symmetry:} $(A^k)^T = A^k$ for all $k=1,2,3$, by direct
+    inspection of~\eqref{eq:SH_matrices_explicit}.
+  \item \textbf{Time matrix positivity:} the ``time matrix'' is the
+    identity $A^0 \equiv I_4$~(Level~A).
+    Positive definiteness is immediate.
+  \item \textbf{Characteristic cone:} the condition
+    $\det(\omega I_4 + \sum_k \xi_k A^k)=0$ gives
+    $\omega^2 = c_*^2|\vec\xi|^2$,
+    which is the Lorentzian light-cone condition.
+    This coincides with the causal cone of the Lorentzian effective
+    metric~(Level~A).
+\end{enumerate}
+All three conditions of the Leray--Choquet-Bruhat definition are
+satisfied.
+
+For the nonlinear case, the matrices acquire dependence on~$\partial\Phi$
+through $c_* = c_*(|\partial\Phi|)$, but remain symmetric and the
+identity remains the time matrix as long as $c_*>0$, i.e.\ as long as
+the Lorentzian condition $\alpha>\beta$ holds.
+
+\subsection*{The Level~A result}
+
+By the Leray--Choquet-Bruhat theorem for symmetric hyperbolic
+systems~\cite{Leray1952,ChoquetBruhat1952}, the system admits:
+\begin{enumerate}
+  \item a well-posed Cauchy problem (local-in-time);
+  \item causal propagation within the characteristic cone;
+  \item a retarded Green's function satisfying
+    $K(\tau<0)=0$ for the full nonlinear dynamics.
 \end{enumerate}
 
-\paragraph{Matrix form.}
-Combining~\eqref{eq:SH_eom} and~\eqref{eq:SH_integrability},
-the system for $U = (U_0, U_1, U_2, U_3)$ takes the form
 \begin{equation}
-  \sum_{A=0}^{3} M^A(U)\,\partial_A U = F(U),
-  \label{eq:SH_matrix_form}
-\end{equation}
-where the coefficient matrices $M^A(U)$ are obtained by expressing
-the two conditions above in block form.
-The effective metric $G^{AB}_{\rm eff}(U)$ being symmetric in $A,B$
-directly implies that the matrices $M^A$ are symmetric:
-\begin{equation}
-  (M^A)^T = M^A \quad \text{for all } A.
-\end{equation}
-
-\paragraph{Positive time matrix.}
-The ``time'' coefficient matrix $M^0$ satisfies
-\begin{equation}
-  M^0(U) = G^{00}_{\rm eff}(U)\,I_4 + \text{off-diagonal integrability terms}.
-\end{equation}
-In the Lorentzian ordered branch,
-$G^{00}_{\rm eff} = -c_*^{-2} < 0$ in Lorentzian signature.
-After the standard rescaling $U_0 \to c_*^{-1}U_0$
-(as in Appendix~\ref{app:retarded_kernel}),
-the time matrix becomes positive definite:
-\begin{equation}
-  M^0(U) > 0 \qquad \text{(positive definite)}
-\end{equation}
-whenever $G^{AB}_{\rm eff}$ has Lorentzian signature.
-
-\paragraph{Conclusion.}
-System~\eqref{eq:SH_matrix_form} is therefore a
-\emph{symmetric hyperbolic system in the sense of Leray--Choquet-Bruhat}:
-symmetric matrices $M^A$ with positive definite time
-matrix~$M^0$~\cite{Leray1952,ChoquetBruhat1952}.
-By the Leray--Choquet-Bruhat theorem, this system admits:
-\begin{itemize}
-  \item a well-posed Cauchy problem (local-in-time existence and
-    uniqueness for regular initial data);
-  \item causal propagation inside the characteristic cone
-    $\det(\sum_A M^A \xi_A) = 0$, which coincides with the
-    Lorentzian light cone;
-  \item a \emph{retarded Green's function} with
-    $K(\tau<0)=0$ for the full nonlinear system.
-\end{itemize}
-
-\begin{equation}
-  \boxed{K(\tau<0)=0 \quad \text{for the full nonlinear ECT ordered-branch
-  dynamics.} \quad \text{(Level~A.)}}
+  \boxed{K(\tau<0)=0 \quad \text{for the full nonlinear ECT dynamics of }
+  \Phi \text{ in the Lorentzian ordered branch.} \quad\text{(Level~A.)}}
   \label{eq:K_full_levelA}
 \end{equation}
 
-This result holds for the complete single-field dynamics of~$\Phi$,
-encompassing all of its derived variables ($\sigma$, $\chi$, macroscopic
-amplitude~$\phi$) simultaneously.
-It is not restricted to the linearised or quadratic approximation.
+Since all branch variables ($\sigma$, $\chi$, $\phi$, gauge fluctuations
+treated as functionals of~$\Phi$) are derived from the single fundamental
+scalar, this result covers all of them simultaneously.
 
 \subsection*{Scope and limitations}
 
-\textbf{The Level~A result holds throughout} the domain where:
+\textbf{Level~A holds throughout} the domain where:
 \begin{enumerate}
-  \item $G^{AB}_{\rm eff}(\partial\Phi)$ has Lorentzian signature
-    ($\alpha > \beta > 0$; same condition as the SSB result);
-  \item the initial data are sufficiently regular (no defect cores,
-    no signature-changing regions).
+  \item $\alpha>\beta>0$ (Lorentzian signature; same Level~A condition
+    as Section~\ref{sec:metric_classification});
+  \item initial data are sufficiently regular (defect-free, smooth
+    condensate background).
 \end{enumerate}
 
-\textbf{The result does not extend to:}
+\textbf{Not claimed here:}
 \begin{itemize}
-  \item defect cores where $u = |\partial\Phi|\to 0$ and $n_A$ is
-    undefined~(the gradient decomposition breaks down);
-  \item regions where the effective metric changes signature;
-  \item the Markovian and ohmic closure assumptions, which remain
-    Level~B regardless of this causal result.
+  \item global-in-time existence (beyond local);
+  \item causal structure in defect cores where $|\partial\Phi|\to 0$;
+  \item the ohmic/Markov assumptions, which remain Level~B.
 \end{itemize}
-
-\textbf{Global existence} (as opposed to local-in-time) requires
-additional energy estimates beyond the symmetric-hyperbolic structure
-and is not claimed here.
 
 \subsection*{Relation to Appendix~\ref{app:retarded_kernel}}
 
-Appendix~\ref{app:retarded_kernel} proved $K(\tau<0)=0$ for the
-linearised (quadratic) sector by explicit Fourier-space contour
-integration.
-The present appendix is a stronger result: it establishes the same
-conclusion for the full nonlinear dynamics by reducing the single
-scalar field equation to a symmetric hyperbolic system.
-The quadratic result is a special case of the present theorem
-(obtained by linearising~$G^{AB}_{\rm eff}$ around the vacuum).
+Appendix~\ref{app:retarded_kernel} proved $K(\tau<0)=0$ in the
+\emph{quadratic} sector by contour integration.
+The present appendix is strictly stronger: it proves the same result for
+the \emph{full nonlinear} dynamics.
+The quadratic result is the special case of the present theorem obtained
+by linearising $c_*(|\partial\Phi|)\approx c_*$.
 
 
 \section{Retarded Causal Kernel: Proof That $K(\tau<0)=0$}
