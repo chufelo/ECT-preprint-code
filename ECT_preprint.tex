@@ -2808,183 +2808,321 @@ which is not yet derived at this stage.
 \subsection{Action scale $S_0$ as the ECT precursor of $\hbar$}
 \label{sec:hbar_status}
 
-\textit{Status: layered.
-The coherent branch admits compact phase and winding structure at Level~A.
-The emergence of a distinguished pre-quantum action scale $S_0$
-is established at Level~B through the minimal nontrivial loop sector.
-The identification $S_0\leftrightarrow\hbar$ is the strongest
-structural bridge to quantum mechanics, but not yet an ultimate theorem.
-Full quantum reconstruction belongs to the later quantum programme.}
+\textit{Status: three-layered.
+Layer~1 (strict within the reduced $U(1)$-extended phase-loop EFT):
+the winding-sector action admits a sharp lower bound at fixed loop
+length, with the minimum achieved by uniform winding.
+Layer~2 (Level~B EFT input): specifying the characteristic size of an
+elementary coherent loop yields a distinguished EFT action scale
+$S_0^{\rm EFT}$.
+Layer~3 (Level~B matching): the identification
+$S_0^{\rm EFT}\leftrightarrow\hbar$ is the strongest structural bridge
+to quantum mechanics, but remains a matching statement, not a
+parameter-free derivation.}
 
 A central question for ECT is whether quantum mechanics requires the
-external introduction of Planck\'s constant, or whether a distinguished
+external introduction of Planck's constant, or whether a distinguished
 action scale already emerges within the coherent-topological branch of
 the condensate.
 The present framework supports the second interpretation:
 before identifying $\hbar$ itself, ECT already contains a natural
-\emph{pre-quantum action scale} $S_0$.
-What follows clarifies why $S_0$ arises structurally, what it means
-for the classical--quantum divide, and where the boundary between
+\emph{pre-quantum action scale} $S_0^{\rm EFT}$.
+What follows clarifies why $S_0^{\rm EFT}$ arises, what it means for
+the classical--quantum divide, and where the boundary between
 established and open results lies.
 
 ECT does not insert $S_0$ by hand to imitate quantum mechanics.
-It is the action scale associated with the smallest nontrivial
-coherent-topological cycle of the condensate, forced by phase
-single-valuedness and BR1.
+Rather, within the $U(1)$-extended phase EFT, phase single-valuedness
+and winding sectors imply a sharp action bound at fixed loop length.
+Once the characteristic size of an elementary coherent loop is
+specified, this yields a distinguished EFT action scale.
 
-\paragraph{Role of S6 (multiplicity) in motivating $S_0$.}
-Ontological property~S6 states that no configuration of the
-$\Phi$-medium is privileged a priori.
-Among all configurations compatible with the ordered branch~(P4)
-and the smooth coherent sector~(BR1), there is therefore no
-preferred action scale except those singled out by
-\emph{structural necessity}.
-The phase periodicity $\theta\sim\theta+2\pi$ of the coherent
-phase variable (derived from BR1 and single-valuedness) forces
-exactly one preferred action quantum:
-\begin{equation}
-  S_0 = \frac{S_{\rm loop,min}}{2\pi},
-\end{equation}
-the minimal loop action per $2\pi$ winding.
-Because no smaller non-zero loop action is consistent with
-single-valuedness~(BR1), and because S6 forbids privileging
-any larger multiple, $S_0$ is the \emph{unique} distinguished
-action scale in the coherent sector~(Level~B).
+% ============ LAYER 1 ============
 
-\paragraph{Coherent phase variable.}
+\paragraph{Layer~1: compact phase and the variational bound
+(strict within the reduced $U(1)$-extended phase-loop EFT).}
+
+\emph{Coherent phase variable.}
 In the smooth coherent branch~(BR1), the collective state is
-characterised not only by an amplitude but also by a phase-like
-variable~$\theta$.
-Because the coherent state is physically single-valued, this phase is
-defined only modulo a full winding:
+characterised not only by an amplitude $\rho$ but also by a
+phase-like variable~$\theta$.
+Because the coherent state is physically single-valued, this phase
+is defined only modulo a full winding:
 \begin{equation}
   \theta \sim \theta + 2\pi.
   \label{eq:theta_periodicity}
 \end{equation}
-This is a structural property of the coherent branch and its winding
-sectors, not yet a full quantum-mechanical postulate~(Level~B).
+It should be noted that the real scalar field $\Phi$ of P3 does not
+by itself carry a compact $U(1)$ phase variable.
+The extension to $\Phi_{\rm eff}=\rho\,e^{i\theta}$ is an additional
+modelling step for the coherent charged sector.
+Accordingly, the periodicity $\theta\sim\theta+2\pi$ and the
+associated winding number are strict statements within the
+$U(1)$-extended phase EFT, not direct topological consequences of
+the vacuum manifold $O(4)/O(3)\simeq S^3$
+(which has $\pi_1(S^3)=0$).
 
-\paragraph{Dimensionless phase and the action scale.}
-If the coherent phase is controlled by an action-like functional, the
-natural dimensionless combination takes the form
+\emph{Phase action.}
+At wavelengths large compared to the radial-core scale, and within
+the smooth coherent sector, the radial mode is approximately frozen
+and the effective dynamics is dominated by the phase.
+We write the reduced phase action in the schematic EFT form
 \begin{equation}
-  \exp\!\left(i\,\frac{S}{S_0}\right),
-  \label{eq:phase_action_ratio}
+  S_\theta[\theta]
+  = \frac{K_\theta}{2}
+    \int d^4X\;(\partial_A\theta)^2,
+  \label{eq:S_theta_layer1}
 \end{equation}
-where $S_0$ is the characteristic action scale of the coherent sector.
-This identification of phase with action-ratio is a structural
-assumption at Level~B, not yet derived from P1--P5 alone;
-see Appendix~\ref{app:action_scale_S0} for the explicit chain.
-The single-valuedness condition~\eqref{eq:theta_periodicity} then
-implies
+with $K_\theta\sim v_0^2$ in the simplest realisation.
+
+\emph{Sharp lower bound on loop action
+(Cauchy--Schwarz inequality).}
+Consider a closed coherent loop $\gamma$ of proper length $L$
+in the phase EFT with winding number
+$n[\gamma]=\frac{1}{2\pi}\oint_\gamma\partial_\ell\theta\,d\ell$.
+The reduced 1D action along the loop is
 \begin{equation}
-  \Delta S = 2\pi n\,S_0, \qquad n\in\mathbb{Z}.
-  \label{eq:action_quantisation_loops}
+  S_{\rm loop}[\theta]
+  = \frac{K_\theta}{2}\oint_\gamma d\ell\;
+    (\partial_\ell\theta)^2.
+  \label{eq:S_loop_def}
 \end{equation}
-The coherent branch therefore naturally organises non-trivial phase
-cycles into integer winding sectors of the action.
-
-\paragraph{Minimal non-trivial action cycle.}
-The smallest non-trivial coherent loop corresponds to $n=1$:
+By the Cauchy--Schwarz inequality applied to the constant function
+$f=1$ and $g=\partial_\ell\theta$:
 \begin{equation}
-  S_{\rm loop,min} = 2\pi S_0.
-  \label{eq:Sloop_min_hbar}
+  \oint d\ell\;(\partial_\ell\theta)^2
+  \;\geq\;
+  \frac{1}{L}\left(\oint d\ell\;\partial_\ell\theta\right)^{\!2}
+  = \frac{(2\pi n)^2}{L},
+  \label{eq:CS_inequality}
 \end{equation}
-This is consistent with the minimal winding sector of the coherent
-branch as stated in~BR1.
-In this sense $S_0$ is not an arbitrary parameter, but the elementary
-action scale associated with phase periodicity and winding
-structure~(Level~B).
+with equality if and only if $\partial_\ell\theta=\text{const}$
+along the loop (uniform winding).
+Therefore:
+\begin{equation}
+  \boxed{S_{\rm loop}[\theta]
+  \;\geq\;
+  \frac{2\pi^2 K_\theta\,n^2}{L},
+  \qquad
+  \text{equality at uniform winding.}}
+  \label{eq:loop_bound}
+\end{equation}
+This is a strict variational result within the phase EFT:
+the minimiser of loop action at fixed length and winding is the
+uniform-gradient configuration, and the minimum scales as
+$n^2/L$.
 
-The explicit first-principles estimate of $S_0$ from the effective
-phase dynamics requires a reduced 1D loop action whose construction
-goes beyond the present quadratic EFT; the calculation is deferred
-to Appendix~\ref{app:Sloop_calc}.
+\emph{Important structural remark.}
+Equation~\eqref{eq:loop_bound} provides a sharp lower bound for
+each fixed $L$, but because the bound falls as $1/L$,
+$S_{\rm loop}\to 0$ as $L\to\infty$.
+The pure phase topology alone does \emph{not} yield a nonzero
+global minimum of the loop action; additional physical input is
+needed to obtain a distinguished action scale.
 
-\paragraph{Relation to $\hbar$.}
+% ============ LAYER 2 ============
+
+\paragraph{Layer~2: elementary-loop scale and the distinguished
+action parameter (Level~B).}
+
+\emph{Why the fixed-$L$ bound is not yet a nonzero global minimum.}
+Equation~\eqref{eq:loop_bound} gives the minimum action in a
+fixed length-and-winding sector, but because the bound falls as
+$1/L$, it does not define a nonzero global minimum when the loop
+length is allowed to vary.
+
+\emph{Elementary coherent loop size.}
+To obtain a distinguished EFT action scale, one must specify the
+characteristic size of an elementary coherent loop.
+The natural choice is the radial-core scale: for loops much larger
+than $\xi_{\rm core}\sim m_\varphi^{-1}$, the smooth coherent
+description breaks down and the loop can no longer be treated as a
+single elementary coherent object within the reduced phase EFT.
+The characteristic elementary loop length is therefore
+\begin{equation}
+  L_{\rm core}\sim 2\pi\,\xi_{\rm core}
+  = \frac{2\pi}{m_\varphi}.
+  \label{eq:Lcore}
+\end{equation}
+This is a Level~B EFT input: it uses the radial-mode correlation
+length from the broken-phase potential, not topology alone.
+
+\emph{Distinguished EFT action scale.}
+Evaluating the fixed-$L$ lower bound~\eqref{eq:loop_bound} at the
+elementary-loop size with $n=1$ gives the characteristic
+elementary-loop action
+\begin{equation}
+  S_{\rm elem}
+  = \frac{2\pi^2 K_\theta}{L_{\rm core}}
+  = \pi\,K_\theta\,m_\varphi.
+  \label{eq:S_elem}
+\end{equation}
+We then define the associated EFT action scale by
+\begin{equation}
+  \boxed{S_0^{\rm EFT}
+  \;\equiv\;
+  \frac{S_{\rm elem}}{2\pi}
+  = \frac{K_\theta\,m_\varphi}{2}.}
+  \label{eq:S0_EFT}
+\end{equation}
+This is a distinguished EFT scale associated with the elementary
+coherent loop, not the global variational minimum over arbitrary
+loop lengths~(Level~B).
+
+\emph{Self-consistency, not prediction.}
+The relation~\eqref{eq:S0_EFT} should be read as a
+self-consistency condition: if $S_0^{\rm EFT}$ is to be identified
+with $\hbar$, then the condensate parameters must satisfy
+$K_\theta\,m_\varphi/2\approx\hbar$.
+This is analogous to the BCS gap equation, where the
+superconducting gap $\Delta$ is determined self-consistently
+rather than predicted from first principles.
+The content of ECT is not that $\hbar$ is computed from nothing,
+but that the EFT action scale identified with $\hbar$ and the
+gravitational coupling $G_N$ are both controlled by the same
+condensate parameters:
+\begin{equation}
+  S_0^{\rm EFT} = \frac{K_\theta\,m_\varphi}{2},
+  \qquad
+  G_N = \frac{c_*^4}{8\pi\,M_G^2},
+  \label{eq:hbar_GN_same_condensate}
+\end{equation}
+where $M_G$, $K_\theta$, $m_\varphi$, and $c_*$ are all functions
+of $(v_0,\lambda,\alpha,\beta)$.
+The existence of such a common parametric origin is a nontrivial
+structural result, even though the individual values require matching.
+
+% ============ LAYER 3 ============
+
+\paragraph{Layer~3: identification with $\hbar$ (Level~B matching).}
+
 In ordinary quantum theory, $\hbar$ is the quantity that renders the
-action dimensionless in the phase factor.
-ECT reproduces the same structural role through $S_0$.
-The natural identification is therefore
+action dimensionless in the phase factor
+$\mathcal{A}\sim e^{iS/\hbar}$.
+ECT reproduces the same structural role through $S_0^{\rm EFT}$:
 \begin{equation}
-  S_0 \;\text{ is the ECT precursor of }\; \hbar,
+  S_0^{\rm EFT} \;\text{ is the ECT precursor of }\; \hbar.
   \label{eq:S0_precursor_hbar}
 \end{equation}
-or, as a working identification,
+The working identification is
 \begin{equation}
-  \hbar \;\leftrightarrow\; S_0
+  \hbar \;\leftrightarrow\; S_0^{\rm EFT}
   \label{eq:hbar_S0_identification}
 \end{equation}
 (Level~B: strongly motivated structural identification, not yet a
 strict theorem).
 
+\emph{Why this is not yet Level~A.}
+To promote the identification to Level~A, one would need to
+derive from ECT not just a number with units of action, but the
+full structural role of $\hbar$:
+\begin{enumerate}[label=(\roman*)]
+  \item a universal phase weighting
+    $\mathcal{A}\sim e^{iS/S_0^{\rm EFT}}$
+    for arbitrary histories, not only for special loops;
+  \item a composition law for coherent amplitudes;
+  \item canonical commutators normalised by $S_0^{\rm EFT}$;
+  \item ultimately, reconstruction of the Hilbert-space structure
+    and the Born rule.
+\end{enumerate}
+This is the programme of the Quantum
+Sector~(Section~\ref{sec:quantum}), not a one-line identification.
+Within that programme, partial results are already
+available~(Sections~\ref{sec:qs_phase_dynamics}--\ref{sec:qs_ccr}),
+but the full reconstruction is not yet complete.
+
+\emph{Potential route toward Level~A.}
+A complete promotion of $S_0^{\rm EFT}=\hbar$ to Level~A would
+require a reconstruction programme consisting of at least the
+following steps:
+(a)~derivation of a universal complex amplitude
+functional from the coherent branch;
+(b)~proof of a composition rule for amplitudes (multiplication
+of phase factors);
+(c)~establishment of reflective positivity or an equivalent
+reconstruction condition leading to Hilbert-space structure;
+(d)~derivation of the commutator normalisation from the
+same $S_0^{\rm EFT}$;
+(e)~demonstration that no other action scale is consistent with
+these structures.
+Such a programme goes substantially beyond the scope of the
+present paper, but the three-layered result established
+here---sharp variational bound, physically motivated
+elementary-loop scale, and common parametric origin with
+$G_N$---provides the structural foundation on which such a
+reconstruction could be built.
+
 \paragraph{Relation to the classical limit and variational dynamics.}
-The emergence of $S_0$ is fully compatible with the variational principle.
-At the fundamental level, realised configurations remain extremals of
-$S_E[\Phi]$~(DP; Section~\ref{sec:noether}).
-What $S_0$ adds is a sensitivity scale for coherent phase relations:
-when action differences satisfy $|\Delta S|\gg S_0$, relative phase
-oscillations become rapidly varying and an extremal, effectively classical
-description dominates; when $|\Delta S|\sim S_0$, phase differences cannot
-be ignored and interference between coherent histories becomes structurally
-relevant.
-Thus $S_0$ separates the extremal/classical regime from the phase-sensitive
-quantum regime of the branch, without contradicting the underlying
+The emergence of $S_0^{\rm EFT}$ is fully compatible with the
+variational principle.
+At the fundamental level, realised configurations remain extremals
+of $S_E[\Phi]$~(DP; Section~\ref{sec:noether}).
+What $S_0^{\rm EFT}$ adds is a sensitivity scale for coherent phase
+relations: when action differences satisfy
+$|\Delta S|\gg S_0^{\rm EFT}$, relative phase oscillations become
+rapidly varying and an extremal, effectively classical description
+dominates; when $|\Delta S|\sim S_0^{\rm EFT}$, phase differences
+cannot be ignored and interference between coherent histories
+becomes structurally relevant.
+Thus $S_0^{\rm EFT}$ separates the extremal/classical regime from
+the phase-sensitive regime, without contradicting the underlying
 variational dynamics.
 
 \paragraph{Coarse graining and emergent classicality.}
-If branch histories are tracked at a resolution comparable to $S_0$,
-relative phases matter and quantum interference is expected.
+If branch histories are tracked at a resolution comparable to
+$S_0^{\rm EFT}$, relative phases matter and quantum interference is
+expected.
 If the description is coarse-grained over many branch sectors---for
-instance when the environment has many degrees of freedom~($N_{\rm eff}\gg1$)
-as in Section~\ref{sec:arrow_of_time}---those relative phases are
+instance when the environment has many degrees of
+freedom~($N_{\rm eff}\gg1$) as in
+Section~\ref{sec:arrow_of_time}---those relative phases are
 effectively washed out.
-ECT interprets classicality not as the absence of $S_0$, but as the loss
-of access to $S_0$-sensitive phase information through coarse graining.
+ECT interprets classicality not as the absence of $S_0^{\rm EFT}$,
+but as the loss of access to $S_0^{\rm EFT}$-sensitive phase
+information through coarse graining.
 
 \paragraph{Path-integral hint.}
-The most natural amplitude assignment suggested by the coherent-topological
-branch structure is
+The most natural amplitude assignment suggested by the
+coherent-topological branch structure is
 \begin{equation}
-  \mathcal{A} \sim e^{iS/S_0}.
+  \mathcal{A} \sim e^{iS/S_0^{\rm EFT}}.
   \label{eq:path_integral_hint}
 \end{equation}
-This is the direct analogue of the usual quantum phase factor, arising here
-as a structural consequence of coherent phase periodicity and topological
-winding.
 Equation~\eqref{eq:path_integral_hint} should be read as a strong
 ECT motivation for the path-integral phase, not yet as a complete
 derivation of the quantum measure or of the Born rule.
 
 \paragraph{Comparison with familiar quantisation ideas.}
-The role of $S_0$ in ECT is close in spirit to several well-known
-quantisation mechanisms, but is not identical to any of them.
 
-\emph{Bohr--Sommerfeld quantisation~\cite{LandauLifshitzQM}:}
-in semiclassical mechanics one has $\oint p\,dq = 2\pi n\hbar$.
-ECT leads instead to $\Delta S = 2\pi n S_0$~\eqref{eq:action_quantisation_loops},
-but the origin is coherent-topological phase winding of the condensate
-branch, not orbital quantisation of particle trajectories.
+\emph{Bohr--Sommerfeld
+quantisation~\cite{LandauLifshitzQM}:}
+in semiclassical mechanics one has
+$\oint p\,dq = 2\pi n\hbar$.
+ECT instead motivates a distinguished action scale through
+phase winding in the reduced coherent-loop EFT, with the elementary
+unit-winding loop carrying an action of order
+$2\pi S_0^{\rm EFT}$.
+The origin is coherent-topological phase structure rather than
+orbital quantisation.
 
-\emph{Flux quantisation and superfluid winding:}
+\emph{Flux quantisation and superfluid
+winding~\cite{Volovik2003}:}
 this is perhaps the closest analogy.
-In superfluids and superconductors, compact phase plus single-valuedness
-forces quantised circulation or flux~\cite{Volovik2003}.
-ECT uses the same structural logic, applied to the action-phase relation
-of the coherent branch rather than to a material superfluid.
+In superfluids, compact phase plus single-valuedness forces
+quantised circulation.
+ECT uses the same structural logic, applied to the action-phase
+relation of the coherent branch rather than to a material
+superfluid.
 
-\emph{Path-integral phase assignment~\cite{FeynmanHibbs1965}:}
-standard quantum theory uses $e^{iS/\hbar}$ as its fundamental phase
-weighting and takes $\hbar$ as primitive.
+\emph{Path-integral phase
+assignment~\cite{FeynmanHibbs1965}:}
+standard quantum theory uses $e^{iS/\hbar}$ and takes $\hbar$ as
+primitive.
 ECT does not assume $\hbar$ from the outset; it explains why a
-distinguished action scale should appear first from the coherent branch,
-and only then motivates identifying that scale with $\hbar$.
+distinguished action scale should appear, and only then motivates
+identifying that scale with $\hbar$.
 
 \paragraph{Status summary.}
-The correct reading is layered: ECT already explains why a
-distinguished action scale should exist and strongly motivates
-identifying it with $\hbar$; but the whole formal structure of quantum
-mechanics is not yet derived from this fact alone.
 
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
@@ -2992,26 +3130,47 @@ mechanics is not yet derived from this fact alone.
 \hline
 Statement & Status & Comment \\
 \hline
-Coherent branch admits a compact phase variable
-  & A & Coherent-topological branch / BR1 \\
+\multicolumn{3}{l}{\textit{Layer~1: reduced $U(1)$-extended
+  phase-loop EFT}} \\
+Coherent compact phase variable in the
+  $U(1)$-extended phase EFT
+  & B & Modelling extension of real $\Phi$ \\
 Single-valuedness on closed loops
-  & A & Topological consistency \\
-Nontrivial winding sectors exist
-  & A & BR1 and loop structure \\
-Minimal nonzero action scale $S_0$ structurally natural
-  & B & Distinguished by minimal winding; S6 \\
-$\theta \sim S/S_0$ (action-phase bridge)
-  & B & Structural identification \\
-$S_0$ separates classical and phase-sensitive regimes
+  & A & Topological consistency within that EFT \\
+Nontrivial winding sectors
+  & A & Integer winding number \\
+Sharp lower bound on loop action at fixed length
+  & A & Eq.~\eqref{eq:loop_bound}; Cauchy--Schwarz \\
+Uniform winding minimises the fixed-$L$ action
+  & A & Equality case of~\eqref{eq:CS_inequality} \\
+\hline
+\multicolumn{3}{l}{\textit{Layer~2: elementary-loop scale}} \\
+Elementary loop size $L_{\rm core}\sim 2\pi/m_\varphi$
+  & B & EFT input from the radial-core scale \\
+$S_0^{\rm EFT}=K_\theta\,m_\varphi/2$
+  & B & Characteristic elementary-loop action scale \\
+$S_0^{\rm EFT}$ and $G_N$ are controlled by the same
+  condensate parameters
+  & B & Structural link through $(v_0,\lambda,\alpha,\beta)$ \\
+Self-consistency: $S_0^{\rm EFT}\approx\hbar$ constrains
+  $(v_0,\lambda)$
+  & B & Analogous to BCS gap equation \\
+\hline
+\multicolumn{3}{l}{\textit{Layer~3: identification
+  with $\hbar$}} \\
+$S_0^{\rm EFT}$ separates classical and phase-sensitive
+  regimes
   & B & Variational + coarse-graining argument \\
-Phase factor $\mathcal{A}\sim e^{iS/S_0}$ motivated
-  & B & Path-integral logic \\
-$S_0$ as precursor of $\hbar$
+Phase factor
+  $\mathcal{A}\sim e^{iS/S_0^{\rm EFT}}$ motivated
+  & B & Path-integral hint \\
+$S_0^{\rm EFT}$ as precursor of $\hbar$
   & B & Strongest quantum matching \\
-Exact identification $S_0=\hbar$
-  & Open/B & Strongly motivated; not ultimate closure \\
-Born rule / operator algebra / Hilbert space
-  & Open & Later quantum programme \\
+Identification $S_0^{\rm EFT}\leftrightarrow\hbar$
+  & B (matching) & Not parameter-free \\
+Full reconstruction programme
+  (universal amplitudes, Born rule)
+  & C (open) & Beyond scope of the present paper \\
 \hline
 \end{tabular}
 \end{center}
@@ -9716,7 +9875,7 @@ Macroscopic arrow of time & Reduced-state decoherence plus low-entropy coherent 
 Speed of light $c$ & $c_*=\sqrt{\beta/(\alpha-\beta)}$ & identified \\
 Gravitational coupling $G_N$ & Geometric EFT matching: $G_N=c_*^4/(8\pi M_G^2)$ & matched (Level~B) \\
 Ordered-branch amplitude variable $\phi$ & Macroscopic closure variable for slow amplitude variations of the ordered branch & effective (Level~B) \\
-Pre-quantum action scale $S_0$ & Minimal loop action $S_{\rm loop,min}=2\pi S_0$ & derived (structural Level~A) \\
+Pre-quantum action scale $S_0^{\rm EFT}$ & Elementary-loop action $S_{\rm elem}=2\pi S_0^{\rm EFT}$; Cauchy--Schwarz bound strict, $L_{\rm core}$ input Level~B & derived (structural) \\
 Physical Planck constant $\hbar$ & Final identification $S_0=\hbar$ & identified after additional matching (Level~B / open) \\
 Schr\"odinger equation & KG~+~NR limit~+ emergent complex sector & derived (Level~B) \\
 Macroscopic Einstein-like closure & Pure-metric frozen-order limit + $\phi$-first IR closure & structural / effective (Level~A/B) \\
@@ -9772,7 +9931,7 @@ D15 & First-principles derivation of the causal response kernel from ECT micrody
 D16 & SM gauge group from O(4) & C & Embedded, not derived & 7, \ref{sec:open_problems} \\
 D17 & Second law $dS/dw\geq0$ (effective result, ordered branch) & B & Level-A directional backbone + ohmic/Markov closure; full microscopic derivation open (OP24) & \ref{sec:second_law_basics}, \ref{sec:open_problems} \\
 D18 & Universe domain size $R_{\rm domain}\gtrsim R_H$ (amplified by pre-Lorentzian ordering) & B/Open & Scale depends on ordering dynamics (OP3); $e^{N_e}$ factor from inflation removed & \ref{sec:universe_size} \\
-D19 & $S_{\rm loop,min}=2\pi S_0$ from phase quantisation & A & Structural consequence of winding sectors~(\S\ref{sec:qs_phase_dynamics}); $S_0=\hbar$ remains Level~B / open~(OP-Q2) & \ref{sec:qs_hbar} \\
+D19 & Elementary-loop action scale $S_{\rm elem}=2\pi S_0^{\rm EFT}$ from phase winding in $U(1)$-extended EFT & A/B & Cauchy--Schwarz bound strict (A); $L_{\rm core}$ input and $S_0^{\rm EFT}=\hbar$ matching remain Level~B~(OP-Q2) & \ref{sec:hbar_status}, \ref{sec:qs_hbar} \\
 D20 & $\beta$ param.: general $c_*=\sqrt{\beta/(\alpha-\beta)}$ & A & --- & \ref{sec:ssb} \\
 D21 & Casimir: conditional $3/2$ estimate from minimal reduced soft-orientation EFT (not a proof of three physical Goldstone particles; condensate-reflecting boundaries only) & B & Conditional on minimal EFT boundary assumption & \ref{sec:casimir} \\
 D22 & Unruh-type temperature from Euclidean/Rindler coherent-vacuum response; standard $\hbar$ form after $S_0=\hbar$ identification & A/B & Structural Euclidean/Rindler response is Level~A; observational $\hbar$ form requires Level~B identification~(OP-Q2) & \ref{sec:qs_unruh} \\
@@ -15877,7 +16036,7 @@ Integer winding sectors exist
   & Level~A
   & Single-valuedness of $\Phi_{\rm eff}$;
     Eq.~\eqref{eq:qs_winding} \\
-Minimal loop action $S_{\rm loop,min}=2\pi S_0$ exists
+Elementary-loop action $S_{\rm elem}=2\pi S_0^{\rm EFT}$ defined
   & Level~A
   & Structural consequence of nontrivial loop sector \\
 Explicit first-principles value of $S_0$
@@ -17177,13 +17336,22 @@ from the microscopic Euclidean functional remains an open problem.
 \label{app:action_scale_S0}
 
 \textit{Reference from main text: Section~\ref{sec:hbar_status}.
-Status: explicit derivation chain at Level~B.}
+Status: explicit derivation chain at Level~B.
+The compact phase and its periodicity belong to the $U(1)$-extended
+phase EFT (modelling step beyond bare~P3).
+The action--phase bridge is a structural Level~B assumption.}
 
 This appendix makes explicit the chain of reasoning behind the
-identification of $S_0$ as the ECT precursor of $\hbar$.
+identification of $S_0^{\rm EFT}$ as the ECT precursor of $\hbar$.
 Its purpose is not to derive the full quantum formalism, but to
 show how the coherent branch naturally introduces an elementary
 action scale.
+It should be noted that the real scalar field $\Phi$ of P3 does not
+by itself carry a compact $U(1)$ phase variable; the
+extension to $\Phi_{\rm eff}=\rho\,e^{i\theta}$ is an additional
+modelling step for the coherent sector, not a direct topological
+consequence of the vacuum manifold $O(4)/O(3)\simeq S^3$
+(which has $\pi_1(S^3)=0$).
 
 \subsection*{A.\ Phase variable on the coherent branch}
 
@@ -17256,7 +17424,7 @@ The coherent branch provides:
   \item a periodic phase variable~\eqref{eq:app_theta_circle};
   \item integer winding sectors~\eqref{eq:app_winding_number};
   \item a minimal non-trivial action loop~\eqref{eq:app_min_action_loop};
-  \item a fundamental action scale $S_0$ as the ECT precursor of $\hbar$.
+  \item a fundamental action scale $S_0^{\rm EFT}$ as the ECT precursor of $\hbar$.
 \end{enumerate}
 
 % ------------------------------------------------------------
@@ -17265,7 +17433,14 @@ The coherent branch provides:
 
 \textit{Reference from main text: Section~\ref{sec:hbar_status}.}
 
-To obtain~$S_0$ one needs to construct an effective 1D functional
+Section~\ref{sec:hbar_status} establishes a sharp lower bound on the
+loop action at fixed length via the Cauchy--Schwarz
+inequality~\eqref{eq:loop_bound}, and defines the EFT action scale
+$S_0^{\rm EFT}=K_\theta m_\varphi/2$ by evaluating that bound at
+the elementary-loop size $L_{\rm core}\sim 2\pi/m_\varphi$.
+
+To go beyond this EFT estimate and obtain a first-principles value
+of~$S_0^{\rm EFT}$, one needs to construct an effective 1D functional
 for a loop in the coherent sector.
 Starting from the 4D phase action
 $S[\theta]\sim\int_{\mathcal{V}}d^4X\,f(\rho)(\partial_A\theta)^2$,
@@ -17275,7 +17450,7 @@ the transition from the bulk integral over~$\mathcal{V}$ to a
 (ii)~integration of $f(\rho)$ over the transverse cross-section;
 (iii)~introduction of an effective line tension $\mathcal{T}$
      such that $S_{\rm eff}^{\rm 1D}[\mathcal{C}]=\mathcal{T}\cdot|\mathcal{C}|$;
-(iv)~minimisation over contour shape and size under the $n=1$
+(iv)~evaluation at the characteristic core-sized loop under the $n=1$
      winding constraint.
 Each of these steps requires the nonlinear broken-phase potential
 (beyond the quadratic EFT) and the choice of a vortex profile,
