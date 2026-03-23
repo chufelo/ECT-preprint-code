@@ -1679,14 +1679,33 @@ orientation is established first, while thermodynamic irreversibility
 appears at the coarse-grained level as a further structural consequence
 of the ordered phase.
 
+\paragraph{Starting point: no external time.}
+Postulate~P3 states that ECT admits no external time parameter: the
+Euclidean manifold~$\mathcal{M}^4$ is the fundamental arena, and all
+temporal notions must emerge from it.
+This means the arrow-of-time problem in ECT is two-layered:
+first, an effective time direction must emerge from the condensate
+structure~(Sections~\ref{sec:eff_metric}--\ref{sec:lorentzian_window});
+second, that direction must acquire a preferred orientation.
+The present section addresses only the second layer, taking the
+emergent Lorentzian structure as already established.
+
 \paragraph{Geometric arrow: branch selection.}
 Before ordering, the Euclidean $\Phi$-medium possesses no distinguished
 time direction: all four directions of $\mathcal{M}^4$ are equivalent.
+Before ordering, the microscopic action contains no preferred sign of
+the branch direction: the pre-ordered Euclidean theory is symmetric
+under reversal of the eventual condensate orientation, $w\to -w$.
+At the microscopic level, neither direction of the condensate gradient
+is preferred.
 After the transition $O(4)\to O(3)$, the ordered branch selects a
 preferred direction $w$ through
-$\langle \partial_A \Phi \rangle = u_0\,\delta_{Aw} \neq 0$.
-This breaks the full Euclidean isotropy and provides the geometric basis
-for the effective Lorentzian branch.
+$\langle \partial_A \Phi \rangle = u_0\,\delta_{Aw} \neq 0$,
+providing the geometric basis for the effective Lorentzian
+branch~(Section~\ref{sec:eff_metric}).
+The asymmetry therefore originates not from the action itself, but from
+the realised selection of one ordered orientation over the opposite
+branch in a given history of the condensate.
 In this sense, ECT explains the \emph{orientation} of effective time
 as a direct consequence of spontaneous ordering~(Level~A).
 
@@ -1700,17 +1719,23 @@ the multiplicity of admissible configurations~(S6), the admissibility
 of non-uniform ordering~(S8), and the topological completeness~(S9).
 
 \paragraph{Statistical speciality of the ordered branch via S6.}
-The structural property~S6 states that the configuration space of the
-$\Phi$-medium is non-trivial and that no configuration is privileged
-\emph{a priori}.
+The structural property~S6 states that no configuration of the
+$\Phi$-medium is privileged \emph{a priori}.
+This might seem to conflict with P4, which selects an ordered branch.
+The tension is resolved by the admissibility/realisation
+distinction~(Section~\ref{sec:noether}): S6 governs which
+configurations are ontologically admissible, while P4 governs which
+is dynamically realised.
+S6 therefore does not contradict P4; instead it provides the counting
+background against which P4's selection is statistically exceptional.
+
 Against that background, the coherent ordered branch is statistically
 special: it is a highly organised and constrained subset of the full
 configuration space.
 In a configuration-space counting, overwhelmingly dominant configurations
 are disordered ($u_0\approx 0$); the ordered branch selected by P4
-corresponds to a highly constrained subset of the configuration
-space, naturally interpretable as a low-entropy sector at the
-coarse-grained level.
+corresponds to a highly constrained subset, naturally interpretable as a
+low-entropy sector at the coarse-grained level.
 This gives ECT a natural interpretation of the low-entropy initial
 condition: the initial ordered branch does not need to be imposed from
 outside as an ad hoc boundary condition, but appears as a dynamically
@@ -1723,10 +1748,15 @@ slowly varying branch backgrounds are all admissible.
 As the branch evolves, coarse-grained descriptions generically explore
 a larger class of such partially ordered configurations than the
 initially coherent state.
-This makes entropy growth structurally natural: the ordered branch
-begins in a statistically exceptional configuration, while subsequent
-inhomogeneous evolution opens access to a much larger coarse-grained
-state space, giving $dS_{\rm ent}/dw\geq 0$ at the domain-structure
+A qualitative expectation is that the number of coarse-grained states
+accessible through domain-boundary structure increases with the total
+complexity of the domain network, for example with the total
+domain-wall area in a coarse-grained description.
+This is a structural Level~B heuristic, not a first-principles
+derivation.
+As domains expand and interact, the corresponding coarse-grained entropy
+is therefore naturally expected to increase while ordering remains
+inhomogeneous, giving $dS_{\rm ent}/dw\geq 0$ at the domain-structure
 level~(Level~B).
 
 \paragraph{Relation to decoherence and coarse graining.}
@@ -1748,8 +1778,12 @@ Markovian assumptions of Section~\ref{sec:influence_functional}, is
   \label{eq:dSdw_explicit}
   \frac{dS_{\rm ent}}{dw}
   = N_{\rm eff}\,\gamma\!\left(\frac{dq}{dw}\right)^{\!2}
-  \geq 0.
+  \geq 0,
 \end{equation}
+where $q$ is a collective coordinate of the reduced subsystem,
+$N_{\rm eff}$ is the effective number of environmental modes,
+and $\gamma$ is the ohmic damping coefficient~(see
+Section~\ref{sec:influence_functional} for derivation).
 What is not yet established is the full microscopic decoherence kernel
 or a first-principles H-theorem~(OP1, OP5, OP24).
 
@@ -1780,11 +1814,20 @@ natural channels through which an initially coherent ordered state can
 lose ideal uniformity and populate a broader macroscopic ensemble,
 thereby supporting the thermodynamic arrow~(Level~B from S8+S9).
 
-\paragraph{Quantum exception.}
+\paragraph{Quantum exception and relation to \texorpdfstring{$S_0$}{S0}.}
 For $N_{\rm eff}\sim 1$ the product $N_{\rm eff}\gamma\tau_{\rm loop}\lesssim 1$:
 reverse motion along~$w$ is not suppressed.
-Reversibility of dynamics with few degrees of freedom is reproduced
-automatically---an internal ECT result, not imported from another theory.
+Reversibility of dynamics with few effective degrees of freedom is
+naturally recovered within the same ECT framework rather than imported
+from outside.
+This quantum exception is structurally connected to the pre-quantum
+action scale $S_0$~(Section~\ref{sec:hbar_status}): when action
+differences between competing histories satisfy $|\Delta S|\sim S_0$,
+relative phases cannot be suppressed and the classical irreversible
+description breaks down.
+The quantum exception is therefore not a separate postulate but a
+consequence of the same $S_0$-controlled phase sensitivity that governs
+the classical/quantum divide throughout ECT.
 
 \paragraph{Comparison with other approaches.}
 
@@ -1823,22 +1866,28 @@ Statement & Status & Comment \\
 \hline
 Ordered branch selects preferred direction $w$
   & A & Direct consequence of $O(4)\to O(3)$ \\
+Realised branch orientation breaks $\pm w$ degeneracy;
+pre-ordered action remains symmetric
+  & A & Asymmetry from branch realisation, not from the action \\
 Effective Lorentzian time orientation emerges
-  & A & Geometric branch result \\
+  & A & Geometric branch result; Section~\ref{sec:eff_metric} \\
 Ordered branch is statistically special
-  & B & Uses S6 (multiplicity) \\
+  & B & Uses S6; S6 vs P4 resolved via Section~\ref{sec:noether} \\
 Entropy growth is structurally natural
   & B & Uses S8 + coarse graining \\
-Retarded kernel structure in the quadratic sector
-  & A (within contour-based quadratic treatment) &
-    Contour integral~(App.~\ref{app:retarded_kernel});
-    full microscopic origin remains open \\
+Domain-network growth supports $dS/dw>0$
+  & B & Structural Level~B heuristic \\
+Retarded kernel in quadratic sector
+  & A / quadratic & Contour integral~(App.~\ref{app:retarded_kernel});
+    full microscopic origin open \\
 Decoherence aligns with branch-selected arrow
   & B & Structural compatibility \\
 Defect/domain production supports irreversibility
   & B & Uses S8 + S9 \\
 Compatibility with variational dynamics
   & B & Coarse-graining of extremal dynamics \\
+Quantum exception connected to $S_0$ scale
+  & B & $|\Delta S|\sim S_0$; Section~\ref{sec:hbar_status} \\
 Full microscopic second law / H-theorem
   & Open & OP1, OP5, OP24 \\
 \hline
