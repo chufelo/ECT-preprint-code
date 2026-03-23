@@ -4123,13 +4123,14 @@ dark-matter patch for phenomena already explained by the $\phi$-closure.
 \label{sec:radial_mode}
 
 \textit{Status: layered.
-The existence of the primary radial mode~$\sigma$ as the amplitude
-fluctuation of $|\partial\Phi|$ follows at Level~A from the condensate
-structure.
-Its Planck-scale mass is Level~B (scale matching).
-The secondary Higgs-like radial mode is Level~B/C (conditional on the
-second condensate transition and local gauge realisation; OP-EW).
-Identification with the observed Higgs boson is open.}
+The primary radial mode of the first condensate is required at Level~A
+as the amplitude fluctuation of the ordered branch.
+Its Planckian scale follows at Level~B from the matching
+$u_0\sim\bar{M}_{\rm Pl}$.
+A secondary Higgs-like radial mode is structurally admissible only if an
+electroweak-like second condensate transition exists; this remains
+Level~B/C and does not by itself establish the full Standard Model Higgs
+sector.}
 
 \paragraph{First radial mode: amplitude fluctuation of the ordered branch.}
 In the scalar-only ECT basis the fundamental degree of freedom is the
@@ -4163,22 +4164,35 @@ $\Phi$ and carries no orientation or gauge indices.
 In the ordered background it propagates with an effective mass $m_\sigma$
 and sees the same emergent Lorentzian metric as other EFT modes.
 
-\textbf{Distinction from the soft orientation sector.}
-The integrability constraint $\partial_A Q_B - \partial_B Q_A = 0$
-(Section~\ref{sec:goldstone_integrability_main}) ensures that, at
-linear order, amplitude fluctuations $\sigma$ and orientation
-fluctuations $\chi$ decouple: $\sigma$ shifts $|Q_A|$ while $\chi$
-rotates its direction.
-The two modes are therefore orthogonal degrees of freedom of the
-single field $\Phi$, not independent fields.
+\paragraph{Why the primary radial mode is not the soft orientation scalar.}
+The primary radial mode $\sigma$ must also be distinguished from the
+surviving soft scalar $\chi$ of the orientation sector
+(Section~\ref{sec:goldstone_integrability_main}).
+This distinction is ECT-specific and follows from the integrability of
+the gradient condensate: $Q_A=\partial_A\Phi$ is an exact one-form,
+so amplitude and orientation fluctuations are not independent generic fields.
+At linear order, $\sigma$ describes fluctuations of the magnitude
+$|Q_A|=|\partial_A\Phi|$,
+whereas $\chi$ parameterises the surviving longitudinal soft variation
+of the orientation sector.
+Thus $\sigma$ and $\chi$ are different scalar excitations with different
+physical roles: $\sigma$ is heavy and radial, while $\chi$ is soft and
+branch-sensitive.
 
-\textbf{Higher-dimension operators.}
-Integrating out $\sigma$ at $E\ll m_\sigma$ generates a tower of
-suppressed effective operators in the low-energy broken-phase EFT,
-with coefficients of order $E^{2n}/m_\sigma^{2n}$.
-These corrections are negligible at all presently accessible energies
-but encode the imprint of the UV condensate structure on the effective
-theory below the Planck scale~(Level~B).
+\paragraph{Higher-dimension operators after integrating out $\sigma$.}
+Integrating out the heavy primary radial mode does not merely remove it
+from the low-energy spectrum.
+It also generates higher-dimension operators suppressed by powers of
+$m_\sigma^{-2}$, schematically of the form
+\begin{equation}
+  \Delta\mathcal{L}_{\rm EFT}
+  \sim \sum_{n\ge 1}\frac{\mathcal{O}_{2n+4}}{m_\sigma^{2n}}.
+  \label{eq:HDO_sigma}
+\end{equation}
+This is the standard EFT consequence of decoupling.
+In ECT it explains why the broken-phase low-energy theory remains
+reliable at $E\ll m_\sigma$, while still retaining calculable
+suppressed corrections from the heavy radial sector~(Level~B).
 
 \paragraph{Second radial mode: candidate from the electroweak-like transition.}
 If the second condensate transition $O(3)\to O(2)$ is realised at
@@ -4292,8 +4306,8 @@ Secondary mode is structurally analogous to SM Higgs
   & B/C & Formal radial analogue; not a derivation \\
 $m_h = \sqrt{2\lambda_2}\,v_2$ with $v_2$ from $G_F$ matching
   & B/C & Matching input, not ECT prediction \\
-$\lambda_2(v_2)\approx0.13$ consistent with $m_H\approx125$\,GeV
-  & Open & External SM matching \\
+$\lambda_2(v_2)\approx0.13$ if matched to $m_H\approx125$\,GeV
+  & Constraint & External SM matching, not an ECT derivation \\
 Yukawa / gauge mass generation fully derived
   & Open & Not completed; part of OP-EW \\
 \hline
