@@ -5523,7 +5523,7 @@ observationally distinct effects that must not be conflated:
   a perturbative, Planck-suppressed additional interaction.
   It violates CP and Lorentz invariance.
   It is detectable via spin precession
-  ($\omega_5 \sim 10^{-10}\,$rad/s) and
+  ($\omega_5 \sim 10^{-10}$--$10^{-15}\,$rad/s, model-dependent) and
   equivalence-principle tests ($\eta \sim 10^{-15}$).
   It is \emph{far too weak} to affect galactic rotation
   curves.
@@ -9663,7 +9663,7 @@ Table~\ref{tab:ect_hubble_jwst_summary}.
 \textsc{pass} & Condensate stability      & $V''(v_0)=2\mu^2>0$                                   & \S\ref{sec:ssb} \\
 \textsc{pass} & Ghost-freedom             & Phys.\ mode $\lambda>0$ at $\alpha>1$                 & \S\ref{sec:ssb} \\
 \textsc{pass} & LIV bound                 & $|\delta c/c|<10^{-15}$ (GW170817)                    & \S\ref{sec:qs_black_holes} \\
-\textsc{pass} & Causality                 & $\Gamma_{\rm loop}\gg1$ macroscopically                & \S\ref{sec:second_law} \\
+\textsc{pass} & Causality                 & Retarded propagation of ordered branch (Level~A); directed decoherence $\Gamma_{\rm irr}\geq 0$ (Level~A)                & \S\ref{sec:arrow_of_time} \\
 \textsc{prob.}& Second law $dS/dw\geq0$  & Effective (Gaussian--Markov); full microscopic derivation open (OP24) & \S\ref{sec:second_law} \\
 \textsc{prob.}& Born measure              & Conditional uniqueness under C1--C3; unique outcome selection open (OP23) & \S\ref{sec:born_rule} \\
 \textsc{open} & Primordial perturbations $n_s$, $r$ & ECT-native formula pending; branch-selection mechanism identified; borrowed slow-roll formula removed & \S\ref{sec:mp_cosmo} \\
@@ -9759,7 +9759,7 @@ D5a & Graviton: induced linearised effective-metric perturbation on ordered bran
 D5b & Fierz--Pauli form, TT projection, ghost-free counting at linearised level & B & TT gauge; explicit mode-counting from microscopic condensate variables open (OP3 partially resolved) & 8, App.~\ref{app:GN_derivation} \\
 D6 & Dirac form (structural reconstruction once spinorial fields admitted) & B & O(3) spinor rep.; not from bare bosonic action & \ref{sec:fermions}, \ref{sec:dirac_eq} \\
 D7 & Instanton mass spectrum $m_n=n\times1.6$ GeV & B & $\pi_3({\rm O(3)})=\mathbb{Z}$ & 10 \\
-D8 & Effective irreversibility (Gaussian--Markov model, ordered branch) & B & Gaussian--Markov approx.; $K(\tau<0)=0$ structural; not derived from bare action (OP24) & 4 \\
+D8 & Thermodynamic second law for macroscopic systems & B & Level-A directional backbone (retarded propagation, $\Gamma_{\rm irr}\geq 0$) + effective ohmic/Markov closure; full microscopic derivation open (OP24) & \ref{sec:second_law_basics} \\
 D9 & Physical identification $S_0=\hbar$ & B & Structural action scale $S_0$ exists~(Level~A); its final physical identification with $\hbar$ requires additional matching / closure~(OP-Q2) & \ref{sec:qs_hbar}, \ref{sec:qs_ccr} \\
 D10 & Linearised Einstein eqs. + $\Theta_{\mu\nu}$ & B & Linearisation & \ref{sec:macroscopic} \\
 D11 & Compatibility with $n_s\approx0.967$ (Planck 2018) & Open & ECT-native derivation pending; borrowed slow-roll formula removed & \ref{sec:mp_cosmo} \\
@@ -11514,7 +11514,7 @@ manifestations of the same condensate:
 the $\phi$-branch operates on kpc scales;
 the fifth force is Planck-suppressed and detectable at
 laboratory scales through spin precession
-($\omega_5 \sim 10^{-10}$\,rad\,s$^{-1}$) and
+($\omega_5 \sim 10^{-10}$--$10^{-15}$\,rad\,s$^{-1}$, model-dependent) and
 E\"otv\"os-type experiments ($\eta \sim 10^{-15}$).
 Neither is a consequence of the other.
 
@@ -13741,14 +13741,22 @@ These questions belong to decoherence.
 In ECT they must be addressed inside the coherent branch itself,
 rather than imported from an external quantum framework.
 
+\paragraph{Position within the full argument.}
+This subsection presents the open-system route to thermodynamic
+irreversibility in the ECT coherent branch.
+In the revised structure of the paper, the directional architecture
+(retarded propagation, dissipative orientation, and suppression of
+off-diagonal histories) is separated from the strict thermodynamic
+second law.
+The former is discussed in Section~\ref{sec:arrow_of_time}; the
+strict monotonicity relation derived here belongs to the Level~B
+closure obtained under the effective ohmic/Markov assumptions.
+
 \paragraph{Relation to ECT basics.}
 Section~\ref{sec:second_law_basics} assembled the structural
-three-ingredient argument and the two status tables.
-The present section provides the technical derivation.
-Section~\ref{sec:second_law_basics} assembled the structural
-three-ingredient argument for the second law:
-geometric branch orientation, statistically exceptional initial sector,
-and causal coarse graining.
+argument for the second law:
+the Level~A directional backbone, the statistically exceptional
+initial sector, and the Level~B ohmic/Markov closure.
 The present section provides the technical quantum-sector derivation
 behind that picture.
 In particular, it explains why the ordered coherent branch supports
@@ -14769,8 +14777,9 @@ criterion for when such contributions matter:
 \begin{itemize}
   \item $\Gamma_{\rm loop} \ll 1$: quantum regime, interference
   visible, time reversal approximately intact;
-  \item $\Gamma_{\rm loop} \gg 1$: classical regime, macroscopic
-  irreversibility, preferred time direction established.
+  \item $\Gamma_{\rm loop} \gg 1$: classical regime; under the
+  effective ohmic/Markov closure~(Section~\ref{sec:second_law_basics}),
+  macroscopic entropy growth and a preferred time direction follow.
 \end{itemize}
 This provides a single quantitative ECT criterion for the
 quantum--classical boundary, without introducing a
@@ -16263,8 +16272,12 @@ Rather than attempting to quantise an existing spacetime geometry, ECT
 starts from a fundamentally Euclidean arena where no distinction
 between space and time exists, and recovers the Lorentzian structure
 as an effective property of the symmetry-broken vacuum.  The
-Lorentzian metric, the causal cone, and the arrow of time all arise
-from the same condensate background that provides a common
+Lorentzian metric and the causal cone arise directly from the
+ordered condensate background.
+The thermodynamic arrow of time is addressed at the level of the
+ordered-branch open-system description with clearly stated closure
+assumptions~(Section~\ref{sec:second_law_basics}).
+The same condensate background provides a common
 parameter-matching framework for $G_N$, $\hbar$, and $c_*$
 (internal consistency relations; non-circular derivation open, OP-$\Lambda$).
 
