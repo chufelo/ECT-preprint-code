@@ -9664,7 +9664,7 @@ Table~\ref{tab:ect_hubble_jwst_summary}.
 \textsc{pass} & Ghost-freedom             & Phys.\ mode $\lambda>0$ at $\alpha>1$                 & \S\ref{sec:ssb} \\
 \textsc{pass} & LIV bound                 & $|\delta c/c|<10^{-15}$ (GW170817)                    & \S\ref{sec:qs_black_holes} \\
 \textsc{pass} & Causality                 & Retarded propagation of ordered branch (Level~A); directed decoherence $\Gamma_{\rm irr}\geq 0$ (Level~A)                & \S\ref{sec:arrow_of_time} \\
-\textsc{prob.}& Second law $dS/dw\geq0$  & Effective (Gaussian--Markov); full microscopic derivation open (OP24) & \S\ref{sec:second_law} \\
+\textsc{prob.}& Second law $dS/dw\geq0$  & Level-A directional backbone + Level-B ohmic/Markov closure; full microscopic H-theorem open (OP24) & \S\ref{sec:second_law_basics} \\
 \textsc{prob.}& Born measure              & Conditional uniqueness under C1--C3; unique outcome selection open (OP23) & \S\ref{sec:born_rule} \\
 \textsc{open} & Primordial perturbations $n_s$, $r$ & ECT-native formula pending; branch-selection mechanism identified; borrowed slow-roll formula removed & \S\ref{sec:mp_cosmo} \\
 \textsc{pass} & Baryogenesis              & $\eta_B\sim9\times10^{-10}$ (leptogenesis)            & \S\ref{sec:baryogenesis} \\
@@ -9766,9 +9766,9 @@ D11 & Compatibility with $n_s\approx0.967$ (Planck 2018) & Open & ECT-native der
 D12 & Baryogenesis $\eta_B\approx9\times10^{-10}$ & B & Leptogenesis mechanism & \ref{sec:mp_cosmo} \\
 D13 & UV safety of graviton & C & Power counting not done & 8, \ref{sec:open_problems} \\
 D14 & Full non-linear Einstein eqs.\ (anisotropic curv.\ term); $\phi$-first scalar-tensor IR closure (Appendix~\ref{app:phi_first_EFE}) & A/B & Riemann commutator identity (OP2 resolved at linear level); scalar-tensor closure = effective IR ansatz & \ref{sec:macroscopic}, App.~\ref{app:curvature_coupling}, App.~\ref{app:phi_first_EFE} \\
-D15 & First-principles derivation of causal response kernel from ECT microdynamics & Open & The retarded ordered-branch scalar dynamics provides the structural motivation, but a non-circular derivation of the causal FV kernel from the bare ECT action is not yet complete & 4, \ref{sec:open_problems} \\
+D15 & First-principles derivation of causal response kernel from ECT microdynamics & C & The retarded ordered-branch scalar dynamics provides the structural motivation, but a non-circular derivation of the causal FV kernel from the bare ECT action is not yet complete & \ref{sec:second_law_basics}, \ref{sec:open_problems} \\
 D16 & SM gauge group from O(4) & C & Embedded, not derived & 7, \ref{sec:open_problems} \\
-D17 & Second law $dS/dw\geq0$ (effective Gaussian--Markov result, ordered branch) & B & Gaussian--Markov approx.\ + structural initial condition; not derived from bare action (OP24) & \ref{sec:quantum}, \ref{sec:open_problems} \\
+D17 & Second law $dS/dw\geq0$ (effective result, ordered branch) & B & Level-A directional backbone + ohmic/Markov closure; full microscopic derivation open (OP24) & \ref{sec:second_law_basics}, \ref{sec:open_problems} \\
 D18 & Universe domain size $R_{\rm domain}\gtrsim R_H$ (amplified by pre-Lorentzian ordering) & B/Open & Scale depends on ordering dynamics (OP3); $e^{N_e}$ factor from inflation removed & \ref{sec:universe_size} \\
 D19 & $S_{\rm loop,min}=2\pi S_0$ from phase quantisation & A & Structural consequence of winding sectors~(\S\ref{sec:qs_phase_dynamics}); $S_0=\hbar$ remains Level~B / open~(OP-Q2) & \ref{sec:qs_hbar} \\
 D20 & $\beta$ param.: general $c_*=\sqrt{\beta/(\alpha-\beta)}$ & A & --- & \ref{sec:ssb} \\
@@ -10136,7 +10136,7 @@ distinguished from a postulated MOND interpolation law:
     \label{eq:gdagger_env_full}
   \end{equation}
   where $g_{\dagger,0}\sim cH_0$ is the cosmological baseline
-  (Section~\ref{sec:gdagger_hierarchy}) and $\Xi$ encodes
+  (Fig.~\ref{fig:gdagger_hierarchy}) and $\Xi$ encodes
   environment dependence.  The galaxy-to-galaxy scatter in fitted
   $g_\dagger^{\rm eff}$ is therefore an ECT \emph{prediction},
   not a shortcoming.
@@ -10740,7 +10740,7 @@ programme for admissible late-time deformations is outlined in
 Appendix~\ref{sec:late_closure_robustness}.
 The corresponding analytic benchmark window is shown in
 Appendix~\ref{app:late_cosmo_algorithm},
-Fig.~\ref{fig:app_h0_scan}.
+Fig.~\ref{fig:h0_scan_main}.
 
 Crucially, the late-time ECT background is not defined by assuming a
 $\Lambda$CDM expansion history as physical input.
