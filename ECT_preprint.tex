@@ -2552,32 +2552,42 @@ and which are not yet derived.
 \subsection{Three condensate scales: structure, hierarchy, and open problems}
 \label{sec:three_scales}
 
-ECT involves three qualitatively distinct characteristic scales.
-They are \emph{not} of the same type: the first is a UV condensate
-amplitude, the second a required low-energy matching parameter
-(if a second transition exists), and the third an emergent IR
-variation scale.
+ECT contains three qualitatively different scales: a UV stiffness
+scale, a low-energy matching scale, and an emergent IR variation scale.
+They are \emph{not} three independent VEVs of three different fields.
 
 \begin{center}
 \renewcommand{\arraystretch}{1.3}
-\begin{tabular}{p{2.0cm}p{3.3cm}p{4.5cm}p{2.6cm}}
+\begin{tabular}{p{1.6cm}p{2.8cm}p{3.5cm}p{2.4cm}p{2.3cm}}
 \hline
-Scale & Value & Physical origin in ECT & Status \\
+Scale & Value & Physical origin in ECT & Status
+  & Observable anchor \\
 \hline
 $u_0$ & ${\sim}\,\bar{M}_{\rm Pl}\approx2.44\times10^{18}$\,GeV
   & UV condensate amplitude; gravity and phase normalisation
-  & Level~B (matching) \\
+  & Level~B (matching)
+  & $G_N$ \\
 $v_2$ & $\approx246.22$\,GeV
   & Low-energy matching to electroweak EFT; structural candidate
     for second transition
-  & Constraint / Level~B structural \\
+  & Constraint / Level~B
+  & $G_F$ \\
 $v_{\rm gal}$ & kpc-scale variation length
   & Emergent IR scale of ordered-branch amplitude variation;
     $\phi$-sector
-  & Level~B (structural) \\
+  & Level~B (structural)
+  & SPARC/RAR \\
 \hline
 \end{tabular}
 \end{center}
+
+These three scales are not of the same conceptual type.
+The UV scale $u_0$ is associated with the gradient condensate and the
+stiffness of the ordered branch.
+The intermediate scale $v_2$ is, in the present formulation, a
+low-energy matching constraint if a second transition exists.
+The galactic scale is an emergent IR variation scale of the
+$\phi$-sector closure, not a second microscopic condensate VEV.
 
 The multiplicity~S6 and topological completeness~S9 of the
 $\Phi$-medium make a multi-scale structure structurally admissible,
@@ -2624,6 +2634,34 @@ suppression; a trans-Planckian $u_0$ would conflict with EFT
 validity. The identification $u_0\sim\bar{M}_{\rm Pl}$ is
 therefore the unique natural matching.
 
+\paragraph{The gradient condensate and the open problem OP-grad.}
+Postulate~P4 introduces $u_0$ as the gradient condensate amplitude
+$\langle\partial_A\Phi\rangle = u_0\,\delta_{Aw}$, independently
+of the bare potential minimum
+$\phi_0 = \sqrt{\mu^2/\lambda}$~(P3).
+This independence is deliberate: the ordered vacuum of ECT is
+characterised by the gradient structure, not by the field value.
+Nevertheless, a dimensionally natural estimate is obtained by
+combining the bare-amplitude scale
+$\phi_0\sim\mu/\sqrt{\lambda}$ with the radial correlation length
+$\xi_{\rm cond}\sim m_\varphi^{-1}$, where
+$m_\varphi\sim\sqrt{2}\,\mu$.
+This gives
+\begin{equation}
+  u_0 \;\sim\; \frac{\phi_0}{\xi_{\rm cond}}
+  \;\sim\; \phi_0\,m_\varphi
+  \;\sim\; \frac{\mu}{\sqrt{\lambda}}\cdot\sqrt{2}\,\mu
+  \;\sim\; \frac{\mu^2}{\sqrt{\lambda}}.
+  \label{eq:u0_dimensional}
+\end{equation}
+This is only a dimensional self-consistency estimate, not a
+derivation.
+The explicit dynamical mechanism by which the gradient condensate
+emerges from the bare action remains an open foundational
+problem~(OP-grad).
+Until OP-grad is closed, $u_0$ should be treated as an
+independent Level~2 parameter~(Section~\ref{sec:param_hierarchy}).
+
 \paragraph{Galactic IR scale: emergent branch-variation scale.}
 The galactic-scale physics in ECT does not arise from a separate
 microscopic VEV.
@@ -2643,6 +2681,16 @@ For $M_\star\sim10^{10}\,M_\odot$ this gives $r_0\sim5$--$20$\,kpc
   \boxed{v_{\rm gal} \text{ is an emergent IR scale, not a second UV condensate VEV.}}
 \end{equation}
 
+\paragraph{Why $g^\dagger\sim cH_0$.}
+The structural proximity $g^\dagger\sim cH_0/(2\pi)\approx
+1.04\times10^{-10}$\,m\,s$^{-2}$ is one of the most suggestive
+numerical coincidences in ECT.
+At present, ECT does not derive this relation from first principles.
+Rather, it indicates that the galactic transition scale may be tied to
+the cosmological background scale of the ordered branch.
+A full derivation of $g^\dagger$ from condensate dynamics remains
+open~(OP-galactic; Section~\ref{sec:mp_galactic}).
+
 \paragraph{Intermediate scale $v_2$ and the electroweak matching.}
 If the ECT condensate undergoes a second ordering step, the
 intermediate scale is fully fixed by low-energy matching:
@@ -2659,7 +2707,7 @@ second transition $O(3)\to O(2)$ is discussed in
 Appendix~\ref{app:second_transition}; it remains an open
 problem of ECT.
 
-\paragraph{Hierarchy and two distinct open problems.}
+\paragraph{Hierarchy and three distinct open problems.}
 The three scales obey
 \begin{equation}
   u_0 \sim \bar{M}_{\rm Pl} \gg v_2 \gg v_{\rm gal},
@@ -2667,10 +2715,37 @@ The three scales obey
   \frac{v_2}{u_0} \approx 10^{-16}.
   \label{eq:hierarchy}
 \end{equation}
+
+\paragraph{The hierarchy problem in the ECT context.}
+The ratio $v_2/u_0\approx 10^{-16}$ is the ECT counterpart of the
+standard gauge hierarchy problem.
+ECT does not solve this problem in the current formulation.
+However, the ECT setting differs from the Standard Model in one
+structurally important respect: $v_2$ is not a fundamental vacuum
+expectation value of a second independent field, but the matching
+scale of a \emph{second ordering step} within the same
+condensate~(Appendix~\ref{app:second_transition}).
+If this second transition has a dynamical origin---for instance
+through RG running of the effective orientation coupling from
+$u_0$ down to $v_2$ (Fig.~\ref{fig:three_condensate_scales})---the
+large hierarchy could in principle be accommodated logarithmically
+rather than by fine-tuning.
+This is a structural possibility, not a derived result:
+the explicit RG calculation within ECT has not been performed and
+remains part of OP-EW.
+Any claim that ECT resolves the hierarchy problem would be
+premature.
+
 Since $v_2$ and $v_{\rm gal}$ are qualitatively different
-objects, the three-scale structure contains two distinct open
+objects, the three-scale structure contains three distinct open
 problems:
 \begin{description}
+  \item[OP-grad (gradient condensate).]
+    What is the dynamical mechanism by which the gradient
+    condensate $\langle\partial_A\Phi\rangle = u_0\,\delta_{Aw}$
+    emerges from the bare action P3?
+    Dimensional analysis~\eqref{eq:u0_dimensional} is consistent,
+    but a first-principles derivation remains open.
   \item[OP-EW (electroweak hierarchy).]
     Why does a second condensate scale arise at $v_2\ll u_0$?
     A structural candidate mechanism is described in
@@ -2684,6 +2759,31 @@ problems:
     functional is not yet available.
 \end{description}
 
+\paragraph{Consistency between gravitational and quantum scales.}
+A distinctive structural feature of ECT is that the gravitational
+stiffness~$M_G$ and the pre-quantum action scale~$S_0^{\rm EFT}$
+are both controlled by the \emph{same} condensate
+parameters~$(v_0,\lambda,\alpha,\beta)$:
+\begin{equation}
+  G_N = \frac{c_*^4}{8\pi M_G^2},
+  \qquad
+  S_0^{\rm EFT} = \frac{K_\theta\,m_\varphi}{2},
+  \label{eq:GN_S0_common}
+\end{equation}
+where $M_G$, $K_\theta\sim v_0^2$, $m_\varphi=\sqrt{2\lambda}\,v_0$,
+and $c_*$ are all functions of the condensate data
+(Section~\ref{sec:hbar_status}).
+Neither $G_N$ nor $S_0^{\rm EFT}$ is derived from the other; both are
+Level~B matching relations.
+But the fact that they share a common parametric origin means that
+ECT implies a structural consistency relation between the gravitational
+and quantum sectors: both are controlled by the same condensate
+parameters, even though their numerical values still require matching.
+This is the structural content of the common origin of the
+gravitational and quantum scales in ECT: not that one is derived from
+the other, but that both emerge from a single ordered medium and their
+ratio is constrained by the condensate parameters.
+
 \noindent\textbf{Status summary:}
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
@@ -2693,11 +2793,20 @@ Statement & Status & Comment \\
 \hline
 Existence of UV scale $u_0$ from P4 & A & \\
 $u_0\sim\bar{M}_{\rm Pl}$ & B & Requires $Z_n\sim1$; OP2 \\
+$u_0\sim\phi_0\cdot m_\varphi$: dimensional
+  self-consistency & B & Eq.~\eqref{eq:u0_dimensional};
+  OP-grad \\
 $v_2=(\sqrt{2}G_F)^{-1/2}$ as IR matching constraint & Constraint & If second transition exists \\
 Galactic scale is emergent IR branch variation & B & Via $\phi$-sector and RAR \\
+$g^\dagger\sim cH_0$: suggestive structural coincidence & B &
+  OP-galactic \\
+$G_N$ and $S_0^{\rm EFT}$ are controlled by the same
+  condensate parameters & B & Eq.~\eqref{eq:GN_S0_common};
+  structural link \\
 $\mathfrak{o}(3)\cong\mathfrak{su}(2)$: structural compatibility
   with EW-like second transition & A & Algebra only \\
 Second transition $O(3)\to O(2)$ as structural candidate & B & Requires phase--orientation coupling \\
+Gradient condensate from bare action & Open (OP-grad) & \\
 Phase--orientation coupling as dynamical driver & Open (OP-EW) & \\
 First-principles derivation of $v_2$ & Open (OP-EW) & \\
 First-principles derivation of $g^\dagger$ & Open (OP-galactic) & \\
