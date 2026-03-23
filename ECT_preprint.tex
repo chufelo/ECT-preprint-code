@@ -4439,71 +4439,284 @@ of QED from the minimal ECT postulates is not yet completed
 (Section~\ref{sec:gauge}).
 
 \subsection{Emergence of $U(1)$ gauge symmetry}
+\label{sec:u1_emergence}
 
-\textit{Status: Level~A/B structural.  The $U(1)$ phase symmetry
-of the emergent complex condensate sector (BR1) gives rise to a
-gauge structure when the global symmetry is promoted to a local one.
-The coherent phase mode is the most natural condensate candidate for
-an emergent massless gauge degree of freedom.
-The identification of the resulting gauge boson with the physical photon
-is Level~B structural matching; the full derivation of QED from the
-minimal ECT postulates is not yet completed.}
+\textit{Status: three-layered.
+Layer~1 (strict within the $U(1)$-extended phase EFT): global $U(1)$
+symmetry, Noether current, and its conservation are Level~A consequences
+of the phase action.
+Layer~2 (Level~B structural): promotion to local $U(1)$ is motivated
+by the physical requirement that only phase gradients, not phases
+themselves, be locally observable; the resulting gauge structure follows
+standard EFT logic.
+Layer~3 (Level~B matching): identification of the emergent massless
+gauge boson with the physical photon is a structural matching statement.
+Full derivation of QED from minimal ECT postulates is not yet completed.}
 
-\paragraph{Local symmetry and gauge connection.}
+\paragraph{Connection to the coherent branch and to the action-scale
+programme.}
+The phase field $\theta(X)$ appearing in the present section is the
+\emph{same} compact angular variable that organises the coherent-topological
+branch~(BR1) and whose winding structure gives rise to the distinguished
+EFT action scale $S_0^{\rm EFT}$~(Section~\ref{sec:hbar_status}).
+It is also the variable whose effective dynamics is developed in the
+Quantum Sector~(Section~\ref{sec:qs_phase_dynamics}).
+The gauge structure discussed below is therefore not an unrelated
+addition, but a natural development of the same phase sector already
+used in the action-scale and quantum-sector discussion.
 
-Suppose now that the phase transformation becomes spacetime dependent,
+% ============ LAYER 1 ============
 
+\paragraph{Layer~1: global $U(1)$ symmetry and the Noether current
+(Level~A within the $U(1)$-extended phase EFT).}
+
+\emph{Global symmetry.}
+In the emergent complex representation of the coherent branch
+(Section~\ref{par:real_vs_complex}),
+$\Phi_{\rm eff}=\rho\,e^{i\theta}$,
+the effective action is invariant under constant phase shifts:
 \begin{equation}
-\Phi(X) \rightarrow e^{i\alpha(X)}\Phi(X).
+  \Phi_{\rm eff}(X) \;\to\; e^{i\alpha}\,\Phi_{\rm eff}(X),
+  \qquad \alpha = \text{const}.
+  \label{eq:global_U1}
 \end{equation}
+This global $U(1)$ symmetry is a property of the $U(1)$-extended
+coherent-sector EFT, not of the minimal real scalar field of P3.
 
-The ordinary derivative of the field transforms as
-
+\emph{Noether current.}
+By Noether's theorem applied to~\eqref{eq:global_U1}, the conserved
+current is
 \begin{equation}
-\partial_A \Phi \rightarrow
-e^{i\alpha(X)}\left(\partial_A \Phi
-+ i(\partial_A\alpha)\Phi\right),
+  j^A \;\equiv\;
+  \frac{-i}{2}\!\left(
+    \Phi_{\rm eff}^*\,\partial^A\Phi_{\rm eff}
+    - \Phi_{\rm eff}\,\partial^A\Phi_{\rm eff}^*
+  \right)
+  = \rho^2\,\partial^A\theta,
+  \qquad
+  \partial_A j^A = 0.
+  \label{eq:U1_noether}
 \end{equation}
+This is a Level~A result within the $U(1)$-extended phase EFT:
+it follows from the phase action and Noether's theorem without
+additional assumptions.
 
-so the kinetic term is no longer invariant.
+\emph{Physical interpretation.}
+The current~\eqref{eq:U1_noether} has a distinctive condensate
+structure: it is the phase gradient $\partial^A\theta$ weighted by
+the condensate density $\rho^2$.
+In the ECT interpretation, this suggests that charged excitations
+may be understood as phase-topological or phase-gradient structures
+of the ordered medium rather than as completely independent primitive
+objects.
+This is structurally analogous to the supercurrent in a superfluid
+or superconductor, where the current is likewise proportional to the
+gradient of the order-parameter phase~\cite{Volovik2003}.
 
-To restore invariance one introduces a compensating field $A_A$ and
-replaces the derivative with a covariant derivative
+\paragraph{Gauge current and the homogeneous limit.}
+For a homogeneous phase configuration $\partial_A\theta=0$ the current
+vanishes, $j^A=0$.
+Nonzero charge/current therefore appears only when the coherent branch
+supports nontrivial phase structure.
+In this sense the gauge current is an excitation property of the
+ordered medium rather than a background property of the condensate
+vacuum itself.
 
+% ============ LAYER 2 ============
+
+\paragraph{Layer~2: local $U(1)$ and gauge connection
+(Level~B structural).}
+
+\emph{Physical motivation for localisation.}
+Local observables depend on phase gradients rather than on the
+absolute value of the phase itself, although global phase holonomies
+remain physically meaningful.
+In an inhomogeneous condensate, the phase $\theta(X)$ can be redefined
+locally by an arbitrary smooth function $\alpha(X)$ without changing
+any local physical prediction---provided that the derivative is
+simultaneously adjusted.
+This is the standard motivation for gauge invariance in
+condensed-matter and field-theoretic contexts.
+
+In ECT this motivation is structural: once the coherent branch
+possesses a compact phase, the localisation of the global symmetry
+is a natural EFT step.
+It is \emph{not} derived from P1--P5 as a theorem; it is a Level~B
+structural extension motivated by the local redundancy of the
+absolute phase.
+
+\emph{Gauge connection.}
+Promoting the phase transformation to a local one,
+$\Phi_{\rm eff}\to e^{i\alpha(X)}\Phi_{\rm eff}$,
+the ordinary derivative is no longer covariant:
 \begin{equation}
-D_A = \partial_A - i e A_A .
+  \partial_A\Phi_{\rm eff} \;\to\;
+  e^{i\alpha(X)}\!\left(\partial_A\Phi_{\rm eff}
+  + i(\partial_A\alpha)\,\Phi_{\rm eff}\right).
 \end{equation}
-
-If the gauge field transforms as
-
+To restore covariance one introduces a compensating connection
+$A_A$ and defines the covariant derivative
 \begin{equation}
-A_A \rightarrow A_A + \frac{1}{e}\partial_A\alpha ,
+  D_A = \partial_A - ieA_A,
+  \label{eq:cov_deriv}
 \end{equation}
-
-the covariant derivative transforms covariantly,
-
+with the gauge transformation
 \begin{equation}
-D_A \Phi \rightarrow e^{i\alpha(X)} D_A\Phi .
+  A_A \;\to\; A_A + \frac{1}{e}\,\partial_A\alpha,
+  \label{eq:gauge_transf_A}
 \end{equation}
+so that $D_A\Phi_{\rm eff}\to e^{i\alpha(X)}D_A\Phi_{\rm eff}$.
+The constant $e$ is the gauge coupling.
+In the present formulation it is a \emph{free EFT parameter},
+not derived from the condensate data.
 
-Thus the action remains invariant under local phase transformations.
+\emph{Kinetic term and its uniqueness.}
+The gauge-invariant field strength is
+\begin{equation}
+  F_{AB} = \partial_A A_B - \partial_B A_A.
+  \label{eq:F_AB}
+\end{equation}
+This is a standard EFT uniqueness statement at leading derivative
+order: among parity-even gauge-invariant terms with at most two
+derivatives, the canonical choice is
+\begin{equation}
+  S_{\rm gauge} = -\frac{1}{4}\int d^4X\;F_{AB}\,F^{AB}.
+  \label{eq:Maxwell_action}
+\end{equation}
+The overall normalisation of $S_{\rm gauge}$ (i.e.\ the value of~$e$)
+is not fixed by this uniqueness argument; it remains a free matching
+parameter~(Level~B).
 
-\paragraph{Status and interpretation.}
-The emergence of the compact phase variable $\theta(X)$ in the coherent
-branch is a Level~A consequence of BR1 and single-valuedness.
-What is established is the existence of a distinguished \emph{phase sector}
-with $U(1)$-type structure.
-The identification of this phase sector with the physical electromagnetic
-gauge field is Level~B structural matching:
-the coherent phase mode is the most natural condensate candidate for an
-emergent $U(1)$ gauge degree of freedom, and its masslessness is
-structurally consistent with the photon.
-However, the full derivation of the electromagnetic field,
-its gauge localisation, and its couplings to charged matter is not yet
-completed from P1--P5 alone.
+% ============ LAYER 3 ============
+
+\paragraph{Layer~3: identification with the photon
+(Level~B matching).}
+
+In this framework the observed masslessness of the photon is naturally
+consistent with the fact that the coherent-branch $U(1)$ remains
+unbroken.
+If that $U(1)$ were instead Higgsed, a mass term would be expected
+through the Anderson--Higgs mechanism.
+
+The identification of this massless $U(1)$ boson with the physical
+photon is a Level~B structural matching: the coherent phase mode is
+the most natural condensate candidate for an emergent electromagnetic
+gauge degree of freedom.
+The full derivation of QED---including the precise form of the
+matter--gauge coupling, the running of $e$, and the anomalous magnetic
+moment---is not yet completed from P1--P5 alone.
+
+\paragraph{Holonomy and phase compactness.}
+For $\Phi_{\rm eff}=\rho\,e^{i\theta}$ the gauge transformation
+$\Phi_{\rm eff}\to e^{i\alpha(X)}\Phi_{\rm eff}$ acts on the phase as
+$\theta\to\theta+\alpha(X)$.
+Accordingly, the gauge-invariant phase gradient is
+\begin{equation}
+  \mathcal{D}_A\theta \;\equiv\; \partial_A\theta - eA_A.
+  \label{eq:gauge_inv_phase_gradient}
+\end{equation}
+The compact periodicity $\theta\sim\theta+2\pi$ then implies that
+the gauge-covariant phase holonomy around a closed loop must be
+quantised:
+\begin{equation}
+  \oint_\gamma \mathcal{D}_A\theta\,dX^A = 2\pi n,
+  \qquad n\in\mathbb{Z}.
+  \label{eq:holonomy}
+\end{equation}
+Using~\eqref{eq:gauge_inv_phase_gradient}, this yields the standard
+dimensionless holonomy condition
+\begin{equation}
+  e\oint_\gamma A_A\,dX^A = 2\pi n
+  \label{eq:flux_quantisation}
+\end{equation}
+up to the choice of sign convention.
+This is the usual compact-phase quantisation condition.
+Its possible relation to the action scale $S_0^{\rm EFT}$ requires
+an additional normalisation assumption and is not derived here.
+
+\paragraph{Superfluid analogy.}
+The $U(1)$ gauge structure of ECT is closest in spirit to the gauge
+emergence in superfluid and superconductor
+physics~\cite{Volovik2003}.
+In both cases:
+\begin{itemize}
+  \item a compact phase variable arises from the ordered medium;
+  \item single-valuedness of the phase forces quantised circulation
+    or flux;
+  \item the gauge connection enters as the natural compensating field
+    for local phase redundancy;
+  \item the masslessness or massiveness of the gauge boson depends on
+    whether the $U(1)$ phase symmetry is preserved or broken.
+\end{itemize}
+In a superfluid, the $U(1)$ is global and there is no dynamical photon.
+In a superconductor, the $U(1)$ is gauged and the photon acquires a
+mass (Meissner effect).
+In ECT, the coherent-branch $U(1)$ is gauged and unbroken, yielding a
+massless photon.
+The analogy is structural, not exact: the ECT condensate is not a
+material medium but the pre-spacetime ordered background.
+
+\paragraph{What is needed for Level~A.}
+To promote the $U(1)$ gauge structure from Level~B embedding to Level~A
+derivation, the following programme would need to be completed:
+\begin{enumerate}[label=(\roman*)]
+  \item derive the \emph{necessity} of local gauge invariance from the
+    condensate dynamics, not merely its compatibility;
+  \item show that $F_{AB}F^{AB}$ is the unique admissible kinetic term
+    within the condensate EFT (currently a standard EFT statement,
+    not derived from condensate structure);
+  \item derive the coupling constant $e$ from condensate parameters;
+  \item demonstrate that charged matter couples correctly to $A_A$
+    with the observed electromagnetic vertex structure.
+\end{enumerate}
+None of these steps has been completed.
 The $U(1)$ sector is the \emph{strongest gauge-embedding result}
-currently available in ECT, but should be read as an emergent
-phase--gauge correspondence rather than a fully completed derivation of QED.
+currently available in ECT, but it remains an emergent phase--gauge
+correspondence rather than a fully completed derivation of QED.
+
+\paragraph{Status summary.}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
+\hline
+Statement & Status & Comment \\
+\hline
+\multicolumn{3}{l}{\textit{Layer~1: global $U(1)$ in the phase EFT}} \\
+Global $U(1)$ symmetry of the coherent-branch
+  phase action
+  & B & $U(1)$-extension of real $\Phi$ \\
+Noether current $j^A=\rho^2\partial^A\theta$ and its
+  conservation
+  & A & Within $U(1)$-extended phase EFT \\
+Gauge current vanishes in homogeneous limit
+  & A & $\partial_A\theta=0 \Rightarrow j^A=0$ \\
+\hline
+\multicolumn{3}{l}{\textit{Layer~2: local $U(1)$ and gauge connection}} \\
+Local observables depend on phase gradients
+  rather than absolute phase
+  & B & Kinematic interpretation within the
+    local phase EFT \\
+Promotion to local $U(1)$: gauge connection $A_A$
+  & B & Structural EFT step, not derived from P1--P5 \\
+$F_{AB}F^{AB}$: unique leading-order kinetic term
+  & B & Standard EFT uniqueness \\
+Coupling constant $e$: free EFT parameter
+  & Matched & Not derived from condensate data \\
+\hline
+\multicolumn{3}{l}{\textit{Layer~3: identification with the photon}} \\
+Masslessness naturally compatible with unbroken
+  $U(1)$
+  & B & No Higgsing of the coherent-branch phase sector \\
+Holonomy quantisation from phase compactness
+  & B & Standard compact-phase condition \\
+Identification with the physical photon
+  & B & Strongest gauge-embedding result in ECT \\
+Full QED from P1--P5
+  & Open & Requires (i)--(iv) above \\
+\hline
+\end{tabular}
+\end{center}
 
 \subsection{Non-Abelian gauge structure: structural embedding}
 \label{sec:nonabelian_embedding}
