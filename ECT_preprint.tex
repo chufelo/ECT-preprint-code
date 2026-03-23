@@ -4126,8 +4126,12 @@ dark-matter patch for phenomena already explained by the $\phi$-closure.
 Their identification with observable particles differs in level of rigour.}
 
 \paragraph{First radial mode: amplitude fluctuation of the ordered branch.}
-Fluctuations of the condensate amplitude around the ordered background
-$u_0 = |\partial\Phi|$ define the radial (amplitude) mode~$\sigma$:
+In the scalar-only ECT basis the fundamental degree of freedom is the
+condensate field $\Phi$; the ordered background is characterised by
+$Q_A=\partial_A\Phi = u_0\,n_A$, where $n_A$ is the derived orientation
+variable~(Section~\ref{sec:sector_map}).
+Amplitude fluctuations of $Q_A$ --- i.e.\ fluctuations of
+$u_0=|\partial\Phi|$ --- define the radial mode~$\sigma$:
 \begin{equation}
   u = u_0 + \sigma, \qquad
   m_\sigma^2 = V''(u_0) \sim 2\lambda\,u_0^2.
@@ -4148,14 +4152,17 @@ It is \emph{not} the Standard Model Higgs boson.
 \paragraph{Second radial mode: candidate from the electroweak-like transition.}
 If the second condensate transition $O(3)\to O(2)$ is realised at
 scale $v_2$ (Appendix~\ref{app:second_transition}, assumptions A1--A2),
-the corresponding condensate develops its own radial fluctuation:
+the effective broken-phase description at that scale admits a radial
+fluctuation around the second condensate vacuum.
+In an effective field theory language (\emph{not} a second independent
+fundamental field, but an effective condensate sector at scale $v_2$):
 \begin{equation}
-  \Phi_2 = v_2 + h, \qquad
-  m_h^2 = V_2''(v_2) = 2\lambda_2\,v_2^2,
+  \phi_{\rm ew} = v_2 + h, \qquad
+  m_h^2 = V_{\rm ew}''(v_2) = 2\lambda_2\,v_2^2,
   \label{eq:higgs_mass_candidate}
 \end{equation}
-where $\lambda_2$ is the quartic coupling of the second condensate
-at scale~$v_2$.
+where $\lambda_2$ is the quartic coupling of the second-condensate
+effective sector at scale~$v_2$.
 
 This mode is \emph{structurally analogous} to the Standard Model
 Higgs boson in the following sense:
@@ -4195,6 +4202,70 @@ $m_{\sigma}\sim\bar{M}_{\rm Pl}$ (first condensate) and
 $m_h\sim v_2$ (second condensate, if it exists).
 The IR galactic scale $v_{\rm gal}$ is not a UV condensate VEV
 and has no associated radial mode~(Section~\ref{sec:three_scales}).
+
+\paragraph{Reframing the hierarchy problem.}
+The usual SM hierarchy problem asks: why is the Higgs mass so small compared
+to the Planck scale~\cite{tHooft1979}?
+ECT recasts this as a condensate-spectrum question: why does a second
+condensate branch appear at $v_2\sim 10^{-16}\,u_0$?
+This is still an open problem~(OP-EW), but the reframing is itself meaningful:
+instead of a fine-tuning of one scalar mass, the challenge becomes explaining
+the dynamical origin of a second ordered phase at an intermediate scale.
+A dimensional-transmutation estimate via RGE of the condensate quartic coupling
+would in principle generate such a scale, but this requires external SM input
+(top-quark Yukawa $y_t\approx0.95$) and remains Level~C~(Appendix~\ref{app:second_transition}).
+
+\paragraph{Comparison with other Higgs frameworks.}
+
+\emph{Standard Model Higgs:}
+in the SM the Higgs is an elementary scalar doublet introduced
+phenomenologically~\cite{EnglertBrout1964,Higgs1964}.
+In ECT radial modes emerge naturally as condensate amplitude excitations;
+the primary mode is necessarily present, while the Higgs-like secondary
+mode is conditional on the second transition.
+
+\emph{Condensed-matter amplitude (Higgs) modes:}
+in superconductors and superfluids, broken-phase condensates carry both
+a Goldstone (phase) mode and a massive amplitude (Higgs) mode~\cite{LittlewoodVarma1981,Volovik2003}.
+The ECT primary radial mode $\sigma$ is the direct analogue of such an
+amplitude mode --- but here the condensate underlies spacetime structure itself,
+not a material medium.
+
+\emph{EFT hierarchy and decoupling:}
+in standard EFT, heavy particles decouple at low energies and generate
+suppressed higher-dimension operators.
+The Planck-heavy primary mode $\sigma$ of ECT plays exactly this role:
+it integrates out at $E\ll m_\sigma$, leaving the broken-phase EFT
+that describes all lower-energy physics.
+
+\paragraph{Status summary.}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{6.3cm}p{2.0cm}p{5.0cm}}
+\hline
+Statement & Status & Comment \\
+\hline
+Ordered condensate admits a primary radial mode $\sigma$
+  & A & Amplitude fluctuation of $|\partial\Phi|$ \\
+Primary radial mode is distinct from the SM Higgs
+  & A & Different condensate level \\
+$m_\sigma\sim\bar{M}_{\rm Pl}$ (Planck heavy)
+  & B & Uses scale matching $u_0\sim\bar{M}_{\rm Pl}$ \\
+$\sigma$ sets the UV cutoff of the broken-phase EFT
+  & B & Decoupling / EFT structure \\
+Secondary radial mode exists if second transition occurs
+  & B/C & Conditional on OP-EW and local gauge realisation \\
+Secondary mode is structurally analogous to SM Higgs
+  & B/C & Formal radial analogue; not a derivation \\
+$m_h = \sqrt{2\lambda_2}\,v_2$ with $v_2$ from $G_F$ matching
+  & B/C & Matching input, not ECT prediction \\
+$\lambda_2(v_2)\approx0.13$ consistent with $m_H\approx125$\,GeV
+  & Open & External SM matching \\
+Yukawa / gauge mass generation fully derived
+  & Open & Not completed; part of OP-EW \\
+\hline
+\end{tabular}
+\end{center}
 
 \subsection{Emergence of the Graviton}
 \label{sec:graviton}
