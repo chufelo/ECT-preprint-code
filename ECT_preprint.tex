@@ -1880,9 +1880,10 @@ Entropy growth is structurally natural
   & B & Uses S8 + coarse graining \\
 Domain-network growth supports $dS/dw>0$
   & B & Structural Level~B heuristic \\
-Causal kernel $K(\tau<0)=0$ for all Lorentzian branch perturbations
-  & A & Symmetric hyperbolic reduction;
-    App.~\ref{app:causal_hyperbolic} \\
+Causal kernel $K(\tau<0)=0$ in the quadratic Lorentzian sector
+  & A & Appendix~\ref{app:retarded_kernel} \\
+Symmetric-hyperbolic extension for individual branch modes
+  & Strong~B & App.~\ref{app:causal_hyperbolic}; full coupled system pending \\
 Decoherence aligns with branch-selected arrow
   & B & Structural compatibility \\
 Defect/domain production supports irreversibility
@@ -1903,17 +1904,17 @@ Full microscopic second law / H-theorem
 
 \textit{Status: layered.
 ECT does not postulate the second law as an independent axiom.
-Its derivation combines two Level~A ingredients
-(geometric branch selection and the causal retarded kernel
-$K(\tau<0)=0$ for all perturbations in the Lorentzian ordered branch;
-Appendix~\ref{app:causal_hyperbolic}) with Level~B ingredients
+Its derivation combines one Level~A ingredient
+(geometric branch selection) with a causal-kernel result that is
+Level~A in the quadratic Lorentzian sector~(Appendix~\ref{app:retarded_kernel})
+and admits a strong symmetric-hyperbolic extension for individual
+branch perturbation modes~(Appendix~\ref{app:causal_hyperbolic}),
+together with Level~B ingredients
 (structurally motivated low-entropy initial sector, effective
 coarse-graining closure, and the ohmic/Markov assumptions required for
 the explicit entropy-production formula).
-For the physically realised Lorentzian universe the second law is
-therefore a strong Level~B result with a Level~A causal backbone;
-the causal foundation has now been raised to Level~A for the
-full ordered branch.
+The second law is therefore a strong Level~B result with a
+Level~A causal backbone.
 The full technical derivation is given in
 Section~\ref{sec:influence_functional}.}
 
@@ -1955,8 +1956,10 @@ The thermodynamic arrow in ECT requires three elements simultaneously:
   \item \textbf{Causal coarse graining~(Level~A/B).}
     The environment must respond causally and a coarse-grained
     description must be adopted.
-    The retarded kernel $K(\tau<0)=0$ is Level~A for all perturbations
-    in the Lorentzian ordered branch~(Appendix~\ref{app:causal_hyperbolic}).
+    The retarded kernel $K(\tau<0)=0$ is Level~A in the quadratic
+    Lorentzian sector~(Appendix~\ref{app:retarded_kernel}) and admits
+    a strong symmetric-hyperbolic extension for individual branch
+    perturbation modes~(Appendix~\ref{app:causal_hyperbolic}).
     The coarse-graining closure (ohmic/Markov) is Level~B.
 \end{enumerate}
 This is the ECT analogue of the Boltzmann argument: reversible
@@ -2059,10 +2062,10 @@ Geometric time orientation from ordered branch
   & A & Section~\ref{sec:arrow_of_time} \\
 Low-entropy initial sector structurally motivated
   & B & P4+S6; no strict measure at basics level \\
-Causal kernel $K(\tau<0)=0$ for all perturbations in
-Lorentzian ordered branch
-  & A & Symmetric hyperbolic reduction;
-    Appendix~\ref{app:causal_hyperbolic} \\
+Causal kernel $K(\tau<0)=0$ in the quadratic Lorentzian sector
+  & A & Appendix~\ref{app:retarded_kernel} \\
+Symmetric-hyperbolic extension for individual branch modes
+  & Strong~B & Appendix~\ref{app:causal_hyperbolic}; coupled system pending \\
 Entropy growth for macroscopic reduced systems
   & B & Three-ingredient logic; requires coarse-graining closure \\
 Explicit formula~\eqref{eq:dSdw_second_law_basics}
@@ -13618,9 +13621,10 @@ keeping all quantitative overclaims under control.
 % ============================================================
 
 \textit{Status: layered.
-Level~A for the causal retarded kernel for all perturbations in the
-Lorentzian ordered branch~(Appendix~\ref{app:causal_hyperbolic},
-symmetric-hyperbolic reduction);
+Level~A for the causal retarded kernel in the quadratic Lorentzian
+sector~(Appendix~\ref{app:retarded_kernel});
+strong symmetric-hyperbolic extension for individual branch modes
+(Appendix~\ref{app:causal_hyperbolic});
 Level~A for nonnegative spectral density in the quadratic sector;
 Level~B for the low-entropy initial coherent sector at the ECT-basics
 stage; Level~A/B for the low-entropy initial branch once the
@@ -13795,17 +13799,11 @@ semiclassically distinguished low-entropy sector rather than with a
 generic highly mixed configuration.
 
 \paragraph{Status.}
-This is best regarded as a strengthening of the Level~B initial-state
-argument toward Level~A/B, not yet as a completed Level~A theorem.
-Its final status depends on the full completion of the quantum-sector
-reconstruction, including the precise measure and reduced-state
-interpretation~(OP-Q11).
-
-\paragraph{Status.}
 The existence of an ordered coherent sector is structural~(Level~A).
-Its interpretation as a low-entropy initial condition is Level~B:
-strongly motivated by P4, BR1, and the ordered vacuum, but not yet a
-first-principles microscopic entropy theorem.
+Its interpretation as a low-entropy initial condition is Level~B at
+the ECT-basics stage and can be strengthened toward Level~A/B once
+the quantum-sector path-integral weighting is admitted.
+This is not yet a completed microscopic entropy theorem~(OP-Q11).
 
 \subsubsection*{Positive spectral density and dissipative kernel}
 
@@ -14017,7 +14015,11 @@ effective bath analysis of Appendix~\ref{app:ohmic_markov}.
   \item the coherent branch admits a reduced influence-functional
     organisation;
   \item the retarded kernel is causal in the quadratic broken-phase
-    sector~\eqref{eq:qs_retarded_zero};
+    sector~\eqref{eq:qs_retarded_zero}
+    (Appendix~\ref{app:retarded_kernel});
+    a symmetric-hyperbolic extension to individual branch modes is
+    given in Appendix~\ref{app:causal_hyperbolic}~(Level~A for scalar
+    modes; full coupled system pending);
   \item the spectral density is nonnegative in the quadratic
     sector~\eqref{eq:qs_rho_positive};
   \item macroscopic entropy growth is qualitatively supported.
@@ -17714,13 +17716,13 @@ Strict derivation belongs to Section~\ref{sec:influence_functional}.
 causal propagation at Level~A}
 \label{app:causal_hyperbolic}
 
-\textit{Status: Level~A for all perturbations within the Lorentzian
-ordered branch, conditional on the Lorentzian signature being maintained.
-This is the same condition as the Level~A SSB result of
-Section~\ref{sec:metric_classification}.
-This appendix provides the explicit symmetric-hyperbolic reduction that
-upgrades the quadratic-sector result of Appendix~\ref{app:retarded_kernel}
-to a statement about the full ordered branch.}
+\textit{Status: Level~A for individual scalar branch perturbation modes
+via explicit symmetric-hyperbolic reduction of the quasilinear ECT EOM.
+This extends the quadratic result of Appendix~\ref{app:retarded_kernel}
+to the nonlinear scalar dynamics.
+A full Level~A theorem for the complete coupled branch system would
+require writing the full multi-variable branch equations in
+symmetric-hyperbolic form; this is a well-defined future task.}
 
 \subsection*{The equation of motion in the ordered branch}
 
@@ -17840,13 +17842,18 @@ This is the same Level~A condition as the SSB result
 of Section~\ref{sec:metric_classification}.
 
 \begin{equation}
-  \boxed{K(\tau<0)=0 \quad \text{for all perturbations in the Lorentzian
-  ordered branch} \quad \text{(Level~A).}}
+  \boxed{K(\tau<0)=0 \quad \text{for individual scalar branch modes
+  in the Lorentzian ordered branch (Level~A).}}
   \label{eq:K_causal_levelA}
 \end{equation}
 
-\noindent This supersedes the earlier restriction to the quadratic sector
-in Appendix~\ref{app:retarded_kernel}.
+\noindent This extends the quadratic causal-kernel result of
+Appendix~\ref{app:retarded_kernel} to the nonlinear scalar dynamics.
+A complete Level~A statement for the fully coupled branch system
+(including the joint dynamics of all branch variables) requires the
+corresponding symmetric-hyperbolic reduction for the full system;
+each individual mode satisfies the condition, but the coupled
+multi-variable system has not yet been reduced to SH form.
 
 \subsection*{What this does not establish}
 
