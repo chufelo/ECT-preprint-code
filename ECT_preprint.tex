@@ -4726,140 +4726,171 @@ Full QED from P1--P5
 \textit{Status: structural embedding, Level~B/C.
 The non-Abelian gauge sector is not derived from the minimal scalar
 ECT postulates P1--P5; it is shown to be structurally admissible
-if the condensate possesses internal multiplet structure.}
+if the condensate possesses internal multiplet structure.
+The Standard Model gauge group is embedded, not derived.}
 
 \paragraph{General non-Abelian framework.}
 
-If the condensate possesses internal degrees of freedom
-forming a multiplet
-
+If the condensate possesses internal degrees of freedom forming a
+multiplet
 \begin{equation}
-\Phi = (\Phi_1,\Phi_2,\dots,\Phi_N)^T ,
+  \Phi = (\Phi_1,\Phi_2,\dots,\Phi_N)^T,
 \end{equation}
-
 and the action is invariant under global $SU(N)$ rotations
-$\Phi \to U\Phi$, then promoting these to local transformations
+$\Phi\to U\Phi$, then promoting these to local transformations
 $U(X)$ requires the introduction of gauge connections.
 The covariant derivative is
-
 \begin{equation}
-D_A = \partial_A - i g A_A^a T^a ,
+  D_A = \partial_A - ig\,A_A^a T^a,
+  \label{eq:nonabelian_cov_deriv}
 \end{equation}
-
 where $T^a$ are the generators and $A_A^a$ are the associated
 gauge fields.
+The gauge-invariant field strength tensor is
+\begin{equation}
+  F_{AB}^a = \partial_A A_B^a - \partial_B A_A^a
+  + g\,f^{abc}\,A_A^b A_B^c,
+  \label{eq:nonabelian_F}
+\end{equation}
+where $f^{abc}$ are the structure constants of the group,
+and the gauge field action is
+\begin{equation}
+  S_{\rm gauge} = -\frac{1}{4}
+  \int d^4X\;F_{AB}^a\,F^{a\,AB}.
+  \label{eq:YM_action}
+\end{equation}
 This construction shows structural compatibility of ECT with
-non-Abelian gauge theories; it does not derive the specific
-gauge group from the condensate.
+non-Abelian gauge theories; it does not derive the specific gauge
+group from the condensate.
 
-\subsection{$SU(3)$-like gauge structure: structural embedding}
-\label{sec:su3_embedding}
-
-\textit{Status: structural embedding, Level~C.
-A colour-triplet condensate sector provides a structural host
-for an $SU(3)$-like gauge sector; this is not derived from the
-minimal scalar postulates P1--P5.}
-
-The corresponding field strength tensor is
-
+\paragraph{The algebraic bridge:
+$\mathfrak{so}(3)\cong\mathfrak{su}(2)$.}
+After the spacetime symmetry breaking $O(4)\to O(3)$, the residual
+unbroken rotation algebra of the ordered branch is
 \begin{equation}
-F_{AB}^a
-=
-\partial_A A_B^a
--
-\partial_B A_A^a
-+
-g f^{abc}A_A^b A_B^c ,
+  \mathfrak{so}(3) \;\cong\; \mathfrak{su}(2).
+  \label{eq:so3_su2_iso}
 \end{equation}
-
-where $f^{abc}$ are the structure constants of the group.
-
-The gauge field action is
-
-\begin{equation}
-S_{gauge}
-=
--\frac{1}{4}
-\int d^4X\sqrt{-g}\,
-F_{AB}^a F^{a\,AB}.
-\end{equation}
+This is an isomorphism of Lie algebras, not an identification of
+the global groups $SO(3)$ and $SU(2)$.
+Among the Standard Model simple gauge factors, $SU(2)$ is the only
+one whose Lie algebra has a direct algebraic analogue in the residual
+spacetime-rotation algebra of the broken phase.
+This is an algebraic bridge, not yet a derivation of the electroweak
+sector.
+Its possible relation to chirality and the selection of $SU(2)_L$
+is discussed separately in Section~\ref{sec:chirality}.
 
 \paragraph{Accommodation of Standard Model gauge groups.}
-
 Within this framework the gauge interactions of the Standard Model
-can be \emph{accommodated} as arising from internal symmetries of the
-condensate (the exact SM gauge group is imposed as input, not derived
-from first principles within the current framework):
-
+can be \emph{accommodated} as arising from internal symmetries of
+the condensate:
 \begin{itemize}
-
-\item $U(1)$ symmetry of the condensate phase produces the
-electromagnetic interaction.
-
-\item An $SU(2)$ doublet condensate provides a structural embedding
-for a weak-interaction-like sector, if a second condensate transition
-exists.
-
-\item A triplet structure provides a possible embedding of an
-$SU(3)$-like strong-interaction sector; this remains a model-level
-extension rather than a first-principles ECT derivation.
-
+  \item $U(1)$: the coherent-branch phase symmetry
+    (Section~\ref{sec:u1_emergence}); structurally the strongest
+    gauge-embedding result, with a distinguished Noether current
+    and superfluid analogy.
+  \item $SU(2)$: algebraically distinguished by the isomorphism
+    $\mathfrak{so}(3)\cong\mathfrak{su}(2)$; a structural
+    embedding for a weak-interaction-like sector if a second
+    condensate transition exists
+    (Section~\ref{sec:ew_embedding}).
+  \item $SU(3)$: requires an additional colour-triplet internal
+    structure with no spacetime counterpart; this remains a
+    model-level extension~(Level~C).
 \end{itemize}
-
-Thus gauge interactions can be \emph{embedded} as connections required
-to maintain local symmetry of extended condensate sectors.
-This is a structural compatibility statement, not yet a derivation of
-the full Standard-Model gauge structure from minimal ECT.
+The coupling constants $g$, $g'$, and $g_s$ are all free EFT
+parameters in the present formulation; none is derived from the
+condensate data.
+At the present stage, neither the values nor the running of
+$(g,g',g_s)$ are derived from condensate microphysics.
+They remain EFT matching parameters.
 
 \subsection{Electroweak-like embedding and its current status}
 \label{sec:ew_embedding}
+
+\textit{Status: structural embedding, Level~B/C.
+The electroweak-like sector is not derived from minimal ECT; it is
+shown to be structurally admissible if a second condensate transition
+$O(3)\to O(2)$ is realised.
+The scale $v_2$ is a matching constraint, not a prediction.
+Connection to ECT basics: Section~\ref{sec:three_scales},
+Appendix~\ref{app:second_transition}.}
 
 Beyond the Abelian phase sector, one may ask whether the ordered
 condensate admits an additional non-Abelian sector analogous to the
 electroweak interaction.
 At the present stage this must be formulated cautiously.
 
-A convenient \emph{embedding model} is to introduce a condensate doublet
+\paragraph{ECT-specific structural motivation.}
+The isomorphism $\mathfrak{so}(3)\cong\mathfrak{su}(2)$
+established in the previous subsection provides a structural
+motivation that is absent for other gauge groups.
+A second ordering step $O(3)\to O(2)$ would yield two broken and one
+unbroken generator in the residual orientation sector.
+This is only a counting-level and algebraic analogy to the electroweak
+pattern; it is not by itself a derivation of the
+$SU(2)\times U(1)\to U(1)_{\rm em}$ mechanism or of the observed
+$W^\pm/Z/\gamma$ spectrum.
+
+A structural candidate mechanism for such a second transition is
+described in Appendix~\ref{app:second_transition}; it requires
+two additional assumptions (phase--orientation coupling and
+potential alignment) not yet derived from P1--P5.
+
+\paragraph{Embedding model.}
+A convenient electroweak-like EFT embedding is to introduce a
+condensate doublet
 \begin{equation}
-\Phi =
-\begin{pmatrix}
-\Phi_1 \\
-\Phi_2
-\end{pmatrix},
+  \Phi =
+  \begin{pmatrix} \Phi_1 \\ \Phi_2 \end{pmatrix},
 \end{equation}
 with gauge-covariant dynamics
 \begin{equation}
-S_{\text{weak}}=
-\int d^4X
-\left[
-\frac{1}{2}\lvert D_A\Phi\rvert^2
-+
-\frac{\lambda_2}{4}
-\left(\Phi^\dagger\Phi - v_2^2\right)^2
-\right],
+  S_{\text{weak}} = \int d^4X\left[
+    \frac{1}{2}|D_A\Phi|^2
+    + \frac{\lambda_2}{4}\left(\Phi^\dagger\Phi-v_2^2\right)^2
+  \right],
 \end{equation}
 where
 \begin{equation}
-D_A = \partial_A - i g\,\frac{\tau^a}{2}\,W_A^a.
+  D_A = \partial_A - ig\,\frac{\tau^a}{2}\,W_A^a - ig'\,Y\,B_A.
 \end{equation}
+Here $\tau^a$ are the Pauli matrices, $W_A^a$ the $SU(2)$ gauge
+fields, $B_A$ the hypercharge gauge field, $Y$ the hypercharge
+assignment, and $g$, $g'$ the corresponding coupling constants.
 This construction is \emph{not} derived from the minimal scalar ECT
 postulates P1--P5.
-Rather, it provides a low-energy \emph{structural embedding} showing how
-an electroweak-like EFT could be accommodated if a second condensate
-transition exists.
+Rather, it provides a low-energy \emph{structural embedding} showing
+how an electroweak-like EFT could be accommodated if a second
+condensate transition exists.
 
-If such an intermediate transition is realised, the associated scale is
-fixed by low-energy matching:
+\paragraph{Scale matching and the hierarchy problem.}
+If such an intermediate transition is realised, the associated scale
+is fixed by low-energy matching:
 \begin{equation}
-  v_2 = \left(\sqrt{2}\,G_F\right)^{-1/2} \approx 246.22\,\text{GeV},
+  v_2 = \left(\sqrt{2}\,G_F\right)^{-1/2}
+  \approx 246.22\,\text{GeV},
 \end{equation}
 equivalently by the observed relations
 \begin{equation}
-  m_W = \frac{g v_2}{2},
-  \qquad
+  m_W = \frac{gv_2}{2}, \qquad
   m_Z = \frac{\sqrt{g^2+g'^2}}{2}\,v_2.
 \end{equation}
-Thus 246\,GeV is not a free choice once the electroweak EFT is matched.
+Thus $246\,$GeV is not a free choice once the electroweak EFT is
+matched.
+The ratio $v_2/u_0\approx 10^{-16}$ is the ECT counterpart of the
+standard gauge hierarchy problem, discussed in
+Section~\ref{sec:three_scales}.
+
+\paragraph{ECT interpretation: second phase of the same medium.}
+If the second transition is realised, ECT would then interpret the
+electroweak condensate not as an independent scalar field introduced
+\emph{ad hoc}, but as a second ordered phase of the same underlying
+$\Phi$-medium whose first transition already produced the Lorentzian
+spacetime and the gravitational sector.
+This is a conceptual distinction from the Standard Model, where the
+Higgs field and the spacetime metric are independent structures.
 
 At the current level of ECT this should be read only as follows:
 \begin{itemize}
@@ -4867,112 +4898,133 @@ At the current level of ECT this should be read only as follows:
     electroweak-like embedding;
   \item the value of $v_2$ is a \emph{matching constraint} if that
     embedding is realised;
-  \item the dynamical origin of the second transition remains open
-    (OP-EW; see Section~\ref{sec:three_scales} and
+  \item the dynamical origin of the second transition remains
+    open~(OP-EW; see Section~\ref{sec:three_scales} and
     Appendix~\ref{app:second_transition}).
 \end{itemize}
-Accordingly, the electroweak-like sector is currently a
-Level~B/C structural embedding, not a first-principles derivation from
-the bare scalar condensate action.
+Accordingly, the electroweak-like sector is currently a Level~B/C
+structural embedding, not a first-principles derivation from the bare
+scalar condensate action.
 
-\subsection{Internal symmetry structure and possible Standard Model sectors}
+\subsection{Gauge sector summary, structural observations,
+and the open programme}
+\label{sec:gauge_summary}
 
 \textit{Status: structural compatibility statement, Level~B/C.
-The Standard Model gauge group $U(1)\times SU(2)\times SU(3)$
-is not derived from minimal ECT; it is shown to be embeddable
-if the condensate carries the appropriate internal multiplet structure.
+The Standard Model gauge group $U(1)\times SU(2)\times SU(3)$ is not
+derived from minimal ECT; it is shown to be embeddable if the
+condensate carries the appropriate internal structure.
 A full first-principles derivation remains open~(OP-SM).}
 
-The gauge structures discussed above suggest a structural correspondence
-with the symmetry structure of the Standard Model.
+\paragraph{Separation of spacetime and internal symmetries.}
+The spacetime symmetry breaking $O(4)\to O(3)$ acts on the coordinate
+index of the Euclidean arena, whereas internal gauge symmetries act on
+multiplet indices of the condensate components.
+These sectors are therefore structurally distinct from the outset.
 
-In the ECT framework, gauge interactions can be embedded via internal
-symmetries of the condensate order parameter (Level~B/C; SM gauge group
-embedded, not microscopically derived from the bare scalar action).
-The condensate may possess several internal components that can
-rotate in an internal space without changing the energy of the ground state.
+The Coleman--Mandula theorem~\cite{ColemanMandula1967} constrains the
+structure of exact symmetries of a nontrivial relativistic S-matrix
+under specific assumptions.
+The present ECT discussion is formulated at the level of the condensate
+action and its symmetry structure, prior to any full S-matrix
+reconstruction.
+For that reason, the theorem does not by itself settle the viability of
+the present embedding programme.
+This should not be read as a violation or circumvention of
+Coleman--Mandula, but simply as a reminder that the current analysis is
+outside its standard scope.
 
-Let the condensate field be represented as a multiplet
+\paragraph{Connection to chirality.}
+The group-theoretic decomposition $SO(4)\simeq SU(2)_L\times SU(2)_R$,
+together with the SSB selection of a preferred axis, is discussed in the
+context of fermion chirality in Section~\ref{sec:chirality}.
+That discussion shows how the symmetry breaking can structurally
+distinguish the two $SU(2)$ sectors and select $SU(2)_L$ as the
+surviving gauge factor~(Level~B structural reconstruction; fermions
+are not derived from the bare bosonic condensate).
 
-\begin{equation}
-\Phi(X)=
-\begin{pmatrix}
-\Phi_1(X) \\
-\Phi_2(X) \\
-\vdots \\
-\Phi_N(X)
-\end{pmatrix}.
-\end{equation}
+\paragraph{What is needed for Level~A.}
+To promote the gauge sector from structural embedding to
+first-principles derivation, the following programme would need to be
+completed:
+\begin{enumerate}[label=(\roman*)]
+  \item derive the \emph{necessity} of internal multiplet structure
+    from the condensate dynamics, rather than introducing it as an
+    extension;
+  \item derive the specific gauge group
+    $U(1)\times SU(2)\times SU(3)$, or show that it is uniquely
+    selected by the condensate structure;
+  \item derive the coupling constants $(e, g, g', g_s)$ from
+    condensate parameters;
+  \item derive the second transition $O(3)\to O(2)$ dynamically
+    from the bare action;
+  \item show that the resulting EFT reproduces the full Standard
+    Model gauge sector, including anomaly cancellation and the
+    correct fermion representations.
+\end{enumerate}
+None of these steps has been completed.
+The gauge sector is a structural embedding programme, not a
+completed derivation.
 
-The transformations that preserve the norm of the multiplet form a
-unitary symmetry group
+\paragraph{Status summary.}
 
-\begin{equation}
-\Phi \rightarrow U\Phi,
-\qquad
-U^\dagger U = I .
-\end{equation}
-
-If different subsets of condensate components evolve dynamically as
-approximately independent sectors,
-
-\begin{equation}
-\Phi =
-\begin{pmatrix}
-\Phi_{(3)} \\
-\Phi_{(2)} \\
-\Phi_{(1)}
-\end{pmatrix},
-\end{equation}
-
-the internal symmetry structure may effectively factorize into
-subgroups acting on these sectors.
-
-Promoting these symmetries to local symmetries introduces gauge
-connections in the covariant derivative
-
-\begin{equation}
-D_A =
-\partial_A
-- i g_s T^a G_A^a
-- i g \tau^i W_A^i
-- i g' B_A .
-\end{equation}
-
-Here the corresponding gauge fields can be interpreted as
-
-\begin{align}
-G_A^a & \quad (a=1\dots8) && \text{color gauge fields},\\
-W_A^i & \quad (i=1\dots3) && \text{weak gauge fields},\\
-B_A   &                   && U(1)\ \text{gauge field}.
-\end{align}
-
-Such a structure resembles the gauge sector of the Standard Model,
-characterized by the symmetry group
-
-\begin{equation}
-SU(3)\times SU(2)\times U(1).
-\end{equation}
-
-In the present framework this structure is interpreted as arising from
-internal symmetries of different sectors of the condensate field.
-
-The spontaneous breaking of spacetime symmetry
-
-\begin{equation}
-O(4)\rightarrow O(3)
-\end{equation}
-
-selects a preferred direction in spacetime but does not constrain the
-internal symmetry structure of the condensate. The gauge symmetries
-therefore originate from internal rotations in the condensate space,
-while the Lorentzian spacetime structure is associated with the
-condensate orientation in the Euclidean manifold (in the phase $\alpha>\beta$).
-
-A full derivation of the Standard Model gauge group from the
-microscopic condensate dynamics remains an open problem~(OP-SM).
-The present discussion establishes only structural compatibility,
-not a first-principles derivation.
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
+\hline
+Statement & Status & Comment \\
+\hline
+\multicolumn{3}{l}{\textit{Non-Abelian gauge embedding}} \\
+Structural compatibility of ECT with non-Abelian
+  gauge theories
+  & B/C & Embedding, not derivation \\
+$\mathfrak{so}(3)\cong\mathfrak{su}(2)$: algebraic
+  isomorphism
+  & A & Lie-algebra identity \\
+$SU(2)$ algebraically distinguished among SM
+  simple factors
+  & A & Direct Lie-algebra analogue in the
+    residual rotation sector \\
+$SU(3)$: requires additional internal structure
+  & C & No spacetime counterpart identified \\
+Yang--Mills action as leading-order EFT term
+  & B & Standard EFT uniqueness \\
+Couplings $(g, g', g_s)$: free EFT matching
+  parameters
+  & Matched & Not derived from condensate dynamics \\
+\hline
+\multicolumn{3}{l}{\textit{Electroweak-like embedding}} \\
+$O(3)\to O(2)$ as candidate electroweak-like
+  transition
+  & B & Counting/algebraic analogy only \\
+$v_2 = (\sqrt{2}G_F)^{-1/2}$: matching constraint
+  & Constraint & If second transition exists \\
+Electroweak sector as second phase of the same
+  medium
+  & B/C & Structural interpretation \\
+Dynamical origin of the second transition
+  & Open (OP-EW) & \\
+\hline
+\multicolumn{3}{l}{\textit{Structural observations}} \\
+Spacetime and internal symmetries act on different
+  index spaces
+  & A & Built into the formulation \\
+$SO(4)\simeq SU(2)_L\times SU(2)_R$ and chiral
+  selection
+  & B & Structural possibility discussed in
+    Section~\ref{sec:chirality} \\
+\hline
+\multicolumn{3}{l}{\textit{Open programme}} \\
+Full SM gauge group from condensate microdynamics
+  & Open (OP-SM) & \\
+First-principles origin of internal multiplet
+  structure
+  & Open & \\
+Full SM gauge sector including anomaly cancellation
+  & Open & \\
+\hline
+\end{tabular}
+\end{center}
 
 \section{Elementary Particles and Field Excitations in ECT}
 \label{sec:particles}
@@ -5868,7 +5920,7 @@ phenomenological and subject to further derivation from the microscopic
 condensate dynamics.
 
 \subsection{Chirality and fermion interactions}
-
+\label{sec:chirality}
 
 \paragraph{Chirality and the origin of the $SU(2)_L$ sector}
 
