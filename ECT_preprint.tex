@@ -742,10 +742,10 @@ or symmetry breaking.
     are not excluded a priori.
 \end{description}
 
-\paragraph{Layer~D\,: Dynamical principle.}
+\paragraph{Layer~DP\,: Dynamical principle.}
 
 \begin{description}
-  \item[\textbf{D1} --- Variational selection.]
+  \item[\textbf{DP} --- Variational selection.]
     Physically realisable configurations are extrema of a local
     functional $S_E[\Phi]$ compatible with the basic symmetries of the
     medium, and satisfy conditions ensuring the well-posedness of the
@@ -759,7 +759,7 @@ In that realisation:
 P1 makes explicit S1--S3;
 P2 formalises S2 at the level of the bare symmetry;
 P3 realises S4, S5, and provides the minimal local variational
-realisation associated with D1;
+realisation associated with DP;
 P4 realises S7;
 P5 makes explicit S6 and S8.
 The broader topological completeness property S9 is partially reflected,
@@ -2512,7 +2512,7 @@ Pseudo-Goldstone mass mechanism
 Relation to electroweak gauge/Higgs sector
   & Open (OP-EW) & Requires second condensate scale and localisation \\
 Variational selection of realised $\Phi$-configurations
-  & Level~A & D1a/D1b (basic definition of the theory) \\
+  & Level~A & DP (basic definition of the theory) \\
 Emergent extremal dynamics in reduced effective sectors
   & Level~B & Inherited from variational selection after branch reduction \\
 Action scale $S_0$ as ECT precursor of $\hbar$
@@ -2919,7 +2919,7 @@ strict theorem).
 \paragraph{Relation to the classical limit and variational dynamics.}
 The emergence of $S_0$ is fully compatible with the variational principle.
 At the fundamental level, realised configurations remain extremals of
-$S_E[\Phi]$~(D1; Section~\ref{sec:noether}).
+$S_E[\Phi]$~(DP; Section~\ref{sec:noether}).
 What $S_0$ adds is a sensitivity scale for coherent phase relations:
 when action differences satisfy $|\Delta S|\gg S_0$, relative phase
 oscillations become rapidly varying and an extremal, effectively classical
@@ -3178,7 +3178,7 @@ but by the class of observables retained under coarse-graining.
 \label{sec:noether}
 
 \textit{Status: layered.
-Physical configuration selection via extremality is Level~A (D1).
+Physical configuration selection via extremality is Level~A (DP).
 Noether structure from action symmetries is Level~A.
 Inheritance by the ordered branches is Level~A/B.
 Compatibility with the arrow of time and with the classical/quantum
@@ -3194,13 +3194,13 @@ the much larger set of ontologically admissible ones.
 Extremality is therefore the bridge from the ontological layer of the
 theory to its dynamical content.
 The action principle belongs to the same foundational \emph{dynamical}
-layer as D1, not to the ontological layer of properties S1--S9.
+layer as DP, not to the ontological layer of properties S1--S9.
 
 \paragraph{From admissibility to realisation.}
 The structural properties S1--S9 of the $\Phi$-medium specify what
 kinds of configurations are admissible: regular or defect-adjacent,
 homogeneous or inhomogeneous, coherent or topologically nontrivial.
-The dynamical principle~D1 then states that physically realised
+The dynamical principle~DP then states that physically realised
 configurations are extremals of a local action functional compatible
 with the basic symmetries of the medium:
 \begin{equation}
@@ -3334,7 +3334,7 @@ histories remain phase-relevant.
 Statement & Status & Comment \\
 \hline
 Physical configurations selected variationally
-  & A & D1 \\
+  & A & DP \\
 Symmetry-compatible action implies Noether structure
   & A & Standard variational logic \\
 Ordered branch inherits variational structure
@@ -3389,9 +3389,9 @@ ECT basics establishes the following common foundation for both branches:
   \item Connected four-dimensional Euclidean arena with initially
     equivalent directions and points~(P1; ontology layer S1--S3);
   \item Local $O(4)$-invariant scalar microdynamics and the minimal
-    variational realisation of the $\Phi$-medium~(P2--P3, D1);
+    variational realisation of the $\Phi$-medium~(P2--P3, DP);
   \item Variational selection of physically realised $\Phi$-configurations
-    and the origin of emergent extremal dynamics~(D1,
+    and the origin of emergent extremal dynamics~(DP,
     Section~\ref{sec:noether});
   \item Gradient-ordered vacuum branch with spontaneous
     $O(4)\to O(3)$ breaking~(P4);
@@ -9766,7 +9766,7 @@ D11 & Compatibility with $n_s\approx0.967$ (Planck 2018) & Open & ECT-native der
 D12 & Baryogenesis $\eta_B\approx9\times10^{-10}$ & B & Leptogenesis mechanism & \ref{sec:mp_cosmo} \\
 D13 & UV safety of graviton & C & Power counting not done & 8, \ref{sec:open_problems} \\
 D14 & Full non-linear Einstein eqs.\ (anisotropic curv.\ term); $\phi$-first scalar-tensor IR closure (Appendix~\ref{app:phi_first_EFE}) & A/B & Riemann commutator identity (OP2 resolved at linear level); scalar-tensor closure = effective IR ansatz & \ref{sec:macroscopic}, App.~\ref{app:curvature_coupling}, App.~\ref{app:phi_first_EFE} \\
-D15 & Causality of $K(\tau)$ from ECT & B & Structural: forward light cone of ECT metric; non-circular derivation from bare action not completed & 4, \ref{sec:open_problems} \\
+D15 & First-principles derivation of causal response kernel from ECT microdynamics & Open & The retarded ordered-branch scalar dynamics provides the structural motivation, but a non-circular derivation of the causal FV kernel from the bare ECT action is not yet complete & 4, \ref{sec:open_problems} \\
 D16 & SM gauge group from O(4) & C & Embedded, not derived & 7, \ref{sec:open_problems} \\
 D17 & Second law $dS/dw\geq0$ (effective Gaussian--Markov result, ordered branch) & B & Gaussian--Markov approx.\ + structural initial condition; not derived from bare action (OP24) & \ref{sec:quantum}, \ref{sec:open_problems} \\
 D18 & Universe domain size $R_{\rm domain}\gtrsim R_H$ (amplified by pre-Lorentzian ordering) & B/Open & Scale depends on ordering dynamics (OP3); $e^{N_e}$ factor from inflation removed & \ref{sec:universe_size} \\
@@ -17990,16 +17990,20 @@ Consequently:
 
 \subsection*{Relation to other appendices}
 
-\begin{itemize}
-  \item Appendix~\ref{app:retarded_kernel}: proves $K(\tau<0)=0$
-    in the quadratic sector (used in the alternative derivation of
-    $J(\omega)\geq 0$).
-  \item Appendix~\ref{app:causal_hyperbolic}: extends $K(\tau<0)=0$
-    to the full nonlinear $\Phi$-dynamics.
-  \item Appendix~\ref{app:ohmic_markov}: scaling analysis of the
-    spectral density; explains why the default is super-ohmic and
-    what additional assumptions lead to ohmic behaviour.
-\end{itemize}
+Appendix~\ref{app:retarded_kernel} establishes retarded propagation in
+the quadratic ordered-branch sector, i.e.\ the vanishing of the
+retarded Green function for negative time separation.
+Appendix~\ref{app:causal_hyperbolic} extends this retarded-propagation
+result to the full nonlinear dynamics of the ordered-branch scalar
+field~$\Phi$ via symmetric-hyperbolic reduction.
+In the open-system reduction used in the present appendix, this
+retarded structure is encoded by a causal response kernel
+$K(\tau<0)=0$.
+A full first-principles derivation of that kernel directly from ECT
+microdynamics remains open~(OP1, OP5).
+Appendix~\ref{app:ohmic_markov} provides the scaling analysis of the
+spectral density; it explains why the default is super-ohmic and
+what additional assumptions lead to ohmic behaviour.
 
 
 % ------------------------------------------------------------
