@@ -1687,7 +1687,7 @@ all temporal notions must emerge from the ordered branch and its
 effective Lorentzian description.
 In this sense, the arrow-of-time problem in ECT is two-layered:
 first, an effective time direction must emerge from the condensate
-structure~(Sections~\ref{sec:eff_metric}--\ref{sec:lorentzian_window});
+structure~(Sections~\ref{sec:effective_metric}--\ref{sec:lorentz_window});
 second, that direction must acquire a preferred orientation.
 The present section addresses only the second layer, taking the
 emergent Lorentzian structure as already established.
@@ -1704,7 +1704,7 @@ After the transition $O(4)\to O(3)$, the ordered branch selects a
 preferred direction $w$ through
 $\langle \partial_A \Phi \rangle = u_0\,\delta_{Aw} \neq 0$,
 providing the geometric basis for the effective Lorentzian
-branch~(Section~\ref{sec:eff_metric}).
+branch~(Section~\ref{sec:effective_metric}).
 The asymmetry therefore originates not from the action itself, but from
 the realised selection of one ordered orientation over the opposite
 branch in a given history of the condensate.
@@ -1873,7 +1873,7 @@ Realised branch orientation breaks $\pm w$ degeneracy;
 pre-ordered action remains symmetric
   & A & Asymmetry from branch realisation, not from the action \\
 Effective Lorentzian time orientation emerges
-  & A & Geometric branch result; Section~\ref{sec:eff_metric} \\
+  & A & Geometric branch result; Section~\ref{sec:effective_metric} \\
 Ordered branch is statistically special
   & B & Uses S6; S6 vs P4 resolved via Section~\ref{sec:noether} \\
 Entropy growth is structurally natural
@@ -1892,6 +1892,186 @@ Compatibility with variational dynamics
 Quantum exception connected to $S_0$ scale
   & B & $|\Delta S|\sim S_0$; Section~\ref{sec:hbar_status} \\
 Full microscopic second law / H-theorem
+  & Open & OP1, OP5, OP24 \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\subsection{The second law of thermodynamics in ECT}
+\label{sec:second_law_basics}
+
+\textit{Status: layered.
+ECT does not postulate the second law as an independent axiom.
+Its derivation combines a Level~A geometric foundation
+(the ordered branch selection and the causal retarded-kernel structure
+in the quadratic Lorentzian sector) with Level~B ingredients
+(structurally motivated low-entropy initial sector, effective
+coarse-graining closure, and the ohmic/Markov assumptions required for
+explicit entropy-production formulae).
+For the physically realised Lorentzian universe the second law is
+therefore best described as a strong Level~B result with a Level~A
+causal backbone.
+The full technical derivation is given in
+Section~\ref{sec:influence_functional};
+the causal extension beyond the quadratic sector is discussed in
+Appendix~\ref{app:causal_hyperbolic}.}
+
+The thermodynamic second law in ECT is not a primitive input.
+It emerges from the arrow of time~(Section~\ref{sec:arrow_of_time})
+together with the causal response structure of the ordered condensate
+and the statistical nature of coarse-grained branch evolution.
+This section assembles that logic at the ECT-basics level; the detailed
+influence-functional derivation is deferred to
+Section~\ref{sec:influence_functional}.
+
+\paragraph{The second law is not the same as the arrow of time.}
+Section~\ref{sec:arrow_of_time} established a preferred orientation of
+effective time in the ordered branch.
+That result is geometric and structural~(Level~A).
+By itself it does \emph{not} yet imply entropy growth.
+ECT therefore distinguishes three separate things:
+\begin{itemize}
+  \item the \emph{geometric arrow} of time from ordered-branch selection;
+  \item the \emph{statistical tendency} toward higher-entropy macrostates;
+  \item the \emph{effective thermodynamic law}
+    $dS_{\rm ent}/dw\geq 0$ for macroscopic reduced systems.
+\end{itemize}
+The first is Level~A.
+The second and third require additional ingredients.
+
+\paragraph{Three ingredients are needed.}
+The thermodynamic arrow in ECT requires three elements simultaneously:
+\begin{enumerate}
+  \item \textbf{Geometric time orientation~(Level~A).}
+    The ordered branch selects a preferred direction~$w$
+    (Section~\ref{sec:arrow_of_time}).
+    Without this, the sign of $dS/dw$ has no physical meaning.
+  \item \textbf{A statistically exceptional initial sector~(Level~B).}
+    The ordered branch selected by P4 is structurally non-generic
+    relative to the larger admissible configuration space characterised
+    by S6 (Section~\ref{sec:arrow_of_time}).
+    This gives a natural low-entropy starting point.
+  \item \textbf{Causal coarse graining~(Level~A/B).}
+    The environment must respond causally and a coarse-grained
+    description must be adopted.
+    The retarded kernel $K(\tau<0)=0$ is Level~A in the quadratic
+    Lorentzian sector~(Appendix~\ref{app:retarded_kernel})
+    and strongly expected to extend beyond it~(Appendix~\ref{app:causal_hyperbolic}).
+    The coarse-graining closure (ohmic/Markov) is Level~B.
+\end{enumerate}
+This is the ECT analogue of the Boltzmann argument: reversible
+microdynamics plus a special initial condition plus coarse graining
+leads to irreversible macroscopic behaviour.
+
+\paragraph{Structural entropy-growth statement.}
+The key qualitative conclusion is: once the ordered branch is the
+realised low-entropy sector and once unresolved branch modes are
+integrated out causally, entropy growth for macroscopic reduced sectors
+is structurally natural rather than imposed.
+ECT does not postulate the second law from outside; it explains why it
+is expected to emerge in the physically realised ordered universe.
+
+\paragraph{Quantitative closure and its status.}
+The explicit working formula, under the effective ohmic and Markovian
+assumptions of Section~\ref{sec:influence_functional}:
+\begin{equation}
+  \frac{dS_{\rm ent}}{dw}
+  = N_{\rm eff}\,\gamma\!\left(\frac{dq}{dw}\right)^{\!2} \geq 0,
+  \label{eq:dSdw_second_law_basics}
+\end{equation}
+where $q$ is the collective coordinate of the reduced subsystem,
+$N_{\rm eff}$ is the effective number of environmental modes, and
+$\gamma$ is the ohmic damping coefficient.
+This is Level~B: the non-negative sign is anchored in the causal
+retarded structure, but the explicit form requires the effective
+open-system closure.
+
+\paragraph{Statistical suppression of time-reversed trajectories.}
+The ratio of backward-to-forward trajectory probability over an
+interval $\Delta w$ is:
+\begin{equation}
+  \frac{P_{\rm back}}{P_{\rm fwd}}
+  = \exp\!\left(-2\,N_{\rm eff}\,\gamma\,\Delta w\cdot
+    \frac{(\Delta q)^2}{\ell^2}\right),
+  \label{eq:Pback_Pfwd_basics}
+\end{equation}
+with $\ell$ a characteristic displacement scale.
+For macroscopic systems ($1\,{\rm mol}$, $T=300\,{\rm K}$,
+$\Delta w = c\cdot 1\,{\rm ns}$): the exponent is $\approx 3.6\times10^{33}$,
+so $P_{\rm back}/P_{\rm fwd}\approx 0$.
+For $N_{\rm eff}\sim 1$: the exponent is $\sim 10^{-15}$,
+so $P_{\rm back}/P_{\rm fwd}\approx 1$ (quantum reversibility).
+The second law in ECT is therefore \emph{statistical rather than
+dynamical}: overwhelmingly valid for macroscopic systems, naturally
+weakened at the quantum scale~(consistent with the $S_0$-controlled
+divide of Section~\ref{sec:hbar_status}).
+
+\paragraph{Three regimes.}
+ECT provides a unified three-regime picture:
+\begin{itemize}
+  \item \textbf{Cosmological~($N_{\rm eff}\to\infty$):}
+    second law essentially exact; ordered branch defines cosmic arrow.
+  \item \textbf{Macroscopic~($N_{\rm eff}\gg 1$):}
+    time-reversed trajectories exponentially suppressed; second law
+    holds to astronomically high precision.
+  \item \textbf{Quantum~($N_{\rm eff}\sim 1$):}
+    fine-grained phase information not washed out; reversibility
+    recovered; consistent with unitary quantum mechanics and with
+    $S_0$-sensitive phase logic.
+\end{itemize}
+
+\paragraph{Relation to Boltzmann and Loschmidt.}
+Boltzmann derives irreversibility from reversible microdynamics via a
+statistical closure.
+ECT reproduces the same logical structure: reversible extremal
+dynamics~(D1) plus a statistically exceptional initial
+branch~(P4+S6) plus causal coarse graining gives $dS/dw\geq 0$.
+ECT's advantage over the original Boltzmann argument is that the
+initial low-entropy condition is not assumed ad hoc but arises
+structurally from ordered-branch selection~(P4+S6) and, in the quantum
+sector, from the path-integral weight~(Section~\ref{sec:influence_functional}).
+The Loschmidt objection is answered in the same way:
+the microscopic laws remain reversible, but the physically realised
+initial branch is statistically non-generic.
+
+\paragraph{What remains open.}
+ECT does not yet provide:
+\begin{itemize}
+  \item a first-principles derivation of the low-entropy initial branch
+    from a fully constructed microscopic measure at the ECT-basics level;
+  \item a derivation of the ohmic and Markovian closure from bare
+    postulates P1--P5;
+  \item a complete nonlinear H-theorem for arbitrary branch dynamics;
+  \item an explicit symmetric-hyperbolic reduction of the full nonlinear
+    ECT branch equations~(which would upgrade the causal-kernel result
+    to Level~A beyond the quadratic sector).
+\end{itemize}
+These remain open problems~(OP1, OP5, OP24).
+
+\paragraph{Status summary.}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{6.4cm}p{2.0cm}p{4.8cm}}
+\hline
+Statement & Status & Comment \\
+\hline
+Geometric time orientation from ordered branch
+  & A & Section~\ref{sec:arrow_of_time} \\
+Low-entropy initial sector structurally motivated
+  & B & P4+S6; no strict measure at basics level \\
+Causal kernel $K(\tau<0)=0$ in quadratic Lorentzian sector
+  & A & Appendix~\ref{app:retarded_kernel} \\
+Causal kernel beyond quadratic sector
+  & Struct.\ ext. & Appendix~\ref{app:causal_hyperbolic}; pending
+    explicit ECT symmetric-hyperbolic reduction \\
+Entropy growth for macroscopic reduced systems
+  & B & Three-ingredient logic; requires coarse-graining closure \\
+Explicit formula~\eqref{eq:dSdw_second_law_basics}
+  & B & Ohmic/Markov working closure \\
+Quantum reversibility for $N_{\rm eff}\sim 1$
+  & B & Internal ECT result; consistent with §\ref{sec:hbar_status} \\
+Full microscopic H-theorem from bare postulates
   & Open & OP1, OP5, OP24 \\
 \hline
 \end{tabular}
@@ -13439,13 +13619,19 @@ keeping all quantitative overclaims under control.
 \label{sec:qs_decoherence}\label{sec:influence_functional}\label{sec:second_law}
 % ============================================================
 
-\textit{Status: Level~A for the causal retarded kernel in the
-quadratic broken-phase sector; Level~A for nonnegative spectral
-density in the quadratic sector; Level~B for the low-entropy initial
-coherent sector, the effective ohmic regime, the Markov approximation,
+\textit{Status: layered.
+Level~A for the causal retarded kernel in the quadratic Lorentzian
+broken-phase sector~(Appendix~\ref{app:retarded_kernel});
+Level~A for nonnegative spectral density in the quadratic sector;
+Level~B for the low-entropy initial coherent sector at the ECT-basics
+stage; Level~A/B for the low-entropy initial branch once the
+path-integral weight is admitted in the quantum sector;
+Level~B for the effective ohmic regime, the Markov approximation,
 and the explicit entropy-production formula.
-Connection to ECT basics: Section~\ref{sec:arrow_of_time},
-Appendix~\ref{app:ohmic_markov}, and Appendix~\ref{app:retarded_kernel}.}
+Connection to ECT basics:
+Sections~\ref{sec:arrow_of_time} and~\ref{sec:second_law_basics};
+Appendices~\ref{app:ohmic_markov}, \ref{app:retarded_kernel},
+and~\ref{app:causal_hyperbolic}.}
 
 \medskip
 The previous subsections established the coherent branch as a
@@ -13458,6 +13644,18 @@ time emerges.
 These questions belong to decoherence.
 In ECT they must be addressed inside the coherent branch itself,
 rather than imported from an external quantum framework.
+
+\paragraph{Relation to ECT basics.}
+Section~\ref{sec:second_law_basics} assembled the structural
+three-ingredient argument for the second law:
+geometric branch orientation, statistically exceptional initial sector,
+and causal coarse graining.
+The present section provides the technical quantum-sector derivation
+behind that picture.
+In particular, it explains why the ordered coherent branch supports
+a low-entropy initial sector, how the influence functional produces
+entropy growth in the reduced description, and why macroscopic
+irreversibility coexists with quantum reversibility.
 
 \subsubsection*{Why decoherence belongs to the coherent branch}
 
@@ -13536,6 +13734,21 @@ underlying broken-phase EFT.
 Irreversibility is therefore built on top of a causal ordered
 background, not inserted by hand.
 
+\paragraph{Beyond the quadratic sector.}
+The explicit Level~A proof applies in the quadratic Lorentzian
+broken-phase sector.
+Beyond it, the same causal conclusion is strongly supported by the
+hyperbolic character of the Lorentzian ordered branch:
+once the effective equations are shown to form a symmetric hyperbolic
+system in the sense of Leray--Choquet-Bruhat~\cite{Leray1952,ChoquetBruhat1952},
+$K(\tau<0)=0$ becomes a mathematical theorem for the full nonlinear
+branch.
+This reduction has not yet been written out explicitly for ECT;
+Appendix~\ref{app:causal_hyperbolic} explains what is needed.
+For the conservative main-text status we therefore retain:
+Level~A in the quadratic Lorentzian sector, with a strong structural
+extension expected beyond it.
+
 \subsubsection*{Low-entropy coherent initial sector}
 
 The second ingredient is the assumption that the initial coherent
@@ -13563,6 +13776,31 @@ restriction strongly motivates an initially low-entropy sector:
 The natural QS starting point is therefore not a maximally disordered
 state but a highly ordered coherent one---exactly the initial condition
 needed for an emergent arrow of time.
+
+\subsubsection*{Path-integral weighting and the initial coherent sector}
+
+Once the quantum sector is formulated in terms of the coherent
+action scale $S_0$, the Euclidean path-integral weight
+\begin{equation}
+  \label{eq:qs_partition_function}
+  Z = \int \mathcal{D}\Phi\; e^{-S_E[\Phi]/S_0}
+\end{equation}
+provides a natural weighting over admissible coherent histories
+without introducing an additional measure postulate.
+This does not yet amount to a complete theorem that the initial
+ordered branch is uniquely the minimum-entropy state in a fully
+microscopic sense.
+However, it strengthens the structural P4+S6 argument:
+the ordered coherent branch is naturally associated with a
+semiclassically distinguished low-entropy sector rather than with a
+generic highly mixed configuration.
+
+\paragraph{Status.}
+This is best regarded as a strengthening of the Level~B initial-state
+argument toward Level~A/B, not yet as a completed Level~A theorem.
+Its final status depends on the full completion of the quantum-sector
+reconstruction, including the precise measure and reduced-state
+interpretation~(OP-Q11).
 
 \paragraph{Status.}
 The existence of an ordered coherent sector is structural~(Level~A).
@@ -13682,6 +13920,11 @@ Its form is familiar from open-system theory~\cite{CaldeiraLeggett1983}; its
 ECT-specific content is that $S_0$ (not postulated $\hbar$) controls
 the normalisation in~\eqref{eq:qs_influence}, and that the bath
 is the unresolved condensate itself.
+Equation~\eqref{eq:qs_entropy_explicit} is the quantitative version
+of the structural second-law statement assembled in
+Section~\ref{sec:second_law_basics}: the basics section gives the
+conceptual three-ingredient logic; the present section gives the
+corresponding reduced open-system formula.
 
 \paragraph{Role of the explicit formula.}
 Equation~\eqref{eq:qs_entropy_explicit} is not a universal entropy law.
@@ -13709,6 +13952,16 @@ This is exactly what one wants: ECT does not destroy reversibility at
 the fundamental level.
 It explains why reversibility survives for small coherent sectors and
 why it fails effectively for macroscopic ones.
+
+\paragraph{Numerical illustration.}
+For a macroscopic system ($1\,{\rm mol}$, $T=300\,{\rm K}$,
+$\Delta w=c\cdot1\,{\rm ns}$), the exponent controlling the ratio
+$P_{\rm back}/P_{\rm fwd}$ is of order $3.6\times10^{33}$,
+so time-reversed trajectories are effectively absent.
+For $N_{\rm eff}\sim1$, the same exponent is of order $10^{-15}$,
+so $P_{\rm back}/P_{\rm fwd}\approx1$.
+This is the quantitative expression of the three-regime picture
+assembled in Section~\ref{sec:second_law_basics}.
 
 \paragraph{Interpretive consequence.}
 This resolves a potential tension: ECT can support a macroscopic arrow
@@ -17456,6 +17709,96 @@ working assumptions for the macroscopic decoherence calculation.
 Strict derivation belongs to Section~\ref{sec:influence_functional}.
 
 % ------------------------------------------------------------
+
+\section{Hyperbolicity and causal propagation beyond the quadratic sector}
+\label{app:causal_hyperbolic}
+
+\textit{Status: strong structural extension of the quadratic
+causal-kernel result of Appendix~\ref{app:retarded_kernel}.
+This appendix explains why the retarded character of the kernel is
+expected to persist beyond the quadratic Lorentzian broken-phase
+sector, and states precisely what additional work would be needed to
+make this a complete Level~A result.}
+
+\subsection*{What the quadratic result establishes}
+
+Appendix~\ref{app:retarded_kernel} proved $K(\tau<0)=0$ by explicit
+contour integration in the quadratic Lorentzian broken-phase sector.
+That proof is complete and rigorous at the linearised level.
+Its limitation is that it does not directly address the full nonlinear
+dynamics of the ordered branch.
+
+\subsection*{Symmetric hyperbolic systems}
+
+For hyperbolic partial-differential systems, causal propagation is not
+an accident of the linearisation but a structural property.
+Leray~\cite{Leray1952} and Choquet-Bruhat~\cite{ChoquetBruhat1952}
+showed that \emph{symmetric hyperbolic systems}
+\begin{equation}
+  A^\mu(x,u)\,\partial_\mu u = F(x,u),
+  \quad A^\mu = (A^\mu)^T, \quad A^0 > 0
+\end{equation}
+admit:
+\begin{enumerate}
+  \item a well-posed Cauchy problem with local existence and uniqueness;
+  \item causal propagation inside the characteristic cone
+    $\det(A^\mu k_\mu)=0$;
+  \item a retarded Green's function vanishing outside the future
+    light cone.
+\end{enumerate}
+Crucially, these results apply to the \emph{full nonlinear} system,
+not only its linearisation.
+The landmark application is Choquet-Bruhat's proof that GR admits a
+well-posed Cauchy problem~\cite{ChoquetBruhat1952,ChoquetBruhat2009}.
+
+\subsection*{Why this is relevant for ECT}
+
+After $O(4)\to O(3)$ SSB establishes a Lorentzian effective metric,
+the equations of motion for perturbations in the ordered branch form
+a quasilinear wave system:
+\begin{equation}
+  g^{\mu\nu}_{\rm eff}(x,\varphi)\,\partial_\mu\partial_\nu\varphi
+  + \text{lower derivatives} = 0.
+\end{equation}
+At the quadratic level this is manifestly symmetric hyperbolic (see
+Appendix~\ref{app:retarded_kernel}).
+Beyond the quadratic level, the same conclusion is expected as long
+as the effective Lorentzian signature is maintained throughout the
+domain.
+
+\subsection*{What would be needed for a complete Level~A result}
+
+To upgrade $K(\tau<0)=0$ to Level~A for the full nonlinear ordered
+branch, one needs to:
+\begin{enumerate}
+  \item write the nonlinear ECT branch equations of motion in the
+    explicit form $A^\mu(x,u)\partial_\mu u = F(x,u)$;
+  \item verify that the matrices $A^\mu$ are symmetric and $A^0>0$
+    in the Lorentzian ordered domain;
+  \item check that the domain of Lorentzian signature is maintained
+    (i.e.\ no metric-signature-changing regions arise in the relevant
+    regime).
+\end{enumerate}
+Steps~(2)--(3) are mathematically well-defined but have not yet been
+carried out explicitly for ECT.
+This is a tractable future task and does not require new physics
+beyond what is already in the theory.
+
+\subsection*{What is established and what is not}
+
+\textbf{Established~(Level~A, quadratic sector):}
+retarded causal kernel in the quadratic Lorentzian broken-phase
+sector~(Appendix~\ref{app:retarded_kernel}).
+
+\textbf{Strongly expected but not yet proved for ECT:}
+retarded causal kernel for the full nonlinear Lorentzian ordered branch;
+pending explicit symmetric-hyperbolic reduction.
+
+\textbf{Consequence for the second law:}
+the conservative main-text status remains Level~A in the quadratic
+sector, with a well-defined path to full Level~A once the
+symmetric-hyperbolic reduction is carried out.
+
 \section{Retarded Causal Kernel: Proof That $K(\tau<0)=0$}
 \label{app:retarded_kernel}
 
