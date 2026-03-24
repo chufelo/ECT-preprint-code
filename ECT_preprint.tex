@@ -6589,109 +6589,142 @@ in the ECT framework.
 \subsection{Spinor structure in the condensate background}
 \label{sec:spinor_structure}
 
-\paragraph{Spinors as compatible excitations of the condensate background (Level~B)}
+\textit{Status: Level~A for the group-theoretic statements
+($Spin(4)\simeq SU(2)_L\times SU(2)_R$,
+$\pi_1(SO(3))=\mathbb{Z}_2$).
+$\pi_1(SO(3))=\mathbb{Z}_2$ is a Level~A topological fact about the
+residual rotation group; its relevance as a structural motivation for
+half-integer representations is Level~B.
+Fermions are not derived as collective condensate excitations;
+they are introduced as additional fields compatible with the
+condensate symmetry.}
 
-In conventional quantum field theory spinor fields are introduced as
+Section~\ref{sec:fermion_particles} provided the brief particle-spectrum
+roadmap; the present section develops that route in detail.
+
+\paragraph{Spinors as compatible excitations (Level~B).}
+In conventional quantum field theory, spinor fields are introduced as
 fundamental objects transforming under the Lorentz group $SO(3,1)$.
 Within the ECT framework, spinor degrees of freedom are
-\emph{compatible} with the condensate geometry: after O(4)$\to$O(3)
+\emph{compatible} with the condensate geometry: after $O(4)\to O(3)$
 breaking the residual group admits spinor representations, and
 Clifford linearisation then yields the Dirac form.
-This is a structural compatibility statement (Level~B),
-not a derivation of spinors as collective condensate excitations.
+This is a structural compatibility statement~(Level~B), not a
+derivation of spinors as collective condensate excitations.
 
-\paragraph{Rotations in four dimensions}
+\paragraph{Euclidean rotation group and its spinorial content.}
+Before symmetry breaking the condensate is invariant under rotations
+in four-dimensional Euclidean space, $O(4)$.
+The connected Euclidean spin group satisfies
+$Spin(4) \simeq SU(2)_L \times SU(2)_R$,
+while at the Lie-algebra level
+$\mathfrak{so}(4) \simeq
+\mathfrak{su}(2)_L \oplus \mathfrak{su}(2)_R$~(Level~A).
+Rotations in four dimensions thus naturally split into two
+independent $SU(2)$ sectors.
+The fundamental representation of each $SU(2)$ factor is
+two-dimensional; two-component spinors are among the irreducible
+representations naturally available in this decomposition.
 
-Before symmetry breaking the condensate is invariant under rotations in
-four-dimensional Euclidean space,
+\textbf{Important caveat.}
+The group-theoretic structure \emph{admits} spinorial representations;
+it does not guarantee that spinorial excitations are dynamically
+present as stable quasiparticles of the bare bosonic condensate.
+The step from ``spinor representations exist'' to ``spinorial
+particles appear in the spectrum'' requires introducing additional
+fermionic degrees of freedom as external inputs.
 
-\begin{equation}
-O(4).
-\end{equation}
-
-The connected rotation subgroup satisfies the local group isomorphism
-
-\begin{equation}
-SO(4)\ \simeq\ SU(2)_L \times SU(2)_R .
-\end{equation}
-
-Thus rotations in four dimensions naturally split into two independent
-$SU(2)$ sectors.
-
-\paragraph{Spinor representations}
-
-The fundamental representation of $SU(2)$ is two-dimensional.  As a
-result, the natural objects transforming under the rotation group are
-two-component spinors.
-
-\textbf{Important caveat.}  The group-theoretic structure \emph{admits}
-spinorial representations; it does not guarantee that spinorial
-excitations are dynamically present as stable quasiparticles of
-the bare bosonic condensate.  The step from ``spinor representations
-exist'' to ``spinorial particles appear in the spectrum'' requires
-introducing additional fermionic degrees of freedom as external
-inputs (see Level~B/C framing at the start of this section).
 With that proviso, if spinorial excitations are admitted, they can
 be written as
-
 \begin{equation}
-\Psi =
-\begin{pmatrix}
-\psi_L \\
-\psi_R
-\end{pmatrix},
+  \Psi = \begin{pmatrix} \psi_L \\ \psi_R \end{pmatrix},
 \end{equation}
+where $\psi_L$ and $\psi_R$ transform under the two $SU(2)$ factors
+of $Spin(4)$.
 
-where $\psi_L$ and $\psi_R$ transform under the two $SU(2)$ factors of
-$SO(4)$.
+\paragraph{Topological availability of half-integer representations.}
+The residual continuous rotation symmetry after SSB is $SO(3)$,
+whose fundamental group is
+$\pi_1(SO(3)) = \mathbb{Z}_2$~(Level~A).
+This topological fact makes double-valued (equivalently, spinorial
+under the double cover) representations structurally available:
+a $2\pi$ rotation acts nontrivially, returning $-1$ rather than $+1$.
+It does not by itself imply that dynamical fermionic excitations must
+occur.
+What remains an additional input is the physical assumption that
+such representations are \emph{realised} by dynamical excitations
+of the ordered branch.
 
-\paragraph{Relation to Lorentz symmetry}
+\paragraph{From Euclidean to Lorentzian spinors.}
+After the condensate selects a preferred direction through $O(4)\to O(3)$,
+the effective spacetime acquires a Lorentzian structure.
+The corresponding symmetry group becomes $SO(3,1)$, whose universal
+cover is $SL(2,\mathbb{C})$.
+The pair $(\psi_L, \psi_R)$ is then compatible with the Dirac spinor
+structure in the emergent Lorentzian spacetime~(Level~B).
 
-After the condensate selects a preferred direction through the symmetry
-breaking
+\paragraph{Why spinors: first-order minimality.}
+Among all representations of the Lorentz group, spinorial
+representations are the unique ones for which a first-order wave
+equation can be written via the Clifford algebra
+$\{\gamma^\mu,\gamma^\nu\} = 2\eta^{\mu\nu}$:
+the resulting Dirac equation is the minimal Lorentz-covariant
+first-order equation whose square reproduces the relativistic
+dispersion relation.
+In ECT, where the Lorentzian metric is emergent and the Clifford
+algebra is defined on the effective metric of the ordered branch,
+this first-order minimality provides a structural reason why
+spinorial excitations---if admitted---occupy a privileged place
+among Lorentz-covariant field representations on the condensate
+background.
+This is not a derivation; it is a compatibility argument.
+This compatibility argument becomes dynamical only after the
+Clifford-linearised first-order reconstruction of
+Section~\ref{sec:dirac_eq}.
 
-\begin{equation}
-O(4) \rightarrow O(3),
-\end{equation}
+\paragraph{Comparison with other emergent-fermion approaches.}
+In superfluid ${}^3$He-A~\cite{Volovik2003}, Weyl fermions emerge
+as low-energy excitations near topological Fermi points in
+momentum space: the fermionic character is a property of the
+quasiparticle spectrum, not an external input.
+In ECT the situation is different: fermions are introduced as
+additional fields compatible with the ordered branch.
+ECT currently provides a structural compatibility route and a
+Lorentzian-spinorial reconstruction, but not yet a microscopic
+derivation of fermions as quasiparticles of the bare bosonic medium.
 
-the effective spacetime experienced by low-energy excitations acquires
-a Lorentzian structure.  The corresponding symmetry group becomes the
-Lorentz group
-
-\begin{equation}
-SO(3,1),
-\end{equation}
-
-whose spinor representations are described by
-
-\begin{equation}
-SL(2,\mathbb{C}).
-\end{equation}
-
-The pair $(\psi_L,\psi_R)$ is then \emph{compatible with} the Dirac spinor structure
-in the emergent Lorentzian spacetime (Level~B: structural reconstruction).
-
-\paragraph{Interpretation}
-
-In this picture fermions correspond to excitations of the condensate
-whose internal degrees of freedom transform under the two $SU(2)$
-sectors of the four-dimensional rotation group.  The decomposition
-
-\begin{equation}
-SO(4)\simeq SU(2)_L \times SU(2)_R
-\end{equation}
-
-therefore provides a geometric origin for Weyl spinors and their chiral
-structure.
-
-When combined with the symmetry breaking
-
-\begin{equation}
-O(4)\rightarrow O(3),
-\end{equation}
-
-this framework also provides a natural setting for understanding why
-one chiral sector may become dynamically distinguished at low energies.
+\paragraph{Status summary.}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
+\hline
+Statement & Status & Comment \\
+\hline
+$Spin(4) \simeq SU(2)_L \times SU(2)_R$
+  & A & Double cover of $SO(4)$ \\
+Spinorial representations available through the
+  double cover of the connected rotation group
+  & A & Group-theoretic \\
+$\pi_1(SO(3)) = \mathbb{Z}_2$: topological
+  availability of half-integer representations
+  & A & Topological fact of residual rotation
+    group \\
+Half-integer representations as structural
+  motivation for fermionic excitations
+  & B & Physical interpretation of topological
+    availability \\
+Dirac spinors compatible with ordered Lorentzian
+  branch
+  & B & Structural compatibility \\
+First-order minimality gives spinorial
+  representations a structurally privileged role
+  & B & Clifford linearisation on the emergent
+    metric \\
+Fermions as collective condensate excitations
+  & Open & Not derived from bare bosonic action \\
+\hline
+\end{tabular}
+\end{center}
 
 \subsection{Structural Reconstruction of the Dirac Form}
 \label{sec:dirac_eq}
