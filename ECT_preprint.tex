@@ -1908,6 +1908,20 @@ holds for \emph{any} nonnegative spectral density, not only ohmic.
 However, strict monotonicity still requires the Markov closure, as in the
 standard framework.
 
+
+\emph{Composite Higgs models~\cite{Kaplan1984,Agashe2005}:}
+in these models the Higgs is not elementary but a pseudo-Nambu--Goldstone
+boson of a new strongly coupled sector.
+The ECT secondary radial mode shares the feature of being a
+\emph{condensate excitation} rather than a fundamental scalar, but
+differs in mechanism: it is the amplitude fluctuation of a second
+ordered phase, not a pseudo-NGB of a confining gauge theory.
+Unlike pseudo-Nambu--Goldstone Higgs scenarios, the ECT secondary radial
+mode is not protected by an approximate shift symmetry in the present
+formulation.
+The two approaches face the same hierarchy challenge; ECT recasts it
+as a condensate-dynamics question rather than a compositeness question.
+
 \paragraph{Status summary.}
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
@@ -5197,6 +5211,53 @@ In ECT it explains why the broken-phase low-energy theory remains
 reliable at $E\ll m_\sigma$, while still retaining calculable
 suppressed corrections from the heavy radial sector~(Level~B).
 
+
+\paragraph{Connection to the pre-quantum action scale.}
+The primary radial mass $m_\sigma$ is closely related to the
+physical scale that enters the distinguished EFT action scale of the
+coherent-topological branch~(Section~\ref{sec:hbar_status}):
+\begin{equation}
+  S_0^{\rm EFT} = \frac{K_\theta\,m_\varphi}{2}.
+  \label{eq:S0_sigma_bridge}
+\end{equation}
+In the minimal single-condensate realisation, the radial core scale
+$m_\varphi$ entering $S_0^{\rm EFT}$ is naturally identified with the
+primary radial mass $m_\sigma$.
+This is a nontrivial structural link: the same condensate scale that
+controls the EFT breakdown threshold is also tied to the pre-quantum
+action scale later matched to $\hbar$.
+In other words, the quantum sector and the UV structure of the
+geometric branch share a common mass scale.
+This connection is a Level~B consistency statement, not a
+parameter-free prediction, because both $S_0^{\rm EFT}$ and $m_\sigma$
+depend on the condensate parameters $(v_0, \lambda)$ which are fixed
+by matching.
+
+\paragraph{The primary radial mode as physical UV threshold.}
+In standard quantum field theory, the UV cutoff $\Lambda$ is
+typically introduced as a formal regulator without intrinsic physical
+meaning.
+In ECT the physical EFT breakdown scale is set by the \emph{mass}
+of the primary radial mode $m_\sigma$.
+The broken-phase EFT is valid for $E \ll m_\sigma$; at
+$E \sim m_\sigma$ the radial mode becomes dynamical and the
+effective description must be replaced by the full condensate theory.
+This is the standard EFT picture, but with a concrete physical
+interpretation: the scale at which the EFT breaks down is the
+scale at which the condensate amplitude itself begins to fluctuate.
+The Euclidean propagator of the radial mode
+(Appendix~\ref{app:corr_length}) decays asymptotically as
+\begin{equation}
+  G_\sigma(r) \;\propto\; \frac{e^{-m_\sigma r}}{r^{3/2}}
+  \qquad (r\to\infty),
+  \label{eq:G_sigma_decay}
+\end{equation}
+confirming that amplitude correlations decay on the scale
+$\xi_{\rm cond}\sim m_\sigma^{-1}$.
+Beyond this distance the ordered branch is effectively stiff against
+amplitude fluctuations, and the low-energy EFT is well-defined
+to that approximation~(Level~B).
+
 \paragraph{Second radial mode: candidate from the electroweak-like transition.}
 If the second condensate transition $O(3)\to O(2)$ is realised at
 scale $v_2$ (Appendix~\ref{app:second_transition}, assumptions A1--A2),
@@ -5251,6 +5312,53 @@ $m_h\sim v_2$ (second condensate, if it exists).
 The IR galactic scale $v_{\rm gal}$ is not a UV condensate VEV
 and has no associated radial mode~(Section~\ref{sec:three_scales}).
 
+
+\paragraph{Higgs self-coupling and testability.}
+If the secondary condensate potential is quartic near $v_2$,
+\begin{equation}
+  V_{\rm ew}(\phi_{\rm ew})
+  =
+  \frac{\lambda_2}{4}\left(\phi_{\rm ew}^2-v_2^2\right)^2,
+\end{equation}
+then the Higgs mass satisfies
+\begin{equation}
+  m_h^2 = 2\lambda_2\,v_2^2,
+  \qquad
+  \lambda_2 = \frac{m_h^2}{2v_2^2}.
+\end{equation}
+The corresponding cubic self-interaction is
+\begin{equation}
+  V_{\rm ew} \supset \lambda_2\,v_2\,h^3,
+\end{equation}
+or equivalently
+\begin{equation}
+  V_{\rm ew}'''(v_2) = 6\lambda_2\,v_2 = \frac{3m_h^2}{v_2}.
+\end{equation}
+Different collider conventions for the trilinear Higgs coupling differ
+by combinatorial factors; the expression above refers to the third
+derivative of the effective potential at the minimum.
+Deviations from this quartic relation would signal non-quartic
+corrections to the effective potential at scale $v_2$---for instance,
+induced by the primary condensate sector or by the dynamics of the
+second transition itself.
+Such deviations are in principle testable through Higgs pair production
+and other future precision-Higgs measurements.
+At present ECT does not predict their magnitude; this remains a
+Level~C phenomenological possibility.
+
+\paragraph{Possible mixing with the primary radial mode.}
+If the Higgs-like excitation $h$ and the primary radial mode $\sigma$
+belong to different ordered phases of the same underlying medium, a
+mixing term between them is generically allowed unless forbidden by an
+additional symmetry.
+After diagonalisation, such mixing would generically induce small
+universal deviations in the Higgs couplings to Standard Model fields.
+In the decoupling regime $m_\sigma \gg m_h$ these effects are expected
+to be suppressed by powers of $m_h^2/m_\sigma^2$ or by the corresponding
+portal coefficient.
+At present ECT does not predict the size of this mixing; it is a
+Level~C phenomenological possibility.
+
 \paragraph{Reframing the hierarchy problem.}
 The usual SM hierarchy problem asks: why is the Higgs mass so small compared
 to the Planck scale~\cite{tHooft1979}?
@@ -5262,6 +5370,36 @@ the dynamical origin of a second ordered phase at an intermediate scale.
 A dimensional-transmutation estimate via RGE of the condensate quartic coupling
 would in principle generate such a scale, but this requires external SM input
 (top-quark Yukawa $y_t\approx0.95$) and remains Level~C~(Appendix~\ref{app:second_transition}).
+
+
+\paragraph{Radiative stability: what ECT does and does not solve.}
+The reframing of the hierarchy problem as a condensate-spectrum
+question does not by itself resolve the radiative stability issue.
+If the secondary radial mode $h$ couples to other fields (gauge
+bosons, fermions) with generic EFT couplings, its mass receives
+quadratic radiative corrections of order
+\begin{equation}
+  \delta m_h^2 \;\sim\; \frac{g^2}{16\pi^2}\,m_\sigma^2
+  \;\sim\; \frac{g^2}{16\pi^2}\,\bar{M}_{\rm Pl}^2.
+  \label{eq:quadratic_correction}
+\end{equation}
+This is a schematic EFT estimate; the precise coefficient depends on
+the couplings and field content of the secondary sector.
+The resulting fine-tuning is of the same order as in the Standard Model.
+ECT does not claim to solve this problem.
+What it offers is a different \emph{physical context}:
+the fine-tuning question becomes whether the dynamics of the
+second condensate transition naturally selects $v_2 \ll u_0$.
+A possible mechanism is dimensional transmutation via the
+RG running of the effective quartic coupling from $u_0$ to $v_2$
+(Section~\ref{sec:three_scales},
+Appendix~\ref{app:second_transition}), but this remains
+Level~C and has not been demonstrated within ECT.
+Absent an additional symmetry, compositeness mechanism, or dynamical
+selection principle, the secondary scalar remains quadratically
+sensitive to the primary UV scale.
+Any claim that ECT resolves the naturalness problem would be
+premature.
 
 \paragraph{Comparison with other Higgs frameworks.}
 
@@ -5304,6 +5442,11 @@ $m_\sigma\sim\bar{M}_{\rm Pl}$ (Planck heavy)
   & B & Uses scale matching $u_0\sim\bar{M}_{\rm Pl}$ \\
 $\sigma$ provides the natural validity scale of the broken-phase EFT
   & B & Decoupling; higher-dimension operators suppressed by $m_\sigma$ \\
+$m_\sigma$ is structurally linked to the action-scale
+  sector through $S_0^{\rm EFT}$
+  & B & In the minimal single-condensate realisation \\
+$m_\sigma$ as physical EFT breakdown scale
+  & B & Correlation-length and decoupling scale \\
 Secondary radial mode exists if a second transition occurs
   & B/C & Conditional on the electroweak-like second condensate step \\
 Secondary mode is structurally analogous to SM Higgs
@@ -5312,6 +5455,12 @@ $m_h = \sqrt{2\lambda_2}\,v_2$ with $v_2$ from $G_F$ matching
   & B/C & Matching input, not ECT prediction \\
 $\lambda_2(v_2)\approx0.13$ if matched to $m_H\approx125$\,GeV
   & Constraint & External SM matching, not an ECT derivation \\
+Radiative stability of $m_h$
+  & Open & Quadratic sensitivity to the primary UV scale remains \\
+Quartic relation for $m_h$ and the cubic interaction near the minimum
+  & B/C & Holds if the secondary potential is nearly quartic \\
+Possible $\sigma$--$h$ mixing
+  & C & Phenomenological possibility, not yet quantified \\
 Yukawa / gauge mass generation fully derived
   & Open & Not completed; part of OP-EW \\
 \hline
