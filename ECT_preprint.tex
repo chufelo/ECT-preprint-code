@@ -19090,9 +19090,9 @@ a further high-quality diagnostic.
 In this work we have developed the Euclidean Condensate Theory (ECT), in
 which spacetime and gravitational dynamics arise from a condensate
 structure of the vacuum.
-The complete theoretical identity of the framework is captured by four
-fundamental laws (Section~\ref{sec:laws_ect}) and six signature
-equations (Section~\ref{sec:signature_eqs}).
+The complete theoretical identity of the framework is captured by the
+foundational postulates, branch-selection rules, and signature
+relations summarised in Section~\ref{sec:part1_conclusions}.
 The derivational chain running from the postulates to the observational
 predictions is mapped in Table~\ref{tab:ect_structure}, while the full
 classification of results by derivation level is given in
@@ -19628,69 +19628,6 @@ $O(3)$-invariant deformation parametrised by~$(\alpha,\beta)$:
 \]
 The anisotropy parameters $(\alpha,\beta)$ are not fixed by this analysis
 and must be determined from physical matching conditions~(OP-grad).
-
-% ------------------------------------------------------------
-\section{Dimensions, Normalisations, and Matching Relations}
-\label{app:dimensions}
-
-\textit{Reference from main text: Section~\ref{sec:consistency_relations}.}
-
-\subsection*{A. Dimensions in natural units ($c=\hbar=1$, provisionally)}
-
-\begin{center}
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{ll}
-\hline
-Quantity & Dimension \\
-\hline
-$\Phi$ & $[\text{GeV}]$ \\
-$u_0=|\langle\partial_A\Phi\rangle|$ & $[\text{GeV}^2]$ \\
-$\mu$ & $[\text{GeV}]$ \\
-$\lambda$ & dimensionless \\
-$m_\sigma=\sqrt{2}\,\mu$ & $[\text{GeV}]$ \\
-$m_{\rm eff}$ & $[\text{GeV}]$ \\
-$M_G=\bar{M}_{\rm Pl}$ & $[\text{GeV}]$ \\
-$S_0$ & dimensionless in $\hbar=c=1$; status pending identification \\
-$\xi_{\rm cond}$ & $[\text{GeV}^{-1}]$ \\
-\hline
-\end{tabular}
-\end{center}
-
-\noindent\textbf{Note.} $[\phi_0]=\text{GeV}$, $[u_0]=\text{GeV}^2$: these are different objects.
-
-\subsection*{B. Normalisation and benchmark point}
-
-From~\eqref{eq:c_star_def}: $c_*^2=\beta/(\alpha-\beta)$.
-At $c_*=c=1$ and $\beta=1$: $\alpha=2$, $c_*=1$.
-
-\subsection*{C. Distinction between bare and EFT masses}
-
-\begin{align}
-  m_\sigma^2 &= V''(\phi_0)=2\mu^2
-  &&\text{(bare radial scale, level P3)},\\
-  m_{\rm eff}^2 &\neq m_\sigma^2
-  &&\text{(EFT fluctuation mass, broken-phase EFT)}.
-\end{align}
-Their relation appears only after explicit EFT matching through radial-mode integration.
-
-\subsection*{D. Gravitational matching}
-
-\[
-  G_N = \frac{c_*^4}{8\pi M_G^2}
-  \;\Longrightarrow\;
-  M_G = \bar{M}_{\rm Pl} \approx 2.435\times 10^{18}\,\text{GeV}
-  \quad (c=\hbar=1).
-\]
-
-\subsection*{E. Pre-quantum action scale}
-
-From the winding condition~\eqref{eq:winding_condition}:
-$S_{\rm loop,min}=2\pi S_0$.
-The question of identifying $S_0$ with observable~$\hbar$
-is deferred to Section~\ref{sec:quantum}, where it is
-discussed and motivated in the context of the Quantum Sector.
-
-
 
 % ------------------------------------------------------------
 \section{Variational Selection and Reduced Extremal Dynamics}
@@ -21947,6 +21884,42 @@ level would constrain the parameter $\gamma$.
 
 
 %%% ===========================================================
+
+\paragraph{Predicted EFE suppression.}
+Table~\ref{tab:EFE_predictions} lists the predicted suppression
+of the condensate transition scale due to the external field effect
+for representative environments.
+
+\begin{longtable}{@{}llll@{}}
+\caption{Predicted suppression of the condensate scale due to the external field effect (EFE).}
+\label{tab:EFE_predictions}\\
+
+\toprule
+$g_{\rm ext}/g^\dagger$ &
+$r_{0,\rm eff}/r_{0,\rm iso}$ &
+$\Delta v_{\rm flat}$ &
+Environment \\
+\midrule
+\endfirsthead
+
+\toprule
+$g_{\rm ext}/g^\dagger$ &
+$r_{0,\rm eff}/r_{0,\rm iso}$ &
+$\Delta v_{\rm flat}$ &
+Environment \\
+\midrule
+\endhead
+
+0.008 & 0.996 & $-0.4\%$ & NGC 1052-DF2 \cite{vanDokkum2018} \\
+0.04 & 0.981 & $-1.9\%$ & Loose group \\
+0.12 & 0.947 & $-5.3\%$ & Typical galaxy group \\
+0.45 & 0.833 & $-16.7\%$ & Virgo cluster outskirts \\
+1.00 & 0.707 & $-29.3\%$ & Virgo cluster centre \\
+4.2 & 0.439 & $-56.1\%$ & Cluster core (strong EFE) \\
+
+\bottomrule
+\end{longtable}
+
 \subsection{Status of all results}
 \label{app:lof:status_table}
 
@@ -22063,296 +22036,6 @@ Closing this gap requires a non-perturbative analysis
 near the Euclidean$\leftrightarrow$Lorentzian transition.
 This is listed as Open Problem~OP-new-1.
 
-
-\section{Foundational summary and signature relations}
-\label{app:laws_and_eqs}
-
-This appendix section provides a compact but still substantive summary
-of the framework.
-Its purpose is not to replace the detailed derivations in the main text,
-but to give the reader a final structured map of what ECT now claims in
-its disciplined form.
-
-\subsection{Condensed structural summary}
-\label{sec:laws_ect}
-
-The present ECT formulation can be organised around four structural
-statements.
-
-\begin{description}[leftmargin=1.2em, labelindent=0pt, style=unboxed]
-
-\item[\textbf{(S1) Euclidean microscopic substrate.}]
-The bare arena is a four-dimensional Euclidean manifold with
-$O(4)$-invariant microscopic action and no preferred time direction.
-This is the starting point of the theory, not yet a spacetime with
-Lorentzian causal order.
-
-\item[\textbf{(S2) Ordered Lorentzian branch.}]
-Spontaneous symmetry breaking $O(4)\to O(3)$ selects an ordered
-direction.
-In the broken-phase EFT, this generates an effective Lorentzian
-propagation structure whenever $\alpha>\beta$.
-Time is therefore not inserted at the microscopic level but emerges as
-part of the ordered branch.
-
-\item[\textbf{(S3) Two branches of one condensate.}]
-The ordered condensate separates into:
-(a)~a geometric/macroscopic branch, governing effective metric response,
-gravitational dynamics, cosmology, and weak-field phenomenology;
-and
-(b)~a coherent-topological/quantum branch, governing phase-sensitive
-dynamics, winding sectors, decoherence, vacuum-response effects,
-defect sectors, and reduced-state horizon thermality.
-
-\item[\textbf{(S4) Explicit status discipline.}]
-ECT no longer presents all important outputs as if they had equal
-derivational status.
-Instead, the present article separates structural Level~A results,
-effective Level~B closures, and genuinely open problems.
-This status discipline is not a cosmetic addition; it is part of the
-current formulation of the framework.
-
-\end{description}
-
-\paragraph{Interpretive remark.}
-These four structural statements should not be read as replacing the
-detailed postulates and branch analyses in the main text.
-Their role is to summarise, at the highest level, what kind of theory
-ECT has become in its present formulation:
-not a single-step derivation of all known physics, but a two-branch
-ordered-medium framework with explicit status control over its claims.
-
-\subsection{Signature relations of the present formulation}
-\label{sec:signature_eqs}
-
-For compact reference, the most important signature relations of the
-current article are the following.
-
-\begin{description}[leftmargin=1.2em, labelindent=0pt, style=unboxed]
-
-\item[\textbf{(R1) Effective metric of the ordered branch.}]
-\begin{equation}
-  g_{\rm eff}^{AB}
-  = \beta\,\delta^{AB} - \alpha\,n^A n^B.
-\end{equation}
-This is the central tensorial object of the ordered macroscopic branch.
-
-\item[\textbf{(R2) Lorentzian branch condition.}]
-\begin{equation}
-  \alpha>\beta.
-\end{equation}
-Additional EFT windows may apply in more specialised discussions, but
-$\alpha>\beta$ is the basic sign condition.
-
-\item[\textbf{(R3) Ordered-branch propagation speed.}]
-\begin{equation}
-  c_*^2 = \frac{\beta}{\alpha-\beta}.
-\end{equation}
-The observational choice $c_*=c$ fixes the canonical normalisation of
-the broken phase.
-
-\item[\textbf{(R4) Geometric EFT matching of gravity.}]
-\begin{equation}
-  G_N = \frac{c_*^4}{8\pi M_G^2}.
-\end{equation}
-This is not a bare-postulate microscopic derivation, but the correct
-macroscopic matching relation of the present article.
-
-\paragraph{Reading of (R4).}
-Relation (R4) should be interpreted as the macroscopic normalisation of
-the tensor branch, not as a one-line derivation of Newton's constant
-from bare microscopic data.
-Its strength is that it makes the meaning of gravity in ECT explicit:
-gravity measures the inverse compliance of the ordered tensor sector.
-Its limitation is equally explicit:
-the microscopic reduction to $M_G$ remains open.
-
-\item[\textbf{(R5) Minimal coherent loop action.}]
-\begin{equation}
-  S_{\rm loop,min}=2\pi S_0.
-\end{equation}
-This establishes the structural action scale of the coherent branch.
-The final physical identification $S_0=\hbar$ is not yet a Level~A
-theorem.
-
-\paragraph{Reading of (R5).}
-Relation (R5) is one of the key structural outputs of the coherent
-branch.
-It establishes that the theory contains a distinguished action scale
-already before the final observational identification with $\hbar$ is
-made.
-This is stronger than having no quantum scale at all, but weaker than a
-completed derivation of standard quantum mechanics.
-The present article therefore treats $S_0$ as structurally real while
-keeping the final $S_0=\hbar$ step explicitly conditional.
-
-\item[\textbf{(R6) Effective macroscopic closure.}]
-\begin{equation}
-  e^{\beta\phi} G_{\mu\nu}
-  + \Lambda_{\rm eff}(\phi)\,g_{\mu\nu}
-  + \Theta_{\mu\nu}[\phi,n]
-  = \frac{8\pi G_{\rm eff}(\phi)}{c^4}\,T_{\mu\nu}.
-\end{equation}
-This is the current $\phi$-first macroscopic closure, to be read at
-Level~B.
-
-\item[\textbf{(R7) Reduced-state decoherence logic.}]
-For subsystem variables $q,q'$ coupled to an environment,
-the effective reduced description is organised by a decoherence
-functional/influence structure in which the diagonal sector is preserved
-while off-diagonal coherence is suppressed under suitable bath
-conditions.
-This is the bridge from coherent amplitudes to macroscopic alternatives.
-
-\item[\textbf{(R8) Horizon thermality without fundamental information
-destruction.}]
-Near-horizon thermality is interpreted in ECT as a reduced-state
-phenomenon compatible with global coherent purity.
-The theory therefore rules out fundamental non-unitary information
-destruction as an admissible resolution, while leaving the explicit
-strong-field constructive mechanism open.
-
-\paragraph{Reading of (R8).}
-The significance of (R8) is primarily negative but important:
-within the present ECT postulate structure, fundamental non-unitary
-destruction of information is not an admissible resolution of the
-black-hole problem.
-What remains open is not whether information may simply disappear, but
-how apparent thermality, reduced-state mixedness, and global coherent
-purity are realised constructively in the completed strong-field sector.
-This is why the horizon discussion is already stronger than a vague
-speculation, but not yet a finished constructive theorem.
-
-\end{description}
-
-\subsection*{How this appendix should and should not be used}
-
-This appendix is intended as a compact structural map for the reader.
-It is useful for orientation, but it should not be overread.
-In particular:
-\begin{itemize}
-  \item it does not replace the detailed branch-by-branch derivations;
-  \item it does not upgrade Level~B closures into Level~A theorems;
-  \item it does not imply that all standard laws are already recovered
-  from bare postulates alone.
-\end{itemize}
-Its role is to compress the framework faithfully, not to oversell it.
-
-\subsection{How to read this appendix summary}
-
-This appendix should be used as a compact map, not as a substitute for
-the detailed sections.
-For the actual derivations and status statements, the reader should rely
-on the main text and on Tables~\ref{tab:ect_structure},
-\ref{tab:ect-levels}, and~\ref{tab:ECT_predictions}.
-In particular, the present appendix summary should not be misread as a
-claim that all standard physical laws have already been derived as
-unconditional bare-postulate theorems.
-Its purpose is to collect the framework in a form that is concise,
-internally consistent, and faithful to the article's current
-Level~A / Level~B / Open discipline.
-
-
-\subsection{Three scales in the present ECT formulation}
-\label{app:cosmo:scales}
-
-For historical reasons, older ECT drafts often described several
-physically distinct scales using one common condensate notation.
-In the present formulation these scales are separated explicitly.
-
-\begin{enumerate}
-  \item \textbf{Microscopic condensate / correlation scale.}
-  The ordered phase possesses a short-distance condensate correlation
-  length $\xi_{\rm cond}\sim m_\sigma^{-1}$,
-  expected to be microscopic and in the strongest closures close to the
-  Planck domain.
-
-  \item \textbf{Macroscopic gravitational stiffness scale.}
-  The tensor branch is controlled by the gravitational stiffness
-  parameter $M_G$, related to observed gravity through the matching
-  relation $G_N=c_*^4/(8\pi M_G^2)$.
-  This is the relevant large-scale stiffness variable in the present
-  macroscopic formulation.
-
-  \item \textbf{Coherent action scale.}
-  The coherent-topological branch contains a structural action scale
-  $S_0$, fixed through the minimal loop action $S_{\rm loop,min}=2\pi S_0$.
-  The final physical identification $S_0=\hbar$ remains a Level~B/open
-  step.
-
-  \item \textbf{Galactic/environmental weak-field scale.}
-  In the present critical $\phi$-branch closure, galactic phenomenology
-  is organised by the acceleration scale $g_\dagger$ together with the
-  screening/environment scales discussed in the Macroscopic Physics part.
-\end{enumerate}
-
-This separation should replace the older shorthand in which one symbol
-was used simultaneously for gravitational, quantum, and cosmological
-roles.
-
-
-\subsection{Dark-energy interpretation: present status}
-\label{app:cosmo:de}
-
-In the present article, late-time cosmic acceleration is not treated as
-a bare cosmological constant inserted independently of the condensate,
-but as part of the effective macroscopic closure associated with the
-ordered vacuum background and the amplitude sector.
-
-The relevant statement is therefore not that dark energy has already
-been derived from first principles as a unique output of the bare
-microscopic action.
-Rather, the current $\phi$-first macroscopic closure admits an
-effective late-time vacuum contribution which can be parameterised in
-terms of an effective equation of state,
-\begin{equation}
-  w(z)=w_0+w_a\,\frac{z}{1+z},
-\end{equation}
-with benchmark values such as $w_0\approx -0.83$ belonging to the
-current closure~(Level~B) rather than to a completed Level~A theorem.
-This is compatible with the DESI~2024 measurement
-$w_0 = -0.827 \pm 0.059$~\cite{DESI2024}, providing a nontrivial
-consistency check at the Level~B closure level.
-
-The correct status is:
-\begin{itemize}
-  \item structural compatibility of late-time vacuum acceleration with
-  the ordered condensate framework;
-  \item Level~B for the explicit dark-energy closure used
-  phenomenologically;
-  \item open for a full microscopic derivation of the relevant
-  effective potential and its late-time parameters.
-\end{itemize}
-
-
-\subsection{Effective gravitational coupling: present reading}
-\label{app:cosmo:geff}
-
-In earlier ECT drafts the cosmological effective coupling was often
-written directly in terms of a legacy condensate amplitude notation.
-In the present formulation the correct reading is more cautious.
-
-At the macroscopic level, the observed Newton coupling is fixed by
-geometric EFT matching,
-\begin{equation}
-  G_N=\frac{c_*^4}{8\pi M_G^2},
-\end{equation}
-while in the $\phi$-first closure one may write an effective
-order-dependent gravitational response
-\begin{equation}
-  G_{\rm eff}(X)=G_N e^{-\beta\phi(X)}.
-\end{equation}
-This should be interpreted as a closure variable describing slow
-macroscopic variations of the ordered branch, not as a bare-postulate
-microscopic derivation of time-varying gravity.
-
-Accordingly, future scenarios involving the asymptotic behaviour of
-$G_{\rm eff}$, $\phi$, or the ordered branch should be read as
-closure-dependent cosmological scenarios rather than as unconditional
-predictions of the bare theory.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Numerical algorithms}
 \label{app:algorithms}
@@ -22832,83 +22515,6 @@ $A_0 = M_{\rm ECT}/M_{\rm obs}$ (baseline $\nu$-closure);
 $A_{\rm fin}$ after corrections $E_1$--$E_4$.
 Abell~520 peak on gas is the correct observed morphology.
 
-\section{Supplementary numerical calculations}
-\label{app:supplementary}
-
-\subsection{$G_N$ in SI}
-In the present ECT formulation the observed Newton coupling enters through
-geometric EFT matching rather than through a direct algebraic identification
-with a single condensate amplitude.
-The relevant relation is
-\begin{equation}
-  G_N \;=\; \frac{c_*^4}{8\pi M_G^2},
-\end{equation}
-where $M_G$ is the gravitational stiffness scale of the ordered tensor EFT.
-At canonical matching one sets $c_*=c$ and identifies
-$M_G=\bar M_{\rm Pl}$ observationally.
-With $\bar{M}_{\rm Pl}=2.435\times10^{18}\;\mathrm{GeV}/c^2
-=4.341\times10^{-9}\;\mathrm{kg}$ this gives
-\begin{equation}
-G_N \;=\; \frac{\hbar\,c}{8\pi\,\bar{M}_{\rm Pl}^2}
-\;=\; \frac{1.055\times10^{-34}\times2.998\times10^{8}}
-{8\pi\times(4.341\times10^{-9})^2}
-\;\approx\; 6.678\times10^{-11}\;\mathrm{m^3\,kg^{-1}\,s^{-2}},
-\end{equation}
-in agreement with the CODATA value
-$G_N = 6.674\times10^{-11}\;\mathrm{m^3\,kg^{-1}\,s^{-2}}$ up to rounding~($0.06\%$).
-This subsection should therefore be read purely as a numerical
-illustration of the matching relation, not as a first-principles
-microscopic derivation of $G_N$ from the bare condensate action.
-
-\begin{longtable}{@{}llll@{}}
-\caption{Predicted suppression of the condensate scale due to the external field effect (EFE).}
-\label{tab:EFE_predictions}\\
-
-\toprule
-$g_{\rm ext}/g^\dagger$ &
-$r_{0,\rm eff}/r_{0,\rm iso}$ &
-$\Delta v_{\rm flat}$ &
-Environment \\
-\midrule
-\endfirsthead
-
-\toprule
-$g_{\rm ext}/g^\dagger$ &
-$r_{0,\rm eff}/r_{0,\rm iso}$ &
-$\Delta v_{\rm flat}$ &
-Environment \\
-\midrule
-\endhead
-
-0.008 & 0.996 & $-0.4\%$ & NGC 1052-DF2 \cite{vanDokkum2018} \\
-0.04 & 0.981 & $-1.9\%$ & Loose group \\
-0.12 & 0.947 & $-5.3\%$ & Typical galaxy group \\
-0.45 & 0.833 & $-16.7\%$ & Virgo cluster outskirts \\
-1.00 & 0.707 & $-29.3\%$ & Virgo cluster centre \\
-4.2 & 0.439 & $-56.1\%$ & Cluster core (strong EFE) \\
-
-\bottomrule
-\end{longtable}
-
-\subsection{Primordial spectral index $n_s$: status}
-The ECT mechanism for the horizon problem is pre-Lorentzian
-branch-selection (not inflation). An ECT-native derivation of
-$n_s$ and $r$ from the condensate perturbation spectrum is
-an open task~(OP3). The observed Planck~2018 value
-$n_s=0.9649\pm0.0042$~\cite{Planck2018} is compatible with
-a nearly scale-invariant pre-Lorentzian stage, but no
-quantitative ECT formula exists yet.
-
-\subsection{Milky Way: fit
-quality}
-ECT legacy benchmark ($r_0=5.7$ kpc, 1 parameter, superseded):
-$\chi^2/N=2.84$.
-$\Lambda$CDM/NFW (3 parameters: $M_{\rm vir}$, $c$, $r_s$):
-$\chi^2/N=3.51$. MOND (0 parameters): $\chi^2/N=16.48$.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Derivation of Newton's Constant from Action Variation}
-% ============================================================
 \section{$\phi$-first nonlinear gravity: full derivation}
 \label{app:phi_first_EFE}
 % ============================================================
