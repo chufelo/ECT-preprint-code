@@ -5849,26 +5849,301 @@ which resembles the seesaw mechanism.  A condensate-specific
 derivation of the right-handed neutrino scale from ECT dynamics
 remains an open problem (OP15).
 
-\subsection{Predicted New States}
+\subsection{Predicted New States and Topological Sectors}
+\label{sec:predicted_states}
+% backward-compatibility alias:
 \label{sec:instantons}
 
-\textbf{Status (Level~B/C).}  The states below are predicted by
-ECT at various levels of rigour; their relic abundances, stability,
-and dark-matter properties require further analysis.
+\textit{Status: layered.
+The topological classification of the vacuum manifold is Level~A
+(homotopy of $S^3$).
+The existence of specific condensate excitations and their
+phenomenological properties are Level~B/C.
+The topological mass ansatz cited in the derivation chain~(D7) is
+a phenomenological estimate, not a first-principles derivation.
+The topological classification is therefore strongest in its
+qualitative sector statements (which sectors are allowed or forbidden),
+whereas quantitative mass estimates belong to phenomenological closure
+and are directly falsifiable independently of the underlying homotopy
+classification.}
 
-ECT is compatible with, and in some cases predicts, the following
-classes of new excitations:
+ECT admits three qualitatively distinct classes of states beyond the
+observed Standard Model spectrum: smooth condensate excitations,
+topologically classified sectors of the ordered vacuum, and
+(conditionally) defect configurations from a possible second
+transition.
+This subsection classifies each class and specifies its derivation
+status.
 
+The spectrum discussed here combines three strands developed earlier in
+the chapter: the smooth radial-mode sector
+(Section~\ref{sec:radial_mode}), the electroweak-like conditional sector
+(Section~\ref{sec:ew_particles}), and the topological classification of
+vacuum manifolds (Appendix~\ref{app:relic_homotopy} and
+Section~\ref{sec:qs_defects}).
+
+% ============ CLASS 1: SMOOTH EXCITATIONS ============
+
+\paragraph{Class~1: smooth condensate excitations.}
+
+\emph{(a) Primary radial mode $\sigma$.}
+The amplitude fluctuation of the ordered condensate, with
+$m_\sigma \sim \sqrt{2\lambda}\,u_0 \sim \bar{M}_{\rm Pl}$
+(Section~\ref{sec:radial_mode}).
+Its presence is a Level~A consequence of treating the ordered branch as
+a condensate with amplitude as well as orientation fluctuations.
+It is Planck-heavy, integrates out at $E \ll m_\sigma$, and defines
+the physical UV threshold of the broken-phase EFT.
+
+\emph{(b) Surviving soft scalar $\chi$.}
+In the scalar-only ECT basis, the integrability constraint
+$\partial_A Q_B - \partial_B Q_A = 0$ reduces the naive three-component
+Goldstone sector to a single longitudinal scalar mode $\chi$
+(Section~\ref{sec:goldstone_integrability_main},
+Appendix~\ref{app:goldstone_integrability}).
+Its mass, couplings, and stability are not determined at the present
+stage~(Level~B).
+Whether $\chi$ plays a cosmological role (e.g.\ as a dark-sector
+candidate) remains open~(Section~\ref{sec:dark_sector}).
+
+% ============ CLASS 2: TOPOLOGICAL SECTORS ============
+
+\paragraph{Class~2: topological sectors from the primary SSB.}
+
+The vacuum manifold of the primary ordering transition is
+$\mathcal{M}_1 = O(4)/O(3) \simeq S^3$.
+Its homotopy groups determine which topological defects are
+structurally permitted and which are
+forbidden~\cite{Nakahara2003}~(Level~A):
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{lll}
+\hline
+Homotopy group & Value & Consequence \\
+\hline
+$\pi_0(S^3)$ & $0$ & No stable domain walls \\
+$\pi_1(S^3)$ & $0$ & No stable cosmic strings \\
+$\pi_2(S^3)$ & $0$ & No stable magnetic monopoles \\
+$\pi_3(S^3)$ & $\mathbb{Z}$ & Texture/skyrmion-like sectors \\
+\hline
+\end{tabular}
+\end{center}
+
+\emph{Anti-predictions (Level~A).}
+The vanishing of $\pi_0$, $\pi_1$, and $\pi_2$ means that ECT
+\emph{predicts the absence} of topologically stable domain walls,
+cosmic strings, and magnetic monopoles from the primary condensate
+transition.
+This is a structural consequence of the topology of $S^3$ and does
+not require additional suppression mechanisms or cosmological
+dilution.
+The cosmological implications of this result---in particular the
+absence of the standard relic catastrophe---are developed in
+Section~\ref{sec:relic_ect}.
+
+\emph{Texture/skyrmion sector (Level~A for existence of sectors,
+Level~B/C for dynamics).}
+The non-trivial homotopy class $\pi_3(S^3) = \mathbb{Z}$ guarantees
+the existence of topologically nontrivial field configurations
+classified by an integer topological charge $Q \in \mathbb{Z}$.
+These are texture-type or skyrmion-like configurations: spatially
+extended field configurations in which the ordered condensate wraps the
+vacuum manifold $S^3$ a nontrivial number of times.
+
+The existence of nontrivial homotopy classes does not by itself imply
+the existence of stable finite-size particle-like solitons.
+Whether the corresponding configurations are dynamically stabilised
+against collapse or unwinding depends on the nonlinear terms of the
+effective action, possible higher-derivative contributions, gauge
+effects, or other UV-completion data.
+Accordingly, topology guarantees the sector labels, but not yet the
+existence of stable isolated particles~(Level~B/C;
+Section~\ref{sec:qs_defects}).
+
+\paragraph{Status of the topological mass ansatz.}
+The derivation chain~(D7) and the falsification
+table~(Table~\ref{tab:ECT_predictions}, entry~F6) cite a
+phenomenological estimate
+\begin{equation}
+  m_n \sim n \times 1.6\;\text{GeV}/c^2
+  \label{eq:topological_mass_ansatz}
+\end{equation}
+for the mass of topological sectors with charge $Q = n$.
+The derivation chain~(D7) and falsification table~(F6) currently refer
+to this phenomenological ansatz as an ``instanton'' spectrum; in the
+present section the more neutral term ``topological sector'' is
+preferred in order to avoid confusion with Yang--Mills instantons.
+
+This estimate should be understood as follows:
 \begin{itemize}
-\item one surviving longitudinal soft scalar mode $\chi$ in the
-  linear scalar-only broken phase~(Level~B;
-  see Appendix~\ref{app:goldstone_integrability}),
-\item heavy radial condensate scalar ($m\sim M_{\rm Pl}$),
-\item possible topological soliton states of the condensate
-  allowed by the topological completeness property~S9.
+  \item the integer label $n$ follows from the additive topological
+    structure $\pi_3(S^3) = \mathbb{Z}$~(Level~A for the existence of
+    sectors with charge $Q = n$);
+  \item any mass relation $m_n = f(n)$ is dynamical rather than purely
+    topological; a linear ansatz $m_n \propto n$ is therefore at most a
+    phenomenological assumption, not a Level~A
+    consequence~(Level~C);
+  \item the overall mass scale $m_1 \sim 1.6\,$GeV is a
+    phenomenological estimate obtained from dimensional analysis
+    involving the condensate stiffness and core scale; it is
+    \emph{not} a first-principles ECT derivation~(Level~C);
+  \item whether such states are dynamically stable, whether they
+    are produced in the early universe, and whether they
+    contribute to observable hadronic or dark-sector physics
+    are open questions.
+\end{itemize}
+No explicit profile solution or rigorous energy bound is presently
+available in the ECT framework for these sectors.
+A first-principles derivation of the topological mass spectrum
+from the ECT action would require solving the full nonlinear
+field equations for the skyrmion/texture profile on the ordered
+background.
+This belongs to the open programme of the theory.
+
+% ============ CLASS 3: SECONDARY DEFECTS ============
+
+\paragraph{Class~3: defect configurations from a possible
+second transition (conditional).}
+
+If the second condensate transition $O(3) \to O(2)$ is realised
+(Appendix~\ref{app:second_transition}), the secondary vacuum
+manifold is
+\begin{equation}
+  \mathcal{M}_2 = O(3)/O(2) \simeq S^2.
+  \label{eq:M2_S2}
+\end{equation}
+Its homotopy groups are:
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{lll}
+\hline
+Homotopy group & Value & Consequence \\
+\hline
+$\pi_0(S^2)$ & $0$ & No stable domain walls \\
+$\pi_1(S^2)$ & $0$ & No stable cosmic strings \\
+$\pi_2(S^2)$ & $\mathbb{Z}$ & Possible monopole-like defects \\
+\hline
+\end{tabular}
+\end{center}
+Thus if the second transition exists, ECT would admit a sector of
+$\pi_2(S^2) = \mathbb{Z}$ topological configurations.
+Their interpretation as global hedgehogs or monopole-like states
+depends on whether the secondary symmetry is global or gauged and on the
+details of the corresponding EFT completion.
+For a global secondary symmetry this would correspond to hedgehog-type
+(global-monopole) configurations; in a gauged realisation one may obtain
+monopole-like configurations, but their detailed status depends on the
+full gauge embedding and cannot be inferred from homotopy alone.
+This is conditional on OP-EW and is
+Level~B/C~(Appendix~\ref{app:second_transition}).
+
+% ============ NEW STATES vs REINTERPRETATION ============
+
+\paragraph{New states beyond the observed Standard Model spectrum.}
+Summarising the three classes above, the genuinely new condensate
+states admitted by ECT, beyond the observed SM spectrum, are:
+\begin{enumerate}[label=(\roman*)]
+  \item a Planck-heavy primary radial mode $\sigma$
+    (Level~A/B);
+  \item a surviving soft scalar $\chi$ from the constrained
+    orientation sector (Level~B; role open);
+  \item a topologically nontrivial texture/skyrmion sector
+    labelled by $\pi_3(S^3) = \mathbb{Z}$
+    (existence Level~A; dynamics Level~B/C);
+  \item (conditional) secondary monopole-like defects from
+    $\pi_2(S^2) = \mathbb{Z}$ if the second transition
+    exists~(Level~B/C).
+\end{enumerate}
+Items (i)--(iii) are structural consequences of the primary
+ordered branch and do not depend on the second transition.
+Item (iv) is conditional on OP-EW.
+
+The Higgs-like secondary radial mode $h$ discussed in
+Section~\ref{sec:ew_particles} is not a new state beyond the observed
+SM spectrum; rather, it is an ECT reinterpretation of the observed
+Higgs boson, conditional on the second transition being realised.
+
+\paragraph{Connection to the dark sector.}
+The main astrophysical successes of ECT (rotation curves, RAR, BTFR)
+do not require any particle dark matter
+(Section~\ref{sec:dark_sector}).
+Accordingly, any dark-sector role of the states discussed here would be
+supplementary rather than required for the explanation of galactic
+rotation phenomenology.
+Whether the topological and collective excitations listed above
+contribute to the cosmic dark sector---for instance as part of the
+dark-matter relic abundance or as sources of gravitational-wave
+backgrounds---remains an open question developed in
+Section~\ref{sec:qs_defects}.
+
+\paragraph{Observational signatures and falsifiability.}
+Two entries in the falsification
+table~(Table~\ref{tab:ECT_predictions})
+are directly connected to the predicted states:
+\begin{itemize}
+  \item \textbf{F6:} if the topological mass ansatz
+    $m_n \sim n \times 1.6\,$GeV is taken at face value,
+    collider searches for resonances at $1.6$, $3.2$, $4.8\,$GeV
+    would either confirm or exclude this phenomenological model.
+    Non-observation would disfavour the specific mass estimate,
+    not the existence of topological sectors themselves.
+    In other words, F6 tests a specific phenomenological realisation of
+    the topological sector, not the topological sector as such.
+  \item \textbf{Absence of primary-SSB relics:} if topologically
+    stable domain walls, cosmic strings, or monopoles were
+    unambiguously traced to the primary $O(4)\to O(3)$ transition,
+    this would contradict the homotopy classification of the primary
+    vacuum manifold and hence the corresponding ECT vacuum structure.
 \end{itemize}
 
-The properties and stability of such objects require further analysis.
+\paragraph{Status summary.}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
+\hline
+Statement & Status & Comment \\
+\hline
+\multicolumn{3}{l}{\textit{Smooth condensate excitations}} \\
+Primary radial mode $\sigma$, $m \sim M_{\rm Pl}$
+  & A/B & Amplitude fluctuation of the ordered branch \\
+Surviving soft scalar $\chi$
+  & B & Integrability-constrained; role open \\
+\hline
+\multicolumn{3}{l}{\textit{Topological sectors from primary SSB}} \\
+$\pi_0 = \pi_1 = \pi_2 = 0$: no stable walls,
+  strings, or monopoles
+  & A & Direct anti-prediction from the topology
+    of $S^3$ \\
+$\pi_3(S^3) = \mathbb{Z}$: texture/skyrmion sectors
+  exist
+  & A & Topological classification \\
+Dynamical stability of localised texture/skyrmion
+  states
+  & Open & Requires nonlinear condensate dynamics \\
+Integer topological charge $Q = n$ labels primary
+  texture sectors
+  & A & Follows from $\pi_3(S^3) = \mathbb{Z}$ \\
+Phenomenological mass ansatz for topological sectors
+  & C & Not derived from topology alone \\
+Mass scale $m_1 \sim 1.6\,$GeV
+  & C & Phenomenological estimate; not
+    first-principles \\
+\hline
+\multicolumn{3}{l}{\textit{Conditional: second transition}} \\
+$\pi_2(S^2) = \mathbb{Z}$: monopole-like defects
+  & B/C & If $O(3)\to O(2)$ exists; nature depends
+    on local vs global realisation \\
+\hline
+\multicolumn{3}{l}{\textit{Connection to dark sector}} \\
+Galactic mass discrepancy without particle DM
+  & B & $\phi$-sector closure \\
+Topological states as possible DM candidates
+  & C & Role not established \\
+\hline
+\end{tabular}
+\end{center}
 
 \subsection{Summary}
 
@@ -9361,6 +9636,9 @@ The non-trivial class $\pi_3(S^3)=\mathbb{Z}$ indicates texture/skyrmion-like
 topological sectors rather than monopoles, strings, or walls; these belong
 to a different part of the ECT topological content and do not reintroduce
 the standard relic catastrophe.
+The full classification of predicted new states and topological sectors,
+including conditional secondary defects, is given in
+Section~\ref{sec:predicted_states}.
 
 \textbf{(ii)~Standard GUT monopole overproduction is not structurally
 required~(Level~B).}
