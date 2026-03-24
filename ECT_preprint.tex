@@ -6125,22 +6125,26 @@ Section~\ref{sec:fermions}, which covers:
   \item chirality and the selection of
     $SU(2)_L$~(Section~\ref{sec:chirality});
   \item Yukawa couplings and fermion
-    masses~(see the fermionic-sector discussion below);
+    masses~(Section~\ref{sec:yukawa});
   \item ECT-specific fermion--condensate
-    coupling~(Section~\ref{sec:fifth_force});
+    coupling~(Section~\ref{sec:fifth_force_fermion});
   \item spin-statistics structural
-    route~(Section~\ref{sec:qs_statistics}).
+    route~(Section~\ref{sec:fermion_statistics}).
 \end{itemize}
-The main ECT-specific fermion interaction currently identified
-beyond the Standard Model embedding is the fifth-force coupling
-$\Delta\mathcal{L} = \beta_5\,\bar\Psi\gamma^A n_A\Psi$, which
-introduces preferred-direction effects in the ordered branch and is
-testable via spin precession and equivalence-principle
-experiments~(Section~\ref{sec:fifth_force}).
+A currently identified ECT-specific fermion--condensate interaction
+beyond the Standard Model embedding is
+$\Delta\mathcal{L} = \beta_5\,\bar\Psi\gamma^A n_A\Psi$.
+Its structural form is introduced in
+Section~\ref{sec:fifth_force_fermion}, while its detailed
+phenomenology, observational constraints, and falsification tests are
+developed in Section~\ref{sec:fifth_force}.
 
-In this chapter fermions are treated only at the level of structural
-compatibility and effective embedding; the detailed reconstruction is
-deferred to Section~\ref{sec:fermions}.
+In the present chapter fermions are treated only at the level of
+structural compatibility and effective embedding.
+The detailed fermionic programme is deferred to
+Section~\ref{sec:fermions}, where spinor structure, the Dirac form,
+chirality, Yukawa couplings, the fermion--condensate coupling, and the
+spin-statistics route are discussed separately.
 
 \subsection{Neutrino Sector}
 \label{sec:neutrino_particles}
@@ -6565,7 +6569,7 @@ $\bar\Psi$, evaluated in the condensate background
 (structural reconstruction, Level~B).
 
 Fermionic degrees of freedom can be introduced consistently with
-the spinor representations of $SO(4)\simeq SU(2)_L\times SU(2)_R$,
+the spinor representations of $Spin(4)\simeq SU(2)_L\times SU(2)_R$,
 the double cover of the underlying Euclidean rotation group.
 This section performs a \emph{structural reconstruction} of the Dirac form.
 Once (i)~emergent Lorentzian geometry and (ii)~spinorial representations of
@@ -6573,7 +6577,7 @@ $SO(4)$ are admitted as Level~B inputs, the Dirac form follows algebraically.
 The section does \emph{not} derive fermions from the bare bosonic condensate action.
 
 \textbf{Honest framing.}
-The symmetry group structure $SO(4)\simeq SU(2)_L\times SU(2)_R$
+The symmetry group structure $Spin(4)\simeq SU(2)_L\times SU(2)_R$
 admits spinor representations, and after analytic continuation to
 $SL(2,\mathbb{C})$ the standard Weyl and Dirac spinors are obtained
 by Clifford linearisation.  However, two important points should be
@@ -6586,6 +6590,31 @@ it does not microscopically derive fermions as collective excitations
 of the condensate.  The latter would require a separate construction.
 This section reconstructs the Dirac equation structurally (Level~B) and discusses chirality
 in the ECT framework.
+
+This section develops the fermionic programme only at the level of
+structural reconstruction on the ordered branch.
+The goal is not to derive fermions from the bare bosonic condensate,
+but to show how spinorial fields, Dirac kinematics, chirality, and
+fermion couplings can be consistently organised once the emergent
+Lorentzian background is admitted.
+Quantum-statistical questions are only touched upon here at the level
+of structural route and are completed, if at all, only in the broader
+quantum programme.
+
+\paragraph{Section roadmap.}
+The logic of this section is layered.
+Section~\ref{sec:spinor_structure} establishes the group-theoretic
+compatibility of spinorial representations with the ordered branch.
+Section~\ref{sec:dirac_eq} reconstructs the Dirac form on the emergent
+Lorentzian background.
+Section~\ref{sec:chirality} discusses the structural route to chiral
+asymmetry.
+Sections~\ref{sec:yukawa} and~\ref{sec:fifth_force_fermion} treat,
+respectively, the Standard-Model-like Yukawa embedding and the
+ECT-specific fermion--condensate coupling.
+Section~\ref{sec:fermion_statistics} outlines the structural route
+toward spin-statistics, and Section~\ref{sec:fermion_open}
+summarises the open programme.
 
 \subsection{Spinor structure in the condensate background}
 \label{sec:spinor_structure}
@@ -6647,9 +6676,11 @@ of $Spin(4)$.
 The residual continuous rotation symmetry after SSB is $SO(3)$,
 whose fundamental group is
 $\pi_1(SO(3)) = \mathbb{Z}_2$~(Level~A).
-This topological fact makes double-valued (equivalently, spinorial
-under the double cover) representations structurally available:
-a $2\pi$ rotation acts nontrivially, returning $-1$ rather than $+1$.
+This topological fact means that the connected rotation group has a
+nontrivial double cover.
+Accordingly, spinorial representations become structurally available:
+a $2\pi$ rotation, trivial in $SO(3)$ itself, can act as $-1$ in the
+spinorial representation lifted to the double cover.
 It does not by itself imply that dynamical fermionic excitations must
 occur.
 What remains an additional input is the physical assumption that
@@ -6674,13 +6705,12 @@ first-order equation whose square reproduces the relativistic
 dispersion relation.
 In ECT, where the Lorentzian metric is emergent and the Clifford
 algebra is defined on the effective metric of the ordered branch,
-this first-order minimality provides a structural reason why
-spinorial excitations---if admitted---occupy a privileged place
-among Lorentz-covariant field representations on the condensate
-background.
+this first-order minimality places spinorial representations in a
+structurally privileged position among possible field types on the
+ordered condensate background, once such excitations are admitted.
 This is not a derivation; it is a compatibility argument.
-This compatibility argument becomes dynamical only after the
-Clifford-linearised first-order reconstruction of
+This compatibility argument acquires dynamical content only once the
+first-order Clifford-linearised equation is introduced, as discussed in
 Section~\ref{sec:dirac_eq}.
 
 \paragraph{Comparison with other emergent-fermion approaches.}
@@ -6705,7 +6735,8 @@ $Spin(4) \simeq SU(2)_L \times SU(2)_R$
   & A & Double cover of $SO(4)$ \\
 Spinorial representations available through the
   double cover of the connected rotation group
-  & A & Group-theoretic \\
+  & A & Group-theoretic availability; dynamical
+    realisation not implied \\
 $\pi_1(SO(3)) = \mathbb{Z}_2$: topological
   availability of half-integer representations
   & A & Topological fact of residual rotation
@@ -6730,142 +6761,175 @@ Fermions as collective condensate excitations
 \subsection{Structural Reconstruction of the Dirac Form}
 \label{sec:dirac_eq}
 
+\textit{Status: Level~B structural reconstruction.
+If one admits (i)~emergent Lorentzian kinematics,
+(ii)~spinorial representations compatible with the broken
+$O(4)\to O(3)$ background, and
+(iii)~first-order Clifford linearisation as the minimal relativistic
+option, then a Dirac-type first-order equation can be constructed
+algebraically.
+Each of these inputs goes beyond the minimal scalar condensate
+postulate; the reconstruction is therefore Level~B.
+The ECT-specific content is that the Clifford algebra is defined on
+the emergent metric of the ordered branch rather than on a
+fundamental spacetime structure.}
 
-\paragraph{Dirac equation from condensate geometry}
-
-\textbf{Status and scope.}
-The derivation below is a \emph{structural reconstruction}, not a
-theorem from the bare bosonic condensate action alone.  Given
-(i)~the emergent Lorentzian kinematics of the ordered branch,
-(ii)~spinorial representations of the broken $SO(4)\to SO(3)$ symmetry,
-and (iii)~first-order minimality (Clifford linearisation), the Dirac
-form follows.  Each of these three inputs goes beyond the minimal
-scalar condensate postulate; the reconstruction is Level~B.
-
-In relativistic quantum theory the Dirac equation is the minimal
-Lorentz-covariant first-order wave equation whose square reproduces
-the relativistic dispersion relation.  ECT reconstructs the same
-structure from the geometry of excitations propagating on the ordered
-condensate branch.
-
-\paragraph{Relativistic dispersion from the emergent metric}
-
-After the spontaneous symmetry breaking
-
+\paragraph{Relativistic dispersion from the emergent metric.}
+After $O(4)\to O(3)$ symmetry breaking, low-energy excitations
+propagate in an emergent Lorentzian spacetime.
+For a free relativistic excitation on the emergent Lorentzian branch,
+the natural quadratic invariant is
 \begin{equation}
-O(4)\rightarrow O(3),
+  p_\mu p^\mu = m^2 c_*^2,
+  \qquad
+  p_\mu = \left(\frac{E}{c_*},\mathbf{p}\right).
 \end{equation}
+For fermionic fields, the question is then whether this quadratic
+relation admits a first-order spinorial linearisation.
 
-low-energy excitations propagate in an emergent Lorentzian spacetime.
-The local dispersion relation for a free massive excitation is
-
-\begin{equation}
-p_\mu p^\mu = m^2 c_*^2,
-\qquad
-p_\mu = \left(\frac{E}{c_*},\mathbf p\right).
-\end{equation}
-
-A first-order wave equation for a fermionic field $\Psi$ should therefore
-be linear in $p_\mu$ while reproducing this quadratic invariant when
-squared.
-
-\paragraph{Clifford algebra and linearization}
-
+\paragraph{Clifford algebra and linearisation.}
 Introduce matrices $\gamma^\mu$ obeying the Clifford algebra
-
 \begin{equation}
-\{\gamma^\mu,\gamma^\nu\}=2\eta^{\mu\nu}.
+  \{\gamma^\mu,\gamma^\nu\} = 2\eta^{\mu\nu}.
 \end{equation}
-
 This algebra encodes the geometry of the local Lorentzian metric.
-Defining
+In ECT this metric is not a fundamental background but the
+\emph{induced effective metric} of the ordered
+branch~(Section~\ref{sec:graviton}): the $\eta^{\mu\nu}$ appearing
+in the Clifford relation is interpreted as the flat-limit Lorentzian
+metric induced by the uniform condensate vacuum.
+The Clifford structure is therefore tied to the emergent metric of the
+ordered branch rather than imposed on a fundamental spacetime from the
+outset.
+In that sense it is structurally induced by the condensate geometry,
+not introduced independently of it.
 
+Defining $\slashed{p} \equiv \gamma^\mu p_\mu$, one obtains
 \begin{equation}
-\slashed{p}\equiv \gamma^\mu p_\mu
+  (\slashed{p})^2
+  = \gamma^\mu\gamma^\nu p_\mu p_\nu
+  = \tfrac{1}{2}\{\gamma^\mu,\gamma^\nu\}p_\mu p_\nu
+  = \eta^{\mu\nu}p_\mu p_\nu
+  = p_\mu p^\mu.
 \end{equation}
-
-one obtains
-
-\begin{equation}
-(\slashed{p})^2
-=
-\gamma^\mu\gamma^\nu p_\mu p_\nu
-=
-\frac{1}{2}\{\gamma^\mu,\gamma^\nu\}p_\mu p_\nu
-=
-\eta^{\mu\nu}p_\mu p_\nu
-=
-p_\mu p^\mu .
-\end{equation}
-
-Thus the Clifford algebra provides a natural linearization of the
+Thus the Clifford algebra provides a natural linearisation of the
 quadratic invariant $p_\mu p^\mu$.
 
-\paragraph{Dirac equation}
-
+\paragraph{Dirac equation.}
 The minimal first-order equation consistent with this structure is
-
 \begin{equation}
-(\slashed{p}-mc_*)\Psi=0 .
+  (\slashed{p} - mc_*)\Psi = 0.
 \end{equation}
-
-In coordinate space, with $p_\mu\rightarrow i\hbar\partial_\mu$, this
+In coordinate space, with $p_\mu \to i\hbar\partial_\mu$, this
 becomes
-
 \begin{equation}
-\boxed{
-\left(i\hbar\gamma^\mu\partial_\mu - mc_*\right)\Psi = 0 .
-}
+  \boxed{
+    \left(i\hbar\gamma^\mu\partial_\mu - mc_*\right)\Psi = 0.
+  }
+  \label{eq:dirac_eq}
 \end{equation}
+This reproduces a Dirac-type equation for relativistic fermionic
+excitations on the ordered condensate branch (structural
+reconstruction, Level~B).
+At the canonical normalisation $\alpha = 2\beta$, $\beta = 1$ one
+has $c_* = c$, recovering the standard Dirac form.
 
-This reproduces the Dirac equation for relativistic fermionic excitations
-on the ordered condensate branch (structural reconstruction, Level~B).
-At the canonical normalisation $\alpha=2$, $\beta=1$ one has
-$c_*=c$, recovering the standard Dirac form.
+\paragraph{Connection to the ECT action.}
+The Dirac equation~\eqref{eq:dirac_eq} is the Euler--Lagrange
+equation of the extended action
+$S_{\rm ECT+f}$~\eqref{eq:S_fermion} with respect to $\bar\Psi$,
+evaluated on the ordered condensate background.
+This makes the Dirac form consistent with the variational structure of
+the \emph{extended} theory.
+The point is not that the fermionic sector has been derived from the
+bare bosonic condensate action, but that once the fermionic extension
+is admitted, the Dirac equation is not added ad hoc at the equation
+level: it follows from varying the extended action.
 
-\paragraph{Weyl decomposition}
-
-In the chiral representation the Dirac spinor decomposes into two Weyl
-spinors
-
+\paragraph{Weyl decomposition.}
+In the chiral representation the Dirac spinor decomposes into two
+Weyl spinors
 \begin{equation}
-\Psi=
-\begin{pmatrix}
-\psi_L\\
-\psi_R
-\end{pmatrix},
+  \Psi = \begin{pmatrix} \psi_L \\ \psi_R \end{pmatrix},
 \end{equation}
+transforming under the two inequivalent two-component representations
+of $SL(2,\mathbb{C})$.
+This connects directly to the ECT observation that the Euclidean
+spin group admits the decomposition
+$Spin(4) \simeq SU(2)_L \times SU(2)_R$
+(Section~\ref{sec:spinor_structure}).
 
-transforming under the two inequivalent two-component representations of
-$SL(2,\mathbb C)$. This connects directly to the ECT observation that
-the pre-breaking Euclidean rotation group admits the decomposition
-
+\paragraph{Curved-spacetime generalisation.}
+On a non-uniform condensate background, where the effective metric
+$g^{\rm eff}_{\mu\nu}$ varies, the corresponding curved-background
+Dirac form is naturally expected to take the form
 \begin{equation}
-SO(4)\simeq SU(2)_L\times SU(2)_R .
+  \left(i\hbar\gamma^a e_a{}^\mu \nabla_\mu - mc_*\right)\Psi = 0,
+  \label{eq:dirac_curved}
 \end{equation}
+where $e_a{}^\mu$ is the emergent vierbein and $\nabla_\mu$ includes
+the spin connection compatible with $g^{\rm eff}_{\mu\nu}$.
+In the ECT interpretation, both the effective vierbein and the
+associated spin connection are expected to be induced by the
+condensate orientation field and its gradients, rather than introduced
+as independent geometric structures.
+At the present stage this should be read as a Level~B structural
+interpretation, not as a completed explicit derivation.
 
-\paragraph{ECT-specific deformation (phenomenological)}
+\paragraph{ECT-specific fermion--condensate coupling.}
+Beyond the Dirac form itself, the ordered branch admits an additional
+fermion--condensate coupling
+$\Delta\mathcal{L} = \beta_5\,\bar\Psi\gamma^A n_A\Psi$.
+Its status within the fermionic reconstruction is discussed in
+Section~\ref{sec:fifth_force_fermion}, while its phenomenology is
+developed separately in Section~\ref{sec:fifth_force}.
 
-The symmetry breaking $O(4)\rightarrow O(3)$ introduces a preferred
-condensate direction $n^\mu$ in the effective low-energy theory.  The
-leading rotationally invariant deformation of the Dirac operator can be
-written as
+\paragraph{What is and is not reconstructed here.}
+The present subsection reconstructs the \emph{Dirac form} as the
+minimal first-order spinorial equation compatible with the emergent
+Lorentzian branch.
+It does not yet derive the existence of fermions from the bare bosonic
+condensate, nor does it derive fermionic quantisation, anticommutation
+relations, or the full spin-statistics theorem.
+Nor does the present subsection derive the observed fermion spectrum,
+generation structure, or Yukawa hierarchy.
+Those questions belong to the broader fermionic and quantum
+programmes developed in the following subsections and in
+Section~\ref{sec:qs_statistics}.
 
-\begin{equation}
-\Delta\mathcal{L}
-=
-\beta\,\bar{\Psi}\gamma^\mu n_\mu \Psi .
-\end{equation}
-
-In ECT the coupling is expected to be Planck-suppressed,
-$\beta\sim m_f/M_{\rm Pl}$ (dimensional estimate, not
-a first-principles derivation). Any nonzero value would induce small deviations
-from exact Lorentz invariance, potentially testable in precision
-spin-precession and clock-comparison experiments.
-
-At the present stage the precise value of $\beta$ should be regarded as
-phenomenological and subject to further derivation from the microscopic
-condensate dynamics.
+\paragraph{Status summary.}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
+\hline
+Statement & Status & Comment \\
+\hline
+Lorentzian quadratic invariant for free excitations
+  on the ordered branch
+  & A (EFT) & Kinematic input from the broken-phase
+    propagation structure \\
+Clifford algebra on the emergent metric
+  & B & $\eta^{\mu\nu}$ is interpreted as the
+    induced flat-limit metric \\
+Dirac-type first-order equation via Clifford
+  linearisation
+  & B & Structural reconstruction once the
+    spinorial and Lorentzian inputs are admitted \\
+Connection to $S_{\rm ECT+f}$ variational
+  structure
+  & B & Euler--Lagrange equation of the extended
+    action \\
+Weyl decomposition $\leftrightarrow$
+  $Spin(4)\simeq SU(2)_L\times SU(2)_R$
+  & A/B & Group-theoretic (A); physical
+    relevance (B) \\
+Curved-background Dirac generalisation with an
+  emergent vierbein/spin-connection interpretation
+  & B & Structural interpretation; explicit
+    derivation pending \\
+\hline
+\end{tabular}
+\end{center}
 
 \subsection{Chirality and fermion interactions}
 \label{sec:chirality}
@@ -7021,10 +7085,16 @@ present stage~(Level~C; OP-generations).
 \label{sec:fifth_force_fermion}
 
 \textit{Status: Level~B/C.
-The fifth-force coupling is the only ECT-specific fermion interaction
+The fifth-force coupling is the main ECT-specific fermion interaction
 currently identified beyond the Standard Model embedding.
 Its strength is a dimensional estimate; full phenomenology is
 developed in Section~\ref{sec:fifth_force}.}
+
+This subsection introduces the structural form and status of the
+ECT-specific fermion--condensate coupling.
+Its detailed phenomenology, observational constraints, and
+falsification tests are developed separately in
+Section~\ref{sec:fifth_force}.
 
 The symmetry breaking $O(4)\to O(3)$ introduces a preferred
 condensate direction $n_A \equiv \partial_A\Phi/|\partial\Phi|$ in
