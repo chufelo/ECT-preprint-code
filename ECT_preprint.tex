@@ -5605,24 +5605,180 @@ the $U(1)$ symmetry is introduced as an extension of the minimal
 bosonic condensate, and the full quantum electrodynamics structure
 is not derived from the scalar condensate alone.
 
-\subsection{Electroweak Sector}
+\subsection{Electroweak Sector and the Higgs Interpretation in ECT}
+\label{sec:ew_particles}
 
-The electroweak sector of ECT is currently treated as a
-\emph{structural embedding} via an effective condensate doublet with
-$SU(2)\times U(1)$ symmetry (Level~B/C).
-This means:
-\begin{itemize}
-  \item the symmetry pattern is compatible with an electroweak-like EFT;
-  \item the scale $v_2=246$\,GeV is fixed by low-energy matching if the
-    second transition exists;
-  \item the dynamical origin of this doublet sector is not yet derived
-    from the minimal scalar condensate.
-\end{itemize}
-Accordingly, the Higgs boson is represented here only at the level of
-the embedded low-energy EFT as the radial excitation of the
-electroweak condensate.
-Its emergence from first-principles ECT remains open
-(Section~\ref{sec:three_scales}, Appendix~\ref{app:second_transition}).
+\textit{Status: Level~B/C structural embedding.
+The electroweak sector is not derived from minimal ECT; it is shown
+to be structurally admissible if a second condensate transition
+$O(3)\to O(2)$ exists.
+This subsection consolidates the Higgs interpretation from the
+radial-mode analysis~(Section~\ref{sec:radial_mode}), the
+electroweak-like gauge embedding~(Section~\ref{sec:ew_embedding}),
+and the structural candidate mechanism~(Appendix~\ref{app:second_transition}).}
+
+The Higgs discussion in ECT has two complementary sides:
+the gauge-embedding side, where the electroweak-like EFT is introduced
+(Section~\ref{sec:ew_embedding}), and the radial-mode side, where the
+secondary amplitude excitation is analysed as a condensate mode
+(Section~\ref{sec:radial_mode}).
+The present subsection brings these two viewpoints together.
+
+\paragraph{The Higgs boson as a second condensate radial mode.}
+In the Standard Model, the Higgs boson is an elementary scalar field
+introduced independently of the spacetime
+metric~\cite{EnglertBrout1964,Higgs1964}.
+In ECT, the role of the Higgs is played by the radial excitation~$h$
+of the second condensate vacuum at scale
+$v_2\approx246\,$GeV~(Section~\ref{sec:radial_mode}):
+\begin{equation}
+  \phi_{\rm ew} = v_2 + h, \qquad
+  m_h^2 = 2\lambda_2\,v_2^2.
+\end{equation}
+This is not an independent fundamental field, but the amplitude
+fluctuation of a second ordered phase of the same underlying
+$\Phi$-medium whose first ordered phase is associated with the
+Lorentzian spacetime and gravitational sector.
+The distinction is conceptual: the SM Higgs and the spacetime metric
+are unrelated structures; in ECT they would both arise from a single
+underlying medium.
+
+\paragraph{Coupling pattern.}
+If the electroweak embedding is realised at the level of the SM
+gauge structure~(Section~\ref{sec:ew_embedding}), the Higgs couplings
+to $W^\pm$, $Z$, and fermions follow the Standard Model pattern
+at leading order.
+This is a direct consequence of the embedding: the low-energy EFT
+is \emph{designed} to reproduce the SM structure, and the Higgs
+coupling pattern is therefore an input, not a prediction.
+Accordingly, agreement with the observed tree-level Higgs coupling
+pattern is a consistency requirement of the embedding, not an emergent
+prediction of minimal ECT.
+
+\paragraph{ECT-specific sources of deviation.}
+Within the ECT framework, three potential sources of deviation from
+SM Higgs properties are structurally identified, though none is
+quantitatively predicted at the present stage:
+
+\emph{(i) Mixing with the primary radial mode.}
+The Higgs-like mode $h$ and the Planck-heavy primary radial mode
+$\sigma$ belong to different ordered phases of the same medium.
+A mixing term is generically allowed unless forbidden by an
+additional symmetry~(Section~\ref{sec:radial_mode}).
+After diagonalisation, such mixing would generically induce small
+universal deviations in the Higgs couplings to Standard Model fields.
+In the decoupling regime $m_\sigma \gg m_h$ these effects are expected
+to be strongly suppressed, typically by powers of $m_h/m_\sigma$ and by
+the corresponding portal coefficient.
+At present ECT does not predict the size of this mixing.
+
+\emph{(ii) Non-quartic corrections to the Higgs self-coupling.}
+If the effective potential at scale $v_2$ deviates from the
+quartic form, the cubic self-interaction
+$V_{\rm ew}'''(v_2)=3m_h^2/v_2$ receives corrections.
+Such deviations are in principle testable through Higgs pair
+production at HL-LHC or FCC-hh~(Section~\ref{sec:radial_mode}).
+
+\emph{(iii) Condensate-sector corrections to Yukawa couplings.}
+If the Yukawa couplings $y_f$ receive contributions from the
+primary condensate sector---for instance through higher-dimension
+operators suppressed by the primary radial scale---small deviations
+from the SM relation $m_f = y_f v_2$ could appear.
+At present ECT does not predict the size of such effects.
+In the minimal decoupling picture they are expected to be highly
+suppressed, but a quantitative estimate requires a concrete model of
+the second transition and of the matter-coupling sector.
+
+\paragraph{Comparison: SM Higgs versus ECT Higgs.}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{p{4.0cm}p{4.5cm}p{4.5cm}}
+\hline
+Property & Standard Model & ECT \\
+\hline
+Ontological status
+  & Elementary scalar field
+  & Radial excitation of second condensate phase \\
+Relation to spacetime
+  & Independent of metric
+  & Same underlying medium as the gravitational/spacetime sector \\
+$v_2 = 246\,$GeV
+  & Fundamental VEV
+  & Matching constraint (if second transition exists) \\
+$m_h = 125\,$GeV
+  & Determined by $\lambda$ and $v$
+  & Determined by $\lambda_2$ and $v_2$ (same formula) \\
+Coupling pattern
+  & Predicted by SM gauge structure
+  & Reproduced by embedding (input, not prediction) \\
+Cubic Higgs interaction near the minimum
+  & $V'''(v) = 3m_h^2/v$
+  & Same if $V_{\rm ew}$ is quartic; deviations possible \\
+Naturalness
+  & Quadratic divergence $\sim\Lambda^2$
+  & Same problem: $\delta m_h^2\sim m_\sigma^2$ \\
+Radial partner
+  & None
+  & Primary radial mode $\sigma\sim M_{\rm Pl}$ \\
+Mixing with primary condensate radial mode
+  & No analogue in the minimal SM
+  & Possible $\sigma$--$h$ mixing \\
+\hline
+\end{tabular}
+\end{center}
+
+\paragraph{What ECT adds and what it does not.}
+ECT does not derive the Higgs boson from first principles.
+What it adds is a \emph{structural context}: the Higgs is
+reinterpreted as one of two radial modes of a single condensate,
+the other being the Planck-heavy primary mode that defines the
+UV threshold of the effective theory.
+This reinterpretation does not currently lead to a quantitative
+prediction that differs robustly from the Standard Model, but it
+changes the conceptual status of the hierarchy
+problem~(Section~\ref{sec:radial_mode}): instead of asking why an
+elementary scalar is light, one asks why the condensate undergoes
+a second ordering step at $v_2\ll u_0$.
+
+The electroweak sector remains a structural embedding at
+Level~B/C, not a completed derivation.
+Its full first-principles realisation within ECT requires closing
+OP-EW~(Section~\ref{sec:three_scales},
+Appendix~\ref{app:second_transition}).
+
+\paragraph{Status summary.}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
+\hline
+Statement & Status & Comment \\
+\hline
+Higgs as radial excitation of second condensate
+  phase
+  & B/C & If second transition exists \\
+SM coupling pattern reproduced by embedding
+  & B/C & Input, not prediction \\
+$\sigma$--$h$ mixing as source of coupling
+  deviations
+  & C & Generically allowed; magnitude not predicted \\
+Non-quartic corrections to Higgs self-coupling
+  & C & Testable in principle at HL-LHC/FCC \\
+Condensate-sector corrections to Yukawa couplings
+  & C & Expected to be suppressed; magnitude not
+    predicted \\
+Higgs and spacetime associated with the same
+  underlying medium
+  & B/C & Conceptual reinterpretation, if the second
+    transition exists \\
+Radiative naturalness of the Higgs-like mode
+  & Open & Same quadratic sensitivity issue as in the SM \\
+Full EW sector derived from P1--P5
+  & Open (OP-EW) & \\
+\hline
+\end{tabular}
+\end{center}
 
 \subsection{Fermions (Level~B: structural route)}
 
