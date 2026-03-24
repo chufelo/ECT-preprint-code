@@ -7433,80 +7433,131 @@ Operator anti-commutation algebra
 \subsection{Open programme and status summary for the fermionic sector}
 \label{sec:fermion_open}
 
+\textit{Status: this subsection collects the open problems and the
+joint status summary for the fermionic
+sector~(Sections~\ref{sec:spinor_structure}--\ref{sec:fermion_statistics}).
+The fermionic sector is among the most heavily embedded parts of ECT:
+its content is introduced as structural reconstruction on the ordered
+branch rather than derived from the bare bosonic condensate.}
+
+\paragraph{Open programme.}
 To promote the fermionic sector from structural reconstruction to
 first-principles derivation, the following programme would need to be
 completed:
 \begin{enumerate}[label=(\roman*)]
   \item derive the dynamical origin of spinorial fields from the
-    bare bosonic condensate (currently: external input);
+    bare bosonic condensate, including their fully induced
+    vierbein/spin-connection coupling on non-uniform condensate
+    backgrounds (currently: external input;
+    Section~\ref{sec:spinor_structure});
   \item derive fermionic statistics beyond the structural
-    $\pi_1 = \mathbb{Z}_2$ route (currently: Level~B compatibility);
+    $\pi_1(\mathcal{M}_2) = \mathbb{Z}_2$ exchange-topology route
+    (currently: Level~B compatibility;
+    Section~\ref{sec:fermion_statistics},
+    Section~\ref{sec:qs_statistics});
   \item derive the Yukawa coupling pattern and the fermion mass
-    hierarchy (currently: SM input, Level~C);
+    hierarchy (currently: SM input, Level~C;
+    Section~\ref{sec:yukawa});
   \item derive the fifth-force coupling $\beta_5$ beyond the
-    dimensional estimate (currently: Level~B/C);
+    dimensional estimate (currently: Level~B/C;
+    Section~\ref{sec:fifth_force_fermion},
+    Section~\ref{sec:fifth_force});
   \item derive the chiral gauge selection $SU(2)_L$ dynamically
-    (currently: Level~B structural hint);
+    (currently: Level~B structural possibility;
+    Section~\ref{sec:chirality});
   \item derive the origin of exactly three fermion generations
-    (currently: no mechanism identified).
+    (currently: no mechanism identified;
+    Section~\ref{sec:yukawa}).
 \end{enumerate}
 None of these steps has been completed.
 The fermionic sector is a structural reconstruction programme, not
 a completed derivation from the bare scalar condensate.
 
-\paragraph{Status summary.}
+\paragraph{What would Level~A look like?}
+A hypothetical Level~A fermionic sector would mean that spinorial
+excitations emerge as dynamical quasiparticles of the bare bosonic
+condensate, with their statistics, mass spectrum, and gauge quantum
+numbers determined by condensate microphysics.
+An instructive analogy is provided by emergent fermionic quasiparticles
+in systems such as superfluid ${}^3$He-A~\cite{Volovik2003}, although
+ECT does not currently realise an analogous microscopic mechanism.
+The structural route developed in this section should be understood as
+the present limit of what the framework can establish for fermions.
+A genuine Level~A completion would require qualitatively new input
+beyond what is currently available in ECT.
+
+\paragraph{Connections to the broader ECT programme.}
+Several fermionic open problems are shared with other sectors of the
+theory:
+\begin{itemize}
+  \item the spin-statistics question~(ii) connects to the quantum
+    sector~(Section~\ref{sec:qs_statistics}; OP-Q11);
+  \item the fifth-force phenomenology~(iv) connects to the gauge and
+    macroscopic sectors~(Section~\ref{sec:fifth_force});
+  \item the chiral selection~(v) connects to the electroweak
+    embedding~(Section~\ref{sec:ew_embedding});
+  \item the generation puzzle~(vi) remains without a connection to
+    any other part of ECT at the present stage.
+\end{itemize}
+
+\paragraph{Joint status summary.}
+The table below gives a condensed overview.
+Detailed status tables are provided in each subsection.
 
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
-\begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
+\begin{tabular}{p{4.5cm}p{2.0cm}p{6.5cm}}
 \hline
-Statement & Status & Comment \\
+Subsection & Highest level & Summary \\
 \hline
-\multicolumn{3}{l}{\textit{Spinor structure (Section~\ref{sec:spinor_structure})}} \\
-$Spin(4)\simeq SU(2)_L\times SU(2)_R$
-  & A & Double cover of $SO(4)$ \\
-$\pi_1(SO(3))=\mathbb{Z}_2$: half-integer
-  representations available
-  & A & Topological fact \\
-Physical motivation for fermionic excitations
-  & B & Compatibility, not derivation \\
+\ref{sec:spinor_structure}~Spinor structure
+  & A (group theory) / B (physical motivation)
+  & $Spin(4)\simeq SU(2)_L\times SU(2)_R$; spinorial reps
+    available; fermions not derived from bare condensate \\
+\ref{sec:dirac_eq}~Dirac form
+  & B
+  & Structural reconstruction via Clifford linearisation on
+    the emergent metric; connection to $S_{\rm ECT+f}$ \\
+\ref{sec:chirality}~Chirality
+  & B (structural possibility)
+  & SSB provides a structural setting in which chiral asymmetry
+    can arise; selection of $SU(2)_L$ is not derived \\
+\ref{sec:yukawa}~Yukawa / masses
+  & C
+  & SM embedding; hierarchy and three generations
+    open~(OP-Yukawa, OP-generations) \\
+\ref{sec:fifth_force_fermion}~Fifth-force coupling
+  & B/C
+  & $\beta_5\bar\Psi\gamma^A n_A\Psi$; dimensional estimate;
+    phenomenology in Section~\ref{sec:fifth_force} \\
+\ref{sec:fermion_statistics}~Spin-statistics
+  & A (topology) / B (compatibility)
+  & $\pi_1(\mathcal{M}_2)=\mathbb{Z}_2$; for point-particle
+    exchange in $3{+}1$ dimensions this yields only
+    bosonic/fermionic classes;
+    full theorem open~(OP-Q11) \\
 \hline
-\multicolumn{3}{l}{\textit{Dirac equation (Section~\ref{sec:dirac_eq})}} \\
-Dirac form via Clifford linearisation
-  & B & Structural reconstruction \\
-ECT-specific deformation $\beta\bar\Psi\gamma^A n_A\Psi$
-  & B/C & Dimensional estimate for $\beta$ \\
-\hline
-\multicolumn{3}{l}{\textit{Chirality (Section~\ref{sec:chirality})}} \\
-$SO(4)\simeq SU(2)_L\times SU(2)_R$ and chiral
-  selection
-  & B & Structural possibility \\
-\hline
-\multicolumn{3}{l}{\textit{Yukawa sector (Section~\ref{sec:yukawa})}} \\
-$m_f = y_f v_2$
-  & C & SM embedding; $y_f$ not derived \\
-Yukawa hierarchy
-  & Open (OP-Yukawa) & \\
-Three fermion generations
-  & Open (OP-gen) & No mechanism identified \\
-\hline
-\multicolumn{3}{l}{\textit{Spin-statistics (Section~\ref{sec:fermion_statistics})}} \\
-Exchange topology $\pi_1(\mathcal{M}_2)=\mathbb{Z}_2$
-  & A & Topological fact \\
-Structural compatibility with bosonic/fermionic
-  classification
-  & B & Not yet full spin-statistics theorem \\
-Full spin-statistics derivation
-  & Open (OP-Q11) & \\
-\hline
-\multicolumn{3}{l}{\textit{Open programme}} \\
+\multicolumn{3}{l}{\textit{Overall}} \\
 Fermions as collective condensate excitations
-  & Open & \\
+  & Open
+  & Not derived from bare bosonic action \\
 Full first-principles fermionic sector from P1--P5
-  & Open & \\
+  & Open
+  & Structural reconstruction only \\
 \hline
 \end{tabular}
 \end{center}
+
+\paragraph{Overall assessment.}
+At the present stage, the fermionic sector of ECT is best viewed as a
+coherent structural programme rather than a completed derivation.
+Its internal logic is significantly stronger than a purely ad hoc SM
+embedding, because spinor structure, Dirac form, chirality, and the
+ECT-specific fermion--condensate coupling are all tied to the ordered
+branch geometry.
+At the same time, none of the decisive microscopic steps---fermion
+emergence, statistics, Yukawa pattern, or generation structure---has
+yet been derived from the bare condensate action.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
