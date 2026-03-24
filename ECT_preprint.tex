@@ -6149,32 +6149,115 @@ spin-statistics route are discussed separately.
 \subsection{Neutrino Sector}
 \label{sec:neutrino_particles}
 
-In the minimal construction the right–handed neutrino is absent.
+\textit{Status: Level~C speculative SM embedding.
+The neutrino sector is not derived from the minimal ECT
+condensate action; it is a phenomenological embedding
+drawing on Standard-Model mechanisms.
+Connection to leptogenesis: Section~\ref{sec:baryogenesis}.}
 
-\textbf{Status (Level~C — speculative SM embedding).}
-The neutrino sector below is not derived from the minimal ECT
-condensate action; it is a speculative phenomenological embedding
-drawing on Standard-Model mechanisms.  The mass estimate uses
-$M_{\rm GUT}$ as an external input.
-
-Small neutrino masses, as implied by oscillation experiments~\cite{Fukuda1998},
-may arise through Majorana operators
-
+\paragraph{Right-handed neutrino.}
+In the minimal ECT construction, only left-handed neutrino components
+appear in the fermionic sector~(Section~\ref{sec:fermion_particles}).
+If right-handed neutrinos are admitted as additional embedded fields
+(Level~C), a type-I seesaw mechanism can generate light neutrino
+masses, consistent with oscillation
+experiments~\cite{Fukuda1998}:
 \begin{equation}
-\mathcal{L}_M =
-\frac12 M\, \nu_L^T C \nu_L .
+  m_\nu \sim \frac{(y_\nu v_2)^2}{M_R},
+  \label{eq:seesaw}
 \end{equation}
+where $y_\nu$ is the neutrino Yukawa coupling,
+$v_2 \approx 246\,$GeV is the electroweak condensate
+scale~(Section~\ref{sec:ew_embedding}), and $M_R$ is the
+right-handed neutrino Majorana mass.
+All three parameters are external inputs, not derived from ECT.
 
-A rough dimensional estimate for the scale of this operator
-(speculative; $M_{\rm GUT}$ not derived in ECT) is
-
+\paragraph{ECT-specific scale observation.}
+The two condensate scales of ECT ($u_0 \sim \bar{M}_{\rm Pl}
+\approx 2.4\times10^{18}\,$GeV and $v_2 \approx 246\,$GeV) define a
+geometric mean:
 \begin{equation}
-M \sim \frac{v_0^2}{M_{\rm GUT}},
+  M_R^{\rm geom} \equiv \sqrt{u_0\,v_2}
+  \approx \sqrt{2.4\times10^{18}\times246}\;\text{GeV}
+  \approx 2.4\times10^{10}\;\text{GeV}.
+  \label{eq:MR_geom}
 \end{equation}
+If $M_R$ is of this order, the seesaw formula~\eqref{eq:seesaw}
+with $y_\nu \sim 1$ gives
+$m_\nu \sim v_2^2/M_R^{\rm geom} \sim 0.003\,$eV, which
+is in the observed range for neutrino mass splittings
+($\Delta m^2_{\rm atm} \approx 2.5\times10^{-3}\,$eV$^2$,
+$\Delta m^2_{\rm sol} \approx 7.5\times10^{-5}\,$eV$^2$).
+This proximity is suggestive but not a derivation: $M_R^{\rm geom}$
+is a numerical coincidence at the present stage~(Level~B/C).
 
-which resembles the seesaw mechanism.  A condensate-specific
-derivation of the right-handed neutrino scale from ECT dynamics
-remains an open problem (OP15).
+For smaller Yukawa couplings $y_\nu \ll 1$ the effective neutrino
+mass decreases as $m_\nu \propto y_\nu^2$; the observed mass range
+$m_\nu \sim 0.01$--$0.1\,$eV is reproduced for
+$M_R \sim 10^{9}$--$10^{11}\,$GeV and $y_\nu \sim 0.01$--$1$.
+None of these values is derived from ECT.
+
+\paragraph{Connection to leptogenesis.}
+In the baryogenesis discussion~(Section~\ref{sec:baryogenesis}),
+a right-handed neutrino scale $M_R \sim 10^9\,$GeV is used as an
+illustrative benchmark for the resonant leptogenesis estimate
+$\eta_B \sim 9\times10^{-10}$.
+The consistency of the seesaw mechanism with the ECT baryogenesis
+channel is a Level~B structural compatibility result, not a
+closed derivation.
+
+\paragraph{Majorana operator.}
+After integrating out the heavy right-handed neutrino, the
+low-energy effective Lagrangian contains a dimension-5 Majorana
+operator:
+\begin{equation}
+  \mathcal{L}_M = \frac{1}{2}\,m_\nu\,\nu_L^T C \nu_L + \text{h.c.},
+  \label{eq:majorana}
+\end{equation}
+where $C$ is the charge-conjugation matrix.
+This is the standard Weinberg operator; its presence in ECT is an
+embedding, not a derivation from condensate dynamics.
+
+\paragraph{What is and is not derived here.}
+This subsection imposes the seesaw mechanism as a Standard-Model-like
+embedding.
+Neither the existence of right-handed neutrinos, nor their Majorana
+mass $M_R$, nor the neutrino Yukawa couplings $y_\nu$ are derived
+from ECT condensate dynamics.
+The geometric-mean observation $M_R^{\rm geom} = \sqrt{u_0 v_2}$
+is a suggestive numerical coincidence, not a prediction.
+A condensate-specific derivation of the right-handed neutrino scale
+remains an open problem~(OP15).
+
+\paragraph{Status summary.}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
+\hline
+Statement & Status & Comment \\
+\hline
+Type-I seesaw formula
+  $m_\nu \sim (y_\nu v_2)^2/M_R$
+  & C & SM embedding; $M_R$, $y_\nu$ not
+    derived \\
+Geometric-mean scale
+  $M_R^{\rm geom} = \sqrt{u_0\,v_2}
+  \approx 2.4\times10^{10}\,$GeV
+  & B/C & Suggestive numerical coincidence;
+    not a derivation \\
+Neutrino mass in observed range for
+  $M_R \sim 10^{9}$--$10^{11}\,$GeV
+  & C & Consistency check, not prediction \\
+Consistency with leptogenesis channel
+  & B & Section~\ref{sec:baryogenesis} \\
+Right-handed neutrino from ECT dynamics
+  & Open (OP15) & Not derived \\
+Majorana operator as low-energy effective form
+  & C & Standard Weinberg operator;
+    embedding \\
+\hline
+\end{tabular}
+\end{center}
 
 \subsection{Predicted New States and Topological Sectors}
 \label{sec:predicted_states}
