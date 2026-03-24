@@ -2293,6 +2293,14 @@ in standard internal SSB frameworks.
 \section{Spectrum and Effective Dynamics of the Broken Phase}
 \label{sec:broken_spectrum}
 
+\textit{This section organises the excitation spectrum of the broken
+phase: amplitude, orientation, and macroscopic branches; the
+integrability constraint on the soft sector; and the resulting
+hierarchy of effective modes.
+Most results are Level~A/B within the ordered-phase EFT.
+The explicit Goldstone mass mechanism and the complete soft-sector EFT
+remain open.}
+
 After postulate~P4 has selected the gradient-ordered vacuum sector
 and the derived coherent-sector rule~BR1 has identified the smooth
 coherent topological sector, the next step is to determine which
@@ -2318,6 +2326,8 @@ $\langle n_A\rangle = \delta_{Aw}$.
 The orientation variable belongs to the vacuum level of description~(P4);
 it is not a second fundamental microscopic degree of freedom
 and does not appear in the fundamental action.
+The role of the heavy radial excitation $\sigma$ in the particle
+spectrum is discussed in Section~\ref{sec:radial_mode}.
 
 
 \subsection{Sector map: amplitude, soft orientation, and macroscopic
@@ -2331,8 +2341,10 @@ the rest of the theory.
 A fluctuation of $|\partial\Phi|$ around the uniform ordered background $u_0$.
 \begin{itemize}
   \item Nature: UV fluctuation of the condensate amplitude.
-  \item Mass scale: heavy, with characteristic radial scale set by the
-    bare condensate potential ($m_\sigma^2\sim V''(\phi_0)$;
+  \item Mass scale: heavy, with the characteristic radial scale expected to
+    be set by the local curvature of the condensate potential
+    ($m_\sigma^2\sim V''(\phi_0)$ as a representative estimate;
+    explicit EFT matching remains open, OP-grad;
     cf.~\eqref{eq:sigma_mass}).
   \item Role: integrates out at $E\ll m_\sigma$; stabilises the ordered
     branch and sets the UV cutoff of the broken-phase EFT.
@@ -2349,6 +2361,9 @@ A broken-branch orientation sector can be introduced by writing
 At the purely geometric level the ordered branch selects a preferred
 direction and breaks $O(4)\to O(3)$, so that the vacuum manifold is
 $O(4)/O(3)\simeq S^3$.
+At the level of naive broken-generator counting this sector is
+three-dimensional, but in the scalar-only basis its propagating soft
+content is reduced by integrability, as shown below.
 However, in the present scalar-only ECT basis $Q_A$ is not an arbitrary
 vector field but an exact one-form, $Q_A=\partial_A\Phi$.
 Therefore the orientation sector is subject to the integrability
@@ -2360,6 +2375,8 @@ constraint
 This sharply reduces the naive Goldstone counting;
 see Section~\ref{sec:goldstone_integrability_main} and
 Appendix~\ref{app:goldstone_integrability}.
+The particle-spectrum interpretation of the surviving soft mode $\chi$
+is discussed in Section~\ref{sec:particle_soft_orientation}.
 
 \paragraph{Macroscopic $\phi$-sector.}
 Slow classical spatial variations of the ordered background on galactic
@@ -2510,30 +2527,27 @@ Phase $\theta$ & Topological sector & Coherent IR; pre-quantum action scale \\
 \end{tabular}
 \end{center}
 
-\noindent\textbf{Spin-2 content of the geometric branch.}
-\textit{Note on terminology:} ``spin-2'' is used here in the purely
-classical group-theoretic sense---a rank-2 symmetric tensor under
-the rotation group $O(3)$. This does not require quantisation and
-involves no reference to~$\hbar$.
+\noindent\textbf{Effective-metric tensorial sector of the geometric branch.}
+\textit{Terminological note:} ``spin-2'' is used here in the classical
+group-theoretic sense of a rank-2 symmetric tensor under spatial
+rotations; no quantisation assumption is involved.
 
-The three orientation modes $\delta n_i$ form a rank-2 symmetric tensorial
-sector. Through the effective metric $g^{\rm eff}_{AB}(n_A)$,
-small deformations $\delta n_i$ induce metric fluctuations $h_{\mu\nu}$.
-With a massless dispersion $\omega^2=c_n^2 k^2$ at $\alpha=2\beta$,
-the geometric branch contains a tensorial long-wavelength sector
-compatible with a massless rank-2 description.
+A direct fluctuation of the orientation variable $\delta n_i$
+carries vector rather than tensor character.
+The tensorial sector appears only after projection into the induced
+effective metric $g^{\rm eff}_{AB}(n)$: small orientation
+fluctuations generate symmetric effective-metric perturbations
+$h_{\mu\nu}$, and it is this induced metric perturbation that admits
+a linearised massless rank-2 interpretation.
 
-Furthermore, the existence of this massless tensorial sector and
-its coupling to the conserved stress-energy tensor
-(Appendix~\ref{app:noether_full}) make the geometric branch of ECT
-compatible with a Deser-type route~\cite{Deser1970} to massless spin-2
-gravity. On the ECT basics level this should be understood not as
-a completed derivation of full nonlinear gravitational dynamics,
-but as a structural motivation for why Macroscopic Physics should
-develop precisely the spin-2 geometric branch.
-The complete development---gauge reduction, two physical polarisations,
-linearised and nonlinear gravitational equations---belongs to
-Section~\ref{sec:macroscopic}.
+In the scalar-only basis, however, the naive three-component
+orientation triplet is reduced by integrability to a single
+longitudinal scalar mode $\chi$
+(Section~\ref{sec:goldstone_integrability_main}).
+Thus the tensorial effective-metric sector is not an independent
+three-component particle multiplet of orientation modes.
+Its full interpretation as the graviton sector is developed in
+Section~\ref{sec:graviton}.
 
 \subsection{Status of results in this section}
 \label{sec:spectrum_status}
@@ -2590,6 +2604,10 @@ Action scale $S_0$ as ECT precursor of $\hbar$
   & Level~B & Phase periodicity + coherent winding sectors~(BR1) \\
 Strict identification $S_0=\hbar$
   & Open & Requires full quantum-sector reconstruction \\
+Induced effective-metric tensorial sector from orientation
+  fluctuations
+  & Level~B & Tensorial content arises after projection to
+    $g^{\rm eff}_{AB}$; see Section~\ref{sec:graviton} \\
 \hline\hline
 \end{tabular}
 \end{center}
