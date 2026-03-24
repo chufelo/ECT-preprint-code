@@ -5071,26 +5071,72 @@ and new condensate excitations specific to the framework.
 This section catalogues these excitations, labelled by level of rigour.
 
 \subsection{General Structure of Particle Excitations}
+\label{sec:particle_structure}
 
-In the ECT framework the fundamental degree of freedom in the microscopic scalar-only ECT basis
-is the condensate scalar field $\Phi$. The orientation field $n_A$ is introduced
-only as a derived ordered-branch variable through $Q_A=\partial_A\Phi=u\,n_A$,
-and is not an independent microscopic field in the present formulation. 
-Elementary particles arise as excitations of the condensate sector and of the associated gauge fields.
+In the scalar-only ECT basis the fundamental degree of freedom
+is the condensate field $\Phi$.
+The orientation field $n_A$ is introduced only as a derived
+ordered-branch variable through $Q_A = \partial_A\Phi = u\,n_A$
+and is not an independent microscopic field in the present
+formulation~(Section~\ref{sec:sector_map}).
+Elementary particles and field excitations arise as fluctuations of
+the condensate sector, as gauge fields of its internal symmetries,
+or as topological configurations of the ordered vacuum.
 
-Two general classes of excitations are \emph{structurally motivated} within ECT:
+\paragraph{Three categories of excitations.}
+The particle content discussed in this chapter falls into three
+categories with different derivation status:
 
-\begin{enumerate}
-\item fluctuations of the condensate fields,
-\item gauge bosons associated with internal symmetries of the condensate phase structure.
-\end{enumerate}
+\emph{(i) Required condensate excitations.}
+These follow from the structure of the ordered branch and the
+$O(4)\to O(3)$ symmetry breaking:
+\begin{itemize}
+  \item primary radial mode $\sigma$, $m_\sigma \sim \bar{M}_{\rm Pl}$
+    (amplitude fluctuation; Section~\ref{sec:radial_mode});
+  \item surviving soft scalar $\chi$ from the integrability-constrained
+    orientation sector
+    (Section~\ref{sec:particle_soft_orientation});
+  \item graviton as linearised effective-metric perturbation
+    (Section~\ref{sec:graviton}).
+\end{itemize}
 
-In addition, the gravitational field itself emerges as collective excitations of the condensate background.
+\emph{(ii) Structurally embedded Standard Model fields.}
+These are accommodated within the condensate framework but not derived
+from P1--P5:
+\begin{itemize}
+  \item gauge bosons from condensate phase symmetries
+    (Section~\ref{sec:gauge_particles});
+  \item electroweak sector and the Higgs interpretation
+    (Section~\ref{sec:ew_particles});
+  \item fermions as spinorial excitations compatible with the ordered
+    background (Section~\ref{sec:fermion_particles});
+  \item neutrino sector (Section~\ref{sec:neutrino_particles}).
+\end{itemize}
 
-The resulting spectrum \emph{is compatible with} Standard Model particles
-and new condensate excitations (gauge bosons: Level~B/C; fermions:
-Level~B structural reconstruction; soft orientation sector: Level~B minimal EFT
-    (see Appendix~\ref{app:goldstone_integrability})).
+\emph{(iii) Topologically classified sectors and conditional states.}
+These are determined by the homotopy of the vacuum manifold or
+by a possible second transition:
+\begin{itemize}
+  \item texture/skyrmion sectors from $\pi_3(S^3) = \mathbb{Z}$
+    and anti-predictions from $\pi_0 = \pi_1 = \pi_2 = 0$;
+  \item (conditional) secondary defects from $\pi_2(S^2)$ if
+    $O(3)\to O(2)$ exists;
+  \item the Higgs-like secondary radial mode $h$ as a
+    reinterpretation of the observed Higgs boson.
+\end{itemize}
+All three subcategories are developed in
+Section~\ref{sec:predicted_states}.
+
+\paragraph{Connection to the three-scale hierarchy.}
+The particle mass scales are tied to the three condensate
+scales~(Section~\ref{sec:three_scales}):
+$m_\sigma \sim u_0 \sim \bar{M}_{\rm Pl}$ (first condensate),
+$m_h \sim v_2 \approx 246\,$GeV (second condensate, if it exists),
+and the surviving soft mode $\chi$ (massless at tree level in the
+minimal broken-phase EFT).
+The IR galactic scale $v_{\rm gal}$ is not associated with a
+particle excitation but with the macroscopic $\phi$-sector
+closure~(Section~\ref{sec:dark_sector}).
 
 
 
@@ -5138,6 +5184,40 @@ the RAR, and BTFR through the $\phi$-sector without invoking any
 Goldstone-like dark matter.
 The soft orientation sector must \emph{not} be repurposed as a
 dark-matter patch for phenomena already explained by the $\phi$-closure.
+
+
+\paragraph{Role in the predicted-states classification.}
+The surviving soft scalar $\chi$ is listed as item~(ii) in the
+classification of genuinely new states beyond the SM spectrum
+(Section~\ref{sec:predicted_states}).
+Its mass, couplings, and possible cosmological abundance remain
+open~(Level~B).
+
+\paragraph{Status summary.}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
+\hline
+Statement & Status & Comment \\
+\hline
+$O(4)\to O(3)$ breaking admits $S^3$ vacuum manifold
+  & A & Geometric statement \\
+Naive Goldstone counting: $\dim O(4) - \dim O(3) = 3$
+  & A & Broken-generator counting \\
+Integrability reduces propagating soft content to
+  $N_G^{\rm phys} = 1$
+  & B & Inverse-Higgs reduction;
+    Appendix~\ref{app:goldstone_integrability} \\
+Surviving mode $\chi$ massless at tree level
+  & B & No orientation potential in P1--P5 \\
+Pseudo-Goldstone mass mechanism
+  & Open (OP-GM) & No explicit $O(4)$-breaking in P1--P5 \\
+Dark-matter role of $\chi$
+  & Not claimed & Galactic phenomenology uses $\phi$-sector,
+    not $\chi$ \\
+\hline
+\end{tabular}
+\end{center}
 
 \subsection{Radial Condensate Mode}
 \label{sec:radial_mode}
@@ -5564,6 +5644,7 @@ non-renormalisable ultraviolet behaviour of metric quantum gravity
 is potentially absent.
 
 \subsection{Gauge Bosons from Condensate Phase Symmetries}
+\label{sec:gauge_particles}
 
 If the condensate field possesses internal phase symmetries, gauge bosons can be accommodated via the phase holonomy mechanism (Level~B; the SM gauge group is embedded, not derived).
 
@@ -5784,6 +5865,7 @@ Full EW sector derived from P1--P5
 \end{center}
 
 \subsection{Fermions (Level~B: structural route)}
+\label{sec:fermion_particles}
 
 \textbf{Status.} This subsection describes a structural route to
 spinorial excitations; it does \emph{not} derive fermions
@@ -5824,6 +5906,7 @@ The smallness of certain Yukawa couplings remains an open hierarchy problem,
 as does the origin of exactly three fermion generations.
 
 \subsection{Neutrino Sector}
+\label{sec:neutrino_particles}
 
 In the minimal construction the right–handed neutrino is absent.
 
