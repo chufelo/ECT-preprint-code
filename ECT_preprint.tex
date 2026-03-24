@@ -6156,8 +6156,17 @@ drawing on Standard-Model mechanisms.
 Connection to leptogenesis: Section~\ref{sec:baryogenesis}.}
 
 \paragraph{Right-handed neutrino.}
-In the minimal ECT construction, only left-handed neutrino components
-appear in the fermionic sector~(Section~\ref{sec:fermion_particles}).
+In the minimal ECT embedding discussed so far, right-handed neutrinos
+are not required~(Section~\ref{sec:fermion_particles}).
+\paragraph{Dirac versus Majorana possibilities.}
+At the present stage ECT does not distinguish between Dirac and
+Majorana neutrinos.
+A purely Dirac embedding with very small Yukawa couplings remains
+logically possible.
+The seesaw scenario is discussed here because it provides the most
+natural bridge to the leptogenesis mechanism used in
+Section~\ref{sec:baryogenesis}.
+
 If right-handed neutrinos are admitted as additional embedded fields
 (Level~C), a type-I seesaw mechanism can generate light neutrino
 masses, consistent with oscillation
@@ -6166,7 +6175,9 @@ experiments~\cite{Fukuda1998}:
   m_\nu \sim \frac{(y_\nu v_2)^2}{M_R},
   \label{eq:seesaw}
 \end{equation}
-where $y_\nu$ is the neutrino Yukawa coupling,
+up to convention-dependent factors of order unity depending on the
+normalisation of the electroweak condensate field.
+Here $y_\nu$ is the neutrino Yukawa coupling,
 $v_2 \approx 246\,$GeV is the electroweak condensate
 scale~(Section~\ref{sec:ew_embedding}), and $M_R$ is the
 right-handed neutrino Majorana mass.
@@ -6183,19 +6194,23 @@ geometric mean:
   \label{eq:MR_geom}
 \end{equation}
 If $M_R$ is of this order, the seesaw formula~\eqref{eq:seesaw}
-with $y_\nu \sim 1$ gives
-$m_\nu \sim v_2^2/M_R^{\rm geom} \sim 0.003\,$eV, which
-is in the observed range for neutrino mass splittings
-($\Delta m^2_{\rm atm} \approx 2.5\times10^{-3}\,$eV$^2$,
-$\Delta m^2_{\rm sol} \approx 7.5\times10^{-5}\,$eV$^2$).
-This proximity is suggestive but not a derivation: $M_R^{\rm geom}$
-is a numerical coincidence at the present stage~(Level~B/C).
+does \emph{not} reproduce the observed sub-eV neutrino masses for
+order-one Yukawa couplings.
+Indeed, for $y_\nu \sim 1$ one finds
+$m_\nu \sim v_2^2/M_R^{\rm geom}$ in the keV range.
+To obtain $m_\nu$ in the observed sub-eV regime with
+$M_R \sim M_R^{\rm geom}$, one would need small neutrino Yukawa
+couplings.
+This makes $M_R^{\rm geom}$ a suggestive intermediate scale, not a
+successful neutrino-mass prediction by itself~(Level~B/C).
 
-For smaller Yukawa couplings $y_\nu \ll 1$ the effective neutrino
-mass decreases as $m_\nu \propto y_\nu^2$; the observed mass range
-$m_\nu \sim 0.01$--$0.1\,$eV is reproduced for
-$M_R \sim 10^{9}$--$10^{11}\,$GeV and $y_\nu \sim 0.01$--$1$.
-None of these values is derived from ECT.
+For smaller Yukawa couplings the effective neutrino mass decreases as
+$m_\nu \propto y_\nu^2$.
+Observed sub-eV neutrino masses can be reproduced for broad ranges
+of parameters, for example with
+$M_R \sim 10^{9}$--$10^{11}\,$GeV and sufficiently small neutrino
+Yukawa couplings.
+ECT does not predict the required values of $y_\nu$ or $M_R$.
 
 \paragraph{Connection to leptogenesis.}
 In the baryogenesis discussion~(Section~\ref{sec:baryogenesis}),
@@ -6206,17 +6221,32 @@ The consistency of the seesaw mechanism with the ECT baryogenesis
 channel is a Level~B structural compatibility result, not a
 closed derivation.
 
-\paragraph{Majorana operator.}
-After integrating out the heavy right-handed neutrino, the
-low-energy effective Lagrangian contains a dimension-5 Majorana
-operator:
+\paragraph{Low-energy Majorana mass term and the Weinberg operator.}
+After integrating out a heavy right-handed neutrino, the low-energy
+effective theory contains the dimension-5 Weinberg operator of the
+schematic form
 \begin{equation}
-  \mathcal{L}_M = \frac{1}{2}\,m_\nu\,\nu_L^T C \nu_L + \text{h.c.},
+  \mathcal{L}_{\rm Weinberg}
+  \sim
+  \frac{c_{ij}}{\Lambda}\,(L_i \Phi_{\rm ew})(L_j \Phi_{\rm ew})
+  + \text{h.c.},
+\end{equation}
+which, after electroweak symmetry breaking, induces a Majorana mass
+term for the light neutrinos:
+\begin{equation}
+  \mathcal{L}_M
+  =
+  \frac{1}{2}\,m_{\nu,ij}\,\nu_{Li}^T C \nu_{Lj} + \text{h.c.}
   \label{eq:majorana}
 \end{equation}
-where $C$ is the charge-conjugation matrix.
-This is the standard Weinberg operator; its presence in ECT is an
-embedding, not a derivation from condensate dynamics.
+In ECT this is an embedding of the standard low-energy neutrino
+mechanism, not a derivation from condensate dynamics.
+
+\paragraph{Observational handle.}
+If the neutrino sector is Majorana-like, neutrinoless double beta
+decay provides the cleanest experimental probe.
+ECT does not currently predict the effective Majorana mass parameter,
+so this connection is qualitative rather than quantitative.
 
 \paragraph{What is and is not derived here.}
 This subsection imposes the seesaw mechanism as a Standard-Model-like
@@ -6252,9 +6282,10 @@ Consistency with leptogenesis channel
   & B & Section~\ref{sec:baryogenesis} \\
 Right-handed neutrino from ECT dynamics
   & Open (OP15) & Not derived \\
-Majorana operator as low-energy effective form
-  & C & Standard Weinberg operator;
-    embedding \\
+Low-energy Majorana mass term / Weinberg-operator
+  embedding
+  & C & Standard neutrino-mass embedding;
+    not derived from condensate dynamics \\
 \hline
 \end{tabular}
 \end{center}
