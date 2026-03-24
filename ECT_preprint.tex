@@ -6935,109 +6935,156 @@ Curved-background Dirac generalisation with an
 \subsection{Chirality and fermion interactions}
 \label{sec:chirality}
 
-\paragraph{Chirality and the origin of the $SU(2)_L$ sector}
+\textit{Status: Level~B structural possibility.
+The decomposition $Spin(4)\simeq SU(2)_L\times SU(2)_R$ together
+with $O(4)\to O(3)$ SSB provides a structural setting in which an
+asymmetry between the two chiral sectors can arise.
+At the present stage this is a structural possibility, not a
+derivation of the physical weak-interaction chirality.
+Connection to gauge sector: Section~\ref{sec:gauge_summary}.}
 
+\paragraph{The chirality question.}
 One of the striking features of the Standard Model is the chiral nature
 of the weak interaction: the $SU(2)_L$ gauge symmetry acts only on
 left-handed fermions, while right-handed fermions are singlets under
 the weak interaction.
+Within ECT the question is whether this asymmetry has a structural
+origin in the condensate geometry.
 
-Within the ECT framework this asymmetry can be related to the
-symmetry-breaking structure of the condensate.
+\paragraph{Why chirality belongs here.}
+The issue of chirality enters ECT at an intermediate level between
+pure group theory and full gauge phenomenology.
+Section~\ref{sec:spinor_structure} establishes that spinorial
+representations are compatible with the ordered branch, while
+Section~\ref{sec:ew_embedding} discusses the electroweak-like gauge
+embedding.
+The present subsection isolates the specific question of whether the
+condensate geometry can distinguish the two chiral sectors before the
+full weak-interaction phenomenology is specified.
 
-\paragraph{Euclidean symmetry of the condensate}
+This subsection builds on the spinorial compatibility established in
+Section~\ref{sec:spinor_structure} and on the Dirac-form
+reconstruction of Section~\ref{sec:dirac_eq}.
+The question addressed here is not whether spinors can be written on
+the ordered branch, but whether the condensate geometry can
+structurally bias the left- and right-chiral sectors differently.
 
-Before symmetry breaking the condensate dynamics is invariant under
-rotations in four-dimensional Euclidean space,
-
-\begin{equation}
-O(4).
-\end{equation}
-
-The corresponding rotation group satisfies a local isomorphism
-
-\begin{equation}
-SO(4)\ \simeq\ SU(2)_L \times SU(2)_R .
-\end{equation}
-
-The Euclidean rotational symmetry \emph{admits} two
-independent $SU(2)$ sectors.
-
-\paragraph{Symmetry breaking and preferred direction}
+\paragraph{From $Spin(4)$ to chiral asymmetry.}
+As established in Section~\ref{sec:spinor_structure}, the Euclidean
+spin group decomposes as
+$Spin(4) \simeq SU(2)_L \times SU(2)_R$, and the Dirac spinor
+$\Psi = (\psi_L, \psi_R)^T$ carries representations of both factors.
+Before SSB, the two $SU(2)$ sectors are on an equal footing.
 
 The formation of the condensate selects a preferred orientation
-$n_A \equiv \partial_A\Phi/|\partial\Phi|$ in Euclidean space,
-leading to the symmetry breaking
+$n_A \equiv \partial_A\Phi/|\partial\Phi|$, leading to
+$O(4) \to O(3)$.
+Geometrically this corresponds to fixing one axis in
+the four-dimensional space.
+As a result, the symmetry between the two $SU(2)$ factors in the
+decomposition of $Spin(4)$ is no longer exact.
 
-\begin{equation}
-O(4)\rightarrow O(3).
-\end{equation}
+\paragraph{Selection mechanism (Level~B structural argument).}
+After the emergence of the Lorentzian regime via analytic continuation
+$w \to -ic_*t$, the Euclidean rotation group $Spin(4)$ maps to the
+Lorentzian spin group $SL(2,\mathbb{C})$.
+In $SL(2,\mathbb{C})$, the two $SU(2)$ factors become the left-handed
+and right-handed chirality sectors: $\psi_L$ and $\psi_R$ transform
+under the $(1/2,0)$ and $(0,1/2)$ representations, respectively.
 
-Geometrically this corresponds to fixing one axis in the
-four-dimensional rotation group. As a result the symmetry between the
-two $SU(2)$ factors in the decomposition of $SO(4)$ is no longer exact.
+The condensate direction $n_A$ breaks the equivalence between the
+two sectors because the analytic continuation treats the distinguished
+$w$-direction differently from the three spatial directions.
+If the gauge coupling is mediated through condensate-dependent
+structures (as in the electroweak-like embedding of
+Section~\ref{sec:ew_embedding}), then the geometric asymmetry of the
+ordered branch may be reflected in a chiral asymmetry of the
+fermion--gauge coupling.
+At the present stage this should be read only as a structural route:
+ECT does not yet derive which chirality sector is selected, nor the
+detailed form of the weak-interaction vertex.
 
-\paragraph{Emergence of Lorentzian spinor structure}
+\paragraph{Connection to the fifth-force coupling.}
+The ECT-specific deformation
+$\Delta\mathcal{L} = \beta_5\,\bar\Psi\gamma^A n_A\Psi$
+(Section~\ref{sec:fifth_force_fermion}) also breaks left--right
+symmetry through the condensate direction $n_A$.
+The fifth-force coupling and the chiral gauge selection therefore
+share a common structural origin in the preferred direction of the
+ordered branch.
+Whether the two effects are dynamically related or merely share the
+same geometric source remains open.
 
-After the emergence of the Lorentzian regime the fermionic degrees of
-freedom are naturally described by Dirac spinors
+\paragraph{Fate of $SU(2)_R$.}
+If the selection mechanism described above is realised, the
+$SU(2)_R$ sector is not eliminated but effectively decoupled at low
+energies.
+Two possibilities remain structurally open within ECT:
+\begin{itemize}
+  \item $SU(2)_R$ is completely suppressed at all accessible
+    energies, reproducing the Standard Model structure exactly;
+  \item $SU(2)_R$ becomes operative at very high energies,
+    leading to a left--right symmetric extension.
+\end{itemize}
+ECT does not currently distinguish between these possibilities.
+This question belongs to the open fermionic programme summarised in
+Section~\ref{sec:fermion_open}.
 
-\begin{equation}
-\Psi =
-\begin{pmatrix}
-\psi_L \\
-\psi_R
-\end{pmatrix}.
-\end{equation}
+\paragraph{What is and is not derived here.}
+The present subsection shows that the ECT condensate geometry
+provides a \emph{structural setting} in which chiral asymmetry can
+naturally arise: the decomposition
+$Spin(4) \simeq SU(2)_L \times SU(2)_R$ plus SSB creates
+a geometric distinction between the two chirality sectors.
+It does not derive the physical weak interaction, nor does it
+explain why $SU(2)_L$ (and not $SU(2)_R$) is selected, nor does it
+derive the observed fermion representations under the electroweak
+gauge group.
+These questions belong to the open programme~(OP-chirality;
+Section~\ref{sec:fermion_open}).
 
-The two Weyl components $\psi_L$ and $\psi_R$ transform
-independently under the two $SU(2)$ factors that originate from the
-Euclidean rotation group.
+\paragraph{What would be needed for Level~A.}
+To promote chirality from structural possibility to derivation, ECT
+would need to show: (i)~how the condensate dynamics selects one
+chiral sector rather than the other, (ii)~how the electroweak gauge
+vertex acquires its observed chiral form, and (iii)~how the observed
+fermion representation content follows from the same mechanism.
+None of these steps has yet been completed.
 
-\paragraph{Selection of the $SU(2)_L$ sector}
-
-Because the condensate fixes a preferred direction in Euclidean
-space, the symmetry between the two sectors becomes dynamically
-broken. One of the two $SU(2)$ factors remains coupled to the fermion
-sector, while the other effectively decouples at low energies.
-
-The surviving gauge symmetry therefore acts primarily on the
-left-handed fermion components,
-
-\begin{equation}
-SU(2)_L ,
-\end{equation}
-
-while right-handed fermions appear as singlets under this
-interaction. This reproduces the chiral structure observed in the
-weak interaction sector of the Standard Model.
-
-\paragraph{Interpretation}
-
-In this picture the chiral nature of the weak interaction is not an
-independent assumption but can be viewed as a consequence of the
-geometric symmetry breaking of the condensate background.
-
-The combination of the group-theoretic relation
-
-\begin{equation}
-SO(4)\simeq SU(2)_L\times SU(2)_R
-\end{equation}
-
-together with the spontaneous symmetry breaking
-
-\begin{equation}
-O(4)\rightarrow O(3)
-\end{equation}
-
-provides a structural hint that a distinguished $SU(2)$-like sector
-may emerge in an electroweak-like embedding of the condensate.
-At the present stage this does not constitute a derivation of the
-physical weak-interaction sector or its fermionic couplings.
-
-Further development of the ECT framework may clarify whether the
-remaining $SU(2)_R$ sector is completely suppressed or becomes
-relevant only at very high energies.
+\paragraph{Status summary.}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
+\hline
+Statement & Status & Comment \\
+\hline
+$Spin(4) \simeq SU(2)_L \times SU(2)_R$
+  decomposition
+  & A & Double cover of $SO(4)$ \\
+Analytic continuation maps the Euclidean spinorial
+  structure to Lorentzian chiral sectors
+  & B & Structural continuation argument \\
+SSB $O(4)\to O(3)$ distinguishes a preferred
+  direction and removes the pre-breaking symmetry
+  between the two Euclidean $SU(2)$ factors
+  & A/B & Geometric statement (A); relevance for
+    physical chirality is interpretive (B) \\
+The ordered condensate provides a setting in which
+  chiral asymmetry can arise
+  & B & Structural possibility, not derivation \\
+Selection of $SU(2)_L$ as the physical weak factor
+  & B/C & Requires additional dynamical input \\
+Fermion--condensate coupling and chiral asymmetry
+  share the same geometric source $n_A$
+  & B & Common structural origin \\
+Fate of $SU(2)_R$
+  & Open & Suppressed or active only at higher
+    energies \\
+Full derivation of SM chirality from P1--P5
+  & Open (OP-chirality) & \\
+\hline
+\end{tabular}
+\end{center}
 
 \subsection{Yukawa couplings and fermion masses}
 \label{sec:yukawa}
