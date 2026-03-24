@@ -7097,24 +7097,49 @@ Full derivation of SM chirality from P1--P5
 \textit{Status: Level~C phenomenological embedding.
 Yukawa couplings and fermion masses are not derived from the ECT
 condensate action; they are imposed as Standard-Model input.
-The mass formula $m_f = y_f v_2$ has the same structure as in the SM.}
+The mass formula $m_f = y_f v_2$ has the same structure as in the SM,
+up to the field-normalisation convention adopted for the embedded
+electroweak sector.
+Possible condensate-sector corrections are discussed in
+Section~\ref{sec:ew_particles}.}
 
 Once fermionic fields $\Psi$ are admitted as additional spinorial
 degrees of freedom compatible with the ordered
 branch~(Section~\ref{sec:spinor_structure}), their masses arise
 from Yukawa couplings to the electroweak condensate sector:
 \begin{equation}
-  \mathcal{L}_{\rm Yukawa} = y_f\,\bar\Psi\Phi\Psi
+  \mathcal{L}_{\rm Yukawa} = y_f\,\bar\Psi\,\Phi_{\rm ew}\,\Psi
   \quad\Rightarrow\quad
-  m_f = y_f\,v_2.
+  m_f = y_f\,v_2,
   \label{eq:yukawa_mass}
 \end{equation}
+where $\Phi_{\rm ew}$ denotes the electroweak-like condensate field of
+the embedded low-energy sector, not the fundamental bare condensate
+field $\Phi$ of the primary ECT action.
 Here $y_f$ is the Yukawa coupling constant for fermion species $f$,
 and $v_2 \approx 246\,$GeV is the electroweak condensate
 scale~(Section~\ref{sec:ew_embedding}).
 This is the same mass formula as in the Standard Model.
+This relation is written in the normalisation convention adopted for the
+embedded electroweak sector in the present article; numerical factors
+such as $1/\sqrt{2}$ depend on the field normalisation convention.
 The coupling $y_f$ is not derived from condensate microphysics;
 it is a free matching parameter~(Level~C).
+
+\paragraph{Chiral structure of the Yukawa coupling.}
+In the Standard Model, the Yukawa interaction couples left- and
+right-chiral fermion sectors through the electroweak scalar,
+schematically as
+$y_f\,\bar\psi_L\,\Phi_{\rm ew}\,\psi_R + \text{h.c.}$
+Within ECT, the distinction between $\psi_L$ and $\psi_R$ has a
+structural background in the
+$Spin(4)\simeq SU(2)_L \times SU(2)_R$ decomposition and in the
+chirality discussion of Section~\ref{sec:chirality}.
+This means that a left-right Yukawa bilinear is \emph{compatible with}
+the ECT chirality framework.
+However, neither the detailed electroweak representation assignments nor
+the numerical Yukawa couplings are derived from condensate dynamics:
+the Yukawa sector remains an external low-energy embedding.
 
 \paragraph{Yukawa hierarchy.}
 The observed fermion masses span more than five orders of magnitude
@@ -7133,6 +7158,65 @@ leptons.
 ECT does not derive or explain this number.
 The generation structure must be imposed as external input at the
 present stage~(Level~C; OP-generations).
+
+\paragraph{Possible condensate-sector corrections.}
+In the three-scale picture of ECT
+(Section~\ref{sec:three_scales}), the primary condensate amplitude
+$v_0 \sim \bar{M}_{\rm Pl}$ is separated from the electroweak scale
+$v_2 \approx 246\,$GeV by many orders of magnitude.
+If the two condensate sectors are not perfectly decoupled,
+higher-dimension operators suppressed by the primary condensate scale
+(or by the corresponding primary radial threshold) could induce small
+corrections to the low-energy Yukawa relations.
+After electroweak condensation these corrections would typically be
+organised as powers of $v_2/v_0$ in the effective expansion.
+This possibility is discussed qualitatively in
+Section~\ref{sec:ew_particles}; at the present stage ECT does not
+predict the size of such effects~(Level~C).
+
+\paragraph{Connection to the neutrino sector.}
+In the present ECT formulation, neutrino masses are treated through a
+separate embedded mechanism beyond the minimal charged-fermion Yukawa
+structure; the seesaw-type discussion is given in
+Section~\ref{sec:neutrino_particles}.
+
+\paragraph{What is and is not derived here.}
+This subsection imposes the Standard-Model Yukawa structure as
+external input.
+ECT provides the geometric and chirality framework
+(Sections~\ref{sec:spinor_structure}--\ref{sec:chirality}) within
+which the Yukawa coupling can be consistently written, but does not
+derive any aspect of the fermion mass spectrum from first principles.
+The Yukawa hierarchy, the generation structure, and the numerical
+values of $y_f$ remain open problems.
+
+\paragraph{Status summary.}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
+\hline
+Statement & Status & Comment \\
+\hline
+Mass formula $m_f = y_f v_2$
+  & C & SM embedding; $y_f$ not derived \\
+Chiral structure of Yukawa coupling compatible
+  with the ECT chirality framework
+  & B/C & Structural consistency only;
+    representation content and couplings not
+    derived \\
+Yukawa hierarchy
+  & Open (OP-Yukawa) & No ECT mechanism identified \\
+Three fermion generations
+  & Open (OP-gen) & No ECT mechanism identified \\
+Condensate-sector corrections to $y_f$
+  & C & Possible in principle; size not
+    predicted \\
+Neutrino mass mechanism
+  & C & Seesaw-type embedding;
+    Section~\ref{sec:neutrino_particles} \\
+\hline
+\end{tabular}
+\end{center}
 
 \subsection{ECT-specific fermion--condensate coupling}
 \label{sec:fifth_force_fermion}
