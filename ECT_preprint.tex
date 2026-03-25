@@ -5825,6 +5825,137 @@ Full coefficient derived from microphysics
 \end{center}
 
 
+\subsection{Connection to the galactic weak-field sector}
+\label{sec:fifth_to_galactic_bridge}
+
+\textit{Status: structural bridge.
+This subsection does not develop galactic weak-field physics.
+Its purpose is only to locate the ECT-specific fermion--condensate
+coupling within the broader ordered-branch architecture and to state
+clearly how it is related to, but distinct from, the macroscopic
+amplitude-sector analysis developed later in the paper.}
+
+\paragraph{Scope of the present section.}
+Sections~\ref{sec:fifth_coupling}--\ref{sec:fifth_coefficient_constraints}
+have analysed the ECT-specific fermion--condensate coupling as a
+microscopic preferred-direction deformation of the matter sector:
+its operator structure, its parametric suppression, the distinction
+between microscopic and macroscopic sectors, the conditions for
+observability, and the structural constraints on its coefficient.
+All of these results belong to the interaction-level description of the
+ordered branch.
+
+\paragraph{What is developed elsewhere.}
+The galactic weak-field consequences of ECT are not derived from the
+microscopic preferred-direction operator itself.
+They are developed in the Macroscopic Physics part of the paper,
+especially in Section~\ref{sec:mp_galactic}, where the relevant object
+is the amplitude-sector variable $\phi(X)$ and its branch-level
+self-consistent dynamics.
+Flat rotation curves, the radial acceleration relation, the baryonic
+Tully--Fisher relation, and the deep weak-field closure belong to that
+macroscopic amplitude sector.
+
+\paragraph{Why this separation matters.}
+The microscopic coupling
+$\Delta\mathcal L_5=\mu_5\bar\Psi\gamma^A n_A\Psi$
+and the macroscopic $\phi$-closure originate from the same ordered
+branch, but they belong to different effective sectors.
+The former is controlled by the orientational variable $n_A$ and
+enters as a local perturbative deformation of the fermion EFT.
+The latter is controlled by the amplitude variable $\phi(X)$ and
+enters through the nonperturbative branch-level modification of the
+gravitational response.
+For this reason, the galactic weak-field sector is not a consequence of
+the microscopic fermion--condensate coupling, and conversely the
+microscopic coupling is not a reparametrisation of the galactic
+$\phi$-sector.
+This separation is summarised schematically in
+Figure~\ref{fig:ordered_branch_two_sectors}.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  node distance=1.8cm and 2.6cm,
+  box/.style={
+    draw,
+    rounded corners=3pt,
+    align=center,
+    inner sep=6pt,
+    text width=4.4cm,
+    minimum height=1.4cm
+  },
+  smallbox/.style={
+    draw,
+    rounded corners=3pt,
+    align=center,
+    inner sep=5pt,
+    text width=4.8cm,
+    minimum height=1.6cm
+  },
+  note/.style={
+    align=center,
+    inner sep=2pt,
+    text width=3.8cm
+  },
+  >=Latex
+]
+
+\node[box, text width=5.6cm] (top) {\textbf{Ordered branch after $O(4)\to O(3)$}};
+
+\node[box, below left=of top] (leftmid) {\textbf{Orientational variable}\\[2pt]
+$n_A=\partial_A\Phi/|\partial_A\Phi|$};
+
+\node[box, below right=of top] (rightmid) {\textbf{Amplitude-sector variable}\\[2pt]
+$\phi(X)=\beta^{-1}\ln(u/u_\infty)$};
+
+\node[smallbox, below=of leftmid] (leftbot) {\textbf{Microscopic matter-sector deformation}\\[3pt]
+$\Delta\mathcal L_5=\mu_5\,\bar\Psi\gamma^A n_A\Psi$\\[4pt]
+\footnotesize local EFT operator\\
+\footnotesize perturbative / species-sensitive};
+
+\node[smallbox, below=of rightmid] (rightbot) {\textbf{Macroscopic weak-field closure}\\[3pt]
+$G_{\rm eff}(X)$, $\mu(g/g^\dagger)\,g=g_{\rm bar}$\\[4pt]
+\footnotesize branch-level response\\
+\footnotesize nonperturbative / galactic sector};
+
+\draw[->, thick] (top) -- (leftmid);
+\draw[->, thick] (top) -- (rightmid);
+\draw[->, thick] (leftmid) -- (leftbot);
+\draw[->, thick] (rightmid) -- (rightbot);
+
+\node[note] at ($(leftbot)!0.5!(rightbot) + (0,-1.15)$)
+{\textbf{Same ordered branch, different effective sectors}};
+
+\end{tikzpicture}
+\caption{
+Structural separation of the two ordered-branch sectors relevant for
+the ECT-specific interaction analysis.
+The preferred condensate direction $n_A$ generates a microscopic
+fermion-sector deformation through the local operator
+$\Delta\mathcal L_5=\mu_5\bar\Psi\gamma^A n_A\Psi$,
+whereas the amplitude-sector variable $\phi(X)$ governs the
+macroscopic weak-field closure developed in the Macroscopic Physics
+part.
+The two effects share the same ordered-branch origin but belong to
+different effective sectors and must not be identified with each other.
+}
+\label{fig:ordered_branch_two_sectors}
+\end{figure}
+
+\paragraph{What remains open.}
+At the present stage, the separation of the two sectors is established
+structurally and parametrically.
+What is not yet known is whether higher-order terms in the ordered-
+branch EFT couple them in a nontrivial way, or whether the separation
+remains exact after the full Lorentzian low-energy reduction.
+Those questions belong to the open programme, not to the present
+interaction-level analysis.
+
+The corresponding structural argument is stated in more technical form
+in Appendix~\ref{app:fifth_micro_macro}.
+
+
 \subsection{Gauge sector summary, structural observations,
 and the open programme}
 \label{sec:gauge_summary}
@@ -5834,6 +5965,12 @@ The Standard Model gauge group $U(1)\times SU(2)\times SU(3)$ is not
 derived from minimal ECT; it is shown to be embeddable if the
 condensate carries the appropriate internal structure.
 A full first-principles derivation remains open~(OP-SM).}
+
+The interaction-level analysis of
+Sections~\ref{sec:fifth_coupling}--\ref{sec:fifth_to_galactic_bridge}
+closes with a strict micro/macro separation, while the
+macroscopic galactic consequences are developed separately in the
+Macroscopic Physics part.
 
 \paragraph{Separation of spacetime and internal symmetries.}
 The spacetime symmetry breaking $O(4)\to O(3)$ acts on the coordinate
@@ -20959,6 +21096,10 @@ Section~\ref{sec:fifth_observability}: whatever concrete signals survive
 in the matter sector, they must arise from the microscopic preferred-
 direction operator itself or from its environment-dependent reduction,
 not from an identification with the macroscopic $\phi$-closure.
+This also underlies the navigational r\^ole of
+Section~\ref{sec:fifth_to_galactic_bridge}, which links the
+interaction-level preferred-direction analysis to the later
+macroscopic amplitude-sector development without identifying the two.
 
 
 % ============================================================
