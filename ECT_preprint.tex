@@ -5876,56 +5876,59 @@ Figure~\ref{fig:ordered_branch_two_sectors}.
 \begin{figure}[t]
 \centering
 \begin{tikzpicture}[
-  node distance=1.8cm and 2.6cm,
+  node distance=1.6cm and 1.2cm,
   box/.style={
     draw,
     rounded corners=3pt,
     align=center,
-    inner sep=6pt,
-    text width=4.4cm,
-    minimum height=1.4cm
+    inner sep=5pt,
+    text width=3.6cm,
+    minimum height=1.2cm,
+    font=\small
   },
   smallbox/.style={
     draw,
     rounded corners=3pt,
     align=center,
-    inner sep=5pt,
-    text width=4.8cm,
-    minimum height=1.6cm
+    inner sep=4pt,
+    text width=3.8cm,
+    minimum height=1.4cm,
+    font=\small
   },
   note/.style={
     align=center,
     inner sep=2pt,
-    text width=3.8cm
+    text width=3.6cm,
+    font=\small
   },
   >=Latex
 ]
 
-\node[box, text width=5.6cm] (top) {\textbf{Ordered branch after $O(4)\to O(3)$}};
+\node[box, text width=4.6cm] (top) {\textbf{Ordered branch after $O(4)\to O(3)$}};
 
 \node[box, below left=of top] (leftmid) {\textbf{Orientational variable}\\[2pt]
 $n_A=\partial_A\Phi/|\partial_A\Phi|$};
 
-\node[box, below right=of top] (rightmid) {\textbf{Amplitude-sector variable}\\[2pt]
+\node[box, below right=of top] (rightmid) {\textbf{Amplitude variable}\\[2pt]
 $\phi(X)=\beta^{-1}\ln(u/u_\infty)$};
 
-\node[smallbox, below=of leftmid] (leftbot) {\textbf{Microscopic matter-sector deformation}\\[3pt]
-$\Delta\mathcal L_5=\mu_5\,\bar\Psi\gamma^A n_A\Psi$\\[4pt]
-\footnotesize local EFT operator\\
-\footnotesize perturbative / species-sensitive};
+\node[smallbox, below=of leftmid] (leftbot) {\textbf{Microscopic matter deformation}\\[2pt]
+$\Delta\mathcal L_5=\mu_5\bar\Psi\gamma^A n_A\Psi$\\[3pt]
+\scriptsize local EFT operator\\
+\scriptsize perturbative / species-sensitive};
 
-\node[smallbox, below=of rightmid] (rightbot) {\textbf{Macroscopic weak-field closure}\\[3pt]
-$G_{\rm eff}(X)$, $\mu(g/g^\dagger)\,g=g_{\rm bar}$\\[4pt]
-\footnotesize branch-level response\\
-\footnotesize nonperturbative / galactic sector};
+\node[smallbox, below=of rightmid] (rightbot) {\textbf{Macroscopic weak-field closure}\\[2pt]
+$G_{\rm eff}(X)$, $\mu(g/g^\dagger)g=g_{\rm bar}$\\[3pt]
+\scriptsize branch-level response\\
+\scriptsize nonperturbative / galactic};
 
 \draw[->, thick] (top) -- (leftmid);
 \draw[->, thick] (top) -- (rightmid);
 \draw[->, thick] (leftmid) -- (leftbot);
 \draw[->, thick] (rightmid) -- (rightbot);
 
-\node[note] at ($(leftbot)!0.5!(rightbot) + (0,-1.15)$)
-{\textbf{Same ordered branch, different effective sectors}};
+\node[note] at ($(leftbot)!0.5!(rightbot) + (0,-1.0)$)
+{\textbf{Same ordered branch,\\different effective sectors}};
 
 \end{tikzpicture}
 \caption{
