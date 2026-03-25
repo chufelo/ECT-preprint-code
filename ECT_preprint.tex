@@ -33,7 +33,7 @@
 % ---- Cross-references and links ----
 \usepackage[hidelinks]{hyperref}
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta,shapes.geometric,positioning,fit,calc,backgrounds}
+\usetikzlibrary{arrows.meta,shapes.geometric,positioning,fit,calc,backgrounds,decorations.pathreplacing}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.16}
 \usepackage{url}
@@ -5097,6 +5097,9 @@ $\beta_5$ measures the coupling strength relative to the standard
 Dirac mass term.
 For electrons this gives an extremely small deformation, consistent
 with the absence of any presently observed signal.
+The relative suppression of the ECT-specific coupling compared to
+the known interactions is illustrated in
+Figure~\ref{fig:interaction_hierarchy}.
 
 Two caveats are essential:
 (i)~the fermion masses $m_f$ entering
@@ -5104,6 +5107,57 @@ Two caveats are essential:
 are Standard-Model-matched inputs, not ECT-derived quantities;
 (ii)~the electroweak scale $v_2$ is itself a matching constraint, not
 a first-principles result.
+
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  xbar,
+  width=0.85\textwidth,
+  height=6.5cm,
+  xmin=-45, xmax=2,
+  xlabel={$\log_{10}(\text{effective dimensionless coupling})$},
+  xlabel style={font=\small},
+  ytick={1,2,3,4,5},
+  yticklabels={%
+    {ECT fifth ($\beta_5^{(e)}$)},%
+    {Gravity ($G_N m_p^2/\hbar c$)},%
+    {Weak ($G_F m_p^2$)},%
+    {EM ($\alpha$)},%
+    {Strong ($\alpha_s$)}%
+  },
+  yticklabel style={font=\small},
+  xticklabel style={font=\small},
+  bar width=8pt,
+  nodes near coords,
+  nodes near coords style={font=\scriptsize, anchor=west},
+  point meta=explicit symbolic,
+  every axis plot/.append style={fill=black!30, draw=black},
+  enlarge y limits=0.15,
+]
+\addplot coordinates {
+  (0,5)    [${}\sim 1$]
+  (-2.1,4) [${}\sim 10^{-2}$]
+  (-5,3)   [${}\sim 10^{-5}$]
+  (-38.3,2) [${}\sim 10^{-38}$]
+  (-22.4,1) [${}\sim 10^{-22}$]
+};
+\end{axis}
+\end{tikzpicture}
+\caption{
+Schematic comparison of effective dimensionless interaction-strength
+scales.
+The ECT preferred-direction coupling is shown through the ratio
+$\beta_5^{(e)}\sim m_e/u_0\sim 10^{-22}$ for the electron.
+This is not a comparison of identical force laws: each bar represents
+the characteristic dimensionless suppression of a different interaction
+type.
+The gravitational coupling is evaluated at the proton mass scale.
+The diagram illustrates scale hierarchy, not a precision prediction.
+}
+\label{fig:interaction_hierarchy}
+\end{figure}
 
 \paragraph{Relation to the Standard-Model Extension viewpoint.}
 In the Lorentzian branch, the operator
@@ -5687,6 +5741,80 @@ distinguishing background ingredient is the preferred direction selected
 at the first transition.
 A compact statement of this scale argument is given in
 Appendix~\ref{app:fifth_coefficient_scales}.
+The scale hierarchy is shown schematically in
+Figure~\ref{fig:fifth_scale_ladder}.
+
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  scale_mark/.style={
+    font=\small,
+    inner sep=3pt
+  },
+  brace_label/.style={
+    font=\small,
+    midway
+  },
+  >=Latex
+]
+% Vertical energy axis
+\draw[->, thick] (0,0) -- (0,9.5) node[above, font=\small]
+  {$\log_{10}(E/\text{GeV})$};
+
+% Scale marks and labels
+\foreach \y/\val/\lab in {
+  9/18/{$u_0\sim\bar M_{\rm Pl}\sim 2.4\times10^{18}$\,GeV},
+  4.1/2.4/{$v_2\approx 246$\,GeV},
+  3.5/2.2/{$m_t\approx 173$\,GeV},
+  0.5/-3.3/{$m_e\approx 0.5$\,MeV}
+}{
+  \draw[thick] (-0.15,\y) -- (0.15,\y);
+  \node[scale_mark, anchor=west] at (0.3,\y) {\lab};
+}
+
+% Brace: beta_5 = m_f/u_0
+\draw[decorate, decoration={brace, amplitude=5pt, mirror},
+      thick, gray]
+  (-0.5,0.5) -- (-0.5,9)
+  node[brace_label, left=8pt, align=right, text=black]
+  {$\beta_5\sim\dfrac{m_f}{u_0}$\\[4pt]
+   \footnotesize suppression\\[-1pt]
+   \footnotesize $\sim 22$ orders};
+
+% Brace: mu_5 = m_f^2/u_0
+\draw[decorate, decoration={brace, amplitude=5pt},
+      thick, gray]
+  (7.8,0.5) -- (7.8,9)
+  node[brace_label, right=8pt, align=left, text=black]
+  {$\mu_5\sim\dfrac{m_f^2}{u_0}$\\[4pt]
+   \footnotesize dimensionful\\[-1pt]
+   \footnotesize coefficient};
+
+% Annotation: v_2 is NOT the leading scale
+\draw[->, gray, dashed] (4.5,4.1) -- (4.5,5.5)
+  node[above, font=\scriptsize, align=center, text=black]
+  {$v_2$-corrections\\possible but\\subleading};
+
+% Shaded region: "structural gap"
+\fill[black!8] (-0.12,0.5) rectangle (0.12,4.1);
+\fill[black!5] (-0.12,4.1) rectangle (0.12,9);
+
+\end{tikzpicture}
+\caption{
+Hierarchy of energy scales relevant for the ECT-specific
+preferred-direction coupling.
+The leading structural suppression is controlled by the ratio
+$m_f/u_0$, where $u_0\sim\bar M_{\rm Pl}$ is the primary condensate
+scale at which the preferred direction $n_A$ originates.
+The electroweak scale $v_2$ sits many orders of magnitude below $u_0$;
+$v_2$-dependent corrections are structurally possible but subleading in
+the present architecture.
+The diagram is schematic and indicates scale hierarchy, not a precision
+prediction.
+}
+\label{fig:fifth_scale_ladder}
+\end{figure}
 
 \paragraph{Why the electroweak scale $v_2$ is not the leading scale
 in the present architecture.}
