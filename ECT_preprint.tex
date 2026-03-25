@@ -4989,120 +4989,184 @@ This transition marks the boundary between embedded SM interactions
 and genuinely ECT-specific matter-sector deformation.
 
 
+
 \subsection{The ECT-specific fermion--condensate coupling}
 \label{sec:fifth_coupling}
 
-\textit{Status: Level~B structural EFT deformation.
-The operator below is the leading symmetry-allowed fermion--condensate
-coupling on the ordered branch.
-It is structurally admissible once the preferred direction $n_A$ and
-fermion propagation in the ordered-branch background are admitted.
-Neither the operator nor its coefficient is derived from P1--P5 as a
-theorem; they are identified by EFT-level and dimensional analysis.}
+\textit{Status: layered structural EFT result.
+The existence of the preferred direction $n_A$ after
+$O(4)\to O(3)$ is a strict structural consequence of the ordered
+branch~(Level~A).
+Within a parity-even, zeroth-derivative fermionic EFT built on that
+background, the operator
+$n_A\bar\Psi\gamma^A\Psi$
+is the leading ECT-specific fermion--condensate coupling
+(Level~A/B, conditional on the EFT basis).
+Its coefficient is not derived from P1--P5.
+The physically relevant suppression estimate is therefore EFT-level:
+if one writes the coefficient as
+$\mu_5=\beta_5 m_f$ with dimensionless $\beta_5$,
+then $\beta_5\sim m_f/u_0$ is a Level~B dimensional estimate and
+$\mu_5\sim m_f^2/u_0$ is the corresponding dimensionful coupling.
+A first-principles derivation from condensate microdynamics remains
+open.}
 
 \paragraph{Structural origin.}
 As discussed in Section~\ref{sec:condensate_symmetries}, the symmetry
 breaking $O(4)\to O(3)$ selects a preferred direction
 \begin{equation}
-  n_A \equiv \frac{\partial_A\Phi}{|\partial\Phi|}
+  n_A \equiv \frac{\partial_A\Phi}{|\partial\Phi|}.
+  \label{eq:nA_fifth}
 \end{equation}
-in the ordered background.
 This is not a gauge degree of freedom and not an internal multiplet
-index; it is a derived orientational variable of the ordered branch
-(item~(4) in the structural decomposition of
-Section~\ref{sec:condensate_symmetries}).
+index; it is a derived orientational variable of the ordered branch.
+Its existence is a strict structural consequence of the broken phase.
 
-\paragraph{Leading symmetry-allowed operator.}
-A fermion field $\Psi$ propagating in the ordered-branch background can
-couple to $n_A$ through the leading Lorentz-scalar bilinear that
-involves the condensate direction.
-On EFT grounds the simplest such operator is
+\paragraph{Leading parity-even operator.}
+Consider the low-energy fermionic EFT on the ordered branch and impose
+the following restrictions:
+(i)~locality,
+(ii)~linear dependence on the preferred direction $n_A$,
+(iii)~no derivatives on the fermion field,
+(iv)~parity-even operator basis.
+Under these assumptions, the leading ECT-specific fermion bilinear is
 \begin{equation}
-  \mathcal{L}_5
+  \Delta\mathcal{L}_5
   =
-  \beta\,\bar{\Psi}\gamma^A n_A\,\Psi,
+  \mu_5\,\bar{\Psi}\gamma^A n_A\,\Psi,
   \label{eq:L5_operator}
 \end{equation}
-where $\beta$ is a dimensionless coupling constant.
+where $\mu_5$ has mass dimension one.
 
-\paragraph{Why this is ECT-specific.}
-This operator has no Standard Model counterpart.
-In the SM, no preferred spacetime direction is available; in ECT,
-$n_A$ is a structural remnant of the ordered-branch geometry.
-The operator~\eqref{eq:L5_operator} is therefore the main currently
-identified ECT-specific deformation of the fermionic interaction sector
-beyond the Standard Model embedding of
-Section~\ref{sec:matter_couplings}.
-It should be understood as a \emph{structurally allowed} EFT-level
-coupling, not as a necessary consequence derived from the bare
-condensate action.
+This statement should be read carefully.
+It is \emph{not} a theorem of the bare scalar condensate action.
+It is the leading operator in the specified low-energy EFT basis.
+If the parity-even restriction is dropped, an axial structure
+$n_A\bar\Psi\gamma^A\gamma^5\Psi$
+would also be available.
+The formal EFT operator classification is recorded in
+Appendix~\ref{app:fifth_operator_classification}.
 
-\paragraph{Reduction in the broken phase.}
-In the broken-symmetry phase of the ordered branch, the preferred
-direction takes the form
+\paragraph{Why this coupling is ECT-specific.}
+The operator~\eqref{eq:L5_operator} has no counterpart in the minimal
+Standard Model fermion sector, because the SM contains no derived
+preferred spacetime direction analogous to~\eqref{eq:nA_fifth}.
+Its existence therefore reflects a genuinely ECT-specific structural
+ingredient of the ordered branch.
+At the same time, the operator should be understood as a
+\emph{structurally admissible EFT deformation}, not as a necessary
+first-principles consequence of P1--P5.
+
+\paragraph{Lorentzian-branch form.}
+After analytic continuation to the Lorentzian ordered branch, the
+preferred Euclidean direction induces a timelike unit vector
+$u_\mu$ in the emergent low-energy spacetime.
+The coupling then takes the form
 \begin{equation}
-  n_A = (0,0,0,1),
-\end{equation}
-aligned with the emergent temporal coordinate $w$.
-The coupling then reduces to
-\begin{equation}
-  \mathcal{L}_5
+  \Delta\mathcal{L}_5
   =
-  \beta\,\bar{\Psi}\gamma^w\Psi,
+  \mu_5\,u_\mu\,\bar{\Psi}\gamma^\mu\Psi.
+  \label{eq:L5_lorentzian}
 \end{equation}
-which represents a direct coupling between fermions and the temporal
-orientation of the condensate background.
+This is the appropriate low-energy Lorentzian form of the ECT-specific
+fermion--condensate coupling.
+It should be interpreted as a preferred-direction deformation of the
+fermion sector, not as an additional internal gauge interaction.
 
-\paragraph{Dimensional origin of the coupling.}
-The operator can be written in the form
+\paragraph{Dimensional estimate and Planck suppression.}
+Since the bilinear $\bar\Psi\gamma^A n_A\Psi$ has mass dimension
+three, the coefficient $\mu_5$ must have mass dimension one.
+It is therefore convenient to parameterise
 \begin{equation}
-  \mathcal{L}_5
-  = \frac{1}{u_0}\,\bar{\Psi}\gamma^A n_A\,\Psi,
-  \label{eq:L5_dim}
+  \mu_5 \equiv \beta_5\,m_f,
+  \label{eq:mu5_beta5}
 \end{equation}
-where $u_0\sim\bar{M}_{\rm Pl}\approx2.4\times10^{18}$\,GeV is the
-UV condensate amplitude
-(Section~\ref{sec:three_scales}).
-If the second condensate transition exists~(OP-EW), fermions acquire
-masses via the Yukawa mechanism $m_f = y_f v_2$, and the effective
-coupling becomes
+where $\beta_5$ is dimensionless.
+If the only UV suppressing scale available is the primary condensate
+scale $u_0\sim\bar M_{\rm Pl}$, then dimensional analysis suggests
 \begin{equation}
-  \boxed{\beta \sim \frac{m_f}{u_0}
-  \sim \frac{m_f}{\bar{M}_{\rm Pl}}}
-  \qquad\text{(Level~B: dimensional analysis).}
+  \beta_5 \sim \frac{m_f}{u_0}
+  \sim \frac{m_f}{\bar M_{\rm Pl}},
+  \qquad
+  \mu_5 \sim \frac{m_f^2}{u_0}.
   \label{eq:fifth_coupling}
 \end{equation}
-For electrons: $\beta_e\sim m_e/\bar{M}_{\rm Pl}\sim2\times10^{-22}$.
-The coupling is therefore naturally Planck-suppressed for all known
-particles, consistent with all current experimental bounds.
+Thus the genuinely dimensionful coefficient is $\mu_5$, while
+$\beta_5$ measures the coupling strength relative to the standard
+Dirac mass term.
+For electrons this gives an extremely small deformation, consistent
+with the absence of any presently observed signal.
 
-Two caveats must be noted:
-(i)~the fermion masses $m_f$ are SM-matched inputs, not derived from
-ECT;
-(ii)~the electroweak scale $v_2$ is a matching constraint, not a
-first-principles result~(Section~\ref{sec:three_scales}).
-A first-principles derivation of $\beta$ from condensate microdynamics
-remains open.
+Two caveats are essential:
+(i)~the fermion masses $m_f$ entering
+\eqref{eq:mu5_beta5}--\eqref{eq:fifth_coupling}
+are Standard-Model-matched inputs, not ECT-derived quantities;
+(ii)~the electroweak scale $v_2$ is itself a matching constraint, not
+a first-principles result.
+
+\paragraph{Relation to the Standard-Model Extension viewpoint.}
+In the Lorentzian branch, the operator
+$u_\mu\bar\Psi\gamma^\mu\Psi$
+is structurally analogous to a vector background deformation in the
+sense of Lorentz-violating EFT.
+For a single fermion species in a strictly constant flat background,
+such a term can be partly absorbed by field redefinitions and may fail
+to produce directly observable effects.
+Physical effects arise when at least one of the following is true:
+\begin{itemize}
+  \item the coupling differs between fermion species;
+  \item the preferred direction varies across spacetime or environment;
+  \item the background is curved or inhomogeneous;
+  \item the coupling enters relative observables rather than an
+    isolated single-species dispersion relation.
+\end{itemize}
+For ECT this means that the phenomenological relevance of
+\eqref{eq:L5_lorentzian} is tied not merely to the existence of the
+operator, but also to the ordered-branch environment and the relation
+between different matter sectors.
 
 \paragraph{Preferred-direction effects.}
 The operator~\eqref{eq:L5_operator} introduces preferred-direction
-corrections to the emergent Lorentz-invariant matter dynamics at the
+corrections to the emergent Lorentz-invariant fermion dynamics at the
 EFT level.
-It parametrises a residual departure from exact Lorentz invariance in
-the ordered-branch fermion sector.
+It parametrises residual sensitivity of the low-energy matter sector to
+the ordered-branch orientation.
 This preferred-direction structure is absent in the exact
-Lorentz-symmetric limit and constitutes one of the distinctive
-signatures of the ECT ordered branch.
+Lorentz-symmetric limit and is one of the clearest interaction-level
+signatures by which ECT differs from the Standard Model embedding.
 
 \paragraph{What is strict and what is embedded.}
-The existence of the preferred direction $n_A$ after $O(4)\to O(3)$
-is a strict structural consequence of the ordered branch~(Level~A).
-The identification of the leading symmetry-allowed operator and its
-Planck-suppressed dimensional estimate are EFT-level statements~(Level~B).
-The fermion masses $m_f$ entering the coupling are SM-matched
-inputs~(Level~C).
-A first-principles derivation of the operator coefficient from
-condensate microphysics has not been completed.
+The existence of the preferred direction $n_A$ after
+$O(4)\to O(3)$ is a strict structural consequence of the ordered
+branch~(Level~A).
+The statement that
+$n_A\bar\Psi\gamma^A\Psi$
+is the leading parity-even zeroth-derivative operator is a statement
+about the chosen low-energy EFT basis~(Level~A/B conditional).
+The dimensional estimate
+$\beta_5\sim m_f/u_0$
+and hence
+$\mu_5\sim m_f^2/u_0$
+are EFT-level statements~(Level~B).
+The fermion masses $m_f$ are embedded SM inputs~(Level~C).
+A first-principles derivation of the coefficient from condensate
+microphysics has not been completed.
+
+\paragraph{What would be needed for full Level~A.}
+To promote this coupling from a structural EFT deformation to a
+first-principles result, ECT would need to:
+\begin{enumerate}[label=(\roman*)]
+  \item derive the operator directly from the bare condensate action or
+    from a controlled integration-out procedure;
+  \item derive its coefficient from condensate microdynamics rather than
+    dimensional analysis;
+  \item determine whether the vector operator is uniquely selected, or
+    whether axial and derivative competitors survive;
+  \item establish under what conditions the coupling is physically
+    observable rather than removable by field redefinitions in the
+    low-energy Lorentzian limit.
+\end{enumerate}
+None of these steps has yet been completed.
 
 \paragraph{Status summary.}
 \begin{center}
@@ -5113,19 +5177,25 @@ Statement & Status & Comment \\
 \hline
 Preferred direction $n_A$ exists after SSB
   & A & Structural consequence of $O(4)\to O(3)$ \\
-$\bar\Psi\gamma^A n_A\Psi$ is the leading
-  symmetry-allowed operator
-  & B & EFT classification \\
+Leading parity-even zeroth-derivative operator
+  $n_A\bar\Psi\gamma^A\Psi$
+  & A/B & Strict within the stated EFT basis \\
 Operator is ECT-specific (no SM counterpart)
-  & A & Structural: no preferred direction in SM \\
-Coupling $\beta\sim m_f/\bar{M}_{\rm Pl}$
-  & B & Dimensional analysis \\
-Planck suppression for all known particles
-  & B & Consistent with bounds \\
+  & A/B & Structural absence of preferred direction in minimal SM \\
+Dimensionful coupling $\mu_5$ required
+  & A & Follows from mass dimension counting \\
+$\beta_5 \sim m_f/u_0$
+  & B & Dimensional estimate only \\
+$\mu_5 \sim m_f^2/u_0$
+  & B & Consequence of the parameterisation $\mu_5=\beta_5 m_f$ \\
+Planck suppression for known fermions
+  & B & EFT consistency estimate \\
 Fermion masses $m_f$ as inputs
   & C & SM-matched, not ECT-derived \\
 Coefficient derived from condensate microdynamics
-  & Open & \\
+  & Open & Not completed \\
+Physical observability in the Lorentzian limit
+  & Open & Depends on species dependence / gradients / environment \\
 \hline
 \end{tabular}
 \end{center}
@@ -20036,6 +20106,104 @@ Lie-algebra bridge.
 It does not derive the physical Standard Model gauge group,
 its representations, its couplings, or confinement/electroweak
 breaking from the bare scalar condensate action.
+
+
+% ============================================================
+\section{Operator classification and dimensional estimate for the
+ECT-specific fermion--condensate coupling}
+\label{app:fifth_operator_classification}
+% ============================================================
+
+This appendix records the explicit EFT logic behind
+Section~\ref{sec:fifth_coupling}.
+
+\subsection*{A.\ Bilinear basis}
+
+The standard local fermion bilinears are
+\[
+\bar\Psi\Psi,\qquad
+\bar\Psi i\gamma^5\Psi,\qquad
+\bar\Psi\gamma^A\Psi,\qquad
+\bar\Psi\gamma^A\gamma^5\Psi,\qquad
+\bar\Psi\sigma^{AB}\Psi.
+\]
+To form a scalar interaction linear in the preferred direction $n_A$,
+the natural zeroth-derivative candidates are
+\[
+n_A\bar\Psi\gamma^A\Psi,
+\qquad
+n_A\bar\Psi\gamma^A\gamma^5\Psi.
+\]
+If one restricts attention to the parity-even EFT sector, the axial
+candidate is excluded and the vector operator remains as the leading
+allowed term.
+
+\subsection*{B.\ Why the vector operator is leading}
+
+Derivative couplings such as
+\[
+n_A\bar\Psi\sigma^{AB}\partial_B\Psi,
+\qquad
+(\partial_A n_B)\bar\Psi\sigma^{AB}\Psi
+\]
+are higher-order in the derivative expansion and are therefore
+subleading in the low-energy EFT.
+Accordingly, within the parity-even, zeroth-derivative basis, the
+leading ECT-specific operator is
+\[
+n_A\bar\Psi\gamma^A\Psi.
+\]
+
+\subsection*{C.\ Dimensional analysis}
+
+In four spacetime dimensions the fermion field has mass dimension
+\[
+[\Psi]=\frac32,
+\]
+so the bilinear
+\[
+\bar\Psi\gamma^A n_A\Psi
+\]
+has dimension three.
+Therefore the coefficient multiplying it in the Lagrangian density must
+have mass dimension one:
+\[
+[\mu_5]=1.
+\]
+This is why the coefficient should not be treated as purely
+dimensionless at the Lagrangian level.
+
+\subsection*{D.\ Dimensionless ratio and Planck suppression}
+
+A convenient parameterisation is
+\[
+\mu_5=\beta_5 m_f,
+\]
+where $\beta_5$ is dimensionless.
+If the only available suppressing UV scale is $u_0\sim\bar M_{\rm Pl}$,
+then dimensional analysis suggests
+\[
+\beta_5\sim \frac{m_f}{u_0},
+\qquad
+\mu_5\sim \frac{m_f^2}{u_0}.
+\]
+This is an EFT estimate, not a first-principles derivation.
+
+\subsection*{E.\ Lorentzian reduction and observability caveat}
+
+In the Lorentzian ordered branch, the preferred Euclidean direction
+induces a timelike vector $u_\mu$, and the operator becomes
+\[
+\mu_5\,u_\mu\bar\Psi\gamma^\mu\Psi.
+\]
+For a constant background and a single fermion species, such a term can
+be partly removed by field redefinitions.
+Hence the physical content of the coupling is tied to relative effects,
+species dependence, gradients, or environmental variation of the ordered
+branch.
+This explains why the structural admissibility of the operator is
+stronger than the current proof of its directly observable low-energy
+effects.
 
 \section{Variational Selection and Reduced Extremal Dynamics}
 \label{app:variational_reduction}
