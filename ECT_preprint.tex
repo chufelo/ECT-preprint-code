@@ -3983,78 +3983,162 @@ fermionic, and quantum sectors.
 
 
 
-\section{Gauge Symmetries and Interactions}
-\label{sec:gauge}
 
-Gauge-like sectors in ECT are described through emergent internal
-symmetry structures of extended condensate representations.
-In the minimal scalar ECT basis these sectors are not yet derived
-microscopically; they are introduced as structural embeddings
-compatible with the coherent branch.
-This section shows how $U(1)$, $SU(2)$, and $SU(3)$ gauge
-structures can be \emph{embedded} by promoting global symmetries
-of extended condensate representations to local ones.
+% ============================================================
+% NEW UNIFIED SECTION 7: GAUGE + INTERACTIONS + FIFTH COUPLING
+% ============================================================
+\section{Gauge Symmetries, Matter Couplings, and the ECT-Specific Fifth Coupling}
+\label{sec:gauge_and_fifth}
+\label{sec:gauge}% backward compatibility
+\label{sec:fifth_force}% backward compatibility
 
-\textbf{Honest framing.}
-The standard gauge-principle argument (promote global $\to$ local,
-introduce connection, get kinetic term) is generic: it applies to any
-field theory with internal symmetries and does not uniquely select the
-Standard Model gauge group $U(1)\times SU(2)\times SU(3)$.  ECT
-provides a natural host for gauge sectors, but the exact SM gauge group
-is not derived from first principles within the current framework ---
-it must be imposed as an additional input on the internal symmetry
-structure of the condensate.  The results below should therefore be
-read as showing \emph{compatibility} of ECT with gauge theories, not
-as a derivation of the SM gauge group from the condensate alone.
+\textit{This section unifies the gauge-sector architecture of ECT with
+the interaction structure of the embedded matter sector and the
+ECT-specific fermion--condensate coupling.
+The emergence of $U(1)$ and the structural admissibility of
+non-Abelian and electroweak-like sectors are discussed first;
+the second half of the section develops the leading ECT-specific
+deformation of matter interactions and its observational status.
+Status: the $U(1)$ gauge route is the strongest result of this
+section; non-Abelian, electroweak, and matter-coupling sectors remain
+Level~B/C structural embedding or open programme.}
 
 \subsection{Internal symmetries of the condensate}
+\label{sec:condensate_symmetries}
 
-In the ECT framework, gauge interactions can be embedded via local
-internal symmetries of the condensate field (Level~B/C; the SM gauge
-group is embedded, not derived).  The appearance of gauge fields
-follows from the requirement that the condensate action admits
-local phase invariance once internal structure is introduced.
+\textit{Status: structural framework.
+The classification below distinguishes three internal symmetry
+structures of the ordered condensate branch and one additional
+ECT-specific ordered-branch ingredient relevant for matter couplings.
+The compact $U(1)$ phase sector is the most developed result
+(Level~A/B within the extended phase EFT); non-Abelian and
+electroweak-like sectors are structural embeddings (Level~B/C);
+the preferred-direction sector is an ECT-specific ordered-branch
+structure entering the matter sector at Level~B/C.}
+
+The ordered condensate branch established in
+Sections~\ref{sec:ssb}--\ref{sec:branching} introduces not only the
+emergent Lorentzian spacetime structure but also a hierarchy of
+interaction-relevant structures.
+Some of them are genuine internal symmetry structures of the
+condensate field---phase, multiplet, and colour-like organisation.
+Others, such as the preferred condensate direction
+$n_A=\partial_A\Phi/|\partial\Phi|$, arise from the ordered-branch
+geometry itself and are not internal symmetries in the usual sense.
+Together they provide the structural starting point for the gauge-like
+and ECT-specific interaction sectors discussed in this section.
+
+\paragraph{Structural ingredients of the interaction sector.}
+The ordered condensate branch supports four conceptually distinct
+interaction-relevant structures:
+\begin{enumerate}
+  \item \textbf{Compact phase sector.}
+    The coherent-branch representation
+    $\Phi_{\rm eff}(X)=\rho(X)e^{i\theta(X)}$
+    carries a global $U(1)$ phase symmetry.
+    Its local promotion leads to the Abelian gauge structure discussed
+    in Section~\ref{sec:u1_emergence}.
+
+  \item \textbf{Multiplet structure.}
+    If the condensate is organised into internal multiplets, global
+    non-Abelian symmetry structures become available.
+    The ordered branch admits an algebraic bridge
+    $\mathfrak{so}(3)\cong\mathfrak{su}(2)$ relevant for the
+    electroweak-like sector
+    (Sections~\ref{sec:nonabelian_embedding}
+    and~\ref{sec:ew_embedding}).
+
+  \item \textbf{Colour-like extension.}
+    An $SU(3)$-type colour-like sector can be structurally
+    accommodated at the level of non-Abelian embedding if the
+    condensate carries suitable internal triplet structure.
+    This remains a model-level extension, not a first-principles
+    derivation of the strong sector
+    (Section~\ref{sec:nonabelian_embedding}).
+
+  \item \textbf{Preferred condensate direction.}
+    The symmetry breaking $O(4)\to O(3)$ selects a preferred
+    direction
+    $n_A=\partial_A\Phi/|\partial\Phi|$
+    in the ordered background.
+    This is not a gauge symmetry and not an internal multiplet
+    structure; it is a derived orientational variable of the ordered
+    branch.
+    It later enters the ECT-specific fermion--condensate coupling
+    discussed in the fifth-coupling block of this section.
+\end{enumerate}
+
+The first three ingredients correspond to familiar gauge-theory-like
+structures; the fourth is specific to ECT and has no Standard Model
+counterpart.
+
+\paragraph{Why the discussion starts with the phase sector.}
+Among the structures listed above, the compact phase sector provides
+the cleanest and most developed route: it is the only one for which
+the present ECT formulation yields a relatively complete gauge-type
+construction, including a Noether current, local promotion, and a
+clear EFT interpretation.
+For this reason the section begins with the Abelian $U(1)$ case and
+only afterwards turns to the weaker non-Abelian and electroweak-like
+embeddings.
 
 \paragraph{Global phase symmetry.}
-
 As a structural low-energy representation of the coherent branch,
-consider a complex condensate field
-
+consider the complex condensate field
 \begin{equation}
-\Phi_{\rm eff}(X) = \rho(X)\,e^{i\theta(X)} .
+  \Phi_{\rm eff}(X)=\rho(X)e^{i\theta(X)}.
 \end{equation}
-
-In the \emph{emergent complex ordered sector} (see
-Section~\ref{sec:qs_phase_dynamics}: the minimal ECT field is real;
-phase language belongs to the two-component extension), if the phase
-is shifted by a constant,
-
+In the emergent complex ordered sector
+(Section~\ref{sec:qs_phase_dynamics}: the minimal ECT field is
+real; phase language belongs to the two-component extension),
+a constant phase shift
 \begin{equation}
-\Phi_{\rm eff} \rightarrow e^{i\alpha}\Phi_{\rm eff} ,
+  \Phi_{\rm eff}\to e^{i\alpha}\Phi_{\rm eff}
+  \label{eq:global_U1}
 \end{equation}
-
-the effective action of the ordered sector remains invariant.
-This is a global $U(1)$ symmetry of the emergent complex coherent-branch
-representation~(not of the minimal real scalar condensate of P3).
+leaves the effective action invariant.
+This is a global $U(1)$ symmetry of the emergent coherent-branch
+representation.
+At the present stage it should be understood as a structural symmetry
+of the $U(1)$-extended coherent EFT, not as a symmetry statement about
+the minimal real scalar condensate of P3 itself.
 
 \paragraph{Physical interpretation of $\theta$.}
-The phase field $\theta(X)$ in the complexified coherent-branch
-representation $\Phi_{\rm eff} = \rho\,e^{i\theta}$ is the natural
-compact angular variable of the coherent branch~(BR1), not an
-independently postulated field.
+The phase field $\theta(X)$ is the natural compact angular variable
+of the coherent branch~(BR1), not an independently postulated field.
 Its gradient $\partial_A\theta$ defines the associated phase current,
 and its single-valuedness on closed loops underlies the quantisation
 condition~(Section~\ref{sec:quantum}).
-When the global phase symmetry is promoted to a local one, a
-gauge connection can be introduced in the standard EFT manner,
-and the phase variable is absorbed into the gauge-covariant
-phase description.
-At the present stage, this establishes a distinguished compact
-phase sector with $U(1)$-type structure.
+When the global phase symmetry is promoted to a local one, a gauge
+connection can be introduced in the standard EFT manner, and the
+phase variable is incorporated into the gauge-covariant description.
+At the present stage, this establishes a distinguished compact phase
+sector with $U(1)$-type structure.
 The identification of this sector with the physical electromagnetic
 field remains a Level~B structural matching; the full derivation
-of QED from the minimal ECT postulates is not yet completed
-(Section~\ref{sec:gauge}).
+of QED from the minimal ECT postulates is not yet completed.
+This compact phase sector is therefore the strongest currently
+available entry point from condensate structure to gauge-like
+interactions in ECT.
+
+\paragraph{Distinction from spacetime symmetry breaking.}
+The spacetime symmetry breaking $O(4)\to O(3)$ acts on the coordinate
+index $A$ of the Euclidean manifold and produces the emergent
+Lorentzian structure (Section~\ref{sec:ssb}).
+The interaction-relevant structures discussed in this section act at a
+different level: phase, multiplet, and colour-like organisation belong
+to field-space structure, whereas the preferred direction $n_A$ is a
+derived remnant of the ordered-branch geometry.
+The distinction between spacetime and internal symmetries is important
+for the interpretation of the present construction.
+Its relation to the Coleman--Mandula logic is discussed further in
+Section~\ref{sec:gauge_summary}.
+
+These structures provide the starting point for the remainder of the
+section: first the compact $U(1)$ phase route, then the non-Abelian
+and electroweak-like embeddings, and finally the ECT-specific
+matter-sector deformation associated with the preferred condensate
+direction.
 
 \subsection{Emergence of $U(1)$ gauge symmetry}
 \label{sec:u1_emergence}
@@ -4071,40 +4155,27 @@ Layer~3 (Level~B matching): identification of the emergent massless
 gauge boson with the physical photon is a structural matching statement.
 Full derivation of QED from minimal ECT postulates is not yet completed.}
 
-\paragraph{Connection to the coherent branch and to the action-scale
-programme.}
-The phase field $\theta(X)$ appearing in the present section is the
-same compact angular variable introduced in the $U(1)$-extended
-description of the coherent-topological branch~(BR1), whose winding
-structure gives rise to the distinguished EFT action scale
-$S_0^{\rm EFT}$~(Section~\ref{sec:hbar_status}).
-It is also the variable whose effective dynamics is developed in the
-Quantum Sector~(Section~\ref{sec:qs_phase_dynamics}).
-The gauge structure discussed below is therefore not an unrelated
-addition, but a natural development of the same phase sector already
-used in the action-scale and quantum-sector discussion.
-
-% ============ LAYER 1 ============
+\paragraph{Connection to the coherent branch and to the action-scale programme.}
+The phase field $\theta(X)$ appearing in the present subsection is the
+same compact angular variable introduced in the coherent-topological
+branch~(BR1), whose winding structure gives rise to the distinguished
+EFT action scale $S_0^{\rm EFT}$~(Section~\ref{sec:hbar_status}).
+Its effective dynamics is developed further in the Quantum
+Sector~(Section~\ref{sec:qs_phase_dynamics}).
+The gauge structure discussed below is therefore a development of the
+same compact phase sector already used in the action-scale and
+quantum-sector discussion.
 
 \paragraph{Layer~1: global $U(1)$ symmetry and the Noether current
 (Level~A within the $U(1)$-extended phase EFT).}
 
-\emph{Global symmetry.}
-In the emergent complex representation of the coherent branch
-(Section~\ref{sec:qs_phase_dynamics}),
-$\Phi_{\rm eff}=\rho\,e^{i\theta}$,
-the effective action is invariant under constant phase shifts:
-\begin{equation}
-  \Phi_{\rm eff}(X) \;\to\; e^{i\alpha}\,\Phi_{\rm eff}(X),
-  \qquad \alpha = \text{const}.
-  \label{eq:global_U1}
-\end{equation}
-This global $U(1)$ symmetry is a property of the $U(1)$-extended
-coherent-sector EFT, not of the minimal real scalar field of P3.
+The global $U(1)$ symmetry of the coherent-branch representation
+was introduced in the previous subsection.
+Its first structural consequence is the associated conserved current.
 
 \emph{Noether current.}
-By Noether's theorem applied to~\eqref{eq:global_U1}, the conserved
-current is
+By Noether's theorem applied to the global phase
+invariance~\eqref{eq:global_U1}, the conserved current is
 \begin{equation}
   j^A \;\equiv\;
   \frac{-i}{2}\!\left(
@@ -4141,8 +4212,6 @@ In this sense the gauge current is an excitation property of the
 ordered medium rather than a background property of the condensate
 vacuum itself.
 
-% ============ LAYER 2 ============
-
 \paragraph{Layer~2: local $U(1)$ and gauge connection
 (Level~B structural).}
 
@@ -4158,8 +4227,8 @@ This is the standard motivation for gauge invariance in
 condensed-matter and field-theoretic contexts.
 
 In ECT this motivation is structural: once the coherent branch
-possesses a compact phase, the localisation of the global symmetry
-is a natural EFT step.
+possesses a compact phase, localisation of the global symmetry is a
+natural EFT step.
 It is \emph{not} derived from P1--P5 as a theorem; it is a Level~B
 structural extension motivated by the local redundancy of the
 absolute phase.
@@ -4202,11 +4271,9 @@ derivatives, the canonical choice is
   S_{\rm gauge} = -\frac{1}{4}\int d^4X\;F_{AB}\,F^{AB}.
   \label{eq:Maxwell_action}
 \end{equation}
-The overall normalisation of $S_{\rm gauge}$ (i.e.\ the value of~$e$)
+The overall normalisation of $S_{\rm gauge}$ (i.e.\ the value of $e$)
 is not fixed by this uniqueness argument; it remains a free matching
 parameter~(Level~B).
-
-% ============ LAYER 3 ============
 
 \paragraph{Layer~3: identification with the photon
 (Level~B matching).}
@@ -4218,7 +4285,7 @@ If that $U(1)$ were instead Higgsed, a mass term would be expected
 through the Anderson--Higgs mechanism.
 
 The identification of this massless $U(1)$ boson with the physical
-photon is a Level~B structural matching: the coherent phase mode is
+photon is a Level~B structural matching: the coherent phase sector is
 the most natural condensate candidate for an emergent electromagnetic
 gauge degree of freedom.
 The full derivation of QED---including the precise form of the
@@ -4269,18 +4336,19 @@ In both cases:
 \end{itemize}
 In a superfluid, the $U(1)$ is global and there is no dynamical photon.
 In a superconductor, the $U(1)$ is gauged and the photon acquires a
-mass (Meissner effect).
+mass through the Meissner effect.
 In ECT, the coherent-branch $U(1)$ is taken to be gauged and unbroken,
 which is structurally consistent with a massless photon.
-The analogy is structural, not exact: the ECT condensate is not a
-material medium but the pre-spacetime ordered background.
+The analogy is structural, not an exact physical identification: the
+ECT condensate is not a material medium but the ordered background
+underlying the effective spacetime and interaction sectors.
 
 \paragraph{What is needed for Level~A.}
 To promote the $U(1)$ gauge structure from Level~B embedding to Level~A
 derivation, the following programme would need to be completed:
 \begin{enumerate}[label=(\roman*)]
-  \item derive the \emph{necessity} of local gauge invariance from the
-    condensate dynamics, not merely its compatibility;
+  \item derive why local gauge redundancy is dynamically selected in
+    the condensate EFT, not merely why it is compatible with it;
   \item show that $F_{AB}F^{AB}$ is the unique admissible kinetic term
     within the condensate EFT (currently a standard EFT statement,
     not derived from condensate structure);
@@ -4289,7 +4357,7 @@ derivation, the following programme would need to be completed:
     with the observed electromagnetic vertex structure.
 \end{enumerate}
 None of these steps has been completed.
-The $U(1)$ sector is the \emph{strongest gauge-embedding result}
+The $U(1)$ sector is the \emph{most developed gauge-embedding result}
 currently available in ECT, but it remains an emergent phase--gauge
 correspondence rather than a fully completed derivation of QED.
 
@@ -4305,38 +4373,50 @@ Statement & Status & Comment \\
 Global $U(1)$ symmetry of the coherent-branch
   phase action
   & B & $U(1)$-extension of real $\Phi$ \\
-Noether current $j^A=\rho^2\partial^A\theta$ and its
-  conservation
-  & A & Within $U(1)$-extended phase EFT \\
-Gauge current vanishes in homogeneous limit
+Noether current
+  $j^A=\rho^2\partial^A\theta$
+  & A & Strict within the phase EFT \\
+Current conservation
+  $\partial_A j^A=0$
+  & A & Noether theorem \\
+Gauge current vanishes for homogeneous phase
   & A & $\partial_A\theta=0 \Rightarrow j^A=0$ \\
 \hline
-\multicolumn{3}{l}{\textit{Layer~2: local $U(1)$ and gauge connection}} \\
-Local observables depend on phase gradients
-  rather than absolute phase
-  & B & Kinematic interpretation within the
-    local phase EFT \\
-Promotion to local $U(1)$: gauge connection $A_A$
-  & B & Structural EFT step, not derived from P1--P5 \\
-$F_{AB}F^{AB}$: unique leading-order kinetic term
+\multicolumn{3}{l}{\textit{Layer~2: local $U(1)$ and gauge structure}} \\
+Promotion global $\to$ local $U(1)$
+  & B & Structural EFT step \\
+Gauge connection $A_A$ and covariant derivative
+  & B & Standard gauge construction \\
+Gauge field strength $F_{AB}$
+  & B & Definition from $A_A$ \\
+Maxwell-type kinetic term
+  $F_{AB}F^{AB}$
   & B & Standard EFT uniqueness \\
-Coupling constant $e$: free EFT parameter
-  & Matched & Not derived from condensate data \\
+Gauge coupling $e$
+  & C & Free matching parameter \\
 \hline
-\multicolumn{3}{l}{\textit{Layer~3: identification with the photon}} \\
-Masslessness naturally compatible with unbroken
-  $U(1)$
-  & B & No Higgsing of the coherent-branch phase sector \\
-Holonomy quantisation from phase compactness
-  & B & Standard compact-phase holonomy condition; relation to
-    $S_0^{\rm EFT}$ not derived \\
-Identification with the physical photon
-  & B & Strongest gauge-embedding result in ECT \\
-Full QED from P1--P5
-  & Open & Requires (i)--(iv) above \\
+\multicolumn{3}{l}{\textit{Layer~3: photon matching and compactness}} \\
+Massless $U(1)$ boson structurally consistent
+  with photon
+  & B & Matching, not full derivation \\
+Compact phase holonomy
+  & A/B & Compact phase exact; gauge matching
+    structural \\
+Flux quantisation
+  $e\oint A_A\,dX^A=2\pi n$
+  & B & Standard compact-phase consequence \\
+QED fully derived from P1--P5
+  & Open & \\
 \hline
 \end{tabular}
 \end{center}
+
+The Abelian construction provides the cleanest example of how gauge
+structure can emerge from condensate variables.
+The next subsections ask to what extent this logic can be extended to
+the non-Abelian and electroweak sectors.
+
+% === §7.3 through §7.11 will be built in subsequent steps ===
 
 \subsection{Non-Abelian gauge structure: structural embedding}
 \label{sec:nonabelian_embedding}
@@ -7403,8 +7483,8 @@ yet been derived from the bare condensate action.
 
 
 
-\section{Gauge Interactions and a Possible Fifth Force in ECT}
-\label{sec:fifth_force}
+\section{OLD --- Gauge Interactions and a Possible Fifth Force (to be merged)}
+\label{sec:fifth_force_OLD}
 
 In the ECT framework the known gauge interactions of the Standard Model
 can be interpreted as different symmetry sectors of the condensate
