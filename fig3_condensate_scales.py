@@ -10,10 +10,10 @@ Paper location: Figure 3, Section 5.3 (Hierarchy of physical scales)
 Physics:
 --------
 ECT postulates a single scalar field Phi whose condensate expectation value
-v_0(mu) runs with the RG scale mu. The running coupling lambda(mu) connects
+u_0(mu) runs with the RG scale mu. The running coupling lambda(mu) connects
 three widely separated energy scales through a single field:
 
-  1. v_0 ~ M_Pl = 2.4e18 GeV   Planck scale => G_N, hbar, c
+  1. u_0 ~ M_Pl = 2.4e18 GeV   Planck scale => G_N, hbar, c
   2. v_2 = 246 GeV              electroweak scale => W, Z, Higgs
   3. v_gal ~ c/r_0              galactic scale => rotation curves
 
@@ -21,11 +21,11 @@ Left panel (a): running coupling lambda(mu). It stays positive at high scales
 (stable condensate), transitions to metastable negative regime at galactic
 scales. The three red/blue dots mark the three physical scales.
 
-Right panel (b): v_0(mu) = sqrt(mu/lambda(mu)) on log-log scale, showing
+Right panel (b): u_0(mu) = sqrt(mu/lambda(mu)) on log-log scale, showing
 the enormous range of the single condensate field.
 
 The RG connection between scales is qualitative in the current version;
-see Open Problem OP17. The three condensate parameters (v_0, lambda, beta)
+see Open Problem OP17. The three condensate parameters (u_0, lambda, beta)
 determine the three fundamental constants c, G_N, hbar (Section 5).
 
 Dependencies: numpy, matplotlib
@@ -73,7 +73,7 @@ ax1.plot(logmu, lambda_val, '-', color=C_ECT, lw=2.0,
 
 # Planck scale mark
 ax1.plot(18.4, 0.01, 'o', color=C_BARYON, ms=10, zorder=5)
-ax1.annotate(r'$v_0 \sim M_{\rm Pl}$' + '\n' + r'$2.4\times10^{18}$ GeV',
+ax1.annotate(r'$u_0 \sim \bar{M}_{\rm Pl}$' + '\n' + r'$2.4\times10^{18}$ GeV',
              (18.4, 0.01), textcoords='offset points', xytext=(-5, 12),
              fontsize=8, color=C_BARYON, ha='center')
 
@@ -101,16 +101,16 @@ ax1.set_xlim(20, -45); ax1.set_ylim(-0.09, 0.03)
 ax1.legend(fontsize=7, loc='lower left'); ax1.minorticks_on()
 
 # ---- Panel (b): v_0(mu) hierarchy ----
-# v_0(mu) = sqrt(mu / lambda(mu)) — schematic, power-law interpolation
+# u_0(mu) = sqrt(mu / lambda(mu)) — schematic, power-law interpolation
 logmu_curve = np.linspace(19, -35, 500)
 logv0_curve = 18.4 - 0.9 * (18.4 - logmu_curve)
 
 ax2.plot(logmu_curve, 10**(logv0_curve), '-', color=C_ACCENT1, lw=2.0,
-         label=r'$v_0(\mu) = \sqrt{\mu/\lambda(\mu)}$')
+         label=r'$u_0(\mu) = \sqrt{\mu/\lambda(\mu)}$')
 
 # Three scale annotations
 scales = [
-    (18.4, 2.4e18, r'$v_0 \approx 2.4\times10^{18}$ GeV' + '\n' + r'($\to G, \hbar, c$)', C_BARYON, 'right'),
+    (18.4, 2.4e18, r'$u_0 \approx 2.4\times10^{18}$ GeV' + '\n' + r'($\to G, \hbar, c$)', C_BARYON, 'right'),
     (2.39, 246,    r'$v_2 = 246$ GeV' + '\n' + r'($\to W, Z$, Higgs)', C_BARYON, 'left'),
     (-33,  1e-33,  r'$v_{\rm gal} \sim 10^{-33}$ GeV' + '\n(rotation curves)', C_ACCENT2, 'left'),
 ]
@@ -126,7 +126,7 @@ ax2.annotate('RG connects\nall three scales',
 
 ax2.text(0.03, 0.95, '(b)', transform=ax2.transAxes, fontsize=10, va='top', fontweight='bold')
 ax2.set_xlabel(r'$\log_{10}(\mu \,/\, {\rm GeV})$')
-ax2.set_ylabel(r'$v_0(\mu)$ [GeV]')
+ax2.set_ylabel(r'$u_0(\mu)$ [GeV]')
 ax2.set_yscale('log')
 ax2.set_xlim(20, -40); ax2.set_ylim(1e-40, 1e20)
 ax2.legend(fontsize=7, loc='lower left'); ax2.minorticks_on()

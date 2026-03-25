@@ -70,7 +70,7 @@ ax1.set_yticks([]); ax1.set_xticks([])
 
 # Phase bands
 phase_bands = [
-    (0.00, 0.10, '#d0d0d0', 'Euclidean / pre-Lorentzian\n(no macroscopic time, $v_0=0$)'),
+    (0.00, 0.10, '#d0d0d0', 'Euclidean / pre-Lorentzian\n(no macroscopic time, $u_0=0$)'),
     (0.10, 0.18, '#a0a0a0', 'Ordering transition\nO(4)$\\to$O(3), $\\alpha>1$\nLorentzian branch emerges'),
     (0.18, 0.88, '#e8e8e8', 'Causal macroscopic Lorentzian regime\n(ordered branch, $c_*=1/\\sqrt{\\alpha-1}$, time established)'),
     (0.88, 1.03, '#f4f4f4', 'Scen. A/B\nfuture'),
@@ -119,7 +119,7 @@ ax2.plot(xs, u_norm, '-', color='black', lw=2.2,
 ax2.plot(xs, G_eff,  '--', color='0.35', lw=2.0,
          label=r'$G_{\rm eff}(t)/G_N = e^{-\beta\phi}$ (effective gravity)')
 ax2.plot(xs, G_eff_B, ':', color='0.35', lw=1.6,
-         label=r'$G_{\rm eff}/G_N$ (Scen. B, $\to\infty$ as $v_0\to 0$)')
+         label=r'$G_{\rm eff}/G_N$ (Scen. B, $\to\infty$ as $u_0\to 0$)')
 
 # Key annotations
 # phi<0 early

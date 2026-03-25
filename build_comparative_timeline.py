@@ -148,7 +148,7 @@ for x0,x1,col in ect_segs:
 # Labels — staggered to avoid overlap
 lbl(ax, 0.00,  X_BB,  'Undefined',                           'mid', fs=8)
 # Euclidean block: inside, small
-lbl(ax, X_BB,  X_OT,  'Euclidean /\npre-Lorentzian\nphase\n($v_0\!=\!0$, no time)',
+lbl(ax, X_BB,  X_OT,  'Euclidean /\npre-Lorentzian\nphase\n($u_0\!=\!0$, no time)',
     'mid', fs=7.5)
 # PT: outside above (too narrow for inside)
 lbl_out(ax, X_OT, X_OT+0.06, 'PT\nO(4)→O(3)',               above=True, fs=7.5)
@@ -166,9 +166,9 @@ lbl(ax, X_OT+0.29, 0.50, 'Radiation/Matter\ndomination',    'mid', fs=8)
 lbl(ax, 0.50,  X_NOW,
     'Structure +\n$G_{\\rm eff}>G_N$\n(JWST accel.)',         'mid', fs=8.5)
 # Future A / B
-lbl(ax, X_NOW, 0.88, 'Scen. A:\n$v_0\\to v_\\infty$\neternal', 'mid', fs=8)
+lbl(ax, X_NOW, 0.88, 'Scen. A:\n$u_0$ nonzero asympt.\neternal', 'mid', fs=8)
 lbl(ax, 0.88,  1.00,
-    'Scen. B:\n$v_0\\to 0$\nBig Crunch\n$\\sim\\!10^{100}$yr',  'mid', fs=7.5)
+    'Scen. B:\n$u_0\\to 0$\nBig Crunch\n$\\sim\\!10^{100}$yr',  'mid', fs=7.5)
 
 # Scen B arrow: G_eff diverges
 ax.annotate('', xy=(0.94, YT-0.12), xytext=(0.94, YT-0.30),
@@ -210,7 +210,7 @@ ax.text(0.63, YT-0.08, r'$z\!\sim\!10$',
 # ROW (c) — Condensate evolution
 # ════════════════════════════════════════════════════════════════════════════
 ax = axes[2]
-ax.text(-0.003, 0.50, '(c) ECT\ncondensate\n$v_0(t),\\phi(t)$',
+ax.text(-0.003, 0.50, '(c) ECT\ncondensate\n$u_0(t),\\phi(t)$',
         ha='right', va='center', fontsize=11, fontweight='bold',
         transform=ax.transData, multialignment='right')
 
@@ -241,10 +241,10 @@ v0_B[mB] = np.exp(-4.5*(xs[mB]-(X_NOW+0.03)))
 yB = 0.12 + v0_B*0.55
 
 ax.plot(xs, yA, '-', color='black', lw=2.3,
-        label=r'$v_0(t)/v_\infty$ — Scen. A')
+        label=r'$u_0(t)/u_0(\infty)$ — Scen. A')
 ax.plot(xs[xs >= X_NOW], yB[xs >= X_NOW],
         ':', color='black', lw=2.0,
-        label=r'$v_0(t)/v_\infty$ — Scen. B ($v_0\to0$)')
+        label=r'$u_0(t)/u_0(\infty)$ — Scen. B ($u_0\to0$)')
 
 # φ(t): normalised rise
 phi_n = 1 - np.exp(-4.5*(xs-X_OT)/(X_NOW-X_OT))
@@ -272,12 +272,12 @@ ax.text(X_NOW+0.007, 0.12, r'$G_{\rm eff}\!=\!G_N$',
 # ── Annotations — staggered to avoid overlap ──────────────────────────────
 # Euclidean region label
 ax.text((X_BB+X_OT)/2, 0.55,
-        r'$v_0=0$' '\n' r'$\phi$ undef.',
+        r'$u_0=0$' '\n' r'$\phi$ undef.',
         ha='center', va='center', fontsize=8.5, color='white',
         fontweight='bold', multialignment='center')
 
 # v0 rises — outside top
-ax.annotate('$v_0$ rises\nafter PT',
+ax.annotate('$u_0$ rises\nafter PT',
             xy=(X_OT+0.015, yA[5]), xytext=(X_OT-0.005, 0.88),
             fontsize=8, ha='center',
             arrowprops=dict(arrowstyle='->', lw=0.8, color='black'),
