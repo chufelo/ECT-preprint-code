@@ -5097,9 +5097,6 @@ $\beta_5$ measures the coupling strength relative to the standard
 Dirac mass term.
 For electrons this gives an extremely small deformation, consistent
 with the absence of any presently observed signal.
-The relative suppression of the ECT-specific coupling compared to
-the known interactions is illustrated in
-Figure~\ref{fig:interaction_hierarchy}.
 
 Two caveats are essential:
 (i)~the fermion masses $m_f$ entering
@@ -5109,55 +5106,6 @@ are Standard-Model-matched inputs, not ECT-derived quantities;
 a first-principles result.
 
 
-\begin{figure}[t]
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-  xbar,
-  width=0.85\textwidth,
-  height=6.5cm,
-  xmin=-45, xmax=2,
-  xlabel={$\log_{10}(\text{effective dimensionless coupling})$},
-  xlabel style={font=\small},
-  ytick={1,2,3,4,5},
-  yticklabels={%
-    {ECT fifth ($\beta_5^{(e)}$)},%
-    {Gravity ($G_N m_p^2/\hbar c$)},%
-    {Weak ($G_F m_p^2$)},%
-    {EM ($\alpha$)},%
-    {Strong ($\alpha_s$)}%
-  },
-  yticklabel style={font=\small},
-  xticklabel style={font=\small},
-  bar width=8pt,
-  nodes near coords,
-  nodes near coords style={font=\scriptsize, anchor=west},
-  point meta=explicit symbolic,
-  every axis plot/.append style={fill=black!30, draw=black},
-  enlarge y limits=0.15,
-]
-\addplot coordinates {
-  (0,5)    [${}\sim 1$]
-  (-2.1,4) [${}\sim 10^{-2}$]
-  (-5,3)   [${}\sim 10^{-5}$]
-  (-38.3,2) [${}\sim 10^{-38}$]
-  (-22.4,1) [${}\sim 10^{-22}$]
-};
-\end{axis}
-\end{tikzpicture}
-\caption{
-Schematic comparison of effective dimensionless interaction-strength
-scales.
-The ECT preferred-direction coupling is shown through the ratio
-$\beta_5^{(e)}\sim m_e/u_0\sim 10^{-22}$ for the electron.
-This is not a comparison of identical force laws: each bar represents
-the characteristic dimensionless suppression of a different interaction
-type.
-The gravitational coupling is evaluated at the proton mass scale.
-The diagram illustrates scale hierarchy, not a precision prediction.
-}
-\label{fig:interaction_hierarchy}
-\end{figure}
 
 \paragraph{Relation to the Standard-Model Extension viewpoint.}
 In the Lorentzian branch, the operator
@@ -5747,58 +5695,34 @@ Figure~\ref{fig:fifth_scale_ladder}.
 
 \begin{figure}[t]
 \centering
-\begin{tikzpicture}[
-  scale_mark/.style={
-    font=\small,
-    inner sep=3pt
-  },
-  brace_label/.style={
-    font=\small,
-    midway
-  },
-  >=Latex
-]
-% Vertical energy axis
-\draw[->, thick] (0,0) -- (0,9.5) node[above, font=\small]
-  {$\log_{10}(E/\text{GeV})$};
+\begin{tikzpicture}[>=Latex, font=\small]
+% Simple vertical axis with clear tick marks
+\draw[->, thick] (0,0) -- (0,8.2)
+  node[above, font=\footnotesize] {Energy scale};
 
-% Scale marks and labels
-\foreach \y/\val/\lab in {
-  9/18/{$u_0\sim\bar M_{\rm Pl}\sim 2.4\times10^{18}$\,GeV},
-  4.1/2.4/{$v_2\approx 246$\,GeV},
-  3.5/2.2/{$m_t\approx 173$\,GeV},
-  0.5/-3.3/{$m_e\approx 0.5$\,MeV}
-}{
-  \draw[thick] (-0.15,\y) -- (0.15,\y);
-  \node[scale_mark, anchor=west] at (0.3,\y) {\lab};
-}
+% Tick marks and labels on the right
+\draw[thick] (-0.12,7.5) -- (0.12,7.5)
+  node[right=4pt] {$u_0\sim\bar M_{\rm Pl}\sim 10^{18}$\,GeV};
+\draw[thick] (-0.12,3.4) -- (0.12,3.4)
+  node[right=4pt] {$v_2\approx 246$\,GeV};
+\draw[thick] (-0.12,0.6) -- (0.12,0.6)
+  node[right=4pt] {$m_e\approx 0.5$\,MeV};
 
-% Brace: beta_5 = m_f/u_0
-\draw[decorate, decoration={brace, amplitude=5pt, mirror},
-      thick, gray]
-  (-0.5,0.5) -- (-0.5,9)
-  node[brace_label, left=8pt, align=right, text=black]
-  {$\beta_5\sim\dfrac{m_f}{u_0}$\\[4pt]
-   \footnotesize suppression\\[-1pt]
-   \footnotesize $\sim 22$ orders};
+% Left annotation: suppression ratio
+\draw[<->, thick, black!60] (-0.8,0.6) -- (-0.8,7.5);
+\node[left=2pt, align=right, font=\footnotesize] at (-0.8,4.05)
+  {$\beta_5\sim\dfrac{m_f}{u_0}$\\[3pt]
+   \scriptsize $\sim\!22$ orders};
 
-% Brace: mu_5 = m_f^2/u_0
-\draw[decorate, decoration={brace, amplitude=5pt},
-      thick, gray]
-  (7.8,0.5) -- (7.8,9)
-  node[brace_label, right=8pt, align=left, text=black]
-  {$\mu_5\sim\dfrac{m_f^2}{u_0}$\\[4pt]
-   \footnotesize dimensionful\\[-1pt]
-   \footnotesize coefficient};
+% Dashed line for v_2 annotation
+\draw[dashed, black!40] (0.12,3.4) -- (4.5,3.4);
+\node[right, font=\scriptsize, align=left] at (4.5,3.4)
+  {$v_2$-corrections possible\\but subleading};
 
-% Annotation: v_2 is NOT the leading scale
-\draw[->, gray, dashed] (4.5,4.1) -- (4.5,5.5)
-  node[above, font=\scriptsize, align=center, text=black]
-  {$v_2$-corrections\\possible but\\subleading};
-
-% Shaded region: "structural gap"
-\fill[black!8] (-0.12,0.5) rectangle (0.12,4.1);
-\fill[black!5] (-0.12,4.1) rectangle (0.12,9);
+% Arrow from n_A origin to u_0
+\draw[->, black!50] (5.5,7.5) -- (0.3,7.5);
+\node[right, font=\scriptsize, align=left] at (5.5,7.3)
+  {$n_A$ originates\\at this scale};
 
 \end{tikzpicture}
 \caption{
@@ -6079,140 +6003,177 @@ At the present stage, the separation of the two sectors is established
 structurally and parametrically.
 What is not yet known is whether higher-order terms in the ordered-
 branch EFT couple them in a nontrivial way, or whether the separation
-remains exact after the full Lorentzian low-energy reduction.
+remains exact after the full Lorentzian low-energy reduction within the
+multi-sector EFT.
 Those questions belong to the open programme, not to the present
 interaction-level analysis.
 
 The corresponding structural argument is stated in more technical form
-in Appendix~\ref{app:fifth_micro_macro}.
+in Appendix~\ref{app:fifth_micro_macro}, which also makes explicit why
+the microscopic preferred-direction operator and the macroscopic
+$\phi$-closure cannot be identified with each other.
 
 
-\subsection{Gauge sector summary, structural observations,
-and the open programme}
+\subsection{Gauge-sector summary, structural synthesis, and the open programme}
 \label{sec:gauge_summary}
 
-\textit{Status: structural compatibility statement, Level~B/C.
-The Standard Model gauge group $U(1)\times SU(2)\times SU(3)$ is not
-derived from minimal ECT; it is shown to be embeddable if the
-condensate carries the appropriate internal structure.
-A full first-principles derivation remains open~(OP-SM).}
+\textit{Status: layered structural summary.
+Section~7 contains one strong Abelian result, several non-Abelian and
+electroweak-like structural embeddings, an EFT-level matter-coupling
+architecture, and one genuinely ECT-specific deformation of the matter
+sector.
+The strongest result is the $U(1)$ phase--gauge correspondence of
+Section~\ref{sec:u1_emergence}.
+The non-Abelian and electroweak-like sectors remain structural
+embeddings rather than first-principles derivations.
+The fermion--condensate preferred-direction coupling is a distinct
+ECT-specific Level~A/B result in operator form, with Level~B EFT
+coefficient estimates and an open microphysical origin.}
 
-The interaction-level analysis of
-Sections~\ref{sec:fifth_coupling}--\ref{sec:fifth_to_galactic_bridge}
-closes with a strict micro/macro separation, while the
-macroscopic galactic consequences are developed separately in the
-Macroscopic Physics part.
+\paragraph{What Section~7 has established.}
+The main positive result of this section is that the ordered condensate
+branch supports a \emph{hierarchy of internal structures} rather than a
+single gauge-theory output.
+The strongest gauge-sector result is the compact-phase $U(1)$
+construction of Section~\ref{sec:u1_emergence}: within the coherent
+phase EFT, the Noether current, current conservation, local gauge
+completion, and the leading Maxwell-type kinetic structure follow with
+clearly stated assumptions.
+Beyond this, Section~\ref{sec:non_abelian_gauge} establishes that
+non-Abelian gauge structure is structurally admissible if the condensate
+carries suitable internal multiplet data, with
+$\mathfrak{so}(3)\cong\mathfrak{su}(2)$ providing the cleanest
+algebraic bridge.
+Section~\ref{sec:ew_embedding} shows that a candidate
+$O(3)\to O(2)$ step gives only a reduced weak-like analogue, not a
+derivation of the physical electroweak sector.
+Section~\ref{sec:matter_couplings_pattern} places the matter sector at
+the level of EFT matching.
+Finally, Sections~\ref{sec:fifth_coupling}--\ref{sec:fifth_to_galactic_bridge}
+identify one genuinely ECT-specific matter-sector deformation, namely
+the preferred-direction fermion--condensate coupling and its strict
+micro/macro distinction from the amplitude-sector $\phi$-closure.
 
 \paragraph{Separation of spacetime and internal symmetries.}
 The spacetime symmetry breaking $O(4)\to O(3)$ acts on the coordinate
 index of the Euclidean arena, whereas internal gauge symmetries act on
-multiplet indices of the condensate components.
+multiplet indices of condensate components.
 These sectors are therefore structurally distinct from the outset.
+The explicit $U(1)$ construction of
+Section~\ref{sec:u1_emergence} shows how gauge structure can emerge
+concretely within the compact phase EFT without collapsing this
+distinction.
 
 The Coleman--Mandula theorem~\cite{ColemanMandula1967} constrains the
 structure of exact symmetries of a nontrivial relativistic S-matrix
 under specific assumptions.
 The present ECT discussion is formulated at the level of the condensate
-action and its symmetry structure, prior to any full S-matrix
-reconstruction.
+action, the ordered branch, and the corresponding low-energy EFT
+structures, prior to any full S-matrix reconstruction.
 For that reason, the theorem does not by itself settle the viability of
 the present embedding programme.
-This should not be read as a violation or circumvention of
-Coleman--Mandula, but simply as a reminder that the current analysis is
-outside its standard scope.
+This should not be read as a circumvention of Coleman--Mandula, but as
+a statement about the current level of analysis.
 
-\paragraph{Connection to chirality.}
-The group-theoretic decomposition $SO(4)\simeq SU(2)_L\times SU(2)_R$,
-together with the SSB selection of a preferred axis, is discussed in the
-context of fermion chirality in Section~\ref{sec:chirality}.
-That discussion indicates how the symmetry breaking may structurally
-distinguish the two $SU(2)$ sectors and motivate the selection of
-$SU(2)_L$ as the surviving gauge factor~(Level~B structural reconstruction; fermions
-are not derived from the bare bosonic condensate).
+\paragraph{Connection to chirality and the matter sector.}
+The group-theoretic decomposition
+$Spin(4)\simeq SU(2)_L\times SU(2)_R$,
+together with the ordered-branch selection of a preferred direction, was
+analysed in Section~\ref{sec:chirality}.
+That discussion indicates how the broken-phase geometry may
+structurally distinguish the two $SU(2)$ sectors and motivate a
+left/right asymmetry in the matter sector.
+This remains a Level~B structural reconstruction.
+It is relevant to the gauge-side interpretation of the weak-like sector,
+but it is not part of a strict derivation of the gauge group itself, and
+it does not derive fermions from the bare scalar condensate.
 
-\paragraph{What is needed for Level~A.}
-To promote the gauge sector from structural embedding to
-first-principles derivation, the following programme would need to be
-completed:
+\paragraph{What is needed for full Level~A in the gauge sector.}
+To promote the \emph{gauge-sector embedding} from its present
+structural status to a first-principles derivation, the following
+programme would need to be completed:
 \begin{enumerate}[label=(\roman*)]
-  \item derive the \emph{necessity} of internal multiplet structure
-    from the condensate dynamics, rather than introducing it as an
-    extension;
+  \item derive the necessity of internal multiplet structure from the
+    condensate dynamics, rather than introducing it as an extension;
   \item derive the specific gauge group
     $U(1)\times SU(2)\times SU(3)$, or show that it is uniquely
     selected by the condensate structure;
-  \item derive the coupling constants $(e, g, g', g_s)$ from
-    condensate parameters;
-  \item derive the second transition $O(3)\to O(2)$ dynamically
-    from the bare action;
-  \item show that the resulting EFT reproduces the full Standard
-    Model gauge sector, including anomaly cancellation and the
-    correct fermion representations.
+  \item derive the coupling constants $(e,g,g',g_s)$ from condensate
+    parameters;
+  \item derive the candidate second transition $O(3)\to O(2)$
+    dynamically from the bare action;
+  \item show that the resulting EFT reproduces the full Standard Model
+    gauge sector, including anomaly cancellation and the correct matter
+    representations.
 \end{enumerate}
 None of these steps has been completed.
-The gauge sector is a structural embedding programme, not a
-completed derivation.
+The corresponding Level~A programme for the ECT-specific preferred-
+direction matter coupling is given separately in
+Sections~\ref{sec:fifth_coupling}--\ref{sec:fifth_coefficient_constraints}.
 
 \paragraph{Status summary.}
-
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
-\begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
+\begin{tabular}{p{6.1cm}p{2.0cm}p{4.9cm}}
 \hline
 Statement & Status & Comment \\
 \hline
-\multicolumn{3}{l}{\textit{Non-Abelian gauge embedding}} \\
-Structural compatibility of ECT with non-Abelian
-  gauge theories
+\multicolumn{3}{l}{\textit{Abelian gauge structure ($U(1)$)}} \\
+Global Noether current and current conservation
+  & A & Strict within the compact phase EFT \\
+Local gauge completion of the phase sector
+  & A/B & Conditional on the local phase EFT completion \\
+Maxwell-type leading kinetic term
+  & A/B & Standard leading-order EFT choice \\
+Compact holonomy and flux quantisation
+  & A/B & Follows from compact phase geometry \\
+Photon identification
+  & B & Matching, not a full derivation of QED \\
+\hline
+\multicolumn{3}{l}{\textit{Non-Abelian and electroweak-like embedding}} \\
+Structural compatibility with non-Abelian gauge theories
   & B/C & Embedding, not derivation \\
-$\mathfrak{so}(3)\cong\mathfrak{su}(2)$: algebraic
-  isomorphism
-  & A & Lie-algebra identity \\
-$SU(2)$ algebraically singled out among SM
-  simple factors
-  & A & Direct Lie-algebra analogue in the
-    residual rotation sector \\
-$SU(3)$: requires additional internal structure
-  & C & No spacetime counterpart identified \\
-Canonical parity-even Yang--Mills action as
-  leading-order EFT term
-  & B & Standard EFT choice at leading derivative order \\
-Couplings $(g, g', g_s)$: free EFT matching
-  parameters
-  & Matched & Not derived from condensate dynamics \\
+$\mathfrak{so}(3)\cong\mathfrak{su}(2)$
+  & A & Strict Lie-algebra identity \\
+$SU(2)$ algebraically distinguished among SM simple factors
+  & A/B & Strongest non-Abelian bridge in the ordered branch \\
+$SU(3)$-like sector requires additional internal structure
+  & C & Model-level extension, no spacetime counterpart derived \\
+$O(3)\to O(2)$ as candidate weak-like step
+  & B & Reduced algebraic/counting analogue only \\
+$v_2$ as electroweak matching scale
+  & Constraint & If a second condensate transition exists \\
 \hline
-\multicolumn{3}{l}{\textit{Electroweak-like embedding}} \\
-$O(3)\to O(2)$ as candidate electroweak-like
-  transition
-  & B & Counting/algebraic analogy only \\
-$v_2 = (\sqrt{2}G_F)^{-1/2}$: matching constraint
-  & Constraint & If second transition exists \\
-Electroweak sector as second phase of the same
-  medium
-  & B/C & Structural interpretation \\
-Dynamical origin of the second transition
-  & Open (OP-EW) & \\
+\multicolumn{3}{l}{\textit{Matter couplings and interaction architecture}} \\
+Gauge couplings $(e,g,g',g_s)$
+  & Matched & EFT matching parameters, not derived \\
+Yukawa/matter-coupling structure
+  & B/C & Embedded at the EFT level \\
+Chiral selection of $SU(2)_L$
+  & B & Structural possibility, not a first-principles derivation \\
 \hline
-\multicolumn{3}{l}{\textit{Structural observations}} \\
-Spacetime and internal symmetries act on different
-  index spaces
-  & A & Built into the formulation \\
-$SO(4)\simeq SU(2)_L\times SU(2)_R$ and chiral
-  selection
-  & B & Structural possibility discussed in
-    Section~\ref{sec:chirality} \\
-\hline
-\multicolumn{3}{l}{\textit{Open programme}} \\
-Full SM gauge group from condensate microdynamics
-  & Open (OP-SM) & \\
-First-principles origin of internal multiplet
-  structure
-  & Open & \\
-Full SM gauge sector including anomaly cancellation
-  & Open & \\
+\multicolumn{3}{l}{\textit{ECT-specific matter-sector deformation}} \\
+Preferred-direction operator
+  $n_A\bar\Psi\gamma^A\Psi$
+  & A/B & Leading parity-even zeroth-derivative operator in the stated EFT basis \\
+Dimensionful coupling $\mu_5$ and
+  dimensional estimate $\beta_5\sim m_f/u_0$
+  & B & EFT-level dimensional scaling only \\
+Microscopic preferred-direction coupling
+  $\neq$ macroscopic $\phi$-closure
+  & A/B & Structural distinction of ordered-branch sectors \\
+Coefficient derived from condensate microphysics
+  & Open & Not yet completed \\
 \hline
 \end{tabular}
 \end{center}
+
+Section~7 therefore establishes a layered picture rather than a single
+uniform derivation:
+a strong Abelian phase/gauge result, admissible non-Abelian and
+electroweak-like embeddings, an EFT-level matter-coupling bridge, and a
+distinct ECT-specific preferred-direction deformation of the matter
+sector.
 
 \section{Elementary Particles and Field Excitations in ECT}
 \label{sec:particles}
