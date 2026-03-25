@@ -29,6 +29,7 @@
 \usepackage{graphicx}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{enumitem}          % Custom enumerate labels
+\usepackage{needspace}          % Prevent orphan headings
 
 % ---- Cross-references and links ----
 \usepackage[hidelinks]{hyperref}
@@ -67,6 +68,9 @@ and Gravity from Spontaneous $O(4)$ Symmetry Breaking}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 
+
+% Keep status summary headings with their tables
+\newcommand{\statussummary}{\needspace{4\baselineskip}\paragraph{Status summary.}}
 
 \begin{document}
 \maketitle
@@ -1971,7 +1975,7 @@ However, strict monotonicity still requires the Markov closure, as in the
 standard framework.
 
 
-\paragraph{Status summary.}
+\statussummary
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
@@ -2186,7 +2190,7 @@ down.
     promote the state-counting argument from Level~B to Level~A).
 \end{itemize}
 
-\paragraph{Status summary.}
+\statussummary
 
 \noindent\textbf{Table~A: Level~A directional backbone
 (from Section~\ref{sec:arrow_of_time}).}
@@ -3341,7 +3345,7 @@ ECT does not assume $\hbar$ from the outset; it explains why a
 distinguished action scale should appear, and only then motivates
 identifying that scale with $\hbar$.
 
-\paragraph{Status summary.}
+\statussummary
 
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
@@ -3832,7 +3836,7 @@ ECT reproduces this logic structurally: extremality governs the
 backbone of realised histories, while $S_0$ controls when neighbouring
 histories remain phase-relevant.
 
-\paragraph{Status summary.}
+\statussummary
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{6.3cm}p{2.0cm}p{5.0cm}}
@@ -4144,7 +4148,7 @@ consider the non-Abelian and electroweak-like embeddings.
 The later fifth-coupling block treats the ECT-specific matter-sector
 deformation associated with the preferred condensate direction $n_A$.
 
-\paragraph{Status summary.}
+\statussummary
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
@@ -4418,7 +4422,7 @@ The $U(1)$ sector is therefore the most developed gauge-embedding
 result currently available in ECT, but it is not yet a fully completed
 first-principles derivation of QED.
 
-\paragraph{Status summary.}
+\statussummary
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
@@ -4648,7 +4652,7 @@ would need to show:
 \end{enumerate}
 None of these steps has yet been completed.
 
-\paragraph{Status summary.}
+\statussummary
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
@@ -4862,7 +4866,7 @@ The electroweak-like sector is therefore one of the places where the
 gap between structural embedding and first-principles derivation is
 currently largest.
 
-\paragraph{Status summary.}
+\statussummary
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
@@ -5171,7 +5175,7 @@ first-principles result, ECT would need to:
 \end{enumerate}
 None of these steps has yet been completed.
 
-\paragraph{Status summary.}
+\statussummary
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
@@ -5432,7 +5436,7 @@ result, ECT would need to:
 \end{enumerate}
 None of these steps has yet been completed.
 
-\paragraph{Status summary.}
+\statussummary
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
@@ -5642,7 +5646,7 @@ ECT would need to:
     the macroscopic $\phi$-sector signals.
 \end{enumerate}
 
-\paragraph{Status summary.}
+\statussummary
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{6.1cm}p{2.0cm}p{4.9cm}}
@@ -5848,7 +5852,7 @@ To close the question of the coefficient at Level~A, ECT would need:
 \end{enumerate}
 None of these steps has yet been completed.
 
-\paragraph{Status summary.}
+\statussummary
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{6.1cm}p{2.0cm}p{4.9cm}}
@@ -6108,7 +6112,7 @@ The corresponding Level~A programme for the ECT-specific preferred-
 direction matter coupling is given separately in
 Sections~\ref{sec:fifth_coupling}--\ref{sec:fifth_coefficient_constraints}.
 
-\paragraph{Status summary.}
+\statussummary
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{6.1cm}p{2.0cm}p{4.9cm}}
@@ -6349,7 +6353,7 @@ classification of new states beyond the observed SM spectrum
 Its mass, couplings, and possible cosmological abundance remain
 open~(Level~B).
 
-\paragraph{Status summary.}
+\statussummary
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
@@ -6680,7 +6684,7 @@ formulation.
 The two approaches face the same hierarchy challenge; ECT recasts it
 as a condensate-dynamics question rather than a compositeness question.
 
-\paragraph{Status summary.}
+\statussummary
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{6.3cm}p{2.0cm}p{5.0cm}}
@@ -6979,7 +6983,7 @@ The present subsection establishes only that the condensate order
 parameter contains a linearised effective-metric sector with
 a Fierz--Pauli-type structure at quadratic order.
 
-\paragraph{Status summary.}
+\statussummary
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
@@ -7224,7 +7228,7 @@ Its full first-principles realisation within ECT requires closing
 OP-EW~(Section~\ref{sec:three_scales},
 Appendix~\ref{app:second_transition}).
 
-\paragraph{Status summary.}
+\statussummary
 
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
@@ -7423,7 +7427,7 @@ is a suggestive numerical coincidence, not a prediction.
 A condensate-specific derivation of the right-handed neutrino scale
 remains an open problem~(OP15).
 
-\paragraph{Status summary.}
+\statussummary
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
@@ -7706,7 +7710,7 @@ are directly connected to the predicted states:
     vacuum manifold and hence the corresponding ECT vacuum structure.
 \end{itemize}
 
-\paragraph{Status summary.}
+\statussummary
 
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
@@ -8094,7 +8098,7 @@ ECT currently provides a structural compatibility route and a
 Lorentzian-spinorial reconstruction, but not yet a microscopic
 derivation of fermions as quasiparticles of the bare bosonic medium.
 
-\paragraph{Status summary.}
+\statussummary
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
@@ -8272,7 +8276,7 @@ Those questions belong to the broader fermionic and quantum
 programmes developed in the following subsections and in
 Section~\ref{sec:qs_statistics}.
 
-\paragraph{Status summary.}
+\statussummary
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
@@ -8426,7 +8430,7 @@ vertex acquires its observed chiral form, and (iii)~how the observed
 fermion representation content follows from the same mechanism.
 None of these steps has yet been completed.
 
-\paragraph{Status summary.}
+\statussummary
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
@@ -8564,7 +8568,7 @@ derive any aspect of the fermion mass spectrum from first principles.
 The Yukawa hierarchy, the generation structure, and the numerical
 values of $y_f$ remain open problems.
 
-\paragraph{Status summary.}
+\statussummary
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
@@ -8684,7 +8688,7 @@ limit depends on additional issues such as species dependence,
 background gradients, and environment; these are analysed in
 Section~\ref{sec:fifth_coupling}.
 
-\paragraph{Status summary.}
+\statussummary
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
@@ -8788,7 +8792,7 @@ Within the fermionic sector, these questions belong to the open
 programme summarised in Section~\ref{sec:fermion_open}
 (Open; OP-Q11).
 
-\paragraph{Status summary.}
+\statussummary
 \begin{center}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
@@ -15189,7 +15193,7 @@ identifiable with $\hbar$.
 Those questions belong to Sections~\ref{sec:qs_hbar}
 and~\ref{sec:qs_wave}.
 
-\paragraph{Status summary.}
+\statussummary
 \textit{Established}~(Level~A unless noted):
 (i)~the coherent branch is naturally described by $\theta$;
 (ii)~smooth sectors are classified by integer winding~(BR1);
@@ -15323,7 +15327,7 @@ That question leads directly to the wave-dynamical development of the
 Quantum Sector, in which the transition from the Euclidean phase action
 to Schr\"odinger-like dynamics is made explicit.
 
-\paragraph{Status summary.}
+\statussummary
 \textit{Established~(Level~A):}
 the coherent-topological branch of ECT contains a distinguished
 pre-quantum action scale $S_0$ associated with the first nontrivial
@@ -15601,7 +15605,7 @@ organisation and whether their brackets or commutators are normalised
 by the same scale $S_0$.
 That question belongs to Section~\ref{sec:qs_ccr}.
 
-\paragraph{Status summary.}
+\statussummary
 \textit{Established~(Level~A):}
 the coherent branch admits a Lorentzian kinetic structure after the
 continuation~\eqref{eq:qs_wick}, and this structure leads naturally
@@ -15915,7 +15919,7 @@ environments, how effective probabilities arise, and under what
 conditions a Born-type interpretation becomes valid.
 Those questions belong to Section~\ref{sec:qs_decoherence}.
 
-\paragraph{Status summary.}
+\statussummary
 \textit{Established~(Level~A):}
 the smooth coherent branch admits a natural canonical organisation with
 phase variables and conjugate momenta.
@@ -16044,7 +16048,7 @@ developed the structures that ordinary quantum theory usually assumes:
 wave amplitudes, canonical variables, and commutator normalisation.
 The uncertainty relation is therefore not primitive; it is derivative.
 
-\paragraph{Status summary.}
+\statussummary
 \textit{Level~A:} given the canonical structure~\eqref{eq:qs_unc_comm},
 the inequality~\eqref{eq:qs_uncertainty_S0} is pure mathematics.
 \textit{Level~B:} the physical Heisenberg form
@@ -16374,7 +16378,7 @@ Pauli exclusion is therefore a Level~B structural consequence
 conditional on the realisation of the spinorial sector and on
 $S_0=\hbar$~(OP-Q2, OP-Q11).
 
-\paragraph{Status summary.}
+\statussummary
 \begin{itemize}
   \item Level~A: Lorentz algebra from broken phase + Wick rotation;
     Clifford algebra as spinor-representation consequence.
@@ -18123,7 +18127,7 @@ nontrivial defect and topological configurations that may contribute
 to dark-sector ontology and to non-perturbative coherent processes.
 Those sectors are the subject of the next subsection.
 
-\paragraph{Status summary.}
+\statussummary
 \textit{Established~(Level~A):}
 ECT distinguishes clearly between coherent amplitudes, decohered
 reduced sectors, and effective probability candidates.
