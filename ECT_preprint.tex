@@ -4682,105 +4682,215 @@ ordered branch.
 The next subsection develops this connection into the electroweak-like
 embedding.
 
+
 \subsection{Electroweak-like embedding and its current status}
 \label{sec:ew_embedding}
 
-\textit{Status: structural embedding, Level~B/C.
-The electroweak-like sector is not derived from minimal ECT; it is
-shown to be structurally admissible if a second condensate transition
-$O(3)\to O(2)$ is realised.
-The scale $v_2$ is a matching constraint, not a prediction.
+\textit{Status: layered structural embedding.
+The generator counting associated with a candidate second transition
+$O(3)\to O(2)$ is a strict structural statement once such a transition
+is admitted.
+The electroweak-like doublet EFT, the identification with the physical
+$SU(2)\times U(1)\to U(1)_{\rm em}$ pattern, the scale matching
+$v_2\simeq 246\,\mathrm{GeV}$, and the Higgs-like radial mode are
+Level~B/C embedding or matching statements.
+A first-principles derivation from the minimal scalar ECT postulates
+P1--P5 is not yet available.
 Connection to ECT basics: Section~\ref{sec:three_scales},
 Appendix~\ref{app:second_transition}.}
 
-Beyond the Abelian phase sector, one may ask whether the ordered
-condensate admits an additional non-Abelian sector analogous to the
-electroweak interaction.
-At the present stage this must be formulated cautiously.
-
-\paragraph{ECT-specific structural motivation.}
-The isomorphism $\mathfrak{so}(3)\cong\mathfrak{su}(2)$
-established in the previous subsection provides a structural
-motivation that is absent for other gauge groups.
-A second ordering step $O(3)\to O(2)$ would yield two broken and one
-unbroken generator in the residual orientation sector.
-This is only a counting-level and algebraic analogy to the electroweak
-pattern; it is not by itself a derivation of the
-$SU(2)\times U(1)\to U(1)_{\rm em}$ mechanism or of the observed
+\paragraph{Why the electroweak-like sector is structurally distinguished.}
+Among the non-Abelian sectors, the $SU(2)$-like case is singled out by
+the Lie-algebra bridge
+$\mathfrak{so}(3)\cong\mathfrak{su}(2)$
+established in Section~\ref{sec:nonabelian_embedding}.
+This gives the ordered branch a structural relation to a weak-like
+sector that is absent for other simple gauge factors.
+If, in addition to the primary ordering step
+$O(4)\to O(3)$, the condensate undergoes a second effective ordering
+step
+\begin{equation}
+  O(3)\to O(2),
+\end{equation}
+then two generators are broken and one remains unbroken.
+This is a strict counting statement and provides the closest structural
+analogue within ECT to the electroweak breaking pattern.
+By itself, however, it is only an algebraic/combinatorial analogy:
+it does not yet derive the physical
+$SU(2)\times U(1)\to U(1)_{\rm em}$ mechanism nor the observed
 $W^\pm/Z/\gamma$ spectrum.
 
+\paragraph{Candidate second-transition mechanism.}
 A structural candidate mechanism for such a second transition is
-described in Appendix~\ref{app:second_transition}; it requires
-two additional assumptions (phase--orientation coupling and
-potential alignment) not yet derived from P1--P5.
+outlined in Appendix~\ref{app:second_transition}.
+At present it requires additional assumptions beyond P1--P5
+(in particular, phase--orientation coupling and potential alignment).
+Accordingly, the second transition is not yet a theorem of the bare
+condensate action.
 
-\paragraph{Embedding model.}
-A convenient electroweak-like EFT embedding is to introduce a
-condensate doublet
+\paragraph{Electroweak-like embedding model.}
+A convenient effective embedding is to introduce a condensate doublet
 \begin{equation}
-  \Phi =
-  \begin{pmatrix} \Phi_1 \\ \Phi_2 \end{pmatrix},
+  \Phi_{\rm ew} =
+  \begin{pmatrix}
+    \Phi_1 \\
+    \Phi_2
+  \end{pmatrix},
+  \label{eq:EW_doublet}
 \end{equation}
 with gauge-covariant dynamics
 \begin{equation}
-  S_{\text{weak}} = \int d^4X\left[
-    \frac{1}{2}|D_A\Phi|^2
-    + \frac{\lambda_2}{4}\left(\Phi^\dagger\Phi-v_2^2\right)^2
+  S_{\rm ew} =
+  \int d^4X\left[
+    \frac12 |D_A\Phi_{\rm ew}|^2
+    + \frac{\lambda_2}{4}
+      \left(\Phi_{\rm ew}^\dagger\Phi_{\rm ew}-v_2^2\right)^2
   \right],
+  \label{eq:S_weak}
 \end{equation}
 where
 \begin{equation}
-  D_A = \partial_A - ig\,\frac{\tau^a}{2}\,W_A^a - ig'\,Y\,B_A.
+  D_A
+  =
+  \partial_A
+  - ig\,\frac{\tau^a}{2}W_A^a
+  - ig' Y\,B_A.
+  \label{eq:EW_cov_deriv}
 \end{equation}
 Here $\tau^a$ are the Pauli matrices, $W_A^a$ the $SU(2)$ gauge
 fields, $B_A$ the hypercharge gauge field, $Y$ the hypercharge
-assignment, and $g$, $g'$ the corresponding coupling constants.
-This construction is \emph{not} derived from the minimal scalar ECT
-postulates P1--P5.
-Rather, it provides a low-energy \emph{structural embedding} showing
-how an electroweak-like EFT could be accommodated if a second
-condensate transition exists.
+assignment, and $g,g'$ the corresponding couplings.
+
+This construction is not derived from the minimal scalar ECT postulates
+P1--P5.
+Rather, it provides a low-energy structural embedding showing how an
+electroweak-like EFT could be accommodated if a second condensate
+transition exists.
 
 \paragraph{Scale matching and the hierarchy problem.}
-If such an intermediate transition is realised, the associated scale
-is fixed by low-energy matching:
+If such an intermediate transition is realised, the associated scale is
+fixed by low-energy matching:
 \begin{equation}
-  v_2 = \left(\sqrt{2}\,G_F\right)^{-1/2}
-  \approx 246.22\,\text{GeV},
+  v_2 = (\sqrt{2}G_F)^{-1/2}
+  \approx 246.22\,\mathrm{GeV},
+  \label{eq:v2_match}
 \end{equation}
 equivalently by the observed relations
 \begin{equation}
-  m_W = \frac{gv_2}{2}, \qquad
+  m_W = \frac{g v_2}{2},
+  \qquad
   m_Z = \frac{\sqrt{g^2+g'^2}}{2}\,v_2.
+  \label{eq:mw_mz_match}
 \end{equation}
-Thus $246\,$GeV is not a free choice once the electroweak EFT is
-matched.
-The ratio $v_2/u_0\approx 10^{-16}$ is the ECT counterpart of the
-standard gauge hierarchy problem, discussed in
-Section~\ref{sec:three_scales}.
+Thus $246\,\mathrm{GeV}$ is not a free choice once the electroweak
+EFT is matched.
+The ratio
+\begin{equation}
+  \frac{v_2}{u_0}\sim 10^{-16}
+\end{equation}
+is the ECT counterpart of the standard gauge hierarchy problem and is
+discussed in Section~\ref{sec:three_scales}.
+
+\paragraph{Higgs-like radial mode.}
+In this embedding the radial excitation of the electroweak condensate
+plays the structural role of a Higgs-like scalar.
+Writing the doublet in polar form around the broken minimum, the radial
+mode $\sigma_2$ inherits its mass from the local curvature of the
+effective potential at $|\Phi_{\rm ew}|=v_2$:
+\begin{equation}
+  m_{\sigma_2}^2 = 2\lambda_2 v_2^2.
+  \label{eq:msigma2}
+\end{equation}
+The observed Higgs mass $m_H\simeq 125\,\mathrm{GeV}$ therefore
+constrains $\lambda_2$ through matching.
+This is a matching relation, not a prediction from bare condensate
+microphysics.
+In ECT the point is structural: the Higgs-like scalar is interpreted
+as the radial mode of a \emph{second condensate sector}, not as a
+completely independent fundamental scalar unrelated to the condensate
+architecture.
 
 \paragraph{ECT interpretation: second phase of the same medium.}
-If the second transition is realised, ECT would then interpret the
-electroweak condensate not as an independent scalar field introduced
-\emph{ad hoc}, but as a possible second ordered phase of the same underlying
-$\Phi$-medium whose first transition already produced the Lorentzian
-spacetime and the gravitational sector.
-This is a conceptual distinction from the Standard Model, where the
-Higgs field and the spacetime metric are independent structures.
+If the second transition is realised, ECT interprets the electroweak
+condensate not as an ad hoc independent scalar field, but as a possible
+second ordered phase of the same underlying $\Phi$-medium whose first
+transition already produced the Lorentzian spacetime and gravitational
+sector.
+This is a genuine conceptual distinction from the Standard Model, where
+the Higgs field and spacetime geometry are independent structures.
+At the present stage, however, this should be read only as an
+interpretive unification statement, not as a completed derivation.
 
-At the current level of ECT this should be read only as follows:
-\begin{itemize}
-  \item the residual symmetry structure is \emph{compatible} with an
-    electroweak-like embedding;
-  \item the value of $v_2$ is a \emph{matching constraint} if that
-    embedding is realised;
-  \item the dynamical origin of the second transition remains
-    open~(OP-EW; see Section~\ref{sec:three_scales} and
-    Appendix~\ref{app:second_transition}).
-\end{itemize}
-Accordingly, the electroweak-like sector is currently a Level~B/C
-structural embedding, not a first-principles derivation from the bare
-scalar condensate action.
+\paragraph{What is strict and what is embedded.}
+The generator counting associated with a candidate
+$O(3)\to O(2)$ step is strict once such a step is admitted.
+The algebraic bridge
+$\mathfrak{so}(3)\cong\mathfrak{su}(2)$
+is also strict.
+By contrast, the existence of the second transition itself, the doublet
+structure $\Phi_{\rm ew}$, the identification with the physical
+electroweak symmetry-breaking pattern, the values of $g,g'$, the
+matching scale $v_2$, and the Higgs-like radial mode
+$\sigma_2$ are Level~B/C embedding or matching statements.
+
+\paragraph{What would be needed for full Level~A.}
+To promote the electroweak-like sector from structural embedding to a
+first-principles derivation, ECT would need to:
+\begin{enumerate}[label=(\roman*)]
+  \item derive the second condensate transition $O(3)\to O(2)$
+    dynamically from the bare action;
+  \item show that the resulting breaking pattern reproduces the
+    physical $SU(2)\times U(1)\to U(1)_{\rm em}$ structure;
+  \item derive the doublet representation content rather than admit it
+    as an EFT embedding;
+  \item derive the gauge couplings $g,g'$;
+  \item derive the Yukawa structure and fermion mass generation within
+    the same mechanism;
+  \item derive the hierarchy ratio $v_2/u_0\sim10^{-16}$ from
+    condensate dynamics.
+\end{enumerate}
+None of these steps has yet been completed.
+The electroweak-like sector is therefore one of the places where the
+gap between structural embedding and first-principles derivation is
+currently largest.
+
+\paragraph{Status summary.}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
+\hline
+Statement & Status & Comment \\
+\hline
+$O(3)\to O(2)$ generator counting
+  & A & Strict combinatorial statement \\
+$\mathfrak{so}(3)\cong\mathfrak{su}(2)$
+  & A & Strict Lie-algebra fact \\
+Second condensate transition exists
+  & B/C & Candidate mechanism only \\
+Electroweak doublet embedding
+  $\Phi_{\rm ew}$
+  & B/C & Structural EFT embedding \\
+Matching scale $v_2\simeq246\,\mathrm{GeV}$
+  & Constraint & Fixed once EW EFT is matched \\
+$W^\pm,Z,\gamma$ spectrum
+  & B/C & Standard EW EFT matching, not ECT-derived \\
+Higgs-like radial mode $\sigma_2$
+  & B/C & Structural role, mass matched \\
+Gauge couplings $g,g'$
+  & C & Free EFT parameters \\
+Hierarchy ratio $v_2/u_0$
+  & Open & Not derived \\
+Full electroweak sector from P1--P5
+  & Open & \\
+\hline
+\end{tabular}
+\end{center}
+
+This establishes the gauge-side architecture of the electroweak-like
+sector.
+The next subsection addresses how the embedded gauge fields act on
+matter and what the ECT interaction pattern looks like at the
+phenomenological level.
 
 \subsection{Gauge sector summary, structural observations,
 and the open programme}
@@ -20002,6 +20112,45 @@ plausible but does not constitute a derivation.
 Until these are answered, the second transition $O(3)\to O(2)$
 remains a \emph{structural candidate mechanism} of ECT at
 Level~B/C, not an established result.
+
+
+\subsection*{Generator counting}
+\label{app:generator_counting_ew}
+
+For $O(3)\to O(2)$, the dimension of the broken-generator space is
+\begin{equation}
+  \dim O(3)-\dim O(2)=3-1=2.
+\end{equation}
+Thus the candidate second transition yields two broken and one
+unbroken generator.
+This is the exact group-theoretic content of the analogy used in
+Section~\ref{sec:ew_embedding}.
+No stronger physical identification follows from this counting alone.
+
+\subsection*{What this appendix establishes and what it does not}
+\label{app:second_transition_status}
+
+This appendix does not derive the physical electroweak sector from the
+minimal ECT postulates.
+What it establishes is only the following structural chain:
+\begin{enumerate}[label=(\roman*)]
+  \item if a second effective ordering step $O(3)\to O(2)$ is
+    admitted, then the generator counting is compatible with a
+    weak-like symmetry-breaking pattern;
+  \item if a condensate doublet EFT is admitted, then a Higgs-like
+    radial mode and the standard electroweak matching relations can be
+    written in the usual low-energy form;
+  \item this provides a structural embedding of the electroweak sector
+    into the condensate architecture of ECT.
+\end{enumerate}
+
+What remains open is:
+\begin{enumerate}[label=(\alph*)]
+  \item the dynamical origin of the second transition,
+  \item the derivation of the doublet structure,
+  \item the derivation of the gauge couplings and Yukawa sector,
+  \item the derivation of the hierarchy $v_2/u_0$.
+\end{enumerate}
 
 % ------------------------------------------------------------
 \section{Goldstone sector in scalar-only ECT: integrability,
