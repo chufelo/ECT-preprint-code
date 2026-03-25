@@ -4464,94 +4464,215 @@ structure can emerge from condensate variables.
 The next subsections ask to what extent this logic can be extended to
 the non-Abelian and electroweak sectors.
 
-% === §7.3 through §7.11 will be built in subsequent steps ===
 
-
-\subsection{Non-Abelian gauge structure: structural embedding}
+\subsection{Non-Abelian gauge structure and its status}
 \label{sec:nonabelian_embedding}
 
-\textit{Status: structural embedding, Level~B/C.
-The non-Abelian gauge sector is not derived from the minimal scalar
-ECT postulates P1--P5; it is shown to be structurally admissible
-if the condensate possesses internal multiplet structure.
-The Standard Model gauge group is embedded, not derived.}
+\textit{Status: layered structural result.
+At the level of local EFT completion, the non-Abelian covariant
+derivative, field strength, and Yang--Mills kinetic term are standard
+near-theorem consequences once an internal multiplet structure and
+local non-Abelian redundancy are admitted.
+The algebraic bridge $\mathfrak{so}(3)\cong\mathfrak{su}(2)$ is a
+strict Level~A Lie-algebra fact of the ordered branch.
+By contrast, identification of the physical Standard Model gauge group,
+its couplings, and its strong/electroweak phenomenology remains
+Level~B/C embedding or open.}
 
 \paragraph{General non-Abelian framework.}
-
-If the condensate possesses internal degrees of freedom forming a
-multiplet
+Suppose that the effective condensate description contains internal
+multiplet degrees of freedom
 \begin{equation}
   \Phi = (\Phi_1,\Phi_2,\dots,\Phi_N)^T,
 \end{equation}
-and the action is invariant under global $SU(N)$ rotations
-$\Phi\to U\Phi$, then promoting these to local transformations
-$U(X)$ requires the introduction of gauge connections.
-The covariant derivative is
+and that the effective action is invariant under global $SU(N)$
+transformations
+\begin{equation}
+  \Phi \to U\Phi,
+  \qquad U\in SU(N).
+\end{equation}
+If one further admits local multiplet redundancy
+$U\to U(X)$,
+covariance requires the introduction of gauge connections.
+The corresponding covariant derivative is
 \begin{equation}
   D_A = \partial_A - ig\,A_A^a T^a,
   \label{eq:nonabelian_cov_deriv}
 \end{equation}
-where $T^a$ are the generators and $A_A^a$ are the associated
-gauge fields.
-The gauge-invariant field strength tensor is
+where $T^a$ are the generators of the Lie algebra and $A_A^a$ are
+the associated gauge fields.
+
+\paragraph{Field strength and Yang--Mills structure.}
+The gauge-covariant field strength is
 \begin{equation}
   F_{AB}^a = \partial_A A_B^a - \partial_B A_A^a
   + g\,f^{abc}\,A_A^b A_B^c,
   \label{eq:nonabelian_F}
 \end{equation}
-where $f^{abc}$ are the structure constants of the group,
-The canonical parity-even gauge-field action is
+where $f^{abc}$ are the structure constants of the group.
+At leading derivative order, the canonical parity-even gauge-field
+action is
 \begin{equation}
   S_{\rm gauge} = -\frac{1}{4}
   \int d^4X\;F_{AB}^a\,F^{a\,AB}.
   \label{eq:YM_action}
 \end{equation}
-This shows structural compatibility of ECT with non-Abelian gauge
-theories at leading derivative order; it does not derive the specific
-gauge group from the condensate.
+
+\paragraph{Conditional theorem: local non-Abelian EFT completion.}
+Once a local non-Abelian redundancy and multiplet structure are
+admitted, the covariant derivative~\eqref{eq:nonabelian_cov_deriv},
+field strength~\eqref{eq:nonabelian_F}, and leading Yang--Mills
+kinetic structure~\eqref{eq:YM_action} follow by the same EFT logic as
+in the Abelian case.
+In that sense, ECT is structurally compatible with non-Abelian gauge
+theories at leading derivative order.
+
+\paragraph{Proof sketch.}
+Local multiplet covariance requires a compensating connection valued in
+the Lie algebra.
+Closure of the local algebra forces the gauge field to transform in the
+adjoint and introduces the commutator term in the field strength.
+Among local parity-even gauge-invariant terms quadratic in the field
+strength and containing at most two derivatives, the Yang--Mills form
+is the standard leading EFT choice.
+\hfill$\square$
+
+\paragraph{Status caveat.}
+The previous paragraph is a strong structural EFT statement, but not a
+first-principles derivation from the bare scalar condensate action.
+The local non-Abelian redundancy, the representation content, and the
+value of the coupling $g$ are not derived from P1--P5.
+Thus the non-Abelian sector is stronger than a mere analogy, but weaker
+than a full Level~A derivation.
 
 \paragraph{The algebraic bridge:
 $\mathfrak{so}(3)\cong\mathfrak{su}(2)$.}
 After the spacetime symmetry breaking $O(4)\to O(3)$, the residual
 unbroken rotation algebra of the ordered branch is
 \begin{equation}
-  \mathfrak{so}(3) \;\cong\; \mathfrak{su}(2).
+  \mathfrak{so}(3)\cong\mathfrak{su}(2).
   \label{eq:so3_su2_iso}
 \end{equation}
-This is an isomorphism of Lie algebras, not an identification of
-the global groups $SO(3)$ and $SU(2)$.
-Among the Standard Model simple gauge factors, $SU(2)$ is the only
-one whose Lie algebra has a direct algebraic analogue in the residual
-spacetime-rotation algebra of the broken phase.
-This is an algebraic bridge, not yet a derivation of the electroweak
-sector.
-Its possible relation to chirality and the selection of $SU(2)_L$
-is discussed separately in Section~\ref{sec:chirality}.
+This is a strict Lie-algebra isomorphism and therefore a genuine
+Level~A statement.
+It means that among the simple Standard Model gauge factors,
+$SU(2)$ is uniquely distinguished by a direct algebraic analogue in
+the ordered branch.
+
+\paragraph{Global-group caveat.}
+The statement
+$\mathfrak{so}(3)\cong\mathfrak{su}(2)$
+does \emph{not} identify the global groups $SO(3)$ and $SU(2)$.
+Their representation content differs:
+$SU(2)$ admits doublets, whereas $SO(3)$ does not.
+Thus the algebraic bridge is significant but not yet sufficient to
+derive the physical weak-interaction sector.
+Its relation to chirality and the possible selection of $SU(2)_L$ is
+discussed separately in Section~\ref{sec:chirality}.
 
 \paragraph{Accommodation of Standard Model gauge groups.}
-Within this framework the gauge interactions of the Standard Model
-can be \emph{accommodated} as arising from internal symmetries of
-the condensate:
+Within this framework, the gauge interactions of the Standard Model can
+be \emph{accommodated} as arising from internal structures of the
+condensate:
 \begin{itemize}
-  \item $U(1)$: the coherent-branch phase symmetry
-    (Section~\ref{sec:u1_emergence}); structurally the strongest
-    gauge-embedding result, with a distinguished Noether current
-    and superfluid analogy.
-  \item $SU(2)$: algebraically distinguished by the isomorphism
-    $\mathfrak{so}(3)\cong\mathfrak{su}(2)$; a structural
-    embedding for a weak-interaction-like sector if a second
-    condensate transition exists
+  \item \textbf{$U(1)$:} the coherent-branch compact phase sector
+    (Section~\ref{sec:u1_emergence}); this is the most developed
+    gauge-embedding result currently available in ECT.
+  \item \textbf{$SU(2)$:} algebraically distinguished by the
+    isomorphism $\mathfrak{so}(3)\cong\mathfrak{su}(2)$; a structural
+    route to an electroweak-like sector if a second condensate
+    transition exists
     (Section~\ref{sec:ew_embedding}).
-  \item $SU(3)$: requires an additional colour-triplet internal
-    structure with no spacetime counterpart; this remains a
-    model-level extension~(Level~C).
+  \item \textbf{$SU(3)$:} requires an additional colour-triplet
+    internal structure with no direct spacetime counterpart; this
+    remains a model-level extension~(Level~C).
+    In the present framework the $SU(3)$-like sector is taken to
+    remain in the unbroken phase, which is structurally consistent with
+    massless gluons and the absence of a colour-Higgs mechanism.
 \end{itemize}
-The coupling constants $g$, $g'$, and $g_s$ are all free EFT
-parameters in the present formulation; none is derived from the
+
+\paragraph{Coupling constants.}
+The gauge couplings $g$, $g'$, and $g_s$ are free EFT matching
+parameters in the present formulation.
+Neither their numerical values nor their running are derived from the
 condensate data.
-At the present stage, neither the values nor the running of
-$(g,g',g_s)$ are derived from condensate microphysics.
-They remain EFT matching parameters.
+Whether condensate structure could in principle constrain them remains
+an open problem of the ECT interaction programme~(OP-SM).
+
+\paragraph{Confinement as an open problem.}
+The present ECT formulation shows how an $SU(3)$-like gauge structure
+may be structurally accommodated in the low-energy sector, but it does
+not derive confinement or replace the standard QCD account of the
+infrared strong-interaction regime.
+A full derivation of confinement within ECT would require a genuinely
+nonperturbative analysis going beyond the perturbative EFT embedding
+used here.
+Whether condensate structure can provide an ECT-specific route to
+confinement remains open~(OP-SM).
+
+\paragraph{What is strict and what is embedded.}
+The Lie-algebra statement
+$\mathfrak{so}(3)\cong\mathfrak{su}(2)$
+is strict.
+The standard non-Abelian local completion is also structurally strong
+once the local multiplet EFT assumptions are admitted.
+By contrast, the identification of the physical Standard Model gauge
+group, the actual matter representation content, the electroweak
+sector, the strong-interaction infrared regime, and the observed
+coupling constants are not derived here.
+These remain embeddings, matchings, or open problems.
+
+\paragraph{What would be needed for full Level~A.}
+To promote the non-Abelian sector to full Level~A from P1--P5, ECT
+would need to show:
+\begin{enumerate}[label=(\roman*)]
+  \item how internal condensate multiplets arise dynamically from the
+    bare scalar condensate description;
+  \item why local non-Abelian redundancy is selected rather than merely
+    admitted as an EFT completion;
+  \item how the physical gauge group is fixed;
+  \item how matter representations (doublets, triplets, singlets) are
+    selected;
+  \item how the gauge couplings are determined;
+  \item how electroweak breaking and confinement emerge from the same
+    condensate logic.
+\end{enumerate}
+None of these steps has yet been completed.
+
+\paragraph{Status summary.}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
+\hline
+Statement & Status & Comment \\
+\hline
+Local non-Abelian covariant derivative
+  & A/B & Strict within local multiplet EFT assumptions \\
+Non-Abelian field strength
+  & A/B & Same \\
+Yang--Mills leading kinetic term
+  & A/B & Standard leading EFT completion \\
+$\mathfrak{so}(3)\cong\mathfrak{su}(2)$
+  & A & Strict Lie-algebra fact \\
+$SU(2)$ electroweak-like embedding
+  & B/C & Structural route, not derivation \\
+$SU(3)$-like colour sector
+  & C & Model-level extension \\
+Gauge couplings $(g,g',g_s)$
+  & C & Free EFT matching parameters \\
+Confinement
+  & Open & Not derived \\
+Full SM gauge group from P1--P5
+  & Open & \\
+\hline
+\end{tabular}
+\end{center}
+
+Among the non-Abelian sectors, the $SU(2)$-like case is
+algebraically distinguished by the residual rotation algebra of the
+ordered branch.
+The next subsection develops this connection into the electroweak-like
+embedding.
 
 \subsection{Electroweak-like embedding and its current status}
 \label{sec:ew_embedding}
@@ -19474,6 +19595,91 @@ Hence
   e\oint_\gamma A_A\,dX^A=2\pi n
 \end{equation}
 up to sign convention.
+
+
+% ============================================================
+\section{Non-Abelian local completion and the
+\texorpdfstring{$\mathfrak{so}(3)\cong\mathfrak{su}(2)$}{so(3)=su(2)} bridge}
+\label{app:nonabelian_completion}
+% ============================================================
+
+This appendix records the explicit structural steps behind
+Section~\ref{sec:nonabelian_embedding}.
+
+\subsection*{A.\ Local multiplet completion}
+
+Let $\Phi$ be an $N$-component effective condensate multiplet.
+Suppose the effective action is invariant under global
+$SU(N)$ transformations
+\begin{equation}
+  \Phi\to U\Phi,
+  \qquad U\in SU(N).
+\end{equation}
+If one promotes $U$ to a local transformation $U(X)$, covariance
+of derivatives requires the introduction of a Lie-algebra-valued
+connection
+\begin{equation}
+  A_A = A_A^a T^a,
+\end{equation}
+with covariant derivative
+\begin{equation}
+  D_A=\partial_A-igA_A.
+\end{equation}
+This is the standard local completion of a global multiplet symmetry.
+
+\subsection*{B.\ Field strength from commutator closure}
+
+Demanding that the covariant derivatives close under commutation gives
+\begin{equation}
+  [D_A,D_B]\Phi = -ig\,F_{AB}\Phi,
+\end{equation}
+with
+\begin{equation}
+  F_{AB}=\partial_AA_B-\partial_BA_A-ig[A_A,A_B].
+\end{equation}
+In component form this yields
+\begin{equation}
+  F_{AB}^a=\partial_AA_B^a-\partial_BA_A^a+g f^{abc}A_A^bA_B^c.
+\end{equation}
+Thus the commutator term is forced by local non-Abelian covariance.
+
+\subsection*{C.\ Leading kinetic term}
+
+At leading derivative order, the local parity-even quadratic invariant
+built from the field strength is
+\begin{equation}
+  F_{AB}^aF^{a\,AB},
+\end{equation}
+up to normalisation and total derivatives.
+This yields the canonical Yang--Mills action.
+
+\subsection*{D.\ The $\mathfrak{so}(3)\cong\mathfrak{su}(2)$ bridge}
+
+The Lie algebra $\mathfrak{so}(3)$ has generators $J_i$ obeying
+\begin{equation}
+  [J_i,J_j]=\epsilon_{ijk}J_k.
+\end{equation}
+The Lie algebra $\mathfrak{su}(2)$ has generators $T_i$ obeying
+\begin{equation}
+  [T_i,T_j]=\epsilon_{ijk}T_k
+\end{equation}
+up to conventional normalisation.
+Hence
+\begin{equation}
+  \mathfrak{so}(3)\cong\mathfrak{su}(2).
+\end{equation}
+This is an isomorphism of Lie algebras only.
+It does not imply that the global groups $SO(3)$ and $SU(2)$ are
+identical, nor does it by itself determine the physical matter
+representation content.
+
+\subsection*{E.\ Limit of the argument}
+
+This appendix proves only the structural local completion and the
+Lie-algebra bridge.
+It does not derive the physical Standard Model gauge group,
+its representations, its couplings, or confinement/electroweak
+breaking from the bare scalar condensate action.
 
 \section{Variational Selection and Reduced Extremal Dynamics}
 \label{app:variational_reduction}
