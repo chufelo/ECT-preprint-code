@@ -8076,7 +8076,8 @@ Subsection & Highest level & Summary \\
     open~(OP-Yukawa, OP-generations) \\
 \ref{sec:fifth_force_fermion}~Fermion--condensate coupling
   & B/C
-  & $\mu_5\,\bar\Psi\gamma^A n_A\Psi$; dimensional estimate;
+  & $\mu_5\,\bar\Psi\gamma^A n_A\Psi$; EFT-level dimensional estimate
+    via $\mu_5=\beta_5 m_f$, $\beta_5\sim m_f/u_0$;
     phenomenology in Section~\ref{sec:fifth_force} \\
 \ref{sec:fermion_statistics}~Spin-statistics
   & A (topology) / B (compatibility)
@@ -8207,8 +8208,7 @@ The simplest interaction term is
 \begin{equation}
 \mathcal{L}_5
 =
-\beta \,
-\bar{\Psi}\gamma^A n_A \Psi .
+\mu_5\,\bar{\Psi}\gamma^A n_A \Psi .
 \end{equation}
 
 In the broken-symmetry phase
@@ -8222,8 +8222,7 @@ so the interaction reduces to
 \begin{equation}
 \mathcal{L}_5
 =
-\beta\,
-\bar{\Psi}\gamma^w \Psi .
+\mu_5\,\bar{\Psi}\gamma^w \Psi .
 \end{equation}
 
 Physically this represents a direct coupling between fermions and the
@@ -8235,14 +8234,13 @@ Dimensional arguments suggest that the coupling constant is suppressed
 by the Planck scale,
 
 \begin{equation}
-\beta \sim \frac{m}{M_{Pl}} .
+\beta_5 \sim \frac{m_f}{u_0} \sim \frac{m_f}{\bar{M}_{\rm Pl}},
+\qquad
+\mu_5 \sim \frac{m_f^2}{u_0}.
 \end{equation}
 
-For electrons this gives
-
-\begin{equation}
-\beta_e \sim 2\times10^{-22}.
-\end{equation}
+For electrons this gives $\beta_{5,e} \sim 2\times10^{-22}$,
+corresponding to an extremely small dimensionful coupling $\mu_{5,e}$.
 
 The interaction range is controlled by the condensate correlation
 length.
@@ -8344,10 +8342,12 @@ The coupling induces an additional spin-dependent energy shift
 \begin{equation}
 \omega_5
 \sim
-\frac{\beta m_e c^2}{\hbar}.
+\frac{\mu_5 c^2}{\hbar}
+\sim
+\frac{\beta_5 m_e c^2}{\hbar}.
 \end{equation}
 
-For the bare Planck-suppressed coupling $\beta \sim m_e/M_{\rm Pl}$
+For the bare Planck-suppressed coupling $\beta_5 \sim m_e/u_0$
 this gives $\omega_5 \sim 0.1\,\mathrm{rad\,s^{-1}}$, which is 
 already excluded by atomic clock experiments.  However, the 
 physically relevant coupling on galactic scales involves the 
@@ -8360,16 +8360,18 @@ ordered-branch amplitude profile, which is left for future work.
 
 \paragraph{Violation of the equivalence principle}
 
-Because different fermions have different values of $\beta$,
+Because different fermion species have different values of $\beta_5$
+(and hence $\mu_5$),
 test bodies composed of different particles may experience slightly
 different gravitational accelerations.
 
-The corresponding Eötvös parameter is approximately
-
+Composition-dependent effects arise through species dependence of
+the dimensionless ratios $(\beta_5)_f$ or, equivalently, of the
+dimensionful coefficients $\mu_{5,f}$.
+A precise prediction of the E\"otv\"os parameter requires an explicit
+multi-species effective reduction; the bare dimensional estimate gives
 \begin{equation}
 \eta
-\sim
-\frac{|\beta_e-\beta_p|}{g}
 \sim 10^{-20}\text{--}10^{-21}.
 \end{equation}
 
@@ -8388,9 +8390,9 @@ polarization relative to $n_A$,
 \begin{equation}
 \frac{\delta c}{c}
 \sim
-\beta^2
+\beta_5^2
 \sim
-\left(\frac{m_e}{M_{Pl}}\right)^2
+\left(\frac{m_e}{u_0}\right)^2
 \sim
 10^{-45}.
 \end{equation}
@@ -8403,7 +8405,7 @@ constraint on the parameter space of the theory.
 \paragraph{Consistency with existing bounds.}
 All quantitative estimates in this section are order-of-magnitude and
 serve to identify the relevant parametric suppressions (in particular the
-Planck suppression $\beta\sim m_f/M_{\rm Pl}$). A systematic comparison to
+Planck suppression $\beta_5\sim m_f/u_0$). A systematic comparison to
 the full set of laboratory, atomic-clock, spin-precession, and
 equivalence-principle constraints requires an explicit mapping of the
 effective operator $\bar{\Psi}\gamma^A n_A\Psi$ onto standard
@@ -8413,48 +8415,42 @@ Lorentz-violation frameworks and will be presented elsewhere.
 
 \subsection{Origin of the Fifth Interaction Coupling}
 
-\textit{Status: Level~B dimensional analysis. The Planck suppression
-$\beta\sim m_f/\bar{M}_{\rm Pl}$ follows from the UV scale matching;
-the fermion mass $m_f$ enters as an external input, not derived from ECT.}
+\textit{Status: Level~B dimensional EFT estimate.
+The preferred direction $n_A$ follows from the ordered branch, while
+the coefficient of the fermion--condensate operator is not derived from
+microphysics.
+The natural EFT parameterisation is
+$\mu_5=\beta_5 m_f$ with
+$\beta_5\sim m_f/u_0$.}
 
 After the first SSB $O(4)\to O(3)$, the ordered branch introduces
-the derived orientation variable $n_A=\partial_A\Phi/|\partial\Phi|$
+the derived orientation variable
+$n_A=\partial_A\Phi/|\partial\Phi|$
 (not an independent field; Section~\ref{sec:sector_map}).
-Fermions propagating in this ordered-branch background can couple
-to $n_A$ through the leading symmetry-allowed operator:
+Within the parity-even, zeroth-derivative fermionic EFT, the leading
+ECT-specific deformation is
 \begin{equation}
-  \mathcal{L}_5 = \frac{1}{u_0}\,\bar{\Psi}\gamma^A n_A \Psi,
+  \mathcal{L}_5 = \mu_5\,\bar{\Psi}\gamma^A n_A \Psi,
 \end{equation}
-where $u_0\sim\bar{M}_{\rm Pl}$ is the UV condensate amplitude
-(Section~\ref{sec:three_scales}, equation~\eqref{eq:u0_Mpl}).
+where $\mu_5$ has mass dimension one.
 
-Fermion masses enter through the electroweak-like sector.
-If the second condensate transition exists~(OP-EW), fermions
-acquire masses via Yukawa coupling to the second condensate:
+A convenient dimensionless parameterisation is
 \begin{equation}
-  m_f = y_f\,v_2,
+  \mu_5=\beta_5 m_f.
 \end{equation}
-where $v_2\approx246$\,GeV is the electroweak matching
-scale~\eqref{eq:v2_GF} and $y_f$ is an external SM input.
-The effective fifth-force coupling then becomes
+If the only UV suppressing scale is $u_0\sim\bar M_{\rm Pl}$, then
+dimensional analysis suggests
 \begin{equation}
-  \beta \sim \frac{m_f}{u_0} \sim \frac{m_f}{\bar{M}_{\rm Pl}},
-  \label{eq:fifth_coupling_OLD}
+  \beta_5\sim \frac{m_f}{u_0},
+  \qquad
+  \mu_5\sim \frac{m_f^2}{u_0}.
 \end{equation}
-giving
-\begin{equation}
-  \boxed{\beta \sim \frac{m_f}{\bar{M}_{\rm Pl}}}
-  \qquad\text{(Level~B: dimensional analysis).}
-\end{equation}
-For electrons: $\beta_e\sim m_e/\bar{M}_{\rm Pl}\sim2\times10^{-22}$.
-
-The fifth interaction is therefore naturally Planck-suppressed for
-all known particles, consistent with all current experimental bounds.
 For the operator-basis justification and dimensional counting behind
-this estimate, see Appendix~\ref{app:fifth_operator_classification}.
+this estimate, see Section~\ref{sec:fifth_coupling} and
+Appendix~\ref{app:fifth_operator_classification}.
 
-Two caveats must be noted: (i) the fermion masses $m_f$ are
-SM-matched inputs, not derived from ECT; (ii) the electroweak
+Two caveats must be noted: (i)~the fermion masses $m_f$ are
+SM-matched inputs, not derived from ECT; (ii)~the electroweak
 scale $v_2$ is a matching constraint, not a first-principles
 result~(Section~\ref{sec:three_scales}).
 
@@ -8474,6 +8470,14 @@ In ECT this scale is introduced through the macroscopic amplitude variable
 \end{equation}
 whose ambient background $\phi_{\rm env}$ determines the effective
 critical scale $g_\dagger(\phi_{\rm env})$.
+
+\emph{Notation.}
+The symbol $\beta$ in
+$\phi=\beta^{-1}\ln(u/u_\infty)$
+belongs to the macroscopic amplitude-sector closure, whereas
+$\beta_5$ is the dimensionless ratio associated with the microscopic
+fermion--condensate coupling via $\mu_5=\beta_5 m_f$.
+These two quantities should not be conflated.
 
 \paragraph{Two distinct weak-field effects.}
 ECT contains two conceptually distinct ingredients:
@@ -14413,7 +14417,10 @@ an open problem.
 The galactic $\phi$-modification and the ECT fifth force
 ($\mathcal{L}_5 = \mu_5\,\bar\Psi\gamma^A n_A\Psi$,
 $\mu_5 = \beta_5 m_f$, $\beta_5 \sim m_f/u_0$) are \emph{different}
-manifestations of the same condensate:
+manifestations of the same condensate
+(note that the symbol $\beta$ in the amplitude-sector parameter
+$\phi=\beta^{-1}\ln(u/u_\infty)$ is unrelated to the microscopic
+coupling ratio $\beta_5$):
 the $\phi$-branch operates on kpc scales;
 the fifth force is Planck-suppressed and detectable at
 laboratory scales through spin precession
