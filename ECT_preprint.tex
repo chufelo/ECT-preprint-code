@@ -2557,12 +2557,22 @@ Section~\ref{sec:graviton}.
 \subsection{Status of results in this section}
 \label{sec:spectrum_status}
 
-\begin{center}
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{p{5.5cm}p{3.5cm}p{4.0cm}}
+\begin{longtable}{p{5.5cm}p{3.5cm}p{4.0cm}}
+\caption{Status of results in this section.}\label{tab:spectrum_status}\\
 \hline\hline
 Result & Status & Basis \\
 \hline
+\endfirsthead
+\multicolumn{3}{l}{\textit{Table~\ref{tab:spectrum_status} continued}} \\
+\hline\hline
+Result & Status & Basis \\
+\hline
+\endhead
+\hline
+\multicolumn{3}{r}{\textit{Continued on next page}} \\
+\endfoot
+\hline\hline
+\endlastfoot
 Polar decomposition $\partial_A\Phi=(u_0+\sigma)n_A$
   & Level~A & P4 + Theorem~\ref{thm:tensor_uniqueness} \\
 Quadratic EFT action~\eqref{eq:quadratic_action}
@@ -2613,9 +2623,7 @@ Induced effective-metric tensorial sector from orientation
   fluctuations
   & Level~B & Tensorial content arises after projection to
     $g^{\rm eff}_{AB}$; see Section~\ref{sec:graviton} \\
-\hline\hline
-\end{tabular}
-\end{center}
+\end{longtable}
 
 \medskip
 \noindent\textit{What is intentionally not done here.}
