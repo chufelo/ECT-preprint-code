@@ -224,8 +224,8 @@ black-hole thermodynamics
 \begin{longtable}{@{}p{3.2cm} p{9.5cm} p{2.8cm}@{}}
 \caption{Principal symbols. Foundational symbols (P1--P5 level) are
 defined in Sections~\ref{sec:postulates}--\ref{sec:branching}.
-Legacy notation $v_0$ used in Sections~\ref{sec:quantum}--\ref{sec:consistency_relations}
-is the condensate amplitude; see terminological note in Section~\ref{sec:constants}.}
+Derived and matching-level symbols are introduced in the corresponding
+sections.}
 \label{tab:symbols}\\
 \toprule
 \textbf{Symbol} & \textbf{Definition} & \textbf{Value / Units} \\
@@ -2868,9 +2868,12 @@ The relevant matching relations are:
   S_0^{\rm EFT} = \frac{K_\theta\,m_\varphi}{2},
   \label{eq:GN_S0_common}
 \end{equation}
-where $M_G$, $K_\theta\sim v_0^2$, $m_\varphi=\sqrt{2\lambda}\,v_0$,
-and $c_*$ are all functions of the condensate data
-(Section~\ref{sec:hbar_status}).
+where $M_G$, $K_\theta$, $m_\varphi$, and $c_*$ are all functions
+of the condensate data (in the simplest quartic bare-potential
+realisation one expects $K_\theta\sim\phi_0^2$ and
+$m_\varphi=\sqrt{2\lambda}\,\phi_0$, where
+$\phi_0=\sqrt{\mu^2/\lambda}$ is the bare field VEV;
+Section~\ref{sec:hbar_status}).
 Neither $G_N$ nor $S_0^{\rm EFT}$ is derived from the other; both are
 Level~B matching relations.
 But the fact that they share a common parametric origin means that
@@ -3096,7 +3099,8 @@ We write the reduced phase action in the schematic EFT form
     \int d^4X\;(\partial_A\theta)^2,
   \label{eq:S_theta_layer1}
 \end{equation}
-with $K_\theta\sim v_0^2$ in the simplest realisation.
+with $K_\theta\sim\phi_0^2$ in the simplest quartic bare-potential
+realisation, where $\phi_0=\sqrt{\mu^2/\lambda}$.
 
 \emph{Sharp lower bound on loop action
 (Cauchy--Schwarz inequality).}
@@ -3226,8 +3230,9 @@ The relevant matching relations are:
   G_N = \frac{c_*^4}{8\pi\,M_G^2},
   \label{eq:hbar_GN_same_condensate}
 \end{equation}
-where $M_G$, $K_\theta$, $m_\varphi$, and $c_*$ are all functions
-of $(v_0,\lambda,\alpha,\beta)$.
+where $M_G$, $K_\theta$, $m_\varphi$, and $c_*$ are functions
+of the underlying bare-condensate and EFT data
+$(\phi_0,\lambda,\alpha,\beta)$.
 ECT therefore suggests a structural consistency relation between the
 gravitational and quantum sectors: both originate in the same ordered
 condensate, even though their explicit matching relations are not yet
@@ -9596,12 +9601,10 @@ combination of $(u_0,\alpha,\beta)$ must therefore be treated as legacy
 shorthand or phenomenological input unless explicitly rederived inside
 the new EFT logic.
 
-\subsubsection*{Connection to legacy notation}
+\subsubsection*{Notation and scale separation}
 
-Earlier versions of ECT used a single scale $v_0=\langle\Phi\rangle$
-as shorthand for several conceptually distinct quantities.
-In the present formulation this shorthand is abandoned; the relevant
-objects are now clearly separated:
+The gravitational sector involves several conceptually distinct
+scales, which must not be conflated:
 \begin{equation}
   \label{eq:scale_separation}
   \underbrace{\phi_0}_{\text{bare scalar min.}},
@@ -9612,9 +9615,9 @@ objects are now clearly separated:
   \qquad
   \underbrace{M_G}_{\text{grav.\ stiffness}}.
 \end{equation}
-No direct algebraic identification between legacy $v_0$ and the
-new ordered-branch scales is assumed without explicit EFT derivation
-(see terminological note in Section~\ref{sec:constants}).
+No direct algebraic identification between the bare amplitude $\phi_0$
+and the ordered-branch EFT scales is assumed without explicit
+derivation~(Section~\ref{sec:three_scales}).
 
 \subsubsection*{Physical interpretation}
 
@@ -10669,7 +10672,7 @@ because the Euclidean / pre-Lorentzian ordering stage precedes it
 The grey region between the dashed $\Lambda$CDM Big Bang reference
 and the ECT ordering transition O(4)$\to$O(3) represents this
 pre-Lorentzian phase ($u_0=0$, no standard time coordinate).
-The far future separates Scenario~A ($v_0\to v_\infty$, eternal)
+The far future separates Scenario~A (ordered branch remains nonzero asymptotically, eternal)
 and Scenario~B ($u_0\to 0$, Big Crunch at $\sim10^{100}$\,yr).
 \textbf{Row~(c):} schematic ECT condensate evolution:
 $v_0(t)/v_\infty$ (Scen.~A, solid; Scen.~B, dotted),
@@ -14108,9 +14111,11 @@ galactic rotation curves from the ordered-branch amplitude variable $\phi$,
 the baryonic Tully--Fisher relation as an exact algebraic consequence
 of the critical infrared branch, cosmological inflation, dark energy,
 and dark-matter candidates from the condensate spectrum.
-All of these emerge from the variation of the condensate
-amplitude $v_0(r)$ and the anisotropy parameter $\chi = \alpha-\beta$
-on astrophysical and cosmological scales.
+All of these emerge from the macroscopic $\phi$-sector closure:
+the ordered-branch amplitude $u_0$ remains approximately frozen at its
+Planck-scale value, while the anisotropy parameter
+$\chi(X)=\alpha(X)-\beta(X)$ varies across astrophysical and
+cosmological scales~(Section~\ref{sec:mp_galactic}).
 
 Part~III returns to the microscopic quantum structure.
 Whereas Part~I derived key results of quantum mechanics from the condensate
@@ -17158,7 +17163,8 @@ The Goldstone mode $\pi^i_{\boldsymbol{k}}$ satisfies the mode equation
   \Omega_k^2(t) \;=\; c_*^2(t)\,k^2 + m_{\rm eff}^2(t)\,,
   \label{eq:mode_equation}
 \end{equation}
-where $m_{\rm eff}^2(t) = \lambda[v_0^2(\infty) - v_0^2(t)]$.
+where $m_{\rm eff}^2(t) = \lambda[\phi_0^2 - |\Phi(t)|^2]$
+and $\phi_0 = \sqrt{\mu^2/\lambda}$ is the equilibrium VEV.
 
 The expected particle number per mode is
 $\mathcal{N}_k = |\beta_k|^2$,
@@ -21954,7 +21960,7 @@ sector.}
 \textbf{\#} & \textbf{Route} &
 \textbf{Reason for termination / success} \\
 \hline
-1 & $v_0(r)$ & Radial mode Planck-heavy
+1 & Amplitude-route $u_0(r)$ & Radial mode Planck-heavy
   ($\xi \sim \ell_{\rm Pl}$); 5 sub-routes also fail \\
 2 & Linear $\chi$ theory & Fifth force excluded by Cassini
   ($\alpha^2 \sim 1/5 \gg 10^{-5}$) \\
