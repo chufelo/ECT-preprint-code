@@ -493,11 +493,11 @@ In ECT the answer is not a scalar vacuum expectation value
 (which would be $O(4)$-invariant and produce no symmetry breaking)
 but the \emph{gradient field} $\partial_A\Phi$,
 an $O(4)$ vector whose non-zero vacuum expectation value
-$\langle\partial_A\Phi\rangle = v_0\,\delta_{Aw}$
+$\langle\partial_A\Phi\rangle = u_0\,\delta_{Aw}$
 spontaneously selects the emergent time direction.
 This requires no new independent fields beyond the single scalar $\Phi$,
 and the orientational and amplitude modes $n_A, \sigma$ arise
-as its polar decomposition $\partial_A\Phi = (v_0+\sigma)n_A$
+as its polar decomposition $\partial_A\Phi = (u_0+\sigma)n_A$
 (Sec.~\ref{subsec:glossary}).
 
 \paragraph{Terminological note.}
@@ -570,7 +570,7 @@ Section~\ref{sec:mp_galactic} and
 Appendix~\ref{app:lof_full_derivation}, concerns the
 galactic phenomenology of ECT.  In the original formulation
 of the theory, flat rotation curves were parametrised through
-a spatially varying condensate amplitude $v_0(r)$.  A careful
+a spatially varying condensate amplitude $u_0(r)$.  A careful
 analysis reveals that this route encounters fundamental
 obstacles: the radial condensate mode is too heavy
 ($m_\sigma \sim M_{\rm Pl}$) for kpc-scale variations, and a
@@ -1238,7 +1238,7 @@ but requires separate dynamical analysis.
 P5 does not prescribe the magnitude, profile, or dynamical law of
 spatial variations in the ordered branch.
 It does not by itself derive $G_{\rm eff}(\mathbf{x})$,
-$v_0(\mathbf{x})$, or galaxy-by-galaxy scatter relations.
+$u_0(\mathbf{x})$, or galaxy-by-galaxy scatter relations.
 It states only that such non-uniform ordered configurations are
 structurally admissible within the $\Phi$-medium.
 
@@ -4415,7 +4415,7 @@ As a structural low-energy representation of the coherent branch,
 consider a complex condensate field
 
 \begin{equation}
-\Phi(X) = v_0(X)\,e^{i\theta(X)} .
+\Phi_{\rm eff}(X) = \rho(X)\,e^{i\theta(X)} .
 \end{equation}
 
 In the \emph{emergent complex ordered sector} (see
@@ -7399,14 +7399,14 @@ present stage~(Level~C; OP-generations).
 \paragraph{Possible condensate-sector corrections.}
 In the three-scale picture of ECT
 (Section~\ref{sec:three_scales}), the primary condensate amplitude
-$v_0 \sim \bar{M}_{\rm Pl}$ is separated from the electroweak scale
+$u_0 \sim \bar{M}_{\rm Pl}$ is separated from the electroweak scale
 $v_2 \approx 246\,$GeV by many orders of magnitude.
 If the two condensate sectors are not perfectly decoupled,
 higher-dimension operators suppressed by the primary condensate scale
 (or by the corresponding primary radial threshold) could induce small
 corrections to the low-energy Yukawa relations.
 After electroweak condensation these corrections would typically be
-organised as powers of $v_2/v_0$ in the effective expansion.
+organised as powers of $v_2/u_0$ in the effective expansion.
 This possibility is discussed qualitatively in
 Section~\ref{sec:ew_particles}; at the present stage ECT does not
 predict the size of such effects~(Level~C).
@@ -10666,9 +10666,9 @@ because the Euclidean / pre-Lorentzian ordering stage precedes it
 ($\Delta t\approx780\,\mathrm{Myr}$).
 The grey region between the dashed $\Lambda$CDM Big Bang reference
 and the ECT ordering transition O(4)$\to$O(3) represents this
-pre-Lorentzian phase ($v_0=0$, no standard time coordinate).
+pre-Lorentzian phase ($u_0=0$, no standard time coordinate).
 The far future separates Scenario~A ($v_0\to v_\infty$, eternal)
-and Scenario~B ($v_0\to 0$, Big Crunch at $\sim10^{100}$\,yr).
+and Scenario~B ($u_0\to 0$, Big Crunch at $\sim10^{100}$\,yr).
 \textbf{Row~(c):} schematic ECT condensate evolution:
 $v_0(t)/v_\infty$ (Scen.~A, solid; Scen.~B, dotted),
 $\phi(t)$ (dashed), and $G_{\rm eff}/G_N=e^{-\beta\phi}$ (dash-dot).
@@ -11046,7 +11046,7 @@ gauge-invariant perturbation analysis on top of the branch-emergence
 background and lies beyond the scope of the present work.
 
 \paragraph{Structural hints.}
-The pre-Lorentzian stage, in which $v_0(X)\approx\mathrm{const}$, may
+The pre-Lorentzian stage, in which $u_0(X)\approx\mathrm{const}$, may
 admit an approximately scale-free regime and therefore provide a
 natural route toward approximate scale-invariance of the primordial
 spectrum.
@@ -12229,7 +12229,7 @@ Table~\ref{tab:ect_hubble_jwst_summary}.
 \toprule
 \textbf{Status} & \textbf{Check} & \textbf{Key result} & \textbf{Ref.} \\
 \midrule
-\textsc{pass} & Condensate stability      & $V''(v_0)=2\mu^2>0$                                   & \S\ref{sec:ssb} \\
+\textsc{pass} & Condensate stability      & $V''(\phi_0)=2\mu^2>0$                                   & \S\ref{sec:ssb} \\
 \textsc{pass} & Ghost-freedom             & Phys.\ mode $\lambda>0$ at $\alpha>1$                 & \S\ref{sec:ssb} \\
 \textsc{pass} & LIV bound                 & $|\delta c/c|<10^{-15}$ (GW170817)                    & \S\ref{sec:qs_black_holes} \\
 \textsc{pass} & Causality                 & Retarded propagation of ordered branch (Level~A); directed decoherence $\Gamma_{\rm irr}\geq 0$ (Level~A)                & \S\ref{sec:arrow_of_time} \\
@@ -12324,7 +12324,7 @@ D4b & $Q_A=\partial_A\Phi$ implies integrability; $\pi_i=\partial_i\chi/u_0$ & A
 D4c & One surviving longitudinal scalar mode $\chi$ & B & Linear level; inverse-Higgs reduction & App.~\ref{app:goldstone_integrability} \\
 D4d & Minimal 3-component orientation EFT & B & Effective parametrisation & \ref{sec:goldstone_soft_eft} \\
 D4e & Three independent physical Goldstone particles & C & Not established; reduced by integrability & \ref{sec:goldstone_integrability_main} \\
-D5a & Graviton: induced linearised effective-metric perturbation on ordered branch & A & $v_0^2(\alpha-\beta)>0$ & 8 \\
+D5a & Graviton: induced linearised effective-metric perturbation on ordered branch & A & $u_0^2(\alpha-\beta)>0$ & 8 \\
 D5b & Fierz--Pauli form, TT projection, ghost-free counting at linearised level & B & TT gauge; explicit mode-counting from microscopic condensate variables open (OP3 partially resolved) & 8, App.~\ref{app:GN_derivation} \\
 D6 & Dirac form (structural reconstruction once spinorial fields admitted) & B & O(3) spinor rep.; not from bare bosonic action & \ref{sec:fermions}, \ref{sec:dirac_eq} \\
 D7 & Topological-sector mass ansatz $m_n \sim n\times1.6\,$GeV & C & Phenomenological dimensional estimate; integer topological charge follows from $\pi_3(S^3)=\mathbb{Z}$, but the mass law is not derived from topology alone & \ref{sec:predicted_states} \\
@@ -16915,7 +16915,7 @@ only to boundaries that effectively impose Dirichlet conditions on
 the ECT Goldstone sector.  Standard metallic laboratory plates do
 \emph{not} implement these boundary conditions---the $O(4)\to O(3)$
 Goldstone bosons carry no electric charge and couple to ordinary
-matter only gravitationally ($\sim v_0^{-2}$), so conducting plates
+matter only gravitationally ($\sim u_0^{-2}$), so conducting plates
 are transparent to them.  The factor $3/2$ derived below is therefore
 \emph{not} a prediction for the standard laboratory Casimir effect
 between metal plates.  It is a prediction for boundaries that
@@ -17083,7 +17083,7 @@ entropy to the coarse-grained reduced density matrix.
 \textbf{Step 2 (Initial condition from the phase transition --- structural argument).}
 The $O(4)\!\to\!O(3)$ phase transition provides a natural candidate
 for a low-entropy initial state: when the condensate forms in its
-ground state $|\Phi|=v_0$, the system is in a pure state and
+ground state $|\Phi|=\phi_0$, the system is in a pure state and
 $S_{\rm ent}(w_0)\approx0$ by energy minimisation.
 \textbf{Status (structural, not fully derived):}  this argument is
 plausible within the mean-field treatment of the transition, but a
@@ -19662,7 +19662,7 @@ $\delta\Phi$ denotes fluctuations over it.
 Projecting $\delta S_E = 0$ onto the collective variables $\psi_i$
 of the branch (e.g.\ the orientation modes $\delta n_i$, the amplitude
 fluctuation $\sigma$, or the macroscopic background variation
-$\phi \sim \delta v_0/v_0$) gives a reduced effective functional
+$\phi \sim \delta u_0/u_0$) gives a reduced effective functional
 $S_{\rm eff}[\psi_i]$ such that
 \begin{equation}
   \delta S_E[\Phi]\big|_{\rm branch} = 0
@@ -21464,7 +21464,7 @@ The three orientation modes $\delta n_i$ ($i = 1,2,3$) of the minimal EFT propag
 on the anisotropic condensate background with inverse propagator
 \begin{equation}
 G^{-1}(k)
-= v_0^2\bigl[\beta\,k_\perp^2 + \chi\,k_w^2\bigr]\,,
+= u_0^2\bigl[\beta\,k_\perp^2 + \chi\,k_w^2\bigr]\,,
 \end{equation}
 where $k_\perp^2 = k_x^2 + k_y^2 + k_z^2$. If $\chi(X)$
 varies slowly, the one-loop effective action for $\chi$ is
@@ -21475,10 +21475,10 @@ approximation.
 
 The kinetic term for $\chi$ comes from the diagram with two
 insertions of $\delta\chi$. The vertex is
-$\delta S/\delta\chi = -(v_0^2/2)(\partial_w\delta n_i)^2$.
+$\delta S/\delta\chi = -(u_0^2/2)(\partial_w\delta n_i)^2$.
 In the Fourier representation the two-insertion diagram gives:
 \begin{equation}
-Z(\chi) \sim N_G\,v_0^4
+Z(\chi) \sim N_G\,u_0^4
 \int\frac{d^4k}{(2\pi)^4}\;\frac{k_w^4}
 {\bigl[\beta k_\perp^2 + \chi k_w^2\bigr]^3}\,,
 \end{equation}
@@ -21497,7 +21497,7 @@ Then:
 \end{itemize}
 Collecting factors:
 \begin{equation}
-Z(\chi) \sim \frac{3\,v_0^4\,(\beta/\chi)^2
+Z(\chi) \sim \frac{3\,u_0^4\,(\beta/\chi)^2
 \cdot\sqrt{\beta/\chi}}{\beta^3}
 \int\frac{d^4p}{(2\pi)^4}\;\frac{p_w^4}{p^6}\,.
 \end{equation}
@@ -21513,7 +21513,7 @@ $\int_0^\Lambda dp\,p^3\cdot p^{-2} = \Lambda^2/2$.
 Combining:
 \begin{equation}
 \boxed{
-Z(\chi) = \frac{3\,v_0^4\,\Lambda^2}
+Z(\chi) = \frac{3\,u_0^4\,\Lambda^2}
 {128\pi^2\,\beta^{1/2}\,\chi^{5/2}}\,.
 }
 \label{eq:app_Z_chi}
@@ -21885,40 +21885,7 @@ level would constrain the parameter $\gamma$.
 
 %%% ===========================================================
 
-\paragraph{Predicted EFE suppression.}
-Table~\ref{tab:EFE_predictions} lists the predicted suppression
-of the condensate transition scale due to the external field effect
-for representative environments.
 
-\begin{longtable}{@{}llll@{}}
-\caption{Predicted suppression of the condensate scale due to the external field effect (EFE).}
-\label{tab:EFE_predictions}\\
-
-\toprule
-$g_{\rm ext}/g^\dagger$ &
-$r_{0,\rm eff}/r_{0,\rm iso}$ &
-$\Delta v_{\rm flat}$ &
-Environment \\
-\midrule
-\endfirsthead
-
-\toprule
-$g_{\rm ext}/g^\dagger$ &
-$r_{0,\rm eff}/r_{0,\rm iso}$ &
-$\Delta v_{\rm flat}$ &
-Environment \\
-\midrule
-\endhead
-
-0.008 & 0.996 & $-0.4\%$ & NGC 1052-DF2 \cite{vanDokkum2018} \\
-0.04 & 0.981 & $-1.9\%$ & Loose group \\
-0.12 & 0.947 & $-5.3\%$ & Typical galaxy group \\
-0.45 & 0.833 & $-16.7\%$ & Virgo cluster outskirts \\
-1.00 & 0.707 & $-29.3\%$ & Virgo cluster centre \\
-4.2 & 0.439 & $-56.1\%$ & Cluster core (strong EFE) \\
-
-\bottomrule
-\end{longtable}
 
 \subsection{Status of all results}
 \label{app:lof:status_table}
@@ -22554,8 +22521,8 @@ Let $\chi(X)$ be the local ordered-branch amplitude parameter
 Its vacuum value $\chi_\infty$ is matched to
 $(\alpha{-}\beta)$ in the homogeneous vacuum sector.
 Define $\phi\equiv\ln(\chi/\chi_\infty)$,
-$\bar{M}^2_{\rm Pl}\equiv v_0^2\chi_\infty$.
-Since $M^2_{\rm eff}\propto v_0^2\chi$:
+$\bar{M}^2_{\rm Pl}\equiv u_0^2\chi_\infty$.
+Since $M^2_{\rm eff}\propto u_0^2\chi$:
 \begin{equation}
   M^2_{\rm eff}(\phi) = \bar{M}^2_{\rm Pl}\,e^{\beta\phi}.
 \end{equation}
@@ -23220,10 +23187,10 @@ from the Dolan--Jackiw one-loop correction \cite{DolanJackiw1974}.
 The ordered phase ($\langle\Phi\rangle\neq0$) exists while
 $-\mu^2+\lambda T^2/6<0$, i.e.\ for $T<T_c$ with
 \begin{equation}
-  T_c = v_0\sqrt{6},
+  T_c = \phi_0\sqrt{6},
   \label{eq:Tc_value}
 \end{equation}
-where $v_0$ is the condensate VEV.
+where $\phi_0 = \sqrt{\mu^2/\lambda}$ is the bare field VEV.
 
 \paragraph{Critical shell.}
 Setting $T_{\rm loc}(\rho_c)=T_c$ and substituting
@@ -23231,7 +23198,7 @@ Eq.~\eqref{eq:Tolman_app}:
 \begin{equation}
 \rho_c
 =
-\frac{\hbar c}{2\pi\sqrt{6}\,k_B v_0}\,.
+\frac{\hbar c}{2\pi\sqrt{6}\,k_B \phi_0}\,.
 \label{eq:rho_c_app}
 \end{equation}
 Using the observational matching
@@ -23938,7 +23905,7 @@ Statement & Status & Reference \\
 \endlastfoot
 \multicolumn{3}{@{}l}{\textit{Derived from ECT structure (D)}} \\[2pt]
 Fundamental unitarity of condensate dynamics & Level~A & P2 \\
-Critical temperature $T_c = v_0\sqrt{6} \approx 5.96\times10^{18}$\,GeV & Level~A & Eq.~\eqref{eq:Tc_value} \\
+Critical temperature $T_c = \phi_0\sqrt{6} \approx 5.96\times10^{18}$\,GeV & Level~A & Eq.~\eqref{eq:Tc_value} \\
 Critical shell at $\rho_c = \ell_{\rm Pl}/\sqrt{3\pi} \approx 0.33\,\ell_{\rm Pl}$ & Level~B & Eq.~\eqref{eq:rho_c_analytic} \\[4pt]
 \multicolumn{3}{@{}l}{\textit{Conditional theorem (T)}} \\[2pt]
 State-dependence of emission channel required by unitarity + finite shell & Level~B & \S\ref{app:conditional_theorem} \\
@@ -23970,7 +23937,7 @@ Firewall vs.\ smooth-horizon consistency & Open & --- \\
 ECT black-hole information scenario.
 \textbf{(a)} Tolman temperature profile $T_{\rm loc}(\rho)$ near a
 non-extremal horizon, plotted in units of $T_c$ vs.\ $\rho/\rho_c$.
-The condensate critical temperature $T_c = v_0\sqrt{6}$ (dashed horizontal
+The condensate critical temperature $T_c = \phi_0\sqrt{6}$ (dashed horizontal
 line) is reached at the universal proper distance
 $\rho_c \approx 0.33\,\ell_{\rm Pl}$ (dotted vertical line), independently
 of the black-hole mass.
