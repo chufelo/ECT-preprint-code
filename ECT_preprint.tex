@@ -7531,9 +7531,10 @@ detailed form of the weak-interaction vertex.
 \paragraph{Connection to the fifth-force coupling.}
 The ECT-specific deformation
 $\Delta\mathcal{L} = \mu_5\,\bar\Psi\gamma^A n_A\Psi$
-(Section~\ref{sec:fifth_force_fermion}) also breaks left--right
-symmetry through the condensate direction $n_A$.
-The fifth-force coupling and the chiral gauge selection therefore
+(Section~\ref{sec:fifth_force_fermion}) also introduces a preferred
+direction into the fermion sector and thereby distinguishes the two
+chiral sectors geometrically.
+The fermion--condensate coupling and the chiral gauge selection therefore
 share a common structural origin in the preferred direction of the
 ordered branch.
 Whether the two effects are dynamically related or merely share the
@@ -8001,10 +8002,13 @@ completed:
   \item derive the Yukawa coupling pattern and the fermion mass
     hierarchy (currently: SM input, Level~C;
     Section~\ref{sec:yukawa});
-  \item derive the fifth-force coupling $\beta_5$ beyond the
-    dimensional estimate (currently: Level~B/C;
-    Section~\ref{sec:fifth_force_fermion},
-    Section~\ref{sec:fifth_force});
+  \item derive the coefficient of the fermion--condensate coupling
+    beyond the dimensional EFT estimate, equivalently derive
+    $\mu_5$ (or $\beta_5$ in the parameterisation
+    $\mu_5=\beta_5 m_f$) from condensate microdynamics
+    (currently: Level~B/C;
+    Section~\ref{sec:fifth_coupling},
+    Appendix~\ref{app:fifth_operator_classification});
   \item derive the chiral gauge selection $SU(2)_L$ dynamically
     (currently: Level~B structural possibility;
     Section~\ref{sec:chirality});
@@ -8070,7 +8074,7 @@ Subsection & Highest level & Summary \\
   & C
   & SM embedding; hierarchy and three generations
     open~(OP-Yukawa, OP-generations) \\
-\ref{sec:fifth_force_fermion}~Fifth-force coupling
+\ref{sec:fifth_force_fermion}~Fermion--condensate coupling
   & B/C
   & $\mu_5\,\bar\Psi\gamma^A n_A\Psi$; dimensional estimate;
     phenomenology in Section~\ref{sec:fifth_force} \\
@@ -8270,8 +8274,8 @@ The macroscopic ordered-branch amplitude variable $\phi$ produces two
 observationally distinct effects that must not be conflated:
 \begin{itemize}
 \item \textbf{Microscopic fifth force}
-  ($\mathcal{L}_5 = \beta\,\bar\Psi\gamma^A n_A\Psi$,
-  $\beta = m_f/\bar{M}_{\rm Pl}$):
+  ($\mathcal{L}_5 = \mu_5\,\bar\Psi\gamma^A n_A\Psi$,
+  $\mu_5 = \beta_5 m_f$, $\beta_5 \sim m_f/\bar{M}_{\rm Pl}$):
   a perturbative, Planck-suppressed additional interaction.
   It introduces preferred-direction corrections to the emergent
   Lorentz-invariant fermion sector.
@@ -8446,6 +8450,9 @@ For electrons: $\beta_e\sim m_e/\bar{M}_{\rm Pl}\sim2\times10^{-22}$.
 
 The fifth interaction is therefore naturally Planck-suppressed for
 all known particles, consistent with all current experimental bounds.
+For the operator-basis justification and dimensional counting behind
+this estimate, see Appendix~\ref{app:fifth_operator_classification}.
+
 Two caveats must be noted: (i) the fermion masses $m_f$ are
 SM-matched inputs, not derived from ECT; (ii) the electroweak
 scale $v_2$ is a matching constraint, not a first-principles
@@ -8473,9 +8480,9 @@ ECT contains two conceptually distinct ingredients:
 \begin{enumerate}
 \item a direct fermion coupling to the preferred condensate direction,
 \begin{equation}
-\mathcal{L}_5=\beta\,\bar\Psi\gamma^A n_A\Psi,
+\mathcal{L}_5=\mu_5\,\bar\Psi\gamma^A n_A\Psi,
 \qquad
-\beta \sim \frac{m_f}{M_{Pl}},
+\mu_5=\beta_5 m_f,\quad \beta_5 \sim \frac{m_f}{u_0},
 \end{equation}
 which is Planck-suppressed and relevant to spin-precession or
 equivalence-principle tests;
@@ -8555,7 +8562,7 @@ This allows a new interaction term
 \begin{equation}
 \mathcal{L}_5
 =
-\beta\,\bar{\Psi}\gamma^A n_A \Psi ,
+\mu_5\,\bar{\Psi}\gamma^A n_A \Psi ,
 \end{equation}
 
 representing a direct coupling between fermions and the condensate
@@ -14404,8 +14411,8 @@ an open problem.
 
 \paragraph{Distinction from the fifth force.}
 The galactic $\phi$-modification and the ECT fifth force
-($\mathcal{L}_5 = \beta\bar\Psi\gamma^A n_A\Psi$,
-$\beta \sim m_f/M_{\rm Pl}$) are \emph{different}
+($\mathcal{L}_5 = \mu_5\,\bar\Psi\gamma^A n_A\Psi$,
+$\mu_5 = \beta_5 m_f$, $\beta_5 \sim m_f/u_0$) are \emph{different}
 manifestations of the same condensate:
 the $\phi$-branch operates on kpc scales;
 the fifth force is Planck-suppressed and detectable at
