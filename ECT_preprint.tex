@@ -20902,8 +20902,15 @@ explored.
 
 
 %%% ===========================================================
-\subsection{Branch~1: the condensate-amplitude route $v_0(r)$}
+\subsection{Branch~1: the condensate-amplitude route $u_0(r)$}
 \label{app:lof:branch1}
+
+In this appendix it is important to distinguish the asymptotic
+ordered-branch amplitude $u_{0,\infty}$ from the bare-potential vacuum
+value $\phi_\infty\equiv\mu/\sqrt{\lambda}$.
+The Branch~1 route varies the ordered-branch amplitude $u_0(r)$; the
+quartic-potential scale $\phi_\infty$ enters only as the microscopic
+mass-setting scale in the simplest realisation.
 
 \subsubsection{Motivation and scope}
 
@@ -20911,7 +20918,7 @@ The gravitational matching derived in the main text
 (Section~\ref{sec:mp_galactic},
 eq.~\eqref{eq:Geff_phi}) implies
 \begin{equation}
-G_{\rm eff}(X) = \frac{1}{8\pi\,v_0^2(X)\,\chi(X)}\,,
+G_{\rm eff}(X) = \frac{1}{8\pi\,u_0^2(X)\,\chi(X)}\,,
 \qquad
 \chi(X) \equiv \alpha(X) - \beta(X)\,.
 \label{eq:app_Geff_v0}
@@ -20919,20 +20926,20 @@ G_{\rm eff}(X) = \frac{1}{8\pi\,v_0^2(X)\,\chi(X)}\,,
 This immediately suggests two logically distinct possibilities
 for obtaining a scale-dependent gravitational response:
 \begin{enumerate}
-\item a spatial variation of the condensate amplitude $v_0(X)$;
+\item a spatial variation of the condensate amplitude $u_0(X)$;
 \item a spatial variation of the ordered-branch amplitude parameter
   $\chi(X)$.
 \end{enumerate}
 
-At this stage the matching alone does not privilege $v_0$
+At this stage the matching alone does not privilege $u_0$
 over~$\chi$.
 That distinction emerges only after analysing their dynamics:
-$v_0$ is a heavy radial mode and cannot carry galactic-scale
+$u_0$ is a heavy radial mode and cannot carry galactic-scale
 structure, whereas $\chi$ is an order parameter and can
 remain soft near criticality.
 
 The first possibility is the most naive one: since
-$G_{\rm eff} \propto v_0^{-2}$, if $v_0(r)$ were smaller in
+$G_{\rm eff} \propto u_0^{-2}$, if $u_0(r)$ were smaller in
 galactic outskirts than near the centre, $G_{\rm eff}(r)$
 would increase with radius and could, in principle, mimic
 mass-discrepancy phenomenology.
@@ -20946,25 +20953,32 @@ profile ansatz, interpolation formula, or fitting strategy.
 
 We present three independent arguments.
 The first one is decisive; the other two show that the
-historical difficulties of the $v_0(r)$ route are not
+historical difficulties of the $u_0(r)$ route are not
 accidental but are symptoms of the same obstruction.
 
 \subsubsection{Argument 1 (decisive): the radial mode is
 Planck-heavy}
 
-The amplitude $v_0$ is not an arbitrary background function.
+The amplitude $u_0$ is not an arbitrary background function.
 It is the \emph{radial mode} of the condensate.
-Near the symmetry-broken vacuum, the relevant scalar potential
-has the Mexican-hat form
-$V(\Phi) = -\mu^2\Phi^2/2 + \lambda\Phi^4/4$,
-with vacuum expectation value
-$v_\infty = \mu/\sqrt{\lambda}$.
-Writing $v_0(r) = v_\infty + \delta v(r)$ and linearising the
-field equation around the vacuum gives
+In the simplest quartic realisation, the underlying bare scalar
+potential $V(\Phi) = -\mu^2\Phi^2/2 + \lambda\Phi^4/4$
+has vacuum expectation value
 \begin{equation}
--\beta\,\nabla^2(\delta v) + m_\sigma^2\,\delta v = J(r)\,,
+  \phi_\infty \equiv \frac{\mu}{\sqrt{\lambda}}\,.
+\end{equation}
+To test the amplitude-route hypothesis, write the ordered-branch
+amplitude as
+\begin{equation}
+  u_0(r) = u_{0,\infty} + \delta u(r)\,,
+\end{equation}
+where $u_{0,\infty}$ denotes the asymptotic value of the ordered-branch
+amplitude.
+Linearising the radial field equation around the vacuum then yields
+\begin{equation}
+-\beta\,\nabla^2(\delta u) + m_\sigma^2\,\delta u = J(r)\,,
 \qquad
-m_\sigma^2 = 2\lambda\,v_\infty^2\,,
+m_\sigma^2 = 2\lambda\,\phi_\infty^2\,,
 \label{eq:app_yukawa_v0}
 \end{equation}
 where $J(r)$ denotes whatever effective source term baryonic
@@ -20978,11 +20992,11 @@ Its Green-function solution has the universal asymptotic form
 \emph{independently of the detailed shape of the source}.
 
 This already proves the key point: the long-range behaviour
-of $v_0(r)$ is fixed by the mass of the radial mode, not by
+of $u_0(r)$ is fixed by the mass of the radial mode, not by
 our choice of profile.
 
 For canonical ECT normalisation one has
-$v_\infty \sim M_{\rm Pl}$, $\lambda \sim 10^{-2}$, hence
+$\phi_\infty \sim M_{\rm Pl}$, $\lambda \sim 10^{-2}$, hence
 \begin{equation}
 m_\sigma \sim \sqrt{2\lambda}\,M_{\rm Pl}
 \sim 0.14\,M_{\rm Pl}\,,
@@ -20991,7 +21005,7 @@ m_\sigma \sim \sqrt{2\lambda}\,M_{\rm Pl}
 \sim 7\,\ell_{\rm Pl}
 \sim 10^{-34}\,\text{m}\,.
 \end{equation}
-Therefore any spatial variation of $v_0$ is exponentially
+Therefore any spatial variation of $u_0$ is exponentially
 suppressed beyond roughly the Planck scale.
 
 By contrast, galactic phenomenology would require variation
@@ -21005,7 +21019,7 @@ physical radial mass scale of the theory.
 
 This mismatch is fatal.
 It does not say that a specific ansatz is wrong.
-It says that \emph{no smooth kpc-scale profile} $v_0(r)$ can
+It says that \emph{no smooth kpc-scale profile} $u_0(r)$ can
 solve the ECT field equation with the physical radial mass
 $m_\sigma$.
 
@@ -21013,7 +21027,7 @@ The source term $J(r)$ has been left generic on purpose.
 The conclusion does not depend on the detailed
 matter-to-condensate coupling, as long as the radial sector
 remains governed by a local second-order equation with mass
-$m_\sigma^2 = V''(v_\infty)$.
+$m_\sigma^2 = V''(\phi_\infty)$.
 At a local massive radial field, the asymptotic behaviour is
 always Yukawa.
 
@@ -21023,13 +21037,13 @@ not the core problem}
 The second argument is weaker logically than the first, but
 it is important conceptually.
 
-From $G_{\rm eff} \propto v_0^{-2}$, different assumed
+From $G_{\rm eff} \propto u_0^{-2}$, different assumed
 profiles generate different effective gravitational laws:
 \begin{align}
-v_0 \propto [1+(r/r_0)^2]^{-1/2}
+u_0 \propto [1+(r/r_0)^2]^{-1/2}
   &\quad\Longrightarrow\quad
   G_{\rm eff} \propto 1+(r/r_0)^2\,,\\
-v_0 \propto [1+(r/r_0)^2]^{-1/4}
+u_0 \propto [1+(r/r_0)^2]^{-1/4}
   &\quad\Longrightarrow\quad
   G_{\rm eff} \propto \sqrt{1+(r/r_0)^2}\,.
 \end{align}
@@ -21045,14 +21059,14 @@ proof, but as evidence that the route had already lost contact
 with the underlying dynamics.
 
 \subsubsection{Argument 3: even a hypothetical light
-$v_0$-mode would generate an excluded fifth force}
+$u_0$-mode would generate an excluded fifth force}
 
 Suppose, for the sake of argument, that one somehow evaded
 Argument~1 and engineered a very light amplitude mode capable
 of varying over galactic scales.
 Then a second problem appears immediately.
 
-Because $G_{\rm eff} \propto v_0^{-2}$, the field $v_0$ would
+Because $G_{\rm eff} \propto u_0^{-2}$, the field $u_0$ would
 behave as a scalar-tensor mediator coupled directly to the
 strength of gravity.
 A light scalar of this kind generically produces an additional
@@ -21065,10 +21079,10 @@ Unscreened or weakly screened long-range scalar forces are
 tightly constrained by Solar-System and equivalence-principle
 tests, including Cassini ($|\gamma-1| < 2.3\times10^{-5}$)
 and MICROSCOPE ($\eta < 10^{-15}$).
-Therefore even a hypothetical successful galactic $v_0(r)$
+Therefore even a hypothetical successful galactic $u_0(r)$
 profile would still face a severe fifth-force problem.
 
-The $v_0$-route is thus doubly obstructed:
+The $u_0$-route is thus doubly obstructed:
 \emph{(i)} dynamically, because the radial mode is
 Planck-heavy;
 \emph{(ii)} phenomenologically, because a light amplitude
@@ -21103,7 +21117,7 @@ Correction $\delta\beta/\beta_0 \sim 10^{-88}$ at galactic
 scales.
 
 \emph{(e) Non-linear effects.}
-$\delta v_0/v_0 \sim 10^{-6}/r_{\rm kpc}$ --- tiny;
+$\delta u_0/u_0 \sim 10^{-6}/r_{\rm kpc}$ --- tiny;
 non-linear corrections are even smaller.
 
 \subsubsection{Conclusion of Branch~1}
@@ -21124,22 +21138,22 @@ Even if one tried to rescue the route by postulating an
 anomalously light amplitude mode, one would generically obtain
 an unacceptable long-range scalar fifth force.
 
-Hence the amplitude branch $v_0(r)$ must be abandoned as the
+Hence the amplitude branch $u_0(r)$ must be abandoned as the
 origin of galactic weak-field modifications.
 }}
 \end{center}
 
 \subsubsection{Why the galactic branch is built on $\chi(X)$,
-not on $v_0(X)$}
+not on $u_0(X)$}
 
 Although the gravitational matching depends on the product
-$v_0^2(X)\chi(X)$, the two factors have very different
+$u_0^2(X)\chi(X)$, the two factors have very different
 dynamical status
 (as already noted in the main text,
-Section~\ref{sec:mp_galactic}: ``$v_0$ is treated as
+Section~\ref{sec:mp_galactic}: ``$u_0$ is treated as
 approximately constant [\ldots] while $\chi(X)$ may vary
 slowly on astrophysical or cosmological scales'').
-The condensate amplitude $v_0$ is the heavy radial mode
+The condensate amplitude $u_0$ is the heavy radial mode
 and cannot vary on galactic scales (as demonstrated above),
 whereas $\chi = \alpha - \beta$ measures the degree of
 Lorentz ordering and remains a viable soft field near
@@ -21147,13 +21161,16 @@ criticality.
 
 Therefore, on galactic scales one sets
 \begin{equation}
-v_0(X) \simeq v_\infty
+u_0(X) \simeq u_{0,\infty}
 \qquad\text{(frozen amplitude on galactic scales)}\,,
 \end{equation}
-so that
+Here $u_{0,\infty}$ denotes the asymptotic ordered-branch amplitude;
+it should not be identified algebraically with the bare vacuum value
+$\phi_\infty=\mu/\sqrt{\lambda}$ without an explicit EFT derivation.
+It follows that
 \begin{equation}
 G_{\rm eff}(X) \simeq
-\frac{1}{8\pi\,v_\infty^2\,\chi(X)}\,.
+\frac{1}{8\pi\,u_{0,\infty}^2\,\chi(X)}\,.
 \end{equation}
 The only remaining viable source of large-scale variation
 in the weak-field sector is the ordered-branch amplitude variable
@@ -21161,21 +21178,21 @@ $\phi(X) = \frac{1}{\beta}\ln(u(X)/u_\infty)$
 (where the legacy variable $\chi$ is identified with $u$ in the present notation).
 
 A possible objection: why not keep working with the product
-$v_0^2(X)\chi(X)$ directly?
-The reason is that $v_0^2\chi$ is the correct coefficient in
+$u_0^2(X)\chi(X)$ directly?
+The reason is that $u_0^2\chi$ is the correct coefficient in
 the gravitational action, but it is not the most informative
 dynamical variable.
-Its two factors have inequivalent physics: $v_0$ belongs to
+Its two factors have inequivalent physics: $u_0$ belongs to
 the heavy radial sector, while $\chi$ belongs to the soft
 order-parameter sector.
 Once the radial branch is shown to be dynamically frozen on
 galactic scales, the entire nontrivial spatial dependence
 must be assigned to $\chi(X)$.
 
-The transition from the full combination $v_0^2(X)\chi(X)$
+The transition from the full combination $u_0^2(X)\chi(X)$
 to the reduced galactic variable $\chi(X)$ is therefore not a
 matter of convenience but a consequence of scale separation.
-The amplitude $v_0$ is frozen by its Planck-scale mass,
+The amplitude $u_0$ is frozen by its Planck-scale mass,
 whereas $\chi$ remains the only plausible soft degree of
 freedom capable of generating kpc-scale modifications of
 gravity.
