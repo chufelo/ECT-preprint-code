@@ -279,7 +279,8 @@ $N_e$ & Inflationary e-folds (external; not used in ECT) & --- \\
 $w_0,w_a$ & Dark-energy EOS parameters & --- \\
 $g_\dagger$ & Critical acceleration: $g_\dagger\propto cH_0$ & m\,s$^{-2}$ \\[4pt]
 \multicolumn{3}{@{}l}{\textit{Fifth force (Section~\ref{sec:fifth_force})}} \\[2pt]
-$\beta_5$ & Fifth-force coupling & dimensionless \\
+$\mu_5$ & Dimensionful coefficient of the ECT-specific fermion--condensate operator & GeV \\
+$\beta_5$ & Dimensionless fifth-coupling ratio defined by $\mu_5=\beta_5 m_f$ & dimensionless \\
 $\omega_5$ & Spin-precession frequency & rad\,s$^{-1}$ \\
 $\eta$ & E\"{o}tv\"{o}s parameter & dimensionless \\
 \end{longtable}
@@ -5361,8 +5362,8 @@ three categories of excitations
 
 \noindent
 The only currently identified ECT-specific fermion interaction beyond
-the Standard Model is the fifth-force coupling
-$\beta_5\bar\Psi\gamma^A n_A\Psi$
+the Standard Model is the fermion--condensate coupling
+$\mu_5\,\bar\Psi\gamma^A n_A\Psi$
 (Section~\ref{sec:fifth_force_fermion}).
 A condensed overview with status table is given in the chapter
 summary~(Section~\ref{sec:particle_summary}).
@@ -6446,7 +6447,8 @@ Section~\ref{sec:fermions}, which covers:
 \end{itemize}
 A currently identified ECT-specific fermion--condensate interaction
 beyond the Standard Model embedding is
-$\Delta\mathcal{L} = \beta_5\,\bar\Psi\gamma^A n_A\Psi$.
+$\Delta\mathcal{L} = \mu_5\,\bar\Psi\gamma^A n_A\Psi$
+(with $\mu_5=\beta_5 m_f$, $\beta_5\sim m_f/u_0$).
 Its structural form is introduced in
 Section~\ref{sec:fifth_force_fermion}, while its detailed
 phenomenology, observational constraints, and falsification tests are
@@ -6973,7 +6975,7 @@ categories introduced in Section~\ref{sec:particle_structure}.
 \paragraph{ECT-specific observational handles.}
 The main currently identified ECT-specific fermion interaction beyond
 the Standard Model embedding is the fermion--condensate coupling
-$\beta_5\bar\Psi\gamma^A n_A\Psi$
+$\mu_5\,\bar\Psi\gamma^A n_A\Psi$
 (Section~\ref{sec:fifth_force_fermion}; detailed phenomenology in
 Section~\ref{sec:fifth_force}).
 In the gravitational sector, the main discriminants are the
@@ -7069,11 +7071,13 @@ under the spinor representation of the residual O(3) symmetry
 \label{eq:S_fermion}
 S_{\rm ECT+f} = S_{\rm ECT} + \int d^4X\sqrt{g}\left[
 i\bar\Psi\gamma^\mu\nabla_\mu\Psi - y\bar\Psi\Phi\Psi
-- \beta_5\bar\Psi\gamma^A n_A\Psi
+- \mu_5\,\bar\Psi\gamma^A n_A\Psi
 \right],
 \end{equation}
-where $y$ is the Yukawa coupling, $\beta_5$ is the fifth-force
-coupling (Section~\ref{sec:fifth_force}), and the gamma matrices
+where $y$ is the Yukawa coupling, and $\mu_5$ is the dimensionful
+coefficient of the ECT-specific fermion--condensate coupling
+(equivalently $\mu_5=\beta_5 m_f$ with dimensionless $\beta_5$;
+Section~\ref{sec:fifth_coupling}). The gamma matrices
 $\gamma^\mu$ are defined in the Lorentzian geometry induced by the
 condensate.
 \end{enumerate}
@@ -7400,7 +7404,7 @@ interpretation, not as a completed explicit derivation.
 \paragraph{ECT-specific fermion--condensate coupling.}
 Beyond the Dirac form itself, the ordered branch admits an additional
 fermion--condensate coupling
-$\Delta\mathcal{L} = \beta_5\,\bar\Psi\gamma^A n_A\Psi$.
+$\Delta\mathcal{L} = \mu_5\,\bar\Psi\gamma^A n_A\Psi$.
 Its status within the fermionic reconstruction is discussed in
 Section~\ref{sec:fifth_force_fermion}, while its phenomenology is
 developed separately in Section~\ref{sec:fifth_force}.
@@ -7526,7 +7530,7 @@ detailed form of the weak-interaction vertex.
 
 \paragraph{Connection to the fifth-force coupling.}
 The ECT-specific deformation
-$\Delta\mathcal{L} = \beta_5\,\bar\Psi\gamma^A n_A\Psi$
+$\Delta\mathcal{L} = \mu_5\,\bar\Psi\gamma^A n_A\Psi$
 (Section~\ref{sec:fifth_force_fermion}) also breaks left--right
 symmetry through the condensate direction $n_A$.
 The fifth-force coupling and the chiral gauge selection therefore
@@ -7740,41 +7744,62 @@ Neutrino mass mechanism
 \subsection{ECT-specific fermion--condensate coupling}
 \label{sec:fifth_force_fermion}
 
-\textit{Status: Level~B/C.
-The fifth-force coupling is the main ECT-specific fermion interaction
-currently identified beyond the Standard Model embedding.
-Its strength is a dimensional estimate; full phenomenology is
-developed in Section~\ref{sec:fifth_force}.}
+\textit{Status: layered A/B/C bridge.
+The existence of the preferred direction $n_A$ after $O(4)\to O(3)$
+is a structural Level~A consequence of the ordered branch.
+Within a parity-even, zeroth-derivative fermionic EFT, the operator
+$n_A\bar\Psi\gamma^A\Psi$ is the leading ECT-specific fermion bilinear
+(Level~A/B conditional on the EFT basis).
+Its coefficient is not derived from condensate microphysics.
+The full operator analysis is given in
+Section~\ref{sec:fifth_coupling} and
+Appendix~\ref{app:fifth_operator_classification};
+full phenomenology is developed in Section~\ref{sec:fifth_force}.}
 
-This subsection introduces the structural form and status of the
-ECT-specific fermion--condensate coupling.
+This subsection gives the fermionic-sector bridge to the
+ECT-specific preferred-direction coupling.
+Its detailed operator classification, dimensional analysis,
+Lorentzian reduction, and observability caveats are developed in
+Section~\ref{sec:fifth_coupling} and
+Appendix~\ref{app:fifth_operator_classification}.
 Its detailed phenomenology, observational constraints, and
 falsification tests are developed separately in
 Section~\ref{sec:fifth_force}.
 
 The symmetry breaking $O(4)\to O(3)$ introduces a preferred
-condensate direction $n_A \equiv \partial_A\Phi/|\partial\Phi|$ in
-the effective low-energy theory.
-A leading rotationally invariant deformation of the Dirac operator
-compatible with the ordered branch is:
+condensate direction
 \begin{equation}
-  \Delta\mathcal{L} = \beta_5\,\bar\Psi\gamma^A n_A\Psi,
-  \qquad
-  \beta_5 \sim \frac{m_f}{\bar{M}_{\rm Pl}}
-  \quad\text{(dimensional estimate)}.
+  n_A \equiv \frac{\partial_A\Phi}{|\partial\Phi|},
+\end{equation}
+which is a derived orientational variable of the ordered branch.
+Within the parity-even, zeroth-derivative low-energy fermionic EFT,
+the leading ECT-specific deformation of the Dirac operator is
+\begin{equation}
+  \Delta\mathcal{L}
+  =
+  \mu_5\,\bar\Psi\gamma^A n_A\Psi,
   \label{eq:fifth_force_fermion}
 \end{equation}
-This scaling should be read as a dimensional estimate within the
-low-energy EFT, not as a first-principles derivation from the
-microscopic condensate action.
+where $\mu_5$ has mass dimension one.
+
+Equivalently, one may parameterise
+\begin{equation}
+  \mu_5 = \beta_5\,m_f,
+  \qquad
+  \beta_5 \sim \frac{m_f}{u_0},
+  \qquad
+  \mu_5 \sim \frac{m_f^2}{u_0},
+\end{equation}
+as an EFT-level dimensional estimate.
+This scaling should be read as a low-energy consistency estimate, not
+as a first-principles derivation from the microscopic condensate
+action.
 
 In the exact Lorentz-symmetric low-energy limit this operator would be
 absent.
-Its presence therefore parameterises a residual sensitivity of the
+Its presence therefore parametrises a residual sensitivity of the
 fermion sector to the preferred condensate direction.
 
-This coupling introduces preferred-direction effects in the ordered
-branch.
 Its main structural features are:
 \begin{itemize}
   \item it introduces preferred-direction corrections to the emergent
@@ -7783,30 +7808,30 @@ Its main structural features are:
   \item it is absent in the minimal Standard Model fermion sector and
     therefore represents a genuinely ECT-specific deformation of the
     low-energy Dirac operator;
-  \item its strength is expected to scale with the fermion mass through
-    the dimensional estimate $\beta_5 \sim m_f/\bar{M}_{\rm Pl}$.
+  \item its coefficient is Planck-suppressed at the EFT level, with
+    the dimensionless ratio expected to scale as
+    $\beta_5\sim m_f/u_0$.
 \end{itemize}
 As discussed in Section~\ref{sec:chirality}, this coupling shares
 a common geometric source with the chiral-selection problem:
 both are controlled by the preferred condensate direction $n_A$ of
 the ordered branch.
 
-The detailed phenomenology of this operator---including spin precession,
-equivalence-principle tests, and astrophysical constraints---is
-developed in Section~\ref{sec:fifth_force}.
-The falsification entry F4 in Table~\ref{tab:ECT_predictions}
-summarises the main experimental tests.
-
 \paragraph{What is and is not derived here.}
-The operator form $\beta_5\,\bar\Psi\gamma^A n_A\Psi$ is introduced as
-an allowed low-energy deformation of the Dirac operator on the ordered
-branch.
-Its presence is structurally motivated by the preferred condensate
-direction $n_A$, but neither the operator coefficient $\beta_5$ nor
-its exact symmetry origin has been derived from the microscopic
-condensate dynamics.
-At present, the estimate $\beta_5 \sim m_f/\bar{M}_{\rm Pl}$ should be
-read as phenomenological dimensional scaling.
+What is structurally established is the existence of the preferred
+direction $n_A$ and, within the stated EFT basis, the admissibility of
+the operator $n_A\bar\Psi\gamma^A\Psi$ as the leading parity-even
+zeroth-derivative deformation of the fermion sector.
+What is not derived is the microscopic coefficient of this operator.
+Accordingly, the estimate
+$\beta_5\sim m_f/u_0$,
+equivalently
+$\mu_5\sim m_f^2/u_0$,
+should be read as EFT-level dimensional scaling.
+The physical observability of the coupling in the Lorentzian low-energy
+limit depends on additional issues such as species dependence,
+background gradients, and environment; these are analysed in
+Section~\ref{sec:fifth_coupling}.
 
 \paragraph{Status summary.}
 \begin{center}
@@ -7815,15 +7840,18 @@ read as phenomenological dimensional scaling.
 \hline
 Statement & Status & Comment \\
 \hline
-Operator form $\beta_5\bar\Psi\gamma^A n_A\Psi$
-  as an allowed low-energy deformation
-  & B & Structural EFT operator on the ordered
-    branch \\
-Coupling strength $\beta_5 \sim m_f/\bar{M}_{\rm Pl}$
-  & B/C & Dimensional estimate only \\
+Preferred direction $n_A$ after SSB
+  & A & Structural consequence of $O(4)\to O(3)$ \\
+Leading parity-even zeroth-derivative operator
+  $n_A\bar\Psi\gamma^A\Psi$
+  & A/B & Strict within the stated EFT basis \\
+Dimensionful coefficient $\mu_5$
+  & A & Required by mass dimension counting \\
+$\beta_5\sim m_f/u_0$, $\mu_5\sim m_f^2/u_0$
+  & B & Dimensional EFT estimate \\
 Common geometric source with chiral asymmetry
   & B & Both controlled by $n_A$ \\
-Full $\beta_5$ derivation from condensate dynamics
+Coefficient derived from condensate dynamics
   & Open & Section~\ref{sec:fermion_open} \\
 \hline
 \end{tabular}
@@ -8044,7 +8072,7 @@ Subsection & Highest level & Summary \\
     open~(OP-Yukawa, OP-generations) \\
 \ref{sec:fifth_force_fermion}~Fifth-force coupling
   & B/C
-  & $\beta_5\bar\Psi\gamma^A n_A\Psi$; dimensional estimate;
+  & $\mu_5\,\bar\Psi\gamma^A n_A\Psi$; dimensional estimate;
     phenomenology in Section~\ref{sec:fifth_force} \\
 \ref{sec:fermion_statistics}~Spin-statistics
   & A (topology) / B (compatibility)
@@ -8788,7 +8816,7 @@ establish:
     $\Phi_{\rm ew}$; spin-statistics from two distinct $\mathbb{Z}_2$
     structures~(Section~\ref{sec:fermions}).
   \item The ECT-specific fermion--condensate coupling
-    $\beta_5\bar\Psi\gamma^A n_A\Psi$: the only currently identified
+    $\mu_5\,\bar\Psi\gamma^A n_A\Psi$: the only currently identified
     interaction beyond the SM embedding; Planck-suppressed, long-range,
     with predicted spin-precession and E\"otv\"os signatures
     (Section~\ref{sec:fifth_force}).
@@ -11497,21 +11525,28 @@ in ECT, not as uniquely established microscopic channels
 of the theory or as a completed derivation from bare~P3.}
 
 \textbf{(i) Baryon number violation.}
-The fifth-force interaction $\mathcal{L}_5=\beta_5\bar\Psi\gamma^A n_A\Psi$
-(Section~\ref{sec:fifth_force}) couples fermions to the condensate
-orientation~$n^A$.  At non-zero temperature, sphaleron-like processes
-in the condensate background can convert lepton asymmetry into baryon
-asymmetry via the electroweak anomaly (standard leptogenesis).
-Alternatively, topologically nontrivial condensate sectors
-(Section~\ref{sec:predicted_states}) may provide additional
-nonperturbative channels for baryon-number-violating transitions.
-Their explicit microscopic realisation remains open.
+The ECT-specific fermion--condensate coupling
+$\mathcal{L}_5=\mu_5\,\bar\Psi\gamma^A n_A\Psi$
+(Section~\ref{sec:fifth_coupling})
+provides an additional preferred-direction structure in the matter
+sector, but it is not by itself a demonstrated microscopic source of
+baryon-number violation.
+At present, baryon-number violation in the ECT baryogenesis closure is
+assumed to proceed through standard sphaleron/leptogenesis channels,
+possibly modified by the ordered condensate background.
+Whether topologically nontrivial condensate sectors
+(Section~\ref{sec:predicted_states}) provide additional
+nonperturbative channels remains open.
 
 \textbf{(ii) CP violation.}
-The condensate direction $n^A$ explicitly breaks O(4) to O(3) and
-thereby Lorentz symmetry; when combined with CPT invariance this
-implies CP violation proportional to the condensate gradient
-$\partial_A n^B$.  Additionally, the right-handed neutrino mass
+ECT does not yet derive a unique microscopic CP-violating source from
+the preferred-direction coupling alone.
+In the present closure, the CP-violating ingredient is taken to arise
+from the same complex phases that enter standard leptogenesis through
+the right-handed neutrino sector.
+The ordered condensate background may modify that environment, but this
+has not been derived from first principles.
+Additionally, the right-handed neutrino mass
 $M_R\sim10^9$~GeV generated by Yukawa coupling to the condensate
 ($M_R = y_R v_2$) provides the complex phases needed for leptogenesis,
 as in the standard see-saw mechanism.
