@@ -4988,6 +4988,148 @@ following subsections.
 This transition marks the boundary between embedded SM interactions
 and genuinely ECT-specific matter-sector deformation.
 
+
+\subsection{The ECT-specific fermion--condensate coupling}
+\label{sec:fifth_coupling}
+
+\textit{Status: Level~B structural EFT deformation.
+The operator below is the leading symmetry-allowed fermion--condensate
+coupling on the ordered branch.
+It is structurally admissible once the preferred direction $n_A$ and
+fermion propagation in the ordered-branch background are admitted.
+Neither the operator nor its coefficient is derived from P1--P5 as a
+theorem; they are identified by EFT-level and dimensional analysis.}
+
+\paragraph{Structural origin.}
+As discussed in Section~\ref{sec:condensate_symmetries}, the symmetry
+breaking $O(4)\to O(3)$ selects a preferred direction
+\begin{equation}
+  n_A \equiv \frac{\partial_A\Phi}{|\partial\Phi|}
+\end{equation}
+in the ordered background.
+This is not a gauge degree of freedom and not an internal multiplet
+index; it is a derived orientational variable of the ordered branch
+(item~(4) in the structural decomposition of
+Section~\ref{sec:condensate_symmetries}).
+
+\paragraph{Leading symmetry-allowed operator.}
+A fermion field $\Psi$ propagating in the ordered-branch background can
+couple to $n_A$ through the leading Lorentz-scalar bilinear that
+involves the condensate direction.
+On EFT grounds the simplest such operator is
+\begin{equation}
+  \mathcal{L}_5
+  =
+  \beta\,\bar{\Psi}\gamma^A n_A\,\Psi,
+  \label{eq:L5_operator}
+\end{equation}
+where $\beta$ is a dimensionless coupling constant.
+
+\paragraph{Why this is ECT-specific.}
+This operator has no Standard Model counterpart.
+In the SM, no preferred spacetime direction is available; in ECT,
+$n_A$ is a structural remnant of the ordered-branch geometry.
+The operator~\eqref{eq:L5_operator} is therefore the main currently
+identified ECT-specific deformation of the fermionic interaction sector
+beyond the Standard Model embedding of
+Section~\ref{sec:matter_couplings}.
+It should be understood as a \emph{structurally allowed} EFT-level
+coupling, not as a necessary consequence derived from the bare
+condensate action.
+
+\paragraph{Reduction in the broken phase.}
+In the broken-symmetry phase of the ordered branch, the preferred
+direction takes the form
+\begin{equation}
+  n_A = (0,0,0,1),
+\end{equation}
+aligned with the emergent temporal coordinate $w$.
+The coupling then reduces to
+\begin{equation}
+  \mathcal{L}_5
+  =
+  \beta\,\bar{\Psi}\gamma^w\Psi,
+\end{equation}
+which represents a direct coupling between fermions and the temporal
+orientation of the condensate background.
+
+\paragraph{Dimensional origin of the coupling.}
+The operator can be written in the form
+\begin{equation}
+  \mathcal{L}_5
+  = \frac{1}{u_0}\,\bar{\Psi}\gamma^A n_A\,\Psi,
+  \label{eq:L5_dim}
+\end{equation}
+where $u_0\sim\bar{M}_{\rm Pl}\approx2.4\times10^{18}$\,GeV is the
+UV condensate amplitude
+(Section~\ref{sec:three_scales}).
+If the second condensate transition exists~(OP-EW), fermions acquire
+masses via the Yukawa mechanism $m_f = y_f v_2$, and the effective
+coupling becomes
+\begin{equation}
+  \boxed{\beta \sim \frac{m_f}{u_0}
+  \sim \frac{m_f}{\bar{M}_{\rm Pl}}}
+  \qquad\text{(Level~B: dimensional analysis).}
+  \label{eq:fifth_coupling}
+\end{equation}
+For electrons: $\beta_e\sim m_e/\bar{M}_{\rm Pl}\sim2\times10^{-22}$.
+The coupling is therefore naturally Planck-suppressed for all known
+particles, consistent with all current experimental bounds.
+
+Two caveats must be noted:
+(i)~the fermion masses $m_f$ are SM-matched inputs, not derived from
+ECT;
+(ii)~the electroweak scale $v_2$ is a matching constraint, not a
+first-principles result~(Section~\ref{sec:three_scales}).
+A first-principles derivation of $\beta$ from condensate microdynamics
+remains open.
+
+\paragraph{Preferred-direction effects.}
+The operator~\eqref{eq:L5_operator} introduces preferred-direction
+corrections to the emergent Lorentz-invariant matter dynamics at the
+EFT level.
+It parametrises a residual departure from exact Lorentz invariance in
+the ordered-branch fermion sector.
+This preferred-direction structure is absent in the exact
+Lorentz-symmetric limit and constitutes one of the distinctive
+signatures of the ECT ordered branch.
+
+\paragraph{What is strict and what is embedded.}
+The existence of the preferred direction $n_A$ after $O(4)\to O(3)$
+is a strict structural consequence of the ordered branch~(Level~A).
+The identification of the leading symmetry-allowed operator and its
+Planck-suppressed dimensional estimate are EFT-level statements~(Level~B).
+The fermion masses $m_f$ entering the coupling are SM-matched
+inputs~(Level~C).
+A first-principles derivation of the operator coefficient from
+condensate microphysics has not been completed.
+
+\paragraph{Status summary.}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{6.0cm}p{2.0cm}p{5.0cm}}
+\hline
+Statement & Status & Comment \\
+\hline
+Preferred direction $n_A$ exists after SSB
+  & A & Structural consequence of $O(4)\to O(3)$ \\
+$\bar\Psi\gamma^A n_A\Psi$ is the leading
+  symmetry-allowed operator
+  & B & EFT classification \\
+Operator is ECT-specific (no SM counterpart)
+  & A & Structural: no preferred direction in SM \\
+Coupling $\beta\sim m_f/\bar{M}_{\rm Pl}$
+  & B & Dimensional analysis \\
+Planck suppression for all known particles
+  & B & Consistent with bounds \\
+Fermion masses $m_f$ as inputs
+  & C & SM-matched, not ECT-derived \\
+Coefficient derived from condensate microdynamics
+  & Open & \\
+\hline
+\end{tabular}
+\end{center}
+
 \subsection{Gauge sector summary, structural observations,
 and the open programme}
 \label{sec:gauge_summary}
@@ -8195,7 +8337,7 @@ scale~\eqref{eq:v2_GF} and $y_f$ is an external SM input.
 The effective fifth-force coupling then becomes
 \begin{equation}
   \beta \sim \frac{m_f}{u_0} \sim \frac{m_f}{\bar{M}_{\rm Pl}},
-  \label{eq:fifth_coupling}
+  \label{eq:fifth_coupling_OLD}
 \end{equation}
 giving
 \begin{equation}
