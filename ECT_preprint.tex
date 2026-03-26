@@ -10512,6 +10512,39 @@ effective gravitational dynamics studied below.
 \label{sec:mp_gravity}
 % ==============================================================
 
+\textit{Scope and status.
+This section constructs the macroscopic gravitational dynamics of the
+ordered condensate branch.  It does not claim a first-principles
+derivation of the full nonlinear field equations directly from
+Euclidean microdynamics~P3.  Starting from the local Lorentzian
+ordered-phase structure derived in Part~I and from the homogeneous
+special-relativistic limit of \S\ref{sec:sr_limit}, the section builds
+the minimal generally covariant low-energy completion of the
+gravitational sector.
+The macroscopic gravitational sector is the slowly varying nonlinear
+continuation of the homogeneous ordered-phase Lorentzian structure
+established in \S\ref{sec:sr_limit}: special relativity is the
+tangent-space limit; macroscopic gravity describes what happens when
+that tangent-space structure varies from point to point.
+The structural necessity of a nonlinear covariant completion is
+Level~A; the explicit closure adopted below is Level~B.
+The Einstein limit is recovered when the additional ordered-branch
+variables~($\phi$, $n_A$) are frozen or screened.}
+
+\paragraph{Three-level status discipline.}
+Throughout this section, each result is assigned one of three levels:
+\begin{description}[noitemsep,leftmargin=2.2em]
+  \item[Strict (Level~A):] local Lorentzian branch, necessity of a
+    covariant macroscopic completion, GR recovery when additional branch
+    variables freeze.
+  \item[Structural (Level~B):] minimal nonlinear covariant completion
+    used in this chapter (the $\phi$-first closure and generalised
+    Einstein equations derived from it).
+  \item[Closure-dependent:] specific functional choices for
+    $G_{\rm eff}(\phi)$, $\Lambda_{\rm eff}(\phi)$, detailed galactic
+    and cosmological fits.
+\end{description}
+
 % ============================================================
 \subsection{Effective metric and the macroscopic limit
 of the condensate}
@@ -11428,6 +11461,27 @@ What it claims is that the geometric branch narrows the admissible
 closure to a very restricted class, and that the current best-developed
 closure in that class is the $\phi$-first one.
 
+\subsubsection*{Why the same variational principle yields different
+equations}
+
+Hilbert's variational derivation of the Einstein equations was
+mathematically complete for the Einstein--Hilbert action: varying
+$S_{\rm EH}=\frac{1}{16\pi G}\int\!\sqrt{-g}\,R\,d^4x+S_{\rm matter}$
+yields exactly the Einstein field equations, because the action
+contains only the metric and minimally coupled matter.
+In ECT, the macroscopic action contains additional condensate-derived
+structures: the amplitude variable~$\phi$, the ordered-branch
+orientation structure, and the corresponding nonminimal couplings
+allowed by the broken phase~(\S\ref{sec:operator_basis}).
+Once these are included in the generally covariant action, the
+variational principle yields the ECT nonlinear
+completion~\eqref{eq:gen_EE} rather than pure~GR.
+The difference is therefore not in the variational method, but in the
+dynamical field content and operator basis of the
+action~\cite{Will2014}.
+In this sense, GR is not wrong---it is the screened limit of a richer
+macroscopic structure.
+
 \subsubsection*{From the ordered-branch amplitude to the $\phi$-field}
 
 The ordered-branch infrared EFT introduced in
@@ -11626,6 +11680,48 @@ U(\phi)\ \text{from the branch potential }W(u).
 The precise renormalised coefficients and the final phenomenological
 closure ansatz remain Level~B, but the functions themselves are no
 longer conceptually free-floating.
+
+\subsubsection*{Minimal generally covariant operator basis}
+\label{sec:operator_basis}
+
+The amplitude-dominated macroscopic reduction identifies the minimal
+field content of the geometric branch:
+\begin{itemize}[noitemsep]
+  \item the effective metric $g_{\mu\nu}$,
+  \item the condensate amplitude variable $\phi$ (reparameterising
+    the ordered-branch amplitude $u/u_\infty$),
+  \item the orientation structure $n^\mu$ inherited from the broken
+    phase (a condensate-derived collective variable, not an independent
+    aether-like field),
+  \item matter fields $\Psi$ minimally coupled to $g_{\mu\nu}$.
+\end{itemize}
+At two-derivative order, the most general local diffeomorphism-invariant
+action consistent with these ingredients is schematically
+\begin{equation}
+  \label{eq:operator_basis}
+  S_{\rm macro}
+  = \int d^4x\,\sqrt{-g}\,\Big[
+    F(\phi)\,R
+    - \tfrac{1}{2}Z(\phi)\,(\nabla\phi)^2
+    - U(\phi)
+    + \mathcal{A}(\phi)\,n^\mu n^\nu R_{\mu\nu}
+    + \mathcal{B}(\phi)\,(\nabla_\mu n_\nu)(\nabla^\mu n^\nu)
+    + \mathcal{L}_{\rm mat}
+  \Big].
+\end{equation}
+Higher-derivative operators (four derivatives and above) are omitted
+under the infrared locality assumption~A2 below.
+Parity-odd terms are excluded by the $O(3)$ isotropy of the spatial
+sector.
+The constraint $n^\mu n_\mu=\varepsilon$ is enforced by the
+ordered-branch structure, not by a Lagrange multiplier.
+
+The $\phi$-first closure adopted in this chapter is obtained by
+specialising~\eqref{eq:operator_basis}: the orientation sector
+$\mathcal{A}$, $\mathcal{B}$ is absorbed into the causal background
+structure and subleading anisotropic corrections~$\Theta_{\mu\nu}$,
+while the amplitude sector is retained through
+$F(\phi)=e^{\beta\phi}$, $Z(\phi)=\omega(\phi)$, and $U(\phi)$.
 
 \subsubsection*{Working assumptions of the $\phi$-first macroscopic closure}
 
@@ -11900,7 +11996,54 @@ medium appears purely metric.
 Deviations from GR correspond to residual macroscopic signatures of the
 underlying ordered structure.
 
-\subsubsection*{What is established and what is not}
+\paragraph{Three physical departures from GR.}
+The generalised equations~\eqref{eq:gen_EE} contain three structural
+elements absent from standard Einstein gravity:
+
+\emph{(i)~Dynamic vacuum contribution $\Lambda_{\rm eff}(\phi)$.}
+The effective cosmological term is not a constant but a function of the
+condensate amplitude.  As the ordered phase evolves cosmologically,
+$\Lambda_{\rm eff}$ traces the branch potential $U(\phi)$.  This can
+naturally realise quintessence-like behaviour with $w\neq -1$, depending
+on the branch potential and cosmological
+evolution~(closure-dependent).
+
+\emph{(ii)~Variable gravitational coupling $G_{\rm eff}(\phi)=G_N
+e^{-\beta\phi}$.}
+Where the condensate is more strongly ordered (larger~$u$), the medium
+is stiffer and gravity appears weaker.  In galactic environments this
+mechanism underlies the modified low-acceleration response discussed in
+\S\ref{sec:mp_galactic}~(closure-dependent phenomenology).
+
+\emph{(iii)~Anisotropic condensate response
+$\Theta_{\mu\nu}[\phi,n]$.}
+This term has no analogue in GR.  It resembles the $c_1\ldots c_4$
+terms in Einstein--aether theory~\cite{Jacobson2004}, but in ECT it is
+not postulated---it is derived from the orientation sector of the same
+ordered branch.  It may induce effective gravitational-slip-like effects
+($\Psi\neq\Phi$ in Newtonian gauge), to be constrained by
+lensing/dynamical comparisons in galaxy clusters and by future surveys
+(Euclid, Vera Rubin)~(structural interpretation; quantitative details
+closure-dependent).
+
+\subsubsection*{Derivation-level summary}
+
+\begin{description}[noitemsep,leftmargin=2.2em]
+  \item[Strict (Level~A):] local Lorentzian branch; necessity of a
+    covariant macroscopic completion; GR recovery when additional branch
+    variables freeze; Lovelock uniqueness of the pure-metric limit
+    under~A1--A5.
+  \item[Structural (Level~B):] generalised nonlinear equations from the
+    $\phi$-first closure; three departures from GR
+    ($\Lambda_{\rm eff}$, $G_{\rm eff}$, $\Theta_{\mu\nu}$);
+    screened PPN recovery.
+  \item[Closure-dependent:] explicit functional forms of
+    $G_{\rm eff}(\phi)$, $\Lambda_{\rm eff}(\phi)$, $\omega(\phi)$,
+    $U(\phi)$; detailed galactic and cosmological fits;
+    full post-Newtonian parameter set beyond $\gamma_{\rm PPN}$.
+\end{description}
+
+\subsubsection*{What is established and what is not (detailed)}
 
 \textbf{Established or structurally fixed:}
 \begin{enumerate}[label=(\roman*)]
@@ -12231,6 +12374,54 @@ galactic critical branch of Section~\ref{sec:mp_galactic}.
 
 
 % ============================================================
+\subsection{Post-Newtonian regime and Solar System tests}
+\label{sec:mp_ppn}
+% ============================================================
+
+\textit{Status: Level~A for GR recovery in the screened/frozen limit;
+Level~B for explicit post-Newtonian deviations, which require
+closure-specific analysis.}
+
+\paragraph{GR limit and PPN recovery.}
+In the screened/frozen-$\phi$ limit ($\phi\to 0$, $\nabla_\mu\phi=0$,
+$\Theta_{\mu\nu}\to 0$), the generalised
+equations~\eqref{eq:gen_EE} reduce identically to the standard Einstein
+equations with cosmological constant~\eqref{eq:EE_standard}.
+In this limit the parametrised post-Newtonian
+(PPN) framework~\cite{Will2014} gives:
+\begin{equation}
+  \gamma_{\rm PPN} \to 1, \qquad
+  \beta_{\rm PPN} \to 1,
+  \label{eq:ppn_screened}
+\end{equation}
+so that all standard Solar System tests---perihelion precession of
+Mercury, light deflection, Shapiro time delay, Nordtvedt
+effect---are automatically satisfied in the GR limit.
+
+\paragraph{Screening in the Solar System.}
+The macroscopic closure naturally approaches the screened limit in
+dense, slowly varying gravitational environments.
+The ordered-branch amplitude saturates toward its asymptotic value
+$u_\infty$ in the Solar System, so that
+$\phi\equiv\frac{1}{\beta}\ln(u/u_\infty)\to 0$ locally.
+This is not a fine-tuning or chameleon-type mechanism; it is a
+structural consequence of the amplitude saturation in the ordered
+branch~(Section~\ref{sec:mp_nonlinear}).
+The Cassini constraint
+$|\gamma_{\rm PPN}-1|<2.3\times10^{-5}$~\cite{Bertotti2003}
+is therefore satisfied.
+
+\paragraph{Beyond the screened limit.}
+For finite $\phi$, the PPN parameters acquire corrections of order
+$\beta\phi$, whose precise magnitude depends on the closure functions
+$F(\phi)$, $\omega(\phi)$, and the local condensate profile.
+At the present stage the explicit post-Newtonian parameter set beyond
+$\gamma_{\rm PPN}$ has not been computed from the full closure;
+a dedicated Solar-System analysis remains part of the open programme.
+What is established is that the GR limit is approached smoothly and
+that the theory is not excluded by current Solar System data.
+
+% ============================================================
 % ============================================================
 \subsection{Gravitational waves and causal structure}
 \label{sec:mp_gw}
@@ -12317,6 +12508,66 @@ backgrounds~(Level~B; OP-c1).
   \item Full radiative stability at loop level.
 \end{enumerate}
 
+
+% ============================================================
+\subsection{Observational predictions of the gravitational sector}
+\label{sec:mp_grav_predictions}
+% ============================================================
+
+\textit{Summary of the main gravitational-sector predictions and
+consistency conditions, together with their derivation status.}
+
+\renewcommand{\arraystretch}{1.3}
+{\small
+\begin{longtable}{p{4.8cm}p{3.8cm}p{2.0cm}p{2.8cm}}
+\caption{Gravitational-sector predictions and consistency
+conditions.}\label{tab:grav_predictions}\\
+\hline\hline
+Prediction / condition & Formula / estimate & Status & Test \\
+\hline
+\endfirsthead
+\hline\hline
+Prediction (cont.) & Formula & Status & Test \\
+\hline
+\endhead
+\hline
+\endfoot
+\hline\hline
+\endlastfoot
+GR recovery when $\phi,n$ freeze
+  & Eq.~\eqref{eq:EE_standard}
+  & Derived
+  & --- \\
+GW speed $=c_*$
+  & $c_{\rm GW}=c_*$~\eqref{eq:cgw}
+  & Structural
+  & GW170817 \\
+Two TT polarisations
+  & As in GR
+  & Level~B
+  & LIGO/Virgo \\
+Solar System: $\gamma_{\rm PPN}\to 1$
+  & Screened limit
+  & Derived
+  & Cassini \\
+Planck-suppressed LIV
+  & $\Delta t\propto E/(M_{\rm Pl}c^2)\cdot L/c$
+  & EFT est.
+  & Fermi, CTA \\
+Variable $\Lambda_{\rm eff}(\phi)$
+  & Closure-dep.
+  & Level~B
+  & DESI BAO \\
+Variable $G_{\rm eff}(\phi)$
+  & $G_N e^{-\beta\phi}$
+  & Level~B
+  & Galactic (\S\ref{sec:mp_galactic}) \\
+Gravitational slip $\Psi\neq\Phi$
+  & From $\Theta_{\mu\nu}[n]$
+  & Structural
+  & Cluster lensing, Euclid \\
+\end{longtable}
+}
 
 % ==============================================================
 \section{Cosmology from the Ordered Branch}
