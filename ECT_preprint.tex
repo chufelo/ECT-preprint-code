@@ -13398,8 +13398,23 @@ nontrivial $\pi_3(S^3)$ texture sector.
 \label{sec:mp_primordial}
 % ============================================================
 
-\textit{Status: identification of perturbation variables is structural;
-full derivation of $n_s$, $A_s$, $r$ is open.}
+\textit{Status: Level~A for the identification of perturbation degrees
+of freedom, the single-scalar-mode structure, and tensor propagation
+speed; full derivation of $n_s$, $A_s$, $r$ is open.}
+
+Sections~\ref{sec:pre_lorentzian} and \ref{sec:cosmo_problems}
+established the structural setting of ECT cosmology: the ordered
+Lorentzian branch emerges from a pre-ordered regime and is born as a
+macrocoherent, spatially flat branch.
+The next question is therefore not whether perturbations exist, but what
+perturbation content is structurally implied by the ordered branch and
+which parts of the primordial spectrum remain open.
+The purpose of the present subsection is structural rather than fully
+predictive: to identify what is already fixed by the ordered branch, and
+what still requires a quantitative perturbation theory.
+
+\subsubsection*{Inflationary context}
+
 In standard inflation, quantum fluctuations of the inflaton and of the
 metric during accelerated expansion seed the observed primordial
 perturbation spectrum.
@@ -13409,55 +13424,131 @@ The scalar power spectrum is nearly scale-invariant,
   \label{eq:pzeta}
 \end{equation}
 with $n_s = 0.9649\pm 0.0042$ and tensor-to-scalar ratio
-$r_{0.002} < 0.056$ (95\% C.L., Planck~2018 combined with
+$r_{0.002} < 0.056$ (95\%~C.L., Planck~2018 combined with
 BICEP/Keck~\cite{Planck2018,BICEP2021}).
 This constitutes one of inflation's most quantitatively developed
-results: a concrete computational mechanism --- mode freeze-out during
-de~Sitter expansion --- that successfully predicts both the spectral
+results: a concrete computational mechanism---mode freeze-out during
+de~Sitter expansion---that successfully predicts both the spectral
 tilt and the smallness of~$r$.
 
 ECT does not yet match this computational depth, and the present work
 makes no such claim.
-However, the ECT framework identifies a natural perturbative sector
-and a plausible route toward primordial perturbations.
+However, the ECT framework already fixes the perturbation field content
+at a structural level and identifies a plausible route toward the
+primordial spectrum.
 
-\paragraph{Perturbation variables.}
+\subsubsection*{Perturbation variables and the single-mode structure}
+
 The condensate field $\Phi$ on the ordered branch admits a natural
-decomposition into fluctuation sectors
-(see~\S\ref{sec:ssb}):
+decomposition into fluctuation sectors~(\S\ref{sec:ssb}):
 orientational (Goldstone) fluctuations $\delta n_A$,
 amplitude fluctuations $\delta\sigma = \delta|\partial\Phi|$,
 and phase fluctuations $\delta\theta$.
 These provide the natural perturbative degrees of freedom of the
 condensate/branch sector.
-Their precise decomposition into scalar, vector, tensor, and
-isocurvature cosmological observables requires a dedicated
-gauge-invariant perturbation analysis on top of the branch-emergence
-background and lies beyond the scope of the present work.
 
-\paragraph{Structural hints.}
-The pre-Lorentzian stage, in which $u_0(X)\approx\mathrm{const}$, may
-admit an approximately scale-free regime and therefore provide a
-natural route toward approximate scale-invariance of the primordial
-spectrum.
-This is a structural qualitative hint, not a derivation: demonstrating
-that condensate fluctuations freeze out appropriately and map onto a
-nearly scale-invariant Lorentzian spectrum requires explicit
-calculation.
+\paragraph{Proposition (single scalar perturbation mode of the ordered
+branch).}
+At leading order, the scalar perturbation sector of the linear ordered
+branch contains exactly one independent scalar degree of freedom.
 
-\paragraph{Comparison with inflation.}
-On the question of primordial perturbations the current status is
-asymmetric: inflation provides a quantitatively predictive framework
-well-tested against Planck and BICEP/Keck data; ECT identifies the
-perturbative sector and a plausible candidate mechanism, but a full
-derivation of $n_s$, $A_s$, and $r$ remains the next major step in
-the ECT cosmological programme.
-The research agenda consists of:
-(i)~derive linearised perturbation equations on the branch-emergence
-background;
-(ii)~identify the gauge-invariant $\zeta$-like variable;
-(iii)~determine the condition for near-scale-invariance;
-(iv)~compute $n_s$, $A_s$, $r$ and compare with Planck~2018.
+\emph{Proof.}
+By the Universality Corollary~(\S\ref{sec:goldstone_integrability_main}),
+the integrability condition $Q_A=\partial_A\Phi$ reduces the linear soft
+ordered-branch excitations to derivatives of a single scalar
+fluctuation~$\chi$.
+Hence the scalar perturbation sector possesses one and only one
+independent scalar mode at leading order.
+\hfill$\square$
+
+This is the structural analogue of a single-scalar perturbation sector.
+It does not yet constitute a full derivation of the observed curvature
+spectrum, but it shows that ECT does not generate a multi-scalar
+primordial sector at leading order within the ordered branch itself,
+without introducing a separate inflaton field at the level of leading
+ordered-branch perturbation content.
+
+\paragraph{Consequence: no independent ordered-branch isocurvature
+mode.}
+Because the linear ordered scalar branch contains only one scalar
+degree of freedom, it does not support an independent isocurvature mode
+of its own at leading order.
+Any primordial isocurvature component would therefore have to arise, if
+at all, from additional phase/gauge/matter sectors beyond the minimal
+ordered scalar branch.
+This structural expectation is compatible with current CMB analyses,
+which constrain primordial isocurvature to be subdominant.
+
+\subsubsection*{Tensor sector}
+
+The tensor perturbations of ECT cosmology are not an independent
+late-time addition, but the same transverse-traceless ordered-branch
+sector analysed in the gravitational-wave discussion of
+Section~\ref{sec:mp_gw}.
+At the structural level, this implies that primordial tensor modes
+propagate on the same ordered-branch cone with speed~$c_*$.
+This also ensures that the causal speed entering primordial tensor
+propagation is the same structural speed~$c_*$ that underlies local
+SR~(\S\ref{sec:sr_limit}) and late-time GW
+propagation~(\S\ref{sec:mp_gw}).
+Thus the primordial tensor sector and the late-time GW sector are
+kinematically consistent by construction.
+The detailed reduction to the observationally relevant TT content
+remains tied to the same open OP-gauge reduction step discussed earlier.
+
+\subsubsection*{Conditional scale-invariance conjecture}
+
+If the ordering transition is approximately scale-free over the range of
+modes relevant for cosmological observations---in the sense that no
+macroscopic scale larger than $\xi_{\rm cond}$ dominates the transition
+dynamics---then the resulting perturbation spectrum is naturally expected
+to be approximately scale-invariant at leading order.
+At present this is a structural conjecture, not a derivation.
+Its verification requires the explicit perturbation equations on the
+FRW-ordered background and the corresponding freeze-out analysis.
+
+\subsubsection*{Comparison with inflation}
+
+Inflationary cosmology provides a quantitatively developed perturbation
+framework, including explicit predictions for $A_s$, $n_s$, and bounds
+on~$r$.
+ECT does not yet reach that level of quantitative completion.
+Its present structural advantage lies elsewhere: the single-scalar
+ordered-branch perturbation sector follows from the integrability of
+the underlying condensate, rather than from the separate introduction of
+an inflaton field.
+What is shared with inflation at the present stage is the single-scalar
+character of the leading perturbation sector, whereas the explicit
+spectral predictions remain open on the ECT side.
+
+\subsubsection*{Research agenda}
+
+A concrete research programme therefore consists of the following steps:
+\begin{enumerate}[noitemsep]
+  \item verify that the single-mode structure implied by the
+    Universality Corollary survives in the cosmological perturbation
+    analysis on an FRW ordered background;
+  \item derive the scalar and tensor perturbation equations through
+    the ordering transition;
+  \item determine the freeze-out mechanism and the corresponding
+    transfer to the late-time curvature spectrum;
+  \item compute the amplitude and tilt in terms of the ordered-branch
+    potential and closure functions;
+  \item derive the tensor-to-scalar ratio and possible non-Gaussianity
+    signatures.
+\end{enumerate}
+
+\subsubsection*{What is established and what remains open}
+
+At Level~A, ECT already fixes the perturbation field content of the
+linear ordered branch: there is a single scalar mode and no independent
+ordered-branch isocurvature scalar.
+At the same structural level, the tensor sector propagates on the same
+ordered-branch cone as the late-time gravitational-wave sector.
+What remains open is the quantitative primordial spectrum itself:
+the explicit derivation of $A_s$, $n_s$, and $r$, the freeze-out
+mechanism across the ordering transition, and the nonlinear coupling to
+phase/gauge/matter sectors.
 
 
 % ============================================================
