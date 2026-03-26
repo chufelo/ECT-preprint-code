@@ -14413,20 +14413,168 @@ JWST observables.
 \label{sec:mp_jwst_cosmo}
 % ============================================================
 
-\textit{Status: Level~B. The structural mechanism is the same
-$G_{\rm eff}>G_N$ at high~$z$ that underlies the Hubble-tension
-alleviation.}
+\textit{Status: Level~B. The structural mechanism is the correlated
+modification of distance, age, and growth observables by the same
+ordered-branch background $\phi_b(z)$. Quantitative results remain
+closure-dependent.}
 
-\textbf{Connection to JWST.}
-In ECT $\phi$-logic, the effective gravitational coupling
-$G_{\rm eff}(z)=G_N e^{-\beta\phi_b(z)}>G_N$ at high redshift
-accelerates structure formation and boosts the abundance of rare
-early halos by a factor $\times2$--3 for $\nu\sim5$--6 peaks
-(Section~\ref{sec:jwst}).
-The background ansatz $\phi_b(z)=-2\varepsilon\ln(1+z)$,
-slow background evolution of $\phi_b$, is consistent with the cosmological
-$G_{\rm eff}(z)$ fit; the JWST tension is alleviated but not
-fully resolved in the present controlled framework.
+\paragraph{Bridge from the Hubble and age subsections.}
+The Hubble-tension mechanism of \S\ref{sec:mp_hubble} and the JWST
+early-galaxy problem are not independent in ECT.
+The same condensate background $\phi_b(z)$ that shifts the late inferred
+Hubble scale also modifies luminosity distances, the available
+Lorentzian formation time, and the growth environment for early
+structures.
+The present subsection collects these effects into a single cosmological
+JWST framework.
+
+\paragraph{Observational landscape.}
+JWST has revealed unexpectedly massive galaxies and supermassive black
+holes at redshifts $z\gtrsim 10$, where the available Lorentzian branch
+age is below $\sim 0.5$~Gyr in standard cosmological
+calibrations~\cite{Labbe2023,Finkelstein2022,Carniani2024,BoylanKolchin2023}.
+The tension is not just one of luminosity inference: it simultaneously
+concerns stellar mass, black-hole mass, compactness, and the time
+available for assembly relative to conventional $\Lambda$CDM
+expectations.
+
+\paragraph{Structural mechanism.}
+In the present ECT closure, a high-redshift branch with
+$G_{\rm eff}(z)>G_N$ produces three competing effects.
+First, smaller luminosity distances reduce the inferred intrinsic
+luminosities and masses of observed sources.
+Second, the same background history modifies the age of the Lorentzian
+branch at fixed redshift and hence the available formation-time budget.
+Third, enhanced effective gravitational strength can accelerate local
+collapse and black-hole growth.
+The net JWST impact is therefore necessarily mixed: some effects help,
+others partially compensate them.
+
+\paragraph{Correlated background constraint.}
+A distinctive feature of ECT is that the JWST time budget is not an
+independent cosmological knob.
+The same background $H(z)$ determines the age of the Lorentzian branch,
+the luminosity-distance relation, the inferred late $H_0$, and the
+available formation time
+$t_{\rm gal}(z_{\rm obs};\,z_{\rm form})$ introduced in
+\S\ref{sec:universe_age}.
+Any closure that improves one of these sectors necessarily shifts the
+others as well.
+This correlated structure sharply constrains the admissible background
+histories.
+
+\paragraph{Layer~1: leading-order proxy analysis.}
+At the leading sub-horizon / Press--Schechter level~(\S\ref{sec:jwst}),
+enhanced effective gravity produces only a moderate increase in the
+abundance of rare high-$\nu$ peaks, typically at the level of a factor
+$\sim2$--3 for the most extreme objects.
+This already goes in the correct direction but is insufficient to close
+the full observed gap relative to standard expectations.
+Thus linear-growth proxies and halo-count enhancement alone alleviate
+the tension but do not resolve it.
+
+\paragraph{Layer~2: derived-parent background and maturity analysis.}
+A more refined assessment uses the derived-parent background discussed
+in the late-time cosmology
+layer~(\S\ref{sec:derived_parent_jwst_main}) together with the full
+linear growth equation
+\begin{equation}
+D'' + \left(2+\frac{H'}{H}\right)D'
+-\frac{3}{2}\,\Omega_m(z)\,\frac{G_{\rm eff}(z)}{G_N}\,D = 0,
+\label{eq:growth_ode_cosmo}
+\end{equation}
+supplemented by the age budget
+$t_{\rm gal}(z_{\rm obs};\,z_{\rm form})$~(\S\ref{sec:universe_age})
+and by semi-analytic maturity factors for galaxy assembly and black-hole
+growth~(Appendix~\ref{sec:ect_maturity_factors}).
+In this second layer the solved linear-growth enhancement is found to be
+near-neutral, whereas the local maturity channels remain more effective.
+The present derived-parent corridor therefore points not to a
+``linear-growth-only'' resolution, but to a mixed mechanism in which
+background evolution and accelerated local development both contribute.
+
+For representative working points, the solved linear-growth factor at
+$z\sim10$ remains close to the reference value, while the semi-analytic
+maturity factors satisfy approximately
+\[
+\mathcal{R}_{\rm gal}\sim 1.2,
+\qquad
+\mathcal{R}_{\rm BH}\sim 1.5.
+\]
+This means that the purely galactic-assembly channel is only marginally
+improved, whereas the black-hole-assisted channel can become
+significantly more viable.
+The detailed parameter corridor, working-point table, and visual
+summaries are presented in the numerical analysis layer of
+\S\ref{sec:derived_parent_jwst_main} and
+Figure~\ref{fig:ect_jwst_anchor_budget}.
+
+\renewcommand{\arraystretch}{1.3}
+{\small
+\begin{longtable}{p{3.5cm}p{4.5cm}p{5.5cm}}
+\caption{Two-layer JWST analysis summary.}
+\label{tab:jwst_two_layer}\\
+\hline\hline
+Layer & Result & Status \\
+\hline
+\endfirsthead
+\hline\hline
+Layer (cont.) & Result & Status \\
+\hline
+\endhead
+\hline
+\endfoot
+\hline\hline
+\endlastfoot
+Layer~1: leading-order / Press--Schechter
+  & Halo enhancement $\times2$--3 at $\nu\sim5$--6
+  & Alleviates only partially \\
+Layer~2: derived-parent + maturity
+  & $D(z{=}10)\approx$ neutral; $\mathcal{R}_{\rm gal}\sim1.2$;
+    $\mathcal{R}_{\rm BH}\sim1.5$
+  & BH-assisted channel more promising than pure galaxy assembly \\
+\end{longtable}
+}
+
+\paragraph{BBN and saturation bound.}
+The same saturation logic that constrains the Hubble-shift mechanism
+(\S\ref{sec:mp_hubble}) also constrains the JWST enhancement.
+The condensate background cannot drift arbitrarily far at high redshift:
+consistency with the early homogeneous branch requires sufficiently
+early saturation toward the screened regime.
+Therefore the JWST enhancement is bounded from above; it cannot be
+increased without limit simply by making $G_{\rm eff}(z)$ larger and
+larger at early times.
+
+\paragraph{What ECT does not claim.}
+ECT does not presently claim a full resolution of the JWST tension.
+In the current controlled framework, the effect is mixed:
+distance inference is softened, age budgets are modified, and local
+maturity channels are accelerated, but the full morphology-level and
+population-level problem is not yet solved.
+A complete assessment would require self-consistent high-redshift
+background evolution, nonlinear collapse modelling, and ultimately
+N-body / hydrodynamic simulations.
+
+\paragraph{Relation to the age and Hubble subsections.}
+The JWST sector is therefore not an independent add-on.
+It is a downstream consequence of the same ordered-branch background
+already used in \S\ref{sec:universe_age} and \S\ref{sec:mp_hubble}:
+one and the same $\phi_b(z)$ controls age, distance, Hubble shift, and
+the effective environment for early development.
+
+\paragraph{What is established and what remains open.}
+At Level~B, ECT provides a correlated cosmological mechanism linking the
+JWST sector to the same ordered-branch background that also shifts the
+late inferred Hubble scale and the Lorentzian age budget.
+The leading-order proxy layer already gives the correct sign of the
+effect but only a modest enhancement.
+The derived-parent layer shows that linear growth alone is close to
+neutral, while local maturity channels---especially BH-assisted
+ones---are more promising.
+What remains open is the fully self-consistent high-redshift branch
+completion, morphology-level predictions, and a full numerical
+structure-formation programme.
 
 
 
@@ -15169,6 +15317,14 @@ rather than near dense sources.
 
 \subsection{Early galaxy and black hole formation (JWST anomalies)}
 \label{sec:jwst}
+
+\textit{Scope note.}
+The cosmological perspective on the JWST problem---including the age
+apparatus, the correlated Hubble/JWST background logic, and the
+derived-parent maturity analysis---is developed in
+\S\ref{sec:mp_jwst_cosmo}.
+The present subsection records the leading-order galactic / halo-growth
+analysis and its Press--Schechter interpretation.
 
 \textit{Observational context.}
 The James Webb Space Telescope has revealed a population of unexpectedly massive
@@ -16601,6 +16757,14 @@ Section~\ref{sec:qs_dark_sector} of the Quantum Sector.
 
 \subsubsection*{Late-time cosmology: Hubble tension, age, and JWST implications}
 \label{sec:hubble_jwst}
+
+\textit{Scope note.}
+The structural Hubble-tension mechanism is presented in
+\S\ref{sec:mp_hubble}; the age apparatus in \S\ref{sec:universe_age};
+and the cosmological JWST framework in \S\ref{sec:mp_jwst_cosmo}.
+The present subsection retains the benchmark numerical layer, the
+derived-parent scan, and the auxiliary figures/tables supporting those
+frameworks.
 
 The earlier phenomenological power-law background ansatz has been
 replaced by a benchmark late-time truncation of the derived condensate
