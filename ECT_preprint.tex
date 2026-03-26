@@ -10093,6 +10093,28 @@ decoherence, and the status of probabilistic interpretation.
 \label{sec:macroscopic}
 \label{sec:mp_scope}
 
+Part~II develops the macroscopic physics of the ordered condensate
+branch.
+Before proceeding to the specific derivations---local
+special-relativistic kinematics~(\S\ref{sec:sr_limit}), the
+gravitational sector~(\S\ref{sec:mp_gravity}), cosmology, and galactic
+phenomenology---the present section fixes the scope, states the
+approximation regime, and records explicitly which results of Part~I
+are used as structural inputs below.
+
+The purpose of this section is threefold.
+First, to define the branch of the theory developed in Part~II.
+Second, to make explicit which approximations are used, where they
+enter, and what their derivation status is.
+Third, to draw a sharp boundary between what Part~II imports from
+Part~I and what it does not import from the Quantum Sector of Part~III.
+
+Throughout this chapter we distinguish three levels of status:
+strictly derived structural inputs from Part~I~(Level~A),
+structural but conditional results inherited from controlled
+reconstruction routes~(Level~B), and closure-dependent macroscopic
+specialisations used in phenomenology.
+
 % ============================================================
 \subsection{Macroscopic Physics as the development
 of the geometric branch}
@@ -10213,26 +10235,52 @@ coarse-grained tensor structure.
   \item a gravitational stiffness scale $M_G$ was identified in ECT
     basics; its matching to $G_N$ is developed in Section~\ref{sec:mp_matching};
   \item structural compatibility with a Deser-type spin-2
-    self-coupling route~(Section~\ref{sec:mode_hierarchy}).
+    self-coupling route~(Section~\ref{sec:mode_hierarchy});
+  \item[(vi)] the Universality Corollary: integrability of
+    $Q_A=\partial_A\Phi$ forces the linear scalar ordered branch into
+    a single causal cone with speed~$c_*$
+    (Level~A; \S\ref{sec:goldstone_integrability_main});
+  \item[(vii)] cone inheritance by the coherent phase sector and,
+    within the minimal phase-to-gauge emergence route, by the gauge
+    sector (Level~A/B bridge; \S\ref{sec:cone_inheritance});
+  \item[(viii)] the structural identification $c_*=c$ within the
+    minimal phase-to-gauge emergence route
+    (Level~B structural; \S\ref{sec:cone_inheritance}).
 \end{enumerate}
 
 \paragraph{What does not follow automatically.}
-The five points above do not automatically give:
+The eight points above do not automatically give:
 the full nonlinear gravitational closure;
 standard Einstein equations in final form;
 complete matching of all phenomenological constants;
 or any quantum-mechanical statement.
 These are developed step by step below.
 
-\paragraph{Logical order of the section.}
-First: effective metric and macroscopic limit~(\S\ref{sec:mp_metric}).
-Then: linear tensorial sector and propagation~(\S\ref{sec:mp_tensor}).
-Next: Noether source structure and matter coupling~(\S\ref{sec:mp_noether}).
-After: gravitational stiffness matching~(\S\ref{sec:mp_matching}).
-Then: nonlinear closure~(\S\ref{sec:mp_nonlinear}).
-Finally: weak-field limit, GWs, cosmology, galactic
-phenomenology, observational tests
-(\S\S\ref{sec:mp_newtonian}--\ref{sec:mp_tests}).
+\paragraph{Logical order of Part~II.}
+First: the homogeneous ordered-phase limit and emergent special
+relativity~(\S\ref{sec:sr_limit}).
+Then: the macroscopic gravitational sector, including the effective
+metric, source structure, gravitational stiffness matching, nonlinear
+closure, weak-field limit, post-Newtonian regime, and gravitational
+waves~(\S\S\ref{sec:mp_metric}--\ref{sec:mp_gw}).
+Finally: cosmology, galactic phenomenology, dark-sector
+interpretation, and observational
+tests~(\S\S\ref{sec:mp_cosmology}--\ref{sec:mp_tests}).
+
+\paragraph{What Part~II does not import from Part~III.}
+The macroscopic branch is constructed without using Planck's constant
+$\hbar$, the Born rule, wavefunction collapse, canonical commutation
+relations, decoherence functionals, or instanton/loop amplitudes.
+These belong exclusively to the Quantum Sector developed in Part~III.
+The role of Part~II is purely geometric and macroscopic.
+
+\paragraph{Branch structure at the coarse-grained level.}
+At the coarse-grained level relevant for the present chapter,
+observables separate into a phase-insensitive geometric development and
+a phase-sensitive coherent-topological development.  Part~II develops
+only the former.  This distinction is sufficient for the present scope
+and does not require a stronger theorem-level claim of exhaustive RG
+classification.
 
 \paragraph{Physical picture.}
 If ECT basics answers: \emph{what is the ordered medium and how
@@ -10244,6 +10292,152 @@ Rather, the working hypothesis of Macroscopic Physics is that the
 large-scale causal and geometric response of the ordered condensate
 admits an effective description which, in the viable Lorentzian
 branch, takes geometric form.
+
+
+% ============================================================
+\subsection{Approximation hierarchy used in Part~II}
+\label{sec:approx_hierarchy}
+% ============================================================
+
+The derivations of Part~II use a nested sequence of approximation
+regimes.  The table below records the approximation levels explicitly
+used in the chapter and indicates where each of them enters.
+The purpose is organisational clarity rather than a theorem-level claim
+of formal completeness.
+
+\renewcommand{\arraystretch}{1.3}
+{\small
+\begin{longtable}{p{4.0cm}p{4.8cm}p{3.5cm}p{2.5cm}}
+\caption{Approximation levels used in Part~II.}
+\label{tab:approx_hierarchy}\\
+\hline\hline
+Approximation & Validity condition & Where used & Origin / status \\
+\hline
+\endfirsthead
+\hline\hline
+Approximation (cont.) & Condition & Where used & Status \\
+\hline
+\endhead
+\hline
+\endfoot
+\hline\hline
+\endlastfoot
+Ordered Lorentzian branch
+  & $\alpha>\beta$
+  & All of Part~II
+  & Level~A (\S\ref{sec:ssb}) \\
+Macroscopic EFT regime
+  & $L\gg\xi_{\rm cond}\sim m_\sigma^{-1}$, $E\ll m_\sigma$
+  & All of Part~II
+  & Level~A (\S\ref{sec:goldstone_integrability_main}) \\
+Homogeneous ordered phase
+  & $\nabla n_A=0$, $\alpha,\beta=\mathrm{const}$
+  & \S\ref{sec:sr_limit} (SR)
+  & Level~A \\
+Linear perturbative regime
+  & $|\delta n_i|/u_0\ll 1$
+  & \S\ref{sec:mp_tensor} (linearised gravity)
+  & Level~A \\
+Minimal nonlinear closure
+  & A1--A4, amplitude-dominated reduction
+  & \S\ref{sec:mp_nonlinear} (generalised EE)
+  & Level~B \\
+Screened/frozen limit
+  & $\phi\to 0$, $\nabla\phi\to 0$, $\Theta_{\mu\nu}\to 0$
+  & \S\ref{sec:mp_ppn} (PPN), GR recovery
+  & Level~A (under closure) \\
+Weak-field, quasi-static
+  & $|h_{\mu\nu}|\ll 1$, $v\ll c_*$, $|\partial_t|\ll c_*|\nabla|$
+  & \S\ref{sec:mp_newtonian} (Newtonian limit)
+  & Level~A (under closure) \\
+FRW background
+  & $n_A\to\bar n_A$, $\phi=\phi(t)$, isotropic
+  & \S\ref{sec:mp_cosmology} (cosmology)
+  & Level~B \\
+Critical IR galactic regime
+  & $F\propto Y_\phi^{3/2}$, deep acceleration regime
+  & \S\ref{sec:mp_galactic} (galaxies)
+  & Closure-dependent \\
+\end{longtable}
+}
+
+These approximations should be understood as the explicit approximation
+map used in the present chapter.  They are introduced here in order to
+make the logical dependencies of the later derivations transparent.
+
+% ============================================================
+\subsection{Bridge from Part~I: structural inputs used in Part~II}
+\label{sec:bridge_inputs}
+% ============================================================
+
+The following table records the results established in Part~I that are
+used as structural inputs in Part~II.  It is intended as a bridge map:
+for each inherited result, we indicate where it was established and
+what role it plays in the macroscopic development.
+
+\renewcommand{\arraystretch}{1.3}
+{\small
+\begin{longtable}{p{4.5cm}p{1.5cm}p{2.0cm}p{5.5cm}}
+\caption{Structural inputs from Part~I used in Part~II.}
+\label{tab:bridge_inputs}\\
+\hline\hline
+Part~I result & Level & Section & Role in Part~II \\
+\hline
+\endfirsthead
+\hline\hline
+Result (cont.) & Level & Section & Role \\
+\hline
+\endhead
+\hline
+\endfoot
+\hline\hline
+\endlastfoot
+$O(4)\to O(3)$ ordered phase, preferred direction $n_A$
+  & A & \S\ref{sec:ssb}
+  & Causal structure, orientation sector \\
+Unique $K^{AB}=\beta\delta^{AB}-\alpha n^A n^B$
+  & A & \S\ref{sec:tensor_uniqueness}
+  & Effective metric, operator basis \\
+Lorentzian window $\alpha>\beta$
+  & A & \S\ref{sec:lorentz_window}
+  & Hyperbolicity of all Part~II \\
+Universality Corollary: single cone
+  & A & \S\ref{sec:goldstone_integrability_main}
+  & SR uniqueness, GW speed \\
+$c_*^2=\beta/(\alpha-\beta)$
+  & A & \S\ref{sec:speed_of_light}
+  & All kinematics \\
+$c_*=c$ (structural identification)
+  & B struct. & \S\ref{sec:cone_inheritance}
+  & All observational comparisons \\
+$G_N=c_*^4/(8\pi M_G^2)$
+  & B & \S\ref{sec:mp_matching}
+  & Gravitational stiffness matching \\
+Ordered-branch EFT variables $(u,n_A)$
+  & A/B & \S\ref{sec:ordered_branch_eft}
+  & $\phi$-field, orientation sector \\
+Noether $T^{AB}$, $J^{C,AB}$
+  & A & \S\ref{sec:noether}
+  & Source structure, Bianchi identity \\
+Phase-to-gauge route (L1--L3)
+  & B & \S\ref{sec:gauge}
+  & Photon identification, $c_\gamma=c_*$ \\
+\end{longtable}
+}
+
+\paragraph{Characteristic scales of the macroscopic regime.}
+The macroscopic branch operates at scales
+\[
+  L\gg \xi_{\rm cond}\sim m_\sigma^{-1},
+  \qquad
+  E\ll m_\sigma,
+\]
+where the condensate correlation length plays the role of the UV cutoff
+of the geometric effective theory.
+The characteristic propagation speed is $c_*$, structurally identified
+with the observed light speed~$c$ within the minimal phase-to-gauge
+route, and the gravitational stiffness scale $M_G$ is fixed by matching
+to~$G_N$.
 
 
 % ==============================================================
