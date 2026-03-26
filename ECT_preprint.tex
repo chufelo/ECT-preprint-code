@@ -11472,7 +11472,7 @@ Hilbert's variational derivation of the Einstein equations was
 mathematically complete for the Einstein--Hilbert action: varying
 $S_{\rm EH}=\frac{1}{16\pi G}\int\!\sqrt{-g}\,R\,d^4x+S_{\rm matter}$
 yields exactly the Einstein field equations, because the action
-contains only the metric and minimally coupled matter.
+contains only the metric and minimally coupled matter fields.
 In ECT, the macroscopic action contains additional condensate-derived
 structures: the amplitude variable~$\phi$, the ordered-branch
 orientation structure, and the corresponding nonminimal couplings
@@ -11698,8 +11698,8 @@ field content of the geometric branch:
     aether-like field),
   \item matter fields $\Psi$ minimally coupled to $g_{\mu\nu}$.
 \end{itemize}
-At two-derivative order, the most general local diffeomorphism-invariant
-action consistent with these ingredients is schematically
+At two-derivative order, the corresponding minimal local
+diffeomorphism-invariant operator basis may be written schematically as
 \begin{equation}
   \label{eq:operator_basis}
   S_{\rm macro}
@@ -11712,6 +11712,11 @@ action consistent with these ingredients is schematically
     + \mathcal{L}_{\rm mat}
   \Big].
 \end{equation}
+Here ``schematically'' means that Eq.~\eqref{eq:operator_basis}
+summarises the minimal covariant operator content relevant for the
+present low-energy completion, rather than claiming a unique
+microscopic derivation of each coefficient function from Euclidean
+microdynamics.
 Higher-derivative operators (four derivatives and above) are omitted
 under the infrared locality assumption~A2 below.
 Parity-odd terms are excluded by the $O(3)$ isotropy of the spatial
@@ -12424,6 +12429,9 @@ and by the functions $F(\phi)$, $\omega(\phi)$, and $U(\phi)$.
 At the present stage the explicit post-Newtonian parameter set beyond
 the screened GR limit has not been derived from the full closure;
 a dedicated Solar-System analysis remains part of the open programme.
+In particular, the full PPN parameter set, including $\beta_{\rm PPN}$
+and other post-Newtonian observables, remains to be derived explicitly
+from the present closure.
 What is established is that the GR limit is approached smoothly and
 that the theory is not excluded by current Solar System data.
 
@@ -12487,6 +12495,15 @@ $M_{\rm LIV}\sim\bar M_{\rm Pl}$):
   \Delta t_{\rm GW}\sim\xi_2\times10^{-64}\,\text{s}
   \quad\text{(negligible observationally)}.
 \end{equation}
+
+\paragraph{Relation to the earlier LIV estimate.}
+The linear estimate in Eq.~\eqref{eq:LIV_delay} and the quadratic
+GW-sector estimate in Eq.~\eqref{eq:gw_liv_dispersion} should not be
+read as contradictory statements about one and the same operator.
+They correspond to different phenomenological parameterisations /
+effective sectors presently coexisting in the article.  A complete
+operator-level unification of the LIV sector remains part of the open
+higher-order EFT programme.
 
 \subsubsection*{Polarisation content}
 
@@ -12552,15 +12569,17 @@ GW speed $=c_*$
   & Derived (Level~A)
   & GW170817 \\
 TT polarisation recovery
-  & requires OP-gauge reduction
-  & Level~B / open step
+  & requires the OP-gauge reduction to the GR-like tensor sector
+  & Level~B / open reduction step
   & LIGO/Virgo \\
 Solar System: $\gamma_{\rm PPN}\to 1$
-  & Screened limit
-  & Derived
+  & screened/frozen GR limit
+  & Derived in screened limit
   & Cassini \\
 Planck-suppressed LIV
-  & Eqs.~\eqref{eq:LIV_delay}, \eqref{eq:gw_liv_dispersion}
+  & sector-dependent higher-order EFT corrections; cf.\
+    Eq.~\eqref{eq:LIV_delay} (photon/time-of-flight estimate) and
+    Eq.~\eqref{eq:gw_liv_dispersion} (GW-sector dispersion estimate)
   & EFT estimate
   & High-energy propagation tests \\
 Dynamic vacuum $\Lambda_{\rm eff}(\phi)$
@@ -12568,8 +12587,8 @@ Dynamic vacuum $\Lambda_{\rm eff}(\phi)$
   & Level~B / closure-dep.
   & Cosmological data \\
 Variable $G_{\rm eff}(\phi)$
-  & $G_N e^{-\beta\phi}$
-  & Level~B
+  & closure-specific realisation
+  & Level~B / closure-dep.
   & Galactic (\S\ref{sec:mp_galactic}) \\
 Possible gravitational slip
   & induced by $\Theta_{\mu\nu}[n]$
