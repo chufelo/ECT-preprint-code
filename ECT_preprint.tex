@@ -10528,6 +10528,10 @@ tangent-space limit; macroscopic gravity describes what happens when
 that tangent-space structure varies from point to point.
 The structural necessity of a nonlinear covariant completion is
 Level~A; the explicit closure adopted below is Level~B.
+The closure used below should therefore be read as the current minimal
+generally covariant low-energy completion of the ordered branch, not as
+the unique imaginable nonlinear completion of the full Euclidean
+microdynamics.
 The Einstein limit is recovered when the additional ordered-branch
 variables~($\phi$, $n_A$) are frozen or screened.}
 
@@ -11477,8 +11481,7 @@ Once these are included in the generally covariant action, the
 variational principle yields the ECT nonlinear
 completion~\eqref{eq:gen_EE} rather than pure~GR.
 The difference is therefore not in the variational method, but in the
-dynamical field content and operator basis of the
-action~\cite{Will2014}.
+dynamical field content and operator basis of the action.
 In this sense, GR is not wrong---it is the screened limit of a richer
 macroscopic structure.
 
@@ -11713,8 +11716,9 @@ Higher-derivative operators (four derivatives and above) are omitted
 under the infrared locality assumption~A2 below.
 Parity-odd terms are excluded by the $O(3)$ isotropy of the spatial
 sector.
-The constraint $n^\mu n_\mu=\varepsilon$ is enforced by the
-ordered-branch structure, not by a Lagrange multiplier.
+The normalisation condition $n^\mu n_\mu=\varepsilon$ is understood as
+part of the ordered-branch structure; in the present minimal basis it
+is not introduced through an independent Lagrange-multiplier sector.
 
 The $\phi$-first closure adopted in this chapter is obtained by
 specialising~\eqref{eq:operator_basis}: the orientation sector
@@ -12019,8 +12023,9 @@ mechanism underlies the modified low-acceleration response discussed in
 $\Theta_{\mu\nu}[\phi,n]$.}
 This term has no analogue in GR.  It resembles the $c_1\ldots c_4$
 terms in Einstein--aether theory~\cite{Jacobson2004}, but in ECT it is
-not postulated---it is derived from the orientation sector of the same
-ordered branch.  It may induce effective gravitational-slip-like effects
+not inserted as an independent sector by hand; it is tied to the
+orientation structure of the same ordered branch within the present
+covariant completion.  It may induce effective gravitational-slip-like effects
 ($\Psi\neq\Phi$ in Newtonian gauge), to be constrained by
 lensing/dynamical comparisons in galaxy clusters and by future surveys
 (Euclid, Vera Rubin)~(structural interpretation; quantitative details
@@ -12036,7 +12041,7 @@ closure-dependent).
   \item[Structural (Level~B):] generalised nonlinear equations from the
     $\phi$-first closure; three departures from GR
     ($\Lambda_{\rm eff}$, $G_{\rm eff}$, $\Theta_{\mu\nu}$);
-    screened PPN recovery.
+    recovery of the standard PPN limit in the screened/frozen regime.
   \item[Closure-dependent:] explicit functional forms of
     $G_{\rm eff}(\phi)$, $\Lambda_{\rm eff}(\phi)$, $\omega(\phi)$,
     $U(\phi)$; detailed galactic and cosmological fits;
@@ -12404,19 +12409,20 @@ dense, slowly varying gravitational environments.
 The ordered-branch amplitude saturates toward its asymptotic value
 $u_\infty$ in the Solar System, so that
 $\phi\equiv\frac{1}{\beta}\ln(u/u_\infty)\to 0$ locally.
-This is not a fine-tuning or chameleon-type mechanism; it is a
-structural consequence of the amplitude saturation in the ordered
-branch~(Section~\ref{sec:mp_nonlinear}).
-The Cassini constraint
+This is not introduced as an external chameleon-type mechanism; within
+the present closure it is interpreted as a consequence of amplitude
+saturation in the ordered branch~(Section~\ref{sec:mp_nonlinear}).
+Accordingly, the Cassini constraint
 $|\gamma_{\rm PPN}-1|<2.3\times10^{-5}$~\cite{Bertotti2003}
-is therefore satisfied.
+is satisfied provided the Solar-System environment lies in the screened
+GR regime described above.
 
 \paragraph{Beyond the screened limit.}
-For finite $\phi$, the PPN parameters acquire corrections of order
-$\beta\phi$, whose precise magnitude depends on the closure functions
-$F(\phi)$, $\omega(\phi)$, and the local condensate profile.
+Away from the screened/frozen-$\phi$ regime, the PPN parameters acquire
+closure-dependent corrections controlled by the local condensate profile
+and by the functions $F(\phi)$, $\omega(\phi)$, and $U(\phi)$.
 At the present stage the explicit post-Newtonian parameter set beyond
-$\gamma_{\rm PPN}$ has not been computed from the full closure;
+the screened GR limit has not been derived from the full closure;
 a dedicated Solar-System analysis remains part of the open programme.
 What is established is that the GR limit is approached smoothly and
 that the theory is not excluded by current Solar System data.
@@ -12440,10 +12446,13 @@ ordered branch:
 \begin{equation}
   \label{eq:cgw}
   c_{\rm GW}=c_n=c_*
-  \quad\text{(Level~A at the benchmark }\alpha=2\beta\text{)}.
+  \qquad\text{(Level~A in the homogeneous ordered branch).}
 \end{equation}
-Consistent with $|c_{\rm GW}/c-1|<6\times10^{-15}$ from GW\,170817
-and its electromagnetic counterpart~\cite{LIGO_Virgo_GW170817_2017}.
+Within the structural identification $c_*=c$ established in the minimal
+phase-to-gauge route of Part~I~(\S\ref{sec:cone_inheritance}), this is
+consistent with the bound
+$|c_{\rm GW}/c-1|<6\times10^{-15}$ from GW\,170817 and its
+electromagnetic counterpart~\cite{LIGO_Virgo_GW170817_2017}.
 
 \subsubsection*{Planck-suppressed Lorentz-violation estimate}
 
@@ -12540,32 +12549,32 @@ GR recovery when $\phi,n$ freeze
   & --- \\
 GW speed $=c_*$
   & $c_{\rm GW}=c_*$~\eqref{eq:cgw}
-  & Structural
+  & Derived (Level~A)
   & GW170817 \\
-Two TT polarisations
-  & As in GR
-  & Level~B
+TT polarisation recovery
+  & requires OP-gauge reduction
+  & Level~B / open step
   & LIGO/Virgo \\
 Solar System: $\gamma_{\rm PPN}\to 1$
   & Screened limit
   & Derived
   & Cassini \\
 Planck-suppressed LIV
-  & $\Delta t\propto E/(M_{\rm Pl}c^2)\cdot L/c$
-  & EFT est.
-  & Fermi, CTA \\
-Variable $\Lambda_{\rm eff}(\phi)$
-  & Closure-dep.
-  & Level~B
-  & DESI BAO \\
+  & Eqs.~\eqref{eq:LIV_delay}, \eqref{eq:gw_liv_dispersion}
+  & EFT estimate
+  & High-energy propagation tests \\
+Dynamic vacuum $\Lambda_{\rm eff}(\phi)$
+  & closure-dependent evolution
+  & Level~B / closure-dep.
+  & Cosmological data \\
 Variable $G_{\rm eff}(\phi)$
   & $G_N e^{-\beta\phi}$
   & Level~B
   & Galactic (\S\ref{sec:mp_galactic}) \\
-Gravitational slip $\Psi\neq\Phi$
-  & From $\Theta_{\mu\nu}[n]$
-  & Structural
-  & Cluster lensing, Euclid \\
+Possible gravitational slip
+  & induced by $\Theta_{\mu\nu}[n]$
+  & Structural / closure-dep.\ magnitude
+  & Lensing--dynamics, Euclid \\
 \end{longtable}
 }
 
