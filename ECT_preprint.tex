@@ -13558,13 +13558,27 @@ phase/gauge/matter sectors.
 
 \textit{Status: Level~B. The FRW reduction follows from the
 macroscopic closure of \S\ref{sec:mp_nonlinear}; specific
-closure functions remain open~(OP3).}
+closure functions remain open~(OP3).
+The no-phantom result $w\ge-1$ is Level~B structural
+(conditional on $\omega(\phi)>0$ in the adopted closure).}
 
-\subsubsection*{Homogeneous FLRW branch after ordering}
+\subsubsection*{Bridge from the gravitational sector}
 
-Once the ordered geometric branch is established on large scales, the
-effective metric reduces to an FLRW form.
-In the homogeneous $\phi$-first closure:
+The full background equations governing the homogeneous ordered branch
+are already derived in \S\ref{sec:mp_nonlinear}
+(Eqs.~\eqref{eq:bg_reduction_friedmann}--\eqref{eq:bg_reduction_scalar})
+as the isotropic background reduction of the $\phi$-first closure.
+The present subsection analyses their physical content: late-time
+dark-energy behaviour, the evolution of the effective gravitational
+coupling, and the resulting observational constraints.
+An inflation-like effective description of the ordering transition,
+if retained, is discussed in \S\ref{sec:pre_lorentzian}--\ref{sec:cosmo_problems}.
+
+\subsubsection*{Screened FLRW limit}
+
+In the screened limit $\phi\to 0$, $\dot\phi\to 0$, the background
+system reduces to the standard Friedmann equation with cosmological
+constant:
 \begin{equation}
   \label{eq:FLRW}
   H^2
@@ -13573,74 +13587,75 @@ In the homogeneous $\phi$-first closure:
   \qquad
   \Lambda_{\rm eff}(0)=\frac{U(0)}{\bar M_{\rm Pl}^2}.
 \end{equation}
-Equivalently, defining the effective vacuum energy density
-$\rho_{\Lambda,{\rm eff}}=U(0)$:
-\[
-H^2=\frac{8\pi G_N}{3}\!\left(\rho_{\rm mat}+\rho_{\Lambda,{\rm eff}}\right).
-\]
-This is the cosmological reduction of the macroscopic closure
-\eqref{eq:phi_first_action}--\eqref{eq:gen_EE}, not a derivation from
-bare~P3.
-
-\subsubsection*{Inflation-like effective descriptions of the ordering transition}
-
-In the present ECT picture, one possible coarse-grained description of
-the ordering transition is an inflation-like effective epoch in which
-the Lorentzian branch becomes macroscopically established.
-This should be read as an effective closure-level scenario rather than
-as the core structural solution of the horizon problem.
-The structural horizon-resolution mechanism in ECT is the coherent
-branch-selection logic discussed above
-(Section~\ref{sec:horizon_ect_main}); an inflation-like stage, if
-retained, is best interpreted as a possible reinforcement or effective
-macroscopic description of part of that process.
-The structural ECT mechanism for the horizon and flatness problems is
-the pre-Lorentzian branch-selection logic
-(Section~\ref{sec:horizon_ect_main}), which does not require an
-inflationary epoch.
-Computing the primordial spectral index $n_s$ and tensor-to-scalar
-ratio $r$ directly from ECT is the next major step in the
-cosmological programme (see research agenda above); no ECT-native
-formula is available at the present stage.
+This is a consistency check: the $\phi$-first closure recovers standard
+$\Lambda$CDM cosmology in the screened limit.
 
 \subsubsection*{Dark energy as residual amplitude-sector vacuum energy}
 
-The effective potential $U(\phi)$ generically has a residual nonzero
-value at $\phi=0$.
-In the macroscopic Einstein form this corresponds to:
+When $\phi$ is slowly evolving rather than frozen, the amplitude sector
+contributes both kinetic and potential energy to the cosmological
+background.
+The effective energy density and pressure of the $\phi$-sector are:
 \begin{equation}
-  \label{eq:dark_energy}
-  \Lambda_{\rm eff}=\frac{U(0)}{\bar M_{\rm Pl}^2},
+  \label{eq:rho_phi}
+  \rho_\phi = \tfrac{1}{2}\omega(\phi)\dot\phi^2 + U(\phi),
   \qquad
-  \rho_{\Lambda,{\rm eff}}=U(0).
+  p_\phi = \tfrac{1}{2}\omega(\phi)\dot\phi^2 - U(\phi),
 \end{equation}
-In the present $\phi$-first closure:
+so the effective equation of state is
+\begin{equation}
+  \label{eq:w_phi}
+  w_\phi
+  = \frac{p_\phi}{\rho_\phi}
+  = \frac{\tfrac{1}{2}\omega\dot\phi^2 - U}
+         {\tfrac{1}{2}\omega\dot\phi^2 + U}.
+\end{equation}
+The effective potential $U(\phi)$ generically has a residual nonzero
+value at $\phi=0$, giving the dark-energy
+contribution~\eqref{eq:FLRW}.
+
+\paragraph{Proposition (no-phantom constraint).}
+Within the $\phi$-first closure, if $\omega(\phi)>0$, the effective
+dark-energy equation of state satisfies $w_\phi\ge-1$ identically.
+
+\emph{Proof.}
+Since $\omega>0$ and $\dot\phi^2\ge 0$, the kinetic
+term $\tfrac{1}{2}\omega\dot\phi^2\ge 0$.
+Adding it to both numerator and denominator
+of~\eqref{eq:w_phi} relative to the $\dot\phi=0$ case:
+$w_\phi\ge -U/U=-1$, with equality iff $\dot\phi=0$.
+\hfill$\square$
+
+\emph{Status:} Level~B structural---conditional on the $\phi$-first
+closure and $\omega(\phi)>0$.
+This is a testable structural prediction: the ECT $\phi$-first closure
+structurally excludes phantom crossing ($w<-1$) at the background level.
+Current DESI~DR2 data~\cite{DESI2024} are compatible with $w_0>-1$.
+
+In terms of the kinetic-to-potential ratio:
 \begin{equation}
   \label{eq:w0_fit}
   w_0 = -1 + \frac{2\rho_{\rm kin}}{3\rho_{\rm cond}},
+  \qquad
+  \rho_{\rm kin}\equiv\tfrac{1}{2}\omega\dot\phi^2,
+  \quad
+  \rho_{\rm cond}\equiv\rho_\phi.
 \end{equation}
-where $\rho_{\rm kin}/\rho_{\rm cond}$ is not yet derived
-from bare ECT postulates. The formula predicts $w_0>-1$
-structurally, compatible with DESI~DR2 2025~\cite{DESI2024},
-but no specific numerical value can be claimed without
-a solved background history~(Level~B/Open).
-
+The ratio $\rho_{\rm kin}/\rho_{\rm cond}$ is not yet derived from
+bare ECT postulates; no specific numerical value of $w_0$ can be
+claimed without a solved background history~(Level~B/Open).
 
 % --- fig:w_z ---
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.95\textwidth]{figures/fig_w_z_desi.png}
-\caption{Representative ECT closure prediction for the effective dark
-energy equation of state $w(z)$ compared with $\Lambda$CDM and DESI
-constraints.
-\textbf{(a)}~$w(z)$: the ECT thawing condensate (solid black)
-predicts $w\ge-1$ at all redshifts.
+\caption{Representative ECT closure prediction for $w(z)$ compared
+with $\Lambda$CDM and DESI constraints.
+\textbf{(a)}~$w(z)$: the $\phi$-first closure predicts $w\ge-1$
+at all redshifts (Proposition above).
 \textbf{(b)}~Deviation from $\Lambda$CDM.
-The key structural point is that the ECT macroscopic branch naturally
-prefers a non-phantom effective behaviour $w\ge-1$ in this class of
-closures.
-The precise fitted curve is phenomenological and closure-dependent,
-rather than a first-principles theorem from bare~P3.}
+The precise curve is closure-dependent, not a first-principles
+theorem from bare~P3.}
 \label{fig:w_z}
 \end{figure}
 
@@ -13662,24 +13677,52 @@ The sign and order of magnitude of the effect follow from
 $\phi$-first logic; a numerical value would require a solved
 background history $\phi_b(z)$, which is not yet available.
 
+\paragraph{Early-universe constraint on $\phi_b(z)$.}
+The evolution $G_{\rm eff}(z)$ must be compatible with
+big-bang nucleosynthesis~(BBN), which constrains
+$|\Delta G/G|$ at $z\sim10^9$ to the percent level.
+For a naive power-law ansatz $\phi_b(z)=-2\varepsilon\ln(1+z)$
+with $\varepsilon\sim 0.01$, one finds
+$G_{\rm eff}(z_{\rm BBN})/G_N\sim(1+z_{\rm BBN})^{2\varepsilon}$,
+which exceeds the BBN bound for $z_{\rm BBN}\sim10^9$.
+This implies that the background field $\phi_b(z)$ must saturate
+(become approximately constant) at sufficiently high redshift,
+which is physically expected: the ordered branch stabilises
+shortly after the ordering transition, so $\phi_b(z)$ should
+approach a constant for $z\gg z_{\rm eq}$.
+A more realistic $\phi_b(z)$ that saturates at early times is
+therefore required for quantitative consistency; the naive power-law
+is valid only as a late-time approximation.
 
 % --- fig:cosmo_predictions ---
 \begin{figure*}[!htb]
 \centering
 \includegraphics[width=\textwidth]{figures/fig_cosmo_predictions.png}
 \caption{Illustrative cosmological observables in the current ECT
-macroscopic closure.
-(a)~Redshift anomaly $\delta z=\tfrac{1}{2}\delta\phi$ as a function of
-the local ordered-branch amplitude fluctuation.
-(b)~Effective dark-energy equation of state $w(z)$ in the closure,
-showing $w_0>-1$ structure (illustrative closure; specific value not derived from ECT).
-(c)~Running gravitational coupling $G_{\rm eff}(z)/G_N$ for a
-illustrative background evolution $\phi_b(z)$ (slow-roll form).
-These curves are phenomenological consequences of the present
-$\phi$-first cosmological closure, not first-principles derivations
-from bare~P3.}
+closure.
+(a)~Redshift anomaly $\delta z=\tfrac{1}{2}\delta\phi$.
+(b)~$w(z)$ showing $w_0>-1$ structure.
+(c)~Running $G_{\rm eff}(z)/G_N$ for an illustrative $\phi_b(z)$.
+These are closure-dependent consequences of the $\phi$-first
+cosmological closure, not first-principles derivations from bare~P3.}
 \label{fig:cosmo_predictions}
 \end{figure*}
+
+\subsubsection*{What is established and what remains open}
+
+\emph{Level~B structural:}
+(i)~the FRW background reduction of the $\phi$-first closure is
+well-defined and recovers $\Lambda$CDM in the screened limit;
+(ii)~the no-phantom constraint $w\ge-1$ holds whenever
+$\omega(\phi)>0$;
+(iii)~a slowly evolving $G_{\rm eff}(z)$ provides a structural
+route to Hubble-tension alleviation.
+
+\emph{Open:}
+(i)~explicit form of $U(\phi)$ and $\omega(\phi)$ from bare~P3~(OP3);
+(ii)~a solved self-consistent background $\phi_b(z)$ with early-time
+saturation compatible with BBN;
+(iii)~quantitative MCMC fit to CMB+BAO+SN data.
 
 % ============================================================
 \subsection{Baryogenesis in the ECT framework}
