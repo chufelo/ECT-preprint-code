@@ -13981,52 +13981,116 @@ yet an autonomous microscopic baryogenesis theory.
 \label{sec:universe_age}
 % ============================================================
 
-\textit{Status: Level~B. Numerical estimates are illustrative
-and closure-dependent.}
+\textit{Status: Level~B. The conceptual reinterpretation of cosmic
+age is structural; numerical estimates are illustrative and
+closure-dependent.}
 
-In the $\phi$-first closure, the cosmic expansion
-history is modified through two effective ingredients~(Level~B):
-(i)~the redshift-dependent gravitational coupling
-$G_{\rm eff}(z)=G_N e^{-\beta\phi_b(z)}$, and
-(ii)~the no-phantom equation of state $w_0\ge-1$
-(Corollary, \S\ref{sec:mp_flrw}).
-Both effects increase the effective Hubble rate at intermediate
-redshifts.
+The condensate background evolution discussed in
+\S\ref{sec:condensate_cosmo_evolution}, together with the homogeneous
+background equations of \S\ref{sec:mp_flrw}, provides the branch history
+$\phi_b(z)$ relevant for cosmological timing.
+The present subsection asks how the age of the Lorentzian ordered
+branch should be defined in ECT, and how it compares conceptually and
+quantitatively with the standard $\Lambda$CDM age assignment.
 
-The age of the Universe is
+\paragraph{Conceptual meaning of age in ECT.}
+In $\Lambda$CDM the age of the Universe is measured from the
+Lorentzian Big-Bang singularity.
+In ECT, by contrast, the Big-Bang singularity is replaced by a
+pre-ordered / pre-Lorentzian regime
+(\S\ref{sec:pre_lorentzian}).
+Accordingly, the quantity $t_0^{\rm ECT}$ should be interpreted as
+the age of the Lorentzian ordered branch, measured from the ordering
+transition onward.
+It is therefore not conceptually identical to the standard
+$\Lambda$CDM age parameter, even when the two are numerically close:
+the two quantities refer to different notions of cosmic origin.
+
+\paragraph{Age integral.}
+The Lorentzian branch age is
 \begin{equation}
-  t_0 = \int_0^\infty \frac{dz}{(1+z)\,H^{\rm ECT}(z)},
+  t_0 = \int_0^\infty \frac{dz}{(1+z)\,H(z)},
   \label{eq:age_integral}
 \end{equation}
-where the ECT Hubble function reads
-\begin{equation}
-  H^{\rm ECT}(z)^2 = H_0^2\!\left[
-    \Omega_m(1+z)^3 (1+z)^{2\varepsilon}
-    + \Omega_\Lambda \bigl(1 + 2\rho_{\rm kin}/\rho_{\rm cond}\bigr)
-    \cdot f_w(z)
-  \right],
-\end{equation}
-with $f_w(z)$ capturing the redshift evolution of $w(z)$.
+where $H(z)$ is determined by the background system already derived in
+Eqs.~\eqref{eq:bg_reduction_friedmann}--\eqref{eq:bg_reduction_scalar}
+together with the condensate evolution of
+\S\ref{sec:condensate_cosmo_evolution}.
+No independent phenomenological Hubble ansatz is introduced here.
+In ECT this integral computes the duration of the Lorentzian ordered
+branch, once the corresponding background history $H(z)$ has been
+fixed.
 
-\textbf{Numerical estimate.}
-Using an illustrative power-law background $\phi_b(z)=-2\varepsilon\ln(1+z)$
-with $\varepsilon\sim 0.01$ (closure-level, not derived), and flat
-$\Lambda$CDM as the fiducial, numerical integration gives an indicative range
+\paragraph{Monotonicity observation.}
+From the age integral it follows immediately that any branch
+realisation with a larger Hubble rate over a given redshift interval
+produces a shorter Lorentzian age over that interval.
+Thus, if a given ECT closure yields a larger Hubble rate than the
+$\Lambda$CDM benchmark over part of cosmic history, then the
+corresponding Lorentzian branch age is reduced relative to that
+benchmark over the same regime.
+This is a mathematical consequence of the age integral, not yet a
+standalone cosmological theorem about all possible ECT closures.
+
+\paragraph{Leading closure-level background effects.}
+The age of the homogeneous branch is influenced by two closure-level
+background effects already identified in \S\ref{sec:mp_flrw}:
+the evolution of the effective gravitational coupling as realised in the
+present $\phi$-first closure, $G_{\rm eff}(z)\sim G_N e^{-\beta\phi_b(z)}$,
+and the non-phantom amplitude-sector dark-energy component
+($w\ge-1$, Corollary, \S\ref{sec:mp_flrw}).
+It is important to distinguish between the structural statement that
+the Lorentzian branch age is defined by the ordered-branch background
+history, and any concrete numerical estimate, which depends on the
+chosen closure-level background~$\phi_b(z)$.
+
+\paragraph{Illustrative numerical estimate.}
+An illustrative background-level estimate in the present closure gives
+a Lorentzian branch age of order
 \begin{equation}
-  t_0^{\rm ECT} \approx 13.3\text{--}13.5\;\mathrm{Gyr}
-  \quad\text{(illustrative closure)},
+  t_0^{\rm ECT}\sim 13.3\text{--}13.5~{\rm Gyr}
+  \quad\text{(illustrative closure)}.
   \label{eq:t0_ECT}
 \end{equation}
-compared to the Planck $\Lambda$CDM value $t_0^{\Lambda{\rm CDM}} = 13.80 \pm 0.02\,\mathrm{Gyr}$.
-The ECT mechanism generically shifts $t_0$ by $\mathcal{O}(\varepsilon)$ relative
-to $\Lambda$CDM; the specific range above is illustrative.
+This number should be read only as an illustrative closure-level
+estimate within a
+specific late-time background parametrisation; it is not a
+zero-parameter prediction of ECT.
+Any late-time background parametrisation used for illustrative age
+estimates must not be extrapolated unchanged into the pre-BBN regime;
+high-redshift saturation of the condensate background remains part of
+the consistency requirements~(\S\ref{sec:mp_flrw}).
 
-\textbf{Honesty note.}
-This estimate uses the ECT-corrected $H_0$ and $w_0$ but does not
-include a full MCMC fit to CMB+BAO+SN data.  The numbers in
-equation~\eqref{eq:t0_ECT} should be regarded as an order-of-magnitude
-orientation.  A quantitative confrontation with data requires a
-dedicated MCMC pipeline, which is left for future work.
+\paragraph{Observational context.}
+The standard $\Lambda$CDM age inferred from CMB-calibrated background
+fits is close to $13.8$~Gyr.
+Independent astrophysical lower bounds from old stellar populations
+(globular clusters, white-dwarf cooling, nucleo-cosmochronology) are
+comfortably below that value.
+An illustrative ECT age in the range above is therefore not in conflict
+with existing lower bounds.
+What differs conceptually is not only the number itself, but the
+meaning of the quantity: in ECT it measures the age of the Lorentzian
+ordered branch rather than the duration since a fundamental singular
+beginning.
+A shorter or differently structured Lorentzian age does not by itself
+solve the early-galaxy problem, but the condensate background mechanism
+that modifies the expansion history may also reduce the time required
+for early structure formation through the effective gravitational
+coupling~(\S\ref{sec:mp_jwst_cosmo}).
+
+\paragraph{What is established and what remains open.}
+At the structural level, ECT changes the meaning of cosmic age: the
+relevant quantity is the duration of the Lorentzian ordered branch,
+not the elapsed time since a fundamental singularity.
+The sign of any age correction relative to $\Lambda$CDM is fixed by
+the background Hubble history through the age integral.
+What remains open is the fully derived function $\phi_b(z)$, the
+self-consistent high-redshift completion of the background ansatz, and
+a full cosmological fit of the resulting age to the data.
+The numerical range quoted above should therefore be treated only as an
+illustrative closure-level outcome, not as a fully fitted ECT age
+determination.
 
 % ============================================================
 \subsection{Hubble tension: structural mechanism and illustrative estimates}
