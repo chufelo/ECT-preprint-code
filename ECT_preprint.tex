@@ -1638,14 +1638,19 @@ The Lorentzian window is $\beta < \alpha < 4\beta$:
 
 \paragraph{Structural identification $c_*=c$.}
 The identification $c_*=c$ is a structural consequence of
-single-field ECT within the minimal gauge-emergence route:
-all linear ordered-branch modes share a unique causal cone
-(Universality Corollary, \S\ref{sec:goldstone_integrability_main}),
-and the phase and gauge sectors inherit the same cone at leading order
+single-field ECT within the minimal phase-to-gauge emergence route.
+At Level~A, all linear modes of the scalar ordered branch share a
+unique causal cone (Universality Corollary,
+\S\ref{sec:goldstone_integrability_main}).
+At the coherent-sector level, the compact phase branch is governed by
+the same broken-phase tensor structure, and the gauge sector inherits
+the same cone only within the minimal phase-to-gauge construction
 (\S\ref{sec:cone_inheritance}).
-This result is Level~B structural, conditional on gauge emergence
-from the compact phase branch.
-Observational confirmation is provided by the constraint
+Accordingly, the status of $c_*=c$ is Level~B structural:
+it is conditional not only on gauge emergence from the compact phase
+branch, but also on the absence of an independent leading-order gauge
+kinetic sector beyond the minimal route.
+Observational support is provided by the bound
 $|c_{\rm GW}-c_\gamma|/c<10^{-15}$~\cite{LIGO_Virgo_GW170817_2017}.
 In canonical units ($\beta=1$) this corresponds to $\alpha=2\beta=2$.
 
@@ -1668,12 +1673,12 @@ Fermi constraints. CTA~\cite{CTA2020} will probe
 $\Delta t/L\sim10^{-21}$\,s\,m$^{-1}$, directly testing
 Eq.~\eqref{eq:LIV_delay}.
 
-\textbf{Key ECT distinction:} LIV is \emph{sub-condensate} and
-\emph{universal} (all species share the same condensate $n^A$),
-so the delay is species-independent.
-The prediction $\Delta t\propto E^1/M_{\rm Pl}$ (linear suppression)
-is distinguishable from generic quadratic models
-$\Delta t\propto E^2/M_{\rm Pl}^2$.
+\textbf{ECT interpretation:} LIV effects are attributed to
+sub-condensate structure and are expected to be controlled by the same
+ordered background tensor.  In this sense they are not introduced as
+independent sector-by-sector parameters.  Their detailed suppression
+pattern, however, remains part of the higher-order EFT analysis and
+should not be overstated at the present stage.
 
 \paragraph{Emergent special relativity.}
 \label{par:emergent_SR}
@@ -1682,10 +1687,14 @@ kinematic core as an emergent structure of the ordered condensate
 phase.
 The $O(4)\to O(3)$ SSB generates a hyperbolic kinetic tensor
 $K^{AB}$~(Theorem~\ref{thm:tensor_uniqueness}).
-In the homogeneous ordered phase, after analytic continuation
-$w\to -ic_*t$, the effective metric reduces to the Minkowski form
-$\eta_{\mu\nu}=\mathrm{diag}(-1,1,1,1)$~(in units $c_*=1$), and
+In the homogeneous ordered phase, the Lorentzian branch may be
+parametrised in real time by $w=c_* t$, so that the effective metric
+reduces locally to the Minkowski form
+$\eta_{\mu\nu}=\mathrm{diag}(-1,1,1,1)$ in units $c_*=1$, and
 the isometry group is the Poincar\'e group.
+(The Wick/Picard--Lefschetz continuation belongs to the path-integral
+justification discussed elsewhere and should not be conflated with this
+real-time kinematic parametrisation.)
 The scalar broken-branch sector possesses a unique causal cone
 (Universality Corollary, \S\ref{sec:goldstone_integrability_main}).
 The phase-sector continuation is controlled by the same
@@ -9661,7 +9670,7 @@ maintained throughout the paper.
 The derivation logic of the foundational construction is shown
 schematically in Figure~\ref{fig:partI_derivation_logic}.}
 
-\begin{figure*}[!htb]
+\begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{figures/fig_partI_derivation_logic.png}
 \caption{Derivation logic of Part~I (Foundations).
@@ -9679,7 +9688,7 @@ Node shading follows the Level~A/B/Open classification used
 throughout the paper.
 Open problems are shown as dashed outlines.}
 \label{fig:partI_derivation_logic}
-\end{figure*}
+\end{figure}
 
 \paragraph{Foundational outcome of Part~I.}
 Part~I establishes the minimal ECT core:
@@ -10020,6 +10029,7 @@ decoherence, and the status of probabilistic interpretation.
 \label{sec:phi_first_strategy}% was: phi-first strategy subsection
 % ============================================================
 
+\FloatBarrier
 %==============================================================
 \part{Macroscopic Physics: Gravity, Cosmology, and Observational Tests}
 \label{part:macro}
@@ -10253,8 +10263,9 @@ $K^{AB}=\beta\,\delta^{AB}-\alpha\,n^A n^B$
 (Theorem~\ref{thm:tensor_uniqueness}), that integrability of
 $Q_A=\partial_A\Phi$ forces the linear soft sector into a single
 scalar channel~(\S\ref{sec:goldstone_integrability_main}), and that
-the phase and gauge sectors inherit the same cone within the minimal
-emergence route~(\S\ref{sec:cone_inheritance}).
+the coherent phase sector is governed by the same ordered-branch tensor
+structure.  The gauge sector inherits the same cone only within the
+minimal phase-to-gauge emergence route~(\S\ref{sec:cone_inheritance}).
 
 The purpose of the present section is therefore not to postulate
 special relativity anew, but to state explicitly which parts of local
@@ -10343,11 +10354,11 @@ tensor generated by the broken phase
 \subsection{Lorentz transformations from cone invariance}
 \label{subsec:sr_lorentz}
 
-The admissible linear transformations between inertial frames
-are those preserving the interval~\eqref{eq:sr_interval}.
-Imposing linearity, spatial isotropy of the residual $O(3)$, and
-invariance of the null cone $x=\pm c_*\,t$, one obtains the
-Lorentz boost along~$x$:
+The admissible linear transformations between inertial coordinate
+systems of the homogeneous ordered phase are those preserving the
+interval~\eqref{eq:sr_interval}.  Imposing linearity, spatial isotropy
+of the residual $O(3)$, and invariance of the null cone
+$x=\pm c_*\,t$, one obtains the Lorentz boost along~$x$:
 \begin{equation}
   x' = \gamma_*(x - vt),
   \qquad
@@ -10361,8 +10372,10 @@ time dilation $\Delta t=\gamma_*\Delta\tau$,
 length contraction $L=L_0/\gamma_*$, and
 velocity addition $u\oplus v=(u+v)/(1+uv/c_*^2)$.
 
-The Lorentz group is thus not postulated but appears as the isometry
-group of the emergent flat effective geometry.
+Equivalently, these transformations are precisely the linear isometries
+of the flat ordered-branch metric~\eqref{eq:sr_interval}; the usual
+Lorentz subgroup of the Poincar\'e group is therefore realised as the
+kinematic symmetry of the homogeneous ordered phase.
 
 % ------------------------------------------------------------
 \subsection{Relativistic dispersion, energy, and momentum}
@@ -10374,8 +10387,9 @@ phase gives the plane-wave dispersion
   \omega^2 = c_*^2\,\mathbf{k}^2 + m^2 c_*^4.
   \label{eq:sr_dispersion}
 \end{equation}
-Setting $E=\hbar\omega$, $\mathbf{p}=\hbar\mathbf{k}$ yields the
-standard relativistic energy--momentum relation
+Upon the standard quantum identification
+$E=\hbar\omega$, $\mathbf{p}=\hbar\mathbf{k}$, one obtains the
+familiar relativistic energy--momentum relation
 \begin{equation}
   E^2 = p^2 c_*^2 + m^2 c_*^4.
   \label{eq:sr_E_p}
@@ -10400,8 +10414,9 @@ In the minimal phase-to-gauge emergence route developed in Part~I
 inherits the same broken-phase tensor structure, and the resulting
 minimal gauge completion introduces a transverse gauge field whose
 Maxwell-type kinetic term is built on the same ordered-branch
-geometry.  Within this route, the photon cone coincides with the
-ordered scalar cone:
+geometry.  Within this route, and in the absence of an independent
+leading-order gauge kinetic sector beyond the minimal construction,
+the photon cone coincides with the ordered scalar cone:
 $c_\gamma = c_*$.
 Since the observed vacuum light speed is defined operationally by
 $c\equiv c_\gamma$, one obtains the structural identification
@@ -10411,10 +10426,10 @@ $c\equiv c_\gamma$, one obtains the structural identification
   \label{eq:sr_c_equals_cstar}
 \end{equation}
 
-This is substantially stronger than a benchmark normalisation
-or unit convention: it is a structural consequence of the single-field
-nature of ECT, conditional only on gauge emergence from the compact
-phase branch.
+This is substantially stronger than a benchmark normalisation or unit
+convention: within the minimal route it is a structural identification
+tied to the single-field condensate architecture, rather than an
+external matching choice.
 
 % ------------------------------------------------------------
 \subsection{From local special relativity to macroscopic gravity}
@@ -10422,6 +10437,11 @@ phase branch.
 
 The present section describes the homogeneous ordered phase, in which
 the effective geometry is flat and the cone speed is constant.
+In the present logic, this constancy refers to the locally homogeneous
+ordered phase used to derive special-relativistic kinematics.  Slow
+variation of the condensate background belongs to the macroscopic
+gravitational regime and does not alter the local tangent-space role of
+$c_*$.
 Macroscopic gravity begins when the ordered condensate background is
 allowed to vary slowly:
 \[
@@ -10456,6 +10476,8 @@ identified with the ordered-branch speed: $c=c_*$.
 \paragraph{Still open.}
 A theorem-level derivation of the full gauge sector from the
 microscopic Euclidean theory.
+A theorem-level derivation of the precise suppression pattern of
+non-minimal gauge-sector operators beyond the minimal route.
 A complete analysis of higher-order Lorentz-violating corrections
 beyond the homogeneous limit.
 
@@ -10463,6 +10485,21 @@ In this sense, ECT already derives the kinematic core of special
 relativity and narrows the remaining gap to a specific structural
 question: whether the physical photon is realised as the transverse
 gauge manifestation of the same compact phase branch.
+
+\paragraph{Summary.}
+\begin{equation}
+  \text{homogeneous ordered phase}
+  \;\Longrightarrow\;
+  \text{unique scalar-branch cone } c_*
+  \;\Longrightarrow\;
+  \text{local SR},
+  \label{eq:sr_summary_chain}
+\end{equation}
+and, within the minimal phase-to-gauge emergence route,
+\begin{equation}
+  c_\gamma = c_* = c.
+  \label{eq:sr_summary_cstar}
+\end{equation}
 
 \bigskip
 Having established the homogeneous ordered-phase limit and its
@@ -10903,8 +10940,9 @@ this yields a conserved rank-2 current for the scalar sector:
 \end{equation}
 The complete form including translational and rotational currents
 is derived in Appendix~\ref{app:noether_full}.
-After analytic continuation $w\to-ic_*t$ this becomes the standard
-covariant conservation law $\nabla_\mu T^{\mu\nu}=0$.
+In the Lorentzian ordered branch, parametrised in real time by
+$w=c_* t$, this becomes the standard covariant conservation law
+$\nabla_\mu T^{\mu\nu}=0$.
 
 This is a strict Level~A statement.
 It depends only on the homogeneity of the Euclidean arena~(P1) and on
