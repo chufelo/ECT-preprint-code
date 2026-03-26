@@ -13571,6 +13571,11 @@ as the isotropic background reduction of the $\phi$-first closure.
 The present subsection analyses their physical content: late-time
 dark-energy behaviour, the evolution of the effective gravitational
 coupling, and the resulting observational constraints.
+In what follows, it is important to distinguish between structural
+properties of the homogeneous branch (such as the existence of a
+dark-energy-like amplitude sector and the no-phantom bound within the
+closure) and particular background parameterisations used for
+illustration or data contact.
 An inflation-like effective description of the ordering transition,
 if retained, is discussed in \S\ref{sec:pre_lorentzian}--\ref{sec:cosmo_problems}.
 
@@ -13614,22 +13619,24 @@ The effective potential $U(\phi)$ generically has a residual nonzero
 value at $\phi=0$, giving the dark-energy
 contribution~\eqref{eq:FLRW}.
 
-\paragraph{Proposition (no-phantom constraint).}
-Within the $\phi$-first closure, if $\omega(\phi)>0$, the effective
-dark-energy equation of state satisfies $w_\phi\ge-1$ identically.
+\paragraph{Corollary (no-phantom bound in the $\phi$-first closure).}
+If $\omega(\phi)>0$, then the homogeneous amplitude-sector equation of
+state satisfies $w_\phi\ge-1$, with equality only in the frozen limit
+$\dot\phi=0$.
 
 \emph{Proof.}
-Since $\omega>0$ and $\dot\phi^2\ge 0$, the kinetic
-term $\tfrac{1}{2}\omega\dot\phi^2\ge 0$.
-Adding it to both numerator and denominator
-of~\eqref{eq:w_phi} relative to the $\dot\phi=0$ case:
-$w_\phi\ge -U/U=-1$, with equality iff $\dot\phi=0$.
+Since $\omega(\phi)>0$ and $\dot\phi^2\ge 0$, the kinetic contribution
+$K\equiv\tfrac{1}{2}\omega(\phi)\dot\phi^2\ge 0$.
+Therefore $w_\phi=(K-U)/(K+U)\ge -1$, with equality iff $K=0$.
 \hfill$\square$
 
-\emph{Status:} Level~B structural---conditional on the $\phi$-first
-closure and $\omega(\phi)>0$.
-This is a testable structural prediction: the ECT $\phi$-first closure
-structurally excludes phantom crossing ($w<-1$) at the background level.
+This is a Level~B structural consequence of the adopted $\phi$-first
+closure and of the positivity of the kinetic coefficient.
+It should not be confused with a fully model-independent prediction of
+all possible nonlinear completions of ECT.
+This makes quintessence-like late-time behaviour structurally natural in
+the present closure, while leaving the precise present-day value of
+$w_0$ to the explicit background solution.
 Current DESI~DR2 data~\cite{DESI2024} are compatible with $w_0>-1$.
 
 In terms of the kinetic-to-potential ratio:
@@ -13669,6 +13676,9 @@ coupling:
 \end{equation}
 where $\phi_b(z)$ is the slowly evolving cosmological background
 of the order field.
+This expression should be read as the background realisation of the
+effective coupling within the present $\phi$-first closure, rather than
+as a unique theorem-level cosmological law of the full ECT framework.
 If $\phi_b$ varies monotonically with epoch, the effective
 gravitational strength at recombination differs from its
 late-time value, providing a structural route to
@@ -13677,22 +13687,17 @@ The sign and order of magnitude of the effect follow from
 $\phi$-first logic; a numerical value would require a solved
 background history $\phi_b(z)$, which is not yet available.
 
-\paragraph{Early-universe constraint on $\phi_b(z)$.}
-The evolution $G_{\rm eff}(z)$ must be compatible with
-big-bang nucleosynthesis~(BBN), which constrains
-$|\Delta G/G|$ at $z\sim10^9$ to the percent level.
-For a naive power-law ansatz $\phi_b(z)=-2\varepsilon\ln(1+z)$
-with $\varepsilon\sim 0.01$, one finds
-$G_{\rm eff}(z_{\rm BBN})/G_N\sim(1+z_{\rm BBN})^{2\varepsilon}$,
-which exceeds the BBN bound for $z_{\rm BBN}\sim10^9$.
-This implies that the background field $\phi_b(z)$ must saturate
-(become approximately constant) at sufficiently high redshift,
-which is physically expected: the ordered branch stabilises
-shortly after the ordering transition, so $\phi_b(z)$ should
-approach a constant for $z\gg z_{\rm eq}$.
-A more realistic $\phi_b(z)$ that saturates at early times is
-therefore required for quantitative consistency; the naive power-law
-is valid only as a late-time approximation.
+\paragraph{BBN consistency constraint.}
+Any background realisation in which $G_{\rm eff}(z)$ evolves
+significantly at very high redshift is constrained by primordial
+nucleosynthesis.
+Accordingly, a naive continuation of a late-time running ansatz to
+arbitrarily large~$z$ should not be taken literally.
+Within ECT this is naturally interpreted as a saturation requirement:
+once the ordered branch has stabilised sufficiently early, the
+background $\phi_b(z)$ must become nearly constant over the BBN era.
+Thus BBN does not falsify the mechanism itself, but constrains the
+allowed high-redshift completion of the background ansatz.
 
 % --- fig:cosmo_predictions ---
 \begin{figure*}[!htb]
