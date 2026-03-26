@@ -458,8 +458,10 @@ and the effective propagation speed $c$ can emerge from the dynamics of
 perturbations in the symmetry-broken phase. In the effective
 description the characteristic propagation speed of low-energy
 excitations defines the causal cone of the emergent metric. The identification of this velocity with the physical speed of light
-corresponds to a choice of units in which the characteristic
-propagation speed of condensate excitations is set equal to $c$. The gravitational sector
+is a structural consequence of the single-field nature of ECT
+(\S\ref{sec:cone_inheritance}): all linear ordered-branch
+excitations share the same causal cone, and the gauge sector
+inherits it within the minimal emergence route. The gravitational sector
 appears as an effective description of collective excitations of the
 condensate, while quantum dynamics can be interpreted in terms of loop
 configurations and path-integral weights associated with the vacuum
@@ -1634,10 +1636,17 @@ The Lorentzian window is $\beta < \alpha < 4\beta$:
     derivation in Appendix~\ref{app:lorentz_window}.
 \end{itemize}
 
-\paragraph{Benchmark normalisation.}
-The observational constraint that gravitational waves and
-electromagnetic signals propagate at the same speed~\cite{LIGO_Virgo_GW170817_2017}
-motivates the working normalisation $c_*=c$.
+\paragraph{Structural identification $c_*=c$.}
+The identification $c_*=c$ is a structural consequence of
+single-field ECT within the minimal gauge-emergence route:
+all linear ordered-branch modes share a unique causal cone
+(Universality Corollary, \S\ref{sec:goldstone_integrability_main}),
+and the phase and gauge sectors inherit the same cone at leading order
+(\S\ref{sec:cone_inheritance}).
+This result is Level~B structural, conditional on gauge emergence
+from the compact phase branch.
+Observational confirmation is provided by the constraint
+$|c_{\rm GW}-c_\gamma|/c<10^{-15}$~\cite{LIGO_Virgo_GW170817_2017}.
 In canonical units ($\beta=1$) this corresponds to $\alpha=2\beta=2$.
 
 \paragraph{LIV time delay: ECT prediction.}
@@ -1665,6 +1674,30 @@ so the delay is species-independent.
 The prediction $\Delta t\propto E^1/M_{\rm Pl}$ (linear suppression)
 is distinguishable from generic quadratic models
 $\Delta t\propto E^2/M_{\rm Pl}^2$.
+
+\paragraph{Emergent special relativity.}
+\label{par:emergent_SR}
+ECT does not postulate special relativity but derives its
+kinematic core as an emergent structure of the ordered condensate
+phase.
+The $O(4)\to O(3)$ SSB generates a hyperbolic kinetic tensor
+$K^{AB}$~(Theorem~\ref{thm:tensor_uniqueness}).
+In the homogeneous ordered phase, after analytic continuation
+$w\to -ic_*t$, the effective metric reduces to the Minkowski form
+$\eta_{\mu\nu}=\mathrm{diag}(-1,1,1,1)$~(in units $c_*=1$), and
+the isometry group is the Poincar\'e group.
+The scalar broken-branch sector possesses a unique causal cone
+(Universality Corollary, \S\ref{sec:goldstone_integrability_main}).
+The phase sector inherits the same tensor structure, and within
+the minimal gauge-emergence route, $c_\gamma=c_*$
+(\S\ref{sec:cone_inheritance}).
+Higher-order Lorentz-violating corrections are expected to be
+Planck-suppressed and controlled by the condensate
+structure~\eqref{eq:LIV_delay}.
+Existing observations constrain such deviations very
+strongly~\cite{LIGO_Virgo_GW170817_2017,Mattingly2005,Liberati2013,KosteleckyRussell2011}.
+Einstein special relativity thus appears as the infrared
+homogeneous limit of the ordered-branch kinematics of ECT.
 
 
 \subsection{Effective Lorentzian metric}
@@ -2291,6 +2324,27 @@ constraint that reduces the naive $O(4)/O(3)$ Goldstone content
 (Appendix~\ref{app:goldstone_integrability}).  This has no analogue
 in standard internal SSB frameworks.
 
+\paragraph{Universality of the causal cone.}
+The integrability constraint has a direct consequence for the
+universality of the emergent causal cone.
+In Einstein--aether
+theory~\cite{Jacobson2004,JacobsonMattingly2001}, the aether vector
+is an independent dynamical field with four free kinetic coefficients;
+different spin sectors generically propagate at different speeds, and
+universality requires fine-tuning.
+In the SME~\cite{ColladayKostelecky1998,Kostelecky2004}, each sector
+carries an independent set of Lorentz-violation parameters.
+In the He-3 analogy~\cite{Volovik2003}, different quasiparticle
+species can see different cones.
+In ECT, the fundamental field is one~($\Phi$), the kinetic tensor
+is one~($K^{AB}$), and integrability reduces all linear soft modes
+to derivatives of one scalar~$\chi$.
+There are no free sector-dependent Lorentz-violation coefficients
+at the leading linear level
+(Universality Corollary, \S\ref{sec:goldstone_integrability_main}).
+A detailed comparison of speed structures is given in
+Appendix~\ref{app:universality_proof}.
+
 
 % ============================================================
 % SECTION 4: SPECTRUM AND EFFECTIVE DYNAMICS OF THE BROKEN PHASE
@@ -2453,6 +2507,69 @@ One must therefore distinguish two statements:
 The full technical derivation is given in
 Appendix~\ref{app:goldstone_integrability}.
 
+\paragraph{Corollary: universality of the emergent causal cone
+within the linear scalar branch.}
+\label{par:universality_corollary}
+The integrability result has a further consequence that distinguishes
+ECT from multi-field Lorentz-violation
+frameworks~\cite{Jacobson2004,JacobsonMattingly2001,Horava2009,%
+ColladayKostelecky1998,Volovik2003}.
+
+\emph{Corollary (single-field causal universality).}
+In the scalar-only ECT basis, the ordered-branch variable
+$Q_A=\partial_A\Phi$ is an exact one-form.
+The integrability condition~\eqref{eq:integrability_un} reduces all
+linear soft excitations $(\sigma,\pi_i)$ to derivatives of a single
+scalar fluctuation~$\chi$~\eqref{eq:goldstone_reduction_main}.
+The linear ordered branch therefore possesses a unique principal
+symbol, fixed by the kinetic tensor $K^{AB}$~(Theorem~\ref{thm:tensor_uniqueness}),
+and hence a unique emergent causal cone with speed
+$c_*^2=\beta/(\alpha-\beta)$~\eqref{eq:c_star_general}.
+
+\emph{Proof.}
+From~\eqref{eq:goldstone_reduction_main},
+$\sigma=\partial_w\chi$ and $\pi_i=\partial_i\chi/u_0$.
+The quadratic EFT action becomes
+$S^{(2)}=\tfrac{1}{2}\int d^4X\,K^{AB}\partial_A\chi\,\partial_B\chi$,
+which is one equation for one field.
+Its characteristics satisfy
+$\beta\,\mathbf{k}^2-(\alpha-\beta)\,k_w^2=0$,
+defining a single cone with speed
+$c_*^2=\beta/(\alpha-\beta)$.
+Since $\sigma$ and $\pi_i$ are derivatives of~$\chi$, no second
+independent principal symbol exists.
+\hfill$\square$
+
+\emph{Scope.}
+This corollary applies to the linear ordered scalar branch.
+It does not automatically extend to the gauge or fermionic sectors,
+which require additional construction steps
+(gauge emergence, \S\ref{sec:gauge};
+spinorial reconstruction, \S\ref{sec:fermions}).
+The extension to the phase and gauge sectors is discussed in
+\S\ref{sec:cone_inheritance}.
+
+\emph{Contrast with competing frameworks.}
+In Einstein--aether theory~\cite{Jacobson2004,JacobsonMattingly2001}
+the unit vector~$n^\mu$ is an independent dynamical field with four
+free kinetic coefficients~$c_1\ldots c_4$.  Different spin sectors
+generically propagate at different speeds; universality of the causal
+cone requires fine-tuning of the~$c_i$.
+In Ho\v{r}ava--Lifshitz gravity~\cite{Horava2009} different sectors
+may acquire distinct UV dispersion relations.
+In the Standard Model Extension~(SME)~\cite{ColladayKostelecky1998,Kostelecky2004}
+each sector carries an independent set of Lorentz-violation
+coefficients; universality is not a structural consequence.
+In the He-3 analogy of Volovik~\cite{Volovik2003} different
+quasiparticle species can see different effective light cones.
+In ECT none of these issues arises at the leading linear level,
+because the fundamental field is one~($\Phi$), the kinetic tensor is
+one~($K^{AB}$), and all linear soft modes are derivatives of one
+scalar~($\chi$).
+A detailed comparison of speed structures is given in
+Appendix~\ref{app:universality_proof}.
+
+
 \subsection{Minimal soft orientation EFT and phenomenological status}
 \label{sec:goldstone_soft_eft}
 
@@ -2554,6 +2671,94 @@ three-component particle multiplet of orientation modes.
 Its full interpretation as the graviton sector is developed in
 Section~\ref{sec:graviton}.
 
+% ============================================================
+\subsection{Causal cone inheritance by the phase and gauge sectors}
+\label{sec:cone_inheritance}
+% ============================================================
+
+The Universality Corollary~(\S\ref{sec:goldstone_integrability_main})
+establishes a unique causal cone for the linear scalar ordered branch.
+This subsection traces how that cone is inherited by the phase and
+gauge sectors.
+
+\paragraph{Phase sector (Level~A/B bridge).}
+The phase~$\theta$ enters ECT through the polar decomposition
+$\Phi_{\rm eff}=\rho\,e^{i\theta}$.
+At wavelengths large compared to the radial-mode scale, the effective
+phase action takes the form~\eqref{eq:qs_phase_action}:
+\[
+  S_\theta
+  =
+  \frac{K_\theta^{\rm eff}}{2}
+  \int d^4X\; g_{\rm eff}^{AB}\,\partial_A\theta\,\partial_B\theta
+  + S_{\rm higher},
+\]
+where $g_{\rm eff}^{AB}$ is the broken-phase kinetic tensor
+$K^{AB}$---the same tensor that defines the causal cone of the
+geometric branch~(Section~\ref{sec:lorentz_order_field}).
+This is not a circular argument: $K^{AB}$ is determined by the
+symmetry of SSB~(Theorem~\ref{thm:tensor_uniqueness}), independently
+of any identification $c_*=c$.  Both the propagation speed~$c_*$
+and the phase action~$S_\theta$ are parallel consequences of the
+same root $K^{AB}$, not dependent on each other.
+
+Status: Level~A for the tensor structure of $S_\theta$; Level~B for
+the coefficient $K_\theta^{\rm eff}$, which has not yet been derived
+from bare~P3.
+
+\paragraph{Gauge sector (Level~B structural).}
+If gauge emergence is realised by the minimal gauging procedure
+(Propositions~1--3, Section~\ref{sec:gauge}), then:
+
+\begin{enumerate}
+\item The leading two-derivative gauge-invariant kinetic term is
+  uniquely of Maxwell type: $F_{AB}F^{AB}$
+  (Proposition~3, \S\ref{sec:gauge}).
+  This term is built on the same~$g_{\rm eff}^{AB}$.
+\item Within the minimal phase-to-gauge emergence route, no
+  independent leading-order anisotropic gauge kinetic tensor is
+  introduced beyond the ordered-phase tensor~$K^{AB}$.
+  This contrasts with Einstein--aether~\cite{Jacobson2004}, where the
+  gauge sector may have its own kinetic coefficients, and with the
+  SME~\cite{ColladayKostelecky1998}, where each sector carries
+  independent Lorentz-violation parameters.
+\item Therefore, within the minimal route,
+  $c_\gamma=c_*$,
+  and since the observed speed of light is defined as
+  $c\equiv c_\gamma$:
+  \begin{equation}
+    \label{eq:cstar_structural}
+    c = c_\gamma = c_*
+    \qquad \text{(Level~B structural).}
+  \end{equation}
+\end{enumerate}
+
+\paragraph{Important caveat.}
+Beyond the minimal phase-to-gauge emergence route, the conclusion
+is not automatic.
+If the gauge sector is allowed an independent EFT extension, the
+anisotropic operator $n^\mu F_{\mu\nu}n^\alpha F_\alpha{}^\nu$ may
+acquire a free coefficient, and the universality argument no longer
+holds.  The present result is therefore conditional on the minimal
+route.
+
+\paragraph{Summary of the structural identification $c_*=c$.}
+The hierarchy of derivation levels is:
+\begin{enumerate}
+\item Level~A: unique causal cone of the linear scalar ordered branch
+  (Universality Corollary, integrability $+$ uniqueness of $K^{AB}$).
+\item Level~A/B bridge: the phase sector inherits the same tensor
+  structure at leading order.
+\item Level~B structural: within the minimal gauge-emergence route,
+  $c_\gamma=c_*$ and hence $c=c_*$.
+\end{enumerate}
+This replaces the earlier presentation of $c_*=c$ as a benchmark
+normalisation~\cite{LIGO_Virgo_GW170817_2017} with a structural
+identification whose only remaining open step is the realisation of
+the physical photon as the transverse gauge manifestation of the
+phase branch~(OP-gauge,
+Section~\ref{sec:gauge}).
+
 \subsection{Status of results in this section}
 \label{sec:spectrum_status}
 
@@ -2591,6 +2796,12 @@ Integrability of $Q_A=\partial_A\Phi$
   & Level~A & Scalar-only basis of P3 \\
 Linear reduction $\pi_i=\partial_i\chi/u_0$, $\sigma=\partial_w\chi$
   & Level~A & Integrability around the ordered background \\
+Unique causal cone of the linear scalar ordered branch
+  & Level~A & Universality Corollary (\S\ref{sec:goldstone_integrability_main}): single $\chi$ $\Rightarrow$ single principal symbol \\
+Cone inheritance by phase sector $\theta$
+  & Level~A/B & Same $K^{AB}$; $K_\theta^{\rm eff}$ open \\
+$c_\gamma=c_*$ (minimal gauge-emergence route)
+  & Level~B structural & Minimal gauging of compact phase (\S\ref{sec:cone_inheritance}) \\
 Minimal 3-component orientation EFT on $O(4)/O(3)\simeq S^3$
   & Level~B (effective description) & Broken-branch parametrisation only \\
 Independent soft mode in scalar-only broken phase: one longitudinal scalar $\chi$
@@ -2978,7 +3189,11 @@ formalism nor a gravitational sector.
 \paragraph{Observational matching.}
 The constraint that gravitational and electromagnetic signals propagate
 at the same speed~\cite{LIGO_Virgo_GW170817_2017} motivates the
-benchmark $c_*=c$. In canonical units ($\beta=1$) this corresponds
+structural identification $c_*=c$
+(Level~B structural within the minimal phase-to-gauge emergence
+route; see \S\ref{sec:goldstone_integrability_main}
+and \S\ref{sec:cone_inheritance}).
+In canonical units ($\beta=1$) this corresponds
 to $\alpha=2\beta=2$.
 The parameters $(\alpha,\beta)$ are EFT parameters not derivable
 from the bare micro-action P3 in the current formulation.
@@ -3429,9 +3644,9 @@ $c_*$
   & Level~A (EFT)
   & Eq.~\eqref{eq:c_star_def} \\
 $\alpha=2\beta$
-  & Working normalisation $c_*=c$
-  & Benchmark (matching)
-  & \cite{LIGO_Virgo_GW170817_2017} \\
+  & Structural identification $c_*=c$
+  & Level~B structural
+  & \S\ref{sec:cone_inheritance} + \cite{LIGO_Virgo_GW170817_2017} \\
 $m_\sigma^2=2\mu^2$
   & Bare radial stiffness
   & Level~A in P3
@@ -9445,7 +9660,7 @@ schematically in Figure~\ref{fig:partI_derivation_logic}.}
 \caption{Derivation logic of Part~I (Foundations).
 Starting from the postulates P1--P5 and the dynamical principle~DP,
 together with the derived coherent branch rule~BR1 and two
-phenomenological matching inputs (Ph1:~$c_*=c$; Ph2:~$G_N$ matching),
+structural identifications (Ph1:~$c_*=c$, Level~B structural conditional on minimal gauge emergence, \S\ref{sec:cone_inheritance}; Ph2:~$G_N$ matching, Level~B),
 the diagram traces the principal derivation chains through SSB,
 emergent Lorentzian geometry, fundamental constants, equations of
 motion, gauge and fermionic sectors, to the ECT-specific
@@ -9668,15 +9883,20 @@ leptogenesis~(Section~\ref{sec:neutrino_particles}).
 
 \paragraph{Derived from postulates (Level~A).}
 Lorentzian signature, uniqueness of the kinetic tensor, light speed
-$c_*$, the Klein--Gordon equation, the global Noether current and its
-conservation, the algebraic isomorphism
+$c_*$, universality of the causal cone within the linear scalar
+ordered branch (Universality Corollary,
+\S\ref{sec:goldstone_integrability_main}: single field, single
+$K^{AB}$, single cone), the Klein--Gordon equation, the global
+Noether current and its conservation, the algebraic isomorphism
 $\mathfrak{so}(3)\cong\mathfrak{su}(2)$, the two-branch structure,
 the integer winding condition, the six-layer causal architecture
 (Levels~A1--A3), and the structural distinction between the
 orientational and amplitude sectors of the ordered branch.
 
 \paragraph{Derived with stated assumptions (Level~B).}
-Gravitational constant $G_N$, action scale $S_0$, the Schr\"odinger
+Gravitational constant $G_N$, action scale $S_0$, the structural
+identification $c_*=c$ within the minimal gauge-emergence route
+(\S\ref{sec:cone_inheritance}), the Schr\"odinger
 equation, the linearised Einstein equations, the local $U(1)$ gauge
 completion within the compact phase EFT, the thermodynamic arrow
 of time (under ohmic/Markov closure), the Dirac equation (from
@@ -9725,6 +9945,10 @@ The following problems are explicitly open:
   \item Microscopic derivation of the fifth-coupling coefficient
     $\mu_5$ from condensate microdynamics, and establishment of
     radiative stability.
+  \item Realisation of the physical photon as the transverse gauge
+    manifestation of the compact phase branch~(OP-gauge); this is the
+    remaining step needed to promote the structural identification
+    $c_*=c$ from Level~B to Level~A.
   \item Full mapping of the ECT-specific operator onto standard
     Lorentz-violation and equivalence-principle test frameworks.
   \item Full quantum reconstruction from $S_0$: amplitude composition,
@@ -21783,6 +22007,129 @@ Dark-matter role of soft sector & Removed & Not needed by ECT \\
 \end{tabular}
 \end{center}
 
+% ------------------------------------------------------------
+\section{Single-field causal universality: detailed proof and
+comparison with competing frameworks}
+\label{app:universality_proof}
+
+\textit{Reference from main text:
+Universality Corollary
+(\S\ref{sec:goldstone_integrability_main}), cone inheritance
+(\S\ref{sec:cone_inheritance}), and comparison with other theories
+(\S\ref{sec:comparison_theories}).
+Status: Level~A for the scalar ordered branch; Level~B structural for
+the gauge sector.}
+
+% ---- Theorem ----
+\subsection{Theorem: unique causal cone of the linear scalar
+ordered branch}
+
+\textbf{Theorem.}
+\textit{Let $\Phi$ be the single scalar field of ECT with the
+ordered-branch EFT satisfying P1--P4. Let
+$K^{AB}=\beta\,\delta^{AB}-\alpha\,n^A n^B$ be the unique kinetic
+tensor (Theorem~\ref{thm:tensor_uniqueness}).
+Then the characteristic surface
+$\det(K^{AB}\xi_A\xi_B)=0$ defines a unique causal cone, and all
+linear soft modes of the ordered branch propagate on that cone.}
+
+\emph{Proof.}
+
+\emph{Step~1.} From the uniqueness theorem
+(Theorem~\ref{thm:tensor_uniqueness},
+\S\ref{sec:tensor_uniqueness}), $K^{AB}$ is determined
+up to two parameters $(\alpha,\beta)$ by the $O(4)\to O(3)$ SSB.
+
+\emph{Step~2.} From integrability
+(Appendix~\ref{app:goldstone_integrability}),
+$Q_A=\partial_A\Phi$ is an exact one-form.
+At the linear level, $\delta Q_A=\partial_A\chi$, so that
+$\sigma=\partial_w\chi$ and $\pi_i=\partial_i\chi/u_0$.
+
+\emph{Step~3.} The quadratic EFT action becomes
+\begin{equation}
+  \label{eq:Schi_universal}
+  S^{(2)}=\frac{1}{2}\int d^4X\;K^{AB}\,\partial_A\chi\,\partial_B\chi
+  =\frac{1}{2}\int d^4X\;\left[\beta\,(\partial_i\chi)^2
+  -(\alpha-\beta)(\partial_w\chi)^2\right].
+\end{equation}
+This is one equation for one field.
+
+\emph{Step~4.} The equation of motion
+$\beta\,\nabla^2\chi-(\alpha-\beta)\,\partial_w^2\chi=0$
+has the characteristic polynomial
+$\beta\,\mathbf{k}^2-(\alpha-\beta)\,k_w^2=0$,
+defining a single cone with speed
+\begin{equation}
+  c_*^2=\frac{\beta}{\alpha-\beta}\,.
+\end{equation}
+Since $\sigma$ and $\pi_i$ are derivatives of $\chi$, no second
+independent principal symbol exists.
+\hfill$\square$
+
+% ---- Einstein-aether comparison ----
+\subsection{Comparison with Einstein--aether theory}
+
+In Einstein--aether theory~\cite{Jacobson2004,JacobsonMattingly2001}
+the preferred direction is carried by a unit timelike vector
+$u^\mu$ with its own kinetic action:
+\begin{equation}
+  S_{\ae}=-\frac{M^2}{2}\int d^4x\,\sqrt{-g}\,
+  \bigl[c_1(\nabla_\mu u_\nu)(\nabla^\mu u^\nu)
+  +c_2(\nabla_\mu u^\mu)^2
+  +c_3(\nabla_\mu u_\nu)(\nabla^\nu u^\mu)
+  +c_4 u^\mu u^\nu(\nabla_\mu u_\alpha)(\nabla_\nu u^\alpha)\bigr].
+\end{equation}
+The four free coefficients $c_1\ldots c_4$ give rise to three
+distinct propagation speeds for spin-0, spin-1, and spin-2
+perturbations. Their equality $c_0=c_1=c_2$ requires two
+fine-tuning relations among the $c_i$~\cite{JacobsonMattingly2001}.
+
+In ECT, $n_A=\partial_A\Phi/|\partial\Phi|$ is a derived object, not
+an independent dynamical field. There are no free
+$c_1\ldots c_4$: the unique kinetic tensor $K^{AB}$ has two
+parameters $(\alpha,\beta)$ and yields a single speed $c_*$.
+Universal-cone universality is therefore structural, not fine-tuned.
+
+% ---- SME comparison ----
+\subsection{Comparison with the Standard Model Extension}
+
+The Standard Model Extension~(SME)~\cite{ColladayKostelecky1998,%
+Kostelecky2004} parametrises all possible Lorentz-violating operators
+for each sector independently. For the photon sector alone the
+CPT-even term involves the rank-4 coefficient tensor
+$(k_F)^{\kappa\lambda\mu\nu}$ with 19 independent components.
+The electron sector carries a separate tensor $(c_e)^{\mu\nu}$ with
+9 components. These coefficients are phenomenologically independent:
+the SME does not relate them.
+
+In ECT, all Lorentz-violating structure originates from a single
+tensor $K^{AB}$, which has only two independent parameters
+$(\alpha,\beta)$. All sectors inherit the same
+anisotropy, and there are no free sector-dependent Lorentz-violation
+coefficients at leading order. This makes ECT far more predictive
+(and more easily falsifiable) than a generic SME-level
+parametrisation.
+
+Current observational bounds~\cite{KosteleckyRussell2011,%
+Mattingly2005,Liberati2013} constrain photon-sector anisotropy to
+$|\delta c_\gamma/c|\lesssim\text{few}\times10^{-17}$ (optical
+cavity tests) and gravitational-electromagnetic nonuniversality to
+$|c_{\rm GW}-c_\gamma|/c\lesssim10^{-15}$~(GW170817).
+These bounds are consistent with ECT, where Lorentz-violation effects
+are Planck-suppressed.
+
+% ---- Scope ----
+\subsection{Scope and limitations}
+
+The theorem covers the linear scalar ordered branch.
+Extension to the gauge sector is conditional on the minimal
+phase-to-gauge emergence route
+(\S\ref{sec:cone_inheritance}). Extension to the fermionic sector
+follows the structural reconstruction route
+(\S\ref{sec:fermions}). Both are Level~B.
+
+% ------------------------------------------------------------
 % ------------------------------------------------------------
 \section{Effective Action for Orientation Modes: Nonlinear Sigma-Model}
 \label{app:sigma_model}
