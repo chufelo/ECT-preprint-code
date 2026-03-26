@@ -12907,8 +12907,8 @@ The corresponding correlation length is
 $\xi_{\rm cond}\sim m_\sigma^{-1}\sim\ell_{\rm Pl}
 \approx1.6\times10^{-35}$\,m.
 If the transition to the ordered branch is sharp, the earliest
-Lorentzian relaxation scale after ordering is naturally of order
-$M_{\rm Pl}^{-1}\approx5.4\times10^{-44}$\,s.
+Lorentzian relaxation scale after ordering is naturally expected to be
+of order $M_{\rm Pl}^{-1}$.
 These are matching estimates, not first-principles derivations of
 transition dynamics~(OP3).
 
@@ -13053,8 +13053,8 @@ If the observed Universe corresponds to such a coherently selected
 connected branch, then its large-scale homogeneity is inherited from the
 branch-selection event itself rather than manufactured later by causal
 equilibration inside an already formed spacetime.
-In this sense, a macro-coherent branch transition is already sufficient
-to dissolve the standard horizon paradox for the observed Universe.
+In this sense, a macro-coherent branch transition provides a coherent
+resolution route for the standard horizon paradox within ECT.
 
 The assumption that the progenitor domain is connected, and that its
 coherence scale is large enough to satisfy
@@ -13064,8 +13064,8 @@ L_{\rm br}\,\frac{a_0}{a_{\rm br}}\gtrsim L_{\rm hom},
 is at present a working hypothesis rather than a first-principles
 derivation.
 Its role here is to formulate the coherent-branch scenario precisely.
-Additional quantitative support for the required scale is discussed in
-Appendix~\ref{app:horizon_ect_appendix}.
+A dedicated quantitative estimate of the required coherence scale is
+left for future work.
 
 At the level of classical action comparison, the coherent branch is also
 the natural low-gradient baseline.
@@ -13388,11 +13388,10 @@ independent scalar mode at leading order.
 \hfill$\square$
 
 This is the structural analogue of a single-scalar perturbation sector.
-It does not yet constitute a full derivation of the observed curvature
-spectrum, but it shows that ECT does not generate a multi-scalar
-primordial sector at leading order within the ordered branch itself,
-without introducing a separate inflaton field at the level of leading
-ordered-branch perturbation content.
+It does not yet constitute a derivation of the observed curvature
+spectrum, but it does show that the leading ordered-branch perturbation
+content is not multi-scalar and does not require a separately postulated
+inflaton degree of freedom at that level.
 
 \paragraph{Consequence: no independent ordered-branch isocurvature
 mode.}
@@ -13585,19 +13584,13 @@ if retained, is discussed in \S\ref{sec:pre_lorentzian}--\ref{sec:cosmo_problems
 
 \subsubsection*{Screened FLRW limit}
 
-In the screened limit $\phi\to 0$, $\dot\phi\to 0$, the background
-system reduces to the standard Friedmann equation with cosmological
-constant:
-\begin{equation}
-  \label{eq:FLRW}
-  H^2
-  = \frac{8\pi G_N}{3}\,\rho_{\rm mat}
-  + \frac{\Lambda_{\rm eff}(0)}{3},
-  \qquad
-  \Lambda_{\rm eff}(0)=\frac{U(0)}{\bar M_{\rm Pl}^2}.
-\end{equation}
-This is a consistency check: the $\phi$-first closure recovers standard
-$\Lambda$CDM cosmology in the screened limit.
+In the screened/frozen limit $\phi\to0$, $\dot\phi\to0$, the full
+background system of
+Eqs.~\eqref{eq:bg_reduction_friedmann}--\eqref{eq:bg_reduction_scalar}
+reduces to the standard Einstein--Friedmann form with an effective
+vacuum contribution determined by the frozen amplitude sector.
+This serves as a consistency check: the $\phi$-first closure recovers
+the $\Lambda$CDM background structure in the screened limit.
 
 \subsubsection*{Dark energy as residual amplitude-sector vacuum energy}
 
@@ -13621,7 +13614,7 @@ so the effective equation of state is
 \end{equation}
 The effective potential $U(\phi)$ generically has a residual nonzero
 value at $\phi=0$, giving the dark-energy
-contribution~\eqref{eq:FLRW}.
+contribution to the background Friedmann system~(\S\ref{sec:mp_nonlinear}).
 
 \paragraph{Corollary (no-phantom bound in the $\phi$-first closure).}
 If $\omega(\phi)>0$, then the homogeneous amplitude-sector equation of
@@ -13650,8 +13643,10 @@ In terms of the kinetic-to-potential ratio:
   \qquad
   \rho_{\rm kin}\equiv\tfrac{1}{2}\omega\dot\phi^2,
   \quad
-  \rho_{\rm cond}\equiv\rho_\phi.
+  \rho_{\rm cond}\equiv U(\phi).
 \end{equation}
+This parametrisation is most useful in the late-time
+kinetic-subdominant regime $\rho_{\rm kin}\ll\rho_{\rm cond}$.
 The ratio $\rho_{\rm kin}/\rho_{\rm cond}$ is not yet derived from
 bare ECT postulates; no specific numerical value of $w_0$ can be
 claimed without a solved background history~(Level~B/Open).
@@ -13685,8 +13680,8 @@ effective coupling within the present $\phi$-first closure, rather than
 as a unique theorem-level cosmological law of the full ECT framework.
 If $\phi_b$ varies monotonically with epoch, the effective
 gravitational strength at recombination differs from its
-late-time value, providing a structural route to
-Hubble-tension alleviation~(Level~B).
+late-time value, providing a possible structural route to partial Hubble-tension
+alleviation within the present closure~(Level~B).
 The sign and order of magnitude of the effect follow from
 $\phi$-first logic; a numerical value would require a solved
 background history $\phi_b(z)$, which is not yet available.
@@ -13702,6 +13697,9 @@ once the ordered branch has stabilised sufficiently early, the
 background $\phi_b(z)$ must become nearly constant over the BBN era.
 Thus BBN does not falsify the mechanism itself, but constrains the
 allowed high-redshift completion of the background ansatz.
+In particular, any late-time illustrative parametrisation should be
+understood as local in redshift and not extrapolated unchanged to the
+entire pre-BBN regime.
 
 % --- fig:cosmo_predictions ---
 \begin{figure*}[!htb]
@@ -13885,6 +13883,8 @@ Additionally, a right-handed neutrino mass scale
 M_R\sim10^9~\mathrm{GeV}
 \]
 may be used as an illustrative leptogenesis benchmark.
+This benchmark is imported from the standard leptogenesis literature and
+is not fixed by ECT itself.
 In the standard see-saw picture this scale enters the heavy-neutrino
 sector in which the relevant CP-violating phases reside, but ECT does
 not presently derive those phases from condensate dynamics.
@@ -13897,6 +13897,7 @@ $u_0\sim\bar M_{\rm Pl}$ and $v_2\sim246$~GeV:
   \approx 2.4\times10^{10}\;\text{GeV}.
 \end{equation}
 This numerical proximity is at most an illustrative coincidence.
+No structural significance should presently be assigned to it.
 It should not be read as a derivation of the heavy-neutrino mass scale
 from the condensate sector.
 At the present stage, $M_R$ remains an externally chosen benchmark
@@ -13909,6 +13910,8 @@ lies deep in the strong-coupling regime.
 This is not a derived feature of ECT but an external closure input,
 and it signals that the present benchmark should not be overinterpreted
 as a perturbatively controlled microscopic model.
+Accordingly, the numerical benchmark is at best indicative, not
+microscopically reliable.
 
 \textbf{(iii) Departure from thermal equilibrium.}
 The $O(4)\to O(3)$ ordering transition is itself a symmetry-breaking
@@ -13946,7 +13949,7 @@ closure~(Level~B),
 \sim \frac{3}{2}\,\varepsilon\,\kappa\,\frac{n_R}{s}
 \sim 9\times10^{-10},
 \end{equation}
-within a factor $\sim\!1.5$ of the observed value.
+which lies in the observationally relevant range.
 This should be read only as a benchmark consistency check within the
 resonant leptogenesis closure.
 It is not a zero-parameter prediction of ECT:
@@ -13969,6 +13972,9 @@ derived from bare ECT.
 Accordingly, the present subsection establishes compatibility with
 Sakharov-type baryogenesis at Level~B, but not yet a first-principles
 ECT derivation of the observed baryon asymmetry.
+The present role of ECT in this subsection is therefore to provide a
+structural environment compatible with Sakharov-type baryogenesis, not
+yet an autonomous microscopic baryogenesis theory.
 
 % ============================================================
 \subsection{Universe age in ECT}
