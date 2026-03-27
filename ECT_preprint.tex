@@ -15930,257 +15930,7 @@ the nonlinear branch appear in dilute near-critical regions
 rather than near dense sources.
 
 
-%%% -----------------------------------------------------------
-
-\begin{table}[H]
-\centering
-\caption{Level-4 self-consistency checklist.
-\textsc{pass} = derived or verified consistent at Level~A/B;
-\textsc{part.} = partial derivation or prediction awaiting precision test;
-\textsc{prob.} = structurally motivated, rigorous proof pending;
-\textsc{open} = known open problem.}
-\label{tab:level4_checklist}
-\setlength{\tabcolsep}{6pt}
-\renewcommand{\arraystretch}{1.25}
-\small\begin{tabular}{cp{3.8cm}p{7.2cm}l}
-\toprule
-\textbf{Status} & \textbf{Check} & \textbf{Key result} & \textbf{Ref.} \\
-\midrule
-\textsc{pass} & Condensate stability      & $V''(\phi_0)=2\mu^2>0$                                   & \S\ref{sec:ssb} \\
-\textsc{pass} & Ghost-freedom             & Phys.\ mode $\lambda>0$ at $\alpha>\beta$                 & \S\ref{sec:ssb} \\
-\textsc{pass} & LIV bound                 & $|\delta c/c|<10^{-15}$ (GW170817)                    & \S\ref{sec:qs_black_holes} \\
-\textsc{pass} & Causality                 & Retarded propagation of ordered branch (Level~A); directed decoherence $\Gamma_{\rm irr}\geq 0$ (Level~A)                & \S\ref{sec:arrow_of_time} \\
-\textsc{prob.}& Second law $dS/dw\geq0$  & Level-A directional backbone + Level-B ohmic/Markov closure; full microscopic H-theorem open (OP24) & \S\ref{sec:second_law_basics} \\
-\textsc{prob.}& Born measure              & Conditional uniqueness under C1--C3; unique outcome selection open (OP23) & \S\ref{sec:born_rule} \\
-\textsc{open} & Primordial perturbations $n_s$, $r$ & ECT-native formula pending; branch-selection mechanism identified; borrowed slow-roll formula removed & \S\ref{sec:mp_cosmo} \\
-\textsc{part.}& Baryogenesis              & Sakharov-compatible environment (Level~B); $\eta_B$ benchmark only, not ECT-native derivation (OP7)            & \S\ref{sec:baryogenesis} \\
-\textsc{pass} & Unruh temperature         & $T_U=\hbar a/(2\pi c_*k_B)$ from $G_E(X,X')$         & \S\ref{sec:unruh} \\
-\textsc{pass} & Orientation-sector Casimir (ideal boundaries) & Vacuum response from soft orientation sector: computed in minimal EFT & \S\ref{sec:casimir} \\
-\textsc{open} & Casimir: lab applicability & Material boundaries $\to$ soft orientation sector: not derived & \S\ref{sec:casimir} \\
-\textsc{open} & Tensor ratio $r$ & ECT-native derivation pending; removed borrowed slow-roll formula & \S\ref{sec:mp_cosmo} \\
-\textsc{prob.}& Renormalisability         & Fixed Euclidean background avoids GR non-renorm.; full loop closure pending & \S\ref{sec:open_problems} \\
-\textsc{open} & 3 fermion generations     & Origin not yet derived                                & \S\ref{sec:open_problems} \\
-\textsc{open} & SU(3), $\alpha_{\rm fs}$  & RG connection to condensate pending                   & \S\ref{sec:open_problems} \\
-\textsc{part.}& Late-time background closure & No-phantom $w\ge-1$ (Level~B structural); age/distance apparatus; closure-level Hubble mechanism & \S\ref{sec:mp_flrw}, \S\ref{sec:universe_age}, \S\ref{sec:mp_hubble} \\
-\textsc{part.}& JWST correlated background & Correlated age/distance/growth logic; partial alleviation only & \S\ref{sec:mp_jwst_cosmo} \\
-\textsc{part.}& Force-law dimensionality & Universal $d_{\rm force}(x)$ crossover $3\to 7/3\to 2$ in present closure & \S\ref{sec:universe_size} \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-
-\paragraph{Global derivation and status maps.}
-For the reader's convenience, the following tables collect in one place:
-(i)~the derivational architecture of the framework~(Table~\ref{tab:ect_structure}),
-(ii)~the structured classification of results by Level~A / Level~B / Open status~(Table~\ref{tab:ect-levels}),
-and (iii)~the main falsifiable predictions~(Table~\ref{tab:ECT_predictions}).
-These summary tables are subordinate to the detailed section-by-section status
-statements given throughout the paper and should be read in that same disciplined
-sense: status entries reflect the Level~A / Level~B / Open discipline established
-in the revised postulate structure.
-
-\begin{longtable}{p{3.2cm}p{7.8cm}p{2.8cm}}
-\caption{Derivation map of ECT: physical objects and their origins in the new Level~A / Level~B / Open discipline.
-Entries: ``derived'' = structural Level~A consequence; ``structural / effective (Level~A/B)'' = proven in pure-metric limit, Level~B in $\phi$-first closure; ``matched (Level~B)'' = EFT matching relation; ``embedded'' = introduced consistently, not derived from bare scalar action; ``open'' = active research direction.} \\
-\label{tab:ect_structure} \\[-6pt]
-\toprule
-\textbf{Object} & \textbf{Origin in ECT} & \textbf{Status} \\
-\midrule
-\endfirsthead
-\toprule
-\textbf{Object} & \textbf{Origin in ECT} & \textbf{Status} \\
-\midrule
-\endhead
-\midrule\multicolumn{2}{r}{\small\textit{(continued on next page)}}\\
-\endfoot
-\bottomrule
-\endlastfoot
-4D Euclidean space & Postulate P1 & postulate \\
-$O(4)$ symmetry & Postulate P2 & postulate \\
-Condensate $\Phi$ & Postulate P4 & postulate \\
-Lorentzian metric $g_{\mu\nu}$ & SSB $O(4)\!\to\!O(3)$ with $\alpha>\beta$ & derived \\
-Macroscopic arrow of time & Reduced-state decoherence plus low-entropy coherent initial sector & effective / closure-dependent (Level~A/B) \\
-Speed of light $c$ & $c_*=\sqrt{\beta/(\alpha-\beta)}$ & identified \\
-Gravitational coupling $G_N$ & Geometric EFT matching: $G_N=c_*^4/(8\pi M_G^2)$ & matched (Level~B) \\
-Ordered-branch amplitude variable $\phi$ & Macroscopic closure variable for slow amplitude variations of the ordered branch & effective (Level~B) \\
-Pre-quantum action scale $S_0^{\rm EFT}$ & Elementary-loop action $S_{\rm elem}=2\pi S_0^{\rm EFT}$; Cauchy--Schwarz bound strict, $L_{\rm core}$ input Level~B & derived (structural) \\
-Physical Planck constant $\hbar$ & Final identification $S_0=\hbar$ & identified after additional matching (Level~B / open) \\
-Schr\"odinger equation & KG~+~NR limit~+ emergent complex sector & derived (Level~B) \\
-Macroscopic Einstein-like closure & Pure-metric frozen-order limit + $\phi$-first IR closure & structural / effective (Level~A/B) \\
-Graviton & Linearised effective-metric perturbation induced by $\delta n^A$;
-     spin-2 Fierz--Pauli form; massless at linearised effective level & derived (linear) \\
-Photon & $U(1)$ embedding via condensate phase & embedded (Level~B/C) \\
-$W^\pm,Z^0$ & $SU(2)_L$ condensate embedding & embedded (Level~C) \\
-Higgs & Radial mode of $SU(2)$ condensate & embedded (Level~C) \\
-Fermions & $O(3)$ spinor representations & structural route (Level~B) \\
-Dark energy sector & Effective late-time amplitude-sector closure & closure-dependent (Level~B) \\
-Dark-sector role & No particle DM required; soft orientation sector and topological sectors are open questions & open \\
-Flat rotation curves and RAR/BTFR phenomenology & Critical $\phi$-branch closure in the galactic weak-field sector & effective closure (Level~B) \\
-Macroscopic entropy growth & Reduced-state decoherence with effective bath assumptions & effective closure (Level~B) \\
-Universal causal cone & Single $g_{\mu\nu}(n)$ in IR EFT & derived \\
-LV suppression & Higher-dim.\ ops., $\delta c/c\sim(E/\Lambda)^2$ & derived \\
-\hline
-
-\end{longtable}
-
-
-
-\begin{longtable}{@{}p{0.05\textwidth}p{0.37\textwidth}p{0.07\textwidth}p{0.27\textwidth}p{0.12\textwidth}@{}}
-\caption{Structured classification of ECT results. Level~A = strict derivation; Level~B = derivation with stated assumption; Level~C (or `Open') = conjecture / open problem.}
-\label{tab:ect-levels}\\
-\toprule
-\# & Statement & Level & Key assumption (if B/C) & Section \\
-\midrule
-\endfirsthead
-\toprule
-\# & Statement & Level & Key assumption (if B/C) & Section \\
-\midrule
-\endhead
-D1 & Lorentzian phase selected when $\alpha>\beta$; Euclidean otherwise & A & $\alpha>\beta$ is a condition on condensate params & \ref{sec:ssb} \\
-D2 & KG equation from condensate action (Level~A); Schr\"odinger equation by NR reduction~+ emergent complex envelope (Level~B) & A/B & KG: Level~A (O-S continuation assumed for quadratic sector); Schr\"odinger: Level~B (additionally requires NR limit + emergent complex sector) & 4, 4 \\
-D3 & $G_N$ from geometric EFT matching ($G_N=c_*^4/(8\pi M_G^2)$) & B & Matching between ordered-branch tensor EFT and observed gravity; explicit $(u_0,\alpha,\beta)\to M_G$ derivation open~(OP2, OP3) & \ref{sec:mp_matching} \\
-D4a & Ordered branch breaks $O(4)\to O(3)$; vacuum manifold $S^3$ & A & --- & \ref{sec:sector_map} \\
-D4b & $Q_A=\partial_A\Phi$ implies integrability; $\pi_i=\partial_i\chi/u_0$ & A & Scalar-only basis & App.~\ref{app:goldstone_integrability} \\
-D4c & One surviving longitudinal scalar mode $\chi$ & B & Linear level; inverse-Higgs reduction & App.~\ref{app:goldstone_integrability} \\
-D4d & Minimal 3-component orientation EFT & B & Effective parametrisation & \ref{sec:goldstone_soft_eft} \\
-D4e & Three independent physical Goldstone particles & C & Not established; reduced by integrability & \ref{sec:goldstone_integrability_main} \\
-D5a & Graviton: induced linearised effective-metric perturbation on ordered branch & A & $u_0^2(\alpha-\beta)>0$ & 8 \\
-D5b & Fierz--Pauli form, TT projection, ghost-free counting at linearised level & B & TT gauge; explicit mode-counting from microscopic condensate variables open (OP3 partially resolved) & 8, App.~\ref{app:GN_derivation} \\
-D6 & Dirac form (structural reconstruction once spinorial fields admitted) & B & O(3) spinor rep.; not from bare bosonic action & \ref{sec:fermions}, \ref{sec:dirac_eq} \\
-D7 & Topological-sector mass ansatz $m_n \sim n\times1.6\,$GeV & C & Phenomenological dimensional estimate; integer topological charge follows from $\pi_3(S^3)=\mathbb{Z}$, but the mass law is not derived from topology alone & \ref{sec:predicted_states} \\
-D8 & Thermodynamic second law for macroscopic systems & B & Level-A directional backbone (retarded propagation, $\Gamma_{\rm irr}\geq 0$) + effective ohmic/Markov closure; full microscopic derivation open (OP24) & \ref{sec:second_law_basics} \\
-D9 & Physical identification $S_0=\hbar$, $S_{\rm elem}=h$ & B & Structural action scale $S_0$ exists~(Level~A); single-field universality, analytic continuation, and parameter-counting closure protect the identification~(Level~A/B to~B); full structural r\^ole of $\hbar$ requires Quantum Sector programme~(OP-Q2) & \ref{sec:hbar_status}, \ref{sec:qs_hbar}, \ref{sec:qs_ccr} \\
-D10 & Linearised Einstein eqs. + $\Theta_{\mu\nu}$ & B & Linearisation & \ref{sec:macroscopic} \\
-D11 & Primordial perturbation field content: single scalar mode & A & From Universality Corollary; ECT-native spectral tilt $n_s$ and $r$ remain open (OP3) & \ref{sec:mp_primordial} \\
-D12 & Baryogenesis: Sakharov-compatible environment & B & Ordering-transition out-of-equilibrium + benchmark leptogenesis closure; ECT-native $\eta_B$ derivation open (OP7) & \ref{sec:mp_baryogenesis} \\
-D13 & UV safety of graviton & C & Power counting not done & 8, \ref{sec:open_problems} \\
-D14 & Full non-linear Einstein eqs.\ (anisotropic curv.\ term); $\phi$-first scalar-tensor IR closure (Appendix~\ref{app:phi_first_EFE}) & A/B & Riemann commutator identity (OP2 resolved at linear level); scalar-tensor closure = effective IR ansatz & \ref{sec:macroscopic}, App.~\ref{app:curvature_coupling}, App.~\ref{app:phi_first_EFE} \\
-D15 & First-principles derivation of the causal response kernel from ECT microdynamics & C & Retarded ordered-branch scalar dynamics provides the structural basis, but a non-circular derivation of the causal FV kernel from the bare ECT action is not yet complete & \ref{sec:second_law_basics}, \ref{sec:open_problems} \\
-D16 & SM gauge group from O(4) & C & Embedded, not derived & 7, \ref{sec:open_problems} \\
-D17 & Second law $dS/dw\geq0$ (effective result, ordered branch) & B & Level-A directional backbone + ohmic/Markov closure; full microscopic derivation open (OP24) & \ref{sec:second_law_basics}, \ref{sec:open_problems} \\
-D18 & Universe domain size $R_{\rm domain}\gtrsim R_H$ (amplified by pre-Lorentzian ordering) & B/Open & Scale depends on ordering dynamics (OP3); $e^{N_e}$ factor from inflation removed & \ref{sec:universe_size} \\
-D19 & Elementary-loop action scale $S_{\rm elem}=2\pi S_0^{\rm EFT}$ from phase winding in $U(1)$-extended EFT & A/B & Cauchy--Schwarz bound strict (A); $L_{\rm core}$ input and $S_0^{\rm EFT}=\hbar$ matching remain Level~B~(OP-Q2) & \ref{sec:hbar_status}, \ref{sec:qs_hbar} \\
-D20 & $\beta$ param.: general $c_*=\sqrt{\beta/(\alpha-\beta)}$ & A & --- & \ref{sec:ssb} \\
-D21 & Casimir: conditional $3/2$ estimate from minimal reduced soft-orientation EFT (not a proof of three physical Goldstone particles; condensate-reflecting boundaries only) & B & Conditional on minimal EFT boundary assumption & \ref{sec:casimir} \\
-D22 & Unruh-type temperature from Euclidean/Rindler coherent-vacuum response; standard $\hbar$ form after $S_0=\hbar$ identification & A/B & Structural Euclidean/Rindler response is Level~A; observational $\hbar$ form requires Level~B identification~(OP-Q2) & \ref{sec:qs_unruh} \\
-D23a & Time-dependent ordered backgrounds admit Bogoliubov-type mode mixing & B & Structural analogy established; explicit rates remain closure-dependent & \ref{sec:qs_particle_production} \\
-D23b & Primordial spectral parameters ($n_s$, $r$): ECT-native derivation open & C & Branch-selection mechanism identified; explicit perturbation calculation pending (OP3) & \ref{sec:mp_cosmo} \\
-D24 & Gravitational stiffness matching: $G_N=c_*^4/(8\pi M_G^2)$; direct microscopic relation to ordered-branch parameters remains open & B & Geometric EFT matching; explicit $(u_0,\alpha,\beta)\to M_G$ derivation open~(OP2, OP3) & \ref{sec:mp_matching} \\
-D25 & Near-horizon critical scale in the present shell closure: $\rho_c=\ell_{\rm Pl}/\sqrt{3\pi}$ & B & Shell/interface ansatz; Tolman temperature as control parameter (C2b, open); not a universal first-principles theorem & \ref{sec:critical_shell} \\
-D26 & Conditional theorem: exact thermality excluded given finite-entropy shell + complete evaporation & B & Unitarity (natural) + finite shell + no infinite remnant & \ref{sec:no_exact_thermality} \\
-D27 & Shell-state dependence of Hawking channel: derived consequence of D26, not assumption & B & Conditions of D26 & \ref{app:conditional_theorem} \\
-D28 & Effective shell Hamiltonian structure (form, not coefficients) & C & GL criticality + Rindler geometry; coefficients open & \ref{app:chi_dynamics} \\
-D29 & Minimal shell--radiation coupling form $\mathcal{L}_{\rm int}=-\tfrac{g}{2}\delta\chi(\partial\varphi)^2$ & C & Locality + linearity; coefficient $g$ open & \ref{app:chi_dynamics} \\
-D30 & No-phantom late-time closure: $w_\phi\ge -1$ & B & Structural consequence of $\omega(\phi)>0$ in the $\phi$-first closure & \ref{sec:mp_flrw} \\
-D31 & Age = Lorentzian ordered-branch duration & B & Conceptual reinterpretation; quantitative benchmark $t_0\sim 13.0$--$13.5$\,Gyr & \ref{sec:universe_age} \\
-D32 & Structural Hubble-shift mechanism: $\Delta H_0>0$ & B & Correlated with age, distance, JWST through same $\phi_b(z)$; benchmark $\Delta H_0/H_0\approx 2.9\%$ & \ref{sec:mp_hubble} \\
-D33 & Correlated JWST background mechanism & B & Mixed effect: distance/time/growth all shift; BH-assisted channel more promising; partial alleviation only & \ref{sec:mp_jwst_cosmo} \\
-D34 & Force-law dimensionality $d_{\rm force}(x)$: $3\to 7/3\to 2$ & B & Universal curve from single-mode $\phi$-closure; independent of galaxy mass & \ref{sec:universe_size} \\
-\bottomrule
-\end{longtable}
-
-\begin{longtable}{@{}p{0.05\textwidth}p{0.26\textwidth}p{0.24\textwidth}p{0.22\textwidth}p{0.20\textwidth}@{}}
-\caption{Falsifiable predictions of the ECT framework. F1 (environmental modulation of $g_\dagger$) is the most distinctive new prediction; F3 is satisfied at the effective scalar--tensor level.}
-\label{tab:ECT_predictions}\\
-
-\toprule
-\# & Prediction & Observable & Target experiment & Verdict if falsified \\
-\midrule
-\endfirsthead
-
-\toprule
-\# & Prediction & Observable & Target experiment & Verdict if falsified \\
-\midrule
-\endhead
-
-F1 & Environmental modulation of $g_\dagger$
-  (Section~\ref{sec:mp_galactic}) &
-$g_\dagger^{(i)}$ vs.\ $\rho_{\rm env}^{(i)}$:
-  positive correlation at $\gtrsim\!10\%$ &
-SPARC $\times$ 2MRS/SDSS &
-ordered-branch amplitude mechanism disfavoured \\
-
-
-
-F2 & Screening: GR restored at $a > g_\dagger$ &
-No anomaly in Solar System &
-Cassini, MICROSCOPE-2, LLR &
-Chameleon screening excluded \\
-
-F3 & GW speed $c_T = c$ (at effective scalar--tensor level) &
-$|c_T/c - 1| < 10^{-15}$ &
-GW170817 &
-$\checkmark$ Already satisfied \\
-
-F4 & Fifth force $\eta_{\rm Eot}\sim10^{-20}$ &
-EP violation $\eta<10^{-20}$ &
-MICROSCOPE-2 \cite{MICROSCOPE2022} &
-$\mathcal{L}_5$ coupling excluded \\
-
-F5 & $w_0>-1$ (kinetic dark energy) &
-$w_0\in(-1,-0.95)$ &
-DESI DR2, Euclid &
-Condensate DE disfavoured \\
-
-F6 & Topological mass ansatz $m_n \sim n\times1.6\,$GeV &
-Resonance-like structure near 1.6, 3.2, 4.8 GeV &
-LHC / future collider &
-Specific phenomenological realisation of the topological sector excluded \\
-
-F7 & Lorentzian window $1<\alpha<4$ ($\beta=1$) &
-LIV bounds &
-CMB+GW multi-messenger &
-Kinetic tensor structure refuted \\
-
-F8 & Casimir ratio $3/2$ (Section~\ref{sec:casimir}) &
-$(F/A)_{\rm ECT}/(F/A)_{\rm QED}=3/2$, \emph{conditional} on
-boundaries reflecting ECT Goldstone modes (e.g.\ BEC/superfluid
-interfaces); \emph{not} predicted for standard metallic plates &
-Casimir experiment with condensate/superfluid boundaries &
-Goldstone vacuum excluded if ratio measured $\neq 3/2$ at
-appropriate condensate boundaries \\
-
-F9 & Redshift dependence $g_\dagger(z)$ &
-RAR intercept shift at $z > 0.5$ &
-JWST, SKA high-$z$ &
-Cosmological $\phi$-evolution excluded \\
-
-F10 & Cluster-merger lensing morphology: $\kappa$-peak
-  tracks the \emph{more compact baryonic component},
-  whether BCG/stellar or gas core
-  (Section~\ref{sec:bullet_cluster}) &
-BCG-peaked in Bullet, MACS~J0025, El~Gordo;
-  gas-peaked in Abell~520~\cite{Mahdavi2007,Jee2012}:
-  Abell~520 is a direct counter-example to $\Lambda$CDM's
-  collisionless DM prediction (lensing peak should follow
-  galaxies, not gas) &
-Weak- and strong-lensing maps of merging clusters;
-  next-generation surveys (Euclid, Rubin, JWST) &
-Universal $\nu$-closure excluded if peak always follows
-  the galaxy/BCG component regardless of compactness;
-  $\Lambda$CDM tension if gas-peaked morphology confirmed
-  in additional systems \\
-
-F11 & Graviton polarisation: two TT modes only &
-Polarisation decomposition of stochastic GW background &
-LISA, PTA, 3G detectors &
-ECT linearised graviton sector disfavoured \\
-
-F12 & Universal $d_{\rm force}(x)$ curve: $3\to 2$ &
-Pointwise $d_{\rm force}$ from SPARC rotation curves; shape must
-be universal across all galaxy masses &
-SPARC, THINGS, next-generation kinematic surveys &
-Single-mode $\phi$-closure excluded if $d_{\rm force}(x)$ is
-non-universal or fails to reach $d\to2$ at low $x$ \\
-
-F13 & Graviton mass: $m_g = 0$ at linearised effective level &
-Mass-dependent dispersion of GW signal &
-LISA, LIGO O5+ &
-Linearised effective masslessness disfavoured \\
-
-\bottomrule
-\end{longtable}
-
+\FloatBarrier
 \subsection{Cluster-merger lensing test}
 \label{sec:bullet_cluster}
 
@@ -16372,6 +16122,7 @@ Appendix~\ref{app:cluster_lensing}):
 \end{figure}
 
 
+\FloatBarrier
 \subsection{Galactic dynamics: BTFR, rotation curves, and the effective critical scale}
 \label{sec:galactic_dynamics}
 
@@ -16858,6 +16609,7 @@ $g^\dagger_{\rm eff}\approx1.72\,(cH_0/2\pi)$.}
 \label{fig:mw_new}
 \end{figure}
 
+\FloatBarrier
 \subsection{Radial Acceleration Relation}
 \label{sec:rar_subsection}
 
@@ -16931,6 +16683,7 @@ law added on top of the theory, but a different projection of the same
 galactic closure already used in the SPARC velocity analysis.
 
 % ==============================================================
+\FloatBarrier
 \subsection{Summary and status of galactic and astrophysical phenomenology}
 \label{sec:mp_galactic_summary}
 % ==============================================================
@@ -16992,6 +16745,7 @@ which is absent in both $\Lambda$CDM and MOND and directly testable
 with existing data.
 
 % ==============================================================
+\FloatBarrier
 \section{Dark Sector Interpretation and Discriminants}
 \label{sec:mp_dark}
 % ==============================================================
@@ -17957,6 +17711,257 @@ currently observed sources.
 
 
 
+
+%%% -----------------------------------------------------------
+
+\begin{table}[H]
+\centering
+\caption{Level-4 self-consistency checklist.
+\textsc{pass} = derived or verified consistent at Level~A/B;
+\textsc{part.} = partial derivation or prediction awaiting precision test;
+\textsc{prob.} = structurally motivated, rigorous proof pending;
+\textsc{open} = known open problem.}
+\label{tab:level4_checklist}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.25}
+\small\begin{tabular}{cp{3.8cm}p{7.2cm}l}
+\toprule
+\textbf{Status} & \textbf{Check} & \textbf{Key result} & \textbf{Ref.} \\
+\midrule
+\textsc{pass} & Condensate stability      & $V''(\phi_0)=2\mu^2>0$                                   & \S\ref{sec:ssb} \\
+\textsc{pass} & Ghost-freedom             & Phys.\ mode $\lambda>0$ at $\alpha>\beta$                 & \S\ref{sec:ssb} \\
+\textsc{pass} & LIV bound                 & $|\delta c/c|<10^{-15}$ (GW170817)                    & \S\ref{sec:qs_black_holes} \\
+\textsc{pass} & Causality                 & Retarded propagation of ordered branch (Level~A); directed decoherence $\Gamma_{\rm irr}\geq 0$ (Level~A)                & \S\ref{sec:arrow_of_time} \\
+\textsc{prob.}& Second law $dS/dw\geq0$  & Level-A directional backbone + Level-B ohmic/Markov closure; full microscopic H-theorem open (OP24) & \S\ref{sec:second_law_basics} \\
+\textsc{prob.}& Born measure              & Conditional uniqueness under C1--C3; unique outcome selection open (OP23) & \S\ref{sec:born_rule} \\
+\textsc{open} & Primordial perturbations $n_s$, $r$ & ECT-native formula pending; branch-selection mechanism identified; borrowed slow-roll formula removed & \S\ref{sec:mp_cosmo} \\
+\textsc{part.}& Baryogenesis              & Sakharov-compatible environment (Level~B); $\eta_B$ benchmark only, not ECT-native derivation (OP7)            & \S\ref{sec:baryogenesis} \\
+\textsc{pass} & Unruh temperature         & $T_U=\hbar a/(2\pi c_*k_B)$ from $G_E(X,X')$         & \S\ref{sec:unruh} \\
+\textsc{pass} & Orientation-sector Casimir (ideal boundaries) & Vacuum response from soft orientation sector: computed in minimal EFT & \S\ref{sec:casimir} \\
+\textsc{open} & Casimir: lab applicability & Material boundaries $\to$ soft orientation sector: not derived & \S\ref{sec:casimir} \\
+\textsc{open} & Tensor ratio $r$ & ECT-native derivation pending; removed borrowed slow-roll formula & \S\ref{sec:mp_cosmo} \\
+\textsc{prob.}& Renormalisability         & Fixed Euclidean background avoids GR non-renorm.; full loop closure pending & \S\ref{sec:open_problems} \\
+\textsc{open} & 3 fermion generations     & Origin not yet derived                                & \S\ref{sec:open_problems} \\
+\textsc{open} & SU(3), $\alpha_{\rm fs}$  & RG connection to condensate pending                   & \S\ref{sec:open_problems} \\
+\textsc{part.}& Late-time background closure & No-phantom $w\ge-1$ (Level~B structural); age/distance apparatus; closure-level Hubble mechanism & \S\ref{sec:mp_flrw}, \S\ref{sec:universe_age}, \S\ref{sec:mp_hubble} \\
+\textsc{part.}& JWST correlated background & Correlated age/distance/growth logic; partial alleviation only & \S\ref{sec:mp_jwst_cosmo} \\
+\textsc{part.}& Force-law dimensionality & Universal $d_{\rm force}(x)$ crossover $3\to 7/3\to 2$ in present closure & \S\ref{sec:universe_size} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\paragraph{Global derivation and status maps.}
+For the reader's convenience, the following tables collect in one place:
+(i)~the derivational architecture of the framework~(Table~\ref{tab:ect_structure}),
+(ii)~the structured classification of results by Level~A / Level~B / Open status~(Table~\ref{tab:ect-levels}),
+and (iii)~the main falsifiable predictions~(Table~\ref{tab:ECT_predictions}).
+These summary tables are subordinate to the detailed section-by-section status
+statements given throughout the paper and should be read in that same disciplined
+sense: status entries reflect the Level~A / Level~B / Open discipline established
+in the revised postulate structure.
+
+\begin{longtable}{p{3.2cm}p{7.8cm}p{2.8cm}}
+\caption{Derivation map of ECT: physical objects and their origins in the new Level~A / Level~B / Open discipline.
+Entries: ``derived'' = structural Level~A consequence; ``structural / effective (Level~A/B)'' = proven in pure-metric limit, Level~B in $\phi$-first closure; ``matched (Level~B)'' = EFT matching relation; ``embedded'' = introduced consistently, not derived from bare scalar action; ``open'' = active research direction.} \\
+\label{tab:ect_structure} \\[-6pt]
+\toprule
+\textbf{Object} & \textbf{Origin in ECT} & \textbf{Status} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Object} & \textbf{Origin in ECT} & \textbf{Status} \\
+\midrule
+\endhead
+\midrule\multicolumn{2}{r}{\small\textit{(continued on next page)}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+4D Euclidean space & Postulate P1 & postulate \\
+$O(4)$ symmetry & Postulate P2 & postulate \\
+Condensate $\Phi$ & Postulate P4 & postulate \\
+Lorentzian metric $g_{\mu\nu}$ & SSB $O(4)\!\to\!O(3)$ with $\alpha>\beta$ & derived \\
+Macroscopic arrow of time & Reduced-state decoherence plus low-entropy coherent initial sector & effective / closure-dependent (Level~A/B) \\
+Speed of light $c$ & $c_*=\sqrt{\beta/(\alpha-\beta)}$ & identified \\
+Gravitational coupling $G_N$ & Geometric EFT matching: $G_N=c_*^4/(8\pi M_G^2)$ & matched (Level~B) \\
+Ordered-branch amplitude variable $\phi$ & Macroscopic closure variable for slow amplitude variations of the ordered branch & effective (Level~B) \\
+Pre-quantum action scale $S_0^{\rm EFT}$ & Elementary-loop action $S_{\rm elem}=2\pi S_0^{\rm EFT}$; Cauchy--Schwarz bound strict, $L_{\rm core}$ input Level~B & derived (structural) \\
+Physical Planck constant $\hbar$ & Final identification $S_0=\hbar$ & identified after additional matching (Level~B / open) \\
+Schr\"odinger equation & KG~+~NR limit~+ emergent complex sector & derived (Level~B) \\
+Macroscopic Einstein-like closure & Pure-metric frozen-order limit + $\phi$-first IR closure & structural / effective (Level~A/B) \\
+Graviton & Linearised effective-metric perturbation induced by $\delta n^A$;
+     spin-2 Fierz--Pauli form; massless at linearised effective level & derived (linear) \\
+Photon & $U(1)$ embedding via condensate phase & embedded (Level~B/C) \\
+$W^\pm,Z^0$ & $SU(2)_L$ condensate embedding & embedded (Level~C) \\
+Higgs & Radial mode of $SU(2)$ condensate & embedded (Level~C) \\
+Fermions & $O(3)$ spinor representations & structural route (Level~B) \\
+Dark energy sector & Effective late-time amplitude-sector closure & closure-dependent (Level~B) \\
+Dark-sector role & No particle DM required; soft orientation sector and topological sectors are open questions & open \\
+Flat rotation curves and RAR/BTFR phenomenology & Critical $\phi$-branch closure in the galactic weak-field sector & effective closure (Level~B) \\
+Macroscopic entropy growth & Reduced-state decoherence with effective bath assumptions & effective closure (Level~B) \\
+Universal causal cone & Single $g_{\mu\nu}(n)$ in IR EFT & derived \\
+LV suppression & Higher-dim.\ ops., $\delta c/c\sim(E/\Lambda)^2$ & derived \\
+\hline
+
+\end{longtable}
+
+
+
+\begin{longtable}{@{}p{0.05\textwidth}p{0.37\textwidth}p{0.07\textwidth}p{0.27\textwidth}p{0.12\textwidth}@{}}
+\caption{Structured classification of ECT results. Level~A = strict derivation; Level~B = derivation with stated assumption; Level~C (or `Open') = conjecture / open problem.}
+\label{tab:ect-levels}\\
+\toprule
+\# & Statement & Level & Key assumption (if B/C) & Section \\
+\midrule
+\endfirsthead
+\toprule
+\# & Statement & Level & Key assumption (if B/C) & Section \\
+\midrule
+\endhead
+D1 & Lorentzian phase selected when $\alpha>\beta$; Euclidean otherwise & A & $\alpha>\beta$ is a condition on condensate params & \ref{sec:ssb} \\
+D2 & KG equation from condensate action (Level~A); Schr\"odinger equation by NR reduction~+ emergent complex envelope (Level~B) & A/B & KG: Level~A (O-S continuation assumed for quadratic sector); Schr\"odinger: Level~B (additionally requires NR limit + emergent complex sector) & 4, 4 \\
+D3 & $G_N$ from geometric EFT matching ($G_N=c_*^4/(8\pi M_G^2)$) & B & Matching between ordered-branch tensor EFT and observed gravity; explicit $(u_0,\alpha,\beta)\to M_G$ derivation open~(OP2, OP3) & \ref{sec:mp_matching} \\
+D4a & Ordered branch breaks $O(4)\to O(3)$; vacuum manifold $S^3$ & A & --- & \ref{sec:sector_map} \\
+D4b & $Q_A=\partial_A\Phi$ implies integrability; $\pi_i=\partial_i\chi/u_0$ & A & Scalar-only basis & App.~\ref{app:goldstone_integrability} \\
+D4c & One surviving longitudinal scalar mode $\chi$ & B & Linear level; inverse-Higgs reduction & App.~\ref{app:goldstone_integrability} \\
+D4d & Minimal 3-component orientation EFT & B & Effective parametrisation & \ref{sec:goldstone_soft_eft} \\
+D4e & Three independent physical Goldstone particles & C & Not established; reduced by integrability & \ref{sec:goldstone_integrability_main} \\
+D5a & Graviton: induced linearised effective-metric perturbation on ordered branch & A & $u_0^2(\alpha-\beta)>0$ & 8 \\
+D5b & Fierz--Pauli form, TT projection, ghost-free counting at linearised level & B & TT gauge; explicit mode-counting from microscopic condensate variables open (OP3 partially resolved) & 8, App.~\ref{app:GN_derivation} \\
+D6 & Dirac form (structural reconstruction once spinorial fields admitted) & B & O(3) spinor rep.; not from bare bosonic action & \ref{sec:fermions}, \ref{sec:dirac_eq} \\
+D7 & Topological-sector mass ansatz $m_n \sim n\times1.6\,$GeV & C & Phenomenological dimensional estimate; integer topological charge follows from $\pi_3(S^3)=\mathbb{Z}$, but the mass law is not derived from topology alone & \ref{sec:predicted_states} \\
+D8 & Thermodynamic second law for macroscopic systems & B & Level-A directional backbone (retarded propagation, $\Gamma_{\rm irr}\geq 0$) + effective ohmic/Markov closure; full microscopic derivation open (OP24) & \ref{sec:second_law_basics} \\
+D9 & Physical identification $S_0=\hbar$, $S_{\rm elem}=h$ & B & Structural action scale $S_0$ exists~(Level~A); single-field universality, analytic continuation, and parameter-counting closure protect the identification~(Level~A/B to~B); full structural r\^ole of $\hbar$ requires Quantum Sector programme~(OP-Q2) & \ref{sec:hbar_status}, \ref{sec:qs_hbar}, \ref{sec:qs_ccr} \\
+D10 & Linearised Einstein eqs. + $\Theta_{\mu\nu}$ & B & Linearisation & \ref{sec:macroscopic} \\
+D11 & Primordial perturbation field content: single scalar mode & A & From Universality Corollary; ECT-native spectral tilt $n_s$ and $r$ remain open (OP3) & \ref{sec:mp_primordial} \\
+D12 & Baryogenesis: Sakharov-compatible environment & B & Ordering-transition out-of-equilibrium + benchmark leptogenesis closure; ECT-native $\eta_B$ derivation open (OP7) & \ref{sec:mp_baryogenesis} \\
+D13 & UV safety of graviton & C & Power counting not done & 8, \ref{sec:open_problems} \\
+D14 & Full non-linear Einstein eqs.\ (anisotropic curv.\ term); $\phi$-first scalar-tensor IR closure (Appendix~\ref{app:phi_first_EFE}) & A/B & Riemann commutator identity (OP2 resolved at linear level); scalar-tensor closure = effective IR ansatz & \ref{sec:macroscopic}, App.~\ref{app:curvature_coupling}, App.~\ref{app:phi_first_EFE} \\
+D15 & First-principles derivation of the causal response kernel from ECT microdynamics & C & Retarded ordered-branch scalar dynamics provides the structural basis, but a non-circular derivation of the causal FV kernel from the bare ECT action is not yet complete & \ref{sec:second_law_basics}, \ref{sec:open_problems} \\
+D16 & SM gauge group from O(4) & C & Embedded, not derived & 7, \ref{sec:open_problems} \\
+D17 & Second law $dS/dw\geq0$ (effective result, ordered branch) & B & Level-A directional backbone + ohmic/Markov closure; full microscopic derivation open (OP24) & \ref{sec:second_law_basics}, \ref{sec:open_problems} \\
+D18 & Universe domain size $R_{\rm domain}\gtrsim R_H$ (amplified by pre-Lorentzian ordering) & B/Open & Scale depends on ordering dynamics (OP3); $e^{N_e}$ factor from inflation removed & \ref{sec:universe_size} \\
+D19 & Elementary-loop action scale $S_{\rm elem}=2\pi S_0^{\rm EFT}$ from phase winding in $U(1)$-extended EFT & A/B & Cauchy--Schwarz bound strict (A); $L_{\rm core}$ input and $S_0^{\rm EFT}=\hbar$ matching remain Level~B~(OP-Q2) & \ref{sec:hbar_status}, \ref{sec:qs_hbar} \\
+D20 & $\beta$ param.: general $c_*=\sqrt{\beta/(\alpha-\beta)}$ & A & --- & \ref{sec:ssb} \\
+D21 & Casimir: conditional $3/2$ estimate from minimal reduced soft-orientation EFT (not a proof of three physical Goldstone particles; condensate-reflecting boundaries only) & B & Conditional on minimal EFT boundary assumption & \ref{sec:casimir} \\
+D22 & Unruh-type temperature from Euclidean/Rindler coherent-vacuum response; standard $\hbar$ form after $S_0=\hbar$ identification & A/B & Structural Euclidean/Rindler response is Level~A; observational $\hbar$ form requires Level~B identification~(OP-Q2) & \ref{sec:qs_unruh} \\
+D23a & Time-dependent ordered backgrounds admit Bogoliubov-type mode mixing & B & Structural analogy established; explicit rates remain closure-dependent & \ref{sec:qs_particle_production} \\
+D23b & Primordial spectral parameters ($n_s$, $r$): ECT-native derivation open & C & Branch-selection mechanism identified; explicit perturbation calculation pending (OP3) & \ref{sec:mp_cosmo} \\
+D24 & Gravitational stiffness matching: $G_N=c_*^4/(8\pi M_G^2)$; direct microscopic relation to ordered-branch parameters remains open & B & Geometric EFT matching; explicit $(u_0,\alpha,\beta)\to M_G$ derivation open~(OP2, OP3) & \ref{sec:mp_matching} \\
+D25 & Near-horizon critical scale in the present shell closure: $\rho_c=\ell_{\rm Pl}/\sqrt{3\pi}$ & B & Shell/interface ansatz; Tolman temperature as control parameter (C2b, open); not a universal first-principles theorem & \ref{sec:critical_shell} \\
+D26 & Conditional theorem: exact thermality excluded given finite-entropy shell + complete evaporation & B & Unitarity (natural) + finite shell + no infinite remnant & \ref{sec:no_exact_thermality} \\
+D27 & Shell-state dependence of Hawking channel: derived consequence of D26, not assumption & B & Conditions of D26 & \ref{app:conditional_theorem} \\
+D28 & Effective shell Hamiltonian structure (form, not coefficients) & C & GL criticality + Rindler geometry; coefficients open & \ref{app:chi_dynamics} \\
+D29 & Minimal shell--radiation coupling form $\mathcal{L}_{\rm int}=-\tfrac{g}{2}\delta\chi(\partial\varphi)^2$ & C & Locality + linearity; coefficient $g$ open & \ref{app:chi_dynamics} \\
+D30 & No-phantom late-time closure: $w_\phi\ge -1$ & B & Structural consequence of $\omega(\phi)>0$ in the $\phi$-first closure & \ref{sec:mp_flrw} \\
+D31 & Age = Lorentzian ordered-branch duration & B & Conceptual reinterpretation; quantitative benchmark $t_0\sim 13.0$--$13.5$\,Gyr & \ref{sec:universe_age} \\
+D32 & Structural Hubble-shift mechanism: $\Delta H_0>0$ & B & Correlated with age, distance, JWST through same $\phi_b(z)$; benchmark $\Delta H_0/H_0\approx 2.9\%$ & \ref{sec:mp_hubble} \\
+D33 & Correlated JWST background mechanism & B & Mixed effect: distance/time/growth all shift; BH-assisted channel more promising; partial alleviation only & \ref{sec:mp_jwst_cosmo} \\
+D34 & Force-law dimensionality $d_{\rm force}(x)$: $3\to 7/3\to 2$ & B & Universal curve from single-mode $\phi$-closure; independent of galaxy mass & \ref{sec:universe_size} \\
+\bottomrule
+\end{longtable}
+
+\begin{longtable}{@{}p{0.05\textwidth}p{0.26\textwidth}p{0.24\textwidth}p{0.22\textwidth}p{0.20\textwidth}@{}}
+\caption{Falsifiable predictions of the ECT framework. F1 (environmental modulation of $g_\dagger$) is the most distinctive new prediction; F3 is satisfied at the effective scalar--tensor level.}
+\label{tab:ECT_predictions}\\
+
+\toprule
+\# & Prediction & Observable & Target experiment & Verdict if falsified \\
+\midrule
+\endfirsthead
+
+\toprule
+\# & Prediction & Observable & Target experiment & Verdict if falsified \\
+\midrule
+\endhead
+
+F1 & Environmental modulation of $g_\dagger$
+  (Section~\ref{sec:mp_galactic}) &
+$g_\dagger^{(i)}$ vs.\ $\rho_{\rm env}^{(i)}$:
+  positive correlation at $\gtrsim\!10\%$ &
+SPARC $\times$ 2MRS/SDSS &
+ordered-branch amplitude mechanism disfavoured \\
+
+
+
+F2 & Screening: GR restored at $a > g_\dagger$ &
+No anomaly in Solar System &
+Cassini, MICROSCOPE-2, LLR &
+Chameleon screening excluded \\
+
+F3 & GW speed $c_T = c$ (at effective scalar--tensor level) &
+$|c_T/c - 1| < 10^{-15}$ &
+GW170817 &
+$\checkmark$ Already satisfied \\
+
+F4 & Fifth force $\eta_{\rm Eot}\sim10^{-20}$ &
+EP violation $\eta<10^{-20}$ &
+MICROSCOPE-2 \cite{MICROSCOPE2022} &
+$\mathcal{L}_5$ coupling excluded \\
+
+F5 & $w_0>-1$ (kinetic dark energy) &
+$w_0\in(-1,-0.95)$ &
+DESI DR2, Euclid &
+Condensate DE disfavoured \\
+
+F6 & Topological mass ansatz $m_n \sim n\times1.6\,$GeV &
+Resonance-like structure near 1.6, 3.2, 4.8 GeV &
+LHC / future collider &
+Specific phenomenological realisation of the topological sector excluded \\
+
+F7 & Lorentzian window $1<\alpha<4$ ($\beta=1$) &
+LIV bounds &
+CMB+GW multi-messenger &
+Kinetic tensor structure refuted \\
+
+F8 & Casimir ratio $3/2$ (Section~\ref{sec:casimir}) &
+$(F/A)_{\rm ECT}/(F/A)_{\rm QED}=3/2$, \emph{conditional} on
+boundaries reflecting ECT Goldstone modes (e.g.\ BEC/superfluid
+interfaces); \emph{not} predicted for standard metallic plates &
+Casimir experiment with condensate/superfluid boundaries &
+Goldstone vacuum excluded if ratio measured $\neq 3/2$ at
+appropriate condensate boundaries \\
+
+F9 & Redshift dependence $g_\dagger(z)$ &
+RAR intercept shift at $z > 0.5$ &
+JWST, SKA high-$z$ &
+Cosmological $\phi$-evolution excluded \\
+
+F10 & Cluster-merger lensing morphology: $\kappa$-peak
+  tracks the \emph{more compact baryonic component},
+  whether BCG/stellar or gas core
+  (Section~\ref{sec:bullet_cluster}) &
+BCG-peaked in Bullet, MACS~J0025, El~Gordo;
+  gas-peaked in Abell~520~\cite{Mahdavi2007,Jee2012}:
+  Abell~520 is a direct counter-example to $\Lambda$CDM's
+  collisionless DM prediction (lensing peak should follow
+  galaxies, not gas) &
+Weak- and strong-lensing maps of merging clusters;
+  next-generation surveys (Euclid, Rubin, JWST) &
+Universal $\nu$-closure excluded if peak always follows
+  the galaxy/BCG component regardless of compactness;
+  $\Lambda$CDM tension if gas-peaked morphology confirmed
+  in additional systems \\
+
+F11 & Graviton polarisation: two TT modes only &
+Polarisation decomposition of stochastic GW background &
+LISA, PTA, 3G detectors &
+ECT linearised graviton sector disfavoured \\
+
+F12 & Universal $d_{\rm force}(x)$ curve: $3\to 2$ &
+Pointwise $d_{\rm force}$ from SPARC rotation curves; shape must
+be universal across all galaxy masses &
+SPARC, THINGS, next-generation kinematic surveys &
+Single-mode $\phi$-closure excluded if $d_{\rm force}(x)$ is
+non-universal or fails to reach $d\to2$ at low $x$ \\
+
+F13 & Graviton mass: $m_g = 0$ at linearised effective level &
+Mass-dependent dispersion of GW signal &
+LISA, LIGO O5+ &
+Linearised effective masslessness disfavoured \\
+
+\bottomrule
+\end{longtable}
 
 \subsection{Status table and open problems of the
 macroscopic branch}
