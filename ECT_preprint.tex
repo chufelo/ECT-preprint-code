@@ -14578,43 +14578,186 @@ structure-formation programme.
 
 
 % ============================================================
-\subsection{Cosmological predictions and comparison with
-\texorpdfstring{$\Lambda$}{Lambda}CDM}
+\subsection{Cosmological predictions: summary and derivation status}
 \label{sec:mp_cosmo_predictions}
 % ============================================================
 
-\subsubsection*{Cosmological predictions}
+The preceding subsections established a range of cosmological results at
+different derivation levels.
+The purpose of the present subsection is to collect them in a single
+summary table, analogous to the gravitational-sector summary in
+\S\ref{sec:mp_grav_predictions}, and to distinguish explicitly
+between strictly derived results, structural closure-level consequences,
+and illustrative benchmark outcomes.
 
-\textit{Status: Level~B. All numerical values follow
-from the $\phi$-first macroscopic closure. They are
-benchmark predictions, not zero-parameter outputs
-of bare~P3.}
+It is especially important to separate:
+(i)~Level~A cosmological results that follow directly from the ordered
+branch and its topology,
+(ii)~Level~B structural consequences of the adopted $\phi$-first
+closure,
+and (iii)~benchmark numerical outcomes that depend on specific late-time
+or leptogenesis closure choices.
+Quantities not yet derived from ECT---such as an ECT-native formula
+for $n_s$, a fully derived present-day value of $w_0$, or a
+first-principles baryogenesis asymmetry---are not listed below as ECT
+predictions.
 
-These benchmark values belong to different effective
-closure layers (inflationary ordering, late-time
-amplitude-sector dynamics, and resonant leptogenesis) and
-should not be interpreted as outputs of a single
-zero-parameter first-principles computation.
+\renewcommand{\arraystretch}{1.25}
+{\small
+\begin{longtable}{p{3.6cm}p{3.6cm}p{1.2cm}p{1.6cm}p{2.8cm}}
+\caption{Cosmological predictions and structural consequences
+of ECT.}\label{tab:cosmo_predictions_summary}\\
+\hline\hline
+Prediction / consequence & Result / formula & Level & Section
+  & Observational context \\
+\hline
+\endfirsthead
+\hline\hline
+Prediction (cont.) & Result & Level & Sec. & Obs.\ context \\
+\hline
+\endhead
+\hline
+\endfoot
+\hline\hline
+\endlastfoot
 
-\begin{itemize}
-\item $n_s \approx 0.967$ (Planck~2018: $0.965\pm0.004$).
-\textit{ECT identifies the mechanism (branch-selection /
-scale-invariance of pre-Lorentzian stage) but does not yet provide
-an ECT-native formula for $n_s$.  Derivation is the next step in
-the cosmological programme~(Open, OP3).}
+Spatial flatness
+  & $k=0$
+  & A
+  & \S\ref{sec:flatness_ect}
+  & CMB / BAO \\
 
-\item $w_0 = -1+2\rho_{\rm kin}/(3\rho_{\rm cond})$ (structural formula;
-specific value not derived from ECT bare postulates).
-\textit{Level~B: $\rho_{\rm kin}/\rho_{\rm cond}$ is a free closure parameter.
-The formula predicts $w_0>-1$ structurally, compatible with
-DESI~DR2~2024 ($-0.827\pm0.059$)~\cite{DESI2024}.}
+Primary monopole channel absent
+  & $\pi_2(S^3)=0$
+  & A
+  & \S\ref{sec:relic_ect}
+  & no GUT monopole overproduction \\
 
-\item $\eta_B \approx 9\times10^{-10}$
-(observed: $6\times10^{-10}$; factor $\sim\!1.5$).
-\textit{Benchmark consistency check inside the resonant leptogenesis
-closure~(Level~B); the CP-asymmetry and washout factor are not
-derived from condensate dynamics~(OP7).}
-\end{itemize}
+Single scalar perturbation mode
+  & from Universality Corollary
+  & A
+  & \S\ref{sec:mp_primordial}
+  & perturbation field content \\
+
+No ordered-branch isocurvature
+  & consequence of single-mode
+  & A
+  & \S\ref{sec:mp_primordial}
+  & subdominant isocurvature bounds \\
+
+Tensor speed $=c_*$
+  & primordial tensor on same cone
+  & A/B
+  & \S\ref{sec:mp_primordial}
+  & GW sector consistency \\
+
+Macrocoherent branch minimum
+  & $S_{\rm ord}=0$ iff $n_A=\mathrm{const}$
+  & A
+  & \S\ref{sec:horizon_ect_main}
+  & horizon-resolution route \\
+
+No-phantom late-time branch
+  & $w_\phi\ge -1$ for $\omega>0$
+  & B struct.
+  & \S\ref{sec:mp_flrw}
+  & late-time DE sector \\
+
+Age reinterpreted
+  & age = Lorentzian branch duration
+  & B struct.
+  & \S\ref{sec:universe_age}
+  & cosmic age \\
+
+Correlated observables
+  & $t_0$, $t_U$, $t_{\rm gal}$, $D_L$ from one $H(z)$
+  & B struct.
+  & \S\ref{sec:universe_age}
+  & age / distance / JWST \\
+
+Upward Hubble shift
+  & $\Delta H_0>0$ in benchmark
+  & B struct.
+  & \S\ref{sec:mp_hubble}
+  & Hubble tension \\
+
+$w_0$--$H_0$ correlation
+  & one $\phi_b(z)$ drives both
+  & B struct.
+  & \S\ref{sec:mp_hubble}
+  & joint late-time fits \\
+
+BBN-localised drift
+  & high-$z$ saturation required
+  & B struct.
+  & \S\ref{sec:mp_hubble}
+  & BBN consistency \\
+
+Three-stage condensate evolution
+  & ordering $\to$ stabilisation $\to$ drift
+  & B struct.
+  & \S\ref{sec:condensate_cosmo_evolution}
+  & background logic \\
+
+Ordering transition out-of-equilibrium
+  & strongest ECT Sakharov ingredient
+  & B struct.
+  & \S\ref{sec:mp_baryogenesis}
+  & baryogenesis compatibility \\
+
+Benchmark Hubble shift
+  & $\Delta H_0/H_0\approx 2.9\%$
+  & B bench.
+  & \S\ref{sec:mp_hubble}
+  & intermediate Planck/SH0ES \\
+
+Benchmark Lorentzian age
+  & $t_0^{\rm ECT}\sim 13.0$--$13.5$\,Gyr
+  & B bench.
+  & \S\ref{sec:universe_age}
+  & compatible with lower bounds \\
+
+JWST: galaxy-assembly channel
+  & $\mathcal{R}_{\rm gal}\sim 1.2$
+  & B bench.
+  & \S\ref{sec:mp_jwst_cosmo}
+  & modest alleviation \\
+
+JWST: BH-assisted channel
+  & $\mathcal{R}_{\rm BH}\sim 1.5$
+  & B bench.
+  & \S\ref{sec:mp_jwst_cosmo}
+  & more promising \\
+
+Leading halo enhancement
+  & factor $\sim2$--3 at extreme peaks
+  & B bench.
+  & \S\ref{sec:jwst}
+  & partial alleviation \\
+\end{longtable}
+}
+
+\paragraph{What is explicitly not yet predicted.}
+The present ECT cosmological programme does \emph{not} yet provide:
+(i)~an ECT-native formula for the scalar spectral index $n_s$ or the
+tensor-to-scalar ratio $r$;
+(ii)~a closure-independent present-day numerical value of $w_0$;
+(iii)~a first-principles derivation of the baryon asymmetry $\eta_B$.
+These remain open tasks identified earlier in
+\S\S\ref{sec:mp_primordial}, \ref{sec:mp_flrw}, and
+\ref{sec:mp_baryogenesis}.
+
+\paragraph{Status summary.}
+The strongest cosmological predictions of ECT are structural rather than
+numerical:
+spatial flatness of the baseline branch, absence of the primary
+monopole channel, the single-scalar perturbation content of the ordered
+branch, and the no-phantom late-time closure.
+The Hubble-tension mechanism, age reinterpretation, and JWST
+correlations are structural at Level~B and benchmarked quantitatively
+within the present $\phi$-first closure.
+A fully ECT-native perturbation spectrum and a first-principles
+baryogenesis model remain central open problems.
 
 % ============================================================
 \subsection{Cosmological evolution: ECT vs.\ \texorpdfstring{$\Lambda$}{Lambda}CDM}
@@ -14687,9 +14830,9 @@ Inflation & Separate inflaton field with ad-hoc potential &
   transition (Level~B structural scenario; not the core
   horizon-resolution mechanism in ECT;
   see Section~\ref{sec:horizon_ect_main});
-  $n_s \approx 0.967$ (observational; ECT-native derivation open)
-  (one-parameter closure, Level~B; not yet a full first-principles
-  replacement for inflation) \\
+  ECT-native derivation of the primordial spectrum remains open
+  (see \S\ref{sec:mp_primordial});
+  not yet a full first-principles replacement for inflation \\
 Flatness problem & Separate mechanism (inflation) required to suppress
   $|\Omega_K|$ dynamically; without inflation, extreme fine-tuning
   of initial conditions needed &
@@ -15475,7 +15618,7 @@ Table~\ref{tab:ect_hubble_summary}.
 \textsc{prob.}& Second law $dS/dw\geq0$  & Level-A directional backbone + Level-B ohmic/Markov closure; full microscopic H-theorem open (OP24) & \S\ref{sec:second_law_basics} \\
 \textsc{prob.}& Born measure              & Conditional uniqueness under C1--C3; unique outcome selection open (OP23) & \S\ref{sec:born_rule} \\
 \textsc{open} & Primordial perturbations $n_s$, $r$ & ECT-native formula pending; branch-selection mechanism identified; borrowed slow-roll formula removed & \S\ref{sec:mp_cosmo} \\
-\textsc{pass} & Baryogenesis              & $\eta_B\sim9\times10^{-10}$ (leptogenesis)            & \S\ref{sec:baryogenesis} \\
+\textsc{part.}& Baryogenesis              & Sakharov-compatible environment (Level~B); $\eta_B$ benchmark only, not ECT-native derivation (OP7)            & \S\ref{sec:baryogenesis} \\
 \textsc{pass} & Unruh temperature         & $T_U=\hbar a/(2\pi c_*k_B)$ from $G_E(X,X')$         & \S\ref{sec:unruh} \\
 \textsc{pass} & Orientation-sector Casimir (ideal boundaries) & Vacuum response from soft orientation sector: computed in minimal EFT & \S\ref{sec:casimir} \\
 \textsc{open} & Casimir: lab applicability & Material boundaries $\to$ soft orientation sector: not derived & \S\ref{sec:casimir} \\
@@ -15571,7 +15714,7 @@ D8 & Thermodynamic second law for macroscopic systems & B & Level-A directional 
 D9 & Physical identification $S_0=\hbar$ & B & Structural action scale $S_0$ exists~(Level~A); its final physical identification with $\hbar$ requires additional matching / closure~(OP-Q2) & \ref{sec:qs_hbar}, \ref{sec:qs_ccr} \\
 D10 & Linearised Einstein eqs. + $\Theta_{\mu\nu}$ & B & Linearisation & \ref{sec:macroscopic} \\
 D11 & Compatibility with $n_s\approx0.967$ (Planck 2018) & C & ECT-native derivation pending; borrowed slow-roll formula removed & \ref{sec:mp_cosmo} \\
-D12 & Baryogenesis $\eta_B\approx9\times10^{-10}$ & B & Leptogenesis mechanism & \ref{sec:mp_cosmo} \\
+D12 & Baryogenesis: Sakharov-compatible environment & B & Ordering-transition out-of-equilibrium + benchmark leptogenesis closure; ECT-native $\eta_B$ derivation open (OP7) & \ref{sec:mp_baryogenesis} \\
 D13 & UV safety of graviton & C & Power counting not done & 8, \ref{sec:open_problems} \\
 D14 & Full non-linear Einstein eqs.\ (anisotropic curv.\ term); $\phi$-first scalar-tensor IR closure (Appendix~\ref{app:phi_first_EFE}) & A/B & Riemann commutator identity (OP2 resolved at linear level); scalar-tensor closure = effective IR ansatz & \ref{sec:macroscopic}, App.~\ref{app:curvature_coupling}, App.~\ref{app:phi_first_EFE} \\
 D15 & First-principles derivation of the causal response kernel from ECT microdynamics & C & Retarded ordered-branch scalar dynamics provides the structural basis, but a non-circular derivation of the causal FV kernel from the bare ECT action is not yet complete & \ref{sec:second_law_basics}, \ref{sec:open_problems} \\
@@ -22409,9 +22552,10 @@ see Section~\ref{sec:casimir}).
 The Unruh temperature $T_U=\hbar a/(2\pi c_* k_B)$ is derived by
 continuing the $O(4)$-invariant correlator onto the Rindler trajectory.
 Time-dependent ordered backgrounds naturally admit Bogoliubov-type mode
-mixing, while the primordial spectral index $n_s \approx 0.967$ is compatible
-with the ECT branch-selection mechanism, but an ECT-native derivation
-remains the next step in the cosmological programme~(Open, OP3).
+mixing, while the primordial perturbation sector is structurally identified
+(single scalar mode from the Universality Corollary), but an ECT-native
+derivation of $n_s$ and $r$ remains the next step in the cosmological
+programme~(Open, OP3).
 
 \paragraph{Observational validation.}
 
