@@ -15873,58 +15873,15 @@ rather than near dense sources.
 \label{sec:jwst}
 
 \textit{Scope note.}
-The cosmological perspective on the JWST problem---including the age
-apparatus, the correlated Hubble/JWST background logic, and the
+The full cosmological perspective on the JWST problem---including the
+correlated Hubble/JWST background logic, the age apparatus, and the
 derived-parent maturity analysis---is developed in
 \S\ref{sec:mp_jwst_cosmo}.
-The present subsection records the leading-order galactic / halo-growth
-analysis and its Press--Schechter interpretation.
-
-\textit{Observational context.}
-The James Webb Space Telescope has revealed a population of unexpectedly massive
-galaxies and supermassive black holes at redshifts $z>10$, corresponding to
-cosmic ages $<500$\,Myr after the Big Bang \cite{Labbe2023,Finkelstein2022}.
-The observed stellar masses ($M_\star\sim 10^{9}$--$10^{11}\,M_\odot$) and black-hole
-masses ($M_{\rm BH}\sim 10^{7}$--$10^{9}\,M_\odot$) exceed the expectations of
-standard $\Lambda$CDM by factors of several within the available assembly time.
-
-\textit{ECT mechanism ($\phi$-first).}
-In ECT $\phi$-logic, the effective gravitational coupling on the
-cosmological background is controlled by the background order field
-$\phi_b(z)$ (Section~\ref{sec:mp_nonlinear}):
-\begin{equation}
-  G_{\rm eff}(z) = G_N\,e^{-\beta\phi_b(z)},
-  \qquad
-  M^2_{\rm eff}(z) = \bar M^2_{\rm Pl}\,e^{\beta\phi_b(z)}.
-  \label{eq:Geff_jwst}
-\end{equation}
-This is the same relation that governs the nonlinear gravity and
-galactic-scale $\phi$-branch — a single order field unifies the
-cosmological and galactic gravitational sectors.
-
-The full field decomposes as $\phi(X)=\phi_b(z)+\delta\phi(X)$,
-where $\phi_b(z)$ is the slowly evolving cosmological background
-and $\delta\phi(X)$ encodes local deviations.
-The $\phi$-logic suggests qualitatively that dense collapsing
-regions may screen $\delta\phi$, driving the local dynamics back
-toward the GR branch; a derivation of this screening from the
-nonlinear $\phi$-equation remains open.
-
-\textit{Background structure.}
-The $\phi$-first framework identifies the cosmological background
-as a slowly evolving order field $\phi_b(z)$, with
-\begin{equation}
-  G_{\rm eff}(z) = G_N\,e^{-\beta\phi_b(z)}.
-  \label{eq:phi_b_ansatz}
-\end{equation}
-The specific functional form of $\phi_b(z)$ is not yet derived
-from the ECT background equations; a first-principles solution
-of the coupled $\phi$--Friedmann system remains an open problem.
-Any specific numerical parameterisation (such as a power-law ansatz)
-should be treated as an illustrative closure, not a prediction.
-A power-law profile $\phi_b(z)=-2\varepsilon\ln(1+z)$ would recover
-$G_{\rm eff}(z)=G_N(1+z)^{2\varepsilon}$, but any specific $\varepsilon$
-should be treated as an illustrative closure only.
+The present subsection records only the leading-order halo-growth
+analysis and its Press--Schechter interpretation within the
+$\phi$-first framework.
+For the observational context, the $G_{\rm eff}(z)$ mechanism, and
+the background ansatz see \S\ref{sec:mp_jwst_cosmo}.
 
 \textit{Structure growth.}
 In the leading sub-horizon approximation, and neglecting explicit
@@ -15986,7 +15943,7 @@ relative to $\Lambda$CDM.
 The observed deficit is $\times10$--100~\cite{BoylanKolchin2023},
 so in its present controlled $\phi$-first form ECT \emph{alleviates
 but does not resolve} the JWST early-structure tension.
-With the background ansatz~\eqref{eq:phi_b_ansatz}, no additional
+With the background ansatz~\eqref{eq:Geff_z}, no additional
 numerical improvement over the leading-order estimate is obtained.
 
 The $\phi$-logic suggests that early-time global enhancement
@@ -17006,6 +16963,67 @@ $g_{\rm bar}$, and naturally allows galaxy-to-galaxy variation through
 $g^\dagger_{\rm eff}$.  In this sense the RAR is not an independent fit
 law added on top of the theory, but a different projection of the same
 galactic closure already used in the SPARC velocity analysis.
+
+% ==============================================================
+\subsection{Summary and status of galactic and astrophysical phenomenology}
+\label{sec:mp_galactic_summary}
+% ==============================================================
+
+The preceding subsections developed the astrophysical phenomenology of
+ECT within the $\phi$-first ordered-branch closure.
+The main results and their derivation status are:
+
+\begin{enumerate}
+  \item \textbf{Galactic rotation curves}
+    (Section~\ref{sec:galactic_dynamics}):
+    the critical $\phi$-branch closure reproduces flat rotation curves
+    across the full SPARC sample with one free parameter~$r_0$ per
+    galaxy and median $\chi^2/N\sim1$~(Level~B).
+    Computational details in
+    Appendix~\ref{app:sparc_computation};
+    derivation of the algebraic fitting law in
+    Appendix~\ref{app:galactic_phi_closure}.
+
+  \item \textbf{BTFR}
+    (Section~\ref{sec:galactic_dynamics}):
+    the deep-branch slope $V_f^4\propto M_b$ follows algebraically
+    from the critical branch~(Level~B).
+
+  \item \textbf{RAR}
+    (Section~\ref{sec:rar_subsection}):
+    the two asymptotic regimes ($g\simeq g_{\rm bar}$ at high
+    acceleration and $g\simeq\sqrt{g_{\rm bar}\,g_\dagger}$ at low
+    acceleration) are derived from the ECT field equation;
+    the interpolation is a representative algebraic closure~(Level~B).
+
+  \item \textbf{JWST early-structure tension}
+    (Section~\ref{sec:jwst}):
+    the leading-order Press--Schechter enhancement is
+    $\times2$--3 for the most anomalous sources;
+    the full cosmological analysis
+    (\S\ref{sec:mp_jwst_cosmo}) adds correlated age/distance/growth
+    effects but only partially alleviates the tension~(Level~B).
+
+  \item \textbf{Cluster-merger lensing}
+    (Section~\ref{sec:bullet_cluster}):
+    the $\phi$-closure predicts that the convergence peak tracks the
+    more compact baryonic component;
+    morphology is robust, amplitude is an order-of-magnitude
+    estimate~(Level~B).
+    Computational details in Appendix~\ref{app:cluster_lensing}.
+\end{enumerate}
+
+\noindent
+All results in this section are Level~B: they use the $\phi$-first
+ordered-branch closure, not first-principles derivations from the
+bare ECT action.
+The galactic sector has one free scale per galaxy ($r_0$ or
+equivalently~$g^\dagger_{\rm eff}$); the cosmological JWST sector
+uses a phenomenological background ansatz $\phi_b(z)$.
+The most distinctive new prediction is the environmental modulation
+of $g^\dagger_{\rm eff}$~(F1, Table~\ref{tab:ECT_predictions}),
+which is absent in both $\Lambda$CDM and MOND and directly testable
+with existing data.
 
 % ==============================================================
 \section{Dark Sector Interpretation and Discriminants}
