@@ -14815,7 +14815,9 @@ Navy boxes indicate the first Hubble-compatible corridor.
 The labelled points \textbf{B} (balanced), \textbf{H} (Hubble-priority),
 and \textbf{A} (age-priority) are the working points used in the
 linear-growth and JWST maturity analysis
-(Table~\ref{tab:derived_parent_working_points}).}
+(Table~\ref{tab:derived_parent_working_points}).
+The scan construction, selection criteria, and derived-parent workflow
+are documented in Appendix~\ref{sec:derived_parent_pipeline}.}
 \label{fig:ect_condensate_param_scan}
 \end{figure*}
 
@@ -14836,7 +14838,9 @@ $t_{\rm BH}^{\rm ref}/t_{\rm BH}^{\rm ECT}\propto G_{\rm eff}/G_N$
 (BH-growth-like).
 This figure makes explicit that the ECT mechanism for early maturity is
 not driven by linear growth alone, but by the combination of background
-evolution and accelerated local development channels.}
+evolution and accelerated local development channels.
+The numerical setup and the derived-parent comparison workflow are
+documented in Appendix~\ref{sec:derived_parent_pipeline}.}
 \label{fig:ect_derived_parent_comparison}
 \end{figure*}
 
@@ -14855,10 +14859,17 @@ The comparison shows that the present ECT corridor achieves
 $\mathcal R_{\rm gal}\approx\mathcal R_{\rm req}$ for most cases and
 $\mathcal R_{\rm BH}>\mathcal R_{\rm req}$ for all cases.
 These factors are semi-analytic development budgets, not morphology-level
-predictions.}
+predictions.
+Numerical inputs, anchor-case bookkeeping, and budget definitions are
+documented in Appendix~\ref{sec:derived_parent_pipeline} and
+Appendix~\ref{sec:ect_maturity_factors}.}
 \label{fig:ect_jwst_anchor_budget}
 \end{figure*}
 \FloatBarrier
+
+The article-facing numerical and schematic artefacts used in this
+subsection correspond to the reproducibility outputs listed in
+Appendix~\ref{sec:late_cosmo_artefacts}.
 
 \paragraph{BBN and saturation bound.}
 The same saturation logic that constrains the Hubble-shift mechanism
@@ -15141,7 +15152,11 @@ Only sector~(ii) is presently resolved quantitatively in the
 late-time Hubble--JWST analysis; the remaining layers represent
 the current conceptual ECT picture.
 This schematic should not be read as a fully established
-quantitative early-Universe history.}
+quantitative early-Universe history.
+As discussed in Appendix~\ref{app:late_cosmo_background} and
+Appendix~\ref{sec:late_cosmo_artefacts}, this figure belongs to
+the present conceptual article-facing layer and should not be read
+as a completed quantitative reconstruction of all condensate sectors.}
 \label{fig:ect_full_condensate_universe_evolution}
 \end{figure*}
 
@@ -15167,7 +15182,10 @@ This is a schematic consistent with the derived-parent analysis; it
 should not be read as a fully established early-Universe history.
 It summarises the present derived-parent interpretation and should be
 read as a conceptual guide to the current numerical and theoretical
-picture.}
+picture.
+The derived-parent background logic underlying this schematic is
+documented in Appendix~\ref{app:late_cosmo_background} and
+Appendix~\ref{sec:derived_parent_pipeline}.}
 \label{fig:ect_universe_condensate_evolution}
 \end{figure*}
 \FloatBarrier
@@ -17571,9 +17589,6 @@ This figure should not be interpreted as a direct comparison of
 absolute cosmic ages with $\Lambda$CDM; its role is instead to
 organise the internal ECT layers: ordering, gravitational condensate
 evolution, electroweak condensation, and the observable Universe.
-Conversely, Fig.~\ref{fig:ect_full_condensate_universe_evolution}
-should be read as an internal conceptual decomposition of the ECT
-picture, rather than as a direct age-comparison diagram.
 The late-time amplitude-sector detail is also shown in
 Figure~\ref{fig:ect_universe_condensate_evolution}.
 The present late-time Hubble--JWST analysis resolves only the
@@ -19247,6 +19262,10 @@ of $S_0=\hbar$.}
 \label{fig:qs_quantization_chain}
 \end{figure}
 
+For the present loop-based calculation status and the open
+first-principles derivation of the action scale~$S_0$, see
+Appendix~\ref{app:Sloop_calc}.
+
 \FloatBarrier
 % ============================================================
 \subsection{Uncertainty principle in the coherent branch}
@@ -20026,7 +20045,9 @@ in different ways.
 The analogue-gravity continuity shows that none of these effects requires
 a fundamental spacetime ontology; they emerge from the coherent-vacuum
 response structure.
-This is a structural interpretation map, not a quantitative derivation.}
+This is a structural interpretation map, not a quantitative derivation.
+See Appendix~\ref{app:qs_vacuum_response} for the detailed structural
+discussion.}
 \label{fig:qs_vacuum_unified}
 \end{figure}
 
@@ -20542,6 +20563,8 @@ Section~\ref{sec:qs_decoherence}.}
 Figure~\ref{fig:qs_decoherence_regimes} is schematic; the quantitative
 interpolation between the two regimes remains part of OP-Q15 and the
 effective bath analysis of Appendix~\ref{app:ohmic_markov}.
+For the spectral-density hierarchy and bath-regime classification,
+see also Appendix~\ref{app:qs_bath_regimes}.
 
 \subsubsection*{Status summary}
 
@@ -21906,6 +21929,10 @@ of the evaporating black-hole problem.}
 Figure~\ref{fig:qs_bh_shell} is schematic: it visualises the current
 Level~B strong-field closure and should not be read as a solved global
 metric profile.
+For the present strong-field bookkeeping, generalized-entropy structure,
+and the open shell-dynamics problem, see
+Appendices~\ref{app:bh_info}, \ref{app:conditional_theorem},
+and~\ref{app:chi_dynamics}.
 
 The physically observed radiation state is not the total state but
 a reduced state:
@@ -22549,7 +22576,10 @@ The coherent-topological branch is organised around phase dynamics, the
 pre-quantum action scale $S_0$, wave reduction, canonical structure, decoherence,
 Born-type probability, ordered-vacuum response, and the strong-field horizon problem.
 Arrows indicate logical dependencies between results.
-This figure is a structural roadmap, not itself a derivation.}
+This figure is a structural roadmap, not itself a derivation.
+The corresponding open-problem list is detailed below;
+section-specific technical appendices are referenced in the
+individual subsections.}
 \label{fig:qs_consistency}
 \end{figure}
 
