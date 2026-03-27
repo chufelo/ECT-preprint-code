@@ -14666,13 +14666,76 @@ by the same single ordered-branch scalar background, not by an
 independent family of extra cosmological fields.
 
 \paragraph{Layer~1: leading-order proxy analysis.}
-At the leading sub-horizon / Press--Schechter level~(\S\ref{sec:jwst}),
-enhanced effective gravity produces only a moderate increase in the
-abundance of rare high-$\nu$ peaks, typically at the level of a factor
-$\sim2$--3 for the most extreme objects.
-This already goes in the correct direction but is insufficient to close
-the full observed gap relative to standard expectations.
-Thus linear-growth proxies and halo-count enhancement alone alleviate
+\label{sec:jwst}%  backward-compatibility alias
+In the leading sub-horizon approximation, and neglecting explicit
+perturbations of the $\phi$-sector in the growth equation, one may
+write the standard continuity--Euler--Poisson system with the
+effective coupling:
+\begin{equation}
+  \ddot\delta + 2H\dot\delta
+  - 4\pi G_{\rm eff}(z)\,\bar\rho\,\delta = 0.
+  \label{eq:growth_ode_proxy}
+\end{equation}
+At leading order in $\varepsilon$ this gives
+\begin{equation}
+  \frac{D_{\rm ECT}(z)}{D_{\Lambda{\rm CDM}}(z)}
+  \approx 1 + \varepsilon\ln(1+z) + O(\varepsilon^2).
+  \label{eq:D_ECT_proxy}
+\end{equation}
+At $z=10$: $D_{\rm ECT}/D_{\Lambda{\rm CDM}}\approx 1.024$.
+
+\textit{Halo abundance (Press--Schechter).}
+Setting $f(z)\equiv G_{\rm eff}(z)/G_N = e^{-\phi_b(z)}$,
+the effective rarity of a $\nu$-$\sigma$ peak becomes
+$\nu_{\rm eff}=\nu/\sqrt{f}$, giving
+\begin{equation}
+  \frac{n_{\rm ECT}}{n_{\Lambda{\rm CDM}}}
+  = \exp\!\left[\frac{\nu^2}{2}\!\left(1-\frac{1}{f(z)}\right)\right].
+  \label{eq:PS_phi}
+\end{equation}
+Illustrative values for a slow-roll background profile are given in
+Table~\ref{tab:jwst_ps}.
+
+\begin{table}[H]
+\centering
+\caption{Halo abundance enhancement in ECT vs.\ $\Lambda$CDM,
+eq.~\eqref{eq:PS_phi} for an illustrative slow-roll profile.
+$\nu$ = peak rarity parameter; JWST anomalies correspond to
+$\nu\sim5$--6.
+The ansatz $\phi_b(z)=-2\varepsilon\ln(1+z)$ gives $f(z)=e^{-\phi_b}$;
+specific $\varepsilon$ is illustrative only.}
+\label{tab:jwst_ps}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{ccccc}
+\hline
+$z$ & $\phi_b(z)$ & $f=e^{-\phi_b}$ & $\nu=5$ & $\nu=6$ \\
+\hline
+ 7  & $-0.043$ & 1.043 & $\times 1.7$ & $\times 2.1$ \\
+10  & $-0.048$ & 1.049 & $\times 1.8$ & $\times 2.3$ \\
+12  & $-0.052$ & 1.053 & $\times 1.9$ & $\times 2.5$ \\
+15  & $-0.055$ & 1.057 & $\times 2.0$ & $\times 2.6$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\textit{Quantitative assessment.}
+For the most anomalous JWST sources ($\nu\sim5$--6),
+the ECT $\phi$-mechanism predicts an overabundance of $\times2$--3
+relative to $\Lambda$CDM.
+The observed deficit is $\times10$--100~\cite{BoylanKolchin2023},
+so in its present controlled $\phi$-first form ECT \emph{alleviates
+but does not resolve} the JWST early-structure tension.
+With the background ansatz~\eqref{eq:Geff_z}, no additional
+numerical improvement over the leading-order estimate is obtained.
+
+The $\phi$-logic suggests that early-time global enhancement
+($\phi_b<0$) and local screening in dense proto-galactic cores
+may ultimately be described within a single amplitude-sector framework.
+A derivation of this mechanism from the full nonlinear $\phi$-equation,
+and the question of whether a nontrivial background history $\phi_b(z)$
+could provide stronger early enhancement, are left as open
+problems~(Section~\ref{sec:open_problems}).
+Thus, linear-growth proxies and halo-count enhancement alone alleviate
 the tension but do not resolve it.
 
 \paragraph{Layer~2: derived-parent background and maturity analysis.}
@@ -15869,103 +15932,6 @@ rather than near dense sources.
 
 %%% -----------------------------------------------------------
 
-\subsection{Early galaxy and black hole formation (JWST anomalies)}
-\label{sec:jwst}
-
-\textit{Scope note.}
-The full cosmological perspective on the JWST problem---including the
-correlated Hubble/JWST background logic, the age apparatus, and the
-derived-parent maturity analysis---is developed in
-\S\ref{sec:mp_jwst_cosmo}.
-The present subsection records only the leading-order halo-growth
-analysis and its Press--Schechter interpretation within the
-$\phi$-first framework.
-For the observational context, the $G_{\rm eff}(z)$ mechanism, and
-the background ansatz see \S\ref{sec:mp_jwst_cosmo}.
-
-\textit{Structure growth.}
-In the leading sub-horizon approximation, and neglecting explicit
-perturbations of the $\phi$-sector in the growth equation, one may
-write the standard continuity--Euler--Poisson system with the
-effective coupling:
-\begin{equation}
-  \ddot\delta + 2H\dot\delta
-  - 4\pi G_{\rm eff}(z)\,\bar\rho\,\delta = 0.
-\end{equation}
-At leading order in $\varepsilon$ this gives
-\begin{equation}
-  \frac{D_{\rm ECT}(z)}{D_{\Lambda{\rm CDM}}(z)}
-  \approx 1 + \varepsilon\ln(1+z) + O(\varepsilon^2).
-\end{equation}
-At $z=10$: $D_{\rm ECT}/D_{\Lambda{\rm CDM}}\approx 1.024$.
-
-\textit{Halo abundance (Press--Schechter).}
-Setting $f(z)\equiv G_{\rm eff}(z)/G_N = e^{-\phi_b(z)}$,
-the effective rarity of a $\nu$-$\sigma$ peak becomes
-$\nu_{\rm eff}=\nu/\sqrt{f}$, giving
-\begin{equation}
-  \frac{n_{\rm ECT}}{n_{\Lambda{\rm CDM}}}
-  = \exp\!\left[\frac{\nu^2}{2}\!\left(1-\frac{1}{f(z)}\right)\right].
-  \label{eq:PS_phi}
-\end{equation}
-Illustrative values for a slow-roll background profile are given in
-Table~\ref{tab:jwst_ps}; they are \emph{unchanged} from the
-previous estimate --- the improvement here is conceptual
-(unified $\phi$-language with the gravity section) rather than
-numerical.
-
-\begin{table}[H]
-\centering
-\caption{Halo abundance enhancement in ECT vs.\ $\Lambda$CDM,
-eq.~\eqref{eq:PS_phi} for an illustrative slow-roll profile.
-$\nu$ = peak rarity parameter; JWST anomalies correspond to
-$\nu\sim5$--6.
-The ansatz $\phi_b(z)=-2\varepsilon\ln(1+z)$ gives $f(z)=e^{-\phi_b}$;
-specific $\varepsilon$ is illustrative only.}
-\label{tab:jwst_ps}
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{ccccc}
-\hline
-$z$ & $\phi_b(z)$ & $f=e^{-\phi_b}$ & $\nu=5$ & $\nu=6$ \\
-\hline
- 7  & $-0.043$ & 1.043 & $\times 1.7$ & $\times 2.1$ \\
-10  & $-0.048$ & 1.049 & $\times 1.8$ & $\times 2.3$ \\
-12  & $-0.052$ & 1.053 & $\times 1.9$ & $\times 2.5$ \\
-15  & $-0.055$ & 1.057 & $\times 2.0$ & $\times 2.6$ \\
-\hline
-\end{tabular}
-\end{table}
-
-\textit{Quantitative assessment.}
-For the most anomalous JWST sources ($\nu\sim5$--6),
-the ECT $\phi$-mechanism predicts an overabundance of $\times2$--3
-relative to $\Lambda$CDM.
-The observed deficit is $\times10$--100~\cite{BoylanKolchin2023},
-so in its present controlled $\phi$-first form ECT \emph{alleviates
-but does not resolve} the JWST early-structure tension.
-With the background ansatz~\eqref{eq:Geff_z}, no additional
-numerical improvement over the leading-order estimate is obtained.
-
-The $\phi$-logic suggests that early-time global enhancement
-($\phi_b<0$) and local screening in dense proto-galactic cores
-may ultimately be described within a single amplitude-sector framework.
-A derivation of this mechanism from the full nonlinear $\phi$-equation,
-and the question of whether a nontrivial background history $\phi_b(z)$
-could provide stronger early enhancement, are left as open problems
-(Section~\ref{sec:open_problems}).
-
-The late-time background apparatus developed in
-Appendices~\ref{app:late_cosmo_background} and~\ref{app:late_cosmo_algorithm}
-provides the first controlled connection between the Hubble tension, the
-age of the Universe, and the JWST background effects in ECT.  The same
-$\phi$-background drift that shifts the inferred late $H_0$ also modifies
-luminosity distances to high-$z$ galaxies, the lookback time available
-for early structure formation, and the effective growth environment; see
-Fig.~\ref{fig:ect_hubble_background} and
-Table~\ref{tab:ect_hubble_summary}.
-
-
-
 \begin{table}[H]
 \centering
 \caption{Level-4 self-consistency checklist.
@@ -16997,12 +16963,12 @@ The main results and their derivation status are:
     the interpolation is a representative algebraic closure~(Level~B).
 
   \item \textbf{JWST early-structure tension}
-    (Section~\ref{sec:jwst}):
+    (Section~\ref{sec:mp_jwst_cosmo}):
     the leading-order Press--Schechter enhancement is
     $\times2$--3 for the most anomalous sources;
-    the full cosmological analysis
-    (\S\ref{sec:mp_jwst_cosmo}) adds correlated age/distance/growth
-    effects but only partially alleviates the tension~(Level~B).
+    the correlated age/distance/growth analysis
+    adds derived-parent maturity factors but only partially
+    alleviates the tension~(Level~B).
 
   \item \textbf{Cluster-merger lensing}
     (Section~\ref{sec:bullet_cluster}):
