@@ -28738,13 +28738,13 @@ smooth interpolation through three regimes:
       (\log z_{\rm ord}-\log z)/\sigma_{\rm ord}\bigr)\bigr].
     \]
   \item \textit{Stabilisation} ($z_{\rm stab}\lesssim z\lesssim z_{\rm ord}$):
-    $\phi_b\approx\phi_{\rm stab}\approx -0.05$, consistent with the BBN
-    requirement that $G_{\rm eff}/G_N$ deviates from unity by at most a
-    few percent.
+    $\phi_b\approx\phi_{\rm stab}\approx -0.6$, consistent with the
+    derived-parent benchmark $G_{\rm eff}/G_N\approx 1.5$ at the
+    JWST epoch $z\sim 10$.
   \item \textit{Late-time slow drift} ($z\lesssim z_{\rm stab}$):
-    a small additional negative shift $\delta\phi\sim-0.05$ to $-0.10$,
-    modelled with an exponential approach:
-    $\phi_b(z)\to\phi_0$ as $z\to 0$.
+    $\phi_b$ continues to increase (approach the screened state
+    $\phi=0$), reaching $\phi_0\approx -0.10$ at $z=0$,
+    consistent with $G_{\rm eff}(z{=}0)/G_N\approx 1.08$.
 \end{enumerate}
 
 \paragraph{Derived quantities.}
@@ -28757,9 +28757,16 @@ G_{\rm eff}/G_N = e^{-\beta\phi_b},
 w_\phi = -1 + \delta w\,e^{-z/z_{\rm drift}}.
 \]
 The benchmark parameter choices are $\beta=0.8$,
-$\phi_{\rm deep}=-3$, $\phi_{\rm stab}=-0.05$,
-$\phi_0^{(A)}=-0.10$, $\phi_0^{(B)}=-0.15$,
-$z_{\rm ord}=2000$, $z_{\rm stab}=50$.
+$\phi_{\rm deep}=-3$, $\phi_{\rm stab}=-0.6$,
+$\phi_0=-0.10$,
+$z_{\rm ord}=2000$, $z_{\rm approach}=100$.
+The stabilised value $\phi_{\rm stab}\approx -0.6$ is chosen to
+match the benchmark $G_{\rm eff}(z{=}10)/G_N\approx 1.5$ from the
+derived-parent analysis (Table~\ref{tab:derived_parent_working_points}).
+The key physical requirement is that $\phi_b$ increases monotonically
+throughout cosmic history (the condensate approaches the screened
+state), consistent with the direction of evolution in the solved
+benchmark system.
 
 \paragraph{Time mapping.}
 The cosmic-time version (Fig.~\ref{fig:condensate_evolution_time})
