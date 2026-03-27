@@ -3280,13 +3280,17 @@ mode is developed in Section~\ref{sec:radial_mode}.
 \subsection{Action scale $S_0$ as the ECT precursor of $\hbar$}
 \label{sec:hbar_status}
 
-\textit{Status: three-layered.
+\textit{Status: three-layered with structural bridges.
 Layer~1 (strict within the reduced $U(1)$-extended phase-loop EFT):
 the winding-sector action admits a sharp lower bound at fixed loop
 length, with the minimum achieved by uniform winding.
-Layer~2 (Level~B EFT input): specifying the characteristic size of an
-elementary coherent loop yields a distinguished EFT action scale
-$S_0^{\rm EFT}$.
+Layer~2 (Level~A/B EFT closure): specifying the characteristic size of
+an elementary coherent loop yields a distinguished EFT action scale
+$S_0^{\rm EFT}$; the core scale is supported by a vortex variational
+estimate.
+Structural bridges (Level~A/B to~B): single-field universality,
+analytic continuation, and parameter-counting closure collectively
+protect the identification from arbitrary fitting.
 Layer~3 (Level~B matching): the identification
 $S_0^{\rm EFT}\leftrightarrow\hbar$ is the strongest structural bridge
 to quantum mechanics, but remains a matching statement, not a
@@ -3419,6 +3423,23 @@ The characteristic elementary loop length is therefore
 This is a Level~B EFT input: it uses the radial-mode correlation
 length from the broken-phase potential, not topology alone.
 
+\emph{Variational support for the core scale.}
+The estimate $\xi_{\rm core}\sim m_\varphi^{-1}$ is not merely a
+dimensional guess: it is confirmed by the standard global-vortex
+variational problem for the full $(\rho,\theta)$ system.
+For a rectilinear vortex with unit winding, the radial profile
+$\rho(r)$ satisfies $\rho(0)=0$ and $\rho(r)\to\phi_0$ at
+$r\gg m_\varphi^{-1}$, with the core size fixed by the balance
+between gradient energy and potential energy at
+$\xi_{\rm core}\sim m_\varphi^{-1}$.
+For a closed loop of circumference $L\sim 2\pi\xi_{\rm core}$,
+curvature corrections are $O(1)$ and do not change the scaling
+estimate.
+This raises the status of $L_{\rm core}$ from a purely ad~hoc
+choice to a variationally motivated estimate~(Level~A/B), with the
+$O(1)$ numerical coefficient remaining open pending the full 4D
+closed-loop variational problem.
+
 \emph{Distinguished EFT action scale.}
 Evaluating the fixed-$L$ lower bound~\eqref{eq:loop_bound} at the
 elementary-loop size with $n=1$ gives the characteristic
@@ -3446,9 +3467,7 @@ Throughout the remainder of the paper the notation
 $S_{\rm loop,min}=2\pi S_0$ may occasionally appear in earlier
 sections.
 In the present revised formulation, however, this quantity should be
-understood as the elementary-loop action at the characteristic core
-scale, not as a global variational minimum over arbitrary loop lengths.
-It should be understood as the elementary-loop action
+understood as the elementary-loop action
 $S_{\rm elem}$ evaluated at the characteristic core scale
 $L_{\rm core}$, not as a global variational minimum over
 arbitrary loop lengths.
@@ -3483,9 +3502,95 @@ gravitational and quantum sectors: both originate in the same ordered
 condensate, even though their explicit matching relations are not yet
 fully unified at the microscopic level.
 
+% ============ STRUCTURAL BRIDGES ============
+
+\paragraph{Single-field universality~(Level~A/B).}
+ECT is a theory of a single microscopic field~$\Phi$ governed by a
+single Euclidean action~$S_E[\Phi]$~(P3).
+All excitation sectors---radial, phase, orientational,
+gravitational---are decompositions of the same field around the same
+ordered vacuum.
+The Euclidean functional integral
+\begin{equation}
+  Z = \int\mathcal{D}\Phi\;
+      \exp\!\bigl(-S_E[\Phi]/\Sigma\bigr)
+  \label{eq:Z_single_field}
+\end{equation}
+is therefore characterised by a \emph{single} action normalization
+$\Sigma$ shared by all sectors.
+The coherent phase sector, via the topological and variational
+construction of Layer~1 and the core-scale closure of Layer~2,
+identifies a distinguished candidate for this universal normalization:
+$\Sigma=S_0^{\rm EFT}$.
+If the $U(1)$-coherent sector is a faithful effective reduction of
+the underlying single-field branch, then the universal action
+normalization is identified with~$S_0^{\rm EFT}$.
+
+This is a structural consequence of the single-field architecture
+of ECT~(P3), not an independent postulate.
+The level is A/B because the link between the full
+action~$S_E[\Phi]$ and the reduced phase action~$S_\theta[\theta]$
+passes through an effective integration-out of the radial mode,
+which is itself a Level~B closure step.
+
+\paragraph{Analytic continuation preserves action normalization~(Level~A/B).}
+The Wick rotation $w\to -ic_*t$ is the same analytic continuation
+already used to derive the emergent Lorentzian metric and causal
+structure~(Section~\ref{sec:lorentz_order_field}).
+Applied to the coherent-sector weight it gives
+\begin{equation}
+  \exp\!\bigl(-S_E/S_0^{\rm EFT}\bigr)
+  \;\longrightarrow\;
+  \exp\!\bigl(iS_L/S_0^{\rm EFT}\bigr).
+  \label{eq:wick_preserves_S0}
+\end{equation}
+If the action normalization changed under continuation, this would
+constitute an additional, independently unjustified postulate.
+The most natural and internally consistent continuation preserves
+the same $S_0^{\rm EFT}$ on both sides.
+This is Level~A/B because the continuation itself is well-defined
+for the ordered branch, but the coherent-sector reduction through
+which $S_0^{\rm EFT}$ enters is Level~B.
+
+\paragraph{Parameter-counting closure~(Level~B structural).}
+In its simplest bare-potential realisation, ECT has three
+structurally independent bare/EFT parameters
+$(\phi_0,\lambda,\alpha)$ at $\beta=1$.
+Three observational calibration relations are needed to fix them:
+\begin{itemize}
+  \item $c_*=c$ fixes $\alpha$
+    (Section~\ref{sec:lorentz_window}; Level~A/B);
+  \item $G_N=c_*^4/(8\pi M_G^2)$ fixes the gravitational stiffness
+    scale~(Section~\ref{sec:GN_matching}; Level~B);
+  \item $S_0^{\rm EFT}=\hbar$ fixes $m_\varphi$, or
+    equivalently~$\lambda$.
+\end{itemize}
+Without the third calibration, one free parameter would remain
+physically uncalibrated at this stage of the theory.
+The identification $S_0^{\rm EFT}=\hbar$ naturally closes the theory
+by fixing $m_\varphi = 2\hbar/K_\theta$.
+This is not a derivation of $\hbar$ from first principles, but a
+structural argument showing that the identification is the third and
+final calibration relation of a three-parameter theory, rather than
+an arbitrary fit.
+
 % ============ LAYER 3 ============
 
 \paragraph{Layer~3: identification with $\hbar$ (Level~B matching).}
+
+The preceding structural bridges---single-field universality, analytic
+continuation, and parameter-counting closure---collectively protect
+the identification of $S_0^{\rm EFT}$ with the observed Planck constant
+from the charge of arbitrary fitting.
+The identification itself is:
+\begin{equation}
+  \hbar \;\leftrightarrow\; S_0^{\rm EFT},
+  \qquad
+  S_{\rm elem} = 2\pi\hbar = h.
+  \label{eq:hbar_S0_identification}
+\end{equation}
+This is a Level~B matching statement: strongly motivated by the
+structural bridges above, but not yet a strict parameter-free theorem.
 
 In ordinary quantum theory, $\hbar$ is the quantity that renders the
 action dimensionless in the phase factor
@@ -3495,13 +3600,14 @@ ECT reproduces the same structural role through $S_0^{\rm EFT}$:
   S_0^{\rm EFT} \;\text{ is the ECT precursor of }\; \hbar.
   \label{eq:S0_precursor_hbar}
 \end{equation}
-The working identification is
-\begin{equation}
-  \hbar \;\leftrightarrow\; S_0^{\rm EFT}
-  \label{eq:hbar_S0_identification}
-\end{equation}
-(Level~B: strongly motivated structural identification, not yet a
-strict theorem).
+
+\emph{Clarification of loop terminology.}
+Here $S_{\rm loop,min}$ refers specifically to the minimal action of
+an elementary coherent phase-winding loop in the $U(1)$-extended
+sector~(Layer~1), not to an arbitrary closed condensate configuration.
+This distinction is important because more general path-integral
+language appears elsewhere in the text; the $\hbar$ identification
+is grounded in the specific phase-topological construction.
 
 \emph{Why this is not yet Level~A.}
 To promote the identification to Level~A, one would need to
@@ -3609,7 +3715,8 @@ Uniform winding minimises the fixed-$L$ action
 \hline
 \multicolumn{3}{l}{\textit{Layer~2: elementary-loop scale}} \\
 Elementary loop size $L_{\rm core}\sim 2\pi/m_\varphi$
-  & B & EFT input from the radial-core scale \\
+  & A/B & EFT input; supported by vortex variational
+    estimate ($O(1)$ coefficient open) \\
 $S_0^{\rm EFT}=K_\theta\,m_\varphi/2$
   & B & Characteristic elementary-loop action scale \\
 $S_0^{\rm EFT}$ and $G_N$ are structurally linked through the same
@@ -3619,6 +3726,15 @@ Self-consistency: $S_0^{\rm EFT}\approx\hbar$ constrains the EFT
   parameter combination
   & B & Analogous to BCS gap equation \\
 \hline
+\multicolumn{3}{l}{\textit{Structural bridges}} \\
+Single-field universality: one $\Sigma$ for all sectors
+  & A/B & Consequence of P3; reduction is Level~B \\
+Analytic continuation preserves $S_0^{\rm EFT}$
+  & A/B & Same continuation as for metric \\
+Parameter-counting closure: $S_0^{\rm EFT}=\hbar$ is
+  third matching condition
+  & B & Shows necessity, not derivation \\
+\hline
 \multicolumn{3}{l}{\textit{Layer~3: identification
   with $\hbar$}} \\
 $S_0^{\rm EFT}$ separates classical and phase-sensitive regimes
@@ -3627,8 +3743,10 @@ Phase factor $\mathcal{A}\sim e^{iS/S_0^{\rm EFT}}$ motivated
   & B & Path-integral hint \\
 $S_0^{\rm EFT}$ as precursor of $\hbar$
   & B & Strongest quantum matching \\
-Identification $S_0^{\rm EFT}\leftrightarrow\hbar$
-  & B (matching) & Not parameter-free \\
+Identification $S_0^{\rm EFT}\leftrightarrow\hbar$,
+  $S_{\rm elem}=h$
+  & B (matching) & Not parameter-free; protected by
+    bridges above \\
 Universal amplitude composition / Born rule
   & C (open) & Later quantum programme \\
 \hline
@@ -3699,12 +3817,16 @@ $v_{\rm gal}$
   & kpc-scale; not a microscopic VEV \\
 $S_0$
   & Pre-quantum action scale
-  & Existence: BR1
-  & Explicit calc.\ $\to$ Sect.~\ref{sec:quantum} \\
+  & A/B (phase-loop construction,
+    \S\ref{sec:hbar_status})
+  & Structural completion in
+    Sect.~\ref{sec:quantum} \\
 $\hbar$
   & Planck constant
-  & Not yet complete
-  & Task of Sect.~\ref{sec:quantum} \\
+  & B (matching, \S\ref{sec:hbar_status}
+    and~\ref{sec:qs_hbar})
+  & Full quantum reconstruction
+    remains open \\
 \hline\hline
 \end{tabular}
 \end{center}
@@ -15073,13 +15195,13 @@ epistemic weight.}
 
 \paragraph{Size of the ECT domain.}
 
-In the ECT macroscopic scenario~(Level~B), the physical universe
-is a finite ordered Lorentzian domain in which the macroscopic
+In one possible ECT macroscopic completion~(Level~B), the observable
+universe is a finite ordered Lorentzian domain in which the macroscopic
 geometric branch is active. Beyond the causal boundary of this domain
 the ordered-branch description itself ceases to remain reliable.
 As the ordered amplitude weakens toward the edge of a finite domain,
-the Lorentzian branch description breaks down and the pre-ordered /
-pre-Lorentzian condensate regime takes over~(Level~B scenario;
+the Lorentzian branch description is expected to break down and the
+pre-ordered / pre-Lorentzian condensate regime to take over~(Level~B scenario;
 explicit dynamics requires OP3).
 This should be understood not as reaching a physical wall, but as
 entering a regime in which the macroscopic geometric branch is no
@@ -15255,16 +15377,21 @@ $d_{\rm force}\approx 3$ to $d_{\rm force}\approx 2$ with a universal
 shape as a function of $x=g_{\rm obs}/g^\dagger$.
 A statistically significant and systematic departure from this universal
 curve would falsify the present single-mode $\phi$-closure.
+This falsifier applies only within the galactic regime where the
+single-galaxy branch approximation remains valid; it should not be
+extended unchanged into the cosmic-web domain.
 
 \paragraph{Status.}
 This force-law dimensionality is a macroscopic closure diagnostic
 (Level~B), not a theorem about the microscopic topological dimension
-of the arena.  It measures how the effective gravitational response
+of the arena and not, by itself, a derivation of a finite universe
+boundary.  It measures how the effective gravitational response
 interpolates between Newtonian and critical-branch behaviour.
 
 \paragraph{What is established and what remains open.}
 The finite-domain interpretation is a Level~B cosmological scenario
-whose large-scale completion remains open~(OP3).
+whose large-scale completion remains open~(OP3) and should not be given
+the same weight as the force-law result below.
 By contrast, the force-law dimensionality formula
 $d_{\rm force}(x)$ is a concrete Level~B closure result with a universal
 shape and directly testable galactic-scale consequences.
@@ -15303,15 +15430,17 @@ The purpose of the present subsection is therefore not to introduce new
 cosmological claims, but to summarise which parts of the ECT
 cosmological programme are already established, which are benchmarked,
 and which remain open.
+It should therefore be read as a status synthesis of the chapter rather
+than as an additional derivational step.
 A detailed prediction-by-prediction table is given in
 \S\ref{sec:mp_cosmo_predictions}.
 
 \subsubsection*{Strictly established (Level~A)}
 
 \begin{enumerate}[label=(\roman*)]
-  \item The theory admits a pre-ordered / pre-Lorentzian configuration
-    regime once Lorentzian signature is treated as emergent rather than
-    fundamental~(\S\ref{sec:pre_lorentzian}).
+  \item Once Lorentzian signature is treated as emergent rather than
+    fundamental, the theory admits a pre-ordered / pre-Lorentzian
+    configuration regime~(\S\ref{sec:pre_lorentzian}).
   \item The baseline ordered cosmological branch is spatially flat:
     $k=0$~(\S\ref{sec:flatness_ect}).
   \item The primary ordered-branch vacuum manifold satisfies
@@ -15383,6 +15512,10 @@ A detailed prediction-by-prediction table is given in
     tension~(\S\ref{sec:jwst}, \S\ref{sec:mp_jwst_cosmo}).
 \end{enumerate}
 
+\noindent
+All numbers in this block should be read as benchmark-level closure
+diagnostics, not as closure-independent ECT predictions.
+
 \subsubsection*{What remains open}
 
 \begin{enumerate}[label=(\roman*)]
@@ -15394,6 +15527,8 @@ A detailed prediction-by-prediction table is given in
   \item The microscopic origin of the effective closure functions,
     in particular $U(\phi)$ and the full background history
     $\phi_b(z)$~(OP3).
+  \item A closure-independent late-time fit of the ECT background
+    sector to the combined age / distance / Hubble / JWST data.
   \item A first-principles ECT derivation of the baryon asymmetry
     $\eta_B$; current results establish only a Sakharov-compatible
     environment plus benchmark leptogenesis
@@ -15416,7 +15551,7 @@ flatness of the baseline branch, the absence of the primary monopole
 channel, and the single-scalar perturbation content of the ordered
 branch.
 The late-time cosmological sector is less complete but already
-organised: age, distance, Hubble shift, and JWST timing/growth effects
+structurally organised: age, distance, Hubble shift, and JWST timing/growth effects
 are not independent sectors but correlated consequences of one and the
 same ordered-branch background.
 The central remaining gap of the cosmological programme is therefore
@@ -15991,7 +16126,7 @@ D5b & Fierz--Pauli form, TT projection, ghost-free counting at linearised level 
 D6 & Dirac form (structural reconstruction once spinorial fields admitted) & B & O(3) spinor rep.; not from bare bosonic action & \ref{sec:fermions}, \ref{sec:dirac_eq} \\
 D7 & Topological-sector mass ansatz $m_n \sim n\times1.6\,$GeV & C & Phenomenological dimensional estimate; integer topological charge follows from $\pi_3(S^3)=\mathbb{Z}$, but the mass law is not derived from topology alone & \ref{sec:predicted_states} \\
 D8 & Thermodynamic second law for macroscopic systems & B & Level-A directional backbone (retarded propagation, $\Gamma_{\rm irr}\geq 0$) + effective ohmic/Markov closure; full microscopic derivation open (OP24) & \ref{sec:second_law_basics} \\
-D9 & Physical identification $S_0=\hbar$ & B & Structural action scale $S_0$ exists~(Level~A); its final physical identification with $\hbar$ requires additional matching / closure~(OP-Q2) & \ref{sec:qs_hbar}, \ref{sec:qs_ccr} \\
+D9 & Physical identification $S_0=\hbar$, $S_{\rm elem}=h$ & B & Structural action scale $S_0$ exists~(Level~A); single-field universality, analytic continuation, and parameter-counting closure protect the identification~(Level~A/B to~B); full structural r\^ole of $\hbar$ requires Quantum Sector programme~(OP-Q2) & \ref{sec:hbar_status}, \ref{sec:qs_hbar}, \ref{sec:qs_ccr} \\
 D10 & Linearised Einstein eqs. + $\Theta_{\mu\nu}$ & B & Linearisation & \ref{sec:macroscopic} \\
 D11 & Primordial perturbation field content: single scalar mode & A & From Universality Corollary; ECT-native spectral tilt $n_s$ and $r$ remain open (OP3) & \ref{sec:mp_primordial} \\
 D12 & Baryogenesis: Sakharov-compatible environment & B & Ordering-transition out-of-equilibrium + benchmark leptogenesis closure; ECT-native $\eta_B$ derivation open (OP7) & \ref{sec:mp_baryogenesis} \\
@@ -18373,9 +18508,12 @@ $\hbar$ is addressed next.
 \label{sec:qs_hbar}
 % ============================================================
 
-\textit{Status: Level~A for the structural existence of a distinguished
-pre-quantum action scale $S_0$ in the coherent-topological branch;
-Level~B for any identification of that scale with the observed $\hbar$.
+\textit{Status: Level~A for the winding-sector structure and
+fixed-length variational bound;
+Level~A/B for the existence of a distinguished finite pre-quantum
+action scale $S_0$ once the characteristic core-sized loop is
+specified;
+Level~B for the identification $S_0=\hbar$.
 Connection to ECT basics: Section~\ref{sec:hbar_status} and
 Appendix~\ref{app:Sloop_calc}.}
 
@@ -18388,26 +18526,31 @@ Evaluated at the characteristic elementary-loop scale
 $L_{\rm core}\sim 2\pi/m_\varphi$, this yields the distinguished EFT
 action scale $S_0^{\rm EFT}=K_\theta m_\varphi/2$.
 The present subsection clarifies the precise status of this scale.
-The key point is that a distinguished pre-quantum action scale is
-already structurally present in ECT, but its identification with the
-observed quantum of action $\hbar$ is not automatic.
 The key point is that $S_0$ is already structurally present in ECT,
 but its identification with the observed quantum of action $\hbar$ is
 \emph{not} automatic.
+In this subsection, $S_0$ refers to the elementary coherent
+phase-loop action scale derived in the $U(1)$-extended phase EFT
+(Section~\ref{sec:hbar_status}), not to a generic closed condensate
+configuration.
 
-\paragraph{Why $S_0$ exists at Level~A.}
+\paragraph{Why $S_0$ exists~(Level~A for winding sectors;
+Level~A/B for the finite action scale).}
 The existence of $S_0$ follows from three structural facts:
 \begin{enumerate}[label=(\roman*)]
-  \item the coherent branch retains a genuine phase variable $\theta$;
+  \item the coherent branch retains a genuine phase variable
+    $\theta$~(Level~A within the $U(1)$-extended EFT);
   \item smooth coherent configurations are partitioned into integer
-    winding sectors~(BR1);
-  \item the reduced phase-loop EFT admits a distinguished elementary-loop
-    action scale once the characteristic core-sized loop is specified.
+    winding sectors~(BR1; Level~A);
+  \item the reduced phase-loop EFT admits a distinguished
+    elementary-loop action scale once the characteristic core-sized
+    loop is specified~(Level~A/B: core-scale closure).
 \end{enumerate}
 Together these imply that the coherent branch possesses a distinguished
 action scale associated with topologically nontrivial phase transport.
-This is a structural consequence of the coherent-topological sector,
-not an imported quantum axiom.
+The winding structure and fixed-length bound are strict~(Level~A);
+the finite distinguished scale additionally requires the core-scale
+input~(Level~A/B).
 
 \paragraph{What $S_0$ means physically.}
 The quantity $S_0$ should be understood as the intrinsic unit of action
@@ -18468,6 +18611,24 @@ The theory has therefore already explained \emph{why an action quantum
 candidate should exist at all}, even if it has not yet completed the
 empirical identification.
 
+\paragraph{Structural bridges protecting the identification.}
+The identification $S_0=\hbar$ is further supported by three
+structural arguments developed in Section~\ref{sec:hbar_status}:
+(i)~single-field universality implies that the same action
+normalization governs all sectors of the functional integral,
+and the coherent phase sector identifies $S_0^{\rm EFT}$ as the
+distinguished candidate for this normalization;
+(ii)~the same Wick continuation $w\to -ic_*t$ that produces the
+emergent Lorentzian metric also carries the coherent-sector weight
+into a Lorentzian amplitude $\sim e^{iS/S_0^{\rm EFT}}$, preserving
+the action normalization;
+(iii)~parameter-counting shows that $S_0^{\rm EFT}=\hbar$ is the
+third and final matching condition of the three-parameter theory,
+after $c_*=c$ and $G_N$-matching.
+These bridges do not constitute a parameter-free derivation of
+$\hbar$, but they collectively show that the identification is
+strongly constrained rather than arbitrary.
+
 \paragraph{Bridge to wave dynamics.}
 Once a distinguished action scale exists, the natural next question is
 how coherent sectors combine into an effective wave description and
@@ -18479,22 +18640,32 @@ Quantum Sector, in which the transition from the Euclidean phase action
 to Schr\"odinger-like dynamics is made explicit.
 
 \statussummary
-\textit{Established~(Level~A):}
-the coherent-topological branch of ECT contains a distinguished
-pre-quantum action scale $S_0$ associated with the first nontrivial
-loop sector.
-\textit{Not yet established~(Level~B, open):}
+\textit{Established:}
+Level~A for winding sectors and the fixed-length loop bound;
+Level~A/B for the distinguished finite action scale $S_0$ after
+core-scale closure.
+\textit{Structural bridges~(Level~A/B to~B):}
+single-field universality, analytic continuation, and parameter-counting
+closure collectively protect the identification from the charge of
+arbitrary fitting~(Section~\ref{sec:hbar_status}).
+\textit{Not yet established~(Level~B matching):}
 the full dynamical, canonical, and numerical identification
 \begin{equation}
-  S_0 = \hbar .
+  S_0 = \hbar, \qquad S_{\rm elem} = 2\pi\hbar = h.
   \label{eq:qs_S0_identification}
 \end{equation}
-That step belongs to the constructive program of the Quantum Sector.
+This is the third and final matching condition of ECT, after $c_*=c$
+and~$G_N$-matching.
+Completion of the full structural r\^ole of $\hbar$---universal
+amplitude weighting, canonical commutators, Born rule---belongs to
+the constructive programme of the Quantum Sector.
 
 \paragraph{Summary.}
 ECT already contains more than a generic broken-phase field theory:
 it contains a topologically selected candidate for a universal action
-scale.
+scale, protected by structural bridges that make the identification
+with~$\hbar$ a natural and structurally protected closure of the
+theory.
 This is the correct starting point for the emergence of quantum
 kinematics.
 The theory remains methodologically honest: $S_0$ is structurally
