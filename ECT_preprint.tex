@@ -13787,25 +13787,54 @@ JWST early-galaxy enhancement~(\S\ref{sec:mp_jwst_cosmo}).
 \begin{figure*}[htb]
 \centering
 \includegraphics[width=\textwidth]{figures/ect_condensate_evolution_schematic_bw.pdf}
-\caption{Schematic three-stage evolution of the condensate background in
-the $\phi$-first closure.
+\caption{Schematic closure-level evolution of the condensate background
+in the $\phi$-first closure and its derived cosmological consequences.
 \textbf{(a)}~Condensate amplitude variable $\phi_b(z)$: ordering from
 deep negative values (stage~i), stabilisation near $\phi\approx 0$
 (stage~ii), and late-time slow drift (stage~iii).
 \textbf{(b)}~Condensate amplitude ratio $u/u_\infty=e^{\beta\phi}$:
 approaches unity as ordering completes.
-\textbf{(c)}~Effective gravitational coupling
+\textbf{(c)}~Derived effective gravitational coupling
 $G_{\rm eff}/G_N=e^{-\beta\phi}$: enhanced at early times, approaches
 $G_N$ at late times.
-\textbf{(d)}~Effective equation of state $w_\phi(z)$: frozen near $-1$
-at high~$z$, mildly quintessence-like at late times.
+\textbf{(d)}~Derived effective equation of state $w_\phi(z)$: frozen
+near $-1$ at high~$z$, mildly quintessence-like at late times; this is
+a schematic closure-level realisation, not a fitted reconstruction.
 Solid: Scenario~A (stable asymptote);
 dashed: Scenario~B (continued drift).
-Grey shading marks the three evolution stages.
-This figure is a schematic closure-level visualisation; the quantitative
-trajectory requires the explicit solution $\phi_b(z)$ from the full
-background system~(Appendix~\ref{app:late_cosmo_background}).}
+The two scenarios share the same high-$z$ evolution history and diverge
+only in the late-time asymptotic branch behaviour.
+Grey shading marks the three qualitative evolution stages
+(ordering / stabilisation / slow drift).
+This figure is a schematic closure-level visualisation, not a numerical
+output of the full background system; the quantitative trajectory
+$\phi_b(z)$ requires the explicit solution from
+Appendix~\ref{app:late_cosmo_background}.}
 \label{fig:condensate_evolution}
+\end{figure*}
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[width=\textwidth]{figures/ect_condensate_evolution_time_bw.pdf}
+\caption{Schematic closure-level condensate evolution over cosmic
+time~(Gyr), complementary to the redshift-based
+Figure~\ref{fig:condensate_evolution}.
+\textbf{(a)}~Condensate amplitude variable $\phi_b(t)$ (left axis,
+black) and amplitude ratio $u/u_\infty=e^{\beta\phi}$ (right axis,
+grey), showing the three qualitative stages:
+ordering (dark shading), stabilisation (light shading), and late-time
+slow drift.
+\textbf{(b)}~Effective gravitational coupling
+$G_{\rm eff}/G_N=e^{-\beta\phi}$, enhanced at early times and
+approaching~$G_N$ at late times.
+Solid: Scenario~A (stable asymptote);
+dashed: Scenario~B (continued drift).
+Vertical dotted line marks the present epoch.
+Key cosmological epochs (BBN, recombination) are indicated.
+This figure is a schematic closure-level visualisation; the quantitative
+trajectory requires the explicit background solution from
+Appendix~\ref{app:late_cosmo_background}.}
+\label{fig:condensate_evolution_time}
 \end{figure*}
 
 \paragraph{Far-future evolution.}
@@ -28686,6 +28715,70 @@ that does not rely on an interim matter+radiation tail.
 The benchmark late-time closure introduced below should therefore be read
 as the local screened-branch truncation of the derived system above,
 rather than as an independently chosen scalar--tensor ans\"{a}tz.
+
+\subsection{Schematic condensate evolution: computational notes}
+\label{sec:condensate_evolution_computation}
+
+The schematic condensate evolution figures
+(Figs.~\ref{fig:condensate_evolution} and
+\ref{fig:condensate_evolution_time}) are constructed as follows.
+
+\paragraph{Three-stage model.}
+The condensate amplitude variable $\phi_b$ is modelled with a
+smooth interpolation through three regimes:
+\begin{enumerate}[noitemsep]
+  \item \textit{Ordering stage} ($z\gtrsim z_{\rm ord}$, or
+    equivalently $t\lesssim t_{\rm BBN}$): the amplitude grows from
+    deep negative values ($\phi\approx-3$) toward the stabilisation
+    plateau, using a logistic-type interpolation:
+    \[
+    \phi_b(z) = \phi_{\rm deep}
+    + (\phi_{\rm stab}-\phi_{\rm deep})
+    \times\tfrac{1}{2}\bigl[1+\tanh\bigl(
+      (\log z_{\rm ord}-\log z)/\sigma_{\rm ord}\bigr)\bigr].
+    \]
+  \item \textit{Stabilisation} ($z_{\rm stab}\lesssim z\lesssim z_{\rm ord}$):
+    $\phi_b\approx\phi_{\rm stab}\approx -0.05$, consistent with the BBN
+    requirement that $G_{\rm eff}/G_N$ deviates from unity by at most a
+    few percent.
+  \item \textit{Late-time slow drift} ($z\lesssim z_{\rm stab}$):
+    a small additional negative shift $\delta\phi\sim-0.05$ to $-0.10$,
+    modelled with an exponential approach:
+    $\phi_b(z)\to\phi_0$ as $z\to 0$.
+\end{enumerate}
+
+\paragraph{Derived quantities.}
+From $\phi_b$ the derived observables follow algebraically:
+\[
+u/u_\infty = e^{\beta\phi_b},
+\qquad
+G_{\rm eff}/G_N = e^{-\beta\phi_b},
+\qquad
+w_\phi = -1 + \delta w\,e^{-z/z_{\rm drift}}.
+\]
+The benchmark parameter choices are $\beta=0.8$,
+$\phi_{\rm deep}=-3$, $\phi_{\rm stab}=-0.05$,
+$\phi_0^{(A)}=-0.10$, $\phi_0^{(B)}=-0.15$,
+$z_{\rm ord}=2000$, $z_{\rm stab}=50$.
+
+\paragraph{Time mapping.}
+The cosmic-time version (Fig.~\ref{fig:condensate_evolution_time})
+uses the standard Planck~2018 background cosmology
+($H_0=67.4\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$,
+$\Omega_m=0.315$, $\Omega_\Lambda=0.685$):
+\[
+t(z) = \frac{1}{H_0}\int_z^\infty
+\frac{dz'}{(1+z')\sqrt{\Omega_r(1{+}z')^4
++\Omega_m(1{+}z')^3+\Omega_\Lambda}}.
+\]
+
+\paragraph{Status.}
+These figures are schematic closure-level visualisations constructed
+from smooth interpolating functions, not outputs of the full
+self-consistent background solver.
+The generation scripts are available in the repository
+(\texttt{scripts/fig\_condensate\_evolution.py} and
+\texttt{scripts/fig\_condensate\_evolution\_time.py}).
 
 \subsection{Effective action and FRW reduction}
 
