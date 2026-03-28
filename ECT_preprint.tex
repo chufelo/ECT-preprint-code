@@ -3002,15 +3002,20 @@ microscopic VEV.
 It is the scale at which slow spatial variations
 $u_0\to u_0(\mathbf{x})$ of the ordered-branch amplitude become
 dynamically important in the $\phi$-sector~(Section~\ref{sec:sector_map}).
-The characteristic galactic radius is
+The primary critical scale of the galactic branch is the
+acceleration $g^\dagger\approx1.2\times10^{-10}$\,m\,s$^{-2}$
+(the RAR acceleration scale~\cite{McGaugh2016}), with cosmological
+baseline $g^\dagger_0\sim cH_0/(2\pi)$.
+The corresponding derived transition radius for a given baryonic mass is
 \begin{equation}
-  r_0 \sim \left(\frac{G_N M_\star}{g^\dagger}\right)^{1/2},
-  \label{eq:r0_gal}
+  r_* \equiv \left(\frac{G_N M_{\rm bar}}{g^\dagger}\right)^{1/2};
+  \label{eq:rstar_gal}
 \end{equation}
-where $g^\dagger\approx1.2\times10^{-10}$\,m\,s$^{-2}$ is
-the RAR acceleration scale~\cite{McGaugh2016}.
-For $M_\star\sim10^{10}\,M_\odot$ this gives $r_0\sim5$--$20$\,kpc
+for $M_{\rm bar}\sim10^{10}\,M_\odot$ this gives
+$r_*\sim5$--$20$\,kpc
 (Level~B; Section~\ref{sec:mp_galactic}).
+Here $g^\dagger$ is the primary variable; $r_*$ is a derived
+scale, not an independent parameter.
 \begin{equation}
   \boxed{v_{\rm gal} \text{ is an emergent IR scale, not a second UV condensate VEV.}}
 \end{equation}
@@ -15327,7 +15332,7 @@ there.
 \paragraph{Multi-scale structure.}
 The matched hierarchy of condensate-related scales
 ($u_0\sim\bar{M}_{\rm Pl}$, $v_{\rm EW}=246$\,GeV,
-$v_{\rm gal}\sim r_0^{-1}$) and the open question of their RG
+$v_{\rm gal}\sim r_*^{-1}$) and the open question of their RG
 connection~(OP-new-6) are introduced in
 \S\ref{sec:condensate_cosmo_evolution}.
 
@@ -15763,9 +15768,14 @@ ordering-transition dynamics.
 \label{sec:mp_galactic}
 % ============================================================
 
-\textit{Status: all Level~B (phenomenological closure of the
-$\phi$-first critical-branch strategy). Not first-principles from
-bare~P3. One free parameter $r_0$ per galaxy.}
+\textit{Status: the galactic sector is developed within the
+Level~B ordered-branch amplitude closure, not yet as a
+first-principles derivation from bare~P3.
+In the present practical SPARC implementation, the fitted
+galaxy-level quantity is the effective critical acceleration
+$g^\dagger_{\rm eff}$; the corresponding transition radius
+$r_*=\sqrt{G_N M_{\rm bar}/g^\dagger}$ is a derived scale,
+not a primary parameter.}
 
 \subsubsection*{Why the condensate-amplitude route fails}
 
@@ -15876,9 +15886,9 @@ physically distinct scales that must not be conflated.
   \item \textbf{Critical galactic transition scale.}
   The transition from screened Newtonian behaviour to the
   critical $\phi$-branch is governed by the acceleration scale
-  $g_\dagger$, or equivalently by the galactic transition
-  radius $r_0=\sqrt{GM_{\rm bar}/g_\dagger}$.
-  This is the characteristic IR scale of the galactic closure.
+  $g_\dagger$. The corresponding derived transition radius
+  $r_*=\sqrt{G_N M_{\rm bar}/g_\dagger}$ is secondary:
+  $g_\dagger$ is the primary critical-scale variable.
 
   \item \textbf{Cosmological reference scale.}
   In the present closure, $g_\dagger\sim cH_0$, which explains
@@ -15893,7 +15903,7 @@ The four scales form a clear hierarchy:
 \;\ll\;
 \lambda_\phi(\rho)
 \;\lesssim\;
-r_0
+r_*
 \;\ll\;
 H_0^{-1}.
 \end{equation}
@@ -16826,8 +16836,9 @@ The main results and their derivation status are:
   \item \textbf{Galactic rotation curves}
     (Section~\ref{sec:galactic_dynamics}):
     the critical $\phi$-branch closure reproduces flat rotation curves
-    across the full SPARC sample with one free parameter~$r_0$ per
-    galaxy and median $\chi^2/N\sim1$~(Level~B).
+    across the full SPARC sample with one fitted effective critical
+    acceleration~$g^\dagger_{\rm eff}$ per galaxy and median
+    $\chi^2/N\sim1$~(Level~B).
     Computational details in
     Appendix~\ref{app:sparc_computation};
     derivation of the algebraic fitting law in
@@ -16866,8 +16877,10 @@ The main results and their derivation status are:
 All results in this section are Level~B: they use the $\phi$-first
 ordered-branch closure, not first-principles derivations from the
 bare ECT action.
-The galactic sector has one free scale per galaxy ($r_0$ or
-equivalently~$g^\dagger_{\rm eff}$); the cosmological JWST sector
+The galactic sector has one fitted effective critical
+acceleration~$g^\dagger_{\rm eff}$ per galaxy (the corresponding
+transition radius $r_*$ is a derived quantity); the cosmological
+JWST sector
 uses a phenomenological background ansatz $\phi_b(z)$.
 The most distinctive new prediction is the environmental modulation
 of $g^\dagger_{\rm eff}$~(F1, Table~\ref{tab:ECT_predictions}),
@@ -25353,8 +25366,16 @@ explored.
 
 
 %%% ===========================================================
-\subsection{Branch~1: the condensate-amplitude route $u_0(r)$}
+\subsection{Branch~1: the condensate-amplitude route $u_0(r)$
+  (discarded)}
 \label{app:lof:branch1}
+
+\textit{Note: this branch was explored as a historical route and
+found to be unviable. The notation $r_0$ and the
+$u_0(r)$-profiles used below belong exclusively to this
+discarded route and should not be confused with the working
+$g^\dagger$-first/$\phi$-first galactic closure used in the
+main text (Section~\ref{sec:mp_galactic}).}
 
 In this appendix it is important to distinguish the asymptotic
 ordered-branch amplitude $u_{0,\infty}$ from the bare-potential vacuum
