@@ -15787,9 +15787,11 @@ ordered branch, its amplitude response, and matter-induced ordering
 are admitted, a constrained nonlinear infrared branch can reproduce
 the baryonic Tully--Fisher relation~(BTFR), the radial acceleration
 relation~(RAR), individual galactic rotation curves, and
-cluster-level lensing deviations in a unified framework --- with
+the qualitative morphology of cluster-level lensing deviations
+within a unified ordered-branch framework --- with
 one fitted effective critical acceleration~$g^\dagger_{\rm eff}$
-per galaxy and no particle dark matter.
+per galaxy in the present galactic implementation and without
+introducing particle dark matter in this sector.
 The detailed derivation chain is documented in
 Appendix~\ref{app:lof_full_derivation}; the computational closures
 and SPARC pipeline are given in
@@ -15807,7 +15809,7 @@ first-principles derivation from bare~P3.
 In the present practical SPARC implementation, the fitted
 galaxy-level quantity is the effective critical acceleration
 $g^\dagger_{\rm eff}$; the corresponding transition radius
-$r_*=\sqrt{G_N M_{\rm bar}/g^\dagger}$ is a derived scale,
+$r_*=\sqrt{G_N M_{\rm bar}/g^\dagger_{\rm eff}}$ is a derived scale,
 not a primary parameter.}
 
 For the structural origin of the macroscopic amplitude variable, its
@@ -15841,13 +15843,15 @@ inherited from the ordered-branch EFT, not postulated.
 The galactic $\phi$-sector should be read as an ordered-branch
 EFT continuation of the postulate architecture, not as an
 independent phenomenological add-on.
-P4 fixes the existence of the ordered branch with a nonzero
-gradient condensate structure,
+P4 fixes the ordered branch as the relevant macroscopic background,
 while P5 permits non-uniform ordered configurations and therefore
-makes spatially varying branch responses admissible.
+makes spatially varying branch responses admissible within the
+effective ordered-phase description.
 Once matter is coupled in the effective field equations,
 inhomogeneous baryonic environments source spatially varying
-equilibrium configurations $\bar\phi(\mathbf{x})$:
+equilibrium configurations $\bar\phi(\mathbf{x})$.
+At the effective level, the quasistatic ordered-branch field
+equation takes the schematic matter-sourced form
 \begin{equation}
   \mathcal{K}(\phi)\,\Box\phi \approx
   \frac{8\pi G_N}{c^4}\,\rho_{\rm bar}\,\xi_1(\phi),
@@ -15865,11 +15869,12 @@ The existence of the amplitude variable~$\phi$, the exponential
 response factor $F(\phi) = e^{\beta\phi}$, and the
 matter-driven ordering tendency are structurally inherited from
 the EFT reduction of the ordered phase.
-By contrast, the simple practical kinetic closure used in the
-present galactic fits is only a benchmark local realisation of
-that branch and should not be confused with a completed
-first-principles derivation of the full macroscopic
-$\phi$-dynamics.
+By contrast, the simple practical kinetic/interpolating closure
+used in the present galactic fits --- including the benchmark
+local form of the kinetic sector entering the SPARC pipeline ---
+is only a local realisation of that branch and should not be
+confused with a completed first-principles derivation of the
+full macroscopic $\phi$-dynamics.
 
 \subsubsection*{Why the bare condensate-amplitude route fails}
 
@@ -15959,16 +15964,17 @@ it is an expected feature of the same underlying mechanism.
 Within the present Level~B closure, the density dependence of
 $m_\phi(\rho)$ implies a strong hierarchy of screening lengths
 across environments.
-In dense laboratory and Solar-System conditions the
-corresponding Compton scale is driven far below astrophysical
-distances, so that the scalar branch is effectively
+In dense laboratory and inner Solar-System conditions the
+corresponding screening length is driven far below AU scales,
+so that the scalar branch is effectively
 Yukawa-suppressed and post-Newtonian deviations are screened.
-In galactic outskirts the screening length becomes comparable to
-the macroscopic scale of the system, opening the transition
-window in which the nonlinear infrared branch can activate.
-In low-density intergalactic environments the screening scale
-can become very large, so that the near-critical branch remains
-accessible.
+On galactic outskirts the screening length can grow to
+kpc scales, comparable to the macroscopic scale of the system,
+opening the transition window in which the nonlinear infrared
+branch can activate.
+In low-density intergalactic and void-like environments the
+screening scale can exceed Mpc values, so that the near-critical
+branch remains accessible.
 These estimates should be read as order-of-magnitude consistency
 checks within the present closure, not yet as first-principles
 predictions; for explicit benchmark numbers see
@@ -15985,6 +15991,10 @@ in ECT the screened field is not an extra scalar appended to GR
 by hand, but the ordered-branch amplitude response of the same
 condensate sector that also controls the infrared critical
 branch.
+It also differs from symmetron- and Vainshtein-type screening in
+that the present suppression is tied directly to the ordered-branch
+amplitude response rather than to symmetry restoration or derivative
+self-screening of an extra field sector.
 
 
 %%% -----------------------------------------------------------
@@ -16016,10 +16026,14 @@ physically distinct scales that must not be conflated.
 
   \item \textbf{Critical galactic transition scale.}
   The transition from screened Newtonian behaviour to the
-  critical $\phi$-branch is governed by the acceleration scale
-  $g_\dagger$. The corresponding derived transition radius
-  $r_*=\sqrt{G_N M_{\rm bar}/g_\dagger}$ is secondary:
-  $g_\dagger$ is the primary critical-scale variable.
+  critical $\phi$-branch occurs where
+  $g_{\rm obs}\sim g^\dagger_{\rm eff}$, with
+  $g^\dagger_{\rm eff}$ itself an environment-modulated
+  descendant of the cosmological baseline $g^\dagger_0$.
+  The corresponding derived transition radius
+  $r_*=\sqrt{G_N M_{\rm bar}/g^\dagger_{\rm eff}}$ is
+  secondary: $g^\dagger_{\rm eff}$ is the primary
+  critical-scale variable.
 
   \item \textbf{Cosmological reference scale.}
   In the present closure, $g_\dagger\sim cH_0$, which explains
@@ -16187,8 +16201,8 @@ critical branch.
 In standard MOND-like
 frameworks~\cite{Milgrom1983,BekensteinMilgrom1984}
 the AQUAL equation structure is postulated;
-ECT derives the same structure as the critical infrared branch
-of the ordered-branch amplitude response.
+ECT reproduces the same effective structure as the critical
+infrared branch of the ordered-branch amplitude response.
 
 \paragraph{Full interpolating equation.}
 The complete static equation, valid from the Newtonian to the
@@ -16244,7 +16258,7 @@ rather than nuisance contamination.
 \paragraph{Status summary.}
 At the current stage the galactic branch of ECT should be read
 as a structurally motivated but still Level~B programme.
-What is already fixed at the structural level is:
+What is already structurally established at the present level is:
 the ordered-branch amplitude variable~$\phi$,
 the matter-driven tendency toward increased ordering in dense
 environments,
@@ -17069,7 +17083,9 @@ The galactic sector has one fitted effective critical
 acceleration~$g^\dagger_{\rm eff}$ per galaxy (the corresponding
 transition radius $r_*$ is a derived quantity); the cosmological
 JWST sector
-uses a phenomenological background ansatz $\phi_b(z)$.
+presently relies on a Level~B background
+closure $\phi_b(z)$ supplemented by derived-parent maturity
+factors.
 The most distinctive new prediction is the environmental modulation
 of $g^\dagger_{\rm eff}$~(F1, Table~\ref{tab:ECT_predictions}),
 which is absent in both $\Lambda$CDM and MOND and directly testable
@@ -25563,7 +25579,11 @@ found to be unviable. The notation $r_0$ and the
 $u_0(r)$-profiles used below belong exclusively to this
 discarded route and should not be confused with the working
 $g^\dagger$-first/$\phi$-first galactic closure used in the
-main text (Section~\ref{sec:mp_galactic}).}
+main text (Section~\ref{sec:mp_galactic}).
+Nothing in this subsection should be read as part of the working
+$g^\dagger$-first galactic closure used in Section~\ref{sec:mp_galactic_phenom};
+it is included only to document why the historical $u_0(r)$ route
+was abandoned.}
 
 In this appendix it is important to distinguish the asymptotic
 ordered-branch amplitude $u_{0,\infty}$ from the bare-potential vacuum
