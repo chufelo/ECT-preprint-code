@@ -16532,9 +16532,31 @@ Appendix~\ref{app:cluster_lensing}):
 
 \textit{Status overview: the AQUAL/MOND field-equation structure and its
 two asymptotics ($\mu\to1$ at high acceleration, $\mu\to y$ at low
-acceleration) are strong Level~B results from the new ECT postulates.
-The exact global interpolation law and the exact numerical value of
-$g_\dagger$ are not yet uniquely fixed~(Level~B/Open, OP3).}
+acceleration) are strong Level~B consequences of the ordered-branch
+$\phi$-closure established in Section~\ref{sec:mp_galactic}.
+What remains open is the exact global interpolation law across the
+transition region and the first-principles environment dependence that
+maps the baseline critical scale $g^\dagger_0$ to the fitted
+galaxy-level values $g^\dagger_{\rm eff}$~(Level~B/Open, OP3).}
+
+\paragraph{Scope.}
+The structural origin of the ordered-branch amplitude variable~$\phi$,
+the matter-driven ordering tendency, screening, and the critical
+IR branch were established in Section~\ref{sec:mp_galactic}.
+The present subsection builds on that foundation to derive the explicit
+algebraic consequences --- AQUAL field equation, BTFR, and the
+practical closure used for SPARC rotation-curve fitting --- and to
+present the numerical results.
+For the ordered-branch derivation backbone, see
+Appendix~\ref{app:lof_full_derivation}.
+
+\paragraph{Notation for the critical scale.}
+In this subsection, $g^\dagger$ denotes the generic critical-branch
+acceleration scale in formal derivations, $g^\dagger_0$ denotes the
+cosmological baseline value, and $g^\dagger_{\rm eff}$ denotes the
+galaxy-level effective scale extracted in the practical SPARC closure.
+The distinction is essential: the baseline is structural, whereas the
+per-galaxy value belongs to the current Level~B data interface.
 
 \subsubsection*{Derivation chain: from ECT postulates to RAR and BTFR}
 \label{sec:galactic_rar}
@@ -16593,37 +16615,36 @@ distinguished from a postulated MOND interpolation law:
 \item \textbf{BTFR.}
   On the flat part of a rotation curve the deep-branch limit gives
   directly $v_\infty^4=G_N M_b\,g_\dagger$
-  (see Section~\ref{sec:btfr_ect_updated} for the derivation).
+  (see the explicit derivation below).
 
-\item \textbf{Status of $g_\dagger$.}
-  ECT does not predict a strictly universal MOND constant.  Instead:
-  \begin{equation}
-    g_\dagger = g_{\dagger,0}\,\Xi(\rho_{\rm env},\bar\phi_{\rm env},\ldots),
-    \label{eq:gdagger_env_full}
-  \end{equation}
-  where $g_{\dagger,0}\sim cH_0$ is the cosmological baseline
-  (Fig.~\ref{fig:gdagger_hierarchy}) and $\Xi$ encodes
-  environment dependence.  The galaxy-to-galaxy scatter in fitted
-  $g_\dagger^{\rm eff}$ is therefore an ECT \emph{prediction},
+\item \textbf{Status of the critical scale.}
+  ECT does not predict a strictly universal MOND constant.
+  Instead, the practical galaxy-level scale is interpreted as an
+  environment-modulated descendant of the cosmological baseline
+  (eq.~\eqref{eq:gdagger_env_main}):
+  $g^\dagger_{\rm eff}
+  = g^\dagger_0\,\Xi(\rho_{\rm env},\bar\phi_{\rm env},\ldots)$,
+  where $g^\dagger_0\sim cH_0/(2\pi)$ is the baseline critical
+  scale established in Section~\ref{sec:mp_galactic}
+  (Fig.~\ref{fig:gdagger_hierarchy}).
+  The galaxy-to-galaxy scatter in fitted
+  $g^\dagger_{\rm eff}$ is therefore an ECT \emph{prediction},
   not a shortcoming.
 \end{enumerate}
 
-\subsubsection*{Matter stabilises the Lorentzian phase}
+As established in Section~\ref{sec:mp_galactic}
+(eq.~\eqref{eq:phi_eom_local}), matter drives $\bar\phi>0$ through
+the effective ordered-branch field equation, thereby stabilising the
+Lorentzian/macroscopic branch in dense environments.
+That sourcing underpins both the screened regime and the activation
+of the nonlinear infrared branch used below.
 
-From the $\phi$-equation of motion~(varying \eqref{eq:phi_first_action}
-and combining with the Einstein equation trace):
-\begin{equation}
-  \label{eq:phi_eom}
-  \mathcal{K}(\phi)\,\Box\phi \approx
-  \frac{8\pi G_N}{c^4}\,\rho_{\rm bar}\,\xi_1(\phi),
-  \qquad \xi_1\sim O(1),
-\end{equation}
-matter drives $\phi>0$: the condensate becomes more ordered near
-baryons~(Level~B from field equations).
+\subsubsection*{Effective critical-branch Lagrangian}
 
-\subsubsection*{The critical branch $\mathcal{F}\propto Y_\phi^{3/2}$}
-
-The effective galactic Lagrangian for $\phi$:
+The deep-branch critical form $\mathcal{F}\propto Y_\phi^{3/2}$ was
+motivated in Section~\ref{subsec:lof_critical}.
+In the present effective galactic language the Lagrangian for $\phi$
+takes the form:
 \begin{equation}
   \label{eq:phi_galactic}
   \mathcal{L}_\phi = \frac{\bar M_{\rm Pl}^2}{2}\,\mathcal{F}(Y_\phi),
@@ -16637,8 +16658,9 @@ In the critical branch $\mathcal{F}=A_{\rm ECT}Y_\phi^{3/2}$:
   = -\frac{\bar M_{\rm Pl}^2 A_{\rm ECT}}{2M_\phi^4}\,
   |(\partial_\mu\phi)^2|^{3/2},
 \end{equation}
-producing MOND-like dynamics in deep weak fields without a fifth force
-in the screened limit.
+which is the effective galactic realisation of the same ordered-branch
+critical dynamics and reproduces the MOND-like deep-acceleration
+asymptotics at Level~B.
 
 \subsubsection*{Baryonic Tully--Fisher relation as a corollary of the deep ECT branch}
 \label{sec:btfr_ect_updated}
@@ -16668,9 +16690,13 @@ The observed normalisation and residual scatter then probe the
 still-open environment dependence of $g_\dagger$~(OP3).
 
 The overall normalisation is Level~B at present, because it passes
-through $g_\dagger$.  In the simplest baseline picture
-$g_\dagger\sim cH_0$, while in the fuller ECT interpretation
-$g_\dagger = g_{\dagger,0}\,\Xi(\rho_{\rm env},\bar\phi_{\rm env},\ldots)$.
+through the critical acceleration scale.
+At the structural level the baseline value is
+$g^\dagger_0\sim cH_0/(2\pi)$,
+while in the practical galactic implementation the relevant quantity is
+the environment-modulated effective scale
+$g^\dagger_{\rm eff}=g^\dagger_0\,\Xi(\rho_{\rm env},
+\bar\phi_{\rm env},\ldots)$.
 ECT therefore predicts not only the BTFR itself, but also a physically
 meaningful residual scatter around the mean relation, rather than an
 exactly universal MOND constant.
@@ -16710,6 +16736,9 @@ benchmark.  The latter can be added later by replacing
 $M_{\rm bar,eff}$ with an independently tabulated total baryonic mass.
 
 \subsubsection*{Practical ECT closure for rotation curves}
+
+The benchmark algebraic closure used below is derived and documented
+in Appendix~\ref{app:galactic_phi_closure}.
 
 The galactic sector of the $\phi$-first formulation is treated as a
 nonlinear static response problem for the effective gravitational
@@ -16761,6 +16790,10 @@ with either fixed stellar mass-to-light ratios
 mass-to-light ratio $\Upsilon_{\rm d}$.
 
 \subsubsection*{SPARC sample fits and model comparison}
+
+The numerical fitting protocol, diagnostics, and machine-level
+outputs used in this subsection are documented in
+Appendix~\ref{app:sparc_computation}.
 
 We fitted the closure~\eqref{eq:ect_rotation_closure_main} to the SPARC
 mass-model sample. The fixed-$M/L$ mode provides the cleaner test of
@@ -16906,7 +16939,7 @@ predicted hierarchy of descriptions for the critical acceleration scale:
   $S_{\rm loop,min}=2\pi S_0$, which together with the cosmological
   background sets
   \begin{equation}
-    g_{\dagger,0} = \frac{cH_0}{2\pi} \approx 1.04\times10^{-10}\,\mathrm{m\,s^{-2}}.
+    g^\dagger_0 = \frac{cH_0}{2\pi} \approx 1.04\times10^{-10}\,\mathrm{m\,s^{-2}}.
     \label{eq:gdag_baseline}
   \end{equation}
   This value, derived without any galactic fitting, lies within 13\%
@@ -16917,7 +16950,7 @@ predicted hierarchy of descriptions for the critical acceleration scale:
   A minimal Level~B ansatz for the environment dependence is
   \begin{equation}
     g_\dagger(\rho_{\rm env})
-    = \frac{g_{\dagger,0}}{\sqrt{1+\rho_{\rm env}/\rho_*}}\,,
+    = \frac{g^\dagger_0}{\sqrt{1+\rho_{\rm env}/\rho_*}}\,,
     \label{eq:gdag_env}
   \end{equation}
   where $\rho_*$ is a single global scale associated with the
@@ -16926,8 +16959,8 @@ predicted hierarchy of descriptions for the critical acceleration scale:
   environment laws, not yet as a unique first-principles derivation
   from bare~P3~(OP3).
   In this minimal ansatz, isolated void galaxies approach the
-  baseline value $g_{\dagger,0}$, while group- and cluster-members
-  shift to $g_\dagger<g_{\dagger,0}$.  More general ECT-compatible
+  baseline value $g^\dagger_0$, while group- and cluster-members
+  shift to $g_\dagger<g^\dagger_0$.  More general ECT-compatible
   environment laws may allow either upward or downward departures
   from the baseline; the key point is that ECT does not require a
   strictly universal MOND constant.
@@ -16956,7 +16989,7 @@ environments.
     residuals in the other systems reflect environment effects predicted
     by ECT.
   \textbf{Row 2 (Level~2):} environment-dependent
-    $g_\dagger(\rho_{\rm env})=g_{\dagger,0}/\sqrt{1+\rho_{\rm env}/\rho_*}$
+    $g_\dagger(\rho_{\rm env})=g^\dagger_0/\sqrt{1+\rho_{\rm env}/\rho_*}$
     with one global parameter $\rho_*$;
     all three systems improve, demonstrating that the scatter in
     $g_\dagger^{\rm eff}$ is physically sourced by large-scale density.
@@ -17012,6 +17045,41 @@ effective critical scale is
 $g^\dagger_{\rm eff}\approx1.72\,(cH_0/2\pi)$.}
 \label{fig:mw_new}
 \end{figure}
+
+\paragraph{Observational prospects.}
+The hierarchy of $g^\dagger$ in ECT leads to two observational
+programmes.
+At low redshift, wide-environment samples and group catalogues
+can test the predicted correlation between fitted
+$g^\dagger_{\rm eff}$ and environment density.
+At higher redshift, future kinematic surveys (SKA, deep IFU
+studies, and improved outer-curve reconstructions) may test
+whether the galactic critical scale remains tied to the same
+baseline $g^\dagger_0$ or shows detectable epoch dependence
+through the background branch.
+These are not independent add-ons, but direct tests of the
+three-level hierarchy shown in
+Fig.~\ref{fig:gdagger_hierarchy}.
+
+\subsubsection*{Status summary}
+
+At the current stage, the galactic-dynamics programme of ECT
+should be read as the observational and algebraic continuation
+of the ordered-branch $\phi$-sector established in
+Section~\ref{sec:mp_galactic}.
+What is structurally supported at Level~B is the AQUAL-type
+field equation, the two asymptotic regimes, the BTFR slope~$4$,
+and the interpretation of galaxy-to-galaxy scatter through an
+effective critical scale $g^\dagger_{\rm eff}$ descending from
+a cosmological baseline $g^\dagger_0$.
+What remains open is the exact interpolation law across the
+transition region, the first-principles derivation of the
+environment law
+$\Xi(\rho_{\rm env},\bar\phi_{\rm env},\ldots)$, and the full
+reduction from the ordered-branch EFT to the practical SPARC
+closure
+(Appendices~\ref{app:galactic_phi_closure}
+and~\ref{app:sparc_computation}; OP3).
 
 \FloatBarrier
 \subsection{Radial Acceleration Relation}
@@ -27402,7 +27470,7 @@ of the $\chi$-field; higher coefficients require loop calculations.
 % -----------------------------------------------------------
 
 Variation of $S_{\rm IR}$ gives the self-consistent system
-(eqs.~\eqref{eq:gen_EE}--\eqref{eq:phi_eom} in the main text).
+(eqs.~\eqref{eq:gen_EE} and~\eqref{eq:phi_eom_local} in the main text).
 Note that the \emph{metric} equation contains the non-minimal terms
 $\nabla_\mu\nabla_\nu M^2_{\rm eff} - g_{\mu\nu}\Box M^2_{\rm eff}$
 arising from $\delta(M^2_{\rm eff}(\phi)R)/\delta g^{\mu\nu}$;
