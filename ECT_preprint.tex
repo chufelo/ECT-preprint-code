@@ -15763,6 +15763,36 @@ ordering-transition dynamics.
 \label{sec:mp_galactic_phenom}
 % ==============================================================
 
+\paragraph{Scope and status of the galactic branch.}
+This chapter moves from the effective ordered-branch gravity
+sector of Section~\ref{sec:mp_nonlinear} to the astrophysical
+regimes in which the macroscopic amplitude variable~$\phi$ can
+become dynamically relevant on galactic and cluster scales.
+The structural role of~$\phi$ itself --- its origin as a
+reparameterisation of the ordered-branch amplitude, its
+matter-driven ordering tendency, and the existence of a screened
+regime --- is already motivated by the ordered-branch EFT
+architecture (Sections~\ref{sec:mp_nonlinear}--\ref{sec:mp_matching}).
+The explicit galactic closure used below remains a Level~B effective
+strategy rather than a first-principles derivation from bare~P3.
+
+\paragraph{What is and is not claimed here.}
+The purpose of this chapter is not to present galactic
+phenomenology as an arbitrary MOND-like fit, nor to overstate it as
+a complete microscopic derivation. Rather, it shows that once the
+ordered branch, its amplitude response, and matter-induced ordering
+are admitted, a constrained nonlinear infrared branch can reproduce
+the baryonic Tully--Fisher relation~(BTFR), the radial acceleration
+relation~(RAR), individual galactic rotation curves, and
+cluster-level lensing deviations in a unified framework --- with
+one fitted effective critical acceleration~$g^\dagger_{\rm eff}$
+per galaxy and no particle dark matter.
+The detailed derivation chain is documented in
+Appendix~\ref{app:lof_full_derivation}; the computational closures
+and SPARC pipeline are given in
+Appendices~\ref{app:galactic_phi_closure}
+and~\ref{app:sparc_computation}.
+
 % ============================================================
 \subsection{Galactic sector: the ordered-branch amplitude variable}
 \label{sec:mp_galactic}
@@ -15777,25 +15807,90 @@ $g^\dagger_{\rm eff}$; the corresponding transition radius
 $r_*=\sqrt{G_N M_{\rm bar}/g^\dagger}$ is a derived scale,
 not a primary parameter.}
 
-\subsubsection*{Why the condensate-amplitude route fails}
+For the structural origin of the macroscopic amplitude variable, its
+derived response factor, and the corresponding ordered-branch closure
+functions, see Appendix~\ref{app:lof_full_derivation}
+(Sections~AJ.1--AJ.4).
 
-A direct galactic role of the heavy radial condensate mode is strongly
-disfavoured for two independent reasons.
+\subsubsection*{The ordered-branch amplitude variable as the
+  relevant galactic degree of freedom}
+
+In the ordered branch the macroscopic response is naturally
+parameterised by the amplitude ratio
+\begin{equation}
+  \phi \equiv \frac{1}{\beta}\ln\frac{u}{u_\infty}\,,
+  \qquad
+  F(\phi) = \frac{u}{u_\infty} = e^{\beta\phi}\,,
+  \label{eq:phi_amplitude_def}
+\end{equation}
+where $u$ is the local ordered-branch amplitude and $u_\infty$ is
+its asymptotic screened value. This variable is not introduced
+ad hoc for the galactic sector: it is the macroscopic amplitude
+coordinate associated with the ordered branch itself, and its
+kinetic and potential closures are inherited from the EFT reduction
+of the branch dynamics.
+The structural derivation yields a response factor
+$F(\phi) = e^{\beta\phi}$ and a kinetic coupling
+$\omega(\phi) = \omega_0\,e^{2\beta\phi}$, both of which are
+inherited from the ordered-branch EFT, not postulated.
+
+\paragraph{From the postulates to the galactic amplitude branch.}
+The galactic $\phi$-sector should be read as an ordered-branch
+EFT continuation of the postulate architecture, not as an
+independent phenomenological add-on.
+P4 fixes the existence of the ordered branch with a nonzero
+gradient condensate structure,
+while P5 permits non-uniform ordered configurations and therefore
+makes spatially varying branch responses admissible.
+Once matter is coupled in the effective field equations,
+inhomogeneous baryonic environments source spatially varying
+equilibrium configurations $\bar\phi(\mathbf{x})$:
+\begin{equation}
+  \mathcal{K}(\phi)\,\Box\phi \approx
+  \frac{8\pi G_N}{c^4}\,\rho_{\rm bar}\,\xi_1(\phi),
+  \qquad \xi_1 \sim O(1),
+  \label{eq:phi_eom_local}
+\end{equation}
+so that matter drives $\bar\phi > 0$: the condensate becomes more
+ordered near baryons~(Level~B from the effective field equations).
+This is the local source of both screening (dense environments)
+and the nonlinear infrared activation (dilute outskirts).
+
+\paragraph{Derived origin versus benchmark closure.}
+A crucial distinction should be kept explicit.
+The existence of the amplitude variable~$\phi$, the exponential
+response factor $F(\phi) = e^{\beta\phi}$, and the
+matter-driven ordering tendency are structurally inherited from
+the EFT reduction of the ordered phase.
+By contrast, the simple practical kinetic closure used in the
+present galactic fits is only a benchmark local realisation of
+that branch and should not be confused with a completed
+first-principles derivation of the full macroscopic
+$\phi$-dynamics.
+
+\subsubsection*{Why the bare condensate-amplitude route fails}
+
+A direct galactic role of the heavy radial condensate mode is
+strongly disfavoured for two independent reasons.
 
 First, under the phenomenological matching hypothesis
-$\xi_{\rm cond}\sim\ell_{\rm Pl}$ used in the present ECT closure,
-the radial mode is extremely heavy, of order the microscopic cutoff,
-so it cannot naturally generate kpc-scale structure.
-Attempting to stretch that mode to galactic distances would require an
-extreme and radiatively unstable tuning of the underlying parameters.
+$\xi_{\rm cond}\sim\ell_{\rm Pl}$ used in the present ECT
+closure, the radial mode is extremely heavy, of order the
+microscopic cutoff, so it cannot naturally generate kpc-scale
+structure.
 
 Second, an ordinary linear scalar-tensor realisation of the same
-sector falls into the Brans--Dicke-like regime and generically produces
-post-Newtonian deviations far too large for Solar-System data.
+sector falls into the Brans--Dicke-like regime and generically
+produces post-Newtonian deviations far too large for Solar-System
+data.
 
-For these reasons the galactic branch of ECT is not built from the bare
-radial condensate amplitude itself, but from the nonlinear critical
-dynamics of the ordered-branch amplitude variable~$\phi$.
+For these reasons the galactic branch of ECT is not built from
+the bare radial condensate amplitude itself, but from the
+nonlinear critical dynamics of the ordered-branch amplitude
+variable~$\phi$, whose structural origin was given above.
+(For the detailed exploration and rejection of the direct
+$u_0(r)$-route, see
+Appendix~\ref{app:lof:branch1}.)
 
 
 \begin{figure}[htb]
@@ -15818,13 +15913,15 @@ Representative astrophysical systems are indicated.}
 \subsubsection*{Screening in dense environments}
 \label{subsec:lof_screening}
 
-\textit{Status: Level~B (phenomenological $\phi$-first closure).
-The screening mechanism follows from the $\phi$-equation of
-motion~\eqref{eq:phi_eom} under the quasi-static approximation;
-a first-principles derivation from bare~P3 remains open~(OP-screen).}
+\textit{Status: Level~B (ordered-branch $\phi$-first closure).
+The screening mechanism follows from the matter-driven
+$\phi$-equation~\eqref{eq:phi_eom_local} under the
+quasi-static approximation; a first-principles derivation from
+bare~P3 remains open~(OP-screen).}
 
-Once the local condensate shifts $\bar\phi(\rho)$ upward in
-denser environments, the ordered-branch amplitude variable acquires an
+Since matter drives $\bar\phi(\rho)$ upward
+(eq.~\eqref{eq:phi_eom_local}), the ordered-branch amplitude
+variable acquires an
 effective mass for perturbations around the local equilibrium.
 Expanding $\phi = \bar\phi(\rho) + \delta\phi$, small fluctuations
 obey a Yukawa-type equation with effective mass (Level~B):
@@ -15855,6 +15952,36 @@ The recovery of GR in the Solar System is therefore not in
 conflict with the existence of a nonlinear galactic branch;
 it is an expected feature of the same underlying mechanism.
 
+\paragraph{Benchmark screening scales.}
+Within the present Level~B closure, the density dependence of
+$m_\phi(\rho)$ implies a strong hierarchy of screening lengths
+across environments.
+In dense laboratory and Solar-System conditions the
+corresponding Compton scale is driven far below astrophysical
+distances, so that the scalar branch is effectively
+Yukawa-suppressed and post-Newtonian deviations are screened.
+In galactic outskirts the screening length becomes comparable to
+the macroscopic scale of the system, opening the transition
+window in which the nonlinear infrared branch can activate.
+In low-density intergalactic environments the screening scale
+can become very large, so that the near-critical branch remains
+accessible.
+These estimates should be read as order-of-magnitude consistency
+checks within the present closure, not yet as first-principles
+predictions.
+
+\paragraph{Relation to known screening paradigms.}
+Phenomenologically, the dense-environment suppression of the
+galactic scalar branch is closest to chameleon-type
+screening~\cite{KhouryWeltman2004}, in the sense that the
+effective scalar mass increases with ambient density and
+suppresses long-range fifth-force effects.
+The present mechanism is nevertheless structurally different:
+in ECT the screened field is not an extra scalar appended to GR
+by hand, but the ordered-branch amplitude response of the same
+condensate sector that also controls the infrared critical
+branch.
+
 
 %%% -----------------------------------------------------------
 %%% -----------------------------------------------------------
@@ -15863,7 +15990,7 @@ it is an expected feature of the same underlying mechanism.
 
 \textit{Status: Level~A for the identification of distinct
 physical scales; Level~B for numerical estimates based on the
-$\phi$-first phenomenological closure.}
+$\phi$-first ordered-branch closure.}
 
 The galactic closure of the macroscopic branch contains several
 physically distinct scales that must not be conflated.
@@ -15997,10 +16124,10 @@ not any specific exponent.
 \subsubsection*{Critical infrared regime}
 \label{subsec:lof_critical}
 
-\textit{Status: Level~B (phenomenological critical infrared
-closure of the $\phi$-first macroscopic branch). The
-$Y_\phi^{3/2}$ critical kinetic form is supported by a
-scale-invariance argument, but not yet derived from bare~P3~(OP2).}
+\textit{Status: Level~B (critical infrared closure of the
+$\phi$-first ordered-branch programme). The $Y_\phi^{3/2}$
+critical kinetic form is supported by a scale-invariance
+argument, but not yet derived from bare~P3~(OP2).}
 
 Once the perturbative gradient expansion breaks down, it is
 natural to replace it by a critical infrared effective theory for
@@ -16042,6 +16169,23 @@ strongly than a linear theory would predict.  This nonlinear
 stiffness is what produces the $1/r$ force law needed for flat
 rotation curves.
 
+\paragraph{Uniqueness and observational corollary.}
+The role of the $Y_\phi^{3/2}$ branch is stronger than a mere
+dimensional convenience.
+In three spatial dimensions it is the unique scale-invariant
+monomial built from the dimensionless amplitude variable~$\phi$,
+and it is precisely this exponent that yields the deep-branch
+relation $\mu(y)\to y$ and hence
+$g \sim \sqrt{g_N\,g^\dagger}$.
+The flat-curve asymptotics and the BTFR slope~$4$ are therefore
+not separate assumptions but direct corollaries of the same
+critical branch.
+In standard MOND-like
+frameworks~\cite{Milgrom1983,BekensteinMilgrom1984}
+the AQUAL equation structure is postulated;
+ECT derives the same structure as the critical infrared branch
+of the ordered-branch amplitude response.
+
 \paragraph{Full interpolating equation.}
 The complete static equation, valid from the Newtonian to the
 deep-MOND regime, takes the AQUAL-like form
@@ -16069,6 +16213,46 @@ ordered-branch amplitude background. This field dependence is what makes
 the nonlinear branch appear in dilute near-critical regions
 rather than near dense sources.
 
+\paragraph{Environmental modulation as an ECT prediction.}
+ECT does not predict a strictly universal MOND
+constant~$a_0$. Instead, the critical acceleration is set by
+the cosmological baseline with environment-dependent
+modulation:
+\begin{equation}
+  g^\dagger_{\rm eff}
+  = g^\dagger_0\,\Xi(\rho_{\rm env}, \bar\phi_{\rm env}, \ldots),
+  \qquad
+  g^\dagger_0 \sim \frac{cH_0}{2\pi}\,.
+  \label{eq:gdagger_env_main}
+\end{equation}
+This is one of the clearest observational distinctions from
+standard MOND-like frameworks with a fixed universal
+acceleration scale.
+In ECT the residual galaxy-to-galaxy variation of the fitted
+critical scale is not merely tolerated: weak but systematic
+environment dependence is a genuine prediction of the
+ordered-branch programme~(F1 in
+Table~\ref{tab:ECT_predictions}).
+This makes group environment, external-field context, and
+cluster membership part of the observational test of the theory
+rather than nuisance contamination.
+
+\paragraph{Status summary.}
+At the current stage the galactic branch of ECT should be read
+as a structurally motivated but still Level~B programme.
+What is already fixed at the structural level is:
+the ordered-branch amplitude variable~$\phi$,
+the matter-driven tendency toward increased ordering in dense
+environments,
+the existence of a screened regime, and
+the deep critical branch that reproduces the MOND-like
+weak-field asymptotics ($Y_\phi^{3/2}$).
+What remains open is the full first-principles derivation of the
+interpolating closure from bare~P3,
+the non-perturbative bridge between the perturbative ordered
+branch and the critical infrared fixed point~(OP2, OP3),
+and the quantitative environment dependence of
+$g^\dagger_{\rm eff}$~(OP-screen).
 
 \FloatBarrier
 \subsection{Cluster-merger lensing test}
@@ -26451,8 +26635,9 @@ sector.}
 \textbf{\#} & \textbf{Route} &
 \textbf{Reason for termination / success} \\
 \hline
-1 & Amplitude-route $u_0(r)$ & Radial mode Planck-heavy
-  ($\xi \sim \ell_{\rm Pl}$); 5 sub-routes also fail \\
+1 & Amplitude-route $u_0(r)$ (discarded) & Radial mode Planck-heavy
+  ($\xi \sim \ell_{\rm Pl}$); 5 sub-routes also fail; legacy
+  $r_0$-notation belongs only to this rejected branch \\
 2 & Linear $\chi$ theory & Fifth force excluded by Cassini
   ($\alpha^2 \sim 1/5 \gg 10^{-5}$) \\
 3 & Geometric $\phi$ coupling & $\checkmark$ \emph{Successful}:
