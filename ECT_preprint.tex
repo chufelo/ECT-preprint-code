@@ -281,7 +281,10 @@ $n_s$ & Scalar spectral index (ECT-native derivation: open) & --- \\
 $r$ & Tensor-to-scalar ratio & --- \\
 $N_e$ & Inflationary e-folds (external; not used in ECT) & --- \\
 $w_0,w_a$ & Dark-energy EOS parameters & --- \\
-$g_\dagger$ & Critical acceleration: $g_\dagger\propto cH_0$ & m\,s$^{-2}$ \\[4pt]
+$g_\dagger$ & Critical acceleration: $g_\dagger\propto cH_0$ & m\,s$^{-2}$ \\
+$g^\dagger_{\rm eff}$ & Fitted effective critical acceleration per galaxy & m\,s$^{-2}$ \\
+$r_*$ & Derived galactic transition radius: $r_*=\sqrt{G_N M_{\rm bar}/g^\dagger}$ & kpc \\
+$\lambda_\phi(\rho)$ & Screening length: $\lambda_\phi = m_\phi^{-1}(\rho)$ & m \\[4pt]
 \multicolumn{3}{@{}l}{\textit{Fifth force (Section~\ref{sec:fifth_force})}} \\[2pt]
 $\mu_5$ & Dimensionful coefficient of the ECT-specific fermion--condensate operator & GeV \\
 $\beta_5$ & Dimensionless fifth-coupling ratio defined by $\mu_5=\beta_5 m_f$ & dimensionless \\
@@ -15968,7 +15971,8 @@ can become very large, so that the near-critical branch remains
 accessible.
 These estimates should be read as order-of-magnitude consistency
 checks within the present closure, not yet as first-principles
-predictions.
+predictions; for explicit benchmark numbers see
+Appendix~\ref{app:screening_benchmarks}.
 
 \paragraph{Relation to known screening paradigms.}
 Phenomenologically, the dense-environment suppression of the
@@ -26686,6 +26690,66 @@ Closing this gap requires a non-perturbative analysis
 (e.g.\ functional renormalisation group) of the $\phi$-sector
 near the Euclidean$\leftrightarrow$Lorentzian transition.
 This is listed as Open Problem~OP-new-1.
+
+
+% ==============================================================
+\section{Benchmark screening-length estimates across environments}
+\label{app:screening_benchmarks}
+% ==============================================================
+
+This short appendix provides order-of-magnitude estimates of the
+screening length $\lambda_\phi = m_\phi^{-1}$ implied by the
+Level~B $\phi$-first closure (eq.~\eqref{eq:mphi_main} in the main
+text), for representative astrophysical environments.
+These should be read as benchmark consistency checks within the
+present closure, not as first-principles predictions.
+
+\paragraph{Setup.}
+In the quasi-static regime the effective $\phi$-mass is
+$m_\phi^2(\rho) \approx [U_0''(\bar\phi) +
+4\pi\rho/(\bar\chi^2 c^2)] / K(\bar\phi)$.
+For the benchmark one-loop kinetic closure
+$K(\phi) \propto e^{-\phi/2}$ and a convex $U_0$, both the
+numerator and the denominator work in the same direction:
+higher density drives $m_\phi$ upward and hence
+$\lambda_\phi$ downward.
+
+\paragraph{Dense environments (laboratory, Solar System).}
+At terrestrial densities
+$\rho \sim 10^3$\,kg\,m$^{-3}$ and Solar-System densities
+$\rho \sim 1$\,kg\,m$^{-3}$ the density term dominates the
+numerator. The resulting $m_\phi$ is driven far above
+any astrophysically relevant inverse length, so that
+$\lambda_\phi \ll 1$\,AU.
+The scalar branch is effectively Yukawa-suppressed, and the
+residual fifth-force contribution to post-Newtonian observables
+is well below the Cassini bound~\cite{Bertotti2003}.
+
+\paragraph{Galactic disk and transition region.}
+At ISM densities $\rho \sim 10^{-21}$\,kg\,m$^{-3}$
+the screening length grows to $\lambda_\phi \sim$\,kpc.
+This is the regime in which the system enters the transition
+window between the screened Newtonian branch and the nonlinear
+critical branch.
+The precise transition location is controlled by $g^\dagger$,
+not by $\lambda_\phi$ alone.
+
+\paragraph{Galactic outskirts and voids.}
+At densities $\rho \sim 10^{-26}$--$10^{-27}$\,kg\,m$^{-3}$
+the density contribution to $m_\phi^2$ becomes subdominant
+relative to the bare curvature $U_0''$.
+In this limit $\lambda_\phi$ can exceed Mpc scales, and the
+near-critical $\phi$-branch remains accessible.
+This is the regime probed by the deep-MOND/void corner of the
+regime diagram (Fig.~\ref{fig:regime_diagram}).
+
+\paragraph{Status.}
+All estimates above are order-of-magnitude benchmarks derived
+from the present Level~B closure.
+A quantitative mapping
+$\rho \mapsto \lambda_\phi(\rho)$ requires knowledge of
+$U_0(\phi)$ from first principles, which is part of open
+problem~OP3.
 
 
 \section{Numerical algorithms}
