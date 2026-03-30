@@ -19741,8 +19741,8 @@ coherent action scale $S_0$.
 \textit{Status: Level~A for the winding-sector structure and
 fixed-length variational bound;
 Level~A/B for the existence of a distinguished finite pre-quantum
-action scale $S_0$ once the characteristic core-sized loop is
-specified;
+action scale $S_0$ once the characteristic elementary-loop
+closure is specified;
 Level~B for the identification $S_0=\hbar$.
 Connection to ECT basics: Section~\ref{sec:hbar_status} and
 Appendix~\ref{app:Sloop_calc}.}
@@ -19752,10 +19752,8 @@ The previous subsection established that the coherent branch of ECT
 is organised by nontrivial loop sectors of the phase field and that,
 within the reduced $U(1)$-extended phase-loop EFT, the fixed-length
 loop action admits a sharp lower bound.
-Evaluated at the characteristic elementary-loop scale
-$L_{\rm core}\sim 2\pi/m_\varphi$, this yields the distinguished EFT
-action scale $S_0^{\rm EFT}=K_\theta m_\varphi/2$.
-The present subsection clarifies the precise status of this scale.
+The present subsection clarifies the precise status of the resulting
+distinguished coherent action scale.
 The key point is that $S_0$ is already structurally present in ECT,
 but its identification with the observed quantum of action $\hbar$ is
 \emph{not} automatic.
@@ -19777,19 +19775,35 @@ The existence of $S_0$ follows from three structural facts:
     loop is specified~(Level~A/B: core-scale closure).
 \end{enumerate}
 Together these imply that the coherent branch possesses a distinguished
-action scale associated with topologically nontrivial phase transport.
+action scale associated with nontrivial compact-phase transport.
 The winding structure and fixed-length bound are strict~(Level~A);
 the finite distinguished scale additionally requires the core-scale
 input~(Level~A/B).
 
+The corresponding EFT action scale, recalled from
+Section~\ref{sec:hbar_status}, is
+\begin{equation}
+  S_0^{\rm EFT}
+  =
+  \frac{K_\theta^{\rm eff}\,m_\varphi}{2},
+  \label{eq:qs_S0_recall}
+\end{equation}
+where $K_\theta^{\rm eff}$ is the effective phase stiffness of the
+coherent branch and $m_\varphi$ is the inverse core-length scale
+entering the elementary-loop closure.
+As emphasised in ECT basics, this quantity refers to the
+\emph{elementary loop evaluated at the characteristic core scale},
+not to a global variational minimum over arbitrary loop lengths.
+
 \paragraph{What $S_0$ means physically.}
 The quantity $S_0$ should be understood as the intrinsic unit of action
-prepared by the topology of the coherent condensate.
-It is the action carried by the first nontrivial loop sector, up to the
-factor $2\pi$.
+prepared by the compact-phase structure of the coherent branch.
+It is the action associated with the first nontrivial elementary loop,
+up to the factor $2\pi$.
 In this sense $S_0$ is \emph{pre-quantum}: it is an action scale
-selected by the theory's own topology, but it has not yet been shown to
-be the same quantity that appears in all observed quantum processes.
+selected by the internal coherent-sector structure of the theory,
+but it has not yet been shown to be the same quantity that appears in
+all observed quantum processes.
 
 \paragraph{Why $S_0=\hbar$ is not yet established.}
 The structural existence of a distinguished loop action scale does not
@@ -19799,7 +19813,9 @@ yet prove that:
   \item canonical quantisation rules are governed by $S_0$;
   \item the wave-dynamical limit of the coherent branch reproduces the
     observed quantum kinematics with $S_0$ in the r\^ole of $\hbar$;
-  \item the numerical value of $S_0$ matches the observed
+  \item the numerical value of $S_0$ and its universal role across the
+    coherent-sector amplitude, wave, and canonical structures match the
+    observed Planck constant
     $\hbar=1.054\ldots\times10^{-34}\,\mathrm{J\,s}$.
 \end{enumerate}
 These are additional statements; none follows merely from
@@ -19841,33 +19857,55 @@ The theory has therefore already explained \emph{why an action quantum
 candidate should exist at all}, even if it has not yet completed the
 empirical identification.
 
-\paragraph{Structural bridges protecting the identification.}
-The identification $S_0=\hbar$ is further supported by three
-structural arguments developed in Section~\ref{sec:hbar_status}:
-(i)~single-field universality implies that the same action
-normalization governs all sectors of the functional integral,
-and the coherent phase sector identifies $S_0^{\rm EFT}$ as the
-distinguished candidate for this normalization;
-(ii)~the same Wick continuation $w\to -ic_*t$ that produces the
-emergent Lorentzian metric also carries the coherent-sector weight
-into a Lorentzian amplitude $\sim e^{iS/S_0^{\rm EFT}}$, preserving
-the action normalization;
-(iii)~parameter-counting shows that $S_0^{\rm EFT}=\hbar$ is the
-third and final matching condition of the three-parameter theory,
-after $c_*=c$ and $G_N$-matching.
-These bridges do not constitute a parameter-free derivation of
-$\hbar$, but they collectively show that the identification is
-strongly constrained rather than arbitrary.
+\paragraph{Structural bridges and the three matching relations.}
+The possible identification $S_0^{\rm EFT}=\hbar$ is not introduced as
+an isolated fit.
+It is supported by three structural bridges developed in
+Section~\ref{sec:hbar_status}: single-field universality,
+analytic continuation, and parameter-counting closure.
 
-\paragraph{Bridge to wave dynamics.}
+In the simplest bare-potential realisation, the effective theory is
+organised by three independent matching relations:
+\begin{align}
+  c_* &= c,
+  \notag\\
+  G_N &= \frac{c_*^4}{8\pi M_G^2},
+  \label{eq:qs_three_matching}\\
+  S_0^{\rm EFT} &= \hbar.
+  \notag
+\end{align}
+The first two connect the ordered branch to Lorentzian propagation and
+to observed gravity; the third would connect the coherent branch to the
+observed quantum of action.
+Taken together, these relations show that the identification
+$S_0^{\rm EFT}=\hbar$ is structurally constrained within the same
+ordered-medium framework, even though it is not yet a parameter-free
+Level~A derivation.
+For the full discussion of these bridges, see
+Section~\ref{sec:hbar_status}.
+
+\paragraph{Bridge to the rest of Part~III.}
 Once a distinguished action scale exists, the natural next question is
 how coherent sectors combine into an effective wave description and
 whether the Wick rotation $w\to -ic_*t$ carries the phase-sector
 action into a standard kinetic term with $S_0$ as the effective
 action unit.
-That question leads directly to the wave-dynamical development of the
-Quantum Sector, in which the transition from the Euclidean phase action
-to Schr\"odinger-like dynamics is made explicit.
+That question leads first to the wave-dynamical development of the
+Quantum Sector in Section~\ref{sec:qs_wave_kinematics}.
+
+Beyond wave kinematics, the same scale also enters the later quantum
+programme:
+the normalisation of canonical structures
+(Section~\ref{sec:qs_ccr}),
+the Hilbert-space / unitarity bridge
+(Section~\ref{sec:qs_hilbert_bridge}),
+the open-system decoherence architecture
+(Section~\ref{sec:qs_decoherence}),
+and the probability problem
+(Section~\ref{sec:qs_born}).
+In all of these later uses, however, the physical identification
+$S_0=\hbar$ remains a Level~B matching step rather than an already
+completed Level~A derivation.
 
 \statussummary
 \textit{Established:}
@@ -19890,23 +19928,9 @@ Completion of the full structural r\^ole of $\hbar$---universal
 amplitude weighting, canonical commutators, Born rule---belongs to
 the constructive programme of the Quantum Sector.
 
-\paragraph{Summary.}
-ECT already contains more than a generic broken-phase field theory:
-it contains a topologically selected candidate for a universal action
-scale, protected by structural bridges that make the identification
-with~$\hbar$ a natural and structurally protected closure of the
-theory.
-This is the correct starting point for the emergence of quantum
-kinematics.
-The theory remains methodologically honest: $S_0$ is structurally
-present before it is empirically identified with $\hbar$.
-The next task is to examine whether the coherent phase action develops
-into wave dynamics and canonical structure governed by this same scale.
-
 % ============================================================
 
 % Topological loop quantisation analogies (relocated from former §19.23)
-\label{sec:loops_analogy_section}
 \begin{table}[h]
 \centering
 \caption{Topological loop quantisation in different physical systems.
