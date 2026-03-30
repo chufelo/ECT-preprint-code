@@ -8,32 +8,33 @@ digraph PartI {
   nodesep=0.35;
   ranksep=0.55;
 
-  // === POSTULATES ===
-  node [fillcolor="#909090"];
+  // === POSTULATES (BLACK background, white text) ===
+  node [fillcolor="#404040", fontcolor=white];
   P1 [label="P1\n4D Euclidean\n§2"];
   P2 [label="P2\nO(4) action\n§2"];
   P3 [label="P3\nCondensate Φ\n§2"];
   P4 [label="P4\nGradient cond.\n§2"];
-  
-  // === PHENOMENOLOGICAL INPUTS ===
-  node [fillcolor="#c8c8c8"];
+
+  // === PHENOMENOLOGICAL INPUTS (dark gray, white text) ===
+  node [fillcolor="#808080", fontcolor=white];
   Ph2 [label="Ph2\nu₀ = M̄Pl (obs.)\n§5.4"];
   Ph1 [label="Ph1\nc* = c (structural)\nLevel B, §4.8"];
 
-  // === LEVEL A ===
-  node [fillcolor="#b0b0b0"];
+  // === LEVEL A (medium gray) ===
+  node [fillcolor="#b8b8b8", fontcolor=black];
   SSB [label="SSB\nO(4) → O(3)\nselects w\n§3"];
-  UC [label="Universality Corollary\none Φ → one Kᴬᴮ → one cone\n§4.3"];
+  UC [label="Universality Corollary\none Φ → one K → one cone\n§4.3"];
   lorentz [label="Lorentzian metric\n§3.6"];
   goldstone [label="3 Goldstone bosons\n(fuzzy DM candidates)\n§4"];
   cstar [label="c* = √(β/(α−β))\nLight speed\n§5.3"];
   KG [label="Klein–Gordon eq.\n§3.6"];
   second_law [label="2nd law of\nthermodynamics\n§3.9"];
+  topo_anti [label="Topological anti-predictions\nπ₀ = π₁ = π₂ = 0\nNo walls/strings/monopoles\n§8"];
 
-  // === LEVEL B ===
-  node [fillcolor="#d9d9d9"];
-  hbar [label="ℏ = Sloop/(2π)\nPlanck constant\n§5.6"];
-  GE [label="Euclidean correlator\nGE(X,X′)\n§5"];
+  // === LEVEL B (very light gray, almost white) ===
+  node [fillcolor="#e0e0e0", fontcolor=black];
+  hbar [label="ℏ = S_loop/(2π)\nPlanck constant\n§5.6"];
+  GE [label="Euclidean correlator\nGE(X, X′)\n§5"];
   GN [label="GN = c*⁴/(8πMG²)\nGrav. constant\n§5.4"];
   gauge [label="Gauge fields\nU(1), SU(2)\n§7"];
   unruh [label="Unruh effect\nTU = ℏa/(2πc*kB)\nQS"];
@@ -42,18 +43,15 @@ digraph PartI {
   dirac [label="Dirac equation\n§9"];
   BH [label="BH thermodynamics\nS = A/(4GN)\nQS"];
   einstein [label="Einstein equations\n(linearised)\n§6"];
-  lepto [label="Leptogenesis\nηB ~ 9×10⁻¹⁰\n§7"];
-  fifth [label="5th force\nω₅ ~ 10⁻¹⁰ rad/s\n§7.6"];
+  fifth [label="5th force\nβ₅ ~ mf/u₀\nSpecies-dependent\n§7.6"];
   uncert [label="Uncertainty\nprinciple\nQS"];
-  inflation [label="Inflation/part.prod.\nns = 0.967"];
-  DE [label="Dark energy\nw₀ > −1"];
-  rotcurves [label="Rotation curves\nGeff(r), g†"];
-  jwst [label="JWST galaxies\n×2–3 enhancement"];
-  LIV [label="Planck-scale LIV\n|δc/c| < 10⁻¹⁵"];
-  
-  // === OPEN ===
-  node [fillcolor="white", style="rounded,dashed"];
-  SU3 [label="SU(3), mn\n[OPEN]"];
+  skyrmion [label="Skyrmion/texture sectors\nπ₃(S³) = ℤ\nm_n ~ n × 1.6 GeV\n§8"];
+  LIV [label="LIV structural\nΔtLIV ∝ E/MPl × L/c\n§10"];
+  seesaw [label="Neutrino seesaw scale\nMR ~ √(u₀ v₂)\n→ leptogenesis route\n§9"];
+
+  // === OPEN (white, dashed, thick) ===
+  node [fillcolor="white", style="rounded,dashed", fontcolor=black, penwidth=2];
+  SU3 [label="SU(3), m_n\n[OPEN]"];
   threegen [label="3 generations\n[OPEN]"];
 
   // === RANKS ===
@@ -62,62 +60,41 @@ digraph PartI {
   {rank=same; hbar; GE; GN}
   {rank=same; gauge; KG; schrodinger; unruh}
   {rank=same; dirac; BH; casimir; einstein}
-  {rank=same; lepto; SU3; uncert; second_law; fifth; threegen}
-  {rank=same; inflation; DE; rotcurves; jwst; LIV}
+  {rank=same; SU3; fifth; uncert; second_law; threegen}
+  {rank=same; topo_anti; skyrmion; LIV; seesaw}
 
   // === EDGES ===
-  P1 -> SSB;
-  P2 -> SSB;
-  P3 -> SSB;
-  P4 -> SSB;
+  P1 -> SSB; P2 -> SSB; P3 -> SSB; P4 -> SSB;
   SSB -> UC;
-  UC -> lorentz;
-  UC -> goldstone;
-  UC -> cstar;
-  SSB -> GE;
-  UC -> hbar;
+  UC -> lorentz; UC -> goldstone; UC -> cstar;
+  SSB -> GE; UC -> hbar;
   cstar -> GN;
   Ph2 -> GN [style=dashed];
   Ph1 -> cstar [style=dashed];
-  lorentz -> KG;
-  lorentz -> gauge;
-  GE -> unruh;
-  GE -> casimir;
-  hbar -> schrodinger;
-  cstar -> schrodinger;
-  KG -> schrodinger;
+  lorentz -> KG; lorentz -> gauge;
+  GE -> unruh; GE -> casimir;
+  hbar -> schrodinger; cstar -> schrodinger; KG -> schrodinger;
   gauge -> dirac;
-  lorentz -> einstein;
-  GN -> einstein;
-  GN -> BH;
+  lorentz -> einstein; GN -> einstein; GN -> BH;
   dirac -> fifth;
-  dirac -> lepto;
   gauge -> SU3 [style=dashed, color=gray50];
   gauge -> threegen [style=dashed, color=gray50];
-  einstein -> second_law;
-  hbar -> uncert;
-  einstein -> rotcurves;
-  einstein -> inflation;
-  einstein -> DE;
-  einstein -> jwst;
-  cstar -> LIV;
-  GN -> LIV;
-  lepto -> inflation;
-  fifth -> rotcurves;
-  
-  // Legend at BOTTOM
+  einstein -> second_law; hbar -> uncert;
+  SSB -> topo_anti;
+  SSB -> skyrmion;
+  cstar -> LIV; GN -> LIV;
+  dirac -> seesaw;
+
+  // Legend BOTTOM
   subgraph cluster_legend {
-    label="";
-    style=invis;
-    rank=sink;
-    leg_p [label="Postulate (P1–P4)", fillcolor="#909090", style="rounded,filled", fontsize=8, shape=box];
-    leg_ph [label="Phenom. input", fillcolor="#c8c8c8", style="rounded,filled", fontsize=8, shape=box];
-    leg_a [label="Derived – Level A", fillcolor="#b0b0b0", style="rounded,filled", fontsize=8, shape=box];
-    leg_b [label="Derived – Level B", fillcolor="#d9d9d9", style="rounded,filled", fontsize=8, shape=box];
-    leg_o [label="Open problem", fillcolor="white", style="rounded,dashed", fontsize=8, shape=box];
+    label=""; style=invis; rank=sink;
+    leg_p [label="Postulate (P1–P4)", fillcolor="#404040", fontcolor=white, style="rounded,filled", fontsize=9];
+    leg_ph [label="Phenom. input", fillcolor="#808080", fontcolor=white, style="rounded,filled", fontsize=9];
+    leg_a [label="Derived – Level A", fillcolor="#b8b8b8", style="rounded,filled", fontsize=9];
+    leg_b [label="Derived – Level B", fillcolor="#e0e0e0", style="rounded,filled", fontsize=9];
+    leg_o [label="Open problem", fillcolor="white", style="rounded,dashed", fontsize=9, penwidth=2];
     leg_p -> leg_ph -> leg_a -> leg_b -> leg_o [style=invis];
     {rank=same; leg_p; leg_ph; leg_a; leg_b; leg_o}
   }
-  // Force legend below everything
-  inflation -> leg_a [style=invis];
+  topo_anti -> leg_a [style=invis];
 }
