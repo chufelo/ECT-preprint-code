@@ -10932,7 +10932,7 @@ of the condensate}
 \textit{Status: Level~A for the emergence of the effective Lorentzian
 metric structure in the broken-phase EFT~(Theorem~\ref{thm:tensor_uniqueness}).
 The position-dependent coupling $G_{\rm eff}(X)=G_N e^{-\beta\phi(X)}$
-introduced below belongs to the phenomenological $\phi$-first closure
+introduced below belongs to the current ordered-branch $\phi$-first closure
 and is therefore Level~B.}
 
 \medskip
@@ -11092,7 +11092,12 @@ Equation~\eqref{eq:geff_contra} then gives:
   = \operatorname{diag}\!\bigl(\beta,\,\beta,\,\beta,\,-(\alpha-\beta)\bigr).
 \end{equation}
 For $\alpha>\beta$ one eigenvalue changes sign and the effective metric
-acquires Lorentzian signature.
+acquires Lorentzian signature at the level of the hyperbolic lower
+bound.
+In the present macroscopic programme, the working viable
+Lorentzian/macroscopic window is the stronger condition
+$\beta<\alpha<4\beta$ inherited from ECT
+basics~(Section~\ref{sec:lorentz_window}).
 At canonical normalisation $\alpha=2$, $\beta=1$:
 $g_{\rm eff}^{AB}=\operatorname{diag}(1,1,1,-1)=\eta^{AB}$~(Level~A in EFT).
 
@@ -11140,23 +11145,26 @@ strict Level~A result; its interpretation as the effective metric of the
 macroscopic causal branch is the corresponding geometric reading within
 the viable Lorentzian regime.
 By contrast, the introduction of a position-dependent effective Newton
-coupling through a macroscopic amplitude variable is part of the current
-phenomenological closure of the macroscopic branch and is Level~B.
+coupling through a macroscopic amplitude variable is part of the
+current ordered-branch closure of the macroscopic branch and is Level~B.
 
 To parameterise slow background variations of the ordered branch, define
 the macroscopic amplitude variable:
 \begin{equation}
   \label{eq:phi_def}
-  \phi(X)\equiv\ln\frac{u(X)}{u_\infty},
+  \phi(X)\equiv\frac{1}{\beta}\ln\frac{u(X)}{u_\infty},
   \qquad \phi\big|_{\rm vac}=0,
 \end{equation}
 where $u(X)$ is the ordered-branch condensate amplitude introduced in
-Section~\ref{sec:ordered_branch_eft} and $u_\infty$ is its asymptotic
-screened value. An equivalent ordered-branch amplitude variable $\chi$ was used in
+Section~\ref{sec:ordered_branch_eft}, $u_\infty$ is its asymptotic
+screened value, and $\beta$ is a dimensionless coupling parameter.
+With this normalisation one has $u/u_\infty=e^{\beta\phi}$, matching
+the notation used throughout the later macroscopic $\phi$-sector.
+An equivalent ordered-branch amplitude variable $\chi$ was used in
 intermediate formulations of the galactic EFT.
 In the present notation this role is played by $u$, so one may read
 $\chi$-based formulas as their $u$-based counterparts.
-In the phenomenological $\phi$-first closure:
+In the current ordered-branch $\phi$-first closure:
 \begin{equation}
   \label{eq:Geff_phi}
   G_{\rm eff}(X)=G_N\,e^{-\beta\phi(X)}.
@@ -11754,12 +11762,10 @@ Statement & Status & Basis \\
 \hline
 Gravitational stiffness scale $M_G$ exists in tensor EFT
   & Level~A & Linear tensor sector \\
-$M_G$ matched numerically to $\bar M_{\rm Pl}$
+$M_G=\bar M_{\rm Pl}$: matched numerical value
   & Matched & Observational input \\
 $G_N=c_*^4/(8\pi M_G^2)$: matching relation
   & Level~B & Comparison with lin.\ GR \\
-$M_G=\bar M_{\rm Pl}$: numerical value
-  & Matched & Observational input \\
 $M_G^2\sim c_M\kappa_n$: EFT order-of-magnitude
   & Level~B & Dimensional analysis \\
 $(u_0,\alpha,\beta)\to\kappa_n\to M_G$: derivation chain
@@ -11814,8 +11820,8 @@ This statement is Level~A as a structural claim.
 What is \emph{not} Level~A is the exact final form of that closure.
 ECT at its current stage does not yet derive the full nonlinear metric
 dynamics directly from bare~P3; instead it constrains the admissible
-closure strongly and yields a natural phenomenological route:
-the $\phi$-first closure of the macroscopic branch.
+closure strongly and yields the current best-developed macroscopic
+route: the ordered-branch $\phi$-first closure.
 
 \subsubsection*{Why the closure is not taken to be pure GR immediately}
 
@@ -12057,6 +12063,10 @@ U(\phi)\ \text{from the branch potential }W(u).
 The precise renormalised coefficients and the final phenomenological
 closure ansatz remain Level~B, but the functions themselves are no
 longer conceptually free-floating.
+This is the common macroscopic origin of the later cosmological and
+galactic $\phi$-closures: their benchmark forms are therefore not
+independent phenomenological insertions, but specialisations of the
+same amplitude-first reduction at different observational scales.
 
 \subsubsection*{Minimal generally covariant operator basis}
 \label{sec:operator_basis}
@@ -12581,6 +12591,11 @@ closure must reproduce the well-tested Newtonian and post-Newtonian
 regime in the Solar System; second, the same weak-field expansion
 provides the entry point for the galactic phenomenology of
 Section~\ref{sec:mp_galactic}.
+The local screened Newtonian limit established here is therefore not
+the end of the gravitational analysis, but the point from which the
+later galactic branch departs once the weak-field regime is combined
+with the critical infrared closure of
+Section~\ref{sec:mp_galactic}.
 
 \subsubsection*{Weak-field expansion of the geometric branch}
 
@@ -12975,6 +12990,40 @@ Possible gravitational slip
 \end{longtable}
 }
 
+\subsubsection*{Section-level status summary}
+
+At the current stage, the emergent gravitational sector of ECT should
+be read as follows.
+
+\textbf{Strictly established (Level~A):}
+the existence of a unique coarse-grained Lorentzian metric candidate in
+the ordered phase; the presence of a linear tensor propagation sector;
+the existence of a conserved macroscopic source tensor; the structural
+necessity of a nonlinear covariant completion; and the recovery of
+ordinary Einstein/Newtonian gravity in the screened frozen-order limit.
+
+\textbf{Structurally established (Level~B):}
+the $\phi$-first nonlinear covariant closure as the current best
+developed macroscopic completion; the interpretation of
+$G_{\rm eff}(\phi)$, $\Lambda_{\rm eff}(\phi)$, and
+$\Theta_{\mu\nu}[\phi,n]$ as the three characteristic departures from
+pure GR; the isotropic background reduction feeding the cosmological
+sector; and the weak-field route toward the galactic critical branch.
+
+\textbf{Still open:}
+the first-principles derivation of the full nonlinear closure from
+bare~P3, the microscopic derivation of the closure functions
+$F(\phi)$, $\omega(\phi)$, and $U(\phi)$, the full universality of
+matter coupling, the exact nonlinear role of the anisotropic response
+tensor $\Theta_{\mu\nu}$, and the complete reduction from the
+ordered-branch EFT to the later cosmological and galactic data
+interfaces.
+
+This section therefore establishes the gravitational branch as a
+well-structured macroscopic EFT sector, while leaving the final
+microphysical closure and precision phenomenology to the later
+cosmological and galactic chapters.
+
 % ==============================================================
 \section{ECT and the Classical Cosmological Problems}
 \label{sec:mp_cosmology}
@@ -12995,8 +13044,8 @@ with the pre-Lorentzian scenario from which they arise, and the
 current status of primordial perturbations.
 The exceptions to Level~B status are the flatness result
 ($k=0$ from P1, Level~A), the primary relic classification
-($\pi_2(S^3)=0$, Level~A), and the branch-coherence mechanism
-(Level~A for the sigma-model minimum).
+($\pi_2(S^3)=0$, Level~A), and the sigma-model minimum underlying the branch-coherence route
+(Level~A; the full cosmological horizon scenario remains Level~B).
 Throughout this section $c$ denotes the structural identification
 $c_*=c$ of the minimal gauge-emergence
 route~(\S\ref{sec:cone_inheritance}).
@@ -13085,16 +13134,17 @@ transition dynamics~(OP3).
 
 \emph{(i)~Reinterpretation of the Big Bang.}
 Within the pre-Lorentzian scenario, the standard Lorentzian Big Bang
-singularity is no longer the fundamental starting point of the theory;
-it is replaced by a non-Lorentzian pre-ordered regime of the same
-underlying arena.
+singularity is no longer treated as the fundamental starting point of
+the theory; it is instead replaced, at the scenario level, by a
+non-Lorentzian pre-ordered regime of the same underlying arena.
 This is a structural reinterpretation, not yet a theorem about all
 possible solutions of the full nonequilibrium dynamics.
 
 \emph{(ii)~Horizon problem reformulated.}
 The standard horizon problem---formulated inside an already existing
-Lorentzian spacetime---is shifted to a branch-coherence problem: why
-was the ordering transition macroscopically coherent?
+Lorentzian spacetime---is shifted to a branch-coherence problem: under what conditions
+can the ordering transition be macroscopically coherent on the
+progenitor domain?
 This reformulation is developed in \S\ref{sec:cosmo_problems}.
 
 \emph{(iii)~Trans-Planckian issue softened.}
@@ -13235,6 +13285,16 @@ derivation.
 Its role here is to formulate the coherent-branch scenario precisely.
 A dedicated quantitative estimate of the required coherence scale is
 left for future work.
+As a purely kinematic benchmark, this condition may be rewritten as
+\[
+L_{\rm br}\gtrsim L_{\rm hom}\,\frac{a_{\rm br}}{a_0}.
+\]
+Thus the required coherence scale on the progenitor branch is smaller
+than the present homogeneity scale by the same expansion factor that
+separates the branch-selection epoch from today.
+This does not yet solve the branch-selection dynamics, but it clarifies
+that the required pre-branch coherence need not be macroscopic in
+today's units.
 
 At the level of classical action comparison, the coherent branch is also
 the natural low-gradient baseline.
@@ -13337,7 +13397,7 @@ Hence, for the exact baseline branch,
 \]
 The observed bound $|\Omega_K(t_0)|<0.004$ (Planck 2018) is therefore
 not a constraint that ECT must dynamically suppress, but an
-observational confirmation of the flat baseline branch.
+observational compatibility check of the flat baseline branch.
 Independent late-Universe analyses are consistent with the same
 near-flatness conclusion, strengthening the empirical compatibility.
 Subleading departures from exact flatness may arise from perturbations,
@@ -13427,6 +13487,10 @@ a nontrivial texture sector, not yet a quantitative relic spectrum.
 The full classification of predicted new states and topological sectors,
 including conditional secondary defects, is given in
 Section~\ref{sec:predicted_states}.
+The present cosmological result should therefore be read narrowly but
+strongly: ECT removes the primary monopole catastrophe structurally,
+while deferring the detailed relic phenomenology of later sectors to
+the broader predicted-states programme.
 
 \textbf{(ii)~Standard GUT monopole overproduction is not structurally
 required~(Level~B).}
@@ -13553,8 +13617,9 @@ independent scalar mode at leading order.
 This is the structural analogue of a single-scalar perturbation sector.
 It does not yet constitute a derivation of the observed curvature
 spectrum, but it does show that the leading ordered-branch perturbation
-content is not multi-scalar and does not require a separately postulated
-inflaton degree of freedom at that level.
+content is not intrinsically multi-scalar and does not, at that
+structural level, force the introduction of a separately postulated
+inflaton-like degree of freedom.
 
 \paragraph{Consequence: no independent ordered-branch isocurvature
 mode.}
@@ -13624,6 +13689,11 @@ A concrete research programme therefore consists of the following steps:
   \item derive the tensor-to-scalar ratio and possible non-Gaussianity
     signatures.
 \end{enumerate}
+This perturbation programme must ultimately be matched to the
+homogeneous ordered-branch cosmology developed in
+Section~\ref{sec:mp_late_cosmology}, so that the background branch and
+the primordial fluctuation sector are treated within a single
+macroscopic framework.
 
 \subsubsection*{What is established and what remains open}
 
@@ -13686,16 +13756,19 @@ Relic / monopole
 }
 
 \paragraph{What is established and what remains open.}
-At Level~A, ECT yields three structural results:
+At Level~A, ECT yields three structural cosmological results:
 (i)~the Euclidean ordering functional admits a macro-coherent minimum,
 which provides the core of the horizon-resolution route;
 (ii)~the emergent homogeneous branch is born spatially flat, $k=0$;
 (iii)~the ordered-branch vacuum manifold satisfies
 $\pi_2(S^3)=0$, eliminating the primary monopole channel.
-What remains open is the fully dynamical cosmological realisation of the
-branch-selection process, the quantitative perturbation theory across
-the ordering transition, and the nonlinear relic spectrum of the
-nontrivial $\pi_3(S^3)$ texture sector.
+At the same structural level, the primordial perturbation sector is
+already constrained to a single leading scalar mode together with a
+tensor sector propagating on the same ordered-branch cone.
+What remains open is the fully dynamical realisation of branch
+selection, the quantitative perturbation theory across the ordering
+transition (including $A_s$, $n_s$, and $r$), and the nonlinear relic
+spectrum of the nontrivial $\pi_3(S^3)$ texture sector.
 
 % ==============================================================
 \section{Cosmology from the Ordered Branch}
