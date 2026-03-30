@@ -5,22 +5,28 @@ digraph PartI {
   edge [fontname="Helvetica", fontsize=8];
   newrank=true;
   splines=true;
-  nodesep=0.35;
+  nodesep=0.40;
   ranksep=0.55;
 
-  // === POSTULATES ===
+  // =====================================================
+  // POSTULATES (darkest)
+  // =====================================================
   node [fillcolor="#404040", fontcolor=white];
   P1 [label="P1\n4D Euclidean\n§2"];
   P2 [label="P2\nO(4) action\n§2"];
   P3 [label="P3\nCondensate Φ\n§2"];
   P4 [label="P4\nGradient cond.\n§2"];
 
-  // === PHENOMENOLOGICAL INPUTS ===
+  // =====================================================
+  // PHENOMENOLOGICAL INPUTS (dark gray)
+  // =====================================================
   node [fillcolor="#808080", fontcolor=white];
   Ph2 [label="Ph2\nu₀ = MPl (obs.)\n§5.4"];
   Ph1 [label="Ph1\nc* = c (structural)\nLevel B, §4.8"];
 
-  // === LEVEL A ===
+  // =====================================================
+  // LEVEL A — strict derivations (medium gray)
+  // =====================================================
   node [fillcolor="#b8b8b8", fontcolor=black];
   SSB [label="SSB\nO(4) → O(3)\nselects w\n§3"];
   UC [label="Universality Corollary\nOne Φ → one K → one cone\n§4.3"];
@@ -31,61 +37,89 @@ digraph PartI {
   second_law [label="2nd law of\nthermodynamics\n§3.9"];
   topo_anti [label="Topological anti-predictions\nπ₀ = π₁ = π₂ = 0\nNo walls / strings / monopoles\n§8"];
 
-  // === LEVEL B ===
+  // =====================================================
+  // LEVEL B — derived with assumptions (light gray)
+  // =====================================================
   node [fillcolor="#e0e0e0", fontcolor=black];
-  hbar [label="Action scale identification\nS₀ = ℏ\n(from phase winding)\n§5.6"];
-  GE [label="Euclidean correlator\nG(E)(X, X')\n§5"];
-  GN [label="Grav. constant\nG(N) = c*⁴ / (8π M²(G))\n§5.4"];
+  S0 [label="Action scale identification\nS₀ = h\n(from phase winding)\n§5.6"];
+  GE [label="Euclidean correlator\nG_E(X, X')\n§5"];
+  GN [label="Grav. constant\nG_N = c*⁴ / (8π M²_G)\n§5.4"];
   gauge [label="Gauge fields\nU(1), SU(2)\n§7"];
-  unruh [label="Unruh effect\nT(U) = ha / (2πc*k(B))\nQS"];
-  casimir [label="Casimir effect\nF/A = 3/2 × (F/A)(QED)\nQS"];
-  schrodinger [label="Schrodinger eq.\nQS"];
   dirac [label="Dirac equation\n§9"];
-  BH [label="BH thermodynamics\nS = A / (4G(N))\nQS"];
   einstein [label="Einstein equations\n(linearised)\n§6"];
-  fifth [label="5th force\nβ₅ ~ m(f) / u₀\nSpecies-dependent\n§7.6"];
-  uncert [label="Uncertainty\nprinciple\nQS"];
-  skyrmion [label="Skyrmion / texture sectors\nπ₃(S³) = Z\nm(n) ~ n × 1.6 GeV\n§8"];
-  LIV [label="LIV structural\nΔt ~ (E / M(Pl)) × L/c\n§10"];
-  seesaw [label="Neutrino seesaw scale\nM(R) ~ sqrt(u₀ × v₂)\n→ leptogenesis route\n§9"];
+  fifth [label="5th force\nβ₅ ~ m_f / u₀\nSpecies-dependent\n§7.6"];
+  skyrmion [label="Skyrmion / texture sectors\nπ₃(S³) = Z\nm_n ~ n × 1.6 GeV\n§8"];
+  LIV [label="LIV structural\nΔt ~ (E / M_Pl) × L/c\n§10"];
+  seesaw [label="Neutrino seesaw scale\nM_R ~ sqrt(u₀ × v₂)\n→ leptogenesis route\n§9"];
 
-  // === OPEN ===
+  // =====================================================
+  // OPEN PROBLEMS (white, dashed)
+  // =====================================================
   node [fillcolor="white", style="rounded,dashed", fontcolor=black, penwidth=2];
-  SU3 [label="SU(3), m(n)\n[OPEN]"];
+  SU3 [label="SU(3), m_n\n[OPEN]"];
   threegen [label="3 generations\n[OPEN]"];
 
-  // === RANKS ===
-  {rank=same; P1; P2; P3; P4; Ph2; Ph1}
+  // =====================================================
+  // RANKS
+  // =====================================================
+  {rank=same; P1; P2; P3; P4; Ph1; Ph2}
   {rank=same; lorentz; goldstone; cstar}
-  {rank=same; hbar; GE; GN}
-  {rank=same; gauge; KG; schrodinger; unruh}
-  {rank=same; dirac; BH; casimir; einstein}
-  {rank=same; SU3; fifth; uncert; second_law; threegen}
-  {rank=same; topo_anti; skyrmion; LIV; seesaw}
+  {rank=same; S0; GE; GN}
+  {rank=same; gauge; KG; einstein}
+  {rank=same; dirac; second_law}
+  {rank=same; SU3; fifth; threegen; seesaw}
+  {rank=same; topo_anti; skyrmion; LIV}
 
-  // === EDGES ===
-  P1 -> SSB; P2 -> SSB; P3 -> SSB; P4 -> SSB;
+  // =====================================================
+  // EDGES — strict derivations (solid)
+  // =====================================================
+  P1 -> SSB;
+  P2 -> SSB;
+  P3 -> SSB;
+  P4 -> SSB;
+
   SSB -> UC;
-  UC -> lorentz; UC -> goldstone; UC -> cstar;
-  SSB -> GE; UC -> hbar;
+  UC -> lorentz;
+  UC -> goldstone;
+  UC -> cstar;
+  UC -> S0;
+
+  lorentz -> KG;
+  lorentz -> gauge;
+  lorentz -> einstein;
+
   cstar -> GN;
-  Ph2 -> GN [style=dashed];
-  Ph1 -> cstar [style=dashed];
-  lorentz -> KG; lorentz -> gauge;
-  GE -> unruh; GE -> casimir;
-  hbar -> schrodinger; cstar -> schrodinger; KG -> schrodinger;
-  gauge -> dirac;
-  lorentz -> einstein; GN -> einstein; GN -> BH;
-  dirac -> fifth;
-  gauge -> SU3 [style=dashed, color=gray50];
-  gauge -> threegen [style=dashed, color=gray50];
-  einstein -> second_law; hbar -> uncert;
+  GN -> einstein;
+
   SSB -> topo_anti;
   SSB -> skyrmion;
-  cstar -> LIV; GN -> LIV;
+
+  gauge -> dirac;
+  dirac -> fifth;
   dirac -> seesaw;
 
-  // Legend BOTTOM with border
+  einstein -> second_law;
+
+  cstar -> LIV;
+  GN -> LIV;
+
+  // =====================================================
+  // EDGES — require assumptions (dashed)
+  // =====================================================
+  Ph1 -> cstar [style=dashed];
+  Ph2 -> GN [style=dashed];
+  P3 -> GE [style=dashed];
+  P4 -> lorentz [style=dashed];
+
+  SSB -> GE [style=dashed];
+  S0 -> KG [style=dashed];
+
+  gauge -> SU3 [style=dashed, color=gray50];
+  gauge -> threegen [style=dashed, color=gray50];
+
+  // =====================================================
+  // LEGEND at bottom with arrow examples
+  // =====================================================
   subgraph cluster_legend {
     label="Legend";
     fontname="Helvetica";
@@ -103,17 +137,24 @@ digraph PartI {
     leg_b [label="Derived - Level B", fillcolor="#e0e0e0", style="rounded,filled"];
     leg_o [label="Open problem", fillcolor="white", style="rounded,dashed", penwidth=2];
 
-    // Arrow descriptions
-    arr_solid [label="Strict derivation", shape=plaintext, fillcolor=white, style=""];
-    arr_dashed [label="Requires assumptions", shape=plaintext, fillcolor=white, style=""];
+    // Arrow examples
+    node [shape=point, width=0.01, fillcolor=black, style=filled];
+    arr_s_from [label=""];
+    arr_d_from [label=""];
+
+    node [shape=plaintext, fillcolor=white, style="", fontsize=9];
+    arr_s_to [label="Strict derivation"];
+    arr_d_to [label="Requires assumptions"];
 
     leg_p -> leg_ph [style=invis];
     leg_ph -> leg_a [style=invis];
     leg_a -> leg_b [style=invis];
     leg_b -> leg_o [style=invis];
-    leg_o -> arr_solid [style=invis];
-    arr_solid -> arr_dashed [style=invis];
-    {rank=same; leg_p; leg_ph; leg_a; leg_b; leg_o; arr_solid; arr_dashed}
+    leg_o -> arr_s_from [style=invis];
+    arr_s_from -> arr_s_to [penwidth=1.5];
+    arr_s_to -> arr_d_from [style=invis];
+    arr_d_from -> arr_d_to [style=dashed, penwidth=1.5];
+    {rank=same; leg_p; leg_ph; leg_a; leg_b; leg_o; arr_s_from; arr_s_to; arr_d_from; arr_d_to}
   }
   topo_anti -> leg_a [style=invis];
 }
