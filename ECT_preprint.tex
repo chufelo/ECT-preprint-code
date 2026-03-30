@@ -20327,26 +20327,284 @@ partially developed.
 \label{sec:qs_hilbert_bridge}
 % ==============================================================
 
-\textit{This section addresses the central question of how the coherent-topological
-branch of ECT connects to the full quantum-mechanical formalism: the physical
-Hilbert space, the status of unitarity, canonical commutation relations, and
-the uncertainty principle.
-The Osterwalder--Schrader / reflection-positivity programme and its relation
-to the ECT postulate structure are discussed.
-Status: the canonical organisation and uncertainty
-relation are Level~A given the coherent-branch structure; the full
-Hilbert-space reconstruction and unitarity status are
-Level~B and partially open.}
+\textit{Inputs from previous sections:
+coherent phase action~\eqref{eq:qs_phase_action},
+distinguished action scale $S_0$~(Section~\ref{sec:qs_hbar}),
+Wick rotation~\eqref{eq:qs_wick}, and
+Schr\"odinger-type reduction~\eqref{eq:qs_schrodinger_type}.
+Aim: to identify the conditions under which the Euclidean coherent
+structure of ECT gives rise to a physical Hilbert space,
+unitary evolution, canonical commutation relations, and the
+uncertainty principle.
+Status: Level~A for the canonical organisation and the
+uncertainty inequality within the coherent branch;
+Level~A for reflection positivity in the free quadratic sector;
+Level~B for the full interacting Hilbert-space reconstruction
+and for the unitarity status beyond the quadratic regime.}
 
 \medskip
-\paragraph{Plan of this section.}
-Subsections~\ref{sec:qs_ccr} and~\ref{sec:qs_uncertainty} develop the
-canonical structure and the uncertainty principle from the
-coherent-topological branch established in the previous sections.
-The reflection-positivity route and the status of unitarity are
-noted as open structural targets that would close the Hilbert-space
-programme of the Quantum Sector.
+The previous sections established that the coherent-topological branch
+possesses a distinguished action scale $S_0$, a natural
+wave-dynamical reduction, and a Lorentzian kinetic structure inherited
+from the broken phase.
+The present section addresses the next logical question:
+\emph{under what conditions does this Euclidean coherent structure
+give rise to the full apparatus of quantum mechanics}---a physical
+Hilbert space with positive norm, a self-adjoint Hamiltonian,
+unitary time evolution, and canonical commutation relations?
 
+This is the central bridge of the Quantum Sector.
+Without it, the resemblance between the coherent-branch wave dynamics
+and ordinary quantum mechanics would remain suggestive but formally
+incomplete.
+
+\paragraph{Plan of this section.}
+The section proceeds in four steps:
+\begin{enumerate}[label=(\roman*)]
+  \item reflection positivity and the Osterwalder--Schrader route to
+    a physical Hilbert space
+    (Section~\ref{sec:qs_reflection_positivity});
+  \item the status of unitarity in the coherent branch
+    (Section~\ref{sec:qs_unitarity_status});
+  \item canonical structure and the status of commutation relations
+    (Section~\ref{sec:qs_ccr});
+  \item the uncertainty principle as a mathematical consequence
+    (Section~\ref{sec:qs_uncertainty}).
+\end{enumerate}
+
+% ============================================================
+\subsection{Reflection positivity and the route to a physical
+Hilbert space}
+\label{sec:qs_reflection_positivity}
+% ============================================================
+
+\textit{Status: Level~A for the free quadratic broken-phase sector;
+Level~B for the full interacting coherent-sector functional integral.
+Connection: P1~(Euclidean arena), P2~(O(4)-invariant action),
+Wick rotation~\eqref{eq:qs_wick}.}
+
+\medskip
+The standard route from a Euclidean field theory to a physical
+Lorentzian quantum theory passes through the
+\emph{Osterwalder--Schrader (OS) reconstruction
+theorem}~\cite{OsterwalderSchrader1973,OsterwalderSchrader1975}.
+The theorem states that if a Euclidean field theory satisfies a set
+of axioms---most critically \emph{reflection positivity}---then it
+is possible to reconstruct a Lorentzian quantum field theory with
+a physical Hilbert space, a positive-definite norm, a self-adjoint
+Hamiltonian bounded below, and unitary time evolution.
+ECT is constructed on a Euclidean arena from the outset~(P1) and
+therefore naturally fits the premises of this programme.
+
+\paragraph{Reflection positivity in ECT.}
+Reflection positivity is a condition on the Euclidean functional
+integral.
+Let $\Theta$ denote the reflection that reverses the distinguished
+Euclidean coordinate: $\Theta w = -w$ (leaving the spatial
+coordinates $x^i$ unchanged).
+The ECT coherent-sector functional integral
+\begin{equation}
+  \label{eq:qs_euclidean_measure}
+  Z = \int \mathcal{D}\Phi\; e^{-S_E[\Phi]/S_0}
+\end{equation}
+is said to satisfy reflection positivity if, for every functional
+$F[\Phi]$ supported in the half-space $w>0$,
+\begin{equation}
+  \label{eq:qs_reflection_positivity}
+  \bigl\langle (\Theta F)^*\, F \bigr\rangle_E
+  \;\equiv\;
+  \int \mathcal{D}\Phi\;
+  \bigl(\Theta F[\Phi]\bigr)^*\, F[\Phi]\;
+  e^{-S_E[\Phi]/S_0}
+  \;\ge\; 0.
+\end{equation}
+When this condition holds, the OS theorem guarantees the existence of
+a physical Hilbert space $\mathcal{H}_{\rm phys}$, a vacuum state
+$|\Omega\rangle$, and a self-adjoint transfer-matrix Hamiltonian
+$\hat H\ge 0$ generating time translations.
+
+\paragraph{Why the ECT arena is well-suited.}
+The ECT postulate structure provides the natural ingredients for
+the OS programme:
+\begin{enumerate}[label=(\roman*)]
+  \item P1 gives the Euclidean 4-manifold $\mathcal{M}^4$;
+  \item P2 gives the $O(4)$-invariant action $S_E[\Phi]$;
+  \item P4+BR1 select the ordered broken phase with a distinguished
+    direction $n^A = \delta^A_w$, which defines the reflection plane
+    $\{w=0\}$ relative to which~\eqref{eq:qs_reflection_positivity}
+    is formulated;
+  \item the Wick rotation $w\to -ic_*t$~\eqref{eq:qs_wick}, already
+    used to reconstruct the Lorentzian metric in ECT basics and
+    Macroscopic Physics, is exactly the analytic continuation that
+    the OS reconstruction requires.
+\end{enumerate}
+Thus the OS programme is not an external addition to ECT but a
+natural structural consequence of the theory's own Euclidean starting
+point and broken-phase ordering.
+
+\paragraph{Status in the quadratic sector~(Level~A).}
+For the free quadratic broken-phase action
+\begin{equation}
+  \label{eq:qs_quadratic_action}
+  S_E^{(2)} = \frac{1}{2}\int d^4X\;
+  \bigl[(\partial_A\varphi)^2 + m^2\varphi^2\bigr],
+\end{equation}
+reflection positivity is a standard result: the Gaussian measure
+$\exp(-S_E^{(2)}/S_0)\,\mathcal{D}\varphi$ satisfies
+condition~\eqref{eq:qs_reflection_positivity} for all
+$m^2>0$~\cite{GlimmJaffe1987}.
+The ECT broken-phase quadratic sector has $m_\sigma^2 = 2\mu^2 > 0$
+(Eq.~\eqref{eq:sigma_mass}), so reflection positivity
+holds at Level~A in the free quadratic regime.
+
+\paragraph{Status beyond the quadratic sector~(Level~B/open).}
+For the full interacting coherent-sector functional integral, the
+verification of reflection positivity is a nontrivial constructive
+task.
+In standard constructive QFT, such verification has been completed
+only for a small number of models (e.g.\ $\phi^4_2$, $\phi^4_3$).
+For ECT the analogous programme is:
+\begin{enumerate}[label=(\roman*)]
+  \item verify that the full $O(4)\to O(3)$ broken-phase action,
+    including Goldstone, radial, and orientation sectors, satisfies
+    reflection positivity;
+  \item control the functional measure beyond the Gaussian
+    approximation;
+  \item demonstrate that the resulting OS-reconstructed Hilbert space
+    coincides with the coherent-branch wave-dynamical description.
+\end{enumerate}
+This programme is Level~B/open: it is structurally well-motivated
+and uses only ingredients already present in ECT, but the full
+nonperturbative completion has not yet been carried out.
+It belongs to the long-term constructive programme of the theory
+and is flagged as an open problem~(OP-Q16).
+
+\paragraph{What reflection positivity would establish.}
+If reflection positivity is verified for the full coherent-sector
+measure, the OS theorem would deliver:
+\begin{enumerate}[label=(\roman*)]
+  \item a physical Hilbert space $\mathcal{H}_{\rm phys}$ with
+    positive-definite inner product;
+  \item a vacuum state $|\Omega\rangle$ with $\hat H|\Omega\rangle=0$;
+  \item a self-adjoint Hamiltonian $\hat H\ge 0$;
+  \item unitary time evolution
+    $U(t) = e^{-i\hat H t/S_0}$;
+  \item a spectral representation for all correlation functions.
+\end{enumerate}
+These are not additional postulates but constructive consequences of
+a single Euclidean condition.
+The full canonical quantisation programme of the Quantum Sector would
+then be grounded in this reconstruction rather than assumed
+independently.
+
+\paragraph{Relation to the Wick rotation already used in ECT.}
+The Wick rotation $w\to -ic_*t$~\eqref{eq:qs_wick} has already been
+used twice: once in ECT basics to reconstruct the Lorentzian metric,
+and once in the Quantum Sector to pass from the Euclidean coherent
+action to the Schr\"odinger-type evolution.
+The OS reconstruction theorem provides the mathematical justification
+for this continuation: it is not merely a formal trick but the
+rigorous bridge from a well-defined Euclidean functional integral to
+a well-defined Lorentzian quantum theory.
+
+\statussummary
+\textit{Established~(Level~A):}
+reflection positivity holds in the free quadratic broken-phase sector.
+\textit{Structural programme~(Level~B/open):}
+the full interacting coherent-sector verification is well-motivated
+and uses only ECT ingredients, but has not yet been completed
+nonperturbatively~(OP-Q16).
+
+% ============================================================
+\subsection{Status of unitarity in the coherent branch}
+\label{sec:qs_unitarity_status}
+% ============================================================
+
+\textit{Status: Level~A in the quadratic sector
+(follows from reflection positivity);
+Level~B for the full interacting coherent branch.
+Connection: reflection positivity
+(Section~\ref{sec:qs_reflection_positivity}),
+global coherent structure~(P2).}
+
+\medskip
+Unitarity is not an independent postulate of ECT.
+If the OS reconstruction programme is completed, unitarity of the
+Lorentzian time evolution follows as a mathematical consequence
+of reflection positivity.
+However, because the full nonperturbative verification is not yet
+in place, it is important to state the status of unitarity separately
+and at the appropriate level of precision.
+
+\paragraph{Global unitarity~(Level~A in quadratic sector).}
+In the free quadratic sector, the OS-reconstructed Hamiltonian is
+self-adjoint and bounded below, so the time-evolution operator
+$U(t)=e^{-i\hat H t/S_0}$ is unitary.
+This is Level~A: it follows from the standard OS theorem applied to
+the Gaussian broken-phase measure.
+At this level, the full coherent state space evolves unitarily and no
+information is fundamentally lost.
+
+\paragraph{Global unitarity~(Level~B beyond quadratic sector).}
+Beyond the quadratic sector, global unitarity is a Level~B structural
+expectation: it is the natural consequence of the OS programme applied
+to the full interacting action, but its verification requires the
+completion of OP-Q16.
+
+\paragraph{Two levels of unitarity in ECT.}
+It is essential to distinguish two levels:
+\begin{enumerate}[label=(\roman*)]
+  \item \textbf{Global unitarity:} the total coherent-sector evolution
+    on $\mathcal{H}_{\rm phys}$ is unitary.
+    This is the level relevant for the black-hole information problem
+    (Section~\ref{sec:qs_black_holes}).
+  \item \textbf{Reduced-sector non-unitarity:} after tracing over
+    unresolved condensate modes, the reduced density matrix of a
+    subsystem evolves non-unitarily.
+    This is the level relevant for decoherence and the arrow of time
+    (Section~\ref{sec:qs_decoherence}).
+\end{enumerate}
+Both levels are consistent: global unitarity is preserved, while
+the appearance of non-unitary evolution in reduced descriptions is
+a consequence of the system--environment split, not of fundamental
+information loss.
+
+\paragraph{Why this matters.}
+The distinction between global and reduced unitarity is one of the
+structurally strongest points of the Quantum Sector.
+It resolves the apparent tension between:
+\begin{itemize}
+  \item the need for unitary evolution to prevent information loss
+    (black-hole information problem, Section~\ref{sec:qs_black_holes});
+  \item the need for effective non-unitarity to produce decoherence,
+    the arrow of time, and the quantum-to-classical transition
+    (Section~\ref{sec:qs_decoherence}).
+\end{itemize}
+ECT does not need to choose between the two.
+The same theory naturally produces both, at different levels of
+description.
+
+\paragraph{Relation to P2.}
+Postulate~P2 requires that the Euclidean action $S_E[\Phi]$ is
+$O(4)$-invariant.
+This symmetry is the Euclidean precursor of Lorentzian unitarity:
+in the OS reconstruction, the $O(4)$ symmetry of the Euclidean
+correlators maps to the Poincar\'e covariance and unitarity of the
+reconstructed Lorentzian theory.
+Thus P2 is not merely a symmetry assumption; it is the structural
+root of unitarity in ECT.
+
+\statussummary
+\textit{Established~(Level~A):}
+global unitarity in the quadratic broken-phase sector.
+\textit{Structural expectation~(Level~B):}
+global unitarity for the full interacting coherent branch, conditional
+on the completion of the OS programme~(OP-Q16).
+\textit{Structural consequence:}
+reduced-sector non-unitarity is compatible with global unitarity and
+produces decoherence without fundamental information loss.
+
+% ============================================================
 \subsection{Canonical structure and the status of commutation relations}
 \label{sec:qs_ccr}
 % ============================================================
@@ -23838,6 +24096,25 @@ Analogue-gravity continuity of the coherent-vacuum interpretation
   & Level~B
   & Section~\ref{sec:qs_vacuum_unified};
     conceptual support, not standalone derivation \\
+Reflection positivity in quadratic broken-phase sector
+  & Level~A
+  & Section~\ref{sec:qs_reflection_positivity};
+    standard OS result for Gaussian measure with $m^2>0$ \\
+Reflection positivity for full interacting coherent sector
+  & Open (OP-Q16)
+  & Section~\ref{sec:qs_reflection_positivity};
+    constructive QFT programme \\
+Global unitarity in quadratic sector
+  & Level~A
+  & Section~\ref{sec:qs_unitarity_status};
+    OS reconstruction \\
+Global unitarity beyond quadratic sector
+  & Level~B
+  & Conditional on OP-Q16 \\
+Global vs.\ reduced unitarity distinction
+  & Level~A
+  & Structural consequence of coherent-branch architecture;
+    Section~\ref{sec:qs_unitarity_status} \\
 \end{longtable}
 }
 
@@ -23938,6 +24215,11 @@ individual subsections.}
     strongly monitored macroscopic regime $N_{\rm eff}\gg1$,
     including a first-principles derivation of the effective bath
     structure beyond the simple ohmic/Markov closure.
+  \item[OP-Q16] Full nonperturbative verification of reflection
+    positivity~(Section~\ref{sec:qs_reflection_positivity}) for the
+    interacting coherent-sector functional integral, completing the
+    Osterwalder--Schrader Hilbert-space reconstruction programme and
+    establishing global unitarity beyond the quadratic regime.
 \end{description}
 
 \paragraph{What has been achieved.}
