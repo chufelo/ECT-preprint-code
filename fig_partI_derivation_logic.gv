@@ -15,6 +15,7 @@ digraph PartI {
   P2 [label=<P2<BR/>O(4) action<BR/>§2>];
   P3 [label=<P3<BR/>Condensate Φ<BR/>§2>];
   P4 [label=<P4<BR/>Gradient cond.<BR/>§2>];
+  P5 [label=<P5<BR/>Non-uniform<BR/>ordering<BR/>§2>];
 
   // === PHENOMENOLOGICAL INPUTS ===
   node [fillcolor="#808080", fontcolor=white];
@@ -51,7 +52,7 @@ digraph PartI {
   threegen [label=<3 generations<BR/>[OPEN]>];
 
   // === RANKS ===
-  {rank=same; P1; P2; P3; P4; Ph1; Ph2}
+  {rank=same; P1; P2; P3; P4; P5; Ph1; Ph2}
   {rank=same; lorentz; goldstone; cstar}
   {rank=same; S0; GE; GN}
   {rank=same; gauge; KG; einstein}
@@ -60,12 +61,14 @@ digraph PartI {
   {rank=same; topo_anti; skyrmion; LIV}
 
   // === EDGES — solid = strict ===
-  P1 -> SSB; P2 -> SSB; P3 -> SSB; P4 -> SSB;
+  P1 -> SSB; P2 -> SSB; P3 -> SSB; P4 -> SSB; P5 -> SSB;
   SSB -> UC;
   UC -> lorentz; UC -> goldstone; UC -> cstar; UC -> S0;
   lorentz -> KG; lorentz -> gauge; lorentz -> einstein;
   cstar -> GN; GN -> einstein;
   SSB -> topo_anti; SSB -> skyrmion;
+  P5 -> topo_anti [style=dashed];
+  P5 -> skyrmion [style=dashed];
   gauge -> dirac;
   dirac -> fifth; dirac -> seesaw;
   einstein -> second_law;
@@ -102,7 +105,7 @@ digraph PartI {
         <TD COLSPAN="7"><B>Legend</B></TD>
       </TR>
       <TR>
-        <TD BGCOLOR="#404040"><FONT COLOR="white">Postulate (P1–P4)</FONT></TD>
+        <TD BGCOLOR="#404040"><FONT COLOR="white">Postulate (P1–P5)</FONT></TD>
         <TD BGCOLOR="#808080"><FONT COLOR="white">Phenom. input</FONT></TD>
         <TD BGCOLOR="#b8b8b8">Derived – Level A</TD>
         <TD BGCOLOR="#ffffff" BORDER="1">Derived – Level B</TD>
