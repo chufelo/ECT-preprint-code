@@ -1,0 +1,62 @@
+digraph PartII {
+  rankdir=TB;
+  fontname="Times-Roman";
+  node [fontname="Times-Roman", fontsize=11, shape=box, style="rounded"];
+  edge [fontname="Times-Roman", fontsize=9];
+  
+  // Color scheme: filled=structural, dashed=open
+  node [fillcolor="#d9d9d9", style="rounded,filled"];
+  
+  // Level A nodes (dark fill)
+  node [fillcolor="#b0b0b0", style="rounded,filled"];
+  partI [label="Part I outputs\n(P1–P5, BR1, DP)"];
+  flatness [label="k = 0\n(P1 + macrocoherence)"];
+  monopole [label="π₂(S³) = 0\nno primary monopoles"];
+  scalar_mode [label="Single scalar\nperturbation mode"];
+  
+  // Level B nodes (lighter fill)
+  node [fillcolor="#d9d9d9", style="rounded,filled"];
+  bridge [label="Bridge §12\nInherited inputs\n(β<α<4β, c*, u₀)"];
+  gravity [label="Emergent gravity §13\nc*=c, G_N matching\nNonlinear φ-closure"];
+  cosmo [label="Classical cosmology §14"];
+  ordered_cosmo [label="Ordered-branch\ncosmology §15\nw ≥ −1, Hubble mech.\nJWST effects"];
+  galactic [label="Galactic/cluster §16\nBTFR slope 4\ng†₀ ≈ cH₀/(2π)\nEnvironmental g†_eff\nCluster morphology"];
+  dark [label="Dark sector §17\nNo particle DM needed\nDE from ordered branch\nF1, F5, F10"];
+  tests [label="Tests & Falsifiers §18\n13 falsifiable predictions"];
+  
+  // Open nodes (dashed)
+  node [fillcolor="white", style="rounded,dashed"];
+  open_closure [label="First-principles\nclosure functions\n(Open: OP3)"];
+  open_ns [label="ECT-native n_s, r\n(Open: OP3)"];
+  open_fractions [label="Cosmological\nfraction budget\n(Open)"];
+  
+  // Edges
+  partI -> bridge [style=bold];
+  bridge -> gravity [style=bold];
+  gravity -> cosmo;
+  cosmo -> flatness;
+  cosmo -> monopole;
+  cosmo -> scalar_mode;
+  cosmo -> ordered_cosmo;
+  ordered_cosmo -> galactic;
+  galactic -> dark;
+  dark -> tests;
+  
+  // Open problem connections
+  gravity -> open_closure [style=dashed, color=gray50];
+  ordered_cosmo -> open_ns [style=dashed, color=gray50];
+  dark -> open_fractions [style=dashed, color=gray50];
+  
+  // Legend
+  subgraph cluster_legend {
+    label="Legend";
+    fontsize=10;
+    style=rounded;
+    color=gray70;
+    leg_a [label="Structural / Level A", fillcolor="#b0b0b0", style="rounded,filled", fontsize=9];
+    leg_b [label="Closure-level / Level B", fillcolor="#d9d9d9", style="rounded,filled", fontsize=9];
+    leg_o [label="Open", fillcolor="white", style="rounded,dashed", fontsize=9];
+    leg_a -> leg_b [style=invis];
+    leg_b -> leg_o [style=invis];
+  }
+}
