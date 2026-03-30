@@ -1,52 +1,52 @@
 digraph PartII {
   rankdir=TB;
-  fontname="Times-Roman";
-  node [fontname="Times-Roman", fontsize=10, shape=box, style="rounded,filled", margin="0.12,0.06"];
-  edge [fontname="Times-Roman", fontsize=8];
+  fontname="Helvetica";
+  node [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", margin="0.12,0.06"];
+  edge [fontname="Helvetica", fontsize=8];
   splines=true;
   nodesep=0.35;
   ranksep=0.50;
   newrank=true;
 
-  // === LEVEL A (medium gray) ===
+  // === LEVEL A ===
   node [fillcolor="#b8b8b8"];
-  partI [label="Part I outputs\n(P1–P5, BR1, DP)\n§§2–10", fontsize=11];
-  sr [label="Special Relativity\nds² = ημν dXμ dXν\n§13.1"];
-  metric [label="Effective metric\ndiag(β, β, β, −(α−β))\n§13.1"];
-  source [label="Conserved source\ndiv(T^AB) = 0\n§13.3"];
-  cgw [label="GW speed\nc_GW = c*\n(GW170817 ✓)\n§13.7"];
-  weakfield [label="Screened Newtonian\nlimit\n§13.6"];
-  flatness [label="k = 0\n(P1 + macrocoherence)\n§14.3"];
-  monopole [label="π₂(S³) = 0\nno primary monopoles\n§14.4"];
-  scalar_mode [label="Single scalar\nperturbation mode\n§14.5"];
+  partI [label=<Part I outputs<BR/>(P1–P5, BR1, DP)<BR/>§§2–10>, fontsize=11];
+  sr [label=<Special Relativity<BR/>ds² = η<SUB>μν</SUB> dX<SUP>μ</SUP> dX<SUP>ν</SUP><BR/>§13.1>];
+  metric [label=<Effective metric<BR/>diag(β, β, β, −(α−β))<BR/>§13.1>];
+  source [label=<Conserved source<BR/>∂<SUB>A</SUB> T<SUP>AB</SUP> = 0<BR/>§13.3>];
+  cgw [label=<GW speed<BR/>c<SUB>GW</SUB> = c*<BR/>(GW170817 ✓)<BR/>§13.7>];
+  weakfield [label=<Screened Newtonian<BR/>limit<BR/>§13.6>];
+  flatness [label=<k = 0<BR/>(P1 + macrocoherence)<BR/>§14.3>];
+  monopole [label=<π<SUB>2</SUB>(S³) = 0<BR/>no primary monopoles<BR/>§14.4>];
+  scalar_mode [label=<Single scalar<BR/>perturbation mode<BR/>§14.5>];
 
-  // === LEVEL B (light gray) ===
+  // === LEVEL B ===
   node [fillcolor="#e0e0e0"];
-  bridge [label="Bridge §12\nInherited inputs\n(β < α < 4β, c*, u₀, K^AB)"];
-  GN [label="G_N matching\nG_N = c*⁴/(8πM²_G)\n§13.4"];
-  closure [label="Nonlinear φ-closure §13.5\nGEE: G_eff, Λ_eff, Θ_μν"];
-  closure_funcs [label="Closure functions\nF = exp(βφ)\nω = ω₀ exp(2βφ)\nU = W(u∞ exp(βφ))\n(Level B: forms derived)\n§13.5, App."];
-  nophantom [label="No-phantom bound\nw(z) ≥ −1\n(ω(φ) > 0)\n§15.1"];
-  hubble [label="Hubble mechanism\nΔH₀/H₀ ≈ 2.9%\n(benchmark)\n§15.5"];
-  jwst [label="JWST effects\nAge/distance/growth\n(two-layer analysis)\n§15.6"];
-  age [label="Age apparatus\nt₀ ≈ 13.1 Gyr\n(benchmark)\n§15.4"];
-  baryogenesis [label="Sakharov-compatible\nbaryogenesis env.\n§15.3"];
-  rotcurves [label="Rotation curves\n165 SPARC galaxies\n1 param/galaxy\n§16.3"];
-  btfr [label="BTFR slope 4\n(algebraic)\n§16.3"];
-  rar [label="RAR\nσ ≈ 0.13 dex\n§16.4"];
-  gdagger [label="Baseline scale\ng†₀ = cH₀/(2π)\n≈ 1.04×10⁻¹⁰ m/s²\n§16.3"];
-  envmod [label="Environmental\nmodulation\ng†₀ → g†_eff\n(F1)\n§16.1"];
-  cluster [label="Cluster-merger\nlensing morphology\n(Bullet+3 systems)\n(F10)\n§16.2"];
-  darkDM [label="No particle DM\nfor galactic\ndiscrepancy\n§17.2"];
-  darkDE [label="Dark energy =\nordered-branch\nbackground\n§17.3"];
-  tests [label="13 Falsifiable\npredictions\nF1–F13\n§18.1", fontsize=11];
+  bridge [label=<Bridge §12<BR/>Inherited inputs<BR/>(β &lt; α &lt; 4β, c*, u<SUB>0</SUB>, K<SUP>AB</SUP>)>];
+  GN [label=<G<SUB>N</SUB> matching<BR/>G<SUB>N</SUB> = c*<SUP>4</SUP>/(8π M<SUB>G</SUB><SUP>2</SUP>)<BR/>§13.4>];
+  closure [label=<Nonlinear φ-closure §13.5<BR/>GEE: G<SUB>eff</SUB>, Λ<SUB>eff</SUB>, Θ<SUB>μν</SUB>>];
+  closure_funcs [label=<Closure functions<BR/>F = exp(βφ)<BR/>ω = ω<SUB>0</SUB> exp(2βφ)<BR/>U = W(u<SUB>∞</SUB> exp(βφ))<BR/>(Level B: forms derived)<BR/>§13.5, App.>];
+  nophantom [label=<No-phantom bound<BR/>w(z) ≥ −1<BR/>(ω(φ) &gt; 0)<BR/>§15.1>];
+  hubble [label=<Hubble mechanism<BR/>ΔH<SUB>0</SUB>/H<SUB>0</SUB> ≈ 2.9%<BR/>(benchmark)<BR/>§15.5>];
+  jwst [label=<JWST effects<BR/>Age/distance/growth<BR/>(two-layer analysis)<BR/>§15.6>];
+  age [label=<Age apparatus<BR/>t<SUB>0</SUB> ≈ 13.1 Gyr<BR/>(benchmark)<BR/>§15.4>];
+  baryogenesis [label=<Sakharov-compatible<BR/>baryogenesis env.<BR/>§15.3>];
+  rotcurves [label=<Rotation curves<BR/>165 SPARC galaxies<BR/>1 param/galaxy<BR/>§16.3>];
+  btfr [label=<BTFR slope 4<BR/>(algebraic)<BR/>§16.3>];
+  rar [label=<RAR<BR/>σ ≈ 0.13 dex<BR/>§16.4>];
+  gdagger [label=<Baseline scale<BR/>g<SUP>†</SUP><SUB>0</SUB> = cH<SUB>0</SUB>/(2π)<BR/>≈ 1.04×10⁻¹⁰ m/s²<BR/>§16.3>];
+  envmod [label=<Environmental<BR/>modulation<BR/>g<SUP>†</SUP><SUB>0</SUB> → g<SUP>†</SUP><SUB>eff</SUB><BR/>(F1)<BR/>§16.1>];
+  cluster [label=<Cluster-merger<BR/>lensing morphology<BR/>(Bullet+3 systems)<BR/>(F10)<BR/>§16.2>];
+  darkDM [label=<No particle DM<BR/>for galactic<BR/>discrepancy<BR/>§17.2>];
+  darkDE [label=<Dark energy =<BR/>ordered-branch<BR/>background<BR/>§17.3>];
+  tests [label=<13 Falsifiable<BR/>predictions<BR/>F1–F13<BR/>§18.1>, fontsize=11];
 
-  // === OPEN (dashed) ===
+  // === OPEN ===
   node [fillcolor="white", style="rounded,dashed", penwidth=2];
-  open_eft [label="EFT parameters\nZ_u, W(u), β\nfrom bare P3\n(Open: OP-grad)"];
-  open_ns [label="ECT-native n_s, r\n(Open: OP3)"];
-  open_fractions [label="Cosmological\nfraction budget\n(Open)"];
-  open_phi_bvp [label="Full φ boundary-\nvalue solver\n(Open)"];
+  open_eft [label=<EFT parameters<BR/>Z<SUB>u</SUB>, W(u), β<BR/>from bare P3<BR/>(Open: OP-grad)>];
+  open_ns [label=<ECT-native n<SUB>s</SUB>, r<BR/>(Open: OP3)>];
+  open_fractions [label=<Cosmological<BR/>fraction budget<BR/>(Open)>];
+  open_phi_bvp [label=<Full φ boundary-<BR/>value solver<BR/>(Open)>];
 
   // === EDGES ===
   partI -> bridge [style=bold, penwidth=2];
@@ -75,14 +75,25 @@ digraph PartII {
   darkDE -> open_fractions [style=dashed, color=gray50];
   rotcurves -> open_phi_bvp [style=dashed, color=gray50];
 
-  // Legend BOTTOM
-  subgraph cluster_legend {
-    label=""; style=invis; rank=sink;
-    leg_a [label="Structural / Level A", fillcolor="#b8b8b8", style="rounded,filled", fontsize=9];
-    leg_b [label="Closure-level / Level B", fillcolor="#e0e0e0", style="rounded,filled", fontsize=9];
-    leg_o [label="Open", fillcolor="white", style="rounded,dashed", fontsize=9, penwidth=2];
-    leg_a -> leg_b -> leg_o [style=invis];
-    {rank=same; leg_a; leg_b; leg_o}
-  }
-  tests -> leg_b [style=invis];
+  // === LEGEND AT BOTTOM ===
+  node [shape=point, width=0, style=invis];
+  spacer1 [label=""];
+  tests -> spacer1 [style=invis];
+  open_fractions -> spacer1 [style=invis];
+  open_phi_bvp -> spacer1 [style=invis];
+
+  node [shape=plaintext, style="", fillcolor=white];
+  legend [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="4" CELLPADDING="6" COLOR="black">
+      <TR><TD COLSPAN="7"><B>Legend</B></TD></TR>
+      <TR>
+        <TD BGCOLOR="#b8b8b8">Structural / Level A</TD>
+        <TD BGCOLOR="#e0e0e0">Closure-level / Level B</TD>
+        <TD BORDER="1" STYLE="DASHED">Open problem</TD>
+        <TD>——→ Strict derivation</TD>
+        <TD>– – → Requires assumptions</TD>
+      </TR>
+    </TABLE>
+  >];
+  spacer1 -> legend [style=invis];
 }
