@@ -15795,10 +15795,11 @@ per galaxy in the present galactic implementation and without
 introducing an additional particle dark-matter component
 within the present ordered-branch description.
 The detailed derivation chain is documented in
-Appendix~\ref{app:lof_full_derivation}; the computational closures
-and SPARC pipeline are given in
+Appendix~\ref{app:lof_full_derivation}; the galactic closure and
+SPARC pipeline are given in
 Appendices~\ref{app:galactic_phi_closure}
-and~\ref{app:sparc_computation}.
+and~\ref{app:sparc_computation}; the cluster-merger implementation
+is documented in Appendix~\ref{app:cluster_lensing}.
 
 % ============================================================
 \subsection{Galactic sector: the ordered-branch amplitude variable}
@@ -16665,8 +16666,10 @@ asymptotics at Level~B.
 \label{sec:btfr_ect_updated}
 
 \textit{Status: Level~B.  The slope 4 is a strong structural result;
-the normalisation depends on $g_\dagger$ and is therefore currently
-Level~B pending the full derivation of $g_\dagger(\rho_{\rm env})$.}
+the normalisation depends on the effective critical scale
+$g^\dagger_{\rm eff}$ and is therefore currently
+Level~B pending the full derivation of the environment law
+$\Xi(\rho_{\rm env},\bar\phi_{\rm env},\ldots)$.}
 
 In ECT the baryonic Tully--Fisher relation is not an independent
 phenomenological input.  It follows directly from the deep-branch
@@ -16707,7 +16710,7 @@ The galactic SPARC analysis below provides a direct numerical
 realisation of this analytic result.  The BTFR slope remains
 structural~(Level~B), while the scatter in the normalisation is
 interpreted as an ECT prediction of environment-dependent
-$g_\dagger(\rho_{\rm env})$ rather than a failure of the framework.
+$g^\dagger_{\rm eff}$ rather than a failure of the framework.
 
 \begin{figure}[htb]
 \centering
@@ -17184,8 +17187,8 @@ this residual width is usually attributed predominantly to
 observational systematics such as distance errors, inclination
 uncertainties, and mass-to-light-ratio degeneracies.
 In ECT, by contrast, a physically meaningful component of the scatter
-is \emph{predicted} through the galaxy-to-galaxy variation of
-$g^\dagger_{\rm eff}$ --- the same environment-dependent effective
+is naturally interpreted in ECT through the galaxy-to-galaxy
+variation of $g^\dagger_{\rm eff}$ --- the same environment-dependent effective
 critical scale already discussed in
 Section~\ref{sec:galactic_dynamics}.
 A quantitative decomposition of the observed RAR width into
@@ -17243,7 +17246,9 @@ The main results and their derivation status are:
     the same ordered-branch $\phi$-closure yields a unified
     morphology test at merger-cluster scale: the convergence peak
     tracks the more compact baryonic component.
-    Morphology is robust across four systems
+    The same algebraic threshold logic is carried across the
+    four-cluster suite without per-system retuning.
+    Morphology is robust across all four systems
     (Bullet, MACS~J0025, El~Gordo, Abell~520),
     while the remaining amplitude deficit is comparable to the
     generic MOND cluster problem ($\times 1.1$--$1.9$) and
