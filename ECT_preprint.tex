@@ -17213,17 +17213,37 @@ future kinematic measurements of disc galaxies at $z\gtrsim0.5$.
 \label{sec:mp_galactic_summary}
 % ==============================================================
 
-The preceding subsections developed the astrophysical phenomenology of
-ECT within the $\phi$-first ordered-branch closure.
+The preceding subsections developed the galactic and cluster-scale
+phenomenology of ECT within the $\phi$-first ordered-branch closure.
 The main results and their derivation status are:
 
 \begin{enumerate}
+  \item \textbf{Ordered-branch $\phi$-sector}
+    (Section~\ref{sec:mp_galactic}):
+    the amplitude variable~$\phi$, the matter-driven ordering
+    tendency, the chameleon-type screening hierarchy
+    ($\lambda_\phi\ll 1\,$AU in dense environments,
+    $\sim$\,kpc on galactic outskirts,
+    $>$\,Mpc in voids), and the
+    critical IR branch $\mathcal{F}\propto Y_\phi^{3/2}$ are
+    structurally established within the Level~B ordered-branch
+    closure.
+    Benchmark screening-length estimates are collected in
+    Appendix~\ref{app:screening_benchmarks}.
+
   \item \textbf{Galactic rotation curves}
     (Section~\ref{sec:galactic_dynamics}):
     the critical $\phi$-branch closure reproduces flat rotation curves
-    across the full SPARC sample with one fitted effective critical
-    acceleration~$g^\dagger_{\rm eff}$ per galaxy and median
-    $\chi^2/N\sim1$~(Level~B).
+    across the full SPARC sample (165 galaxies) with one fitted
+    effective critical
+    acceleration~$g^\dagger_{\rm eff}$ per galaxy; median
+    $\chi^2_r\approx 2.7$ (fixed~$M/L$),
+    $\approx 1.4$ (free~$M/L$), competitive with MOND
+    ($\chi^2_r\approx 3.1$) on comparable parameter
+    footing~(Level~B).
+    The galaxy-to-galaxy scatter in fitted $g^\dagger_{\rm eff}$ is
+    interpreted as a physical signal of environment dependence rather
+    than a shortcoming of the framework~(prediction~F1).
     Computational details in
     Appendix~\ref{app:sparc_computation};
     derivation of the algebraic fitting law in
@@ -17232,7 +17252,12 @@ The main results and their derivation status are:
   \item \textbf{BTFR}
     (Section~\ref{sec:galactic_dynamics}):
     the deep-branch slope $V_f^4\propto M_b$ follows algebraically
-    from the critical branch~(Level~B).
+    from the critical branch~(Level~B structural result);
+    the normalisation passes through the cosmological baseline
+    $g^\dagger_0\sim cH_0/(2\pi)\approx
+    1.04\times10^{-10}\,$m\,s$^{-2}$ and therefore
+    probes the environment dependence of
+    $g^\dagger_{\rm eff}$~(OP3).
 
   \item \textbf{RAR}
     (Section~\ref{sec:rar_subsection}):
@@ -17240,26 +17265,26 @@ The main results and their derivation status are:
     acceleration and $g\simeq\sqrt{g_{\rm bar}\,g^\dagger_{\rm eff}}$
     at low acceleration) are derived from the ECT field equation;
     the interpolation is a representative algebraic closure~(Level~B).
-
-  \item \textbf{JWST early-structure tension}
-    (Section~\ref{sec:mp_jwst_cosmo}):
-    the leading-order Press--Schechter enhancement is
-    $\times2$--3 for the most anomalous sources;
-    the correlated age/distance/growth analysis
-    adds derived-parent maturity factors but only partially
-    alleviates the tension~(Level~B).
+    The observed RAR scatter ($\sigma\approx0.13\,$dex) is partially
+    predicted through the environment dependence of
+    $g^\dagger_{\rm eff}$.
+    A related force-law dimensionality diagnostic
+    $d_{\rm force}(x)$ provides an additional closure-level
+    prediction~(D34, Section~\ref{sec:universe_size}).
 
   \item \textbf{Cluster-merger lensing}
     (Section~\ref{sec:bullet_cluster}):
     the $\phi$-closure predicts that the convergence peak tracks the
     more compact baryonic component;
-    morphology is robust, amplitude is an order-of-magnitude
-    estimate~(Level~B).
+    morphology is robust across four systems
+    (Bullet, MACS~J0025, El~Gordo, Abell~520),
+    amplitude $M_{\rm ECT}/M_{\rm obs}\approx 0.54$--$0.87$
+    after corrections~(Level~B).
     The same ordered-branch $\phi$-closure yields a unified
     morphology test at merger-cluster scale, with the remaining
     amplitude deficit comparable to the generic MOND cluster
-    problem and therefore serving as a quantitative target rather
-    than a morphology-level failure.
+    problem ($\times 1.1$--$1.9$) and therefore serving as a
+    quantitative target rather than a morphology-level failure.
     Computational details in Appendix~\ref{app:cluster_lensing}.
 \end{enumerate}
 
@@ -17270,15 +17295,15 @@ bare ECT action.
 In the present practical galactic implementation, one fitted
 effective critical acceleration~$g^\dagger_{\rm eff}$ is
 assigned per galaxy (the corresponding transition radius $r_*$
-is a derived quantity); the cosmological
-JWST sector
-presently relies on a Level~B background
-closure $\phi_b(z)$ supplemented by derived-parent maturity
-factors.
+is a derived quantity).
 The most distinctive new prediction is the environmental modulation
 of $g^\dagger_{\rm eff}$~(F1, Table~\ref{tab:ECT_predictions}),
 which is absent in both $\Lambda$CDM and MOND and directly testable
 with existing data.
+For the cosmological sector of the ordered-branch programme ---
+including FLRW evolution, Hubble-tension mechanism, and JWST
+early-structure implications --- see the summary in
+Section~\ref{sec:mp_cosmo_status}.
 
 % ==============================================================
 \FloatBarrier
