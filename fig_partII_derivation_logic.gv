@@ -3,105 +3,93 @@ digraph PartII {
   fontname="Times-Roman";
   node [fontname="Times-Roman", fontsize=10, shape=box, style="rounded,filled", margin="0.12,0.06"];
   edge [fontname="Times-Roman", fontsize=8];
-  
-  // === LEVEL A nodes (dark fill) ===
+  splines=true;
+  nodesep=0.35;
+  ranksep=0.50;
+  newrank=true;
+
+  // === LEVEL A (dark fill) ===
   node [fillcolor="#b0b0b0"];
-  partI [label="Part I outputs\n(P1–P5, BR1, DP)", fontsize=11];
-  sr [label="Special Relativity §13.1\nds² = η_μν dX^μ dX^ν"];
-  metric [label="Effective metric\ng^AB_eff = diag(β,β,β,−(α−β))"];
-  source [label="Conserved source\n∂_A T^AB = 0"];
-  cgw [label="GW speed\nc_GW = c*\n(GW170817 ✓)"];
-  weakfield [label="Screened Newtonian\nlimit (Level A)"];
-  flatness [label="k = 0\n(P1 + macrocoherence)"];
-  monopole [label="π₂(S³) = 0\nno primary monopoles"];
-  scalar_mode [label="Single scalar\nperturbation mode"];
-  
-  // === LEVEL B nodes (lighter fill) ===
+  partI [label="Part I outputs\n(P1–P5, BR1, DP)\n§§2–10", fontsize=11];
+  sr [label="Special Relativity\nds² = ημν dXμ dXν\n§13.1"];
+  metric [label="Effective metric\ngᴬᴮeff = diag(β,β,β,−(α−β))\n§13.1"];
+  source [label="Conserved source\n∂A Tᴬᴮ = 0\n§13.3"];
+  cgw [label="GW speed\ncGW = c*\n(GW170817 ✓)\n§13.7"];
+  weakfield [label="Screened Newtonian\nlimit\n§13.6"];
+  flatness [label="k = 0\n(P1 + macrocoherence)\n§14.3"];
+  monopole [label="π₂(S³) = 0\nno primary monopoles\n§14.4"];
+  scalar_mode [label="Single scalar\nperturbation mode\n§14.5"];
+
+  // === LEVEL B (lighter fill) ===
   node [fillcolor="#d9d9d9"];
-  bridge [label="Bridge §12\nInherited inputs\n(β<α<4β, c*, u₀, K^AB)"];
-  GN [label="G_N matching\nG_N = c*⁴/(8πM²_G)"];
-  closure [label="Nonlinear φ-closure §13.5\nGEE: G_eff, Λ_eff, Θ_μν"];
-  closure_funcs [label="Closure functions\nF=e^{βφ}, ω=ω₀e^{2βφ}\nU=W(u_∞ e^{βφ})\n(Level B: forms derived)"];
-  nophantom [label="No-phantom bound\nw(z) ≥ −1\n(ω(φ)>0)"];
-  hubble [label="Hubble mechanism\nΔH₀/H₀ ≈ 2.9%\n(benchmark)"];
-  jwst [label="JWST effects\nAge/distance/growth\n(two-layer analysis)"];
-  age [label="Age apparatus\nt₀ ≈ 13.1 Gyr\n(benchmark)"];
-  baryogenesis [label="Sakharov-compatible\nbaryogenesis env.\n(Level B)"];
-  rotcurves [label="Rotation curves\n165 SPARC galaxies\n1 param/galaxy"];
-  btfr [label="BTFR slope 4\n(algebraic)"];
-  rar [label="RAR\nσ ≈ 0.13 dex"];
-  gdagger [label="Baseline scale\ng†₀ = cH₀/(2π)\n≈ 1.04×10⁻¹⁰ m/s²"];
-  envmod [label="Environmental\nmodulation\ng†₀ → g†_eff\n(F1)"];
-  cluster [label="Cluster-merger\nlensing morphology\n(Bullet+3 systems)\n(F10)"];
-  darkDM [label="No particle DM\nfor galactic\ndiscrepancy"];
-  darkDE [label="Dark energy =\nordered-branch\nbackground"];
-  tests [label="13 Falsifiable\npredictions\nF1–F13", fontsize=11];
-  
-  // === OPEN nodes (dashed) ===
+  bridge [label="Bridge §12\nInherited inputs\n(β<α<4β, c*, u₀, Kᴬᴮ)"];
+  GN [label="GN matching\nGN = c*⁴/(8πMG²)\n§13.4"];
+  closure [label="Nonlinear φ-closure §13.5\nGEE: Geff, Λeff, Θμν"];
+  closure_funcs [label="Closure functions\nF = eᵝᵠ, ω = ω₀ e²ᵝᵠ\nU = W(u∞ eᵝᵠ)\n(Level B: forms derived)\n§13.5, App."];
+  nophantom [label="No-phantom bound\nw(z) ≥ −1\n(ω(φ) > 0)\n§15.1"];
+  hubble [label="Hubble mechanism\nΔH₀/H₀ ≈ 2.9%\n(benchmark)\n§15.5"];
+  jwst [label="JWST effects\nAge/distance/growth\n(two-layer analysis)\n§15.6"];
+  age [label="Age apparatus\nt₀ ≈ 13.1 Gyr\n(benchmark)\n§15.4"];
+  baryogenesis [label="Sakharov-compatible\nbaryogenesis env.\n§15.3"];
+  rotcurves [label="Rotation curves\n165 SPARC galaxies\n1 param/galaxy\n§16.3"];
+  btfr [label="BTFR slope 4\n(algebraic)\n§16.3"];
+  rar [label="RAR\nσ ≈ 0.13 dex\n§16.4"];
+  gdagger [label="Baseline scale\ng†₀ = cH₀/(2π)\n≈ 1.04×10⁻¹⁰ m/s²\n§16.3"];
+  envmod [label="Environmental\nmodulation\ng†₀ → g†eff\n(F1)\n§16.1"];
+  cluster [label="Cluster-merger\nlensing morphology\n(Bullet+3 systems)\n(F10)\n§16.2"];
+  darkDM [label="No particle DM\nfor galactic\ndiscrepancy\n§17.2"];
+  darkDE [label="Dark energy =\nordered-branch\nbackground\n§17.3"];
+  tests [label="13 Falsifiable\npredictions\nF1–F13\n§18.1", fontsize=11];
+
+  // === OPEN (dashed) ===
   node [fillcolor="white", style="rounded,dashed"];
-  open_eft [label="EFT parameters\nZ_u, W(u), β\nfrom bare P3\n(Open: OP-grad)"];
-  open_ns [label="ECT-native n_s, r\n(Open: OP3)"];
+  open_eft [label="EFT parameters\nZu, W(u), β\nfrom bare P3\n(Open: OP-grad)"];
+  open_ns [label="ECT-native ns, r\n(Open: OP3)"];
   open_fractions [label="Cosmological\nfraction budget\n(Open)"];
   open_phi_bvp [label="Full φ boundary-\nvalue solver\n(Open)"];
-  
+
   // === EDGES ===
-  // Main derivation chain
   partI -> bridge [style=bold, penwidth=2];
   bridge -> sr;
   bridge -> metric;
   bridge -> source;
-  
   metric -> GN;
   metric -> cgw;
   {GN; source} -> closure;
   closure -> closure_funcs;
   closure -> weakfield;
-  
   weakfield -> rotcurves;
-  
-  // Classical cosmology
   {sr; closure} -> flatness;
   {sr; closure} -> monopole;
   {sr; closure} -> scalar_mode;
-  
-  // Ordered-branch cosmology
   closure_funcs -> nophantom;
   closure_funcs -> hubble;
   closure_funcs -> age;
   {hubble; age} -> jwst;
   closure -> baryogenesis;
-  
-  // Galactic phenomenology
   rotcurves -> btfr;
   rotcurves -> rar;
   weakfield -> gdagger;
   gdagger -> envmod;
   {rotcurves; envmod} -> cluster;
-  
-  // Dark sector
   {rotcurves; envmod} -> darkDM;
   {nophantom; hubble} -> darkDE;
-  
-  // Tests
   {darkDM; darkDE; envmod; cluster; cgw} -> tests;
-  
-  // Open problems (dashed)
   closure_funcs -> open_eft [style=dashed, color=gray50];
   scalar_mode -> open_ns [style=dashed, color=gray50];
   darkDE -> open_fractions [style=dashed, color=gray50];
   rotcurves -> open_phi_bvp [style=dashed, color=gray50];
-  
-  // Legend
+
+  // Legend at BOTTOM
   subgraph cluster_legend {
-    label="Legend";
-    fontsize=9;
-    style=rounded;
-    color=gray70;
-    margin="8";
-    leg_a [label="Structural / Level A", fillcolor="#b0b0b0", style="rounded,filled", fontsize=8];
-    leg_b [label="Closure-level / Level B", fillcolor="#d9d9d9", style="rounded,filled", fontsize=8];
-    leg_o [label="Open", fillcolor="white", style="rounded,dashed", fontsize=8];
-    leg_a -> leg_b [style=invis];
-    leg_b -> leg_o [style=invis];
+    label="";
+    style=invis;
+    rank=sink;
+    leg_a [label="Structural / Level A", fillcolor="#b0b0b0", style="rounded,filled", fontsize=8, shape=box];
+    leg_b [label="Closure-level / Level B", fillcolor="#d9d9d9", style="rounded,filled", fontsize=8, shape=box];
+    leg_o [label="Open", fillcolor="white", style="rounded,dashed", fontsize=8, shape=box];
+    leg_a -> leg_b -> leg_o [style=invis];
+    {rank=same; leg_a; leg_b; leg_o}
   }
+  tests -> leg_b [style=invis];
 }
