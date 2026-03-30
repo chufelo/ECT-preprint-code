@@ -19253,13 +19253,12 @@ OP-screen: screening mechanism from bare P3 & Open & Open & OP-screen \\
 \part{Quantum Sector: Coherent-Topological Branch}
 \label{part:quantum}
 
-\section{Quantum Sector}
+
+% ==============================================================
+\section{Scope, Inputs, and Logical Programme of the Quantum Sector}
 \label{sec:quantum}
+% ==============================================================
 
-% The following backward-compatibility labels redirect to new QS sections.
-% They allow external references from other parts of the article to resolve.
-
-% ============================================================
 \subsection{Quantum Sector as the development of the
 coherent-topological branch}
 \label{sec:qs_intro}
@@ -19526,6 +19525,12 @@ The framework distinguishes clearly between structural emergence,
 effective closure, and still-open microscopic completion.
 
 % ============================================================
+
+% ==============================================================
+\section{Coherent Phase Dynamics, Loop Sectors, and the Pre-Quantum Action Scale}
+\label{sec:qs_phase_and_scale}
+% ==============================================================
+
 \subsection{Coherent phase dynamics and loop sectors}
 \label{sec:qs_phase_dynamics}
 % ============================================================
@@ -19868,6 +19873,32 @@ The next task is to examine whether the coherent phase action develops
 into wave dynamics and canonical structure governed by this same scale.
 
 % ============================================================
+
+% Topological loop quantisation analogies (relocated from former §19.23)
+\label{sec:loops_analogy_section}
+\begin{table}[h]
+\centering
+\caption{Topological loop quantisation in different physical systems.
+All share the homotopy group $\pi_1(S^1)=\mathbb{Z}$.}
+\label{tab:loops_analogy}
+\begin{tabular}{llll}
+\hline\hline
+System & Object & Topological origin & Quantum \\
+\hline
+Superfluid $^4$He~\cite{Donnelly1991} & Quantised vortex & $\pi_1(S^1)=\mathbb{Z}$ & $\kappa=h/m$ \\
+Type-II superconductor & Flux quantum & $\pi_1(S^1)=\mathbb{Z}$ & $\Phi_0=h/2e$ \\
+Early QM (de Broglie) & Bohr--Sommerfeld orbit & $\pi_1(S^1)=\mathbb{Z}$ & $\oint p\,dq=n\hbar$ \\
+ECT condensate & Condensate loop & $\pi_1(S^1)=\mathbb{Z}$ & $S_{\min}=2\pi\hbar$ \\
+\hline\hline
+\end{tabular}
+\end{table}
+
+
+% ==============================================================
+\section{From Euclidean Coherent Dynamics to Lorentzian Wave Kinematics}
+\label{sec:qs_wave_kinematics}
+% ==============================================================
+
 \subsection{Wave dynamics, Wick rotation, and
   Schr\"odinger-type evolution}
 \label{sec:qs_wave}
@@ -20143,146 +20174,179 @@ sector and the status of commutation relations.
 
 
 
-\subsubsection{Euclidean path-dependence: intermediate
-results from both past and future}
-\label{sec:path_dependence}
+\subsection{Principle of extremal action and saddle dominance}
+\label{sec:qs_extremal_action}
+% ============================================================
 
-A fundamental feature of the ECT framework is that the Euclidean
-equation of motion
-\begin{equation}
-  \left(-\nabla^2_E + m^2\right)\Phi(X) = 0,
-  \qquad \nabla^2_E = \delta^{AB}\partial_A\partial_B,
-\end{equation}
-is an \emph{elliptic} partial differential equation.  Consequently,
-the value of $\Phi$ at an interior point $X_m$ depends simultaneously
-on boundary conditions at \emph{both} $w < w_m$ (the ``past'') and
-$w > w_m$ (the ``future'').  The Euclidean Green's function
-$G_E(X,X')$ is fully symmetric under $w\leftrightarrow -w$, encoding
-this two-sided dependence.
-
-\textbf{Physical consequences.}
-This two-sided propagation is the structural origin of several quantum
-phenomena in ECT.
-
-\begin{enumerate}
-
-\item \textit{Quantum interference.}
-  The amplitude from $X_i$ to $X_f$ via intermediate $X_m$:
-  \[
-    G_E(X_f, X_i) = \int G_E(X_f, X_m)\, G_E(X_m, X_i)\, d^4X_m.
-  \]
-  After Wick rotation $w \to ic_*t$, $G_E$ maps to the Feynman
-  propagator $G_F$.  The two-sided $w$-dependence becomes
-  superposition of quantum amplitudes.
-
-\item \textit{Quantum tunnelling.}
-  The Euclidean path integral assigns weight $e^{-S_E}$ to every
-  field configuration including those traversing classically
-  forbidden regions.  Tunnelling is not a separate postulate but
-  a natural consequence of the two-sided $w$-dependence.
-
-\item \textit{Directionality and irreversibility.}
-  The two-sided $w$-dependence of the Euclidean propagator does
-  \emph{not} by itself produce an arrow of time: the Euclidean
-  Green's function is symmetric under $w\leftrightarrow -w$ and
-  treats past and future equally.  An effective asymmetry
-  $P_{\rm back}/P_{\rm fwd} \neq 1$ appears only \emph{after}
-  the Gaussian--Markov coarse-graining of the influence functional
-  (Section~\ref{sec:second_law}), which introduces a preferred
-  direction through the irreversible functional $\Gamma_{\rm irr}$.
-  Deriving irreversibility from the bare ECT action without
-  coarse-graining remains open (OP24).
-
-\end{enumerate}
-
-\label{sec:indefinite_causal_order}
-
-\textit{Status: Level~B structural argument. The connection
-to experimental indefinite-causal-order protocols is qualitative;
-quantitative predictions require detailed modelling.}
+\textit{Status: Level~A for the saddle-point principle inside the
+coherent amplitude language; Level~B for the physical interpretation
+of finite-$S_0$ corrections as the source of quantum fluctuations in
+specific reduced systems.}
 
 \medskip
-The two-sided Euclidean dependence (Section~\ref{sec:path_dependence})
-has a direct connection to experiments demonstrating
-\emph{indefinite causal order} of quantum operations.
+The principle of extremal action is not an independent postulate in
+ECT.
+It follows directly from the coherent amplitude structure already
+established in Sections~\ref{sec:qs_phase_dynamics}
+and~\ref{sec:qs_wave}.
 
-\subsubsection*{The Procopio--Walther quantum switch}
+\subsubsection*{Coherent amplitude weighting}
 
-Procopio et al.\ (2015)~\cite{Procopio2015} realised a quantum switch
-in which the causal order of two unitary operations $A$ and $B$
-is placed in superposition: $|AB\rangle + |BA\rangle$.
-In ECT this is not surprising:
-\begin{itemize}
-  \item the underlying Euclidean substrate has no built-in preferred
-  temporal ordering;
-  \item causal order is emergent, appearing only after the condensate
-  selects an ordered branch;
-  \item in quantum-coherent processes ($\Gamma_{\rm loop}\lesssim1$),
-  reverse traversal contributes non-negligibly, so the effective
-  order of operations can be in superposition.
-\end{itemize}
-
-\subsubsection*{ECT predictions for indefinite-order experiments}
-
-\paragraph{Prediction 1 (decoherence degradation).}
-The indefinite-order advantage should degrade with the same criterion
-that governs the quantum--classical boundary:
+The coherent branch is weighted by amplitudes of the
+form~\eqref{eq:qs_weight_S0}:
+\[
+  \mathcal{A}[q] \sim \exp\!\bigl(i\,S[q]/S_0\bigr).
+\]
+In the Euclidean preparatory language the corresponding weight is
 \begin{equation}
-  \label{eq:indef_causal_criterion}
-  \Gamma_{\rm loop} \sim 1 \quad\text{marks the crossover.}
+  \label{eq:qs_extremal_weight_E}
+  \mathcal{W}[q]
+  \sim
+  \exp\!\left(-\frac{S_E[q]}{S_0}\right).
 \end{equation}
-As $N_{\rm eff}\gamma$ increases, the advantage should vanish
-continuously, following the same $\Gamma_{\rm loop}$ scaling
-as molecular interferometry.
+When the relevant action satisfies $S[q]\gg S_0$ (or $S_E[q]\gg S_0$),
+the path weight is dominated by saddle configurations.
 
-\paragraph{Prediction 2 (bath-size scaling).}
-Environmental bath size $N_{\rm eff}$ suppresses indefinite-order
-signatures in the same way it suppresses reverse-branch transitions.
+\subsubsection*{Saddle-point conditions}
 
-\paragraph{Prediction 3 (temperature scaling).}
-The thermal de~Broglie wavelength $\ell\propto T^{-1/2}$ controls
-the decoherence rate; higher temperature gives faster contrast loss,
-consistent with $\tau_{\rm dec}\propto T^{-1}$.
-
-\subsubsection*{Quantitative estimates for photonic switch experiments}
-
-For a photonic quantum-switch setup (photon path $L\sim1$\,m,
-vacuum propagation, minimal leakage:
-$N_{\rm eff}\gamma\sim10^{-3}$\,s$^{-1}$), the ECT decoherence time is:
+In the Lorentzian branch the dominant contributions satisfy
 \begin{equation}
-  \tau_{\rm dec}^{\rm photonic}
-  \sim \frac{1}{N_{\rm eff}\gamma}
-  \sim 10^{3}\,\text{s}
-  \quad(\Gamma_{\rm loop}\ll 1).
-  \label{eq:indef_tau}
+  \label{eq:qs_saddle}
+  \delta S[q] = 0;
 \end{equation}
-Since $\tau_{\rm flight}\sim10^{-9}$\,s $\ll\tau_{\rm dec}$,
-we have $\Gamma_{\rm loop}\ll1$: the indefinite-order advantage
-is fully visible~--- consistent with Procopio et al.\ (2015).
+in the Euclidean preparatory branch:
+\begin{equation}
+  \label{eq:qs_saddle_E}
+  \delta S_E[q] = 0.
+\end{equation}
+This is the emergent principle of extremal action~(Level~A).
 
-If the photon is deliberately coupled to a thermal bath with
-$N_{\rm eff}\sim10^{6}$ environmental modes, ECT predicts the
-advantage should vanish when
-$\Gamma_{\rm loop}\equiv N_{\rm eff}\gamma\,\tau_{\rm flight}\sim1$.
-This crossover is a \emph{testable} ECT prediction.
+\subsubsection*{Why this matters}
 
-\textbf{Historical note.}
-The theoretical quantum-switch framework was developed by Brukner et al.\
-starting 2011--2012~\cite{Chiribella2012}; the first photonic
-realisation is Procopio et al.\ (2015)~\cite{Procopio2015}.
+Classicality does not require a second independent principle.
+Classical extremal trajectories and finite-$S_0$ coherent fluctuations
+are two limits of a single ordered-branch framework: the large-action
+saddle regime and the near-$S_0$ quantum regime respectively.
 
-\subsubsection*{Interpretive conclusion}
+\subsubsection*{Finite-$S_0$ corrections}
 
-In ECT, indefinite causal order is the direct manifestation of the
-pre-Lorentzian two-sided Euclidean dependence in a quantum-coherent
-setting.
-These experiments confirm the structural prediction that causal order
-is emergent rather than fundamental.
-The criterion $\Gamma_{\rm loop}\lesssim1$ as the quantum--classical
-boundary is a quantitative ECT prediction for the degradation of
-indefinite-order resources under environmental noise.
+When $S[q]$ is not large compared with $S_0$, saddle-point dominance
+fails and neighbouring histories contribute appreciably.
+Finite-$S_0$ corrections are therefore the origin of the coherent
+non-classical regime in ECT.
+
+\paragraph{Status.}
+The saddle principle is Level~A.
+Its detailed implementation in specific reduced coherent systems is
+Level~B, depending on the wave-dynamical and $S_0=\hbar$ programme.
+
+\paragraph{Summary.}
+In ECT the principle of extremal action is not an additional law.
+It is the saddle-dominance limit of the coherent amplitude weighting
+already present in the Quantum Sector.
 
 % ============================================================
+\subsection{Conservation laws in the coherent sector}
+\label{sec:qs_conservation}
+% ============================================================
+
+\textit{Status: Level~A for the existence of Noether currents inherited
+from the variational structure of the ordered condensate; Level~B for
+their full interpretation in reduced coherent-sector language.
+Connection to ECT basics and Macroscopic Physics:
+Section~\ref{sec:noether}, Appendix~\ref{app:noether_full}, and
+Section~\ref{sec:mp_noether}.}
+
+\medskip
+The Quantum Sector does not introduce conservation laws from outside.
+They are inherited from the same variational condensate structure that
+already produced conserved quantities in ECT basics and Macroscopic
+Physics.
+What changes in QS is not the existence of the currents, but their
+interpretation inside the coherent-topological branch.
+
+This subsection is also the QS-side development of the shared
+deferred Noether material~(Section~\ref{sec:noether}):
+the same variational foundation that generated source currents in
+Macroscopic Physics must, in the coherent-topological branch,
+organise phase-sector charges, winding-sector bookkeeping, and
+ultimately topological current algebra.
+
+\subsubsection*{Translational Noether current}
+
+From translational invariance of the underlying action, the condensate
+admits the conserved Noether tensor
+\begin{equation}
+  \label{eq:qs_noether_T}
+  \partial_A T^{AB} = 0
+\end{equation}
+(Level~A; follows from P1--P3 and the Noether procedure,
+Appendix~\ref{app:noether_full}).
+This holds regardless of which effective branch is studied.
+
+\subsubsection*{Rotational and topological sector}
+
+Likewise, the ordered condensate carries conserved rotational currents,
+\begin{equation}
+  \label{eq:qs_noether_J}
+  \partial_C J^{C,AB} = 0,
+\end{equation}
+already developed in Appendix~\ref{app:noether_full}.
+In the coherent-topological sector these currents acquire an additional
+interpretive rôle: they organise how loop sectors, winding sectors, and
+defect sectors are embedded into the same ordered medium.
+
+\subsubsection*{Why conservation laws look different in QS}
+
+In the geometric branch the natural observables are stress-energy,
+source tensors, and large-scale response.
+In the Quantum Sector the natural observables are amplitudes, reduced
+phase variables, winding sectors, and coherent histories.
+The same underlying conserved structures are therefore seen through a
+different coarse-graining.
+
+\subsubsection*{Open point: topological currents}
+
+A fully explicit development of topological Noether currents in the
+coherent branch has not yet been completed.
+The deferred Noether material~(Section~\ref{sec:noether}) flagged this
+as a shared MP/QS target.
+The coherent branch clearly suggests a conserved topological
+organisation, but its final current algebra remains open.
+
+\paragraph{Summary.}
+Conservation laws are not missing from the Quantum Sector; they are
+inherited from the same variational foundation as ECT basics and MP.
+Their specifically coherent-topological interpretation is still only
+partially developed.
+
+% ============================================================
+
+% ==============================================================
+\section{Hilbert-Space Structure, Reflection Positivity, Canonical Algebra, and Unitarity}
+\label{sec:qs_hilbert_bridge}
+% ==============================================================
+
+\textit{This section addresses the central question of how the coherent-topological
+branch of ECT connects to the full quantum-mechanical formalism: the physical
+Hilbert space, the status of unitarity, canonical commutation relations, and
+the uncertainty principle.
+The Osterwalder--Schrader / reflection-positivity programme and its relation
+to the ECT postulate structure are discussed.
+Status: the canonical organisation and uncertainty
+relation are Level~A given the coherent-branch structure; the full
+Hilbert-space reconstruction and unitarity status are
+Level~B and partially open.}
+
+\medskip
+\paragraph{Plan of this section.}
+Subsections~\ref{sec:qs_ccr} and~\ref{sec:qs_uncertainty} develop the
+canonical structure and the uncertainty principle from the
+coherent-topological branch established in the previous sections.
+The reflection-positivity route and the status of unitarity are
+noted as open structural targets that would close the Hilbert-space
+programme of the Quantum Sector.
+
 \subsection{Canonical structure and the status of commutation relations}
 \label{sec:qs_ccr}
 % ============================================================
@@ -20583,151 +20647,150 @@ It is the mathematical consequence of the canonical organisation of the
 smooth coherent branch.
 
 % ============================================================
-\subsection{Principle of extremal action and saddle dominance}
-\label{sec:qs_extremal_action}
-% ============================================================
 
-\textit{Status: Level~A for the saddle-point principle inside the
-coherent amplitude language; Level~B for the physical interpretation
-of finite-$S_0$ corrections as the source of quantum fluctuations in
-specific reduced systems.}
+% ==============================================================
+\section{Euclidean Path-Dependence, Quantum Nonclassicality, Statistics, and Dirac Structure}
+\label{sec:qs_nonclassical}
+% ==============================================================
+
+\subsection{Euclidean path-dependence: intermediate
+results from both past and future}
+\label{sec:path_dependence}
+
+A fundamental feature of the ECT framework is that the Euclidean
+equation of motion
+\begin{equation}
+  \left(-\nabla^2_E + m^2\right)\Phi(X) = 0,
+  \qquad \nabla^2_E = \delta^{AB}\partial_A\partial_B,
+\end{equation}
+is an \emph{elliptic} partial differential equation.  Consequently,
+the value of $\Phi$ at an interior point $X_m$ depends simultaneously
+on boundary conditions at \emph{both} $w < w_m$ (the ``past'') and
+$w > w_m$ (the ``future'').  The Euclidean Green's function
+$G_E(X,X')$ is fully symmetric under $w\leftrightarrow -w$, encoding
+this two-sided dependence.
+
+\textbf{Physical consequences.}
+This two-sided propagation is the structural origin of several quantum
+phenomena in ECT.
+
+\begin{enumerate}
+
+\item \textit{Quantum interference.}
+  The amplitude from $X_i$ to $X_f$ via intermediate $X_m$:
+  \[
+    G_E(X_f, X_i) = \int G_E(X_f, X_m)\, G_E(X_m, X_i)\, d^4X_m.
+  \]
+  After Wick rotation $w \to ic_*t$, $G_E$ maps to the Feynman
+  propagator $G_F$.  The two-sided $w$-dependence becomes
+  superposition of quantum amplitudes.
+
+\item \textit{Quantum tunnelling.}
+  The Euclidean path integral assigns weight $e^{-S_E}$ to every
+  field configuration including those traversing classically
+  forbidden regions.  Tunnelling is not a separate postulate but
+  a natural consequence of the two-sided $w$-dependence.
+
+\item \textit{Directionality and irreversibility.}
+  The two-sided $w$-dependence of the Euclidean propagator does
+  \emph{not} by itself produce an arrow of time: the Euclidean
+  Green's function is symmetric under $w\leftrightarrow -w$ and
+  treats past and future equally.  An effective asymmetry
+  $P_{\rm back}/P_{\rm fwd} \neq 1$ appears only \emph{after}
+  the Gaussian--Markov coarse-graining of the influence functional
+  (Section~\ref{sec:second_law}), which introduces a preferred
+  direction through the irreversible functional $\Gamma_{\rm irr}$.
+  Deriving irreversibility from the bare ECT action without
+  coarse-graining remains open (OP24).
+
+\end{enumerate}
+
+\label{sec:indefinite_causal_order}
+
+\textit{Status: Level~B structural argument. The connection
+to experimental indefinite-causal-order protocols is qualitative;
+quantitative predictions require detailed modelling.}
 
 \medskip
-The principle of extremal action is not an independent postulate in
-ECT.
-It follows directly from the coherent amplitude structure already
-established in Sections~\ref{sec:qs_phase_dynamics}
-and~\ref{sec:qs_wave}.
+The two-sided Euclidean dependence (Section~\ref{sec:path_dependence})
+has a direct connection to experiments demonstrating
+\emph{indefinite causal order} of quantum operations.
 
-\subsubsection*{Coherent amplitude weighting}
+\subsubsection*{The Procopio--Walther quantum switch}
 
-The coherent branch is weighted by amplitudes of the
-form~\eqref{eq:qs_weight_S0}:
-\[
-  \mathcal{A}[q] \sim \exp\!\bigl(i\,S[q]/S_0\bigr).
-\]
-In the Euclidean preparatory language the corresponding weight is
+Procopio et al.\ (2015)~\cite{Procopio2015} realised a quantum switch
+in which the causal order of two unitary operations $A$ and $B$
+is placed in superposition: $|AB\rangle + |BA\rangle$.
+In ECT this is not surprising:
+\begin{itemize}
+  \item the underlying Euclidean substrate has no built-in preferred
+  temporal ordering;
+  \item causal order is emergent, appearing only after the condensate
+  selects an ordered branch;
+  \item in quantum-coherent processes ($\Gamma_{\rm loop}\lesssim1$),
+  reverse traversal contributes non-negligibly, so the effective
+  order of operations can be in superposition.
+\end{itemize}
+
+\subsubsection*{ECT predictions for indefinite-order experiments}
+
+\paragraph{Prediction 1 (decoherence degradation).}
+The indefinite-order advantage should degrade with the same criterion
+that governs the quantum--classical boundary:
 \begin{equation}
-  \label{eq:qs_extremal_weight_E}
-  \mathcal{W}[q]
-  \sim
-  \exp\!\left(-\frac{S_E[q]}{S_0}\right).
+  \label{eq:indef_causal_criterion}
+  \Gamma_{\rm loop} \sim 1 \quad\text{marks the crossover.}
 \end{equation}
-When the relevant action satisfies $S[q]\gg S_0$ (or $S_E[q]\gg S_0$),
-the path weight is dominated by saddle configurations.
+As $N_{\rm eff}\gamma$ increases, the advantage should vanish
+continuously, following the same $\Gamma_{\rm loop}$ scaling
+as molecular interferometry.
 
-\subsubsection*{Saddle-point conditions}
+\paragraph{Prediction 2 (bath-size scaling).}
+Environmental bath size $N_{\rm eff}$ suppresses indefinite-order
+signatures in the same way it suppresses reverse-branch transitions.
 
-In the Lorentzian branch the dominant contributions satisfy
+\paragraph{Prediction 3 (temperature scaling).}
+The thermal de~Broglie wavelength $\ell\propto T^{-1/2}$ controls
+the decoherence rate; higher temperature gives faster contrast loss,
+consistent with $\tau_{\rm dec}\propto T^{-1}$.
+
+\subsubsection*{Quantitative estimates for photonic switch experiments}
+
+For a photonic quantum-switch setup (photon path $L\sim1$\,m,
+vacuum propagation, minimal leakage:
+$N_{\rm eff}\gamma\sim10^{-3}$\,s$^{-1}$), the ECT decoherence time is:
 \begin{equation}
-  \label{eq:qs_saddle}
-  \delta S[q] = 0;
+  \tau_{\rm dec}^{\rm photonic}
+  \sim \frac{1}{N_{\rm eff}\gamma}
+  \sim 10^{3}\,\text{s}
+  \quad(\Gamma_{\rm loop}\ll 1).
+  \label{eq:indef_tau}
 \end{equation}
-in the Euclidean preparatory branch:
-\begin{equation}
-  \label{eq:qs_saddle_E}
-  \delta S_E[q] = 0.
-\end{equation}
-This is the emergent principle of extremal action~(Level~A).
+Since $\tau_{\rm flight}\sim10^{-9}$\,s $\ll\tau_{\rm dec}$,
+we have $\Gamma_{\rm loop}\ll1$: the indefinite-order advantage
+is fully visible~--- consistent with Procopio et al.\ (2015).
 
-\subsubsection*{Why this matters}
+If the photon is deliberately coupled to a thermal bath with
+$N_{\rm eff}\sim10^{6}$ environmental modes, ECT predicts the
+advantage should vanish when
+$\Gamma_{\rm loop}\equiv N_{\rm eff}\gamma\,\tau_{\rm flight}\sim1$.
+This crossover is a \emph{testable} ECT prediction.
 
-Classicality does not require a second independent principle.
-Classical extremal trajectories and finite-$S_0$ coherent fluctuations
-are two limits of a single ordered-branch framework: the large-action
-saddle regime and the near-$S_0$ quantum regime respectively.
+\textbf{Historical note.}
+The theoretical quantum-switch framework was developed by Brukner et al.\
+starting 2011--2012~\cite{Chiribella2012}; the first photonic
+realisation is Procopio et al.\ (2015)~\cite{Procopio2015}.
 
-\subsubsection*{Finite-$S_0$ corrections}
+\subsubsection*{Interpretive conclusion}
 
-When $S[q]$ is not large compared with $S_0$, saddle-point dominance
-fails and neighbouring histories contribute appreciably.
-Finite-$S_0$ corrections are therefore the origin of the coherent
-non-classical regime in ECT.
-
-\paragraph{Status.}
-The saddle principle is Level~A.
-Its detailed implementation in specific reduced coherent systems is
-Level~B, depending on the wave-dynamical and $S_0=\hbar$ programme.
-
-\paragraph{Summary.}
-In ECT the principle of extremal action is not an additional law.
-It is the saddle-dominance limit of the coherent amplitude weighting
-already present in the Quantum Sector.
-
-% ============================================================
-\subsection{Conservation laws in the coherent sector}
-\label{sec:qs_conservation}
-% ============================================================
-
-\textit{Status: Level~A for the existence of Noether currents inherited
-from the variational structure of the ordered condensate; Level~B for
-their full interpretation in reduced coherent-sector language.
-Connection to ECT basics and Macroscopic Physics:
-Section~\ref{sec:noether}, Appendix~\ref{app:noether_full}, and
-Section~\ref{sec:mp_noether}.}
-
-\medskip
-The Quantum Sector does not introduce conservation laws from outside.
-They are inherited from the same variational condensate structure that
-already produced conserved quantities in ECT basics and Macroscopic
-Physics.
-What changes in QS is not the existence of the currents, but their
-interpretation inside the coherent-topological branch.
-
-This subsection is also the QS-side development of the shared
-deferred Noether material~(Section~\ref{sec:noether}):
-the same variational foundation that generated source currents in
-Macroscopic Physics must, in the coherent-topological branch,
-organise phase-sector charges, winding-sector bookkeeping, and
-ultimately topological current algebra.
-
-\subsubsection*{Translational Noether current}
-
-From translational invariance of the underlying action, the condensate
-admits the conserved Noether tensor
-\begin{equation}
-  \label{eq:qs_noether_T}
-  \partial_A T^{AB} = 0
-\end{equation}
-(Level~A; follows from P1--P3 and the Noether procedure,
-Appendix~\ref{app:noether_full}).
-This holds regardless of which effective branch is studied.
-
-\subsubsection*{Rotational and topological sector}
-
-Likewise, the ordered condensate carries conserved rotational currents,
-\begin{equation}
-  \label{eq:qs_noether_J}
-  \partial_C J^{C,AB} = 0,
-\end{equation}
-already developed in Appendix~\ref{app:noether_full}.
-In the coherent-topological sector these currents acquire an additional
-interpretive rôle: they organise how loop sectors, winding sectors, and
-defect sectors are embedded into the same ordered medium.
-
-\subsubsection*{Why conservation laws look different in QS}
-
-In the geometric branch the natural observables are stress-energy,
-source tensors, and large-scale response.
-In the Quantum Sector the natural observables are amplitudes, reduced
-phase variables, winding sectors, and coherent histories.
-The same underlying conserved structures are therefore seen through a
-different coarse-graining.
-
-\subsubsection*{Open point: topological currents}
-
-A fully explicit development of topological Noether currents in the
-coherent branch has not yet been completed.
-The deferred Noether material~(Section~\ref{sec:noether}) flagged this
-as a shared MP/QS target.
-The coherent branch clearly suggests a conserved topological
-organisation, but its final current algebra remains open.
-
-\paragraph{Summary.}
-Conservation laws are not missing from the Quantum Sector; they are
-inherited from the same variational foundation as ECT basics and MP.
-Their specifically coherent-topological interpretation is still only
-partially developed.
+In ECT, indefinite causal order is the direct manifestation of the
+pre-Lorentzian two-sided Euclidean dependence in a quantum-coherent
+setting.
+These experiments confirm the structural prediction that causal order
+is emergent rather than fundamental.
+The criterion $\Gamma_{\rm loop}\lesssim1$ as the quantum--classical
+boundary is a quantitative ECT prediction for the degradation of
+indefinite-order resources under environmental noise.
 
 % ============================================================
 \subsection{Quantum statistics: exchange sectors and spinorial compatibility}
@@ -20801,6 +20864,25 @@ point toward the standard bosonic/fermionic classification, but the
 full spin-statistics theorem remains open~(OP-Q11).
 
 % ============================================================
+
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\caption{Quantum statistics in ECT vs standard frameworks.}
+\label{tab:statistics_comparison}
+\begin{tabular}{@{}p{3.2cm}p{4.0cm}p{5.0cm}@{}}
+\hline
+Aspect & Standard QM/QFT & ECT \\
+\hline
+Route to antisymmetry & Axiom & Sign structure \emph{associated with} spinorial reps.\ of the ordered sector (Level~B; not a full PLZ theorem) \\
+Basis & $\{\hat a,\hat a^\dagger\}=1$ postulated & Topology + spinorial sign \\
+Pauli principle & Exact axiom & Structural (quadratic regime) \\
+Full PLZ theorem & Yes & Open \\
+Beyond-quadratic & N/A & Speculative, not predicted \\
+\hline
+\end{tabular}
+\end{table}
+
 \subsection{Representation-theoretic route to Dirac structure}
 \label{sec:qs_dirac}
 % ============================================================
@@ -20912,6 +20994,12 @@ $S_0=\hbar$~(OP-Q2, OP-Q11).
 \end{itemize}
 
 % ============================================================
+
+% ==============================================================
+\section{Quantum Vacuum Structure and Universal Response of the Ordered Condensate}
+\label{sec:qs_vacuum_response}
+% ==============================================================
+
 \subsection{Quantum vacuum structure of the ordered condensate}
 \label{sec:qs_vacuum_intro}
 % backward-compatibility alias:
@@ -20983,174 +21071,6 @@ The vacuum in ECT is the ordered condensate itself, seen through the
 coherent branch.
 This provides the natural setting for Casimir-like effects,
 particle-production phenomena, and Unruh-type vacuum response.
-
-% ============================================================
-\subsection{Boundary sensitivity of the ordered vacuum and the Casimir effect}
-\label{sec:qs_casimir}
-% backward-compatibility alias:
-\label{sec:casimir}
-% ============================================================
-
-\textit{Status: Level~B.
-ECT naturally predicts that the ordered coherent vacuum should be
-sensitive to boundary conditions.
-A full quantitative Casimir calculation from the completed coherent
-EFT remains to be carried out.}
-
-\medskip
-A nontrivial ordered vacuum should respond to boundaries.
-This is the essential conceptual content of the Casimir effect in ECT:
-placing boundaries modifies the allowed coherent fluctuation spectrum
-of the ordered condensate and therefore changes the vacuum energy.
-
-\subsubsection*{Why a Casimir-type effect is expected}
-
-If the ordered vacuum supports coherent fluctuation modes, then
-imposing boundary conditions changes the allowed mode spectrum.
-Schematically,
-\begin{equation}
-  \label{eq:qs_casimir_modes}
-  E_{\rm vac}^{\rm(boundary)}
-  \neq
-  E_{\rm vac}^{\rm(free)}.
-\end{equation}
-The resulting energy difference induces an observable force between
-boundaries.
-This is not an extra hypothesis; it is the generic consequence of
-having a nontrivial ordered vacuum with mode structure.
-
-\subsubsection*{ECT interpretation}
-
-In ordinary QFT the Casimir force is often phrased as a consequence of
-zero-point mode subtraction.
-In ECT the interpretation is more direct: the effect reflects the
-response of the ordered coherent vacuum to a change in admissible
-boundary-compatible fluctuation sectors.
-The language of ``zero-point'' energy is replaced by the language of
-boundary-constrained coherent vacuum stiffness.
-
-\subsubsection*{Status and future derivation}
-
-ECT supports the \emph{structural existence} of a Casimir-type
-phenomenon.
-What is not yet completed is the explicit calculation of the force
-coefficient for realistic geometries from the final reduced coherent
-action~(OP-Q12).
-
-\paragraph{Summary.}
-The Casimir effect fits naturally into ECT as a boundary-sensitivity
-phenomenon of the ordered vacuum.
-Its quantitative derivation remains part of the future
-coherent-vacuum programme.
-
-% ============================================================
-\subsection{Cosmological particle production and time-dependent ordered backgrounds}
-\label{sec:qs_particle_production}
-% ============================================================
-
-\textit{Status: Level~B.
-ECT is structurally compatible with cosmological particle production
-in time-dependent ordered backgrounds.
-A completed first-principles derivation of all production rates from
-the coherent EFT is not yet available.}
-
-\medskip
-If the ordered condensate background changes in time, the notion of
-``particle'' defined relative to one coherent vacuum slicing need not
-coincide with that defined relative to another.
-This is the natural setting for cosmological particle production in ECT,
-complementary to the macroscopic phase-transition discussion
-of Section~\ref{sec:mp_cosmo}.
-
-\subsubsection*{Time-dependent ordered branch}
-
-In a nonstationary background, the effective coherent vacuum is itself
-time-dependent.
-Mode decomposition at early and late times therefore differs.
-Schematically, the early-time and late-time mode operators are related
-by a Bogoliubov transformation,
-\begin{equation}
-  \label{eq:qs_bogoliubov}
-  a_k^{\rm(out)}
-  =
-  \alpha_k\,a_k^{\rm(in)}
-  +
-  \beta_k\,a_{-k}^{\rm(in)\dagger},
-\end{equation}
-with $|\beta_k|^2$ measuring the produced excitation density.
-This structural form is Level~B: the actual $\alpha_k$, $\beta_k$
-coefficients require the completed time-dependent coherent-vacuum
-calculation.
-
-\subsubsection*{ECT interpretation}
-
-Particle production here is not ``creation from nothing''.
-It is a reorganisation of excitation content relative to a changing
-ordered background.
-In that sense, cosmological particle production is another
-manifestation of the dynamical vacuum nature of the ECT condensate.
-
-\subsubsection*{Relation to MP cosmology}
-
-Macroscopic Physics describes the large-scale evolution of the ordered
-branch (Section~\ref{sec:mp_cosmo}).
-The present QS subsection gives the coherent-vacuum interpretation of
-how such time dependence can populate excitation sectors.
-The two descriptions are complementary: MP governs the background
-evolution; QS governs the excitation production against that background.
-
-\paragraph{Summary.}
-ECT naturally accommodates cosmological particle production whenever
-the ordered vacuum changes in time.
-Quantitative production rates remain Level~B/open~(OP-Q12).
-
-% ============================================================
-\subsection{Accelerated observers and the Unruh-type response}
-\label{sec:qs_unruh}
-% backward-compatibility alias:
-\label{sec:unruh}
-% ============================================================
-
-\textit{Status: Level~B.
-ECT is structurally compatible with an Unruh-type response of the
-ordered coherent vacuum to accelerated observers.
-A completed detector-response derivation from the reduced coherent
-action is still open.}
-
-\medskip
-If the ordered vacuum is genuinely physical, then observer-dependent
-mode decomposition should matter.
-An accelerated observer need not decompose the coherent vacuum into the
-same excitations as an inertial observer.
-This is the structural origin of an Unruh-type effect in ECT.
-
-\subsubsection*{Kinematic expectation}
-
-For uniform acceleration $a$, the standard QFT result gives
-\begin{equation}
-  \label{eq:qs_unruh_temp}
-  T_U
-  =
-  \frac{\hbar\,a}{2\pi\,c\,k_B}.
-\end{equation}
-This formula uses the observed $\hbar$; within ECT, $\hbar$ is to be
-understood as $S_0$ after the identification
-$S_0=\hbar$~\eqref{eq:qs_S0_identification}~(Level~B).
-The structural statement is that an accelerated detector coupled to the
-coherent branch should register a thermal-like response of the ordered
-vacuum.
-
-\subsubsection*{ECT status}
-
-The ordered-vacuum framework makes an Unruh-type effect natural and
-expected.
-What is not yet in place is the explicit detector-response calculation
-from the completed ECT coherent EFT~(OP-Q12).
-
-\paragraph{Summary.}
-The Unruh effect is naturally compatible with ECT because the vacuum is
-an ordered coherent medium, not an empty background.
-Its fully explicit derivation remains Level~B/open.
 
 % ============================================================
 \subsection{Unified response logic and analogue-gravity continuity}
@@ -21278,6 +21198,378 @@ For a detailed discussion of the unified vacuum-response logic,
 see Appendix~\ref{app:qs_vacuum_response}.
 
 % ============================================================
+\subsection{Boundary sensitivity of the ordered vacuum and the Casimir effect}
+\label{sec:qs_casimir}
+% backward-compatibility alias:
+\label{sec:casimir}
+% ============================================================
+
+\textit{Status: Level~B.
+ECT naturally predicts that the ordered coherent vacuum should be
+sensitive to boundary conditions.
+A full quantitative Casimir calculation from the completed coherent
+EFT remains to be carried out.}
+
+\medskip
+A nontrivial ordered vacuum should respond to boundaries.
+This is the essential conceptual content of the Casimir effect in ECT:
+placing boundaries modifies the allowed coherent fluctuation spectrum
+of the ordered condensate and therefore changes the vacuum energy.
+
+\subsubsection*{Why a Casimir-type effect is expected}
+
+If the ordered vacuum supports coherent fluctuation modes, then
+imposing boundary conditions changes the allowed mode spectrum.
+Schematically,
+\begin{equation}
+  \label{eq:qs_casimir_modes}
+  E_{\rm vac}^{\rm(boundary)}
+  \neq
+  E_{\rm vac}^{\rm(free)}.
+\end{equation}
+The resulting energy difference induces an observable force between
+boundaries.
+This is not an extra hypothesis; it is the generic consequence of
+having a nontrivial ordered vacuum with mode structure.
+
+\subsubsection*{ECT interpretation}
+
+In ordinary QFT the Casimir force is often phrased as a consequence of
+zero-point mode subtraction.
+In ECT the interpretation is more direct: the effect reflects the
+response of the ordered coherent vacuum to a change in admissible
+boundary-compatible fluctuation sectors.
+The language of ``zero-point'' energy is replaced by the language of
+boundary-constrained coherent vacuum stiffness.
+
+\subsubsection*{Status and future derivation}
+
+ECT supports the \emph{structural existence} of a Casimir-type
+phenomenon.
+What is not yet completed is the explicit calculation of the force
+coefficient for realistic geometries from the final reduced coherent
+action~(OP-Q12).
+
+\paragraph{Summary.}
+The Casimir effect fits naturally into ECT as a boundary-sensitivity
+phenomenon of the ordered vacuum.
+Its quantitative derivation remains part of the future
+coherent-vacuum programme.
+
+% ============================================================
+\subsection{ECT Casimir effect: explicit formula}
+
+
+% -------------------------------------------------------------------------
+
+\textbf{Scope and applicability (read before the formula).}
+The calculation below is a \emph{conditional prediction}: it applies
+only to boundaries that effectively impose Dirichlet conditions on
+the ECT Goldstone sector.  Standard metallic laboratory plates do
+\emph{not} implement these boundary conditions---the $O(4)\to O(3)$
+Goldstone bosons carry no electric charge and couple to ordinary
+matter only gravitationally ($\sim u_0^{-2}$), so conducting plates
+are transparent to them.  The factor $3/2$ derived below is therefore
+\emph{not} a prediction for the standard laboratory Casimir effect
+between metal plates.  It is a prediction for boundaries that
+physically reflect the gapless condensate sector, such as
+superfluid interfaces, BEC domain walls, or $O(4)\to O(3)$
+phase-transition surfaces in the early Universe.  Whether any
+accessible laboratory system implements such boundary conditions is
+an open problem (OP18, Section~\ref{sec:open_problems}).
+
+\subsubsection{Derivation for condensate-reflecting boundaries}
+
+\textbf{Boundary condition assumption.}
+The derivation below applies exclusively to the idealised case of
+condensate-reflecting boundaries that impose Dirichlet conditions on
+the ECT Goldstone sector.  Standard metallic plates do not implement
+these conditions.  The factor $3/2$ is therefore a
+\emph{conditional} prediction, not a statement about the ordinary
+laboratory Casimir effect.
+
+For reference, the standard QED result for two photon polarisations
+between parallel plates separated by $a$ is
+\begin{equation}
+  \frac{F}{A}\bigg|_{\rm QED}
+  \;=\;
+  -\frac{\pi^2}{120}\,\frac{\hbar c}{a^4}\,.
+  \label{eq:casimir_qed}
+\end{equation}
+For boundaries that reflect the minimal ECT soft-orientation sector,
+the three components of the minimal orientation EFT with Dirichlet
+boundary conditions contribute independently~(Level~B, minimal EFT;
+see Appendix~\ref{app:goldstone_integrability}):
+\begin{equation}
+  \boxed{%
+  \frac{F}{A}\bigg|_{\rm ECT}
+  \;=\;
+  -\frac{3\pi^2}{240}\,\frac{\hbar c_*}{a^4}
+  \;=\;
+  -\frac{\pi^2}{80}\,\frac{\hbar c}{a^4}\,,
+  }
+  \label{eq:casimir_ect}
+\end{equation}
+which is $3/2$ of the QED result.  This follows from zeta-function
+regularisation~\cite{BirrellDavies1982} of three scalar field components
+of the minimal soft-orientation EFT:
+\begin{equation}
+  E_0^{\rm ren}(a) \;=\; -3\times\frac{\pi^2}{720}\,\frac{\hbar c_*\,A}{a^3}
+  \;\implies\;
+  \frac{F}{A} = -\frac{\partial E_0^{\rm ren}}{\partial a}\bigg/A\,.
+\end{equation}
+For ideal condensate-domain walls (e.g.\ near the $O(4)\to O(3)$ transition
+in the early Universe), Dirichlet conditions on the Goldstone modes are
+natural and the calculation is complete.
+
+\textbf{Summary statement.}
+The factor $3/2$ derived above is \emph{not} a correction to the standard
+electromagnetic Casimir experiment between metallic plates;
+it is a \emph{separate conditional prediction} for boundaries that
+physically couple to the ECT Goldstone sector.
+Existing metallic-plate Casimir data neither confirm nor rule out this
+prediction; purpose-designed condensate-reflecting boundaries are
+required to test it (OP18).
+
+\textbf{ECT conceptual note.}
+The Casimir energy computed here is one boundary-sensitive manifestation
+of the same condensate two-point correlator $N(\tau,\mathbf{x}-\mathbf{x}')$
+that also governs decoherence in the influence-functional sector and
+the thermal response in the Unruh construction
+(Section~\ref{sec:unified_correlator}).  In ECT these are not
+independent ingredients but different regimes of a single condensate
+two-point structure: boundary conditions (Casimir), detector trajectory
+(Unruh), and coarse-grained environment coupling (decoherence).
+
+% -------------------------------------------------------------------------
+
+% ============================================================
+\subsection{Accelerated observers and the Unruh-type response}
+\label{sec:qs_unruh}
+% backward-compatibility alias:
+\label{sec:unruh}
+% ============================================================
+
+\textit{Status: Level~B.
+ECT is structurally compatible with an Unruh-type response of the
+ordered coherent vacuum to accelerated observers.
+A completed detector-response derivation from the reduced coherent
+action is still open.}
+
+\medskip
+If the ordered vacuum is genuinely physical, then observer-dependent
+mode decomposition should matter.
+An accelerated observer need not decompose the coherent vacuum into the
+same excitations as an inertial observer.
+This is the structural origin of an Unruh-type effect in ECT.
+
+\subsubsection*{Kinematic expectation}
+
+For uniform acceleration $a$, the standard QFT result gives
+\begin{equation}
+  \label{eq:qs_unruh_temp}
+  T_U
+  =
+  \frac{\hbar\,a}{2\pi\,c\,k_B}.
+\end{equation}
+This formula uses the observed $\hbar$; within ECT, $\hbar$ is to be
+understood as $S_0$ after the identification
+$S_0=\hbar$~\eqref{eq:qs_S0_identification}~(Level~B).
+The structural statement is that an accelerated detector coupled to the
+coherent branch should register a thermal-like response of the ordered
+vacuum.
+
+\subsubsection*{ECT status}
+
+The ordered-vacuum framework makes an Unruh-type effect natural and
+expected.
+What is not yet in place is the explicit detector-response calculation
+from the completed ECT coherent EFT~(OP-Q12).
+
+\paragraph{Summary.}
+The Unruh effect is naturally compatible with ECT because the vacuum is
+an ordered coherent medium, not an empty background.
+Its fully explicit derivation remains Level~B/open.
+
+% ============================================================
+\subsection{Unruh effect from the Euclidean correlator}
+
+% -------------------------------------------------------------------------
+
+\subsubsection{Derivation}
+
+The Unruh effect \cite{Unruh1976,Fulling1973,Davies1975} states that a
+uniformly accelerated observer detects the Minkowski vacuum as a thermal
+bath at $T_U = \hbar a/(2\pi k_B c)$.  In ECT this follows automatically
+from the Euclidean correlator via analytic continuation.
+
+The Euclidean two-point function for a massless Goldstone boson is
+\cite{BirrellDavies1982}:
+\begin{equation}
+  G_E(X,X')
+  \;=\;
+  \frac{1}{4\pi^2\,|X-X'|^2}\,,
+  \qquad
+  |X-X'|^2 \;=\; (\boldsymbol{x}-\boldsymbol{x}')^2 + (w-w')^2\,.
+  \label{eq:green_euclidean}
+\end{equation}
+
+The analytic continuation $w\to -ic_*\,t - \varepsilon$ yields:
+\begin{equation}
+  G^+_M(x,x')
+  \;=\;
+  -\frac{1}{4\pi^2 c_*^2}
+  \cdot
+  \frac{1}{(t-t'-i\varepsilon)^2 - |\boldsymbol{x}-\boldsymbol{x}'|^2/c_*^2}\,,
+  \label{eq:wightman}
+\end{equation}
+the standard Wightman function, confirming consistency with the
+Osterwalder--Schrader theorem \cite{OsterwalderSchrader1973}.
+
+Along the Rindler trajectory with proper acceleration $a$,
+$G^+_M$ becomes periodic in imaginary proper time with period
+$\beta_U = 2\pi c_*/a$ --- a thermal distribution.
+The Unruh--DeWitt detector response gives a Planck spectrum with:
+\begin{equation}
+  \boxed{%
+    T_U \;=\; \frac{\hbar\,a}{2\pi c_*\,k_B}\,,
+  }
+  \label{eq:unruh_ect}
+\end{equation}
+reducing to the standard result at $c_*=c$.
+For an LHC proton with $a\simeq10^{23}$\,m\,s$^{-2}$:
+$T_U\approx4\times10^{-8}$\,K.
+
+\subsubsection{Physical interpretation}
+
+In the ECT interpretation, the Unruh effect is not a postulate but a
+consequence of the $O(4)$-invariance o
+
+% ============================================================
+\subsection{Cosmological particle production and time-dependent ordered backgrounds}
+\label{sec:qs_particle_production}
+% ============================================================
+
+\textit{Status: Level~B.
+ECT is structurally compatible with cosmological particle production
+in time-dependent ordered backgrounds.
+A completed first-principles derivation of all production rates from
+the coherent EFT is not yet available.}
+
+\medskip
+If the ordered condensate background changes in time, the notion of
+``particle'' defined relative to one coherent vacuum slicing need not
+coincide with that defined relative to another.
+This is the natural setting for cosmological particle production in ECT,
+complementary to the macroscopic phase-transition discussion
+of Section~\ref{sec:mp_cosmo}.
+
+\subsubsection*{Time-dependent ordered branch}
+
+In a nonstationary background, the effective coherent vacuum is itself
+time-dependent.
+Mode decomposition at early and late times therefore differs.
+Schematically, the early-time and late-time mode operators are related
+by a Bogoliubov transformation,
+\begin{equation}
+  \label{eq:qs_bogoliubov}
+  a_k^{\rm(out)}
+  =
+  \alpha_k\,a_k^{\rm(in)}
+  +
+  \beta_k\,a_{-k}^{\rm(in)\dagger},
+\end{equation}
+with $|\beta_k|^2$ measuring the produced excitation density.
+This structural form is Level~B: the actual $\alpha_k$, $\beta_k$
+coefficients require the completed time-dependent coherent-vacuum
+calculation.
+
+\subsubsection*{ECT interpretation}
+
+Particle production here is not ``creation from nothing''.
+It is a reorganisation of excitation content relative to a changing
+ordered background.
+In that sense, cosmological particle production is another
+manifestation of the dynamical vacuum nature of the ECT condensate.
+
+\subsubsection*{Relation to MP cosmology}
+
+Macroscopic Physics describes the large-scale evolution of the ordered
+branch (Section~\ref{sec:mp_cosmo}).
+The present QS subsection gives the coherent-vacuum interpretation of
+how such time dependence can populate excitation sectors.
+The two descriptions are complementary: MP governs the background
+evolution; QS governs the excitation production against that background.
+
+\paragraph{Summary.}
+ECT naturally accommodates cosmological particle production whenever
+the ordered vacuum changes in time.
+Quantitative production rates remain Level~B/open~(OP-Q12).
+
+% ============================================================
+\subsection{ECT vacuum predictions: unified Casimir, Unruh, and particle production}
+\label{sec:vacuum_summary_tables}
+
+\begin{table}[H]
+\centering
+\caption{Quantum vacuum effects organized in ECT around the Euclidean condensate
+correlator $G_E=(4\pi^2|X-X'|^2)^{-1}$ (organizing proposition;
+each effect requires its own specification).
+Status: A = analytically derived within ECT; P = programmatic (requires
+boundary-condition or detector-coupling input; conditional prediction).
+The Casimir entry is conditional on boundaries acting on the minimal
+reduced soft-orientation EFT sector; it is \emph{not} a prediction
+for standard metallic-plate experiments, and it does not establish
+three independent physical Goldstone particles.}
+\label{tab:vacuum_predictions}
+\begin{tabular}{@{}lllcc@{}}
+\toprule
+Effect & ECT formula & ECT value & Std.\ result & Status \\
+\midrule
+Casimir (minimal 3-comp.\ soft-orientation EFT,\\cond.-reflecting boundaries) &
+$-\dfrac{3\pi^2\hbar c_*}{240 a^4}$ &
+$3/2\times(F/A)_{\rm QED}$ \emph{conditional} &
+$-\dfrac{\pi^2\hbar c}{120 a^4}$ & P \\
+Unruh temperature &
+$\dfrac{\hbar a}{2\pi c_* k_B}$ &
+$4\times10^{-8}$\,K at LHC &
+$\dfrac{\hbar a}{2\pi c k_B}$ & A \\[8pt]
+Decoherence rate (ohmic) &
+$\Gamma_{\rm dist}\sim N_{\rm eff}\gamma(\Delta q/\ell)^2$ &
+Matches Caldeira--Leggett & Standard CL & A \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+% -------------------------------------------------------------------------
+
+Parker \cite{Parker1969} showed that time-varying spacetime geometry produces
+particle pairs from the vacuum.  In ECT, the $O(4)\to O(3)$ phase transition
+is a non-adiabatic event: the ordered Lorentzian branch becomes established on the Planck time scale
+$\tau_{\rm PT}\sim\ell_{\rm Pl}/c$~(Level~B; explicit transition dynamics, OP3).
+
+The Goldstone mode $\pi^i_{\boldsymbol{k}}$ satisfies the mode equation
+\cite{Parker1969,BirrellDavies1982}:
+\begin{equation}
+  \ddot{v}_k + \Omega_k^2(t)\,v_k \;=\; 0\,,
+  \qquad
+  \Omega_k^2(t) \;=\; c_*^2(t)\,k^2 + m_{\rm eff}^2(t)\,,
+  \label{eq:mode_equation}
+\end{equation}
+where $m_{\rm eff}^2(t) = \lambda[\phi_0^2 - |\Phi(t)|^2]$
+and $\phi_0 = \sqrt{\mu^2/\lambda}$ is the equilibrium VEV.
+
+The expected particle number per mode is
+$\mathcal{N}_k = |\beta_k|^2$,
+where $\beta_k$ are Bogoliubov coefficients \cite{BirrellDavies1982}.
+An ECT-native computation of $n_s$ and $r$ from the condensate
+fluctuation spectrum during the ordering transition remains
+open~(OP3, \S\ref{sec:mp_primordial}).
+\label{eq:ns_cosm}
+
+% -------------------------------------------------------------------------
 \subsection{Summary of coherent-vacuum predictions}
 \label{sec:qs_vacuum_summary}
 % ============================================================
@@ -21369,6 +21661,12 @@ particle-production phenomena, and accelerated-vacuum response, while
 keeping all quantitative overclaims under control.
 
 % ============================================================
+
+% ==============================================================
+\section{Open Quantum Systems, Decoherence, and Irreversibility}
+\label{sec:qs_open_systems}
+% ==============================================================
+
 \subsection{Influence functional, decoherence, and the arrow of time}
 \label{sec:qs_decoherence}\label{sec:influence_functional}\label{sec:second_law}
 % ============================================================
@@ -21980,93 +22278,6 @@ sub-Planck-separation corrections are currently unobservable.
 
 
 % ============================================================
-\subsection{ECT Casimir effect: explicit formula}
-
-
-% -------------------------------------------------------------------------
-
-\textbf{Scope and applicability (read before the formula).}
-The calculation below is a \emph{conditional prediction}: it applies
-only to boundaries that effectively impose Dirichlet conditions on
-the ECT Goldstone sector.  Standard metallic laboratory plates do
-\emph{not} implement these boundary conditions---the $O(4)\to O(3)$
-Goldstone bosons carry no electric charge and couple to ordinary
-matter only gravitationally ($\sim u_0^{-2}$), so conducting plates
-are transparent to them.  The factor $3/2$ derived below is therefore
-\emph{not} a prediction for the standard laboratory Casimir effect
-between metal plates.  It is a prediction for boundaries that
-physically reflect the gapless condensate sector, such as
-superfluid interfaces, BEC domain walls, or $O(4)\to O(3)$
-phase-transition surfaces in the early Universe.  Whether any
-accessible laboratory system implements such boundary conditions is
-an open problem (OP18, Section~\ref{sec:open_problems}).
-
-\subsubsection{Derivation for condensate-reflecting boundaries}
-
-\textbf{Boundary condition assumption.}
-The derivation below applies exclusively to the idealised case of
-condensate-reflecting boundaries that impose Dirichlet conditions on
-the ECT Goldstone sector.  Standard metallic plates do not implement
-these conditions.  The factor $3/2$ is therefore a
-\emph{conditional} prediction, not a statement about the ordinary
-laboratory Casimir effect.
-
-For reference, the standard QED result for two photon polarisations
-between parallel plates separated by $a$ is
-\begin{equation}
-  \frac{F}{A}\bigg|_{\rm QED}
-  \;=\;
-  -\frac{\pi^2}{120}\,\frac{\hbar c}{a^4}\,.
-  \label{eq:casimir_qed}
-\end{equation}
-For boundaries that reflect the minimal ECT soft-orientation sector,
-the three components of the minimal orientation EFT with Dirichlet
-boundary conditions contribute independently~(Level~B, minimal EFT;
-see Appendix~\ref{app:goldstone_integrability}):
-\begin{equation}
-  \boxed{%
-  \frac{F}{A}\bigg|_{\rm ECT}
-  \;=\;
-  -\frac{3\pi^2}{240}\,\frac{\hbar c_*}{a^4}
-  \;=\;
-  -\frac{\pi^2}{80}\,\frac{\hbar c}{a^4}\,,
-  }
-  \label{eq:casimir_ect}
-\end{equation}
-which is $3/2$ of the QED result.  This follows from zeta-function
-regularisation~\cite{BirrellDavies1982} of three scalar field components
-of the minimal soft-orientation EFT:
-\begin{equation}
-  E_0^{\rm ren}(a) \;=\; -3\times\frac{\pi^2}{720}\,\frac{\hbar c_*\,A}{a^3}
-  \;\implies\;
-  \frac{F}{A} = -\frac{\partial E_0^{\rm ren}}{\partial a}\bigg/A\,.
-\end{equation}
-For ideal condensate-domain walls (e.g.\ near the $O(4)\to O(3)$ transition
-in the early Universe), Dirichlet conditions on the Goldstone modes are
-natural and the calculation is complete.
-
-\textbf{Summary statement.}
-The factor $3/2$ derived above is \emph{not} a correction to the standard
-electromagnetic Casimir experiment between metallic plates;
-it is a \emph{separate conditional prediction} for boundaries that
-physically couple to the ECT Goldstone sector.
-Existing metallic-plate Casimir data neither confirm nor rule out this
-prediction; purpose-designed condensate-reflecting boundaries are
-required to test it (OP18).
-
-\textbf{ECT conceptual note.}
-The Casimir energy computed here is one boundary-sensitive manifestation
-of the same condensate two-point correlator $N(\tau,\mathbf{x}-\mathbf{x}')$
-that also governs decoherence in the influence-functional sector and
-the thermal response in the Unruh construction
-(Section~\ref{sec:unified_correlator}).  In ECT these are not
-independent ingredients but different regimes of a single condensate
-two-point structure: boundary conditions (Casimir), detector trajectory
-(Unruh), and coarse-grained environment coupling (decoherence).
-
-% -------------------------------------------------------------------------
-
-% ============================================================
 \subsection{Crooks-type fluctuation relation and effective entropy production}
 \label{sec:crooks_ect}
 
@@ -22181,210 +22392,12 @@ extends to the full non-Markovian path integral remains open (OP24).
 
 
 % ============================================================
-\subsection{ECT vacuum predictions: unified Casimir, Unruh, and particle production}
-\label{sec:vacuum_summary_tables}
 
-\begin{table}[H]
-\centering
-\caption{Quantum vacuum effects organized in ECT around the Euclidean condensate
-correlator $G_E=(4\pi^2|X-X'|^2)^{-1}$ (organizing proposition;
-each effect requires its own specification).
-Status: A = analytically derived within ECT; P = programmatic (requires
-boundary-condition or detector-coupling input; conditional prediction).
-The Casimir entry is conditional on boundaries acting on the minimal
-reduced soft-orientation EFT sector; it is \emph{not} a prediction
-for standard metallic-plate experiments, and it does not establish
-three independent physical Goldstone particles.}
-\label{tab:vacuum_predictions}
-\begin{tabular}{@{}lllcc@{}}
-\toprule
-Effect & ECT formula & ECT value & Std.\ result & Status \\
-\midrule
-Casimir (minimal 3-comp.\ soft-orientation EFT,\\cond.-reflecting boundaries) &
-$-\dfrac{3\pi^2\hbar c_*}{240 a^4}$ &
-$3/2\times(F/A)_{\rm QED}$ \emph{conditional} &
-$-\dfrac{\pi^2\hbar c}{120 a^4}$ & P \\
-Unruh temperature &
-$\dfrac{\hbar a}{2\pi c_* k_B}$ &
-$4\times10^{-8}$\,K at LHC &
-$\dfrac{\hbar a}{2\pi c k_B}$ & A \\[8pt]
-Decoherence rate (ohmic) &
-$\Gamma_{\rm dist}\sim N_{\rm eff}\gamma(\Delta q/\ell)^2$ &
-Matches Caldeira--Leggett & Standard CL & A \\
-\bottomrule
-\end{tabular}
-\end{table}
+% ==============================================================
+\section{Quantum--Classical Boundary, Probability, Born Rule, and Measurement Status}
+\label{sec:qs_measurement}
+% ==============================================================
 
-
-
-% -------------------------------------------------------------------------
-
-Parker \cite{Parker1969} showed that time-varying spacetime geometry produces
-particle pairs from the vacuum.  In ECT, the $O(4)\to O(3)$ phase transition
-is a non-adiabatic event: the ordered Lorentzian branch becomes established on the Planck time scale
-$\tau_{\rm PT}\sim\ell_{\rm Pl}/c$~(Level~B; explicit transition dynamics, OP3).
-
-The Goldstone mode $\pi^i_{\boldsymbol{k}}$ satisfies the mode equation
-\cite{Parker1969,BirrellDavies1982}:
-\begin{equation}
-  \ddot{v}_k + \Omega_k^2(t)\,v_k \;=\; 0\,,
-  \qquad
-  \Omega_k^2(t) \;=\; c_*^2(t)\,k^2 + m_{\rm eff}^2(t)\,,
-  \label{eq:mode_equation}
-\end{equation}
-where $m_{\rm eff}^2(t) = \lambda[\phi_0^2 - |\Phi(t)|^2]$
-and $\phi_0 = \sqrt{\mu^2/\lambda}$ is the equilibrium VEV.
-
-The expected particle number per mode is
-$\mathcal{N}_k = |\beta_k|^2$,
-where $\beta_k$ are Bogoliubov coefficients \cite{BirrellDavies1982}.
-An ECT-native computation of $n_s$ and $r$ from the condensate
-fluctuation spectrum during the ordering transition remains
-open~(OP3, \S\ref{sec:mp_primordial}).
-\label{eq:ns_cosm}
-
-% -------------------------------------------------------------------------
-\subsection{Unruh effect from the Euclidean correlator}
-
-% -------------------------------------------------------------------------
-
-\subsubsection{Derivation}
-
-The Unruh effect \cite{Unruh1976,Fulling1973,Davies1975} states that a
-uniformly accelerated observer detects the Minkowski vacuum as a thermal
-bath at $T_U = \hbar a/(2\pi k_B c)$.  In ECT this follows automatically
-from the Euclidean correlator via analytic continuation.
-
-The Euclidean two-point function for a massless Goldstone boson is
-\cite{BirrellDavies1982}:
-\begin{equation}
-  G_E(X,X')
-  \;=\;
-  \frac{1}{4\pi^2\,|X-X'|^2}\,,
-  \qquad
-  |X-X'|^2 \;=\; (\boldsymbol{x}-\boldsymbol{x}')^2 + (w-w')^2\,.
-  \label{eq:green_euclidean}
-\end{equation}
-
-The analytic continuation $w\to -ic_*\,t - \varepsilon$ yields:
-\begin{equation}
-  G^+_M(x,x')
-  \;=\;
-  -\frac{1}{4\pi^2 c_*^2}
-  \cdot
-  \frac{1}{(t-t'-i\varepsilon)^2 - |\boldsymbol{x}-\boldsymbol{x}'|^2/c_*^2}\,,
-  \label{eq:wightman}
-\end{equation}
-the standard Wightman function, confirming consistency with the
-Osterwalder--Schrader theorem \cite{OsterwalderSchrader1973}.
-
-Along the Rindler trajectory with proper acceleration $a$,
-$G^+_M$ becomes periodic in imaginary proper time with period
-$\beta_U = 2\pi c_*/a$ --- a thermal distribution.
-The Unruh--DeWitt detector response gives a Planck spectrum with:
-\begin{equation}
-  \boxed{%
-    T_U \;=\; \frac{\hbar\,a}{2\pi c_*\,k_B}\,,
-  }
-  \label{eq:unruh_ect}
-\end{equation}
-reducing to the standard result at $c_*=c$.
-For an LHC proton with $a\simeq10^{23}$\,m\,s$^{-2}$:
-$T_U\approx4\times10^{-8}$\,K.
-
-\subsubsection{Physical interpretation}
-
-In the ECT interpretation, the Unruh effect is not a postulate but a
-consequence of the $O(4)$-invariance o
-
-% ============================================================
-\subsection{Topological loop quantisation: analogies table}
-\label{sec:loops_analogy_section}
-
-\begin{table}[h]
-\centering
-\caption{Topological loop quantisation in different physical systems.
-All share the homotopy group $\pi_1(S^1)=\mathbb{Z}$.}
-\label{tab:loops_analogy}
-\begin{tabular}{llll}
-\hline\hline
-System & Object & Topological origin & Quantum \\
-\hline
-Superfluid $^4$He~\cite{Donnelly1991} & Quantised vortex & $\pi_1(S^1)=\mathbb{Z}$ & $\kappa=h/m$ \\
-Type-II superconductor & Flux quantum & $\pi_1(S^1)=\mathbb{Z}$ & $\Phi_0=h/2e$ \\
-Early QM (de Broglie) & Bohr--Sommerfeld orbit & $\pi_1(S^1)=\mathbb{Z}$ & $\oint p\,dq=n\hbar$ \\
-ECT condensate & Condensate loop & $\pi_1(S^1)=\mathbb{Z}$ & $S_{\min}=2\pi\hbar$ \\
-\hline\hline
-\end{tabular}
-\end{table}
-
-
-\begin{longtable}{@{}p{2.5cm}p{3.2cm}p{3.2cm}p{4.2cm}@{}}
-\caption{Comparison of Born-rule derivations.} \\
-\label{tab:born_comparison} \\[-6pt]
-\toprule
-Aspect & Deutsch (1999)~\cite{Deutsch1999} &
-  Wallace (2012)~\cite{Wallace2012} &
-  ECT (this work) \\
-\midrule
-\endfirsthead
-\toprule
-Aspect & Deutsch (1999)~\cite{Deutsch1999} &
-  Wallace (2012)~\cite{Wallace2012} &
-  ECT (this work) \\
-\midrule
-\endhead
-\midrule\multicolumn{3}{r}{\small\textit{(continued on next page)}}\\
-\endfoot
-\bottomrule
-\endlastfoot
-Framework
-  & MWI + decision theory
-  & MWI + decoherence
-  & Euclidean path integral \\
-Source of weights
-  & Rationality axioms
-  & Rationality + branch structure
-  & Decoherence structure from $e^{-\Gamma[q,q']}$; probability
-    assignment additionally requires Gleason-type conditions \\
-Decoherence
-  & Not used
-  & Postulated
-  & Derived from $S_E$ \\
-Extra assumptions
-  & Rationality
-  & Rationality + separability
-  & C2 ($N_{\rm eff}\gg1$), C3 \\
-Known limitations
-  & Circularity~\cite{Barker2000}
-  & Albert (2010) objection
-  & C1--C3 necessary but not sufficient; Gleason-type
-    conditions required; unique outcome selection open (OP23) \\
-\hline
-
-\end{longtable}
-
-
-\begin{table}[h!]
-\centering
-\renewcommand{\arraystretch}{1.3}
-\caption{Quantum statistics in ECT vs standard frameworks.}
-\label{tab:statistics_comparison}
-\begin{tabular}{@{}p{3.2cm}p{4.0cm}p{5.0cm}@{}}
-\hline
-Aspect & Standard QM/QFT & ECT \\
-\hline
-Route to antisymmetry & Axiom & Sign structure \emph{associated with} spinorial reps.\ of the ordered sector (Level~B; not a full PLZ theorem) \\
-Basis & $\{\hat a,\hat a^\dagger\}=1$ postulated & Topology + spinorial sign \\
-Pauli principle & Exact axiom & Structural (quadratic regime) \\
-Full PLZ theorem & Yes & Open \\
-Beyond-quadratic & N/A & Speculative, not predicted \\
-\hline
-\end{tabular}
-\end{table}
-
-
-% ============================================================
 \subsection{Quantum--classical boundary: reverse $O(3)\to O(4)$ transitions}
 \label{sec:quantum_classical_boundary}
 
@@ -22674,6 +22687,59 @@ coherent branch and examine the r\^ole of topological and defect
 sectors.
 
 % ============================================================
+
+\begin{longtable}{@{}p{2.5cm}p{3.2cm}p{3.2cm}p{4.2cm}@{}}
+\caption{Comparison of Born-rule derivations.} \\
+\label{tab:born_comparison} \\[-6pt]
+\toprule
+Aspect & Deutsch (1999)~\cite{Deutsch1999} &
+  Wallace (2012)~\cite{Wallace2012} &
+  ECT (this work) \\
+\midrule
+\endfirsthead
+\toprule
+Aspect & Deutsch (1999)~\cite{Deutsch1999} &
+  Wallace (2012)~\cite{Wallace2012} &
+  ECT (this work) \\
+\midrule
+\endhead
+\midrule\multicolumn{3}{r}{\small\textit{(continued on next page)}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Framework
+  & MWI + decision theory
+  & MWI + decoherence
+  & Euclidean path integral \\
+Source of weights
+  & Rationality axioms
+  & Rationality + branch structure
+  & Decoherence structure from $e^{-\Gamma[q,q']}$; probability
+    assignment additionally requires Gleason-type conditions \\
+Decoherence
+  & Not used
+  & Postulated
+  & Derived from $S_E$ \\
+Extra assumptions
+  & Rationality
+  & Rationality + separability
+  & C2 ($N_{\rm eff}\gg1$), C3 \\
+Known limitations
+  & Circularity~\cite{Barker2000}
+  & Albert (2010) objection
+  & C1--C3 necessary but not sufficient; Gleason-type
+    conditions required; unique outcome selection open (OP23) \\
+\hline
+
+\end{longtable}
+
+
+
+% ==============================================================
+\section{Topological Sectors, Defect Configurations, and the Dark Sector}
+\label{sec:qs_topo_dark}
+% ==============================================================
+
 \subsection{Topological sectors, defect configurations, and the dark sector}
 \label{sec:qs_defects}
 % backward-compatibility alias:
@@ -22910,6 +22976,12 @@ phenomenology is developed in MP; genuinely topological dark-sector
 ontology belongs to QS.
 
 % ============================================================
+
+% ==============================================================
+\section{Black-Hole Thermodynamics, Hawking Radiation, and the Information Problem}
+\label{sec:qs_bh}
+% ==============================================================
+
 \subsection{Black-hole thermodynamics, Hawking radiation,
 and the information problem}
 \label{sec:qs_black_holes}\label{sec:no_exact_thermality}
@@ -23457,6 +23529,12 @@ The structural resolution logic is already strong (Level~A);
 the full nonlinear strong-field completion remains open~(OP-Q13).
 
 % ============================================================
+
+% ==============================================================
+\section{Status Map, Open Problems, and Completion Status of Part~III}
+\label{sec:qs_status_map}
+% ==============================================================
+
 \subsection{Status table and open problems of the Quantum Sector}
 \label{sec:qs_status}
 % backward-compatibility alias:
