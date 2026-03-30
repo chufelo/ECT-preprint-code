@@ -19389,16 +19389,6 @@ Part~III is organised into eleven sections:
     (Section~\ref{sec:qs_status_map}): final assessment of Part~III.
 \end{enumerate}
 
-\paragraph{Relation to Part~II.}
-Part~II answered the question: \emph{how does the ordered condensate
-appear to a large-scale observer insensitive to coherent phase data?}
-Part~III asks the complementary question: \emph{what effective dynamics
-remains when that phase data is retained rather than averaged away?}
-These are not two different theories but two branches of the same
-ordered condensate, selected by two different classes of observables.
-The bridge between them is the branching structure established in
-Part~I (Section~\ref{sec:branching}).
-
 % ==============================================================
 \section{Scope, Inputs, and Logical Programme of the Quantum Sector}
 \label{sec:quantum}
@@ -19414,44 +19404,27 @@ coherent-topological branch}
 \textit{Connection to ECT basics:
 Sections~\ref{sec:branching}, \ref{sec:coh_branch},
 \ref{sec:hbar_status}.
-Status: conceptual bridge; the coherent branch, winding logic,
-and the pre-quantum action scale were prepared in ECT basics and
-are now developed further.
-Full quantum closure is not assumed at the outset and remains
-only partial or conditional in the present Part.}
+Status: entry point to the coherent-topological branch.
+ECT basics established the existence of a phase-sensitive coherent
+sector, winding classification within the smooth coherent EFT,
+and a distinguished pre-quantum action scale~$S_0$.
+What follows in Part~III is not assumed from the outset to be a
+complete derivation of quantum mechanics; rather, it is a staged
+programme in which some structures are obtained structurally,
+some only conditionally, and some remain open.}
 
 \medskip
-After ECT basics and Macroscopic Physics, the logical structure
-of ECT has separated into two effective branches from the same
-ordered phase.
-The first branch---developed in Macroscopic Physics
-(Section~\ref{sec:macroscopic})---describes those observables
-governed by the phase-insensitive, coarse-grained geometric
-response: long-wavelength metric fluctuations, gravitational
-stiffness, cosmological dynamics, and galactic phenomenology.
-In that branch the global phase of the effective order parameter
-is irrelevant to the observables of interest and can be averaged away.
-
-The second branch---developed here---treats the same ordered
-phase through observables that \emph{remain sensitive} to
-global phase structure, winding sectors, loop configurations,
-and coherent correlators.
-This is the coherent-topological branch of ECT, and its systematic
-development is the task of the Quantum Sector.
-
-\paragraph{Why a separate Quantum Sector is needed.}
-The geometric branch is sufficient whenever local phase information
-is washed out under coarse-graining.
-It is not sufficient for phenomena in which the global phase of
-the effective order parameter, the topology of loop sectors, and the
-coherent structure of amplitudes remain physically active.
-Those phenomena require a different effective description---one that
-retains global phase data rather than discarding it.
-The coherent-topological branch provides this description.
+This subsection does not repeat the general introduction to Part~III
+given above.
+Its more specific purpose is to identify the effective variables of
+the coherent-topological branch, to state the main derivation targets
+of the Quantum Sector, and to clarify which additional ingredients are
+required in order to approach the standard quantum-mechanical
+formalism.
 
 \paragraph{Primary variables of the coherent-topological branch.}
-In the coherent branch the ordered condensate is described by
-variables that retain global phase information.
+In the coherent branch the ordered phase is described by variables
+that retain global phase information.
 The primary objects are:
 \begin{itemize}
   \item the effective order parameter
@@ -19459,204 +19432,89 @@ The primary objects are:
       \Phi_{\rm eff} = \rho\,e^{i\theta}
       \label{eq:qs_order_parameter}
     \end{equation}
-  \item the phase variable $\theta$, which is \emph{not}
-    coarse-grained away;
+  \item the phase variable $\theta$, which is not coarse-grained away;
   \item the winding quantisation condition,
     \begin{equation}
       \oint_\gamma \partial_A\theta\,dX^A = 2\pi n,
       \qquad n\in\mathbb{Z}
       \label{eq:qs_winding}
     \end{equation}
-  \item the pre-quantum action scale $S_0$, introduced through
-    the minimal nontrivial loop action
+  \item the pre-quantum action scale $S_0$, introduced through the
+    minimal nontrivial loop action
     \begin{equation}
       S_{\rm loop,min} = 2\pi S_0
       \label{eq:qs_Sloop}
     \end{equation}
   \item coherent correlators and loop amplitudes of the ordered sector.
 \end{itemize}
-These objects were already structurally prepared in ECT basics:
-the coherent-topological branch was identified
-(Section~\ref{sec:coh_branch}), the pre-quantum scale $S_0$ was
-introduced (Section~\ref{sec:hbar_status}), and the existence
-of winding sectors was established within~BR1.
-None of them was fully developed dynamically; that development
-belongs to the present section.
-
-\paragraph{What ECT basics already established.}
-The following structural ingredients are available before
-entering the Quantum Sector:
-\begin{enumerate}[label=(\roman*)]
-  \item The ordered phase admits a genuine phase-sensitive sector,
-    distinct from the geometric branch~(Level~A within the
-    broken-phase EFT).
-  \item Topologically quantised winding sectors are structurally
-    admitted in the smooth coherent order parameter under BR1
-    (Level~A for the existence of winding classification within
-    the coherent-sector EFT).
-  \item A pre-quantum action scale $S_0$ is structurally
-    introduced by the loop quantisation condition~\eqref{eq:qs_Sloop}
-    (Level~A for the structural existence of the scale;
-    its explicit first-principles evaluation is deferred,
-    see Appendix~\ref{app:Sloop_calc}).
-  \item The variational/Noether foundation is common to both
-    branches, so the Quantum Sector is not an independent add-on
-    but a second effective development of the same condensate
-    theory (Level~A: follows from the shared P1--P3 action).
-\end{enumerate}
-
-\paragraph{What has not yet been established at this point.}
-ECT basics and Macroscopic Physics did \emph{not} yet prove:
-\begin{enumerate}[label=(\roman*)]
-  \item That $S_0 = \hbar$.
-    This is one of the first central tasks of the Quantum Sector:
-    it requires an explicit calculation and identification,
-    not merely the structural existence of $S_0$.
-  \item That the Euclidean coherent branch admits a full physical
-    Hilbert-space reconstruction with positive norm and global
-    unitarity beyond explicitly controlled subsectors.
-  \item That canonical commutation relations follow in their
-    standard form.
-  \item That the Born rule has been derived.
-  \item That decoherence, probability interpretation, and
-    measurement theory are complete.
-  \item That topological defect sectors (vortices, domain walls,
-    instantons) have been fully developed.
-\end{enumerate}
-All these belong to the present Part or to its explicitly
-listed open problems.
-
-\paragraph{Minimal quantum core versus open completion.}
-Part~III does not assume from the outset that full quantum mechanics
-has already been recovered.
-Its strict or near-strict core concerns the coherent phase degree of
-freedom, winding sectors, the emergence of a distinguished action
-scale, wave-type coherent evolution, and the architecture of
-decoherence and vacuum response.
-By contrast, full Born-rule closure, full interacting Hilbert-space
-reconstruction, and a complete measurement theory remain conditional
-or open.
+These structures were prepared in ECT basics but not yet developed into
+a full dynamical quantum programme.
+Part~III begins that development.
 
 \paragraph{Why the phase is not coarse-grained away here.}
-In Macroscopic Physics, local phase information was irrelevant
-because the observables under study were governed by the coarse-grained
-metric response and long-wavelength stiffness.
+In the geometric branch, local phase information was irrelevant because
+the observables under study were governed by the coarse-grained metric
+response and long-wavelength stiffness.
 In the coherent-topological branch the relevant observables are
-different: the global consistency of the phase, the existence of
-nontrivial loop sectors, and the quantisation of winding numbers
-carry direct physical content.
-Therefore the phase variable $\theta$ is not discarded under
-coarse-graining; it becomes one of the principal effective variables in any
-description intended to retain interference, loop-sector, and
-coherence-sensitive observables.
+different: global phase consistency, nontrivial loop sectors, and
+winding-sensitive amplitudes carry physical content.
+The phase field~$\theta$ is therefore retained not as an aesthetic
+choice but because interference-sensitive, loop-sensitive, and
+coherence-sensitive observables would be lost if it were averaged away.
 
 \paragraph{Physical meaning of the Quantum Sector.}
-The Quantum Sector should \emph{not} be understood as importing
-ordinary quantum mechanics into ECT from outside.
-Its role is precisely the opposite: to show how phase-sensitive and
-topological features of the ordered phase can \emph{provide a
-structural route to, motivate, constrain, or partially reconstruct}
-several of the structures that ordinary quantum theory usually
-takes as postulated.
-Both branches---geometric and coherent-topological---are consequences
-of the same working postulates P1--P5 and the derived coherent-sector
-rule~BR1; they differ only in which class of observables they target.
+The Quantum Sector should not be understood as importing ordinary
+quantum mechanics into ECT from outside.
+Its role is the opposite: to determine how far the ordered phase,
+once its coherent and topological data are retained, can generate,
+motivate, constrain, or partially reconstruct structures that standard
+quantum theory usually takes as postulated.
 
-A central task of Part~III is therefore not merely to recover
-wave-like evolution, but to determine under what additional conditions
-the Euclidean coherent branch supports a physical Hilbert-space
-interpretation with positive norm, positive spectrum, and unitary
-Lorentzian evolution.
-This bridge is addressed explicitly in
+A central issue is not merely the recovery of wave-like evolution, but
+the status of the bridge from Euclidean coherent dynamics to a physical
+Hilbert-space description with positive norm, positive spectrum, and
+unitary Lorentzian evolution.
+That bridge is examined in
 Section~\ref{sec:qs_hilbert_bridge}.
 
-\paragraph{Bridge from Macroscopic Physics.}
-Part~II answered the question:
-\emph{how does the ordered phase appear to a large-scale
-observer insensitive to coherent phase data?}
-Part~III asks the complementary question:
-\emph{what effective dynamics remains when that phase data is
-retained rather than averaged away?}
-These are not two different theories but two branches of the
-same condensate, selected by two different classes of
-observables.
-The bridge between them is the branching structure established
-in Part~I (Section~\ref{sec:branching}).
-
-\paragraph{Logical structure of Part~III.}
-Part~III is organised into ten main sections following this
-entry section:
-\begin{enumerate}[label=(\arabic*)]
-  \item \textbf{Coherent phase dynamics, loop sectors, and the
-    pre-quantum action scale}
-    (Section~\ref{sec:qs_phase_and_scale}):
-    the phase field $\theta$, winding classification, loop-sector
-    topology, and the distinguished action scale $S_0$.
-  \item \textbf{From Euclidean coherent dynamics to Lorentzian
-    wave kinematics}
-    (Section~\ref{sec:qs_wave_kinematics}):
-    Wick rotation, Hamilton--Jacobi / continuity decomposition,
-    Schr\"odinger-type recombination, extremal action, and
-    conservation laws.
-  \item \textbf{Hilbert-space structure, reflection positivity,
-    canonical algebra, and unitarity}
-    (Section~\ref{sec:qs_hilbert_bridge}):
-    the central bridge from the Euclidean coherent structure to
-    the quantum-mechanical formalism; Osterwalder--Schrader
-    programme; canonical commutators; uncertainty principle.
-  \item \textbf{Euclidean path-dependence, quantum nonclassicality,
-    statistics, and Dirac structure}
-    (Section~\ref{sec:qs_nonclassical}):
-    two-sided Euclidean propagation, interference, tunnelling,
-    indefinite causal order, exchange sectors, spinorial
-    representations, and the Dirac route.
-  \item \textbf{Quantum vacuum structure and universal response}
-    (Section~\ref{sec:qs_vacuum_response}):
-    the ordered vacuum as a structured medium; Casimir, Unruh,
-    and particle-production effects as manifestations of one
-    coherent-vacuum response.
-  \item \textbf{Open quantum systems, decoherence, and
-    irreversibility}
-    (Section~\ref{sec:qs_open_systems}):
-    influence functional, entropy production, Crooks-type relation,
-    and decoherence timescales.
-  \item \textbf{Quantum--classical boundary, probability, Born rule,
-    and measurement status}
-    (Section~\ref{sec:qs_measurement}):
-    reverse $O(3)\to O(4)$ transitions, conditional Born-type
-    interpretation via Gleason, and open problems of measurement.
-  \item \textbf{Topological sectors, defect configurations, and the
-    dark sector}
-    (Section~\ref{sec:qs_topo_dark}):
-    the wider state space beyond the smooth coherent branch;
-    dark-sector interpretation and its limits.
-  \item \textbf{Black-hole thermodynamics, Hawking radiation, and the
-    information problem}
-    (Section~\ref{sec:qs_bh}):
-    horizon thermality as a coherent-vacuum phenomenon; apparent
-    mixedness from reduced-state tracing; critical ordered-phase
-    shell closure.
-  \item \textbf{Status map, open problems, and completion status}
-    (Section~\ref{sec:qs_status_map}).
+\paragraph{Derivation targets of Part~III.}
+ECT basics and Macroscopic Physics did not yet establish:
+\begin{enumerate}[label=(\roman*)]
+  \item the physical identification $S_0=\hbar$;
+  \item a full Hilbert-space reconstruction of the interacting
+    coherent branch with positive norm and global unitarity;
+  \item the standard-form canonical commutation algebra as a completed
+    theorem of the theory rather than as a structural route;
+  \item a complete derivation of Born weights;
+  \item a complete theory of measurement;
+  \item the full dynamics and observational status of defect sectors;
+  \item a complete nonperturbative closure of the black-hole sector.
 \end{enumerate}
-A final consistency map is shown in
-Fig.~\ref{fig:qs_consistency};
-Figures~\ref{fig:qs_quantization_chain}, \ref{fig:qs_vacuum_unified},
-\ref{fig:qs_decoherence_regimes}, and~\ref{fig:qs_bh_shell}
-provide complementary schematic maps.
+These are the principal targets, conditional steps, and open problems
+of Part~III.
 
-\paragraph{Summary.}
-Part~III develops the coherent-topological branch of ECT from
-its structural preparation in Part~I into a staged quantum
-programme: first phase dynamics and the action scale, then wave
-kinematics, then the Hilbert-space / unitarity bridge, then
-nonclassicality, vacuum response, decoherence, measurement status,
-and finally defect sectors and black-hole applications.
+\paragraph{Roadmap.}
+The chapter proceeds from phase dynamics and the distinguished action
+scale~(\S\ref{sec:qs_phase_and_scale}) to wave kinematics
+(\S\ref{sec:qs_wave_kinematics}), then to the Hilbert-space /
+unitarity bridge (\S\ref{sec:qs_hilbert_bridge}), nonclassicality and
+statistics (\S\ref{sec:qs_nonclassical}), coherent-vacuum response
+(\S\ref{sec:qs_vacuum_response}), open-system decoherence
+(\S\ref{sec:qs_open_systems}), the quantum-classical boundary and
+measurement status (\S\ref{sec:qs_measurement}), wider topological and
+defect sectors (\S\ref{sec:qs_topo_dark}), and finally black-hole
+thermodynamics and the information problem (\S\ref{sec:qs_bh}), before
+the concluding status map in \S\ref{sec:qs_status_map}.
 
-Its purpose is not to overstate a completed derivation of all of
-quantum theory, but to identify as sharply as possible what follows
-structurally from the ordered condensate, what requires additional
-closure assumptions, and what remains open.
+\paragraph{Status at entry.}
+At the entry to Part~III, ECT has established the coherent branch,
+its phase-sensitive variables, winding classification, and the
+existence of a distinguished action scale~$S_0$ at the structural
+level.
+What remains is to determine how much of quantum kinematics,
+probability, irreversibility, and information flow can be derived from
+that ordered-phase framework without overclaiming closure where it has
+not yet been achieved.
 
 % ============================================================
 
