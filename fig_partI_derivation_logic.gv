@@ -1,0 +1,141 @@
+digraph PartI {
+  rankdir=TB;
+  fontname="Times-Roman";
+  node [fontname="Times-Roman", fontsize=10, shape=box, style="rounded,filled", margin="0.10,0.05"];
+  edge [fontname="Times-Roman", fontsize=8];
+  newrank=true;
+  splines=true;
+  nodesep=0.35;
+  ranksep=0.55;
+
+  // === POSTULATES (top row, special fill) ===
+  node [fillcolor="#909090", fontcolor=black];
+  P1 [label="P1\n4D Euclidean\n§2"];
+  P2 [label="P2\nO(4) action\n§2"];
+  P3 [label="P3\nCondensate Φ\n§2"];
+  P4 [label="P4\nGradient cond.\n§2"];
+  
+  // === PHENOMENOLOGICAL INPUTS (slightly different shade) ===
+  node [fillcolor="#c8c8c8"];
+  Ph2 [label="Ph2\nu₀ = M̄_Pl (obs.)\n§5.4"];
+  Ph1 [label="Ph1\nc* = c (structural)\nLevel B, §4.8"];
+
+  // === LEVEL A nodes (dark fill) ===
+  node [fillcolor="#b0b0b0"];
+  SSB [label="SSB\nO(4) → O(3)\nselects w\n§3"];
+  UC [label="Universality Corollary\none Φ → one K^AB → one cone\n§4.3"];
+  lorentz [label="Lorentzian metric\n§3.6"];
+  goldstone [label="3 Goldstone bosons\n(fuzzy DM candidates)\n§4"];
+  cstar [label="c* = √(β/(α−β))\nLight speed\n§5.3"];
+  KG [label="Klein–Gordon eq.\n§3.6"];
+  second_law [label="2nd law of\nthermodynamics\n§3.9"];
+
+  // === LEVEL B nodes (lighter fill) ===
+  node [fillcolor="#d9d9d9"];
+  hbar [label="ℏ = S_loop/(2π)\nPlanck constant\n§5.6"];
+  GE [label="Euclidean correlator\nG_E(X,X′)\n§5"];
+  GN [label="G_N = c*⁴/(8πM²_G)\nGrav. constant\n§5.4"];
+  gauge [label="Gauge fields\nU(1), SU(2)\n§7"];
+  unruh [label="Unruh effect\nT_U = ℏa/(2πc*k_B)\nQS"];
+  casimir [label="Casimir effect\n(F/A) = 3/2·(F/A)_QED\nQS"];
+  schrodinger [label="Schrödinger eq.\nQS"];
+  dirac [label="Dirac equation\n§9"];
+  BH [label="BH thermodynamics\nS = A/(4G_N)\nQS"];
+  einstein [label="Einstein equations\n(linearised)\n§6"];
+  lepto [label="Leptogenesis\nη_B ~ 9×10⁻¹⁰\n§7"];
+  fifth [label="5th force\nω₅ ~ 10⁻¹⁰ rad/s\n§7.6"];
+  uncert [label="Uncertainty\nprinciple\nQS"];
+  inflation [label="Inflation/part.prod.\nn_s = 0.967"];
+  DE [label="Dark energy\nw₀ > −1"];
+  rotcurves [label="Rotation curves\nG_eff(r), g†"];
+  jwst [label="JWST galaxies\n×2–3 enhancement"];
+  LIV [label="Planck-scale LIV\n|δc/c| < 10⁻¹⁵"];
+  
+  // === OPEN nodes (dashed) ===
+  node [fillcolor="white", style="rounded,dashed"];
+  SU3 [label="SU(3), m_n\n[OPEN]"];
+  threegen [label="3 generations\n[OPEN]"];
+
+  // === RANKS ===
+  {rank=same; P1; P2; P3; P4; Ph2; Ph1}
+  {rank=same; lorentz; goldstone; cstar}
+  {rank=same; hbar; GE; GN}
+  {rank=same; gauge; unruh; KG; schrodinger}
+  {rank=same; dirac; BH; casimir; einstein}
+  {rank=same; lepto; SU3; uncert; second_law; fifth; threegen}
+  {rank=same; inflation; DE; rotcurves; jwst; LIV}
+
+  // === EDGES ===
+  // Postulates → SSB
+  P1 -> SSB;
+  P2 -> SSB;
+  P3 -> SSB;
+  P4 -> SSB;
+
+  // SSB → Universality Corollary
+  SSB -> UC;
+
+  // UC → fundamental structures
+  UC -> lorentz;
+  UC -> goldstone;
+  UC -> cstar;
+
+  // Fundamental structures → constants
+  SSB -> GE;
+  UC -> hbar;
+  cstar -> GN;
+  Ph2 -> GN [style=dashed];
+  Ph1 -> cstar [style=dashed];
+
+  // Constants/metric → equations of motion
+  lorentz -> KG;
+  lorentz -> gauge;
+  GE -> unruh;
+  GE -> casimir;
+  hbar -> schrodinger;
+  cstar -> schrodinger;
+  KG -> schrodinger;
+
+  // Gauge + metric → Dirac, Einstein
+  gauge -> dirac;
+  lorentz -> einstein;
+  GN -> einstein;
+  GN -> BH;
+  
+  // Equations → phenomenology
+  dirac -> fifth;
+  dirac -> lepto;
+  gauge -> SU3 [style=dashed, color=gray50];
+  gauge -> threegen [style=dashed, color=gray50];
+  einstein -> second_law;
+  hbar -> uncert;
+
+  // Bottom-level phenomenology
+  einstein -> rotcurves;
+  einstein -> inflation;
+  einstein -> DE;
+  einstein -> jwst;
+  cstar -> LIV;
+  GN -> LIV;
+  lepto -> inflation;
+  fifth -> rotcurves;
+  
+  // Legend
+  subgraph cluster_legend {
+    label="Legend";
+    fontsize=9;
+    style=rounded;
+    color=gray70;
+    margin="8";
+    leg_p [label="Postulate (P1–P4)", fillcolor="#909090", style="rounded,filled", fontsize=8];
+    leg_ph [label="Phenomenological input", fillcolor="#c8c8c8", style="rounded,filled", fontsize=8];
+    leg_a [label="Derived – Level A (strict)", fillcolor="#b0b0b0", style="rounded,filled", fontsize=8];
+    leg_b [label="Derived – Level B (+assump.)", fillcolor="#d9d9d9", style="rounded,filled", fontsize=8];
+    leg_o [label="Open problem", fillcolor="white", style="rounded,dashed", fontsize=8];
+    leg_p -> leg_ph [style=invis];
+    leg_ph -> leg_a [style=invis];
+    leg_a -> leg_b [style=invis];
+    leg_b -> leg_o [style=invis];
+    {rank=same; leg_p; leg_ph; leg_a; leg_b; leg_o}
+  }
+}
