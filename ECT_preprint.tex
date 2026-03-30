@@ -20430,9 +20430,10 @@ the OS programme:
   \item P1 gives the Euclidean 4-manifold $\mathcal{M}^4$;
   \item P2 gives the $O(4)$-invariant action $S_E[\Phi]$;
   \item P4+BR1 select the ordered broken phase with a distinguished
-    direction $n^A = \delta^A_w$, which defines the reflection plane
-    $\{w=0\}$ relative to which~\eqref{eq:qs_reflection_positivity}
-    is formulated;
+    direction $n^A = \delta^A_w$, which supplies a natural coordinate
+    adaptation for the later Lorentzian interpretation; the
+    reflection-positivity condition itself is imposed at the Euclidean
+    level, independently of SSB;
   \item the Wick rotation $w\to -ic_*t$~\eqref{eq:qs_wick}, already
     used to reconstruct the Lorentzian metric in ECT basics and
     Macroscopic Physics, is exactly the analytic continuation that
@@ -20442,20 +20443,25 @@ Thus the OS programme is not an external addition to ECT but a
 natural structural consequence of the theory's own Euclidean starting
 point and broken-phase ordering.
 
-\paragraph{Status in the quadratic sector~(Level~A).}
+\paragraph{Status in explicitly positive Gaussian subsectors.}
 For the free quadratic broken-phase action
 \begin{equation}
   \label{eq:qs_quadratic_action}
   S_E^{(2)} = \frac{1}{2}\int d^4X\;
   \bigl[(\partial_A\varphi)^2 + m^2\varphi^2\bigr],
 \end{equation}
-reflection positivity is a standard result: the Gaussian measure
+reflection positivity is a standard result for explicitly positive
+Gaussian Euclidean measures: the Gaussian measure
 $\exp(-S_E^{(2)}/S_0)\,\mathcal{D}\varphi$ satisfies
 condition~\eqref{eq:qs_reflection_positivity} for all
 $m^2>0$~\cite{GlimmJaffe1987}.
 The ECT broken-phase quadratic sector has $m_\sigma^2 = 2\mu^2 > 0$
-(Eq.~\eqref{eq:sigma_mass}), so reflection positivity
-holds at Level~A in the free quadratic regime.
+(Eq.~\eqref{eq:sigma_mass}), so the standard OS reconstruction
+applies to explicitly positive Gaussian subsectors of the broken
+phase.
+This provides a local model and structural bridge for the full
+Hilbert-space programme, but it is not yet a theorem for the complete
+coherent interacting sector.
 
 \paragraph{Status beyond the quadratic sector~(Level~B/open).}
 For the full interacting coherent-sector functional integral, the
@@ -20508,8 +20514,9 @@ rigorous bridge from a well-defined Euclidean functional integral to
 a well-defined Lorentzian quantum theory.
 
 \statussummary
-\textit{Established~(Level~A):}
-reflection positivity holds in the free quadratic broken-phase sector.
+\textit{Established:}
+standard OS reconstruction applies to explicitly positive Gaussian
+subsectors of the broken phase (structural bridge).
 \textit{Structural programme~(Level~B/open):}
 the full interacting coherent-sector verification is well-motivated
 and uses only ECT ingredients, but has not yet been completed
@@ -20536,20 +20543,22 @@ However, because the full nonperturbative verification is not yet
 in place, it is important to state the status of unitarity separately
 and at the appropriate level of precision.
 
-\paragraph{Global unitarity~(Level~A in quadratic sector).}
-In the free quadratic sector, the OS-reconstructed Hamiltonian is
-self-adjoint and bounded below, so the time-evolution operator
-$U(t)=e^{-i\hat H t/S_0}$ is unitary.
-This is Level~A: it follows from the standard OS theorem applied to
-the Gaussian broken-phase measure.
-At this level, the full coherent state space evolves unitarily and no
-information is fundamentally lost.
+\paragraph{Global unitarity in explicitly positive Gaussian subsectors.}
+For the reconstructed positive Gaussian subsectors of the broken phase,
+the OS-reconstructed Hamiltonian is self-adjoint and bounded below, so
+the time-evolution operator $U(t)=e^{-i\hat H t/S_0}$ is unitary.
+This follows from the standard OS theorem applied to the Gaussian
+broken-phase measure and is the strongest current unitarity result
+available within ECT.
+Extension to the full interacting coherent branch remains conditional
+on the completion of the OS programme~(OP-Q16).
 
-\paragraph{Global unitarity~(Level~B beyond quadratic sector).}
-Beyond the quadratic sector, global unitarity is a Level~B structural
-expectation: it is the natural consequence of the OS programme applied
-to the full interacting action, but its verification requires the
-completion of OP-Q16.
+\paragraph{Global unitarity beyond the Gaussian regime~(conditional/open).}
+Beyond the Gaussian subsectors, global unitarity is a conditional
+structural expectation: it is the natural consequence of the OS
+programme applied to the full interacting action, but its
+verification requires the completion of OP-Q16.
+It should not be presented as an independently established result.
 
 \paragraph{Two levels of unitarity in ECT.}
 It is essential to distinguish two levels:
@@ -20587,22 +20596,27 @@ description.
 \paragraph{Relation to P2.}
 Postulate~P2 requires that the Euclidean action $S_E[\Phi]$ is
 $O(4)$-invariant.
-This symmetry is the Euclidean precursor of Lorentzian unitarity:
-in the OS reconstruction, the $O(4)$ symmetry of the Euclidean
-correlators maps to the Poincar\'e covariance and unitarity of the
-reconstructed Lorentzian theory.
-Thus P2 is not merely a symmetry assumption; it is the structural
-root of unitarity in ECT.
+This symmetry is a necessary but not sufficient ingredient for
+Lorentzian unitarity: in the OS reconstruction, the $O(4)$ symmetry
+of the Euclidean correlators maps to the Poincar\'e covariance of
+the reconstructed Lorentzian theory, but unitarity additionally
+requires reflection positivity and the associated reconstruction
+conditions.
+P2 therefore provides the symmetry foundation from which unitarity
+can be reached, once the positivity programme~(OP-Q16) is completed.
 
 \statussummary
-\textit{Established~(Level~A):}
-global unitarity in the quadratic broken-phase sector.
-\textit{Structural expectation~(Level~B):}
-global unitarity for the full interacting coherent branch, conditional
-on the completion of the OS programme~(OP-Q16).
-\textit{Structural consequence:}
-reduced-sector non-unitarity is compatible with global unitarity and
-produces decoherence without fundamental information loss.
+\textit{Established:}
+global unitarity in reconstructed positive Gaussian subsectors
+(standard OS result).
+\textit{Conditional programme~(depends on OP-Q16):}
+global unitarity for the full interacting coherent branch; not yet
+independently established.
+\textit{Structural consequence~(Level~A at the conceptual level):}
+the distinction between global and reduced descriptions is
+well-defined; reduced-sector non-unitarity is compatible with global
+unitarity and produces decoherence without fundamental information
+loss, once global unitarity is granted.
 
 % ============================================================
 \subsection{Canonical structure and the status of commutation relations}
@@ -21258,6 +21272,19 @@ $S_0=\hbar$~(OP-Q2, OP-Q11).
 \label{sec:qs_vacuum_response}
 % ==============================================================
 
+\textit{Inputs: ordered coherent vacuum from P4+BR1;
+wave dynamics and action scale $S_0$ from Sections~\ref{sec:qs_phase_and_scale}--\ref{sec:qs_wave_kinematics};
+Wick rotation~\eqref{eq:qs_wick}.
+Aim: to show that the ordered coherent vacuum responds nontrivially
+to boundaries, acceleration, time dependence, and strong-field
+interfaces, unifying Casimir, Unruh, particle-production, and
+horizon-thermality phenomena as manifestations of one underlying
+structure.
+Status: Level~A for the structural claim that the vacuum is
+nontrivial; Level~B for all quantitative vacuum-response effects;
+explicit derivations remain conditional on the completed coherent EFT.}
+
+\medskip
 \subsection{Quantum vacuum structure of the ordered condensate}
 \label{sec:qs_vacuum_intro}
 % backward-compatibility alias:
@@ -21515,7 +21542,7 @@ Its quantitative derivation remains part of the future
 coherent-vacuum programme.
 
 % ============================================================
-\subsection{ECT Casimir effect: explicit formula}
+\subsubsection{Conditional toy estimate: explicit formula for condensate-reflecting boundaries}
 
 
 % -------------------------------------------------------------------------
@@ -21555,8 +21582,9 @@ between parallel plates separated by $a$ is
   \label{eq:casimir_qed}
 \end{equation}
 For boundaries that reflect the minimal ECT soft-orientation sector,
-the three components of the minimal orientation EFT with Dirichlet
-boundary conditions contribute independently~(Level~B, minimal EFT;
+within a provisional minimal multi-component soft-orientation
+EFT, the three components with Dirichlet boundary conditions
+contribute independently~(Level~B, minimal EFT;
 see Appendix~\ref{app:goldstone_integrability}):
 \begin{equation}
   \boxed{%
@@ -21578,13 +21606,17 @@ of the minimal soft-orientation EFT:
 \end{equation}
 For ideal condensate-domain walls (e.g.\ near the $O(4)\to O(3)$ transition
 in the early Universe), Dirichlet conditions on the Goldstone modes are
-natural and the calculation is complete.
+natural and the conditional estimate is self-consistent within the assumed EFT.
 
-\textbf{Summary statement.}
+\textbf{Summary statement and status caveat.}
 The factor $3/2$ derived above is \emph{not} a correction to the standard
 electromagnetic Casimir experiment between metallic plates;
-it is a \emph{separate conditional prediction} for boundaries that
-physically couple to the ECT Goldstone sector.
+it is a \emph{conditional toy estimate} within a provisional
+multi-component orientation EFT for boundaries that physically couple
+to the ECT Goldstone sector.
+This estimate is not part of the strict current core of ECT: it depends
+on a non-final closure of the soft-orientation sector and must not be
+interpreted as a current robust ECT prediction for any laboratory setup.
 Existing metallic-plate Casimir data neither confirm nor rule out this
 prediction; purpose-designed condensate-reflecting boundaries are
 required to test it (OP18).
@@ -21650,16 +21682,24 @@ an ordered coherent medium, not an empty background.
 Its fully explicit derivation remains Level~B/open.
 
 % ============================================================
-\subsection{Unruh effect from the Euclidean correlator}
+\subsubsection{Conditional correlator-based reconstruction of the Unruh response}
 
 % -------------------------------------------------------------------------
 
 \subsubsection{Derivation}
 
+The derivation below is a conditional reconstruction using the standard
+Euclidean correlator of a massless scalar mode, taken as a proxy for the
+completed soft coherent sector.
+It shows structural compatibility and continuity with the standard result,
+not yet a full first-principles ECT derivation from the completed
+coherent EFT.
+
 The Unruh effect \cite{Unruh1976,Fulling1973,Davies1975} states that a
 uniformly accelerated observer detects the Minkowski vacuum as a thermal
-bath at $T_U = \hbar a/(2\pi k_B c)$.  In ECT this follows automatically
-from the Euclidean correlator via analytic continuation.
+bath at $T_U = \hbar a/(2\pi k_B c)$.  In ECT this structural
+reconstruction proceeds from the Euclidean correlator via analytic
+continuation.
 
 The Euclidean two-point function for a massless Goldstone boson is
 \cite{BirrellDavies1982}:
@@ -21765,7 +21805,7 @@ the ordered vacuum changes in time.
 Quantitative production rates remain Level~B/open~(OP-Q12).
 
 % ============================================================
-\subsection{ECT vacuum predictions: unified Casimir, Unruh, and particle production}
+\subsubsection{Unified vacuum predictions table}
 \label{sec:vacuum_summary_tables}
 
 \begin{table}[H]
@@ -21828,7 +21868,7 @@ open~(OP3, \S\ref{sec:mp_primordial}).
 \label{eq:ns_cosm}
 
 % -------------------------------------------------------------------------
-\subsection{Summary of coherent-vacuum predictions}
+\subsection{Summary and status of coherent-vacuum response}
 \label{sec:qs_vacuum_summary}
 % ============================================================
 
@@ -21925,6 +21965,17 @@ keeping all quantitative overclaims under control.
 \label{sec:qs_open_systems}
 % ==============================================================
 
+\textit{Inputs: coherent amplitude structure from Sections~\ref{sec:qs_phase_and_scale}--\ref{sec:qs_hilbert_bridge};
+retarded kernel from Appendix~\ref{app:retarded_kernel};
+ordered vacuum from Section~\ref{sec:qs_vacuum_response}.
+Aim: to show how environment-induced decoherence, effective
+irreversibility, and a thermodynamic arrow of time emerge from the
+coherent branch without external thermodynamic postulates.
+Status: Level~A for the retarded kernel and spectral positivity in
+the quadratic sector; Level~B for the full entropy-production formula
+and the effective ohmic/Markov closure.}
+
+\medskip
 \subsection{Influence functional, decoherence, and the arrow of time}
 \label{sec:qs_decoherence}\label{sec:influence_functional}\label{sec:second_law}
 % ============================================================
@@ -22656,6 +22707,17 @@ extends to the full non-Markovian path integral remains open (OP24).
 \label{sec:qs_measurement}
 % ==============================================================
 
+\textit{Inputs: decoherence architecture from Section~\ref{sec:qs_open_systems};
+coherent amplitude structure from Sections~\ref{sec:qs_phase_and_scale}--\ref{sec:qs_hilbert_bridge};
+reverse $O(3)\to O(4)$ logic from the Euclidean path integral.
+Aim: to identify the quantum--classical boundary, explain why
+decoherence is not yet the Born rule, and state what ECT can and
+cannot currently establish about probability and measurement.
+Status: Level~B for the quantum--classical boundary criterion;
+Level~B (conditional uniqueness via Gleason) for the Born-type rule;
+full measurement theory remains open.}
+
+\medskip
 \subsection{Quantum--classical boundary: reverse $O(3)\to O(4)$ transitions}
 \label{sec:quantum_classical_boundary}
 
@@ -22998,6 +23060,18 @@ Known limitations
 \label{sec:qs_topo_dark}
 % ==============================================================
 
+\textit{Inputs: smooth coherent branch~BR1 and its boundary;
+defect-sector material deferred from ECT basics
+(Section~\ref{sec:defect_sectors});
+macroscopic dark-sector bridge from Section~\ref{sec:dark_sector}.
+Aim: to develop the wider state space beyond the smooth coherent branch,
+including vortex-like, wall-like, and instanton-like configurations,
+and to state their potential dark-sector relevance.
+Status: Level~A for the structural existence of the wider state space;
+Level~B for dynamic classification and dark-sector interpretation;
+quantitative dominant dark-matter identification remains open.}
+
+\medskip
 \subsection{Topological sectors, defect configurations, and the dark sector}
 \label{sec:qs_defects}
 % backward-compatibility alias:
@@ -23240,6 +23314,19 @@ ontology belongs to QS.
 \label{sec:qs_bh}
 % ==============================================================
 
+\textit{Inputs: coherent-vacuum response from Section~\ref{sec:qs_vacuum_response};
+global vs.\ reduced unitarity from Section~\ref{sec:qs_unitarity_status};
+decoherence architecture from Section~\ref{sec:qs_open_systems}.
+Aim: to reformulate black-hole thermodynamics within the ordered-condensate
+language, show how apparent thermal mixedness can arise without fundamental
+information loss, and identify the critical ordered-phase shell as the
+natural ECT mechanism.
+Status: Level~A for the negative result (fundamental information destruction
+incompatible with the ECT structure); Level~B for the critical-shell
+closure and all constructive horizon-thermodynamic results;
+full evaporation completion remains open.}
+
+\medskip
 \subsection{Black-hole thermodynamics, Hawking radiation,
 and the information problem}
 \label{sec:qs_black_holes}\label{sec:no_exact_thermality}
@@ -24096,24 +24183,26 @@ Analogue-gravity continuity of the coherent-vacuum interpretation
   & Level~B
   & Section~\ref{sec:qs_vacuum_unified};
     conceptual support, not standalone derivation \\
-Reflection positivity in quadratic broken-phase sector
-  & Level~A
+Reflection positivity in positive Gaussian subsectors
+  & Structural bridge
   & Section~\ref{sec:qs_reflection_positivity};
-    standard OS result for Gaussian measure with $m^2>0$ \\
+    standard OS result for explicitly positive Gaussian measures \\
 Reflection positivity for full interacting coherent sector
   & Open (OP-Q16)
   & Section~\ref{sec:qs_reflection_positivity};
     constructive QFT programme \\
-Global unitarity in quadratic sector
-  & Level~A
+Global unitarity in positive Gaussian subsectors
+  & Structural bridge
   & Section~\ref{sec:qs_unitarity_status};
-    OS reconstruction \\
-Global unitarity beyond quadratic sector
-  & Level~B
-  & Conditional on OP-Q16 \\
+    standard OS reconstruction \\
+Global unitarity beyond Gaussian regime
+  & Conditional/Open
+  & Depends on OP-Q16; not yet independently established \\
 Global vs.\ reduced unitarity distinction
-  & Level~A
-  & Structural consequence of coherent-branch architecture;
+  & Level~A conceptual framework
+  & Well-defined structural distinction;
+    full physical closure conditional on global reconstruction
+    programme~(OP-Q16);
     Section~\ref{sec:qs_unitarity_status} \\
 \end{longtable}
 }
@@ -24222,7 +24311,58 @@ individual subsections.}
     establishing global unitarity beyond the quadratic regime.
 \end{description}
 
-\paragraph{What has been achieved.}
+\subsection{Minimal quantum core already established by ECT}
+\label{sec:qs_minimal_core}
+
+The following structural results constitute the minimal quantum core
+that ECT has already established, independent of the open problems
+listed above.
+
+\paragraph{Strict or near-strict core.}
+\begin{enumerate}[label=(\roman*)]
+  \item Loop sectors with integer winding classification~(Level~A).
+  \item Distinguished action scale $S_0$ as a structural
+    pre-quantum scale~(Level~A for existence; Level~B for
+    identification with $\hbar$).
+  \item Wave-type effective dynamics via Hamilton--Jacobi / continuity
+    decomposition~(Level~A).
+  \item Canonical organisation candidate for the smooth coherent
+    branch~(Level~A for Poisson brackets; Level~B for quantum
+    commutators).
+  \item Reflection-positivity bridge to physical Hilbert space in
+    positive Gaussian subsectors~(structural bridge).
+  \item Environment-induced decoherence architecture from the
+    influence functional~(Level~B).
+  \item Vacuum-response logic unifying Casimir, Unruh, particle
+    production, and horizon thermality~(Level~B).
+  \item Lorentz algebra and Clifford structure from
+    $O(4)\to O(3)$ + Wick rotation~(Level~A).
+\end{enumerate}
+
+\paragraph{What remains conditional or open.}
+\begin{enumerate}[label=(\roman*)]
+  \item Full Hilbert-space/projector structure from bare
+    postulates~(OP-Q16).
+  \item Full Born rule as a first-principles theorem~(OP-Q7).
+  \item Full interacting OS closure and global unitarity~(OP-Q16).
+  \item Complete measurement theory~(OP-Q8).
+  \item Full spin-statistics theorem~(OP-Q11).
+  \item Nonperturbative black-hole evaporation closure~(OP-Q13).
+  \item Explicit reduced loop calculation for $S_0$~(OP-Q1).
+  \item Dominant dark-matter candidate identification~(OP-Q10).
+\end{enumerate}
+
+This distinction is essential.
+ECT does not yet claim to have derived all of standard quantum
+mechanics from its postulates.
+What it does claim is that the correct structural location for
+quantum kinematics has been identified inside the theory, and that
+a substantial fraction of the required architecture has been
+explicitly developed.
+
+\subsection{Completion status and bridge forward}
+\label{sec:qs_bridge_forward}
+
 Even with these open problems, the Quantum Sector has already gone far
 beyond a generic statement that ``quantum mechanics might emerge''.
 ECT now contains:
