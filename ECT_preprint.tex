@@ -256,6 +256,7 @@ $\xi_{\rm cond}$ & EFT correlation length: $\xi_{\rm cond}\sim m_\sigma^{-1}$; m
 \multicolumn{3}{@{}l}{\textit{Derived smooth coherent sector (BR1)}} \\[2pt]
 $\Phi_{\rm eff}=\rho e^{i\theta}$ & Effective order parameter of coherent IR sector & --- \\
 $\theta$ & Phase of $\Phi_{\rm eff}$; winding condition $\oint\partial_A\theta\,dX^A=2\pi n$ & rad \\
+$K_\theta^{\rm eff}$ & Effective phase stiffness of the coherent branch; expected dimensionally to scale as $\sim\phi_0^2$ up to EFT matching coefficients & GeV$^2$ \\
 $S_0$ & Pre-quantum action scale: $S_{\rm elem}=2\pi S_0$; elementary-loop action in the $U(1)$-extended coherent sector (BR1); matched to $\hbar$ at Level~B & $[\hbar]$ \\[4pt]
 \multicolumn{3}{@{}l}{\textit{Gravitational matching --- Macroscopic Physics (Level~B)}} \\[2pt]
 $\mathcal{C}_n$ & Orientation-stiffness coefficient: $\kappa_n=\mathcal{C}_n\,u_0^2$; $[\mathcal{C}_n]=\text{GeV}^{-2}$; not yet derived (OP-Planck) & GeV$^{-2}$ \\
@@ -19563,8 +19564,8 @@ effective variables of the coherent-topological branch and to show
 why their natural language is the language of phase dynamics.
 This is not yet ordinary quantum mechanics.
 Rather, it is the phase-sensitive effective description of the ordered
-condensate in the regime where coherent loop sectors remain
-physically relevant.
+condensate in the branch where coherent loop sectors are retained as part of
+the effective description.
 
 \paragraph{Phase as the natural variable of the coherent branch.}
 Once the ordered condensate is written as
@@ -19593,13 +19594,15 @@ The quadratic phase action in this regime takes the generic form
   S_\theta
   =
   \frac{K_\theta^{\rm eff}}{2}
-  \int d^4X\; g_{\rm eff}^{AB}(X)\,\partial_A\theta\,\partial_B\theta
+  \int d^4X\; K^{AB}(X)\,\partial_A\theta\,\partial_B\theta
   + S_{\rm higher},
 \end{equation}
-where $g_{\rm eff}^{AB}$ is the effective Lorentzian metric tensor of
-the broken phase---the same tensor that enters the geometric branch at
-macroscopic scales (Section~\ref{sec:lorentz_order_field})---and
-$S_{\rm higher}$ denotes higher-gradient and interaction corrections.
+where $K^{AB}(X)$ is the broken-phase Euclidean kinetic tensor of the
+ordered branch, inherited from the anisotropic EFT discussed in
+ECT basics, and $S_{\rm higher}$ denotes higher-gradient and
+interaction corrections.
+Its Lorentzian image arises only after the Wick rotation discussed in
+Section~\ref{sec:qs_wave}.
 
 Here $K_\theta^{\rm eff}$ denotes the \emph{effective phase stiffness}
 of the coherent branch.
@@ -19615,20 +19618,27 @@ integrated out consistently.
 That matching belongs to the coherent-sector EFT program and is
 left as an open problem pending the full loop-sector
 calculation~(Appendix~\ref{app:Sloop_calc}).
+Dimensional analysis in the simplest quartic realisation suggests
+$K_\theta^{\rm eff}\sim \phi_0^2$ up to EFT matching coefficients.
+The explicit reduction of $K_\theta^{\rm eff}$ to the primary
+broken-phase parameters is, however, not assumed here and remains part
+of the open coherent-sector EFT programme.
 Equation~\eqref{eq:qs_phase_action} should be understood as a
 Level~B effective closure, not yet the full microscopic derivation
 from bare~P3.
 
 \paragraph{Why this action is natural.}
 Equation~\eqref{eq:qs_phase_action} is the phase-sector analogue of
-the sigma-model and tensor EFT structures already used in ECT basics
-and Macroscopic Physics.
+the anisotropic EFT structures already used in ECT basics.
 Its role is to capture the lowest-order dynamics of smooth coherent
 configurations once the heavy radial structure has been integrated out
 and the phase is retained as a genuine dynamical degree of freedom.
-The phase action is not an extra postulate but the natural effective
-continuation of the broken ordered phase into its coherent-topological
-branch.
+At this stage the action is still written on the Euclidean broken-phase
+background; its Lorentzian wave-kinematical form emerges only after the
+Wick rotation discussed in Section~\ref{sec:qs_wave}.
+The phase action is therefore not an extra postulate but the natural
+effective continuation of the broken ordered phase into its
+coherent-topological branch.
 
 \paragraph{Winding sectors and topological classification.}
 The coherent branch is partitioned into sectors classified by winding
@@ -19638,13 +19648,21 @@ number (cf.~\eqref{eq:qs_winding}):
   n[\gamma] \;=\; \frac{1}{2\pi}
   \oint_\gamma \partial_A\theta\,dX^A \;\in\; \mathbb{Z}.
 \end{equation}
-This is a Level~A structural statement: it follows from the
-single-valuedness of $\Phi_{\rm eff}$ in the smooth coherent sector
-selected by BR1.
+This is a Level~A structural statement within the reduced
+compact-phase description of the smooth coherent sector selected
+by BR1.
+It should be stressed, however, that the vacuum manifold
+$O(4)/O(3)\simeq S^3$ has $\pi_1(S^3)=0$, so the winding
+classification does not follow from the topology of the coset space
+itself.
+Rather, it arises in the $U(1)$-extended compact-phase EFT of the
+coherent branch, where $\Phi_{\rm eff}=\rho e^{i\theta}$ is treated
+as the relevant low-energy order parameter
+(see Section~\ref{sec:hbar_status}).
 The trivial sector $n=0$ contains contractible smooth configurations;
 nontrivial sectors $n\neq0$ correspond to configurations with
-topologically nontrivial phase winding that cannot be eliminated by
-a smooth deformation.
+nontrivial phase winding that cannot be eliminated by a smooth
+deformation within the reduced compact-phase coherent EFT.
 
 \paragraph{Minimal loop action and the appearance of $S_0$.}
 The existence of nontrivial winding sectors immediately implies a
@@ -19660,6 +19678,11 @@ At this stage $S_0$ is \emph{not} yet identified with $\hbar$: what
 is established is only that the coherent branch carries a distinguished
 action scale~(Level~A for existence; Level~B for explicit value pending
 the loop-sector calculation).
+Under the later Level~B matching hypothesis that the characteristic
+elementary loop is core-sized, one expects this scale to be associated
+with microscopic circumferences of order the core length.
+Its possible relation to the observed value of $\hbar$ is analysed in
+Section~\ref{sec:qs_hbar}; it is not assumed at the present stage.
 
 \paragraph{Physical meaning of the loop sectors.}
 A nontrivial loop sector represents more than a winding number.
@@ -19669,7 +19692,10 @@ the smooth coherent branch.
 That is why loop sectors are the natural place where quantum-like
 notions of amplitude, interference between sectors, and action
 quantisation can first arise in ECT---not from operator axioms, but
-from the topology of the ordered condensate itself.
+from the compact phase structure of the ordered coherent branch.
+This logic is structurally analogous to circulation quantisation in
+superfluids and flux quantisation in superconductors
+(see Table~\ref{tab:loops_analogy}).
 
 \paragraph{Smooth coherent branch versus defect sectors.}
 The present discussion is restricted to the smooth coherent sector defined by BR1.
@@ -19705,16 +19731,7 @@ and~\ref{sec:qs_wave}.
 (vi)~the full wave-dynamical superposition rule between sectors;
 (vii)~the role of defect sectors~(Section~\ref{sec:qs_defects}).
 
-\paragraph{Summary.}
-The coherent-topological branch is naturally organised by phase
-dynamics.
-Its primary data are the phase field $\theta$, the winding
-condition~\eqref{eq:qs_winding_sector}, and the loop-sector
-classification of the ordered condensate.
-This gives ECT a distinguished coherent action scale and a topological
-organisation of physically admissible sectors.
-Whether this pre-quantum scale can be identified with the observed
-$\hbar$ is addressed next.
+
 
 % ============================================================
 \subsection{Pre-quantum action scale and the status of
