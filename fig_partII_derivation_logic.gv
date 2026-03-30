@@ -7,6 +7,7 @@ digraph PartII {
   nodesep=0.35;
   ranksep=0.50;
   newrank=true;
+  labeljust=c;
 
   // === LEVEL A ===
   node [fillcolor="#b8b8b8"];
@@ -21,7 +22,7 @@ digraph PartII {
   scalar_mode [label=<Single scalar<BR/>perturbation mode<BR/>§14.5>];
 
   // === LEVEL B ===
-  node [fillcolor="#e0e0e0"];
+  node [fillcolor="#ffffff"];
   bridge [label=<Bridge §12<BR/>Inherited inputs<BR/>(β &lt; α &lt; 4β, c*, u<SUB>0</SUB>, K<SUP>AB</SUP>)>];
   GN [label=<G<SUB>N</SUB> matching<BR/>G<SUB>N</SUB> = c*<SUP>4</SUP>/(8π M<SUB>G</SUB><SUP>2</SUP>)<BR/>§13.4>];
   closure [label=<Nonlinear φ-closure §13.5<BR/>GEE: G<SUB>eff</SUB>, Λ<SUB>eff</SUB>, Θ<SUB>μν</SUB>>];
@@ -81,6 +82,8 @@ digraph PartII {
   tests -> spacer1 [style=invis];
   open_fractions -> spacer1 [style=invis];
   open_phi_bvp -> spacer1 [style=invis];
+  btfr -> spacer1 [style=invis];
+  rar -> spacer1 [style=invis];
 
   node [shape=plaintext, style="", fillcolor=white];
   legend [label=<
@@ -88,7 +91,7 @@ digraph PartII {
       <TR><TD COLSPAN="7"><B>Legend</B></TD></TR>
       <TR>
         <TD BGCOLOR="#b8b8b8">Structural / Level A</TD>
-        <TD BGCOLOR="#e0e0e0">Closure-level / Level B</TD>
+        <TD BGCOLOR="#ffffff" BORDER="1">Closure-level / Level B</TD>
         <TD BORDER="1" STYLE="DASHED">Open problem</TD>
         <TD>——→ Strict derivation</TD>
         <TD>– – → Requires assumptions</TD>

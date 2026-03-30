@@ -7,6 +7,7 @@ digraph PartI {
   splines=true;
   nodesep=0.40;
   ranksep=0.55;
+  labeljust=c;
 
   // === POSTULATES ===
   node [fillcolor="#404040", fontcolor=white];
@@ -32,7 +33,7 @@ digraph PartI {
   topo_anti [label=<Topological anti-predictions<BR/>π<SUB>0</SUB> = π<SUB>1</SUB> = π<SUB>2</SUB> = 0<BR/>No walls / strings / monopoles<BR/>§8>];
 
   // === LEVEL B ===
-  node [fillcolor="#e0e0e0", fontcolor=black];
+  node [fillcolor="#ffffff", fontcolor=black];
   S0 [label=<Action scale identification<BR/>S<SUB>0</SUB> = ℏ<BR/>(from phase winding)<BR/>§5.6>];
   GE [label=<Euclidean correlator<BR/>G<SUB>E</SUB>(X, X′)<BR/>§5>];
   GN [label=<Grav. constant<BR/>G<SUB>N</SUB> = c*<SUP>4</SUP>/(8π M<SUB>G</SUB><SUP>2</SUP>)<BR/>§5.4>];
@@ -89,6 +90,8 @@ digraph PartI {
   seesaw -> spacer1 [style=invis];
   LIV -> spacer1 [style=invis];
   SU3 -> spacer1 [style=invis];
+  threegen -> spacer1 [style=invis];
+  fifth -> spacer1 [style=invis];
   spacer1 -> spacer2 [style=invis];
 
   // Legend as a single HTML table node at the very bottom
@@ -102,7 +105,7 @@ digraph PartI {
         <TD BGCOLOR="#404040"><FONT COLOR="white">Postulate (P1–P4)</FONT></TD>
         <TD BGCOLOR="#808080"><FONT COLOR="white">Phenom. input</FONT></TD>
         <TD BGCOLOR="#b8b8b8">Derived – Level A</TD>
-        <TD BGCOLOR="#e0e0e0">Derived – Level B</TD>
+        <TD BGCOLOR="#ffffff" BORDER="1">Derived – Level B</TD>
         <TD BORDER="1" STYLE="DASHED">Open problem</TD>
         <TD>——→ Strict derivation</TD>
         <TD>– – → Requires assumptions</TD>
