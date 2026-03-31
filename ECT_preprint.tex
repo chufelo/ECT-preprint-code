@@ -19547,6 +19547,24 @@ not yet been achieved.
 \label{sec:qs_phase_and_scale}
 % ==============================================================
 
+This section develops the first technical layer of the Quantum Sector.
+Its purpose is to identify the effective variable that survives in the
+smooth coherent branch, to show how nontrivial loop sectors arise in
+the reduced compact-phase description, and to explain why these sectors
+already imply a distinguished action scale before any full quantum
+closure has been established.
+
+The logic is staged.
+Section~\ref{sec:qs_phase_dynamics} introduces the phase variable,
+its reduced Euclidean action, and the winding-sector organisation of
+the coherent branch.
+Section~\ref{sec:qs_hbar} then clarifies the status of the resulting
+scale $S_0$: structurally present in ECT, but not yet automatically
+identical to the observed Planck constant $\hbar$.
+In this way, Section~\ref{sec:qs_phase_and_scale} provides the bridge
+from coherent loop structure to the later wave, canonical, and
+probability constructions of Part~III.
+
 \subsection{Coherent phase dynamics and loop sectors}
 \label{sec:qs_phase_dynamics}
 % ============================================================
@@ -19559,13 +19577,12 @@ Connection to ECT basics: BR1, Section~\ref{sec:hbar_status},
 Appendix~\ref{app:Sloop_calc}.}
 
 \medskip
-The first task of the Quantum Sector is to identify the correct
-effective variables of the coherent-topological branch and to show
-why their natural language is the language of phase dynamics.
+We begin with the phase-sensitive effective description of the smooth
+coherent branch.
 This is not yet ordinary quantum mechanics.
-Rather, it is the phase-sensitive effective description of the ordered
-condensate in the branch where coherent loop sectors are retained as part of
-the effective description.
+Rather, it is the reduced compact-phase EFT in which nontrivial loop
+sectors are retained and organised before the later wave-dynamical and
+canonical constructions are attempted.
 
 \paragraph{Phase as the natural variable of the coherent branch.}
 Once the ordered condensate is written as
@@ -19636,7 +19653,7 @@ background; its Lorentzian wave-kinematical form emerges only after the
 Wick rotation discussed in Section~\ref{sec:qs_wave}.
 The phase action is therefore not an extra postulate but the natural
 effective continuation of the broken ordered phase into its
-coherent-topological branch.
+coherent branch.
 
 \paragraph{Winding sectors and topological classification.}
 The coherent branch is partitioned into sectors classified by winding
@@ -19662,16 +19679,20 @@ nontrivial sectors $n\neq0$ correspond to configurations with
 nontrivial phase winding that cannot be eliminated by a smooth
 deformation within the reduced compact-phase coherent EFT.
 
-\paragraph{Minimal loop action and the appearance of $S_0$.}
-The existence of nontrivial winding sectors immediately implies a
-minimal nontrivial loop contribution to the action.
-The $n=1$ minimal loop carries action
+\paragraph{Elementary loop action and the appearance of $S_0$.}
+The existence of nontrivial winding sectors implies a distinguished
+elementary nontrivial loop contribution to the action once the
+characteristic loop closure is specified.
+The $n=1$ elementary loop carries action
 \begin{equation}
   \label{eq:qs_loop_min}
   S_{\rm loop,min} = 2\pi S_0,
 \end{equation}
 where the pre-quantum action scale $S_0$ depends on the coherent-sector
 EFT parameters~(Appendix~\ref{app:Sloop_calc}).
+Here the notation $S_{\rm loop,min}$ refers to the elementary-loop
+action evaluated at the characteristic core scale, not to a global
+variational minimum over arbitrary loop lengths.
 At this stage $S_0$ is \emph{not} yet identified with $\hbar$: what
 is established is only that the coherent branch carries a distinguished
 action scale~(Level~A for existence; Level~B for explicit value pending
@@ -19771,8 +19792,8 @@ The existence of $S_0$ follows from three structural facts:
   \item smooth coherent configurations are partitioned into integer
     winding sectors~(BR1; Level~A);
   \item the reduced phase-loop EFT admits a distinguished
-    elementary-loop action scale once the characteristic core-sized
-    loop is specified~(Level~A/B: core-scale closure).
+    elementary-loop action scale once the characteristic elementary-loop
+    closure is specified~(Level~A/B: core-scale closure).
 \end{enumerate}
 Together these imply that the coherent branch possesses a distinguished
 action scale associated with nontrivial compact-phase transport.
@@ -19925,13 +19946,18 @@ the full dynamical, canonical, and numerical identification
 In the simplest three-relation closure discussed here, this plays the
 r\^ole of the third matching relation, after $c_*=c$
 and~$G_N$-matching.
-Completion of the full structural r\^ole of $\hbar$---universal
-amplitude weighting, canonical commutators, Born rule---belongs to
-the constructive programme of the Quantum Sector.
+The completion of the $\hbar$-programme in ECT---universal amplitude
+weighting, canonical normalisation, and Born-type probability
+weights---belongs to the later constructive development of the
+Quantum Sector.
 
 % ============================================================
 
 % Topological loop quantisation analogies (relocated from former §19.23)
+For orientation, it is useful to compare the ECT loop-sector logic
+with other physical systems in which a reduced circle-valued phase
+degree of freedom leads to quantised loop data.
+
 \begin{table}[h]
 \centering
 \caption{Topological or compact-phase loop quantisation in different
