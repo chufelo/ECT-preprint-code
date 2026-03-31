@@ -6433,7 +6433,7 @@ programme should be read as a consistency target relative to this
 window, not as a derived fit to the WEP data themselves.
 Second, precision spin-dependent searches constrain exotic
 spin-coupled interactions in comagnetometer, torsion-balance, and
-spectroscopy experiments.
+spectroscopy experiments~\cite{Safronova2018}.
 Third, compact-star observations require any additional long-range
 interaction to remain compatible with the existence of neutron stars
 with masses above $2\,M_\odot$~\cite{Cromartie2020,Fonseca2021}.
@@ -6614,7 +6614,7 @@ Dimensional scaling $\mu_5\sim m_f^2/\phi_0$
   & B & Benchmark-level EFT scaling, not first-principles matching \\
 WEP / E\"otv\"os consistency benchmark
   & B & Compared against MICROSCOPE-level window, not derived fit \\
-Spin-sensitive observability benchmark
+Spin-sensitive search-window benchmark
   & B & Requires mapping to concrete lab observables \\
 Compact-star consistency benchmark
   & B & Consistency-level only; not full EOS closure \\
@@ -11167,6 +11167,12 @@ Ordered electroweak redundancy (\S\ref{sec:gauge})
   & Electroweak gauge-structure phenomenology is consistent with an
     $SU(2)\times U(1)$ organisation, while the detailed mass pattern
     remains tied to the still-open $v_2$ closure \\
+Einstein nonlinear closure (\S\ref{sec:mp_nonlinear})
+  & Non-Einstein two-derivative completion required,
+    or non-universal matter-metric coupling
+  & Classical GR weak-field success; binary-pulsar
+    radiative consistency; absence of compulsory extra
+    low-energy tensor polarisations \\
 Condensate-origin dark sector (\S\ref{sec:mp_dark})
   & Dark phenomena requiring a fundamentally
     non-condensate particle with no ordered-medium
@@ -11724,6 +11730,22 @@ Throughout this section, each result is assigned one of three levels:
     and cosmological fits.
 \end{description}
 
+\paragraph{What is established, what is singled out, and what remains open.}
+At the present stage, the ECT gravity programme contains three layers.
+First, the ordered branch supports a massless tensor sector on the
+emergent Lorentzian background, with linear weak-field dynamics
+derived from the condensate EFT~(\S\ref{sec:graviton};
+Level~A for massless tensor propagation).
+Second, once universal coupling to the same effective stress tensor
+and the consistency of the gauge-redundant spin-2 sector are imposed,
+the Einstein--Hilbert nonlinear closure is singled out as the unique
+two-derivative completion of the ordered-branch gravitational
+route~(Level~A/B; \S\ref{sec:mp_nonlinear}).
+Third, the exact microscopic derivation of all nonlinear coefficients
+directly from the bare condensate action, as well as the controlled
+suppression of higher-curvature corrections, remain
+open~(OP2, OP3).
+
 % ============================================================
 \subsection{Effective metric and the macroscopic limit
 of the condensate}
@@ -12128,12 +12150,59 @@ In ECT, $n_A$ is a collective variable of the broken phase, not
 in the bare action~P3.
 The Fierz--Pauli structure emerges spontaneously, not by postulate.
 
-\subsubsection*{Deser-compatible self-coupling route}
+\subsubsection*{Deser-compatible self-coupling route and
+Einstein closure uniqueness}
 
 The structure established above satisfies the requirements of
 Deser's self-coupling bootstrap~\cite{Deser1970}.
 The geometric branch is therefore \emph{compatible with} a
 Deser-type route to nonlinear Einstein equations~(Level~B; OP2).
+
+\paragraph{Einstein closure as the unique low-derivative nonlinear
+completion~(Level~A/B).}
+Suppose that the ordered branch admits:
+(i)~a massless spin-2 weak-field sector on the emergent Lorentzian
+background~(established in \S\ref{sec:graviton}),
+(ii)~universal coupling of that sector to the same effective
+stress-energy tensor that sources the macroscopic
+geometry~(\S\ref{sec:mp_noether}),
+and (iii)~no additional unsuppressed tensor structures at the same
+two-derivative order.
+Then the requirement of nonlinear self-consistency of the spin-2
+sector---specifically, the preservation of the contracted Bianchi
+identity and the absence of ghost-like inconsistencies---singles out
+the Einstein--Hilbert completion, up to the cosmological term, field
+redefinitions, and higher-derivative corrections.
+This is the Lovelock--Deser
+uniqueness~\cite{Lovelock1971,Deser1970,Choquet-Bruhat2009}
+applied to the ECT geometric branch.
+
+In this sense, ECT does not merely reproduce a gravitational analogy:
+it structurally selects the Einstein route as the unique consistent
+ordered-branch nonlinear completion at the two-derivative level.
+The additional $\phi$- and $n_A$-sectors of the full ECT closure
+represent ordered-branch corrections \emph{beyond} this pure-metric
+Einstein limit, controlled by the condensate amplitude and
+orientation sectors.
+
+\paragraph{What this does not yet establish.}
+The present argument does not yet derive every nonlinear coefficient
+directly from the microscopic condensate action.
+Nor does it exclude all higher-curvature corrections beyond the
+Einstein--Hilbert level.
+What it does establish is that, within the ordered-branch
+two-derivative closure and under universal coupling, the nonlinear
+Einstein route is uniquely selected as the consistent completion of
+the massless spin-2 sector.
+
+\paragraph{Falsifier for the Einstein-closure programme.}
+The present programme would fail if the weak-field ordered-branch
+tensor sector required a nonlinear completion that is not equivalent,
+at the two-derivative level, to the Einstein--Hilbert route; or if
+matter sectors coupled non-universally to inequivalent effective
+metrics; or if an unsuppressed extra scalar or vector component
+remained unavoidable in the same low-energy gravitational regime
+where GR is empirically verified.
 
 
 % ============================================================
@@ -13775,10 +13844,18 @@ Prediction (cont.) & Formula & Status & Test \\
 \endfoot
 \hline\hline
 \endlastfoot
+Einstein--Hilbert uniqueness at 2-derivative order
+  & Lovelock--Deser route~(\S\ref{sec:mp_nonlinear})
+  & Level~A/B
+  & Classical GR; binary pulsars \\
 GR recovery when $\phi,n$ freeze
   & Eq.~\eqref{eq:EE_standard}
   & Derived
   & --- \\
+Universal metric coupling
+  & All matter sectors couple to one $g_{\mu\nu}$
+  & Level~A/B
+  & WEP tests; MICROSCOPE \\
 GW speed $=c_*$
   & $c_{\rm GW}=c_*$~\eqref{eq:cgw}
   & Derived (Level~A)
@@ -13824,8 +13901,13 @@ be read as follows.
 \textbf{Strictly established (Level~A):}
 the existence of a unique coarse-grained Lorentzian metric candidate in
 the ordered phase; the presence of a linear tensor propagation sector;
-the existence of a conserved macroscopic source tensor; the structural
-necessity of a nonlinear covariant completion; and the recovery of
+the existence of a conserved macroscopic source tensor; and the
+structural necessity of a nonlinear covariant completion.
+
+\textbf{Structurally singled out (Level~A/B):}
+the Einstein--Hilbert nonlinear closure as the unique two-derivative
+completion under universal coupling and spin-2 self-consistency
+(Lovelock--Deser route, \S\ref{sec:mp_nonlinear}); and the recovery of
 ordinary Einstein/Newtonian gravity in the screened frozen-order limit.
 
 \textbf{Structurally established (Level~B):}
