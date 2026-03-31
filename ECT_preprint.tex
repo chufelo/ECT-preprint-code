@@ -17223,7 +17223,7 @@ ordered-branch amplitude background. This field dependence is what makes
 the nonlinear branch appear in dilute near-critical regions
 rather than near dense sources.
 
-\paragraph{Environmental modulation as an ECT prediction.}
+\paragraph{Environmental modulation as a programme-level ECT signature.}
 ECT does not predict a strictly universal MOND
 constant~$a_0$. Instead, the critical acceleration is set by
 the cosmological baseline with environment-dependent
@@ -17238,10 +17238,10 @@ modulation:
 This is one of the clearest observational distinctions from
 standard MOND-like frameworks with a fixed universal
 acceleration scale.
-In ECT the residual galaxy-to-galaxy variation of the fitted
-critical scale is not merely tolerated: weak but systematic
-environment dependence is a genuine prediction of the
-ordered-branch programme~(F1 in
+In the current ECT galactic programme, the residual galaxy-to-galaxy
+variation of the fitted critical scale is not merely tolerated:
+a weak but systematic environment dependence is treated as a
+programme-level signature of the ordered-branch route~(F1 in
 Table~\ref{tab:ECT_predictions}).
 This makes group environment, external-field context, and
 cluster membership part of the observational test of the theory
@@ -17516,14 +17516,25 @@ Appendix~\ref{app:cluster_lensing}):
 \subsection{Galactic dynamics: BTFR, rotation curves, and the effective critical scale}
 \label{sec:galactic_dynamics}
 
-\textit{Status overview: the AQUAL/MOND field-equation structure and its
-two asymptotics ($\mu\to1$ at high acceleration, $\mu\to y$ at low
-acceleration) are strong Level~B consequences of the ordered-branch
-$\phi$-closure established in Section~\ref{sec:mp_galactic}.
+\textit{Status overview.}
+The present galactic programme has three distinct layers that should not
+be conflated.
+\textbf{(i) Structural ordered-branch content:} the existence of a
+screened regime, a critical infrared branch, and the associated
+deep-acceleration asymptotics belong to the current ordered-branch
+macroscopic logic and are supported at Level~A/B.
+\textbf{(ii) Effective galactic closure:} the AQUAL-type functional,
+its interpolation family, and the practical acceleration-space closure
+used for galaxy phenomenology are Level~B constructions built on that
+ordered-branch logic.
+\textbf{(iii) Data interface:} the fitted per-galaxy quantity
+$g^\dagger_{\rm eff}$ belongs to the present SPARC implementation and
+is therefore Level~B/Open as an observational interface, not yet a
+first-principles prediction from the bare ECT action.
 What remains open is the exact global interpolation law across the
 transition region and the first-principles environment dependence that
 maps the baseline critical scale $g^\dagger_0$ to the fitted
-galaxy-level values $g^\dagger_{\rm eff}$~(Level~B/Open, OP3).}
+galaxy-level values $g^\dagger_{\rm eff}$~(OP3).
 
 \paragraph{Scope.}
 The structural origin of the ordered-branch amplitude variable~$\phi$,
@@ -17562,13 +17573,17 @@ distinguished from a postulated MOND interpolation law:
     \label{eq:gal_effective_action}
   \end{equation}
 
-\item \textbf{Deep-branch scale invariance.}
-  On the critical branch no new scale may appear beyond $g_\dagger$,
-  which forces~(Level~B; scale-invariance argument):
+\item \textbf{Deep-branch scale-invariant representative closure.}
+  On the critical branch, if one requires that no new galactic
+  acceleration scale enter beyond $g_\dagger$, the simplest
+  scale-invariant representative member of the ECT-compatible
+  nonlinear family is
   \begin{equation}
     \mathcal{F}(Y)\propto Y^{3/2}.
     \label{eq:F_deep}
   \end{equation}
+  This is a strong Level~B closure choice motivated by the critical
+  ordered-branch logic, not yet a unique theorem of the bare action.
 
 \item \textbf{General AQUAL field equation.}
   Varying~\eqref{eq:gal_effective_action} gives:
@@ -17612,8 +17627,9 @@ distinguished from a postulated MOND interpolation law:
   established in Section~\ref{sec:mp_galactic}
   (Fig.~\ref{fig:gdagger_hierarchy}).
   The galaxy-to-galaxy scatter in fitted
-  $g^\dagger_{\rm eff}$ is therefore an ECT \emph{prediction},
-  not a shortcoming.
+  $g^\dagger_{\rm eff}$ is therefore interpreted in the present ECT
+  programme as a meaningful signature rather than automatically as a
+  shortcoming.
 \end{enumerate}
 
 As established in Section~\ref{sec:mp_galactic}
@@ -17670,8 +17686,11 @@ Hence
   \label{eq:BTFR}
   v_\infty^4 = G_N M_b\,g_\dagger.
 \end{equation}
-The asymptotic BTFR slope of $4$ is a direct consequence of the deep ECT
-branch and requires no additional assumption~(Level~B structural result).
+The asymptotic BTFR slope of $4$ is an algebraic consequence of the
+deep-branch field equation once the accepted critical closure is in
+place.
+It is therefore structurally stronger than the present fit-level
+normalisation, which still passes through the effective critical scale.
 The observed normalisation and residual scatter then probe the
 still-open environment dependence of the effective critical scale
 $g^\dagger_{\rm eff}$ and its relation to the baseline
@@ -17685,15 +17704,16 @@ while in the practical galactic implementation the relevant quantity is
 the environment-modulated effective scale
 $g^\dagger_{\rm eff}=g^\dagger_0\,\Xi(\rho_{\rm env},
 \bar\phi_{\rm env},\ldots)$.
-ECT therefore predicts not only the BTFR itself, but also a physically
-meaningful residual scatter around the mean relation, rather than an
+ECT therefore yields not only the BTFR itself, but also a route by
+which a physically meaningful residual scatter around the mean relation
+can arise through the effective critical scale, rather than an
 exactly universal MOND constant.
 
 \paragraph{Numerical bridge to the SPARC fits.}
 The galactic SPARC analysis below provides a direct numerical
 realisation of this analytic result.  The BTFR slope remains
-structural~(Level~B), while the scatter in the normalisation is
-interpreted as an ECT prediction of environment-dependent
+structural~(Level~B), while the scatter in the normalisation is interpreted within the present ECT
+programme as a signature of environment-dependent
 $g^\dagger_{\rm eff}$ rather than a failure of the framework.
 
 \begin{figure}[htb]
@@ -17985,8 +18005,11 @@ environments.
   \textbf{Row 2 (Level~2):} environment-dependent
     $g_\dagger(\rho_{\rm env})=g^\dagger_0/\sqrt{1+\rho_{\rm env}/\rho_*}$
     with one global parameter $\rho_*$;
-    all three systems improve, demonstrating that the scatter in
-    $g_\dagger^{\rm eff}$ is physically sourced by large-scale density.
+    all three systems improve, illustrating that a one-parameter
+    environment law can account for part of the observed scatter in
+    $g_\dagger^{\rm eff}$.
+    This should be read as a representative benchmark, not yet as a
+    first-principles demonstration of the unique environment source.
   \textbf{Row 3 (Level~3):} $g^\dagger_{\rm eff}$ fitted per galaxy
     (current SPARC analysis, Figs.~\ref{fig:sparc_sample_new}--\ref{fig:mw_new}),
     giving optimal $\chi^2$.
@@ -17994,22 +18017,28 @@ environments.
   The progression $\chi^2/N$: Level~1~$\to$~Level~2~$\to$~Level~3
   quantifies the contribution of environment physics to the galactic
   acceleration scale.
-  Unlike MOND, ECT \emph{predicts} that the effective critical
-  scale varies with environment and provides a physical mechanism
-  (eq.~\eqref{eq:gdag_env}); the non-universality of
-  $g^\dagger_{\rm eff}$ is therefore a distinctive ECT signature,
-  not a shortcoming.}
+  Unlike MOND, the present ECT programme allows and physically motivates
+  an environment-dependent effective critical scale.
+  Equation~\eqref{eq:gdag_env} is the current minimal Level-B
+  representative law for that dependence, not yet its unique
+  first-principles derivation.
+  The non-universality of $g^\dagger_{\rm eff}$ is therefore a
+  programme-level ECT signature rather than a completed theorem.}
   \label{fig:gdagger_hierarchy}
 \end{figure*}
 
 The key observational test of this hierarchy is prediction~F1:
 the fitted $g^\dagger_{\rm eff}$ values from the full SPARC sample
-should show a statistically significant \emph{negative} correlation
-with large-scale environment density
-$\rho_{\rm env}$ (from 2MRS or SDSS group catalogues), at a level
-$\gtrsim10\%$ across the sample.  A detection would directly
-distinguish ECT from all MOND-like frameworks that postulate a
+should show a statistically significant dependence on large-scale
+environment density $\rho_{\rm env}$ (from 2MRS or SDSS group
+catalogues), rather than collapsing to a strictly universal constant.
+The sign and detailed functional form of that dependence remain tied to
+the still-open first-principles environment law.
+A statistically robust environment dependence would directly
+distinguish the ECT route from frameworks that impose a strictly
 universal acceleration scale.
+The operational statistical test of this prediction is summarised in
+Appendix~\ref{app:gdagger_environment_test}.
 
 \subsubsection*{Milky Way as a representative case}
 
@@ -18381,6 +18410,43 @@ the ordered-branch account of dark energy
 and the explicit discriminants and falsifiers of the present closure
 (Section~\ref{sec:dark_discriminants}).
 
+\begin{longtable}{p{3.2cm}p{5.1cm}p{1.5cm}p{4.0cm}}
+\caption{Three logically distinct dark-sector channels in the present
+ECT programme.}
+\label{tab:dark_sector_channels}\\
+\toprule
+Channel & Present ECT claim & Status & Main discriminant \\
+\midrule
+\endfirsthead
+\multicolumn{4}{l}{\textit{Table~\ref{tab:dark_sector_channels} continued}}\\
+\toprule
+Channel & Present ECT claim & Status & Main discriminant \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{\textit{Continued on next page}}\\
+\endfoot
+\bottomrule
+\endlastfoot
+Galactic mass discrepancy
+& The ordered-branch $\phi$-response can already account for
+RAR/BTFR/rotation-curve phenomenology without a standard particle halo
+& B
+& SPARC fits, BTFR scaling, environment dependence of
+$g^\dagger_{\rm eff}$ \\
+Additional condensate excitations
+& Collective or topological dark excitations remain structurally
+possible but are not required by the present galactic closure
+& B/C
+& Stability, relic abundance, lensing and structure-growth signatures \\
+Late-time dark energy
+& Accelerated expansion is interpreted through ordered-branch
+background energy rather than by adding an independent dark-energy
+substance
+& B
+& $w(z)$, background expansion history, late-time cosmological fits \\
+\end{longtable}
+
 % ==============================================================
 \subsection{Dark-matter interpretation: $\phi$-branch and beyond}
 \label{sec:dark_matter_interp}
@@ -18416,6 +18482,29 @@ particle dark matter.
 The dark-matter interpretation of the galactic sector should therefore
 be read as an ordered-branch response effect, not as evidence for a
 separate hidden particle halo.
+
+\paragraph{What is established and what is not.}
+At the current stage, ECT does \emph{not} establish a theorem that all
+dark-sector phenomenology must be exhausted by the macroscopic
+$\phi$-branch alone.
+What it does establish is a sharper and more limited claim:
+the galactic mass-discrepancy phenomenology can already be
+accounted for within the present ordered-branch response closure,
+without introducing a standard particle halo at the level of the
+current galaxy-scale programme.
+This is the central macroscopic dark-sector result of the present
+article.
+Any additional collective or topological dark condensate excitations
+remain logically possible, but they are not required by the current
+galactic evidence discussed here.
+
+In particular, the present conclusion is galaxy-scale only.
+It does not yet imply that cluster-scale or cosmological dark-sector
+phenomenology must be exhausted by the same minimal macroscopic
+$\phi$-closure.
+Those larger-scale channels may still require either additional
+collective condensate excitations or a more complete closure of the
+ordered-medium response.
 
 \paragraph{Numerical anchors from Section~\ref{sec:mp_galactic_phenom}.}
 The current galactic programme already fixes several benchmark facts:
@@ -18475,9 +18564,11 @@ ECT prediction, a relic-abundance estimate, or a working dark-sector
 explanation; it remains a
 Level-B/C benchmark tied to the broader predicted-states programme
 (Section~\ref{sec:predicted_states}).
-It is introduced here only as a scale-setting illustration for that
-programme, not as an ingredient of the present galactic
-mass-discrepancy closure.
+It is introduced here only as a scale-setting illustration for the
+broader condensate-excitation programme.
+It is not an ingredient of the present galactic mass-discrepancy
+closure, and it should not be read as a derived relic-abundance or
+dark-sector fit.
 
 The homotopy sector $\pi_3(S^3)=\mathbb{Z}$ is structurally fixed by
 the ordered-vacuum manifold, but whether the corresponding
@@ -18501,10 +18592,24 @@ spin-independent WIMP bounds to extremely small cross sections, with
 no positive signal for the galactic discrepancy channel
 (e.g.~LZ~\cite{LZ2023}).
 A robust detection of a particle species specifically shown to account
-for the galactic mass discrepancy would therefore falsify the present
-$\phi$-branch interpretation.
+for the galactic mass discrepancy on galaxy scales would therefore
+falsify the present macroscopic $\phi$-branch-only interpretation of
+that channel.
+It would not by itself falsify the full ECT framework, which could still
+accommodate additional condensate or particle sectors beyond the present
+closure.
+
+This distinction is important.
+The present galactic closure is a specific macroscopic ECT channel,
+not the whole ontology of the theory.
+A particle interpretation of the galactic discrepancy would therefore
+refute the current $\phi$-branch-only explanation of that channel,
+while still leaving open broader ECT completions with additional
+condensate or particle sectors.
+
 By contrast, the mere existence of additional dark condensate
-excitations on non-galactic scales would not.
+excitations on non-galactic scales would not challenge the galactic
+$\phi$-branch interpretation.
 
 ECT does not yet derive the cosmological fractions
 $\Omega_b$, $\Omega_{\rm DM}$, and $\Omega_\Lambda$ from first
@@ -18726,9 +18831,11 @@ $\sigma_{\rm SI}<10^{-47}\,$cm$^2$ without any positive signal that
 could account for the galactic mass-discrepancy phenomenology
 (e.g.~\cite{LZ2023}).
 A robust detection of a particle species specifically shown to account
-for the galactic mass discrepancy would therefore falsify the present
-$\phi$-branch interpretation; the mere detection of a subdominant new
-particle species would not.
+for the galactic mass discrepancy on galaxy scales would therefore
+falsify the present macroscopic $\phi$-branch-only interpretation of
+that channel; it would not by itself falsify the full ECT framework.
+The mere detection of a subdominant new particle species would not
+challenge the galactic $\phi$-branch interpretation.
 
 \paragraph{No-phantom dark energy (F5).}
 The present ordered-branch closure yields $w(z)\ge-1$ at all redshifts,
@@ -19356,6 +19463,20 @@ currently observed sources.
 The value of this block is therefore primarily organisational: it marks
 the strong-curvature observational frontier that any future ECT
 completion must eventually address.
+
+
+\paragraph{Dark-sector synthesis.}
+At the present stage, ECT supports a three-channel dark-sector reading:
+(i)~a galaxy-scale ordered-branch response closure that already
+addresses the mass discrepancy without standard particle halos;
+(ii)~a late-time dark-energy route carried by the ordered background;
+and (iii)~the still-open possibility of additional collective or
+topological condensate excitations.
+The first of these is the strongest current macroscopic result.
+The third remains structurally admissible but not yet observationally
+required.
+Table~\ref{tab:dark_sector_channels} summarises the three channels
+and their discriminants.
 
 
 % ==============================================================
@@ -33696,6 +33817,77 @@ This is a unification of origin, not yet a collapse to a single
 derived parameter.
 
 
+% ==============================================================
+\section{Operational environment test for the effective critical scale}
+\label{app:gdagger_environment_test}
+% ==============================================================
+
+This appendix specifies the operational statistical test of
+prediction~F1: the non-universality of the fitted effective
+critical scale $g^\dagger_{\rm eff}$ across the SPARC galaxy sample.
+
+\paragraph{Environment proxy.}
+The large-scale environment density $\rho_{\rm env}$ can be defined
+operationally through several complementary proxies:
+(a)~nearest-neighbour density from the 2MRS
+catalogue~\cite{Huchra2012};
+(b)~group-catalogue membership and host-halo mass from SDSS
+group catalogues~\cite{Yang2007};
+(c)~tidal-field strength from large-scale structure reconstructions.
+Each proxy probes a different environmental scale; any robust
+environment dependence should be detectable with at least one of them.
+
+\paragraph{Statistical protocol.}
+The test proceeds in four steps:
+\begin{enumerate}[label=(\roman*)]
+  \item fit each SPARC galaxy with the
+    closure~\eqref{eq:ect_rotation_closure_main} to obtain
+    $g^\dagger_{\rm eff}$ per galaxy;
+  \item cross-match the SPARC sample with the chosen environment
+    catalogue to assign $\rho_{\rm env}$ to each galaxy;
+  \item compute the Spearman rank correlation
+    $r_S(g^\dagger_{\rm eff},\,\rho_{\rm env})$ and the corresponding
+    $p$-value, both for the full sample and after controlling for
+    baryonic mass $M_b$ and morphological type via partial correlation
+    or hierarchical regression;
+  \item test whether the residual $g^\dagger_{\rm eff}$
+    distribution is consistent with a universal constant (null
+    hypothesis) or requires an environment-dependent model (ECT
+    alternative).
+\end{enumerate}
+
+\paragraph{Confirmation criterion.}
+Prediction~F1 is considered supported if the partial correlation
+between $g^\dagger_{\rm eff}$ and $\rho_{\rm env}$, after controlling
+for $M_b$ and morphology, is statistically significant at
+$p<0.01$ and cannot be attributed to known baryonic-model
+systematics (stellar mass-to-light ratio degeneracy, distance
+errors, or inclination bias).
+The sign and functional form of the dependence are not fixed by the
+present ECT closure and should be reported as empirical findings.
+
+\paragraph{Falsification criterion.}
+If the fitted $g^\dagger_{\rm eff}$ values collapse to a strictly
+universal constant across the full environment range---with no
+statistically significant residual dependence on
+$\rho_{\rm env}$---then the ECT programme-level signature of
+environment-dependent critical acceleration would be falsified at the
+current closure level.
+
+\paragraph{Distinguishing baryonic systematics from genuine
+environment dependence.}
+The main confound is that baryonic-model errors (e.g.\ uncertain
+stellar mass-to-light ratios) can mimic environment dependence if
+they correlate with galaxy type, which in turn correlates with
+environment.
+To control for this:
+(a)~repeat the analysis with both fixed and free $\Upsilon_{\rm d}$;
+(b)~use a morphology-stratified subsample;
+(c)~verify that any detected correlation survives in the
+gas-dominated subsample, where stellar $M/L$ plays a subdominant
+role.
+
+
 \section*{Acknowledgments}
 \addcontentsline{toc}{part}{Acknowledgments}
 The author thanks the open-source scientific community for the SPARC galaxy database
@@ -33707,6 +33899,7 @@ The author declares no competing interests and received no external funding for 
 
 \phantomsection
 \addcontentsline{toc}{part}{References}
+
 \bibliography{references}
 
 
