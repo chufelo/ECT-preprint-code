@@ -20304,17 +20304,19 @@ $\hat{H}_{\rm coh}$ derived explicitly).
 \label{sec:qs_extremal_action}
 % ============================================================
 
-\textit{Status: Level~A for the saddle-point principle inside the
-coherent amplitude language; Level~B for the physical interpretation
-of finite-$S_0$ corrections as the source of quantum fluctuations in
-specific reduced systems.}
+\textit{Status: Level~A for the stationary-phase / saddle-point
+structure of the coherent amplitude weighting and for the resulting
+extremality condition in the large-phase-difference limit;
+Level~B for the detailed physical interpretation of finite-$S_0$
+corrections in specific reduced coherent systems.
+Connection to ECT basics: DP~(Section~\ref{sec:noether}).}
 
 \medskip
-The principle of extremal action is not an independent postulate in
-ECT.
-It follows directly from the coherent amplitude structure already
-established in Sections~\ref{sec:qs_phase_dynamics}
-and~\ref{sec:qs_wave}.
+The principle of extremal action is not introduced in the Quantum
+Sector as a new independent law.
+Within the coherent amplitude language, it appears as the leading
+stationary-phase order of the same $S_0$-weighted structure that
+organises coherent histories.
 
 \subsubsection*{Coherent amplitude weighting}
 
@@ -20333,43 +20335,194 @@ In the Euclidean preparatory language the corresponding weight is
 When the relevant action satisfies $S[q]\gg S_0$ (or $S_E[q]\gg S_0$),
 the path weight is dominated by saddle configurations.
 
+\subsubsection*{Stationary-phase structure}
+
+Starting from the coherent amplitude weighting
+\eqref{eq:qs_weight_S0}, the saddle-point structure can be exhibited
+explicitly.
+The relevant criterion is not merely that an action be ``large'' in an
+absolute sense, but that phase differences satisfy
+$|\Delta S|/S_0\gg 1$, so that neighbouring histories contribute with
+rapidly oscillating relative phases.
+In that regime, the coherent functional integral is dominated by the
+vicinity of stationary configurations $\theta_{\rm cl}$ satisfying
+\begin{equation}
+  \label{eq:qs_EL_coherent}
+  \frac{\delta S_\theta}{\delta \theta}
+  \bigg|_{\theta_{\rm cl}} = 0.
+\end{equation}
+
+Expanding around such a configuration,
+$\theta=\theta_{\rm cl}+\eta$, gives
+\begin{equation}
+  \label{eq:qs_saddle_expand}
+  S_\theta[\theta_{\rm cl}+\eta]
+  =
+  S_\theta[\theta_{\rm cl}]
+  +
+  \frac12
+  \int d^4x\,d^4y\;
+  \eta(x)\,
+  \mathcal{K}_{\rm cl}(x,y)\,
+  \eta(y)
+  + \mathcal{O}(\eta^3),
+\end{equation}
+where
+\[
+  \mathcal{K}_{\rm cl}(x,y)
+  :=
+  \left.
+  \frac{\delta^2 S_\theta}{\delta\theta(x)\,\delta\theta(y)}
+  \right|_{\theta_{\rm cl}} .
+\]
+Formally, the leading saddle approximation then takes the form
+\begin{equation}
+  \label{eq:qs_one_loop}
+  Z_{\rm coh}
+  \approx
+  e^{iS_\theta[\theta_{\rm cl}]/S_0}
+  \cdot
+  \bigl[\det(\mathcal{K}_{\rm cl}/S_0)\bigr]^{-1/2},
+\end{equation}
+up to the usual phase and regularisation subtleties of oscillatory
+functional determinants~\cite{FeynmanHibbs1965}.
+The first factor gives the classical coherent phase weight, while the
+second describes the leading fluctuation correction around the saddle.
+
 \subsubsection*{Saddle-point conditions}
 
-In the Lorentzian branch the dominant contributions satisfy
+In the Lorentzian branch, the dominant coherent histories satisfy the
+stationarity condition
 \begin{equation}
   \label{eq:qs_saddle}
-  \delta S[q] = 0;
+  \delta S[q]=0,
 \end{equation}
-in the Euclidean preparatory branch:
+while in the Euclidean preparatory branch one has
 \begin{equation}
   \label{eq:qs_saddle_E}
-  \delta S_E[q] = 0.
+  \delta S_E[q]=0.
 \end{equation}
-This is the emergent principle of extremal action~(Level~A).
+These are not extra principles added on top of the coherent sector.
+They are the leading saddle conditions selected by the same
+$S_0$-weighted amplitude structure when phase differences become large
+compared with~$S_0$.
+
+\paragraph{Connection to the dynamical principle.}
+The saddle condition~\eqref{eq:qs_saddle} is the coherent-sector
+realisation of the variational dynamical principle introduced earlier
+in the article (Section~\ref{sec:noether}).
+In this sense, Part~III does not replace DP; rather, it shows how the
+same extremality condition reappears as the leading stationary-phase
+order of the coherent amplitude language.
+This is the precise sense in which classical extremality is recovered
+from the coherent-sector weighting when relative phases become rapidly
+oscillatory.
 
 \subsubsection*{Why this matters}
 
-Classicality does not require a second independent principle.
-Classical extremal trajectories and finite-$S_0$ coherent fluctuations
-are two limits of a single ordered-branch framework: the large-action
-saddle regime and the near-$S_0$ quantum regime respectively.
+Classicality does not require a second unrelated law.
+Within the coherent branch, extremal trajectories and finite-$S_0$
+fluctuations are two limits of one and the same ordered-medium
+framework.
+When relevant phase differences satisfy $|\Delta S|/S_0\gg1$,
+destructive interference suppresses non-stationary histories and the
+saddle dominates.
+When action differences become comparable to~$S_0$, neighbouring
+histories contribute appreciably and the coherent non-classical regime
+opens up.
 
-\subsubsection*{Finite-$S_0$ corrections}
+Finite-$S_0$ corrections therefore quantify the departure from the
+strict saddle regime.
+At the formal level they are encoded by the fluctuation operator
+$\mathcal{K}_{\rm cl}$ and higher-order terms in the expansion around
+the stationary history.
+Their detailed interpretation in specific reduced systems remains part
+of the later constructive quantum programme.
 
-When $S[q]$ is not large compared with $S_0$, saddle-point dominance
-fails and neighbouring histories contribute appreciably.
-Finite-$S_0$ corrections are therefore the origin of the coherent
-non-classical regime in ECT.
+\paragraph{Two routes to classicality in ECT.}
+It is important to distinguish two complementary mechanisms by which
+classical behaviour emerges in ECT:
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{Saddle dominance:}
+  when relevant phase differences satisfy $|\Delta S|/S_0\gg1$, the
+  coherent amplitude integral is dominated by stationary histories, and
+  individual trajectories obey the extremality condition.
+  \item \textbf{Decoherence:}
+  when a subsystem is coupled to many unresolved condensate degrees of
+  freedom, off-diagonal coherent contributions are suppressed in the
+  reduced description, yielding effectively classical alternatives.
+\end{enumerate}
+The first mechanism explains why extremal histories emerge.
+The second explains why macroscopically distinct superpositions are not
+observed.
+The quantitative decoherence side of this transition is developed later
+in Sections~\ref{sec:qs_decoherence}
+and~\ref{sec:quantum_classical_boundary}.
 
-\paragraph{Status.}
-The saddle principle is Level~A.
-Its detailed implementation in specific reduced coherent systems is
-Level~B, depending on the wave-dynamical and $S_0=\hbar$ programme.
+\paragraph{Quantitative orientation~(Level~B).}
+If one adopts the later Level~B identification $S_0=\hbar$, the
+stationary-phase criterion acquires its familiar scale.
+For a macroscopic mechanical system---for example, a kilogram-scale
+oscillator with centimetre-scale motion---characteristic actions
+exceed $\hbar$ by roughly $10^{30}$--$10^{32}$, so saddle dominance is
+extremely sharp.
+By contrast, in atomic-scale systems the relevant action differences
+are of order $\hbar$, and no such sharp suppression of neighbouring
+histories occurs.
+These estimates are standard consequences of the stationary-phase
+criterion; they serve only as orientation and do not require any
+ECT-specific input beyond the identification $S_0=\hbar$.
 
-\paragraph{Summary.}
-In ECT the principle of extremal action is not an additional law.
-It is the saddle-dominance limit of the coherent amplitude weighting
-already present in the Quantum Sector.
+\paragraph{Observational orientation and ECT interpretation.}
+The saddle-dominance logic developed here is not merely formal.
+Matter-wave interferometry already probes regimes in which individual
+branches are well described by extremal or near-extremal histories,
+while observable interference is controlled by finite phase
+differences between them.
+From the ECT perspective, such observations support a two-layer view of
+classicality:
+extremal-history dominance emerges when relevant phase differences
+become large compared with $S_0$, whereas the suppression of
+interference between macroscopically distinct alternatives requires the
+additional decoherence mechanism developed later in Part~III.
+ECT does not claim unique explanatory priority over standard quantum
+mechanics for these phenomena; rather, it provides a structural origin
+for the same semiclassical reading within the coherent condensate
+framework.
+
+\paragraph{ECT structural expectations for the extremal-action sector.}
+The coherent-sector picture developed here suggests the following
+structurally testable expectations:
+\begin{enumerate}[label=(\roman*)]
+  \item classical extremal trajectories can emerge already in regimes
+  where interference has not yet disappeared---saddle dominance and
+  decoherence are conceptually distinct thresholds;
+  \item the relevant control parameter for saddle dominance is the
+  phase-difference ratio $|\Delta S|/S_0$, not the absolute size of a
+  system alone;
+  \item full macroscopic classicality requires both saddle dominance
+  and environmental decoherence;
+  \item the same action scale $S_0$ that controls the saddle criterion
+  must also enter the canonical normalisation, the Born-type
+  probability weights, and the wave-kinematical reconstruction
+  developed elsewhere in Part~III---a cross-sector universality
+  requirement that would be falsified if different quantum layers
+  required different action scales.
+\end{enumerate}
+The first three expectations are shared with standard semiclassical
+quantum mechanics.
+The fourth is ECT-specific: it reflects the single-field condensate
+architecture~(P3) in which all quantum sectors inherit the same
+distinguished action scale from the coherent branch.
+
+\statussummary
+\textit{Established~(Level~A):}
+the stationary-phase / saddle structure and the resulting extremality
+condition are consequences of the coherent amplitude language.
+\textit{Not yet established~(Level~B):}
+the explicit quantitative use of these results in specific reduced
+systems, which depends on further effective reductions and, in many
+practical comparisons, on the later matching identification $S_0=\hbar$.
 
 % ============================================================
 \subsection{Conservation laws in the coherent sector}
