@@ -771,6 +771,12 @@ or symmetry breaking.
     The configuration space includes all topological sectors compatible
     with the vacuum manifold; topologically non-trivial configurations
     are not excluded a priori.
+
+  \item[\textbf{S10} --- Medium character.]
+    In the ordered $\Phi$-medium, pointwise internal coordinates of
+    the effective order parameter are descriptive redundancies rather
+    than independently observable degrees of freedom; local observables
+    depend only on invariant gradient and holonomy data.
 \end{description}
 
 \paragraph{Layer~DP\,: Dynamical principle.}
@@ -795,7 +801,13 @@ P4 realises S7;
 P5 makes explicit S6 and S8.
 The broader topological completeness property S9 is partially reflected,
 within the smooth coherent branch, by the derived sector rule~BR1.
-Together, P1--P5 and BR1 provide the present structural framework of ECT.
+The medium-character property S10 is independent of P1--P5: it
+expresses the physical assertion that the $\Phi$-medium is a
+continuum medium rather than a rigid structure, so that internal
+symmetry directions of the action are descriptive redundancies of
+the effective description.
+Together, P1--P5, BR1, and S10 provide the present structural
+framework of ECT.
 
 \subsection{List of postulates}
 \label{subsec:postulate_list}
@@ -1259,6 +1271,100 @@ It does not by itself derive $G_{\rm eff}(\mathbf{x})$,
 $u_0(\mathbf{x})$, or galaxy-by-galaxy scatter relations.
 It states only that such non-uniform ordered configurations are
 structurally admissible within the $\Phi$-medium.
+
+\subsubsection*{S10 --- Medium character}
+
+\paragraph{Physical meaning.}
+Property~S10 expresses the fact that the $\Phi$-medium is a
+\emph{continuum medium} rather than a rigid structure.
+In any physical medium---a crystal, a superfluid, a nematic
+liquid crystal---the absolute value of internal coordinates
+(the displacement of a lattice site, the absolute phase of a
+superfluid order parameter, the pointwise director orientation)
+is not directly observable.
+Only gradients, deformations, and holonomies carry physical
+information.
+S10 asserts that the $\Phi$-medium of ECT has this same character.
+
+\paragraph{Why S10 is not a repetition of P2 or P3.}
+P2 states that the \emph{action} is invariant under global $O(4)$
+rotations.
+P3 states that the action is \emph{local}.
+S10 makes a distinct and logically independent assertion about the
+\emph{observational status} of internal field-space directions:
+pointwise values of the compact phase~$\theta(X)$ and the local
+orientation~$n_A(X)$ of the ordered branch are descriptive
+redundancies, not physical observables.
+
+The distinction is precise:
+\begin{itemize}
+  \item P2 says the \emph{action} does not distinguish $\theta$ from
+    $\theta+\alpha$ globally.
+  \item S10 says the \emph{description} does not distinguish
+    $\theta(X)$ from $\theta(X)+\alpha(X)$ pointwise.
+\end{itemize}
+The first is a symmetry of the theory.
+The second is a redundancy of the description.
+The passage from symmetry to redundancy is the physical content of S10.
+
+In a rigid structure (e.g.\ a crystal whose atoms are individually
+trackable), local orientation could in principle be observed.
+In a continuum medium, it cannot.
+S10 asserts that the $\Phi$-medium belongs to the latter class.
+
+\paragraph{Consequences.}
+S10 has far-reaching structural implications.
+Since pointwise internal coordinates are redundancies:
+\begin{enumerate}[label=(\roman*)]
+  \item local phase redefinitions
+    $\theta(X)\to\theta(X)+\alpha(X)$ are promoted to local
+    redundancies of the compact-phase sector, providing the structural
+    route to a $U(1)$ gauge connection
+    (Section~\ref{sec:u1_emergence});
+  \item local orientation redefinitions
+    $n_A(X)\to R_A{}^B(X)\,n_B(X)$ are promoted to local
+    redundancies of the ordered orientation sector, providing the
+    structural route to an
+    $\mathfrak{so}(3)\cong\mathfrak{su}(2)$ gauge connection
+    (Section~\ref{sec:nonabelian_embedding});
+  \item the combined local redundancy gives the ordered-branch gauge
+    architecture $SU(2)\times U(1)$;
+  \item the continuity equation for the coherent density
+    becomes structurally tied to the phase-current conservation law,
+    rather than requiring a separate unitarity axiom;
+  \item the ordered-branch gauge-topological structure provides a
+    natural route to an ECT-native baryon-violating framework
+    (Section~\ref{sec:baryogenesis}).
+\end{enumerate}
+
+\paragraph{Nonlocal observables are not excluded.}
+S10 excludes pointwise internal coordinates as observables, but does
+\emph{not} exclude gauge-invariant nonlocal observables such as
+holonomies, winding numbers, or Wilson-loop data.
+On the contrary, such quantities are natural in a medium with compact
+phase and local frame redundancy: they encode the physically meaningful
+global phase and orientation structure that survives when pointwise
+data are treated as redundancies.
+
+\paragraph{What S10 does not assert.}
+S10 does not by itself determine the gauge coupling constants $g$, $g'$;
+it does not derive the electroweak symmetry-breaking pattern
+$SU(2)\times U(1)\to U(1)_{\rm em}$;
+it does not derive the fermion representation content;
+and it does not produce the $SU(3)$ colour gauge structure, which
+requires additional internal degrees of freedom beyond the minimal
+scalar realisation of P3.
+
+\paragraph{Why S10 is natural for a medium.}
+The ontology of ECT is that of a \emph{medium}: a single scalar
+field $\Phi$ fills the Euclidean arena and orders into an effective
+vacuum branch.
+For any physical medium, the distinction between ``symmetry of the
+Hamiltonian'' and ``redundancy of internal coordinates'' is standard:
+the absolute displacement of a crystal in free space is unobservable,
+the absolute phase of a superfluid is unobservable, the absolute angle
+of a nematic director is unobservable.
+S10 simply states that the same applies to the $\Phi$-medium of ECT.
 
 \subsection{Three statement types}
 \label{subsec:statement_types}
@@ -14264,177 +14370,269 @@ closure are recorded in
 Appendix~\ref{app:late_cosmo_background}.
 
 % ============================================================
-\subsection{Baryogenesis in the ECT framework}
+\subsection{Matter--antimatter asymmetry in the ECT framework}
 \label{sec:baryogenesis}
 \label{sec:mp_baryogenesis}
 % ============================================================
 
-\textit{Status: Level~B. ECT is structurally compatible
-with the Sakharov conditions, but a complete first-principles
-baryogenesis model from bare~P3 does not yet exist~(OP7).
-The numerical estimate $\eta_B\sim9\times10^{-10}$ is a
-benchmark within the resonant leptogenesis closure,
-not a zero-parameter prediction of ECT.
-The Planck-scale condensate amplitude / stiffness scale is used only
-as an illustrative matching scale in the closure benchmarks.}
+\textit{Status: Level~A/B given empirical fermions and S10.
+ECT provides a native framework in which the three Sakharov ingredients
+for baryogenesis can be supplied by ordered-medium mechanisms.
+This establishes the structural possibility of matter--antimatter
+asymmetry in the ordered branch, and a natural generic route to
+$\eta_B\neq0$ under suitable transition conditions.
+The precise value of $\eta_B$, and the full transport/freeze-out
+analysis required to determine whether the realised asymmetry is
+nonzero in a specific cosmological history, remain open.
+Connection: Section~\ref{sec:qs_conservation}
+(defect-mediated topology change),
+Section~\ref{sec:fifth_force} ($\mathcal{L}_5$ coupling),
+Section~\ref{sec:u1_emergence} (gauge structure).}
 
-The homogeneous late-time branch described in
-Section~\ref{sec:mp_flrw} provides the cosmological background
-within which any baryogenesis mechanism must operate.
-The present subsection asks a narrower question:
-which Sakharov-compatible ingredients are structurally available in ECT,
-and which ingredients are still imported from standard particle physics?
-The purpose of this subsection is therefore compatibility analysis, not
-yet a full ECT-native baryogenesis model.
+\medskip
+The observed baryon-to-photon ratio
+$\eta_B\equiv(n_B-n_{\bar B})/n_\gamma\approx6\times10^{-10}$
+means that for every billion particle--antiparticle pairs in the early
+Universe, approximately one extra baryon survived annihilation.
+All visible matter---stars, planets, observers---consists of this
+surviving excess.
 
-The observed baryon-to-photon ratio $\eta_B\approx6\times10^{-10}$
-requires a mechanism for baryogenesis satisfying the three
-Sakharov conditions~\cite{Sakharov1967}: (i)~baryon number violation,
+Any baryogenesis mechanism must satisfy the three Sakharov
+conditions~\cite{Sakharov1967}: (i)~baryon number violation,
 (ii)~C and CP violation, and (iii)~departure from thermal equilibrium.
 
-\textit{The items below should be read as closure-level
-mechanisms that may supply Sakharov-compatible ingredients
-in ECT, not as uniquely established microscopic channels
-of the theory or as a completed derivation from bare~P3.}
+In earlier versions of this section, baryon-number violation was
+imported from Standard Model sphaleron/leptogenesis channels.
+The development below does not rely exclusively on imported Standard
+Model channels, but instead formulates an ECT-native structural
+framework in which the Sakharov ingredients can be supplied by the
+ordered medium itself.
 
-It is important to distinguish clearly between ECT-native structural
-ingredients and ingredients presently imported from standard physics.
-ECT-specific inputs include:
-(i)~the ordering transition itself, which can provide a natural
-out-of-equilibrium environment, and
-(ii)~the preferred-direction fermion coupling
-$\mathcal{L}_5=\mu_5\,\bar\Psi\gamma^A n_A\Psi$,
-which is a structural candidate for additional CP-violating effects.
-By contrast, baryon-number-violating channels (such as sphalerons) and
-the detailed CP-violating phases of the right-handed neutrino sector are
-not yet derived from bare ECT postulates and are imported here from the
-standard leptogenesis framework.
+\subsubsection*{ECT-native Sakharov ingredients}
 
-\textbf{(i) Baryon number violation.}
-The ECT-specific fermion--condensate coupling
-\[
-\mathcal{L}_5=\mu_5\,\bar\Psi\gamma^A n_A\Psi
-\]
-introduces a preferred-direction structure into the fermionic sector,
-but it is not by itself a demonstrated microscopic source of
-baryon-number violation.
-In the present baryogenesis closure, baryon-number violation is taken to
-proceed through the standard sphaleron/leptogenesis channels, possibly
-in an ordered condensate background.
-Whether nontrivial condensate sectors provide additional nonperturbative
-baryon-violating channels remains open.
+\textbf{(i) Baryon number violation: defect-mediated topology change.}
 
-\textbf{(ii) CP violation.}
-ECT does not yet derive a unique microscopic CP-violating source from
-first principles.
-The preferred-direction coupling~$\mathcal{L}_5$ provides a structural
-candidate for additional CP-violating effects in the condensate
-environment, but an explicit calculation of the resulting CP asymmetry
-has not yet been carried out.
-In the present closure, the actual CP-violating ingredient is therefore
-taken from the same complex phases that enter standard leptogenesis via
-the right-handed neutrino sector.
-The ordered condensate may modify that environment, but this has not
-been derived microscopically.
+The coherent branch of ECT carries topologically conserved winding
+sectors~(Section~\ref{sec:qs_conservation}).
+As established there, winding-number conservation holds exactly within
+the smooth coherent branch~(BR1), but can be violated through
+defect-mediated transitions in which the condensate amplitude vanishes
+($\rho\to 0$) at a localised core.
 
-Additionally, a right-handed neutrino mass scale
-\[
-M_R\sim10^9~\mathrm{GeV}
-\]
-may be used as an illustrative leptogenesis benchmark.
-This benchmark is imported from the standard leptogenesis literature and
-is not fixed by ECT itself.
-In the standard see-saw picture this scale enters the heavy-neutrino
-sector in which the relevant CP-violating phases reside, but ECT does
-not presently derive those phases from condensate dynamics.
-The scale $M_R\sim10^9$~GeV is numerically close to the geometric mean
-of the two condensate scales
-$\phi_0\sim\bar M_{\rm Pl}$ and $v_2\sim246$~GeV:
+If baryon number is associated with the relevant emergent
+gauge-topological sector of the $SU(2)\times U(1)$ ordered-branch
+gauge structure~(Section~\ref{sec:u1_emergence},
+Section~\ref{sec:nonabelian_embedding}), then defect-mediated topology
+changes provide an ECT-native channel for baryon number violation.
+This channel is:
+\begin{itemize}
+  \item \emph{thermally suppressed} at $T\ll m_\sigma\sim\bar{M}_{\rm Pl}$:
+  the defect creation rate scales as
+  $\Gamma_{\rm defect}\sim\exp(-E_{\rm defect}/k_BT)$,
+  with $E_{\rm defect}\sim m_\sigma$
+  (Eq.~\eqref{eq:qs_defect_rate});
+  \item \emph{thermally accessible} at $T\sim m_\sigma$:
+  near the condensate scale, defect formation becomes unsuppressed.
+\end{itemize}
+This is the ECT structural analogue of instanton and sphaleron
+processes in gauge field theory, with the crucial difference that the
+mechanism arises from the condensate topology rather than being
+imported from the Standard Model gauge sector.
+
+\textbf{(ii) CP violation: preferred-direction fermion coupling.}
+
+If fermionic excitations are empirically admitted
+(phenomenological input, analogous to $c_*=c$),
+then the unique leading renormalisable coupling of a spinorial
+excitation to the ordered direction field $n_A$ is
 \begin{equation}
-  M_R^{\rm geom} \equiv \sqrt{\phi_0\, v_2}
-  \approx \sqrt{2.4\times10^{18}\times246}\;\text{GeV}
-  \approx 2.4\times10^{10}\;\text{GeV}.
+  \label{eq:baryogenesis_L5}
+  \mathcal{L}_5 = \mu_5\,\bar\Psi\gamma^A n_A\Psi
 \end{equation}
-This numerical proximity is at most an illustrative coincidence.
-No structural significance should presently be assigned to it.
-It should not be read as a derivation of the heavy-neutrino mass scale
-from the condensate sector.
-At the present stage, $M_R$ remains an externally chosen benchmark
-within the leptogenesis closure.
-A Yukawa coupling
-\[
-y_R = M_R/v_2 \sim 4\times10^6
-\]
-lies deep in the strong-coupling regime.
-This is not a derived feature of ECT but an external closure input,
-and it signals that the present benchmark should not be overinterpreted
-as a perturbatively controlled microscopic model.
-Accordingly, the numerical benchmark is at best indicative, not
-microscopically reliable.
+(Level~A given empirical fermions: EFT uniqueness theorem;
+Section~\ref{sec:fifth_force}).
+This coupling violates P (parity) and, in combination with complex
+phases in the fermionic sector, violates CP.
+It is not an ad hoc addition but the structurally required leading
+interaction between spinorial excitations and the ordered medium.
 
-\textbf{(iii) Departure from thermal equilibrium.}
+\textbf{(iii) Departure from thermal equilibrium: the ordering
+transition.}
+
 The $O(4)\to O(3)$ ordering transition is itself a symmetry-breaking
-phase transition of the condensate.
+phase transition of the condensate~(Level~A; follows from~P4).
 Any such transition occurring on a finite timescale provides a natural
 departure from equilibrium for species whose interaction rates are too
 slow to track the transition adiabatically.
-Within the present ECT picture, this is the most clearly ECT-native
-\emph{structural} Sakharov ingredient: the Universe enters its Lorentzian branch through
-an ordering event rather than through an already equilibrated primordial
-Lorentzian plasma.
+Within the ECT framework, the Universe enters its Lorentzian branch
+through an ordering event rather than through an already equilibrated
+primordial plasma.
 If the transition completes on a timescale
-\[
-\tau_{\rm tr}\sim M_{\rm Pl}^{-1},
-\]
-then heavy species with
-\[
-\Gamma \ll \tau_{\rm tr}^{-1}
-\]
-are automatically driven out of equilibrium.
-This includes the illustrative right-handed neutrino benchmark
-$M_R\ll M_{\rm Pl}$ used in the closure.
-The detailed order and nonequilibrium microphysics of the transition,
-however, remain open and depend on the underlying condensate potential
-(OP3).
+$\tau_{\rm tr}\sim M_{\rm Pl}^{-1}$,
+then species with $\Gamma\ll\tau_{\rm tr}^{-1}$ are automatically
+driven out of equilibrium.
 
-\textbf{Estimate of $\eta_B$.}
-Using the standard resonant leptogenesis formula with
-$M_R\sim10^9$~GeV, the wash-out factor $\kappa\sim0.1$--$1$,
-and the CP-asymmetry $\varepsilon\sim10^{-6}$ typical of the
-see-saw mechanism, one can obtain, within the resonant leptogenesis
-closure~(Level~B),
+\subsubsection*{ECT-native bias mechanism}
+
+Beyond the structural availability of the three Sakharov ingredients,
+ECT admits a natural bias mechanism of the
+spontaneous-baryogenesis type.
+
+During the non-equilibrium ordering epoch, the ordered background is
+generically time dependent: the preferred direction $n_A(X)$ and the
+compact phase $\theta(X)$ evolve as the transition proceeds.
+This time dependence generates an effective
+chemical-potential-like bias:
 \begin{equation}
-\eta_B
-\sim \frac{3}{2}\,\varepsilon\,\kappa\,\frac{n_R}{s}
-\sim 9\times10^{-10},
+  \label{eq:mu_eff_baryogenesis}
+  \mu_{\rm eff}
+  \;\sim\;
+  c_\theta\,\dot\theta
+  \;+\;
+  c_\Omega\,\Omega_t
+  \;+\;
+  c_5\,\mu_5\,n_0
+  \;+\;\cdots
 \end{equation}
-which lies in the observationally relevant range at the benchmark level.
-This should be read only as a benchmark consistency check within the
-resonant leptogenesis closure.
-It is not a zero-parameter prediction of ECT:
-the ingredients $\varepsilon$, $\kappa$, and $M_R$ are not derived here
-from condensate dynamics.
-Reducing the residual discrepancy and deriving these quantities from an
-ECT-native microscopic model remain open problems
-(OP7, Section~\ref{sec:open_problems}).
+where $\Omega_t$ is a time-dependent scalar built from the angular
+velocity of the ordered frame, and the coefficients
+$c_\theta$, $c_\Omega$, $c_5$ depend on the effective Lagrangian of
+the coherent branch and on the fermion--condensate coupling structure.
 
-\paragraph{What is established and what remains open.}
-Within the present ECT framework, the strongest structural baryogenesis
-ingredient is the existence of an ordering transition that can naturally
-provide departure from equilibrium.
-The preferred-direction coupling $\mathcal{L}_5$ is a structural
-candidate for additional CP-violating effects, but its quantitative role
-has not yet been computed.
-Baryon-number-violating channels and the detailed leptogenesis
-parameters used here are imported from standard physics rather than
-derived from bare ECT.
-Accordingly, the present subsection establishes compatibility with
-Sakharov-type baryogenesis at Level~B, but not yet a first-principles
-ECT derivation of the observed baryon asymmetry.
-The present role of ECT in this subsection is therefore to provide a
-structural environment compatible with Sakharov-type baryogenesis, not
-yet an autonomous microscopic baryogenesis theory or a
-first-principles ECT prediction for $\eta_B$.
+The physical r\^ole of $\mu_{\rm eff}$ is to act as an effective
+chemical-potential-like bias in the time-dependent ordered background.
+When baryon-number-violating processes are active, this bias is
+converted into a net baryon asymmetry.
+In a hot plasma with small $\mu_{\rm eff}/T$, standard
+equilibrium thermodynamics gives~\cite{CohenKaplan1988}:
+\begin{equation}
+  \label{eq:nB_bias}
+  n_B - n_{\bar B}
+  \;\propto\;
+  \mu_{\rm eff}\,T^2.
+\end{equation}
+After freeze-out at temperature $T_D$, the asymmetry is frozen:
+\begin{equation}
+  \label{eq:etaB_freezeout}
+  \eta_B
+  \;\sim\;
+  C\,\frac{\mu_{\rm eff}(T_D)}{T_D},
+\end{equation}
+where $C$ is a model-dependent coefficient of order unity,
+depending on the number of active degrees of freedom and on
+transport details.
+
+\subsubsection*{When matter--antimatter asymmetry arises and when
+it does not}
+
+ECT does not predict that $\eta_B\neq0$ arises in every
+logically possible transition history.
+Rather, it establishes that under generic conditions the asymmetry
+is the expected outcome, while $\eta_B=0$ requires exceptional
+fine-tuning.
+
+\paragraph{Conditions under which $\eta_B\neq0$ (generic).}
+A nonzero matter--antimatter asymmetry arises when the following
+conditions are simultaneously satisfied:
+\begin{enumerate}[label=(\alph*)]
+  \item The ordering transition is \emph{inhomogeneous or
+  time-dependent}, so that $\mu_{\rm eff}\neq0$.
+  This is the physically expected situation for any real
+  phase transition of finite duration.
+  \item The fermion--condensate coupling $\mu_5\neq0$.
+  This is the generic case: $\mu_5=0$ is a symmetry-enhanced
+  special case rather than the generic expectation of the effective
+  coupling structure.
+  \item \emph{B-violating transitions are active} during the epoch
+  when the bias is nonzero.
+  At temperatures $T\sim m_\sigma\sim\bar{M}_{\rm Pl}$, this
+  is naturally satisfied.
+  \item \emph{Freeze-out occurs before complete washout}:
+  the B-violating rate drops below the expansion rate while
+  $\eta_B\neq0$.
+\end{enumerate}
+
+\paragraph{Conditions under which $\eta_B=0$ (exceptional cases).}
+The asymmetry vanishes if any of the following exceptional conditions
+holds:
+\begin{enumerate}[label=(\roman*)]
+  \item \textbf{Exactly homogeneous transition:}
+  the ordering history is sufficiently symmetric that no effective bias
+  $\mu_{\rm eff}$ is generated.
+  \item \textbf{Vanishing effective CP-bias source:}
+  the relevant effective couplings are such that the ordered background
+  induces no net CP-asymmetric bias.
+  \item \textbf{Exact dynamical cancellation:}
+  the bias changes sign during the transition in such a way that the
+  integrated asymmetry source cancels.
+  \item \textbf{Complete washout:}
+  baryon-number-violating processes remain active long enough after the
+  bias epoch to erase the produced asymmetry.
+\end{enumerate}
+These cases are structurally possible, but they require a more
+symmetric or more finely balanced transition history than the generic
+ordered-medium expectation.
+A nonzero $\eta_B$ is thus a natural generic expectation of the ECT
+baryogenesis framework, although its actual realised value depends on
+transport, freeze-out, and washout dynamics.
+
+\subsubsection*{Comparison with the Standard Model}
+
+In the Standard Model, electroweak baryogenesis fails at
+observed parameters because the electroweak phase transition is
+a crossover rather than a strongly first-order transition.
+New BSM physics is therefore required.
+
+In ECT, the ordering transition $O(4)\to O(3)$ is a genuine
+symmetry-breaking phase transition at the Planck scale, where
+the ECT framework can supply all three Sakharov ingredients
+by native ordered-medium mechanisms.
+The ECT framework therefore provides a structural setting for
+baryogenesis that does not have to be introduced as an external
+add-on to the ordered-medium theory itself.
+Whether this setting quantitatively reproduces the observed baryon
+asymmetry without additional beyond-minimal ingredients remains an open
+question.
+
+\subsubsection*{Imported leptogenesis benchmark (Level~B)}
+
+For completeness, the previous version of this section used a
+resonant leptogenesis closure with $M_R\sim10^9\,$GeV,
+wash-out factor $\kappa\sim0.1$--$1$, and CP-asymmetry
+$\varepsilon\sim10^{-6}$, yielding
+$\eta_B\sim9\times10^{-10}$ at the benchmark level.
+This benchmark is not an ECT prediction but an imported consistency
+check showing that a Sakharov-type mechanism, if realised, can produce
+the right order of magnitude.
+It remains available as a Level~B comparison but does not replace
+the ECT-native framework developed above.
+
+\paragraph{Status summary.}
+\begin{itemize}
+  \item \textbf{Level~A:}
+  the $O(4)\to O(3)$ ordering transition provides departure from
+  equilibrium; defect-mediated topology change provides a structural
+  channel for topological-sector transitions.
+  \item \textbf{Level~A/B:}
+  if baryon number is associated with the relevant
+  gauge-topological sector, defect-mediated transitions provide a
+  baryon-number-violating channel.
+  \item \textbf{Level~A given Ph:}
+  the unique leading fermion--condensate
+  coupling~$\mathcal{L}_5$ provides a CP-bias candidate
+  (given that fermionic excitations are empirically observed).
+  \item \textbf{Level~A/B given Ph:}
+  ECT contains a native baryogenesis framework in which all three
+  Sakharov ingredients are structurally available.
+  Under generic conditions of the ordering transition
+  ($\mu_{\rm eff}\neq0$, active B-violation, incomplete washout),
+  a nonzero matter--antimatter asymmetry is the expected outcome.
+  \item \textbf{Open:}
+  the explicit calculation of $\eta_B$ from condensate parameters,
+  including the transport equation, the freeze-out dynamics, and
+  the washout analysis; the precise identification of baryon number
+  with a specific gauge-topological sector of the ordered branch.
+\end{itemize}
 
 % ============================================================
 \subsection{Universe age and cosmological time budgets in ECT}
@@ -20564,75 +20762,292 @@ practical comparisons, on the later matching identification $S_0=\hbar$.
 \label{sec:qs_conservation}
 % ============================================================
 
-\textit{Status: Level~A for the existence of Noether currents inherited
-from the variational structure of the ordered condensate; Level~B for
-their full interpretation in reduced coherent-sector language.
-Connection to ECT basics and Macroscopic Physics:
-Section~\ref{sec:noether}, Appendix~\ref{app:noether_full}, and
-Section~\ref{sec:mp_noether}.}
+\textit{Status: Level~A for the existence of translational and
+rotational Noether currents inherited from the variational condensate
+structure (P1--P3~+~DP); Level~A within the compact-phase EFT for the
+phase current $j^A=\rho^2\partial^A\theta$ and for winding-number
+conservation; Level~B for the full Lorentzian interpretation as energy,
+momentum, angular momentum, and probability current; Level~B for the
+conditions under which global charges are well defined.
+Connection: Section~\ref{sec:noether},
+Appendix~\ref{app:noether_full},
+Section~\ref{sec:u1_emergence},
+Section~\ref{sec:mp_noether},
+and Section~\ref{sec:qs_wave}~(Eq.~\eqref{eq:qs_continuity}).}
 
 \medskip
-The Quantum Sector does not introduce conservation laws from outside.
-They are inherited from the same variational condensate structure that
-already produced conserved quantities in ECT basics and Macroscopic
-Physics.
-What changes in QS is not the existence of the currents, but their
-interpretation inside the coherent-topological branch.
+In standard physics, conservation of energy-momentum, conservation of
+charge, conservation of probability, and quantisation of charge are
+introduced through distinct structural inputs: spacetime symmetry
+(Noether), gauge symmetry ($U(1)$), unitarity of quantum evolution,
+and topological or grand-unification arguments respectively.
 
-This subsection is also the QS-side development of the shared
-deferred Noether material~(Section~\ref{sec:noether}):
-the same variational foundation that generated source currents in
-Macroscopic Physics must, in the coherent-topological branch,
-organise phase-sector charges, winding-sector bookkeeping, and
-ultimately topological current algebra.
+In ECT, all of these conservation structures trace to a single
+structural origin: the ordered condensate field $\Phi$ governed by the
+$O(4)$-invariant action $S_E[\Phi]$ on the homogeneous Euclidean
+arena~$\mathcal{M}^4$.
+The translation and rotation symmetries of the arena~(P1, P2) produce
+the energy-momentum and angular-momentum currents;
+the compact-phase single-valuedness of
+$\Phi_{\rm eff}=\rho e^{i\theta}$
+supports the conserved phase current and the loop-sector
+quantisation structure of the coherent branch;
+and the continuity equation for the coherent density, which in standard
+quantum theory follows from the unitarity axiom, here arises as the
+Lorentzian wave-sector image of the same underlying compact-phase
+conservation structure.
+This cross-sector unification is one of the distinctive structural
+features of the ECT approach.
 
-\subsubsection*{Translational Noether current}
+\subsubsection*{Energy-momentum conservation}
 
-From translational invariance of the underlying action, the condensate
-admits the conserved Noether tensor
+From the translational homogeneity of the Euclidean arena~(P1) and the
+locality of the action~(P3), Noether's theorem produces the conserved
+tensor~(Appendix~\ref{app:noether_full}):
 \begin{equation}
   \label{eq:qs_noether_T}
   \partial_A T^{AB} = 0
+  \qquad\text{(Level~A)}.
 \end{equation}
-(Level~A; follows from P1--P3 and the Noether procedure,
-Appendix~\ref{app:noether_full}).
-This holds regardless of which effective branch is studied.
+After the Wick rotation~\eqref{eq:qs_wick} and passage to the
+Lorentzian ordered branch, this is reinterpreted as
+\begin{equation}
+  \label{eq:qs_covariant_conservation}
+  \nabla_\mu T^{\mu\nu} = 0
+  \qquad\text{(Level~B interpretation)}.
+\end{equation}
 
-\subsubsection*{Rotational and topological sector}
+\paragraph{When energy is not globally conserved.}
+Equation~\eqref{eq:qs_covariant_conservation} is a \emph{local}
+conservation law.
+Global energy conservation additionally requires an exact
+time-translation Killing vector in the effective Lorentzian geometry.
+In two physically important situations this fails:
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{Cosmological expansion:} when the ordered background
+  evolves, global time-translation invariance is broken and there is no
+  conserved global energy---precisely as in general
+  relativity~\cite{Weinberg1972}
+  (Section~\ref{sec:mp_noether}).
+  \item \textbf{Open coherent subsystem:} when the coherent sector is
+  coupled to unresolved environmental modes, energy can flow from the
+  subsystem to the environment.
+  The total condensate energy is still locally conserved, but the
+  reduced coherent-sector energy is not.
+  This is the ECT structural origin of dissipation
+  (Section~\ref{sec:qs_decoherence}).
+\end{enumerate}
 
-Likewise, the ordered condensate carries conserved rotational currents,
+\subsubsection*{Angular momentum conservation}
+
+The $O(4)$ rotational symmetry of the Euclidean action~(P2) produces
+six conserved angular Noether currents:
 \begin{equation}
   \label{eq:qs_noether_J}
-  \partial_C J^{C,AB} = 0,
+  \partial_C J^{C,AB} = 0
+  \qquad\text{(Level~A)}.
 \end{equation}
-already developed in Appendix~\ref{app:noether_full}.
-In the coherent-topological sector these currents acquire an additional
-interpretive rôle: they organise how loop sectors, winding sectors, and
-defect sectors are embedded into the same ordered medium.
+After the ordered-branch breaking $O(4)\to O(3)$ and Wick rotation,
+these split into three spatial angular-momentum
+components~$J^{ij}$ ($i,j=1,2,3$), which remain exact conserved
+quantities of the residual $O(3)$ symmetry, and three mixed
+components~$J^{wi}$, reinterpreted as Lorentzian boost generators in
+the emergent Poincar\'e structure~(Level~A for the Euclidean
+conservation; Level~B for the full Poincar\'e interpretation).
 
-\subsubsection*{Why conservation laws look different in QS}
+\subsubsection*{Phase-current conservation in the coherent branch}
 
-In the geometric branch the natural observables are stress-energy,
-source tensors, and large-scale response.
-In the Quantum Sector the natural observables are amplitudes, reduced
-phase variables, winding sectors, and coherent histories.
-The same underlying conserved structures are therefore seen through a
-different coarse-graining.
+The coherent branch carries an additional conserved current beyond the
+translational and rotational structures.
+The global $U(1)$ phase symmetry of the compact-phase EFT
+(Section~\ref{sec:u1_emergence}) yields:
+\begin{equation}
+  \label{eq:qs_phase_current}
+  j^A = \rho^2\,\partial^A\theta,
+  \qquad
+  \partial_A j^A = 0
+  \qquad\text{(Level~A within the compact-phase EFT)},
+\end{equation}
+recalled from Eq.~\eqref{eq:U1_noether}.
+Under the Wick rotation and the Level~B identification $S_0=\hbar$,
+the temporal component $j^0$ is proportional to the coherent density
+$\rho$, and the spatial components $j^i$ to the coherent current.
+The continuity equation~\eqref{eq:qs_continuity} derived in
+Section~\ref{sec:qs_wave} can be read as the Lorentzian wave-sector
+image of the same underlying conservation structure.
 
-\subsubsection*{Open point: topological currents}
+In standard quantum mechanics, the continuity equation for $|\Psi|^2$
+follows from the unitarity of time evolution, which is a separate
+axiom.
+In ECT, the same equation follows from the Noether structure of the
+compact-phase EFT---a structural derivation rather than a postulate.
 
-A fully explicit development of topological Noether currents in the
-coherent branch has not yet been completed.
-The deferred Noether material~(Section~\ref{sec:noether}) flagged this
-as a shared MP/QS target.
-The coherent branch clearly suggests a conserved topological
-organisation, but its final current algebra remains open.
+\subsubsection*{Winding-number conservation}
 
-\paragraph{Summary.}
-Conservation laws are not missing from the Quantum Sector; they are
-inherited from the same variational foundation as ECT basics and MP.
-Their specifically coherent-topological interpretation is still only
-partially developed.
+In addition to the differential Noether currents, the coherent branch
+carries a topological conservation law: the winding number
+\begin{equation}
+  \label{eq:qs_winding_conserved}
+  n[\gamma]
+  = \frac{1}{2\pi}\oint_\gamma \partial_A\theta\,dX^A
+  \;\in\;\mathbb{Z}
+\end{equation}
+is invariant under smooth deformations of the field configuration
+within the coherent branch~(BR1; Level~A within the compact-phase EFT).
+
+Winding-number conservation is topological: it does not depend on the
+specific dynamics, only on the single-valuedness of $\Phi_{\rm eff}$
+and the smoothness of the configuration.
+This is a global sector-classification law, distinct from local
+Noether conservation.
+It constrains global sector changes and remains stable under smooth
+deformations within the compact-phase EFT.
+
+\subsubsection*{Defect-mediated topology change}
+
+The topological protection of winding number holds only within the
+smooth coherent branch~(BR1), where $\rho>0$ everywhere.
+If the condensate amplitude vanishes at a localised defect core
+($\rho\to 0$), the compact-phase description breaks down and the
+winding number can change discontinuously.
+This is the ECT structural analogue of instanton and sphaleron
+processes in gauge field theory.
+
+\paragraph{Physical mechanism.}
+In a superfluid, a quantised vortex can be created or annihilated
+only through processes in which the superfluid density drops to zero at
+the vortex core~\cite{Donnelly1991,Volovik2003}.
+In ECT, analogously, a change of the topological charge requires
+a configuration in which $\Phi_{\rm eff}$ passes through zero.
+Such defect-mediated transitions are admissible configurations
+under~S4, but they are \emph{thermally suppressed} by the condensate
+stability at temperatures far below the condensate scale.
+
+\paragraph{Thermal suppression estimate~(Level~A/B).}
+The energy cost of creating a defect core where $\rho\to 0$ is of
+order the condensate core scale:
+\begin{equation}
+  \label{eq:qs_defect_energy}
+  E_{\rm defect} \;\sim\; m_\sigma \;\sim\; \bar{M}_{\rm Pl}.
+\end{equation}
+The defect creation rate is therefore thermally suppressed:
+\begin{equation}
+  \label{eq:qs_defect_rate}
+  \Gamma_{\rm defect}
+  \;\sim\;
+  \exp\!\left(-\frac{E_{\rm defect}}{k_B T}\right).
+\end{equation}
+At laboratory temperatures ($T\sim 300\,$K $\sim 2.6\times10^{-11}\,$GeV),
+$E_{\rm defect}/k_BT\sim 4.6\times10^{29}$---utterly negligible.
+At GUT-scale temperatures ($T\sim 10^{16}\,$GeV),
+$E_{\rm defect}/k_BT\sim 10^{3}$---still strongly suppressed.
+Only at temperatures approaching the condensate scale
+($T\sim m_\sigma\sim\bar{M}_{\rm Pl}$) does
+$E_{\rm defect}/k_BT\sim 1$ and defect creation becomes thermally
+accessible.
+
+\paragraph{Connection to baryogenesis.}
+These defect-mediated topology changes, together with the
+CP-bias mechanism from the preferred-direction fermion coupling and
+the non-equilibrium conditions of the ordering transition, provide the
+structural setting for an ECT-native baryogenesis framework.
+This connection is developed in
+Section~\ref{sec:baryogenesis}.
+
+\subsubsection*{Observational orientation}
+
+The compact-phase conservation structure developed here is the
+structural counterpart of quantised circulation and flux in condensed
+matter:
+in superfluid ${}^4$He, circulation is quantised as
+$\kappa=h/m_{\rm He}\approx 9.97\times10^{-8}\,\mathrm{m^2/s}$;
+in type-II superconductors, the magnetic flux quantum is
+$\Phi_0=h/2e\approx 2.07\times10^{-15}\,\mathrm{Wb}$.
+In each case the quantisation follows from the single-valuedness of a
+compact order-parameter phase
+(cf.\ Table~\ref{tab:loops_analogy}).
+
+Experimentally, electric charge conservation has been tested to
+extraordinary precision: the best limits on electron charge
+non-conservation give lifetimes exceeding
+$10^{26}\,$years~\cite{PDG2022}.
+In the ECT framework, this extreme stability is structurally
+consistent with the strong low-energy suppression of defect-mediated
+topological sector changes.
+At the present stage, this should be read as a consistency check of the
+ordered-medium framework rather than as a completed quantitative
+derivation of observed charge stability.
+The connection between defect-mediated transitions and
+baryogenesis is developed in Section~\ref{sec:baryogenesis}.
+
+\subsubsection*{ECT structural expectations and falsifiable
+requirements}
+
+The conservation-law architecture of the coherent sector suggests the
+following structurally testable expectations:
+\begin{enumerate}[label=(\roman*)]
+  \item \textbf{Unified origin:}
+  conservation of energy-momentum, conservation of charge, conservation
+  of coherent density (probability), and quantisation of charge all
+  originate from the same ordered condensate through different aspects
+  of its symmetry and compact-phase structure.
+  Standard physics distributes these across independent structural
+  inputs (Noether, gauge symmetry, unitarity, and topology).
+  \item \textbf{Topological robustness:}
+  winding-number conservation provides robustness of the loop-sector
+  classification under smooth perturbations within the compact-phase
+  EFT.
+  It is stronger than a purely local differential conservation law in
+  that it constrains global sector changes rather than only local
+  current flow.
+  \item \textbf{Defect-mediated topological sector change:}
+  transitions between different winding/topological sectors are
+  possible only through defect processes (vanishing $\rho$) and are
+  exponentially suppressed at low energies by condensate stability.
+  The suppression lifts at Planck-scale temperatures, providing
+  a structural setting for baryon-number-violating channels.
+  \item \textbf{Cross-sector universality of $S_0$:}
+  the same action scale that enters the continuity equation, the
+  canonical commutators, the Born weights, and the wave-kinematical
+  reconstruction also controls the Noether-current normalisation.
+\end{enumerate}
+
+\paragraph{Falsifiable structural requirements.}
+ECT makes two falsifiable structural predictions for this sector:
+\begin{enumerate}[label=(\alph*)]
+  \item If conservation of probability, conservation of charge, and
+  quantisation of action were found to require \emph{different}
+  fundamental scales---rather than the single scale $S_0$---the
+  single-field condensate architecture~(P3) would be falsified.
+  \item If topological-sector transitions were observed at energies
+  far below the condensate core scale ($E\ll m_\sigma$) through a
+  smooth (non-defect) process, the topological protection mechanism
+  of the coherent branch would be falsified.
+\end{enumerate}
+Neither of these has been observed: all known conservation laws are
+consistent with a single universal $\hbar$, and charge conservation
+holds to the limits of experimental precision at accessible energies.
+
+\statussummary
+\textit{Established~(Level~A):}
+translational and rotational Noether currents inherited from
+P1--P3~+~DP;
+phase current $j^A=\rho^2\partial^A\theta$ and its conservation
+within the compact-phase EFT;
+winding-number conservation under smooth deformations~(BR1).
+\textit{Established~(Level~B):}
+the Lorentzian interpretation of Noether currents as energy, momentum,
+and angular momentum;
+the continuity equation~\eqref{eq:qs_continuity} as the Lorentzian
+wave-sector image of the underlying phase Noether law; the later
+probability-current interpretation of the coherent current under the
+$S_0=\hbar$ matching;
+thermal suppression of defect-mediated topology change.
+\textit{Open:}
+fully explicit topological current algebra in the coherent branch;
+the precise defect-sector dynamics and its connection to
+non-perturbative baryogenesis;
+conserved charges associated with the full defect sector.
 
 % ============================================================
 
