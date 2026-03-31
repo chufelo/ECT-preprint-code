@@ -25856,7 +25856,7 @@ coherent ordered medium, factorisation of distant subsystems is no
 longer automatic.
 If two subsystems $A$ and $B$ are both embedded in the same ordered
 condensate, the reduced state
-$\hat\rho_{AB}=\mathrm{Tr}_{\rm env}\,|\Psi\rangle\langle\Psi|$
+$\hat\rho_{AB}=\mathrm{Tr}_{\rm env}\,\hat\rho_{\rm tot}$
 generically does not factorise as
 $\hat\rho_A\otimes\hat\rho_B$, because both subsystems interact with
 a common medium whose correlators extend across the spatial separation.
@@ -25908,9 +25908,13 @@ ECT must account for both: the persistence of non-classical
 correlations in isolated subsystems (entanglement) and their eventual
 suppression under environmental coupling (decoherence).
 The same influence-functional infrastructure is expected to govern both
-regimes, with entanglement corresponding to the
-$\Gamma_{\rm irr}\ll 1$ limit and decoherence to the
-$\Gamma_{\rm irr}\gg 1$ limit.
+regimes, but they are not reducible to a single scalar criterion.
+Entanglement concerns the non-factorisability of multipartite reduced
+states, whereas decoherence concerns the suppression of interference in
+a chosen reduced description under environmental tracing.
+In practice, increasing $\Gamma_{\rm irr}$ provides one natural route by
+which coherent entanglement signatures become fragile, but the two
+notions are not identical.
 
 \paragraph{Empirical backdrop.}
 The empirical confirmation of Bell-inequality violation is now
@@ -25944,10 +25948,21 @@ full fundamental test.
 Fourth, if a future derivation is completed, Bell correlations should
 not require introducing a second independent non-medium ontology.
 
+\paragraph{What is not yet established.}
+The present ECT entanglement programme does not yet derive the exact
+CHSH-type correlators, Tsirelson bound, or the full quantum-information
+tensor-product formalism from first principles.
+It establishes a structural route to non-factorisable coherent
+correlations within a single medium, and shows why Bell-local hidden
+variable completion is not the intended target.
+The completed quantitative Bell-correlator reconstruction remains an
+open step of the programme.
+
 \paragraph{Falsifier for the entanglement programme.}
 The ECT entanglement programme would fail if
-(i)~Bell-type correlations required a primitive tensor-product quantum
-axiom entirely unrelated to the coherent medium,
+(i)~Bell-type correlations could only be reproduced by taking the
+tensor-product entanglement structure as an irreducible primitive layer
+with no reconstruction from the coherent medium,
 (ii)~the correlation structure inferred from decoherence and
 vacuum-response kernels proved fundamentally incompatible with the
 correlation structure required by entanglement experiments,
@@ -27777,6 +27792,137 @@ decoherence, vacuum-response effects, and dark-sector phenomenology
 inside one common ordered-medium picture while making explicit which
 parts are structural, which are effective, and which remain open.
 
+
+\subsection{Architectural comparison with neighbouring programmes}
+\label{sec:comparison}
+
+The purpose of this subsection is not to argue that ECT is ``better''
+than all neighbouring frameworks.
+It is to locate ECT within the broader landscape of approaches to
+emergent spacetime and quantum gravity, highlighting where its
+architectural choices overlap with, differ from, and remain weaker or
+stronger than those of its neighbours.
+
+\paragraph{Scope and methodology.}
+The comparison is organised along eight structural axes:
+origin of time/Lorentzian structure,
+origin of gauge structure,
+origin/status of quantum axioms,
+gravity closure,
+dark-sector treatment,
+singularity logic,
+information/decoherence architecture,
+and falsifier structure.
+Table~\ref{tab:comparison_main} summarises the comparison; an expanded
+version with additional axes is given in
+Appendix~\ref{app:comparison_expanded}.
+
+\paragraph{Comparison by falsifier style.}
+A distinctive feature of the ECT programme is that many of its
+falsifiers are cross-sector architectural rather than sectorwise:
+a single failure can threaten the whole one-cone, one-action-scale,
+one-UV-threshold architecture.
+By contrast, the standard GR + SM framework has largely sectorwise
+falsifiers (particle content, gravitational tests, cosmological
+parameters), while modified-gravity models typically have
+Lorentz-violation or extra-mode falsifiers.
+This difference is a structural consequence of ECT's attempt to reduce
+the number of independent primitives.
+
+\paragraph{Comparison by number of independent primitives.}
+ECT attempts to compress the number of independent foundational
+primitives more aggressively than most neighbouring frameworks.
+The standard GR + SM picture requires geometry (metric +
+diffeomorphism), quantum axioms (Hilbert space, Born rule), the gauge
+group, the particle content, dark matter, and dark energy as separate
+inputs.
+ECT aims to trace many of these back to a single ordered medium.
+This compression is not yet complete---the SM gauge group and the
+electroweak/Yukawa hierarchy are not yet derived---but the
+architectural ambition itself distinguishes ECT from approaches that
+accept the standard input list.
+
+{
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{p{2.2cm}p{2.2cm}p{2.2cm}p{2.2cm}p{2.2cm}p{2.2cm}}
+\caption{Architectural comparison of ECT with neighbouring programmes.
+Entries are necessarily compressed; for expanded discussion see
+Appendix~\ref{app:comparison_expanded}.}
+\label{tab:comparison_main}\\
+\toprule
+Axis & GR + SM & Einstein-aether & Ho\v{r}ava--Lifshitz
+  & Volovik analogue & ECT \\
+\midrule
+\endfirsthead
+\toprule
+Axis & GR + SM & Einstein-aether & Ho\v{r}ava--Lifshitz
+  & Volovik analogue & ECT \\
+\midrule
+\endhead
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
+Time / Lorentz
+  & Fundamental
+  & Fundamental; preferred frame added
+  & Fundamental but anisotropic
+  & Emergent from condensate
+  & Emergent from $O(4)\!\to\!O(3)$ \\
+Gauge structure
+  & Postulated
+  & Postulated
+  & Postulated
+  & Analogy only
+  & $U(1)$ structural; $SU(2)$ algebraic bridge; $SU(3)$ open \\
+Quantum axioms
+  & Primitive
+  & Primitive
+  & Primitive
+  & Primitive
+  & Structural route via coherent branch; completion open \\
+Gravity closure
+  & Einstein eqs.\ exact
+  & Einstein + aether
+  & Modified dispersion
+  & Acoustic metric only
+  & Induced metric; FP route; nonlinear closure open \\
+Dark sector
+  & Extra particles + $\Lambda$
+  & Extra particles + $\Lambda$
+  & Extra particles + $\Lambda$
+  & Not addressed
+  & Condensate response; no extra species at galactic level \\
+Singularities
+  & Physical or censored
+  & Physical or censored
+  & Possibly resolved by UV
+  & Not addressed
+  & Branch boundary; condensate breakdown \\
+BH information
+  & Paradox open
+  & Paradox open
+  & Modified; details model-dependent
+  & Not addressed
+  & Reduced-state reading; no fundamental loss \\
+Falsifier style
+  & Sectorwise
+  & Extra-mode / LIV
+  & LIV / dispersion
+  & Not systematic
+  & Cross-sector architectural \\
+\end{longtable}
+}
+
+\paragraph{Interpretive note.}
+The comparison above is architectural, not polemical.
+Each listed programme has independent strengths that ECT does not
+replicate.
+The point is not that ECT solves all problems, but that it pursues a
+distinctive architectural strategy---single ordered medium, emergent
+spacetime and quantum structure, cross-sector falsifiers---that is
+worth comparing on its own terms.
 
 \subsection{Limitations of the present formulation}
 
@@ -35711,6 +35857,111 @@ and the Lorentzian age budget simultaneously.
 Any upward shift of the inferred late-time Hubble scale is therefore
 necessarily correlated with a specific sign pattern in the other three
 observables.
+
+% ==============================================================
+\section{Expanded architectural comparison of ECT and neighbouring
+programmes}
+\label{app:comparison_expanded}
+% ==============================================================
+
+This appendix provides an expanded version of the architectural
+comparison given in Section~\ref{sec:comparison}.
+The comparison is intended as a structural orientation, not as a
+claim of superiority.
+
+{
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{p{3.2cm}p{3.5cm}p{3.5cm}p{3.5cm}}
+\caption{Expanded comparison: ECT versus selected programmes.}
+\label{tab:comparison_expanded}\\
+\toprule
+Axis & GR + SM & CDT / causal discretisation & ECT \\
+\midrule
+\endfirsthead
+\toprule
+Axis (cont.) & GR + SM & CDT / causal discretisation & ECT \\
+\midrule
+\endhead
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
+Starting-point geometry
+  & Lorentzian manifold (fundamental)
+  & Lorentzian simplicial complex
+  & Euclidean $\mathbb{R}^4$; Lorentzian emergent \\
+Time status
+  & Fundamental coordinate
+  & Fundamental causal ordering
+  & No external time; emergent from SSB \\
+Speed of light
+  & Fundamental constant
+  & Lattice-emergent (continuum limit)
+  & Derived: $c_*=1/\sqrt{\alpha-\beta}$ \\
+$\hbar$ status
+  & Fundamental constant
+  & Fundamental constant
+  & Structural candidate $S_0$; matched to $\hbar$ \\
+Gauge group
+  & Postulated $SU(3)\times SU(2)\times U(1)$
+  & Not addressed
+  & $U(1)$ structural; $SU(2)$ algebraic bridge; $SU(3)$ open \\
+Gravity
+  & Einstein--Hilbert action
+  & Regge calculus
+  & Induced metric; FP-type linearised; nonlinear closure open \\
+Dark matter
+  & WIMP / axion / other particle
+  & Not addressed
+  & Condensate $\phi$-branch response \\
+Dark energy
+  & Cosmological constant $\Lambda$
+  & Emergent (model-dependent)
+  & Dynamic $\Lambda_{\rm eff}(X)$; $w\ge-1$ \\
+Singularity treatment
+  & Penrose--Hawking theorems
+  & Resolved by discreteness
+  & Branch boundary; condensate breakdown \\
+Decoherence / arrow
+  & External quantum postulate
+  & Not addressed
+  & Influence-functional from coherent branch \\
+Entanglement
+  & Primitive tensor-product axiom
+  & Not addressed
+  & Medium-based non-factorisable route \\
+BH information
+  & Paradox open
+  & Not addressed at continuum level
+  & Reduced-state reading; no fundamental loss \\
+Falsifier style
+  & Sectorwise
+  & Discreteness-scale tests
+  & Cross-sector architectural \\
+No.\ of independent primitives
+  & $\sim$6 (metric, QM, gauge, particles, DM, DE)
+  & $\sim$3 (lattice, QM, matter)
+  & Target: 1 medium + postulates P1--P6 \\
+\end{longtable}
+}
+
+\paragraph{Barbour timeless mechanics.}
+Barbour's relational programme~\cite{Barbour1999} shares ECT's goal of
+eliminating external time but works in 3D configuration space rather
+than 4D Euclidean space.
+ECT and Barbour's programme are therefore architecturally distinct:
+ECT starts from a 4D arena and derives 3+1 structure through SSB,
+whereas Barbour reconstructs dynamics from instantaneous
+configurations.
+
+\paragraph{Scope note.}
+This comparison is necessarily incomplete.
+Many other approaches (loop quantum gravity, string theory, asymptotic
+safety, causal sets, group field theory) have rich internal structures
+that cannot be compressed into a single table row.
+The purpose here is to locate ECT among its closest architectural
+neighbours, not to survey the full landscape.
 
 % ==============================================================
 \section{Analogue-observable dictionary for ordered-branch tests}
