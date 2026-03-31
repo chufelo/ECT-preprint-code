@@ -22922,10 +22922,15 @@ Hilbert space}
 \label{sec:qs_reflection_positivity}
 % ============================================================
 
-\textit{Status: Level~A for the free quadratic broken-phase sector;
-Level~B for the full interacting coherent-sector functional integral.
+\textit{Status: Level~A for reflection positivity in the free quadratic
+broken-phase subsectors (massive radial mode and free massless Goldstone
+modes); Level~B/open for the full interacting coherent-sector functional
+integral.
 Connection: P1~(Euclidean arena), P2~(O(4)-invariant action),
-Wick rotation~\eqref{eq:qs_wick}.}
+P5~(medium character), Wick rotation~\eqref{eq:qs_wick},
+the UV-threshold programme~(\S\ref{par:uv_threshold}),
+and the downstream Hilbert-space, Born, entanglement, decoherence,
+and black-hole-information programmes.}
 
 \medskip
 The standard route from a Euclidean field theory to a physical
@@ -22978,6 +22983,12 @@ the OS programme:
     adaptation for the later Lorentzian interpretation; the
     reflection-positivity condition itself is imposed at the Euclidean
     level, independently of SSB;
+  \item P5 gives the ordered branch a genuine medium interpretation:
+    the Euclidean functional measure is read as the statistical weight
+    of a physical $\Phi$-medium configuration, not merely as a formal
+    integration device.
+    This does not by itself prove reflection positivity, but it makes
+    the OS route conceptually native to ECT;
   \item the Wick rotation $w\to -ic_*t$~\eqref{eq:qs_wick}, already
     used to reconstruct the Lorentzian metric in ECT basics and
     Macroscopic Physics, is exactly the analytic continuation that
@@ -23007,6 +23018,29 @@ This provides a local model and structural bridge for the full
 Hilbert-space programme, but it is not yet a theorem for the complete
 coherent interacting sector.
 
+\paragraph{Goldstone sector at the free quadratic level.}
+The $O(4)\to O(3)$ breaking produces three massless Goldstone modes.
+For a free massless scalar in four Euclidean dimensions, the standard
+Gaussian measure is reflection-positive as well, up to the usual
+infrared/zero-mode subtleties of the massless sector, which do not
+affect the local reflection-positivity statement used
+here~\cite{GlimmJaffe1987}.
+Therefore the free quadratic broken-phase content of ECT is
+OS-compatible not only in the massive radial subsector but also in the
+free massless Goldstone subsector.
+In this precise sense, the full \emph{free quadratic} broken-phase
+content (one massive radial mode plus three free Goldstone modes) is
+reflection-positive sector by sector.
+
+\paragraph{Relation to the radial threshold scale.}
+The radial mode furnishes the natural massive threshold of the ordered
+branch.
+Its precise numerical placement belongs to the later scale-matching
+programme~(\S\ref{sec:three_scales}), but the reflection-positivity
+point needed here is simpler: the massive radial Gaussian subsector has
+$m_\sigma^2>0$, and therefore satisfies the standard OS positivity
+criterion for explicitly positive Gaussian measures.
+
 \paragraph{Status beyond the quadratic sector~(Level~B/open).}
 For the full interacting coherent-sector functional integral, the
 verification of reflection positivity is a nontrivial constructive
@@ -23029,6 +23063,19 @@ nonperturbative completion has not yet been carried out.
 It belongs to the long-term constructive programme of the theory
 and is flagged as an open problem~(OP-Q16).
 
+\paragraph{Connection to the UV-threshold programme.}
+The later UV-threshold programme~(\S\ref{par:uv_threshold}) is
+structurally relevant for the OS route.
+The same radial threshold that marks the domain of validity of the
+ordered-branch EFT also limits how far the Euclidean coherent-sector
+description is expected to be extended toward arbitrarily short scales.
+This does \emph{not} solve the constructive reflection-positivity
+problem for the interacting theory, but it means that the RP programme
+in ECT is not forced to treat the ordered branch as fundamental at
+arbitrarily high momenta.
+The UV-threshold and Hilbert-space programmes are therefore
+architecturally linked rather than independent.
+
 \paragraph{What reflection positivity would establish.}
 If reflection positivity is verified for the full coherent-sector
 measure, the OS theorem would deliver:
@@ -23047,6 +23094,26 @@ The full canonical quantisation programme of the Quantum Sector would
 then be grounded in this reconstruction rather than assumed
 independently.
 
+\paragraph{Why this bridge matters downstream.}
+The Hilbert space reconstructed by the OS route is the common arena for
+the rest of the Quantum Sector.
+Specifically:
+(i)~the canonical commutator programme requires a positive-norm
+$\mathcal{H}_{\rm phys}$ as its domain~(Section~\ref{sec:qs_ccr});
+(ii)~the Born-type probability reading requires positive inner-product
+structure~(Section~\ref{sec:qs_born});
+(iii)~the entanglement programme presupposes tensor-product structure
+inside a physical Hilbert space~(Section~\ref{sec:qs_entanglement});
+(iv)~decoherence and the arrow-of-time programme require reduced-state
+descriptions built from an underlying globally unitary
+theory~(Section~\ref{sec:qs_decoherence});
+(v)~the black-hole information programme likewise relies on global
+unitarity at the level of the full coherent
+description~(Section~\ref{sec:qs_black_holes}).
+In this sense, reflection positivity is not an isolated mathematical
+detail but the single bridge on which the downstream quantum
+architecture rests.
+
 \paragraph{Relation to the Wick rotation already used in ECT.}
 The Wick rotation $w\to -ic_*t$~\eqref{eq:qs_wick} has already been
 used twice: once in ECT basics to reconstruct the Lorentzian metric,
@@ -23057,14 +23124,47 @@ for this continuation: it is not merely a formal trick but the
 rigorous bridge from a well-defined Euclidean functional integral to
 a well-defined Lorentzian quantum theory.
 
+\paragraph{Discriminant: Euclidean-first versus Lorentzian-first
+readings.}
+The distinctive feature of ECT is not the use of the OS theorem itself,
+which belongs to standard constructive QFT, but the ontological
+direction in which it is used.
+In ECT the Euclidean arena is primary~(P1), and the Lorentzian quantum
+theory is the derived output of the OS bridge.
+By contrast, in standard Lorentzian-first formulations the Euclidean
+theory is usually introduced as an auxiliary continuation of a theory
+already defined in Lorentzian terms.
+ECT therefore gives the OS reconstruction a more central conceptual
+role: it is not merely a consistency tool, but the native bridge from
+the fundamental Euclidean medium description to the physical Hilbert
+space of the coherent branch.
+
+\paragraph{Falsifier for the Hilbert-space programme.}
+If the full interacting coherent-sector functional integral fails to
+satisfy reflection positivity, then the OS route cannot construct a
+physical Hilbert space with positive norm and globally unitary
+evolution.
+In that case the downstream coherent-branch programmes for canonical
+algebra, Born-type probabilities, entanglement, decoherence, and the
+black-hole-information reading would lose their common structural
+foundation.
+Reflection positivity is therefore a genuine architectural falsifier for
+the quantum reading of ECT, not a merely technical side condition.
+
 \statussummary
-\textit{Established:}
-standard OS reconstruction applies to explicitly positive Gaussian
-subsectors of the broken phase (structural bridge).
+\textit{Established~(Level~A):}
+(i)~standard OS reconstruction applies to explicitly positive Gaussian
+massive subsectors of the broken phase;
+(ii)~the free massless Goldstone subsectors are likewise
+reflection-positive in the standard Gaussian sense;
+(iii)~the free quadratic broken-phase content is therefore
+sector-by-sector OS-compatible.
 \textit{Structural programme~(Level~B/open):}
-the full interacting coherent-sector verification is well-motivated
-and uses only ECT ingredients, but has not yet been completed
-nonperturbatively~(OP-Q16).
+the full interacting coherent-sector verification remains a
+constructive-QFT problem, but in ECT it is structurally tied to the
+same ordered-branch architecture that underlies the UV-threshold,
+canonical, Born, entanglement, decoherence, and black-hole-information
+programmes~(OP-Q16).
 
 % ============================================================
 \subsection{Status of unitarity in the coherent branch}
@@ -25835,6 +25935,10 @@ quantum-information formalism.}
 \paragraph{What is established, what is structurally suggested, and what
 remains open.}
 \label{par:entanglement_programme}
+The tensor-product and reduced-state language used below presupposes the
+physical Hilbert-space bridge discussed in
+Section~\ref{sec:qs_reflection_positivity}.
+
 The ECT quantum sector already contains three ingredients relevant to
 entanglement.
 First, subsystems are not fundamental isolates but reduced sectors of a
@@ -27450,10 +27554,15 @@ Analogue-gravity continuity of the coherent-vacuum interpretation
   & Level~B
   & Section~\ref{sec:qs_vacuum_unified};
     conceptual support, not standalone derivation \\
-Reflection positivity in positive Gaussian subsectors
-  & Structural bridge
+Reflection positivity in massive Gaussian broken-phase subsectors
+  & Level~A
   & Section~\ref{sec:qs_reflection_positivity};
     standard OS result for explicitly positive Gaussian measures \\
+Reflection positivity in free massless Goldstone subsectors
+  & Level~A
+  & Section~\ref{sec:qs_reflection_positivity};
+    standard Gaussian massless-scalar RP compatibility
+    (up to the usual infrared subtleties) \\
 Reflection positivity for full interacting coherent sector
   & Open (OP-Q16)
   & Section~\ref{sec:qs_reflection_positivity};
