@@ -226,7 +226,7 @@ black-hole thermodynamics
 % =============================================================================
 
 \begin{longtable}{@{}p{3.2cm} p{9.5cm} p{2.8cm}@{}}
-\caption{Principal symbols. Foundational symbols (P1--P5 level) are
+\caption{Principal symbols. Foundational symbols (P1--P6 level) are
 defined in Sections~\ref{sec:postulates}--\ref{sec:branching}.
 Derived and matching-level symbols are introduced in the corresponding
 sections.}
@@ -655,7 +655,7 @@ structure, geometry, and gravitational dynamics are to emerge from it.
 The foundational construction is organised in three levels.
 First, the ontological properties of the $\Phi$-medium are stated
 explicitly (Section~\ref{subsec:phi_medium_properties}).
-Second, the working postulates P1--P5 specify the concrete ECT
+Second, the working postulates P1--P6 specify the concrete ECT
 realisation of that medium.
 Third, derived branch rules such as BR1 isolate special coherent sectors
 of the ordered phase.
@@ -763,6 +763,12 @@ or symmetry breaking.
     The $\Phi$-medium is capable of transitioning into an ordered state
     with a preferred direction $\langle\partial_A\Phi\rangle \neq 0$.
 
+  \item[\textbf{S10} --- Medium character.]
+    In the ordered $\Phi$-medium, pointwise internal coordinates of
+    the effective order parameter are descriptive redundancies rather
+    than independently observable degrees of freedom; local observables
+    depend only on invariant gradient and holonomy data.
+
   \item[\textbf{S8} --- Inhomogeneity of ordering.]
     Ordering need not be globally uniform; ordered domains, transition
     zones, and local deviations from a uniform background are admissible.
@@ -772,11 +778,6 @@ or symmetry breaking.
     with the vacuum manifold; topologically non-trivial configurations
     are not excluded a priori.
 
-  \item[\textbf{S10} --- Medium character.]
-    In the ordered $\Phi$-medium, pointwise internal coordinates of
-    the effective order parameter are descriptive redundancies rather
-    than independently observable degrees of freedom; local observables
-    depend only on invariant gradient and holonomy data.
 \end{description}
 
 \paragraph{Layer~DP\,: Dynamical principle.}
@@ -798,15 +799,15 @@ P2 formalises S2 at the level of the bare symmetry;
 P3 realises S4, S5, and provides the minimal local variational
 realisation associated with DP;
 P4 realises S7;
+P6 realises S10;
 P5 makes explicit S6 and S8.
 The broader topological completeness property S9 is partially reflected,
 within the smooth coherent branch, by the derived sector rule~BR1.
-The medium-character property S10 is independent of P1--P5: it
-expresses the physical assertion that the $\Phi$-medium is a
-continuum medium rather than a rigid structure, so that internal
-symmetry directions of the action are descriptive redundancies of
-the effective description.
-Together, P1--P5, BR1, and S10 provide the present structural
+The medium-character property S10 is realised by the working
+postulate~P6, which is logically independent of P1--P5: it asserts
+that pointwise internal coordinates of the ordered branch are
+descriptive redundancies rather than observables.
+Together, P1--P6, BR1, and DP provide the present structural
 framework of ECT.
 
 \subsection{List of postulates}
@@ -967,6 +968,58 @@ later in Section~\ref{sec:quantum}.
 
 
 \medskip
+\noindent\textbf{P6 --- Medium character of the ordered branch.}
+\label{eq:P6}
+In the ordered $\Phi$-medium, pointwise internal coordinates of the
+effective order parameter---specifically, the compact phase
+$\theta(X)$ and the local orientation $n_A(X)$ of the ordered
+branch---are descriptive redundancies of the effective description
+rather than independently observable degrees of freedom.
+Local physical observables depend only on invariant gradient and
+holonomy data of the effective order parameter.
+
+This postulate realises property~S10 of the $\Phi$-medium within
+the concrete ordered-branch framework of ECT.
+It is logically independent of P1--P5: the passage from
+``the action is symmetric under global internal rotations'' (P2) to
+``pointwise internal coordinates are locally unobservable'' (P6) is a
+non-trivial physical assertion that distinguishes a deformable
+continuum medium from a rigid structure.
+
+P6 is motivated by the universal behaviour of known physical media:
+in a superfluid, the absolute phase at a single point is not an
+observable---only phase gradients and circulation integrals carry
+physical information;
+in a nematic liquid crystal, the pointwise director angle is
+unobservable---only director gradients and topological defect data
+are physical;
+in a crystal, the absolute displacement of a lattice site is
+unobservable---only the strain tensor (gradient of displacement) is.
+P6 asserts that the $\Phi$-medium of ECT has this same
+continuum-medium character.
+
+\emph{What P6 does not assert.}
+P6 does not exclude gauge-invariant \emph{nonlocal} observables such as
+holonomies, winding numbers, or Wilson-loop data; on the contrary, such
+quantities are natural in a medium with compact phase and local frame
+redundancy.
+P6 does not by itself determine the gauge coupling constants or the
+fermion representation content, and it does not produce the $SU(3)$
+colour gauge structure, which requires additional internal degrees of
+freedom beyond the minimal scalar realisation of P3.
+
+\emph{Central structural consequence.}
+Since pointwise internal coordinates are redundancies, local
+redefinitions of $\theta(X)$ and $n_A(X)$ must be treated as local
+gauge redundancies.
+This requires compensating gauge connections and leads to the
+ordered-branch gauge architecture $SU(2)\times U(1)$.
+The full derivation is developed in
+Sections~\ref{sec:u1_emergence}
+and~\ref{sec:nonabelian_embedding}.
+
+
+\medskip
 \noindent\textbf{P5 --- Multiplicity of configurations and admissibility of non-uniform ordering.}
 \label{eq:P5}
 The configuration space of the $\Phi$-medium is non-trivial: no single
@@ -990,7 +1043,11 @@ follow from it as a theorem.
 \subsection{Independence of postulates}
 \label{subsec:independence}
 
-The five working postulates are logically independent:
+The six working postulates P1--P6 are logically independent:
+P1--P5 are independent of one another (as below), and P6 is
+independent of all five (it cannot be derived from action symmetry,
+locality, field content, ordering, or configuration multiplicity
+alone).
 \begin{itemize}
   \item P1 does not follow from P2--P5: neither $O(4)$ invariance, nor
     the choice of field content, nor the admissibility of an ordered
@@ -1245,38 +1302,12 @@ coherent vacuum sector of ECT.
 
 
 
-\subsubsection*{P5 --- Multiplicity and inhomogeneity}
+\subsubsection*{P6 / S10 --- Medium character}
 
 \paragraph{Physical meaning.}
-The $\Phi$-medium is not restricted to a single global configuration.
-Ordered realisations may include spatially varying condensate
-backgrounds, domain structures, and transition regions.
-No globally uniform ordered state is imposed a priori as the unique
-physical realisation.
-
-\paragraph{Consequences.}
-P5 makes spatially varying ordered backgrounds structurally admissible
-within ECT. This in turn makes later macroscopic constructions with
-branch-dependent effective quantities conceptually natural, although the
-explicit dynamical laws must still be derived separately. Domain structures and transition regions are therefore natural
-constituents of the ordered phase rather than special additions.
-Likewise, residual scatter in effective phenomenological scales
-(such as $g^\dagger$ in the galactic sector) is not excluded a priori,
-but requires separate dynamical analysis.
-
-\paragraph{What P5 does not assert.}
-P5 does not prescribe the magnitude, profile, or dynamical law of
-spatial variations in the ordered branch.
-It does not by itself derive $G_{\rm eff}(\mathbf{x})$,
-$u_0(\mathbf{x})$, or galaxy-by-galaxy scatter relations.
-It states only that such non-uniform ordered configurations are
-structurally admissible within the $\Phi$-medium.
-
-\subsubsection*{S10 --- Medium character}
-
-\paragraph{Physical meaning.}
-Property~S10 expresses the fact that the $\Phi$-medium is a
-\emph{continuum medium} rather than a rigid structure.
+Property~S10, realised by the working postulate~P6, expresses
+the fact that the $\Phi$-medium is a \emph{continuum medium} rather
+than a rigid structure.
 In any physical medium---a crystal, a superfluid, a nematic
 liquid crystal---the absolute value of internal coordinates
 (the displacement of a lattice site, the absolute phase of a
@@ -1290,8 +1321,9 @@ S10 asserts that the $\Phi$-medium of ECT has this same character.
 P2 states that the \emph{action} is invariant under global $O(4)$
 rotations.
 P3 states that the action is \emph{local}.
-S10 makes a distinct and logically independent assertion about the
-\emph{observational status} of internal field-space directions:
+S10 (realised by~P6) makes a distinct and logically independent
+assertion about the \emph{observational status} of internal
+field-space directions:
 pointwise values of the compact phase~$\theta(X)$ and the local
 orientation~$n_A(X)$ of the ordered branch are descriptive
 redundancies, not physical observables.
@@ -1364,7 +1396,35 @@ Hamiltonian'' and ``redundancy of internal coordinates'' is standard:
 the absolute displacement of a crystal in free space is unobservable,
 the absolute phase of a superfluid is unobservable, the absolute angle
 of a nematic director is unobservable.
-S10 simply states that the same applies to the $\Phi$-medium of ECT.
+S10, and therefore P6, simply states that the same applies to the
+$\Phi$-medium of ECT.
+
+\subsubsection*{P5 --- Multiplicity and inhomogeneity}
+
+\paragraph{Physical meaning.}
+The $\Phi$-medium is not restricted to a single global configuration.
+Ordered realisations may include spatially varying condensate
+backgrounds, domain structures, and transition regions.
+No globally uniform ordered state is imposed a priori as the unique
+physical realisation.
+
+\paragraph{Consequences.}
+P5 makes spatially varying ordered backgrounds structurally admissible
+within ECT. This in turn makes later macroscopic constructions with
+branch-dependent effective quantities conceptually natural, although the
+explicit dynamical laws must still be derived separately. Domain structures and transition regions are therefore natural
+constituents of the ordered phase rather than special additions.
+Likewise, residual scatter in effective phenomenological scales
+(such as $g^\dagger$ in the galactic sector) is not excluded a priori,
+but requires separate dynamical analysis.
+
+\paragraph{What P5 does not assert.}
+P5 does not prescribe the magnitude, profile, or dynamical law of
+spatial variations in the ordered branch.
+It does not by itself derive $G_{\rm eff}(\mathbf{x})$,
+$u_0(\mathbf{x})$, or galaxy-by-galaxy scatter relations.
+It states only that such non-uniform ordered configurations are
+structurally admissible within the $\Phi$-medium.
 
 \subsection{Three statement types}
 \label{subsec:statement_types}
@@ -1372,7 +1432,7 @@ S10 simply states that the same applies to the $\Phi$-medium of ECT.
 The following sections use three types of assertions:
 \begin{itemize}
   \item \textit{Theorem} --- a strict consequence of the current
-    foundational framework (P1--P5 together with any explicitly stated
+    foundational framework (P1--P6 together with any explicitly stated
     derived branch rules and branch conditions used in the theorem);
   \item \textit{EFT consequence} --- a result valid within the low-energy
     expansion over the broken vacuum;
@@ -1420,7 +1480,7 @@ with A4--A5 understood in the quadratic ordered sector and the
 thermodynamic second law remaining Level~B
 (requires Markovian closure).}
 
-The working postulates P1--P5, together with the derived
+The working postulates P1--P6, together with the derived
 coherent-sector rule~BR1, do not yet constitute the full physical theory.
 This section develops the geometric consequences of vacuum ordering~(P4)
 in three stages.
@@ -2906,9 +2966,10 @@ Status: Level~A for the tensor structure of $S_\theta$; Level~B for
 the coefficient $K_\theta^{\rm eff}$, which has not yet been derived
 from bare~P3.
 
-\paragraph{Gauge sector (Level~B structural).}
-If gauge emergence is realised by the minimal gauging procedure
-(Propositions~1--3, Section~\ref{sec:gauge}), then:
+\paragraph{Gauge sector (Level~A/B after P6).}
+With the medium-character postulate~P6, gauge emergence via
+Propositions~1--3 (Section~\ref{sec:gauge}) is no longer conditional
+but structural.  Therefore:
 
 \begin{enumerate}
 \item The leading two-derivative gauge-invariant kinetic term is
@@ -2929,18 +2990,18 @@ If gauge emergence is realised by the minimal gauging procedure
   \begin{equation}
     \label{eq:cstar_structural}
     c = c_\gamma = c_*
-    \qquad \text{(Level~B structural).}
+    \qquad \text{(Level~A/B after P6).}
   \end{equation}
 \end{enumerate}
 
-\paragraph{Important caveat.}
-Beyond the minimal phase-to-gauge emergence route, the conclusion
-is not automatic.
-If the gauge sector is allowed an independent EFT extension, the
-anisotropic operator $n^\mu F_{\mu\nu}n^\alpha F_\alpha{}^\nu$ may
-acquire a free coefficient, and the universality argument no longer
-holds.  The present result is therefore conditional on the minimal
-route.
+\paragraph{Caveat: independent gauge-sector extension.}
+If the gauge sector were allowed an independent EFT extension beyond
+the minimal P6-based emergence route, the anisotropic operator
+$n^\mu F_{\mu\nu}n^\alpha F_\alpha{}^\nu$ might acquire a free
+coefficient, and the universality argument would no longer hold.
+Within the P6 framework, however, the gauge connection arises from
+the same ordered-branch redundancy, and the minimal route is the
+structurally preferred one.
 
 \paragraph{Summary of the structural identification $c_*=c$.}
 The hierarchy of derivation levels is:
@@ -2949,8 +3010,8 @@ The hierarchy of derivation levels is:
   (Universality Corollary, integrability $+$ uniqueness of $K^{AB}$).
 \item Level~A/B bridge: the phase sector inherits the same tensor
   structure at leading order.
-\item Level~B structural: within the minimal gauge-emergence route,
-  $c_\gamma=c_*$ and hence $c=c_*$.
+\item Level~A/B (after P6): within the P6-based gauge-emergence
+  route, $c_\gamma=c_*$ and hence $c=c_*$.
 \end{enumerate}
 This replaces the earlier presentation of $c_*=c$ as a benchmark
 normalisation~\cite{LIGO_Virgo_GW170817_2017} with a structural
@@ -3021,7 +3082,7 @@ Equality $c_\chi=c_*$
 Three independent physical Goldstone particles
   & Not established & Reduced by integrability in scalar-only basis \\
 No Higgs-type eating at the P1--P5 level
-  & Level~B (structural) & No local $O(3)$ gauge structure \\
+  & Level~B (structural; upgradeable with P6) & No local $O(3)$ gauge structure \\
 Pseudo-Goldstone mass mechanism
   & Open (OP-GM) & Requires explicit breaking source beyond P1--P5 \\
 Relation to electroweak gauge/Higgs sector
@@ -3446,7 +3507,7 @@ formalism nor a gravitational sector.
 The constraint that gravitational and electromagnetic signals propagate
 at the same speed~\cite{LIGO_Virgo_GW170817_2017} motivates the
 structural identification $c_*=c$
-(Level~B structural within the minimal phase-to-gauge emergence
+(Level~A/B (after P6) within the P6-based gauge emergence
 route; see \S\ref{sec:goldstone_integrability_main}
 and \S\ref{sec:cone_inheritance}).
 In canonical units ($\beta=1$) this corresponds
@@ -4100,7 +4161,7 @@ The underlying symmetry and variational structures are predominantly
 Level~A, while the explicit reduction to branch-specific effective
 descriptions and some physical interpretations remain Level~B or open.}
 
-The five working postulates P1--P5, together with the ordered
+The six working postulates P1--P6, together with the ordered
 vacuum sector, the broken-phase spectrum, the scale hierarchy, and the
 derived smooth coherent-sector rule~BR1, define a common condensate
 framework from which two distinct but mutually consistent effective
@@ -4783,18 +4844,20 @@ Standard Model gauge group fully derived
 \subsection{Emergence of $U(1)$ gauge symmetry}
 \label{sec:u1_emergence}
 
-\textit{Status: layered and near-maximal.
+\textit{Status: layered.
 Layer~1 is Level~A within the compact coherent-phase EFT:
 once the ordered branch is described by the compact phase variable
 $\theta$, the Noether current, its conservation, and the homogeneous
 limit follow strictly.
-Layer~2 is a conditional near-theorem within the \emph{local}
-phase EFT: if local phase redundancy is admitted, the compensating
-connection, the Maxwell-type leading kinetic structure, and the
-gauge-covariant compact holonomy/flux-quantisation statements follow
-by standard EFT classification plus compact phase geometry.
-Layer~3 remains Level~B matching: identification with the physical
-photon is not yet a full derivation of QED from P1--P5.}
+Layer~2 is Level~A after the introduction of~P6 (medium character):
+P6 implies that pointwise phase values are descriptive redundancies
+(L1--L3 below), so the compensating connection, the Maxwell-type
+leading kinetic structure, and the gauge-covariant compact
+holonomy/flux-quantisation statements follow by standard EFT
+classification plus compact phase geometry without additional
+assumptions.
+Layer~3 remains Level~A/B matching: identification with the physical
+photon is not yet a full derivation of QED from P1--P6.}
 
 \paragraph{Connection to the coherent branch.}
 The phase field $\theta(X)$ appearing in this subsection is the same
@@ -4870,18 +4933,27 @@ This is structurally analogous to supercurrents in superfluids and
 superconductors~\cite{Volovik2003}, though not physically identical to
 a material condensate.
 
-\paragraph{Layer~2: local $U(1)$ completion and gauge connection
-(conditional near-theorem within the local phase EFT).}
+\paragraph{Layer~2: local $U(1)$ completion and gauge connection.}
 
-\emph{Additional assumptions for Layer~2.}
-Assume:
+The following three conditions were originally introduced as
+conditional assumptions.
+With the medium-character postulate~P6, they are now structural
+consequences of the postulate framework:
 \begin{enumerate}[label=(L\arabic*)]
-  \item locality of the effective description;
+  \item locality of the effective description
+    --- follows from~P3;
   \item only phase gradients, not the absolute phase, enter local
-        observables;
+        observables
+    --- follows from~P2 (the action does not depend on $\theta$
+        explicitly) together with~P6 (pointwise $\theta$ is not an
+        observable);
   \item local phase redefinitions are treated as redundancies of the
-        effective description.
+        effective description
+    --- this is the direct content of~P6 applied to the compact phase
+        sector.
 \end{enumerate}
+With L1--L3 established, the gauge-emergence construction below
+proceeds without additional assumptions.
 
 \paragraph{Proposition 2: local phase redundancy requires a compensating connection.}
 Under the local phase transformation
@@ -4917,10 +4989,11 @@ See Appendix~\ref{app:u1_noether_completion} for details.
 \hfill$\square$
 
 \paragraph{Remark on status.}
-This proposition is not a theorem of minimal P1--P5.
-It is a theorem \emph{within the local phase EFT assumptions}
-(L1)--(L3).
-Its role in ECT is therefore conditional but strong.
+With the medium-character postulate~P6, assumptions L1--L3 are no
+longer conditional but follow from the postulate framework
+(P2~+~P3~+~P6; see above).
+Therefore Propositions~2 and~3 are structural consequences of the
+ECT postulates applied to the compact-phase sector~(Level~A).
 
 \paragraph{Proposition 3: leading local gauge kinetic term.}
 Define the gauge-invariant field strength
@@ -5008,27 +5081,29 @@ matching step.
 The present subsection therefore contains both Level~A and Level~B
 content, and these should not be conflated.
 
-\paragraph{What would be needed for full Level~A from P1--P5.}
-To promote the entire $U(1)$ sector to full Level~A from the minimal
-postulates, the following programme would need to be completed:
+\paragraph{What has been established and what remains open.}
+With P6, the $U(1)$ gauge sector has been substantially promoted:
 \begin{enumerate}[label=(\roman*)]
-  \item derive the compact phase EFT itself directly from the minimal
-    condensate dynamics rather than admitting it as an extended branch
-    description;
-  \item derive why local phase redundancy is dynamically selected,
-    rather than structurally admitted;
-  \item derive the gauge connection $A_A$ as an emergent condensate
-    response variable rather than introduce it as a compensator;
-  \item derive the Maxwell kinetic term from condensate response or
-    branch elasticity rather than from EFT classification;
-  \item derive the coupling $e$ from condensate parameters;
-  \item derive the physical QED matter vertex and its observed
-    electromagnetic phenomenology.
+  \item the compact phase EFT follows from BR1 within the ordered
+    branch~(Level~A);
+  \item local phase redundancy follows from P6~(Level~A) ---
+    no longer an additional assumption;
+  \item the compensating gauge connection $A_A$ is the unique
+    first-order local completion of the redundancy~(Level~A);
+  \item the Maxwell kinetic term is the unique leading-order
+    parity-even gauge-invariant structure~(Level~A EFT classification).
 \end{enumerate}
-None of these steps has been completed.
-The $U(1)$ sector is therefore the most developed gauge-embedding
-result currently available in ECT, but it is not yet a fully completed
-first-principles derivation of QED.
+The following steps remain open:
+\begin{enumerate}[label=(\roman*),resume]
+  \item the gauge coupling $e$ is not derived from condensate
+    parameters;
+  \item the physical QED matter vertex and its observed
+    electromagnetic phenomenology are not yet a completed derivation.
+\end{enumerate}
+Thus the $U(1)$ gauge emergence from the compact-phase sector is now
+Level~A for the structural gauge architecture, with Level~A/B for
+the full physical photon identification and Level~B for coupling
+matching.
 
 \statussummary
 \begin{center}
@@ -5084,15 +5159,19 @@ the non-Abelian and electroweak sectors.
 \subsection{Non-Abelian gauge structure and its status}
 \label{sec:nonabelian_embedding}
 
-\textit{Status: layered structural result.
-At the level of local EFT completion, the non-Abelian covariant
-derivative, field strength, and Yang--Mills kinetic term are standard
-near-theorem consequences once an internal multiplet structure and
-local non-Abelian redundancy are admitted.
+\textit{Status: substantially strengthened by P6.
+With the medium-character postulate~P6, local orientation redundancy
+of the ordered branch is no longer an additional assumption but a
+structural consequence of the postulate framework.
+The non-Abelian covariant derivative, field strength, and Yang--Mills
+kinetic term then follow by standard EFT completion~(Level~A/B).
 The algebraic bridge $\mathfrak{so}(3)\cong\mathfrak{su}(2)$ is a
-strict Level~A Lie-algebra fact of the ordered branch.
-By contrast, identification of the physical Standard Model gauge group,
-its couplings, and its strong/electroweak phenomenology remains
+strict Level~A Lie-algebra fact.
+Together with the $U(1)$ phase sector, this gives the ordered-branch
+gauge architecture $SU(2)\times U(1)$~(Level~A for the structural
+gauge redundancy; Level~A/B for the full dynamical gauge closure).
+Identification with the physical Standard Model gauge group, its
+couplings, and its strong/electroweak phenomenology remains
 Level~B/C embedding or open.}
 
 \paragraph{General non-Abelian framework.}
@@ -5158,13 +5237,36 @@ The explicit structural local-completion steps and the
 $\mathfrak{so}(3)\cong\mathfrak{su}(2)$ bridge are written out in
 Appendix~\ref{app:nonabelian_completion}.
 
-\paragraph{Status caveat.}
-The previous paragraph is a strong structural EFT statement, but not a
-first-principles derivation from the bare scalar condensate action.
-The local non-Abelian redundancy, the representation content, and the
-value of the coupling $g$ are not derived from P1--P5.
-Thus the non-Abelian sector is stronger than a mere analogy, but weaker
-than a full Level~A derivation.
+\paragraph{Status update after P6.}
+With the medium-character postulate~P6, the local orientation
+redundancy of the ordered branch is no longer an additional assumption:
+P6 asserts that pointwise orientation $n_A(X)$ is a descriptive
+redundancy, so local redefinitions $n_A(X)\to R_A{}^B(X)\,n_B(X)$
+are local gauge redundancies of the ordered description.
+The compensating connection valued in
+$\mathfrak{so}(3)\cong\mathfrak{su}(2)$ and the leading Yang--Mills
+kinetic structure then follow by the same EFT logic as in the $U(1)$
+case~(Level~A for the gauge redundancy; Level~A/B for the full
+dynamical closure).
+The representation content and the value of the coupling $g$ remain
+open matching parameters.
+
+\paragraph{Ordered-branch gauge architecture.}
+Combining the $U(1)$ gauge connection from the compact-phase sector
+(Section~\ref{sec:u1_emergence}) with the
+$\mathfrak{su}(2)$ gauge connection from the orientation sector,
+the ordered branch of ECT carries the local gauge architecture
+\begin{equation}
+  \label{eq:gauge_architecture}
+  \boxed{SU(2)\times U(1)}
+  \qquad\text{(Level~A for structural gauge redundancy).}
+\end{equation}
+This is the central gauge-emergence result of ECT.
+It follows from P2~+~P3~+~P4~+~P6 without importing the Standard
+Model gauge group as an external input.
+The identification of this ordered-branch gauge structure with the
+physical electroweak gauge group $SU(2)_L\times U(1)_Y$ is a further
+Level~B matching step developed in Section~\ref{sec:ew_embedding}.
 
 \paragraph{The algebraic bridge:
 $\mathfrak{so}(3)\cong\mathfrak{su}(2)$.}
@@ -8966,8 +9068,9 @@ The fermionic sector is introduced consistently with the full ECT
 action~\eqref{eq:ECT_action}.  The scalar condensate $\Phi$ couples
 to fermions via Yukawa interactions $y\bar\Psi\Phi\Psi$; gauge fields
 can be embedded consistently via the phase symmetries of $\Phi$
-(Level~B/C; Sections~\ref{sec:gauge}--\ref{sec:fifth_force};
-SM gauge group is an input, not derived from the bare condensate action).
+(the $SU(2)\times U(1)$ ordered-branch gauge architecture
+follows from P6; Sections~\ref{sec:gauge}--\ref{sec:fifth_force};
+identification with the physical SM gauge group is Level~A/B).
 The \emph{structural reconstruction} of the Dirac form below is written
 as an Euler--Lagrange equation of $S_{\rm ECT+f}$;
 the fermion field $\Psi$ and its couplings are additional
@@ -11498,7 +11601,7 @@ of gravitational propagation}
 % ============================================================
 
 \textit{Status: massless tensor propagation Level~A in EFT;
-physical TT polarisations Level~B~(OP-gauge).
+physical TT polarisations Level~A/B~(gauge architecture from P6; OP-gauge).
 Migrated from: \texttt{sec:spin2\_content}, \texttt{app:sigma\_model}.}
 
 \subsubsection*{Orientation modes as metric perturbations}
@@ -11557,7 +11660,7 @@ would imply a reduction from 10 components to 2 physical TT modes.
 \emph{This reducibility has not yet been demonstrated explicitly
 in the ECT condensate language}~(OP-gauge).
 Massless tensor propagation: Level~A in EFT;
-exactly 2 TT modes: Level~B~(OP-gauge).
+exactly 2 TT modes: Level~A/B~(gauge architecture from P6; OP-gauge).
 
 \paragraph{Comparison with Einstein-aether theory.}
 In Einstein-aether theory~\cite{Jacobson2004} the unit vector
@@ -13091,7 +13194,7 @@ that the theory is not excluded by current Solar System data.
 % ============================================================
 
 \textit{Status: GW propagation speed Level~A in broken-phase EFT;
-polarisation content Level~B~(OP-gauge);
+polarisation content Level~A/B~(gauge architecture from P6; OP-gauge);
 Planck-suppressed LIV correction estimate Level~A in EFT
 power-counting once a propagation distance~$D$ is specified.}
 
@@ -13161,7 +13264,7 @@ Full reduction to physical propagating content requires gauge analysis
 (OP-gauge):
 \begin{itemize}
   \item massless tensor propagation sector: Level~A;
-  \item exact reduction to 2 TT polarisations: Level~B~(OP-gauge).
+  \item exact reduction to 2 TT polarisations: Level~A/B~(gauge architecture from P6; OP-gauge).
 \end{itemize}
 The anisotropic correction $\Theta_{\mu\nu}[n]$~\eqref{eq:Theta_n}
 may additionally modify amplitude evolution in nontrivial ordered
@@ -14375,7 +14478,7 @@ Appendix~\ref{app:late_cosmo_background}.
 \label{sec:mp_baryogenesis}
 % ============================================================
 
-\textit{Status: Level~A/B given empirical fermions and S10.
+\textit{Status: Level~A/B given empirical fermions and P6 (S10).
 ECT provides a native framework in which the three Sakharov ingredients
 for baryogenesis can be supplied by ordered-medium mechanisms.
 This establishes the structural possibility of matter--antimatter
