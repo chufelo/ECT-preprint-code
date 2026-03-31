@@ -23378,39 +23378,51 @@ The coherent phase variable $\theta$ is compact:
 $\theta\sim\theta+2\pi$
 (single-valuedness of the effective order parameter,
 Section~\ref{sec:qs_phase_dynamics}).
-This compactness has an immediate canonical consequence.
+This compactness has an immediate canonical consequence, but it must be
+stated carefully.
+What is quantised directly is not the local momentum density
+$\pi_\theta(\mathbf{x},t)$ pointwise, but the generator of the global
+phase shift, i.e.\ the zero-mode / integrated conjugate quantity
+\begin{equation}
+  \label{eq:qs_Qtheta}
+  Q_\theta(t)\equiv \int d^3x\,\pi_\theta(\mathbf{x},t).
+\end{equation}
 If the operator relation~\eqref{eq:qs_commutator_candidate} holds, then
-the conjugate momentum eigenvalues are restricted to integer multiples
-of the normalisation scale:
+single-valuedness of the coherent wave functional under
+$\theta\mapsto\theta+2\pi$ implies
 \begin{equation}
   \label{eq:qs_dirac_quantization}
-  p_\theta \in \mathbb{Z}\cdot S_0.
+  Q_\theta \in \mathbb{Z}\cdot S_0.
 \end{equation}
-This is the standard Dirac quantisation condition for a compact phase
-variable and follows purely from single-valuedness of the coherent
-wave functional $\Psi\propto e^{in\theta}$~(Level~A once the compact
-topology is granted).
-Equation~\eqref{eq:qs_dirac_quantization} is not an additional input:
-it is a topological consequence of the same winding-sector structure
-already established by BR1~(Section~\ref{sec:qs_phase_dynamics},
+This is the standard quantisation statement for a compact canonical
+phase variable: the compact coordinate implies a discrete spectrum for
+the corresponding global conjugate generator.
+Equation~\eqref{eq:qs_dirac_quantization} is therefore not an
+additional input but a topological consequence of the same compact
+phase structure that already underlies the winding-sector
+classification~(Section~\ref{sec:qs_phase_dynamics},
 eq.~\eqref{eq:qs_winding}).
-In this precise sense, the integer winding numbers $n\in\mathbb{Z}$
-and the discrete momentum spectrum are two faces of the same
-compact-phase topology.
+What remains open is the precise operator-level relation between this
+global quantisation statement and the full local many-body algebra of
+the coherent branch.
 
 \paragraph{Structural triangle: winding -- canonical -- action scale.}
 The three structural results of the coherent branch---integer winding
-sectors, canonical commutator candidate, and the action scale
+sectors, the canonical commutator candidate, and the action scale
 $S_0$---are not independent achievements but three aspects of a
 single compact-phase architecture.
 The winding sectors follow from the compact topology of $\theta$;
-the canonical commutator is the operator bridge associated with the
-same topology; and $S_0$ is the unique normalisation set by the
-elementary loop action.
-If any one of these three were absent or required a different
-normalisation, the architecture would be internally inconsistent.
-This self-reinforcing triangle is one of the most structurally
-rigid features of the coherent branch.
+the canonical bridge is the operator-level organisation associated
+with the same compact variable; and $S_0$ is the unique normalisation
+set by the elementary loop action.
+At the global level this already yields the quantisation condition
+\eqref{eq:qs_dirac_quantization} for the generator of the compact phase
+shift.
+If any one of these three ingredients were absent or required a
+different normalisation, the architecture would be internally
+inconsistent.
+This self-reinforcing triangle is one of the most structurally rigid
+features of the coherent branch.
 
 \subsubsection*{From phase variables to wavefunction kinematics}
 
@@ -27464,11 +27476,11 @@ Structural commutator normalisation candidate by $S_0$
   & Section~\ref{sec:qs_ccr};
     singled out by loop weights, wave reduction, and the absence of a
     second independent action scale in the smooth coherent branch \\
-Dirac quantisation of compact-phase momentum
+Global quantisation of the compact-phase shift generator
   & Level~A
-  & Eq.~\eqref{eq:qs_dirac_quantization};
+  & Eqs.~\eqref{eq:qs_Qtheta}--\eqref{eq:qs_dirac_quantization};
     topological consequence of compact $\theta$ and
-    single-valuedness of coherent wave functional \\
+    single-valuedness of the coherent wave functional \\
 Momentum-operator-type wave kinematics
   & Level~B
   & Eq.~\eqref{eq:qs_p_operator}; depends on $S_0$ normalisation \\
