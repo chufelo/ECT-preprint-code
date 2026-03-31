@@ -19986,6 +19986,21 @@ ECT coherent phase EFT & Elementary loop & compact $U(1)$ phase, $\pi_1(S^1)=\ma
 \label{sec:qs_wave_kinematics}
 % ==============================================================
 
+This section develops the second technical layer of the Quantum Sector.
+Its purpose is to show how the Euclidean coherent-phase action of the
+previous section acquires a Lorentzian wave-kinematical interpretation,
+how its phase-weight language leads to a Hamilton--Jacobi / continuity
+structure, and under what additional assumptions this structure can be
+recombined into a Schr\"odinger-type evolution law.
+
+The logic remains staged.
+Section~\ref{sec:qs_wave} develops the Wick-rotated coherent wave
+kinematics.
+Section~\ref{sec:qs_extremal_action} then clarifies the status of
+extremal action and saddle dominance, and
+Section~\ref{sec:qs_conservation} shows how the conserved structures of
+the variational foundation are inherited by the coherent sector.
+
 \subsection{Wave dynamics, Wick rotation, and
   Schr\"odinger-type evolution}
 \label{sec:qs_wave}
@@ -20001,8 +20016,8 @@ Connection to ECT basics: Sections~\ref{sec:hbar_status},
 \ref{sec:coh_branch}; Appendix~\ref{app:Sloop_calc}.}
 
 \medskip
-The previous two subsections established that the coherent-topological
-branch is organised by the phase field $\theta$, its winding sectors,
+The previous two subsections established that the coherent branch is
+organised by the phase field $\theta$, its winding sectors,
 and the distinguished pre-quantum action scale $S_0$.
 The question now is whether this coherent sector admits a
 wave-dynamical description.
@@ -20017,7 +20032,7 @@ action~\eqref{eq:qs_phase_action}, recalled here schematically:
 \[
   S_\theta
   = \frac{K_\theta^{\rm eff}}{2}
-    \int d^4X\; g_{\rm eff}^{AB}\,\partial_A\theta\,\partial_B\theta
+    \int d^4X\; K^{AB}\,\partial_A\theta\,\partial_B\theta
     + \cdots
 \]
 Because the coherent branch is organised by loop sectors weighted by
@@ -20045,9 +20060,8 @@ $S_0=\hbar$ identification~\eqref{eq:qs_S0_identification}.
 \subsubsection*{Why Wick rotation is necessary and not arbitrary}
 
 The ordered condensate is constructed from a Euclidean arena
-$\mathcal{M}^4$, but the broken phase develops a distinguished
-Lorentzian direction through the sign structure of the effective kinetic
-tensor $g_{\rm eff}^{AB}$.
+$\mathcal{M}^4$, but the broken phase develops a distinguished Lorentzian direction through
+the sign structure of the Euclidean kinetic tensor $K^{AB}$.
 As established in ECT basics and used throughout Macroscopic Physics,
 the broken phase admits the continuation
 \begin{equation}
@@ -20100,8 +20114,20 @@ Section~\ref{sec:coh_branch}).
 
 \subsubsection*{Lorentzian form of the coherent phase dynamics}
 
-Under the continuation~\eqref{eq:qs_wick}, the phase-sector
-action~\eqref{eq:qs_phase_action} acquires the Lorentzian form
+With the adapted broken-phase basis $n^A=\delta^A_w$, the Euclidean
+kinetic form entering Eq.~\eqref{eq:qs_phase_action} may be written as
+\[
+K^{AB}\partial_A\theta\,\partial_B\theta
+=
+\beta\,\delta^{ij}\partial_i\theta\,\partial_j\theta
+-(\alpha-\beta)(\partial_w\theta)^2.
+\]
+Under the continuation~\eqref{eq:qs_wick}, one has
+$\partial_w \to (i/c_*)\partial_t$,
+so the Euclidean phase-sector action is carried into a Lorentzian
+kinetic form with the expected separation between temporal and spatial
+derivatives.
+At the level of the reduced isotropic closure this gives
 \begin{equation}
   \label{eq:qs_phase_action_L}
   S_\theta^{(L)}
@@ -20119,10 +20145,10 @@ Its importance is that it provides the correct Lorentzian kinetic
 structure for coherent phase evolution, with the spatial gradient and
 time-derivative terms separated by the effective speed~$c_*$.
 
-\subsubsection*{Hamilton--Jacobi / continuity structure~(Level~A)}
+\subsubsection*{Hamilton--Jacobi / continuity structure}
 
-Introducing the polar-decomposition ansatz for the coherent wave
-functional~(cf.~Eq.~\eqref{eq:qs_polar}):
+\paragraph{Real and imaginary parts of the coherent wave ansatz.}
+Introducing the polar decomposition
 \begin{equation}
   \label{eq:qs_wave_ansatz}
   \Psi(x,t)
@@ -20130,40 +20156,59 @@ functional~(cf.~Eq.~\eqref{eq:qs_polar}):
   \sqrt{\rho(x,t)}\;
   \exp\!\left(\frac{i\,\mathcal{S}(x,t)}{S_0}\right),
 \end{equation}
-and separating the coherent phase dynamics into its real and imaginary
-parts yields the structure~(Level~A: this separation is algebraically
-exact, not an approximation):
+and separating the resulting evolution law into real and imaginary
+parts yields a Hamilton--Jacobi / continuity structure for the coherent
+sector.
 
-\paragraph{Real part --- coherent Hamilton--Jacobi equation.}
-The real part of the phase-weight equation takes the form of a
-Hamilton--Jacobi-type relation in which the gradient term
-$\mathcal{O}(S_0^2)$ represents the genuinely non-classical
-contribution:
+\paragraph{Real part --- Hamilton--Jacobi-type structure.}
+The real part has the general form
 \begin{equation}
   \label{eq:qs_HJ_structure}
-  \frac{\partial\mathcal{S}}{\partial t}
+  \partial_t\mathcal{S}
   +
-  \frac{(\nabla_q\mathcal{S})^2}{2m_{\rm eff}}
-  + V_{\rm coh}
-  - (S_0^2\text{-term from } \rho)
-  = 0.
+  H_{\rm coh}\!\bigl[\rho,\mathcal{S}\bigr]
+  = 0,
 \end{equation}
-When $S_0\to0$, the non-classical term vanishes and one recovers the
-classical Hamilton--Jacobi equation, establishing the classical limit
-cleanly.
+where $H_{\rm coh}$ is the effective coherent Hamilton--Jacobi
+functional inherited from the Lorentzian phase action.
+Its classical part is determined by the Lorentzian kinetic term, while
+its non-classical part is controlled by the same distinguished action
+scale~$S_0$ that entered the coherent phase weight.
+When $S_0\to0$, the non-classical contribution vanishes and one recovers
+the classical Hamilton--Jacobi equation, establishing the classical
+limit cleanly.
 
-\paragraph{Imaginary part --- coherent continuity equation.}
-The imaginary part is a continuity equation for the coherent density
-$\rho$, expressing conservation of the coherent probability current.
+\paragraph{Imaginary part --- continuity structure.}
+The imaginary part gives the associated continuity equation for the
+coherent density:
+\begin{equation}
+  \label{eq:qs_continuity}
+  \partial_t\rho
+  + \nabla_i J^i_{\rm coh}[\rho,\mathcal{S}]
+  = 0,
+\end{equation}
+where $J^i_{\rm coh}$ is the effective coherent current determined by
+the same reduced phase dynamics.
+
+\paragraph{Exact content and effective reductions.}
+In special effective reductions---for example, in the simplest
+nonrelativistic coherent limit with an explicitly identified effective
+mass and potential---one recovers the familiar Madelung-type form of
+the quantum Hamilton--Jacobi and continuity equations
+(cf.~\cite{Madelung1927}).
+That more explicit form is useful as an orientation, but it is not the
+primary structural statement of ECT at this stage.
 
 \paragraph{Level~A content.}
-These two equations together constitute the
-\emph{Hamilton--Jacobi / continuity structure} of the coherent phase
-sector.
-This structure is a Level~A result: it follows directly from the
-existence of the coherent phase action~\eqref{eq:qs_phase_action},
-the Wick continuation~\eqref{eq:qs_wick}, and the polar
-representation~\eqref{eq:qs_wave_ansatz}.
+The Level~A statement established here is the existence of a
+Hamilton--Jacobi / continuity decomposition of the coherent wave
+ansatz once the Lorentzian phase-sector action and the Wick
+continuation are in place.
+What is exact at this stage is the structural split into real and
+imaginary parts.
+What is \emph{not} yet Level~A is the fully explicit form of the
+effective Hamiltonian functional in every regime, or its universal
+identification with the standard Schr\"odinger operator.
 The key structural point is that $S_0$---not an externally postulated
 constant---appears as the distinguished action unit controlling the
 non-classical term.
@@ -20210,11 +20255,12 @@ Even before the final $S_0=\hbar$ identification, ECT has gone beyond a
 generic broken-phase field theory.
 The theory organises the coherent branch by:
 \begin{itemize}
-  \item topological loop sectors with integer winding~(BR1);
-  \item an intrinsic action scale $S_0$ determined by the topology;
+  \item compact-phase loop sectors with integer winding~(BR1);
+  \item an intrinsic action scale $S_0$ determined by the compact-phase
+    structure of the coherent branch;
   \item Lorentzian time reconstruction through the same broken-phase
     continuation used in Macroscopic Physics;
-  \item a natural first-order coherent wave reduction governed by $S_0$.
+  \item a natural coherent wave reduction governed by $S_0$.
 \end{itemize}
 This is precisely the structural content required from a theory that
 aims to explain \emph{why wave mechanics exists at all}, rather than
@@ -20249,15 +20295,7 @@ the full identification of that reduction with ordinary quantum
 mechanics in normalised form~(requires $S_0=\hbar$ and
 $\hat{H}_{\rm coh}$ derived explicitly).
 
-\paragraph{Summary.}
-The coherent-topological branch of ECT does not jump from loop
-quantisation to operator axioms.
-The logic is controlled: the reduced phase action, together with the
-broken-phase Wick continuation~\eqref{eq:qs_wick} and the distinguished
-action scale $S_0$, naturally produces a Schr\"odinger-type wave
-description of smooth coherent configurations.
-This prepares the next step: the canonical structure of the coherent
-sector and the status of commutation relations.
+
 
 
 
