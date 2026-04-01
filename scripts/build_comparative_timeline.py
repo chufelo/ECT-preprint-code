@@ -96,7 +96,7 @@ for x0,x1,col in lcdm_segs:
 lbl(ax, 0.00,  X_BB,  'Undefined\n(no spacetime)',     'mid', fs=8)
 # Planck+Inflation merged with Big Bang label above
 lbl(ax, 0.13,  0.18,  'Radiation\n(quarks,\nleptons)', 'bot', fs=7.5)
-lbl_out(ax, 0.18, 0.21, 'EW\ntrans.',                  above=False, fs=7.5)
+lbl(ax, 0.18, 0.21, 'EW\ntrans.', 'mid', fs=6.5)
 lbl(ax, 0.21,  0.26,  'QCD+\nBBN',                    'top', fs=7.5)
 lbl(ax, 0.26,  0.34,  'Recomb.\n380 kyr',              'mid', fs=8)
 lbl(ax, 0.34,  0.50,  'Radiation/Matter\ndomination',  'mid', fs=8.5)
@@ -110,11 +110,11 @@ ax.text(X_BB, YT+0.08, 'Big Bang\n$t{=}0$',
 lbl(ax, X_BB, 0.13, 'Planck+\nInflation', 'mid', fs=7.5)
 
 # Age arrow
-ax.annotate('', xy=(X_NOW-0.003, 0.92), xytext=(X_BB+0.003, 0.92),
+ax.annotate('', xy=(X_NOW-0.003, YB-0.04), xytext=(X_BB+0.003, YB-0.04),
             arrowprops=dict(arrowstyle='<->', color='black', lw=1.3))
-ax.text((X_BB+X_NOW)/2, 0.94,
+ax.text((X_BB+X_NOW)/2, YB-0.07,
         r'$t_0^{\Lambda{\rm CDM}} = 13.80$ Gyr',
-        ha='center', va='bottom', fontsize=8.5, fontweight='bold')
+        ha='center', va='top', fontsize=8.5, fontweight='bold', color='black')
 
 # z~10
 # z~10 removed from panel (a)
@@ -181,18 +181,18 @@ ax.text(X_BB, YB-0.10, r'$\Lambda$CDM BB',
         ha='center', va='top', fontsize=8, color='0.40', style='italic')
 
 # ECT age arrow
-ax.annotate('', xy=(X_NOW-0.003, 0.03), xytext=(X_OT+0.003, 0.03),
+ax.annotate('', xy=(X_NOW-0.003, YB-0.04), xytext=(X_OT+0.003, YB-0.04),
             arrowprops=dict(arrowstyle='<->', color='black', lw=1.3))
-ax.text((X_OT+X_NOW)/2, -0.01,
+ax.text((X_OT+X_NOW)/2, YB-0.07,
         r'$t_0^{\rm ECT} = 13.02$ Gyr',
-        ha='center', va='top', fontsize=9, fontweight='bold')
+        ha='center', va='top', fontsize=9, fontweight='bold', color='black')
 
 # Δt annotation inside Euclidean block (white text on dark bg)
-axes[1].annotate('', xy=(X_OT-0.003, 0.85), xytext=(X_BB+0.003, 0.85),
-                 arrowprops=dict(arrowstyle='<->', color='white', lw=2.0))
-axes[1].text((X_BB+X_OT)/2, 0.88,
+axes[1].annotate('', xy=(X_OT-0.003, YB-0.04), xytext=(X_BB+0.003, YB-0.04),
+                 arrowprops=dict(arrowstyle='<->', color='black', lw=1.5))
+axes[1].text((X_BB+X_OT)/2, YB-0.07,
              r'$\Delta t\!\approx\!780$ Myr',
-             ha='center', va='bottom', fontsize=8.5, fontweight='bold', color='white')
+             ha='center', va='top', fontsize=8.5, fontweight='bold', color='black')
 
 # z~10
 # z~10 removed from panel (b)
