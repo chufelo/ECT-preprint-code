@@ -26987,8 +26987,18 @@ relevant mesoscopic regime;
 \subsection{Crooks-type fluctuation relation and effective entropy production}
 \label{sec:crooks_ect}
 
-\textit{Status: Level~B --- Gaussian--Markov reduction of the ECT
-influence functional; not derived from bare postulates alone.}
+\textit{Status: Level~B.
+The Crooks-type fluctuation relation and the effective
+entropy-production formula are derived within the Gaussian--Markov
+reduction of the ECT influence functional.
+They are not consequences of the bare ECT postulates alone and do not
+yet constitute a full microscopic second-law theorem.
+Connection: the influence-functional decoherence programme
+(\S\ref{sec:qs_decoherence}), the quantitative timescale analysis
+(\S\ref{sec:tau_ECT_systems}), medium character~(P5), the directional
+backbone established in ECT basics
+(\S\ref{sec:second_law_basics}), and the global/reduced unitarity
+distinction~(\S\ref{sec:qs_unitarity_status}).}
 
 
 
@@ -27003,21 +27013,39 @@ approximation; it is not derived from the ECT postulates alone
 without these additional steps.  A fully microscopic derivation
 remains open (OP24, Section~\ref{sec:open_problems}).
 
-\paragraph{Effective entropy production in the Gaussian--Markov model.}
+\paragraph{Medium reading~(P5).}
+Under the medium interpretation~(P5), the present Crooks-type relation
+is not read as a formal theorem about an abstract system coupled to an
+external bath.
+The explicitly tracked subsystem and the unresolved environment both
+belong to one ordered condensate.
+The suppression of backward traversal is therefore a reduced-state
+property of internal condensate organisation, not an independently
+postulated thermodynamic law.
 
-After integrating out the environmental degrees of freedom in the
-Caldeira--Leggett ohmic model, the reduced density matrix of the
-system takes the Gaussian form:
+\paragraph{Effective entropy production in the Gaussian--Markov
+reduction.}
+
+Within the Gaussian--Markov reduction of the ECT influence functional
+$\mathcal{F}[q,q']$~\eqref{eq:qs_influence}, the reduced density
+matrix of the tracked coherent subsystem takes the effective form
 \begin{equation}
 \label{eq:S_ent_def}
 \rho_{\rm red}^{\rm G}(w) \;\propto\;
   \exp\!\bigl(-\Gamma_{\rm irr}(w)\bigr),
 \end{equation}
-where $\Gamma_{\rm irr}$ is the \emph{irreversible part} of the
-influence functional in the Gaussian--Markov approximation.
-\textbf{Important:} Eq.~\eqref{eq:S_ent_def} is a Gaussian model
-ansatz, not a general consequence of ECT; $\Gamma_{\rm irr}$ is
-not the full decoherence functional but its Gaussian reduction.
+where $\Gamma_{\rm irr}$ denotes the irreversible part of the
+influence functional in that Gaussian--Markov closure.
+\textbf{Important:}
+Eq.~\eqref{eq:S_ent_def} is an effective Gaussian reduced-state form,
+not a general consequence of the bare ECT postulates.
+Likewise, $\Gamma_{\rm irr}$ is not the full decoherence functional
+$\Gamma[q,q']$ but its irreversible part in the Gaussian--Markov
+approximation.
+In the appropriate limit, this effective organisation reduces to the
+standard Caldeira--Leggett open-system form~\cite{CaldeiraLeggett1983},
+but the logical starting point here is the ECT influence functional,
+not the external CL model.
 
 Within this model, the von Neumann entropy satisfies
 \begin{equation}
@@ -27034,9 +27062,13 @@ and its rate of change is
 \end{equation}
 since $N_{\rm eff}>0$, $\gamma>0$, and $(dq/dw)^2\geq0$.
 
-This gives $dS_{\rm ent}/dw\geq0$ for all macroscopic trajectories
-($N_{\rm eff}\gg1$) within the Gaussian--Markov model, with equality
-only for static configurations ($dq/dw=0$).
+Within the Gaussian--Markov reduction, this gives
+$dS_{\rm ent}/dw\geq0$ for macroscopic trajectories with
+$N_{\rm eff}\gg1$, with equality only for static configurations
+($dq/dw=0$).
+This is therefore an effective monotonicity statement inside the
+present closure, not yet a full microscopic second-law theorem of the
+complete ECT path integral.
 Whether the full non-Markovian ECT path integral implies monotone
 entropy growth without the Gaussian--Markov coarse-graining is an
 open problem (OP24, Section~\ref{sec:open_problems}).
@@ -27073,18 +27105,21 @@ the diagonal condition $\Gamma[q,q]=0$).
 Physically, each interaction with the Gaussian environment adds positive
 entropy to the coarse-grained reduced density matrix.
 
-\textbf{Step 2 (Initial condition from the phase transition --- structural argument).}
-The $O(4)\!\to\!O(3)$ phase transition provides a natural candidate
-for a low-entropy initial state: when the condensate forms in its
-ground state $|\Phi|=\phi_0$, the system is in a pure state and
-$S_{\rm ent}(w_0)\approx0$ by energy minimisation.
-\textbf{Status (structural, not fully derived):}  this argument is
-plausible within the mean-field treatment of the transition, but a
-rigorous derivation of a pure initial state from the full many-body
-Euclidean path integral---without assuming thermal equilibration at
-$T_c$---remains open (OP24).  The low-entropy initial condition
-is therefore taken as structurally motivated by ECT rather than
-derived from bare postulates alone.
+\textbf{Step 2 (Initial condition from the ordering transition --- structural argument).}
+The $O(4)\!\to\!O(3)$ ordering transition provides a natural candidate
+for a low-entropy initial coherent sector.
+The ordered condensate $|\Phi|=\phi_0$ is selected by the variational
+extremal condition together with the ordered-branch restriction,
+producing a highly ordered configuration with low effective entropy at
+the start of the Lorentzian branch.
+\textbf{Status (structural, not fully derived):}
+this argument is structurally motivated within the ordered-branch
+programme, but a rigorous derivation of a nearly pure or
+entropy-minimised initial reduced state from the full Euclidean path
+integral remains open~(OP24).
+The low-entropy initial condition is therefore not derived from the
+bare postulates alone; it is an organised structural input of the
+present closure.
 
 \textbf{Step 3 (Macroscopic effective irreversibility).}
 Since $\Gamma_{\rm irr}(w)$ is monotonically non-decreasing
@@ -27096,6 +27131,59 @@ model.  The coordinate $w$ therefore defines a preferred direction
 \emph{within the Gaussian--Markov reduction}.  Whether this conclusion
 extends to the full non-Markovian path integral remains open (OP24).
 
+
+\paragraph{Discriminant: ECT Crooks-type relation versus standard
+fluctuation theorems.}
+Standard Crooks fluctuation relations are derived within an already
+assumed statistical-mechanical or operator-algebraic framework.
+In ECT the logical origin is different:
+the relevant ratio is traced back to the irreversible part
+$\Gamma_{\rm irr}$ of the condensate influence functional after
+Gaussian--Markov coarse-graining.
+The mathematics reduces to the standard form in the corresponding
+limit, but the ECT-specific claim is that irreversibility is not
+primitive: it is an effective consequence of coarse-graining one
+ordered medium.
+
+\paragraph{Falsifier for the Crooks programme.}
+The present Crooks-type relation would be challenged if a completed
+non-Markovian ECT analysis showed that the irreversible part
+$\Gamma_{\rm irr}$ can become negative in physically relevant regimes,
+breaking the sign structure required for
+$P_{\rm back}/P_{\rm fwd}\leq1$.
+It would also be weakened if the full Euclidean path-integral treatment
+yielded an arrow-of-time structure fundamentally incompatible with the
+Gaussian--Markov reduction, rather than merely refining it.
+At present, no such incompatibility is known.
+
+\paragraph{Bridge to the probability and measurement programme.}
+The present subsection does not yet derive the Born rule or a full
+measurement theory.
+What it establishes is narrower:
+within the Gaussian--Markov reduction, backward traversal is
+effectively suppressed, entropy grows in the reduced description, and a
+macroscopic arrow of time emerges.
+These are the thermodynamic and open-system preconditions for the next
+stage of the quantum-sector analysis, namely the quantum--classical
+boundary, Born-type probabilities, and measurement status.
+
+\statussummary
+\textit{Level~B:}
+(i)~the effective entropy-production formula
+\eqref{eq:2nd_law_ECT} is derived within the Gaussian--Markov
+reduction of the ECT influence functional;
+(ii)~the Crooks-type fluctuation relation
+\eqref{eq:crooks_ECT} follows from the same reduction;
+(iii)~the three-step arrow-of-time logic
+(monotone $\Gamma_{\rm irr}$, low-entropy initial branch, macroscopic
+$N_{\rm eff}\gg1$) is internally consistent within this closure.
+
+\textit{Open~(OP24):}
+(i)~extension to the full non-Markovian microscopic ECT path integral;
+(ii)~a rigorous derivation of the low-entropy initial branch from the
+bare Euclidean path integral;
+(iii)~a full microscopic second-law theorem without the
+Gaussian--Markov closure.
 
 % ============================================================
 
