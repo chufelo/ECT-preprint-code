@@ -5437,9 +5437,11 @@ is $\Delta Z_A\sim Q^2\ln(\Lambda_*^2/m^2)/(12\pi^2)$.
 With $\ln(\Lambda_*^2/m^2)\sim 50$ (Planck-to-electroweak range),
 each mode contributes $\Delta Z_A\approx 0.42$.
 Achieving $Z_A\sim 10$--$11$ therefore requires an effective
-weighted sum $\sum_i c_i Q_i^2 \sim 21$--$26$, which is
-a plausible range for an emergent sector containing multiple
-charged species.
+weighted sum $\sum_i c_i Q_i^2$ of order a few${\times}10$.
+This is not obviously impossible for an emergent sector with
+multiple charged species, bosonic contributions, and possible
+nonperturbative renormalisation, but the detailed accounting
+remains to be performed.
 
 \paragraph{Status.}
 ECT transfers the question ``why is $\alpha_{\rm fs}\approx 1/137$?''
@@ -10565,15 +10567,22 @@ If fermions experience an effective potential from the condensate
 profile (e.g.\ of kink/domain-wall type), the number of
 normalizable bound states is controlled by the dimensionless ratio
 \begin{equation}
-  \nu \;\sim\; \frac{y}{\sqrt{2\lambda}},
+  \nu \;\sim\; \frac{y}{\sqrt{2\lambda_{\rm eff}}},
   \label{eq:nu_bound}
 \end{equation}
-where $y$ is the effective Yukawa coupling and $\lambda$ is the
-condensate quartic self-coupling.
+where $y$ is an effective Yukawa coupling and $\lambda_{\rm eff}$
+is the effective quartic parameter controlling the local
+post-transition profile in the toy spectral model.
+It should not be identified automatically with the fundamental
+bare quartic of the full ECT condensate action.
 In toy models of P\"oschl--Teller type, the number of light
 fermionic bound states is $N_{\rm gen}\approx\lfloor\nu\rfloor$.
-Three generations require $3\le\nu<4$, i.e.\
-$y\sim 1.3$--$2.0$ for $\lambda\sim 0.10$--$0.13$.
+In the toy spectral model, three generations require
+$3\le\nu<4$, i.e.\ $y\sim 1.3$--$2.0$ for
+$\lambda_{\rm eff}\sim 0.10$--$0.13$.
+This should be read only as a naturalness window for an
+effective profile model, not as a completed derivation from
+the fundamental ECT parameters.
 This is a natural range of order unity, requiring no extreme
 tuning.
 
@@ -15440,12 +15449,19 @@ the resulting power spectrum acquires an effective tilt
 where $L\sim H_0^{-1}\sim 10^{26}$\,m is the cosmological horizon
 and $\xi_0\sim\ell_{\rm Pl}\sim 10^{-35}$\,m is the condensate
 correlation length.
-With $\ln(L/\xi_0)\sim 140$, values $\hat p\sim 4$--$5$ yield
+With $\ln(L/\xi_0)\sim 140$, values $\hat p\sim 4$--$5$
+(understood as the phenomenologically relevant target range
+required for agreement with observation, not as a quantity
+already derived from the ECT critical theory) yield
 \begin{equation}
   n_s^{\rm ECT}\sim 0.96\text{--}0.97,
   \label{eq:ns_ect_range}
 \end{equation}
 which is compatible with the observed $n_s=0.9649\pm 0.0042$.
+At present, $\hat p\sim 4$--$5$ should be understood as the
+phenomenologically relevant target range required for agreement
+with observation, not as a quantity already derived from the
+ECT critical theory.
 
 An independent estimate comes from the gauge--Higgs sector.
 The $O(4)$ order parameter can be rewritten as a complex Higgs
@@ -15491,9 +15507,11 @@ suppresses excess non-Gaussianity.
 
 \paragraph{Status.}
 The estimates~\eqref{eq:ns_ect_range} and
-\eqref{eq:amplitude_requirement} demonstrate that ECT without
-inflation produces a primordial perturbation spectrum in the
-observationally correct range.
+\eqref{eq:amplitude_requirement} show that ECT without
+inflation can naturally reach the observational range for the
+primordial spectrum.
+This is a compatibility result, not yet a first-principles
+derivation.
 However, a rigorous derivation remains open: the explicit
 freeze-out dynamics, the gauge-invariant curvature transfer,
 and the precise values of $\hat p$ and the conversion factors
@@ -31127,12 +31145,14 @@ By contrast, the Standard Model requires 19~free parameters
 4~CKM parameters, Higgs mass, Higgs VEV, $\theta_{\rm QCD}$),
 and $\Lambda$CDM adds 6~cosmological parameters
 ($H_0$, $\Omega_b$, $\Omega_{\rm cdm}$, $\tau$, $A_s$, $n_s$),
-for a total of $\sim\!25$ parameters to describe the same
-physical content.
+for a total of $\sim\!25$ parameters to describe the
+corresponding low-energy particle and cosmological phenomenology.
 
-The compression ratio---two fundamental inputs versus
-$\sim\!25$---is one of the strongest structural arguments
-for the ECT programme.
+The compression ratio---two presently free condensate inputs
+versus $\sim\!25$ parameters in the Standard Model plus
+$\Lambda$CDM---is one of the strongest structural motivations
+for the ECT programme, even though several low-energy sectors
+remain only structurally rather than fully derived.
 
 %--------------------------------------------------------------
 \subsection{Completion data and residual bifurcation points}
@@ -31150,9 +31170,10 @@ initial state.
 This is not a special weakness of ECT: every fundamental theory
 (GR, QFT, string theory) requires initial conditions for the
 temporal asymmetry.
-ECT offers a natural mechanism---the phase transition
-$O(4)\to O(3)$ generically produces a non-equilibrium, coherent,
-low-entropy starting state---but does not yet derive a strict
+ECT offers a natural route: the phase transition
+$O(4)\to O(3)$ can generate a non-equilibrium, coherent,
+low-entropy starting state.
+A strict proof that this outcome is generic remains open---but does not yet derive a strict
 second law from first principles.
 
 \paragraph{Type~2: Open microphysics.}
@@ -31501,10 +31522,16 @@ $\alpha_{\rm fs}=1/137$ (structural routes identified---overlap/tunnelling
 suppression, spectral bound-state counting, and emergent gauge
 normalisation respectively---but explicit computations remain open;
 see \S\ref{par:yukawa_hierarchy}, \S\ref{par:three_generations},
-\S\ref{sec:alpha_fs}, and Appendix~\ref{app:open_microphysics});
+\S\ref{sec:alpha_fs}, and Appendix~\ref{app:open_microphysics}).
+These should be interpreted as identified calculational
+programmes with concrete numerical targets, not as completed
+derivations;
 the primordial perturbation spectrum $(n_s, A_s, r)$ without inflation
 (critical-fluctuation route yields $n_s\sim 0.96$--$0.97$,
-\S\ref{sec:primordial_estimates}, but full derivation is open);
+\S\ref{sec:primordial_estimates}, but full derivation is open).
+These four directions should be interpreted as identified
+calculational programmes with concrete numerical targets,
+not as completed derivations;
 and the full nonlinear gravitational closure at the theorem level.
 These limitations are real, mark the current frontier, and are
 catalogued in Section~\ref{sec:limitations}.
@@ -39376,8 +39403,13 @@ With $\ln(\Lambda_*^2/m^2)\sim 50$ and $Q=1$,
 $\Delta Z_A\approx 0.42$ per species.
 The required total $Z_A\sim 10$--$11$ therefore needs an effective
 charged-mode sum $\sum_i c_i Q_i^2\sim 21$--$26$.
-In the Standard Model with three generations of quarks and leptons
-the effective sum $\sum_i c_i Q_i^2$ is indeed of order~20.
+A fermionic Standard-Model-like content alone does not
+automatically saturate the required effective sum, so additional
+bosonic contributions, multiplicity factors, threshold effects,
+or nonperturbative renormalisation may be needed.
+The present estimate should therefore be understood only as an
+order-of-magnitude plausibility check, not as a completed
+derivation.
 
 \noindent\emph{Status:}
 ECT provides a structural Level~B route; the explicit derivation
@@ -39402,7 +39434,7 @@ $\nu = y/\sqrt{2\lambda}$
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{cccc}
 \hline
-$\lambda$ & $\sqrt{2\lambda}$ & $y$ range for $N_{\rm gen}=3$
+$\lambda_{\rm eff}$ & $\sqrt{2\lambda_{\rm eff}}$ & $y$ range for $N_{\rm gen}=3$
   & Comment \\
 \hline
 $0.10$ & $0.447$ & $1.34$--$1.79$ & natural $y=O(1)$ \\
@@ -39412,6 +39444,13 @@ $0.13$ & $0.510$ & $1.53$--$2.04$ & natural $y=O(1)$ \\
 \end{center}
 In all cases, three generations arise for $y\sim 1.3$--$2.0$,
 a natural range requiring no extreme tuning.
+The parameter $\lambda_{\rm eff}$ refers to the local effective
+profile entering the toy spectral problem; it is not yet identified
+with the fundamental quartic parameter of the full ECT action.
+The parameter $\lambda_{\rm eff}$ refers to the local effective
+profile entering the toy spectral problem; it is not yet
+identified with the fundamental quartic parameter of the full
+ECT action.
 
 The complementary topological route via the index of the
 internal Dirac operator $D_{\rm int}$ on the condensate
@@ -39422,6 +39461,16 @@ spectral-topological invariant.
 For an $O(4)$-background carrying instanton number~$n$
 (from $\pi_3(S^3)=\mathbb{Z}$), the Atiyah--Singer index
 theorem gives $|n|$ zero modes per chirality.
+This does not by itself identify the observed family number
+with the instanton number; it only shows that topological
+protection of mode multiplicity is available in principle.
+The physical identification of the three Standard-Model
+families with such protected modes remains open.
+This does not by itself identify the observed family number
+with the instanton number; it only shows that topological
+protection of mode multiplicity is available in principle.
+The physical identification of the three Standard-Model
+families with such protected modes remains open.
 
 \noindent\emph{Status:} Level~B/C (structural route identified;
 strict derivation of exactly three families from the ECT
@@ -39501,6 +39550,9 @@ $\delta u_*/u_0\sim 5\times 10^{-5}$~\eqref{eq:amplitude_requirement},
 which is achievable through loop-scale weak/Higgs corrections
 ($g^2/(16\pi^2)\sim 10^{-3}$--$10^{-2}$)
 supplemented by a modest conversion suppression factor.
+The logarithmic exponent $\hat p$ has not yet been derived
+within ECT; the quoted range should be read as the range
+needed for compatibility with the observed tilt.
 
 \noindent\emph{Status:} Level~B/C (the critical-fluctuation route
 is numerically compatible with observations; the full derivation
