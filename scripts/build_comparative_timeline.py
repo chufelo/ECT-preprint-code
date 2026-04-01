@@ -66,7 +66,7 @@ for ax in axes:
     for sp in ax.spines.values(): sp.set_visible(False)
 
 # ── Shared epoch separators ───────────────────────────────────────────────────
-shared_v = [X_BB, X_OT, 0.34, 0.50, 0.58, X_NOW]
+shared_v = [X_BB, X_OT, X_NOW]
 for ax in axes:
     for xv in shared_v:
         ax.axvline(xv, color='0.55', ls=':', lw=0.55, alpha=0.55, zorder=2)
@@ -87,8 +87,7 @@ lcdm_segs = [
     (0.26,  0.34,   G['recomb']),
     (0.34,  0.50,   G['matter']),
     (0.50,  X_NOW,  G['struct']),
-    (X_NOW, 0.90,   G['de']),
-    (0.90,  1.00,   G['future_a']),
+    (X_NOW, 1.00,   G['de']),
 ]
 for x0,x1,col in lcdm_segs:
     rect(ax, x0, x1, col)
@@ -101,7 +100,7 @@ lbl_out(ax, 0.18, 0.21, 'EW\ntrans.',                  above=False, fs=7.5)
 lbl(ax, 0.21,  0.26,  'QCD+\nBBN',                    'top', fs=7.5)
 lbl(ax, 0.26,  0.34,  'Recomb.\n380 kyr',              'mid', fs=8)
 lbl(ax, 0.34,  0.50,  'Radiation/Matter\ndomination',  'mid', fs=8.5)
-lbl(ax, 0.50,  X_NOW, 'Structure formation',           'mid', fs=9)
+lbl(ax, 0.54,  X_NOW, 'Structure formation',           'mid', fs=9)
 lbl(ax, X_NOW, 0.90,  'Future\n(de Sitter)',           'mid', fs=8.5)
 
 # Big Bang marker
@@ -118,9 +117,7 @@ ax.text((X_BB+X_NOW)/2, 0.94,
         ha='center', va='bottom', fontsize=8.5, fontweight='bold')
 
 # z~10
-ax.axvline(0.63, color='0.4', ls=':', lw=1.0)
-ax.text(0.63, YT-0.08, r'$z\!\sim\!10$', ha='center', va='top',
-        fontsize=8, color='0.35')
+# z~10 removed from panel (a)
 
 # ════════════════════════════════════════════════════════════════════════════
 # ROW (b) — ECT epochs
@@ -133,12 +130,12 @@ ax.text(-0.003, 0.50, '(b) ECT\nepochs', ha='right', va='center',
 # Epoch colours only (no text yet)
 ect_segs = [
     (0.00,  X_OT,        G['euclid']),   # Full pre-OT = Euclidean   # Euclidean gap
-    (X_OT,  X_OT+0.06,  G['pt']),
-    (X_OT+0.06, X_OT+0.16, G['infl']),
-    (X_OT+0.16, X_OT+0.24, G['rad']),
-    (X_OT+0.24, X_OT+0.29, G['recomb']),
-    (X_OT+0.29, 0.50,    G['matter']),
-    (0.50,  X_NOW,       G['struct']),
+    (X_OT,  X_OT+0.05,  G['pt']),
+    (X_OT+0.05, X_OT+0.12, G['infl']),
+    (X_OT+0.12, X_OT+0.18, G['rad']),
+    (X_OT+0.18, X_OT+0.22, G['recomb']),
+    (X_OT+0.22, 0.54,    G['matter']),
+    (0.54,  X_NOW,       G['struct']),
     (X_NOW, 0.88,        G['future_a']),
     (0.88,  1.00,        G['future_b']),
 ]
@@ -153,19 +150,19 @@ lbl(ax, 0.00,  X_OT,  'Euclidean / pre-Lorentzian phase\n($u_0\!=\!0$, no time)'
 # PT: outside above (too narrow for inside)
 # PT label merged with ordering transition below
 # Inflation-like: outside below
-lbl(ax, X_OT, X_OT+0.06,
-    'Phase\ntransition', 'mid', fs=6.5)
-lbl(ax, X_OT+0.06, X_OT+0.16,
+lbl(ax, X_OT, X_OT+0.05,
+    'O(4)$\\to$O(3)\nPhase trans.', 'mid', fs=6)
+lbl(ax, X_OT+0.05, X_OT+0.12,
     'Ordering\ntransition', 'mid', fs=7)
 # Radiation: outside above
-lbl_out(ax, X_OT+0.16, X_OT+0.24,
-        'Radiation,\nEW $v_2$=246 GeV,\nQCD+BBN (as in SM)', above=True, fs=7.5)
+lbl(ax, X_OT+0.12, X_OT+0.18,
+    'Radiation\nEW,QCD\n+BBN', 'mid', fs=6)
 # Recomb: outside below
-lbl_out(ax, X_OT+0.24, X_OT+0.29, 'Recomb.\n380 kyr',       above=True, fs=7.5)
+lbl(ax, X_OT+0.18, X_OT+0.22, 'Recomb.\n380 kyr', 'mid', fs=6)
 # Matter: inside
-lbl(ax, X_OT+0.29, 0.50, 'Radiation/Matter\ndomination',    'mid', fs=8)
+lbl(ax, X_OT+0.22, 0.54, 'Radiation/Matter\ndomination',    'mid', fs=8)
 # Structure
-lbl(ax, 0.50,  X_NOW,
+lbl(ax, 0.54,  X_NOW,
     'Structure +\n$G_{\\rm eff}>G_N$\n(JWST accel.)',         'mid', fs=8.5)
 # Future A / B
 lbl(ax, X_NOW, 0.88, 'Scen. A:\n$u_0$ nonzero asympt.\neternal', 'mid', fs=8)
@@ -176,8 +173,7 @@ lbl(ax, 0.88,  1.00,
 
 # ECT ordering transition marker
 ax.axvline(X_OT, color='black', lw=1.8, zorder=7)
-ax.text(X_OT, YT+0.12, 'O(4)$\\to$O(3)',
-        ha='center', va='bottom', fontsize=9, fontweight='bold')
+# O(4)→O(3) label moved inside PT section
 
 # ΛCDM BB reference
 ax.axvline(X_BB, color='0.45', ls='--', lw=1.2, zorder=6)
@@ -189,7 +185,7 @@ ax.annotate('', xy=(X_NOW-0.003, 0.03), xytext=(X_OT+0.003, 0.03),
             arrowprops=dict(arrowstyle='<->', color='black', lw=1.3))
 ax.text((X_OT+X_NOW)/2, -0.01,
         r'$t_0^{\rm ECT} = 13.02$ Gyr',
-        ha='center', va='bottom', fontsize=9, fontweight='bold')
+        ha='center', va='top', fontsize=9, fontweight='bold')
 
 # Δt annotation inside Euclidean block (white text on dark bg)
 axes[1].annotate('', xy=(X_OT-0.003, 0.85), xytext=(X_BB+0.003, 0.85),
@@ -199,9 +195,7 @@ axes[1].text((X_BB+X_OT)/2, 0.88,
              ha='center', va='bottom', fontsize=8.5, fontweight='bold', color='white')
 
 # z~10
-ax.axvline(0.63, color='0.4', ls=':', lw=1.0)
-ax.text(0.63, YT-0.08, r'$z\!\sim\!10$',
-        ha='center', va='top', fontsize=8, color='0.35')
+# z~10 removed from panel (b)
 
 # ════════════════════════════════════════════════════════════════════════════
 # ROW (c) — Condensate evolution
@@ -307,9 +301,7 @@ axes[0].text(X_NOW, YT+0.10, 'NOW', ha='center', va='bottom',
              fontsize=11, fontweight='bold')
 # NOW labels removed from panels b,c — single NOW at top suffices
 
-axes[2].axvline(0.63, color='0.4', ls=':', lw=1.0)
-axes[2].text(0.63, 0.97, r'$z\!\sim\!10$',
-             ha='center', va='top', fontsize=8, color='0.35')
+# z~10 removed from panel (c)
 
 # ════════════════════════════════════════════════════════════════════════════
 # Row labels (left axis)
