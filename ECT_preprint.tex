@@ -26728,10 +26728,18 @@ the coherent branch itself.
 \subsection{Decoherence timescale: derivation for specific experimental systems}
 \label{sec:tau_ECT_systems}
 
-\textit{Status: Level~B. The general ECT formula for $\tau_{\rm dec}$ is
-derived from the condensate influence functional within the Gaussian--Markov
-reduction. Specific numerical estimates below use this formula applied to
-known experimental parameters.}
+\textit{Status: Level~B.
+The general ECT decoherence-timescale formula is derived within the
+Gaussian--Markov reduction of the condensate influence functional.
+The specific numerical estimates below are consistency-level
+applications of that formula to experimentally motivated parameter
+ranges, not first-principles predictions of all microscopic inputs.
+Connection: the influence-functional programme
+(\S\ref{sec:qs_decoherence}), medium character~(P5), the
+global/reduced unitarity distinction
+(\S\ref{sec:qs_unitarity_status}), the analogue-laboratory programme
+(\S\ref{sec:analogue_lab}), and the vacuum-response infrastructure of
+Chapter~24.}
 
 The decoherence timescale $\tau_{\rm dec}$ can be computed explicitly
 for each physical system by evaluating $N_{\rm eff}$ and $\gamma$ from the
@@ -26761,6 +26769,31 @@ where $\sigma_{\rm eff}$ is the effective scattering cross-section
 and $v_{\rm ph}$ the condensate phase velocity.  In the macroscopic
 limit, these expressions reduce to the standard Caldeira--Leggett
 result~\cite{CaldeiraLeggett1983}.
+
+\paragraph{Medium reading~(P5).}
+The parameters $N_{\rm eff}$ and $\gamma$ entering
+Eq.~\eqref{eq:tau_ECT_general} are not read in ECT as properties of an
+external reservoir unrelated to the coherent subsystem.
+They characterise unresolved sectors of the same ordered condensate
+that also supports the coherent degrees of freedom being tracked
+explicitly.
+In the environmental case, this unresolved sector is realised by
+effective collision channels;
+in the gravitational case, by graviton-like condensate modes.
+The medium interpretation~(P5) is therefore the unifying reason why
+the same influence-functional framework can host both kinds of
+decoherence.
+
+\paragraph{Relation to the general decoherence programme.}
+The present subsection should be read as the quantitative continuation
+of Section~\ref{sec:qs_decoherence}.
+Section~\ref{sec:qs_decoherence} established the structural
+organisation of reduced influence-functional decoherence;
+the present subsection specialises that framework to concrete systems
+and extracts indicative timescales once sector-appropriate values of
+$N_{\rm eff}$ and $\gamma$ are supplied.
+Nothing conceptually new is added here; what changes is the level of
+numerical concreteness.
 
 \subsubsection*{Case~1: C$_{60}$ matter-wave interferometry}
 
@@ -26794,13 +26827,17 @@ $10^{-2}$ & $\ll 10^{-3}$ & No interference \\
 \end{tabular}
 \end{table}
 
-At $p\approx10^{-6}$~Pa, interference is predicted by ECT,
-consistent with the Arndt~(1999) observation of C$_{60}$ diffraction.
-The suppression of interference at higher pressures is consistent with
-Hornberger et al.\ (2003).  This is a quantitative Level~B confirmation:
-the formula gives the correct qualitative crossover without adjusting
-any ECT-specific parameter --- the result follows from the Gaussian--Markov
-reduction applied to known experimental parameters.
+At $p\approx10^{-6}$~Pa, interference is predicted by the ECT
+timescale estimate, consistent with the Arndt~(1999) observation of
+C$_{60}$ diffraction.
+The suppression of interference at higher pressures is likewise
+consistent with the crossover discussed by Hornberger et al.\ (2003).
+This should be read as an order-of-magnitude Level~B consistency
+anchor, not as a precision confirmation:
+the formula reproduces the correct qualitative crossover once
+experimentally supplied residual-gas parameters and an effective
+collision cross-section are inserted into the Gaussian--Markov
+reduction.
 
 \subsubsection*{Case~2: Gravity-induced decoherence}
 
@@ -26814,20 +26851,23 @@ objects collapse with timescale $\tau_{\rm DP}=\hbar/E_G$, where
     \frac{|\psi(\mathbf{r})|^2\,|\psi(\mathbf{r}')|^2}
          {|\mathbf{r}-\mathbf{r}'|}\,d^3r\,d^3r'.
 \end{equation}
-In ECT, gravitational decoherence is not a separate mechanism;
-it enters $\Gamma[q]$ through $N_{\rm eff}^{\rm grav}$,
-the number of $\delta n_A$ (graviton-like) condensate modes at
-frequency $\omega_{\rm grav}\sim c/\ell_{\rm Pl}$:
+In ECT, gravitational decoherence is not introduced as a separate
+fundamental law.
+It is read as the contribution of the graviton-like condensate sector
+to the same influence functional $\Gamma[q,q']$ that governs the
+environmental case.
+At leading order in the macroscopic gravitational matching,
+the corresponding reduced decoherence timescale takes the
+Di\'osi--Penrose form
 \begin{equation}
   \label{eq:tau_ECT_grav}
   \tau_{\rm ECT}^{\rm grav}
-  = \frac{\hbar\,\omega_{\rm grav}}{E_G\,\omega_{\rm grav}}
   = \frac{\hbar}{E_G}
   = \tau_{\rm DP}.
 \end{equation}
-ECT thus reproduces the Di\'osi--Penrose formula as a limiting case
-of the condensate decoherence functional at leading order in the
-macroscopic matching $G_N = c_*^4/(8\pi M_G^2)$.
+ECT therefore reproduces the Di\'osi--Penrose scaling as a limiting
+case of the condensate decoherence functional in the
+gravity-dominated regime.
 
 \begin{table}[h!]
 \centering
@@ -26854,6 +26894,92 @@ in proposed optomechanical experiments~\cite{Marshall2003}.
 ECT does not modify the Di\'osi--Penrose result at leading order;
 sub-Planck-separation corrections are currently unobservable.
 
+
+\paragraph{Structural unification of environmental and gravitational
+decoherence.}
+The two cases analysed above illustrate a single structural point.
+In standard physics, environmental decoherence and gravitational
+decoherence are usually introduced as conceptually distinct
+mechanisms.
+In ECT both are treated as specialisations of one and the same
+condensate influence functional $\Gamma[q,q']$, evaluated for different
+unresolved sectors of the ordered medium.
+Residual-gas collisions and graviton-like condensate modes are not
+independent fundamental laws in this reading; they are different bath
+sectors of one ordered condensate.
+This does not prove that all decoherence channels in nature are thereby
+exhausted, but it does show that the single-medium architecture already
+contains both classes without postulating separate microscopic
+principles.
+
+\paragraph{Discriminant: unified condensate decoherence versus separate
+mechanisms.}
+In the standard presentation, environmental decoherence and
+gravitational decoherence are typically discussed as independent
+programmes.
+ECT does not deny either effective formula.
+Its distinctive claim is instead that both emerge from one ordered
+medium and one influence-functional structure.
+The ECT-specific content is therefore not the mere recovery of the
+individual leading-order scalings, but their common origin in the same
+condensate framework.
+
+\paragraph{Falsifier for the decoherence-timescale programme.}
+The decoherence-timescale programme would be weakened if the ECT
+formula~\eqref{eq:tau_ECT_general} yielded qualitatively incorrect
+scaling with pressure, superposition separation, or system mass in
+regimes already tested experimentally.
+It would be more strongly challenged if environmental and
+gravitational decoherence required fundamentally different
+influence-functional structures that could not be embedded into one
+ordered-medium framework.
+At present, the leading-order agreement with both the
+Caldeira--Leggett-type scaling and the
+Di\'osi--Penrose form is maintained at the structural level.
+
+\paragraph{Connection to the analogue-laboratory programme.}
+The timescale logic developed here is directly relevant to the
+analogue-laboratory programme~(\S\ref{sec:analogue_lab}),
+where superfluid and BEC systems provide controlled environments with
+measurable coherence times and tunable bath couplings.
+Such systems offer the most accessible near-term route to testing the
+scaling structure of the ECT decoherence formula beyond the already
+available fullerene interferometry anchor.
+
+\paragraph{Empirical status.}
+The C$_{60}$ interferometry case is one of the clearest quantitative
+anchors of the ECT quantum sector.
+The experimentally observed pressure-controlled crossover in coherence
+visibility is reproduced at the correct order of magnitude once the
+Gaussian--Markov reduction is combined with known system parameters.
+The gravitational case is different: the Di\'osi--Penrose form is
+structurally recovered, but its direct experimental isolation remains
+open.
+Proposed optomechanical experiments~\cite{Marshall2003} target the
+nanogram-scale regime where the corresponding timescale becomes
+potentially testable.
+
+\statussummary
+\textit{Level~B:}
+(i)~the general decoherence-timescale formula
+\eqref{eq:tau_ECT_general} is derived within the Gaussian--Markov
+closure of the condensate influence functional;
+(ii)~the C$_{60}$ interferometric crossover is reproduced at the
+correct order of magnitude;
+(iii)~the Di\'osi--Penrose gravitational decoherence form is recovered
+as a limiting case of the same condensate-functional framework.
+
+\textit{Structural unification:}
+environmental and gravitational decoherence are read as two bath-sector
+specialisations of one ordered-medium influence functional rather than
+as separate fundamental mechanisms.
+
+\textit{Open:}
+(i)~a strict first-principles derivation of $N_{\rm eff}$ and $\gamma$
+beyond the effective Gaussian--Markov closure;
+(ii)~an experimental isolation of gravitational decoherence in the
+relevant mesoscopic regime;
+(iii)~subleading corrections from the full condensate dynamics.
 
 % ============================================================
 \subsection{Crooks-type fluctuation relation and effective entropy production}
