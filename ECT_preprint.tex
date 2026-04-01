@@ -10055,7 +10055,11 @@ Each of these inputs goes beyond the minimal scalar condensate
 postulate; the reconstruction is therefore Level~B.
 The ECT-specific content is that the Clifford algebra is interpreted
 with respect to the emergent metric of the ordered branch rather than
-introduced on a fundamental spacetime structure from the outset.}
+introduced on a fundamental spacetime structure from the outset.
+A more structural representation-theoretic route to the same Dirac form
+is developed later in Section~\ref{sec:qs_dirac}, where the equation is
+written first in terms of the pre-identification action scale $S_0$ and
+only subsequently matched to $\hbar$.}
 
 \paragraph{Relativistic dispersion from the emergent metric.}
 After $O(4)\to O(3)$ symmetry breaking, low-energy excitations
@@ -24387,15 +24391,23 @@ Beyond-quadratic & N/A & Speculative, not predicted \\
 \label{sec:qs_dirac}
 % ============================================================
 
-\textit{Status: Level~A for the emergence of the Lorentz algebra
-$\mathfrak{so}(1,3)$ from $O(4)\to O(3)$ SSB combined with Wick
-rotation, and for the representation-theoretic route to Clifford
-structure.
-This gives a conditional structural theorem: if the coherent sector
-contains physical spinorial excitations, then their unique local
-Lorentz-covariant first-order dynamics is Dirac-type.
-Level~B for the physical realisation of a Dirac field in ECT.
-Open: mass generation and gauge couplings from condensate microdynamics.}
+\textit{Status: Level~A for the chain
+$O(4)\to O(3)\Rightarrow d_{\rm spatial}=3\Rightarrow
+\mathrm{Spin}(3)\Rightarrow \mathfrak{so}(1,3)\Rightarrow$
+Clifford structure, once the Wick bridge is applied to the ordered
+branch.
+Level~B~(conditional) for the statement that, if the coherent sector
+contains physical spinorial excitations, then their minimal local
+linear Lorentz-covariant first-order dynamics is Dirac-type.
+Level~B/open for the physical realisation of spinorial excitations,
+their masses, gauge couplings, and the full second-quantised operator
+completion.
+Connection: exchange topology and spinorial compatibility
+(\S\ref{sec:qs_statistics}), fermionic programme
+(\S\ref{sec:fermion_statistics}), electroweak/chirality route
+(\S\ref{sec:ew_embedding}), fifth-force coupling
+(\S\ref{sec:fifth_coupling}), and the entanglement programme
+(\S\ref{sec:qs_entanglement}).}
 
 \medskip
 The exchange-sector analysis of Section~\ref{sec:qs_statistics}
@@ -24404,6 +24416,30 @@ and fermionic sectors.
 The present subsection shows that the symmetry structure of the broken
 condensate provides a natural representation-theoretic route to
 the Dirac structure.
+
+\paragraph{Full structural chain from the ordered branch to Dirac
+form.}
+The representation-theoretic route to Dirac structure should be read as
+the final part of a longer ordered-branch chain:
+\begin{enumerate}[label=(\roman*)]
+  \item the $O(4)\to O(3)$ transition fixes the ordered branch with
+  three spatial directions;
+  \item in that three-dimensional branch, the exchange topology of
+  identical excitations is $\pi_1(\mathcal{M}_2)=\mathbb{Z}_2$
+  (Section~\ref{sec:qs_statistics});
+  \item the residual rotational sector admits the spinorial double cover
+  $\mathrm{Spin}(3)\to SO(3)$;
+  \item after Wick rotation, the broken-phase algebra yields the
+  Lorentz algebra $\mathfrak{so}(1,3)$;
+  \item the spinor representation of that algebra forces the Clifford
+  structure~\eqref{eq:qs_clifford};
+  \item within the minimal local linear first-order Lorentz-covariant
+  closure, the corresponding spinorial dynamics is Dirac-type.
+\end{enumerate}
+Steps~(i)--(v) are structural consequences of the ordered-branch
+architecture; step~(vi) is conditional on the physical realisation of
+spinorial excitations and on staying within the minimal first-order
+spinor closure.
 
 \subsubsection*{From $O(4)\to O(3)$ to the Lorentz algebra~(Level~A)}
 
@@ -24450,17 +24486,29 @@ differential equation takes the form
   \label{eq:qs_dirac_conditional}
   \bigl(i\,S_0\,\gamma^\mu\partial_\mu - m_\psi\,c_*\bigr)\psi = 0,
 \end{equation}
-because $i\gamma^\mu\partial_\mu$ is the unique first-order operator
-consistent with~\eqref{eq:qs_clifford}.
+because, within the minimal local linear Lorentz-covariant first-order
+spinor closure, $i\gamma^\mu\partial_\mu$ is the unique operator
+compatible with~\eqref{eq:qs_clifford}.
 This is a conditional statement:
 \begin{quote}
 \textbf{Conditional structural theorem.}
-\textit{If the coherent sector of ECT contains physical
-spinorial excitations realising the
+\textit{If the coherent sector of ECT contains physical spinorial
+excitations realising the
 $(\frac{1}{2},0)\oplus(0,\frac{1}{2})$ representation of the
-emergent Lorentz group, then their local Lorentz-covariant
-first-order dynamics is uniquely Dirac-type~\eqref{eq:qs_dirac_conditional}.}
+emergent Lorentz group, then, within the minimal local linear
+Lorentz-covariant first-order closure, their free massive dynamics is
+uniquely Dirac-type~\eqref{eq:qs_dirac_conditional}.}
 \end{quote}
+
+\paragraph{Relation to the Part~I Dirac equation.}
+In Part~I~(\S\ref{sec:dirac_eq}), the Dirac equation is written in the
+post-identification form with the observed $\hbar$.
+The present equation~\eqref{eq:qs_dirac_conditional} uses the
+pre-identification coherent action scale $S_0$.
+The two forms are consistent:
+Part~I presents the phenomenologically matched equation, whereas the
+present subsection gives the structural route that leads to that
+normalisation before the final $S_0=\hbar$ identification is imposed.
 
 \paragraph{What this theorem does and does not establish.}
 \textit{It does establish:} the representation-theoretic uniqueness
@@ -24470,28 +24518,107 @@ representation.
 exist in the ECT spectrum; their mass generation or gauge couplings;
 the complete quantisation of the Dirac field from bare~P3.
 
+\paragraph{Medium reading~(P5).}
+Postulate~P5 does not by itself derive the Dirac operator.
+Its role here is interpretive.
+It says that, if spinorial excitations are realised, they are not
+abstract fields on a pre-given background but physical excitations of
+one common ordered medium.
+Accordingly, the Clifford and Dirac structures are read in ECT not as
+fundamental ingredients of spacetime, but as representation-theoretic
+organisations of coherent medium excitations on the ordered branch.
+
+\paragraph{Discriminant: emergent versus fundamental Dirac structure.}
+In standard relativistic quantum field theory, the Dirac equation is
+introduced on an already assumed Lorentzian spacetime and then used as
+the starting point for the fermionic sector.
+In ECT the logical direction is reversed:
+the ordered branch first produces the spatial dimensionality,
+exchange-sector dichotomy, Lorentz algebra, and Clifford structure,
+and only then yields the Dirac form as the minimal compatible
+spinorial dynamics.
+The distinctive ECT claim is therefore not that the physical fermion
+spectrum has already been derived, but that once spinorial excitations
+are present, their minimal first-order Lorentz-covariant free dynamics
+is structurally fixed rather than separately postulated.
+
+\paragraph{Connection to downstream programmes.}
+The Dirac route is not an endpoint.
+Once admitted, it provides the fermionic backbone for several later
+programmes:
+(i)~the chirality route used in the electroweak
+embedding~(\S\ref{sec:ew_embedding});
+(ii)~the neutrino-sector discussion in
+Part~I~(\S\ref{sec:fermion_statistics}), where the Dirac/Majorana
+question is posed within the same spinorial framework;
+(iii)~the ECT-specific fifth-force coupling
+$\Delta\mathcal{L}_5=\mu_5\bar\Psi\gamma^A n_A\Psi$
+(\S\ref{sec:fifth_coupling});
+and (iv)~the spin-statistics and entanglement programmes
+(\S\ref{sec:qs_statistics}, \S\ref{sec:qs_entanglement}),
+which use the same spinorial structure as part of their closure.
+
+\paragraph{Empirical anchor.}
+Observed charged leptons and quarks are described by Dirac-type
+relativistic spinor dynamics to very high precision.
+Neutrinos also belong to the same relativistic spinorial framework,
+even though the detailed Dirac-versus-Majorana completion remains open.
+ECT does not yet derive the fermion mass spectrum from condensate
+microdynamics, but it does provide the structural statement that if the
+ordered branch supports spinorial excitations, then the minimal local
+linear first-order Lorentz-covariant free equation available to them
+is of Dirac type.
+In this sense, the observed fermionic sector serves as an empirical
+anchor for the conditional theorem without turning it into a completed
+first-principles derivation of the full fermion spectrum.
+
+\paragraph{Falsifier for the Dirac-structure programme.}
+The Dirac-structure programme would fail if
+(i)~the emergent Lorentz algebra of the ordered branch did not admit
+spinorial representations compatible with the induced metric;
+(ii)~the Clifford structure required by that representation were
+inconsistent with the same metric;
+(iii)~within the same minimal local linear first-order spinor closure,
+a non-Dirac Lorentz-covariant free dynamics were equally admissible;
+or (iv)~the physical fermionic sector ultimately required a structure
+incompatible with the ordered-branch spinorial route.
+Any of these would force a substantial revision of the present
+representation-theoretic construction.
+
 \paragraph{Pauli exclusion.}
 Exchange topology gives bosonic and fermionic sectors at Level~A
 (Section~\ref{sec:qs_statistics}).
 The Dirac structure, once admitted, makes the standard spin-statistics
-argument available: a spin-$\tfrac{1}{2}$ field quantised with
-commutators yields an energy spectrum unbounded below, so
-anticommutators are required.
-Pauli exclusion is therefore a Level~B structural consequence
-conditional on the realisation of the spinorial sector and on
+route available: for a spin-$\tfrac{1}{2}$ field, the operator
+completion compatible with stability and the fermionic exchange sector
+requires anticommutation rather than commutation.
+Pauli exclusion is therefore a Level~B structural consequence,
+conditional on the realised spinorial sector, the completed
+spin-statistics route, and the physical normalisation
 $S_0=\hbar$~(OP-Q2, OP-Q11).
 
 \statussummary
-\begin{itemize}
-  \item Level~A: Lorentz algebra from broken phase + Wick rotation;
-    Clifford algebra as spinor-representation consequence.
-  \item Level~B~(conditional): Dirac-type first-order dynamics,
-    given spinorial excitations.
-  \item Level~B: Pauli exclusion, conditional on spinorial sector
-    and $S_0=\hbar$.
-  \item Open~(OP-Q3, OP-Q11): physical spinorial spectrum,
-    mass generation, gauge couplings, full second-quantisation.
-\end{itemize}
+\textit{Established~(Level~A):}
+(i)~the ordered branch plus Wick rotation yields the Lorentz algebra
+$\mathfrak{so}(1,3)$;
+(ii)~the spinorial representation of that algebra forces the Clifford
+structure~\eqref{eq:qs_clifford};
+(iii)~the longer structural chain from the ordered-branch dimensionality
+and exchange sector to Lorentz/spinor/Clifford kinematics is internal
+to ECT.
+
+\textit{Level~B~(conditional):}
+(i)~if physical spinorial excitations are realised, then within the
+minimal local linear first-order closure their free massive dynamics is
+Dirac-type;
+(ii)~Pauli exclusion follows once the spinorial sector and the
+spin-statistics route are combined, with the physical normalisation
+fixed by $S_0=\hbar$.
+
+\textit{Open~(OP-Q3, OP-Q11):}
+the physical spinorial spectrum, mass generation, gauge couplings,
+full second-quantised operator algebra, and the completed fermionic
+many-body construction.
 
 % ============================================================
 
@@ -28143,10 +28270,11 @@ Lorentz algebra $\mathfrak{so}(1,3)$ from $O(4)\to O(3)$ + Wick rotation
 Clifford algebra $\{\gamma^\mu,\gamma^\nu\}=2g^{\mu\nu}$
   & Level~A
   & Spinor-representation consequence of Lorentz algebra \\
-Dirac-type dynamics~(conditional): if spinorial excitations exist
+Dirac-type free dynamics for realised spinorial excitations
   & Level~B~(conditional)
-  & Eq.~\eqref{eq:qs_dirac_conditional};
-    conditional uniqueness theorem; Section~\ref{sec:qs_dirac} \\
+  & Minimal local linear first-order Lorentz-covariant closure;
+    Eq.~\eqref{eq:qs_dirac_conditional};
+    Section~\ref{sec:qs_dirac} \\
 Physical spinorial sector of ECT
   & Level~B/open~(OP-Q11)
   & Requires spectrum construction from condensate \\
