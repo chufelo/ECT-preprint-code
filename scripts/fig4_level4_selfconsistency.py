@@ -216,7 +216,7 @@ checks = [
     ('PASS',  'No inflation needed',    r'Horizon, flatness, monopole resolved',C_ECT),
     ('PASS',  'Baryogenesis',           r'$\eta_B \sim 9\times10^{-10}$ (lept.)', C_ECT),
     ('PROB.', 'Renormalizability',      'On fixed background (likely)',          '#CC9900'),
-    ('OPEN',  '3 fermion generations',  'not yet explained',                     '#888888'),
+    ('PART.', r'$\alpha_{\rm fs}$, 3 gen., Yukawa',  'Structural routes identified',  '#CC9900'),
 ]
 
 y0 = 9.2
