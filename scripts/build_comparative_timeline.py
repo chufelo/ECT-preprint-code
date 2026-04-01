@@ -95,7 +95,7 @@ for x0,x1,col in lcdm_segs:
 
 # Staggered labels ΛCDM — early block alternates above/inside
 lbl(ax, 0.00,  X_BB,  'Undefined\n(no spacetime)',     'mid', fs=8)
-lbl_out(ax, X_BB, 0.13, 'Planck+\nInflation',          above=True, fs=8)
+# Planck+Inflation merged with Big Bang label above
 lbl(ax, 0.13,  0.18,  'Radiation\n(quarks,\nleptons)', 'bot', fs=7.5)
 lbl_out(ax, 0.18, 0.21, 'EW\ntrans.',                  above=False, fs=7.5)
 lbl(ax, 0.21,  0.26,  'QCD+\nBBN',                    'top', fs=7.5)
@@ -106,15 +106,15 @@ lbl(ax, X_NOW, 0.90,  'Future\n(de Sitter)',           'mid', fs=8.5)
 
 # Big Bang marker
 ax.axvline(X_BB, color='black', lw=1.8, zorder=7)
-ax.text(X_BB, YT+0.10, 'Big Bang\n$t=0$', ha='center', va='bottom',
-        fontsize=9, fontweight='bold')
+ax.text(X_BB, YT+0.16, 'Big Bang\n$t{=}0$\nPlanck+\nInflation',
+        ha='center', va='bottom', fontsize=8, fontweight='bold')
 
 # Age arrow
 ax.annotate('', xy=(X_NOW-0.003, 0.04), xytext=(X_BB+0.003, 0.04),
             arrowprops=dict(arrowstyle='<->', color='black', lw=1.3))
-ax.text((X_BB+X_NOW)/2, 0.01,
+ax.text((X_BB+X_NOW)/2, 0.02,
         r'$t_0^{\Lambda{\rm CDM}} = 13.80$ Gyr',
-        ha='center', va='bottom', fontsize=9.5, fontweight='bold')
+        ha='center', va='bottom', fontsize=8.5, fontweight='bold')
 
 # z~10
 ax.axvline(0.63, color='0.4', ls=':', lw=1.0)
@@ -151,15 +151,15 @@ lbl(ax, 0.00,  X_BB,  'Undefined',                           'mid', fs=8)
 lbl(ax, X_BB,  X_OT,  'Euclidean /\npre-Lorentzian\nphase\n($u_0\!=\!0$, no time)',
     'mid', fs=7.5)
 # PT: outside above (too narrow for inside)
-lbl_out(ax, X_OT, X_OT+0.06, 'PT\nO(4)→O(3)',               above=True, fs=7.5)
+# PT label merged with ordering transition below
 # Inflation-like: outside below
-lbl_out(ax, X_OT+0.06, X_OT+0.16,
-        'Ordering\ntransition',                   above=False, fs=7.5)
+lbl_out(ax, X_OT, X_OT+0.16,
+        'PT O(4)→O(3)\n+ ordering\ntransition',  above=False, fs=7.5)
 # Radiation: outside above
 lbl_out(ax, X_OT+0.16, X_OT+0.24,
         'Radiation,\nEW $v_2$=246 GeV,\nQCD+BBN (as in SM)', above=True, fs=7.5)
 # Recomb: outside below
-lbl_out(ax, X_OT+0.24, X_OT+0.29, 'Recomb.\n380 kyr',       above=False, fs=7.5)
+lbl_out(ax, X_OT+0.24, X_OT+0.29, 'Recomb.\n380 kyr',       above=True, fs=7.5)
 # Matter: inside
 lbl(ax, X_OT+0.29, 0.50, 'Radiation/Matter\ndomination',    'mid', fs=8)
 # Structure
@@ -170,12 +170,7 @@ lbl(ax, X_NOW, 0.88, 'Scen. A:\n$u_0$ nonzero asympt.\neternal', 'mid', fs=8)
 lbl(ax, 0.88,  1.00,
     'Scen. B:\n$u_0\\to 0$\nBig Crunch\n$\\sim\\!10^{100}$yr',  'mid', fs=7.5)
 
-# Scen B arrow: G_eff diverges
-ax.annotate('', xy=(0.94, YT-0.12), xytext=(0.94, YT-0.30),
-            arrowprops=dict(arrowstyle='->', color='black', lw=1.0))
-ax.text(0.94, YT-0.31, r'$G_{\rm eff}\to\infty$',
-        ha='center', va='top', fontsize=7.5,
-        bbox=dict(fc='white', ec='0.5', lw=0.5, pad=1.5))
+# G_eff arrow removed (info in Scen B label)
 
 # ECT ordering transition marker
 ax.axvline(X_OT, color='black', lw=1.8, zorder=7)
@@ -250,7 +245,7 @@ ax.plot(xs[xs >= X_NOW], yB[xs >= X_NOW],
 phi_n = 1 - np.exp(-4.5*(xs-X_OT)/(X_NOW-X_OT))
 phi_n = np.clip(phi_n, 0, 1)
 y_phi = 0.15 + phi_n*0.42
-ax.plot(xs[xs <= X_NOW+0.01], y_phi[xs <= X_NOW+0.01],
+ax.plot(xs, y_phi,
         '--', color='0.40', lw=1.9,
         label=r'$\phi(t)$: $\phi\ll0$ early $\to$ $\phi\to-0.10$ now')
 
@@ -295,16 +290,12 @@ ax.text(X_NOW-0.015, 0.22,
         ha='right', va='bottom', fontsize=8,
         bbox=dict(fc='white', ec='0.5', lw=0.5, pad=1.5))
 
-# Scen B divergence
-ax.text(0.94, 0.80,
-        r'Scen. B:' '\n' r'$G_{\rm eff}\to\infty$',
-        ha='center', va='top', fontsize=8,
-        bbox=dict(fc='white', ec='0.6', lw=0.6, pad=2))
+# Scen B box removed (info in legend)
 
 # Legend — bottom right
-ax.legend(fontsize=8.5, loc='lower right', framealpha=0.97,
+ax.legend(fontsize=8, loc='upper right', framealpha=0.90,
           edgecolor='0.5', ncol=2, columnspacing=0.8,
-          bbox_to_anchor=(0.998, 0.01))
+          bbox_to_anchor=(0.998, 0.97))
 
 # ════════════════════════════════════════════════════════════════════════════
 # SHARED: NOW line + z~10 in row c
