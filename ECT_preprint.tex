@@ -29520,7 +29520,8 @@ identification or full closure is not yet finished.
 Level~B = closure-level or conditional result, with the relevant
 additional assumptions, matching steps, or reduced-state hypotheses
 explicitly indicated.
-Open = not yet derived; explicit open-problem reference given.}
+Open = not yet derived; where available, an explicit open-problem
+reference is given.}
 \label{tab:qs_status}\\
 \hline\hline
 Result & Status & Basis / comment \\
@@ -29536,6 +29537,7 @@ Result (cont.) & Status & Basis / comment \\
 \endlastfoot
 Result & Status & Basis / comment \\
 \hline
+% --- Ch.19--20: Scope, phase dynamics, S_0 ---
 Coherent branch exists as phase-sensitive sector
   & Level~A
   & BR1 + ordered broken phase; Section~\ref{sec:qs_intro} \\
@@ -29558,6 +29560,7 @@ Identification $S_0=\hbar$
   & Structural universality established; physical identification
     by matching;
     Eq.~\eqref{eq:qs_S0_identification} \\
+% --- Ch.21: Wave kinematics, extremal action, conservation ---
 Hamilton--Jacobi / continuity structure of coherent phase dynamics
   & Level~A
   & Algebraically exact; Section~\ref{sec:qs_wave} \\
@@ -29569,6 +29572,40 @@ Schr\"odinger-type complex recombination
   & Level~B
   & Structural route; $S_0=\hbar$ and $\hat H_{\rm coh}$ still needed;
     Eq.~\eqref{eq:qs_schrodinger_type} \\
+Extremal-action principle as saddle dominance
+  & Level~A
+  & Eqs.~\eqref{eq:qs_saddle}, \eqref{eq:qs_saddle_E} \\
+Conservation laws inherited by coherent branch
+  & Level~A
+  & Eqs.~\eqref{eq:qs_noether_T}, \eqref{eq:qs_noether_J} \\
+% --- Ch.22: Hilbert-space bridge ---
+Reflection positivity in massive Gaussian broken-phase subsectors
+  & Level~A
+  & Section~\ref{sec:qs_reflection_positivity};
+    standard OS result for explicitly positive Gaussian measures \\
+Reflection positivity in free massless Goldstone subsectors
+  & Level~A
+  & Section~\ref{sec:qs_reflection_positivity};
+    standard Gaussian massless-scalar RP compatibility
+    (up to the usual infrared subtleties) \\
+Reflection positivity for full interacting coherent sector
+  & Open (OP-Q16)
+  & Section~\ref{sec:qs_reflection_positivity};
+    constructive QFT programme \\
+Global unitarity in reconstructed positive Gaussian subsectors
+  & Level~A
+  & Follows from reflection positivity and the OS reconstruction for
+    the broken-phase Gaussian measure;
+    Section~\ref{sec:qs_unitarity_status} \\
+Global unitarity beyond Gaussian regime
+  & Level~B/open
+  & Depends on OP-Q16; not yet independently established;
+    Section~\ref{sec:qs_unitarity_status} \\
+Global vs.\ reduced unitarity distinction
+  & Level~A
+  & Well-defined structural distinction between full coherent unitarity
+    and reduced-sector effective non-unitarity;
+    Section~\ref{sec:qs_unitarity_status} \\
 Canonical organisation of smooth coherent branch
   & Level~A
   & Section~\ref{sec:qs_ccr};
@@ -29587,171 +29624,19 @@ Global quantisation of the compact-phase shift generator
   & Eqs.~\eqref{eq:qs_Qtheta}--\eqref{eq:qs_dirac_quantization};
     topological consequence of compact $\theta$ and
     single-valuedness of the coherent wave functional \\
+Global compact-phase quantisation condition
+  & Level~A
+  & Eq.~\eqref{eq:qs_dirac_quantization};
+    topological consequence of compact $\theta$ and
+    single-valuedness, complementary to the canonical bridge;
+    Sections~\ref{sec:qs_ccr}, \ref{sec:qs_uncertainty} \\
 Momentum-operator-type wave kinematics
   & Level~B
   & Eq.~\eqref{eq:qs_p_operator}; depends on $S_0$ normalisation \\
 Full operator algebra and many-body canonical completion
-  & Open
+  & Open (OP-Q4)
   & Section~\ref{sec:qs_ccr};
     operator-level derivation beyond the reduced coherent sector \\
-Reduced influence-functional organisation
-  & Level~B
-  & Open-system EFT of coherent branch;
-    Eq.~\eqref{eq:qs_influence} \\
-Retarded propagation of ordered-branch scalar~$\Phi$
-  & Level~A (quadratic)
-  & Appendix~\ref{app:retarded_kernel} \\
-Positive spectral density $\rho(\mu^2)\ge 0$
-  & Level~A (quadratic)
-  & Linear broken-phase EFT \\
-Standard 3D bath gives super-ohmic $J\!\propto\!\omega^4$
-  & Level~A
-  & Eq.~\eqref{eq:qs_super_ohmic};
-    Appendix~\ref{app:ohmic_markov} \\
-Effective ohmic regime
-  & Level~B
-  & Working closure assumption; Eq.~\eqref{eq:qs_ohmic} \\
-Markov approximation
-  & Level~B
-  & Working closure assumption; Eq.~\eqref{eq:qs_markov} \\
-Qualitative entropy monotonicity $dS/dw\ge 0$
-  & Level~B
-  & Eq.~\eqref{eq:qs_entropy_monotone};
-    retarded kernel + low-entropy branch \\
-Explicit entropy-production formula
-  & Level~B
-  & Eq.~\eqref{eq:qs_entropy_explicit};
-    depends on ohmic + Markov closure \\
-Macroscopic irreversibility ($N_{\rm eff}\!\gg\!1$)
-  & Level~B
-  & Section~\ref{sec:qs_decoherence};
-    decoherence closure \\
-Near-reversible coherent dynamics ($N_{\rm eff}\!\sim\!1$)
-  & Level~B
-  & Same decoherence logic; quantum exception regime \\
-Low-entropy coherent initial sector
-  & Level~B
-  & Section~\ref{sec:qs_decoherence};
-    motivated by ordered-branch initial condition \\
-Qualitative monotonicity $dS_{\rm irr}/dw\ge0$
-  & Level~B
-  & Eq.~\eqref{eq:qs_entropy_monotone};
-    reduced macroscopic dynamics \\
-Reverse $O(3)\!\to\!O(4)$ Euclidean segments are structurally admissible
-  & Level~A
-  & Follows from the $O(4)$-invariant Euclidean action;
-    Section~\ref{sec:quantum_classical_boundary} \\
-Quantum--classical boundary via $\Gamma_{\rm loop}$ criterion
-  & Level~B
-  & Reverse Euclidean segments remain relevant for
-    $\Gamma_{\rm loop}\lesssim1$ and are effectively suppressed for
-    $\Gamma_{\rm loop}\gg1$;
-    Section~\ref{sec:quantum_classical_boundary} \\
-Explicit entropy production~\eqref{eq:qs_entropy_explicit}
-  & Level~B
-  & Ohmic/Markov closure;
-    Eq.~\eqref{eq:qs_entropy_explicit} \\
-Crooks-type fluctuation relation in Gaussian--Markov closure
-  & Level~B
-  & Eq.~\eqref{eq:crooks_ECT};
-    Section~\ref{sec:crooks_ect} \\
-C$_{60}$ decoherence-timescale consistency anchor
-  & Level~B
-  & Order-of-magnitude agreement within Gaussian--Markov closure;
-    Section~\ref{sec:tau_ECT_systems} \\
-Di\'osi--Penrose gravitational decoherence as condensate limit
-  & Level~B
-  & Recovered from the same influence-functional framework;
-    Section~\ref{sec:tau_ECT_systems} \\
-Environmental + gravitational decoherence: structural unification
-  & Level~B~(structural)
-  & Two bath-sector specialisations of one condensate influence
-    functional; Section~\ref{sec:tau_ECT_systems} \\
-Amplitude / decoherence / probability distinction
-  & Level~A
-  & Section~\ref{sec:qs_born};
-    Eq.~\eqref{eq:qs_prob_logic} \\
-Born rule: conditional uniqueness via Gleason
-  & Level~B~(conditional)
-  & Gleason: unique given Hilbert/projector structure;
-    not yet first-principles from bare~P3~(OP-Q7) \\
-Structural assumptions (C1)--(C3) for conditional Gleason route
-  & Level~B
-  & Hilbert/projector structure, orthogonal reduced alternatives, and
-    additive probability measure;
-    Section~\ref{sec:qs_born} \\
-Full Born rule as first-principles theorem
-  & Open (OP-Q7)
-  & Requires full derivation from coherent-sector dynamics \\
-Completed measurement-update theory
-  & Open (OP-Q8)
-  & Pointer sectors, branch update, records not complete \\
-Black-hole thermodynamics as coherent-vacuum effective target
-  & Level~B
-  & Eqs.~\eqref{eq:qs_Hawking_temp}--\eqref{eq:qs_Hawking_temp_S0};
-    rewriting requires $S_0=\hbar$ \\
-Reduced-state thermality $\neq$ fundamental information loss
-  & Level~A
-  & General QS reduced-state logic;
-    Eq.~\eqref{eq:qs_rho_ext} \\
-Fundamental non-unitary information destruction incompatible
-  with the ECT postulate structure
-  & Level~A
-  & P2 + reduced-state logic; Section~\ref{sec:qs_black_holes} \\
-Critical ordered-phase shell near the horizon
-  & Level~B
-  & Section~\ref{sec:qs_black_holes}; strong-field closure \\
-Full strong-field evaporation completion~(Page curve)
-  & Open (OP-Q13)
-  & Global nonlinear horizon solution not yet complete \\
-Generalized entropy $S_{\rm gen}=S_{BH}+S_{\rm ext}^{\rm coarse}$
-  & Level~B
-  & Eq.~\eqref{eq:qs_generalized_entropy};
-    natural reduced-observer bookkeeping \\
-Page-curve-compatible unitary evaporation logic
-  & Level~B
-  & Structural support in Section~\ref{sec:qs_black_holes} \\
-Explicit Page-curve computation
-  & Open (OP-Q13)
-  & Requires global nonlinear shell dynamics \\
-Near-horizon shell-scale dispersion parameterisation
-  & Level~B
-  & Eqs.~\eqref{eq:qs_bh_dispersion},
-    \eqref{eq:qs_bh_Geff};
-    parameters not yet derived from bare~P3 \\
-Ringdown and late-time echo signatures of the shell
-  & Level~B
-  & Section~\ref{sec:qs_black_holes} \\
-Primordial-black-hole constraints on the strong-field closure
-  & Level~B
-  & Section~\ref{sec:qs_black_holes}; cosmological bridge \\
-Wider defect sector beyond smooth coherent branch
-  & Level~A
-  & Section~\ref{sec:qs_defects} + \ref{sec:defect_sectors} \\
-Defect sectors: structural existence
-  & Level~A
-  & Section~\ref{sec:qs_defects} \\
-Defect sectors: full dynamics and classification
-  & Open (OP-Q9)
-  & Core structure, stability, production; not yet complete \\
-Smooth collective dark-sector candidates
-  & Level~B
-  & Bridge MP to QS; Section~\ref{sec:dark_sector} \\
-Topological/defect dark-sector candidates
-  & Level~B
-  & Section~\ref{sec:qs_defects}; detailed dynamics open \\
-Quantitative dominant dark-matter identification
-  & Open (OP-Q10)
-  & No unique first-principles candidate established yet \\
-Analogue-laboratory instantiability of ordered-medium logic
-  & Level~A/B
-  & Structural expectation that media with compact phase, winding,
-    correlators, and environment-sensitive response admit ECT-type
-    analogues; Section~\ref{sec:analogue_lab} \\
-Concrete analogue-platform mapping to ECT subprogrammes
-  & Level~B
-  & Superfluid, BEC, Josephson, superconducting, and acoustic-horizon
-    systems; Section~\ref{sec:analogue_lab} \\
 Uncertainty inequality $\Delta q\,\Delta p\ge S_0/2$
   & Level~A
   & Eqs.~\eqref{eq:qs_robertson}, \eqref{eq:qs_uncertainty_S0};
@@ -29759,31 +29644,7 @@ Uncertainty inequality $\Delta q\,\Delta p\ge S_0/2$
 Heisenberg form $\Delta q\,\Delta p\ge\hbar/2$
   & Level~B
   & Requires $S_0=\hbar$~\eqref{eq:qs_S0_identification} \\
-Global compact-phase quantisation condition
-  & Level~A
-  & Eq.~\eqref{eq:qs_dirac_quantization};
-    topological consequence of compact $\theta$ and
-    single-valuedness, complementary to the canonical bridge;
-    Sections~\ref{sec:qs_ccr}, \ref{sec:qs_uncertainty} \\
-Extremal-action principle as saddle dominance
-  & Level~A
-  & Eqs.~\eqref{eq:qs_saddle}, \eqref{eq:qs_saddle_E} \\
-Conservation laws inherited by coherent branch
-  & Level~A
-  & Eqs.~\eqref{eq:qs_noether_T}, \eqref{eq:qs_noether_J} \\
-Non-factorisable coherent correlations (entanglement route)
-  & Level~A/B
-  & Structural: reduced bipartite state of single medium
-    generically non-factorisable;
-    Section~\ref{sec:qs_entanglement} \\
-Bell-correlator completion
-  & Open
-  & Full CHSH-type derivation from condensate dynamics not yet
-    available; Section~\ref{sec:qs_entanglement} \\
-No-signalling compatibility of common-medium entanglement
-  & Level~A/B
-  & Non-factorisable reduced state, not controllable message channel;
-    Section~\ref{sec:qs_entanglement} \\
+% --- Ch.23: Path-dependence, statistics, Dirac ---
 Two-sided Euclidean boundary dependence
   & Level~A
   & Elliptic Euclidean field equation;
@@ -29836,6 +29697,7 @@ Pauli exclusion
 Full spin-statistics theorem
   & Open (OP-Q11)
   & Requires operator completion beyond current closure \\
+% --- Ch.24: Vacuum response ---
 Ordered condensate vacuum is physically nontrivial
   & Level~A
   & Ordered medium with correlators, stiffness, winding, and
@@ -29849,10 +29711,14 @@ Casimir coefficient for condensate-reflecting boundaries
   & Provisional soft-orientation EFT with ideal Dirichlet
     condensate-reflecting boundaries;
     Eq.~\eqref{eq:casimir_ect} \\
-Horizon thermality as coherent-vacuum response channel
+Unruh-type response: structural observer dependence
+  & Level~A
+  & Accelerated and inertial observers decompose the ordered vacuum
+    differently; Section~\ref{sec:qs_unruh} \\
+Unruh temperature from Euclidean-correlator reconstruction
   & Level~A/B
-  & Strong-field continuation of the same vacuum-response logic;
-    Sections~\ref{sec:qs_vacuum_unified}, \ref{sec:qs_bh} \\
+  & Eq.~\eqref{eq:unruh_ect}; requires $S_0=\hbar$ and $c_*=c$;
+    Section~\ref{sec:qs_unruh} \\
 Time-dependent ordered backgrounds: background-dependent particle notion
   & Level~A
   & Nonstationary ordered vacuum produces inequivalent mode
@@ -29865,14 +29731,10 @@ Bogoliubov-type mode mixing in ECT coherent vacuum
 Quantitative production rates $|\beta_k|^2$
   & Open (OP-Q12)
   & Requires completed time-dependent coherent-vacuum calculation \\
-Unruh-type response: structural observer dependence
-  & Level~A
-  & Accelerated and inertial observers decompose the ordered vacuum
-    differently; Section~\ref{sec:qs_unruh} \\
-Unruh temperature from Euclidean-correlator reconstruction
+Horizon thermality as coherent-vacuum response channel
   & Level~A/B
-  & Eq.~\eqref{eq:unruh_ect}; requires $S_0=\hbar$ and $c_*=c$;
-    Section~\ref{sec:qs_unruh} \\
+  & Strong-field continuation of the same vacuum-response logic;
+    Sections~\ref{sec:qs_vacuum_unified}, \ref{sec:qs_bh} \\
 Unified vacuum-response logic (Casimir/production/Unruh/horizon)
   & Level~A/B
   & Section~\ref{sec:qs_vacuum_unified};
@@ -29882,33 +29744,181 @@ Analogue-gravity continuity of the coherent-vacuum interpretation
   & Level~B
   & Section~\ref{sec:qs_vacuum_unified};
     conceptual support, not standalone derivation \\
-Reflection positivity in massive Gaussian broken-phase subsectors
+% --- Ch.25: Decoherence, arrow of time ---
+Reduced influence-functional organisation
+  & Level~B
+  & Open-system EFT of coherent branch;
+    Eq.~\eqref{eq:qs_influence} \\
+Retarded propagation of ordered-branch scalar~$\Phi$
+  & Level~A (quadratic)
+  & Appendix~\ref{app:retarded_kernel} \\
+Positive spectral density $\rho(\mu^2)\ge 0$
+  & Level~A (quadratic)
+  & Linear broken-phase EFT \\
+Standard 3D bath gives super-ohmic $J\!\propto\!\omega^4$
   & Level~A
-  & Section~\ref{sec:qs_reflection_positivity};
-    standard OS result for explicitly positive Gaussian measures \\
-Reflection positivity in free massless Goldstone subsectors
+  & Eq.~\eqref{eq:qs_super_ohmic};
+    Appendix~\ref{app:ohmic_markov} \\
+Effective ohmic regime
+  & Level~B
+  & Working closure assumption; Eq.~\eqref{eq:qs_ohmic} \\
+Markov approximation
+  & Level~B
+  & Working closure assumption; Eq.~\eqref{eq:qs_markov} \\
+Low-entropy coherent initial sector
+  & Level~B
+  & Section~\ref{sec:qs_decoherence};
+    motivated by ordered-branch initial condition \\
+Qualitative entropy monotonicity $dS/dw\ge 0$
+  & Level~B
+  & Eq.~\eqref{eq:qs_entropy_monotone};
+    retarded kernel + low-entropy branch \\
+Explicit entropy-production formula
+  & Level~B
+  & Eq.~\eqref{eq:qs_entropy_explicit};
+    depends on ohmic + Markov closure \\
+Macroscopic irreversibility ($N_{\rm eff}\!\gg\!1$)
+  & Level~B
+  & Section~\ref{sec:qs_decoherence};
+    decoherence closure \\
+Near-reversible coherent dynamics ($N_{\rm eff}\!\sim\!1$)
+  & Level~B
+  & Same decoherence logic; quantum exception regime \\
+Crooks-type fluctuation relation in Gaussian--Markov closure
+  & Level~B
+  & Eq.~\eqref{eq:crooks_ECT};
+    Section~\ref{sec:crooks_ect} \\
+C$_{60}$ decoherence-timescale consistency anchor
+  & Level~B
+  & Order-of-magnitude agreement within Gaussian--Markov closure;
+    Section~\ref{sec:tau_ECT_systems} \\
+Di\'osi--Penrose gravitational decoherence as condensate limit
+  & Level~B
+  & Recovered from the same influence-functional framework;
+    Section~\ref{sec:tau_ECT_systems} \\
+Environmental + gravitational decoherence: structural unification
+  & Level~B~(structural)
+  & Two bath-sector specialisations of one condensate influence
+    functional; Section~\ref{sec:tau_ECT_systems} \\
+% --- Ch.26: QC boundary, Born, measurement ---
+Reverse $O(3)\!\to\!O(4)$ Euclidean segments are structurally admissible
   & Level~A
-  & Section~\ref{sec:qs_reflection_positivity};
-    standard Gaussian massless-scalar RP compatibility
-    (up to the usual infrared subtleties) \\
-Reflection positivity for full interacting coherent sector
-  & Open (OP-Q16)
-  & Section~\ref{sec:qs_reflection_positivity};
-    constructive QFT programme \\
-Global unitarity in reconstructed positive Gaussian subsectors
+  & Follows from the $O(4)$-invariant Euclidean action;
+    Section~\ref{sec:quantum_classical_boundary} \\
+Quantum--classical boundary via $\Gamma_{\rm loop}$ criterion
+  & Level~B
+  & Reverse Euclidean segments remain relevant for
+    $\Gamma_{\rm loop}\lesssim1$ and are effectively suppressed for
+    $\Gamma_{\rm loop}\gg1$;
+    Section~\ref{sec:quantum_classical_boundary} \\
+Amplitude / decoherence / probability distinction
   & Level~A
-  & Follows from reflection positivity and the OS reconstruction for
-    the broken-phase Gaussian measure;
-    Section~\ref{sec:qs_unitarity_status} \\
-Global unitarity beyond Gaussian regime
-  & Level~B/open
-  & Depends on OP-Q16; not yet independently established;
-    Section~\ref{sec:qs_unitarity_status} \\
-Global vs.\ reduced unitarity distinction
+  & Section~\ref{sec:qs_born};
+    Eq.~\eqref{eq:qs_prob_logic} \\
+Born rule: conditional uniqueness via Gleason
+  & Level~B~(conditional)
+  & Gleason: unique given Hilbert/projector structure;
+    not yet first-principles from bare~P3~(OP-Q7) \\
+Structural assumptions (C1)--(C3) for conditional Gleason route
+  & Level~B
+  & Hilbert/projector structure, orthogonal reduced alternatives, and
+    additive probability measure;
+    Section~\ref{sec:qs_born} \\
+Unique outcome selection beyond conditional Born weights
+  & Open (OP-Q19)
+  & Relation between branch weights, decohered alternatives, and
+    actually realised records remains incomplete;
+    Section~\ref{sec:qs_born} \\
+Full Born rule as first-principles theorem
+  & Open (OP-Q7)
+  & Requires full derivation from coherent-sector dynamics \\
+Completed measurement-update theory
+  & Open (OP-Q8)
+  & Pointer sectors, branch update, records not complete \\
+% --- Ch.27: Entanglement ---
+Non-factorisable coherent correlations (entanglement route)
+  & Level~A/B
+  & Structural: reduced bipartite state of single medium
+    generically non-factorisable;
+    Section~\ref{sec:qs_entanglement} \\
+No-signalling compatibility of common-medium entanglement
+  & Level~A/B
+  & Non-factorisable reduced state, not controllable message channel;
+    Section~\ref{sec:qs_entanglement} \\
+Bell-correlator completion
+  & Open (OP-Q20)
+  & Full CHSH-type derivation from condensate dynamics not yet
+    available; Section~\ref{sec:qs_entanglement} \\
+% --- Ch.28: Topological / defect / dark ---
+Wider defect sector beyond smooth coherent branch
   & Level~A
-  & Well-defined structural distinction between full coherent unitarity
-    and reduced-sector effective non-unitarity;
-    Section~\ref{sec:qs_unitarity_status} \\
+  & Section~\ref{sec:qs_defects} + \ref{sec:defect_sectors} \\
+Defect sectors: structural existence
+  & Level~A
+  & Section~\ref{sec:qs_defects} \\
+Defect sectors: full dynamics and classification
+  & Open (OP-Q9)
+  & Core structure, stability, production; not yet complete \\
+Smooth collective dark-sector candidates
+  & Level~B
+  & Bridge MP to QS; Section~\ref{sec:dark_sector} \\
+Topological/defect dark-sector candidates
+  & Level~B
+  & Section~\ref{sec:qs_defects}; detailed dynamics open \\
+Quantitative dominant dark-matter identification
+  & Open (OP-Q10)
+  & No unique first-principles candidate established yet \\
+% --- Ch.29: Black holes ---
+Black-hole thermodynamics as coherent-vacuum effective target
+  & Level~B
+  & Eqs.~\eqref{eq:qs_Hawking_temp}--\eqref{eq:qs_Hawking_temp_S0};
+    rewriting requires $S_0=\hbar$ \\
+Reduced-state thermality $\neq$ fundamental information loss
+  & Level~A
+  & General QS reduced-state logic;
+    Eq.~\eqref{eq:qs_rho_ext} \\
+Fundamental non-unitary information destruction incompatible
+  with the ECT postulate structure
+  & Level~A
+  & P2 + reduced-state logic; Section~\ref{sec:qs_black_holes} \\
+Critical ordered-phase shell near the horizon
+  & Level~B
+  & Section~\ref{sec:qs_black_holes}; strong-field closure \\
+Generalized entropy $S_{\rm gen}=S_{BH}+S_{\rm ext}^{\rm coarse}$
+  & Level~B
+  & Eq.~\eqref{eq:qs_generalized_entropy};
+    natural reduced-observer bookkeeping \\
+Page-curve-compatible unitary evaporation logic
+  & Level~B
+  & Structural support in Section~\ref{sec:qs_black_holes} \\
+Explicit Page-curve computation
+  & Open (OP-Q13)
+  & Requires global nonlinear shell dynamics \\
+Full strong-field evaporation completion~(Page curve)
+  & Open (OP-Q13)
+  & Global nonlinear horizon solution not yet complete \\
+Near-horizon shell-scale dispersion parameterisation
+  & Level~B
+  & Eqs.~\eqref{eq:qs_bh_dispersion},
+    \eqref{eq:qs_bh_Geff};
+    parameters not yet derived from bare~P3 \\
+Ringdown and late-time echo signatures of the shell
+  & Level~B
+  & Section~\ref{sec:qs_black_holes} \\
+Primordial-black-hole constraints on the strong-field closure
+  & Level~B
+  & Section~\ref{sec:qs_black_holes}; cosmological bridge \\
+% --- Ch.30: Analogue lab ---
+Analogue-laboratory instantiability of ordered-medium logic
+  & Level~A/B
+  & Structural expectation that media with compact phase, winding,
+    correlators, and environment-sensitive response admit ECT-type
+    analogues; Section~\ref{sec:analogue_lab} \\
+Concrete analogue-platform mapping to ECT subprogrammes
+  & Level~B
+  & Superfluid, BEC, Josephson, superconducting, and acoustic-horizon
+    systems; Section~\ref{sec:analogue_lab} \\
+
 \end{longtable}
 }
 
@@ -30017,6 +30027,10 @@ problems or closure-dependent steps.}
     weights, including the relation between branch weights,
     decohered alternatives, and actually realised measurement
     records~(Section~\ref{sec:qs_born}).
+  \item[OP-Q20] First-principles derivation of Bell-inequality-violating
+    correlators, including the CHSH-type correlation algebra and the
+    Tsirelson bound, from condensate
+    dynamics~(Section~\ref{sec:qs_entanglement}).
 \end{description}
 
 \subsection{Minimal quantum core already established by ECT}
