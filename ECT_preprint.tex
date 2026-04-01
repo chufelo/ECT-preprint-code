@@ -10683,10 +10683,13 @@ Its fundamental group is
 \end{equation}
 which yields exactly two exchange classes: symmetric and
 antisymmetric.
-Because the ordered branch is effectively $3+1$-dimensional, this
-topological result supports only the usual bosonic/fermionic
-dichotomy; anyonic braid statistics is not expected for fundamental
+Because the ordered branch is fixed by the $O(4)\to O(3)$ transition
+to an effectively $3+1$-dimensional structure, the exchange topology
+supports only the usual bosonic/fermionic dichotomy for fundamental
 particle exchange in the primary branch.
+This does not exclude effective anyonic quasiparticle behaviour in
+reduced lower-dimensional media, but it does exclude anyonic exchange
+as the fundamental statistics of the primary ordered branch.
 
 Integer-spin tensorial sectors are compatible with symmetric
 exchange; half-integer spinorial sectors with antisymmetric exchange.
@@ -24170,12 +24173,22 @@ from condensate dynamics remains incomplete.
 \label{sec:qs_statistics}
 % ============================================================
 
-\textit{Status: Level~B throughout.
-This subsection provides a structural route to bosonic/fermionic
-classification inside the coherent branch.
-It does not yet constitute a first-principles derivation of the full
-spin-statistics theorem or of second-quantised anticommutation
-relations from bare~P3.}
+\textit{Status: Level~A for the exchange-topology statement that in the
+primary ordered branch, whose spatial dimensionality is fixed to
+$d_{\rm spatial}=3$ by the $O(4)\to O(3)$ breaking pattern, the
+two-particle configuration space has
+$\pi_1(\mathcal{M}_2)=\mathbb{Z}_2$ and therefore admits exactly two
+fundamental exchange classes.
+Level~B for the structural compatibility between symmetric exchange and
+integer-spin sectors, and between antisymmetric exchange and spinorial
+sectors.
+Open~(OP-Q11) for the full spin-statistics theorem, the operator
+anticommutation algebra, and the complete many-body fermionic
+construction.
+Connection: $O(4)\to O(3)$ ordering~(P4), medium character~(P5),
+fermionic-sector discussion~(\S\ref{sec:fermion_statistics}),
+Dirac route~(\S\ref{sec:qs_dirac}), and entanglement for identical
+particles~(\S\ref{sec:qs_entanglement}).}
 
 \medskip
 If the Quantum Sector of ECT is to reproduce more than one-particle
@@ -24205,19 +24218,68 @@ This yields exactly two topological exchange classes: symmetric and
 antisymmetric~(Level~A as a topological fact; the connection to
 specific condensate sectors is Level~B).
 
+\paragraph{Why the $\mathbb{Z}_2$ exchange dichotomy is structural in
+ECT.}
+The exchange topology $\pi_1(\mathcal{M}_2)=\mathbb{Z}_2$ is specific
+to the exchange of identical excitations in $d\ge3$ spatial
+dimensions.
+In $d=2$, the corresponding braid structure is richer and supports
+anyonic exchange phases~\cite{Wilczek1982,Nayak2008}; in the primary
+ordered branch of ECT, however, the spatial dimensionality is not a
+free external input.
+It is fixed by the $O(4)\to O(3)$ breaking pattern itself:
+the ordered branch has exactly three spatial directions.
+Therefore the $\mathbb{Z}_2$ exchange dichotomy is not separately
+postulated; it is the topological consequence of the same symmetry
+breaking that establishes the ordered branch.
+In this precise sense, the bosonic/fermionic exchange split is
+structurally tied to P4.
+
+\paragraph{Empirical anchor.}
+Observed particle physics in $3+1$ dimensions exhibits exactly the
+bosonic/fermionic dichotomy for fundamental excitations: photons and
+gauge bosons are bosonic, while electrons, neutrinos, and quarks are
+fermionic.
+By contrast, anyonic exchange has been observed only in effectively
+two-dimensional condensed-matter systems, where braid topology differs
+from the $3+1$-dimensional particle-exchange problem.
+This empirical split is precisely the pattern expected if the primary
+ordered branch is fundamentally three-dimensional, while anyonic
+statistics remains an emergent lower-dimensional quasiparticle
+phenomenon rather than a fundamental exchange law of the coherent
+branch.
+
 \subsubsection*{Representation-theoretic compatibility}
 
 After $O(4)\to O(3)$ breaking, excitations of the ordered sector fall
 into representations of the residual rotational structure.
-Integer-spin tensorial sectors are compatible with symmetric exchange;
-half-integer spinorial sectors are compatible with antisymmetric
+At this stage ECT establishes a structural compatibility statement:
+integer-spin tensorial sectors fit naturally with symmetric exchange,
+while half-integer spinorial sectors fit naturally with antisymmetric
 exchange.
-This is not yet the full Pauli--L\"uders--Zumino theorem, but it is
-the correct structural compatibility statement: exchange topology and
-representation sign fit together naturally in the ordered branch.
+This is stronger than a mere analogy but weaker than the full
+Pauli--L\"uders--Zumino theorem.
+What is established here is the compatibility of exchange topology and
+representation content in the ordered branch; what remains open is the
+full operator-level spin-statistics theorem and the many-body fermionic
+construction.
+
+\paragraph{Medium reading of exchange~(P5).}
+Postulate~P5 does not alter the topology of exchange, but it gives that
+topology a physical reading.
+Exchange in ECT is not merely a permutation of abstract particle
+labels; it is the exchange of excitations of one common ordered
+medium.
+This strengthens the ontological interpretation of the
+bosonic/fermionic split without changing its mathematical status:
+the $\mathbb{Z}_2$ exchange dichotomy remains a topological statement,
+while P5 clarifies what is being exchanged physically.
 
 \subsubsection*{What is and is not claimed}
 
+The present subsection therefore establishes the topological and
+representation-theoretic skeleton of the bosonic/fermionic split, but
+not yet its full operator-algebraic completion.
 ECT at the present stage does \emph{not} yet derive:
 \begin{enumerate}[label=(\roman*)]
   \item the full relativistic spin-statistics theorem;
@@ -24230,11 +24292,76 @@ What it does provide is a structurally natural route from
 coherent exchange sectors to the bosonic/fermionic
 dichotomy.
 
-\paragraph{Summary.}
-Quantum statistics in ECT is presently a Level~B structural result:
-exchange topology and ordered-branch representation theory already
-point toward the standard bosonic/fermionic classification, but the
-full spin-statistics theorem remains open~(OP-Q11).
+\paragraph{Connection to downstream programmes.}
+The exchange-sector dichotomy established here feeds directly into
+three downstream constructions.
+First, it constrains the physical reading of the fermionic sector in
+Part~I~(\S\ref{sec:fermion_statistics}).
+Second, it provides the exchange-side input for the
+representation-theoretic route to Dirac structure in the next
+subsection~(\S\ref{sec:qs_dirac}).
+Third, it supplies the identical-particle background for the
+entanglement programme~(\S\ref{sec:qs_entanglement}), where
+non-factorisable states of indistinguishable excitations depend on the
+same exchange structure.
+
+\paragraph{Discriminant: standard, anyonic, and ECT routes.}
+Three logically distinct routes should be separated.
+In standard relativistic QFT, the full spin-statistics theorem is
+proved within an already assumed Lorentzian operator framework.
+In effectively two-dimensional systems, braid topology allows anyonic
+exchange phases beyond the bosonic/fermionic dichotomy.
+In ECT, the primary result is different in kind:
+the ordered branch fixes $d_{\rm spatial}=3$, and this dimensionality
+already restricts the fundamental exchange topology to
+$\mathbb{Z}_2$.
+Thus ECT does not yet reproduce the full standard theorem, but it does
+explain why the primary branch should display a bosonic/fermionic
+split rather than an anyonic one.
+
+\paragraph{Falsifier for the exchange-sector programme.}
+The exchange-sector programme would be undermined if
+(i)~the ordered branch failed to fix an effectively three-dimensional
+spatial sector, so that the $\mathbb{Z}_2$ exchange topology no longer
+followed;
+(ii)~fundamental particle exchange in the primary $3+1$ branch showed
+stable anyonic phases;
+or (iii)~the completed coherent-sector operator algebra turned out to
+be incompatible with the structural pairing between spinorial sectors
+and antisymmetric exchange.
+Any of these would force a substantial revision of the present
+spin-statistics route.
+
+\paragraph{Observed pattern.}
+The observed split of known $3+1$-dimensional particle physics into
+bosons and fermions is fully consistent with the exchange-sector
+structure identified here.
+At the same time, the existence of anyonic exchange in effectively
+two-dimensional condensed-matter systems confirms the contrasting part
+of the discriminant: once the dimensionality changes, the exchange
+topology changes as well.
+ECT therefore places the bosonic/fermionic dichotomy and the absence
+of fundamental anyons in the primary branch on the same structural
+footing.
+
+\statussummary
+\textit{Established~(Level~A):}
+(i)~the primary ordered branch is effectively three-dimensional
+through the $O(4)\to O(3)$ breaking pattern;
+(ii)~for identical excitations in that branch,
+$\pi_1(\mathcal{M}_2)=\mathbb{Z}_2$;
+(iii)~the fundamental exchange topology therefore admits exactly two
+classes.
+
+\textit{Level~B:}
+the ordered-branch representation content is structurally compatible
+with the standard bosonic/fermionic assignment:
+integer-spin tensorial sectors with symmetric exchange and spinorial
+sectors with antisymmetric exchange.
+
+\textit{Open~(OP-Q11):}
+the full spin-statistics theorem, operator anticommutation algebra,
+and many-body fermionic Fock-space construction remain to be derived.
 
 % ============================================================
 
@@ -28001,9 +28128,15 @@ $\Gamma_{\rm loop}$ degradation criterion for indefinite-order resources
 Topological exchange-sector dichotomy ($\mathbb{Z}_2$)
   & Level~A (topological)
   & Eq.~\eqref{eq:qs_exchange_pi1} \\
+Spatial dimensionality $d_{\rm spatial}=3$ fixes the exchange topology
+  & Level~A
+  & $O(4)\to O(3)$ ordered branch implies
+    $\pi_1(\mathcal{M}_2)=\mathbb{Z}_2$;
+    Section~\ref{sec:qs_statistics} \\
 Bosonic/fermionic structural compatibility
   & Level~B
-  & Section~\ref{sec:qs_statistics} \\
+  & Exchange topology plus ordered-branch representation content;
+    Section~\ref{sec:qs_statistics} \\
 Lorentz algebra $\mathfrak{so}(1,3)$ from $O(4)\to O(3)$ + Wick rotation
   & Level~A
   & Eq.~\eqref{eq:qs_clifford}; Section~\ref{sec:qs_dirac} \\
