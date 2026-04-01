@@ -106,13 +106,14 @@ lbl(ax, X_NOW, 0.90,  'Future\n(de Sitter)',           'mid', fs=8.5)
 
 # Big Bang marker
 ax.axvline(X_BB, color='black', lw=1.8, zorder=7)
-ax.text(X_BB, YT+0.16, 'Big Bang\n$t{=}0$\nPlanck+\nInflation',
-        ha='center', va='bottom', fontsize=8, fontweight='bold')
+ax.text(X_BB, YT+0.08, 'Big Bang\n$t{=}0$',
+        ha='center', va='bottom', fontsize=9, fontweight='bold')
+lbl(ax, X_BB, 0.13, 'Planck+\nInflation', 'mid', fs=7.5)
 
 # Age arrow
-ax.annotate('', xy=(X_NOW-0.003, 0.04), xytext=(X_BB+0.003, 0.04),
+ax.annotate('', xy=(X_NOW-0.003, 0.92), xytext=(X_BB+0.003, 0.92),
             arrowprops=dict(arrowstyle='<->', color='black', lw=1.3))
-ax.text((X_BB+X_NOW)/2, 0.02,
+ax.text((X_BB+X_NOW)/2, 0.94,
         r'$t_0^{\Lambda{\rm CDM}} = 13.80$ Gyr',
         ha='center', va='bottom', fontsize=8.5, fontweight='bold')
 
@@ -131,8 +132,7 @@ ax.text(-0.003, 0.50, '(b) ECT\nepochs', ha='right', va='center',
 
 # Epoch colours only (no text yet)
 ect_segs = [
-    (0.00,  X_BB,        G['undef']),
-    (X_BB,  X_OT,        G['euclid']),   # Euclidean gap
+    (0.00,  X_OT,        G['euclid']),   # Full pre-OT = Euclidean   # Euclidean gap
     (X_OT,  X_OT+0.06,  G['pt']),
     (X_OT+0.06, X_OT+0.16, G['infl']),
     (X_OT+0.16, X_OT+0.24, G['rad']),
@@ -146,15 +146,17 @@ for x0,x1,col in ect_segs:
     rect(ax, x0, x1, col)
 
 # Labels — staggered to avoid overlap
-lbl(ax, 0.00,  X_BB,  'Undefined',                           'mid', fs=8)
+# No "Undefined" in ECT — everything before PT is Euclidean
 # Euclidean block: inside, small
-lbl(ax, X_BB,  X_OT,  'Euclidean /\npre-Lorentzian\nphase\n($u_0\!=\!0$, no time)',
-    'mid', fs=7.5)
+lbl(ax, 0.00,  X_OT,  'Euclidean / pre-Lorentzian phase\n($u_0\!=\!0$, no time)',
+    'mid', fs=8)
 # PT: outside above (too narrow for inside)
 # PT label merged with ordering transition below
 # Inflation-like: outside below
-lbl_out(ax, X_OT, X_OT+0.16,
-        'PT O(4)→O(3)\n+ ordering\ntransition',  above=False, fs=7.5)
+lbl(ax, X_OT, X_OT+0.06,
+    'Phase\ntransition', 'mid', fs=6.5)
+lbl(ax, X_OT+0.06, X_OT+0.16,
+    'Ordering\ntransition', 'mid', fs=7)
 # Radiation: outside above
 lbl_out(ax, X_OT+0.16, X_OT+0.24,
         'Radiation,\nEW $v_2$=246 GeV,\nQCD+BBN (as in SM)', above=True, fs=7.5)
@@ -174,7 +176,7 @@ lbl(ax, 0.88,  1.00,
 
 # ECT ordering transition marker
 ax.axvline(X_OT, color='black', lw=1.8, zorder=7)
-ax.text(X_OT, YT+0.18, 'O(4)→O(3)\nordering trans.',
+ax.text(X_OT, YT+0.12, 'O(4)$\\to$O(3)',
         ha='center', va='bottom', fontsize=9, fontweight='bold')
 
 # ΛCDM BB reference
@@ -183,16 +185,16 @@ ax.text(X_BB, YB-0.10, r'$\Lambda$CDM BB',
         ha='center', va='top', fontsize=8, color='0.40', style='italic')
 
 # ECT age arrow
-ax.annotate('', xy=(X_NOW-0.003, 0.04), xytext=(X_OT+0.003, 0.04),
+ax.annotate('', xy=(X_NOW-0.003, 0.03), xytext=(X_OT+0.003, 0.03),
             arrowprops=dict(arrowstyle='<->', color='black', lw=1.3))
-ax.text((X_OT+X_NOW)/2, 0.01,
+ax.text((X_OT+X_NOW)/2, -0.01,
         r'$t_0^{\rm ECT} = 13.02$ Gyr',
-        ha='center', va='bottom', fontsize=9.5, fontweight='bold')
+        ha='center', va='bottom', fontsize=9, fontweight='bold')
 
 # Δt annotation inside Euclidean block (white text on dark bg)
-axes[1].annotate('', xy=(X_OT-0.003, 0.55), xytext=(X_BB+0.003, 0.55),
+axes[1].annotate('', xy=(X_OT-0.003, 0.85), xytext=(X_BB+0.003, 0.85),
                  arrowprops=dict(arrowstyle='<->', color='white', lw=2.0))
-axes[1].text((X_BB+X_OT)/2, 0.68,
+axes[1].text((X_BB+X_OT)/2, 0.88,
              r'$\Delta t\!\approx\!780$ Myr',
              ha='center', va='bottom', fontsize=8.5, fontweight='bold', color='white')
 
@@ -210,8 +212,7 @@ ax.text(-0.003, 0.50, '(c) ECT\ncondensate\n$u_0(t),\\phi(t)$',
         transform=ax.transData, multialignment='right')
 
 # Background
-ax.add_patch(Rectangle((0.00, 0.05), X_BB,     0.90, facecolor=G['undef'],    ec='black', lw=0.5))
-ax.add_patch(Rectangle((X_BB, 0.05), X_OT-X_BB, 0.90, facecolor=G['euclid'], ec='black', lw=0.5))
+ax.add_patch(Rectangle((0.00, 0.05), X_OT,     0.90, facecolor=G['euclid'],   ec='black', lw=0.5))
 ax.add_patch(Rectangle((X_OT, 0.05), X_NOW-X_OT, 0.90, facecolor=G['cond_bg'], ec='black', lw=0.5))
 ax.add_patch(Rectangle((X_NOW, 0.05), 0.88-X_NOW, 0.90, facecolor=G['future_a'], ec='black', lw=0.5))
 ax.add_patch(Rectangle((0.88, 0.05),  0.12,       0.90, facecolor=G['future_b'],  ec='black', lw=0.5))
@@ -304,10 +305,7 @@ for ax in axes:
     ax.axvline(X_NOW, color='black', lw=2.2, zorder=9)
 axes[0].text(X_NOW, YT+0.10, 'NOW', ha='center', va='bottom',
              fontsize=11, fontweight='bold')
-axes[1].text(X_NOW, YT+0.36, 'NOW', ha='center', va='bottom',
-             fontsize=11, fontweight='bold')
-axes[2].text(X_NOW, 0.97, 'NOW', ha='center', va='top',
-             fontsize=10, fontweight='bold')
+# NOW labels removed from panels b,c — single NOW at top suffices
 
 axes[2].axvline(0.63, color='0.4', ls=':', lw=1.0)
 axes[2].text(0.63, 0.97, r'$z\!\sim\!10$',
