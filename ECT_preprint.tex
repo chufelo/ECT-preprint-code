@@ -25108,33 +25108,35 @@ EFT.
 \centering
 \begin{tikzpicture}[
   node distance=1.0cm and 1.0cm,
-  box/.style={draw, rounded corners, align=center, minimum width=3.0cm,
+  box/.style={draw, rounded corners, align=center, minimum width=3.1cm,
     minimum height=0.95cm, font=\small},
-  arrow/.style={->, thick}
+  arrow/.style={->, thick},
+  dline/.style={dashed, thick}
 ]
 \node[box] (vac) {ordered coherent\\vacuum};
 \node[box, below left=of vac] (casimir) {boundary response\\(Casimir)};
 \node[box, below=of vac] (prod) {time-dependent response\\(particle production)};
 \node[box, below right=of vac] (unruh) {observer response\\(Unruh)};
 \node[box, below=2.2cm of prod] (bh) {strong-field interface\\response (Hawking/horizon)};
-\node[box, right=2.0cm of bh] (ag) {analogue-gravity\\continuity};
+\node[box, right=2.2cm of prod] (ag) {analogue-gravity\\continuity};
+
 \draw[arrow] (vac) -- (casimir);
 \draw[arrow] (vac) -- (prod);
 \draw[arrow] (vac) -- (unruh);
-\draw[arrow] (casimir) -- (bh);
-\draw[arrow] (prod) -- (bh);
-\draw[arrow] (unruh) -- (bh);
-\draw[arrow] (bh) -- (ag);
-\draw[arrow] (vac) to[bend left=40] (ag);
+\draw[arrow] (vac) -- (bh);
+
+\draw[dline] (ag) -- (casimir);
+\draw[dline] (ag) -- (prod);
+\draw[dline] (ag) -- (unruh);
+\draw[dline] (ag) -- (bh);
 \end{tikzpicture}
 \caption{Unified response logic of the ordered coherent vacuum
-in the Quantum Sector of ECT~(Level~B).
+in the Quantum Sector of ECT~(Level~A/B).
 Boundary conditions, time-dependent backgrounds, accelerated observers,
-and strong-field causal interfaces probe one and the same ordered vacuum
-in different ways.
-The analogue-gravity continuity shows that none of these effects requires
-a fundamental spacetime ontology; they emerge from the coherent-vacuum
-response structure.
+and strong-field causal interfaces probe one and the same ordered
+vacuum through four parallel response channels.
+The dashed analogue-gravity links indicate conceptual continuity, not a
+completed derivation chain between the effects themselves.
 This is a structural unification map, not yet a completed quantitative
 one-kernel derivation.
 See Appendix~\ref{app:qs_vacuum_response} for the detailed structural
@@ -25850,12 +25852,22 @@ Particle production in time-dependent background &
 $a_k^{\rm(out)}=\alpha_k a_k^{\rm(in)}+\beta_k a_{-k}^{\rm(in)\dagger}$ &
 $|\beta_k|^2$ mode-dependent; rates open &
 Bogoliubov mixing & B \\
-Decoherence rate (ohmic) &
-$\Gamma_{\rm dist}\sim N_{\rm eff}\gamma(\Delta q/\ell)^2$ &
-Matches Caldeira--Leggett & Standard CL & A \\
+Horizon thermality (near-horizon route) &
+$T_{\rm H}\sim\dfrac{\hbar \kappa}{2\pi c_* k_B}$ &
+Strong-field / near-horizon regime; full closure open &
+Standard Hawking temperature form & A/B \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\paragraph{Status note on the horizon-thermality row.}
+The horizon-thermality entry records the structural route by which the
+same coherent-vacuum correlator logic extends to strong-field causal
+interfaces.
+It should not be read as a completed black-hole evaporation theory.
+Its present status is Level~A/B because the near-horizon thermal form
+is structurally recovered, while the full strong-field closure remains
+part of the downstream black-hole programme.
 
 
 
@@ -26014,9 +26026,10 @@ Unruh temperature from Euclidean-correlator reconstruction
   & Eq.~\eqref{eq:unruh_ect}; requires $S_0=\hbar$ and $c_*=c$;
     Section~\ref{sec:qs_unruh} \\
 Unified vacuum-response logic (Casimir/production/Unruh/horizon)
-  & Level~B
+  & Level~A/B
   & Section~\ref{sec:qs_vacuum_unified};
-    single coherent-vacuum structure, four physical settings \\
+    one coherent-vacuum response structure read through four probing
+    regimes \\
 Analogue-gravity continuity of the ECT vacuum interpretation
   & Level~B
   & Section~\ref{sec:qs_vacuum_unified} \\
@@ -28967,9 +28980,10 @@ Unruh temperature from Euclidean-correlator reconstruction
   & Eq.~\eqref{eq:unruh_ect}; requires $S_0=\hbar$ and $c_*=c$;
     Section~\ref{sec:qs_unruh} \\
 Unified vacuum-response logic (Casimir/production/Unruh/horizon)
-  & Level~B
+  & Level~A/B
   & Section~\ref{sec:qs_vacuum_unified};
-    single coherent-vacuum structure, four physical settings \\
+    one coherent-vacuum response structure read through four probing
+    regimes \\
 Analogue-gravity continuity of the coherent-vacuum interpretation
   & Level~B
   & Section~\ref{sec:qs_vacuum_unified};
