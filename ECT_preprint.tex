@@ -27219,28 +27219,33 @@ Gaussian--Markov closure.
 \label{sec:qs_measurement}
 % ==============================================================
 
-\textit{Inputs: decoherence architecture from
-Section~\ref{sec:qs_open_systems};
-coherent amplitude structure from
-Sections~\ref{sec:qs_phase_and_scale}--\ref{sec:qs_hilbert_bridge};
-reverse $O(3)\to O(4)$ logic from the Euclidean path integral;
-medium character~(P5).
+\textit{Inputs: the Hilbert-space and projector route
+(\S\ref{sec:qs_reflection_positivity}), the global/reduced unitarity
+distinction~(\S\ref{sec:qs_unitarity_status}), coherent amplitude
+structure from
+Sections~\ref{sec:qs_phase_and_scale}--\ref{sec:qs_hilbert_bridge},
+the decoherence and arrow-of-time programme
+(\S\ref{sec:qs_decoherence}, \S\ref{sec:crooks_ect}), the reverse
+$O(3)\to O(4)$ Euclidean logic, and medium character~(P5).
 Aim: to identify the quantum--classical boundary, explain why
 decoherence is not yet the Born rule, and state what ECT can and
 cannot currently establish about probability and measurement.
 Status: Level~A for the structural admissibility of reverse
-$O(3)\!\to\!O(4)$ Euclidean segments in the path integral~(from P2).
+$O(3)\!\to\!O(4)$ Euclidean segments in the path integral~(from P2),
+and for the distinction between coherent amplitudes and decohered
+reduced sectors.
 Level~B for the quantitative quantum--classical boundary criterion
-$\Gamma_{\rm loop}\lesssim1$, for the conditional uniqueness of
-Born-type weights~(via Gleason), and for the amplitude $\to$
-decoherence $\to$ effective-probability logical chain.
-Full measurement theory and first-principles Born-rule derivation
-remain open.
+$\Gamma_{\rm loop}\lesssim1$, for the amplitude $\to$ decoherence
+$\to$ effective-probability logical chain, and for the conditional
+uniqueness of Born-type weights once the required Hilbert/projector
+conditions are in place.
+A full first-principles derivation of the Born rule and a completed
+measurement-update theory remain open.
 Connections: the decoherence and arrow-of-time programme
-(\S\ref{sec:qs_decoherence}), the Crooks-type
-relation~(\S\ref{sec:crooks_ect}), medium character~(P5), and
+(\S\ref{sec:qs_decoherence}, \S\ref{sec:crooks_ect}),
+the Hilbert-space route~(\S\ref{sec:qs_reflection_positivity}),
 the global/reduced unitarity distinction
-(\S\ref{sec:qs_unitarity_status}).}
+(\S\ref{sec:qs_unitarity_status}), and medium character~(P5).}
 
 \medskip
 \subsection{Quantum--classical boundary: reverse $O(3)\to O(4)$ transitions}
@@ -27454,21 +27459,21 @@ what status measurement outcomes acquire in ECT.
 % NOTE: GPT draft used label sec:qs_probability; changed to sec:qs_born
 % for consistency with the roadmap in Section~\ref{sec:qs_intro}.
 
-\textit{Status: Level~A for the distinction between coherent amplitudes
-and decohered reduced sectors.
-Level~B for the emergence of effective probability weights, the
-conditional uniqueness of a Born-type interpretation via
-Gleason's theorem, and the four-step logical chain
-amplitudes $\to$ decoherence $\to$ classical alternatives $\to$
-probability.
+\textit{Status: Level~A for the distinction between coherent
+amplitudes, decohered reduced sectors, and effective probability
+candidates.
+Level~B for the conditional uniqueness of Born-type weights once a
+Hilbert/projector structure and additive probability measure on
+decohered alternatives are admitted.
 A full first-principles derivation of the Born rule and a completed
-measurement-update theory remain open~(OP-Q7, OP-Q23).
-Connection: the quantum--classical boundary
-(\S\ref{sec:quantum_classical_boundary}), the decoherence programme
-(\S\ref{sec:qs_decoherence}), the Crooks-type
-relation~(\S\ref{sec:crooks_ect}), medium character~(P5), and the
-global/reduced unitarity distinction
-(\S\ref{sec:qs_unitarity_status}).}
+measurement-update theory remain open.
+Connection: wave-kinematical organisation
+(\S\ref{sec:qs_wave}), canonical structure
+(\S\ref{sec:qs_ccr}), reflection positivity and Hilbert-space route
+(\S\ref{sec:qs_reflection_positivity}), global/reduced unitarity
+(\S\ref{sec:qs_unitarity_status}), decoherence
+(\S\ref{sec:qs_decoherence}), and the quantum--classical boundary
+(\S\ref{sec:quantum_classical_boundary}).}
 
 \medskip
 The previous subsections established three ingredients of the coherent
@@ -27481,6 +27486,21 @@ This question must be handled with unusual care.
 Decoherence alone does not produce probability.
 It only suppresses phase interference between macroscopically distinct
 reduced sectors.
+
+\paragraph{Structural assumptions entering the Gleason route.}
+For clarity, the conditional Born argument used below will be stated in
+terms of three assumptions:
+\begin{enumerate}[label=(C\arabic*)]
+  \item the relevant decohered alternatives are represented by a
+    Hilbert-space / projector structure built on the coherent branch;
+  \item decoherence has selected approximately orthogonal reduced
+    alternatives in the regime of interest;
+  \item an additive probability measure on those decohered
+    alternatives is admitted.
+\end{enumerate}
+ECT does not yet derive all three from the bare postulates alone.
+What it establishes is that, once they are in place, the quadratic
+Born assignment is not merely natural but conditionally unique.
 
 \paragraph{Medium reading~(P5).}
 Under the medium interpretation~(P5), the amplitude-to-probability
@@ -27557,10 +27577,13 @@ Many discussions conflate four conceptually separate steps:
 \end{enumerate}
 In ECT these four steps are kept conceptually distinct.
 
-\subsubsection*{Why a Born-type rule is plausible in ECT}
+\subsubsection*{Why a Born-type rule is structurally natural and
+conditionally unique in ECT}
 
-Although not yet proved, a Born-type rule is strongly suggested by the
-internal structure of the coherent branch.
+A Born-type rule is not yet derived from first principles in ECT,
+but it is strongly suggested by the internal structure of the coherent
+branch and becomes conditionally unique once assumptions~(C1)--(C3)
+are admitted.
 ECT already contains:
 \begin{enumerate}[label=(\roman*)]
   \item complex coherent amplitudes weighted by $S_0$;
@@ -27676,61 +27699,67 @@ alternatives~(conditional uniqueness via Gleason, above).
 ECT thereby provides the right \emph{architecture} of the Born
 problem, even if it has not yet fully solved it.
 
-\subsubsection*{Bridge to topological and dark-sector extensions}
+\subsubsection*{Bridge to entanglement and Bell-type correlations}
 
-The probability and measurement discussion concerns the smooth
-coherent branch selected by BR1.
-The full coherent sector of ECT is wider: it also includes
-nontrivial defect and topological configurations that may contribute
-to dark-sector ontology and to non-perturbative coherent processes.
-Those sectors are the subject of the next subsection.
+The probability and measurement discussion has so far focused on
+decohered reduced sectors and effectively classical alternatives.
+The next step is different:
+to analyse coherent correlations that remain intrinsically
+non-factorisable and are therefore not exhausted by the branch-based
+probability discussion alone.
+That is the subject of the next section on entanglement and
+Bell-type correlations.
 
-\paragraph{Discriminant: ECT probability route versus standard
-postulate-based approaches.}
-In standard quantum mechanics, the Born rule is introduced as an
-independent postulate or axiom.
-In ECT the logical order is different:
-amplitudes come first, decoherence arises from the same condensate
-dynamics, and probability enters only after effectively classical
-alternatives have been selected.
-The distinctive ECT content is not the Born formula itself (which
-coincides with the standard one) but the structural chain that makes
-probability a derived concept rather than a primitive one, and the
-conditional uniqueness provided by Gleason's theorem once the
-Hilbert/projector structure is admitted.
+\paragraph{Discriminant: ECT Born route versus standard probability
+postulates.}
+Standard formulations of quantum theory usually take the Born rule as
+an axiom or attempt to justify it through auxiliary principles such as
+decision theory.
+ECT takes a different route.
+It does not treat probability as primitive.
+Instead, it first organises coherent amplitudes, then derives
+decoherence of reduced sectors, and only then asks what probability
+assignment is compatible with the resulting Hilbert/projector
+structure.
+The ECT-specific claim is therefore not that probability is assumed,
+but that a quadratic assignment becomes structurally singled out once
+the relevant reduced-state architecture is in place.
 
-\paragraph{Falsifier for the probability programme.}
-The ECT probability programme would be challenged if a completed
-analysis showed that the ordered condensate admits a consistent
-probability assignment fundamentally different from the quadratic
-Born form, even after the Hilbert-space projector structure and
-additive probability measure on decohered alternatives are admitted.
-It would also be weakened if the decoherence programme failed to
-produce the approximately diagonal reduced description on which the
-entire probability route depends.
-At present, no such failure is known.
+\paragraph{Falsifier for the Born-weight programme.}
+The present programme would be weakened if a completed ECT derivation
+showed that decohered alternatives do not admit the Hilbert/projector
+structure assumed in~(C1), or that additive probability measures on
+those alternatives are inconsistent with the coherent-branch
+architecture.
+It would be more strongly challenged if a completed derivation forced a
+non-quadratic probability rule while retaining the same Hilbert-space
+structure.
+At present, no such incompatibility is known; the open point is not
+inconsistency, but incompleteness.
+
+\paragraph{Empirical status.}
+The quadratic Born weighting is extraordinarily well confirmed across
+atomic, molecular, optical, and solid-state quantum experiments.
+ECT does not claim a distinct experimental prediction at this stage.
+Its contribution is architectural:
+it explains why probability should enter only after decoherence and why
+the quadratic rule is conditionally singled out once the required
+reduced-state structure is admitted.
 
 \statussummary
 \textit{Established~(Level~A):}
-the logical distinction between coherent amplitudes, decohered reduced
-sectors, and effective probability candidates.
+ECT distinguishes clearly between coherent amplitudes, decohered
+reduced sectors, and effective probability candidates.
 
-\textit{Level~B~(conditional uniqueness):}
-once the Hilbert-space projector structure and additive probability
-measure on decohered alternatives are admitted, Gleason's theorem
-forces $P_\alpha\propto|\Psi_\alpha|^2$ as the unique probability
-assignment.
-The four-step chain amplitudes $\to$ decoherence $\to$ classical
-alternatives $\to$ probability is internally consistent within the
-present closure.
+\textit{Level~B:}
+once assumptions~(C1)--(C3) are admitted, the quadratic Born rule is
+not merely plausible but conditionally unique via Gleason's theorem.
 
-\textit{Open~(OP-Q7, OP-Q23):}
-(i)~a full first-principles derivation of the Born rule from bare
-P1--P4;
-(ii)~a completed measurement-update theory including branch selection,
-state update, and pointer-sector stability;
-(iii)~the r\^ole of defect and topological sectors during
-measurement-like processes.
+\textit{Open:}
+(i)~a first-principles derivation of the Hilbert/projector and
+probability-measure structure required by~(C1)--(C3);
+(ii)~a full first-principles derivation of the Born rule;
+(iii)~a completed measurement-update theory.
 
 \paragraph{Summary.}
 ECT does not postulate probability at the foundation.
@@ -27766,25 +27795,26 @@ Aspect & Deutsch (1999)~\cite{Deutsch1999} &
 Framework
   & MWI + decision theory
   & MWI + decoherence
-  & Euclidean path integral \\
+  & Coherent branch + decoherence + conditional Gleason route \\
 Source of weights
   & Rationality axioms
   & Rationality + branch structure
-  & Decoherence structure from $e^{-\Gamma[q,q']}$; probability
-    assignment additionally requires Gleason-type conditions \\
+  & Decohered reduced sectors; quadratic assignment conditionally
+    unique once assumptions~(C1)--(C3) hold \\
 Decoherence
   & Not used
   & Postulated
-  & Derived from $S_E$ \\
+  & Derived at closure level from the reduced influence-functional
+    organisation \\
 Extra assumptions
   & Rationality
   & Rationality + separability
-  & C2 ($N_{\rm eff}\gg1$), C3 \\
+  & (C1)--(C3) for the conditional Gleason step \\
 Known limitations
   & Circularity~\cite{Barker2000}
   & Albert (2010) objection
-  & C1--C3 necessary but not sufficient; Gleason-type
-    conditions required; unique outcome selection open (OP23) \\
+  & Conditional uniqueness only; first-principles derivation of
+    (C1)--(C3) and unique outcome selection still open (OP23) \\
 \hline
 
 \end{longtable}
