@@ -15,12 +15,13 @@ digraph PartI {
   P2 [label=<P2<BR/>O(4) action<BR/>§2>];
   P3 [label=<P3<BR/>Condensate Φ<BR/>§2>];
   P4 [label=<P4<BR/>Gradient cond.<BR/>§2>];
-  P5 [label=<P5<BR/>Non-uniform<BR/>ordering<BR/>§2>];
+  P5 [label=<P5<BR/>Medium<BR/>character<BR/>§2>];
+  P6 [label=<P6<BR/>Non-uniform<BR/>ordering<BR/>§2>];
 
   // === PHENOMENOLOGICAL INPUTS ===
   node [fillcolor="#808080", fontcolor=white];
   Ph2 [label=<Ph2<BR/>M<SUB>G</SUB> = M̄<SUB>Pl</SUB><BR/>(weak-field matching)<BR/>Level B, §5.4>];
-  Ph1 [label=<Ph1<BR/>c* = c (structural)<BR/>Level B, §4.8>];
+  Ph1 [label=<Ph1<BR/>c* = c (structural)<BR/>Level A/B, §4.8>];
 
   // === LEVEL A ===
   node [fillcolor="#b8b8b8", fontcolor=black];
@@ -32,6 +33,7 @@ digraph PartI {
   PX [label=<P(X) ≠&gt; (∂n)²<BR/>Theorem 3.2<BR/>Level A, §3>];
   KG [label=<Klein–Gordon eq.<BR/>§3.6>];
   topo_anti [label=<Topological anti-predictions<BR/>π<SUB>0</SUB> = π<SUB>1</SUB> = π<SUB>2</SUB> = 0<BR/>No walls / strings / monopoles<BR/>§8>];
+  gauge [label=<Gauge fields<BR/>SU(2)×U(1)<BR/>Level A (via P5), §7>];
 
   // === LEVEL B ===
   node [fillcolor="#ffffff", fontcolor=black];
@@ -40,10 +42,9 @@ digraph PartI {
   S0 [label=<Action scale identification<BR/>S<SUB>0</SUB> = ℏ<BR/>(from phase winding)<BR/>§5.6>];
   GE [label=<Euclidean correlator<BR/>G<SUB>E</SUB>(X, X′)<BR/>§5>];
   GN [label=<Grav. constant<BR/>G<SUB>N</SUB> = c*<SUP>4</SUP>/(8π M<SUB>G</SUB><SUP>2</SUP>)<BR/>§5.4>];
-  gauge [label=<Gauge fields<BR/>U(1), SU(2)<BR/>§7>];
   dirac [label=<Dirac equation<BR/>§9>];
   einstein [label=<Einstein equations<BR/>(linearised)<BR/>§6>];
-  fifth [label=<5th force<BR/>β<SUB>5</SUB> ~ m<SUB>f</SUB> / φ<SUB>0</SUB><BR/>Species-dependent<BR/>§7.6>];
+  fifth [label=<5th force<BR/>β<SUB>5</SUB> ~ m<SUB>f</SUB> / φ<SUB>0</SUB><BR/>Level A given Ph<BR/>§7.6>];
   skyrmion [label=<Skyrmion / texture sectors<BR/>π<SUB>3</SUB>(S³) = ℤ<BR/>m<SUB>n</SUB> ~ n × 1.6 GeV<BR/>§8>];
   LIV [label=<LIV structural<BR/>Δt ~ (E / M<SUB>Pl</SUB>) × L/c<BR/>§10>];
   seesaw [label=<Neutrino seesaw scale<BR/>M<SUB>R</SUB> ~ √(φ<SUB>0</SUB> × v<SUB>2</SUB>)<BR/>→ leptogenesis route<BR/>§9>];
@@ -54,7 +55,7 @@ digraph PartI {
   threegen [label=<3 generations<BR/>[OPEN]>];
 
   // === RANKS ===
-  {rank=same; P1; P2; P3; P4; P5; Ph1; Ph2}
+  {rank=same; P1; P2; P3; P4; P5; P6; Ph1; Ph2}
   {rank=same; lorentz; goldstone; cstar}
   {rank=same; S0; GE; GN}
   {rank=same; gauge; KG; einstein}
@@ -63,17 +64,20 @@ digraph PartI {
   {rank=same; topo_anti; skyrmion; LIV}
 
   // === EDGES — solid = strict ===
-  P1 -> SSB; P2 -> SSB; P3 -> SSB; P4 -> SSB; P5 -> SSB;
+  P1 -> SSB; P2 -> SSB; P3 -> SSB; P4 -> SSB;
+  P6 -> SSB [style=dashed];
   SSB -> UC;
   UC -> lorentz; UC -> goldstone; UC -> cstar; UC -> S0;
   UC -> PX;
   PX -> NLO;
   NLO -> GN [style=dashed];
-  lorentz -> KG; lorentz -> gauge; lorentz -> einstein;
+  lorentz -> KG; lorentz -> einstein;
+  P5 -> gauge;
+  lorentz -> gauge;
   cstar -> GN; GN -> einstein;
   SSB -> topo_anti; SSB -> skyrmion;
-  P5 -> topo_anti [style=dashed];
-  P5 -> skyrmion [style=dashed];
+  P6 -> topo_anti [style=dashed];
+  P6 -> skyrmion [style=dashed];
   gauge -> dirac;
   dirac -> fifth; dirac -> seesaw;
   einstein -> second_law;
@@ -90,7 +94,6 @@ digraph PartI {
   gauge -> threegen [style=dashed, color=gray50];
 
   // === FORCE LEGEND TO ABSOLUTE BOTTOM ===
-  // Invisible spacer nodes to push legend down
   node [shape=point, width=0, style=invis];
   spacer1 [label=""];
   spacer2 [label=""];
@@ -102,7 +105,6 @@ digraph PartI {
   fifth -> spacer1 [style=invis];
   spacer1 -> spacer2 [style=invis];
 
-  // Legend as a single HTML table node at the very bottom
   node [shape=plaintext, style="", fillcolor=white];
   legend [label=<
     <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="4" CELLPADDING="6" COLOR="black">
@@ -110,7 +112,7 @@ digraph PartI {
         <TD COLSPAN="7"><B>Legend</B></TD>
       </TR>
       <TR>
-        <TD BGCOLOR="#404040"><FONT COLOR="white">Postulate (P1–P5)</FONT></TD>
+        <TD BGCOLOR="#404040"><FONT COLOR="white">Postulate (P1–P6)</FONT></TD>
         <TD BGCOLOR="#808080"><FONT COLOR="white">Phenom. input</FONT></TD>
         <TD BGCOLOR="#b8b8b8">Derived – Level A</TD>
         <TD BGCOLOR="#ffffff" BORDER="1">Derived – Level B</TD>
