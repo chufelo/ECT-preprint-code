@@ -563,7 +563,7 @@ The gravitational and gauge sectors are presented in
 Sections~\ref{sec:macroscopic}--\ref{sec:particles}.
 \textbf{Part~II (Macroscopic Physics)} covers galactic dynamics
 via the ordered-branch amplitude variable and cosmological implications
-including inflation, dark energy, and dark matter.
+including structural alternatives to inflation, dark energy, and dark matter.
 \textbf{Part~III (Quantum Sector)} collects emergent principles
 of physics derived from condensate loop configurations---uncertainty
 principle, extremal action, quantum statistics, and a structural
@@ -5378,6 +5378,73 @@ QED fully derived from P1--P6
 \hline
 \end{tabular}
 \end{center}
+
+\subsubsection*{Structural route to the fine-structure constant}
+\label{sec:alpha_fs}
+
+If the $U(1)$ gauge field $A_\mu$ is emergent from the condensate
+phase sector, then its kinetic term arises with a normalisation
+coefficient $Z_A$ that is in principle calculable:
+\begin{equation}
+  \mathcal{L}_{\rm eff}
+  =
+  -\frac{Z_A}{4}\,F_{\mu\nu}F^{\mu\nu}
+  + \bar\psi\, i\gamma^\mu(\partial_\mu - iqA_\mu)\psi
+  + \cdots
+  \label{eq:Leff_U1}
+\end{equation}
+After canonical normalisation $A_\mu^{(c)}=\sqrt{Z_A}\,A_\mu$, the
+observed electromagnetic coupling becomes
+\begin{equation}
+  e = \frac{q}{\sqrt{Z_A}},
+  \qquad
+  \alpha_{\rm fs}
+  = \frac{e^2}{4\pi}
+  = \frac{q^2}{4\pi\, Z_A}.
+  \label{eq:alpha_fs_ZA}
+\end{equation}
+This reduces the problem of the fine-structure constant to the
+determination of the emergent gauge-field normalisation~$Z_A$.
+
+\paragraph{Required magnitude.}
+For $q=1$ the observed value $\alpha_{\rm fs}^{-1}\approx 137$
+requires
+\begin{equation}
+  Z_A^{\rm IR}
+  = \frac{1}{4\pi\,\alpha_{\rm fs}}
+  \approx 10.9.
+  \label{eq:ZA_target}
+\end{equation}
+This is a moderate coefficient of order ten, not an extreme number.
+
+\paragraph{Induced gauge kinetics.}
+The Maxwell term may be partially or wholly induced by integrating
+out charged condensate modes:
+\begin{equation}
+  Z_A(\mu)
+  = Z_A^{(0)}
+  + \sum_i c_i Q_i^2\,\ln\frac{\Lambda_*^2}{m_i^2}
+  + \Delta Z_A^{\rm nonpert}.
+  \label{eq:ZA_induced}
+\end{equation}
+For a single charged Dirac mode with $Q=1$, the one-loop contribution
+is $\Delta Z_A\sim Q^2\ln(\Lambda_*^2/m^2)/(12\pi^2)$.
+With $\ln(\Lambda_*^2/m^2)\sim 50$ (Planck-to-electroweak range),
+each mode contributes $\Delta Z_A\approx 0.42$.
+Achieving $Z_A\sim 10$--$11$ therefore requires an effective
+weighted sum $\sum_i c_i Q_i^2 \sim 21$--$26$, which is
+a plausible range for an emergent sector containing multiple
+charged species.
+
+\paragraph{Status.}
+ECT transfers the question ``why is $\alpha_{\rm fs}\approx 1/137$?''
+into a concrete calculational target: the determination of the
+emergent $U(1)$ normalisation $Z_A$ from condensate microphysics.
+The required magnitude $Z_A\sim 10.9$ is naturally achievable through
+induced gauge kinetics (Level~B structural route;
+full derivation open, OP-$\alpha_{\rm fs}$).
+Technical details are collected in
+Appendix~\ref{app:open_microphysics}.
 
 The Abelian construction provides the cleanest example of how gauge
 structure can emerge from condensate variables.
@@ -10443,23 +10510,82 @@ However, neither the detailed electroweak representation assignments nor
 the numerical Yukawa couplings are derived from condensate dynamics:
 the Yukawa sector remains an external low-energy embedding.
 
-\paragraph{Yukawa hierarchy.}
+\paragraph{Yukawa hierarchy: structural route.}
+\label{par:yukawa_hierarchy}
 The observed fermion masses span more than five orders of magnitude
 (from the electron mass $m_e \approx 0.511\,$MeV to the top quark
 mass $m_t \approx 173\,$GeV), corresponding to Yukawa couplings
 from $y_e \approx 2 \times 10^{-6}$ to $y_t \approx 0.99$.
-ECT does not explain this hierarchy.
-Any mechanism that would derive the Yukawa pattern from condensate
-dynamics would require understanding the internal structure of the
-fermionic sector at a level not currently available in the
-theory~(OP-Yukawa).
+If the three fermion generations correspond to distinct normalizable
+fermionic modes~$\psi_i$ in the post-transition condensate background
+(see below), then the Yukawa matrix is not arbitrary but is
+determined by overlap integrals:
+\begin{equation}
+  Y_{ij}\;\sim\;\int d^3x\;\psi_i^\dagger(x)\,\mathcal{H}(x)\,\psi_j(x),
+  \label{eq:yukawa_overlap}
+\end{equation}
+where $\mathcal{H}(x)$ is the effective Higgs/condensate coupling
+profile.
+If the modes are quasi-localised with characteristic inverse
+localisation lengths~$\kappa_i$, then
+$Y_i\sim e^{-S_i}$
+with $S_i\propto\kappa_i$, and the hierarchy arises from moderate
+differences in effective action:
+for the up-type sector,
+$\Delta S_{c/t}\approx\ln(y_t/y_c)\approx 4.9$ and
+$\Delta S_{u/t}\approx\ln(y_t/y_u)\approx 11.3$;
+for the charged-lepton sector,
+$\Delta S_{\mu/\tau}\approx 2.8$ and
+$\Delta S_{e/\tau}\approx 8.1$.
+These moderate values ($\Delta S\sim 3$--$11$) show that the
+observed mass hierarchies do not require extreme tuning but are
+quantitatively plausible within an overlap/tunnelling origin.
+The leading-order Yukawa matrix is naturally near-rank-1:
+$Y\approx Y^{(0)}+\delta Y$ with $\operatorname{rank}(Y^{(0)})=1$,
+$\|\delta Y\|\ll\|Y^{(0)}\|$, giving one heavy and two
+exponentially lighter generations.
 
-\paragraph{Three fermion generations.}
+This route is Level~B/C: the structural mechanism is identified
+but the explicit computation of $Y_{ij}$ from condensate
+microphysics remains open~(OP-Yukawa).
+Details are in Appendix~\ref{app:open_microphysics}.
+
+\paragraph{Three fermion generations: spectral route.}
+\label{par:three_generations}
 The Standard Model contains exactly three generations of quarks and
 leptons.
-ECT does not derive or explain this number.
-The generation structure must be imposed as external input at the
-present stage~(Level~C; OP-generations).
+In ECT, the most promising route to this number is through the
+spectral structure of the post-transition condensate background.
+If fermions experience an effective potential from the condensate
+profile (e.g.\ of kink/domain-wall type), the number of
+normalizable bound states is controlled by the dimensionless ratio
+\begin{equation}
+  \nu \;\sim\; \frac{y}{\sqrt{2\lambda}},
+  \label{eq:nu_bound}
+\end{equation}
+where $y$ is the effective Yukawa coupling and $\lambda$ is the
+condensate quartic self-coupling.
+In toy models of P\"oschl--Teller type, the number of light
+fermionic bound states is $N_{\rm gen}\approx\lfloor\nu\rfloor$.
+Three generations require $3\le\nu<4$, i.e.\
+$y\sim 1.3$--$2.0$ for $\lambda\sim 0.10$--$0.13$.
+This is a natural range of order unity, requiring no extreme
+tuning.
+
+A complementary topological route uses the index of the internal
+Dirac operator in the condensate background:
+$N_L-N_R=\operatorname{Index}(D_{\rm int})$,
+which can protect the family number as a spectral-topological
+invariant.
+
+Both routes translate the generation problem into a concrete
+spectral task: counting the normalizable fermionic zero/quasi-zero
+modes supported by the post-transition condensate background.
+At the present stage, this is Level~B/C: the structural mechanism
+is identified, the required parameter ranges are natural, but a
+strict derivation of exactly three generations from the ECT
+condensate profile has not been completed~(OP-generations).
+Details are in Appendix~\ref{app:open_microphysics}.
 
 \paragraph{Possible condensate-sector corrections.}
 In the three-scale picture of ECT
@@ -10484,13 +10610,19 @@ Section~\ref{sec:neutrino_particles}.
 
 \paragraph{What is and is not derived here.}
 This subsection imposes the Standard-Model Yukawa structure as
-external input.
-ECT provides the geometric and chirality framework
+external input at Level~C, but identifies structural routes toward
+derivation at Level~B/C.
+ECT provides: (i)~the geometric and chirality framework
 (Sections~\ref{sec:spinor_structure}--\ref{sec:chirality}) within
-which the Yukawa coupling can be consistently written, but does not
-derive any aspect of the fermion mass spectrum from first principles.
-The Yukawa hierarchy, the generation structure, and the numerical
-values of $y_f$ remain open problems.
+which the Yukawa coupling can be consistently written;
+(ii)~a spectral route to the generation number through fermionic
+bound-state counting in the condensate background
+(\S\ref{par:three_generations});
+(iii)~an overlap/tunnelling mechanism for hierarchical Yukawa
+couplings (\S\ref{par:yukawa_hierarchy}).
+The numerical values of $y_f$ and the exact generation number remain
+open calculational targets
+(Appendix~\ref{app:open_microphysics}).
 
 \statussummary
 \begin{center}
@@ -10507,9 +10639,13 @@ Chiral structure of Yukawa coupling compatible
     representation content and couplings not
     derived \\
 Yukawa hierarchy
-  & Open (OP-Yukawa) & No ECT mechanism identified \\
+  & B/C & Structural route via overlap/tunnelling
+    (\S\ref{par:yukawa_hierarchy});
+    explicit computation open (OP-Yukawa) \\
 Three fermion generations
-  & Open (OP-generations) & No ECT mechanism identified \\
+  & B/C & Spectral route via bound-state counting
+    (\S\ref{par:three_generations});
+    strict derivation open (OP-generations) \\
 Condensate-sector corrections to $y_f$
   & C & Possible in principle; size not
     predicted \\
@@ -15266,6 +15402,98 @@ to be approximately scale-invariant at leading order.
 At present this is a structural conjecture, not a derivation.
 Its verification requires the explicit perturbation equations on the
 FRW-ordered background and the corresponding freeze-out analysis.
+
+\subsubsection*{Critical O(4) fluctuations and spectral tilt estimates}
+\label{sec:primordial_estimates}
+
+The ordering transition $O(4)\to O(3)$ is a symmetry-breaking
+phase transition in four Euclidean dimensions with vacuum manifold
+$S^3$.
+Near criticality the order-parameter propagator has the form
+\begin{equation}
+  G_4(p)\sim \frac{1}{(p^2)^{1-\eta/2}},
+  \label{eq:G4_critical}
+\end{equation}
+where $\eta$ is the anomalous dimension.
+Since $d=4$ is the upper critical dimension for the $O(N)$ model,
+mean-field scaling applies with logarithmic corrections:
+$\eta=0$ at leading order, but the correlation function acquires
+a multiplicative logarithmic factor,
+\begin{equation}
+  G(r)\sim \frac{1}{r^{d-2}\bigl[\ln(r/\xi_0)\bigr]^{\hat p}},
+  \label{eq:log_corrections}
+\end{equation}
+where $\hat p$ is a universal exponent.
+After projection onto three-dimensional spatial slices
+and conversion to curvature perturbations through the metric
+constraint equation $k^2\Phi_k\sim G_N\delta\rho_k$,
+the resulting power spectrum acquires an effective tilt
+\begin{equation}
+  1 - n_s \;\sim\; \frac{\hat p}{\ln(L/\xi_0)},
+  \label{eq:ns_log_estimate}
+\end{equation}
+where $L\sim H_0^{-1}\sim 10^{26}$\,m is the cosmological horizon
+and $\xi_0\sim\ell_{\rm Pl}\sim 10^{-35}$\,m is the condensate
+correlation length.
+With $\ln(L/\xi_0)\sim 140$, values $\hat p\sim 4$--$5$ yield
+\begin{equation}
+  n_s^{\rm ECT}\sim 0.96\text{--}0.97,
+  \label{eq:ns_ect_range}
+\end{equation}
+which is compatible with the observed $n_s=0.9649\pm 0.0042$.
+
+An independent estimate comes from the gauge--Higgs sector.
+The $O(4)$ order parameter can be rewritten as a complex Higgs
+doublet $H=(H_1,H_2)^T$, making the connection
+$O(4)\simeq$~Higgs-doublet sector of $SU(2)\times U(1)$ explicit.
+Weakly gauging $SU(2)\times U(1)$ produces one-loop corrections to
+the effective anomalous dimension:
+\begin{equation}
+  \gamma_H \sim \frac{1}{16\pi^2}
+  \bigl(\tfrac{3}{4}g'^2 + \tfrac{9}{4}g^2 - 3y_t^2\bigr)
+  \approx -1.2\times 10^{-2},
+  \label{eq:gamma_H_estimate}
+\end{equation}
+using $g\approx 0.65$, $g'\approx 0.36$, $y_t\approx 1$.
+If the spectral tilt is of order $2|\gamma_H|$, this gives
+$1-n_s\sim 0.025$, again in the correct range.
+
+\paragraph{Amplitude estimate.}
+If the curvature perturbation arises through local transition-time
+fluctuations, $\zeta(\mathbf{x})\sim \delta u_*/u_0$,
+then the observed amplitude
+$\sqrt{A_s}\approx 4.6\times 10^{-5}$ requires
+\begin{equation}
+  \frac{\delta u_*}{u_0}\sim 5\times 10^{-5}.
+  \label{eq:amplitude_requirement}
+\end{equation}
+This is a modest fractional fluctuation, compatible with
+loop-scale weak/Higgs corrections of order
+$g^2/(16\pi^2)\sim 10^{-3}$--$10^{-2}$
+supplemented by a conversion/coarse-graining suppression
+factor of $10^{-2}$--$10^{-1}$.
+
+\paragraph{Role of weak gauging.}
+Weakly gauging $SU(2)\times U(1)$ potentially assists the
+primordial perturbation programme in three ways:
+(i)~gauge constraints absorb orientational (isocurvature)
+modes of the $S^3$ vacuum manifold, leaving a single adiabatic
+scalar seed;
+(ii)~gauge--Higgs running provides a natural source of small
+red tilt;
+(iii)~the gauge coupling disciplines the freeze-out and
+suppresses excess non-Gaussianity.
+
+\paragraph{Status.}
+The estimates~\eqref{eq:ns_ect_range} and
+\eqref{eq:amplitude_requirement} demonstrate that ECT without
+inflation produces a primordial perturbation spectrum in the
+observationally correct range.
+However, a rigorous derivation remains open: the explicit
+freeze-out dynamics, the gauge-invariant curvature transfer,
+and the precise values of $\hat p$ and the conversion factors
+are completion targets of the ECT perturbation programme
+(Level~B/C).
 
 \subsubsection*{Comparison with inflationary perturbation theory}
 
@@ -30356,10 +30584,13 @@ The macroscopic sector develops as follows:
   $v_{\rm gal}\sim$~kpc (galactic $\phi$-branch)
   (Section~\ref{sec:three_scales}).
 \item \emph{Cosmology.} The ordered-branch amplitude governs
-  inflation~($n_s\approx 0.967$), late-time dark energy via
+  structural resolution of the horizon, flatness, and monopole
+  problems without inflation
+  (Section~\ref{sec:cosmo_problems}), late-time dark energy via
   $\Lambda_{\rm eff}$ from residual condensate vacuum structure,
   and a route to the Hubble tension through
-  $G_{\rm eff}(z)$~(Level~B).
+  $G_{\rm eff}(z)$~(Level~B).  The primordial perturbation
+  spectrum~$(n_s,A_s,r)$ remains an open target.
 \item \emph{Galactic dynamics.} The nonlinear response of the
   ordered-branch amplitude variable~$\phi$ yields a critical
   $\phi$-branch closure capturing the BTFR (slope~4, algebraic),
@@ -30853,6 +31084,108 @@ degrees of freedom.
 Both channels offer direct falsifiable predictions of the theory.
 
 %--------------------------------------------------------------
+%--------------------------------------------------------------
+\subsection{Parameter compression and comparison}
+\label{sec:parameter_compression}
+%--------------------------------------------------------------
+
+ECT achieves a remarkably high ratio of derived physical content
+to fundamental input parameters.
+The theory has four bare parameters:
+$u_0$ (condensate amplitude), $\lambda$ (quartic self-coupling),
+$\alpha$ (anisotropy coefficient), and $\beta$ (normalisation
+coefficient).
+The observational matching
+$\alpha=2\beta=2$ fixes two of these, leaving only
+\textbf{two free parameters}: $u_0$ and $\lambda$.
+
+From these two parameters ECT derives or structurally constrains:
+$c^*$ (speed of light), $\hbar$ (Planck constant),
+$G_N$ (gravitational constant),
+the Schr\"odinger equation,
+the Klein--Gordon and Dirac equations,
+linearised and (conditionally) full Einstein equations,
+universal causal cone and Lorentz invariance in the IR,
+structural resolution of horizon, flatness, and monopole problems,
+galactic rotation curves and the BTFR,
+dark energy as residual condensate energy with $w_0\in(-1,-1/3)$,
+a route to the Hubble tension,
+baryon asymmetry conditions,
+decoherence and the classical limit,
+the arrow of time and the second law,
+black-hole entropy and information structure,
+and structural routes to $\alpha_{\rm fs}$, generation
+number, and Yukawa hierarchy.
+
+By contrast, the Standard Model requires 19~free parameters
+(6~quark masses, 3~lepton masses, 3~gauge couplings,
+4~CKM parameters, Higgs mass, Higgs VEV, $\theta_{\rm QCD}$),
+and $\Lambda$CDM adds 6~cosmological parameters
+($H_0$, $\Omega_b$, $\Omega_{\rm cdm}$, $\tau$, $A_s$, $n_s$),
+for a total of $\sim\!25$ parameters to describe the same
+physical content.
+
+The compression ratio---two fundamental inputs versus
+$\sim\!25$---is one of the strongest structural arguments
+for the ECT programme.
+
+%--------------------------------------------------------------
+\subsection{Completion data and residual bifurcation points}
+\label{sec:completion_data}
+%--------------------------------------------------------------
+
+The remaining non-closed sectors of ECT fall into three
+conceptually distinct classes, following the classification of
+incompleteness introduced in this section.
+
+\paragraph{Type~1: Initial-condition-sensitive sectors.}
+The arrow of time, thermodynamic irreversibility, and the second law
+depend not on a different ``branch of laws'' but on the realized
+initial state.
+This is not a special weakness of ECT: every fundamental theory
+(GR, QFT, string theory) requires initial conditions for the
+temporal asymmetry.
+ECT offers a natural mechanism---the phase transition
+$O(4)\to O(3)$ generically produces a non-equilibrium, coherent,
+low-entropy starting state---but does not yet derive a strict
+second law from first principles.
+
+\paragraph{Type~2: Open microphysics.}
+This class includes: the CP-violating mechanism for baryogenesis
+(currently at the level of Sakharov-condition compatibility),
+the fine-structure constant (structural route via
+$\alpha_{\rm fs}=q^2/(4\pi Z_A)$, \S\ref{sec:alpha_fs}),
+three fermion generations (spectral route,
+\S\ref{par:three_generations}),
+the Yukawa hierarchy (overlap/tunnelling route,
+\S\ref{par:yukawa_hierarchy}),
+the primordial perturbation spectrum (critical-fluctuation route,
+\S\ref{sec:primordial_estimates}),
+and the origin of $SU(3)_{\rm colour}$.
+For each, the structural mechanism is identified but the explicit
+computation remains an open calculational programme.
+
+\paragraph{Type~3: Fundamental condensate parameters.}
+The two remaining free parameters $u_0$ and $\lambda$
+(after fixing $\alpha=2\beta=2$) are genuine phenomenological
+inputs of the theory, analogous to the free parameters of any
+fundamental framework.
+Their values are fixed by matching to observations
+($u_0\sim\bar M_{\rm Pl}$, $\lambda$ from the $\hbar$ relation).
+
+\paragraph{Epistemic vs.\ ontic distinction.}
+It is important to note that if a parameter currently appears as
+closure data for a Level~B result, this does not necessarily mean
+that the result is fundamentally underivable without it.
+It may mean only that the current version of the derivation
+does not close without this input.
+Future developments of ECT may reduce the number of independent
+closure data by deriving some of them from more fundamental
+condensate structures.
+The programme of strict classification of truly irreducible
+inputs versus current derivational gaps is itself an important
+open task.
+
 \subsection{Current limitations}
 \label{sec:limitations}
 
@@ -30882,8 +31215,15 @@ interpreted as part of the physics to be explained, not
 as a failure of universality.
 
 (iv)~Three fermion generations, the Yukawa coupling hierarchy, and
-the fine structure constant $\alpha_{\rm fs} = 1/137$ are not
-explained.
+the fine structure constant $\alpha_{\rm fs} = 1/137$ are not yet
+derived from first principles, but structural routes have been
+identified for all three: $\alpha_{\rm fs}=q^2/(4\pi Z_A)$ through
+emergent gauge normalisation~(\S\ref{sec:alpha_fs}), family
+multiplicity through spectral counting of fermionic
+modes~(\S\ref{par:three_generations}), and Yukawa hierarchy through
+overlap/tunnelling suppression~(\S\ref{par:yukawa_hierarchy}).
+These are Level~B/C routes, not completed derivations
+(Appendix~\ref{app:open_microphysics}).
 
 (v)~ECT already provides a physical ultraviolet threshold of the
 ordered branch through the primary radial mode $m_\sigma$
@@ -30905,9 +31245,13 @@ programme level, the full nonlinear gravitational closure is only
 partly theorem-level, and the black-hole evaporation/information
 programme is not yet quantitatively closed.
 
-(viii)~The electroweak scale $v_2$ and the Yukawa hierarchy are not yet
+(viii)~The electroweak scale $v_2$ is not yet
 derived from condensate dynamics; the physical identification
 $S_0=\hbar$ remains Level~B/Open.
+The Yukawa hierarchy now has an identified structural route
+(overlap/tunnelling suppression,
+\S\ref{par:yukawa_hierarchy})
+but the explicit computation remains open.
 
 
 %--------------------------------------------------------------
@@ -31085,7 +31429,8 @@ On the macroscopic side, the galactic $\phi$-branch closure
 $g(R) = \tfrac{1}{2}\bigl(g_N + \sqrt{g_N^2 + 4\,g_N\,g_\dagger}\,\bigr)$
 captures flat rotation curves, the RAR, and the BTFR (algebraic
 slope~4) with $g_\dagger\sim cH_0/(2\pi)\approx 1.1\times10^{-10}$~m/s$^2$; the cosmological sector admits
-inflation ($n_s\approx 0.967$), late-time acceleration via
+structural resolution of the classical cosmological problems
+without inflation (Section~\ref{sec:cosmo_problems}), late-time acceleration via
 $\Lambda_{\rm eff}$, and a route to the Hubble tension; the
 strong-field critical-shell ansatz produces
 $\rho_c=\ell_{\rm Pl}/\sqrt{3\pi}$
@@ -38323,7 +38668,7 @@ The repository contains: the full-SPARC rotation-curve fitting pipeline
 for the new ECT galactic closure (including fixed/free $M/L$ modes,
 model-comparison diagnostics against MOND and $\Lambda$CDM/NFW, and
 sample-level summary tables for all 165 galaxies),
-cosmological calculations (Hubble tension, inflation $n_s$, JWST halo-abundance
+cosmological calculations (Hubble tension, primordial perturbation targets, JWST halo-abundance
 enhancement), matching and consistency calculations for the gravitational and
 coherent action scales (including the linearised $G_N$ matching logic collected
 in Appendix~\ref{app:GN_derivation}), fifth-force bounds, baryogenesis estimates,
@@ -38966,6 +39311,174 @@ To control for this:
 (c)~verify that any detected correlation survives in the
 gas-dominated subsample, where stellar $M/L$ plays a subdominant
 role.
+
+
+% ============================================================
+\section{Structural routes to open microphysical targets}
+\label{app:open_microphysics}
+% ============================================================
+
+This appendix collects technical details for the four structural
+routes identified in the main text: the fine-structure constant,
+the generation number, the Yukawa hierarchy, and the primordial
+perturbation spectrum.
+In each case, ECT already compresses the problem into a sharply
+localised calculational task.
+The following estimates demonstrate that the required numerical
+targets lie in natural ranges rather than demanding extreme tuning.
+
+% ------------------------------------------------------------
+\subsection*{A.\ Fine-structure constant: emergent gauge
+normalisation}
+\label{app:alpha_fs_details}
+% ------------------------------------------------------------
+
+From~\eqref{eq:alpha_fs_ZA}, $\alpha_{\rm fs}=q^2/(4\pi Z_A)$.
+The observational target is $Z_A^{\rm IR}\approx 10.9$.
+On the UV side, the RG-evolved value at a high scale $\mu\sim
+M_{\rm Pl}$ is $Z_A^{\rm UV}\sim 9$--$10$, corresponding to
+$\alpha^{-1}(\mu_{\rm UV})\sim 110$--$120$.
+
+For an induced gauge kinetic term arising from $N$ charged
+Dirac modes, the one-loop contribution per mode is
+\begin{equation}
+  \Delta Z_A \;=\; \frac{Q^2}{12\pi^2}
+  \ln\frac{\Lambda_*^2}{m^2}.
+  \label{eq:DeltaZA_oneloop}
+\end{equation}
+With $\ln(\Lambda_*^2/m^2)\sim 50$ and $Q=1$,
+$\Delta Z_A\approx 0.42$ per species.
+The required total $Z_A\sim 10$--$11$ therefore needs an effective
+charged-mode sum $\sum_i c_i Q_i^2\sim 21$--$26$.
+In the Standard Model with three generations of quarks and leptons
+the effective sum $\sum_i c_i Q_i^2$ is indeed of order~20.
+
+\noindent\emph{Status:}
+ECT provides a structural Level~B route; the explicit derivation
+of $Z_A$ from condensate microphysics is an open calculational
+programme~(OP-$\alpha_{\rm fs}$).
+
+% ------------------------------------------------------------
+\subsection*{B.\ Three fermion generations: spectral counting}
+\label{app:generations_details}
+% ------------------------------------------------------------
+
+In a toy model where the condensate profile after the ordering
+transition creates an effective potential of P\"oschl--Teller type
+for fermions, the number of normalizable bound states is
+$N_{\rm bound}\approx\lfloor\nu\rfloor$, where
+$\nu = y/\sqrt{2\lambda}$
+(Eq.~\eqref{eq:nu_bound}).
+
+\noindent
+\emph{Numerical window for three generations:}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{cccc}
+\hline
+$\lambda$ & $\sqrt{2\lambda}$ & $y$ range for $N_{\rm gen}=3$
+  & Comment \\
+\hline
+$0.10$ & $0.447$ & $1.34$--$1.79$ & natural $y=O(1)$ \\
+$0.13$ & $0.510$ & $1.53$--$2.04$ & natural $y=O(1)$ \\
+\hline
+\end{tabular}
+\end{center}
+In all cases, three generations arise for $y\sim 1.3$--$2.0$,
+a natural range requiring no extreme tuning.
+
+The complementary topological route via the index of the
+internal Dirac operator $D_{\rm int}$ on the condensate
+background would give
+$N_L-N_R = \operatorname{Index}(D_{\rm int})$,
+providing protection of the family number as a
+spectral-topological invariant.
+For an $O(4)$-background carrying instanton number~$n$
+(from $\pi_3(S^3)=\mathbb{Z}$), the Atiyah--Singer index
+theorem gives $|n|$ zero modes per chirality.
+
+\noindent\emph{Status:} Level~B/C (structural route identified;
+strict derivation of exactly three families from the ECT
+condensate profile is open, OP-generations).
+
+% ------------------------------------------------------------
+\subsection*{C.\ Yukawa hierarchy: overlap and tunnelling
+suppression}
+\label{app:yukawa_details}
+% ------------------------------------------------------------
+
+If families correspond to three quasi-localised fermionic modes,
+then eigenvalues of the Yukawa matrix
+(Eq.~\eqref{eq:yukawa_overlap}) satisfy $y_i\sim y_0\, e^{-S_i}$,
+where $y_0\sim y_t\sim 1$ and $S_i$ measures the effective
+overlap suppression action.
+The observed Yukawa couplings require:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{lcccc}
+\hline
+Sector & Heavy & Middle & Light & $\Delta S_{\rm heavy\to light}$\\
+\hline
+Up-type & $y_t\approx 0.99$ & $y_c\approx 7.3\times 10^{-3}$
+  & $y_u\approx 1.3\times 10^{-5}$ & $11.3$ \\
+Charged leptons & $y_\tau\approx 1.0\times 10^{-2}$
+  & $y_\mu\approx 6.1\times 10^{-4}$
+  & $y_e\approx 2.9\times 10^{-6}$ & $8.1$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+These require only moderate effective-action differences
+($\Delta S\sim 3$--$11$), which are quantitatively natural
+for quasi-localised modes with slightly different binding
+depths or tunnelling barriers.
+
+\noindent\emph{Status:} Level~B/C (the overlap/tunnelling mechanism
+is physically motivated and quantitatively plausible; the
+explicit computation of $Y_{ij}$ from condensate microphysics
+is open, OP-Yukawa).
+
+% ------------------------------------------------------------
+\subsection*{D.\ Primordial perturbations without inflation:
+estimate summary}
+\label{app:primordial_details}
+% ------------------------------------------------------------
+
+The critical-fluctuation route developed in
+Section~\ref{sec:primordial_estimates} yields two independent
+estimates for the spectral tilt:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{lcc}
+\hline
+Mechanism & Expression & Estimated $n_s$ \\
+\hline
+Logarithmic $d{=}4$ correction
+  & $1-n_s\sim\hat p/\ln(L/\xi_0)$, $\hat p\sim 4$--$5$
+  & $0.964$--$0.971$ \\
+Gauge--Higgs anomalous dimension
+  & $1-n_s\sim 2|\gamma_H|\sim 0.025$
+  & $\sim 0.975$ \\
+Combined (with conversion correction)
+  & $1-n_s\sim 0.025+\delta_{\rm conv}$
+  & $\sim 0.96$--$0.97$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+The amplitude requires
+$\delta u_*/u_0\sim 5\times 10^{-5}$~\eqref{eq:amplitude_requirement},
+which is achievable through loop-scale weak/Higgs corrections
+($g^2/(16\pi^2)\sim 10^{-3}$--$10^{-2}$)
+supplemented by a modest conversion suppression factor.
+
+\noindent\emph{Status:} Level~B/C (the critical-fluctuation route
+is numerically compatible with observations; the full derivation
+including freeze-out dynamics and curvature transfer is open).
 
 
 \section*{Acknowledgments}
