@@ -27802,7 +27802,8 @@ Here $S_E[\Psi]$ is the Euclidean action of the configuration,
 $S_0$ is the pre-quantum action scale~(\S\ref{sec:qs_hbar}), and
 $\Gamma_{\rm env}[\Psi]$ is the effective decoherence cost of the
 configuration induced by environmental coupling.
-Observed persistent configurations satisfy
+In the minimal PES realisation, observed persistent configurations
+are modelled as satisfying
 $\delta\mathcal{J}_{\rm PES}=0$,
 $\delta^2\mathcal{J}_{\rm PES}\geq0$.
 
@@ -27930,8 +27931,8 @@ The minimal self-consistent loop with winding number $n=1$ has action
 $S_{\rm loop,min}=2\pi S_0$.
 PES explains why this is a fundamental threshold:
 configurations with $S<2\pi S_0$ cannot close a full phase circuit
-($\Delta\theta<2\pi$), are therefore not phase-compact, and do not
-belong to the persistent sector.
+($\Delta\theta<2\pi$), are therefore not phase-compact, and do not realise a self-consistent persistent winding
+sector in this PES picture.
 $S_0$ is thus the \emph{minimal persistent action scale} of the
 condensate---the threshold below which no self-consistent stationary
 configuration exists.
@@ -27980,7 +27981,8 @@ matrix elements from the condensate action~(OP-PES-4).}
 \paragraph{Stability from stationarity.}
 PES provides a physical interpretation of particle stability:
 configurations with $\partial_w\Psi=0$ are stationary, minimally
-disturb the condensate, and persist indefinitely (up to residual
+disturb the condensate, and occupy the most decoherence-resistant sector and are naturally
+associated with the longest-lived excitations (up to residual
 environmental noise).
 PES suggests a unifying reading of stability: long-lived or
 exactly stable excitations should correspond to configurations that
@@ -28148,13 +28150,14 @@ The discrete energy levels of a bound system are precisely these
 ``quiet modes'': configurations compatible with the condensate topology
 that generate no $w$-directed perturbation.
 
-Transitions between stationary states ($\partial_w\Psi\neq0$) are
-\emph{forced} acts of coupling: the system generates a condensate
-perturbation (photon, phonon) that propagates into the environment.
+Transitions between stationary states ($\partial_w\Psi\neq0$)
+correspond to departures from the stationary Euclidean sector and
+therefore involve nonzero coupling to condensate and/or environmental
+degrees of freedom.
 In this reading, the apparent stability of quantum states is not a
-coincidence but a selection effect: configurations with nonzero
-$\partial_w\Psi$ decohere and are absorbed into the classical branch;
-only the ``quiet'' modes survive.
+coincidence but a selection effect: configurations with larger
+effective environmental coupling decohere more rapidly, whereas the
+quiet modes remain in the most decoherence-resistant sector.
 
 \subsubsection*{The photon as a Euclidean traveller}
 
@@ -28242,9 +28245,11 @@ $\Gamma$ yields a small amount of information.
 At full decoherence ($\Gamma\gg1$):
 $I(S{:}E)\to 2\ln2$ (the maximum for a qubit).
 
-Setting $I=\ln2$ (one bit) and solving:
-$\Gamma_{\rm min}\cdot\ln(2/\Gamma_{\rm min})\approx\ln2$,
-which gives $\Gamma_{\rm min}\sim1$.
+The dephasing qubit model therefore exhibits a monotonic
+information--decoherence trade-off: larger mutual information requires
+larger decoherence.
+However, the model does not by itself define a universal one-bit
+threshold for arbitrary measurement protocols.
 
 In the dephasing qubit model, the system--environment mutual
 information grows monotonically with the decoherence parameter
@@ -28266,8 +28271,9 @@ $\Gamma_{\rm loop}^{(i)}\ll1$ partially preserve coherence but
 extract correspondingly little information per act:
 $I^{(i)}\approx\Gamma^{(i)}\ln(2/\Gamma^{(i)})$.
 The total information over $N$ such acts is bounded by the cumulative
-decoherence: $I_{\rm total}\lesssim\Gamma_{\rm total}
-\cdot\ln(2/\Gamma_{\rm total})$.
+decoherence: In the simple dephasing picture this suggests a trade-off of
+the same qualitative form as the single-act result, but a
+protocol-independent multi-step bound remains open.
 Classical post-processing of weak results does not create new
 information.
 Complete state tomography of a single system requires cumulative
@@ -28418,10 +28424,9 @@ ordered Lorentzian branch, effectively bringing the system closer to
 the $\alpha\to\beta$ boundary.
 In this picture:
 \begin{itemize}
-  \item an isolated quantum system ($\Gamma_{\rm loop}\ll1$) can be
-    read as effectively closer to $\alpha\approx\beta$, where all four
-    spatial directions are nearly equivalent and no rigid causal cone
-    constrains the dynamics;
+  \item an isolated quantum system ($\Gamma_{\rm loop}\ll1$) may be interpreted as probing a regime effectively closer to
+    $\alpha\approx\beta$, where all four directions become more nearly
+    equivalent and the causal cone is less rigidly selected;
   \item a macroscopically observed system ($\Gamma_{\rm loop}\gg1$)
     may be interpreted as locked deep into the $\alpha\gg\beta$ regime,
     where the causal cone is rigid and classical causality holds.
@@ -28485,10 +28490,8 @@ $\Gamma_{\rm grav}(\tau_{\rm dec})=1$ gives:
   \label{eq:tau_DP_ECT}
   \boxed{
   \tau_{\rm dec}^{\rm grav}
-  =
-  \frac{\hbar\,R}{G_N\,m^2}
-  =
-  \tau_{\rm DP}.
+  \sim
+  \frac{\hbar\,R}{G_N\,m^2}.
   }
 \end{equation}
 This recovers the Di\'osi--Penrose
@@ -28564,8 +28567,8 @@ Topic (cont.) & Before PES & After PES \\
 \endfoot
 Quantisation & Structural (from phase topology) & Physically grounded: persistent = phase-compact + stationary + decoherence-resistant \\
 Wavefunction collapse & Decoherence-only reading & Euclidean-to-Lorentzian transition via $\Gamma_{\rm loop}$ \\
-Extremal action & Formal mathematical principle & Survival selection: extremal configurations persist because they least disturb the medium \\
-Particle stability & Empirical / classification by quantum numbers & Stationarity-based: stable = $\partial_w\Psi=0$ \\
+Extremal action & Formal mathematical principle & Physical underpinning: near-extremal configurations are interpreted as the most decoherence-resistant sector \\
+Particle stability & Empirical / classification by quantum numbers & Physically grounded: long-lived states are interpreted as lying close to the stationary, minimally disturbing sector \\
 Graviton quantisation & Open structural route & Structurally unified: same $S_0$, same PES \\
 $S_0=\hbar$ & Level~B matching & Deepened: $S_0$ = minimal persistent action scale \\
 \end{longtable}
