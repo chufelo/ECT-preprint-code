@@ -24951,6 +24951,28 @@ The theoretical quantum-switch framework was developed by Brukner et al.\
 starting 2011--2012~\cite{Chiribella2012}; the first photonic
 realisation is Procopio et al.\ (2015)~\cite{Procopio2015}.
 
+
+\paragraph{Quantitative dephasing estimate.}
+The Procopio experiment reports an interferometric visibility
+$V=0.994\pm0.002$ for the quantum-switch interferometer.
+Within the pure-dephasing closure
+$V\simeq e^{-\Gamma_{\rm loop}}$, this gives
+\[
+\Gamma_{\rm loop}^{\rm (exp)}
+=
+-\ln V
+=
+0.0060\pm0.0020,
+\]
+placing the platform deep in the coherent regime
+($\Gamma_{\rm loop}\ll1$).
+The small observed degradation is fully compatible with technical
+imperfections (fibre loss, mode mismatch, detector dark counts)
+rather than with fundamental decoherence.
+This is a visibility-based regime estimate, not a first-principles
+derivation of $\Gamma_{\rm loop}$ from the microscopic condensate
+dynamics.
+
 \subsubsection*{Interpretive conclusion}
 
 In ECT, indefinite-causal-order experiments are naturally read as
@@ -28497,10 +28519,66 @@ Gaussian--Markov closure.
 order-of-magnitude consistency checks, and regime-level consequences
 that the ECT decoherence apparatus
 (Appendix~\ref{app:decoherence_apparatus}) yields when applied to
-concrete experimental systems.
+concrete experimental systems.}
+
+\paragraph{Visibility-based operational estimates of $\Gamma_{\rm loop}$.}
+In many photonic delayed-choice and quantum-switch experiments the
+experimentally accessible quantity is the interferometric visibility~$V$.
+In the simplest pure-dephasing closure, the visibility and the
+reverse-coherence ratio are related by
+\[
+V \simeq e^{-\Gamma_{\rm loop}},
+\qquad
+\frac{P_{\rm back}}{P_{\rm fwd}} \simeq e^{-\Gamma_{\rm loop}}.
+\]
+This allows $\Gamma_{\rm loop}$ and $P_{\rm back}/P_{\rm fwd}$ to be
+extracted directly from the reported visibility, without requiring a
+microscopic environmental model.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}llccc@{}}
+\toprule
+Platform & Observable & $\Gamma_{\rm loop}$ & $P_{\rm back}/P_{\rm fwd}$ & Status \\
+\midrule
+Procopio quantum switch (2015)
+  & $V=0.994\pm0.002$
+  & $0.006\pm0.002$
+  & $0.994\pm0.002$
+  & Visibility-based \\
+Jacques delayed-choice (2007)
+  & $V\approx0.94$
+  & $\approx0.062$
+  & $\approx0.94$
+  & Visibility-based \\
+Bell/CHSH threshold
+  & $2\sqrt{2}\,e^{-\Gamma}=2$
+  & $\ln\sqrt{2}\approx0.347$
+  & $1/\sqrt{2}\approx0.707$
+  & Theory threshold \\
+Qubit 1-bit information bound
+  & $I\sim1$\,bit
+  & $\sim0.25$
+  & $\sim0.78$
+  & Toy closure \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+This table is an operational device: it extracts $\Gamma_{\rm loop}$
+from directly reported visibilities and compares them with the
+theoretical thresholds derived elsewhere in the quantum sector.
+It is not a first-principles derivation of $\Gamma_{\rm loop}$ from
+the microscopic condensate dynamics.
+For matter-wave platforms (C$_{60}$, macromolecules) a
+setup-specific environmental model including thermal emission,
+residual-gas scattering, and flight geometry would be required;
+such estimates are deferred to the experimental programme.
+
+
 The apparatus is an influence-functional / open-system framework:
 it governs decoherence, measurement, and quantum--classical boundary
-phenomena, but not particle lifetimes or precision spectroscopy.}
+phenomena, but not particle lifetimes or precision spectroscopy.
 
 % ------------------------------------------------------------------
 \subsection{Environmental decoherence: C$_{60}$ and macromolecules}
@@ -29236,9 +29314,15 @@ This table is a summary device, not a new derivation.
 Its purpose is to collect in one place the characteristic scales that
 are otherwise derived or motivated across different parts of the
 article.
-In particular, the $T_c$ entry is the standard Dolan--Jackiw thermal
-estimate applied to the ECT condensate potential, not yet a completed
-first-principles finite-temperature derivation from ECT microdynamics.
+In particular, the $T_c$ entry follows from the standard one-loop
+Dolan--Jackiw effective potential for a $\lambda\Phi^4$ order parameter:
+the thermal correction shifts the mass term by $+\lambda T^2/6$,
+so that the coefficient $a(T)=-\mu^2+\lambda T^2/6$ vanishes at
+$T_c^2=6\mu^2/\lambda=6\phi_0^2$, giving
+$T_c=\phi_0\sqrt{6}\approx5.96\times10^{18}\,$GeV.
+This is a Level~B thermal closure anchored to the ECT order-parameter
+scale, not yet a completed first-principles finite-temperature
+derivation from the microscopic ECT action.
 The first two entries are structural scales already used elsewhere in
 the ordered-branch construction, whereas the last two are synthesis
 entries collecting the thermal and cosmological reading of the same
