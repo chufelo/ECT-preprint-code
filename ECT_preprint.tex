@@ -134,7 +134,7 @@ strictly proved in the quadratic sector~(Level~A).
 A further structural consequence is a hierarchy of effective equations:
 the Euclidean condensate equation at the foundational level, the
 ordered-branch equation in the broken phase, the Klein--Gordon equation
-after analytic continuation, and the Schr\"odinger equation in the
+after the real parametrisation $t=w/c_*$, and the Schr\"odinger equation in the
 non-relativistic limit. In this sense, standard quantum mechanics appears
 not as an independent starting point but as an effective descendant of a
 deeper condensate dynamics.
@@ -143,7 +143,7 @@ deeper condensate dynamics.
 The quantum and gravitational branches are developed in later sections.
 On the coherent side, the Quantum Sector derives canonical commutation
 relations from condensate phase single-valuedness, the Klein--Gordon and
-Schr\"odinger equations via analytic continuation, and the identification
+Schr\"odinger equations via the real parametrisation $t=w/c_*$, and the identification
 $S_0=\hbar$ from loop quantisation~(Level~B; self-consistency condition,
 not a zero-parameter prediction). An internal consistency relation
 linking $G_N$ and $\hbar$ follows at Level~B. At the fundamental level,
@@ -2097,14 +2097,12 @@ homogeneous limit of the ordered-branch kinematics of ECT.
 \subsection{Effective Lorentzian metric}
 \label{sec:effective_metric}
 
-At this stage Lorentzian signature is already fixed by the
-broken-phase tensor $K^{AB}$ with $\alpha>\beta$.
-The physical time variable is therefore introduced by the real
-parametrisation $t=w/c_*$, where $c_*^2=\beta/(\alpha-\beta)$.
-No analytic continuation is needed for the derivation of the
-hyperbolic field equation itself.
-Analytic continuation is used elsewhere only as a formal bridge
-between Euclidean weighting and Lorentzian amplitude language.
+At this stage Lorentzian signature has already appeared in the ordered-branch kinetic tensor.
+The effective real-time variable is therefore introduced by the real parametrisation
+$t=w/c_*$, with $c_*^2=\beta/(\alpha-\beta)$.
+This is the step used to write the hyperbolic field equation and the effective Lorentzian metric.
+A separate formal Euclidean--Lorentzian continuation belongs only to the amplitude/path-integral
+language discussed later in the coherent sector.
 The Klein--Gordon equation:
 \begin{equation}
   \label{eq:KG}
@@ -6255,9 +6253,9 @@ coupling of the ordered branch~(Level~A given Ph).
 The coefficient $\mu_5$ remains a free EFT parameter at Level~B.
 
 \paragraph{Lorentzian-branch form.}
-After analytic continuation to the Lorentzian ordered branch, the
-preferred Euclidean direction induces a timelike unit vector
-$u_\mu$ in the emergent low-energy spacetime.
+In the Lorentzian ordered branch, after the real parametrisation
+$t=w/c_*$, the preferred Euclidean direction is read as a timelike
+unit vector $u_\mu$ in the emergent low-energy spacetime.
 The coupling then takes the form
 \begin{equation}
   \Delta\mathcal{L}_5
@@ -9201,8 +9199,11 @@ Model fields.
 The symmetry breaking $O(4)\to O(3)$ leaves a residual continuous
 rotation symmetry $SO(3)$, whose double cover $SU(2)$ admits
 spinor representations.
-After analytic continuation to Lorentzian spacetime the relevant
-group becomes $SL(2,\mathbb{C})$, and Dirac spinors can be
+At the representation-theoretic level, the ordered branch admits the
+standard Lorentzian spin-group reading in which the relevant group is
+$SL(2,\mathbb{C})$.
+This group-theoretic continuation is distinct from the real
+parametrisation $t=w/c_*$ used for the hyperbolic field equations, and Dirac spinors can be
 constructed on the ordered condensate background as two Weyl
 components $\Psi = (\psi_L, \psi_R)^T$.
 This is a structural compatibility statement, not a derivation of
@@ -10100,8 +10101,8 @@ The section does \emph{not} derive fermions from the bare bosonic condensate act
 
 \textbf{Honest framing.}
 The symmetry group structure $Spin(4)\simeq SU(2)_L\times SU(2)_R$
-admits spinor representations, and after analytic continuation to
-$SL(2,\mathbb{C})$ the standard Weyl and Dirac spinors are obtained
+admits spinor representations, and under the standard generator
+continuation the relevant group becomes $SL(2,\mathbb{C})$ the standard Weyl and Dirac spinors are obtained
 by Clifford linearisation.  However, two important points should be
 noted.  First, the spinor structure of the rotation group by itself
 does not imply fermionic \emph{statistics} (anti-commutation
@@ -10515,16 +10516,17 @@ As a result, the symmetry between the two $SU(2)$ factors in the
 decomposition of $Spin(4)$ is no longer exact.
 
 \paragraph{Selection mechanism (Level~B structural argument).}
-After the emergence of the Lorentzian regime via analytic continuation
-$w \to -ic_*t$, the Euclidean rotation group $Spin(4)$ maps to the
-Lorentzian spin group $SL(2,\mathbb{C})$.
-In $SL(2,\mathbb{C})$, the two $SU(2)$ factors become the left-handed
+After the ordered branch has selected a Lorentzian sign structure
+($\alpha>\beta$) and the real time variable is introduced by
+$t=w/c_*$, the Euclidean spin group is read in the corresponding
+Lorentzian spinorial language.
+In that language the two factors are associated with the left-handed
 and right-handed chirality sectors: $\psi_L$ and $\psi_R$ transform
 under the $(1/2,0)$ and $(0,1/2)$ representations, respectively.
 
 The condensate direction $n_A$ breaks the equivalence between the
-two sectors because the analytic continuation treats the distinguished
-$w$-direction differently from the three spatial directions.
+two sectors because the ordered-branch structure treats the distinguished
+$w$-direction differently from the spatial directions from the three spatial directions.
 If the gauge coupling is mediated through condensate-dependent
 structures (as in the electroweak-like embedding of
 Section~\ref{sec:ew_embedding}), then the geometric asymmetry of the
@@ -21908,8 +21910,8 @@ Part~III:
     by the loop quantisation condition, with its explicit
     first-principles evaluation deferred
     (Appendix~\ref{app:Sloop_calc});
-  \item the Lorentzian causal structure, the Wick
-    rotation $w\to -ic_*t$, and the Noether/variational backbone
+  \item the Lorentzian causal structure (via the real parametrisation
+    $t=w/c_*$), and the Noether/variational backbone
     are shared between both branches (Level~A).
 \end{enumerate}
 Part~III takes these as its structural starting point and develops
@@ -21966,7 +21968,7 @@ Part~III is organised into eleven sections:
     loop sectors, winding classification, and the distinguished
     scale $S_0$.
   \item \textbf{Euclidean-to-Lorentzian wave kinematics}
-    (Section~\ref{sec:qs_wave_kinematics}): Wick rotation, wave
+    (Section~\ref{sec:qs_wave_kinematics}): real-time parametrisation, wave
     dynamics, extremal action, and conservation laws.
   \item \textbf{Hilbert-space structure, reflection positivity,
     canonical algebra, and unitarity}
@@ -22713,14 +22715,14 @@ extremal action and saddle dominance, and
 Section~\ref{sec:qs_conservation} shows how the conserved structures of
 the variational foundation are inherited by the coherent sector.
 
-\subsection{Wave dynamics, Wick rotation, and
+\subsection{Wave dynamics, real-time parametrisation, and
   Schr\"odinger-type evolution}
 \label{sec:qs_wave}
 % ============================================================
 
 \textit{Status: Level~A for the existence of the coherent phase
-action~\eqref{eq:qs_phase_action}, for the Wick
-continuation~\eqref{eq:qs_wick}, and for the Hamilton--Jacobi /
+action~\eqref{eq:qs_phase_action}, for the ordered-branch real-time
+parametrisation $t=w/c_*$ once $\alpha>\beta$, and for the Hamilton--Jacobi /
 continuity structure of the coherent phase sector~(structural
 decomposition; see below).
 Level~B for the Schr\"odinger-type complex recombination and for the
@@ -22772,43 +22774,34 @@ $S_0=\hbar$ identification~\eqref{eq:qs_S0_identification}.
 
 \subsubsection*{Analytic continuation versus ordered-branch real-time parametrisation}
 
-The ordered condensate is constructed from a Euclidean arena
-$\mathcal{M}^4$, but the broken phase develops a distinguished Lorentzian direction through
-the sign structure of the Euclidean kinetic tensor $K^{AB}$.
-As established in ECT basics and used throughout Macroscopic Physics,
-the broken phase admits the continuation
+Once the ordered branch satisfies $\alpha>\beta$, the broken-phase tensor
+$K^{AB}=\beta\delta^{AB}-\alpha n^A n^B$ already has Lorentzian sign structure.
+Accordingly, the physical time variable is introduced by the real parametrisation
+\begin{equation}
+  t=\frac{w}{c_*},
+  \qquad
+  c_*^2=\frac{\beta}{\alpha-\beta}.
+\end{equation}
+This is the step used for hyperbolic equations of motion, effective metric reconstruction,
+causal cones, and real-time propagation.
+
+A distinct formal operation is the Euclidean--Lorentzian amplitude continuation
 \begin{equation}
   \label{eq:qs_wick}
-  w \;\to\; -\,i\,c_*\,t,
+  w_E \to \pm i c_* t,
 \end{equation}
-which provides the formal bridge between Euclidean coherent
-weights and Lorentzian phase evolution and reconstructs causal propagation.
-(The real parametrisation $t=w/c_*$ was used to derive the Lorentzian
-metric in Section~\ref{sec:lorentz_order_field} and to develop
-cosmological dynamics in Section~\ref{sec:mp_cosmo};
-the formal continuation is used here only for the
-Euclidean--Lorentzian amplitude correspondence.)
-
-In the Quantum Sector the role of Eq.~\eqref{eq:qs_wick} is
-complementary: it provides the analytic bridge between the Euclidean
-coherent action and its Lorentzian amplitude interpretation.
-The corresponding effective real-time phase evolution law is then
-written in the emergent Lorentzian variables of the broken phase.
-This is not an arbitrary formal trick.
-It is the same continuation that already connects the Euclidean
-ordering arena to observable Lorentzian physics in the geometric branch.
+which is used only to relate Euclidean coherent weights to Lorentzian phase-amplitude language.
+It should not be identified with the derivation of hyperbolicity itself.
 
 \paragraph{Two distinct operations in the ordered branch.}
-The emergence of time in ECT therefore has two parallel aspects:
 \begin{enumerate}[label=(\roman*)]
-  \item in Macroscopic Physics, the real parametrisation $t=w/c_*$ yields Lorentzian
-    geometry, causal cones, and metric-sector propagation;
-  \item in the Quantum Sector, the same continuation yields coherent
-    temporal phase evolution and therefore wave dynamics.
+  \item \textbf{Ordered-branch real-time dynamics:}
+  the real parametrisation $t=w/c_*$ is used for the hyperbolic field equations,
+  effective metric, causal cones, and real-time propagation.
+  \item \textbf{Formal Euclidean--Lorentzian amplitude bridge:}
+  the continuation~\eqref{eq:qs_wick} is used only to translate
+  Euclidean coherent-sector weights into Lorentzian phase evolution.
 \end{enumerate}
-This parallelism is structurally important: the two branches are not
-unrelated, but two uses of the same broken Lorentzian ordering
-structure.
 
 
 \paragraph{Remark: continuation versus real-time dynamics.}
@@ -22837,7 +22830,11 @@ K^{AB}\partial_A\theta\,\partial_B\theta
 \beta\,\delta^{ij}\partial_i\theta\,\partial_j\theta
 -(\alpha-\beta)(\partial_w\theta)^2.
 \]
-Under the continuation~\eqref{eq:qs_wick}, one has
+At this stage the continuation is used only as a formal Euclidean--Lorentzian bridge
+for the coherent phase action. The ordered-branch hyperbolicity and the real time variable
+have already been fixed independently by $\alpha>\beta$ and $t=w/c_*$.
+
+Under the formal amplitude continuation~\eqref{eq:qs_wick}, one has
 $\partial_w \to (i/c_*)\partial_t$,
 so the Euclidean phase-sector action is carried into a Lorentzian
 kinetic form with the expected separation between temporal and spatial
@@ -23001,13 +22998,14 @@ by the same scale $S_0$.
 That question belongs to Section~\ref{sec:qs_ccr}.
 
 \paragraph{Structural cross-check: causal-cone universality.}
-The Wick rotation~\eqref{eq:qs_wick} entering the wave-kinematical
-reconstruction is the same continuation that yields the emergent
-Lorentzian metric and causal cones in the geometric
-branch~(Section~\ref{sec:lorentz_order_field}).
-In ECT this is a structural consequence of the single-field
-architecture~(P3): both branches inherit the same speed $c_*$ from the
-broken-phase tensor $K^{AB}$.
+The coherent wave-kinematical reconstruction and the geometric branch are controlled by the same
+ordered-phase tensor $K^{AB}$ and therefore inherit the same characteristic speed $c_*$.
+In the geometric branch this speed enters through the real ordered-branch parametrisation
+$t=w/c_*$ and the resulting effective Lorentzian metric.
+In the coherent branch the formal continuation~\eqref{eq:qs_wick} is used only for the
+Euclidean--Lorentzian amplitude correspondence.
+The common causal cone is therefore a consequence of the same ordered medium, not of a single
+continuation playing two different derivational roles.
 The observational bound $|c_{\rm GW}-c_\gamma|/c<10^{-15}$ from
 GW\,170817~\cite{LIGO_Virgo_GW170817_2017} shows to very high precision
 that the gravitational and electromagnetic sectors are consistent with
@@ -23400,7 +23398,7 @@ tensor~(Appendix~\ref{app:noether_full}):
   \partial_A T^{AB} = 0
   \qquad\text{(Level~A)}.
 \end{equation}
-After the Wick rotation~\eqref{eq:qs_wick} and passage to the
+After the real parametrisation $t=w/c_*$ and passage to the
 Lorentzian ordered branch, this is reinterpreted as
 \begin{equation}
   \label{eq:qs_covariant_conservation}
@@ -23659,7 +23657,7 @@ That bridge is the task of the next section.
 coherent phase action~\eqref{eq:qs_phase_action},
 distinguished action scale $S_0$~(Section~\ref{sec:qs_hbar}),
 compact-phase topology and winding sectors~(BR1),
-Wick rotation~\eqref{eq:qs_wick}, and
+real parametrisation $t=w/c_*$~\eqref{eq:qs_wick}, and
 Schr\"odinger-type reduction~\eqref{eq:qs_schrodinger_type}.
 Aim: to identify the conditions under which the Euclidean coherent
 structure of ECT gives rise to a physical Hilbert space,
@@ -23731,7 +23729,7 @@ broken-phase subsectors (massive radial mode and free massless Goldstone
 modes); Level~B/open for the full interacting coherent-sector functional
 integral.
 Connection: P1~(Euclidean arena), P2~(O(4)-invariant action),
-P5~(medium character), Wick rotation~\eqref{eq:qs_wick},
+P5~(medium character), the real parametrisation $t=w/c_*$,
 the UV-threshold programme~(\S\ref{par:uv_threshold}),
 and the downstream Hilbert-space, Born, entanglement, decoherence,
 and black-hole-information programmes.}
@@ -23793,10 +23791,11 @@ the OS programme:
     integration device.
     This does not by itself prove reflection positivity, but it makes
     the OS route conceptually native to ECT;
-  \item the Wick rotation $w\to -ic_*t$~\eqref{eq:qs_wick}, already
-    used to reconstruct the Lorentzian metric in ECT basics and
-    Macroscopic Physics, is exactly the analytic continuation that
-    the OS reconstruction requires.
+  \item the formal continuation~\eqref{eq:qs_wick} is exactly the analytic
+    continuation that the OS reconstruction requires;
+    its role here is as a formal Euclidean--Lorentzian bridge,
+    complementary to the real parametrisation $t=w/c_*$ used
+    for the effective metric.
 \end{enumerate}
 Thus the OS programme is not an external addition to ECT but a
 natural structural route suggested by the theory's own Euclidean
@@ -23919,10 +23918,11 @@ detail but the single bridge on which the downstream quantum
 architecture rests.
 
 \paragraph{Relation to the Wick rotation already used in ECT.}
-The Wick rotation $w\to -ic_*t$~\eqref{eq:qs_wick} has already been
-used twice: once in ECT basics to reconstruct the Lorentzian metric,
-and once in the Quantum Sector to pass from the Euclidean coherent
-action to the Schr\"odinger-type evolution.
+The formal continuation~\eqref{eq:qs_wick} has already appeared
+in two contexts: as the amplitude bridge used in the coherent sector,
+and as the formal correspondence underlying the OS reconstruction.
+(The effective Lorentzian metric itself is obtained through the real
+parametrisation $t=w/c_*$, not through the continuation.)
 The OS reconstruction theorem identifies the mathematical form of the
 bridge that would justify this continuation nonperturbatively.
 In the Gaussian subsectors this bridge is standard and rigorous;
@@ -24732,8 +24732,9 @@ route to several standard nonclassical phenomena in ECT.
   \[
     G_E(X_f, X_i) = \int G_E(X_f, X_m)\, G_E(X_m, X_i)\, d^4X_m.
   \]
-  In the quadratic sector, after Wick rotation $w \to ic_*t$, $G_E$
-  maps to the standard Feynman-propagator reading $G_F$.
+  In the quadratic sector, after the formal Euclidean--Lorentzian
+  amplitude continuation $w_E \to \pm i c_* t$, the Euclidean propagator
+  $G_E$ is read in the standard Feynman-propagator language $G_F$.
   The two-sided $w$-dependence is then read as the structural route to
   the superposition of quantum amplitudes.
 
@@ -24826,7 +24827,7 @@ It would also be weakened if the elliptic Euclidean boundary-value
 character could not be made consistent with the retarded causal
 structure established elsewhere for the ordered branch, or if the
 Euclidean weight $\exp(-S_E/S_0)$ failed to reproduce the required
-Feynman-amplitude reading after analytic continuation.
+Feynman-amplitude reading after the formal Euclidean--Lorentzian amplitude continuation.
 No such incompatibility is currently known within the present
 coherent-branch programme.
 
@@ -25557,9 +25558,15 @@ Under $O(4)\to O(3)$ with the condensate direction $n^A=\delta^A_4$:
   \item \textbf{Broken} (coset $O(4)/O(3)$): $J_{i4}$,
     $i\in\{1,2,3\}$.
 \end{itemize}
-After the Wick rotation $w\to-ic_*t$~\eqref{eq:qs_wick},
-the broken generators become boost generators:
-$K_i\equiv-i\,J_{i4}$.
+At the algebraic level, one may perform the standard generator
+continuation that identifies the broken Euclidean generators with the
+Lorentzian boosts:
+\[
+K_i \equiv -\,i\,J_{i4}.
+\]
+This representation-theoretic step is distinct from the real
+ordered-branch parametrisation $t=w/c_*$ used in the hyperbolic field
+equations.
 A direct calculation then confirms that $J_{ij}$ and $K_i$ satisfy
 the Lorentz algebra $\mathfrak{so}(1,3)$,
 with $[K_i,K_j]=-i\,J_{ij}$.
@@ -25705,7 +25712,8 @@ $S_0=\hbar$~(OP-Q2, OP-Q11).
 
 \statussummary
 \textit{Established~(Level~A):}
-(i)~the ordered branch plus Wick rotation yields the Lorentz algebra
+(i)~the ordered branch together with the standard generator continuation
+yields the Lorentz algebra
 $\mathfrak{so}(1,3)$;
 (ii)~the spinorial representation of that algebra forces the Clifford
 structure~\eqref{eq:qs_clifford};
@@ -26630,7 +26638,8 @@ The Euclidean two-point function for a massless Goldstone boson is
   \label{eq:green_euclidean}
 \end{equation}
 
-The analytic continuation $w\to -ic_*\,t - \varepsilon$ yields:
+Under the formal Euclidean--Lorentzian continuation of the correlator,
+one obtains:
 \begin{equation}
   G^+_M(x,x')
   \;=\;
@@ -33211,6 +33220,8 @@ $t=w/c_*$, the fluctuation equation takes the relativistic
 Klein--Gordon form~\eqref{eq:KG}.
 A formal continuation $w_E\to \pm i c_* t$ may still be used when
 relating Euclidean coherent amplitudes to Lorentzian phase evolution.
+The first step is the derivation of real-time dynamics in the ordered branch;
+the second is only a translation of Euclidean coherent amplitudes into Lorentzian phase language.
 Finally, in the nonrelativistic limit one recovers the Schr\"odinger
 equation.
 
@@ -34320,7 +34331,7 @@ Standard (cont.) & Status & ECT origin & Level \\
 \endfoot
 Superposition & Axiom & Ellipticity of the Euclidean field equation & A \\
 $\hbar$ & Fundamental constant & $S_0=c_*\phi_0/\sqrt{\lambda}$: condensate action scale & B \\
-$i$ in Schr\"odinger eq. & Axiom & Phase structure under Wick rotation & A/B \\
+$i$ in Schr\"odinger eq. & Axiom & Phase structure under the formal Euclidean--Lorentzian amplitude bridge & A/B \\
 $\delta S=0$ & Variational axiom & Physical underpinning via PES selection of the decoherence-resistant sector (\S\ref{sec:pes}) & B \\
 Wavefunction collapse & Postulate & Decoherence at $\Gamma_{\rm loop}\gg1$: E$\to$L transition & B \\
 Born rule $P=|\psi|^2$ & Postulate & Conditional uniqueness via Gleason + decoherence & B/C \\
@@ -36125,8 +36136,8 @@ where $c_* = 1/\sqrt{\alpha/\beta - 1}$ is the effective propagation speed.
 
 \paragraph{The reduced first-order system.}
 Equation~\eqref{eq:EOM_quasilinear}, after the
-substitution~\eqref{eq:SH_variables_explicit} and analytic continuation
-$w=-ic_*t$, becomes
+substitution~\eqref{eq:SH_variables_explicit} and the real ordered-branch
+parametrisation $t=w/c_*$, becomes
 \begin{align}
   \partial_t U^0 &= c_*\bigl(\partial_1 U^1 + \partial_2 U^2
                               + \partial_3 U^3\bigr) + F_0,
