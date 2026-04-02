@@ -28249,7 +28249,7 @@ Gaussian--Markov closure.
 \textit{This section collects the quantitative estimates,
 order-of-magnitude consistency checks, and regime-level consequences
 that the ECT decoherence apparatus
-(Appendix~\ref{app:decoherence_apparatus}) delivers when applied to
+(Appendix~\ref{app:decoherence_apparatus}) yields when applied to
 concrete experimental systems.
 The apparatus is an influence-functional / open-system framework:
 it governs decoherence, measurement, and quantum--classical boundary
@@ -28320,8 +28320,9 @@ numbers as the standard theory because the Gaussian--Markov closure
 of the ECT influence functional reduces to the Caldeira--Leggett
 master equation.
 The ECT contribution in this regime is \emph{structural}, not
-numerical: it derives the influence-functional framework from the
-condensate rather than postulating it.
+numerical: it embeds the influence-functional framework in the
+condensate architecture rather than introducing it as an unrelated
+external formalism.
 
 % ------------------------------------------------------------------
 \subsection{Gravitational decoherence: ECT-specific predictions}
@@ -28419,6 +28420,11 @@ Sections~\ref{sec:pes_measurement}--\ref{sec:pes_info_bound}
 are naturally interpreted as operating within this weak-locking regime
 prior to irreversible detection.
 A detector-specific calculation remains outside the present scope.
+At present, an explicit order-of-magnitude estimate has been written
+only for the photonic switch platform.
+For Wheeler delayed-choice, quantum eraser, and delayed-choice
+entanglement swapping, the present ECT contribution remains
+interpretive and consistency-based rather than numerically predictive.
 
 % ------------------------------------------------------------------
 \subsection{Cavity-cat decoherence: next quantitative target}
@@ -28451,8 +28457,8 @@ $\tau_{\rm dec}\approx24\,\mu$s for $\bar{n}=3.3$ and
 $\tau_{\rm dec}\approx8\,\mu$s for $\bar{n}=9.5$.
 In the ECT Markov closure, the same result follows from
 $D_{\rm eff}=S_0/(2\tau_{\rm cav})$ in
-eq.~\eqref{eq:Gamma_Markov}: the ECT-specific gravitational channel
-contributes negligibly for microwave photons, so the apparatus
+eq.~\eqref{eq:Gamma_Markov}: the condensate-gravitational contribution expected in ECT is
+negligible for microwave photons at the present cavity scale, so the apparatus
 reproduces the standard cavity-QED decoherence scaling.
 A genuinely ECT-specific correction would arise only if the cavity
 field coupled to the condensate orientation modes at a rate
@@ -28477,14 +28483,14 @@ System & ECT & Obs. & Status \\
 \endhead
 \bottomrule
 \endfoot
-C$_{60}$ ($10^{-6}$\,Pa) & $\tau_{\rm dec}\gg1$\,ms & Interference \checkmark & = standard \\
-C$_{60}$ ($10^{-4}$\,Pa) & $\tau_{\rm dec}\sim1$\,ms & Degradation & = standard \\
-Fein 25\,000\,amu & Environmental & Interference \checkmark & = standard \\
+C$_{60}$ ($10^{-6}$\,Pa) & $\tau_{\rm dec}\gg1$\,ms & Interference \checkmark & Regime consistency \\
+C$_{60}$ ($10^{-4}$\,Pa) & $\tau_{\rm dec}\sim1$\,ms & Degradation & Regime consistency \\
+Fein 25\,000\,amu & Environmental & Interference \checkmark & Regime consistency \\
 Procopio switch & $\Gamma\sim10^{-12}$ & ICO visible & Interpretive \\
 Nanosphere 1\,$\mu$m & $\tau_{\rm grav}\sim38$\,ms & Not yet tested & ECT-specific \\
 Nanosphere 100\,nm & $\tau_{\rm grav}\sim1$\,hr & Not yet tested & ECT-specific \\
 Crossover (UHV) & $m_{\rm cross}\sim10^{-16}$\,kg & Not yet tested & ECT-specific \\
-Cavity cat & Open target & Brune 1996 & Programme \\
+Cavity cat & Open target & Brune 1996 & Programme-level target \\
 \end{longtable}
 
 
@@ -28812,19 +28818,20 @@ Charged pion & 26\,ns & Larger non-stationarity & Qualitative \\
 $W$ boson & $3\times10^{-25}$\,s & Massive, strongly non-stationary & Qualitative \\
 \end{longtable}
 
-\paragraph{Rydberg scaling prediction~(programme-level).}
-For highly excited atomic states with principal quantum number~$n$,
-the non-stationarity measure is expected to scale as
-$\mathcal{N}_{\rm ns}\propto n^\alpha$ with $\alpha>0$.
-A crude hydrogenic estimate suggests $\alpha\sim2$ as a first
-benchmark.
-This gives a testable prediction: Rydberg atoms should decohere
-faster than ground-state atoms, with the rate scaling as a power of
-the principal quantum number.
-Quantitative tests are accessible in cavity-QED experiments
-(Haroche, Raimond).
+\paragraph{Rydberg states: qualitative consistency only.}
+Highly excited atomic states are qualitatively consistent with the PES
+intuition that configurations with larger effective environmental
+exposure and larger accessible phase-space for decay are less robust
+than the most stationary bound states.
+However, the quantitative scaling of Rydberg lifetimes and decoherence
+rates is controlled by QED matrix elements, black-body effects, and
+cavity-specific environment modelling.
+The present ECT apparatus does not yet derive an independent
+Rydberg-specific exponent.
+Accordingly, Rydberg systems should presently be read as a
+qualitative consistency sector for PES, not as a completed
+ECT-specific prediction.
 
-% ------------------------------------------------------------------
 \subsection{Unified quantisation table}
 \label{sec:pes_quant_table}
 
@@ -33274,11 +33281,11 @@ with available observations.
 and current experimental anchors: complete summary.}
 \label{tab:ect_full_numerical}\\
 \toprule
-System / prediction & ECT value & Observation & Match & Part \\
+System / prediction & ECT value & Observation & Assessment & Part \\
 \midrule
 \endfirsthead
 \toprule
-System / prediction & ECT & Obs. & Match & Part \\
+System / prediction & ECT & Obs. & Assessment & Part \\
 \midrule
 \endhead
 \bottomrule
@@ -33297,10 +33304,10 @@ $\eta_B$ & $9\!\times\!10^{-10}$ & $6\!\times\!10^{-10}$ & $\sim\!1.5\times$ & I
 \multicolumn{5}{l}{\textit{Quantum sector: environmental decoherence
 (Part~III)}} \\
 \midrule
-C$_{60}$ ($10^{-6}$\,Pa) & Interference & Interference & \checkmark & III \\
-C$_{60}$ ($10^{-4}$\,Pa) & Marginal & Degradation & \checkmark & III \\
-Fein 25\,kamu & Environmental & Interference & \checkmark & III \\
-Procopio switch & $\Gamma\!\sim\!10^{-12}$ & ICO visible & \checkmark & III \\
+C$_{60}$ ($10^{-6}$\,Pa) & Interference & Interference & Regime consistency & III \\
+C$_{60}$ ($10^{-4}$\,Pa) & Marginal & Degradation & Regime consistency & III \\
+Fein 25\,kamu & Environmental & Interference & Regime consistency & III \\
+Procopio switch & $\Gamma\!\sim\!10^{-12}$ & ICO visible & Interpretive consistency & III \\
 \midrule
 \multicolumn{5}{l}{\textit{Quantum sector: ECT-specific predictions
 (Part~III)}} \\
@@ -37769,8 +37776,8 @@ OP-Q15.
 % ============================================================
 
 \textit{Status: Level~B.  The generic spectral-density family, the noise
-and dissipation kernels, and the decoherence exponent are derived from
-the coherent-branch subsystem--environment split.
+and dissipation kernels, and the decoherence exponent are constructed
+within the coherent-branch subsystem--environment split.
 The specific spectral exponent depends on the subsystem--bath coupling
 class, which is parameterised rather than uniquely fixed at the present
 stage.}
@@ -38019,10 +38026,10 @@ Setting $\lambda_{\rm env}=\lambda_{\rm grav}$:
   \sim \frac{3\,\hbar\,n_{\rm gas}\,v_{\rm th}}{4\,G_N\,\rho}.
   }
 \end{equation}
-Above $m_{\rm cross}$, and provided ordinary environmental channels are
-suppressed below the condensate-gravitational rate, the gravitational
-channel is expected to dominate.
-This is the ECT-specific mesoscopic regime.
+Above $m_{\rm cross}$, if ordinary environmental channels are reduced
+below the condensate-gravitational rate, the condensate gravitational
+channel is expected to dominate and decoherence should persist even in
+near-perfect vacuum.
 
 % ------------------------------------------------------------------
 \subsection{Domain of applicability}
