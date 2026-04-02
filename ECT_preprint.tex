@@ -27777,16 +27777,16 @@ systems ($= \tau_{\rm DP}$ at leading order, Level~B).}
 Object & Mass $m$ & Separation $\Delta x$ & $E_G$~(J) & $\tau_{\rm ECT}^{\rm grav}$~(s) \\
 \hline
 Proton & $1.67\times10^{-27}$~kg & $1\,\mu$m
-  & $1.9\times10^{-58}$ & $5.5\times10^{23}$ \\
-Nanosphere & $10^{-18}$~kg & $100$~nm
-  & $6.7\times10^{-33}$ & $1.6\times10^{-2}$ \\
-Nanogram & $10^{-12}$~kg & $10$~nm
-  & $6.7\times10^{-27}$ & $1.6\times10^{-8}$ \\
+  & $1.9\times10^{-58}$ & $5.7\times10^{23}$ \\
+Nanosphere ($R\!=\!1\,\mu$m, $\rho\!=\!2000$) & $8.4\times10^{-15}$~kg & $1\,\mu$m
+  & $2.8\times10^{-33}$ & $3.8\times10^{-2}$ \\
+Nanogram & $10^{-12}$~kg & $4.9\,\mu$m
+  & $1.6\times10^{-29}$ & $6.5\times10^{-6}$ \\
 \hline
 \end{tabular}
 \end{table}
 
-The nanogram estimate ($\tau\approx 16$~ns) is potentially testable
+The nanogram estimate ($\tau\approx 6.5\,\mu$s) is potentially testable
 in proposed optomechanical experiments~\cite{Marshall2003}.
 ECT does not modify the Di\'osi--Penrose result at leading order;
 sub-Planck-separation corrections are currently unobservable.
@@ -27957,12 +27957,13 @@ Object & Mass & $\Delta x$ & $\tau^{\rm grav}$ & Testable? \\
 \endhead
 \bottomrule
 \endfoot
-Proton & $1.67\!\times\!10^{-27}$ & $1\,\mu$m & $5.5\!\times\!10^{23}$\,s & No \\
-Nanosphere & $10^{-18}$ & 100\,nm & 0.016\,s & Near-future \\
-Nanogram & $10^{-12}$ & 10\,nm & $16$\,ns & Yes \\
+Proton & $1.67\!\times\!10^{-27}$ & $1\,\mu$m & $5.7\!\times\!10^{23}$\,s & No \\
+Nanosphere ($R\!=\!1\,\mu$m) & $8.4\!\times\!10^{-15}$ & $1\,\mu$m & $38$\,ms & Near-future \\
+Nanosphere ($R\!=\!100$\,nm) & $8.4\!\times\!10^{-18}$ & 100\,nm & $\sim\!1$\,hr & Difficult \\
+Nanogram & $10^{-12}$ & $4.9\,\mu$m & $6.5\,\mu$s & Yes \\
 \end{longtable}
 
-The nanosphere regime ($m\sim10^{-18}$\,kg, $\tau\sim16$\,ms)
+The nanosphere regime ($R\sim1\,\mu$m, $m\sim8\times10^{-15}$\,kg, $\tau\sim38$\,ms)
 is the experimental frontier targeted by the groups of
 Aspelmeyer and Romero-Isart using levitated nanoparticles.
 This is where ECT gravitational decoherence becomes testable
@@ -28189,6 +28190,235 @@ Gaussian--Markov closure.
 
 % ============================================================
 % ==============================================================
+
+% ============================================================
+% ============================================================
+\section{Quantitative Results of the Decoherence Apparatus}
+\label{sec:decoherence_results}
+% ============================================================
+
+\textit{This section collects the quantitative predictions and
+consistency checks that the ECT decoherence apparatus
+(Appendix~\ref{app:decoherence_apparatus}) delivers when applied to
+concrete experimental systems.
+The apparatus is an influence-functional / open-system framework:
+it governs decoherence, measurement, and quantum--classical boundary
+phenomena, but not particle lifetimes or precision spectroscopy.}
+
+% ------------------------------------------------------------------
+\subsection{Environmental decoherence: C$_{60}$ and macromolecules}
+\label{sec:results_environmental}
+
+\textit{Status: Level~B (Gaussian--Markov closure applied to known
+experimental parameters).
+The ECT result reproduces the standard Caldeira--Leggett /
+Hornberger analysis; the numbers are identical to the standard theory
+in this regime.}
+
+The decoherence timescale for matter-wave interferometry is
+\begin{equation}
+  \tau_{\rm dec}
+  = \frac{S_0}{2D_{\rm eff}\,(\Delta q)^2},
+\end{equation}
+where $D_{\rm eff}$ is the effective white-noise amplitude in the
+Markov regime (Appendix~\ref{app:M5_limits}).
+For residual-gas collisions in ultra-high vacuum, the dominant
+environmental coupling is collisional, and $D_{\rm eff}$ is
+controlled by the gas density, thermal velocity, and molecular
+cross-section (Section~\ref{sec:tau_ECT_systems}).
+
+\paragraph{Comparison with observations.}
+
+\begin{longtable}{@{}lllll@{}}
+\caption{ECT environmental-decoherence estimates vs.\ observations.}
+\label{tab:env_decoherence_comparison}\\
+\toprule
+Experiment & Observable & Standard QM & ECT & Match \\
+\midrule
+\endfirsthead
+\toprule
+Experiment & Observable & Standard QM & ECT & Match \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+C$_{60}$ ($p\!=\!10^{-6}$\,Pa)
+  & Interference visible
+  & $\tau_{\rm dec}\gg\tau_{\rm fl}$
+  & Same
+  & \checkmark \\
+C$_{60}$ ($p\!=\!10^{-4}$\,Pa)
+  & Fringe degradation
+  & $\tau_{\rm dec}\sim\tau_{\rm fl}$
+  & Same
+  & \checkmark \\
+C$_{60}$ ($p\!=\!10^{-2}$\,Pa)
+  & No interference
+  & $\tau_{\rm dec}\ll\tau_{\rm fl}$
+  & Same
+  & \checkmark \\
+Fein 2019 (25\,000\,amu)
+  & Interference visible
+  & Environmental regime
+  & Same
+  & \checkmark \\
+\end{longtable}
+
+In the environmental-decoherence regime, ECT reproduces the same
+numbers as the standard theory because the Gaussian--Markov closure
+of the ECT influence functional reduces to the Caldeira--Leggett
+master equation.
+The ECT contribution in this regime is \emph{structural}, not
+numerical: it derives the influence-functional framework from the
+condensate rather than postulating it.
+
+% ------------------------------------------------------------------
+\subsection{Gravitational decoherence: ECT-specific predictions}
+\label{sec:results_gravitational}
+
+\textit{Status: Level~B.  The gravitational decoherence timescale is
+derived from the condensate --- it is \emph{not} postulated as in the
+original Di\'osi--Penrose proposals.
+The numerical predictions below are ECT-specific: standard quantum
+mechanics does not produce them without an additional postulate.}
+
+The gravitational decoherence timescale for a solid sphere of
+radius~$R$ and density~$\rho$ in superposition of two positions
+separated by~$d\sim R$ is
+(Table~\ref{tab:pes_diosi}):
+\begin{equation}
+  \tau_{\rm grav}
+  \sim \frac{\hbar}{E_G},
+  \qquad
+  E_G = \frac{6\,G_N m^2}{5\,R}\,f(d/R).
+\end{equation}
+The ECT-specific prediction is that this decoherence persists even in
+\emph{perfect vacuum}, because the condensate itself acts as the
+gravitational environment.
+
+\paragraph{Experimental frontier.}
+The nanosphere regime ($R\sim1\,\mu$m, $m\sim8\times10^{-15}$\,kg,
+$\tau\sim38$\,ms) is the nearest quantitative target for levitated
+nanoparticle experiments~\cite{Aspelmeyer2014,RomeroIsart2012}.
+An observation of decoherence at this timescale in a vacuum sufficiently
+good to eliminate environmental channels would constitute a direct test
+of the ECT gravitational-decoherence prediction.
+
+% ------------------------------------------------------------------
+\subsection{Environmental--gravitational crossover}
+\label{sec:results_crossover}
+
+\textit{Status: Level~B.  The crossover formula is self-consistent
+for spherical geometry (Appendix~\ref{app:M6_crossover}).}
+
+For given vacuum conditions, the crossover mass above which
+gravitational decoherence dominates over environmental decoherence is
+(eq.~\ref{eq:m_cross}):
+\begin{equation}
+  m_{\rm cross}
+  \sim \frac{3\,\hbar\,n_{\rm gas}\,v_{\rm th}}{4\,G_N\,\rho}.
+\end{equation}
+
+\begin{longtable}{@{}llll@{}}
+\caption{Environmental--gravitational crossover for solid spheres
+($\rho=2000$\,kg/m$^3$).  ECT-specific prediction: no analogue in
+standard quantum mechanics without the Di\'osi--Penrose postulate.}
+\label{tab:crossover}\\
+\toprule
+Vacuum conditions & $m_{\rm cross}$ (kg) & $R_{\rm cross}$ & $\tau_{\rm cross}$ \\
+\midrule
+\endfirsthead
+\toprule
+Vacuum & $m_{\rm cross}$ & $R_{\rm cross}$ & $\tau_{\rm cross}$ \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+$10^{-8}$\,Pa, 300\,K & $\sim5\times10^{-16}$ & $\sim400$\,nm & $\sim4$\,s \\
+$10^{-10}$\,Pa, 4\,K & $\sim10^{-16}$ & $\sim250$\,nm & $\sim40$\,s \\
+$10^{-12}$\,Pa, 0.1\,K & $\sim2\times10^{-17}$ & $\sim140$\,nm & $\sim10$\,min \\
+\end{longtable}
+
+Below $m_{\rm cross}$, standard environmental decoherence dominates and
+ECT gives the same numbers as the standard theory.
+Above $m_{\rm cross}$, the condensate gravitational channel dominates
+and decoherence persists even in perfect vacuum.
+
+% ------------------------------------------------------------------
+\subsection{Photonic weak-locking bounds}
+\label{sec:results_photonic}
+
+\textit{Status: Level~B, interpretive.  ECT does not modify the
+operational predictions of photonic experiments at the present stage;
+it provides weak-locking consistency bounds.}
+
+For single-photon experiments (Wheeler delayed-choice,
+quantum eraser, delayed-choice entanglement swapping,
+photonic quantum switch), the ECT decoherence parameter is
+$\Gamma_{\rm loop}\ll1$ because the single-photon vacuum branch is
+weakly coupled to the condensate ($N_{\rm eff}\approx0$ in
+vacuum-propagation segments).
+
+The consistency requirement is simply that the experiment operates
+in the weak-locking regime: $\Gamma_{\rm loop}\ll1$ before
+irreversible detection (with $\Gamma_{\rm loop}\gg1$ at the
+detector).  All four photonic experiments
+(Sections~\ref{sec:pes_measurement}--\ref{sec:pes_info_bound})
+satisfy this bound.
+
+% ------------------------------------------------------------------
+\subsection{Cavity-cat decoherence: next quantitative target}
+\label{sec:results_cavity_cat}
+
+\textit{Status: programme-level.  This is the next natural
+quantitative target for the ECT decoherence apparatus, beyond the
+environmental and gravitational regimes already treated.}
+
+The Haroche--Raimond cavity-QED experiments~\cite{Haroche1993} directly
+measure the decoherence rate of mesoscopic Schr\"odinger-cat states of
+the microwave field.  The decoherence exponent for a cavity cat-state
+with $\bar{n}$ mean photons and separation~$\alpha$ in phase space is,
+in the generic ECT framework
+(Appendix~\ref{app:M4_decoherence_exponent}):
+\begin{equation}
+  \Gamma_{\rm cat}(t)
+  \sim \frac{|\alpha|^2}{S_0}\,2\!\int_0^t d\tau\,(t-\tau)\,N_{\rm cav}(\tau),
+\end{equation}
+where $N_{\rm cav}(\tau)$ is the noise kernel of the cavity--environment
+coupling.
+A detailed numerical comparison with the Haroche--Raimond data
+(Brune et al.\ 1996~\cite{Brune1996}) remains an open target.
+
+% ------------------------------------------------------------------
+\subsection{Summary: what the apparatus predicts}
+\label{sec:results_summary}
+
+\begin{longtable}{@{}p{3.5cm}p{3.5cm}p{3.5cm}p{3.5cm}@{}}
+\caption{Summary of quantitative results from the ECT decoherence
+apparatus.}
+\label{tab:decoherence_results_summary}\\
+\toprule
+System & ECT estimate & Observation & Status \\
+\midrule
+\endfirsthead
+\toprule
+System & ECT & Obs. & Status \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+C$_{60}$ ($10^{-6}$\,Pa) & $\tau_{\rm dec}\gg1$\,ms & Interference \checkmark & = standard \\
+C$_{60}$ ($10^{-4}$\,Pa) & $\tau_{\rm dec}\sim1$\,ms & Degradation & = standard \\
+Fein 25\,000\,amu & Environmental & Interference \checkmark & = standard \\
+Procopio switch & $\Gamma\sim10^{-12}$ & ICO visible & = standard \\
+Nanosphere 1\,$\mu$m & $\tau_{\rm grav}\sim38$\,ms & Not yet tested & ECT-specific \\
+Nanosphere 100\,nm & $\tau_{\rm grav}\sim1$\,hr & Not yet tested & ECT-specific \\
+Crossover (UHV) & $m_{\rm cross}\sim10^{-16}$\,kg & Not yet tested & ECT-specific \\
+Cavity cat & Open target & Brune 1996 & Programme \\
+\end{longtable}
+
+
+
 \section{Principle of Euclidean Stationarity}
 \label{sec:pes}
 % ==============================================================
@@ -28650,7 +28880,7 @@ a mass in superposition of two positions creates two distinct
 condensate configurations whose overlap decays as
 $e^{-\Gamma_{\rm grav}}$, recovering the Di\'osi--Penrose
 timescale $\tau\sim\hbar R/(G_N m^2)$.
-The nanosphere regime ($m\sim10^{-18}$\,kg, $\tau\sim16$\,ms) is the
+The nanosphere regime ($R\sim1\,\mu$m, $m\sim8\times10^{-15}$\,kg, $\tau\sim38$\,ms) is the
 experimental frontier.
 For the full derivation and numerical estimates, see
 Section~\ref{sec:pes_diosi} in~\S\ref{sec:qs_decoherence}.
@@ -37392,6 +37622,299 @@ That quantitative interpolation between the two regimes is part of
 OP-Q15.
 
 % ============================================================
+
+% ============================================================
+% ============================================================
+\section{Mathematical apparatus for ECT decoherence predictions}
+\label{app:decoherence_apparatus}
+% ============================================================
+
+\textit{Status: Level~B.  The generic spectral-density family, the noise
+and dissipation kernels, and the decoherence exponent are derived from
+the coherent-branch subsystem--environment split.
+The specific spectral exponent depends on the subsystem--bath coupling
+class, which is parameterised rather than uniquely fixed at the present
+stage.}
+
+% ------------------------------------------------------------------
+\subsection{Generic subsystem--bath coupling class}
+\label{app:M1_coupling}
+
+In the broken phase the condensate supports $N_G=3$ gapless
+Goldstone-like orientation modes with linear dispersion
+$\omega_k=c_*|\mathbf{k}|$.
+For a localised subsystem with generalised coordinate~$q$, the
+coupling to these modes takes the generic form
+\begin{equation}
+  H_{\rm int} = q \sum_{\alpha} g_\alpha(\mathbf{k}_\alpha)\,
+  \chi_\alpha(\mathbf{x}_q),
+\end{equation}
+where $g_\alpha(\mathbf{k})$ is the coupling vertex, which depends on
+the operator structure of the interaction.
+
+The resulting spectral density of the effective bath is
+\begin{equation}
+  \label{eq:J_generic_family}
+  \boxed{
+  J(\omega)
+  = \mathcal{A}\,\omega^2\,|g(\omega/c_*)|^2\,
+    e^{-\omega/\omega_c},
+  \qquad
+  \omega_c \sim c_*/\xi_{\rm cond}.
+  }
+\end{equation}
+The spectral exponent is controlled entirely by the coupling vertex:
+\begin{itemize}
+  \item density coupling, $g(k)\sim\mathrm{const}$:
+    $J(\omega)\propto\omega^2$ (sub-ohmic in the standard CL
+    classification);
+  \item derivative coupling, $g(k)\propto k$:
+    $J(\omega)\propto\omega^4$ (super-ohmic, structurally natural
+    for the 3D Goldstone bath with gradient interaction --- this is
+    the regime already identified in the main text,
+    eq.~\eqref{eq:qs_super_ohmic});
+  \item effective ohmic, $J(\omega)\propto\omega$: requires
+    additional coarse-graining or reduced effective dimensionality,
+    introduced as an effective Level~B closure in
+    eq.~\eqref{eq:qs_ohmic}.
+\end{itemize}
+To maintain generality, the subsequent formulae are written for the
+generic power-law family
+\begin{equation}
+  \label{eq:J_s_generic}
+  J_s(\omega) = A_s\,\omega^s\,e^{-\omega/\omega_c},
+\end{equation}
+with $s=1$ (ohmic), $s=2$ (sub-ohmic density coupling), or $s=4$
+(super-ohmic derivative coupling) as the three physically motivated
+cases in ECT.
+
+% ------------------------------------------------------------------
+\subsection{Noise kernel $N(\tau)$}
+\label{app:M2_noise_kernel}
+
+Given the spectral density~\eqref{eq:J_s_generic}, the noise kernel
+of the Feynman--Vernon influence functional is
+\begin{equation}
+  \label{eq:N_tau_general}
+  N(\tau)
+  = \frac{1}{\pi}\int_0^\infty d\omega\,
+    J_s(\omega)\,
+    \coth\!\left(\frac{S_0\omega}{2T_{\rm eff}}\right)
+    \cos(\omega\tau).
+\end{equation}
+
+\subsubsection*{Vacuum limit ($T_{\rm eff}\to0$)}
+
+Setting $\coth\to1$, the integral evaluates in closed form:
+\begin{equation}
+  \label{eq:N0_closed}
+  \boxed{
+  N_0(\tau)
+  = \frac{A_s\,\Gamma(s\!+\!1)\,\omega_c^{s+1}}{\pi}\,
+    \frac{\cos\!\bigl[(s\!+\!1)\arctan(\omega_c\tau)\bigr]}
+    {\bigl(1+\omega_c^2\tau^2\bigr)^{(s+1)/2}}.
+  }
+\end{equation}
+At $\tau=0$:
+$N_0(0)=A_s\,\Gamma(s\!+\!1)\,\omega_c^{s+1}/\pi$.
+
+\subsubsection*{High-temperature limit ($T_{\rm eff}\gg S_0\omega_c$)}
+
+Using $\coth(x)\approx1/x$ for $x\ll1$:
+\begin{equation}
+  \label{eq:NT_closed}
+  \boxed{
+  N_T(\tau)
+  = \frac{2T_{\rm eff}\,A_s\,\Gamma(s)\,\omega_c^{s}}
+    {\pi S_0}\,
+    \frac{\cos\!\bigl[s\,\arctan(\omega_c\tau)\bigr]}
+    {\bigl(1+\omega_c^2\tau^2\bigr)^{s/2}}.
+  }
+\end{equation}
+
+Both formulae exhibit a bath memory time
+$\tau_{\rm env}\sim\omega_c^{-1}\sim\xi_{\rm cond}/c_*$.
+
+% ------------------------------------------------------------------
+\subsection{Dissipation kernel $D_R(\tau)$}
+\label{app:M3_dissipation}
+
+The response (dissipation) kernel completes the Feynman--Vernon pair:
+\begin{equation}
+  \label{eq:DR_general}
+  \boxed{
+  D_R(\tau) = \frac{2}{\pi}\,\Theta(\tau)
+  \int_0^\infty d\omega\,
+  \frac{J_s(\omega)}{\omega}\,\sin(\omega\tau).
+  }
+\end{equation}
+For the generic family~\eqref{eq:J_s_generic}, this gives
+\begin{equation}
+  D_R(\tau) = \frac{2\,A_s\,\Gamma(s)\,\omega_c^{s}}{\pi}\,
+  \Theta(\tau)\,
+  \frac{\sin\!\bigl[s\,\arctan(\omega_c\tau)\bigr]}
+  {\bigl(1+\omega_c^2\tau^2\bigr)^{s/2}}.
+\end{equation}
+The retarded character $D_R(\tau<0)=0$ is structurally guaranteed
+by the $\Theta(\tau)$ prefactor, consistent with the Level~A
+retarded-kernel result~\eqref{eq:qs_retarded_zero}.
+
+The dissipation kernel governs memory/friction effects, Lamb-shift-like
+renormalisation, and the response part of the reduced dynamics.
+Together with $N(\tau)$, it yields the full open-system equation
+\begin{equation}
+  \ddot{q} + \Omega_0^2 q
+  + \int_0^t d\tau'\,D_R(t\!-\!\tau')\,\dot{q}(\tau') = \xi(t),
+  \quad
+  \langle\xi(t)\xi(t')\rangle = N(t\!-\!t').
+\end{equation}
+
+% ------------------------------------------------------------------
+\subsection{Decoherence exponent for spatial superpositions}
+\label{app:M4_decoherence_exponent}
+
+For a spatial superposition with fixed separation~$\Delta q$, the
+decoherence exponent accumulated over time~$t$ is
+\begin{equation}
+  \label{eq:Gamma_Dq}
+  \boxed{
+  \Gamma_{\Delta q}(t)
+  = \frac{(\Delta q)^2}{S_0}\,
+    2\!\int_0^t d\tau\,(t-\tau)\,N(\tau).
+  }
+\end{equation}
+This is the central bridge from the apparatus to observable quantities:
+interference fringe visibility decays as $e^{-\Gamma_{\Delta q}(t)}$.
+
+% ------------------------------------------------------------------
+\subsection{Short-time and Markov limits}
+\label{app:M5_limits}
+
+\subsubsection*{Short-time (non-Markov) regime: $t\ll\tau_{\rm env}$}
+
+For $t\ll\omega_c^{-1}$, the kernel is approximately constant,
+$N(\tau)\approx N(0)$, and
+\begin{equation}
+  \label{eq:Gamma_short}
+  \boxed{
+  \Gamma_{\Delta q}(t)
+  \approx \frac{(\Delta q)^2\,N(0)}{S_0}\,t^2.
+  }
+\end{equation}
+This is a general result: super-ohmic baths always produce
+\emph{quadratic} early-time decoherence, not the Markov-linear
+scaling.
+
+\subsubsection*{Markov (white-noise) regime: $t\gg\tau_{\rm env}$}
+
+If the effective kernel is approximated as white noise,
+$N(\tau)\approx D_{\rm eff}\,\delta(\tau)$, then
+\begin{equation}
+  \label{eq:Gamma_Markov}
+  \boxed{
+  \Gamma_{\Delta q}(t)
+  \approx \frac{2D_{\rm eff}}{S_0}\,(\Delta q)^2\,t.
+  }
+\end{equation}
+This recovers the article's current Gaussian--Markov
+working formula, eq.~\eqref{eq:qs_entropy_explicit}, as a
+coarse-grained long-time closure.
+
+The practical implication is that the \emph{same} ECT apparatus
+produces both the standard Caldeira--Leggett decoherence
+($\Gamma\propto t$, Markov limit) and the non-Markovian early-time
+regime ($\Gamma\propto t^2$), depending on the experimental timescale
+relative to $\tau_{\rm env}$.
+
+% ------------------------------------------------------------------
+\subsection{Self-consistent environmental--gravitational crossover}
+\label{app:M6_crossover}
+
+For a solid sphere of radius~$R$ and density~$\rho$,
+mass $m=\frac{4\pi}{3}\rho R^3$:
+
+\subsubsection*{Environmental collisional rate}
+
+Hard-sphere estimate:
+\begin{equation}
+  \lambda_{\rm env}
+  \sim n_{\rm gas}\,v_{\rm th}\,\pi R^2.
+\end{equation}
+
+\subsubsection*{Gravitational (condensate-DP) rate}
+
+From the ECT gravitational decoherence
+(Section~\ref{sec:pes_diosi}):
+\begin{equation}
+  \lambda_{\rm grav}
+  \sim \tau_{\rm DP}^{-1}
+  \sim \frac{G_N m^2}{\hbar R}
+  = \frac{16\pi^2}{9}\,\frac{G_N\rho^2 R^5}{\hbar}.
+\end{equation}
+
+\subsubsection*{Crossover}
+
+Setting $\lambda_{\rm env}=\lambda_{\rm grav}$:
+\begin{equation}
+  \label{eq:R_cross}
+  \boxed{
+  R_{\rm cross}
+  \sim
+  \left(
+    \frac{9\,\hbar\,n_{\rm gas}\,v_{\rm th}}
+    {16\pi\,G_N\,\rho^2}
+  \right)^{\!1/3},
+  }
+\end{equation}
+\begin{equation}
+  \label{eq:m_cross}
+  \boxed{
+  m_{\rm cross}
+  = \frac{4\pi}{3}\,\rho\,R_{\rm cross}^3
+  \sim \frac{3\,\hbar\,n_{\rm gas}\,v_{\rm th}}{4\,G_N\,\rho}.
+  }
+\end{equation}
+Above $m_{\rm cross}$, decoherence persists even in perfect vacuum ---
+this is the ECT-specific gravitational regime.
+
+% ------------------------------------------------------------------
+\subsection{Domain of applicability}
+\label{app:M7_domain}
+
+\textit{What this apparatus can compute:}
+\begin{enumerate}[label=(\roman*)]
+  \item Environmental decoherence for matter-wave interferometry
+    (C$_{60}$, Fein~2019, and future macromolecular experiments):
+    Section~\ref{sec:tau_ECT_systems}.
+  \item Gravitational (condensate) decoherence for mesoscopic objects
+    in superposition: Section~\ref{sec:pes_diosi},
+    Table~\ref{tab:pes_diosi}.
+  \item Environmental--gravitational crossover mass and radius for
+    given vacuum conditions.
+  \item Cavity/cat-state decoherence in
+    Haroche--Raimond-type microwave CQED experiments
+    (an open quantitative target).
+  \item Weak-locking consistency bounds for photonic experiments
+    (Wheeler delayed-choice, quantum eraser, Procopio switch).
+\end{enumerate}
+
+\textit{What this apparatus cannot yet compute:}
+\begin{enumerate}[label=(\roman*)]
+  \item Lifetimes or decay widths of elementary particles
+    (requires the full particle sector, not the open-system appendix).
+  \item Precision spectroscopy (requires explicit interaction
+    vertices beyond the generic coupling family).
+  \item The fine-structure constant or fermion mass ratios
+    (requires the gauge and Yukawa sectors).
+\end{enumerate}
+
+The boundary is sharp: the present apparatus is an
+\emph{open-system / influence-functional} framework; it governs
+decoherence, measurement, and quantum--classical boundary phenomena.
+Full particle-physics predictions require the separate ECT particle
+programme, which is not the subject of this appendix.
+
+
 \section{Unified vacuum-response logic: boundaries, acceleration,
 time dependence, and horizons}
 \label{app:qs_vacuum_response}
