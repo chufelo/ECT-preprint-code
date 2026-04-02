@@ -436,8 +436,9 @@ symmetry breaking, it is natural to ask whether the Lorentzian
 structure of spacetime could arise as a broken phase of a more
 symmetric Euclidean vacuum.
 Furthermore, at the quantum level the path integral formulation
-naturally employs Euclidean spacetime (via the Wick rotation
-$t \to -i\tau$), suggesting that the Euclidean description may
+is naturally related to a Euclidean
+description through the standard formal analytic continuation
+$t\to -i\tau$, suggesting that the Euclidean description may
 be more fundamental than the Lorentzian one.
 
 In this work we investigate this possibility within the framework of the
@@ -22708,8 +22709,10 @@ structure, and under what additional assumptions this structure can be
 recombined into a Schr\"odinger-type evolution law.
 
 The logic remains staged.
-Section~\ref{sec:qs_wave} develops the coherent wave
-kinematics.
+Section~\ref{sec:qs_wave} develops the coherent wave kinematics
+in the ordered branch, carefully distinguishing the real
+ordered-branch parametrisation $t=w/c_*$ from the formal
+Euclidean--Lorentzian amplitude bridge.
 Section~\ref{sec:qs_extremal_action} then clarifies the status of
 extremal action and saddle dominance, and
 Section~\ref{sec:qs_conservation} shows how the conserved structures of
@@ -22834,7 +22837,9 @@ At this stage the continuation is used only as a formal Euclidean--Lorentzian br
 for the coherent phase action. The ordered-branch hyperbolicity and the real time variable
 have already been fixed independently by $\alpha>\beta$ and $t=w/c_*$.
 
-Under the formal amplitude continuation~\eqref{eq:qs_wick}, one has
+Under the formal amplitude continuation~\eqref{eq:qs_wick}
+(used here only for the coherent-sector amplitude correspondence,
+not for the derivation of ordered-branch hyperbolicity), one has
 $\partial_w \to (i/c_*)\partial_t$,
 so the Euclidean phase-sector action is carried into a Lorentzian
 kinetic form with the expected separation between temporal and spatial
@@ -22914,8 +22919,8 @@ primary structural statement of ECT at this stage.
 \paragraph{Level~A content.}
 The Level~A statement established here is the existence of a
 Hamilton--Jacobi / continuity decomposition of the coherent wave
-ansatz once the Lorentzian phase-sector action and the Wick
-continuation are in place.
+ansatz once the Lorentzian phase-sector action and the formal
+Euclidean--Lorentzian continuation are in place.
 What is exact at this stage is the structural split into real and
 imaginary parts.
 What is \emph{not} yet Level~A is the fully explicit form of the
@@ -23436,8 +23441,13 @@ six conserved angular Noether currents:
   \partial_C J^{C,AB} = 0
   \qquad\text{(Level~A)}.
 \end{equation}
-After the ordered-branch breaking $O(4)\to O(3)$ and Wick rotation,
-these split into three spatial angular-momentum
+After the ordered-branch breaking $O(4)\to O(3)$, the six Euclidean
+rotation generators split into three unbroken spatial-rotation
+generators $J^{ij}$ and three mixed generators $J^{wi}$.
+At the algebraic level, the standard generator continuation then reads
+the latter as Lorentzian boost generators in the emergent Poincar\'e
+structure.
+These split into three spatial angular-momentum
 components~$J^{ij}$ ($i,j=1,2,3$), which remain exact conserved
 quantities of the residual $O(3)$ symmetry, and three mixed
 components~$J^{wi}$, reinterpreted as Lorentzian boost generators in
@@ -23458,7 +23468,8 @@ The global $U(1)$ phase symmetry of the compact-phase EFT
   \qquad\text{(Level~A within the compact-phase EFT)},
 \end{equation}
 recalled from Eq.~\eqref{eq:U1_noether}.
-Under the Wick rotation and the Level~B identification $S_0=\hbar$,
+Under the real ordered-branch parametrisation $t=w/c_*$ and the
+Level~B identification $S_0=\hbar$,
 the temporal component $j^0$ is proportional to the coherent density
 $\rho$, and the spatial components $j^i$ to the coherent current.
 The continuity equation~\eqref{eq:qs_continuity} derived in
@@ -23917,7 +23928,7 @@ In this sense, reflection positivity is not an isolated mathematical
 detail but the single bridge on which the downstream quantum
 architecture rests.
 
-\paragraph{Relation to the Wick rotation already used in ECT.}
+\paragraph{Relation to the formal continuation already used in ECT.}
 The formal continuation~\eqref{eq:qs_wick} has already appeared
 in two contexts: as the amplitude bridge used in the coherent sector,
 and as the formal correspondence underlying the OS reconstruction.
@@ -24777,7 +24788,7 @@ The two-sided dependence along the Euclidean coordinate $w$ must not be
 misread as controllable signalling from the future in Lorentzian time.
 At the fundamental Euclidean level, $w$ is not yet the observed time
 coordinate.
-Only after symmetry breaking and the Wick bridge does the effective
+Only after symmetry breaking and the real ordered-branch parametrisation does the effective
 Lorentzian notion of causal propagation emerge.
 Thus the ECT claim is not that laboratory agents can influence the
 past, but that the pre-Lorentzian coherent description is not organised
@@ -24813,8 +24824,8 @@ In ECT the logical direction is reversed:
 the Euclidean arena is primary, its field equation is elliptic, and the
 two-sided boundary-value structure is already present before the
 Lorentzian branch is reconstructed.
-This does not change the mathematics of propagators after Wick
-rotation, but it changes the interpretive status:
+This does not change the mathematics of propagators after the formal
+Euclidean--Lorentzian continuation, but it changes the interpretive status:
 nonclassical amplitude structure is not taken as primitive, but is read
 as a consequence of the Euclidean-first coherent architecture.
 
@@ -25501,7 +25512,8 @@ Beyond present closure
 \textit{Status: Level~A for the chain
 $O(4)\to O(3)\Rightarrow d_{\rm spatial}=3\Rightarrow
 \mathrm{Spin}(3)\Rightarrow \mathfrak{so}(1,3)\Rightarrow$
-Clifford structure, once the Wick bridge is applied to the ordered
+Clifford structure, once the standard generator continuation is applied at the algebraic level
+to the ordered
 branch.
 Level~B~(conditional) for the statement that, if the coherent sector
 contains physical spinorial excitations, then their minimal local
@@ -25571,7 +25583,7 @@ A direct calculation then confirms that $J_{ij}$ and $K_i$ satisfy
 the Lorentz algebra $\mathfrak{so}(1,3)$,
 with $[K_i,K_j]=-i\,J_{ij}$.
 Thus the Lorentz algebra emerges from the broken-phase structure
-and the Wick rotation.~(Level~A: follows from P4+BR1+\eqref{eq:qs_wick}.)
+and the standard generator continuation.~(Level~A: follows from P4+BR1+\eqref{eq:qs_wick}.)
 
 \subsubsection*{Representation-theoretic route to Clifford structure~(Level~A)}
 
@@ -25714,7 +25726,7 @@ $S_0=\hbar$~(OP-Q2, OP-Q11).
 \textit{Established~(Level~A):}
 (i)~the ordered branch together with the standard generator continuation
 yields the Lorentz algebra
-$\mathfrak{so}(1,3)$;
+$\mathfrak{so}(1,3)$ at the representation-theoretic level;
 (ii)~the spinorial representation of that algebra forces the Clifford
 structure~\eqref{eq:qs_clifford};
 (iii)~the longer structural chain from the ordered-branch dimensionality
@@ -25753,7 +25765,7 @@ interfaces.
 \textit{Inputs: ordered coherent vacuum from P4+BR1;
 wave dynamics and action scale $S_0$ from
 Sections~\ref{sec:qs_phase_and_scale}--\ref{sec:qs_wave_kinematics};
-Wick rotation~\eqref{eq:qs_wick};
+formal continuation~\eqref{eq:qs_wick};
 medium character~(P5).
 Aim: to show that the ordered coherent vacuum responds nontrivially
 to boundaries, acceleration, time dependence, and strong-field
@@ -26728,7 +26740,8 @@ derived after one has already assumed the quantum vacuum and its
 Lorentzian analyticity properties.
 In ECT the logical direction is reversed:
 the Euclidean correlator of the ordered vacuum is primary, and the
-thermal Rindler response appears after analytic continuation and
+thermal Rindler response appears under the formal
+Euclidean--Lorentzian continuation of the correlator together with the
 observer-dependent mode decomposition.
 The mathematics is continuous with the standard result, but the
 ontological starting point is different.
@@ -26738,7 +26751,7 @@ correlator structure later yields the same thermal response.
 
 \paragraph{Falsifier for the Unruh-response programme.}
 The Unruh-response programme would be weakened if the Euclidean
-ordered-vacuum correlator, after analytic continuation and
+ordered-vacuum correlator, under the formal Euclidean--Lorentzian continuation and
 Rindler-trajectory restriction, failed to reproduce the expected
 thermal periodicity or yielded a detector spectrum incompatible with
 Planckian response.
@@ -31905,7 +31918,7 @@ following twelve thematic steps:
   \item scope, inputs, and logical programme of the Quantum Sector;
   \item coherent phase dynamics, loop sectors, and the pre-quantum
     action scale $S_0$;
-  \item wave kinematics, Wick rotation, extremal-action structure,
+  \item wave kinematics, real-time parametrisation, extremal-action structure,
     and conservation laws;
   \item Hilbert-space bridge: reflection positivity, unitarity,
     canonical structure, and the uncertainty principle;
@@ -32076,7 +32089,7 @@ Two-sided Euclidean boundary dependence
     Section~\ref{sec:path_dependence} \\
 Interference/tunnelling route from Euclidean path-dependence
   & Level~A/B
-  & Structural Wick-bridge reading of nonclassical amplitudes;
+  & Structural amplitude-bridge reading of nonclassical amplitudes;
     Section~\ref{sec:path_dependence} \\
 Indefinite-causal-order compatibility route
   & Level~B
@@ -32100,9 +32113,9 @@ Bosonic/fermionic structural compatibility
   & Level~B
   & Exchange topology plus ordered-branch representation content;
     Section~\ref{sec:qs_statistics} \\
-Lorentz algebra $\mathfrak{so}(1,3)$ from $O(4)\to O(3)$ + Wick rotation
+Lorentz algebra $\mathfrak{so}(1,3)$ from the ordered branch + standard generator continuation
   & Level~A
-  & Broken generators $J_{i4}\to K_i$ under Wick rotation;
+  & Broken generators $J_{i4}\to K_i$ under the standard generator continuation;
     Section~\ref{sec:qs_dirac} \\
 Clifford algebra $\{\gamma^\mu,\gamma^\nu\}=2g^{\mu\nu}$
   & Level~A
@@ -32518,7 +32531,7 @@ clearly from what still depends on closure or remains open.
     $\pi_1(\mathcal{M}_2)=\mathbb{Z}_2$ in the primary
     three-dimensional ordered branch.
   \item Lorentz algebra $\mathfrak{so}(1,3)$ and Clifford structure
-    from $O(4)\to O(3)$ plus Wick rotation.
+    from the ordered branch plus the standard generator continuation.
   \item Retarded propagation of the ordered-branch scalar for the full
     nonlinear dynamics together with nonnegative spectral density in the
     quadratic sector.
@@ -33481,7 +33494,8 @@ ECT proposes a deeper level in which the fundamental object is the
 physical condensate field $\Phi(X)$, governed by a global
 four-dimensional boundary-value problem.
 Quantum mechanics is then recovered as the effective coherent branch
-seen after projection, Wick continuation, and coarse-graining.
+seen after projection, the formal Euclidean--Lorentzian amplitude
+bridge, and coarse-graining.
 
 In this sense, ECT does not merely reproduce the formalism of quantum
 mechanics.
