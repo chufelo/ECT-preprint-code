@@ -21613,6 +21613,15 @@ that organised framework rather than to isolated claims.
 
 \renewcommand{\arraystretch}{1.35}
 {\small
+
+A separate numerical/regime-level inventory is now collected in
+Section~\ref{sec:decoherence_results}.
+That inventory should be read together with the present status table:
+the environmental-decoherence entries are closure-level consistency
+checks, the photonic entries are weak-locking consistency statements,
+and the mesoscopic gravitational entries are the genuinely ECT-specific
+predictions of the current decoherence programme.
+
 \begin{longtable}{p{4.8cm}p{1.6cm}p{1.6cm}p{3.6cm}}
 \caption*{Status table and open problems of the macroscopic branch}\\
 \hline\hline
@@ -27737,7 +27746,13 @@ which gas collisions, transit time, and thermal environment dominate
 over gravitational-condensate distinguishability effects.
 The genuinely ECT-specific gravitational-condensate regime
 (\S\ref{sec:pes_diosi}) is expected only at much larger masses
-($m\gtrsim10^{-17}$\,kg, i.e.\ $\gtrsim10^{10}$\,amu), where the
+($m\gtrsim10^{-17}$\,kg, i.e.\ $\gtrsim10^{10}$\,amu).
+For the Fein molecules ($m\sim4\times10^{-23}$\,kg,
+$\Delta q\sim130$\,nm), the gravitational decoherence timescale
+is $\tau_{\rm grav}\sim\hbar\Delta q/(G_N m^2)\sim10^{14}$\,s,
+which exceeds the transit time by $\sim\!17$ orders of magnitude.
+The separation of regimes is thus unambiguous: environmental
+decoherence dominates by a factor of $\gtrsim10^{20}$, where the
 condensate itself acts as the gravitational environment and
 decoherence persists even in perfect vacuum.
 That mass frontier is the target of levitated-nanoparticle
@@ -28227,12 +28242,13 @@ Gaussian--Markov closure.
 
 % ============================================================
 % ============================================================
-\section{Quantitative Results of the Decoherence Apparatus}
+\section{Results and Regime Estimates of the Decoherence Apparatus}
 \label{sec:decoherence_results}
 % ============================================================
 
-\textit{This section collects the quantitative predictions and
-consistency checks that the ECT decoherence apparatus
+\textit{This section collects the quantitative estimates,
+order-of-magnitude consistency checks, and regime-level consequences
+that the ECT decoherence apparatus
 (Appendix~\ref{app:decoherence_apparatus}) delivers when applied to
 concrete experimental systems.
 The apparatus is an influence-functional / open-system framework:
@@ -28264,14 +28280,15 @@ cross-section (Section~\ref{sec:tau_ECT_systems}).
 \paragraph{Comparison with observations.}
 
 \begin{longtable}{@{}lllll@{}}
-\caption{ECT environmental-decoherence estimates vs.\ observations.}
+\caption{ECT environmental-decoherence consistency checks vs.\ observations
+(regime-level comparison).}
 \label{tab:env_decoherence_comparison}\\
 \toprule
-Experiment & Observable & Standard QM & ECT & Match \\
+Experiment & Observable & Standard QM & ECT regime estimate & Match \\
 \midrule
 \endfirsthead
 \toprule
-Experiment & Observable & Standard QM & ECT & Match \\
+Experiment & Observable & Standard QM & ECT regime estimate & Match \\
 \midrule
 \endhead
 \bottomrule
@@ -28389,16 +28406,19 @@ it provides weak-locking consistency bounds.}
 For single-photon experiments (Wheeler delayed-choice,
 quantum eraser, delayed-choice entanglement swapping,
 photonic quantum switch), the ECT decoherence parameter is
-$\Gamma_{\rm loop}\ll1$ because the single-photon vacuum branch is
-weakly coupled to the condensate ($N_{\rm eff}\approx0$ in
+$\Gamma_{\rm loop}\ll1$ because the single-photon vacuum branch is naturally interpreted as
+remaining in the weak-locking regime during free propagation
+(with effectively negligible environmental monitoring in the
 vacuum-propagation segments).
 
 The consistency requirement is simply that the experiment operates
 in the weak-locking regime: $\Gamma_{\rm loop}\ll1$ before
 irreversible detection (with $\Gamma_{\rm loop}\gg1$ at the
-detector).  All four photonic experiments
-(Sections~\ref{sec:pes_measurement}--\ref{sec:pes_info_bound})
-satisfy this bound.
+detector).  All four photonic experiments discussed in
+Sections~\ref{sec:pes_measurement}--\ref{sec:pes_info_bound}
+are naturally interpreted as operating within this weak-locking regime
+prior to irreversible detection.
+A detector-specific calculation remains outside the present scope.
 
 % ------------------------------------------------------------------
 \subsection{Cavity-cat decoherence: next quantitative target}
@@ -28410,26 +28430,42 @@ environmental and gravitational regimes already treated.}
 
 The Haroche--Raimond cavity-QED experiments~\cite{Haroche1993} directly
 measure the decoherence rate of mesoscopic Schr\"odinger-cat states of
-the microwave field.  The decoherence exponent for a cavity cat-state
-with $\bar{n}$ mean photons and separation~$\alpha$ in phase space is,
-in the generic ECT framework
-(Appendix~\ref{app:M4_decoherence_exponent}):
+the microwave field.  As a proxy scaling relation within the generic ECT apparatus,
+the decoherence exponent for a cavity cat-state
+with $\bar{n}$ mean photons and separation~$\alpha$ in phase space is:
 \begin{equation}
   \Gamma_{\rm cat}(t)
   \sim \frac{|\alpha|^2}{S_0}\,2\!\int_0^t d\tau\,(t-\tau)\,N_{\rm cav}(\tau),
 \end{equation}
 where $N_{\rm cav}(\tau)$ is the noise kernel of the cavity--environment
 coupling.
-A detailed numerical comparison with the Haroche--Raimond data
-(Brune et al.\ 1996~\cite{Brune1996}) remains an open target.
+Here $N_{\rm cav}(\tau)$ is not yet derived from a cavity-specific
+ECT micro-model; the formula should be read as the natural extension
+of the generic decoherence exponent to the cavity-cat geometry.
+As an illustration, the Brune et al.\ (1996)~\cite{Brune1996}
+experiment measures decoherence of cavity Schr\"odinger-cat states
+with cavity photon lifetime $\tau_{\rm cav}\approx160\,\mu$s.
+The standard prediction is
+$\tau_{\rm dec}=\tau_{\rm cav}/(2\bar{n})$, giving
+$\tau_{\rm dec}\approx24\,\mu$s for $\bar{n}=3.3$ and
+$\tau_{\rm dec}\approx8\,\mu$s for $\bar{n}=9.5$.
+In the ECT Markov closure, the same result follows from
+$D_{\rm eff}=S_0/(2\tau_{\rm cav})$ in
+eq.~\eqref{eq:Gamma_Markov}: the ECT-specific gravitational channel
+contributes negligibly for microwave photons, so the apparatus
+reproduces the standard cavity-QED decoherence scaling.
+A genuinely ECT-specific correction would arise only if the cavity
+field coupled to the condensate orientation modes at a rate
+comparable to $1/\tau_{\rm cav}$, which is not expected in the
+present regime.
 
 % ------------------------------------------------------------------
 \subsection{Summary: what the apparatus predicts}
 \label{sec:results_summary}
 
 \begin{longtable}{@{}p{3.5cm}p{3.5cm}p{3.5cm}p{3.5cm}@{}}
-\caption{Summary of quantitative results from the ECT decoherence
-apparatus.}
+\caption{Summary of quantitative and regime-level results from the ECT
+decoherence apparatus.}
 \label{tab:decoherence_results_summary}\\
 \toprule
 System & ECT estimate & Observation & Status \\
@@ -28444,7 +28480,7 @@ System & ECT & Obs. & Status \\
 C$_{60}$ ($10^{-6}$\,Pa) & $\tau_{\rm dec}\gg1$\,ms & Interference \checkmark & = standard \\
 C$_{60}$ ($10^{-4}$\,Pa) & $\tau_{\rm dec}\sim1$\,ms & Degradation & = standard \\
 Fein 25\,000\,amu & Environmental & Interference \checkmark & = standard \\
-Procopio switch & $\Gamma\sim10^{-12}$ & ICO visible & = standard \\
+Procopio switch & $\Gamma\sim10^{-12}$ & ICO visible & Interpretive \\
 Nanosphere 1\,$\mu$m & $\tau_{\rm grav}\sim38$\,ms & Not yet tested & ECT-specific \\
 Nanosphere 100\,nm & $\tau_{\rm grav}\sim1$\,hr & Not yet tested & ECT-specific \\
 Crossover (UHV) & $m_{\rm cross}\sim10^{-16}$\,kg & Not yet tested & ECT-specific \\
@@ -32209,6 +32245,14 @@ ordered-medium logic in controlled systems.
 That already constitutes a coherent research programme rather than a
 loose speculation.
 
+The quantitative and regime-level outputs of the present decoherence
+apparatus are summarised separately in
+Section~\ref{sec:decoherence_results};
+the role of the present subsection is not to duplicate those entries,
+but to classify what they establish, what remains closure-dependent,
+and what still requires a deeper microphysical derivation.
+
+
 \paragraph{Methodological status.}
 The correct overall status of the Quantum Sector is neither ``fully
 derived quantum mechanics'' nor ``purely conjectural''.
@@ -33226,7 +33270,8 @@ numerical outputs of ECT across all three Parts and compares them
 with available observations.
 
 \begin{longtable}{@{}p{3.5cm}p{3cm}p{3cm}p{1.5cm}p{2cm}@{}}
-\caption{ECT numerical outputs vs.\ observations: complete summary.}
+\caption{ECT quantitative outputs, regime-level consistency checks,
+and current experimental anchors: complete summary.}
 \label{tab:ect_full_numerical}\\
 \toprule
 System / prediction & ECT value & Observation & Match & Part \\
@@ -33270,10 +33315,13 @@ Casimir $\times3/2$ & $3/2\!\times\!$QED & \textit{Not tested}
   & Prediction & II/III \\
 \end{longtable}
 
-Of the 18~entries, 12 agree with observations, one (MW rotation curve)
-performs better than $\Lambda$CDM, one ($\eta_B$) is within a factor
-of~$1.5$, and four are ECT-specific predictions awaiting experimental
-verification.
+The table mixes three categories:
+(i)~direct quantitative matches to existing observations,
+(ii)~regime-level consistency checks in sectors where ECT reproduces
+the standard open-system predictions, and
+(iii)~genuinely ECT-specific predictions that remain untested.
+It should therefore be read as a programme summary rather than as a
+single statistical scorecard.
 
 
 
@@ -37727,6 +37775,14 @@ The specific spectral exponent depends on the subsystem--bath coupling
 class, which is parameterised rather than uniquely fixed at the present
 stage.}
 
+This appendix should be read as an operational extension of
+Appendix~\ref{app:qs_bath_regimes}.
+The earlier appendix classifies the admissible bath regimes and the
+status of the ohmic/Markov closure; the present appendix supplies a
+generic calculational toolkit within that closure language.
+It does not upgrade the bath model to a first-principles theorem from
+bare~P3.
+
 % ------------------------------------------------------------------
 \subsection{Generic subsystem--bath coupling class}
 \label{app:M1_coupling}
@@ -37757,7 +37813,7 @@ The resulting spectral density of the effective bath is
 The spectral exponent is controlled entirely by the coupling vertex:
 \begin{itemize}
   \item density coupling, $g(k)\sim\mathrm{const}$:
-    $J(\omega)\propto\omega^2$ (sub-ohmic in the standard CL
+    $J(\omega)\propto\omega^2$ (super-ohmic in the standard CL
     classification);
   \item derivative coupling, $g(k)\propto k$:
     $J(\omega)\propto\omega^4$ (super-ohmic, structurally natural
@@ -37775,7 +37831,7 @@ generic power-law family
   \label{eq:J_s_generic}
   J_s(\omega) = A_s\,\omega^s\,e^{-\omega/\omega_c},
 \end{equation}
-with $s=1$ (ohmic), $s=2$ (sub-ohmic density coupling), or $s=4$
+with $s=1$ (ohmic), $s=2$ (super-ohmic density coupling), or $s=4$
 (super-ohmic derivative coupling) as the three physically motivated
 cases in ECT.
 
@@ -37833,11 +37889,9 @@ $\tau_{\rm env}\sim\omega_c^{-1}\sim\xi_{\rm cond}/c_*$.
 The response (dissipation) kernel completes the Feynman--Vernon pair:
 \begin{equation}
   \label{eq:DR_general}
-  \boxed{
   D_R(\tau) = \frac{2}{\pi}\,\Theta(\tau)
   \int_0^\infty d\omega\,
   \frac{J_s(\omega)}{\omega}\,\sin(\omega\tau).
-  }
 \end{equation}
 For the generic family~\eqref{eq:J_s_generic}, this gives
 \begin{equation}
@@ -37846,9 +37900,12 @@ For the generic family~\eqref{eq:J_s_generic}, this gives
   \frac{\sin\!\bigl[s\,\arctan(\omega_c\tau)\bigr]}
   {\bigl(1+\omega_c^2\tau^2\bigr)^{s/2}}.
 \end{equation}
-The retarded character $D_R(\tau<0)=0$ is structurally guaranteed
-by the $\Theta(\tau)$ prefactor, consistent with the Level~A
-retarded-kernel result~\eqref{eq:qs_retarded_zero}.
+In the reduced effective description one imposes the retarded support
+$D_R(\tau<0)=0$ through the $\Theta(\tau)$ prefactor, consistently
+with the Level~A retarded-kernel structure established for the ordered
+Lorentzian branch.
+A full first-principles derivation of this identification from ECT
+microdynamics remains open.
 
 The dissipation kernel governs memory/friction effects, Lamb-shift-like
 renormalisation, and the response part of the reduced dynamics.
@@ -37864,8 +37921,9 @@ Together with $N(\tau)$, it yields the full open-system equation
 \subsection{Decoherence exponent for spatial superpositions}
 \label{app:M4_decoherence_exponent}
 
-For a spatial superposition with fixed separation~$\Delta q$, the
-decoherence exponent accumulated over time~$t$ is
+For a fixed-separation spatial superposition in the Gaussian reduced
+description, and neglecting drift/relaxation relative to pure dephasing,
+the decoherence exponent accumulated over time~$t$ is
 \begin{equation}
   \label{eq:Gamma_Dq}
   \boxed{
@@ -37887,14 +37945,12 @@ For $t\ll\omega_c^{-1}$, the kernel is approximately constant,
 $N(\tau)\approx N(0)$, and
 \begin{equation}
   \label{eq:Gamma_short}
-  \boxed{
   \Gamma_{\Delta q}(t)
   \approx \frac{(\Delta q)^2\,N(0)}{S_0}\,t^2.
-  }
 \end{equation}
-This is a general result: super-ohmic baths always produce
-\emph{quadratic} early-time decoherence, not the Markov-linear
-scaling.
+This is a general result: for analytic kernels with finite $N(0)$, the early-time decoherence is
+quadratic, as illustrated here for the super-ohmic cases relevant to
+ECT.
 
 \subsubsection*{Markov (white-noise) regime: $t\gg\tau_{\rm env}$}
 
@@ -37902,10 +37958,8 @@ If the effective kernel is approximated as white noise,
 $N(\tau)\approx D_{\rm eff}\,\delta(\tau)$, then
 \begin{equation}
   \label{eq:Gamma_Markov}
-  \boxed{
   \Gamma_{\Delta q}(t)
   \approx \frac{2D_{\rm eff}}{S_0}\,(\Delta q)^2\,t.
-  }
 \end{equation}
 This recovers the article's current Gaussian--Markov
 working formula, eq.~\eqref{eq:qs_entropy_explicit}, as a
@@ -37965,8 +38019,10 @@ Setting $\lambda_{\rm env}=\lambda_{\rm grav}$:
   \sim \frac{3\,\hbar\,n_{\rm gas}\,v_{\rm th}}{4\,G_N\,\rho}.
   }
 \end{equation}
-Above $m_{\rm cross}$, decoherence persists even in perfect vacuum ---
-this is the ECT-specific gravitational regime.
+Above $m_{\rm cross}$, and provided ordinary environmental channels are
+suppressed below the condensate-gravitational rate, the gravitational
+channel is expected to dominate.
+This is the ECT-specific mesoscopic regime.
 
 % ------------------------------------------------------------------
 \subsection{Domain of applicability}
