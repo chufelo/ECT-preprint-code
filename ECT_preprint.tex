@@ -24767,6 +24767,110 @@ programme-level ECT guide for when such resources should remain
 visible, not yet as a completed universal law for all switch
 platforms.
 
+
+% ------------------------------------------------------------------
+\subsection{Reverse-path suppression from PES}
+\label{sec:pes_reverse_path}
+
+The Euclidean path integral admits both forward (ordered,
+$O(4)\!\to\!O(3)$) and reverse ($O(3)\!\to\!O(4)$) segments.
+PES provides a quantitative suppression factor.
+
+A forward segment has Euclidean action $S_{\rm ord}$; a reverse
+segment, in which the condensate locally loses its preferred
+orientation, has action
+$S_{\rm dis}>S_{\rm ord}$ by an amount
+$\Delta S=S_{\rm dis}-S_{\rm ord}\sim\kappa_n\cdot V_{\rm eff}$
+(ordering energy $\times$ effective volume).
+In the PES language, $\Gamma_{\rm loop}=\Delta S/S_0$ is exactly the
+decoherence functional for the loop containing the reverse segment.
+The ratio of reverse to forward path weights is therefore:
+\begin{equation}
+  \label{eq:P_back_fwd}
+  \boxed{
+  \frac{P_{\rm back}}{P_{\rm fwd}}
+  =
+  e^{-\Gamma_{\rm loop}}.
+  }
+\end{equation}
+At $\Gamma_{\rm loop}\ll1$: $P_{\rm back}/P_{\rm fwd}\approx1$---reverse
+paths are not suppressed, quantum coherence is maintained.
+At $\Gamma_{\rm loop}\gg1$: $P_{\rm back}/P_{\rm fwd}\to0$---reverse
+paths are exponentially suppressed, classical irreversibility emerges.
+This connects PES directly to the quantum--classical boundary
+criterion~(\S\ref{sec:quantum_classical_boundary}).
+
+% ------------------------------------------------------------------
+\subsection{Tunnelling as traversal through the fourth spatial
+dimension}
+\label{sec:pes_tunnelling}
+
+\textit{Status: Level~B geometric reading.  The standard WKB/instanton
+amplitude is recovered; the ECT-specific content is the reinterpretation
+of the instanton path as a genuine spatial detour.}
+
+\subsubsection*{Geometric interpretation}
+
+In standard quantum mechanics, a particle ``penetrates through'' a
+classically forbidden potential barrier.
+The instanton formalism describes this as a Euclidean-time trajectory
+under the inverted potential.
+
+In ECT, the Euclidean coordinate $w$ is a \emph{real} fourth spatial
+dimension~(P1).
+The potential barrier $V(\mathbf{x})$ is a three-dimensional obstacle.
+In four-dimensional Euclidean space, the barrier does not extend along
+the $w$-direction.
+The instanton trajectory is therefore not a ``penetration through'' the
+barrier but a \emph{detour around it} through the fourth spatial
+dimension.
+
+\subsubsection*{Effective detour length}
+
+The standard instanton action for a particle of mass $m$ tunnelling
+through a barrier of height $V_0$ and width $a$ is:
+\begin{equation}
+  \label{eq:instanton_action}
+  S_{\rm inst}
+  =
+  \int_0^a dx\,\sqrt{2m\bigl(V(x)-E\bigr)}.
+\end{equation}
+The tunnelling probability is $P_{\rm tun}\sim e^{-2S_{\rm inst}/\hbar}$.
+
+In the ECT geometric reading, the effective momentum along the
+$w$-direction during the detour is
+$p_w\sim\sqrt{2m(V_0-E)}$.
+The effective detour length in the fourth dimension is therefore:
+\begin{equation}
+  \label{eq:detour_length}
+  \Delta w_{\rm detour}
+  \sim
+  \frac{S_{\rm inst}}{p_w}
+  \sim a,
+\end{equation}
+i.e.\ of order the barrier width.
+The tunnelling suppression
+$e^{-2S_{\rm inst}/\hbar}=e^{-2p_w\Delta w/\hbar}$ is then read
+as the Euclidean weight of a path that detours by $\Delta w$ through
+the fourth dimension at momentum $p_w$.
+
+The standard WKB result is exactly recovered.
+What ECT adds is the geometric picture: the classically forbidden
+region is not traversed but bypassed, and the suppression factor is the
+cost of the spatial detour.
+
+\subsubsection*{Connection to PES}
+
+In the PES framework, the tunnelling configuration has
+$\partial_w\Psi\neq0$ along the detour segment and therefore incurs a
+non-zero $\Gamma_{\rm env}$.
+The tunnelling rate is controlled by the same non-stationarity measure
+$\mathcal{N}_{\rm ns}$ that governs particle lifetimes
+(eq.~\ref{eq:pes_lifetime}): tunnelling is a temporary departure from
+the persistent stationary sector, with the departure ``length'' set by
+the barrier geometry.
+
+
 \paragraph{Connection to PES.}
 The two-sided Euclidean dependence and the indefinite-causal-order
 reading acquire a unified physical explanation through the Principle
@@ -27625,6 +27729,109 @@ relevant mesoscopic regime;
 (iii)~subleading corrections from the full condensate dynamics.
 
 % ============================================================
+
+% ------------------------------------------------------------------
+\subsection{Gravitational decoherence from condensate
+distinguishability}
+\label{sec:pes_diosi}
+
+\textit{Status: Level~B.  The Di\'osi--Penrose timescale is recovered
+as a limiting case of the ECT influence functional, with the condensate
+itself playing the role of the gravitational environment.}
+
+\subsubsection*{Derivation from ECT}
+
+A mass $m$ at position $\mathbf{x}_0$ modifies the condensate
+amplitude through the quasistatic $\phi$-equation:
+\begin{equation}
+  \delta\phi(\mathbf{x})
+  \sim
+  -\frac{G_N m}{c_*^2\,|\mathbf{x}-\mathbf{x}_0|}.
+\end{equation}
+A superposition of two positions $\mathbf{x}_1$ and $\mathbf{x}_2$
+produces two distinct condensate configurations with difference
+\begin{equation}
+  \label{eq:delta_phi_superpos}
+  \Delta\phi(\mathbf{x})
+  =
+  -\frac{G_N m}{c_*^2}
+  \left(
+    \frac{1}{|\mathbf{x}-\mathbf{x}_1|}
+    -\frac{1}{|\mathbf{x}-\mathbf{x}_2|}
+  \right).
+\end{equation}
+The gravitational decoherence functional is determined by the
+overlap between the two condensate configurations:
+\begin{equation}
+  \Gamma_{\rm grav}(\tau)
+  \sim
+  \frac{\tau}{\hbar}
+  \int d^3x\,
+  \frac{(\Delta\phi)^2}{\xi_{\rm cond}^2/\bar{M}_{\rm Pl}^2}.
+\end{equation}
+For an extended body of radius $R$, the spatial integral evaluates to
+$\sim G_N m^2/(c_*^4 R)$, and the condition
+$\Gamma_{\rm grav}(\tau_{\rm dec})=1$ gives:
+\begin{equation}
+  \label{eq:tau_DP_ECT}
+  \boxed{
+  \tau_{\rm dec}^{\rm grav}
+  \sim
+  \frac{\hbar\,R}{G_N\,m^2}.
+  }
+\end{equation}
+This recovers the Di\'osi--Penrose
+timescale~\cite{Diosi1987,Penrose1996}.
+In ECT it is \emph{not} imported: the condensate itself plays the role
+of the gravitational environment, and the decoherence rate is
+determined by the distinguishability of the two condensate
+configurations.
+
+\subsubsection*{Numerical estimates}
+
+\begin{longtable}{@{}p{3.0cm}cccc@{}}
+\caption{ECT gravitational decoherence timescale
+(eq.~\ref{eq:tau_DP_ECT}; Level~B).}
+\label{tab:pes_diosi}\\
+\toprule
+Object & Mass (kg) & $\Delta x$ & $\tau_{\rm dec}^{\rm grav}$ & Testable? \\
+\midrule
+\endfirsthead
+\toprule
+Object & Mass & $\Delta x$ & $\tau^{\rm grav}$ & Testable? \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Proton & $1.67\!\times\!10^{-27}$ & $1\,\mu$m & $5.5\!\times\!10^{23}$\,s & No \\
+Nanosphere & $10^{-18}$ & 100\,nm & 0.016\,s & Near-future \\
+Nanogram & $10^{-12}$ & 10\,nm & $16$\,ns & Yes \\
+\end{longtable}
+
+The nanosphere regime ($m\sim10^{-18}$\,kg, $\tau\sim16$\,ms)
+is the experimental frontier targeted by the groups of
+Aspelmeyer and Romero-Isart using levitated nanoparticles.
+This is where ECT gravitational decoherence becomes testable
+and where deviations from the standard environmental-decoherence
+picture may first appear.
+
+\subsubsection*{Where ECT should differ from standard decoherence}
+
+At masses below $\sim10^{10}$\,amu, environmental decoherence
+dominates and ECT reproduces standard results (as confirmed by the
+Arndt C$_{60}$ analysis, \S\ref{sec:qs_decoherence}).
+At masses $\gtrsim10^{10}$\,amu ($\sim10^{-17}$\,kg), gravitational
+decoherence from the condensate begins to compete with environmental
+sources.
+In this regime, ECT predicts that decoherence persists even in perfect
+vacuum, because the condensate itself acts as the gravitational
+environment.
+This is a qualitative prediction distinguishing ECT from standard
+open-system quantum mechanics, where gravitational decoherence is
+either absent or must be postulated separately.
+
+
+
 \subsection{Crooks-type fluctuation relation and effective entropy production}
 \label{sec:crooks_ect}
 
@@ -28199,6 +28406,223 @@ Area (quantum gravity) & $A_{\rm min}\sim\ell_{\rm Pl}^2$ & Minimal stationary g
 \end{longtable}
 
 % ------------------------------------------------------------------
+\subsection{Measurement, information, and decoherence: summary}
+\label{sec:pes_measurement_summary}
+
+The PES reading of measurement is developed in full in
+Section~\ref{sec:quantum_classical_boundary}.
+The key results, presented there, include:
+\begin{itemize}
+  \item interaction, in the strict event-based sense, is a Lorentzian
+    concept; in the Euclidean regime, what replaces it is spatial
+    correlation through the common condensate medium
+    (\S\ref{sec:pes_measurement});
+  \item a qubit dephasing model exhibits a monotonic
+    information--decoherence trade-off
+    (eq.~\ref{eq:info_decoherence}), strongly suggesting that fully
+    informative measurements cannot preserve Euclidean coherence
+    (\S\ref{sec:pes_info_bound});
+  \item free photon propagation ($\Gamma_{\rm loop}\approx0$) is
+    naturally consistent with the Euclidean regime, while emission and
+    absorption are Lorentzian coupling events.
+\end{itemize}
+
+% ------------------------------------------------------------------
+\subsection{Reverse-path suppression and tunnelling geometry: summary}
+\label{sec:pes_revtun_summary}
+
+The reverse-path suppression $P_{\rm back}/P_{\rm fwd}=e^{-\Gamma_{\rm loop}}$
+(eq.~\ref{eq:P_back_fwd}) and the geometric reading of tunnelling as a
+spatial detour through the fourth Euclidean dimension
+(eq.~\ref{eq:detour_length}) are developed in full in
+Section~\ref{sec:path_dependence}.
+
+% ------------------------------------------------------------------
+\subsection{The $\alpha\to\beta$ boundary and the geometric meaning of
+quantum coherence}
+\label{sec:pes_alpha_beta}
+
+\textit{Status: programme-level conjecture.  The mapping
+$\Gamma_{\rm loop}\leftrightarrow\alpha-\beta$ is not yet derived
+from first principles.}
+
+\paragraph{What happens at $\alpha\to\beta$.}
+The emergent speed of light is~(D20, Level~A):
+\begin{equation}
+  c_*=\sqrt{\frac{\beta}{\alpha-\beta}}.
+\end{equation}
+As $\alpha\to\beta$ from above, $c_*\to\infty$: the light cone opens
+completely, the distinction between space and time degenerates, and the
+effective metric becomes Euclidean.
+At $\alpha=\beta$ the Lorentzian branch ceases to exist.
+Below this threshold ($\alpha<\beta$), $c_*^2<0$ and the signature
+is strictly Euclidean.
+
+\paragraph{Conjectural bridge to decoherence.}
+A plausible geometric interpretation is that weak environmental locking
+(small $\Gamma_{\rm loop}$) corresponds to a local softening of the
+ordered Lorentzian branch, effectively bringing the system closer to
+the $\alpha\to\beta$ boundary.
+In this picture:
+\begin{itemize}
+  \item an isolated quantum system ($\Gamma_{\rm loop}\ll1$) may be interpreted as probing a regime effectively closer to
+    $\alpha\approx\beta$, where all four directions become more nearly
+    equivalent and the causal cone is less rigidly selected;
+  \item a macroscopically observed system ($\Gamma_{\rm loop}\gg1$)
+    may be interpreted as locked deep into the $\alpha\gg\beta$ regime,
+    where the causal cone is rigid and classical causality holds.
+\end{itemize}
+This provides a natural geometric language for entanglement
+(correlations in a near-Euclidean common medium), tunnelling (detour
+through a near-degenerate fourth dimension), and reverse-path
+coherence (return segments admissible when the cone is soft).
+
+\paragraph{What this does not yet establish.}
+The mapping $\Gamma_{\rm loop}\leftrightarrow\alpha-\beta$ is a
+programme-level conjecture.
+A derivation would require showing how the effective
+$\alpha-\beta$ experienced by a subsystem depends on its
+environmental coupling strength.
+This is listed as OP-PES-5.
+
+% ------------------------------------------------------------------
+\subsection{Gravitational decoherence from the condensate: summary}
+\label{sec:pes_diosi_summary}
+
+The condensate itself acts as the gravitational environment:
+a mass in superposition of two positions creates two distinct
+condensate configurations whose overlap decays as
+$e^{-\Gamma_{\rm grav}}$, recovering the Di\'osi--Penrose
+timescale $\tau\sim\hbar R/(G_N m^2)$.
+The nanosphere regime ($m\sim10^{-18}$\,kg, $\tau\sim16$\,ms) is the
+experimental frontier.
+For the full derivation and numerical estimates, see
+Section~\ref{sec:pes_diosi} in~\S\ref{sec:qs_decoherence}.
+
+% ------------------------------------------------------------------
+
+\subsection{What PES changes in the quantum programme}
+\label{sec:pes_changes}
+
+Table~\ref{tab:pes_before_after} summarises how PES modifies the
+interpretive and structural landscape of the quantum sector.
+
+\begin{longtable}{@{}p{3.5cm}p{4.5cm}p{4.5cm}@{}}
+\caption{Impact of PES on the quantum programme.}
+\label{tab:pes_before_after}\\
+\toprule
+Topic & Before PES & After PES \\
+\midrule
+\endfirsthead
+\toprule
+Topic (cont.) & Before PES & After PES \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Quantisation & Structural (from phase topology) & Physically grounded: persistent = phase-compact + stationary + decoherence-resistant \\
+Wavefunction collapse & Decoherence-only reading & Euclidean-to-Lorentzian transition via $\Gamma_{\rm loop}$ \\
+Extremal action & Formal mathematical principle & Physical underpinning: near-extremal configurations are interpreted as the most decoherence-resistant sector \\
+Particle stability & Empirical / classification by quantum numbers & Physically grounded: long-lived states are interpreted as lying close to the stationary, minimally disturbing sector \\
+Graviton quantisation & Open structural route & Structurally unified: same $S_0$, same PES \\
+$S_0=\hbar$ & Level~B matching & Deepened: $S_0$ = minimal persistent action scale \\
+\end{longtable}
+
+% ------------------------------------------------------------------
+\subsection{What PES does not yet prove}
+\label{sec:pes_open}
+
+The following central outputs remain beyond the current reach of PES:
+\begin{enumerate}[label=(\roman*)]
+  \item A first-principles derivation of $\Gamma_{\rm env}$ from the
+    bare Euclidean path integral~(OP-PES-1).
+  \item A rigorous bound relating $|\delta S_E|$ to
+    $\Gamma_{\rm env}$, which would elevate the survival-theorem
+    reading of the extremal-action principle to Level~A~(OP-PES-2).
+  \item Full UV completion and non-linear quantum-gravity amplitudes
+    from the condensate action~(OP-PES-3, D13).
+  \item Quantitative decay widths from
+    $\mathcal{N}_{\rm ns}$~(OP-PES-4).
+  \item A completed derivation of all spectra from PES alone
+    (PES explains the origin of discreteness but does not replace
+    spectral engineering).
+  \item A full spin-statistics theorem.
+  \item A completed Born rule as an unconditional theorem.
+  \item The quantitative mapping $\Gamma_{\rm loop}\leftrightarrow
+    \alpha-\beta$, which would connect PES to the geometric
+    Euclidean--Lorentzian boundary~(OP-PES-5).
+\end{enumerate}
+
+\paragraph{What PES does and does not identify.}
+PES does not identify stationarity, minimal Euclidean disturbance, and
+extremal action as universally identical notions.
+Rather, it states that the persistent observable sector lies at their
+intersection.
+This distinction is essential: a configuration may satisfy one of
+these conditions without satisfying the others.
+
+\medskip
+PES is therefore a \emph{centrally derived organising principle with a
+partially proven technical core and a large predictive programme
+around it}, not a completed final theorem of the entire quantum
+sector.
+
+% ==============================================================
+
+% ==============================================================
+\section{Quantum--Classical Boundary, Probability, Born Rule, and Measurement Status}
+\label{sec:qs_measurement}
+% ==============================================================
+
+\textit{Inputs: the Hilbert-space and projector route
+(\S\ref{sec:qs_reflection_positivity}), the global/reduced unitarity
+distinction~(\S\ref{sec:qs_unitarity_status}), coherent amplitude
+structure from
+Sections~\ref{sec:qs_phase_and_scale}--\ref{sec:qs_hilbert_bridge},
+the decoherence and arrow-of-time programme
+(\S\ref{sec:qs_decoherence}, \S\ref{sec:crooks_ect}), the reverse
+$O(3)\to O(4)$ Euclidean logic, and medium character~(P5).
+Aim: to identify the quantum--classical boundary, explain why
+decoherence is not yet the Born rule, and state what ECT can and
+cannot currently establish about probability and measurement.
+Status: Level~A for the structural admissibility of reverse
+$O(3)\!\to\!O(4)$ Euclidean segments in the path integral~(from P2),
+and for the distinction between coherent amplitudes and decohered
+reduced sectors.
+Level~B for the quantitative quantum--classical boundary criterion
+$\Gamma_{\rm loop}\lesssim1$, for the amplitude $\to$ decoherence
+$\to$ effective-probability logical chain, and for the conditional
+uniqueness of Born-type weights once the required Hilbert/projector
+conditions are in place.
+A full first-principles derivation of the Born rule and a completed
+measurement-update theory remain open.
+Connections: the decoherence and arrow-of-time programme
+(\S\ref{sec:qs_decoherence}, \S\ref{sec:crooks_ect}),
+the Hilbert-space route~(\S\ref{sec:qs_reflection_positivity}),
+the global/reduced unitarity distinction
+(\S\ref{sec:qs_unitarity_status}), and medium character~(P5).}
+
+\medskip
+\subsection{Quantum--classical boundary: reverse $O(3)\to O(4)$ transitions}
+\label{sec:quantum_classical_boundary}
+
+\textit{Status: Level~A for the structural statement that the
+$O(4)$-invariant Euclidean action~(P2) admits closed-loop
+configurations in which the ordered branch can locally lose its
+preferred $O(3)$ orientation and re-enter the Euclidean
+$O(4)$-symmetric sector.
+Level~B for the interpretation of such segments as the operative
+quantum--classical boundary mechanism and for the quantitative
+criterion $\Gamma_{\rm loop}\lesssim 1$ within the
+Gaussian--Markov decoherence closure.
+Connection: the two-sided Euclidean path-dependence
+(\S\ref{sec:path_dependence}), the decoherence and arrow-of-time
+programme~(\S\ref{sec:qs_decoherence}), the Crooks-type relation
+(\S\ref{sec:crooks_ect}), medium character~(P5), and the
+global/reduced unitarity distinction
+(\S\ref{sec:qs_unitarity_status}).}
+
+% ------------------------------------------------------------------
 % ------------------------------------------------------------------
 \subsection{Measurement as Euclidean-to-Lorentzian transition}
 \label{sec:pes_measurement}
@@ -28401,378 +28825,8 @@ a separate derivation of the relation between accessible record
 information and the decoherence functional, and remains an open
 target~(OP-PES-6).
 
-% ------------------------------------------------------------------
-\subsection{Reverse-path suppression from PES}
-\label{sec:pes_reverse_path}
 
-The Euclidean path integral admits both forward (ordered,
-$O(4)\!\to\!O(3)$) and reverse ($O(3)\!\to\!O(4)$) segments.
-PES provides a quantitative suppression factor.
 
-A forward segment has Euclidean action $S_{\rm ord}$; a reverse
-segment, in which the condensate locally loses its preferred
-orientation, has action
-$S_{\rm dis}>S_{\rm ord}$ by an amount
-$\Delta S=S_{\rm dis}-S_{\rm ord}\sim\kappa_n\cdot V_{\rm eff}$
-(ordering energy $\times$ effective volume).
-In the PES language, $\Gamma_{\rm loop}=\Delta S/S_0$ is exactly the
-decoherence functional for the loop containing the reverse segment.
-The ratio of reverse to forward path weights is therefore:
-\begin{equation}
-  \label{eq:P_back_fwd}
-  \boxed{
-  \frac{P_{\rm back}}{P_{\rm fwd}}
-  =
-  e^{-\Gamma_{\rm loop}}.
-  }
-\end{equation}
-At $\Gamma_{\rm loop}\ll1$: $P_{\rm back}/P_{\rm fwd}\approx1$---reverse
-paths are not suppressed, quantum coherence is maintained.
-At $\Gamma_{\rm loop}\gg1$: $P_{\rm back}/P_{\rm fwd}\to0$---reverse
-paths are exponentially suppressed, classical irreversibility emerges.
-This connects PES directly to the quantum--classical boundary
-criterion~(\S\ref{sec:quantum_classical_boundary}).
-
-% ------------------------------------------------------------------
-\subsection{Tunnelling as traversal through the fourth spatial
-dimension}
-\label{sec:pes_tunnelling}
-
-\textit{Status: Level~B geometric reading.  The standard WKB/instanton
-amplitude is recovered; the ECT-specific content is the reinterpretation
-of the instanton path as a genuine spatial detour.}
-
-\subsubsection*{Geometric interpretation}
-
-In standard quantum mechanics, a particle ``penetrates through'' a
-classically forbidden potential barrier.
-The instanton formalism describes this as a Euclidean-time trajectory
-under the inverted potential.
-
-In ECT, the Euclidean coordinate $w$ is a \emph{real} fourth spatial
-dimension~(P1).
-The potential barrier $V(\mathbf{x})$ is a three-dimensional obstacle.
-In four-dimensional Euclidean space, the barrier does not extend along
-the $w$-direction.
-The instanton trajectory is therefore not a ``penetration through'' the
-barrier but a \emph{detour around it} through the fourth spatial
-dimension.
-
-\subsubsection*{Effective detour length}
-
-The standard instanton action for a particle of mass $m$ tunnelling
-through a barrier of height $V_0$ and width $a$ is:
-\begin{equation}
-  \label{eq:instanton_action}
-  S_{\rm inst}
-  =
-  \int_0^a dx\,\sqrt{2m\bigl(V(x)-E\bigr)}.
-\end{equation}
-The tunnelling probability is $P_{\rm tun}\sim e^{-2S_{\rm inst}/\hbar}$.
-
-In the ECT geometric reading, the effective momentum along the
-$w$-direction during the detour is
-$p_w\sim\sqrt{2m(V_0-E)}$.
-The effective detour length in the fourth dimension is therefore:
-\begin{equation}
-  \label{eq:detour_length}
-  \Delta w_{\rm detour}
-  \sim
-  \frac{S_{\rm inst}}{p_w}
-  \sim a,
-\end{equation}
-i.e.\ of order the barrier width.
-The tunnelling suppression
-$e^{-2S_{\rm inst}/\hbar}=e^{-2p_w\Delta w/\hbar}$ is then read
-as the Euclidean weight of a path that detours by $\Delta w$ through
-the fourth dimension at momentum $p_w$.
-
-The standard WKB result is exactly recovered.
-What ECT adds is the geometric picture: the classically forbidden
-region is not traversed but bypassed, and the suppression factor is the
-cost of the spatial detour.
-
-\subsubsection*{Connection to PES}
-
-In the PES framework, the tunnelling configuration has
-$\partial_w\Psi\neq0$ along the detour segment and therefore incurs a
-non-zero $\Gamma_{\rm env}$.
-The tunnelling rate is controlled by the same non-stationarity measure
-$\mathcal{N}_{\rm ns}$ that governs particle lifetimes
-(eq.~\ref{eq:pes_lifetime}): tunnelling is a temporary departure from
-the persistent stationary sector, with the departure ``length'' set by
-the barrier geometry.
-
-% ------------------------------------------------------------------
-\subsection{The $\alpha\to\beta$ boundary and the geometric meaning of
-quantum coherence}
-\label{sec:pes_alpha_beta}
-
-\textit{Status: programme-level conjecture.  The mapping
-$\Gamma_{\rm loop}\leftrightarrow\alpha-\beta$ is not yet derived
-from first principles.}
-
-\paragraph{What happens at $\alpha\to\beta$.}
-The emergent speed of light is~(D20, Level~A):
-\begin{equation}
-  c_*=\sqrt{\frac{\beta}{\alpha-\beta}}.
-\end{equation}
-As $\alpha\to\beta$ from above, $c_*\to\infty$: the light cone opens
-completely, the distinction between space and time degenerates, and the
-effective metric becomes Euclidean.
-At $\alpha=\beta$ the Lorentzian branch ceases to exist.
-Below this threshold ($\alpha<\beta$), $c_*^2<0$ and the signature
-is strictly Euclidean.
-
-\paragraph{Conjectural bridge to decoherence.}
-A plausible geometric interpretation is that weak environmental locking
-(small $\Gamma_{\rm loop}$) corresponds to a local softening of the
-ordered Lorentzian branch, effectively bringing the system closer to
-the $\alpha\to\beta$ boundary.
-In this picture:
-\begin{itemize}
-  \item an isolated quantum system ($\Gamma_{\rm loop}\ll1$) may be interpreted as probing a regime effectively closer to
-    $\alpha\approx\beta$, where all four directions become more nearly
-    equivalent and the causal cone is less rigidly selected;
-  \item a macroscopically observed system ($\Gamma_{\rm loop}\gg1$)
-    may be interpreted as locked deep into the $\alpha\gg\beta$ regime,
-    where the causal cone is rigid and classical causality holds.
-\end{itemize}
-This provides a natural geometric language for entanglement
-(correlations in a near-Euclidean common medium), tunnelling (detour
-through a near-degenerate fourth dimension), and reverse-path
-coherence (return segments admissible when the cone is soft).
-
-\paragraph{What this does not yet establish.}
-The mapping $\Gamma_{\rm loop}\leftrightarrow\alpha-\beta$ is a
-programme-level conjecture.
-A derivation would require showing how the effective
-$\alpha-\beta$ experienced by a subsystem depends on its
-environmental coupling strength.
-This is listed as OP-PES-5.
-
-% ------------------------------------------------------------------
-\subsection{Gravitational decoherence from condensate
-distinguishability}
-\label{sec:pes_diosi}
-
-\textit{Status: Level~B.  The Di\'osi--Penrose timescale is recovered
-as a limiting case of the ECT influence functional, with the condensate
-itself playing the role of the gravitational environment.}
-
-\subsubsection*{Derivation from ECT}
-
-A mass $m$ at position $\mathbf{x}_0$ modifies the condensate
-amplitude through the quasistatic $\phi$-equation:
-\begin{equation}
-  \delta\phi(\mathbf{x})
-  \sim
-  -\frac{G_N m}{c_*^2\,|\mathbf{x}-\mathbf{x}_0|}.
-\end{equation}
-A superposition of two positions $\mathbf{x}_1$ and $\mathbf{x}_2$
-produces two distinct condensate configurations with difference
-\begin{equation}
-  \label{eq:delta_phi_superpos}
-  \Delta\phi(\mathbf{x})
-  =
-  -\frac{G_N m}{c_*^2}
-  \left(
-    \frac{1}{|\mathbf{x}-\mathbf{x}_1|}
-    -\frac{1}{|\mathbf{x}-\mathbf{x}_2|}
-  \right).
-\end{equation}
-The gravitational decoherence functional is determined by the
-overlap between the two condensate configurations:
-\begin{equation}
-  \Gamma_{\rm grav}(\tau)
-  \sim
-  \frac{\tau}{\hbar}
-  \int d^3x\,
-  \frac{(\Delta\phi)^2}{\xi_{\rm cond}^2/\bar{M}_{\rm Pl}^2}.
-\end{equation}
-For an extended body of radius $R$, the spatial integral evaluates to
-$\sim G_N m^2/(c_*^4 R)$, and the condition
-$\Gamma_{\rm grav}(\tau_{\rm dec})=1$ gives:
-\begin{equation}
-  \label{eq:tau_DP_ECT}
-  \boxed{
-  \tau_{\rm dec}^{\rm grav}
-  \sim
-  \frac{\hbar\,R}{G_N\,m^2}.
-  }
-\end{equation}
-This recovers the Di\'osi--Penrose
-timescale~\cite{Diosi1987,Penrose1996}.
-In ECT it is \emph{not} imported: the condensate itself plays the role
-of the gravitational environment, and the decoherence rate is
-determined by the distinguishability of the two condensate
-configurations.
-
-\subsubsection*{Numerical estimates}
-
-\begin{longtable}{@{}p{3.0cm}cccc@{}}
-\caption{ECT gravitational decoherence timescale
-(eq.~\ref{eq:tau_DP_ECT}; Level~B).}
-\label{tab:pes_diosi}\\
-\toprule
-Object & Mass (kg) & $\Delta x$ & $\tau_{\rm dec}^{\rm grav}$ & Testable? \\
-\midrule
-\endfirsthead
-\toprule
-Object & Mass & $\Delta x$ & $\tau^{\rm grav}$ & Testable? \\
-\midrule
-\endhead
-\bottomrule
-\endfoot
-Proton & $1.67\!\times\!10^{-27}$ & $1\,\mu$m & $5.5\!\times\!10^{23}$\,s & No \\
-Nanosphere & $10^{-18}$ & 100\,nm & 0.016\,s & Near-future \\
-Nanogram & $10^{-12}$ & 10\,nm & $16$\,ns & Yes \\
-\end{longtable}
-
-The nanosphere regime ($m\sim10^{-18}$\,kg, $\tau\sim16$\,ms)
-is the experimental frontier targeted by the groups of
-Aspelmeyer and Romero-Isart using levitated nanoparticles.
-This is where ECT gravitational decoherence becomes testable
-and where deviations from the standard environmental-decoherence
-picture may first appear.
-
-\subsubsection*{Where ECT should differ from standard decoherence}
-
-At masses below $\sim10^{10}$\,amu, environmental decoherence
-dominates and ECT reproduces standard results (as confirmed by the
-Arndt C$_{60}$ analysis, \S\ref{sec:qs_decoherence}).
-At masses $\gtrsim10^{10}$\,amu ($\sim10^{-17}$\,kg), gravitational
-decoherence from the condensate begins to compete with environmental
-sources.
-In this regime, ECT predicts that decoherence persists even in perfect
-vacuum, because the condensate itself acts as the gravitational
-environment.
-This is a qualitative prediction distinguishing ECT from standard
-open-system quantum mechanics, where gravitational decoherence is
-either absent or must be postulated separately.
-
-% ------------------------------------------------------------------
-
-\subsection{What PES changes in the quantum programme}
-\label{sec:pes_changes}
-
-Table~\ref{tab:pes_before_after} summarises how PES modifies the
-interpretive and structural landscape of the quantum sector.
-
-\begin{longtable}{@{}p{3.5cm}p{4.5cm}p{4.5cm}@{}}
-\caption{Impact of PES on the quantum programme.}
-\label{tab:pes_before_after}\\
-\toprule
-Topic & Before PES & After PES \\
-\midrule
-\endfirsthead
-\toprule
-Topic (cont.) & Before PES & After PES \\
-\midrule
-\endhead
-\bottomrule
-\endfoot
-Quantisation & Structural (from phase topology) & Physically grounded: persistent = phase-compact + stationary + decoherence-resistant \\
-Wavefunction collapse & Decoherence-only reading & Euclidean-to-Lorentzian transition via $\Gamma_{\rm loop}$ \\
-Extremal action & Formal mathematical principle & Physical underpinning: near-extremal configurations are interpreted as the most decoherence-resistant sector \\
-Particle stability & Empirical / classification by quantum numbers & Physically grounded: long-lived states are interpreted as lying close to the stationary, minimally disturbing sector \\
-Graviton quantisation & Open structural route & Structurally unified: same $S_0$, same PES \\
-$S_0=\hbar$ & Level~B matching & Deepened: $S_0$ = minimal persistent action scale \\
-\end{longtable}
-
-% ------------------------------------------------------------------
-\subsection{What PES does not yet prove}
-\label{sec:pes_open}
-
-The following central outputs remain beyond the current reach of PES:
-\begin{enumerate}[label=(\roman*)]
-  \item A first-principles derivation of $\Gamma_{\rm env}$ from the
-    bare Euclidean path integral~(OP-PES-1).
-  \item A rigorous bound relating $|\delta S_E|$ to
-    $\Gamma_{\rm env}$, which would elevate the survival-theorem
-    reading of the extremal-action principle to Level~A~(OP-PES-2).
-  \item Full UV completion and non-linear quantum-gravity amplitudes
-    from the condensate action~(OP-PES-3, D13).
-  \item Quantitative decay widths from
-    $\mathcal{N}_{\rm ns}$~(OP-PES-4).
-  \item A completed derivation of all spectra from PES alone
-    (PES explains the origin of discreteness but does not replace
-    spectral engineering).
-  \item A full spin-statistics theorem.
-  \item A completed Born rule as an unconditional theorem.
-  \item The quantitative mapping $\Gamma_{\rm loop}\leftrightarrow
-    \alpha-\beta$, which would connect PES to the geometric
-    Euclidean--Lorentzian boundary~(OP-PES-5).
-\end{enumerate}
-
-\paragraph{What PES does and does not identify.}
-PES does not identify stationarity, minimal Euclidean disturbance, and
-extremal action as universally identical notions.
-Rather, it states that the persistent observable sector lies at their
-intersection.
-This distinction is essential: a configuration may satisfy one of
-these conditions without satisfying the others.
-
-\medskip
-PES is therefore a \emph{centrally derived organising principle with a
-partially proven technical core and a large predictive programme
-around it}, not a completed final theorem of the entire quantum
-sector.
-
-% ==============================================================
-
-% ==============================================================
-\section{Quantum--Classical Boundary, Probability, Born Rule, and Measurement Status}
-\label{sec:qs_measurement}
-% ==============================================================
-
-\textit{Inputs: the Hilbert-space and projector route
-(\S\ref{sec:qs_reflection_positivity}), the global/reduced unitarity
-distinction~(\S\ref{sec:qs_unitarity_status}), coherent amplitude
-structure from
-Sections~\ref{sec:qs_phase_and_scale}--\ref{sec:qs_hilbert_bridge},
-the decoherence and arrow-of-time programme
-(\S\ref{sec:qs_decoherence}, \S\ref{sec:crooks_ect}), the reverse
-$O(3)\to O(4)$ Euclidean logic, and medium character~(P5).
-Aim: to identify the quantum--classical boundary, explain why
-decoherence is not yet the Born rule, and state what ECT can and
-cannot currently establish about probability and measurement.
-Status: Level~A for the structural admissibility of reverse
-$O(3)\!\to\!O(4)$ Euclidean segments in the path integral~(from P2),
-and for the distinction between coherent amplitudes and decohered
-reduced sectors.
-Level~B for the quantitative quantum--classical boundary criterion
-$\Gamma_{\rm loop}\lesssim1$, for the amplitude $\to$ decoherence
-$\to$ effective-probability logical chain, and for the conditional
-uniqueness of Born-type weights once the required Hilbert/projector
-conditions are in place.
-A full first-principles derivation of the Born rule and a completed
-measurement-update theory remain open.
-Connections: the decoherence and arrow-of-time programme
-(\S\ref{sec:qs_decoherence}, \S\ref{sec:crooks_ect}),
-the Hilbert-space route~(\S\ref{sec:qs_reflection_positivity}),
-the global/reduced unitarity distinction
-(\S\ref{sec:qs_unitarity_status}), and medium character~(P5).}
-
-\medskip
-\subsection{Quantum--classical boundary: reverse $O(3)\to O(4)$ transitions}
-\label{sec:quantum_classical_boundary}
-
-\textit{Status: Level~A for the structural statement that the
-$O(4)$-invariant Euclidean action~(P2) admits closed-loop
-configurations in which the ordered branch can locally lose its
-preferred $O(3)$ orientation and re-enter the Euclidean
-$O(4)$-symmetric sector.
-Level~B for the interpretation of such segments as the operative
-quantum--classical boundary mechanism and for the quantitative
-criterion $\Gamma_{\rm loop}\lesssim 1$ within the
-Gaussian--Markov decoherence closure.
-Connection: the two-sided Euclidean path-dependence
-(\S\ref{sec:path_dependence}), the decoherence and arrow-of-time
-programme~(\S\ref{sec:qs_decoherence}), the Crooks-type relation
-(\S\ref{sec:crooks_ect}), medium character~(P5), and the
-global/reduced unitarity distinction
-(\S\ref{sec:qs_unitarity_status}).}
 
 This reverse-traversal picture is the complementary path-integral
 reading of the two-sided Euclidean boundary dependence already
