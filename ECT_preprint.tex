@@ -11092,6 +11092,24 @@ yet been derived from the bare condensate action.
 % ============================================================
 % CONCLUSIONS OF PART I
 % ============================================================
+
+\paragraph{Spin discreteness and measurement.}
+In ECT, spin arises from the $O(3)$ spinor representations of the
+residual symmetry group after $O(4)\to O(3)$ breaking
+(\S\ref{sec:fermions}).
+The discreteness of spin projections (Stern--Gerlach effect) follows
+from the compactness of $SU(2)$: compact groups have
+finite-dimensional unitary representations with discrete eigenvalues.
+This is not an ECT-specific result (it is the same mathematical
+mechanism as in standard quantum mechanics), but ECT provides the
+physical origin of the group: $SU(2)$ is the double cover of the
+residual $O(3)$ after condensate symmetry breaking.
+In the measurement context, a Stern--Gerlach apparatus couples
+the spin to a macroscopic magnetic-field gradient with
+$N_{\rm eff}\gg1$, driving $\Gamma_{\rm loop}\gg1$ for the spin
+degree of freedom and locking it into a definite Lorentzian
+eigenstate.
+
 \section{Conclusions of Part~I: Foundations}
 \label{sec:part1_conclusions}
 
@@ -24910,6 +24928,47 @@ the present discussion is conceptual rather than predictive.
 
 
 % ------------------------------------------------------------------
+
+% ------------------------------------------------------------------
+\subsubsection*{Wigner's friend paradox}
+
+\textit{Status: interpretive / Level~B.  ECT does not modify the
+operational predictions but provides a structural resolution.}
+
+In the Wigner's friend scenario, an observer (the ``friend'')
+performs a measurement inside a sealed laboratory, while a
+superobserver (Wigner) treats the entire laboratory as a quantum
+system.
+In the standard presentation, the paradox is that the friend
+assigns a definite outcome while Wigner assigns a superposition.
+
+In the ECT reading, the resolution is structural.
+The friend's measurement device couples to the quantum system with
+$N_{\rm eff}\gg1$, driving $\Gamma_{\rm loop}\gg1$ for the
+measured subsystem: the Euclidean-to-Lorentzian transition occurs
+inside the lab, irrespective of Wigner's perspective.
+Wigner, if truly isolated from the lab (no information leakage),
+can formally describe the lab in the Euclidean regime; but this
+requires that the lab--environment coupling satisfy
+$\Gamma_{\rm loop}^{\rm lab-ext}\ll1$, which demands essentially
+perfect isolation of a macroscopic laboratory --- a condition that is
+practically unachievable.
+The key ECT insight is that the $E\to L$ transition is
+\emph{observer-independent}: it depends on $N_{\rm eff}$ and
+$\gamma$ (physical coupling to environment), not on who is
+``looking.''
+There is therefore no genuine paradox: the friend and Wigner
+simply have access to different coarse-grainings of the same
+condensate, and the $E\to L$ transition has objectively occurred
+inside the lab once $\Gamma_{\rm loop}\gg1$ there.
+
+\paragraph{Comparison with standard quantum theory.}
+Standard quantum theory accommodates both descriptions
+(friend-collapsed and Wigner-superposed) through the formalism of
+relative states, but does not select between them.
+ECT selects: the $\Gamma_{\rm loop}\gg1$ criterion is an objective
+physical condition, not a matter of choice.
+
 \subsection{Reverse-path suppression from PES}
 \label{sec:pes_reverse_path}
 
@@ -25015,6 +25074,25 @@ $\mathcal{N}_{\rm ns}$ that governs particle lifetimes
 the persistent stationary sector, with the departure ``length'' set by
 the barrier geometry.
 
+
+
+\paragraph{Reverse coherence: Lorentzian-to-Euclidean transition.}
+The reverse process --- a macroscopic (Lorentzian) system returning to
+Euclidean coherence --- is exponentially suppressed by the PES
+functional: $P_{\rm back}/P_{\rm fwd}=e^{-\Gamma_{\rm loop}}$.
+For a macroscopic object with $\Gamma_{\rm loop}\sim10^{20}$,
+$P_{\rm back}\sim e^{-10^{20}}\approx0$.
+This irreversibility is not absolute but statistical:
+for mesoscopic systems with $\Gamma_{\rm loop}\sim1$, partial
+reverse coherence is not forbidden and may be observable as
+recoherence phenomena in carefully isolated systems.
+Candidate experimental platforms include levitated nanoparticles
+in ultra-high vacuum~\cite{Aspelmeyer2014,RomeroIsart2012} and
+superconducting circuits with tunable environmental coupling.
+In standard quantum mechanics, recoherence is possible in principle
+through echo-type protocols (spin echo, dynamical decoupling); ECT
+is consistent with this, since reducing $N_{\rm eff}$ reduces
+$\Gamma_{\rm loop}$ and allows partial return to the Euclidean regime.
 
 \paragraph{Connection to PES.}
 The two-sided Euclidean dependence and the indefinite-causal-order
@@ -30133,6 +30211,24 @@ coherent processes.
 Those wider sectors are the subject of the next section.
 
 % ==============================================================
+
+\paragraph{Connection to tunnelling.}
+Both quantum entanglement and quantum tunnelling arise in ECT from
+the same structural root: non-local correlations mediated by the
+elliptic Euclidean propagator $G_E$.
+Tunnelling is a spatial detour through the fourth Euclidean dimension
+(\S\ref{sec:pes_tunnelling}), while entanglement is a non-factorisable
+correlation through the common condensate substrate.
+Both require the system to remain in the weak-locking regime
+($\Gamma_{\rm loop}\ll1$): once $\Gamma_{\rm loop}\gg1$, the
+Lorentzian ordered branch is locked, spatial correlations become
+causal, and both tunnelling and entanglement become exponentially
+suppressed.
+This structural kinship --- both as consequences of Euclidean
+connectivity --- is a distinctive feature of ECT that has no direct
+counterpart in the standard formalism, where tunnelling and
+entanglement are treated as unrelated phenomena.
+
 \section{Topological Sectors, Defect Configurations, and the Dark Sector}
 \label{sec:qs_topo_dark}
 \label{sec:qs_defects}
@@ -32700,6 +32796,44 @@ This compression is not yet complete---the SM gauge group and the
 electroweak/Yukawa hierarchy are not yet derived---but the
 architectural ambition itself distinguishes ECT from approaches that
 accept the standard input list.
+
+% ------------------------------------------------------------------
+\subsection{Comparison with alternative quantum interpretations}
+\label{sec:comparison_interpretations}
+
+\paragraph{Cramer's transactional interpretation (TI).}
+Cramer~(1986)~\cite{Cramer1986} models every quantum interaction as
+an exchange of ``offer'' (retarded) and ``confirmation'' (advanced)
+waves between emitter and absorber.
+ECT shares with TI the key structural element that the relevant
+propagator admits bidirectional dependence; in TI this is the
+advanced-retarded pair of solutions to the wave equation, while in ECT
+it is the single elliptic propagator of the Euclidean coherent branch.
+However, the two frameworks differ at a deeper level:
+TI is an interpretation layered on top of the standard quantum
+formalism, whereas ECT \emph{derives} bidirectional dependence from
+the Euclidean geometry of the condensate (the elliptic propagator is
+not postulated but follows from $K^{AB}=\delta^{AB}$).
+Moreover, TI requires two copies of the wave (offer and confirmation),
+while ECT uses a single Euclidean propagator with two-sided boundary
+sensitivity.
+
+\paragraph{Page--Wootters mechanism.}
+Page \& Wootters~(1983)~\cite{PageWootters1983} proposed that time
+emerges from entanglement between a ``clock'' subsystem and the rest
+of the universe within a globally stationary (Wheeler--DeWitt)
+state.
+ECT likewise begins from a structure with no external time (P3:
+fully relational), and both approaches deny fundamental time at the
+deepest level.
+The key difference is the \emph{mechanism} of emergence: in
+Page--Wootters, time arises from entanglement-based correlations; in
+ECT, time emerges from the $O(4)\to O(3)$ spontaneous symmetry
+breaking that selects a preferred direction $n_A$ in the Euclidean
+manifold.
+This is a genuine structural distinction: ECT time is a
+condensate-level phenomenon, not a subsystem correlation.
+
 
 {
 \small
