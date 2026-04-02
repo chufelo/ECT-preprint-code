@@ -27720,6 +27720,428 @@ bare Euclidean path integral;
 Gaussian--Markov closure.
 
 % ============================================================
+% ==============================================================
+\section{Principle of Euclidean Stationarity}
+\label{sec:pes}
+% ==============================================================
+
+\textit{Status: Level~B for the core physical content (persistent
+configurations minimise Euclidean non-stationarity and therefore
+minimise environmentally induced decoherence).
+Programme-level conjecture for the universal scope (all discreteness,
+all stability, all quantisation from one selection mechanism).
+Connection: the coherent-phase dynamics~(\S\ref{sec:qs_hbar}), the
+saddle-dominance and extremal-action
+backbone~(\S\ref{sec:qs_extremal_action}), the influence-functional and
+decoherence programme~(\S\ref{sec:qs_decoherence}), and the
+quantum--classical boundary~(\S\ref{sec:quantum_classical_boundary}).}
+
+\medskip
+The preceding chapters have established three structural ingredients:
+(i)~the coherent branch admits loop sectors with a minimal action
+scale~$S_0$~(\S\ref{sec:qs_hbar});
+(ii)~the saddle-point / extremal-action backbone selects dominant
+contributions to the Euclidean functional
+integral~(\S\ref{sec:qs_extremal_action});
+(iii)~the influence-functional reduction provides a quantitative
+decoherence criterion~$\Gamma_{\rm loop}$ that separates the quantum
+and classical regimes~(\S\ref{sec:qs_decoherence}).
+The present section identifies a single organising principle that
+unifies these three ingredients and gives them a common physical
+explanation.
+
+% ------------------------------------------------------------------
+\subsection{Statement of the principle}
+\label{sec:pes_statement}
+
+\paragraph{Short formulation.}
+\begin{quote}
+\textbf{Principle of Euclidean Stationarity (PES).}
+\emph{In ECT, the physically persistent and observable sector is
+selected by those condensate-compatible configurations that
+simultaneously belong to an admissible phase-topological class,
+are stationary or quasi-stationary extremals of the Euclidean action,
+and minimise the environmentally induced decoherence functional.
+Configurations that fail any of these conditions decohere and are
+effectively absorbed into the Lorentzian classical branch.}
+\end{quote}
+
+\paragraph{Why this is not a new postulate.}
+PES is not introduced as an independent axiom.
+It is a structural consequence of three elements already present in
+the theory:
+(i)~the Euclidean-first ontology~(P1), which produces a
+$e^{-S_E/S_0}$-weighted functional integral;
+(ii)~the compact phase topology of the condensate~(BR1), which
+restricts admissible configurations to integer-winding classes;
+(iii)~the influence-functional reduction~(\S\ref{sec:qs_decoherence}),
+which exponentially suppresses configurations that strongly couple to
+the environment.
+PES names the combined selection effect of these three ingredients
+and draws out its consequences.
+
+% ------------------------------------------------------------------
+\subsection{Formal realisation}
+\label{sec:pes_formal}
+
+\paragraph{Effective selection functional.}
+A minimal mathematical realisation of PES is provided by the
+effective selection functional
+\begin{equation}
+  \label{eq:J_PES}
+  \mathcal{J}_{\rm PES}[\Psi]
+  =
+  \frac{S_E[\Psi]}{S_0}
+  +
+  \Gamma_{\rm env}[\Psi],
+\end{equation}
+subject to the phase-topological constraint
+$\oint\nabla\theta\cdot d\boldsymbol{\ell}=2\pi n$
+($n\in\mathbb{Z}$) and unit normalisation $\|\Psi\|^2=1$.
+Here $S_E[\Psi]$ is the Euclidean action of the configuration,
+$S_0$ is the pre-quantum action scale~(\S\ref{sec:qs_hbar}), and
+$\Gamma_{\rm env}[\Psi]$ is the effective decoherence cost of the
+configuration induced by environmental coupling.
+Observed persistent configurations satisfy
+$\delta\mathcal{J}_{\rm PES}=0$,
+$\delta^2\mathcal{J}_{\rm PES}\geq0$.
+
+\paragraph{Proxy model for $\Gamma_{\rm env}$.}
+A natural proxy measure of Euclidean non-stationarity is provided by
+the functional
+\begin{equation}
+  \label{eq:Gamma_env_proxy}
+  \Gamma_{\rm env}[\Psi]
+  =
+  \frac{\tau}{S_0}
+  \int d^3x\,
+  \kappa(\mathbf{x})\,
+  |\partial_w\Psi(\mathbf{x},w)|^2,
+\end{equation}
+where $\kappa(\mathbf{x})\geq0$ is an effective environmental locking
+kernel encoding the local density of medium degrees of freedom.
+This form is consistent with the $\Gamma_{\rm loop}$-apparatus already
+developed in~\S\ref{sec:qs_decoherence}: configurations with
+$\partial_w\Psi=0$ minimise the environmental penalty, while large
+$w$-variations incur rapid decoherence.
+The proxy~\eqref{eq:Gamma_env_proxy} should be read as the simplest
+functional form compatible with the structural requirements, not as a
+first-principles derivation from the full ECT action.
+A rigorous derivation of $\Gamma_{\rm env}$ from the bare Euclidean
+path integral remains an open target~(OP-PES-1).
+
+\paragraph{Distinction: stationarity, disturbance, action.}
+PES involves three related but logically distinct concepts:
+(i)~\emph{stationarity} ($\partial_w\Psi=0$): the configuration does
+not vary along the fourth spatial direction;
+(ii)~\emph{minimal Euclidean disturbance}: the configuration
+minimises $\Gamma_{\rm env}$;
+(iii)~\emph{extremal action}: the configuration satisfies
+$\delta S_E=0$.
+In the persistent sector all three conditions are satisfied
+simultaneously.
+Outside this sector they need not coincide: a configuration may be
+stationary but not action-extremal (wrong boundary class), or
+action-extremal but strongly non-stationary (large $\partial_w\Psi$).
+PES selects the intersection:
+\begin{equation}
+  \label{eq:persistent_sector}
+  \text{observable persistent sector}
+  =
+  \text{extremal sector}
+  \;\cap\;
+  \text{decoherence-resistant sector}
+  \;\cap\;
+  \text{phase-compact sector}.
+\end{equation}
+
+% ------------------------------------------------------------------
+\subsection{Immediate consequences}
+\label{sec:pes_consequences}
+
+\subsubsection*{Origin of discrete spectra}
+
+Discrete energy levels in bound systems are not a separate axiom
+in ECT but a consequence of the triple PES selection.
+In a spatially bounded region (atom, quantum well), the simultaneous
+requirements of phase compactness
+($\oint\nabla\theta\cdot d\boldsymbol\ell=2\pi n$),
+stationarity ($\partial_w\Psi=0$), and normalisability admit only a
+discrete set of solutions.
+Each solution is a ``quiet mode'' of the condensate: a configuration
+compatible with the medium topology that does not disturb the
+environment.
+
+PES explains the \emph{origin} of discreteness---why only a discrete
+set of configurations is physically persistent---but does not by
+itself replace the spectral calculation of a specific system.
+The full spectrum of a given Hamiltonian still requires solving the
+corresponding eigenvalue problem; what PES adds is the physical
+reason why eigenvalue problems are the right mathematical structure
+in the first place.
+
+\subsubsection*{The extremal-action principle as a survival theorem}
+
+In standard physics the principle $\delta S=0$ is a mathematical
+axiom without a physical explanation: \emph{why} does nature select
+extremal-action paths?
+PES provides a candidate answer.
+
+Configurations with non-extremal action satisfy
+$\delta S_E\neq0$ and therefore have larger Euclidean
+disturbance~\eqref{eq:Gamma_env_proxy}: their $|\partial_w\Psi|^2$
+is generically larger than that of the nearby extremal.
+They decohere faster and are effectively absorbed into the classical
+Lorentzian branch.
+Near-extremal configurations survive longest.
+
+In this reading, the variational principle is not an axiom but a
+\emph{survival selection}: extremal configurations persist because
+they are the least disturbing to the medium.
+This should be read as a physical underpinning of the extremal-action
+principle, not yet as a completed formal theorem.
+Elevating it to a rigorous proposition requires an explicit bound
+relating $|\delta S_E|$ to $\Gamma_{\rm env}$~(OP-PES-2).
+
+\subsubsection*{Stationary states as environmentally invisible configurations}
+
+Stationary quantum states ($\partial_w\Psi=0$) do not generate
+perturbations of the surrounding condensate along the fourth spatial
+direction.
+They are, in the language of PES, ``invisible'' to the environment
+and therefore occupy the most decoherence-resistant sector.
+Exact vanishing of the effective decoherence functional requires
+additional assumptions about isolation and environmental noise; in
+practice, stationary states \emph{minimise} rather than exactly
+eliminate the decoherence rate.
+
+Transitions between stationary states ($\partial_w\Psi\neq0$)
+generate condensate perturbations---photons, phonons---which
+constitute acts of coupling to the environment and increase
+$\Gamma_{\rm loop}$.
+
+\subsubsection*{Connection to $S_0=\hbar$}
+
+PES deepens the physical significance of the pre-quantum action
+scale~$S_0$~(\S\ref{sec:qs_hbar}).
+The minimal self-consistent loop with winding number $n=1$ has action
+$S_{\rm loop,min}=2\pi S_0$.
+PES explains why this is a fundamental threshold:
+configurations with $S<2\pi S_0$ cannot close a full phase circuit
+($\Delta\theta<2\pi$), are therefore not phase-compact, and do not
+belong to the persistent sector.
+$S_0$ is thus the \emph{minimal persistent action scale} of the
+condensate---the threshold below which no self-consistent stationary
+configuration exists.
+This strengthens the physical motivation for the identification
+$S_0=\hbar$ but does not by itself raise the level of that
+identification beyond its current Level~B status.
+
+\subsubsection*{Gravitational sector: quantised by the same mechanism}
+
+If PES is universal across all condensate excitations, then the
+graviton sector---identified in~\S\ref{sec:mp_tensor} as the
+transverse-traceless part of the induced effective-metric
+perturbation---inherits the same action quantum~$S_0$.
+This reframes the quantum-gravity programme: rather than quantising
+an independently given classical metric, ECT treats the gravitational
+sector as one more family of condensate excitations, subject to the
+same PES selection.
+
+Two testable structural claims follow:
+\begin{enumerate}[label=(\roman*)]
+  \item \textbf{Cross-sector action universality.}
+    One and the same $S_0$ governs matter, radiation, and gravitational
+    excitations.
+    Any experimental evidence for $\hbar_{\rm grav}\neq\hbar_{\rm EM}$
+    would falsify ECT.
+  \item \textbf{No separate external quantisation step.}
+    Gravitational quantisation is reinterpreted as condensate-excitation
+    quantisation under the same PES selection.
+\end{enumerate}
+PES therefore suggests that the gravitational sector is quantised for
+the same structural reason as all other condensate excitations,
+thereby reframing---rather than automatically closing---the
+quantum-gravity programme.
+Full UV completion, non-linear quantum-gravity amplitudes, and
+black-hole microstate counting from first principles remain
+open~(D13, OP-PES-3).
+
+% ------------------------------------------------------------------
+\subsection{Stability, lifetimes, and the hierarchy of decay rates}
+\label{sec:pes_lifetimes}
+
+\textit{Status: programme-level.  The qualitative hierarchy is
+structurally natural; quantitative decay widths require explicit
+matrix elements from the condensate action~(OP-PES-4).}
+
+\paragraph{Stability from stationarity.}
+PES provides a physical interpretation of particle stability:
+configurations with $\partial_w\Psi=0$ are stationary, minimally
+disturb the condensate, and persist indefinitely (up to residual
+environmental noise).
+Stable particles---proton, electron, photon, lightest
+neutrino---correspond to such configurations.
+Their stability is protected by topological quantum numbers (baryon
+number, lepton number, gauge charge) that prevent continuous
+deformation to a lower-energy stationary configuration.
+
+\paragraph{Instability from non-stationarity.}
+Unstable particles correspond to configurations with
+$\partial_w\Psi\neq0$: they continuously disturb the condensate and
+are therefore coupled to the environment.
+The programme-level scaling law for the decay rate is:
+\begin{equation}
+  \label{eq:pes_lifetime}
+  \tau_{\rm life}^{-1}
+  \sim
+  \gamma_0\,\mathcal{N}_{\rm ns}[\Psi],
+  \qquad
+  \mathcal{N}_{\rm ns}[\Psi]
+  \equiv
+  \frac{1}{S_0}\int d^3x\,
+  \kappa(\mathbf{x})\,|\partial_w\Psi|^2,
+\end{equation}
+where $\gamma_0$ is an overall rate scale and
+$\mathcal{N}_{\rm ns}$ is the non-stationarity measure.
+This is a programme-level organising law, not yet a
+Standard-Model-precision calculation; deriving specific decay widths
+requires computing $\mathcal{N}_{\rm ns}$ for each particle from the
+condensate action.
+
+\paragraph{Qualitative hierarchy.}
+The PES picture is qualitatively consistent with the observed
+hierarchy of lifetimes: configurations with stronger
+non-stationarity (heavier resonances, larger coupling to the
+condensate) decay faster.
+
+\begin{longtable}{@{}p{2.5cm}p{2.5cm}p{5.5cm}p{2.5cm}@{}}
+\caption{Qualitative PES reading of particle lifetimes.}
+\label{tab:pes_lifetimes}\\
+\toprule
+Particle & $\tau_{\rm life}$ & PES interpretation & Status \\
+\midrule
+\endfirsthead
+\toprule
+Particle & $\tau$ & PES interpretation & Status \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Proton & $>10^{34}$\,yr & Stationary; baryon number = topological charge & Consistent \\
+Electron & Stable & Lightest charged lepton; stationary & Consistent \\
+Neutron (free) & 879\,s & Nearly stationary; weak-sector $\partial_w$ small & Qualitative \\
+Muon & $2.2\,\mu$s & Lepton-sector non-stationarity & Qualitative \\
+Charged pion & 26\,ns & Larger non-stationarity & Qualitative \\
+$W$ boson & $3\times10^{-25}$\,s & Massive, strongly non-stationary & Qualitative \\
+\end{longtable}
+
+\paragraph{Rydberg scaling prediction~(programme-level).}
+For highly excited atomic states with principal quantum number~$n$,
+the non-stationarity measure is expected to scale as
+$\mathcal{N}_{\rm ns}\propto n^\alpha$ with $\alpha>0$.
+A crude hydrogenic estimate suggests $\alpha\sim2$ as a first
+benchmark.
+This gives a testable prediction: Rydberg atoms should decohere
+faster than ground-state atoms, with the rate scaling as a power of
+the principal quantum number.
+Quantitative tests are accessible in cavity-QED experiments
+(Haroche, Raimond).
+
+% ------------------------------------------------------------------
+\subsection{Unified quantisation table}
+\label{sec:pes_quant_table}
+
+PES identifies a common physical mechanism behind all known
+quantisation rules: the compact phase topology of the condensate
+combined with the stationarity selection.
+Table~\ref{tab:pes_quantisation} collects these under a unified
+heading.
+
+\begin{longtable}{@{}p{2.8cm}p{2.0cm}p{5.0cm}p{2.8cm}@{}}
+\caption{Unified quantisation through PES.  All entries share the same
+physical origin: compact condensate phase + PES selection.}
+\label{tab:pes_quantisation}\\
+\toprule
+Quantity & Quantum & ECT mechanism & Status \\
+\midrule
+\endfirsthead
+\toprule
+Quantity & Quantum & ECT mechanism & Status \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Action & $S_0=\hbar$ & Minimal self-consistent loop & Derived (B) \\
+Elementary action & $h=2\pi\hbar$ & Full phase circuit $\Delta\theta=2\pi$ & Structural (A) \\
+Energy (bound) & $E_n=n\hbar\omega$ & Stationarity + finite domain & Derived (B) \\
+Angular momentum & $L_z=m\hbar$ & Compactness of $\phi\in[0,2\pi)$ & Structural (A) \\
+Spin & $S=n\hbar/2$ & SU(2) double cover of O(3) & Structural (A) \\
+Electric charge & $q=ne$ & U(1) gauge compactness & Supported (B) \\
+Magnetic flux & $\Phi_0=h/(2e)$ & Superconducting condensate analogy & Supported (B) \\
+Gravitational action & $S_0=\hbar$ & Cross-sector universality & Prediction (B) \\
+Area (quantum gravity) & $A_{\rm min}\sim\ell_{\rm Pl}^2$ & Minimal stationary graviton configuration & Prediction \\
+\end{longtable}
+
+% ------------------------------------------------------------------
+\subsection{What PES changes in the quantum programme}
+\label{sec:pes_changes}
+
+Table~\ref{tab:pes_before_after} summarises how PES modifies the
+interpretive and structural landscape of the quantum sector.
+
+\begin{longtable}{@{}p{3.5cm}p{4.5cm}p{4.5cm}@{}}
+\caption{Impact of PES on the quantum programme.}
+\label{tab:pes_before_after}\\
+\toprule
+Topic & Before PES & After PES \\
+\midrule
+\endfirsthead
+\toprule
+Topic (cont.) & Before PES & After PES \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Quantisation & Structural (from phase topology) & Physically grounded: persistent = phase-compact + stationary + decoherence-resistant \\
+Wavefunction collapse & Decoherence-only reading & Euclidean-to-Lorentzian transition via $\Gamma_{\rm loop}$ \\
+Extremal action & Formal mathematical principle & Survival selection: extremal configurations persist because they least disturb the medium \\
+Particle stability & Empirical / classification by quantum numbers & Stationarity-based: stable = $\partial_w\Psi=0$ \\
+Graviton quantisation & Open structural route & Structurally unified: same $S_0$, same PES \\
+$S_0=\hbar$ & Level~B matching & Deepened: $S_0$ = minimal persistent action scale \\
+\end{longtable}
+
+% ------------------------------------------------------------------
+\subsection{What PES does not yet prove}
+\label{sec:pes_open}
+
+The following central outputs remain beyond the current reach of PES:
+\begin{enumerate}[label=(\roman*)]
+  \item A first-principles derivation of $\Gamma_{\rm env}$ from the
+    bare Euclidean path integral~(OP-PES-1).
+  \item A rigorous bound relating $|\delta S_E|$ to
+    $\Gamma_{\rm env}$, which would elevate the survival-theorem
+    reading of the extremal-action principle to Level~A~(OP-PES-2).
+  \item Full UV completion and non-linear quantum-gravity amplitudes
+    from the condensate action~(OP-PES-3, D13).
+  \item Quantitative decay widths from
+    $\mathcal{N}_{\rm ns}$~(OP-PES-4).
+  \item A completed derivation of all spectra from PES alone
+    (PES explains the origin of discreteness but does not replace
+    spectral engineering).
+  \item A full spin-statistics theorem.
+  \item A completed Born rule as an unconditional theorem.
+  \item The quantitative mapping $\Gamma_{\rm loop}\leftrightarrow
+    \alpha-\beta$, which would connect PES to the geometric
+    Euclidean--Lorentzian boundary~(OP-PES-5).
+\end{enumerate}
+
+PES is therefore a \emph{centrally derived organising principle with a
+partially proven technical core and a large predictive programme
+around it}, not a completed final theorem of the entire quantum
+sector.
+
+% ==============================================================
 
 % ==============================================================
 \section{Quantum--Classical Boundary, Probability, Born Rule, and Measurement Status}
