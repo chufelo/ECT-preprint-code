@@ -29035,6 +29035,29 @@ environmental coupling strength.
 This is listed as OP-PES-5.
 
 % ------------------------------------------------------------------
+
+\paragraph{Numerical scales of the Euclidean--Lorentzian boundary.}
+The $O(4)\to O(3)$ transition sets the fundamental scales:
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Scale & ECT value & Physical meaning \\
+\midrule
+Condensate VEV $\phi_0$ & $\bar{M}_{\rm Pl}=2.44\times10^{18}$\,GeV
+  & Symmetry-breaking amplitude \\
+Condensation length $\xi_{\rm cond}$ & $\sim\ell_{\rm Pl}=1.6\times10^{-35}$\,m
+  & Shortest coherent scale \\
+Critical temperature $T_c$ & $\sim\phi_0\sqrt{6}\sim6\times10^{18}$\,GeV
+  & $O(4)\to O(3)$ transition \\
+Transition energy & $\sim M_{\rm Pl}$ & $\sim10^{19}$\,GeV \\
+\bottomrule
+\end{tabular}
+\end{center}
+The $T_c$ estimate follows from standard thermal-field-theory
+arguments (Dolan--Jackiw 1974) applied to the ECT condensate potential.
+It places the $E\to L$ transition firmly at the Planck epoch.
+
 \subsection{Gravitational decoherence from the condensate: summary}
 \label{sec:pes_diosi_summary}
 
@@ -29364,6 +29387,39 @@ Complete state tomography of a single system requires cumulative
 decoherence of order unity and therefore destroys the coherence of
 that individual copy; tomography is possible only for an ensemble of
 identically prepared systems.
+
+\paragraph{Can one observe without collapse?}
+The information--decoherence trade-off answers this question
+quantitatively within the qubit dephasing model.
+For a qubit, the maximum extractable mutual information is $2$~bits.
+The trade-off gives:
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}cc@{\qquad}c@{}}
+\toprule
+$I(S{:}E)$ [bits] & $\Gamma_{\rm loop}$ needed & Coherence remaining \\
+\midrule
+$0.1$ & $0.01$ & $99\%$ \\
+$0.5$ & $0.09$ & $92\%$ \\
+$1.0$ & $0.25$ & $78\%$ \\
+$1.5$ & $0.56$ & $57\%$ \\
+$1.9$ & $1.34$ & $26\%$ \\
+$\to 2$ & $\to\infty$ & $\to 0$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+The structural conclusion is that any measurement extracting
+$\gtrsim1$~bit of information reduces coherence by at least
+$\sim\!22\%$; a nearly complete observation ($I\gtrsim1.9$~bits)
+requires $\Gamma_{\rm loop}\gtrsim1.3$ and destroys most of the
+Euclidean coherence.
+Full-information observation without collapse is therefore
+\emph{structurally impossible} within the ECT info-decoherence
+framework, not merely practically difficult.
+This is a Level~B result of the qubit dephasing model; a
+protocol-independent generalisation remains open.
+
+
 
 \subsubsection*{Can observation preserve quantum coherence?}
 
@@ -30228,6 +30284,39 @@ This structural kinship --- both as consequences of Euclidean
 connectivity --- is a distinctive feature of ECT that has no direct
 counterpart in the standard formalism, where tunnelling and
 entanglement are treated as unrelated phenomena.
+
+\paragraph{Bell-inequality violation and the decoherence crossover.}
+In the Euclidean coherent regime ($\Gamma_{\rm loop}\ll1$), the
+non-factorisable correlations through the common condensate reproduce
+the standard quantum-mechanical Bell-inequality violations,
+including the Tsirelson bound $\mathrm{CHSH}\le 2\sqrt{2}\approx2.828$.
+Decoherence degrades these correlations: for a Werner-type state with
+visibility $V=e^{-\Gamma_{\rm loop}}$, the effective CHSH value is
+\begin{equation}
+  \mathrm{CHSH}_{\rm eff}
+  = 2\sqrt{2}\,e^{-\Gamma_{\rm loop}}.
+\end{equation}
+The crossover from quantum to classical correlations occurs at
+$\mathrm{CHSH}_{\rm eff}=2$, i.e.\ at
+\begin{equation}
+  \label{eq:Gamma_Bell_crossover}
+  \Gamma_{\rm loop}^{\rm Bell}
+  = \ln\sqrt{2}
+  \approx 0.35.
+\end{equation}
+Below this threshold, Bell-inequality violations are observable;
+above it, the correlations are indistinguishable from classical
+local-hidden-variable statistics.
+This provides a concrete numerical criterion linking the
+ECT decoherence parameter to the quantum-to-classical transition
+for correlations.
+ECT does not predict a different Tsirelson bound from standard
+quantum theory; its contribution is structural:
+it identifies Bell violations with the Euclidean non-local
+connectivity of the coherent branch and decoherence-driven
+suppression with the Lorentzian locking mechanism.
+
+
 
 \section{Topological Sectors, Defect Configurations, and the Dark Sector}
 \label{sec:qs_topo_dark}
