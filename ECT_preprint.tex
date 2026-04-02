@@ -4408,7 +4408,7 @@ Self-consistency: $S_0^{\rm EFT}\approx\hbar$ constrains the EFT
 Single-field universality: one $\Sigma$ for all sectors
   & A/B & Consequence of P3; reduction is Level~B \\
 Analytic continuation preserves $S_0^{\rm EFT}$
-  & A/B & Same continuation as for metric \\
+  & A/B & Same formal amplitude bridge as in the coherent-sector path-integral reading; distinct from the real parametrisation used for the metric \\
 Parameter-counting closure: $S_0^{\rm EFT}=\hbar$ is
   third matching condition
   & B & Shows necessity, not derivation \\
@@ -4722,7 +4722,8 @@ contribution $V_{\rm bg}$}.
 The ordered condensate therefore distinguishes the preferred
 $w$-direction from the transverse directions already at the level
 of the Noether tensor.
-After Lorentzian continuation this anisotropy is reinterpreted as the
+In the ordered-branch Lorentzian reading, implemented through the real
+parametrisation $t=w/c_*$, this anisotropy is reinterpreted as the
 difference between temporal and spatial components in the effective
 energy--momentum description~(Level~A computation; Lorentzian
 interpretation Level~B).
@@ -22612,9 +22613,10 @@ Section~\ref{sec:hbar_status}.
 \paragraph{Bridge to the rest of Part~III.}
 Once a distinguished action scale exists, the natural next question is
 how coherent sectors combine into an effective wave description and
-whether the formal continuation $w_E\to \pm ic_*t$ carries the phase-sector
-action into a standard kinetic term with $S_0$ as the effective
-action unit.
+how the ordered-branch real parametrisation $t=w/c_*$ yields the
+standard kinetic term, while the separate formal continuation
+$w_E\to \pm ic_*t$ provides the amplitude/path-integral bridge for
+the same coherent sector.
 That question leads first to the wave-dynamical development of the
 Quantum Sector in Section~\ref{sec:qs_wave_kinematics}.
 
@@ -22833,17 +22835,14 @@ K^{AB}\partial_A\theta\,\partial_B\theta
 \beta\,\delta^{ij}\partial_i\theta\,\partial_j\theta
 -(\alpha-\beta)(\partial_w\theta)^2.
 \]
-At this stage the continuation is used only as a formal Euclidean--Lorentzian bridge
-for the coherent phase action. The ordered-branch hyperbolicity and the real time variable
-have already been fixed independently by $\alpha>\beta$ and $t=w/c_*$.
+At this stage the ordered-branch hyperbolicity and the real time variable
+have already been fixed independently by $\alpha>\beta$ and the real
+parametrisation $t=w/c_*$.
 
-Under the formal amplitude continuation~\eqref{eq:qs_wick}
-(used here only for the coherent-sector amplitude correspondence,
-not for the derivation of ordered-branch hyperbolicity), one has
-$\partial_w \to (i/c_*)\partial_t$,
-so the Euclidean phase-sector action is carried into a Lorentzian
-kinetic form with the expected separation between temporal and spatial
-derivatives.
+Under the real ordered-branch parametrisation one has
+$\partial_w = c_*^{-1}\partial_t$,
+so the reduced phase-sector action takes the Lorentzian kinetic form
+with the expected separation between temporal and spatial derivatives.
 At the level of the reduced isotropic closure this gives
 \begin{equation}
   \label{eq:qs_phase_action_L}
@@ -22857,6 +22856,10 @@ At the level of the reduced isotropic closure this gives
   \right]
   + \cdots
 \end{equation}
+The formal Euclidean--Lorentzian continuation~\eqref{eq:qs_wick} is kept
+separate and is used only at the level of coherent amplitudes and correlator
+language, not in the derivation of the ordered-branch kinetic form itself.
+
 This is again a Level~B effective closure.
 Its importance is that it provides the correct Lorentzian kinetic
 structure for coherent phase evolution, with the spatial gradient and
@@ -22919,8 +22922,10 @@ primary structural statement of ECT at this stage.
 \paragraph{Level~A content.}
 The Level~A statement established here is the existence of a
 Hamilton--Jacobi / continuity decomposition of the coherent wave
-ansatz once the Lorentzian phase-sector action and the formal
-Euclidean--Lorentzian continuation are in place.
+ansatz once the Lorentzian phase-sector action has been established
+in the real ordered-branch parametrisation.
+The separate formal Euclidean--Lorentzian continuation remains relevant
+only for the amplitude/path-integral reading of the same coherent sector.
 What is exact at this stage is the structural split into real and
 imaginary parts.
 What is \emph{not} yet Level~A is the fully explicit form of the
@@ -25548,8 +25553,9 @@ the final part of a longer ordered-branch chain:
   (Section~\ref{sec:qs_statistics});
   \item the residual rotational sector admits the spinorial double cover
   $\mathrm{Spin}(3)\to SO(3)$;
-  \item in the real Lorentzian parametrisation, the broken-phase algebra yields the
-  Lorentz algebra $\mathfrak{so}(1,3)$;
+  \item at the algebraic level, the ordered branch together with the
+  standard generator continuation yields the Lorentz algebra
+  $\mathfrak{so}(1,3)$;
   \item the spinor representation of that algebra forces the Clifford
   structure~\eqref{eq:qs_clifford};
   \item within the minimal local linear first-order Lorentz-covariant
@@ -25583,7 +25589,9 @@ A direct calculation then confirms that $J_{ij}$ and $K_i$ satisfy
 the Lorentz algebra $\mathfrak{so}(1,3)$,
 with $[K_i,K_j]=-i\,J_{ij}$.
 Thus the Lorentz algebra emerges from the broken-phase structure
-and the standard generator continuation.~(Level~A: follows from P4+BR1+\eqref{eq:qs_wick}.)
+and the standard generator continuation.~(Level~A: follows from
+the ordered-branch symmetry breaking together with the algebraic
+generator continuation.)
 
 \subsubsection*{Representation-theoretic route to Clifford structure~(Level~A)}
 
@@ -25725,7 +25733,7 @@ $S_0=\hbar$~(OP-Q2, OP-Q11).
 \statussummary
 \textit{Established~(Level~A):}
 (i)~the ordered branch together with the standard generator continuation
-yields the Lorentz algebra
+at the representation-theoretic level yields the Lorentz algebra
 $\mathfrak{so}(1,3)$ at the representation-theoretic level;
 (ii)~the spinorial representation of that algebra forces the Clifford
 structure~\eqref{eq:qs_clifford};
@@ -26705,8 +26713,8 @@ coherent-vacuum correlator that underlies the whole vacuum-response
 programme.
 The Euclidean two-point function~\eqref{eq:green_euclidean} is
 manifestly $O(4)$-invariant.
-After analytic continuation, that same correlator is accessed through
-different Lorentzian decompositions: inertial observers use the
+Under the formal Euclidean--Lorentzian continuation of the correlator,
+that same object is accessed through different Lorentzian decompositions: inertial observers use the
 standard Minkowski mode split, whereas uniformly accelerated observers
 probe the same vacuum along Rindler trajectories.
 The thermal character of the response is therefore not a new dynamical
@@ -33452,8 +33460,8 @@ structural outputs:
 \begin{enumerate}[label=(\roman*)]
 \item the Schr\"odinger sector as a nonrelativistic limit of the ordered
 branch;
-\item the Klein--Gordon sector from the Lorentzian continuation of the
-ordered condensate equation;
+\item the Klein--Gordon sector from the ordered-branch equation in the
+real parametrisation $t=w/c_*$;
 \item uncertainty and action quantisation through the role of $S_0$ and
 phase compactness;
 \item decoherence and the quantum--classical boundary through the
