@@ -32976,6 +32976,348 @@ sector, whereas the ECT question is earlier: why a time-bearing ordered
 branch emerges at all.
 
 
+
+% ============================================================
+\subsection{ECT as a foundational framework for quantum mechanics}
+\label{sec:ect_vs_qm}
+% ============================================================
+
+% ------------------------------------------------------------------
+\subsubsection*{From descriptive quantum mechanics to a deeper
+underlying level}
+
+Standard quantum mechanics was historically formulated as a successful
+predictive framework: superposition, the Born rule, state reduction,
+and canonical commutation relations are introduced as operational
+postulates that correctly describe observed phenomena.
+In that sense, standard quantum mechanics answers primarily the
+question of \emph{how to calculate}.
+By contrast, if ECT is correct, then quantum mechanics is not
+fundamental in its usual postulatory form, but rather an effective
+sector emerging from a deeper condensate-based structure.
+ECT therefore aims to answer not only \emph{how} quantum phenomena
+are computed, but also \emph{why} the quantum rules take the form
+they do.
+
+In this reading, the entire quantum sector should in principle follow
+from ECT.
+The parts that have not yet been fully derived --- such as the
+detailed origin of three generations, the exact value of
+$\alpha_{\rm fs}$, or the full Yukawa hierarchy --- should be
+regarded as open internal tasks of the theory rather than as evidence
+that quantum mechanics is independent of it.
+
+This distinction may be illustrated by several examples.
+In standard quantum mechanics, the Born rule is accepted as a
+primitive statement: one computes probabilities as $|\psi|^2$.
+In ECT, the same structure is expected to arise because the amplitude
+$\psi$ is associated with the Euclidean propagator of the coherent
+branch, and $|\psi|^2$ appears after combining forward and reverse
+contributions within one common condensate environment.
+Likewise, in standard quantum mechanics $\hbar$ is a fundamental
+constant, whereas in ECT it is interpreted as the action scale $S_0$
+fixed by the condensate.
+Superposition is postulated in standard quantum mechanics, whereas in
+ECT it corresponds to the Euclidean regime
+$\Gamma_{\rm loop}\ll 1$, in which no Lorentzian causal ordering has
+yet been enforced.
+State reduction is postulated in the Copenhagen reading, whereas in
+ECT it is interpreted as an Euclidean-to-Lorentzian transition driven
+by environmental locking, $\Gamma_{\rm loop}\gg 1$.
+
+% ------------------------------------------------------------------
+\subsubsection*{Hierarchy of equations: Schr\"odinger as a limiting
+case}
+
+ECT does not merely reproduce the standard equations of quantum
+mechanics.
+Rather, it provides a hierarchy of more fundamental equations of which
+the usual quantum equations are limiting cases.
+
+At the most fundamental level one has the Euclidean field equation
+\begin{equation}
+  \label{eq:ect_euclidean_fundamental}
+  \delta^{AB}\partial_A\partial_B \Phi + V'(\Phi)=0,
+\end{equation}
+which is a four-dimensional elliptic equation for the condensate
+field $\Phi$.
+At this level there is no distinguished time coordinate, no $\hbar$,
+and no built-in probabilistic interpretation.
+All four coordinates are spatial from the Euclidean point of view,
+and solutions are determined by boundary data on the full
+four-dimensional domain.
+
+After spontaneous symmetry breaking $O(4)\to O(3)$, the ordered
+branch is governed by an effective kinetic tensor $K^{AB}$, so that
+the relevant fluctuation equation takes the form
+\begin{equation}
+  \label{eq:ect_ordered_branch_wave}
+  K^{AB}\partial_A\partial_B\chi + m_\sigma^2\chi = 0.
+\end{equation}
+In the homogeneous ordered background one obtains an anisotropic
+effective operator in which the $w$-direction is distinguished.
+The Lorentzian regime is controlled by the combination
+$\alpha-\beta$, with
+\begin{equation}
+  c_*^2 = \frac{\beta}{\alpha-\beta},
+\end{equation}
+so that $\alpha>\beta$ corresponds to the Lorentzian ordered branch,
+$\alpha<\beta$ to the Euclidean side, and $\alpha=\beta$ to the
+singular boundary between them.
+This level is already more general than standard quantum mechanics
+because it contains both Euclidean and Lorentzian sectors within the
+same dynamical framework.
+
+After Wick rotation, $w\to -ic_* t$, the fluctuation equation becomes
+a relativistic Klein--Gordon-type
+equation~\eqref{eq:KG}.
+Finally, in the nonrelativistic limit one recovers the Schr\"odinger
+equation.
+
+Thus the usual Schr\"odinger equation is not taken as fundamental.
+It is the narrowest endpoint of a four-level hierarchy:
+(i)~the Euclidean condensate equation,
+(ii)~the ordered-branch equation after symmetry breaking,
+(iii)~the relativistic Lorentzian wave equation,
+(iv)~the nonrelativistic Schr\"odinger limit.
+This hierarchy is one of the central structural results of ECT.
+
+% ------------------------------------------------------------------
+\subsubsection*{What the ordered-branch ECT equation contains beyond
+Schr\"odinger}
+
+The ordered-branch equation is more general than the Schr\"odinger
+equation in several essential ways.
+
+First, it covers both regimes.
+For $\alpha<\beta$, the effective equation remains elliptic and
+describes the Euclidean coherent sector, where there is no causal
+ordering and solutions depend on boundary data from the full domain.
+For $\alpha>\beta$, the equation becomes Lorentzian and supports
+causal propagation.
+Standard Schr\"odinger dynamics describes only the already-selected
+Lorentzian side, and only in its nonrelativistic limit.
+
+Second, the ordered-branch equation is naturally tied to gravity.
+The same condensate structure that yields the coherent wave equation
+also yields the long-wavelength geometric sector.
+In that sense, the quantity that controls coherent propagation and the
+quantity that controls emergent geometry are not foreign to each
+other: both arise from the same ordered condensate background.
+
+Third, the ordered-branch equation accommodates phenomena that
+standard Schr\"odinger theory does not explain at the same structural
+level.
+These include two-sided dependence on boundary data, the
+Euclidean-to-Lorentzian transition, gravitational decoherence from
+condensate distinguishability, and the structural relation between
+tunnelling and entanglement through Euclidean connectivity.
+
+% ------------------------------------------------------------------
+\subsubsection*{Solutions of descriptive ECT equations versus
+statistical quantum equations}
+
+This is one of the deepest points of the comparison.
+
+In standard quantum mechanics, the equation
+$i\hbar\partial_t\psi = H\psi$ is solved as a \emph{Cauchy problem}:
+one specifies $\psi(x,0)$ and evolves forward in time to obtain
+$\psi(x,t)$.
+The solution $\psi$ is a complex amplitude whose squared modulus gives
+probability densities.
+Predictions are extracted as expectation values
+$\langle O\rangle=\langle\psi|O|\psi\rangle$, that is, ensemble
+averages.
+In this formalism, $\psi$ is not itself a directly physical field in
+ordinary spacetime, but a mathematical object used to compute
+probabilities.
+
+In ECT, the fundamental
+equation~\eqref{eq:ect_euclidean_fundamental} is solved as a
+\emph{boundary-value problem}: one specifies boundary data on the
+full four-dimensional domain, and the solution $\Phi(X)$ is the
+configuration of a real physical condensate field throughout Euclidean
+four-space.
+There is no preferred direction of evolution; the solution is
+determined globally, much as the solution of Laplace's equation inside
+a region is fixed by boundary values on its surface.
+
+Several key differences follow.
+
+\emph{Origin of probabilities.}\enspace
+In standard quantum mechanics, $P=|\psi|^2$ is postulated.
+In ECT, probabilities arise only after incomplete description.
+If one does not track all $\sim\!10^{23}$ modes of the condensate
+and keeps only a subsystem, then the environmental modes are
+integrated out, an influence functional is produced, and an effective
+probabilistic description emerges.
+At the fundamental level, however, $\Phi(X)$ is fixed by the full
+boundary data.
+
+\emph{What fixes a measurement outcome.}\enspace
+In standard quantum mechanics, collapse is an extra postulate.
+In ECT, the detector is part of the global boundary-value problem.
+The solution $\Phi(X)$ already contains the detector and its coupling
+to the measured subsystem.
+Effective collapse is then the subsystem-level manifestation of the
+Euclidean-to-Lorentzian transition under strong environmental locking.
+
+\emph{``Future affects past''.}\enspace
+In standard quantum mechanics, this does not arise at the fundamental
+level because the theory is formulated as a forward-time evolution
+problem.
+In ECT, it is natural: for an elliptic equation, changing the
+boundary condition on one side changes the solution throughout the
+region, including what the Lorentzian reading would call the ``past''
+side.
+This is precisely why delayed-choice phenomena admit a simple
+structural reading in ECT.
+
+\emph{Example: the hydrogen atom.}\enspace
+In standard quantum mechanics one solves $H\psi = E\psi$ and
+obtains $E_n=-13.6/n^2$\,eV together with the densities
+$|\psi_{nlm}|^2$.
+In ECT one solves the four-dimensional Euclidean field equation for
+$\Phi$ around the proton, with the self-consistency condition in the
+$w$-direction expressed through the single-valuedness constraint
+$\oint dw\cdot p_w = 2\pi S_0\, n$.
+The same discrete spectrum is recovered, but with a different
+interpretation: the discrete $E_n$ values arise as self-consistency
+conditions for admissible condensate configurations, not as
+eigenvalues of a fundamentally probabilistic wave equation.
+
+\emph{Example: the double-slit experiment.}\enspace
+In standard quantum mechanics, $\psi=\psi_1+\psi_2$ and
+$P=|\psi_1+\psi_2|^2$.
+In ECT, the full 4D field configuration $\Phi(X)$ contains both
+routes as parts of one connected solution of the elliptic field
+equation.
+The interference pattern is therefore a property of the global
+boundary-value solution, rather than a primitive superposition of
+alternative probabilistic branches.
+
+% ------------------------------------------------------------------
+\subsubsection*{Determinism at the fundamental level}
+
+The level-0 Euclidean equation is deterministic.
+There are no probabilities, no wavefunction collapse, and no
+intrinsic stochasticity.
+One specifies the full boundary conditions and obtains one global
+field configuration.
+
+Statistical quantum mechanics then appears not because nature is
+fundamentally probabilistic, but because realistic observers never
+have access to the full condensate state.
+When environmental modes are integrated out, the subsystem acquires
+an influence functional, reduced density matrices, and effective
+probabilities.
+In this sense ECT stands to standard quantum mechanics as microscopic
+Newtonian mechanics stands to statistical mechanics: deterministic
+underneath, probabilistic after coarse-graining.
+
+This point is central for the interpretation of ECT.
+It implies that one may in principle formulate descriptive,
+non-statistical equations for the quantum world at the fundamental
+level, while accepting that the effective subsystem description
+remains probabilistic in practice.
+
+% ------------------------------------------------------------------
+\subsubsection*{Unified origin of the coherent and geometric branches}
+
+One of the strongest claims of ECT is that gravity and quantum
+coherence are not separate ingredients forced together after the fact,
+but two sectors of one ordered condensate theory.
+
+Both branches emerge from the same ordered
+action~\eqref{eq:ordered_branch_euclidean_eft}.
+From this same action one obtains two complementary sectors:
+the \emph{geometric branch}, corresponding to long-wavelength
+variations of $u$ and $n_A$, leading to the generalised Einstein
+sector with $G_{\rm eff}(x)$, $\Lambda_{\rm eff}(x)$, and the
+additional tensor structure built from $n_\mu n_\nu$;
+and the \emph{coherent branch}, corresponding to shorter-wavelength
+fluctuations $\chi$ on the ordered background, leading through the
+relativistic wave equation to the Schr\"odinger limit.
+
+This is not an ad hoc stitching of two unrelated theories.
+The split follows directly from the mode decomposition of the same
+condensate around the same ordered background.
+In this sense, ECT does not ``quantise gravity'' in the usual way;
+it embeds both gravity and quantum mechanics into one common
+substrate.
+
+The generalised Einstein sector already contains quantities of the
+form $G_{\rm eff}(X)$ and $\Lambda_{\rm eff}(X)$, and tensor
+structures involving the ordered direction $n_\mu$.
+Conversely, coherent fluctuations affect the effective amplitude
+sector and thereby back-react on the geometric side.
+Thus the quantum contribution to the Einstein sector is not inserted
+externally as a semiclassical expectation value, but is structurally
+contained in the dynamics of one and the same condensate action.
+
+This unification of the coherent and geometric branches is one of the
+most important structural results of ECT.
+
+% ------------------------------------------------------------------
+\subsubsection*{What ECT already reproduces, and what remains open}
+
+If ECT is correct, then quantum mechanics should follow from it in
+full.
+At present, however, the status is uneven, and it is important to
+separate what has already been structurally obtained from what remains
+open.
+
+ECT already provides, at varying levels of rigour:
+the Schr\"odinger sector as a nonrelativistic limit of the ordered
+branch;
+the Klein--Gordon sector from the Lorentzian continuation of the
+ordered condensate equation;
+uncertainty and action quantisation through the role of $S_0$ and
+phase compactness;
+decoherence and the quantum--classical boundary through the
+influence-functional formalism;
+the Euclidean-to-Lorentzian interpretation of measurement;
+the physical origin of spin discretisation via the residual symmetry
+structure after $O(4)\to O(3)$;
+the Principle of Euclidean Stationarity, which selects the persistent
+sector of admissible configurations;
+gravitational decoherence without inserting the Di\'osi--Penrose
+formula as an independent postulate;
+a unified Euclidean basis for both tunnelling and entanglement;
+and cross-sector universality of the action scale $S_0$.
+
+On the other hand, ECT does not yet fully derive:
+the full Born rule from first principles beyond the present closures;
+a complete theorem of measurement beyond the current
+$\Gamma_{\rm loop}$-based framework;
+Bell correlators directly from the condensate theory beyond toy
+visibility proxies;
+the detailed origin of three generations;
+the exact value of $\alpha_{\rm fs}$;
+or the full Yukawa hierarchy.
+These should be presented as open derivational targets, not as
+failures of the framework.
+
+% ------------------------------------------------------------------
+\subsubsection*{Summary of the comparison}
+
+Standard quantum mechanics is an effective statistical theory of
+subsystems, formulated in terms of a probabilistic amplitude $\psi$
+and a forward-time Cauchy problem.
+ECT proposes a deeper level in which the fundamental object is the
+physical condensate field $\Phi(X)$, governed by a global
+four-dimensional boundary-value problem.
+Quantum mechanics is then recovered as the effective coherent branch
+seen after projection, Wick continuation, and coarse-graining.
+
+In this sense, ECT does not merely reproduce the formalism of quantum
+mechanics.
+It seeks to explain why the formalism has the structure it does, why
+probabilities appear, why superposition exists, why collapse is seen,
+why $\hbar$ is universal, and how the coherent quantum branch and the
+geometric gravitational branch arise from one common substrate.
+
+
 {
 \small
 \renewcommand{\arraystretch}{1.2}
