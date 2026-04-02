@@ -27754,7 +27754,7 @@ which exceeds the transit time by $\sim\!17$ orders of magnitude.
 The separation of regimes is thus unambiguous: environmental
 decoherence dominates by a factor of $\gtrsim10^{20}$, where the
 condensate itself acts as the gravitational environment and
-decoherence persists even in perfect vacuum.
+decoherence should persist even in near-perfect vacuum.
 That mass frontier is the target of levitated-nanoparticle
 experiments~\cite{Aspelmeyer2014,RomeroIsart2012}.
 
@@ -28262,8 +28262,8 @@ phenomena, but not particle lifetimes or precision spectroscopy.}
 \textit{Status: Level~B (Gaussian--Markov closure applied to known
 experimental parameters).
 The ECT result reproduces the standard Caldeira--Leggett /
-Hornberger analysis; the numbers are identical to the standard theory
-in this regime.}
+Hornberger analysis; in this regime the
+numerical estimates coincide with those of the standard theory.}
 
 The decoherence timescale for matter-wave interferometry is
 \begin{equation}
@@ -28284,11 +28284,11 @@ cross-section (Section~\ref{sec:tau_ECT_systems}).
 (regime-level comparison).}
 \label{tab:env_decoherence_comparison}\\
 \toprule
-Experiment & Observable & Standard QM & ECT regime estimate & Match \\
+Experiment & Observable & Standard QM & ECT regime estimate & Assessment \\
 \midrule
 \endfirsthead
 \toprule
-Experiment & Observable & Standard QM & ECT regime estimate & Match \\
+Experiment & Observable & Standard QM & ECT regime estimate & Assessment \\
 \midrule
 \endhead
 \bottomrule
@@ -28297,22 +28297,22 @@ C$_{60}$ ($p\!=\!10^{-6}$\,Pa)
   & Interference visible
   & $\tau_{\rm dec}\gg\tau_{\rm fl}$
   & Same
-  & \checkmark \\
+  & Consistent \\
 C$_{60}$ ($p\!=\!10^{-4}$\,Pa)
   & Fringe degradation
   & $\tau_{\rm dec}\sim\tau_{\rm fl}$
   & Same
-  & \checkmark \\
+  & Consistent \\
 C$_{60}$ ($p\!=\!10^{-2}$\,Pa)
   & No interference
   & $\tau_{\rm dec}\ll\tau_{\rm fl}$
   & Same
-  & \checkmark \\
+  & Consistent \\
 Fein 2019 (25\,000\,amu)
   & Interference visible
   & Environmental regime
   & Same
-  & \checkmark \\
+  & Consistent \\
 \end{longtable}
 
 In the environmental-decoherence regime, ECT reproduces the same
@@ -28328,11 +28328,13 @@ external formalism.
 \subsection{Gravitational decoherence: ECT-specific predictions}
 \label{sec:results_gravitational}
 
-\textit{Status: Level~B.  The gravitational decoherence timescale is
-derived from the condensate --- it is \emph{not} postulated as in the
+\textit{Status: Level~B.  Within the present condensate-based closure,
+the gravitational decoherence timescale is recovered from condensate
+distinguishability rather than postulated independently as in the
 original Di\'osi--Penrose proposals.
-The numerical predictions below are ECT-specific: standard quantum
-mechanics does not produce them without an additional postulate.}
+The numerical estimates below are therefore ECT-specific at the level
+of this closure: standard quantum mechanics does not produce them
+without an additional postulate.}
 
 The gravitational decoherence timescale for a solid sphere of
 radius~$R$ and density~$\rho$ in superposition of two positions
@@ -28344,9 +28346,10 @@ separated by~$d\sim R$ is
   \qquad
   E_G = \frac{6\,G_N m^2}{5\,R}\,f(d/R).
 \end{equation}
-The ECT-specific prediction is that this decoherence persists even in
-\emph{perfect vacuum}, because the condensate itself acts as the
-gravitational environment.
+The ECT-specific prediction is that this decoherence can persist even
+in near-perfect vacuum, provided ordinary environmental channels are
+suppressed below the condensate-gravitational rate, because the
+condensate itself acts as the gravitational environment.
 
 \paragraph{Experimental frontier.}
 The nanosphere regime ($R\sim1\,\mu$m, $m\sim8\times10^{-15}$\,kg,
@@ -28393,8 +28396,10 @@ $10^{-12}$\,Pa, 0.1\,K & $\sim2\times10^{-17}$ & $\sim140$\,nm & $\sim10$\,min \
 
 Below $m_{\rm cross}$, standard environmental decoherence dominates and
 ECT gives the same numbers as the standard theory.
-Above $m_{\rm cross}$, the condensate gravitational channel dominates
-and decoherence persists even in perfect vacuum.
+Above $m_{\rm cross}$, if ordinary environmental channels are reduced
+below the condensate-gravitational rate, the condensate gravitational
+channel is expected to dominate and decoherence should persist even in
+near-perfect vacuum.
 
 % ------------------------------------------------------------------
 \subsection{Photonic weak-locking bounds}
@@ -28415,11 +28420,14 @@ vacuum-propagation segments).
 The consistency requirement is simply that the experiment operates
 in the weak-locking regime: $\Gamma_{\rm loop}\ll1$ before
 irreversible detection (with $\Gamma_{\rm loop}\gg1$ at the
-detector).  All four photonic experiments discussed in
+detector).  The four photonic experiments discussed in
 Sections~\ref{sec:pes_measurement}--\ref{sec:pes_info_bound}
-are naturally interpreted as operating within this weak-locking regime
-prior to irreversible detection.
-A detector-specific calculation remains outside the present scope.
+are naturally read as belonging to this weak-locking regime prior to
+irreversible detection.
+For the switch platform this reading is supported by an explicit
+order-of-magnitude estimate; for Wheeler delayed-choice, quantum
+eraser, and delayed-choice entanglement swapping it remains a
+consistency-based interpretive assignment.
 At present, an explicit order-of-magnitude estimate has been written
 only for the photonic switch platform.
 For Wheeler delayed-choice, quantum eraser, and delayed-choice
@@ -28486,10 +28494,10 @@ System & ECT & Obs. & Status \\
 C$_{60}$ ($10^{-6}$\,Pa) & $\tau_{\rm dec}\gg1$\,ms & Interference \checkmark & Regime consistency \\
 C$_{60}$ ($10^{-4}$\,Pa) & $\tau_{\rm dec}\sim1$\,ms & Degradation & Regime consistency \\
 Fein 25\,000\,amu & Environmental & Interference \checkmark & Regime consistency \\
-Procopio switch & $\Gamma\sim10^{-12}$ & ICO visible & Interpretive \\
-Nanosphere 1\,$\mu$m & $\tau_{\rm grav}\sim38$\,ms & Not yet tested & ECT-specific \\
-Nanosphere 100\,nm & $\tau_{\rm grav}\sim1$\,hr & Not yet tested & ECT-specific \\
-Crossover (UHV) & $m_{\rm cross}\sim10^{-16}$\,kg & Not yet tested & ECT-specific \\
+Procopio switch & $\Gamma\sim10^{-12}$ & ICO visible & Interpretive consistency \\
+Nanosphere 1\,$\mu$m & $\tau_{\rm grav}\sim38$\,ms & Not yet tested & ECT-specific prediction \\
+Nanosphere 100\,nm & $\tau_{\rm grav}\sim1$\,hr & Not yet tested & ECT-specific prediction \\
+Crossover (UHV) & $m_{\rm cross}\sim10^{-16}$\,kg & Not yet tested & ECT-specific prediction \\
 Cavity cat & Open target & Brune 1996 & Programme-level target \\
 \end{longtable}
 
@@ -33313,13 +33321,13 @@ Procopio switch & $\Gamma\!\sim\!10^{-12}$ & ICO visible & Interpretive consiste
 (Part~III)}} \\
 \midrule
 Nanosph.\ 1\,$\mu$m & $\tau_{\rm grav}\!\sim\!38$\,ms
-  & \textit{Not tested} & Prediction & III \\
+  & \textit{Not tested} & ECT-specific prediction & III \\
 Nanosph.\ 100\,nm & $\sim\!1$\,hr & \textit{Not tested}
-  & Prediction & III \\
+  & ECT-specific prediction & III \\
 Crossover (UHV) & $m\!\sim\!10^{-16}$\,kg
-  & \textit{Not tested} & Prediction & III \\
+  & \textit{Not tested} & ECT-specific prediction & III \\
 Casimir $\times3/2$ & $3/2\!\times\!$QED & \textit{Not tested}
-  & Prediction & II/III \\
+  & ECT-specific prediction & II/III \\
 \end{longtable}
 
 The table mixes three categories:
@@ -38050,6 +38058,10 @@ near-perfect vacuum.
     (an open quantitative target).
   \item Weak-locking consistency bounds for photonic experiments
     (Wheeler delayed-choice, quantum eraser, Procopio switch).
+    In the photonic delayed-choice / eraser / entanglement-swapping
+    sector, the present role of the apparatus is mainly to define
+    weak-locking consistency conditions rather than to provide
+    detector-specific precision numerics.
 \end{enumerate}
 
 \textit{What this apparatus cannot yet compute:}
