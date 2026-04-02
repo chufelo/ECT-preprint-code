@@ -315,7 +315,7 @@ $\hbar$ & Planck constant; identified $S_0=\hbar$ in Quantum Sector, Level~B & $
 $\mathcal{M}^4$ & Four-dimensional Euclidean manifold (P1) & --- \\
 $X^A=(x,y,z,w)$ & Euclidean coordinates & m \\
 $\delta_{AB}$ & Euclidean metric & --- \\
-$t$ & Lorentzian time; $w=-ic_*t$ & s \\[4pt]
+$t$ & Lorentzian time; $t=w/c_*$ (real parametrisation) & s \\[4pt]
 \multicolumn{3}{@{}l}{\textit{Decoherence (Section~\ref{sec:influence_functional})}} \\[2pt]
 $\Gamma[q]$ & Decoherence functional & --- \\
 $N_{\rm eff}$ & Effective environmental degrees of freedom & --- \\
@@ -603,8 +603,7 @@ kinetic tensor
 \[
 K^{AB}=\beta\,\delta^{AB}-\alpha\,n^A n^B,
 \]
-whose Lorentzian admissibility requires $\alpha>\beta$. After analytic
-continuation one obtains the Klein--Gordon equation, and in the
+whose Lorentzian admissibility requires $\alpha>\beta$. After the real parametrisation $t=w/c_*$ one obtains the Klein--Gordon equation, and in the
 non-relativistic limit the Schr\"odinger equation. Thus Schr\"odinger
 dynamics is not primary but the narrowest low-energy descendant of a
 more general ECT equation that also accommodates the Euclidean coherent
@@ -2098,10 +2097,14 @@ homogeneous limit of the ordered-branch kinematics of ECT.
 \subsection{Effective Lorentzian metric}
 \label{sec:effective_metric}
 
-At this stage Lorentzian signature has already appeared in the
-dispersion relation. The analytic continuation
-$w\to -ic_*\,t$ serves only to parametrise the hyperbolic sector
-in conventional real-time language.
+At this stage Lorentzian signature is already fixed by the
+broken-phase tensor $K^{AB}$ with $\alpha>\beta$.
+The physical time variable is therefore introduced by the real
+parametrisation $t=w/c_*$, where $c_*^2=\beta/(\alpha-\beta)$.
+No analytic continuation is needed for the derivation of the
+hyperbolic field equation itself.
+Analytic continuation is used elsewhere only as a formal bridge
+between Euclidean weighting and Lorentzian amplitude language.
 The Klein--Gordon equation:
 \begin{equation}
   \label{eq:KG}
@@ -2212,9 +2215,10 @@ The effective metric for perturbations around the ordered branch,
 \end{equation}
 acquires Lorentzian signature when $\alpha>\beta>0$~(Level~A;
 Section~\ref{sec:metric_classification}).
-The analytic continuation $w = -ic_* t$, with
-$c_* = 1/\sqrt{\alpha/\beta-1}$, promotes the geometric direction~$w$
-to an effective temporal coordinate.
+Once the ordered branch satisfies $\alpha>\beta$, the distinguished
+coordinate $w$ becomes time-like in the effective kinetic tensor.
+The corresponding physical time is introduced by the real
+parametrisation $t=w/c_*$, with
 It is only at this point---not before---that the word ``time'' acquires
 physical meaning.
 
@@ -3264,7 +3268,7 @@ Equation of motion~\eqref{eq:eom_broken}
 Lorentzian dispersion~\eqref{eq:dispersion} for $\alpha>\beta$
   & Level~A (EFT) & Theorem~\ref{thm:tensor_uniqueness} + $\alpha>\beta$ \\
 Klein--Gordon equation~\eqref{eq:KG}
-  & Level~A (EFT) & Interpretational step $w\to -ic_*t$ \\
+  & Level~A (EFT) & Real parametrisation $t=w/c_*$ \\
 Free Hamiltonian $H\geq 0$~\eqref{eq:H_free}
   & Level~A (quadratic) & Canonical normalisation; no tachyon/ghost \\
 Identification of $m_{\rm eff}^2$ with $V''(\phi_0)$
@@ -4170,23 +4174,12 @@ passes through an effective integration-out of the radial mode,
 which is itself a Level~B closure step.
 
 \paragraph{Analytic continuation preserves action normalization~(Level~A/B).}
-The Wick rotation $w\to -ic_*t$ is the same analytic continuation
-already used to derive the emergent Lorentzian metric and causal
-structure~(Section~\ref{sec:lorentz_order_field}).
-Applied to the coherent-sector weight it gives
-\begin{equation}
-  \exp\!\bigl(-S_E/S_0^{\rm EFT}\bigr)
-  \;\longrightarrow\;
-  \exp\!\bigl(iS_L/S_0^{\rm EFT}\bigr).
-  \label{eq:wick_preserves_S0}
-\end{equation}
-If the action normalization changed under continuation, this would
-constitute an additional, independently unjustified postulate.
-The most natural and internally consistent continuation preserves
-the same $S_0^{\rm EFT}$ on both sides.
-This is Level~A/B because the continuation itself is well-defined
-for the ordered branch, but the coherent-sector reduction through
-which $S_0^{\rm EFT}$ enters is Level~B.
+The formal analytic continuation $w_E\to \pm ic_*t$ relates
+Euclidean coherent weights to Lorentzian phase evolution.
+It should not be confused with the real parametrisation $t=w/c_*$,
+which is the primary route to the hyperbolic field equations.
+At the present stage the underlying ordered-branch hyperbolicity
+has already been fixed independently by $\alpha>\beta$
 
 \paragraph{Parameter-counting closure~(Level~B structural).}
 In its simplest bare-potential realisation, ECT has three
@@ -8457,7 +8450,7 @@ g^{\rm eff}_{AB} = \delta_{AB}
 + \frac{\alpha-\beta}{(\beta+1)-\alpha}\,n_A n_B
 \approx \eta_{AB} + h_{AB},
 \end{equation}
-where, after analytic continuation $w\to-ic_*t$ and with
+where, after introducing the real ordered-branch time coordinate $t=w/c_*$ and with
 $\alpha=2\beta$, $\beta=1$, the background metric is
 $\eta_{AB}=\mathrm{diag}(-1,1,1,1)$.
 The induced symmetric effective-metric perturbation is
@@ -8505,7 +8498,7 @@ reconstruction, not yet a complete first-principles derivation from the
 bare condensate action.
 
 \textbf{Step 3: massless spin-2 interpretation.}
-After analytic continuation $w\to-ic_*t$, the linearised
+In the real Lorentzian parametrisation $t=w/c_*$, the linearised
 effective-metric sector admits a massless spin-2 interpretation at the
 quadratic level.
 Masslessness is protected, at the linearised effective level,
@@ -22040,7 +22033,7 @@ First, the theory already establishes a nontrivial coherent-branch
 infrastructure:
 a compact-phase sector, a distinguished action scale~$S_0$
 (\S\ref{par:action_scale_universality}), a wave-kinematical route
-after Wick rotation, a continuity structure, and a stationary-phase
+after the real parametrisation $t=w/c_*$, a continuity structure, and a stationary-phase
 classical limit~(\S\ref{par:extremal_backbone}).
 These are either strict Level~A consequences or structurally supported
 Level~A/B consequences of the ordered-condensate architecture, and are
@@ -22317,7 +22310,7 @@ where $K^{AB}(X)$ is the broken-phase Euclidean kinetic tensor of the
 ordered branch, inherited from the anisotropic EFT discussed in
 ECT basics, and $S_{\rm higher}$ denotes higher-gradient and
 interaction corrections.
-Its Lorentzian image arises only after the Wick rotation discussed in
+Its Lorentzian image arises after introducing the real ordered-branch time $t=w/c_*$ as discussed in
 Section~\ref{sec:qs_wave}.
 
 Here $K_\theta^{\rm eff}$ denotes the \emph{effective phase stiffness}
@@ -22348,7 +22341,7 @@ configurations once the heavy radial structure has been integrated out
 and the phase is retained as a genuine dynamical degree of freedom.
 At this stage the action is still written on the Euclidean broken-phase
 background; its Lorentzian wave-kinematical form emerges only after the
-Wick rotation discussed in Section~\ref{sec:qs_wave}.
+real parametrisation discussed in Section~\ref{sec:qs_wave}.
 The phase action is therefore not an extra postulate but the natural
 effective continuation of the broken ordered phase into its
 coherent branch.
@@ -22429,7 +22422,7 @@ action, the next question is how these sectors combine into an
 effective wave description.
 This step requires: (a) showing how the phase-sector path integral
 leads to a Schr\"odinger-like amplitude language; (b) verifying that
-the Wick rotation $w\to -ic_*t$ (established for the geometric branch;
+the real parametrisation $t=w/c_*$ (established for the geometric branch;
 Section~\ref{sec:lorentz_order_field}) carries the phase action into a
 standard kinetic term; (c) establishing when $S_0$ becomes
 identifiable with $\hbar$.
@@ -22616,7 +22609,7 @@ Section~\ref{sec:hbar_status}.
 \paragraph{Bridge to the rest of Part~III.}
 Once a distinguished action scale exists, the natural next question is
 how coherent sectors combine into an effective wave description and
-whether the Wick rotation $w\to -ic_*t$ carries the phase-sector
+whether the formal continuation $w_E\to \pm ic_*t$ carries the phase-sector
 action into a standard kinetic term with $S_0$ as the effective
 action unit.
 That question leads first to the wave-dynamical development of the
@@ -22713,7 +22706,7 @@ structure, and under what additional assumptions this structure can be
 recombined into a Schr\"odinger-type evolution law.
 
 The logic remains staged.
-Section~\ref{sec:qs_wave} develops the Wick-rotated coherent wave
+Section~\ref{sec:qs_wave} develops the coherent wave
 kinematics.
 Section~\ref{sec:qs_extremal_action} then clarifies the status of
 extremal action and saddle dominance, and
@@ -22777,7 +22770,7 @@ action scale of the coherent branch.
 This is a Level~B statement because the full normalisation requires the
 $S_0=\hbar$ identification~\eqref{eq:qs_S0_identification}.
 
-\subsubsection*{Why Wick rotation is necessary and not arbitrary}
+\subsubsection*{Analytic continuation versus ordered-branch real-time parametrisation}
 
 The ordered condensate is constructed from a Euclidean arena
 $\mathcal{M}^4$, but the broken phase develops a distinguished Lorentzian direction through
@@ -22788,11 +22781,13 @@ the broken phase admits the continuation
   \label{eq:qs_wick}
   w \;\to\; -\,i\,c_*\,t,
 \end{equation}
-which transforms the broken-phase kinetic operator into its Lorentzian
-hyperbolic form and reconstructs causal propagation.
-(The same continuation was used to derive the Lorentzian metric
-in Section~\ref{sec:lorentz_order_field} and to develop
-cosmological dynamics in Section~\ref{sec:mp_cosmo}.)
+which provides the formal bridge between Euclidean coherent
+weights and Lorentzian phase evolution and reconstructs causal propagation.
+(The real parametrisation $t=w/c_*$ was used to derive the Lorentzian
+metric in Section~\ref{sec:lorentz_order_field} and to develop
+cosmological dynamics in Section~\ref{sec:mp_cosmo};
+the formal continuation is used here only for the
+Euclidean--Lorentzian amplitude correspondence.)
 
 In the Quantum Sector the role of Eq.~\eqref{eq:qs_wick} is
 complementary: it provides the analytic bridge between the Euclidean
@@ -22803,10 +22798,10 @@ This is not an arbitrary formal trick.
 It is the same continuation that already connects the Euclidean
 ordering arena to observable Lorentzian physics in the geometric branch.
 
-\paragraph{Two complementary uses of the same Wick rotation.}
+\paragraph{Two distinct operations in the ordered branch.}
 The emergence of time in ECT therefore has two parallel aspects:
 \begin{enumerate}[label=(\roman*)]
-  \item in Macroscopic Physics, $w\to -ic_*t$ yields Lorentzian
+  \item in Macroscopic Physics, the real parametrisation $t=w/c_*$ yields Lorentzian
     geometry, causal cones, and metric-sector propagation;
   \item in the Quantum Sector, the same continuation yields coherent
     temporal phase evolution and therefore wave dynamics.
@@ -24770,7 +24765,7 @@ In a Lorentzian-first theory, interference and tunnelling are usually
 introduced only after the quantum formalism has already been assumed.
 In ECT the logical direction is reversed:
 the Euclidean arena naturally gives boundary-value problems with
-two-sided dependence, and after Wick rotation this provides a
+two-sided dependence, and in the Lorentzian parametrisation this provides a
 structural route to the standard superposition/interference reading.
 At the present stage this should be read as a strong architectural
 explanation, not yet as a complete first-principles derivation of the
@@ -24824,7 +24819,7 @@ as a consequence of the Euclidean-first coherent architecture.
 
 \paragraph{Falsifier for the path-dependence programme.}
 The path-dependence programme would fail if the Euclidean two-sided
-propagation structure, after Wick rotation to the ordered Lorentzian
+propagation structure, in the ordered Lorentzian
 branch, proved structurally incompatible with the observed
 interference, tunnelling, or superposition phenomena.
 It would also be weakened if the elliptic Euclidean boundary-value
@@ -25540,7 +25535,7 @@ the final part of a longer ordered-branch chain:
   (Section~\ref{sec:qs_statistics});
   \item the residual rotational sector admits the spinorial double cover
   $\mathrm{Spin}(3)\to SO(3)$;
-  \item after Wick rotation, the broken-phase algebra yields the
+  \item in the real Lorentzian parametrisation, the broken-phase algebra yields the
   Lorentz algebra $\mathfrak{so}(1,3)$;
   \item the spinor representation of that algebra forces the Clifford
   structure~\eqref{eq:qs_clifford};
@@ -33211,9 +33206,11 @@ This level is already more general than standard quantum mechanics
 because it contains both Euclidean and Lorentzian sectors within the
 same dynamical framework.
 
-After Wick rotation, $w\to -ic_* t$, the fluctuation equation becomes
-a relativistic Klein--Gordon-type
-equation~\eqref{eq:KG}.
+In the ordered Lorentzian branch, after the real parametrisation
+$t=w/c_*$, the fluctuation equation takes the relativistic
+Klein--Gordon form~\eqref{eq:KG}.
+A formal continuation $w_E\to \pm i c_* t$ may still be used when
+relating Euclidean coherent amplitudes to Lorentzian phase evolution.
 Finally, in the nonrelativistic limit one recovers the Schr\"odinger
 equation.
 
