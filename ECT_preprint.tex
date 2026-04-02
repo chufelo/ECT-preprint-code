@@ -27895,9 +27895,10 @@ They decohere faster and are effectively absorbed into the classical
 Lorentzian branch.
 Near-extremal configurations survive longest.
 
-In this reading, the variational principle is not an axiom but a
-\emph{survival selection}: extremal configurations persist because
-they are the least disturbing to the medium.
+PES therefore suggests a physical underpinning of the
+extremal-action principle: near-extremal configurations are the most
+decoherence-resistant and therefore dominate the persistent observable
+sector.
 This should be read as a physical underpinning of the extremal-action
 principle, not yet as a completed formal theorem.
 Elevating it to a rigorous proposition requires an explicit bound
@@ -27915,10 +27916,11 @@ additional assumptions about isolation and environmental noise; in
 practice, stationary states \emph{minimise} rather than exactly
 eliminate the decoherence rate.
 
-Transitions between stationary states ($\partial_w\Psi\neq0$)
-generate condensate perturbations---photons, phonons---which
-constitute acts of coupling to the environment and increase
-$\Gamma_{\rm loop}$.
+Transitions between stationary states correspond to departures
+from the stationary Euclidean sector ($\partial_w\Psi\neq0$) and
+therefore involve nonzero coupling to condensate and/or environmental
+degrees of freedom, generating perturbations (photons, phonons) that
+increase $\Gamma_{\rm loop}$.
 
 \subsubsection*{Connection to $S_0=\hbar$}
 
@@ -27980,11 +27982,12 @@ PES provides a physical interpretation of particle stability:
 configurations with $\partial_w\Psi=0$ are stationary, minimally
 disturb the condensate, and persist indefinitely (up to residual
 environmental noise).
-Stable particles---proton, electron, photon, lightest
-neutrino---correspond to such configurations.
-Their stability is protected by topological quantum numbers (baryon
-number, lepton number, gauge charge) that prevent continuous
-deformation to a lower-energy stationary configuration.
+PES suggests a unifying reading of stability: long-lived or
+exactly stable excitations should correspond to configurations that
+lie very close to the stationary, minimally disturbing sector.
+The proton, electron, and photon are natural benchmark cases for such
+a reading, but a first-principles derivation of their exact stability
+from PES remains outside the present scope.
 
 \paragraph{Instability from non-stationarity.}
 Unstable particles correspond to configurations with
@@ -28004,6 +28007,9 @@ The programme-level scaling law for the decay rate is:
 \end{equation}
 where $\gamma_0$ is an overall rate scale and
 $\mathcal{N}_{\rm ns}$ is the non-stationarity measure.
+Eq.~\eqref{eq:pes_lifetime} should be read as a PES scaling ansatz
+for the lifetime hierarchy, not as a first-principles decay-width
+formula.
 This is a programme-level organising law, not yet a
 Standard-Model-precision calculation; deriving specific decay widths
 requires computing $\mathcal{N}_{\rm ns}$ for each particle from the
@@ -28028,8 +28034,8 @@ Particle & $\tau$ & PES interpretation & Status \\
 \endhead
 \bottomrule
 \endfoot
-Proton & $>10^{34}$\,yr & Stationary; baryon number = topological charge & Consistent \\
-Electron & Stable & Lightest charged lepton; stationary & Consistent \\
+Proton & $>10^{34}$\,yr & Candidate stationary/topologically protected sector & Programme-level \\
+Electron & Stable & Candidate stationary sector (lightest charged lepton) & Programme-level \\
 Neutron (free) & 879\,s & Nearly stationary; weak-sector $\partial_w$ small & Qualitative \\
 Muon & $2.2\,\mu$s & Lepton-sector non-stationarity & Qualitative \\
 Charged pion & 26\,ns & Larger non-stationarity & Qualitative \\
@@ -28074,13 +28080,13 @@ Quantity & Quantum & ECT mechanism & Status \\
 \endfoot
 Action & $S_0=\hbar$ & Minimal self-consistent loop & Derived (B) \\
 Elementary action & $h=2\pi\hbar$ & Full phase circuit $\Delta\theta=2\pi$ & Structural (A) \\
-Energy (bound) & $E_n=n\hbar\omega$ & Stationarity + finite domain & Derived (B) \\
+Bound-state spectrum & Discrete $\{E_n\}$ & Phase compactness + stationarity + boundary conditions & Derived/structural (B) \\
 Angular momentum & $L_z=m\hbar$ & Compactness of $\phi\in[0,2\pi)$ & Structural (A) \\
-Spin & $S=n\hbar/2$ & SU(2) double cover of O(3) & Structural (A) \\
-Electric charge & $q=ne$ & U(1) gauge compactness & Supported (B) \\
-Magnetic flux & $\Phi_0=h/(2e)$ & Superconducting condensate analogy & Supported (B) \\
+Spin & $S=n\hbar/2$ & SU(2) double cover of O(3) & Supported/structural route (B) \\
+Electric charge & $q=ne$ & U(1) gauge compactness & Programme-level (B/C) \\
+Magnetic flux & $\Phi_0=h/(2e)$ & Superconducting condensate analogy & Supported analogy (B) \\
 Gravitational action & $S_0=\hbar$ & Cross-sector universality & Prediction (B) \\
-Area (quantum gravity) & $A_{\rm min}\sim\ell_{\rm Pl}^2$ & Minimal stationary graviton configuration & Prediction \\
+Area (quantum gravity) & $A_{\rm min}\sim\ell_{\rm Pl}^2$ & Minimal stationary graviton configuration & Programme-level prediction \\
 \end{longtable}
 
 % ------------------------------------------------------------------
@@ -28131,10 +28137,11 @@ postulated as a separate measurement axiom but follows from the same
 influence-functional mechanism that produces the arrow of
 time~(\S\ref{sec:qs_decoherence}).
 
-\subsubsection*{Quantum systems seek configurations of minimal
-environmental coupling}
+\subsubsection*{The persistent quantum sector as the sector of
+minimal environmental coupling}
 
-PES implies that stationary quantum states ($\partial_w\Psi=0$) are
+PES selects configurations of minimal effective environmental coupling.
+Stationary quantum states ($\partial_w\Psi=0$) are
 those that \emph{do not disturb} the surrounding condensate.
 They are effectively invisible to the environment.
 The discrete energy levels of a bound system are precisely these
@@ -28161,10 +28168,9 @@ In ECT, the correspondence is direct:
 \begin{equation}
   \label{eq:photon_euclidean}
   \text{proper time }=0
-  \quad\Longleftrightarrow\quad
+  \quad\text{is naturally consistent with}\quad
   \Gamma_{\rm loop}\approx0
-  \quad\Longleftrightarrow\quad
-  \text{Euclidean regime}.
+  \quad\text{(Euclidean regime)}.
 \end{equation}
 Upon reaching a macroscopic detector ($\Gamma_{\rm loop}\gg1$), the
 photon is absorbed at a definite point---the Euclidean-to-Lorentzian
@@ -28173,8 +28179,10 @@ transition occurs, and the ``collapse'' takes place.
 Emission and absorption are Lorentzian events (involving macroscopic
 sources and detectors with $\Gamma_{\rm loop}\gg1$); propagation
 between them is Euclidean.
-The photon does not ``travel through space in time''---it traverses
-the Euclidean substrate as a coherent condensate excitation.
+In the PES reading, free propagation of an isolated photon is
+described by a coherence-preserving Euclidean sector with negligible
+environmental locking, whereas emission and absorption are Lorentzian
+coupling events.
 
 % ------------------------------------------------------------------
 \subsection{Information--decoherence bound}
@@ -28225,7 +28233,7 @@ Using the binary entropy function $h_2$:
 At small decoherence ($\Gamma\ll1$):
 \begin{equation}
   \label{eq:info_small_gamma}
-  I(S{:}E)\approx \Gamma\,\ln\frac{2}{\Gamma}
+  I(S{:}E)\approx \Gamma\,\ln\frac{2e}{\Gamma}
   +O(\Gamma^2).
 \end{equation}
 Information extraction is proportional to decoherence: a small
@@ -28238,15 +28246,18 @@ Setting $I=\ln2$ (one bit) and solving:
 $\Gamma_{\rm min}\cdot\ln(2/\Gamma_{\rm min})\approx\ln2$,
 which gives $\Gamma_{\rm min}\sim1$.
 
-\begin{equation}
-  \label{eq:one_bit_bound}
-  \boxed{
-  \text{Extraction of 1~bit of information requires }
-  \Gamma_{\rm loop}\gtrsim 1.
-  }
-\end{equation}
-Complete projective measurement is therefore incompatible with
-preservation of Euclidean coherence.
+In the dephasing qubit model, the system--environment mutual
+information grows monotonically with the decoherence parameter
+$\Gamma$.
+This demonstrates an explicit information--decoherence trade-off:
+extracting more information about the system requires stronger
+environmental coupling and hence greater loss of coherence.
+However, mutual information is not identical to the accessible
+classical measurement record, and the dephasing qubit model does not
+by itself establish a universal one-bit threshold for arbitrary
+measurement protocols.
+Establishing such a bound model-independently remains an open
+target~(OP-PES-6).
 
 \subsubsection*{Weak measurements}
 
@@ -28266,18 +28277,16 @@ copies.
 
 \subsubsection*{Can observation preserve quantum coherence?}
 
-The bound~\eqref{eq:one_bit_bound} suggests that \emph{no}
-measurement protocol, however ingenious, can extract a full bit of
-information about a quantum system without inducing
-$\Gamma_{\rm loop}\gtrsim1$.
-Wavefunction collapse---in the PES reading, the
-Euclidean-to-Lorentzian transition---is therefore an unavoidable
-consequence of informative observation.
-
-This result is currently established for two-level systems with
-Gaussian dephasing~(Level~B).
-Extension to general systems and general coupling protocols remains
-an open target~(OP-PES-6).
+The qubit dephasing model shows explicitly that information
+extraction and decoherence are tied to the same coupling parameter.
+This strongly suggests that fully informative single-copy measurements
+cannot be achieved without driving the system toward the Lorentzian
+locked regime.
+However, a model-independent theorem establishing a universal lower
+bound on $\Gamma_{\rm loop}$ for any informative observation requires
+a separate derivation of the relation between accessible record
+information and the decoherence functional, and remains an open
+target~(OP-PES-6).
 
 % ------------------------------------------------------------------
 \subsection{Reverse-path suppression from PES}
@@ -28409,12 +28418,13 @@ ordered Lorentzian branch, effectively bringing the system closer to
 the $\alpha\to\beta$ boundary.
 In this picture:
 \begin{itemize}
-  \item an isolated quantum system ($\Gamma_{\rm loop}\ll1$) resides
-    near $\alpha\approx\beta$: all four spatial directions are nearly
-    equivalent, no rigid causal cone constrains the dynamics;
+  \item an isolated quantum system ($\Gamma_{\rm loop}\ll1$) can be
+    read as effectively closer to $\alpha\approx\beta$, where all four
+    spatial directions are nearly equivalent and no rigid causal cone
+    constrains the dynamics;
   \item a macroscopically observed system ($\Gamma_{\rm loop}\gg1$)
-    is locked deep into the $\alpha\gg\beta$ regime: the causal cone
-    is rigid, the fourth dimension is frozen, classical causality holds.
+    may be interpreted as locked deep into the $\alpha\gg\beta$ regime,
+    where the causal cone is rigid and classical causality holds.
 \end{itemize}
 This provides a natural geometric language for entanglement
 (correlations in a near-Euclidean common medium), tunnelling (detour
@@ -28481,8 +28491,8 @@ $\Gamma_{\rm grav}(\tau_{\rm dec})=1$ gives:
   \tau_{\rm DP}.
   }
 \end{equation}
-This is exactly the Di\'osi--Penrose
-formula~\cite{Diosi1987,Penrose1996}.
+This recovers the Di\'osi--Penrose
+timescale~\cite{Diosi1987,Penrose1996}.
 In ECT it is \emph{not} imported: the condensate itself plays the role
 of the gravitational environment, and the decoherence rate is
 determined by the distinguishability of the two condensate
@@ -28585,6 +28595,15 @@ The following central outputs remain beyond the current reach of PES:
     Euclidean--Lorentzian boundary~(OP-PES-5).
 \end{enumerate}
 
+\paragraph{What PES does and does not identify.}
+PES does not identify stationarity, minimal Euclidean disturbance, and
+extremal action as universally identical notions.
+Rather, it states that the persistent observable sector lies at their
+intersection.
+This distinction is essential: a configuration may satisfy one of
+these conditions without satisfying the others.
+
+\medskip
 PES is therefore a \emph{centrally derived organising principle with a
 partially proven technical core and a large predictive programme
 around it}, not a completed final theorem of the entire quantum
