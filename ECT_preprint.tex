@@ -33010,10 +33010,13 @@ that quantum mechanics is independent of it.
 This distinction may be illustrated by several examples.
 In standard quantum mechanics, the Born rule is accepted as a
 primitive statement: one computes probabilities as $|\psi|^2$.
-In ECT, the same structure is expected to arise because the amplitude
-$\psi$ is associated with the Euclidean propagator of the coherent
-branch, and $|\psi|^2$ appears after combining forward and reverse
-contributions within one common condensate environment.
+In ECT, a programme-level route to the same structure exists:
+the amplitude $\psi$ is associated with the Euclidean propagator of the
+coherent branch, and $|\psi|^2$ is expected to arise from the combination
+of forward and reverse contributions within one common condensate
+environment.
+At the present stage this should be read as a structural route rather
+than as a completed first-principles derivation of the full Born rule.
 Likewise, in standard quantum mechanics $\hbar$ is a fundamental
 constant, whereas in ECT it is interpreted as the action scale $S_0$
 fixed by the condensate.
@@ -33037,9 +33040,13 @@ the usual quantum equations are limiting cases.
 At the most fundamental level one has the Euclidean field equation
 \begin{equation}
   \label{eq:ect_euclidean_fundamental}
-  \delta^{AB}\partial_A\partial_B \Phi + V'(\Phi)=0,
+  \delta^{AB}\partial_A\partial_B \Phi - V'(\Phi)=0,
 \end{equation}
-which is a four-dimensional elliptic equation for the condensate
+Equation~\eqref{eq:ect_euclidean_fundamental} is simply the
+Euler--Lagrange equation of the bare Euclidean
+micro-action~\eqref{eq:ECT_action}; it is written here only to
+display the logical hierarchy, not as a new independent postulate.
+It is a four-dimensional elliptic equation for the condensate
 field $\Phi$.
 At this level there is no distinguished time coordinate, no $\hbar$,
 and no built-in probabilistic interpretation.
@@ -33054,14 +33061,24 @@ the relevant fluctuation equation takes the form
   \label{eq:ect_ordered_branch_wave}
   K^{AB}\partial_A\partial_B\chi + m_\sigma^2\chi = 0.
 \end{equation}
-In the homogeneous ordered background one obtains an anisotropic
-effective operator in which the $w$-direction is distinguished.
-The Lorentzian regime is controlled by the combination
-$\alpha-\beta$, with
+In the ordered branch the kinetic tensor is not arbitrary but is fixed,
+within the present EFT closure, by the unique form
 \begin{equation}
-  c_*^2 = \frac{\beta}{\alpha-\beta},
+  K^{AB}=\beta\,\delta^{AB}-\alpha\,n^A n^B,
 \end{equation}
-so that $\alpha>\beta$ corresponds to the Lorentzian ordered branch,
+as established earlier in the Foundations part
+(see in particular Eq.~\eqref{eq:ordered_branch_euclidean_eft} and the
+subsequent uniqueness discussion).
+For a homogeneous background with $n^A=\delta^A_w$, this gives
+\[
+K^{AB}=\mathrm{diag}(\beta,\beta,\beta,\beta-\alpha),
+\]
+so that the Lorentzian regime is controlled by the sign of
+$\beta-\alpha$, equivalently by
+\begin{equation}
+  c_*^2=\frac{\beta}{\alpha-\beta}.
+\end{equation}
+Thus $\alpha>\beta$ corresponds to the Lorentzian ordered branch,
 $\alpha<\beta$ to the Euclidean side, and $\alpha=\beta$ to the
 singular boundary between them.
 This level is already more general than standard quantum mechanics
@@ -33181,20 +33198,24 @@ In ECT one solves the four-dimensional Euclidean field equation for
 $\Phi$ around the proton, with the self-consistency condition in the
 $w$-direction expressed through the single-valuedness constraint
 $\oint dw\cdot p_w = 2\pi S_0\, n$.
-The same discrete spectrum is recovered, but with a different
-interpretation: the discrete $E_n$ values arise as self-consistency
-conditions for admissible condensate configurations, not as
-eigenvalues of a fundamentally probabilistic wave equation.
+The standard discrete spectrum is then read as arising from
+self-consistency conditions on admissible condensate configurations,
+rather than as eigenvalues of a fundamentally probabilistic wave
+equation.
+At the present stage this should be read as a structural interpretation
+of the hydrogenic spectrum, not yet as a completed first-principles
+derivation carried through in full spectral detail.
 
 \emph{Example: the double-slit experiment.}\enspace
 In standard quantum mechanics, $\psi=\psi_1+\psi_2$ and
 $P=|\psi_1+\psi_2|^2$.
-In ECT, the full 4D field configuration $\Phi(X)$ contains both
-routes as parts of one connected solution of the elliptic field
-equation.
-The interference pattern is therefore a property of the global
-boundary-value solution, rather than a primitive superposition of
-alternative probabilistic branches.
+In ECT, the double-slit pattern is read as arising from one connected
+solution of the underlying elliptic boundary-value problem, whose
+effective Lorentzian projection contains contributions associated with
+both slit channels.
+This should be read as an interpretive and structural reformulation,
+not as a claim that the present article has solved the full laboratory
+setup from first principles at the microscopic condensate level.
 
 % ------------------------------------------------------------------
 \subsubsection*{Determinism at the fundamental level}
@@ -33230,6 +33251,13 @@ but two sectors of one ordered condensate theory.
 
 Both branches emerge from the same ordered
 action~\eqref{eq:ordered_branch_euclidean_eft}.
+More precisely, they arise as two complementary descriptions of the same
+ordered medium under different coarse-grainings and mode selections:
+the long-wavelength sector is read geometrically, whereas the coherent
+shorter-wavelength sector is read dynamically in wave-mechanical form.
+The theory therefore does not begin with ``gravity plus quantum
+mechanics'' as separate ingredients; it begins with one ordered
+condensate whose different sectors generate both.
 From this same action one obtains two complementary sectors:
 the \emph{geometric branch}, corresponding to long-wavelength
 variations of $u$ and $n_A$, leading to the generalised Einstein
@@ -33251,9 +33279,11 @@ form $G_{\rm eff}(X)$ and $\Lambda_{\rm eff}(X)$, and tensor
 structures involving the ordered direction $n_\mu$.
 Conversely, coherent fluctuations affect the effective amplitude
 sector and thereby back-react on the geometric side.
-Thus the quantum contribution to the Einstein sector is not inserted
-externally as a semiclassical expectation value, but is structurally
-contained in the dynamics of one and the same condensate action.
+Thus the route by which coherent fluctuations back-react on the
+geometric sector is not introduced from outside as an unrelated
+semiclassical prescription, but is structurally rooted in the dynamics
+of one and the same condensate action.
+A completed quantitative backreaction programme, however, remains open.
 
 This unification of the coherent and geometric branches is one of the
 most important structural results of ECT.
@@ -33261,40 +33291,49 @@ most important structural results of ECT.
 % ------------------------------------------------------------------
 \subsubsection*{What ECT already reproduces, and what remains open}
 
-If ECT is correct, then quantum mechanics should follow from it in
-full.
+If ECT is correct, then quantum mechanics should in principle arise as an
+effective sector of the theory.
+At present, this claim is only partly realised: some standard structures
+have already been structurally recovered, whereas others remain open
+derivational targets.
 At present, however, the status is uneven, and it is important to
 separate what has already been structurally obtained from what remains
 open.
 
-ECT already provides, at varying levels of rigour:
-the Schr\"odinger sector as a nonrelativistic limit of the ordered
+ECT already provides, at varying levels of rigour, the following
+structural outputs:
+\begin{enumerate}[label=(\roman*)]
+\item the Schr\"odinger sector as a nonrelativistic limit of the ordered
 branch;
-the Klein--Gordon sector from the Lorentzian continuation of the
+\item the Klein--Gordon sector from the Lorentzian continuation of the
 ordered condensate equation;
-uncertainty and action quantisation through the role of $S_0$ and
+\item uncertainty and action quantisation through the role of $S_0$ and
 phase compactness;
-decoherence and the quantum--classical boundary through the
+\item decoherence and the quantum--classical boundary through the
 influence-functional formalism;
-the Euclidean-to-Lorentzian interpretation of measurement;
-the physical origin of spin discretisation via the residual symmetry
-structure after $O(4)\to O(3)$;
-the Principle of Euclidean Stationarity, which selects the persistent
-sector of admissible configurations;
-gravitational decoherence without inserting the Di\'osi--Penrose
-formula as an independent postulate;
-a unified Euclidean basis for both tunnelling and entanglement;
-and cross-sector universality of the action scale $S_0$.
+\item the Euclidean-to-Lorentzian interpretation of measurement;
+\item the physical origin of spin discretisation via the residual
+symmetry structure after $O(4)\to O(3)$;
+\item the Principle of Euclidean Stationarity, which selects the
+persistent sector of admissible configurations;
+\item gravitational decoherence without inserting the
+Di\'osi--Penrose formula as an independent postulate;
+\item a unified Euclidean basis for both tunnelling and entanglement;
+\item cross-sector universality of the action scale $S_0$.
+\end{enumerate}
 
 On the other hand, ECT does not yet fully derive:
-the full Born rule from first principles beyond the present closures;
-a complete theorem of measurement beyond the current
+\begin{enumerate}[label=(\roman*)]
+\item the full Born rule from first principles beyond the present
+closures;
+\item a complete theorem of measurement beyond the current
 $\Gamma_{\rm loop}$-based framework;
-Bell correlators directly from the condensate theory beyond toy
+\item Bell correlators directly from the condensate theory beyond toy
 visibility proxies;
-the detailed origin of three generations;
-the exact value of $\alpha_{\rm fs}$;
-or the full Yukawa hierarchy.
+\item the detailed origin of three generations;
+\item the exact value of $\alpha_{\rm fs}$;
+\item the full Yukawa hierarchy.
+\end{enumerate}
 These should be presented as open derivational targets, not as
 failures of the framework.
 
@@ -33316,6 +33355,11 @@ It seeks to explain why the formalism has the structure it does, why
 probabilities appear, why superposition exists, why collapse is seen,
 why $\hbar$ is universal, and how the coherent quantum branch and the
 geometric gravitational branch arise from one common substrate.
+
+In this sense, ECT does not replace standard quantum mechanics as a
+laboratory calculation tool; it proposes a deeper level from which
+standard quantum mechanics emerges as an effective, statistically
+formulated subsystem theory.
 
 
 {
