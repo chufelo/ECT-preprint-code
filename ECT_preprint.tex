@@ -14107,16 +14107,16 @@ potentially significant (cluster-merger lensing, perturbative growth).
 Its precise magnitude is in all cases contingent on the coefficient
 $c_1$~(OP-c1).
 
-\begin{longtable}{@{}p{2.6cm}p{2.4cm}p{2.9cm}p{2.4cm}p{2.9cm}@{}}
+\begin{longtable}{@{}p{2.2cm}p{2.2cm}p{2.5cm}p{1.8cm}p{2.1cm}p{2.5cm}@{}}
 \caption{Observational footprint of the full nonlinear field equations
 across the phenomenological sectors of the present work.}
 \label{tab:nlee_footprint} \\
 \toprule
-Sector & Benchmark ECT result & NLEE channel & Separability & Appendix \\
+Sector & Benchmark ECT result & NLEE channel & Role & Separability & Appendix \\
 \midrule
 \endfirsthead
 \toprule
-Sector & Benchmark ECT result & NLEE channel & Separability & Appendix \\
+Sector & Benchmark & NLEE channel & Role & Separability & Appendix \\
 \midrule
 \endhead
 \bottomrule
@@ -14124,26 +14124,31 @@ Sector & Benchmark ECT result & NLEE channel & Separability & Appendix \\
 Hubble tension (\S\ref{sec:mp_hubble})
   & $\Delta H_0/H_0\!\approx\!2.9\%$
   & $\Theta_{\mu\nu}\!\to\!0$ on FRW bkgd
+  & Absorbed
   & Not separable
   & \ref{app:nlee_background} \\
 Universe age (\S\ref{sec:universe_age})
   & $\Delta t_0/t_0\!\approx\!{-}4.8\%$
   & Same FRW logic
+  & Absorbed
   & Not separable
   & \ref{app:nlee_background} \\
 JWST / growth (\S\ref{sec:mp_jwst_cosmo})
-  & $\mathcal R_{\rm BH}\!>\!\mathcal R_{\rm req}$
-  & $\Theta_{\mu\nu}$ in sub-horizon Poisson eq.; $\eta_\Theta\!\sim\!|c_1|$
-  & Potentially significant; $c_1$-dependent
+  & BH channel $>\!\mathcal R_{\rm req}$; gal.\ channel borderline
+  & $\Theta_{\mu\nu}$ in sub-horizon Poisson; $\eta_\Theta\!\sim\!|c_1|$
+  & Reinforcing only; not primary
+  & $c_1$-dependent (proxy)
   & \ref{app:nlee_jwst_growth} \\
 Galactic / RAR / BTFR (\S\ref{sec:mp_galactic})
-  & $g\!=\!\tfrac12(g_N{+}\sqrt{g_N^2{+}4g_Ng_\dagger})$
-  & Degenerate with $g^\dagger_{\rm eff}$ calibration; scatter
-  & Not separately extractable
+  & Closure eq.; slope~4
+  & Degenerate with $g^\dagger_{\rm eff}$; scatter
+  & Degenerate with calibration
+  & Not extractable
   & \ref{app:nlee_galactic_degeneracy} \\
 Cluster mergers (\S\ref{sec:bullet_cluster})
   & $M_{\rm ECT}/M_{\rm obs}\!=\!0.54$--$0.87$
-  & $E_3\!\approx\!{+}0.3\%$--$8.5\%$ via gravitational slip
+  & $E_3\!\approx\!{+}0.3\%$--$8.5\%$ via slip
+  & Direct amplitude correction
   & Most direct probe (Level~B)
   & \ref{app:cluster_slip} \\
 \end{longtable}
@@ -19201,13 +19206,17 @@ deep-branch asymptotics $g\simeq\sqrt{g_N g_\dagger}$ and is preserved
 provided the orientation-stress contribution acts as a slow
 renormalisation of $g^\dagger_{\rm eff}$ rather than as a modification
 of the deep-branch power-law index.
+At the present closure level no separate NLEE-induced change of the
+deep-branch exponent has been identified.
 The most natural non-degenerate signature of the orientation stress in
 the galactic sector is environment-dependent modulation of
 $g^\dagger_{\rm eff}$, contributing to galaxy-to-galaxy scatter beyond
 the environment law~$\Xi$.
-A separately identifiable numerical correction from the full nonlinear
-equations to the rotation-curve, RAR, or BTFR results is not
-extractable at the present closure level.
+Within the present phenomenological galactic closure, a separately
+identifiable numerical correction from the full nonlinear equations to
+the rotation-curve, RAR, or BTFR results is not extractable.
+This is a conclusion within the current closure, not a universal
+theorem of ECT.
 A detailed justification is given in
 Appendix~\ref{app:nlee_galactic_degeneracy};
 for a systematic overview, see~\S\ref{sec:nlee_observational_role}.
@@ -37337,10 +37346,13 @@ table.
 critical-scale calibration}
 \label{app:nlee_galactic_degeneracy}
 
-\textit{Status: structural observation.  No separately identifiable
-numerical correction from the full nonlinear field equations to the
-rotation-curve, RAR, or BTFR results is extractable at the present
-closure level.}
+\textit{Status: structural observation.  Within the present phenomenological galactic closure, no separately
+identifiable numerical correction from the full nonlinear field
+equations to the rotation-curve, RAR, or BTFR results is extractable.
+This conclusion is closure-dependent, not a universal theorem of ECT:
+a future first-principles derivation of the galactic $\phi$-profile
+may reveal non-degenerate NLEE signatures beyond the effective
+critical-scale parametrisation.}
 
 \paragraph{Source of the degeneracy.}
 The anisotropic orientation stress
@@ -37364,6 +37376,10 @@ This structural result is preserved provided the orientation-stress
 contribution in the deep quasistatic regime acts as a slow
 renormalisation of the effective critical scale rather than as a
 modification of the power-law index of the deep-branch interpolation.
+At the present closure level no mechanism has been identified that
+would change the deep-branch exponent; the slope~4 therefore remains
+structurally robust against orientation-stress corrections within the
+current framework.
 At the current closure level, no mechanism has been identified that
 would change the deep-branch exponent; the slope~4 therefore remains
 structurally robust against orientation-stress corrections.
@@ -38486,9 +38502,16 @@ The quantitative magnitude remains contingent on OP-c1.
 
 \paragraph{What this does not establish.}
 This subsection does not derive the perturbation-level coupling of
-$\Theta_{\mu\nu}$ from the ECT action; it introduces $\eta_\Theta$ as
-a phenomenological proxy that parameterises the orientation-stress
-contribution to sub-horizon gravitational collapse and growth.
+$\Theta_{\mu\nu}$ from the ECT action.
+The replacement
+$G_{\rm eff}\to G_{\rm eff}^{\rm pert}=G_{\rm eff}(1+\eta_\Theta)$ is
+a proxy parametrisation of the orientation-stress contribution at the
+sub-horizon level, not a first-principles derivation of the full
+perturbation system.
+Accordingly, the formulas for $\mathcal{R}_{\rm gal}^{\rm full}$ and
+$\mathcal{R}_{\rm BH}^{\rm full}$~\eqref{eq:maturity_nlee} should be
+read as structural scaling estimates within that proxy description,
+not as completed quantitative predictions.
 A first-principles derivation of $c_1$, and hence of $\eta_\Theta$,
 remains open~(OP-c1).
 
@@ -39111,11 +39134,13 @@ existing scalar-amplitude background dynamics.
 Within the benchmark closure, admissible deformations of the kinetic
 and potential functions shift the late-time Hubble result by less than
 $0.1$~percentage points (from $\Delta H_0/H_0\approx2.90\%$ to
-$\approx2.85\%$).  This test probes the sensitivity of the scalar
-sector to closure details, not the contribution of $\Theta_{\mu\nu}$.
-It confirms that the Hubble and age results are dominated by the
-scalar amplitude sector and are not significantly affected by residual
-closure freedom.
+$\approx2.85\%$).  This test probes residual scalar-closure sensitivity only and must not
+be interpreted as a numerical estimate of the orientation-stress
+contribution.
+The conclusion that the background NLEE contribution is not separately
+extractable follows from the FRW reduction itself (preceding
+paragraph), not from the $2.90\%\to2.85\%$ benchmark-deformation
+comparison.
 
 \paragraph{Conclusion.}
 The Hubble-shift estimate, the present-age value, and the lookback-time
