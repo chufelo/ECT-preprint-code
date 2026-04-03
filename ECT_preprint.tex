@@ -17315,46 +17315,7 @@ Layer~2: derived-parent + maturity
 }
 
 \FloatBarrier
-\begin{figure*}[htb]
-\centering
-\includegraphics[width=\textwidth]{figures/ect_condensate_param_scan_bw.pdf}
-\caption{First derived-parent parameter scan in the $(\omega_0,\phi_0)$
-plane at fixed $\beta=0.8$, $\mu=1.5$, $A_2=\mu^2/(6\beta^2)$, $A_3=A_4=0$.
-Panels show (top-left) the late inferred Hubble shift, (top-right) the
-derived-parent cosmic age, (bottom-left) $t_U(z=10)$, and
-(bottom-right) the effective gravitational coupling at $z=10$.
-Navy boxes indicate the first Hubble-compatible corridor.
-The labelled points \textbf{B} (balanced), \textbf{H} (Hubble-priority),
-and \textbf{A} (age-priority) are the working points used in the
-linear-growth and JWST maturity analysis
-(Table~\ref{tab:derived_parent_working_points}).
-The scan construction, selection criteria, and derived-parent workflow
-are documented in Appendix~\ref{sec:derived_parent_pipeline}.}
-\label{fig:ect_condensate_param_scan}
-\end{figure*}
 
-\begin{figure*}[htb]
-\centering
-\includegraphics[width=\textwidth]{figures/ect_derived_parent_comparison_bw.pdf}
-\caption{Comparison between the benchmark control mode and the
-preferred derived-parent working points.
-\textbf{Panel~(a):} expansion history.
-\textbf{Panel~(b):} effective gravitational coupling $G_{\rm eff}/G_N$.
-\textbf{Panel~(c):} solved linear growth factor $D(z)/D_{\rm ref}(z)$
-(not a heuristic proxy): the enhancement at $z=10$ is near-neutral once
-Hubble friction is included.
-\textbf{Panel~(d):} local maturity-channel acceleration factors
-$t_{\rm ff}^{\rm ref}/t_{\rm ff}^{\rm ECT}\propto\sqrt{G_{\rm eff}/G_N}$
-(collapse) and
-$t_{\rm BH}^{\rm ref}/t_{\rm BH}^{\rm ECT}\propto G_{\rm eff}/G_N$
-(BH-growth-like).
-This figure makes explicit that the ECT mechanism for early maturity is
-not driven by linear growth alone, but by the combination of background
-evolution and accelerated local development channels.
-The numerical setup and the derived-parent comparison workflow are
-documented in Appendix~\ref{sec:derived_parent_pipeline}.}
-\label{fig:ect_derived_parent_comparison}
-\end{figure*}
 
 \begin{figure*}[htb]
 \centering
@@ -18958,6 +18919,59 @@ post-collision systems spanning $z=0.20$--$0.87$
 (Table~\ref{tab:cluster_params}).
 The key numerical results are
 (Figures~\ref{fig:bullet_main},~\ref{fig:cluster_suite_budget}):
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=\columnwidth]{figures/fig_bullet_main}
+  \caption{ECT $\phi$-closure analysis of the Bullet Cluster
+  ($z=0.296$; parameters from Table~\ref{tab:cluster_params}).
+  \textbf{(a)} Baryonic surface density $\Sigma_b$; gas
+    dominates by total projected mass.
+  \textbf{(b)} Enhancement factor $\nu(g_N/g_\dagger^{\rm cl})$; dashed
+    contour marks the $g_N/g_\dagger^{\rm cl}=1$ transition.
+  \textbf{(c)} Effective convergence
+    $\Sigma_{\rm eff}=\nu\Sigma_b$; the $\kappa$-peak (circle)
+    lies $d_\star=37\,$kpc from the BCG
+    vs $d_{\rm gas}=83\,$kpc from the gas peak.
+  \textbf{(d)} 1D merger-axis profile.
+  \textbf{(e)} Amplitude budget: successive corrections raise
+    $M_{\rm ECT}/M_{\rm obs}$ from $0.42$ (baseline) to
+    $\approx0.54$; residual deficit $\times1.9$~(OP22).
+  \textbf{(f)} Gravitational slip $E_3$ from the orientation
+    stress $\Theta_{\mu\nu}[n]$ with $c_1(\bar\phi)=-a\bar\phi$;
+    shaded band marks the cluster range
+    $\bar\phi\simeq0.03$--$0.08$.
+  Filled circles: BCG (collisionless).
+  Open circles: X-ray gas (collisional).}
+  \label{fig:bullet_main}
+\end{figure}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=\columnwidth]{figures/fig_cluster_suite_budget}
+  \caption{ECT $\phi$-closure applied uniformly to four merging
+  cluster systems (same protocol, no per-system tuning;
+  parameters: Table~\ref{tab:cluster_params}).
+  \textbf{(e--h)} Merger-axis profiles: $\Sigma_{\rm eff}$
+    (solid) tracks the denser component in every system---BCG
+    in Bullet, MACS~J0025~\cite{Bradac2008}, and
+    El~Gordo~\cite{Diego2023}; gas core in
+    Abell~520~\cite{Mahdavi2007}.
+  \textbf{(i)} Amplitude budget: light bars = baseline $A_0$;
+    dark bars = $A_{\rm fin}$ after corrections
+    (Table~\ref{tab:cluster_corrections}); solid line = observed
+    target.
+  \textbf{(j)} Summary table: ECT predicted and observed
+    $\kappa$-peak offsets and amplitude ratios.
+  Abell~520 (\textit{gas}, italicised) is the only system where
+  the $\kappa$-peak follows the gas core; this is the correct
+  observed morphology for this system and arises from the same
+  physics as the BCG-peaked cases---a unified discriminant
+  prediction of ECT.}
+  \label{fig:cluster_suite_budget}
+\end{figure}
+
+
 \begin{enumerate}[label=(\roman*)]
 \item \textbf{All four systems are reproduced at the qualitative
   morphological level}, with the correct identification of the
@@ -19098,56 +19112,7 @@ which remains a target for the 3D metric--$\phi$ programme~(OP22).
 For a systematic comparison of the orientation-stress role across all
 sectors, see~\S\ref{sec:nlee_observational_role}.
 
-\begin{figure}[htb]
-  \centering
-  \includegraphics[width=\columnwidth]{figures/fig_bullet_main}
-  \caption{ECT $\phi$-closure analysis of the Bullet Cluster
-  ($z=0.296$; parameters from Table~\ref{tab:cluster_params}).
-  \textbf{(a)} Baryonic surface density $\Sigma_b$; gas
-    dominates by total projected mass.
-  \textbf{(b)} Enhancement factor $\nu(g_N/g_\dagger^{\rm cl})$; dashed
-    contour marks the $g_N/g_\dagger^{\rm cl}=1$ transition.
-  \textbf{(c)} Effective convergence
-    $\Sigma_{\rm eff}=\nu\Sigma_b$; the $\kappa$-peak (circle)
-    lies $d_\star=37\,$kpc from the BCG
-    vs $d_{\rm gas}=83\,$kpc from the gas peak.
-  \textbf{(d)} 1D merger-axis profile.
-  \textbf{(e)} Amplitude budget: successive corrections raise
-    $M_{\rm ECT}/M_{\rm obs}$ from $0.42$ (baseline) to
-    $\approx0.54$; residual deficit $\times1.9$~(OP22).
-  \textbf{(f)} Gravitational slip $E_3$ from the orientation
-    stress $\Theta_{\mu\nu}[n]$ with $c_1(\bar\phi)=-a\bar\phi$;
-    shaded band marks the cluster range
-    $\bar\phi\simeq0.03$--$0.08$.
-  Filled circles: BCG (collisionless).
-  Open circles: X-ray gas (collisional).}
-  \label{fig:bullet_main}
-\end{figure}
 
-\begin{figure}[htb]
-  \centering
-  \includegraphics[width=\columnwidth]{figures/fig_cluster_suite_budget}
-  \caption{ECT $\phi$-closure applied uniformly to four merging
-  cluster systems (same protocol, no per-system tuning;
-  parameters: Table~\ref{tab:cluster_params}).
-  \textbf{(e--h)} Merger-axis profiles: $\Sigma_{\rm eff}$
-    (solid) tracks the denser component in every system---BCG
-    in Bullet, MACS~J0025~\cite{Bradac2008}, and
-    El~Gordo~\cite{Diego2023}; gas core in
-    Abell~520~\cite{Mahdavi2007}.
-  \textbf{(i)} Amplitude budget: light bars = baseline $A_0$;
-    dark bars = $A_{\rm fin}$ after corrections
-    (Table~\ref{tab:cluster_corrections}); solid line = observed
-    target.
-  \textbf{(j)} Summary table: ECT predicted and observed
-    $\kappa$-peak offsets and amplitude ratios.
-  Abell~520 (\textit{gas}, italicised) is the only system where
-  the $\kappa$-peak follows the gas core; this is the correct
-  observed morphology for this system and arises from the same
-  physics as the BCG-peaked cases---a unified discriminant
-  prediction of ECT.}
-  \label{fig:cluster_suite_budget}
-\end{figure}
 
 
 \FloatBarrier
@@ -19269,6 +19234,42 @@ distinguished from a postulated MOND interpolation law:
   programme as a meaningful signature rather than automatically as a
   shortcoming.
 \end{enumerate}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/fig_gdagger_hierarchy}
+  \caption{ECT rotation-curve hierarchy for three representative
+  galaxies.
+  \textbf{Row 1 (Level~1):} universal baseline
+    $g^\dagger_0=cH_0/(2\pi)$, zero free parameters.
+    DDO~154 (void dwarf) is already well reproduced~($\chi^2/N\lesssim4$);
+    residuals in the other systems reflect environment effects predicted
+    by ECT.
+  \textbf{Row 2 (Level~2):} environment-dependent
+    $g_\dagger(\rho_{\rm env})=g^\dagger_0/\sqrt{1+\rho_{\rm env}/\rho_*}$
+    with one global parameter $\rho_*$;
+    all three systems improve, illustrating that a one-parameter
+    environment law can account for part of the observed scatter in
+    $g_\dagger^{\rm eff}$.
+    This should be read as a representative benchmark, not yet as a
+    first-principles demonstration of the unique environment source.
+  \textbf{Row 3 (Level~3):} $g^\dagger_{\rm eff}$ fitted per galaxy
+    (current SPARC analysis, Figs.~\ref{fig:sparc_sample_new}--\ref{fig:mw_new}),
+    giving optimal $\chi^2$.
+  Baryonic masses from SPS photometry and HI surveys (no mass fitting).
+  The progression $\chi^2/N$: Level~1~$\to$~Level~2~$\to$~Level~3
+  quantifies the contribution of environment physics to the galactic
+  acceleration scale.
+  Unlike MOND, the present ECT programme allows and physically motivates
+  an environment-dependent effective critical scale.
+  Equation~\eqref{eq:gdag_env} is the current minimal Level-B
+  representative law for that dependence, not yet its unique
+  first-principles derivation.
+  The non-universality of $g^\dagger_{\rm eff}$ is therefore a
+  programme-level ECT signature rather than a completed theorem.}
+  \label{fig:gdagger_hierarchy}
+\end{figure}
 
 As established in Section~\ref{sec:mp_galactic}
 (eq.~\eqref{eq:phi_eom_local}), matter drives $\bar\phi>0$ through
@@ -19659,40 +19660,6 @@ Figure~\ref{fig:gdagger_hierarchy} illustrates all three levels on three
 representative galaxies spanning void dwarf, field spiral, and group
 environments.
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{figures/fig_gdagger_hierarchy}
-  \caption{ECT rotation-curve hierarchy for three representative
-  galaxies.
-  \textbf{Row 1 (Level~1):} universal baseline
-    $g^\dagger_0=cH_0/(2\pi)$, zero free parameters.
-    DDO~154 (void dwarf) is already well reproduced~($\chi^2/N\lesssim4$);
-    residuals in the other systems reflect environment effects predicted
-    by ECT.
-  \textbf{Row 2 (Level~2):} environment-dependent
-    $g_\dagger(\rho_{\rm env})=g^\dagger_0/\sqrt{1+\rho_{\rm env}/\rho_*}$
-    with one global parameter $\rho_*$;
-    all three systems improve, illustrating that a one-parameter
-    environment law can account for part of the observed scatter in
-    $g_\dagger^{\rm eff}$.
-    This should be read as a representative benchmark, not yet as a
-    first-principles demonstration of the unique environment source.
-  \textbf{Row 3 (Level~3):} $g^\dagger_{\rm eff}$ fitted per galaxy
-    (current SPARC analysis, Figs.~\ref{fig:sparc_sample_new}--\ref{fig:mw_new}),
-    giving optimal $\chi^2$.
-  Baryonic masses from SPS photometry and HI surveys (no mass fitting).
-  The progression $\chi^2/N$: Level~1~$\to$~Level~2~$\to$~Level~3
-  quantifies the contribution of environment physics to the galactic
-  acceleration scale.
-  Unlike MOND, the present ECT programme allows and physically motivates
-  an environment-dependent effective critical scale.
-  Equation~\eqref{eq:gdag_env} is the current minimal Level-B
-  representative law for that dependence, not yet its unique
-  first-principles derivation.
-  The non-universality of $g^\dagger_{\rm eff}$ is therefore a
-  programme-level ECT signature rather than a completed theorem.}
-  \label{fig:gdagger_hierarchy}
-\end{figure}
 
 The key observational test of this hierarchy is prediction~F1:
 the fitted $g^\dagger_{\rm eff}$ values from the full SPARC sample
@@ -20888,6 +20855,25 @@ Figure~\ref{fig:ect_hubble_background} should be interpreted as the
 benchmark control figure; the non-benchmark derived-parent results are
 summarised in Figures~\ref{fig:ect_condensate_param_scan}--\ref{fig:ect_jwst_anchor_budget}.
 
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[width=\textwidth]{figures/ect_condensate_param_scan_bw.pdf}
+\caption{First derived-parent parameter scan in the $(\omega_0,\phi_0)$
+plane at fixed $\beta=0.8$, $\mu=1.5$, $A_2=\mu^2/(6\beta^2)$, $A_3=A_4=0$.
+Panels show (top-left) the late inferred Hubble shift, (top-right) the
+derived-parent cosmic age, (bottom-left) $t_U(z=10)$, and
+(bottom-right) the effective gravitational coupling at $z=10$.
+Navy boxes indicate the first Hubble-compatible corridor.
+The labelled points \textbf{B} (balanced), \textbf{H} (Hubble-priority),
+and \textbf{A} (age-priority) are the working points used in the
+linear-growth and JWST maturity analysis
+(Table~\ref{tab:derived_parent_working_points}).
+The scan construction, selection criteria, and derived-parent workflow
+are documented in Appendix~\ref{sec:derived_parent_pipeline}.}
+\label{fig:ect_condensate_param_scan}
+\end{figure*}
+
 \begin{table}[htb]
 \centering
 \caption{Summary of the benchmark late-time ECT cosmology closure.}
@@ -21108,6 +21094,30 @@ The corresponding visual summary of the parameter scan and the
 working-point selection is given in
 Figures~\ref{fig:ect_condensate_param_scan} and
 \ref{fig:ect_derived_parent_comparison}.
+
+
+\begin{figure*}[htb]
+\centering
+\includegraphics[width=\textwidth]{figures/ect_derived_parent_comparison_bw.pdf}
+\caption{Comparison between the benchmark control mode and the
+preferred derived-parent working points.
+\textbf{Panel~(a):} expansion history.
+\textbf{Panel~(b):} effective gravitational coupling $G_{\rm eff}/G_N$.
+\textbf{Panel~(c):} solved linear growth factor $D(z)/D_{\rm ref}(z)$
+(not a heuristic proxy): the enhancement at $z=10$ is near-neutral once
+Hubble friction is included.
+\textbf{Panel~(d):} local maturity-channel acceleration factors
+$t_{\rm ff}^{\rm ref}/t_{\rm ff}^{\rm ECT}\propto\sqrt{G_{\rm eff}/G_N}$
+(collapse) and
+$t_{\rm BH}^{\rm ref}/t_{\rm BH}^{\rm ECT}\propto G_{\rm eff}/G_N$
+(BH-growth-like).
+This figure makes explicit that the ECT mechanism for early maturity is
+not driven by linear growth alone, but by the combination of background
+evolution and accelerated local development channels.
+The numerical setup and the derived-parent comparison workflow are
+documented in Appendix~\ref{sec:derived_parent_pipeline}.}
+\label{fig:ect_derived_parent_comparison}
+\end{figure*}
 
 \FloatBarrier
 \subsubsection*{Observational signatures compatible with accelerated early development}
