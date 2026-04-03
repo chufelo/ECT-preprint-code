@@ -11477,7 +11477,7 @@ suggest a linear time-of-flight correction of the form
 \Delta t_{\rm LIV}\propto \frac{E}{M_{\rm Pl}c^2}\,\frac{L}{c},
 \]
 with no species dependence at leading order because all sectors
-probe the same condensate director field.
+probe the same condensate director field (Fig.~\ref{fig:liv_delay}).
 The precise observational mapping of this structure belongs to
 the later phenomenological programme and is not part of the
 present foundational closure~(Section~\ref{sec:effective_metric}).
@@ -29762,6 +29762,7 @@ $\to 2$ & $\to\infty$ & $\to 0$ \\
 \bottomrule
 \end{tabular}
 \end{center}
+The trade-off is visualised in Fig.~\ref{fig:qubit_info_decoherence}.
 The structural conclusion is that any measurement extracting
 $\gtrsim1$~bit of information reduces coherence by at least
 $\sim\!22\%$; a nearly complete observation ($I\gtrsim1.9$~bits)
@@ -29778,6 +29779,28 @@ measurement architectures.
 Nothing in the present argument excludes weak or distributed
 information-extraction protocols on ensembles of similarly prepared
 systems.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.78\textwidth]{figures/fig_qubit_info_decoherence.pdf}
+\caption{Qubit information--decoherence trade-off in the ECT dephasing
+closure (Eq.~\ref{eq:info_decoherence}).
+Solid curve: mutual information $I(S{:}E)$ in bits as a function of the
+decoherence parameter~$\Gamma_{\rm loop}$.
+Dashed curve: residual coherence $V=e^{-\Gamma}$ (right axis).
+Vertical dotted lines mark operational anchors from ECT-calibrated
+experiments: Procopio~2015 ($V=0.994$, quantum switch),
+Jacques~2007 ($V\approx0.94$, delayed-choice interferometer),
+the one-bit information threshold ($\Gamma\approx0.25$),
+and the Bell/CHSH crossover ($\Gamma=\ln\sqrt{2}\approx0.35$).
+The dashed vertical line at $\Gamma=1$ separates the coherent and
+effectively classical regimes.
+This is a Level~B closure result for the specific dephasing model,
+not a protocol-independent theorem.
+Numerical details are given in Appendix~\ref{app:qubit_numerics}.}
+\label{fig:qubit_info_decoherence}
+\end{figure}
+
 What is constrained here is the prospect of obtaining
 near-complete single-copy information while retaining essentially full
 coherent-branch visibility for that same copy.
@@ -36435,6 +36458,45 @@ Markovianity, ohmicity, Born rule, Pauli principle, OS reconstruction.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ------------------------------------------------------------------
+\section{Qubit information--decoherence numerics}
+\label{app:qubit_numerics}
+
+The qubit dephasing closure of Section~\ref{sec:pes_info_bound}
+uses a maximally coherent initial state
+$|\psi\rangle=(|0\rangle+|1\rangle)/\sqrt{2}$ subject to
+Gaussian dephasing with parameter~$\Gamma$.
+The system--environment mutual information is
+(Eq.~\ref{eq:info_decoherence})
+\begin{equation}
+  I(S{:}E)
+  = 2\,h_2\!\left(\frac{1+e^{-\Gamma}}{2}\right),
+\end{equation}
+where $h_2(p)=-p\ln p-(1-p)\ln(1-p)$ is the binary entropy.
+In bits: $I_{\rm bits}=I/(\ln 2)$.
+The residual coherence (visibility) is $V=e^{-\Gamma}$.
+
+Representative values (Fig.~\ref{fig:qubit_info_decoherence}):
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+$\Gamma$ & $I$ [bits] & $V$ & Physical anchor \\
+\midrule
+$0.006$ & $0.10$ & $0.994$ & Procopio~2015 (quantum switch) \\
+$0.062$ & $0.50$ & $0.940$ & Jacques~2007 (closed config.) \\
+$0.25$  & $1.00$ & $0.779$ & One-bit information threshold \\
+$0.347$ & $1.19$ & $0.707$ & Bell/CHSH crossover \\
+$1.0$   & $1.69$ & $0.368$ & Order-unity decoherence \\
+$3.0$   & $1.98$ & $0.050$ & Near-complete dephasing \\
+\bottomrule
+\end{tabular}
+\end{center}
+The curve is monotonic: extracting more information requires
+stronger decoherence.
+This is a Level~B result of the specific dephasing closure;
+a protocol-independent bound remains open~(OP-PES-6).
+
 \section{Directed decoherence: proof that
   $\Gamma_{\rm irr}[q,q']\geq 0$}
 \label{app:directed_decoherence}
