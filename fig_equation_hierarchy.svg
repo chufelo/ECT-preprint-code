@@ -1,0 +1,59 @@
+<svg width="420" height="480" viewBox="0 0 420 480" xmlns="http://www.w3.org/2000/svg">
+<style>
+  text { font-family: "Times New Roman", "Liberation Serif", serif; fill: #222; }
+  .eq { font-size: 13px; }
+  .title { font-size: 13px; font-weight: bold; }
+  .level { font-size: 11px; fill: #777; font-style: italic; }
+  .step { font-size: 11px; fill: #666; font-style: italic; }
+  rect.box { fill: white; stroke: #555; stroke-width: 1.0; rx: 6; }
+</style>
+<defs>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M1 1L9 5L1 9" fill="none" stroke="#444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+
+<!-- Box 0: Euclidean condensate -->
+<rect class="box" x="85" y="10" width="250" height="62"/>
+<text class="eq" x="210" y="30" text-anchor="middle">dAB dA dB F - V'(F) = 0</text>
+<text class="title" x="210" y="48" text-anchor="middle">Euclidean condensate equation</text>
+<text class="level" x="210" y="64" text-anchor="middle">Level 0: fundamental</text>
+
+<!-- Step label -->
+<text class="step" x="280" y="96" text-anchor="middle">O(4)&#x2192;O(3) SSB</text>
+
+<!-- Arrow 0→1 -->
+<line x1="210" y1="72" x2="210" y2="110" stroke="#444" stroke-width="1.5" marker-end="url(#ar)"/>
+
+<!-- Box 1: Ordered-branch -->
+<rect class="box" x="75" y="112" width="270" height="72"/>
+<text class="eq" x="210" y="132" text-anchor="middle">KAB dA dB x + ms2 x = 0</text>
+<text class="eq" x="210" y="150" text-anchor="middle">KAB = b dAB - a nA nB</text>
+<text class="title" x="210" y="168" text-anchor="middle">Ordered-branch field equation</text>
+<text class="level" x="210" y="182" text-anchor="middle">Level 1: broken-phase EFT</text>
+
+<!-- Step label -->
+<text class="step" x="305" y="212" text-anchor="middle">Real parametrisation t = w/c*</text>
+
+<!-- Arrow 1→2 -->
+<line x1="210" y1="184" x2="210" y2="225" stroke="#444" stroke-width="1.5" marker-end="url(#ar)"/>
+
+<!-- Box 2: Klein-Gordon -->
+<rect class="box" x="85" y="227" width="250" height="62"/>
+<text class="eq" x="210" y="248" text-anchor="middle">dt2 j - c*2 del2 j + M2 j = 0</text>
+<text class="title" x="210" y="266" text-anchor="middle">Klein-Gordon equation</text>
+<text class="level" x="210" y="282" text-anchor="middle">Level 2: Lorentzian branch</text>
+
+<!-- Step label -->
+<text class="step" x="305" y="312" text-anchor="middle">Nonrelativistic limit</text>
+
+<!-- Arrow 2→3 -->
+<line x1="210" y1="289" x2="210" y2="328" stroke="#444" stroke-width="1.5" marker-end="url(#ar)"/>
+
+<!-- Box 3: Schrodinger -->
+<rect class="box" x="75" y="330" width="270" height="62"/>
+<text class="eq" x="210" y="350" text-anchor="middle">i S0 dt y = -(S02/2m) del2 y + V y</text>
+<text class="title" x="210" y="370" text-anchor="middle">Schrodinger equation (S0&#x2192;h)</text>
+<text class="level" x="210" y="384" text-anchor="middle">Level 3: NR coherent branch</text>
+
+</svg>
