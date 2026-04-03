@@ -55,9 +55,24 @@ digraph PartIII {
   analogue [label=<Analogue-lab<BR/>programme<BR/>Level A/B, §32>];
 
 
+  // === Decoherence Results (§26) ===
+  node [fillcolor="#ffffff", fontcolor=black, style="rounded,filled"];
+  decoh_results [label=<Results &amp; regime<BR/>estimates (Γ anchors)<BR/>Level B, §26>];
+
   // === PES (§27) ===
   node [fillcolor="#ffffff", fontcolor=black, style="rounded,filled"];
   pes [label=<PES: Euclidean<BR/>stationarity principle<BR/>Level B, §27>];
+
+  // === NEW CLOSURE NODES ===
+  node [fillcolor="#ffffff", fontcolor=black, style="rounded,filled"];
+  wigner [label=<Wigner's friend<BR/>coarse-graining<BR/>Level B (interp.), §28>];
+  ent_tunnel [label=<Entanglement–tunnelling<BR/>structural bridge<BR/>Level B, §29>];
+  stern_gerlach [label=<Spin discreteness /<BR/>Stern–Gerlach<BR/>Level B, §23>];
+  bell_toy [label=<Bell/CHSH toy<BR/>crossover Γ=ln√2<BR/>Level B, §29>];
+
+  // === REVERSE COHERENCE (programme-level) ===
+  node [fillcolor="white", style="rounded,dashed", fontcolor=black, penwidth=2];
+  reverse_coh [label=<Reverse coherence<BR/>L→E reopening<BR/>Programme-level>];
 
   // === OPEN ===
   node [fillcolor="white", style="rounded,dashed", fontcolor=black, penwidth=2];
@@ -75,9 +90,9 @@ digraph PartIII {
   {rank=same; uncertainty; unitarity; path_dep; exchange}
   {rank=same; schrod; lorentz_cliff; vac_nontrivial}
   {rank=same; retarded; spectral; unified_vac; unruh_T; casimir}
-  {rank=same; decoh; tau_dec; crooks; reverse}
+  {rank=same; decoh; tau_dec; crooks; reverse; decoh_results}
   {rank=same; qc_boundary; born; amp_prob; dirac_cond; pes}
-  {rank=same; entangle; bh_shell; no_info_loss; wider_state; dark_cand}
+  {rank=same; entangle; bh_shell; no_info_loss; wider_state; dark_cand; ent_tunnel; bell_toy; wigner; stern_gerlach; reverse_coh}
   {rank=same; analogue; born_full; measurement; page_curve; bell_full; dark_quant; S0_calc}
 
   // === SOLID ARROWS (strict derivations) ===
@@ -128,6 +143,20 @@ digraph PartIII {
   HJ -> pes;
   pes -> born [style=dashed];
   pes -> qc_boundary;
+
+  // === NEW NODE EDGES ===
+  decoh -> decoh_results;
+  tau_dec -> decoh_results;
+  pes -> decoh_results [style=dashed];
+  decoh_results -> qc_boundary;
+  qc_boundary -> wigner;
+  entangle -> ent_tunnel [style=dashed];
+  entangle -> bell_toy;
+  decoh_results -> bell_toy;
+  lorentz_cliff -> stern_gerlach;
+  dirac_cond -> stern_gerlach;
+  path_dep -> reverse_coh [style=dashed, color=gray50];
+  reverse -> reverse_coh [style=dashed, color=gray50];
 
   // === DASHED ARROWS (requires assumptions / open) ===
   S0 -> S0_match [style=dashed];

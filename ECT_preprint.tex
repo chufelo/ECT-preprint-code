@@ -32355,6 +32355,11 @@ Pauli exclusion
 Full spin-statistics theorem
   & Open (OP-Q11)
   & Requires operator completion beyond current closure \\
+Spin discreteness / Stern--Gerlach selection
+  & Level~B
+  & Discreteness follows from compact $SU(2)$ representation theory;
+    measurement selection is read through environmental locking;
+    Section~\ref{sec:qs_dirac} \\
 % --- Ch.24: Vacuum response ---
 Ordered condensate vacuum is physically nontrivial
   & Level~A
@@ -32469,6 +32474,22 @@ Quantum--classical boundary via $\Gamma_{\rm loop}$ criterion
     $\Gamma_{\rm loop}\lesssim1$ and are effectively suppressed for
     $\Gamma_{\rm loop}\gg1$;
     Section~\ref{sec:quantum_classical_boundary} \\
+Qubit information--decoherence closure for partial observation
+  & Level~B
+  & Simplest dephasing closure used as an operational bound on
+    observation without full collapse;
+    Section~\ref{sec:pes_info_bound} \\
+Wigner's-friend-type coarse-graining reading
+  & Level~B~(interpretive)
+  & The question is shifted from ``who observes'' to which degrees of
+    freedom are already environmentally locked;
+    Section~\ref{sec:quantum_classical_boundary} \\
+Reverse coherence / Lorentzian-to-Euclidean reopening
+  & Programme-level
+  & Structural possibility through reverse
+    $O(3)\!\to\!O(4)$ Euclidean segments;
+    quantitative recoherence platforms remain open;
+    Section~\ref{sec:path_dependence} \\
 Amplitude / decoherence / probability distinction
   & Level~A
   & Section~\ref{sec:qs_born};
@@ -32507,6 +32528,18 @@ Bell-correlator completion
   & Open (OP-Q20)
   & Full CHSH-type derivation from condensate dynamics not yet
     available; Section~\ref{sec:qs_entanglement} \\
+Bell/CHSH toy visibility crossover
+  & Level~B
+  & Effective proxy
+    ${\rm CHSH}_{\rm eff}=2\sqrt{2}\,e^{-\Gamma_{\rm loop}}$ gives the
+    crossover threshold
+    $\Gamma_{\rm loop}=\ln\sqrt{2}$;
+    Section~\ref{sec:qs_entanglement} \\
+Entanglement--tunnelling structural bridge
+  & Level~B~(structural)
+  & Both phenomena are read through Euclidean connectivity, without
+    reducing one to the other;
+    Section~\ref{sec:qs_entanglement} \\
 % --- Ch.28: Topological / defect / dark ---
 Wider defect sector beyond smooth coherent branch
   & Level~A
@@ -32605,31 +32638,36 @@ PES universal extension
 \centering
 \includegraphics[width=\textwidth]{figures/fig_partIII_derivation_logic.png}
 \caption{Derivation logic of Part~III (Quantum Sector).
-Starting from the Part~I outputs inherited through BR1 and the
-coherent-branch programme, the diagram traces the eleven thematic
-steps of Chapters~19--32, including the Principle of Euclidean
-Stationarity~(PES, \S\ref{sec:pes}):
-coherent phase dynamics and the pre-quantum action scale~$S_0$,
-Hamilton--Jacobi / continuity structure, reflection positivity and the
-Hilbert-space bridge, canonical organisation and uncertainty, exchange
-topology and Dirac structure, ordered-vacuum response
-(Casimir, Unruh, particle production, horizon thermality),
-decoherence and the arrow of time (including decoherence timescales,
-the Crooks-type relation, and the structural unification of
-environmental and gravitational decoherence),
+Starting from the Part~I inputs inherited through BR1 and the
+coherent-branch programme, the diagram organises the quantum sector into
+its main structural blocks:
+coherent phase dynamics and the pre-quantum action scale~$S_0$;
+Hamilton--Jacobi / continuity structure;
+reflection positivity and the Hilbert-space bridge;
+canonical organisation and uncertainty;
+exchange topology, Lorentz/Clifford structure, and conditional Dirac
+closure;
+ordered-vacuum response
+(Casimir, Unruh, particle production, horizon thermality);
+decoherence and the arrow of time;
+the added results/regime-estimate layer of
+Section~\ref{sec:decoherence_results};
+the Principle of Euclidean Stationarity~(PES);
 the quantum--classical boundary and the reverse
-$O(3)\!\to\!O(4)$ Euclidean-segment reading,
+$O(3)\!\to\!O(4)$ Euclidean-segment reading;
 Born-type probability and conditional uniqueness via Gleason
-(with assumptions C1--C3),
-entanglement and Bell-type correlations,
-topological / defect / dark-sector ontology,
-black-hole thermodynamics and the information-exclusion result, and
-the analogue-laboratory programme.
-Node shading: dark = Part~I inputs, medium = structural (Level~A),
-light = Level~A/B, white = closure-level (Level~B),
-dashed outline = open.
-Solid arrows denote strict derivations; dashed arrows point to open
-problems or closure-dependent steps.}
+(with assumptions C1--C3);
+entanglement and Bell-type correlations;
+topological / defect / dark-sector ontology;
+black-hole thermodynamics and the information-exclusion result;
+and the analogue-laboratory programme.
+Node shading: dark = inherited Part~I inputs,
+medium = structural (Level~A),
+light = Level~A/B,
+white = closure-level (Level~B),
+dashed outline = programme-level or open.
+Solid arrows denote derivational dependence;
+dashed arrows denote closure-dependent or still-open completion steps.}
 \label{fig:qs_consistency}
 \end{figure}
 
@@ -32637,9 +32675,16 @@ problems or closure-dependent steps.}
 The status map must also be read through PES
 (\S\ref{sec:pes}), which acts as an organising principle rather
 than a replacement of the sector-specific derivations.
-Its core selection logic (persistent sector =
-extremal $\cap$ decoherence-resistant $\cap$ phase-compact) is
-presently Level~B\@.
+Its core selection logic
+(persistent sector =
+extremal $\cap$ decoherence-resistant $\cap$ phase-compact)
+is presently Level~B.
+Operational closures built around this logic now include:
+the qubit information--decoherence bound,
+the visibility-based $\Gamma_{\rm loop}$ anchors,
+the Bell/CHSH crossover proxy,
+and the coarse-graining reading of measurement-type situations such as
+Wigner's friend.
 Its universal extension across all spectra, decay rates, and
 quantum-gravity claims remains programme-level.
 
@@ -32808,6 +32853,20 @@ clearly from what still depends on closure or remains open.
   \item Quantitative decoherence-timescale consistency anchors,
     including the C$_{60}$ case and the Di\'osi--Penrose condensate
     limit (Level~B).
+  \item Operational decoherence proxies from experimentally inferred
+    visibility loss, including the Procopio and Jacques anchors
+    together with the Bell/CHSH crossover threshold
+    $\Gamma_{\rm loop}=\ln\sqrt{2}$ (Level~B; operational rather than
+    first-principles microscopic derivation).
+  \item Qubit-model information--decoherence closure for partial
+    observation and the associated non-collapse bound
+    (Level~B; protocol-independent generalisation remains open,
+    OP-PES-6).
+  \item Wigner's-friend-type coarse-graining reading and reverse
+    coherence / Lorentzian-to-Euclidean reopening remain closure-level
+    or programme-level elaborations of the same
+    quantum--classical-boundary architecture rather than independent
+    theorems.
   \item Conditional uniqueness of Born-type weights once the
     assumptions~(C1)--(C3) are admitted (Level~B); first-principles
     derivation of those assumptions and unique outcome selection remain
@@ -32818,6 +32877,13 @@ clearly from what still depends on closure or remains open.
   \item Full spin-statistics theorem remains open (OP-Q11).
   \item Full Bell-correlator derivation from condensate dynamics
     remains open (OP-Q20).
+  \item The presently available Bell/CHSH threshold is only a toy
+    visibility proxy and must not be confused with a derivation of the
+    CHSH algebra or of the Tsirelson bound from first principles
+    (OP-Q20).
+  \item The entanglement--tunnelling connection is presently a
+    structural bridge based on Euclidean connectivity, not an identity
+    theorem reducing one phenomenon to the other.
   \item Full quantitative Casimir derivation for the
     condensate-reflecting sector remains open (OP-Q18).
   \item Nonperturbative black-hole evaporation closure and the
@@ -32872,6 +32938,17 @@ excluded at the structural level;
 the Principle of Euclidean Stationarity as a unifying selection
 criterion for persistent configurations (Level~B core, programme-level
 extension);
+visibility-based operational $\Gamma_{\rm loop}$ anchors for
+photonic quantum platforms;
+a closure-level qubit information--decoherence bound for partial
+observation;
+a toy Bell/CHSH crossover threshold
+$\Gamma_{\rm loop}=\ln\sqrt{2}$ used as an operational marker rather
+than a first-principles Bell derivation;
+coarse-graining readings of Wigner's-friend-type situations;
+a programme-level reverse-coherence perspective in which
+Lorentzian locking can, in principle, be partially reopened in
+mesoscopic or engineered settings;
 and an analogue-laboratory programme testing the instantiability of the
 ordered-medium logic in controlled systems.
 That already constitutes a coherent research programme rather than a
