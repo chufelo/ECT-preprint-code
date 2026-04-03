@@ -1,12 +1,12 @@
 digraph PartI {
   rankdir=TB;
   fontname="Helvetica";
-  node [fontname="Helvetica", fontsize=13, shape=box, style="rounded,filled", margin="0.15,0.08"];
-  edge [fontname="Helvetica", fontsize=10];
+  node [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", margin="0.12,0.06"];
+  edge [fontname="Helvetica", fontsize=8];
+  splines=true;
+  nodesep=0.35;
+  ranksep=0.50;
   newrank=true;
-  splines=ortho;
-  nodesep=0.55;
-  ranksep=0.70;
   labeljust=c;
 
   // === POSTULATES ===
@@ -20,54 +20,57 @@ digraph PartI {
 
   // === PHENOMENOLOGICAL INPUTS ===
   node [fillcolor="#808080", fontcolor=white];
-  Ph2 [label=<Ph2<BR/>M<SUB>G</SUB> = M̄<SUB>Pl</SUB><BR/>(weak-field matching)<BR/>Level B, §5.4>];
-  Ph1 [label=<Ph1<BR/>c* = c (structural)<BR/>Level A/B, §4.8>];
+  Ph2 [label=<Ph2<BR/>M<SUB>G</SUB> = M̄<SUB>Pl</SUB> (obs.)<BR/>§5.4>];
+  Ph1 [label=<Ph1<BR/>c* = c (structural)<BR/>Level B, §4.8>];
 
   // === LEVEL A ===
   node [fillcolor="#b8b8b8", fontcolor=black];
-  SSB [label=<SSB<BR/>O(4)→O(3)<BR/>selects w<BR/>§3>];
-  UC [label=<Universality Corollary<BR/>One Φ → one K → one cone<BR/>§4.3>];
-  lorentz [label=<Lorentzian metric<BR/>§3.6>];
-  goldstone [label=<3 Goldstone bosons<BR/>(fuzzy DM candidates)<BR/>§4>];
-  cstar [label=<Light speed<BR/>c* = √(β/(α−β))<BR/>§5.3>];
-  PX [label=<P(X) cannot generate (∂n)²<BR/>Theorem 3.2<BR/>Level A, §3>];
-  KG [label=<Klein–Gordon eq.<BR/>§3.6>];
-  topo_anti [label=<Topological anti-predictions<BR/>π₀ = π₁ = π₂ = 0<BR/>No walls / strings / monopoles<BR/>§8>];
-  gauge [label=<Gauge fields<BR/>SU(2)×U(1)<BR/>Level A (via P5), §7>];
+  SSB [label=<SSB<BR/>O(4)→O(3), selects w<BR/>§3>];
+  UC [label=<Universality Corollary<BR/>one Φ → one K<SUP>AB</SUP> → one cone<BR/>§4.3>];
+  lorentz [label=<Lorentzian<BR/>metric<BR/>§3.6>];
+  goldstone [label=<3 Goldstone<BR/>bosons (fuzzy DM)<BR/>§4>];
+  cstar [label=<c* = √(β/(α−β))<BR/>Grav. const.<BR/>§5.3>];
+  PX [label=<P(X) theorem<BR/>no orientation stiffness<BR/>Level A, §3>];
+  KG [label=<Klein–Gordon<BR/>equation<BR/>§3.6>];
+  topo_anti [label=<Topological anti-predictions<BR/>π<SUB>0</SUB> = π<SUB>1</SUB> = π<SUB>2</SUB> = 0<BR/>No walls / strings / monopoles<BR/>§8>];
+  gauge [label=<Gauge fields<BR/>U(1), SU(2)<BR/>§7>];
+  schrodinger [label=<Schrödinger<BR/>equation<BR/>QS>];
 
   // === LEVEL B ===
   node [fillcolor="#ffffff", fontcolor=black];
-  NLO [label=<NLO/induced stiffness<BR/>κn = Cn u₀²<BR/>MG² ~ φ₀²<BR/>Level B, §5.1>];
-  second_law [label=<2nd law of<BR/>thermodynamics<BR/>Level B, §3.9>];
-  S0 [label=<Action scale<BR/>S₀ = ℏ<BR/>(from phase winding)<BR/>§5.6>];
-  GE [label=<Euclidean correlator<BR/>GE(X, X′)<BR/>§5>];
-  GN [label=<Grav. constant<BR/>GN = c*⁴/(8π MG²)<BR/>§5.4>];
-  dirac [label=<Dirac equation<BR/>§9>];
-  einstein [label=<Einstein equations<BR/>(linearised)<BR/>§6>];
-  fifth [label=<5th force<BR/>β₅ ~ mf / φ₀<BR/>Level A given Ph<BR/>§7.6>];
-  skyrmion [label=<Skyrmion / texture sectors<BR/>π₃(S³) = Z<BR/>mn ~ n × 1.6 GeV<BR/>§8>];
-  LIV [label=<LIV structural<BR/>Δt ~ (E / MPl) × L/c<BR/>§10>];
-  seesaw [label=<Neutrino seesaw scale<BR/>MR ~ √(φ₀ × v₂)<BR/>→ leptogenesis route<BR/>§9>];
+  NLO [label=<NLO/induced stiffness<BR/>κ<SUB>n</SUB> = C<SUB>n</SUB> u<SUB>0</SUB>²<BR/>M<SUB>G</SUB>² ~ φ<SUB>0</SUB>²<BR/>Level B, §5.1>];
+  hbar [label=<ℏ = S<SUB>loop</SUB>/2π<BR/>Planck const.<BR/>§5.6>];
+  GE [label=<Euclidean corr.<BR/>G<SUB>E</SUB>(X, X′)<BR/>§5>];
+  GN [label=<G<SUB>N</SUB> = c*<SUP>4</SUP>/(8π M<SUB>G</SUB>²)<BR/>Grav. const.<BR/>§5.4>];
+  einstein [label=<Einstein eqs.<BR/>(linearised)<BR/>§6>];
+  dirac [label=<Dirac eq.<BR/>§9>];
+  second_law [label=<2nd law of<BR/>thermodynamics<BR/>§3.9>];
+  fifth [label=<5th force<BR/>ω<SUB>5</SUB>~10<SUP>−10</SUP> rad/s<BR/>§7.6>];
+  skyrmion [label=<Skyrmion / texture sectors<BR/>π<SUB>3</SUB>(S³) = ℤ<BR/>m<SUB>n</SUB> ~ n × 1.6 GeV<BR/>§8>];
+  LIV [label=<Planck-scale LIV<BR/>|δc/c| &lt; 10<SUP>−15</SUP><BR/>§10>];
+  seesaw [label=<Leptogenesis<BR/>η<SUB>B</SUB>~9 × 10<SUP>−10</SUP><BR/>§7>];
+  unruh [label=<Unruh effect<BR/>T<SUB>U</SUB>=ℏa/(2πc*k<SUB>B</SUB>)<BR/>QS>];
 
   // === OPEN ===
   node [fillcolor="white", style="rounded,dashed", fontcolor=black, penwidth=2];
-  SU3 [label=<SU(3), mn<BR/>[OPEN]>];
+  SU3 [label=<SU(3),<BR/>α<SUB>s</SUB> [OPEN]>];
   threegen [label=<3 generations<BR/>[OPEN]>];
 
   // === RANKS ===
-  {rank=same; P1; P2; P3; P4; P5; P6; Ph1; Ph2}
-  {rank=same; lorentz; goldstone; cstar}
-  {rank=same; S0; GE; GN}
-  {rank=same; gauge; KG; einstein}
+  {rank=same; P1; P2; P3; P4; Ph2; Ph1}
+  {rank=same; P5; P6}
+  {rank=same; lorentz; goldstone; GN; cstar}
+  {rank=same; hbar; GE}
+  {rank=same; gauge; KG; einstein; unruh; schrodinger}
   {rank=same; dirac; second_law}
   {rank=same; SU3; fifth; threegen; seesaw}
   {rank=same; topo_anti; skyrmion; LIV}
 
-  // === EDGES — solid = strict ===
+  // === EDGES ===
   P1 -> SSB; P2 -> SSB; P3 -> SSB; P4 -> SSB;
   P6 -> SSB [style=dashed];
   SSB -> UC;
-  UC -> lorentz; UC -> goldstone; UC -> cstar; UC -> S0;
+  UC -> lorentz; UC -> goldstone; UC -> cstar; UC -> hbar;
   UC -> PX;
   PX -> NLO;
   NLO -> GN [style=dashed];
@@ -82,35 +85,32 @@ digraph PartI {
   dirac -> fifth; dirac -> seesaw;
   einstein -> second_law;
   cstar -> LIV; GN -> LIV;
+  KG -> schrodinger;
+  lorentz -> unruh [style=dashed];
+  hbar -> KG [style=dashed];
 
-  // === EDGES — dashed = requires assumptions ===
   Ph1 -> cstar [style=dashed];
   Ph2 -> NLO [style=dashed];
   P3 -> GE [style=dashed];
   P4 -> lorentz [style=dashed];
   SSB -> GE [style=dashed];
-  S0 -> KG [style=dashed];
   gauge -> SU3 [style=dashed, color=gray50];
   gauge -> threegen [style=dashed, color=gray50];
 
-  // === FORCE LEGEND TO BOTTOM ===
+  // === LEGEND ===
   node [shape=point, width=0, style=invis];
   spacer1 [label=""];
-  spacer2 [label=""];
   topo_anti -> spacer1 [style=invis];
   seesaw -> spacer1 [style=invis];
   LIV -> spacer1 [style=invis];
   SU3 -> spacer1 [style=invis];
   threegen -> spacer1 [style=invis];
   fifth -> spacer1 [style=invis];
-  spacer1 -> spacer2 [style=invis];
 
   node [shape=plaintext, style="", fillcolor=white];
   legend [label=<
     <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="4" CELLPADDING="6" COLOR="black">
-      <TR>
-        <TD COLSPAN="7"><B>Legend</B></TD>
-      </TR>
+      <TR><TD COLSPAN="7"><B>Legend</B></TD></TR>
       <TR>
         <TD BGCOLOR="#404040"><FONT COLOR="white">Postulate (P1–P6)</FONT></TD>
         <TD BGCOLOR="#808080"><FONT COLOR="white">Phenom. input</FONT></TD>
@@ -122,5 +122,5 @@ digraph PartI {
       </TR>
     </TABLE>
   >];
-  spacer2 -> legend [style=invis];
+  spacer1 -> legend [style=invis];
 }
