@@ -58,7 +58,7 @@ fig = plt.figure(figsize=(14, 9.5))
 gs = fig.add_gridspec(3, 1,
     height_ratios=[1.0, 2.2, 1.8],
     hspace=0.0,
-    left=0.08, right=0.93, top=0.94, bottom=0.09)
+    left=0.08, right=0.93, top=0.91, bottom=0.09)
 
 # shared x limits
 XMIN, XMAX = -0.02, 1.03
@@ -71,14 +71,15 @@ ax1.set_yticks([]); ax1.set_xticks([])
 # Phase bands
 phase_bands = [
     (0.00, 0.10, '#d0d0d0', 'Euclidean / pre-Lorentzian\n(no macroscopic time, $u_0=0$)'),
-    (0.10, 0.18, '#a0a0a0', 'Ordering transition\nO(4)$\\to$O(3), $\\alpha>1$\nLorentzian branch emerges'),
-    (0.18, 0.88, '#e8e8e8', 'Causal macroscopic Lorentzian regime\n(ordered branch, $c_*=1/\\sqrt{\\alpha-1}$, time established)'),
+    (0.10, 0.18, '#a0a0a0', 'Ordering transition\nO(4)$\\to$O(3), $\\alpha>\\beta$\nLorentzian branch emerges'),
+    (0.18, 0.88, '#e8e8e8', 'Causal macroscopic Lorentzian regime\n(ordered branch, $c_*=c$, time established)'),
     (0.88, 1.03, '#f4f4f4', 'Scen. A/B\nfuture'),
 ]
-for x0, x1, col, lbl in phase_bands:
+y_offsets = [0.62, 0.35, 0.50, 0.50]  # Euclidean UP, Ordering DOWN
+for idx_b, (x0, x1, col, lbl) in enumerate(phase_bands):
     ax1.add_patch(Rectangle((x0, 0.05), x1-x0, 0.88,
                             facecolor=col, edgecolor='black', lw=0.5))
-    ax1.text((x0+min(x1,1.02))/2, 0.50, lbl,
+    ax1.text((x0+min(x1,1.02))/2, y_offsets[idx_b], lbl,
              ha='center', va='center', fontsize=8.5, multialignment='center')
 
 ax1.text(-0.01, 1.04, '(i) Ordering / Lorentzian-branch emergence',
@@ -227,10 +228,10 @@ ax3.set_xticklabels(epoch_labels, fontsize=8.5, multialignment='center')
 ax3.tick_params(axis='x', which='major', pad=4)
 
 # ── Suptitle ──────────────────────────────────────────────────────────────────
-fig.text(0.50, 0.965,
+fig.text(0.50, 0.975,
          "ECT: schematic full evolution of the ordered-branch condensate sectors and the observable Universe",
          ha='center', fontsize=11.5, fontweight='bold')
-fig.text(0.50, 0.948,
+fig.text(0.50, 0.955,
          r"$\beta=0.8$, $\phi_0=-0.10$ (Hubble-priority);  "
          r"$G_{\rm eff}(z=10)/G_N\approx1.49$;  "
          r"$\Delta H_0/H_0=+2.73\%$;  $t_0^{\rm ECT}=13.02$ Gyr",
