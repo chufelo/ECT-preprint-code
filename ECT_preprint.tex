@@ -31505,38 +31505,7 @@ derivation from bare~P3.
 
 \begin{figure}[h]
 \centering
-\begin{tikzpicture}[scale=1.0]
-  % Outer circle (H_ext)
-  \draw[thick] (0,0) circle (2.9cm);
-  % Shell boundary (dashed)
-  \draw[thick, dashed] (0,0) circle (2.1cm);
-  % Inner circle (H_int)
-  \draw[thick] (0,0) circle (1.2cm);
-
-  % Region labels
-  \node[font=\small] at (0, 3.4) {$\mathcal{H}_{\rm ext}$: asymptotically accessible exterior};
-  \node[font=\footnotesize] at (0, 2.5) {--- critical shell boundary ---};
-  \node[font=\small] at (0, 1.6) {$\mathcal{H}_{\rm shell}$: ordered-phase shell};
-  \node[font=\small] at (0, 0.0) {$\mathcal{H}_{\rm int}$: inaccessible};
-  \node[font=\small] at (0,-0.4) {strong-field sector};
-
-  % Side annotations
-  \draw[->, thick] (3.3, 1.1) -- (2.2, 1.1);
-  \node[font=\small, align=left] at (5.5, 1.1)
-    {strong-field coupling of\\coherent \& topological modes};
-
-  \draw[->, thick] (3.3,-0.8) -- (2.7,-0.8);
-  \node[font=\small, align=left] at (5.5,-0.8)
-    {observer traces over\\shell + interior sectors};
-
-  % Reduced state formula box
-  \draw[rounded corners, thick] (3.8,-2.9) rectangle (8.2,-1.9);
-  \node[font=\small] at (6.0,-2.4)
-    {$\rho_{\rm ext}=\mathrm{Tr}_{{\rm sh,int}}|\Psi\rangle\langle\Psi|$};
-
-  % Arrow from circle bottom to box
-  \draw[->, thick] (2.5,-1.8) -- (3.75,-2.2);
-\end{tikzpicture}
+\includegraphics[width=0.85\textwidth]{figures/fig_bh_shell.pdf}
 \caption{Schematic ECT picture of the near-horizon strong-field region~(Level~B).
 The exterior observer has access only to an effective reduced sector, while a
 critical ordered-phase shell mediates between the asymptotic region and deeper
