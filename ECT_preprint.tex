@@ -1997,6 +1997,26 @@ independent sector-by-sector parameters.  Their detailed suppression
 pattern, however, remains part of the higher-order EFT analysis and
 should not be overstated at the present stage.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.78\textwidth]{figures/fig_liv_delay.pdf}
+\caption{ECT benchmark prediction for the LIV photon time-of-flight
+delay $\Delta t_{\rm LIV}=(E/M_{\rm Pl}c^2)(L/c)$
+(Eq.~\ref{eq:LIV_delay}) as a function of photon energy~$E$
+for several source distances~$L$.
+The grey band marks the Fermi-LAT constrained region
+($\Delta t \gtrsim 10^{-2}$\,s for short-GRB timing);
+the dashed horizontal line indicates the projected CTA
+sensitivity ($\sim\!10^{-4}$\,s).
+The filled circle marks the reference point $E=10$\,GeV,
+$L=4$\,Gpc ($\Delta t\approx 0.34$\,s).
+The benchmark prediction is at the boundary of current constraints
+and directly testable by CTA at TeV energies.
+Numerical details are given in
+Appendix~\ref{app:liv_numerics}.}
+\label{fig:liv_delay}
+\end{figure}
+
 \paragraph{Emergent special relativity.}
 \label{par:emergent_SR}
 ECT does not postulate special relativity but derives its
@@ -36309,6 +36329,53 @@ by linearising $c_*(|\partial\Phi|)\approx c_*$.
 
 
 \section{Retarded Causal Kernel: Proof That $K(\tau<0)=0$}
+
+% ------------------------------------------------------------------
+\section{LIV time-delay numerics}
+\label{app:liv_numerics}
+
+The benchmark ECT formula for photon time-of-flight delay due to
+Lorentz-invariance violation is (Eq.~\ref{eq:LIV_delay})
+\begin{equation}
+  \Delta t_{\rm LIV}
+  = \frac{(\alpha-\beta)}{\beta}\,
+    \frac{E}{M_{\rm Pl}\,c^2}\,\frac{L}{c}
+  \;\xrightarrow{\alpha=2\beta,\,\beta=1}\;
+  \frac{E}{M_{\rm Pl}\,c^2}\,\frac{L}{c}\,.
+\end{equation}
+Using $M_{\rm Pl}=1.22\times10^{19}$\,GeV and
+$1\,{\rm Gpc}=3.086\times10^{25}$\,m, one obtains
+\begin{equation}
+  \Delta t_{\rm LIV}
+  \approx 8.4\times10^{-3}\;
+  \biggl(\frac{E}{1\,{\rm GeV}}\biggr)
+  \biggl(\frac{L}{1\,{\rm Gpc}}\biggr)
+  \;{\rm s}\,.
+  \label{eq:liv_numerics}
+\end{equation}
+Representative values:
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+$E$ (GeV) & $L$ (Gpc) & Source type & $\Delta t$ (s) \\
+\midrule
+$1$   & $4$   & Typical GRB     & $3.4\times10^{-2}$ \\
+$10$  & $4$   & Fermi-LAT GRB   & $3.4\times10^{-1}$ \\
+$10^3$ & $0.4$ & CTA blazar (TeV)& $3.4$ \\
+$10^4$ & $0.04$& CTA nearby AGN  & $3.4$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+The Fermi-LAT constraint from GRB~090510~\cite{Fermi_LIV_2009}
+sets $M_{\rm QG,1}>7.6\,M_{\rm Pl}$ for the linear
+dispersion relation, implying that the benchmark ECT prediction
+with $M_{\rm QG}=M_{\rm Pl}$ lies at the boundary of current
+exclusions.
+CTA~\cite{CTA2020} is expected to reach timing precision
+$\sim\!10^{-4}$\,s at TeV energies over $\sim\!0.1$--$1$\,Gpc
+baselines, directly probing the ECT prediction
+(Fig.~\ref{fig:liv_delay}).
+
 \label{app:retarded_kernel}
 
 \textit{Reference from main text: Section~\ref{sec:arrow_of_time},
