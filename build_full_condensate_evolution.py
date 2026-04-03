@@ -33,7 +33,7 @@ plt.rcParams.update({
 # Positions (approximate):
 #   0.00  Euclidean / pre-Lorentzian
 #   0.10  O(4)→O(3) ordering transition
-#   0.18  Inflation end / Lorentzian branch established
+#   0.18  Lorentzian branch fully established
 #   0.35  EW condensation (v2 turns on)
 #   0.55  Structure formation / JWST epoch (z~10-14)
 #   0.75  Recombination / Matter domination
@@ -43,7 +43,7 @@ plt.rcParams.update({
 EPOCHS = [
     (0.00, "Euclidean\nphase"),
     (0.10, "O(4)$\\to$O(3)\nordering"),
-    (0.18, "Inflation\n$N_e=60$"),
+    (0.18, "Lorentzian\nbranch est."),
     (0.35, "EW: $v_2=246$ GeV\nW, Z, H"),
     (0.55, "JWST epoch\n$z\\sim10$--14"),
     (0.75, "Recomb.\n380 kyr"),
