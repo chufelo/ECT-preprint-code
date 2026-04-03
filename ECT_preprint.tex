@@ -26205,23 +26205,32 @@ EFT.
   arrow/.style={->, >=stealth, thick},
   dline/.style={dashed, gray, thick}
 ]
+% Top: ordered coherent vacuum
 \node[box, fill=gray!15] (vac) at (0,0) {ordered coherent\\vacuum};
+
+% Row of 4 response channels
 \node[box] (casimir) at (-5.0,-2.5) {boundary response\\(Casimir)};
 \node[box] (prod)    at (-1.7,-2.5) {time-dependent\\response\\(particle production)};
 \node[box] (unruh)   at ( 1.7,-2.5) {observer response\\(Unruh)};
 \node[box] (bh)      at ( 5.0,-2.5) {strong-field interface\\response\\(Hawking/horizon)};
 
+% Solid arrows from vacuum to each channel
 \draw[arrow] (vac) -- (casimir);
 \draw[arrow] (vac) -- (prod);
 \draw[arrow] (vac) -- (unruh);
 \draw[arrow] (vac) -- (bh);
 
-\draw[dline] (casimir.south) -- ++(0,-0.4) -- ++(10,0) -- (bh.south |- {0,-3.3}) -- (bh.south);
-\draw[dline] (prod.south) -- ++(0,-0.4);
-\draw[dline] (unruh.south) -- ++(0,-0.4);
+% Analogue-gravity continuity block below centre
+\node[box, fill=gray!8] (ag) at (0,-5.0) {analogue-gravity\\continuity};
 
-\node[font=\footnotesize\itshape, text=gray] at (0,-4.0)
-  {dashed line = analogue-gravity conceptual continuity (all four channels)};
+% Dashed lines from analogue-gravity to each channel
+\draw[dline] (ag) -- (casimir);
+\draw[dline] (ag) -- (prod);
+\draw[dline] (ag) -- (unruh);
+\draw[dline] (ag) -- (bh);
+
+\node[font=\footnotesize\itshape, text=gray] at (0,-6.2)
+  {dashed links = conceptual continuity, not a completed derivation chain};
 \end{tikzpicture}
 \caption{Unified response logic of the ordered coherent vacuum
 in the Quantum Sector of ECT~(Level~A/B).
