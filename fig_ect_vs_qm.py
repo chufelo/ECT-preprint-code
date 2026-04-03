@@ -1,75 +1,59 @@
-"""
-F4: ECT vs Standard QM — Cauchy vs Boundary-Value Problem
-Two-column comparison diagram
-"""
+"""F4: ECT vs QM — v2: compact, no inter-row arrows, larger fonts"""
 import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
+from matplotlib.patches import FancyBboxPatch
 import os
 
-plt.rcParams.update({'font.family': 'serif', 'font.size': 11, 'mathtext.fontset': 'cm'})
+plt.rcParams.update({'font.family': 'serif', 'font.size': 12, 'mathtext.fontset': 'cm'})
 
-fig = plt.figure(figsize=(12, 8))
+fig = plt.figure(figsize=(12, 6.5))
 fig.patch.set_facecolor('white')
 ax = fig.add_axes([0.01, 0.01, 0.98, 0.98])
-ax.set_xlim(0, 12); ax.set_ylim(0, 8); ax.axis('off')
+ax.set_xlim(0, 12); ax.set_ylim(0, 6.5); ax.axis('off')
 
-def box(x, y, w, h, lines, fill='#f0f0f0', edge='#444', fs=10.5, bold_first=False):
+def box(x, y, w, h, lines, fill='#eee', fs=11.5):
     ax.add_patch(FancyBboxPatch((x-w/2, y-h/2), w, h,
-        boxstyle='round,pad=0.12', facecolor=fill, edgecolor=edge, linewidth=1.5, zorder=3))
-    txt = '\n'.join(lines)
-    ax.text(x, y, txt, ha='center', va='center', fontsize=fs, linespacing=1.25, zorder=4)
+        boxstyle='round,pad=0.1', facecolor=fill, edgecolor='#444', linewidth=1.4, zorder=3))
+    ax.text(x, y, '\n'.join(lines), ha='center', va='center', fontsize=fs,
+            linespacing=1.2, zorder=4)
 
-def arr(x0, y0, x1, y1):
-    ax.annotate('', xy=(x1, y1), xytext=(x0, y0),
-        arrowprops=dict(arrowstyle='-|>', color='#444', lw=1.6, mutation_scale=15))
+# Headers
+box(3, 6.0, 5.0, 0.65, ['Standard Quantum Mechanics'], fill='#c0c0c0', fs=14)
+box(9, 6.0, 5.0, 0.65, ['Euclidean Condensate Theory'], fill='#c0c0c0', fs=14)
 
-# === Headers ===
-box(3, 7.5, 4.8, 0.7, ['Standard Quantum Mechanics'], fill='#c0c0c0', fs=13)
-box(9, 7.5, 4.8, 0.7, ['Euclidean Condensate Theory'], fill='#c0c0c0', fs=13)
+# Row labels (left margin)
+rows = [
+    ('Problem type', 5.0),
+    ('Equation', 4.0),
+    ('Probability', 3.0),
+    ('Time', 2.0),
+    ('Measurement', 1.0),
+]
 
-# === Row 1: Problem type ===
-box(3, 6.3, 4.8, 0.8, ['Initial-value (Cauchy) problem',
-    r'$\psi(\mathbf{x}, t_0)$ given $\;\to\;$ evolve forward'], fill='#e8e8e8')
-box(9, 6.3, 4.8, 0.8, ['Boundary-value (elliptic) problem',
-    r'$\Phi(X)$ on entire $\mathcal{M}^4$'], fill='#e0e0e0')
+qm_boxes = [
+    ['Initial-value (Cauchy) problem', r'$\psi(\mathbf{x}, t_0)$ given → evolve forward'],
+    [r'$i\hbar\,\partial_t\psi = H\psi$', 'Schrödinger / Dirac equation'],
+    [r'$|\psi|^2$ = Born rule', '(fundamental axiom)'],
+    ['Time: fundamental coordinate', 'Lorentzian spacetime a priori'],
+    ['Measurement: extra postulate', 'Collapse / decoherence'],
+]
 
-# === Row 2: Equation ===
-box(3, 5.0, 4.8, 0.8, [r'$i\hbar\,\partial_t\psi = H\psi$',
-    'Schrödinger / Dirac equation'], fill='#efefef')
-box(9, 5.0, 4.8, 0.8, [r'$\delta^{AB}\partial_A\partial_B\Phi - V^\prime(\Phi) = 0$',
-    'Euclidean condensate equation'], fill='#efefef')
+ect_boxes = [
+    ['Boundary-value (elliptic) problem', r'$\Phi(X)$ on entire $\mathcal{M}^4$'],
+    [r'$\delta^{AB}\partial_A\partial_B\Phi - V^\prime(\Phi) = 0$', 'Euclidean condensate equation'],
+    [r'$|\psi|^2$ from coarse-graining', '(emergent, not axiom)'],
+    [r'Time: emergent from $O(4)\to O(3)$', 'SSB selects $w$-direction'],
+    [r'Measurement: E$\to$L transition', 'Under environmental locking'],
+]
 
-# === Row 3: Probability ===
-box(3, 3.7, 4.8, 0.8, ['Probability: fundamental axiom',
-    r'$|\psi|^2$ = Born rule (postulated)'], fill='#e8e8e8')
-box(9, 3.7, 4.8, 0.8, ['Probability: emergent',
-    r'$|\psi|^2$ from coarse-graining over', 
-    'untracked condensate modes'], fill='#e0e0e0')
-
-# === Row 4: Time ===
-box(3, 2.4, 4.8, 0.8, ['Time: fundamental coordinate',
-    'Lorentzian spacetime given a priori'], fill='#efefef')
-box(9, 2.4, 4.8, 0.8, ['Time: emergent from SSB',
-    r'$O(4)\to O(3)$ selects $w$-direction'], fill='#efefef')
-
-# === Row 5: Measurement ===
-box(3, 1.1, 4.8, 0.8, ['Measurement: extra postulate',
-    'wavefunction collapse / decoherence'], fill='#e8e8e8')
-box(9, 1.1, 4.8, 0.8, ['Measurement: structural',
-    r'E$\to$L transition under env. locking',
-    '(no extra postulate)'], fill='#e0e0e0')
-
-# Arrows
-for y in [6.3, 5.0, 3.7, 2.4, 1.1]:
-    arr(3, y-0.4, 3, y-0.72)
-    arr(9, y-0.4, 9, y-0.72)
+for i, (label, y) in enumerate(rows):
+    box(3, y, 5.0, 0.72, qm_boxes[i], fill='#e5e5e5')
+    box(9, y, 5.0, 0.72, ect_boxes[i], fill='#e0e0e0')
 
 # Vertical divider
-ax.plot([6, 6], [0.4, 7.1], color='#bbb', lw=1, ls='--')
+ax.plot([6, 6], [0.5, 5.5], color='#bbb', lw=1, ls='--')
 
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'figures')
 fig.savefig(os.path.join(out, 'fig_ect_vs_qm.pdf'), bbox_inches='tight')
 fig.savefig(os.path.join(out, 'fig_ect_vs_qm.png'), dpi=300, bbox_inches='tight')
-plt.close()
-print("fig_ect_vs_qm OK")
+plt.close(); print("OK")
