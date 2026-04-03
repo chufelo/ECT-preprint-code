@@ -1,0 +1,54 @@
+<svg width="680" height="620" viewBox="0 0 680 620" xmlns="http://www.w3.org/2000/svg">
+<style>
+  text { font-family: "Times New Roman", "Liberation Serif", serif; fill: #222; }
+  .bold { font-weight: bold; }
+  .italic { font-style: italic; }
+  .sub { fill: #777; font-style: italic; }
+  .note { fill: #444; font-style: italic; }
+</style>
+
+<!-- Layer 1: Base circles -->
+<circle cx="340" cy="215" r="170" fill="#e8e8e8" stroke="#888" stroke-width="1.2"/>
+<circle cx="240" cy="365" r="170" fill="#e8e8e8" stroke="#888" stroke-width="1.2"/>
+<circle cx="440" cy="365" r="170" fill="#e8e8e8" stroke="#888" stroke-width="1.2"/>
+
+<!-- Layer 2: Pairwise overlaps via clipPath -->
+<defs>
+<clipPath id="cTop"><circle cx="340" cy="215" r="170"/></clipPath>
+<clipPath id="cLeft"><circle cx="240" cy="365" r="170"/></clipPath>
+<clipPath id="cRight"><circle cx="440" cy="365" r="170"/></clipPath>
+</defs>
+<g clip-path="url(#cTop)"><circle cx="240" cy="365" r="170" fill="#d0d0d0"/></g>
+<g clip-path="url(#cTop)"><circle cx="440" cy="365" r="170" fill="#d0d0d0"/></g>
+<g clip-path="url(#cLeft)"><circle cx="440" cy="365" r="170" fill="#d0d0d0"/></g>
+
+<!-- Layer 3: Triple overlap -->
+<g clip-path="url(#cTop)"><g clip-path="url(#cLeft)"><circle cx="440" cy="365" r="170" fill="#b8b8b8"/></g></g>
+
+<!-- Zone labels -->
+<text class="bold" x="340" y="92" text-anchor="middle" font-size="14">Extremal</text>
+<text x="340" y="112" text-anchor="middle" font-size="14">(stationary action)</text>
+
+<text class="bold" x="200" y="418" text-anchor="middle" font-size="14">Decoherence-resistant</text>
+<text x="200" y="440" text-anchor="middle" font-size="14">(Γ_loop ≪ 1)</text>
+
+<text class="bold" x="480" y="418" text-anchor="middle" font-size="14">Phase-compact</text>
+<text x="480" y="440" text-anchor="middle" font-size="14">(integer winding)</text>
+
+<!-- Petal labels -->
+<text class="sub" x="248" y="250" text-anchor="middle" font-size="13">smooth</text>
+<text class="sub" x="248" y="267" text-anchor="middle" font-size="13">extremal</text>
+<text class="sub" x="432" y="250" text-anchor="middle" font-size="13">compact</text>
+<text class="sub" x="432" y="267" text-anchor="middle" font-size="13">extremal</text>
+<text class="sub" x="340" y="420" text-anchor="middle" font-size="13">stable</text>
+<text class="sub" x="340" y="437" text-anchor="middle" font-size="13">coherent</text>
+
+<!-- PES center -->
+<text class="bold" x="340" y="310" text-anchor="middle" font-size="14">PES</text>
+<text class="bold" x="340" y="330" text-anchor="middle" font-size="14">persistent</text>
+<text class="bold" x="340" y="350" text-anchor="middle" font-size="14">configuration</text>
+
+<!-- Bottom -->
+<text class="note" x="340" y="572" text-anchor="middle" font-size="14">Observable quantum states = configurations satisfying</text>
+<text class="note" x="340" y="593" text-anchor="middle" font-size="14">all three conditions simultaneously</text>
+</svg>
