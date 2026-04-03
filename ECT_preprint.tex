@@ -26216,12 +26216,12 @@ EFT.
 \draw[arrow] (vac) -- (unruh);
 \draw[arrow] (vac) -- (bh);
 
-\draw[dline] (casimir) -- (prod);
-\draw[dline] (prod) -- (unruh);
-\draw[dline] (unruh) -- (bh);
+\draw[dline] (casimir.south) -- ++(0,-0.4) -- ++(10,0) -- (bh.south |- {0,-3.3}) -- (bh.south);
+\draw[dline] (prod.south) -- ++(0,-0.4);
+\draw[dline] (unruh.south) -- ++(0,-0.4);
 
-\node[below=0.6cm of prod, xshift=1.7cm, font=\footnotesize\itshape, text=gray]
-  {dashed links = analogue-gravity conceptual continuity};
+\node[font=\footnotesize\itshape, text=gray] at (0,-4.0)
+  {dashed line = analogue-gravity conceptual continuity (all four channels)};
 \end{tikzpicture}
 \caption{Unified response logic of the ordered coherent vacuum
 in the Quantum Sector of ECT~(Level~A/B).
@@ -27706,16 +27706,16 @@ and $N_{\rm eff}\gg1$ remains open~(OP-Q15).
     minimum width=3.8cm, minimum height=1.1cm, font=\small},
   arrow/.style={->, thick}
 ]
-\node[box] (left) at (-3.2,0)
+\node[box] (left) at (-4.8,0)
   {$N_{\rm eff}\sim 1$\\weak monitoring\\long-lived coherence\\possible recoherence};
 \node[box] (mid) at (0,0)
   {coherent subsystem\\+ effective bath};
-\node[box] (right) at (3.4,0)
+\node[box] (right) at (4.8,0)
   {$N_{\rm eff}\gg 1$\\strong monitoring\\rapid decoherence\\classical alternatives};
 \draw[arrow] (mid) -- (left);
 \draw[arrow] (mid) -- (right);
-\node[font=\small] at (-3.2,-1.6) {quantum-coherent regime};
-\node[font=\small] at (3.4,-1.6) {macroscopic regime};
+\node[font=\small] at (-4.8,-1.6) {quantum-coherent regime};
+\node[font=\small] at (4.8,-1.6) {macroscopic regime};
 \end{tikzpicture}
 \caption{Qualitative regime split in the decoherence sector of ECT~(Level~B).
 When only a few effective environment channels are active
