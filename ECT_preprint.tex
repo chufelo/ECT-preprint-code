@@ -21433,20 +21433,27 @@ II~= macroscopic branch of Part~II;
 III~= Quantum Sector / Part~III;
 G~= global whole-framework closure problem.
 
-\begin{table}[H]
-\centering
+\begingroup
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.25}
+\small
+\begin{longtable}{ccp{3.2cm}p{6.2cm}l}
 \caption{Level-4 self-consistency checklist.
 \textsc{pass} = derived or verified consistent at Level~A/B;
 \textsc{part.} = partial derivation or prediction awaiting precision test;
 \textsc{prob.} = structurally motivated, rigorous proof pending;
 \textsc{open} = known open problem.}
-\label{tab:level4_checklist}
-\setlength{\tabcolsep}{6pt}
-\renewcommand{\arraystretch}{1.25}
-\small\begin{tabular}{ccp{3.2cm}p{6.2cm}l}
+\label{tab:level4_checklist}\\
 \toprule
 \textbf{Status} & \textbf{Scope} & \textbf{Check} & \textbf{Key result} & \textbf{Ref.} \\
 \midrule
+\endfirsthead
+\toprule
+\textbf{Status} & \textbf{Scope} & \textbf{Check} & \textbf{Key result} & \textbf{Ref.} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
 \textsc{pass} & I & Condensate stability      & $V''(\phi_0)=2\mu^2>0$                                   & \S\ref{sec:ssb} \\
 \textsc{pass} & I & Ghost-freedom             & Phys.\ mode $\lambda>0$ at $\alpha>\beta$                 & \S\ref{sec:ssb} \\
 \textsc{pass} & I & LIV bound                 & $|\delta c/c|<10^{-15}$ (GW170817)                    & \S\ref{sec:qs_black_holes} \\
@@ -21468,10 +21475,8 @@ G~= global whole-framework closure problem.
 \textsc{part.}& II & Environmental modulation of $g^\dagger_{\rm eff}$ & Framework for environment-dependent galactic critical scale established; precision correlation test pending & \S\ref{sec:mp_galactic_phenom}, \S\ref{sec:dark_discriminants} \\
 \textsc{part.}& II & Galactic dark-sector reinterpretation & Galactic mass discrepancy addressed by $\phi$-closure without particle dark matter; cosmological fraction budget still open & \S\ref{sec:dark_matter_interp} \\
 \textsc{part.}& II & Cluster-merger morphology & Convergence peak follows more compact baryonic component in present $\phi$-closure; morphology robust, amplitude still closure-level & \S\ref{sec:bullet_cluster}, \S\ref{sec:dark_discriminants} \\
-\bottomrule
-\end{tabular}
-\end{table}
-
+\end{longtable}
+\endgroup
 
 % ==============================================================
 \subsection{Global derivation, status, and falsifier maps}
@@ -26195,28 +26200,30 @@ EFT.
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[
-  node distance=1.0cm and 1.0cm,
-  box/.style={draw, rounded corners, align=center, minimum width=3.1cm,
-    minimum height=0.95cm, font=\small},
-  arrow/.style={->, thick},
-  dline/.style={dashed, thick}
+  node distance=1.8cm and 2.0cm,
+  box/.style={draw, rounded corners, align=center, minimum width=3.0cm,
+    minimum height=1.0cm, font=\small, inner sep=5pt},
+  arrow/.style={->, >=stealth, thick},
+  dline/.style={dashed, thick, gray}
 ]
-\node[box] (vac) {ordered coherent\\vacuum};
-\node[box, below left=of vac] (casimir) {boundary response\\(Casimir)};
-\node[box, below=of vac] (prod) {time-dependent response\\(particle production)};
-\node[box, below right=of vac] (unruh) {observer response\\(Unruh)};
-\node[box, below=2.2cm of prod] (bh) {strong-field interface\\response (Hawking/horizon)};
-\node[box, right=2.2cm of prod] (ag) {analogue-gravity\\continuity};
+\node[box, fill=gray!15] (vac) {ordered coherent\\vacuum};
+\node[box, below left=2.0cm and 2.5cm of vac] (casimir) {boundary response\\(Casimir)};
+\node[box, below left=2.0cm and 0.0cm of vac] (prod) {time-dependent\\response\\(particle production)};
+\node[box, below right=2.0cm and 0.0cm of vac] (unruh) {observer response\\(Unruh)};
+\node[box, below=4.5cm of vac] (bh) {strong-field interface\\response (Hawking/horizon)};
 
 \draw[arrow] (vac) -- (casimir);
 \draw[arrow] (vac) -- (prod);
 \draw[arrow] (vac) -- (unruh);
-\draw[arrow] (vac) -- (bh);
+\draw[arrow] (vac.south) -- ++(0,-1.0) -| (bh.north);
 
-\draw[dline] (ag) -- (casimir);
-\draw[dline] (ag) -- (prod);
-\draw[dline] (ag) -- (unruh);
-\draw[dline] (ag) -- (bh);
+\draw[dline] (casimir) -- (prod);
+\draw[dline] (prod) -- (unruh);
+\draw[dline] (unruh.south) -- ++(0,-0.5) -| (bh.east);
+\draw[dline] (casimir.south) -- ++(0,-0.5) -| (bh.west);
+
+\node[below=0.3cm of bh, font=\footnotesize\itshape, text=gray]
+  {dashed links = analogue-gravity conceptual continuity};
 \end{tikzpicture}
 \caption{Unified response logic of the ordered coherent vacuum
 in the Quantum Sector of ECT~(Level~A/B).
@@ -26926,11 +26933,11 @@ The Casimir entry is conditional on idealised condensate-reflecting
 boundaries in the provisional soft-orientation EFT and is \emph{not}
 a prediction for standard metallic-plate experiments.}
 \label{tab:vacuum_predictions}
-\begin{tabular}{@{}lllcc@{}}
+\begin{tabular}{@{}p{4.0cm}p{3.5cm}p{3.2cm}p{3.0cm}c@{}}
 \toprule
 Effect & ECT formula & ECT value & Std.\ result & Status \\
 \midrule
-Casimir (minimal 3-comp.\ soft-orientation EFT,\\cond.-reflecting boundaries) &
+Casimir (minimal 3-comp.\ soft-orientation EFT, cond.-reflecting boundaries) &
 $-\dfrac{3\pi^2\hbar c_*}{240 a^4}$ &
 $3/2\times(F/A)_{\rm QED}$ \emph{conditional} &
 $-\dfrac{\pi^2\hbar c}{120 a^4}$ & B (conditional) \\
