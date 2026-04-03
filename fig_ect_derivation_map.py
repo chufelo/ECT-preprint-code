@@ -47,7 +47,7 @@ digraph ECT {
   P5 -> SSB; P6 -> SSB;
 
   /* ===== TIER 3: Emergent Lorentzian ===== */
-  LOR [label=<Emergent Lorentzian Structure<BR/><FONT POINT-SIZE="9">Metric diag(−1,1,1,1)   ·   c<SUB>*</SUB> = 1/√(α−β)   ·   Causal cone   ·   Arrow of time</FONT>>,
+  LOR [label=<Emergent Lorentzian Structure<BR/><FONT POINT-SIZE="9">Metric diag(−1,1,1,1)   ·   c<SUB>*</SUB> = √(β/(α−β))   ·   Causal cone   ·   Arrow of time</FONT>>,
        fillcolor="#c8c8c8", penwidth=1.5, fontsize=10];
   SSB -> LOR [xlabel=<  α &gt; β >];
 
@@ -61,11 +61,11 @@ digraph ECT {
   {rank=same; MBRANCH; QBRANCH}
 
   /* ===== MACRO BRANCH (left) ===== */
-  GR [label=<General Relativity<BR/><FONT POINT-SIZE="9">Fierz–Pauli → Einstein eqs.<BR/>G<SUB>N</SUB> = c<SUB>*</SUB>²(α−β) / (16πv₀²)   [A/B]</FONT>>];
+  GR [label=<General Relativity<BR/><FONT POINT-SIZE="9">Fierz–Pauli → Einstein eqs.<BR/>G<SUB>N</SUB> = 1/(8πu₀²(α−β))   [A/B]</FONT>>];
 
   MBRANCH -> GR;
 
-  COSMO [label=<Cosmology<BR/><FONT POINT-SIZE="9">Inflation n<SUB>s</SUB> ≈ 0.967   ·   Λ<SUB>eff</SUB><BR/>Hubble tension route   [B]</FONT>>];
+  COSMO [label=<Cosmology<BR/><FONT POINT-SIZE="9">Primordial n<SUB>s</SUB> ≈ 0.967   ·   Λ<SUB>eff</SUB><BR/>Hubble tension route   [B]</FONT>>];
   GAL [label=<Galactic Dynamics<BR/><FONT POINT-SIZE="9">φ-branch   ·   BTFR slope = 4   ·   RAR<BR/>g<SUB>†</SUB> ~ cH₀/(2π)   [B]</FONT>>];
   BH [label=<Black Holes &amp; Strong Field<BR/><FONT POINT-SIZE="9">Shell ρ<SUB>c</SUB> = ℓ<SUB>Pl</SUB>/√(3π)   ·   BH thermo<BR/>Information prog.   [B/Open]</FONT>>];
   FIFTH [label=<5th Force<BR/><FONT POINT-SIZE="9">β₅ ~ m<SUB>f</SUB>/M<SUB>Pl</SUB>   ·   M<SUB>max</SUB> ≈ 2.17 M<SUB>⊙</SUB>   [B]</FONT>>];
@@ -93,6 +93,12 @@ digraph ECT {
   SCHROD -> DECOH;
   SCHROD -> BORN;
   LOR -> TOPO [style=dashed, xlabel=<d<SUB>sp</SUB>=3>];
+
+  /* ===== PES ===== */
+  PES [label=<PES<BR/><FONT POINT-SIZE="9">Euclidean Stationarity<BR/>Selection criterion   [B]</FONT>>];
+  DECOH -> PES;
+  S0 -> PES [style=dashed];
+  PES -> BORN;
 
   /* ===== GAUGE SECTOR (bridging both branches) ===== */
   GAUGE [label=<Gauge &amp; Matter Sector<BR/><FONT POINT-SIZE="9">U(1) → photon   ·   SU(2) → W<SUP>±</SUP>, Z   ·   Higgs (v₂ ≈ 246 GeV)<BR/>Fermions: O(3) spinor reps   ·   SU(3): open   ·   3 gen.: open   [A/B/Open]</FONT>>,
