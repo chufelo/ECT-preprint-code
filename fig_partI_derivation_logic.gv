@@ -1,12 +1,12 @@
 digraph PartI {
   rankdir=TB;
   fontname="Helvetica";
-  node [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", margin="0.10,0.05"];
-  edge [fontname="Helvetica", fontsize=8];
+  node [fontname="Helvetica", fontsize=13, shape=box, style="rounded,filled", margin="0.15,0.08"];
+  edge [fontname="Helvetica", fontsize=10];
   newrank=true;
-  splines=true;
-  nodesep=0.40;
-  ranksep=0.55;
+  splines=ortho;
+  nodesep=0.55;
+  ranksep=0.70;
   labeljust=c;
 
   // === POSTULATES ===
@@ -25,33 +25,33 @@ digraph PartI {
 
   // === LEVEL A ===
   node [fillcolor="#b8b8b8", fontcolor=black];
-  SSB [label=<SSB<BR/>O(4) → O(3)<BR/>selects w<BR/>§3>];
+  SSB [label=<SSB<BR/>O(4)→O(3)<BR/>selects w<BR/>§3>];
   UC [label=<Universality Corollary<BR/>One Φ → one K → one cone<BR/>§4.3>];
   lorentz [label=<Lorentzian metric<BR/>§3.6>];
   goldstone [label=<3 Goldstone bosons<BR/>(fuzzy DM candidates)<BR/>§4>];
   cstar [label=<Light speed<BR/>c* = √(β/(α−β))<BR/>§5.3>];
-  PX [label=<P(X) ≠&gt; (∂n)²<BR/>Theorem 3.2<BR/>Level A, §3>];
+  PX [label=<P(X) cannot generate (∂n)²<BR/>Theorem 3.2<BR/>Level A, §3>];
   KG [label=<Klein–Gordon eq.<BR/>§3.6>];
-  topo_anti [label=<Topological anti-predictions<BR/>π<SUB>0</SUB> = π<SUB>1</SUB> = π<SUB>2</SUB> = 0<BR/>No walls / strings / monopoles<BR/>§8>];
+  topo_anti [label=<Topological anti-predictions<BR/>π₀ = π₁ = π₂ = 0<BR/>No walls / strings / monopoles<BR/>§8>];
   gauge [label=<Gauge fields<BR/>SU(2)×U(1)<BR/>Level A (via P5), §7>];
 
   // === LEVEL B ===
   node [fillcolor="#ffffff", fontcolor=black];
-  NLO [label=<NLO/induced stiffness<BR/>κ<SUB>n</SUB> = C<SUB>n</SUB> u₀²<BR/>M<SUB>G</SUB>² ~ φ₀²<BR/>Level B, §5.1>];
+  NLO [label=<NLO/induced stiffness<BR/>κn = Cn u₀²<BR/>MG² ~ φ₀²<BR/>Level B, §5.1>];
   second_law [label=<2nd law of<BR/>thermodynamics<BR/>Level B, §3.9>];
-  S0 [label=<Action scale identification<BR/>S<SUB>0</SUB> = ℏ<BR/>(from phase winding)<BR/>§5.6>];
-  GE [label=<Euclidean correlator<BR/>G<SUB>E</SUB>(X, X′)<BR/>§5>];
-  GN [label=<Grav. constant<BR/>G<SUB>N</SUB> = c*<SUP>4</SUP>/(8π M<SUB>G</SUB><SUP>2</SUP>)<BR/>§5.4>];
+  S0 [label=<Action scale<BR/>S₀ = ℏ<BR/>(from phase winding)<BR/>§5.6>];
+  GE [label=<Euclidean correlator<BR/>GE(X, X′)<BR/>§5>];
+  GN [label=<Grav. constant<BR/>GN = c*⁴/(8π MG²)<BR/>§5.4>];
   dirac [label=<Dirac equation<BR/>§9>];
   einstein [label=<Einstein equations<BR/>(linearised)<BR/>§6>];
-  fifth [label=<5th force<BR/>β<SUB>5</SUB> ~ m<SUB>f</SUB> / φ<SUB>0</SUB><BR/>Level A given Ph<BR/>§7.6>];
-  skyrmion [label=<Skyrmion / texture sectors<BR/>π<SUB>3</SUB>(S³) = ℤ<BR/>m<SUB>n</SUB> ~ n × 1.6 GeV<BR/>§8>];
-  LIV [label=<LIV structural<BR/>Δt ~ (E / M<SUB>Pl</SUB>) × L/c<BR/>§10>];
-  seesaw [label=<Neutrino seesaw scale<BR/>M<SUB>R</SUB> ~ √(φ<SUB>0</SUB> × v<SUB>2</SUB>)<BR/>→ leptogenesis route<BR/>§9>];
+  fifth [label=<5th force<BR/>β₅ ~ mf / φ₀<BR/>Level A given Ph<BR/>§7.6>];
+  skyrmion [label=<Skyrmion / texture sectors<BR/>π₃(S³) = Z<BR/>mn ~ n × 1.6 GeV<BR/>§8>];
+  LIV [label=<LIV structural<BR/>Δt ~ (E / MPl) × L/c<BR/>§10>];
+  seesaw [label=<Neutrino seesaw scale<BR/>MR ~ √(φ₀ × v₂)<BR/>→ leptogenesis route<BR/>§9>];
 
   // === OPEN ===
   node [fillcolor="white", style="rounded,dashed", fontcolor=black, penwidth=2];
-  SU3 [label=<SU(3), m<SUB>n</SUB><BR/>[OPEN]>];
+  SU3 [label=<SU(3), mn<BR/>[OPEN]>];
   threegen [label=<3 generations<BR/>[OPEN]>];
 
   // === RANKS ===
@@ -93,7 +93,7 @@ digraph PartI {
   gauge -> SU3 [style=dashed, color=gray50];
   gauge -> threegen [style=dashed, color=gray50];
 
-  // === FORCE LEGEND TO ABSOLUTE BOTTOM ===
+  // === FORCE LEGEND TO BOTTOM ===
   node [shape=point, width=0, style=invis];
   spacer1 [label=""];
   spacer2 [label=""];
