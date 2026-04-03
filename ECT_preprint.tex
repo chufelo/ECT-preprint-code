@@ -42096,65 +42096,6 @@ This conclusion applies equally to the Universe-age analysis
 of~\S\ref{sec:universe_age}.
 
 
-\clearpage
-\section*{Data and Code Availability}
-\addcontentsline{toc}{part}{Data and Code Availability}
-
-Galaxy rotation-curve data are drawn from the public SPARC database \cite{Lelli2016}
-(\url{http://astroweb.cwru.edu/SPARC/}).
-All numerical scripts used to produce the figures and calculations in this paper
-are publicly available at:
-
-\begin{center}
-  \url{https://github.com/chufelo/ECT-preprint-code}
-\end{center}
-
-\noindent
-For the late-time cosmology block, the currently released code should be
-read as the benchmark implementation corresponding to the Level~B
-closure and interim high-$z$ numerical completion described in
-Appendix~\ref{app:late_cosmo_algorithm}.
-The expected article-level numerical inputs, outputs, and validation
-checks are summarised in
-Appendix~\ref{sec:late_cosmo_interface}.
-The expected machine-readable artefacts of such a benchmark
-implementation are listed in
-Appendix~\ref{sec:late_cosmo_artefacts}.
-The same benchmark implementation is also intended to support the
-robustness programme under admissible late-time closure deformations
-described in Appendix~\ref{sec:late_closure_robustness}.
-The current repository version already supports direct benchmark--deformed
-comparisons within the admissible late-time closure family, so that the
-first numerical robustness checks can be reproduced directly from code
-outputs.
-
-\noindent
-The repository contains: the full-SPARC rotation-curve fitting pipeline
-for the new ECT galactic closure (including fixed/free $M/L$ modes,
-model-comparison diagnostics against MOND and $\Lambda$CDM/NFW, and
-sample-level summary tables for all 165 galaxies),
-cosmological calculations (Hubble tension, primordial perturbation targets, JWST halo-abundance
-enhancement), matching and consistency calculations for the gravitational and
-coherent action scales (including the linearised $G_N$ matching logic collected
-in Appendix~\ref{app:GN_derivation}), fifth-force bounds, baryogenesis estimates,
-and the effective dimensionality calculation (Fig.~\ref{fig:dimensionality}).
-Scripts are self-contained Python 3 files requiring only \texttt{numpy},
-\texttt{matplotlib}, and \texttt{scipy}.
-
-\medskip
-\noindent
-\begin{minipage}{0.72\linewidth}
-  The repository can also be accessed by scanning the QR code (right).
-  The code is released under the MIT License.
-  Any updates or corrections will be posted to the same URL.
-\end{minipage}
-\hfill
-\begin{minipage}{0.22\linewidth}
-  \centering
-  \includegraphics[width=\linewidth]{figures/github_qr.png}
-  \scriptsize\texttt{github.com/chufelo/\\ECT-preprint-code}
-\end{minipage}
-
 % ============================================================
 % APPENDIX: DIMENSION AND NORMALIZATION AUDIT
 % ============================================================
@@ -42970,6 +42911,67 @@ needed for compatibility with the observed tilt.
 is numerically compatible with observations; the full derivation
 including freeze-out dynamics and curvature transfer is open).
 
+
+
+
+\clearpage
+\section*{Data and Code Availability}
+\addcontentsline{toc}{part}{Data and Code Availability}
+
+Galaxy rotation-curve data are drawn from the public SPARC database \cite{Lelli2016}
+(\url{http://astroweb.cwru.edu/SPARC/}).
+All numerical scripts used to produce the figures and calculations in this paper
+are publicly available at:
+
+\begin{center}
+  \url{https://github.com/chufelo/ECT-preprint-code}
+\end{center}
+
+\noindent
+For the late-time cosmology block, the currently released code should be
+read as the benchmark implementation corresponding to the Level~B
+closure and interim high-$z$ numerical completion described in
+Appendix~\ref{app:late_cosmo_algorithm}.
+The expected article-level numerical inputs, outputs, and validation
+checks are summarised in
+Appendix~\ref{sec:late_cosmo_interface}.
+The expected machine-readable artefacts of such a benchmark
+implementation are listed in
+Appendix~\ref{sec:late_cosmo_artefacts}.
+The same benchmark implementation is also intended to support the
+robustness programme under admissible late-time closure deformations
+described in Appendix~\ref{sec:late_closure_robustness}.
+The current repository version already supports direct benchmark--deformed
+comparisons within the admissible late-time closure family, so that the
+first numerical robustness checks can be reproduced directly from code
+outputs.
+
+\noindent
+The repository contains: the full-SPARC rotation-curve fitting pipeline
+for the new ECT galactic closure (including fixed/free $M/L$ modes,
+model-comparison diagnostics against MOND and $\Lambda$CDM/NFW, and
+sample-level summary tables for all 165 galaxies),
+cosmological calculations (Hubble tension, primordial perturbation targets, JWST halo-abundance
+enhancement), matching and consistency calculations for the gravitational and
+coherent action scales (including the linearised $G_N$ matching logic collected
+in Appendix~\ref{app:GN_derivation}), fifth-force bounds, baryogenesis estimates,
+and the effective dimensionality calculation (Fig.~\ref{fig:dimensionality}).
+Scripts are self-contained Python 3 files requiring only \texttt{numpy},
+\texttt{matplotlib}, and \texttt{scipy}.
+
+\medskip
+\noindent
+\begin{minipage}{0.72\linewidth}
+  The repository can also be accessed by scanning the QR code (right).
+  The code is released under the MIT License.
+  Any updates or corrections will be posted to the same URL.
+\end{minipage}
+\hfill
+\begin{minipage}{0.22\linewidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/github_qr.png}
+  \scriptsize\texttt{github.com/chufelo/\\ECT-preprint-code}
+\end{minipage}
 
 \section*{Acknowledgments}
 \addcontentsline{toc}{part}{Acknowledgments}
