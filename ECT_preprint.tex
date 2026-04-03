@@ -101,7 +101,7 @@ signal are identified.
 Part~II develops generalised Einstein equations with a derived
 orientation-stress correction.
 The macroscopic branch resolves the horizon, flatness, and monopole
-problems without inflation, provides a late-time Hubble-tension
+problems without requiring a separate inflationary mechanism, provides a late-time Hubble-tension
 alleviation route, and yields a dark-energy sector without an
 independent cosmological constant.
 On galactic scales it produces the Tully--Fisher relation with
@@ -380,7 +380,12 @@ g^{\mathrm{eff}}_{AB}\,
 \]
 
 where $\psi$ denotes generic low-energy excitations of the condensate.
-The effective metric governing their propagation is
+In the ordered branch, the effective kinetic tensor is controlled by
+two coefficients $\alpha$ and $\beta$
+(Section~\ref{sec:metric_classification}).
+In the canonical benchmark realisation used throughout this paper,
+$(\alpha,\beta)=(2,1)$, so that the corresponding effective
+metric-like structure reduces to
 
 \[
 g^{\mathrm{eff}}_{AB}
@@ -390,7 +395,7 @@ g^{\mathrm{eff}}_{AB}
 2\, n_A n_B .
 \]
 
-Since $n_A n^A = 1$, the tensor $g^{\mathrm{eff}}_{AB}$ has one
+Since $n_A n^A = 1$, this tensor has one
 negative and three positive eigenvalues and therefore possesses a
 Lorentzian signature $(-+++)$ once the direction defined by $n_A$ is
 identified with the emergent time coordinate. Perturbations propagating
@@ -469,7 +474,7 @@ as its polar decomposition $\partial_A\Phi = (u_0+\sigma)n_A$
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth]{figures/fig_ect_architecture.pdf}
+\includegraphics[width=0.92\textwidth]{figures/fig_ect_architecture.pdf}
 \caption{Schematic architectural map of Euclidean Condensate Theory.
 A single Euclidean $\Phi$-medium undergoes $O(4)\to O(3)$ symmetry
 breaking and yields an ordered branch described by
@@ -482,7 +487,10 @@ latter organises the quantum sector.
 Back-reaction between the two sectors is structurally rooted in the
 single ordered condensate action.
 The figure is schematic only: the derivational status of individual
-arrows is specified in the main text and in the status tables.}
+arrows is specified in the main text and in the status tables.
+The benchmark identification $\alpha=2\beta$ used elsewhere in the paper
+is not the generic branching condition; the structural condition for the
+Lorentzian ordered branch is $\alpha>\beta$.}
 \label{fig:ect_architecture}
 \end{figure}
 
@@ -496,7 +504,9 @@ the question of \emph{why} structures such as superposition, the action
 scale $\hbar$, and the quantum--classical transition appear in the first
 place. The overall architecture is summarised in Fig.~\ref{fig:ect_architecture}.
 The figure should be read as a navigation map for the logical structure
-of the paper rather than as a status-compressed derivation chart.
+of the paper: Part~II develops the geometric branch, Part~III develops
+the coherent branch, and the relation between them is traced back to the
+single ordered condensate action.
 The guiding idea is that the fundamental object is not a
 probability amplitude defined on an already Lorentzian spacetime, but a
 Euclidean condensate field whose ordered broken phase generates both the
@@ -587,14 +597,19 @@ Fundamental constants and the consistency relation for $G_N$
 are covered in Section~\ref{sec:constants}.
 The gravitational and gauge sectors are presented in
 Sections~\ref{sec:macroscopic}--\ref{sec:particles}.
-\textbf{Part~II (Macroscopic Physics)} covers galactic dynamics
-via the ordered-branch amplitude variable and cosmological implications
-including structural alternatives to inflation, dark energy, and dark matter.
-\textbf{Part~III (Quantum Sector)} collects emergent principles
-of physics derived from condensate loop configurations---uncertainty
-principle, extremal action, quantum statistics, and a structural
-route toward the Pauli exclusion principle (Level~B)---and the
-quantum vacuum structure.
+\textbf{Part~II (Macroscopic Physics)} develops the macroscopic branch
+of ECT: generalised Einstein equations with an ordered-branch closure,
+structural cosmological consequences without requiring a separate
+inflationary sector, a benchmark late-time Hubble-tension alleviation
+route, JWST early-structure implications, and galactic phenomenology
+including the baryonic Tully--Fisher relation, the radial-acceleration
+relation, and rotation-curve fits without particle dark matter.
+\textbf{Part~III (Quantum Sector)} develops the coherent branch of ECT:
+winding sectors and the pre-quantum action scale, reflection positivity
+and the Hilbert-space bridge, decoherence and the quantum--classical
+boundary, the Principle of Euclidean Stationarity, entanglement and
+delayed-choice phenomena, vacuum-response effects, and the black-hole /
+horizon-information programme.
 \textbf{Part~IV (Summary and Outlook)} provides predictions,
 comparison with existing approaches, open problems,
 and conclusions.
@@ -947,7 +962,7 @@ These are independent parameters; their relation is not imposed
 kinematically and requires separate dynamical matching~(OP-grad).
 
 \medskip
-\noindent\textbf{BR1 --- Smooth coherent topological sector (derived branch rule).}
+\noindent\textbf{BR1 --- Smooth coherent topological sector (derived branch rule; hereafter referred to simply as the coherent branch).}
 \label{sec:BR1_coherent_sector}
 In the smooth infrared coherent sector of the ordered branch selected
 by~P4, low-energy excitations admit a collective description through
@@ -4910,7 +4925,7 @@ summarised in Section~\ref{sec:predicted_states}.
 \label{sec:foundational_consequences}
 
 For later use it is convenient to collect the main consequences of the
-core foundational framework (Sections~2--6).
+core foundational framework (Sections~\ref{sec:postulates}--\ref{sec:branching}).
 
 \begin{enumerate}
   \item \textbf{Ordered-branch rule.}
@@ -7245,9 +7260,9 @@ remain Level~B/C or open.
 The fermion--condensate preferred-direction coupling is Level~A
 given empirical fermions, with Level~B coefficient estimates.}
 
-\paragraph{What Section~7 has established.}
+\paragraph{What Section~\ref{sec:gauge_and_fifth} has established.}
 After the introduction of the medium-character postulate~P5,
-Section~7 establishes the following hierarchy of results:
+Section~\ref{sec:gauge_and_fifth} establishes the following hierarchy of results:
 \begin{enumerate}[label=(\roman*)]
   \item The compact-phase $U(1)$ construction
     (Section~\ref{sec:u1_emergence}): local phase redundancy follows
@@ -7396,7 +7411,7 @@ Coefficient derived from condensate microphysics
 \end{tabular}
 \end{center}
 
-Section~7 therefore establishes a layered picture rather than a single
+Section~\ref{sec:gauge_and_fifth} therefore establishes a layered picture rather than a single
 uniform derivation, now substantially strengthened by P5.
 
 \paragraph{Interaction map of ECT at the present stage.}
@@ -7515,7 +7530,7 @@ The transition from Part~I to the present chapter is not a change of
 subject, but a change of level of description.
 Part~I established the ordered branch, its sector decomposition, its
 scale hierarchy, and its gauge-side structural embeddings.
-Chapter~8 asks what these already-derived structures imply when read at
+Section~\ref{sec:particles} asks what these already-derived structures imply when read at
 the level of particle-like excitations.
 The chapter is therefore not an additional postulate about particles,
 but the excitation-level unpacking of the broken condensate
@@ -7620,7 +7635,7 @@ the three-scale hierarchy of Section~\ref{sec:three_scales},
 the branching architecture of Section~\ref{sec:branching},
 and the gauge-sector embedding analysed in
 Section~\ref{sec:gauge_and_fifth}.
-Chapter~8 should therefore be read not as an independent particle
+Section~\ref{sec:particles} should therefore be read not as an independent particle
 postulate, but as the particle-level unpacking of those earlier
 structural ingredients.
 
@@ -7635,7 +7650,7 @@ follow from the ordered branch, which are admissible EFT embeddings,
 and which remain conditional or open.
 
 \paragraph{Dependence on later parts of the paper.}
-Chapter~8 identifies particle-like sectors and their derivational
+Section~\ref{sec:particles} identifies particle-like sectors and their derivational
 status, but it does not by itself complete the full phenomenological or
 cosmological role of those sectors.
 Questions of macroscopic closure, dark-sector behaviour, and late-time
@@ -8811,7 +8826,7 @@ The detailed derivation-status analysis of the Abelian gauge sector was
 already given in Section~\ref{sec:u1_emergence}.
 The present subsection should therefore be read as the particle-level
 placement of that result within the classification scheme of
-Chapter~8, not as an independent second derivation.
+Section~\ref{sec:particles}, not as an independent second derivation.
 
 \statussummary
 \begin{center}
@@ -8887,7 +8902,7 @@ the primary ordered branch alone.
 It can arise only if the condensate admits a second effective ordering
 step beyond $O(4)\to O(3)$.
 For that reason, this sector belongs to the conditional/embedded part
-of the Chapter~8 classification rather than to the class of required
+of the Section~\ref{sec:particles} classification rather than to the class of required
 condensate excitations.
 
 The Higgs discussion in ECT has two complementary sides:
@@ -9005,7 +9020,7 @@ changes the conceptual status of the hierarchy
 problem~(Section~\ref{sec:radial_mode}): instead of asking why an
 elementary scalar is light, one asks why the condensate undergoes
 a second ordering step at $v_2\ll u_0$.
-In the language of Chapter~8, this makes the Higgs-like state a
+In the language of Section~\ref{sec:particles}, this makes the Higgs-like state a
 \emph{conditional particle-level interpretation} of the secondary
 condensate sector, not a required excitation of the primary ordered
 branch.
@@ -9239,7 +9254,7 @@ but it does provide a structural reason why the observed weakly active
 neutrino sector is left-chiral.
 
 \paragraph{Why this sector is especially conditional.}
-Within the Chapter~8 classification, the neutrino sector belongs to the
+Within the Section~\ref{sec:particles} classification, the neutrino sector belongs to the
 most weakly constrained part of category~(ii).
 Unlike the electroweak-like sector, it is not even tied to a specific
 ordered-branch symmetry-breaking pattern.
@@ -9815,7 +9830,7 @@ Higgs-like secondary radial mode $h$
 \label{sec:particle_summary}
 
 \textit{Status: synthetic chapter summary.
-Chapter~8 does not derive the full Standard Model particle spectrum from
+Section~\ref{sec:particles} does not derive the full Standard Model particle spectrum from
 the minimal scalar condensate action.
 Its strongest outputs are instead:
 (i)~the identification of the required condensate excitation sectors of
@@ -9827,7 +9842,7 @@ the vacuum manifold.
 The purpose of the present subsection is to collect those results in a
 single disciplined map.}
 
-\paragraph{What Chapter~8 has established.}
+\paragraph{What Section~\ref{sec:particles} has established.}
 The primary ordered branch of ECT necessarily contains three classes of
 particle-like content.
 First, it contains required condensate excitations: the primary radial
@@ -9943,7 +9958,7 @@ Stable localised texture/skyrmion-like states
 Secondary monopole-like defects
   & B/C & Only if the secondary transition exists \\
 \hline
-\multicolumn{3}{l}{\textit{Not derived in Chapter~8}} \\
+\multicolumn{3}{l}{\textit{Not derived in Section~\ref{sec:particles}}} \\
 Full Standard Model particle spectrum
   & Open & Not derived from P1--P6 \\
 Gauge/Yukawa parameters
@@ -9954,7 +9969,7 @@ Topological mass spectrum
 \end{tabular}
 \end{center}
 
-Chapter~8 therefore establishes the bosonic, topological, and
+Section~\ref{sec:particles} therefore establishes the bosonic, topological, and
 particle-classification side of the ordered-branch spectrum, but not the
 full fermionic reconstruction.
 The next section turns to the dedicated fermionic programme, where the
@@ -28545,7 +28560,7 @@ closure, without requiring a microscopic environmental model.
 \small
 \begin{tabular}{@{}p{3.8cm}p{2.8cm}ccc@{}}
 \toprule
-Platform & Observable & $\Gamma_{\rm loop}$ & $P_{\rm back}/P_{\rm fwd}$ & Status \\
+Anchor / marker & Observable & $\Gamma_{\rm loop}$ & $P_{\rm back}/P_{\rm fwd}$ & Status \\
 \midrule
 Procopio quantum switch (2015)
   & $V=0.994\pm0.002$
@@ -28592,7 +28607,8 @@ such estimates are deferred to the experimental programme.
 parameter $\Gamma_{\rm loop}$.
 The solid curve shows the reverse-coherence ratio
 $P_{\rm back}/P_{\rm fwd}=e^{-\Gamma_{\rm loop}}$.
-Filled markers denote visibility-inferred experimental proxies
+Filled markers denote visibility-inferred operational proxies rather
+than first-principles ECT calculations of $\Gamma_{\rm loop}$
 (Procopio quantum switch; Jacques delayed-choice interferometer).
 Dashed vertical lines indicate closure-dependent theoretical
 thresholds used as operational guides: the Bell/CHSH crossover in
@@ -28838,8 +28854,9 @@ present regime.
 \label{sec:results_summary}
 
 \begin{longtable}{@{}p{3.0cm}p{3.2cm}p{2.8cm}p{4.0cm}@{}}
-\caption{Summary of quantitative and regime-level results from the ECT
-decoherence apparatus.}
+\caption{Summary of quantitative estimates, operational proxies,
+and regime-level outputs associated with the present ECT decoherence
+apparatus.}
 \label{tab:decoherence_results_summary}\\
 \toprule
 System & ECT estimate & Observation & Status \\
@@ -28858,7 +28875,9 @@ Procopio switch & $V=0.994\pm0.002 \Rightarrow \Gamma_{\rm loop}^{(\exp)}=0.006\
 Nanosphere 1\,$\mu$m & $\tau_{\rm grav}\sim38$\,ms & Not yet tested & ECT-specific prediction \\
 Nanosphere 100\,nm & $\tau_{\rm grav}\sim1$\,hr & Not yet tested & ECT-specific prediction \\
 Crossover (UHV) & $m_{\rm cross}\sim10^{-16}$\,kg & Not yet tested & ECT-specific prediction \\
-Cavity cat & Open target & Brune 1996 & Programme-level target \\
+Cavity cat & Open target within present closure
+  & Measured decoherence times (Brune 1996)
+  & Programme-level target \\
 \end{longtable}
 
 
@@ -32048,7 +32067,7 @@ The table below reflects these deliberately honest levels.
 \medskip
 The Quantum Sector is now organised across Chapters~19--32 around the
 following twelve thematic steps
-(including scope):
+(including the scope/inputs layer as the first step):
 \begin{enumerate}[noitemsep,label=(\roman*)]
   \item scope, inputs, and logical programme of the Quantum Sector;
   \item coherent phase dynamics, loop sectors, and the pre-quantum
@@ -33062,7 +33081,7 @@ The macroscopic sector develops as follows:
   destruction, and a route to black-hole
   thermodynamics~(Level~B/Open).
 \item \emph{5th force.} The preferred-direction coupling
-  $\beta_5\sim m_f/M_{\rm Pl}$ predicts spin precession
+  $\beta_5\sim m_f/\phi_0$ predicts spin precession
   $\omega_5\sim10^{-10}$~rad/s, E\"otv\"os parameter
   $\eta\sim10^{-15}$, and neutron-star maximum mass
   $M_{\rm max}\approx 2.17\,M_\odot$~(Level~B).
@@ -33124,9 +33143,11 @@ photon as the $U(1)$ phase gauge boson;
 $W^\pm$, $Z$ as $SU(2)$ gauge bosons;
 Higgs as the radial $SU(2)$ mode;
 fermions as $O(3)$ spinor representations;
-three Goldstone bosons ($m\sim 10^{-33}$~eV, fuzzy dark-matter
-candidates); and instanton configurations with mass spectrum
-$m_n = n\times 1.6$~GeV/$c^2$.
+three ultra-light Goldstone-sector modes
+($m\sim 10^{-33}$~eV in the illustrative large-scale benchmark),
+whose possible cosmological or dark-sector role remains open; and an exploratory instanton-sector mass pattern
+($m_n = n\times 1.6$~GeV/$c^2$ in the present benchmark treatment),
+whose dynamical status and observational interpretation remain open.
 
 \paragraph{Step~7: predictions and falsifiers.}
 The derivation chain terminates in a set of quantitative predictions
@@ -33410,24 +33431,24 @@ ECT therefore aims to answer not only \emph{how} quantum phenomena
 are computed, but also \emph{why} the quantum rules take the form
 they do.
 
-In this reading, the entire quantum sector should in principle follow
-from ECT.
-The parts that have not yet been fully derived --- such as the
-detailed origin of three generations, the exact value of
-$\alpha_{\rm fs}$, or the full Yukawa hierarchy --- should be
-regarded as open internal tasks of the theory rather than as evidence
-that quantum mechanics is independent of it.
+In this reading, the quantum sector is expected to arise as an effective
+sector of ECT.
+At the present stage, however, this reconstruction is incomplete:
+the detailed origin of three generations, the exact value of
+$\alpha_{\rm fs}$, and the full Yukawa hierarchy remain open
+derivational targets within the framework.
 
 This distinction may be illustrated by several examples.
 In standard quantum mechanics, the Born rule is accepted as a
 primitive statement: one computes probabilities as $|\psi|^2$.
-In ECT, a programme-level route to the same structure exists:
-the amplitude $\psi$ is associated with the Euclidean propagator of the
-coherent branch, and $|\psi|^2$ is expected to arise from the combination
-of forward and reverse contributions within one common condensate
-environment.
-At the present stage this should be read as a structural route rather
-than as a completed first-principles derivation of the full Born rule.
+In ECT, only a conditional route to the same structure is presently
+available: in the coherent branch, $\psi$ is associated with the
+Euclidean propagator, while $|\psi|^2$ appears naturally in reduced
+descriptions once forward/backward amplitudes and environmental
+coarse-graining are combined.
+At the present stage this should be read as a structural and
+closure-level route, not as a completed first-principles derivation
+of the full Born rule.
 Likewise, in standard quantum mechanics $\hbar$ is a fundamental
 constant, whereas in ECT it is interpreted as the action scale $S_0$
 fixed by the condensate.
@@ -33522,7 +33543,7 @@ in the surrounding discussion.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.82\textwidth]{figures/fig_equation_hierarchy.pdf}
+\includegraphics[width=0.88\textwidth]{figures/fig_equation_hierarchy.pdf}
 \caption{Logical hierarchy of ECT equations.
 The Schr\"odinger equation (Level~3) appears as the narrowest
 low-energy descendant of a deeper chain consisting of the Euclidean
@@ -33534,7 +33555,10 @@ $O(4)\to O(3)$ symmetry breaking, real ordered-branch parametrisation
 $t=w/c_*$, and the nonrelativistic limit.
 The figure summarises the logical organisation of equations discussed
 in the text; it does not assert that all steps are established at
-the same derivational level.}
+the same derivational level.
+The displayed equations are representative schematic forms;
+they are not a claim that all intermediate reductions are
+exhausted by the boxed expressions alone.}
 \label{fig:equation_hierarchy}
 \end{figure}
 
@@ -33614,11 +33638,14 @@ boundary data.
 
 \emph{What fixes a measurement outcome.}\enspace
 In standard quantum mechanics, collapse is an extra postulate.
-In ECT, the detector is part of the global boundary-value problem.
-The solution $\Phi(X)$ already contains the detector and its coupling
-to the measured subsystem.
-Effective collapse is then the subsystem-level manifestation of the
-Euclidean-to-Lorentzian transition under strong environmental locking.
+In ECT, the detector is treated as part of the full physical system and
+therefore belongs, in principle, to the global boundary-value problem.
+At the reduced-description level, effective collapse is then read as the
+subsystem manifestation of an Euclidean-to-Lorentzian transition under
+strong environmental locking.
+This should be understood as a structural reading of measurement, not as
+a completed microscopic solution of realistic detector dynamics from the
+bare condensate action.
 
 \emph{``Future affects past''.}\enspace
 In standard quantum mechanics, this does not arise at the fundamental
@@ -33628,20 +33655,22 @@ In ECT, it is natural: for an elliptic equation, changing the
 boundary condition on one side changes the solution throughout the
 region, including what the Lorentzian reading would call the ``past''
 side.
-This is precisely why delayed-choice phenomena admit a simple
-structural reading in ECT.
+This is the structural reason why delayed-choice-type phenomena can be
+accommodated naturally within ECT; it is not, by itself, a completed
+first-principles derivation of a laboratory delayed-choice setup.
 
 \emph{Example: the hydrogen atom.}\enspace
 In standard quantum mechanics one solves $H\psi = E\psi$ and
 obtains $E_n=-13.6/n^2$\,eV together with the densities
 $|\psi_{nlm}|^2$.
-In ECT one solves the four-dimensional Euclidean field equation for
-$\Phi$ around the proton, with the self-consistency condition in the
-$w$-direction expressed through the single-valuedness constraint
+In ECT, the intended structural picture is that the hydrogenic spectrum
+should arise from the four-dimensional Euclidean field equation for
+$\Phi$ together with the self-consistency condition in the
+$w$-direction expressed by the single-valuedness constraint
 $\oint dw\cdot p_w = 2\pi S_0\, n$.
-The standard discrete spectrum is then read as arising from
+In that reading, the discrete spectrum is associated with
 self-consistency conditions on admissible condensate configurations,
-rather than as eigenvalues of a fundamentally probabilistic wave
+rather than with eigenvalues of a fundamentally probabilistic wave
 equation.
 At the present stage this should be read as a structural interpretation
 of the hydrogenic spectrum, not yet as a completed first-principles
@@ -33737,9 +33766,8 @@ effective sector of the theory.
 At present, this claim is only partly realised: some standard structures
 have already been structurally recovered, whereas others remain open
 derivational targets.
-At present, however, the status is uneven, and it is important to
-separate what has already been structurally obtained from what remains
-open.
+It is therefore important to separate what has already been
+structurally obtained from what remains open.
 
 ECT already provides, at varying levels of rigour, the following
 structural outputs:
@@ -33792,8 +33820,9 @@ description obtained after projection to the relevant subsystem,
 formal Euclidean--Lorentzian amplitude translation, and coarse-graining
 over untracked condensate modes.
 
-In this sense, ECT does not merely reproduce the formalism of quantum
-mechanics.
+ECT therefore aims not only to reproduce the effective formalism of
+quantum mechanics, but to explain why that formalism takes the shape
+it does.
 It seeks to explain why the formalism has the structure it does, why
 probabilities appear, why superposition exists, why collapse is seen,
 why $\hbar$ is universal, and how the coherent quantum branch and the
@@ -33910,10 +33939,9 @@ diagnostics and the most informative empirical tests.
 In ECT, the dominant mass-discrepancy phenomenology on galactic scales is not
 due to a new collisionless particle component but arises from the
 nonlinear response of the ordered-branch amplitude variable $\phi$ in the
-critical weak-field branch.  There is therefore \emph{no} additional
-local particle flux to be detected in laboratory experiments, and
-standard direct-detection strategies are not expected to observe
-a signal.
+critical weak-field branch.  Accordingly, standard direct-detection strategies aimed at a dominant
+galactic dark-matter particle flux are not expected to observe a signal
+from the main mechanism studied in this paper.
 
 Instead, the appropriate detection channel is gravitational: precision
 tests of kinematics and lensing as a function of environment and scale.
@@ -34530,7 +34558,7 @@ $g(R) = \tfrac{1}{2}\bigl(g_N + \sqrt{g_N^2 + 4\,g_N\,g_\dagger}\,\bigr)$
 captures flat rotation curves, the RAR, and the BTFR (algebraic
 slope~4) with $g_\dagger\sim cH_0/(2\pi)\approx 1.1\times10^{-10}$~m/s$^2$; the cosmological sector admits
 structural resolution of the classical cosmological problems
-without inflation (Section~\ref{sec:cosmo_problems}), late-time acceleration via
+without requiring a separate inflationary mechanism (Section~\ref{sec:cosmo_problems}), late-time acceleration via
 $\Lambda_{\rm eff}$, and a route to the Hubble tension; the
 strong-field critical-shell ansatz produces
 $\rho_c=\ell_{\rm Pl}/\sqrt{3\pi}$
@@ -34542,7 +34570,7 @@ The cosmological sector further yields a leptogenesis estimate
 $\eta_B\sim 9\times10^{-10}$ (within a factor of~$1.5$ of the
 observed $6\times10^{-10}$) and compatibility with the
 DESI~2024 dark-energy constraint $w_0 = -0.827$.
-The preferred-direction coupling $\beta_5\sim m_f/M_{\rm Pl}$
+The preferred-direction coupling $\beta_5\sim m_f/\phi_0$
 predicts a new 5th force with spin precession
 $\omega_5\sim 10^{-10}$~rad/s, E\"otv\"os parameter
 $\eta\sim 10^{-15}$ (within reach of MICROSCOPE-2), and a
@@ -34560,7 +34588,8 @@ quantum), $v_2\approx 246$~GeV (electroweak), and
 $v_{\rm gal}\sim$~kpc (galactic dynamics)---and predicts a
 structured particle spectrum including three ultra-light Goldstone
 bosons ($m\sim 10^{-33}$~eV, fuzzy dark-matter candidates) and
-instanton configurations ($m_n = n\times 1.6$~GeV/$c^2$).
+an exploratory instanton-sector mass pattern
+($m_n = n\times 1.6$~GeV/$c^2$ in the present benchmark).
 The full ordered-medium logic is instantiable in
 analogue-laboratory systems (superfluid helium, BEC, nematic liquid
 crystals), providing a concrete experimental pathway for testing the
@@ -34603,7 +34632,7 @@ see \S\ref{par:yukawa_hierarchy}, \S\ref{par:three_generations},
 These should be interpreted as identified calculational
 programmes with concrete numerical targets, not as completed
 derivations;
-the primordial perturbation spectrum $(n_s, A_s, r)$ without inflation
+the primordial perturbation spectrum $(n_s, A_s, r)$ without requiring a separate inflationary mechanism
 (critical-fluctuation route yields $n_s\sim 0.96$--$0.97$,
 \S\ref{sec:primordial_estimates}, but full derivation is open).
 These four directions should be interpreted as identified
@@ -35363,6 +35392,13 @@ consequence of the ECT action.
 
 
 %%% ===========================================================
+\paragraph{Scope of this appendix block.}
+The calculations collected in the present appendix explore candidate
+nonlinear weak-field branches and their EFT consequences.
+They should be read as analytical branch diagnostics and consistency
+tests, not as part of the strict structural core already established in
+the main text.
+
 \subsection{Branch~4: what does one loop actually provide?}
 \label{app:lof:oneloop_calc}
 
