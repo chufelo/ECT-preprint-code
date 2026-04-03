@@ -47,7 +47,7 @@ digraph ECT {
   P5 -> SSB; P6 -> SSB;
 
   /* ===== TIER 3: Emergent Lorentzian ===== */
-  LOR [label=<Emergent Lorentzian Structure<BR/><FONT POINT-SIZE="9">Metric diag(−1,1,1,1)   ·   c<SUB>*</SUB> = √(β/(α−β))   ·   Causal cone   ·   Arrow of time</FONT>>,
+  LOR [label=<Emergent Lorentzian Structure<BR/><FONT POINT-SIZE="9">K<SUP>AB</SUP> = βδ<SUP>AB</SUP> − αn<SUP>A</SUP>n<SUP>B</SUP>   ·   α &gt; β<BR/>c<SUB>*</SUB>² = β/(α−β)   ·   Causal cone   ·   Arrow of time</FONT>>,
        fillcolor="#c8c8c8", penwidth=1.5, fontsize=10];
   SSB -> LOR [xlabel=<  α &gt; β >];
 
@@ -61,7 +61,7 @@ digraph ECT {
   {rank=same; MBRANCH; QBRANCH}
 
   /* ===== MACRO BRANCH (left) ===== */
-  GR [label=<General Relativity<BR/><FONT POINT-SIZE="9">Fierz–Pauli → Einstein eqs.<BR/>G<SUB>N</SUB> = 1/(8πu₀²(α−β))   [A/B]</FONT>>];
+  GR [label=<General Relativity<BR/><FONT POINT-SIZE="9">Fierz–Pauli → Einstein eqs.<BR/>Θ<SUB>μν</SUB>[n,φ], G<SUB>eff</SUB>, Λ<SUB>eff</SUB>   [A/B]</FONT>>];
 
   MBRANCH -> GR;
 
@@ -108,7 +108,13 @@ digraph ECT {
   FIFTH -> GAUGE [style=invis]; /* pull gauge down */
 
   /* ===== PREDICTIONS & FALSIFIERS ===== */
-  PRED [label=<Quantitative Predictions<BR/><FONT POINT-SIZE="9">LIV: |δc/c| &lt; 10⁻¹⁵   ·   Casimir: 3/2 × QED   ·   g<SUB>†</SUB> ≈ 1.1×10⁻¹⁰ m/s²<BR/>BTFR slope = 4   ·   n<SUB>s</SUB> ≈ 0.967   ·   M<SUB>max</SUB> ≈ 2.17 M<SUB>⊙</SUB>   ·   Env.-dep. g<SUB>†</SUB></FONT>>,
+  /* ===== Results/regime estimates ===== */
+  RESULTS [label=<Results / Regime Estimates<BR/><FONT POINT-SIZE="9">Procopio, Jacques, Bell threshold<BR/>Qubit info bound   [B]</FONT>>];
+  DECOH -> RESULTS;
+  PES -> RESULTS;
+  RESULTS -> PRED;
+
+    PRED [label=<Quantitative Predictions<BR/><FONT POINT-SIZE="9">LIV: |δc/c| &lt; 10⁻¹⁵   ·   Casimir: 3/2 × QED   ·   g<SUB>†</SUB> ≈ 1.1×10⁻¹⁰ m/s²<BR/>BTFR slope = 4   ·   n<SUB>s</SUB> ≈ 0.967   ·   M<SUB>max</SUB> ≈ 2.17 M<SUB>⊙</SUB>   ·   Env.-dep. g<SUB>†</SUB></FONT>>,
        fillcolor="#d0d0d0", penwidth=1.5];
   FALS [label=<Cross-Sector Architectural Falsifiers<BR/><FONT POINT-SIZE="9">Single c<SUB>*</SUB>   ·   Single S₀   ·   Single UV threshold m<SUB>σ</SUB><BR/>No DM particles in lab   ·   Env.-dep. transition morphology</FONT>>,
        fillcolor="#d0d0d0", penwidth=1.5];

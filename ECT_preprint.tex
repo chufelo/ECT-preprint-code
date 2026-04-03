@@ -33089,12 +33089,15 @@ This is the single generative event from which both macroscopic and
 quantum sectors descend.
 
 \paragraph{Step~3: emergent Lorentzian structure.}
-Perturbations around the ordered background experience an effective
-kinetic tensor $K^{AB}=\delta^{AB}-(\alpha-\beta)\,n^An^B$ with
-Lorentzian signature when $\alpha>\beta$~(P5).
-This yields an effective metric $\mathrm{diag}(-1,1,1,1)$, an
-emergent speed $c_*=\sqrt{\beta/(\alpha-\beta)}$, and a causal light-cone
-structure.
+Perturbations around the ordered background experience the effective
+ordered-branch kinetic tensor
+$K^{AB}=\beta\,\delta^{AB}-\alpha\,n^A n^B$.
+For a homogeneous ordered background $n^A=\delta^A_w$, the ordered
+branch is Lorentzian when $\alpha>\beta$, with
+$K^{AB}=\mathrm{diag}(\beta,\beta,\beta,\beta-\alpha)$ and
+$c_*^2=\beta/(\alpha-\beta)$.
+This yields an effective metric $\mathrm{diag}(-1,1,1,1)$ and a causal
+light-cone structure.
 
 \paragraph{Step~4: macroscopic tensor branch (Part~II).}
 The macroscopic sector develops as follows:
@@ -33106,13 +33109,12 @@ The macroscopic sector develops as follows:
   closure~(Level~A for uniqueness; Level~B for the macroscopic
   closure).
   The full macroscopic closure yields generalised Einstein equations
-  containing a preferred-direction correction
-  $\alpha_{\rm SDT}(n_\mu n^\lambda R_{\lambda\nu}
-  + n_\nu n^\lambda R_{\lambda\mu}
-  - \tfrac{1}{2}g_{\mu\nu}n^\alpha n^\beta R_{\alpha\beta})$,
-  structurally similar to the Einstein-aether
-  term~\cite{Jacobson2004} but \emph{derived} from SSB rather than
-  postulated.
+  containing a derived preferred-direction / orientation-stress
+  correction built from the ordered vector $n_\mu$ and the nonlinear
+  closure tensor $\Theta_{\mu\nu}[n,\phi]$, structurally similar in
+  spirit to Einstein--aether-type modifications~\cite{Jacobson2004}
+  but derived here from the ordered condensate rather than postulated
+  independently.
 \item \emph{Fundamental constants.}
   $G_N=c_*^4/(8\pi M_G^2)$ and
   $c_*$ are determined by the condensate amplitude and kinetic
@@ -33178,12 +33180,17 @@ In parallel, the coherent sector develops:
   statistics and Dirac structure~(Level~A).
 \item \emph{Entanglement.} Non-factorisable correlations are
   structurally available in the ordered medium~(Level~A).
-\item \emph{PES.} The Principle of Euclidean Stationarity provides a
-  unifying selection criterion for persistent configurations
+\item \emph{PES and operational closures.} The Principle of Euclidean
+  Stationarity (PES) provides a unifying selection criterion for
+  persistent configurations
   (extremal $\cap$ decoherence-resistant $\cap$ phase-compact),
-  together with operational closures including visibility-based
-  $\Gamma_{\rm loop}$ anchors and coarse-graining readings of
-  measurement-type situations~(Level~B).
+  together with closure-level operational results including
+  visibility-based $\Gamma_{\rm loop}$ anchors (Procopio, Jacques),
+  the Bell/CHSH toy crossover threshold
+  $\Gamma_{\rm loop}=\ln\sqrt{2}$,
+  the qubit information--decoherence bound for partial observation,
+  and coarse-graining readings of Wigner's-friend-type situations
+  (Level~B / Programme-level depending on the item).
 \end{itemize}
 
 \paragraph{Step~6: gauge and matter sectors.}
@@ -33220,11 +33227,17 @@ and~\ref{tab:ect-levels}.
 \includegraphics[width=\textwidth]{figures/fig_ect_derivation_map.png}
 \caption{Derivation map of ECT\@.
 The directed graph traces the logical chain from the foundational
-$\Phi$-medium and postulates~(P1--P6), through $O(4)\to O(3)$
-spontaneous symmetry breaking, to the macroscopic tensor branch
-(Part~II) and the quantum coherent branch (Part~III), and onward
-to gauge and matter sectors, quantitative predictions, cross-sector
-falsifiers, and open fronts.
+$\Phi$-medium and postulates~(P1--P6), through
+$O(4)\to O(3)$ spontaneous symmetry breaking, to the macroscopic
+tensor branch (Part~II) and the quantum coherent branch (Part~III),
+and onward to gauge and matter sectors, quantitative predictions,
+cross-sector falsifiers, and open fronts.
+In the quantum sector, the map should also be read as including
+the Principle of Euclidean Stationarity~(PES), the
+results/regime-estimate layer around $\Gamma_{\rm loop}$,
+and the operational closures associated with visibility-based
+dephasing anchors, Bell/CHSH crossover proxies, and the
+quantum--classical boundary.
 Status labels indicate derivation level:
 \textbf{[A]}~structural theorem,
 \textbf{[A/B]}~structurally singled out,
@@ -33273,6 +33286,15 @@ the structural availability of non-factorisable correlations
 dark sector, a black-hole programme in which fundamental information
 destruction is excluded at the structural level, and an
 analogue-laboratory instantiability programme.
+The present Part~III now also includes a closure-level PES-based
+selection layer, visibility-based operational $\Gamma_{\rm loop}$
+anchors, a Bell/CHSH toy crossover threshold,
+coarse-graining readings of measurement-type situations such as
+Wigner's friend, a reverse-coherence programme
+for partial Lorentzian-to-Euclidean reopening, and a structural
+entanglement--tunnelling bridge.
+These additions should be read at Level~B or programme-level,
+not as unconditional Level~A derivations.
 However, several closures remain below unconditional Level~A: the
 physical identification $S_0=\hbar$, the full interacting
 Hilbert-space closure, the completed Born rule as a first-principles
@@ -34482,6 +34504,9 @@ C$_{60}$ ($10^{-6}$\,Pa) & Interference & Interference & Regime consistency & II
 C$_{60}$ ($10^{-4}$\,Pa) & Marginal & Degradation & Regime consistency & III \\
 Fein 25\,kamu & Environmental & Interference & Regime consistency & III \\
 Procopio switch & $V\!=\!0.994\!\pm\!0.002 \Rightarrow \Gamma_{\rm loop}^{(\exp)}\!=\!0.006\!\pm\!0.002$ & ICO visible & Visibility-based interpretive consistency & III \\
+Jacques delayed-choice & $V\!\approx\!0.94 \Rightarrow \Gamma_{\rm loop}\!\approx\!0.062$ & Visibility retained & Visibility-based consistency & III \\
+Bell/CHSH crossover & $\Gamma_{\rm loop}=\ln\sqrt{2}\approx 0.347$ & \textit{Threshold} & Toy operational threshold & III \\
+Qubit observation bound & $1\,$bit $\Rightarrow \Gamma_{\rm loop}\approx 0.25$ & \textit{Closure} & Qubit-model closure & III \\
 \midrule
 \multicolumn{5}{l}{\textit{Quantum sector: ECT-specific predictions
 (Part~III)}} \\
@@ -34554,8 +34579,9 @@ parameters;
 the unique macroscopic rank-2 tensor compatible with the broken
 symmetry pattern (Fierz--Pauli $\to$ Einstein--Hilbert as the unique
 two-derivative closure), with generalised Einstein equations
-containing the derived preferred-direction correction
-$\alpha_{\rm SDT}(n_\mu n^\lambda R_{\lambda\nu}+\ldots)$;
+containing the derived preferred-direction / orientation-stress
+correction built from the ordered vector $n_\mu$ and the nonlinear
+closure tensor $\Theta_{\mu\nu}[n,\phi]$;
 the coherent phase branch with winding sectors, a structural action
 scale~$S_0$, and canonical Schr\"odinger-type dynamics with the
 uncertainty principle;
@@ -34636,6 +34662,12 @@ route~(OP-Q11);
 the full spin--statistics/Pauli theorem~(OP-Q11);
 the Born rule as an unconditional bare-postulate theorem~(OP-Q7);
 the full Bell-correlator derivation~(OP-Q20);
+the protocol-independent information--decoherence bound beyond the
+present qubit closure~(OP-PES-6);
+the quantitative reverse-coherence programme for mesoscopic or
+engineered Lorentzian-to-Euclidean reopening;
+and the full operational Bell programme beyond the present
+toy visibility threshold;
 the constructive strong-field shell/interface mechanism needed for
 an explicit Page-curve computation~(OP-Q13);
 the colour group $SU(3)$ and the electroweak scale $v_2$;
@@ -34657,9 +34689,14 @@ not as completed derivations;
 and the full nonlinear gravitational closure at the theorem level.
 These limitations are real, mark the current frontier, and are
 catalogued in Section~\ref{sec:limitations}.
-It should be noted that the entire framework operates with only
-\emph{two free parameters} ($u_0$ and $\lambda$, after fixing
-$\alpha=2\beta=2$), compared to $\sim\!25$ in the Standard Model
+At the foundational ordered-medium benchmark level, the framework is
+organised around two remaining free condensate inputs
+($u_0$ and $\lambda$) after adopting the observationally fixed
+speed identification $c_*=c$, i.e.\ $\alpha=2\beta$
+(with the conventional normalisation $\beta=1$).
+This statement refers to the foundational benchmark architecture;
+several higher-level closures and effective sector-specific
+implementations remain Level~B or programme-level, compared to $\sim\!25$ in the Standard Model
 plus $\Lambda$CDM (\S\ref{sec:parameter_compression}).
 
 \subsection*{Final outlook}
@@ -34718,17 +34755,19 @@ Discrete energy levels & From boundary conditions & Physical origin clarified: p
 Particle stability & Empirical / symmetry-protected & Interpreted via PES as proximity to the stationary minimally disturbing sector; full lifetime derivation open & Programme \\
 \end{longtable}
 
-To summarise the scope of the programme in one sentence:
+To summarise the present scope in one sentence:
 from a single scalar condensate in Euclidean four-space, ECT derives
-or structurally recovers the Lorentzian signature, the Einstein
-equations (with a new preferred-direction correction), the
-Schr\"odinger equation, the uncertainty principle, the second law of
-thermodynamics, the Casimir effect, the Unruh temperature, the gauge
-bosons of the electroweak sector, a Planck-suppressed 5th force, flat
-rotation curves without dark matter, late-time cosmic acceleration
-without an independent cosmological constant, and a structural
-resolution of the black-hole information paradox---all controlled by
-one ordered medium and six postulates.
+or structurally recovers the Lorentzian signature, the geometric
+Einstein sector (with a derived preferred-direction/orientation-stress
+correction), the Klein--Gordon and Schr\"odinger limits of the coherent
+branch, the uncertainty structure, a closure-level route to
+decoherence-driven entropy growth and Crooks-type irreversibility
+statements, the Casimir effect, the Unruh response, the electroweak
+gauge/Higgs structural sector, a Planck-suppressed 5th force, flat
+rotation curves without collisionless dark matter, late-time cosmic
+acceleration without an independent cosmological constant, and a
+structural information-preservation programme for the black-hole
+problem---all controlled by one ordered medium and six postulates.
 That is already a substantial scientific achievement, and it defines a
 clear route for the next stage of development.
 
