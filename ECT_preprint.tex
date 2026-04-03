@@ -24917,35 +24917,6 @@ shortens coherence times in other coherent-branch experiments.
 The exact scaling remains platform-dependent and is not yet a
 universal ECT theorem.
 
-\subsubsection*{Quantitative estimates for photonic switch experiments}
-
-For a photonic quantum-switch setup (photon path $L\sim1$\,m,
-vacuum propagation, minimal leakage:
-$N_{\rm eff}\gamma\sim10^{-3}$\,s$^{-1}$), the ECT decoherence time is:
-\begin{equation}
-  \tau_{\rm dec}^{\rm photonic}
-  \sim \frac{1}{N_{\rm eff}\gamma}
-  \sim 10^{3}\,\text{s}
-  \quad(\Gamma_{\rm loop}\ll 1).
-  \label{eq:indef_tau}
-\end{equation}
-Since $\tau_{\rm flight}\sim10^{-9}$\,s $\ll\tau_{\rm dec}$,
-we have $\Gamma_{\rm loop}\ll1$: the indefinite-order advantage should remain clearly visible at the
-order-of-magnitude level --- consistent with the Procopio et al.\ (2015)
-platform.
-
-If the photon is deliberately coupled to a thermal bath with
-$N_{\rm eff}\sim10^{6}$ environmental modes, ECT predicts the
-advantage should vanish when
-$\Gamma_{\rm loop}\equiv N_{\rm eff}\gamma\,\tau_{\rm flight}\sim1$.
-This crossover is a programme-level ECT expectation.
-
-This estimate is order-of-magnitude only and depends on the effective
-ohmic/Markov closure adopted for $\gamma$.
-A precision prediction for a specific platform requires an explicit
-model of the photon--environment coupling and of the relevant bath
-structure.
-
 \textbf{Historical note.}
 The theoretical quantum-switch framework was developed by Brukner et al.\
 starting 2011--2012~\cite{Chiribella2012}; the first photonic
@@ -24955,7 +24926,7 @@ realisation is Procopio et al.\ (2015)~\cite{Procopio2015}.
 \paragraph{Quantitative dephasing estimate.}
 The Procopio experiment reports an interferometric visibility
 $V=0.994\pm0.002$ for the quantum-switch interferometer.
-Within the pure-dephasing closure
+Within the simplest pure-dephasing closure
 $V\simeq e^{-\Gamma_{\rm loop}}$, this gives
 \[
 \Gamma_{\rm loop}^{\rm (exp)}
@@ -24969,9 +24940,9 @@ placing the platform deep in the coherent regime
 The small observed degradation is fully compatible with technical
 imperfections (fibre loss, mode mismatch, detector dark counts)
 rather than with fundamental decoherence.
-This is a visibility-based regime estimate, not a first-principles
-derivation of $\Gamma_{\rm loop}$ from the microscopic condensate
-dynamics.
+This should therefore be read as an experimentally inferred dephasing
+proxy within the present closure, not as a first-principles derivation
+of $\Gamma_{\rm loop}$ from microscopic condensate dynamics.
 
 \subsubsection*{Interpretive conclusion}
 
@@ -28531,9 +28502,10 @@ V \simeq e^{-\Gamma_{\rm loop}},
 \qquad
 \frac{P_{\rm back}}{P_{\rm fwd}} \simeq e^{-\Gamma_{\rm loop}}.
 \]
-This allows $\Gamma_{\rm loop}$ and $P_{\rm back}/P_{\rm fwd}$ to be
-extracted directly from the reported visibility, without requiring a
-microscopic environmental model.
+This allows an operational dephasing proxy for $\Gamma_{\rm loop}$,
+and correspondingly for $P_{\rm back}/P_{\rm fwd}$, to be extracted
+directly from the reported visibility within the simplest pure-dephasing
+closure, without requiring a microscopic environmental model.
 
 \begin{center}
 \renewcommand{\arraystretch}{1.3}
@@ -28546,7 +28518,7 @@ Procopio quantum switch (2015)
   & $0.006\pm0.002$
   & $0.994\pm0.002$
   & Visibility-based \\
-Jacques delayed-choice (2007)
+Jacques delayed-choice (2007, closed config.)
   & $V\approx0.94$
   & $\approx0.062$
   & $\approx0.94$
@@ -28819,7 +28791,7 @@ System & ECT & Obs. & Status \\
 C$_{60}$ ($10^{-6}$\,Pa) & $\tau_{\rm dec}\gg1$\,ms & Interference \checkmark & Regime consistency \\
 C$_{60}$ ($10^{-4}$\,Pa) & $\tau_{\rm dec}\sim1$\,ms & Degradation & Regime consistency \\
 Fein 25\,000\,amu & Environmental & Interference \checkmark & Regime consistency \\
-Procopio switch & $\Gamma\sim10^{-12}$ & ICO visible & Interpretive consistency \\
+Procopio switch & $V=0.994\pm0.002 \Rightarrow \Gamma_{\rm loop}^{(\exp)}=0.006\pm0.002$ & ICO visible & Visibility-based interpretive consistency \\
 Nanosphere 1\,$\mu$m & $\tau_{\rm grav}\sim38$\,ms & Not yet tested & ECT-specific prediction \\
 Nanosphere 100\,nm & $\tau_{\rm grav}\sim1$\,hr & Not yet tested & ECT-specific prediction \\
 Crossover (UHV) & $m_{\rm cross}\sim10^{-16}$\,kg & Not yet tested & ECT-specific prediction \\
@@ -29320,9 +29292,11 @@ the thermal correction shifts the mass term by $+\lambda T^2/6$,
 so that the coefficient $a(T)=-\mu^2+\lambda T^2/6$ vanishes at
 $T_c^2=6\mu^2/\lambda=6\phi_0^2$, giving
 $T_c=\phi_0\sqrt{6}\approx5.96\times10^{18}\,$GeV.
-This is a Level~B thermal closure anchored to the ECT order-parameter
-scale, not yet a completed first-principles finite-temperature
-derivation from the microscopic ECT action.
+This is a Level~B thermal estimate obtained by combining the ECT
+identification of the order-parameter scale $\phi_0$ with the standard
+Dolan--Jackiw one-loop finite-temperature correction for a
+$\lambda\Phi^4$ order parameter; it is not yet a first-principles
+finite-temperature derivation from the microscopic ECT action.
 The first two entries are structural scales already used elsewhere in
 the ordered-branch construction, whereas the last two are synthesis
 entries collecting the thermal and cosmological reading of the same
@@ -34219,7 +34193,7 @@ $\eta_B$ & $9\!\times\!10^{-10}$ & $6\!\times\!10^{-10}$ & $\sim\!1.5\times$ & I
 C$_{60}$ ($10^{-6}$\,Pa) & Interference & Interference & Regime consistency & III \\
 C$_{60}$ ($10^{-4}$\,Pa) & Marginal & Degradation & Regime consistency & III \\
 Fein 25\,kamu & Environmental & Interference & Regime consistency & III \\
-Procopio switch & $\Gamma\!\sim\!10^{-12}$ & ICO visible & Interpretive consistency & III \\
+Procopio switch & $V\!=\!0.994\!\pm\!0.002 \Rightarrow \Gamma_{\rm loop}^{(\exp)}\!=\!0.006$ & ICO visible & Visibility-based interpretive consistency & III \\
 \midrule
 \multicolumn{5}{l}{\textit{Quantum sector: ECT-specific predictions
 (Part~III)}} \\
