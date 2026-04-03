@@ -1,115 +1,125 @@
 """
-ECT Architecture map — with "α>β (Lorentzian window) / benchmark: α=2β"
+ECT Architecture map — larger fonts, arrows touching box edges only
 """
 import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
+from matplotlib.patches import FancyBboxPatch
 import os
 
 plt.rcParams.update({
-    'font.family': 'serif',
-    'font.size': 11,
-    'mathtext.fontset': 'cm',
+    'font.family': 'serif', 'font.size': 13, 'mathtext.fontset': 'cm',
 })
 
-FW, FH = 11, 11
+FW, FH = 12, 13
 fig = plt.figure(figsize=(FW, FH))
 fig.patch.set_facecolor('white')
 ax = fig.add_axes([0.02, 0.02, 0.96, 0.96])
 ax.set_xlim(0, FW); ax.set_ylim(0, FH); ax.axis('off')
 
-def box(x, y, w, h, lines, fill='#f0f0f0', edge='#444', fs=11):
+nodes = {}
+
+def box(key, x, y, w, h, lines, fill='#f0f0f0', edge='#444', fs=13):
+    nodes[key] = (x, y, w, h)
     ax.add_patch(FancyBboxPatch((x-w/2, y-h/2), w, h,
-        boxstyle='round,pad=0.12', facecolor=fill, edgecolor=edge,
-        linewidth=1.6, zorder=3))
+        boxstyle='round,pad=0.15', facecolor=fill, edgecolor=edge,
+        linewidth=1.8, zorder=3))
     ax.text(x, y, '\n'.join(lines), ha='center', va='center',
             fontsize=fs, linespacing=1.25, zorder=4)
 
-def arr(x0, y0, x1, y1, label='', dashed=False):
+def arr(src, dst, dashed=False):
+    x0, y0, w0, h0 = nodes[src]
+    x1, y1, w1, h1 = nodes[dst]
+    # Arrow from bottom of src to top of dst
+    ys = y0 - h0/2
+    yd = y1 + h1/2
+    ls = (0,(4,2.5)) if dashed else '-'
+    c = '#999' if dashed else '#333'
+    ax.annotate('', xy=(x1, yd), xytext=(x0, ys),
+        arrowprops=dict(arrowstyle='-|>', color=c, lw=2.0,
+                        mutation_scale=18, linestyle=ls), zorder=5)
+
+def arr_xy(x0, y0, x1, y1, dashed=False):
     ls = (0,(4,2.5)) if dashed else '-'
     c = '#999' if dashed else '#333'
     ax.annotate('', xy=(x1, y1), xytext=(x0, y0),
-        arrowprops=dict(arrowstyle='-|>', color=c, lw=1.8,
-                        mutation_scale=16, linestyle=ls), zorder=5)
-    if label:
-        mx, my = (x0+x1)/2, (y0+y1)/2
-        ax.text(mx+0.15, my, label, fontsize=8.5, ha='left', va='center',
-                color='#666', fontstyle='italic')
+        arrowprops=dict(arrowstyle='-|>', color=c, lw=2.0,
+                        mutation_scale=18, linestyle=ls), zorder=5)
+
+# Row positions
+y0 = 12.0; y1 = 10.0; y2 = 8.0; y3 = 5.8; y4 = 3.5; y5 = 1.3
 
 # === Top: Φ-medium ===
-box(5.5, 10.2, 5.0, 0.9,
-    [r'$\Phi$-medium on $\mathcal{M}^4$',
-     r'P1–P6, DP'],
-    fill='#c8c8c8', fs=12)
+box('phi', 6, y0, 5.5, 1.0,
+    [r'$\Phi$-medium on $\mathcal{M}^4$', 'P1–P6, DP'],
+    fill='#c0c0c0', fs=14)
 
 # === SSB ===
-box(5.5, 8.5, 5.5, 1.1,
+box('ssb', 6, y1, 6.5, 1.3,
     [r'$O(4)\to O(3)$ SSB',
      r'Ordered branch: $\langle\partial_A\Phi\rangle = u_0\,\delta_{Aw}$',
-     r'Lorentzian window: $\alpha>\beta$',
-     r'Benchmark realisation: $\alpha=2\beta$'],
-    fill='#d8d8d8', fs=10.5)
-arr(5.5, 9.75, 5.5, 9.1)
+     r'Lorentzian window: $\alpha > \beta$',
+     r'Benchmark realisation: $\alpha = 2\beta$'],
+    fill='#d0d0d0', fs=12)
+arr('phi', 'ssb')
 
 # === Ordered-branch action ===
-box(5.5, 6.8, 4.5, 0.8,
+box('ord', 6, y2, 5.5, 1.0,
     [r'$S_{\rm ord}[u, n]$',
      r'$K^{AB}=\beta\,\delta^{AB}-\alpha\,n^A n^B$'],
-    fill='#e0e0e0', fs=10.5)
-arr(5.5, 7.9, 5.5, 7.25)
+    fill='#ddd', fs=12)
+arr('ssb', 'ord')
 
 # === Two branches ===
-# Geometric branch (left)
-box(2.8, 5.0, 3.8, 1.0,
-    [r'\textbf{Geometric branch}',
-     r'(Macroscopic Physics, Part II)',
-     r'Long-wavelength amplitude/orientation'],
-    fill='#e8e8e8', fs=10)
-arr(4.3, 6.4, 3.2, 5.55, dashed=False)
+box('geo', 3.0, y3, 4.2, 1.2,
+    ['Geometric branch',
+     '(Macroscopic Physics, Part II)',
+     'Long-wavelength amplitude/orientation'],
+    fill='#e5e5e5', fs=11)
 
-# Coherent branch (right)
-box(8.2, 5.0, 3.8, 1.0,
-    [r'\textbf{Coherent branch}',
-     r'(Quantum Sector, Part III)',
-     r'Short-wavelength phase/winding'],
-    fill='#e8e8e8', fs=10)
-arr(6.7, 6.4, 7.8, 5.55, dashed=False)
+box('coh', 9.0, y3, 4.2, 1.2,
+    ['Coherent branch',
+     '(Quantum Sector, Part III)',
+     'Short-wavelength phase/winding'],
+    fill='#e5e5e5', fs=11)
 
-# === Geometric sub-blocks ===
-box(2.8, 3.3, 3.5, 1.0,
+# Arrows from ordered action to branches (from bottom corners)
+arr_xy(4.5, y2 - 0.5, 3.0, y3 + 0.6)
+arr_xy(7.5, y2 - 0.5, 9.0, y3 + 0.6)
+
+# === Sub-blocks ===
+box('geo_sub', 3.0, y4, 4.5, 1.2,
     [r'Einstein sector, $G_N$ matching',
      r'Cosmology, galactic $\phi$-branch',
-     r'BTFR, RAR, cluster lensing'],
-    fill='#f0f0f0', fs=9.5)
-arr(2.8, 4.45, 2.8, 3.85)
+     'BTFR, RAR, cluster lensing'],
+    fill='#efefef', fs=11)
+arr('geo', 'geo_sub')
 
-# === Coherent sub-blocks ===
-box(8.2, 3.3, 3.5, 1.0,
+box('coh_sub', 9.0, y4, 4.5, 1.2,
     [r'$S_0$, Hilbert bridge, decoherence',
-     r'PES, Born route, entanglement',
-     r'Vacuum response, BH information'],
-    fill='#f0f0f0', fs=9.5)
-arr(8.2, 4.45, 8.2, 3.85)
+     'PES, Born route, entanglement',
+     'Vacuum response, BH information'],
+    fill='#efefef', fs=11)
+arr('coh', 'coh_sub')
 
-# === Back-reaction arrow ===
-ax.annotate('', xy=(3.8, 3.3), xytext=(7.2, 3.3),
-    arrowprops=dict(arrowstyle='<|-|>', color='#999', lw=1.4,
+# Back-reaction
+ax.annotate('', xy=(4.2, y4), xytext=(7.8, y4),
+    arrowprops=dict(arrowstyle='<|-|>', color='#aaa', lw=1.3,
                     mutation_scale=14, linestyle=(0,(3,2))))
-ax.text(5.5, 3.55, 'back-reaction\n(single condensate)', fontsize=8,
-        ha='center', va='bottom', color='#888', fontstyle='italic')
+ax.text(6.0, y4 + 0.25, 'back-reaction (single condensate)',
+        fontsize=9.5, ha='center', color='#888', fontstyle='italic')
 
 # === Predictions ===
-box(5.5, 1.5, 6.0, 1.0,
-    [r'Predictions, falsifiers, open problems',
-     r'BTFR slope 4, $g^\dagger\approx cH_0/(2\pi)$, LIV, 5th force',
-     r'Casimir $3/2$, Unruh, decoherence anchors'],
-    fill='#ddd', fs=9.5)
-arr(2.8, 2.75, 4.5, 2.05)
-arr(8.2, 2.75, 6.5, 2.05)
+box('pred', 6, y5, 7.0, 1.2,
+    ['Predictions, falsifiers, open problems',
+     r'BTFR slope 4, $g^\dagger\!\approx\! cH_0/(2\pi)$, LIV, 5th force',
+     'Casimir 3/2, Unruh, decoherence anchors'],
+    fill='#d5d5d5', fs=11)
+arr_xy(3.0, y4 - 0.6, 4.5, y5 + 0.6)
+arr_xy(9.0, y4 - 0.6, 7.5, y5 + 0.6)
 
 fig.savefig(os.path.join(os.path.dirname(os.path.abspath(__file__)),
             '..', 'figures', 'fig_ect_architecture.pdf'), bbox_inches='tight')
 fig.savefig(os.path.join(os.path.dirname(os.path.abspath(__file__)),
             '..', 'figures', 'fig_ect_architecture.png'), dpi=300, bbox_inches='tight')
 plt.close()
-print("fig_ect_architecture generated")
+print("fig_ect_architecture OK")
