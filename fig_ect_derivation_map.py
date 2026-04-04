@@ -67,7 +67,7 @@ digraph ECT {
 
   COSMO [label=<Cosmology<BR/><FONT POINT-SIZE="9">Primordial n<SUB>s</SUB> ≈ 0.967   ·   Λ<SUB>eff</SUB><BR/>Hubble tension route   [B]</FONT>>];
   GAL [label=<Galactic Dynamics<BR/><FONT POINT-SIZE="9">φ-branch   ·   BTFR slope = 4   ·   RAR<BR/>g<SUB>†</SUB> ~ cH₀/(2π)   [B]</FONT>>];
-  BH [label=<Black Holes &amp; Strong Field<BR/><FONT POINT-SIZE="9">Shell ρ<SUB>c</SUB> = ℓ<SUB>Pl</SUB>/√(3π)   ·   BH thermo<BR/>Information prog.   [B/Open]</FONT>>];
+  BH [label=<Black Holes &amp; Strong Field<BR/><FONT POINT-SIZE="9">Info destruction excluded [A]<BR/>Shell · BH thermo · Page curve [B/Open]</FONT>>];
   FIFTH [label=<5th Force<BR/><FONT POINT-SIZE="9">β₅ ~ m<SUB>f</SUB>/M<SUB>Pl</SUB>   ·   M<SUB>max</SUB> ≈ 2.17 M<SUB>⊙</SUB>   [B]</FONT>>];
   CLUSTER [label=<Cluster Lensing<BR/><FONT POINT-SIZE="9">Bullet, A520, El Gordo<BR/>ν-closure rule   [B]</FONT>>];
 
