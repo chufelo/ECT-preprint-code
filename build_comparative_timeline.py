@@ -66,7 +66,7 @@ for ax in axes:
     for sp in ax.spines.values(): sp.set_visible(False)
 
 # ── Shared epoch separators ───────────────────────────────────────────────────
-shared_v = [X_BB, X_OT, 0.34, 0.50, 0.58, X_NOW]
+shared_v = [X_BB, X_OT, X_NOW]
 for ax in axes:
     for xv in shared_v:
         ax.axvline(xv, color='0.55', ls=':', lw=0.55, alpha=0.55, zorder=2)
@@ -87,39 +87,37 @@ lcdm_segs = [
     (0.26,  0.34,   G['recomb']),
     (0.34,  0.50,   G['matter']),
     (0.50,  X_NOW,  G['struct']),
-    (X_NOW, 0.90,   G['de']),
-    (0.90,  1.00,   G['future_a']),
+    (X_NOW, 1.00,   G['de']),
 ]
 for x0,x1,col in lcdm_segs:
     rect(ax, x0, x1, col)
 
 # Staggered labels ΛCDM — early block alternates above/inside
 lbl(ax, 0.00,  X_BB,  'Undefined\n(no spacetime)',     'mid', fs=8)
-lbl_out(ax, X_BB, 0.13, 'Planck+\nInflation',          above=True, fs=8)
+# Planck+Inflation merged with Big Bang label above
 lbl(ax, 0.13,  0.18,  'Radiation\n(quarks,\nleptons)', 'bot', fs=7.5)
-lbl_out(ax, 0.18, 0.21, 'EW\ntrans.',                  above=False, fs=7.5)
+lbl(ax, 0.18, 0.21, 'EW\ntrans.', 'mid', fs=6.5)
 lbl(ax, 0.21,  0.26,  'QCD+\nBBN',                    'top', fs=7.5)
 lbl(ax, 0.26,  0.34,  'Recomb.\n380 kyr',              'mid', fs=8)
 lbl(ax, 0.34,  0.50,  'Radiation/Matter\ndomination',  'mid', fs=8.5)
-lbl(ax, 0.50,  X_NOW, 'Structure formation',           'mid', fs=9)
+lbl(ax, 0.54,  X_NOW, 'Structure formation',           'mid', fs=9)
 lbl(ax, X_NOW, 0.90,  'Future\n(de Sitter)',           'mid', fs=8.5)
 
 # Big Bang marker
 ax.axvline(X_BB, color='black', lw=1.8, zorder=7)
-ax.text(X_BB, YT+0.10, 'Big Bang\n$t=0$', ha='center', va='bottom',
-        fontsize=9, fontweight='bold')
+ax.text(X_BB, YT+0.08, 'Big Bang\n$t{=}0$',
+        ha='center', va='bottom', fontsize=9, fontweight='bold')
+lbl(ax, X_BB, 0.13, 'Planck+\nInflation', 'mid', fs=7.5)
 
 # Age arrow
-ax.annotate('', xy=(X_NOW-0.003, 0.04), xytext=(X_BB+0.003, 0.04),
+ax.annotate('', xy=(X_NOW-0.003, YB-0.04), xytext=(X_BB+0.003, YB-0.04),
             arrowprops=dict(arrowstyle='<->', color='black', lw=1.3))
-ax.text((X_BB+X_NOW)/2, 0.01,
+ax.text((X_BB+X_NOW)/2, YB-0.07,
         r'$t_0^{\Lambda{\rm CDM}} = 13.80$ Gyr',
-        ha='center', va='bottom', fontsize=9.5, fontweight='bold')
+        ha='center', va='top', fontsize=8.5, fontweight='bold', color='black')
 
 # z~10
-ax.axvline(0.63, color='0.4', ls=':', lw=1.0)
-ax.text(0.63, YT-0.08, r'$z\!\sim\!10$', ha='center', va='top',
-        fontsize=8, color='0.35')
+# z~10 removed from panel (a)
 
 # ════════════════════════════════════════════════════════════════════════════
 # ROW (b) — ECT epochs
@@ -131,14 +129,13 @@ ax.text(-0.003, 0.50, '(b) ECT\nepochs', ha='right', va='center',
 
 # Epoch colours only (no text yet)
 ect_segs = [
-    (0.00,  X_BB,        G['undef']),
-    (X_BB,  X_OT,        G['euclid']),   # Euclidean gap
-    (X_OT,  X_OT+0.06,  G['pt']),
-    (X_OT+0.06, X_OT+0.16, G['infl']),
-    (X_OT+0.16, X_OT+0.24, G['rad']),
-    (X_OT+0.24, X_OT+0.29, G['recomb']),
-    (X_OT+0.29, 0.50,    G['matter']),
-    (0.50,  X_NOW,       G['struct']),
+    (0.00,  X_OT,        G['euclid']),   # Full pre-OT = Euclidean   # Euclidean gap
+    (X_OT,  X_OT+0.05,  G['pt']),
+    (X_OT+0.05, X_OT+0.12, G['infl']),
+    (X_OT+0.12, X_OT+0.18, G['rad']),
+    (X_OT+0.18, X_OT+0.22, G['recomb']),
+    (X_OT+0.22, 0.54,    G['matter']),
+    (0.54,  X_NOW,       G['struct']),
     (X_NOW, 0.88,        G['future_a']),
     (0.88,  1.00,        G['future_b']),
 ]
@@ -146,41 +143,37 @@ for x0,x1,col in ect_segs:
     rect(ax, x0, x1, col)
 
 # Labels — staggered to avoid overlap
-lbl(ax, 0.00,  X_BB,  'Undefined',                           'mid', fs=8)
+# No "Undefined" in ECT — everything before PT is Euclidean
 # Euclidean block: inside, small
-lbl(ax, X_BB,  X_OT,  'Euclidean /\npre-Lorentzian\nphase\n($u_0\!=\!0$, no time)',
-    'mid', fs=7.5)
+lbl(ax, 0.00,  X_OT,  'Euclidean / pre-Lorentzian phase\n($u_0\!=\!0$, no time)',
+    'mid', fs=8)
 # PT: outside above (too narrow for inside)
-lbl_out(ax, X_OT, X_OT+0.06, 'PT\nO(4)→O(3)',               above=True, fs=7.5)
+# PT label merged with ordering transition below
 # Inflation-like: outside below
-lbl_out(ax, X_OT+0.06, X_OT+0.16,
-        'Inflation-like\nepoch (?)\nopen',                   above=False, fs=7.5)
+lbl(ax, X_OT, X_OT+0.05,
+    'O(4)$\\to$O(3)\nPhase trans.', 'mid', fs=6)
+lbl(ax, X_OT+0.05, X_OT+0.12,
+    'Ordering\ntransition', 'mid', fs=7)
 # Radiation: outside above
-lbl_out(ax, X_OT+0.16, X_OT+0.24,
-        'Radiation,\nEW $v_2$=246 GeV,\nQCD+BBN (as in SM)', above=True, fs=7.5)
+lbl(ax, X_OT+0.12, X_OT+0.18,
+    'Radiation\nEW,QCD\n+BBN', 'mid', fs=6)
 # Recomb: outside below
-lbl_out(ax, X_OT+0.24, X_OT+0.29, 'Recomb.\n380 kyr',       above=False, fs=7.5)
+lbl(ax, X_OT+0.18, X_OT+0.22, 'Recomb.\n380 kyr', 'mid', fs=6)
 # Matter: inside
-lbl(ax, X_OT+0.29, 0.50, 'Radiation/Matter\ndomination',    'mid', fs=8)
+lbl(ax, X_OT+0.22, 0.54, 'Radiation/Matter\ndomination',    'mid', fs=8)
 # Structure
-lbl(ax, 0.50,  X_NOW,
+lbl(ax, 0.54,  X_NOW,
     'Structure +\n$G_{\\rm eff}>G_N$\n(JWST accel.)',         'mid', fs=8.5)
 # Future A / B
 lbl(ax, X_NOW, 0.88, 'Scen. A:\n$u_0$ nonzero asympt.\neternal', 'mid', fs=8)
 lbl(ax, 0.88,  1.00,
     'Scen. B:\n$u_0\\to 0$\nBig Crunch\n$\\sim\\!10^{100}$yr',  'mid', fs=7.5)
 
-# Scen B arrow: G_eff diverges
-ax.annotate('', xy=(0.94, YT-0.12), xytext=(0.94, YT-0.30),
-            arrowprops=dict(arrowstyle='->', color='black', lw=1.0))
-ax.text(0.94, YT-0.31, r'$G_{\rm eff}\to\infty$',
-        ha='center', va='top', fontsize=7.5,
-        bbox=dict(fc='white', ec='0.5', lw=0.5, pad=1.5))
+# G_eff arrow removed (info in Scen B label)
 
 # ECT ordering transition marker
 ax.axvline(X_OT, color='black', lw=1.8, zorder=7)
-ax.text(X_OT, YT+0.18, 'O(4)→O(3)\nordering trans.',
-        ha='center', va='bottom', fontsize=9, fontweight='bold')
+# O(4)→O(3) label moved inside PT section
 
 # ΛCDM BB reference
 ax.axvline(X_BB, color='0.45', ls='--', lw=1.2, zorder=6)
@@ -188,23 +181,21 @@ ax.text(X_BB, YB-0.10, r'$\Lambda$CDM BB',
         ha='center', va='top', fontsize=8, color='0.40', style='italic')
 
 # ECT age arrow
-ax.annotate('', xy=(X_NOW-0.003, 0.04), xytext=(X_OT+0.003, 0.04),
+ax.annotate('', xy=(X_NOW-0.003, YB-0.04), xytext=(X_OT+0.003, YB-0.04),
             arrowprops=dict(arrowstyle='<->', color='black', lw=1.3))
-ax.text((X_OT+X_NOW)/2, 0.01,
+ax.text((X_OT+X_NOW)/2, YB-0.07,
         r'$t_0^{\rm ECT} = 13.02$ Gyr',
-        ha='center', va='bottom', fontsize=9.5, fontweight='bold')
+        ha='center', va='top', fontsize=9, fontweight='bold', color='black')
 
 # Δt annotation inside Euclidean block (white text on dark bg)
-axes[1].annotate('', xy=(X_OT-0.003, 0.55), xytext=(X_BB+0.003, 0.55),
-                 arrowprops=dict(arrowstyle='<->', color='white', lw=2.0))
-axes[1].text((X_BB+X_OT)/2, 0.68,
+axes[1].annotate('', xy=(X_OT-0.003, YB-0.04), xytext=(X_BB+0.003, YB-0.04),
+                 arrowprops=dict(arrowstyle='<->', color='black', lw=1.5))
+axes[1].text((X_BB+X_OT)/2, YB-0.07,
              r'$\Delta t\!\approx\!780$ Myr',
-             ha='center', va='bottom', fontsize=8.5, fontweight='bold', color='white')
+             ha='center', va='top', fontsize=8.5, fontweight='bold', color='black')
 
 # z~10
-ax.axvline(0.63, color='0.4', ls=':', lw=1.0)
-ax.text(0.63, YT-0.08, r'$z\!\sim\!10$',
-        ha='center', va='top', fontsize=8, color='0.35')
+# z~10 removed from panel (b)
 
 # ════════════════════════════════════════════════════════════════════════════
 # ROW (c) — Condensate evolution
@@ -215,8 +206,7 @@ ax.text(-0.003, 0.50, '(c) ECT\ncondensate\n$u_0(t),\\phi(t)$',
         transform=ax.transData, multialignment='right')
 
 # Background
-ax.add_patch(Rectangle((0.00, 0.05), X_BB,     0.90, facecolor=G['undef'],    ec='black', lw=0.5))
-ax.add_patch(Rectangle((X_BB, 0.05), X_OT-X_BB, 0.90, facecolor=G['euclid'], ec='black', lw=0.5))
+ax.add_patch(Rectangle((0.00, 0.05), X_OT,     0.90, facecolor=G['euclid'],   ec='black', lw=0.5))
 ax.add_patch(Rectangle((X_OT, 0.05), X_NOW-X_OT, 0.90, facecolor=G['cond_bg'], ec='black', lw=0.5))
 ax.add_patch(Rectangle((X_NOW, 0.05), 0.88-X_NOW, 0.90, facecolor=G['future_a'], ec='black', lw=0.5))
 ax.add_patch(Rectangle((0.88, 0.05),  0.12,       0.90, facecolor=G['future_b'],  ec='black', lw=0.5))
@@ -250,7 +240,7 @@ ax.plot(xs[xs >= X_NOW], yB[xs >= X_NOW],
 phi_n = 1 - np.exp(-4.5*(xs-X_OT)/(X_NOW-X_OT))
 phi_n = np.clip(phi_n, 0, 1)
 y_phi = 0.15 + phi_n*0.42
-ax.plot(xs[xs <= X_NOW+0.01], y_phi[xs <= X_NOW+0.01],
+ax.plot(xs, y_phi,
         '--', color='0.40', lw=1.9,
         label=r'$\phi(t)$: $\phi\ll0$ early $\to$ $\phi\to-0.10$ now')
 
@@ -295,16 +285,12 @@ ax.text(X_NOW-0.015, 0.22,
         ha='right', va='bottom', fontsize=8,
         bbox=dict(fc='white', ec='0.5', lw=0.5, pad=1.5))
 
-# Scen B divergence
-ax.text(0.94, 0.80,
-        r'Scen. B:' '\n' r'$G_{\rm eff}\to\infty$',
-        ha='center', va='top', fontsize=8,
-        bbox=dict(fc='white', ec='0.6', lw=0.6, pad=2))
+# Scen B box removed (info in legend)
 
 # Legend — bottom right
-ax.legend(fontsize=8.5, loc='lower right', framealpha=0.97,
+ax.legend(fontsize=8, loc='upper right', framealpha=0.90,
           edgecolor='0.5', ncol=2, columnspacing=0.8,
-          bbox_to_anchor=(0.998, 0.01))
+          bbox_to_anchor=(0.998, 0.97))
 
 # ════════════════════════════════════════════════════════════════════════════
 # SHARED: NOW line + z~10 in row c
@@ -313,14 +299,9 @@ for ax in axes:
     ax.axvline(X_NOW, color='black', lw=2.2, zorder=9)
 axes[0].text(X_NOW, YT+0.10, 'NOW', ha='center', va='bottom',
              fontsize=11, fontweight='bold')
-axes[1].text(X_NOW, YT+0.36, 'NOW', ha='center', va='bottom',
-             fontsize=11, fontweight='bold')
-axes[2].text(X_NOW, 0.97, 'NOW', ha='center', va='top',
-             fontsize=10, fontweight='bold')
+# NOW labels removed from panels b,c — single NOW at top suffices
 
-axes[2].axvline(0.63, color='0.4', ls=':', lw=1.0)
-axes[2].text(0.63, 0.97, r'$z\!\sim\!10$',
-             ha='center', va='top', fontsize=8, color='0.35')
+# z~10 removed from panel (c)
 
 # ════════════════════════════════════════════════════════════════════════════
 # Row labels (left axis)
@@ -355,7 +336,7 @@ fig.suptitle(
 
 fig.text(0.5, -0.09,
     'Note: schematic; epoch widths non-proportional. '
-    'ECT inflation-like epoch and horizon-resolution mechanism remain open (Level~B/Open). '
+    'ECT resolves horizon, flatness, monopole problems without inflation (Level~A/B). '
     r'Condensate curves schematic; only $\phi$-sector resolved quantitatively.',
     ha='center', va='top', fontsize=7.5, color='0.45', style='italic')
 
