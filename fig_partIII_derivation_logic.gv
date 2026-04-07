@@ -3,99 +3,98 @@ digraph PartIII {
   fontname="Helvetica";
   node [fontname="Helvetica", fontsize=9, shape=box, style="rounded,filled", margin="0.08,0.04"];
   edge [fontname="Helvetica", fontsize=7];
-  newrank=true;
   splines=true;
-  nodesep=0.35;
-  ranksep=0.50;
+  nodesep=0.10;
+  ranksep=0.68;
   labeljust=c;
 
-  // === INPUTS FROM PART I ===
   node [fillcolor="#404040", fontcolor=white];
-  inputs [label=<Part I outputs<BR/>(P1–P6, BR1, DP)<BR/>§§2–10>];
+  inputs [label=<Part I outputs<BR/>(P1&#x2013;P6, BR1, DP)<BR/>&#x00A7;&#x00A7;2&#x2013;10>];
 
-  // === LEVEL A (dark gray) ===
   node [fillcolor="#b8b8b8", fontcolor=black];
-  phase [label=<Coherent phase θ<BR/>&amp; winding sectors<BR/>Level A, §20>];
-  S0 [label=<Pre-quantum action<BR/>scale S₀<BR/>Level A (existence), §20>];
-  HJ [label=<HJ / continuity<BR/>decomposition<BR/>Level A, §21>];
-  RP [label=<Reflection positivity<BR/>(Gaussian subsectors)<BR/>Level A, §22>];
-  unitarity [label=<Global vs reduced<BR/>unitarity distinction<BR/>Level A, §22>];
-  canonical [label=<Canonical organisation<BR/>&amp; Poisson brackets<BR/>Level A, §22>];
-  uncertainty [label=<Robertson–Schrödinger<BR/>uncertainty (with S₀)<BR/>Level A, §22>];
-  exchange [label=<Exchange topology<BR/>ℤ₂ from d=3<BR/>Level A, §23>];
-  path_dep [label=<Two-sided Euclidean<BR/>path-dependence<BR/>Level A, §23>];
-  lorentz_cliff [label=<Lorentz algebra<BR/>&amp; Clifford structure<BR/>Level A, §23>];
-  vac_nontrivial [label=<Ordered vacuum<BR/>nontrivial<BR/>Level A, §24>];
-  retarded [label=<Retarded kernel<BR/>K(τ&lt;0)=0<BR/>Level A, §25>];
-  spectral [label=<Spectral density<BR/>ρ(μ²) ≥ 0<BR/>Level A, §25>];
-  reverse [label=<Reverse O(3)→O(4)<BR/>segments admissible<BR/>Level A, §28>];
-  amp_prob [label=<Amplitude ≠ probability<BR/>distinction<BR/>Level A, §28>];
-  no_info_loss [label=<Fundamental info<BR/>destruction excluded<BR/>Level A, §31>];
-  wider_state [label=<Wider defect sector<BR/>beyond BR1<BR/>Level A, §30>];
+  phase       [label=<Coherent phase &#x03B8;<BR/>&#x26; winding sectors<BR/>Level A, &#x00A7;23>];
+  S0          [label=<Pre-quantum action<BR/>scale S&#x2080;<BR/>Level A (existence), &#x00A7;23>];
+  HJ          [label=<HJ / continuity<BR/>decomposition<BR/>Level A, &#x00A7;24>];
+  RP          [label=<Reflection positivity<BR/>(Gaussian subsectors)<BR/>Level A, &#x00A7;25>];
+  unitarity   [label=<Global vs reduced<BR/>unitarity distinction<BR/>Level A, &#x00A7;25>];
+  canonical   [label=<Canonical organisation<BR/>&#x26; Poisson brackets<BR/>Level A, &#x00A7;25>];
+  uncertainty [label=<Robertson&#x2013;Schr&#xF6;dinger<BR/>uncertainty (with S&#x2080;)<BR/>Level A, &#x00A7;25>];
+  exchange    [label=<Exchange topology<BR/>Z&#x2082; from d=3<BR/>Level A, &#x00A7;26>];
+  path_dep    [label=<Two-sided Euclidean<BR/>path-dependence<BR/>Level A, &#x00A7;26>];
+  lorentz_cliff [label=<Lorentz algebra<BR/>&#x26; Clifford structure<BR/>Level A, &#x00A7;26>];
+  vac_nontrivial [label=<Ordered vacuum<BR/>nontrivial<BR/>Level A, &#x00A7;27>];
+  retarded    [label=<Retarded kernel<BR/>K(&#x03C4;&#x3C;0)=0<BR/>Level A, &#x00A7;28>];
+  spectral    [label=<Spectral density<BR/>&#x03C1;(&#x03BC;&#xB2;) &#x2265; 0<BR/>Level A, &#x00A7;28>];
+  reverse     [label=<Reverse O(3)&#x2192;O(4)<BR/>segments admissible<BR/>Level A, &#x00A7;31>];
+  amp_prob    [label=<Amplitude &#x2260; probability<BR/>distinction<BR/>Level A, &#x00A7;31>];
+  no_info_loss [label=<Fundamental info<BR/>destruction excluded<BR/>Level A, &#x00A7;34>];
+  wider_state [label=<Wider defect sector<BR/>beyond BR1<BR/>Level A, &#x00A7;33>];
 
-  // === LEVEL A/B ===
   node [fillcolor="#d8d8d8", fontcolor=black];
-  S0_match [label=<S₀ = ℏ (matched)<BR/>Level B, §20>];
-  schrod [label=<Schrödinger-type<BR/>recombination<BR/>Level A/B, §21>];
-  unruh_T [label=<Unruh temperature<BR/>from correlator<BR/>Level A/B, §24>];
-  unified_vac [label=<Unified vacuum<BR/>response (4 channels)<BR/>Level A/B, §24>];
-  entangle [label=<Non-factorisable<BR/>correlations<BR/>Level A/B, §29>];
+  S0_match    [label=<S&#x2080; = &#x210F; (matched)<BR/>Level B, &#x00A7;23>];
+  schrod      [label=<Schr&#xF6;dinger-type<BR/>recombination<BR/>Level A/B, &#x00A7;24>];
+  unruh_T     [label=<Unruh temperature<BR/>from correlator<BR/>Level A/B, &#x00A7;27>];
+  unified_vac [label=<Unified vacuum<BR/>response (4 channels)<BR/>Level A/B, &#x00A7;27>];
+  entangle    [label=<Non-factorisable<BR/>correlations<BR/>Level A/B, &#x00A7;32>];
 
-  // === LEVEL B (white) ===
   node [fillcolor="#ffffff", fontcolor=black];
-  decoh [label=<Decoherence &amp;<BR/>arrow of time<BR/>Level B, §25>];
-  tau_dec [label=<Decoherence timescales<BR/>C₆₀, Diósi–Penrose<BR/>Level B, §26>];
-  crooks [label=<Crooks-type relation<BR/>&amp; entropy production<BR/>Level B, §25>];
-  born [label=<Born rule: conditional<BR/>uniqueness (Gleason)<BR/>Level B, §28>];
-  qc_boundary [label=<Quantum–classical<BR/>boundary (Γ_loop)<BR/>Level B, §28>];
-  dirac_cond [label=<Dirac structure<BR/>(conditional)<BR/>Level B, §23>];
-  casimir [label=<Casimir 3/2<BR/>(conditional)<BR/>Level B, §24>];
-  bh_shell [label=<Critical shell<BR/>&amp; horizon thermality<BR/>Level B, §31>];
-  dark_cand [label=<Dark-sector<BR/>candidates<BR/>Level B, §30>];
-  analogue [label=<Analogue-lab<BR/>programme<BR/>Level A/B, §32>];
+  decoh        [label=<Decoherence &#x26;<BR/>arrow of time<BR/>Level B, &#x00A7;28>];
+  tau_dec      [label=<Decoherence timescales<BR/>C&#x2086;&#x2080;, Di&#xF3;si&#x2013;Penrose<BR/>Level B, &#x00A7;29>];
+  crooks       [label=<Crooks-type relation<BR/>&#x26; entropy production<BR/>Level B, &#x00A7;28>];
+  born         [label=<Born rule: conditional<BR/>uniqueness (Gleason)<BR/>Level B, &#x00A7;31>];
+  qc_boundary  [label=<Quantum&#x2013;classical<BR/>boundary (&#x0393;&#x2098;)<BR/>Level B, &#x00A7;31>];
+  dirac_cond   [label=<Dirac structure<BR/>(conditional)<BR/>Level B, &#x00A7;26>];
+  casimir      [label=<Casimir 3/2<BR/>(conditional)<BR/>Level B, &#x00A7;27>];
+  bh_shell     [label=<Critical shell<BR/>&#x26; horizon thermality<BR/>Level B, &#x00A7;34>];
+  dark_cand    [label=<Dark-sector<BR/>candidates<BR/>Level B, &#x00A7;33>];
+  analogue     [label=<Analogue-lab<BR/>programme<BR/>Level A/B, &#x00A7;35>];
+  decoh_results [label=<Results &#x26; regime<BR/>estimates (&#x0393; anchors)<BR/>Level B, &#x00A7;29>];
+  pes          [label=<PES: Euclidean<BR/>stationarity principle<BR/>Level B, &#x00A7;30>];
+  wigner       [label=<Wigner&#x2019;s friend<BR/>coarse-graining<BR/>Level B (interp.), &#x00A7;31>];
+  ent_tunnel   [label=<Entanglement&#x2013;tunnelling<BR/>structural bridge<BR/>Level B, &#x00A7;32>];
+  stern_gerlach [label=<Spin discreteness /<BR/>Stern&#x2013;Gerlach<BR/>Level B, &#x00A7;26>];
+  bell_toy     [label=<Bell/CHSH toy<BR/>crossover &#x0393;=ln&#x221A;2<BR/>Level B, &#x00A7;32>];
 
-
-  // === Decoherence Results (§26) ===
-  node [fillcolor="#ffffff", fontcolor=black, style="rounded,filled"];
-  decoh_results [label=<Results &amp; regime<BR/>estimates (Γ anchors)<BR/>Level B, §26>];
-
-  // === PES (§27) ===
-  node [fillcolor="#ffffff", fontcolor=black, style="rounded,filled"];
-  pes [label=<PES: Euclidean<BR/>stationarity principle<BR/>Level B, §27>];
-
-  // === NEW CLOSURE NODES ===
-  node [fillcolor="#ffffff", fontcolor=black, style="rounded,filled"];
-  wigner [label=<Wigner's friend<BR/>coarse-graining<BR/>Level B (interp.), §28>];
-  ent_tunnel [label=<Entanglement–tunnelling<BR/>structural bridge<BR/>Level B, §29>];
-  stern_gerlach [label=<Spin discreteness /<BR/>Stern–Gerlach<BR/>Level B, §23>];
-  bell_toy [label=<Bell/CHSH toy<BR/>crossover Γ=ln√2<BR/>Level B, §29>];
-
-  // === REVERSE COHERENCE (programme-level) ===
   node [fillcolor="white", style="rounded,dashed", fontcolor=black, penwidth=2];
-  reverse_coh [label=<Reverse coherence<BR/>L→E reopening<BR/>Programme-level>];
-
-  // === OPEN ===
-  node [fillcolor="white", style="rounded,dashed", fontcolor=black, penwidth=2];
-  born_full [label=<Full Born rule<BR/>(OP-Q7)>];
+  reverse_coh [label=<Reverse coherence<BR/>L&#x2192;E reopening<BR/>Programme-level>];
+  born_full   [label=<Full Born rule<BR/>(OP-Q7)>];
   measurement [label=<Measurement theory<BR/>(OP-Q8)>];
-  page_curve [label=<Page curve<BR/>(OP-Q13)>];
-  bell_full [label=<Bell correlators<BR/>(Open)>];
-  dark_quant [label=<Dominant DM ID<BR/>(OP-Q10)>];
-  S0_calc [label=<S₀ from first<BR/>principles (OP-Q1)>];
+  page_curve  [label=<Page curve<BR/>(OP-Q13)>];
+  bell_full   [label=<Bell correlators<BR/>(Open)>];
+  dark_quant  [label=<Dominant DM ID<BR/>(OP-Q10)>];
+  S0_calc     [label=<S&#x2080; from first<BR/>principles (OP-Q1)>];
 
-  // === RANKS ===
+  // ============================================================
+  // RANKS — разбивка широких рядов
+  // ============================================================
   {rank=same; inputs}
   {rank=same; phase; S0; S0_match}
   {rank=same; HJ; canonical; RP}
   {rank=same; uncertainty; unitarity; path_dep; exchange}
   {rank=same; schrod; lorentz_cliff; vac_nontrivial}
-  {rank=same; retarded; spectral; unified_vac; unruh_T; casimir}
-  {rank=same; decoh; tau_dec; crooks; reverse; decoh_results}
-  {rank=same; qc_boundary; born; amp_prob; dirac_cond; pes}
-  {rank=same; entangle; bh_shell; no_info_loss; wider_state; dark_cand; ent_tunnel; bell_toy; wigner; stern_gerlach; reverse_coh}
-  {rank=same; analogue; born_full; measurement; page_curve; bell_full; dark_quant; S0_calc}
+  // был (5): retarded spectral unified_vac unruh_T casimir
+  {rank=same; retarded; spectral; unified_vac}
+  {rank=same; unruh_T; casimir}
+  // был (5): decoh tau_dec crooks reverse decoh_results
+  {rank=same; decoh; reverse}
+  {rank=same; tau_dec; crooks}
+  {rank=same; decoh_results}
+  // был (5): qc_boundary born amp_prob dirac_cond pes
+  {rank=same; pes; amp_prob; dirac_cond}
+  {rank=same; qc_boundary}
+  {rank=same; born}
+  // был (11!): entangle bh_shell no_info_loss wider_state dark_cand ent_tunnel bell_toy wigner stern_gerlach reverse_coh
+  {rank=same; entangle; no_info_loss; wigner; stern_gerlach}
+  {rank=same; bh_shell; bell_toy; ent_tunnel; reverse_coh}
+  {rank=same; wider_state}
+  {rank=same; dark_cand}
+  // был (8): analogue born_full measurement page_curve bell_full dark_quant S0_calc
+  {rank=same; analogue; born_full; measurement}
+  {rank=same; page_curve; bell_full; dark_quant; S0_calc}
 
-  // === SOLID ARROWS (strict derivations) ===
+  // ============================================================
+  // EDGES — оригинал
+  // ============================================================
   inputs -> phase;
   inputs -> S0;
   phase -> HJ;
@@ -135,19 +134,14 @@ digraph PartIII {
   unified_vac -> analogue;
   decoh -> analogue;
   phase -> analogue;
-
-
-  // PES connections
   decoh -> pes;
   S0 -> pes;
   HJ -> pes;
   pes -> born [style=dashed];
   pes -> qc_boundary;
-
-  // === NEW NODE EDGES ===
   decoh -> decoh_results;
   tau_dec -> decoh_results;
-  pes -> decoh_results [style=dashed];
+  pes -> decoh_results [style=dashed, constraint=false];
   decoh_results -> qc_boundary;
   qc_boundary -> wigner;
   entangle -> ent_tunnel [style=dashed];
@@ -157,8 +151,6 @@ digraph PartIII {
   dirac_cond -> stern_gerlach;
   path_dep -> reverse_coh [style=dashed, color=gray50];
   reverse -> reverse_coh [style=dashed, color=gray50];
-
-  // === DASHED ARROWS (requires assumptions / open) ===
   S0 -> S0_match [style=dashed];
   lorentz_cliff -> dirac_cond [style=dashed];
   unified_vac -> casimir [style=dashed];
@@ -170,35 +162,21 @@ digraph PartIII {
   dark_cand -> dark_quant [style=dashed, color=gray50];
   S0 -> S0_calc [style=dashed, color=gray50];
 
-  // === FORCE LEGEND TO BOTTOM ===
-  node [shape=point, width=0, style=invis];
-  spacer1 [label=""];
-  spacer2 [label=""];
-  analogue -> spacer1 [style=invis];
-  born_full -> spacer1 [style=invis];
-  measurement -> spacer1 [style=invis];
-  page_curve -> spacer1 [style=invis];
-  bell_full -> spacer1 [style=invis];
-  dark_quant -> spacer1 [style=invis];
-  S0_calc -> spacer1 [style=invis];
-  spacer1 -> spacer2 [style=invis];
-
+  // Legend
   node [shape=plaintext, style="", fillcolor=white];
   legend [label=<
-    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="4" CELLPADDING="6" COLOR="black">
-      <TR>
-        <TD COLSPAN="7"><B>Legend</B></TD>
-      </TR>
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="4" CELLPADDING="5" COLOR="black">
       <TR>
         <TD BGCOLOR="#404040"><FONT COLOR="white">Part I inputs</FONT></TD>
-        <TD BGCOLOR="#b8b8b8">Derived – Level A</TD>
+        <TD BGCOLOR="#b8b8b8">Derived &#x2013; Level A</TD>
         <TD BGCOLOR="#d8d8d8">Level A/B</TD>
-        <TD BGCOLOR="#ffffff" BORDER="1">Derived – Level B</TD>
+        <TD BGCOLOR="#ffffff" BORDER="1">Derived &#x2013; Level B</TD>
         <TD BORDER="1" STYLE="DASHED">Open problem</TD>
-        <TD>——→ Strict derivation</TD>
-        <TD>– – → Requires assumptions</TD>
+        <TD>&#x2014;&#x2192; Strict derivation</TD>
+        <TD>&#x2013;&#x2013;&#x2192; Requires assumptions</TD>
       </TR>
     </TABLE>
   >];
-  spacer2 -> legend [style=invis];
+  S0_calc -> legend [style=invis];
+  dark_quant -> legend [style=invis];
 }
