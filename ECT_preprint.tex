@@ -1,4 +1,5 @@
 \documentclass[11pt,a4paper]{article}
+\pdfminorversion=7
 
 % ---- Encoding and fonts ----
 \usepackage[T1]{fontenc}
@@ -58,7 +59,7 @@
 \title{Euclidean Condensate Theory (ECT):\\
 Emergence of Spacetime, Quantum Mechanics,\\
 and Gravity from Spontaneous $O(4)$ Symmetry Breaking}
-\author{Valeriy Blagovidov\thanks{Correspondence: \texttt{vblagovidov@gmail.com}.~ORCID: \href{https://orcid.org/0009-0008-6707-7068}{0009-0008-6707-7068}.}}
+\author{Valeriy Blagovidov\thanks{Correspondence: \texttt{blagovidov@phystech.edu}, \texttt{vblagovidov@gmail.com}.~ORCID: \href{https://orcid.org/0009-0008-6707-7068}{0009-0008-6707-7068}.}}
 \date{April 2026}
 
 
@@ -102,8 +103,8 @@ Part~II develops generalised Einstein equations with a derived
 orientation-stress correction.
 The macroscopic branch resolves the horizon, flatness, and monopole
 problems without requiring a separate inflationary mechanism, provides a late-time Hubble-tension
-alleviation route, and yields a dark-energy sector without an
-independent cosmological constant.
+alleviation route, and yields a late-time accelerated expansion without an
+independent cosmological constant or dark-energy substance.
 On galactic scales it produces the Tully--Fisher relation with
 algebraic slope~4, a baseline acceleration scale
 $g^\dagger\approx cH_0/(2\pi)$, and rotation curves across
@@ -180,8 +181,12 @@ Principle of Euclidean Stationarity
 \caption{Principal symbols. Foundational symbols (P1--P6 level) are
 defined in Sections~\ref{sec:postulates}--\ref{sec:branching}.
 Derived and matching-level symbols are introduced in the corresponding
-sections.}
-\label{tab:symbols}\\
+sections.\label{tab:symbols}}\\
+\toprule
+\textbf{Symbol} & \textbf{Definition} & \textbf{Value / Units} \\
+\midrule
+\endfirsthead
+\multicolumn{3}{@{}l}{\small\textit{Table~\ref{tab:symbols} continued}}\\
 \toprule
 \textbf{Symbol} & \textbf{Definition} & \textbf{Value / Units} \\
 \midrule
@@ -210,9 +215,12 @@ $\Phi_{\rm eff}=\rho e^{i\theta}$ & Effective order parameter of coherent IR sec
 $\theta$ & Phase of $\Phi_{\rm eff}$; winding condition $\oint\partial_A\theta\,dX^A=2\pi n$ & rad \\
 $K_\theta^{\rm eff}$ & Effective phase stiffness of the coherent branch; expected dimensionally to scale as $\sim\phi_0^2$ up to EFT matching coefficients & GeV$^2$ \\
 $S_{\rm ord}$ & Ordered-branch action functional; $S_{\rm ord}[u,n]$ & --- \\
-$S_0$ & Pre-quantum action scale: $S_{\rm elem}=2\pi S_0$; elementary-loop action in the $U(1)$-extended coherent sector (BR1); matched to $\hbar$ at Level~B & $[\hbar]$ \\[4pt]
+$S_0$ & Pre-quantum action-scale candidate of the coherent branch: in the fixed-core reduced-loop closure one writes $S_{\rm elem}=2\pi S_0$ for the elementary coherent loop; matched to $\hbar$ at Level~B; not a proven global variational minimum over arbitrary loop lengths & $[\hbar]$ \\
+$S_{\rm elem}$ & Elementary coherent loop action: $S_{\rm elem}=2\pi S_0$ in the fixed-core reduced-loop closure; full variational minimum in the $n\!=\!1$ sector not established (Open); related to $\hbar$ at Level~B & $[\hbar]$ \\
+$L_{\rm core}$ & Characteristic condensate core scale entering the fixed-length loop bound; explicit first-principles derivation open (OP-Q2) & m \\[4pt]
 \multicolumn{3}{@{}l}{\textit{Gravitational matching --- Macroscopic Physics (Level~B)}} \\[2pt]
 $\mathcal{C}_n$ & Orientation-stiffness coefficient: $\kappa_n=\mathcal{C}_n\,u_0^2$; $[\mathcal{C}_n]=\text{GeV}^{-2}$; not yet derived (OP-Planck) & GeV$^{-2}$ \\
+$\kappa_n$ & Orientation stiffness: $\kappa_n=\mathcal{C}_n\,u_0^2$; sets gravitational stiffness $M_G^2\sim\kappa_n$; $[\kappa_n]=\text{GeV}^2$; not yet derived microscopically (OP-Planck) & GeV$^2$ \\
 $M_G$ & Induced gravitational stiffness scale:
   $M_G^2\sim\kappa_n\sim u_0^2/m_\sigma^2\sim\phi_0^2$
   (structural/NLO estimate);
@@ -226,7 +234,8 @@ $\hbar$ & Planck constant; identified $S_0=\hbar$ in Quantum Sector, Level~B & $
 $\mathcal{M}^4$ & Four-dimensional Euclidean manifold (P1) & --- \\
 $X^A=(x,y,z,w)$ & Euclidean coordinates & m \\
 $\delta_{AB}$ & Euclidean metric & --- \\
-$t$ & Lorentzian time; $t=w/c_*$ (real parametrisation) & s \\[4pt]
+$t$ & Lorentzian time; $t=w/c_*$ (real parametrisation) & s \\
+$\ell_{\rm Pl}$ & Planck length: $\ell_{\rm Pl}=\sqrt{\hbar G_N/c^3}\approx1.616\times10^{-35}$\,m; matching hypothesis $\xi_{\rm cond}\sim\ell_{\rm Pl}$ & m \\[4pt]
 \multicolumn{3}{@{}l}{\textit{Decoherence (Section~\ref{sec:influence_functional})}} \\[2pt]
 $\Gamma[q]$ & Decoherence functional & --- \\
 $\Gamma_{\rm loop}$ & Decoherence/locking functional; classicality crossover at $\Gamma_{\rm loop}\sim1$ & dimensionless \\
@@ -261,8 +270,12 @@ $\eta$ & E\"{o}tv\"{o}s parameter & dimensionless \\
 % =============================================================================
 
 \begin{longtable}{@{}p{2.8cm} p{12.2cm}@{}}
-\caption{Abbreviations used in this paper.}
-\label{tab:abbreviations}\\
+\caption{Abbreviations used in this paper.\label{tab:abbreviations}}\\
+\toprule
+\textbf{Abbreviation} & \textbf{Meaning} \\
+\midrule
+\endfirsthead
+\multicolumn{2}{@{}l}{\small\textit{Table~\ref{tab:abbreviations} continued}}\\
 \toprule
 \textbf{Abbreviation} & \textbf{Meaning} \\
 \midrule
@@ -317,6 +330,9 @@ PPN & Parametrised post-Newtonian (formalism) \\
 PTA & Pulsar timing array \\
 QS & Quantum sector (Part~III of this paper) \\
 SN & Supernova (type~Ia unless stated otherwise) \\
+MWI & Many-worlds interpretation \\
+OS & Osterwalder--Schrader (axioms / reconstruction theorem; Section~\ref{sec:qs_reflection_positivity}) \\
+RP & Reflection positivity \\
 \end{longtable}
 
 
@@ -368,6 +384,23 @@ is naturally related to a Euclidean
 description through the standard formal analytic continuation
 $t\to -i\tau$, suggesting that the Euclidean description may
 be more fundamental than the Lorentzian one.
+
+A closely related line of work has shown that Lorentzian dynamics can
+arise effectively from a fundamentally Euclidean (Riemannian) field
+theory. Girelli, Liberati and Sindoni~\cite{GirelliLiberatiSindoni2009}
+showed that a scalar field with a nonvanishing gradient on a
+Riemannian manifold can generate an effective Lorentzian metric for
+perturbations, albeit with scalar (Nordstr\"om-type) gravity.
+Mukohyama and Uzan~\cite{MukohyamaUzan2013} developed a more complete
+classical clock-field construction in which scalars, vectors, and
+Dirac spinors propagate in an effective Minkowski metric on a
+4-dimensional Riemannian manifold. ECT shares this architectural core
+and reaches closely analogous conclusions regarding emergent
+Lorentzian propagation, but differs in the mechanism by which the
+preferred direction appears: here it is attributed to spontaneous
+$O(4)\to O(3)$ ordering rather than to an imposed clock-field
+background. The two frameworks diverge further in the gravitational
+sector and in the extension to quantum and phenomenological questions.
 
 In this work we investigate this possibility within the framework of the
 \emph{Euclidean Condensate Theory} (ECT). The central hypothesis of ECT
@@ -2045,6 +2078,21 @@ Appendix~\ref{app:liv_numerics}.}
 
 \paragraph{Emergent special relativity.}
 \label{par:emergent_SR}
+The possibility that an anisotropic kinetic structure on a Euclidean
+background can yield effective Lorentzian propagation has also been
+demonstrated in closely related constructions.
+Girelli, Liberati and Sindoni~\cite{GirelliLiberatiSindoni2009}
+showed this in a scalar-gradient setting with scalar gravity, and
+Mukohyama and Uzan~\cite{MukohyamaUzan2013} later developed a
+classical clock-field model in which scalar, vector, and spinor
+sectors propagate in an effective Minkowski metric. In that sense,
+ECT is not unique in proposing emergent Lorentzian dynamics from a
+Euclidean substrate. Its distinctive claim is instead that the
+preferred direction is generated dynamically through spontaneous
+$O(4)\to O(3)$ ordering of the condensate gradient, rather than being
+imposed as a background clock-field condition.
+
+\medskip\noindent
 ECT does not postulate special relativity but derives its
 kinematic core as an emergent structure of the ordered condensate
 phase.
@@ -3207,6 +3255,17 @@ step~(Ph1), after which the observed universality of the speed of
 light---including the GW170817
 bound~$|c_{\rm GW}/c-1|<6\times10^{-15}$~\cite{LIGO_Virgo_GW170817_2017}---becomes
 a structural consistency check rather than an independent input.
+
+A useful point of comparison is provided by the clock-field
+construction of Mukohyama and Uzan~\cite{MukohyamaUzan2013}, in which
+a universal effective metric for distinct matter sectors requires an
+explicit matching condition between sector-dependent couplings [their
+Eq.~(5.2)]. In ECT, the intended universality is instead tied to the
+single-medium origin of the broken-phase kinetic structure: all native
+low-energy sectors inherit the same tensor $K^{AB}$, and no analogue
+of the matter-sector tuning is imposed at the benchmark level.
+Whether this universality remains exact beyond the minimal EFT
+truncation is part of the broader consistency programme.
 
 \paragraph{Falsifiable content of cone universality.}
 ECT admits Planck-suppressed higher-order corrections
@@ -7791,6 +7850,43 @@ The present statement of masslessness is therefore an EFT statement
 about the minimal broken-phase closure, not a proof of exact all-order
 mass protection in every possible completion of the theory.
 
+\paragraph{Conditional decoupling estimate for the surviving soft scalar.}
+The full $\chi$-sector EFT (mass, couplings, stability) is not yet
+derived from first principles~(Level~B, OP-GM).
+Under the natural minimal assumption that the surviving scalar $\chi$
+inherits the standard derivative-coupling structure of a Goldstone-like
+mode with suppression scale $f_\chi\sim\phi_0\sim\bar{M}_{\rm Pl}$,
+the effective dimensionless coupling at momentum scale $k$ is
+\begin{equation}
+  g_\chi(k)\sim \frac{k}{f_\chi}\sim\frac{k}{\bar{M}_{\rm Pl}},
+  \label{eq:chi_coupling}
+\end{equation}
+giving
+\begin{equation}
+  g_\chi^2 \sim \left(\frac{k}{\bar{M}_{\rm Pl}}\right)^2.
+\end{equation}
+At galactic scales
+$k\sim\hbar/r_{\rm gal}\sim10^{-42}\,{\rm GeV}$:
+$g_\chi^2\sim10^{-120}$.
+At laboratory energies $k\sim k_BT\sim10^{-9}\,{\rm GeV}$:
+$g_\chi^2\sim10^{-54}$.
+Both values are negligible compared to any currently observable
+coupling, including the ECT fifth-force coupling
+$\beta_5\sim m_f/\phi_0\sim10^{-18}$
+(Section~\ref{sec:fifth_force}), which is itself below current
+experimental reach.
+Under this standard derivative-coupling assumption, the $\chi$-mode
+is therefore completely decoupled from all phenomena discussed in
+this paper---by a further factor $(k/\bar{M}_{\rm Pl})^2$ relative
+even to the fifth-force suppression.
+A stronger statement requires the explicit derivation of the full
+$\chi$-sector EFT and is left open~(OP-GM).
+This estimate is the analogue of the fifth-force result:
+just as the preferred-direction coupling is Planck-suppressed and
+currently unobservable, the derivative-coupled $\chi$-mode is
+further kinematically suppressed, making it utterly negligible
+across all scales considered here.
+
 \paragraph{No dark-matter role in the present closure.}
 The macroscopic sector of ECT already explains galactic rotation curves,
 the RAR, and BTFR through the $\phi$-sector without invoking any
@@ -8615,9 +8711,48 @@ This is a structural claim about the framework, not about its
 current level of derivational completeness.
 
 \paragraph{Ultraviolet behaviour.}
-A possible ultraviolet advantage of the condensate-based graviton
-construction remains speculative and requires explicit power counting.
-No such result is claimed here.
+In perturbative Einstein gravity, non-renormalizability follows from
+the dimensionful coupling $[G_N]=M^{-2}$: each loop order $L$
+contributes graviton amplitudes growing as $(E/M_{\rm Pl})^{2L}$,
+generating an infinite series of new counterterms ($R^2$, $R^3$,
+\ldots) not absorbable into a finite parameter set.
+In ECT the situation is structurally different in two respects.
+
+First, $G_N=c_*^4/(8\pi M_G^2)$ is not a fundamental constant but a
+condensate parameter with $M_G^2\sim\phi_0^2$.
+The natural dimensionless gravitational coupling is
+\begin{equation}
+  g(\mu)\equiv \mu^2 G_{\rm eff}(\mu) = \frac{\lambda(\mu)}{8\pi},
+  \label{eq:g_dimensionless}
+\end{equation}
+using $\phi_0^2=\mu^2/\lambda$ (Level~B matching,
+Eq.~\eqref{eq:sigma_mass}).
+With the numerical boundary condition $\lambda(M_{\rm Pl})\approx10^{-3}$
+(Appendix~\ref{app:algorithms}):
+$g(M_{\rm Pl})\approx 4\times10^{-5}$---parametrically small.
+
+Second, the one-loop $\beta$-function
+$\beta_\lambda=3\lambda^2/(16\pi^2)>0$
+has no UV fixed point in the strict scalar closure.
+However, the Landau pole lies at
+\begin{equation}
+  \mu_{\rm LP}=M_{\rm Pl}\exp\!\left(\frac{16\pi^2}{3\,\lambda(M_{\rm Pl})}\right)
+  \approx M_{\rm Pl}\,e^{5.26\times10^4},
+  \label{eq:landau_pole}
+\end{equation}
+incomparably above the physical threshold $m_\sigma\sim M_{\rm Pl}$
+where the broken-phase EFT already ceases to apply.
+Within the entire validity range of the EFT, $g(\mu)$ remains
+parametrically small and no practically relevant Landau-pole
+obstruction arises.
+Above $m_\sigma$, the relevant degrees of freedom are microscopic
+condensate variables---a structurally different replacement from
+extrapolating perturbative Einstein gravity to arbitrarily high energies.
+
+These structural observations do not constitute a proof of UV safety
+or renormalizability of the full graviton sector.
+Explicit graviton-loop power counting and a two-loop RG analysis of
+the condensate--graviton system remain open tasks~(OP-UV1, OP-UV3).
 
 \paragraph{Connection to the gravitational equations.}
 The role of the present subsection is therefore limited but precise:
@@ -14006,6 +14141,18 @@ $\Theta_{\mu\nu}[\phi,n]$~\eqref{eq:Theta_n} collects derivative and
 anisotropic correction terms from the amplitude and orientation sectors.
 Equation~\eqref{eq:gen_EE} is the current best nonlinear field equation
 of the geometric branch~(Level~B).
+
+This is also the point where the present framework diverges most
+sharply from the clock-field construction of Mukohyama and
+Uzan~\cite{MukohyamaUzan2013}. From a closely related
+Euclidean-to-Lorentzian starting point, their analysis leads to a
+covariant Galileon (a subclass of Horndeski theory) in the
+gravitational sector. ECT instead introduces a dynamical orientation
+sector whose effective stiffness enters the gravitational completion
+and is used here to motivate the generalised Einstein
+equations~\eqref{eq:gen_EE}. The two frameworks therefore share the same
+Euclidean-to-Lorentzian starting question, but branch in different
+directions once gravity is constructed.
 
 \subsubsection*{Bianchi consistency and source conservation}
 
@@ -20031,7 +20178,7 @@ summary in Section~\ref{sec:mp_cosmo_status}.
 
 % ==============================================================
 \FloatBarrier
-\section{Dark Sector Interpretation and Discriminants}
+\section{Mass-discrepancy and late-time-acceleration phenomenology in ECT}
 \label{sec:mp_dark}
 % ==============================================================
 
@@ -20055,11 +20202,25 @@ background-dynamics question tied to the late-time ordered branch.
 \label{sec:dark_sector}
 % ==============================================================
 
-Given the three-way split stated above, the macroscopic logic of ECT is
+In the standard cosmological picture, two separate dark components are
+postulated: particle dark matter to account for galactic dynamics and
+large-scale structure, and dark energy (or a cosmological constant)
+to account for late-time accelerated expansion.
+ECT does not introduce either component as an independent physical
+substance.
+Instead, it asks which of the observational phenomena that motivated
+these postulates can already be accounted for by ordered-branch
+condensate dynamics without separate dark substances.
+The conventional labels \emph{dark matter} and \emph{dark energy}
+are retained throughout this paper exclusively as names of
+\emph{observational phenomena} for comparison with the literature;
+they do not refer to independent entities in the ECT ontology.
+
+Given this reframing, the macroscopic logic of ECT is
 as follows: the phenomenology of missing gravitational response must be
 kept separate from the ontology of possible additional dark degrees of
 freedom, and both must be kept separate from the late-time ordered-branch
-background responsible for dark-energy phenomenology.
+background responsible for the accelerated-expansion phenomenology.
 The galactic mass discrepancy can already be addressed within the
 present $\phi$-first closure without introducing a standard
 particle-dark-matter halo~(Level~B;
@@ -20335,20 +20496,50 @@ excitations remains an open structural possibility; their abundance,
 stability, and cosmological role are not yet derived.
 
 % ==============================================================
-\subsection{Dark energy from the ordered-branch background}
+\subsection{Late-time accelerated expansion: ordered-branch account}
 \label{sec:dark_energy_phi}
 % ==============================================================
 
 \subsubsection*{Ordered-branch background energy and equation of state}
 
+\textit{Variable note.
+Throughout this subsection $\phi=\frac{1}{\beta}\ln(u/u_\infty)$
+is the macroscopic amplitude variable measuring the local degree of
+Lorentzianness of the ordered vacuum---a derived infrared collective
+variable, not the fundamental field~$\Phi$ of postulate~P3.
+Correspondingly, $V(\phi)=V_0+\tfrac{1}{2}m_\phi^2\phi^2$ is an
+EFT-level amplitude potential, distinct from the bare potential
+$V(\Phi)=-\tfrac{\mu^2}{2}\Phi^2+\tfrac{\lambda}{4}\Phi^4$
+of~P3~(Eq.~\eqref{eq:ECT_action});
+the two operate at different levels of the ECT hierarchy.}
+
 \paragraph{Postulate-grounded origin.}
-The late-time dark-energy channel is rooted in the ordered branch fixed
-by~P4, but its present cosmological realisation is developed only at
+What is conventionally called the dark-energy effect---late-time
+accelerated expansion---is rooted in the ordered branch fixed by~P4,
+but its present cosmological realisation is developed only at
 the macroscopic level through the $\phi$-first closure of
 Section~\ref{sec:mp_flrw}.
-In ECT, accelerated expansion is therefore not attributed to an
-independently postulated cosmological constant, but to the residual
-background energy carried by the ordered phase of the same condensate.
+In ECT, accelerated expansion is not attributed to an
+independently postulated cosmological constant or dark-energy substance,
+but to the residual background energy carried by the ordered phase of
+the same condensate.
+
+\paragraph{Cosmological-constant fine-tuning status.}
+For the quartic potential $V(\Phi)=-\mu^2\Phi^2/2+\lambda\Phi^4/4$,
+the broken minimum gives $V(\phi_0)=-\mu^4/(4\lambda)$---a large
+negative tree-level contribution.
+The observed late-time accelerated expansion is therefore not derived
+from the bare quartic minimum in the present closure.
+ECT does reframe the problem: loop contributions to the vacuum energy
+are finite with physical cutoff $m_\sigma\sim M_{\rm Pl}$ rather than
+formally infinite, and $\Lambda_{\rm eff}$ is a dynamical functional
+of the condensate background rather than a rigid external constant.
+These are structural improvements, but the residual fine-tuning between
+$|V(\phi_0)|\sim\lambda M_{\rm Pl}^4/4$ and
+$\rho_\Lambda^{\rm obs}\approx(2.3\times10^{-3}\,{\rm eV})^4$---a
+ratio of order $10^{-120}$---is not eliminated in minimal ECT.
+Deriving a mechanism that suppresses this contribution to the observed
+level remains an open problem~(OP-$\Lambda$3).
 
 \paragraph{Meaning of dynamic dark energy in ECT.}
 In the present ordered-branch cosmology, ``dynamic dark energy'' does
@@ -21680,7 +21871,7 @@ D15 & First-principles derivation of the causal response kernel from ECT micrody
 D16 & SM gauge group from O(4) & C & Embedded, not derived & 7, \ref{sec:open_problems} \\
 D17 & Second law $dS/dw\geq0$ (effective result, ordered branch) & B & Level-A directional backbone + ohmic/Markov closure; full microscopic derivation open (OP-Q17) & \ref{sec:second_law_basics}, \ref{sec:open_problems} \\
 D18 & Universe domain size $R_{\rm domain}\gtrsim R_H$ (amplified by pre-Lorentzian ordering) & B/Open & Scale depends on ordering dynamics (OP3); $e^{N_e}$ factor from inflation removed & \ref{sec:universe_size} \\
-D19 & Elementary-loop action scale $S_{\rm elem}=2\pi S_0^{\rm EFT}$ from phase winding in $U(1)$-extended EFT & A/B & Cauchy--Schwarz bound strict (A); $L_{\rm core}$ input and $S_0^{\rm EFT}=\hbar$ matching remain Level~B~(OP-Q2) & \ref{sec:hbar_status}, \ref{sec:qs_hbar} \\
+D19 & Elementary-loop action scale $S_{\rm elem}=2\pi S_0^{\rm EFT}$ from phase winding in $U(1)$-extended EFT & A/B & Cauchy--Schwarz bound strict~(A); $L_{\rm core}$ input and $S_0^{\rm EFT}=\hbar$ matching remain Level~B~(OP-Q2); global variational minimum in $n\!=\!1$ sector not established~(open) & \ref{sec:hbar_status}, \ref{sec:qs_hbar} \\
 D20 & $\beta$ param.: general $c_*=\sqrt{\beta/(\alpha-\beta)}$ & A & --- & \ref{sec:ssb} \\
 D21 & Casimir: conditional $3/2$ estimate from minimal reduced soft-orientation EFT (not a proof of three physical Goldstone particles; condensate-reflecting boundaries only) & B & Conditional on minimal EFT boundary assumption & \ref{sec:casimir} \\
 D22 & Unruh-type temperature from Euclidean/Rindler coherent-vacuum response; standard $\hbar$ form after $S_0=\hbar$ identification & A/B & Structural Euclidean/Rindler response is Level~A; observational $\hbar$ form requires Level~B identification~(OP-Q2) & \ref{sec:qs_unruh} \\
@@ -22111,6 +22302,52 @@ rule~BR1;
 Level~B denotes results that additionally require stated closure
 assumptions, effective approximations, or matching identifications.
 }
+
+\paragraph{Three distinct questions about quantumness in ECT.}
+\label{par:three_questions}
+The question ``why quantum mechanics?'' is not a single problem; it
+decomposes into three logically independent sub-questions, each
+addressed by a different part of the ECT programme:
+
+\begin{enumerate}[label=(\roman*)]
+  \item \textbf{Structural reconstruction.}
+    \emph{Why does a quantum-theoretic structure exist at all?}
+    ECT provides a structural reconstruction programme for quantum
+    theory through its Euclidean functional measure together with the
+    reflection-positivity / Osterwalder--Schrader reconstruction route
+    (Section~\ref{sec:qs_reflection_positivity}).
+    This route constructs a physical Hilbert space with positive-definite
+    norm, a self-adjoint Hamiltonian, and unitary time evolution from
+    the Euclidean data of the ordered branch.
+    For the free quadratic broken-phase subsectors this route is
+    established at Level~A; for the full interacting coherent-sector
+    theory it remains a Level~B/open constructive programme.
+
+  \item \textbf{Distinguished action scale.}
+    \emph{Why does a pre-quantum action scale appear?}
+    This is addressed by the coherent compact-phase sector
+    (Section~\ref{sec:qs_phase_and_scale}): the compact phase, integer
+    winding sectors, and the characteristic elementary-loop closure
+    supply a structurally distinguished action scale~$S_0$ from within
+    the ordered-branch architecture itself.
+    The existence of nontrivial winding sectors is Level~A; the
+    finite distinguished scale requires the core-scale input
+    (Level~A/B).
+
+  \item \textbf{Physical identification.}
+    \emph{Why is that action scale the observed~$\hbar$?}
+    The identification $S_0=\hbar$ is a Level~B matching step
+    (Section~\ref{sec:qs_hbar}), supported by structural bridges
+    (single-field universality, analytic continuation, and
+    parameter-counting closure) but not yet a parameter-free Level~A
+    derivation.
+\end{enumerate}
+These three questions are complementary rather than competing.
+The first concerns the \emph{existence} of quantum-theoretic
+structure; the second concerns the \emph{origin} of the action scale
+that organises that structure; the third concerns the \emph{empirical
+matching} of the scale to observed data.
+Conflating them obscures the actual logical status of each step.
 
 \paragraph{What is established, what is structural, and what remains
 open in the quantum-sector programme.}
@@ -22596,10 +22833,10 @@ As emphasised in ECT basics, this quantity refers to the
 not to a global variational minimum over arbitrary loop lengths.
 
 \paragraph{What $S_0$ means physically.}
-The quantity $S_0$ should be understood as the intrinsic unit of action
-prepared by the compact-phase structure of the coherent branch.
-It is the action associated with the first nontrivial elementary loop,
-up to the factor $2\pi$.
+The quantity $S_0$ should be understood as the distinguished action
+scale prepared by the compact-phase structure of the coherent branch.
+Within the reduced fixed-core loop construction, it is associated with
+the first nontrivial elementary coherent loop, up to the factor $2\pi$.
 In this sense $S_0$ is \emph{pre-quantum}: it is an action scale
 selected by the internal coherent-sector structure of the theory,
 but it has not yet been shown to be the same quantity that appears in
@@ -22723,6 +22960,13 @@ completed Level~A derivation.
 Level~A for winding sectors and the fixed-length loop bound;
 Level~A/B for the distinguished finite action scale $S_0$ after
 core-scale closure.
+\textit{Not established~(open):}
+a strict positive lower bound for the elementary-loop action as a
+\emph{global} variational minimum over arbitrary loop lengths in the
+$n=1$ sector.
+The fixed-length bound falls as $1/L$ and the pure phase topology alone
+does not yield a nonzero infimum
+(Section~\ref{sec:hbar_status}).
 \textit{Structural bridges~(Level~A/B to~B):}
 single-field universality, analytic continuation, and parameter-counting
 closure collectively protect the identification from the charge of
@@ -22744,13 +22988,16 @@ Quantum Sector.
 \paragraph{Connection to the Principle of Euclidean Stationarity.}
 Section~\ref{sec:pes} introduces PES as the organising principle
 selecting persistent observable configurations.
-PES deepens the physical significance of~$S_0$: it is the
-\emph{minimal persistent action scale}---the threshold below which
-no self-consistent stationary winding configuration exists in the
-PES picture.
-This strengthens the physical motivation for the
-identification~$S_0=\hbar$, although the identification itself
-remains at Level~B.
+PES deepens the physical significance of~$S_0$ by providing a
+persistence-based interpretation of the coherent action scale.
+Within the PES-informed reduced fixed-core loop picture,
+$S_0$ characterises the action scale associated with a
+self-consistent persistent $n=1$ winding closure.
+This gives a stronger physical interpretation of the
+$S_0$-programme, but it does \emph{not} establish a strict positive
+global lower bound on the elementary-loop action over arbitrary loop
+lengths.
+Accordingly, the identification~$S_0=\hbar$ remains at Level~B.
 
 % ============================================================
 
@@ -23966,6 +24213,20 @@ nonperturbative completion has not yet been carried out.
 It belongs to the long-term constructive programme of the theory
 and is flagged as an open problem~(OP-Q16).
 
+\paragraph{Connection to graviton quantisation.}
+If reflection positivity were established for the orientation
+(spin-2) sector of ECT~(OP-OS1), this would have a structural
+consequence for quantum gravity: the physical Hilbert space
+containing graviton states would be reconstructed automatically
+by the same OS theorem, without any separate act of imposing
+commutation relations on the metric field.
+This is structurally distinct from canonical quantum gravity and
+loop quantum gravity, where the quantisation of geometry is an
+independent postulate.
+The present work establishes this as a programme target;
+a complete RP proof for the spin-2 sector remains open~(OP-OS1)
+and beyond the scope of this paper.
+
 \paragraph{Connection to the UV-threshold programme.}
 The later UV-threshold programme~(\S\ref{par:uv_threshold}) is
 structurally relevant for the OS route.
@@ -24055,6 +24316,27 @@ black-hole-information reading would lose their common structural
 foundation.
 Reflection positivity is therefore a genuine architectural falsifier for
 the quantum reading of ECT, not a merely technical side condition.
+
+\paragraph{Complementarity with the compact-phase action-scale
+programme.}
+The reflection-positivity / OS line and the compact-phase / loop line
+developed in Section~\ref{sec:qs_phase_and_scale} address different
+aspects of the quantum programme
+(cf.\ the three-question decomposition in
+\S\ref{par:three_questions}).
+The former concerns the \emph{structural reconstruction} of a physical
+quantum theory from Euclidean data: Hilbert space, positive-definite
+norm, and unitary time evolution.
+The latter concerns the \emph{emergence of a distinguished action
+scale}~$S_0$ and the organisation of coherent winding sectors within
+the ordered-branch architecture.
+These are complementary mechanisms: the OS route provides the
+structural framework in which quantum theory is realised, while the
+compact-phase sector provides the physical content of the action scale
+that enters the Euclidean measure as~$e^{-S_E/S_0}$.
+Neither alone is sufficient: without the OS bridge there is no
+physical Hilbert space; without the coherent-phase sector there is no
+physically motivated action scale.
 
 \statussummary
 \textit{Established~(Level~A):}
@@ -29240,18 +29522,21 @@ increase $\Gamma_{\rm loop}$.
 
 PES deepens the physical significance of the pre-quantum action
 scale~$S_0$~(\S\ref{sec:qs_hbar}).
-The minimal self-consistent loop with winding number $n=1$ has action
-$S_{\rm loop,min}=2\pi S_0$.
-PES explains why this is a fundamental threshold:
-configurations with $S<2\pi S_0$ cannot close a full phase circuit
-($\Delta\theta<2\pi$), are therefore not phase-compact, and do not realise a self-consistent persistent winding
-sector in this PES picture.
-$S_0$ is thus the \emph{minimal persistent action scale} of the
-condensate---the threshold below which no self-consistent stationary
-configuration exists.
-This strengthens the physical motivation for the identification
-$S_0=\hbar$ but does not by itself raise the level of that
-identification beyond its current Level~B status.
+Within the reduced fixed-core loop closure used in the coherent-sector
+construction, the $n=1$ persistent winding configuration is assigned
+the characteristic action $S_{\rm elem}=2\pi S_0$.
+In the PES reading, this identifies $S_0$ as the action scale
+associated with self-consistent persistent coherent winding, rather
+than as an arbitrary normalisation constant.
+
+What PES adds is therefore a \emph{physical interpretation} of the
+distinguished scale: sub-core or non-closing configurations do not
+count as persistent coherent loops in this reduced picture.
+However, PES does \emph{not} by itself prove that $2\pi S_0$ is a
+strict positive global infimum of the loop action over arbitrary loop
+lengths in the full $n=1$ sector.
+This strengthens the motivation for the identification $S_0=\hbar$
+without changing its present Level~B status.
 
 \subsubsection*{Gravitational sector: quantised by the same mechanism}
 
@@ -29575,7 +29860,7 @@ Wavefunction collapse & Decoherence-only reading & Euclidean-to-Lorentzian trans
 Extremal action & Formal mathematical principle & Physical underpinning: near-extremal configurations are interpreted as the most decoherence-resistant sector \\
 Particle stability & Empirical / classification by quantum numbers & Physically grounded: long-lived states are interpreted as lying close to the stationary, minimally disturbing sector \\
 Graviton quantisation & Open structural route & Structurally unified: same $S_0$, same PES \\
-$S_0=\hbar$ & Level~B matching & Deepened: $S_0$ = minimal persistent action scale \\
+$S_0=\hbar$ & Level~B matching & Deepened physical interpretation of the $S_0$-programme; still not a proof of a strict global positive lower bound for the elementary-loop action \\
 \end{longtable}
 
 % ------------------------------------------------------------------
@@ -32402,9 +32687,18 @@ Integer winding sectors exist
   & Level~A
   & Single-valuedness of $\Phi_{\rm eff}$;
     Eq.~\eqref{eq:qs_winding} \\
-Elementary-loop action $S_{\rm elem}=2\pi S_0^{\rm EFT}$ defined
-  & Level~A
-  & Structural consequence of nontrivial loop sector \\
+Distinguished elementary-loop action-scale candidate
+$S_{\rm elem}=2\pi S_0^{\rm EFT}$ in the reduced fixed-core closure
+  & Level~A/B
+  & Defined by evaluating the fixed-length loop bound at the characteristic
+    core scale; not a proven global variational minimum over arbitrary
+    loop lengths \\
+Strict positive lower bound for loop action as global variational
+minimum in $n\!=\!1$ sector
+  & Open
+  & Fixed-length bound falls as $1/L$; pure phase topology alone does
+    not yield a nonzero infimum;
+    Section~\ref{sec:hbar_status} \\
 Explicit first-principles value of $S_0$
   & Open (OP-Q1)
   & Deferred to reduced loop calculation;
@@ -33259,6 +33553,16 @@ This framework should not be interpreted as claiming that time is
 and spatial coordinates---encoded in the metric signature---is a
 collective, emergent property of the vacuum state, much as superfluidity
 is a collective property of helium-4 below the $\lambda$-point.
+
+The comparison with closely related Euclidean-to-Lorentzian
+constructions~\cite{GirelliLiberatiSindoni2009,MukohyamaUzan2013}
+is useful in a second respect as well. It shows that the
+basic idea of emergent Lorentzian structure from Euclidean field
+theory is not unique to ECT, but it also makes clearer which parts of
+ECT remain distinctive claims rather than generic consequences of that
+shared idea: the spontaneous-symmetry-breaking origin of the preferred
+direction, the proposed gravitational completion, and the extension to
+quantum and phenomenological sectors.
 
 %--------------------------------------------------------------
 \subsection{Derivational architecture: from the $\Phi$-medium to
@@ -34261,27 +34565,30 @@ that produces BCG-peaked morphology in Bullet-like systems
 (Section~\ref{sec:bullet_cluster}).
 
 If the condensate sector supports additional weakly coupled excitations
-(constrained soft orientation excitations or topological configurations),
-these would behave
-as an ultra-light and extremely feebly interacting component. Their most
-promising observational signatures would then be astrophysical
+(constrained soft orientation excitations or topological configurations)---
+an optional extension of the minimal ECT closure, not required by the
+present galactic or cosmological account---these would behave
+as ultra-light, extremely feebly interacting modes.
+Their most promising observational signatures would then be astrophysical
 structure effects (core sizes, interference patterns, small-scale
 suppression, or characteristic oscillatory signals), rather than
 terrestrial scattering events.
+The minimal ECT closure does not require such excitations to explain
+any of the phenomena addressed in this paper.
 
 
-\paragraph{Detectability of the ECT dark-energy mechanism.}
+\paragraph{Detectability of the late-time acceleration mechanism in ECT.}
 
-In ECT, the late-time dark-energy sector is represented by the residual
-amplitude-sector contribution together with possible slow evolution of
-condensate parameters at late times. Unlike a
-pure cosmological constant, this scenario generically allows mild
-time-dependence, which is best tested through precision constraints on
-the expansion history and growth of structure, e.g.\ via the
-combination of BAO+SNe, weak lensing, and redshift-space distortions.
-A key target is the redshift dependence of the effective equation of
-state $w(z)$ and potential correlations between late-time acceleration
-and quantities controlling the condensate background.
+In ECT, late-time accelerated expansion is not attributed to an independent
+dark-energy substance.
+It is interpreted instead as an ordered-branch background effect of the same
+condensate.
+The effective equation-of-state parameter $w(z)$ should be understood
+as a phenomenological descriptor of the background evolution rather than
+as evidence for a separate dark-energy component.
+The main observational handle is the redshift dependence of $w(z)$
+and its correlations with quantities controlling the condensate background,
+testable via BAO$+$SNe, weak lensing, and redshift-space distortions.
 
 If the condensate parameters are effectively frozen on cosmological
 timescales, the model becomes observationally close to $\Lambda$CDM at
@@ -34387,9 +34694,13 @@ The ECT framework suggests two complementary observational
 strategies:
 precision tests of the predicted modifications of gravity
 on galactic and cluster scales (RAR, external-field effect, BTFR,
-cluster-merger lensing morphology), and the search for additional
-condensate excitations that would appear as ultra-light dark-sector
-degrees of freedom.
+cluster-merger lensing morphology).
+If the condensate supports additional weakly coupled soft or topological
+excitations (an optional extension, not required by the minimal closure),
+these would manifest as ultra-light, extremely feebly interacting modes;
+their signatures would be indirect astrophysical effects (core sizes,
+interference patterns, small-scale suppression) rather than direct
+laboratory detection.
 Both channels offer direct falsifiable predictions of the theory.
 
 \paragraph{Systematic role of the full nonlinear field equations.}
@@ -34564,22 +34875,53 @@ ordered branch through the primary radial mode $m_\sigma$
 (\S\ref{par:uv_threshold}), but a rigorous graviton-loop
 power-counting analysis and a completed nonperturbative UV closure
 have not been performed.
+The structural contrast with perturbative Einstein gravity is sharp:
+there, $[G_N]=M^{-2}$ forces new curvature counterterms at every
+loop order, making the Landau-pole-like obstruction arise already
+at $E\sim M_{\rm Pl}$; in ECT, $G_N$ is a condensate parameter,
+the dimensionless coupling $g(\mu)=\lambda(\mu)/(8\pi)\approx
+4\times10^{-5}$ remains small throughout the EFT, and the Landau
+pole of the scalar sector lies at
+$\mu_{\rm LP}\approx M_{\rm Pl}\,e^{5.26\times10^4}$---far beyond
+any physically accessible scale.
 Accordingly, the present framework offers a structural route to
 UV regularisation, whereas UV safety in the stronger quantum-gravity
 sense remains open.
+Open tasks: explicit loop power counting~(OP-UV1),
+two-loop RG of the condensate--graviton system~(OP-UV3), and OS
+proof for the spin-2 sector~(OP-OS1).
 
-(vi)~The derivation of thermodynamic irreversibility required a
+(vi)~The cosmological-constant problem is not solved at first-principles
+level in minimal ECT.
+For the bare quartic potential
+$V(\Phi)=-\mu^2\Phi^2/2+\lambda\Phi^4/4$,
+the broken minimum gives a large negative tree-level contribution
+$V(\phi_0)=-\mu^4/(4\lambda)$.
+The observed late-time accelerated expansion is not derived from this
+bare minimum but only from the ordered-branch macroscopic closure.
+Loop contributions to the vacuum energy are finite with physical
+cutoff $m_\sigma$ (rather than formally infinite), and
+$\Lambda_{\rm eff}$ is a dynamical functional of the condensate
+background rather than a rigid constant---both structural improvements
+over the naive EFT estimate.
+However, the residual fine-tuning between
+$|V(\phi_0)|\sim\lambda M_{\rm Pl}^4/4$ and
+$\rho_\Lambda^{\rm obs}\approx(2.3\times10^{-3}\,{\rm eV})^4$---a
+ratio of order $10^{-120}$---is not eliminated.
+Deriving a suppression mechanism remains an open problem~(OP-$\Lambda$3).
+
+(vii)~The derivation of thermodynamic irreversibility required a
 causal response kernel $K(\tau < 0) = 0$, which is structurally motivated
 by the Lorentzian causal structure of ECT (Section~\ref{sec:second_law}).
 The effective second law holds within the Gaussian--Markov approximation;
 a full microscopic derivation remains open (OP-Q17).
 
-(vii)~The exact Bell-correlator reconstruction is still at the
+(viii)~The exact Bell-correlator reconstruction is still at the
 programme level, the full nonlinear gravitational closure is only
 partly theorem-level, and the black-hole evaporation/information
 programme is not yet quantitatively closed.
 
-(viii)~The electroweak scale $v_2$ is not yet
+(ix)~The electroweak scale $v_2$ is not yet
 derived from condensate dynamics; the physical identification
 $S_0=\hbar$ remains Level~B/Open.
 The Yukawa hierarchy now has an identified structural route
@@ -34894,8 +35236,11 @@ one field: $\phi_0\sim\bar{M}_{\rm Pl}$ (gravity and quantum),
 $v_2\approx 246$~GeV (electroweak), and
 $v_{\rm gal}\sim$~kpc (galactic dynamics).
 At the exploratory benchmark level it also suggests a structured
-particle sector including three ultra-light Goldstone
-bosons ($m\sim 10^{-33}$~eV, with a possible fuzzy-dark-sector interpretation left open) and
+particle sector including a surviving soft scalar mode $\chi$
+(massless in minimal ECT; in optional extensions with additional breaking,
+a pseudo-Goldstone mass $m\sim 10^{-33}$~eV is conceivable,
+though its phenomenological role as a dark-sector component is left open
+and is not part of the minimal ECT closure) and
 an exploratory instanton-sector mass pattern
 ($m_n = n\times 1.6$~GeV/$c^2$ in the present benchmark).
 The full ordered-medium logic is instantiable in
@@ -43302,6 +43647,113 @@ comparison given in Section~\ref{sec:comparison}, using the same
 set of programmes as the main table but with additional comparison
 axes.
 
+% ---------- NEW SUBSECTION: MU/GLS comparison ----------
+\subsection{Closely related Euclidean-to-Lorentzian constructions}
+\label{sec:euclidean_lorentzian_comparison}
+
+The idea that Lorentzian physics can emerge as an effective property
+of a fundamentally Euclidean field theory has been explored in several
+independent constructions.\footnote{An early discussion of dynamical
+Lorentzian-signature emergence appears in
+Ref.~\cite{Greensite1993}.}
+
+Girelli, Liberati and Sindoni~\cite{GirelliLiberatiSindoni2009}
+showed that a scalar field with a nonvanishing gradient on a
+Riemannian manifold generates an effective Lorentzian metric for
+perturbations. Their gravitational sector, however, reduces to
+Nordstr\"om (scalar) gravity rather than a tensor theory.
+
+Mukohyama and Uzan~\cite{MukohyamaUzan2013} developed a more complete
+classical construction. They introduced a ``clock field'' $\phi$
+whose gradient $\partial_\mu\phi = M^2 n_\mu$ selects a preferred
+direction on a 4-dimensional Riemannian manifold and allows scalar,
+vector, and Dirac-spinor sectors to propagate in an effective
+Minkowski metric within a region $\mathcal{M}_0$ where
+$\partial_\mu\phi\neq 0$. Their gravitational sector is not general
+relativity but a covariant Galileon/Horndeski-type theory.
+
+ECT shares with Mukohyama--Uzan the core architectural idea and
+reaches closely analogous conclusions concerning emergent Lorentzian
+propagation: in both frameworks, Lorentzian structure is not assumed
+as the fundamental geometry but appears effectively once a scalar
+sector selects a preferred direction on an underlying Euclidean
+background. The two constructions differ, however, in three
+substantial respects.
+
+\begin{itemize}
+\item \textbf{Origin of the preferred direction.}
+Mukohyama--Uzan impose a nonvanishing clock-field gradient as a
+background condition. In ECT, the preferred direction is attributed to
+spontaneous $O(4)\to O(3)$ ordering of the condensate gradient.
+
+\item \textbf{Gravity sector.}
+Mukohyama--Uzan obtain a covariant Galileon/Horndeski-type
+gravitational theory. ECT instead introduces a dynamical orientation
+sector whose effective stiffness is used to motivate the generalised
+Einstein equations with orientation-stress corrections.
+
+\item \textbf{Scope of development.}
+Mukohyama--Uzan restrict their analysis to classical field theory.
+ECT carries the construction further into a quantum/coherent branch,
+vacuum-response questions, and astrophysical/cosmological
+phenomenology.
+\end{itemize}
+
+A further important contrast concerns cone universality. In the
+clock-field construction, different matter sectors can in principle
+see different effective metrics, and a matching condition between
+sector-dependent couplings must be imposed to obtain a universal
+lightcone. In ECT, universality is intended to follow instead from the
+single-medium origin of the broken-phase kinetic structure. Whether
+this remains exact beyond the minimal EFT truncation is itself part of
+the open consistency programme.
+
+The comparison is informative in both directions. On the one hand, the
+existence of these closely related constructions strengthens the claim
+that emergent Lorentzian structure from Euclidean field theory is a
+technically meaningful possibility rather than a purely speculative
+gesture. On the other hand, it sharpens which parts of ECT remain
+genuine open problems: the full closure of the gravitational sector,
+the complete fermion and gauge reconstruction, and the final status of
+cross-sector universality beyond the benchmark EFT.
+
+\begin{longtable}{p{2.8cm}p{2.2cm}p{2.5cm}p{2.2cm}p{2.0cm}p{2.5cm}}
+\caption{Closely related Euclidean-to-Lorentzian constructions.}
+\label{tab:euclidean_lorentzian_comparison}\\
+\toprule
+Framework & Preferred direction & Lorentzian sector & Gravity sector
+  & Quantum sector & Main limitation \\
+\midrule
+\endfirsthead
+\toprule
+Framework & Preferred direction & Lorentzian sector & Gravity sector
+  & Quantum sector & Main limitation \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Girelli--Liberati--Sindoni (2009)
+  & Imposed scalar gradient
+  & Emergent for perturbations
+  & Nordstr\"om (scalar)
+  & No
+  & No tensor gravity \\
+Mukohyama--Uzan (2013)
+  & Imposed clock-field gradient
+  & Emergent for scalar/vector/spinor sectors
+  & Covariant Galileon / Horndeski
+  & No (classical only)
+  & Sector matching required for universal cone \\
+ECT
+  & Spontaneous $O(4)\!\to\!O(3)$ ordering
+  & Emergent in broken phase
+  & GEE motivated by orientation sector
+  & Partial / coherent branch developed
+  & Open closures in gravity, fermions, and full universality \\
+\end{longtable}
+
+\subsection{Comparison with further neighbouring programmes}
+
 {
 \scriptsize
 \renewcommand{\arraystretch}{1.15}
@@ -43503,6 +43955,16 @@ The one-loop $\beta$-function (Section~\ref{sec:three_scales})
 is integrated numerically from $\mu = M_{\rm Pl}$ downward using a
 standard adaptive Runge--Kutta method, with boundary condition
 $\lambda(M_{\rm Pl}) \approx 10^{-3}$.
+This yields a parametrically small dimensionless gravitational coupling
+$g(M_{\rm Pl})=\lambda(M_{\rm Pl})/(8\pi)\approx4\times10^{-5}$
+(Eq.~\eqref{eq:g_dimensionless}).
+Since $\beta_\lambda>0$, $\lambda(\mu)$ decreases monotonically
+toward the infrared and $g(\mu)$ remains small across all
+sub-Planckian scales.
+The Landau pole of the pure scalar closure lies at
+$\mu_{\rm LP}\approx M_{\rm Pl}\,e^{5.26\times10^4}$
+(Eq.~\eqref{eq:landau_pole}), far above the physical EFT threshold
+$m_\sigma\sim M_{\rm Pl}$, and is therefore physically unreachable.
 
 \subsection{Figure production}
 
@@ -43589,6 +44051,9 @@ are summarised in Appendix~\ref{app:algorithms}.
 
 \section*{Acknowledgments}
 \addcontentsline{toc}{part}{Acknowledgments}
+The author thanks T.~Jacobson for drawing attention to the closely
+related clock-field construction of Mukohyama and Uzan, which helped
+sharpen the comparative positioning of the present work.
 The author thanks the open-source scientific community for the SPARC galaxy database
 and the publicly available tools used in this work.
 The author declares no competing interests and received no external funding for this research.
