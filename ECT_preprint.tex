@@ -92,7 +92,8 @@ arise as collective properties of the ordered vacuum; no external
 time is postulated.
 
 Part~I derives the Lorentzian branch as an admissibility property of
-the broken-phase EFT, establishes propagation speed, Newton's constant,
+the broken-phase EFT, establishes propagation speed and a universal
+signal-speed bound, Newton's constant,
 and a pre-quantum action scale as condensate matching relations, and
 recovers the Klein--Gordon and Schr\"odinger equations as effective
 descendants of Euclidean condensate dynamics.
@@ -120,6 +121,12 @@ Substantial parts of the standard quantum formalism are recovered or
 structurally motivated as an effective coarse-grained layer rather than
 introduced as primitive postulates; the remaining elements are stated
 explicitly as open problems.
+
+Part~IV consolidates the results with a map of fundamental constants
+(native outputs, open closure parameters, and derived observables)
+and identifies a minimal colour completion of the medium ---
+a local complex rank-3 internal module with $SU(3)$-structure ---
+as a candidate route to the strong sector.
 
 All results are explicitly separated into structural, closure-dependent,
 and open layers; open problems are stated directly rather than hidden.
@@ -652,8 +659,11 @@ delayed-choice phenomena, vacuum-response effects, and the
 black-hole / horizon-information programme.
 
 \textbf{Part~IV (Summary, Comparisons, and Outlook)} consolidates the
-derivational map, comparison with neighbouring programmes, falsifiers,
-limitations, and open problems.
+derivational map, comparison with neighbouring programmes,
+a map of fundamental constants and their closure levels,
+a colour consistency analysis with a candidate $SU(3)$-structured
+completion of the medium,
+falsifiers, limitations, and open problems.
 
 Section~\ref{sec:quantum_vacuum}
 organises three quantum vacuum phenomena --- the orientation-sector
@@ -712,7 +722,10 @@ later sections. These examples are intended primarily to illustrate how
 condensate dynamics may connect to observable phenomena rather than to
 provide a complete quantitative cosmological model. A full analysis of
 the phenomenology of ECT will require dedicated numerical and
-observational studies.
+observational studies.%
+\footnote{A shorter companion article providing an accessible overview
+of the main ideas, results, and open problems of ECT is available
+at \url{https://doi.org/10.5281/zenodo.19430795}.}
 
 % ============================================================
 
@@ -2163,6 +2176,29 @@ the future development of the Quantum Sector.
 
 The mathematical results admit a concrete physical interpretation.
 
+\paragraph{The phase transition as the birth of physics.}
+The $O(4)\to O(3)$ transition is not merely a technical symmetry
+breaking.
+It is the event that makes physics in the familiar sense possible at
+all.
+Before ordering, the Euclidean condensate distinguishes no time, no
+causal order, no preferred class of propagating excitations.
+All four directions of~$\mathcal{M}^4$ are equivalent, and there is
+therefore no ``event'', no ``evolution'', and no ``particle moving
+along a light cone''.
+After ordering, one direction becomes distinguished, and the following
+all arise simultaneously: the causal cone, Lorentzian kinematics, the
+separation into spatial and temporal coordinates, the excitation
+spectrum around the ordered background, and the decoherence hierarchy.
+Time is not added to an already prepared physics; it arises together
+with it as a property of the ordered phase.
+
+In this sense the $O(4)\to O(3)$ transition plays the role of a
+``crystallisation of the physical world'': before it there is a
+symmetric Euclidean medium; after it there are causality, time,
+particles, and geometry as collective properties of the ordered
+condensate.
+
 \paragraph{What condenses.}
 In superfluid helium-II below the Bose--Einstein condensation
 temperature atoms enter a collective ordered state; the condensate
@@ -2206,6 +2242,23 @@ and mathematically established properties of the Lorentzian ordered
 branch, without additional closure assumptions.
 The full thermodynamic second law, which requires additional Level~B
 ingredients, is developed in Section~\ref{sec:second_law_basics}.
+
+\paragraph{Physical picture: why time flows in one direction.}
+In standard physics the arrow of time is a separate postulate
+(Penrose's Past Hypothesis, or a low-initial-entropy condition
+imposed by hand).
+In ECT the arrow of time follows from two structural ingredients:
+(a)~the selection of the ordered branch~(P4) provides a single
+definite realisation of the condensate with low initial entropy,
+rather than an ensemble;
+(b)~the influence functional suppresses off-diagonal histories
+($\Gamma_{\rm irr}\geq 0$), ensuring that interference decreases
+rather than increases in the forward direction.
+Irreversibility is not a law of nature imposed from outside, but a
+statistical consequence of the subsystem's coupling to a large
+number of condensate modes.
+The arrow of time is therefore not mysterious: it is the direction in
+which the ordered condensate branch was realised.
 
 \paragraph{Starting point: no external time.}
 ECT does not assume an external physical time parameter at the
@@ -3134,6 +3187,25 @@ establishes a unique causal cone for the linear scalar ordered branch.
 This subsection traces how that cone is inherited by the phase and
 gauge sectors.
 
+\paragraph{Physical significance: why a single cone matters.}
+A decisive test of any emergent-spacetime framework is whether
+different low-energy sectors inherit a single causal structure rather
+than sector-dependent propagation cones.
+In many modified-gravity and Lorentz-violating frameworks, different
+fields can have different limiting speeds, destroying universal
+relativistic kinematics.
+In ECT the universality of the causal cone is not postulated but
+inherited from the single ordered condensate
+background: all low-energy excitations see the same kinetic
+tensor~$K^{AB}$, determined by the symmetry of SSB
+(Theorem~\ref{thm:tensor_uniqueness}).
+The observational confirmation $|c_{\rm GW}/c-1|<6\times10^{-15}$
+(GW170817~\cite{LIGO_Virgo_GW170817_2017}) is therefore not a coincidence but a
+consistency check of the single-cone architecture.
+This is in contrast to, e.g., Einstein-aether
+theory~\cite{Jacobson2004}, where different sectors may generically
+have different speeds.
+
 \paragraph{Phase sector (Level~A/B bridge).}
 The phase~$\theta$ enters ECT through the polar decomposition
 $\Phi_{\rm eff}=\rho\,e^{i\theta}$.
@@ -3403,6 +3475,24 @@ After establishing the postulates and the broken-phase dynamics,
 we systematically distinguish: which parameters are microscopic,
 which are effective, which are fixed by observational matching,
 and which are not yet derived.
+
+\paragraph{Physical significance: parameter compression.}
+In standard physics, $c$, $\hbar$, and $G$ appear as three
+independent empirical constants belonging to different chapters of
+physics: relativistic kinematics, quantum theory, and gravitation.
+In ECT they acquire a unified reading as three aspects of the same
+ordered condensate medium:
+the propagation speed~$c_*$ expresses the kinematic anisotropy of the
+ordered phase~(\S\ref{sec:speed});
+the gravitational constant~$G_N$ expresses the geometric stiffness of
+the orientation sector~(\S\ref{sec:grav_stiffness});
+the action scale~$S_0$ expresses the coherent self-consistency of the
+minimal loop~(\S\ref{sec:hbar_status}).
+ECT therefore does not simply ``compute the constants''---it changes
+their logical status from external gifts of nature to observable
+projections of a single underlying medium.
+The explicit matching formulas are collected in
+Table~\ref{tab:param_summary}.
 
 
 \subsection{Three condensate scales: structure, hierarchy, and open problems}
@@ -4655,6 +4745,58 @@ consequence of the condensate framework:
 \textbf{Criterion.}
 In ECT the effective branch is selected not by adding new postulates
 but by the class of observables retained under coarse-graining.
+
+\subsection{Physical picture: correlation versus interaction in the two branches}
+\label{sec:correlation_vs_interaction}
+
+The separation into branches has a fundamental physical consequence
+that must be made explicit before proceeding.
+
+\paragraph{Interaction is a Lorentzian concept.}
+Interaction in the ordinary physical sense---local exchange of energy,
+momentum, or information between physical subsystems---presupposes a
+causal structure: cause, effect, and a definite spacetime event.
+Such a structure exists only in the geometric branch
+($\Gamma_{\rm loop}\gg 1$), where the Lorentzian metric and the arrow
+of time are already established.
+Event-like interaction is therefore an emergent Lorentzian concept
+belonging to the ordered branch~(Level~A).
+
+\paragraph{Common-medium correlation in the coherent branch.}
+In the coherent branch ($\Gamma_{\rm loop}\ll 1$) there is no causal
+event structure.
+Subsystems are not independent entities that ``act on each other'' in
+the Lorentzian sense.
+Instead, they share a common coherent condensate configuration and are
+therefore correlated through the Euclidean substrate---without energy
+exchange, without signal transfer, without ``events''.
+This is the structural basis of quantum entanglement: non-factorisable
+correlation without causal connection
+(developed in Section~\ref{sec:qs_entanglement}).
+
+This does not mean that there is no coupling at all.
+The influence of the medium enters through the influence
+functional~(Section~\ref{sec:qs_decoherence});
+the decoherence kernel, medium response, and suppression of
+off-diagonal elements are all consequences of the medium, not of
+``forces'' in the Lorentzian sense.
+
+\paragraph{The transition.}
+Decoherence ($\Gamma_{\rm loop}\sim 1$) is the mechanism that converts
+common-medium coherent correlation into a decohered, branching,
+event-like world.
+Measurement is precisely this transition: a macroscopic apparatus with
+$\Gamma_{\rm loop}\gg 1$ fixes a Lorentzian event, converting Euclidean
+correlation into a classical outcome
+(Section~\ref{sec:pes_measurement}).
+
+\paragraph{Comparison with standard quantum mechanics.}
+In standard QM, entanglement is postulated through the tensor-product
+structure $\mathcal{H}_A\otimes\mathcal{H}_B$, and collapse is a
+separate axiom.
+In ECT both phenomena follow from one structure: common condensate
+$\to$ correlation; decoherence $\to$ classical event.
+No separate collapse postulate is required.
 
 \subsection{Variational principle and Noether structure}
 \label{sec:noether}
@@ -7704,6 +7846,39 @@ of excitations, but to different logical relations to the foundation of
 ECT: strict consequence, EFT embedding, and conditional/topological
 realisation.
 
+\paragraph{Physical interpretation and condensed-matter analogy.}
+The three categories have direct analogues in condensed-matter physics.
+Category~(i) excitations are analogous to \emph{phonons in a crystal}:
+they are inevitable consequences of the existence of an ordered medium
+with broken symmetry.
+If the medium exists and is ordered, these modes exist automatically.
+Category~(ii) fields are analogous to \emph{impurity atoms in a
+crystal lattice}: they are compatible with the medium and respect its
+symmetries, but they are not derived from the lattice structure alone.
+Category~(iii) states are analogous to \emph{topological defects}
+(dislocations, vortices): their existence or absence is determined by
+the homotopy of the vacuum manifold, independently of the details of
+the dynamics.
+
+\paragraph{Comparison with quantum field theory.}
+In standard QFT, particles are postulated as quanta of independent
+fields ($\phi$, $A_\mu$, $\psi$,~\ldots) defined on a fixed
+spacetime background.
+Each field carries its own Fock space.
+No particle is logically ``more derived'' than any other.
+In ECT the architecture is fundamentally different: ECT does not place
+all particles on the same logical footing.
+Category~(i) particles are necessary consequences of a single
+condensate field~$\Phi$.
+Category~(ii) particles are structurally embedded in the condensate
+symmetry architecture but not derived from the minimal scalar action.
+Category~(iii) states are predicted or excluded by the topology of the
+vacuum manifold~$S^3$.
+The anti-predictions---absence of magnetic monopoles
+($\pi_2(S^3)=0$), domain walls ($\pi_0=0$), and cosmic strings
+($\pi_1=0$)---are strict consequences~(Level~A), in contrast to
+Grand Unified Theories where monopoles are generically predicted.
+
 \paragraph{Connection to the three-scale hierarchy.}
 The particle mass scales are tied to the three condensate
 scales~(Section~\ref{sec:three_scales}):
@@ -7759,6 +7934,48 @@ particle sector, not a claim of complete particle unification.
 Its organising principle is not phenomenological completeness, but
 logical dependence on the ordered-branch foundation.
 
+\paragraph{Multi-particle description: why it is necessary and how ECT
+differs from QM and QFT.}
+Ordinary non-relativistic quantum mechanics operates on a Hilbert
+space~$\mathcal{H}_N$ of fixed particle number~$N$.
+Processes with variable~$N$ (photon emission, pair creation,
+annihilation) require quantum field theory, where the Fock space
+$\mathcal{F}=\bigoplus_{N=0}^{\infty}\mathcal{H}_N$ and
+creation/annihilation operators are introduced as additional postulates.
+In ECT the architecture is different: fundamental are not ``individual
+particles'' but configurations of a single condensate field~$\Phi$.
+Changing particle number is a reconfiguration of the same medium,
+analogous to the appearance and disappearance of vortices in a
+superfluid.
+
+Multi-particle description remains necessary even in the coherent
+branch ($\Gamma_{\rm loop}\ll 1$), where no event-like Lorentzian
+interaction is available
+(Section~\ref{sec:correlation_vs_interaction}), for four reasons:
+\begin{enumerate}[label=(\alph*)]
+  \item \emph{Entanglement:} subsystems sharing a common condensate
+    generically possess non-factorisable correlations
+    (Section~\ref{sec:qs_entanglement});
+  \item \emph{Exchange statistics:} the topology of exchanging two
+    identical excitations ($\pi_1(\mathcal{M}_2)=\mathbb{Z}_2$)
+    determines the bosonic/fermionic dichotomy---a multi-body effect
+    by definition (Section~\ref{sec:qs_statistics});
+  \item \emph{Decoherence threshold:} the number of environmental
+    degrees of freedom~$N_{\rm eff}$ determines the decoherence rate
+    $\tau_{\rm dec}=1/(N_{\rm eff}\cdot\gamma)$;
+  \item \emph{Variable excitation number:} cosmological particle
+    production at the $O(4)\to O(3)$ transition, pair annihilation,
+    and radiation are processes in which the number of condensate
+    excitations changes.
+\end{enumerate}
+
+\paragraph{Status of Fock space.}
+ECT does not require Fock space as a fundamental postulate.
+However, an explicit emergent sector decomposition with variable
+excitation number---especially for the fermionic many-body
+sectors---remains to be constructed from condensate dynamics.
+This is a nontrivial reconstruction problem rather than a foundational
+gap~(Open; OP-Q11).
 
 
 \subsection{Soft Orientation Sector of the Condensate}
@@ -10601,6 +10818,26 @@ the weak interaction.
 Within ECT the question is whether this asymmetry has a structural
 origin in the condensate geometry.
 
+\paragraph{Physical significance.}
+If the left-handed character of the weak interaction is traced to
+the broken-phase geometry rather than to an arbitrary choice of gauge
+representations, then the parity asymmetry of the weak sector
+ceases to be an unexplained empirical fact of the Standard Model and
+becomes a geometric imprint of the vacuum ordering itself.
+The physical content of this possibility is therefore deep: it would
+mean that parity violation in weak interactions is not a contingent
+feature of one particular set of fields, but a direct structural
+consequence of how the condensate selects its ordered phase at the
+$O(4)\to O(3)$ transition.
+At the present stage this remains a structural possibility~(Level~B),
+not yet a closed first-principles derivation of the physical
+weak-interaction chirality.
+This result, if confirmed, would be one of the deepest explanatory
+gains of the condensate programme: a fundamental left--right asymmetry
+of nature would be understood not as a brute empirical datum
+but as the geometric shadow of a single spontaneous symmetry
+breaking.
+
 \paragraph{Why chirality belongs here.}
 The issue of chirality enters ECT at an intermediate level between
 pure group theory and full gauge phenomenology.
@@ -11148,8 +11385,10 @@ ECT does not yet derive:
   \item the full relativistic spin-statistics theorem;
   \item the full operator anti-commutation algebra
     $\{\hat a_i,\hat a_j^\dagger\}=\delta_{ij}$;
-  \item the complete many-body fermionic Fock-space construction
-    from bare condensate dynamics.
+  \item an explicit emergent many-excitation sector decomposition
+    with variable excitation number from condensate dynamics
+    (ECT does not require Fock space as a fundamental postulate,
+    but the effective reconstruction remains open).
 \end{enumerate}
 Within the fermionic sector, these questions belong to the open
 programme summarised in Section~\ref{sec:fermion_open}
@@ -11703,7 +11942,11 @@ Lorentzian signature, uniqueness of the kinetic tensor, light speed
 $c_*$, universality of the causal cone within the linear scalar
 ordered branch (Universality Corollary,
 \S\ref{sec:goldstone_integrability_main}: single field, single
-$K^{AB}$, single cone), the Klein--Gordon equation, the global
+$K^{AB}$, single cone),
+retarded propagation with support confined to the causal cone
+for the full nonlinear scalar ordered branch
+(Appendix~\ref{app:causal_hyperbolic}),
+the Klein--Gordon equation, the global
 Noether current and its conservation, the algebraic isomorphism
 $\mathfrak{so}(3)\cong\mathfrak{su}(2)$,
 the ordered-branch admissibility result $\alpha>\beta$ as the unique
@@ -12644,6 +12887,133 @@ relativity is already encoded in the ordered-branch quadratic
 operator once its cone is identified.
 
 % ------------------------------------------------------------
+\subsection{Universal signal-speed bound and its realisation
+by massless sectors}
+\label{subsec:sr_speed_bound}
+
+\paragraph{Causal bound from the characteristic cone.}
+The fundamental speed bound of the ordered branch is not a
+property of any particular excitation sector: it is the
+characteristic cone of the principal symbol of the ordered-branch
+field equation~\eqref{eq:EOM_quasilinear}.
+For the full nonlinear scalar dynamics of~$\Phi$, the
+symmetric-hyperbolic reduction
+(Appendix~\ref{app:causal_hyperbolic}) together with the
+Leray--Choquet-Bruhat
+theorem~\cite{Leray1952,ChoquetBruhat1952,ChoquetBruhat2009}
+establishes the retarded-support property
+expressed in~\eqref{eq:K_full_levelA}, together with finite
+domain of dependence inside the past causal cone.
+Equivalently, scalar ordered-branch disturbances do not propagate
+outside the local characteristic cone.
+
+This theorem-level result applies directly to the full nonlinear
+scalar ordered-branch dynamics of~$\Phi$.
+For the photon and gravitational-wave sectors the corresponding
+statement enters through cone inheritance in the minimal emergence
+routes~(\S\ref{sec:cone_inheritance}) and therefore carries the
+structural Level~A/B status used throughout the paper.
+
+\paragraph{Group and phase velocities of linear modes.}
+For linear plane waves, the dispersion
+relation~\eqref{eq:sr_dispersion} makes the causal bound explicit.
+A massive mode ($m\neq 0$) has the group velocity
+\begin{equation}
+  v_{\rm gr}
+  = \frac{\partial\omega}{\partial k}
+  = \frac{c_*^2\,k}{\sqrt{c_*^2 k^2 + m^2 c_*^4}}
+  < c_*,
+  \label{eq:sr_vgr}
+\end{equation}
+with equality only in the massless limit.
+Here $k\equiv|\mathbf{k}|$.  This group-velocity result is a concrete
+linear-mode manifestation of the more fundamental causal statement set
+by the characteristic cone and front propagation.
+Massive linear scalar excitations propagate strictly inside the causal
+cone; massless linear scalar excitations propagate on its boundary.
+
+The phase velocity of a massive mode, by contrast, is
+\begin{equation}
+  v_{\rm ph}
+  = \frac{\omega}{k}
+  = c_*\sqrt{1 + \frac{m^2 c_*^2}{k^2}}
+  > c_*,
+  \label{eq:sr_vph}
+\end{equation}
+and formally exceeds the cone speed.
+This does not violate causality: the phase velocity does not
+transport information or causal influence.
+The causal bound is set by the characteristic cone of the principal
+symbol---equivalently, by the front speed---not by the phase
+velocity.
+This is precisely why ECT formulates the relativistic speed limit
+as a bound on causal propagation, not as a bound on every quantity
+carrying the name ``velocity''.
+
+\paragraph{Consistency check: velocity addition.}
+The velocity-addition law derived from cone
+invariance~\eqref{eq:sr_boost},
+$u\oplus v = (u+v)/(1+uv/c_*^2)$,
+preserves the interval $|u|,|v|<c_*\;\Rightarrow\;|u\oplus v|<c_*$.
+This confirms the internal closure of the sub-cone velocity domain
+and is consistent with the causal bound following from the
+principal symbol, but is not its independent source.
+
+\paragraph{Signal speed, not photon speed.}
+The fundamental limiting velocity in ECT is therefore the speed of
+causal propagation---front speed, signal speed, domain-of-dependence
+boundary---determined by the unique ordered-branch causal cone.
+The vacuum speed of light does not define that boundary;
+it realises it.
+Within the minimal phase-to-gauge
+route~(\S\ref{sec:gauge}), the photon candidate is a massless
+Abelian gauge boson whose mass vanishes because the relevant
+compact $U(1)$ symmetry remains unbroken and gauge invariance
+forbids a leading-order Proca mass term.
+The gauge sector inherits the same ordered-branch
+cone~(\S\ref{sec:cone_inheritance}), so the photon propagates on
+the boundary of the universal causal cone.
+Gravitational waves in the minimal tensor route likewise inherit
+the same cone, a prediction supported observationally by the
+near-equality $|c_{\rm GW}/c-1|<6\times10^{-15}$
+measured for GW170817~\cite{LIGO_Virgo_GW170817_2017}.
+
+\paragraph{Universality across inertial frames.}
+Because inertial coordinate changes in the homogeneous ordered
+branch are precisely the transformations preserving one and the same
+null cone~(\S\ref{subsec:sr_lorentz}), the same vacuum signal speed
+is measured in every inertial frame.
+Its universality is therefore not an additional postulate: it is fixed
+by cone invariance itself, and the universality of the vacuum light
+speed follows once the photon sector is tied to that same cone in the
+minimal gauge route.
+What special relativity postulates as the universality of the
+vacuum light speed is, in ECT, reduced to a structural consequence
+of the unique ordered-branch causal cone~(Level~A) together with
+cone inheritance in the minimal gauge route~(Level~A/B).
+
+\paragraph{Status and caveats.}
+\emph{Theorem-level (Level~A):} retarded propagation and
+domain-of-dependence confinement for the full nonlinear scalar
+ordered branch
+(Appendix~\ref{app:causal_hyperbolic});
+linear massive scalar modes propagate inside the cone, and linear
+massless scalar modes on its boundary.
+\emph{Structural Level~A/B:} vacuum photons and gravitational
+waves realise the same cone in the minimal inheritance routes.
+In slowly varying macroscopic backgrounds the statement is local:
+massive excitations propagate inside the local tangent-space
+causal cone, consistent with the tangent-space role of special
+relativity established in~\S\ref{subsec:sr_to_gravity}.
+Extension to strongly nonlinear, solitonic, or fully interacting
+sectors is expected on the basis of the covariant form of the
+effective equations but is not separately proved here.
+
+In this sense, the vacuum light speed is not fundamental by
+itself; it is the experimentally accessible manifestation of the
+deeper ordered-branch causal speed.
+
+% ------------------------------------------------------------
 \subsection{The status of the identification
 \texorpdfstring{$c_*=c$}{c*=c}}
 \label{subsec:sr_cstar_c}
@@ -12697,6 +13067,24 @@ exactly as general relativity uses local Lorentz frames: special
 relativity is the tangent-space limit of a more general macroscopic
 geometry.
 
+An important clarification concerns the status of~$c_*$ in the
+macroscopic regime.
+The EFT parameters~$(\alpha,\beta)$ characterise the vacuum state
+of the ordered phase and are not position-dependent in the standard
+ECT framework.
+Macroscopic gravity arises from slow spatial variation of the
+condensate orientation~$n^A(X)$ and amplitude, which generates a
+curved effective metric~$g_{\rm eff}^{\mu\nu}(X)$, while the local
+tangent-space cone speed~$c_*$ remains invariant---precisely as
+the physical speed of light~$c$ is a universal constant in general
+relativity while the metric varies.
+If certain phenomenological closures are expressed using
+$X$-dependent effective ordered-branch parameters, this describes
+the varying geometry, not a varying vacuum light speed.
+The equivalence principle in ECT is therefore a structural
+consequence of the single-vacuum origin of the causal cone, not an
+additional postulate.
+
 % ------------------------------------------------------------
 \subsection{What is proved and what remains open}
 \label{subsec:sr_proved_open}
@@ -12709,6 +13097,11 @@ The homogeneous ordered phase admits a flat Lorentzian geometry
 whose isometry group is the Poincar\'e group.
 The scalar branch obeys the standard relativistic dispersion
 relation with invariant speed~$c_*$.
+The full nonlinear scalar ordered branch has retarded propagation with
+support confined to the causal cone
+(Appendix~\ref{app:causal_hyperbolic}); consequently massive linear
+scalar excitations propagate strictly inside the cone, and massless
+linear scalar excitations on its boundary.
 
 \paragraph{Structurally established, conditional (Level~B).}
 The compact phase sector inherits the same ordered-branch tensor
@@ -12778,6 +13171,22 @@ the unique imaginable nonlinear completion of the full Euclidean
 microdynamics.
 The Einstein limit is recovered when the additional ordered-branch
 variables~($\phi$, $n_A$) are frozen or screened.}
+
+\paragraph{Physical picture: gravity as condensate stiffness.}
+In ECT geometry is not the primitive ontology.
+The effective metric is a derived bookkeeping object encoding how
+excitations propagate on the ordered condensate background.
+Gravity is the long-wavelength geometric response of the ordered
+condensate to deformations of its orientation structure~$n^A$.
+Mass--energy perturbs the condensate state; the metric records the
+resulting change in propagation kinematics.
+The graviton is not a quantum of fundamental geometry but a
+low-energy excitation of the condensate order that, in the effective
+description, looks like a massless spin-2 mode.
+This inverts the conventional logic of quantum gravity:
+ECT replaces the question ``how to quantise an existing geometry?''
+with the question ``how do collective condensate excitations produce
+a geometric description?''.
 
 \paragraph{Three-level status discipline.}
 Throughout this section, each result is assigned one of three levels:
@@ -20246,6 +20655,16 @@ Late-time dark energy is a third channel again: it arises from the
 ordered-branch background energy of the same condensate, not from the
 galactic $\phi$-branch and not from a particle-dark-matter halo.
 
+\paragraph{Important interpretive caveat.}
+The statement ``ECT does not need dark matter particles in its minimal
+benchmark explanation'' is not equivalent to the statement ``ECT proves
+that no particle beyond the Standard Model can ever exist''.
+The first is a statement about the present minimal closure.
+The second would be an overclaim that the theory does not make.
+Collective condensate excitations and topological sectors remain
+structurally possible as optional extensions or open sectors;
+they are not required by the core benchmark fit developed here.
+
 \paragraph{Observational motivation.}
 These three channels correspond to three distinct observational
 questions that are often grouped together under the label
@@ -20523,6 +20942,22 @@ In ECT, accelerated expansion is not attributed to an
 independently postulated cosmological constant or dark-energy substance,
 but to the residual background energy carried by the ordered phase of
 the same condensate.
+
+\paragraph{Physical picture: dark energy as condensate residual.}
+In standard QFT the vacuum energy is computed as the sum of
+zero-point oscillations of all fields and disagrees with observation by
+approximately 120~orders of magnitude.
+In ECT the reframing is structural:
+dark energy is not an abstract ``vacuum energy'' but the dynamical
+residue of the $O(4)\to O(3)$ phase transition.
+The effective cosmological term~$\Lambda_{\rm eff}(\phi)$ is a
+functional of the condensate background, not a rigid external
+constant; and the physical cutoff on loop contributions is the
+radial-mode mass~$m_\sigma\sim M_{\rm Pl}$, not a formally infinite
+regulator.
+These are structural improvements, but they do not by themselves
+solve the residual $10^{-120}$ fine-tuning
+(see~``Cosmological-constant fine-tuning status'' below).
 
 \paragraph{Cosmological-constant fine-tuning status.}
 For the quartic potential $V(\Phi)=-\mu^2\Phi^2/2+\lambda\Phi^4/4$,
@@ -21527,6 +21962,19 @@ establishes the following main results:
     $U=W(u_\infty e^{\beta\phi})$) are derived from the ordered-branch
     EFT.
 
+  \item A universal signal-speed bound
+    (\S\ref{subsec:sr_speed_bound}):
+    the characteristic cone of the ordered-branch principal symbol
+    confines all disturbances to within the causal cone;
+    massive linear scalar excitations propagate strictly inside it,
+    massless excitations on its boundary;
+    the vacuum light speed is the experimentally accessible
+    manifestation of the ordered-branch causal speed, not a
+    photon-specific constant.
+    The EFT parameters $(\alpha,\beta)$ characterise the vacuum state
+    and are not position-dependent; macroscopic gravity varies the
+    geometry, not the cone speed.
+
   \item Three structural cosmological outputs of the ordered branch:
     spatial flatness $k=0$, absence of the primary monopole channel
     ($\pi_2(S^3)=0$), and a single leading scalar perturbation mode.
@@ -21829,6 +22277,7 @@ Flat rotation curves and RAR/BTFR phenomenology & Critical $\phi$-branch closure
 Macroscopic entropy growth & Reduced-state decoherence with effective bath assumptions & effective closure (Level~B) \\
 Universal causal cone & Single $g_{\mu\nu}(n)$ in IR EFT & derived \\
 LV suppression & Higher-dim.\ ops., $\delta c/c\sim(E/\Lambda)^2$ & derived \\
+Proton stability & Three selection-rule patterns conditional on gauge/flavour completion (\S\ref{sec:proton_stability}) & conditional (Level~C) \\
 \hline
 
 \end{longtable}
@@ -21888,6 +22337,9 @@ D31 & Age = Lorentzian ordered-branch duration & B & Conceptual reinterpretation
 D32 & Structural Hubble-shift mechanism: $\Delta H_0>0$ & B & Correlated with age, distance, JWST through same $\phi_b(z)$; benchmark $\Delta H_0/H_0\approx 2.9\%$ & \ref{sec:mp_hubble} \\
 D33 & Correlated JWST background mechanism & B & Mixed effect: distance/time/growth all shift; BH-assisted channel more promising; partial alleviation only & \ref{sec:mp_jwst_cosmo} \\
 D34 & Force-law dimensionality $d_{\rm force}(x)$: $3\to 7/3\to 2$ & B & Universal curve from single-mode $\phi$-closure; independent of galaxy mass & \ref{sec:universe_size} \\
+D35 & Universal ordered-branch causal cone and local vacuum signal-speed bound & A & Retarded support + domain of dependence from symmetric hyperbolicity (Leray--Choquet-Bruhat) & \ref{subsec:sr_speed_bound}, \ref{app:causal_hyperbolic} \\
+D36 & Vacuum photon/GW realisation of the same cone in minimal inheritance routes & A/B & Minimal gauge/tensor route; cone inheritance from same $K^{AB}$ & \ref{subsec:sr_speed_bound}, \ref{sec:cone_inheritance} \\
+D37 & Proton stability: three selection-rule patterns (I/II/III) & C & Conditional on gauge/flavour completion, especially colour sector and baryon-number selection rules; OP-proton & \ref{sec:proton_stability} \\
 \bottomrule
 \end{longtable}
 
@@ -22006,6 +22458,17 @@ would still remain logically possible) \\
 
 \bottomrule
 \end{longtable}
+
+\paragraph{Baryon-number observables.}
+A further discriminant of the completed ECT closure is provided by
+baryon-number-violating observables.
+This is a Level~C closure discriminant rather than part of the
+already established strict-core predictions listed above.
+Depending on the realised low-energy selection-rule pattern, the
+theory predicts either proton stability, or $\Delta B=2$ observables
+such as $n$--$\bar n$ oscillations and dinucleon decay, or a generic
+Planck-suppressed proton-decay benchmark
+(Section~\ref{sec:proton_stability}).
 
 \subsection{Status table and open problems of the
 macroscopic branch}
@@ -22302,6 +22765,34 @@ rule~BR1;
 Level~B denotes results that additionally require stated closure
 assumptions, effective approximations, or matching identifications.
 }
+
+\paragraph{How ECT changes the logical status of quantum axioms.}
+Standard quantum mechanics and quantum field theory postulate the
+quantum stage: a Hilbert space, self-adjoint observables, unitary
+evolution, the Born rule, and collapse upon measurement.
+None of these axioms is explained within the standard framework; they
+are accepted as foundational givens.
+ECT does not merely reinterpret these axioms; it changes their logical
+status from foundational postulates to reconstruction targets tied to
+the coherence structure of the condensate:
+\begin{itemize}
+  \item Hilbert space is constructed via the Osterwalder--Schrader
+    reconstruction from the Euclidean functional integral
+    (Section~\ref{sec:qs_reflection_positivity});
+  \item unitarity follows from global reflection positivity, while
+    effective non-unitarity at subsystem level arises from decoherence
+    (Section~\ref{sec:qs_unitarity_status});
+  \item the Born rule is motivated as a consequence of
+    decoherence~$+$~branching
+    (Section~\ref{sec:qs_born});
+  \item ``collapse'' is identified with the
+    Euclidean-to-Lorentzian transition at
+    $\Gamma_{\rm loop}\sim 1$---no fundamental collapse postulate is
+    needed, no mystical observer invoked
+    (Section~\ref{sec:pes_measurement}).
+\end{itemize}
+The three questions below decompose this programme into logically
+independent steps, each with its own status~(A/B/Open).
 
 \paragraph{Three distinct questions about quantumness in ECT.}
 \label{par:three_questions}
@@ -24169,7 +24660,14 @@ Hilbert-space programme, but it is not yet a theorem for the complete
 coherent interacting sector.
 
 \paragraph{Goldstone sector at the free quadratic level.}
-The $O(4)\to O(3)$ breaking produces three massless Goldstone modes.
+At the level of the naive free quadratic coordinate counting,
+the $O(4)\to O(3)$ breaking carries three Goldstone coordinates.
+In the scalar-only integrable basis, however, this does not
+automatically imply three independent propagating soft asymptotic
+particles.
+The present OS statement concerns the reflection positivity of the
+free quadratic coordinate sector, not the final counting of physical
+low-energy soft particle content.
 For a free massless scalar in four Euclidean dimensions, the standard
 Gaussian measure is reflection-positive as well, up to the usual
 infrared/zero-mode subtleties of the massless sector, which do not
@@ -24179,7 +24677,8 @@ Therefore the free quadratic broken-phase content of ECT is
 OS-compatible not only in the massive radial subsector but also in the
 free massless Goldstone subsector.
 In this precise sense, the full \emph{free quadratic} broken-phase
-content (one massive radial mode plus three free Goldstone modes) is
+content (one massive radial mode plus the three free
+Goldstone-coordinate subsectors) is
 reflection-positive sector by sector.
 
 \paragraph{Relation to the radial threshold scale.}
@@ -25459,6 +25958,13 @@ Accordingly, the ECT reading is compatible with the standard
 no-signalling constraints of quantum experiments.
 ECT reads this as a natural consequence of the two-sided Euclidean
 coherent architecture.
+An important caveat must be stated explicitly:
+global Euclidean boundary-value dependence is not retro-signalling
+within Lorentzian spacetime.
+It is the standard mathematical property of elliptic boundary-value
+problems: the solution at any interior point depends on data
+everywhere on the boundary.
+No Lorentzian causality violation is implied.
 
 \begin{center}
 \renewcommand{\arraystretch}{1.25}
@@ -25655,6 +26161,23 @@ What ECT adds is the geometric picture: the classically forbidden
 region is not traversed but bypassed, and the suppression factor is the
 cost of the spatial detour.
 
+\paragraph{Physical significance and interpretive status.}
+Ordinary quantum mechanics gives precise tunnelling amplitudes, but
+leaves the physical intuition unsatisfactory: how does the particle
+``end up on the other side'' when it classically lacks sufficient
+energy?
+In ECT the Lorentzian barrier is a barrier for the projected
+classical motion, but not necessarily for the full Euclidean condensate
+configuration.
+What looks like an exponentially suppressed forbidden transition in the
+Lorentzian picture is a configurational bypass in the deeper Euclidean
+picture.
+The system does not violate causality; it realises a configurational
+detour that, after projection, reads as tunnelling.
+At the present level this is primarily an interpretive and geometric
+gain, not yet an established distinct numerical deviation from the
+standard WKB/instanton result.
+
 \subsubsection*{Connection to PES}
 
 In the PES framework, the tunnelling configuration has
@@ -25755,6 +26278,21 @@ Dirac route~(\S\ref{sec:qs_dirac}), and entanglement for identical
 particles~(\S\ref{sec:qs_entanglement}).}
 
 \medskip
+In the present framework, once a given emergent field sector is fixed,
+particles of the same species correspond to quanta of the same emergent
+mode sector of the same ordered medium and therefore carry no hidden
+individuation label beyond the quantum numbers of the shared mode
+itself.
+Environmental dressing may modify propagation or effective interactions,
+but it does not alter species identity.
+Because ECT supplies no hidden individuation variable, exchange of
+same-species quanta is a genuine quotient of configuration space rather
+than a permutation of hidden labels: it reassigns occupation of the same
+mode sector rather than exchanging individuated microscopic objects.
+This is precisely why the many-particle configuration space
+relevant for same-species quanta is already the quotient by exchange,
+to which the following discussion now turns.
+
 If the Quantum Sector of ECT is to reproduce more than one-particle
 coherent kinematics, it must also explain why exchange sectors split
 into bosonic and fermionic classes.
@@ -25849,8 +26387,10 @@ ECT at the present stage does \emph{not} yet derive:
   \item the full relativistic spin-statistics theorem;
   \item the full operator anticommutation algebra
     $\{\hat a_i,\hat a_j^\dagger\}=\delta_{ij}$;
-  \item the complete many-body fermionic Fock-space construction
-    from bare condensate dynamics~(Open; OP-Q11).
+  \item an explicit emergent many-excitation sector decomposition
+    with variable excitation number from condensate dynamics
+    (ECT does not require Fock space as a fundamental postulate,
+    but the effective reconstruction remains open; OP-Q11).
 \end{enumerate}
 What it does provide is a structurally natural route from
 coherent exchange sectors to the bosonic/fermionic
@@ -25925,7 +26465,9 @@ sectors with antisymmetric exchange.
 
 \textit{Open~(OP-Q11):}
 the full spin-statistics theorem, operator anticommutation algebra,
-and many-body fermionic Fock-space construction remain to be derived.
+and an explicit emergent many-excitation sector decomposition
+(Fock-like reconstruction) remain to be derived from condensate
+dynamics.
 
 % ============================================================
 
@@ -26856,19 +27398,36 @@ For ideal condensate-domain walls (e.g.\ near the $O(4)\to O(3)$ transition
 in the early Universe), Dirichlet conditions on the Goldstone modes are
 natural and the conditional estimate is self-consistent within the assumed EFT.
 
-\paragraph{Why the factor $3/2$ is structural within the conditional
-closure.}
-The ratio $3/2$ in Eq.~\eqref{eq:casimir_ect} is not an adjustable
-parameter inside the present toy calculation.
-It is the counting ratio $N_G/N_{\rm QED}=3/2$, where $N_G=3$ is the
-number of Goldstone modes produced by the $O(4)\to O(3)$ breaking
-pattern and $N_{\rm QED}=2$ is the number of photon polarisations in the
-standard electromagnetic Casimir problem.
-Thus, once the provisional soft-orientation EFT and the idealised
-condensate-reflecting Dirichlet boundaries are assumed, the coefficient
-is algebraically fixed.
-What remains conditional is not the ratio itself, but the physical
-applicability of that closure to a real boundary system.
+\paragraph{Why a $3/2$-type factor appears in the provisional closure.}
+Within the provisional multi-component soft-orientation EFT with
+idealised condensate-reflecting Dirichlet boundaries, one obtains a
+counting ratio $N_G/N_{\rm QED}=3/2$, where the naive
+Goldstone-coordinate count is compared with the two photon
+polarisations of the standard QED Casimir problem.
+This fixes the coefficient algebraically inside that provisional
+closure.
+It does not establish that the completed physical low-energy soft
+sector of ECT generically contributes with the same multiplicity in
+real boundary systems.
+
+\paragraph{Soft-mode counting caveat.}
+The breaking pattern $O(4)/O(3)\simeq S^3$ naively carries three
+Goldstone coordinates.
+However, in the scalar-only integrable basis these do not
+automatically correspond to three independent propagating soft
+particles: the physically independent low-energy soft content is
+reduced to a single surviving longitudinal mode~$\chi$
+($N_G^{\rm phys}=1$ at linear order;
+Section~\ref{sec:goldstone_integrability_main},
+Appendix~\ref{app:goldstone_integrability}).
+Therefore any quantitative use of a three-component soft counting
+---including the factor $3/2$ derived above---is provisional and
+boundary-model-dependent until the physically independent
+low-energy soft content is fully fixed in the completed
+coherent-vacuum EFT.
+This caveat applies equally to any use of the three-component count
+in the dark-sector~(\S\ref{sec:dark_sector}) and particle-spectrum
+sections.
 
 \paragraph{Numerical comparison at $a=1\,\mu{\rm m}$.}
 For a plate separation $a=1\,\mu{\rm m}$, the standard QED Casimir
@@ -26882,11 +27441,13 @@ whereas the conditional condensate-reflecting estimate gives
 \left|\frac{F}{A}\right|_{\rm ECT}
 \approx 1.95\times10^{-3}\ {\rm Pa}.
 \]
-The ratio is exactly $3/2$.
-This difference would be experimentally resolvable in principle,
-but only in a system that genuinely implements condensate-reflecting
-boundary conditions for the ECT Goldstone sector rather than ordinary
-electromagnetic metallic-plate conditions.
+Within the provisional three-component closure, the toy estimate
+yields a $3/2$ enhancement relative to the standard QED value.
+A difference of this order would be measurable only in a boundary
+system that is independently shown to realise the required
+condensate-reflecting conditions for the physically relevant soft
+ordered-branch sector.
+No such laboratory implementation is established in the present work.
 
 \textbf{Summary statement and status caveat.}
 The factor $3/2$ derived above is \emph{not} a correction to the standard
@@ -26913,9 +27474,9 @@ Three cases must be kept sharply distinct.
   \item \textbf{Condensate-reflecting boundaries:}
   only in this idealised case does the provisional $3/2$ ratio arise in
   the minimal three-component soft-orientation EFT.
-  Within the provisional minimal three-component soft-orientation EFT,
-  the factor $3/2$ is structural: it reflects the $N_G=3$ Goldstone
-  count from $O(4)\to O(3)$ rather than an adjustable parameter.
+  The provisional $3/2$ factor reflects the naive three-coordinate
+  Goldstone counting of the minimal toy closure, not yet the fully
+  established count of physically independent soft asymptotic modes.
   In the present article this should therefore be read as a
   closure-dependent condensate-sector estimate, not yet as a fully
   closure-independent theorem of the completed vacuum programme.
@@ -27252,6 +27813,21 @@ coincide with that defined relative to another.
 This is the natural setting for cosmological particle production in ECT,
 complementary to the macroscopic phase-transition discussion
 of Section~\ref{sec:mp_cosmo}.
+
+\paragraph{Physical picture: particle creation as vacuum
+reconfiguration.}
+In ECT, particle creation is not the mysterious ``appearance of
+something from nothing''.
+When the condensate background changes---most dramatically at the
+$O(4)\to O(3)$ transition---modes that were ``quiet'' in the
+symmetric phase cease to be quiet in the ordered phase.
+Their amplitude becomes nonzero relative to the new vacuum.
+This is entirely analogous to the physics of known media: rapidly
+cooling a superfluid produces phonons and rotons not because they
+``materialise from the void'', but because the background against
+which ``silence'' is defined has changed.
+The produced excitations are real condensate configurations; their
+number and spectrum depend on the history of the transition.
 
 \subsubsection*{Time-dependent ordered branch}
 
@@ -27661,6 +28237,38 @@ vacuum-response infrastructure~(\S\ref{sec:qs_vacuum_unified}),
 ECT basics~(\S\ref{sec:arrow_of_time},
 \S\ref{sec:second_law_basics}), and the analogue-laboratory
 programme~(\S\ref{sec:analogue_lab}).}
+
+\paragraph{Physical picture: decoherence as medium-driven branch
+selection.}
+In ECT, decoherence is not a postulate about observers destroying wave
+functions.
+It is a physical process: the subsystem loses its coherent integrity
+because it couples to a large number of condensate degrees of freedom
+that it cannot track.
+The medium does not need to ``measure'' in any anthropomorphic sense;
+it suffices that the subsystem ceases to be well described as a
+nearly closed coherent configuration.
+Before decoherence the system belongs to the Euclidean coherent
+regime, where interference alternatives genuinely coexist as parts of
+a single configurational functional.
+After decoherence these alternatives no longer combine into a single
+observable amplitude pattern and begin to behave as separate classical
+branches.
+No separate collapse postulate is needed; its physical content is
+already covered by medium-induced branch selection.
+
+\paragraph{Recoherence: the reverse process.}
+If decoherence is the loss of coherent integrity through the
+environment, recoherence is the partial reassembly of that integrity.
+ECT makes the arrow of classicality not an absolute metaphysical
+dogma but a statistically governed consequence of
+environmental coupling.
+Recoherence is not forbidden in principle; it is exponentially
+suppressed for macroscopic systems:
+$P_{\rm back}/P_{\rm fwd} = e^{-\Gamma_{\rm loop}}$.
+For mesoscopic or engineered systems, partial recovery of coherence
+becomes a physically meaningful possibility, consistent with
+echo-type and quantum-control protocols.
 
 \paragraph{What is established, what is closure-dependent, and what
 remains open in the decoherence programme.}
@@ -30574,6 +31182,18 @@ Decoherence alone does not produce probability.
 It only suppresses phase interference between macroscopically distinct
 reduced sectors.
 
+\paragraph{Physical picture: where probabilities come from.}
+In standard quantum mechanics the Born rule
+$P=|\langle\psi|\phi\rangle|^2$ is postulated.
+In ECT it is motivated as a consequence of decoherence: when the
+influence functional suppresses interference between branches, the
+remaining branches behave as classical alternatives whose weights are
+determined by the squared amplitude.
+This is not yet a full derivation---it is a conditional argument
+(Level~B/Open) that relies on additional assumptions stated below.
+But it removes the Born rule from the list of fundamental axioms and
+relocates it to the status of a reconstruction target.
+
 \paragraph{Structural assumptions entering the Gleason route.}
 For clarity, the conditional Born argument used below will be stated in
 terms of three assumptions:
@@ -30935,6 +31555,23 @@ topology~(\S\ref{sec:qs_statistics}), the decoherence programme
 (\S\ref{par:vacuum_programme}), the Born-weight route
 (\S\ref{sec:qs_born}), medium character~(P5), and the
 quantum--classical boundary~(\S\ref{sec:quantum_classical_boundary}).}
+
+\paragraph{Physical picture: entanglement as a trace of a common
+configuration.}
+In the standard formulation, entanglement is introduced as
+mathematical non-factorisability in a tensor product of Hilbert spaces.
+This works, but says almost nothing about the physical ``why''.
+In ECT a physical picture emerges: two subsystems are entangled not
+because a hidden superluminal signal connects them, but because both
+are partial descriptions of one and the same coherent condensate
+configuration.
+Measurement of one part does not ``send an influence'' to the other.
+It converts the local subsystem into a decohered branch, while the
+other was already part of the same global configuration.
+The observed correlation reflects not signal transfer but the prior
+inseparability of the condensate state.
+This is an interpretive gain~(Level~B); the full derivation of
+Bell-type correlators from condensate dynamics remains open.
 
 \paragraph{Connection to PES.}
 The Principle of Euclidean
@@ -31579,6 +32216,21 @@ of horizon thermodynamic coefficients from bare~P3~(OP-Q13).
 Connection: medium character~(P5), the coherent-vacuum response
 programme, the Unruh/horizon continuity, the global/reduced unitarity
 distinction, and the branch-breakdown logic of the ordered medium.}
+
+\paragraph{Physical picture: the horizon as an emergent condensate
+interface.}
+ECT reframes the black-hole horizon not as a fundamental singularity
+of causal structure but as an emergent interface in the condensate
+medium.
+This provides a microscopic language for why semiclassical Hawking
+thermality may survive while allowing controlled corrections in
+dispersion, late-time correlations, and strong-curvature response.
+The present section organises the mechanism and its observable
+channels; it does not yet provide a complete first-principles
+microtheory of black holes.
+The shell model, Page-curve-like behaviour, and the absence of
+fundamental information loss should be read as an organisational
+framework, not as a closed theorem.
 
 \paragraph{What is established, what is closure-dependent, and what
 remains open in the black-hole programme.}
@@ -32327,6 +32979,17 @@ programme~(\S\ref{par:decoherence_programme}), the
 quantum--classical boundary~(\S\ref{sec:quantum_classical_boundary}),
 the black-hole horizon programme~(\S\ref{sec:qs_bh}), and medium
 character~(P5).}
+
+\paragraph{Physical motivation: why analogue experiments matter for ECT.}
+If ECT is correct, then superfluid liquids, Bose--Einstein condensates,
+and other condensed-matter systems are not merely ``analogies'' but
+realisations of the same physics at a different scale:
+ordered medium $\to$ symmetry breaking $\to$ emergent Lorentzian
+kinematics $\to$ vacuum effects.
+Experiments with Casimir-like effects in superfluid media, decoherence
+in BEC systems, and analogue Hawking radiation are therefore not tests
+of analogies but tests of condensate vacuum physics at accessible
+scales.
 
 \paragraph{What is established, what is testable, and what remains
 outside analogue reach.}
@@ -33126,38 +33789,34 @@ PES universal extension
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/fig_partIII_derivation_logic.png}
+\includegraphics[width=\textwidth,height=0.72\textheight,keepaspectratio]{figures/fig_partIII_derivation_logic.png}
+\captionsetup{font=footnotesize}
 \caption{Derivation logic of Part~III (Quantum Sector).
-Starting from the Part~I inputs inherited through BR1 and the
-coherent-branch programme, the diagram organises the quantum sector into
-its main structural blocks:
-coherent phase dynamics and the pre-quantum action scale~$S_0$;
-Hamilton--Jacobi / continuity structure;
+Starting from Part~I inputs inherited through BR1, the diagram
+organises the quantum sector into its main structural blocks:
+coherent phase dynamics and~$S_0$;
+Hamilton--Jacobi / continuity;
 reflection positivity and the Hilbert-space bridge;
 canonical organisation and uncertainty;
-exchange topology, Lorentz/Clifford structure, and conditional Dirac
-closure;
-ordered-vacuum response
-(Casimir, Unruh, particle production, horizon thermality);
+exchange topology and Dirac closure;
+ordered-vacuum response (Casimir, Unruh, particle production,
+horizon thermality);
 decoherence and the arrow of time;
-the added results/regime-estimate layer of
-Section~\ref{sec:decoherence_results};
-the Principle of Euclidean Stationarity~(PES);
-the quantum--classical boundary and the reverse
-$O(3)\!\to\!O(4)$ Euclidean-segment reading;
-Born-type probability and conditional uniqueness via Gleason
-(with assumptions C1--C3);
+PES;
+the quantum--classical boundary;
+Born-type probability via Gleason;
 entanglement and Bell-type correlations;
-topological / defect / dark-sector ontology;
-black-hole thermodynamics and the information-exclusion result;
+black-hole thermodynamics and information exclusion;
 and the analogue-laboratory programme.
-Node shading: dark = inherited Part~I inputs,
-medium = structural (Level~A),
+Node shading follows the same convention as
+Figure~\ref{fig:partII_derivation_logic}:
+dark = inherited Part~I inputs,
+medium = Level~A,
 light = Level~A/B,
-white = closure-level (Level~B),
-dashed outline = programme-level or open.
-Solid arrows denote derivational dependence;
-dashed arrows denote closure-dependent or still-open completion steps.}
+white = Level~B,
+dashed = open.
+Solid arrows = strict derivation;
+dashed arrows = closure-dependent steps.}
 \label{fig:qs_consistency}
 \end{figure}
 
@@ -33207,7 +33866,12 @@ quantum-gravity claims remains programme-level.
   \item[OP-Q10] Quantitative link between coherent dark
     candidates and observed dark-sector phenomenology.
   \item[OP-Q11] Physical realisation of spinorial excitations in ECT
-    and the complete second-quantised fermionic structure from bare~P3.
+    and an explicit emergent many-excitation sector decomposition
+    (Fock-like reconstruction) with variable excitation number from
+    condensate dynamics.
+    ECT does not require Fock space as a fundamental postulate, but
+    the effective reconstruction---especially for the fermionic
+    many-body sectors---remains to be constructed.
     Note: the Lorentz-to-Clifford route is Level~A and the conditional
     Dirac structure is Level~B~(Section~\ref{sec:qs_dirac});
     what remains open is the proof that such excitations exist in
@@ -33699,6 +34363,10 @@ route to $U(1)$ (photon) and, via non-Abelian completion, to $SU(2)$
 mode at $v_2\approx 246$~GeV~(Level~A/B).
 The colour group $SU(3)$ and the fermion-generation structure remain
 open.
+A minimal colour completion is proposed in
+\S\ref{sec:colour_completion}, and the resulting baryon-number
+selection rules are analysed as a proton-stability discriminant in
+\S\ref{sec:proton_stability}.
 
 \paragraph{Particle spectrum.}
 The condensate architecture organises the particle sector into
@@ -34958,20 +35626,27 @@ correlation test.
 (v)~Derivation of the Standard Model gauge structure from the internal
 symmetries of the condensate, rather than embedding it by hand.
 
-(vi)~Completion of the structural routes to open microphysical
+(vi)~Derivation of baryon-number selection rules in the completed
+gauge/flavour sector, including whether low-energy $\Delta B=1$
+operators are absent, instanton-suppressed, or Planck-suppressed,
+what decay channels they induce, and whether $\Delta B=2$
+observables such as $n$--$\bar n$ oscillations and dinucleon decay
+provide an independent test~(\S\ref{sec:proton_stability}).
+
+(vii)~Completion of the structural routes to open microphysical
 targets: explicit computation of $Z_A$ for the fine-structure
 constant (\S\ref{sec:alpha_fs}), spectral analysis of the
 condensate background for the generation
 number~(\S\ref{par:three_generations}), and overlap-integral
 computation for the Yukawa matrix~(\S\ref{par:yukawa_hierarchy}).
 
-(vii)~Full derivation of the primordial perturbation spectrum
+(viii)~Full derivation of the primordial perturbation spectrum
 $(n_s, A_s, r)$ from the critical dynamics of the
 $O(4)\to O(3)$ ordering transition, including the freeze-out
 mechanism, curvature-mode conversion, and the role of weakly
 gauged $SU(2)\times U(1)$~(\S\ref{sec:primordial_estimates}).
 
-(viii)~First-principles derivation of the orientation-stress
+(ix)~First-principles derivation of the orientation-stress
 coefficient $c_1$~(OP-c1).
 The systematic assessment of the full nonlinear field equations across
 the phenomenological sectors of this work
@@ -35049,7 +35724,553 @@ it identifies not only which results remain below Level~A, but also
 what kind of additional input would be needed to push them upward.
 
 
-\FloatBarrier
+% ============================================================
+\subsection{Fundamental constants and present closure levels}
+\label{sec:constants_map}
+
+ECT does not treat all entries traditionally listed among the
+``constants of Nature'' as belonging to the same conceptual class.
+The following three tables separate native ECT structural outputs
+(Table~\ref{tab:constants_A}), open gauge-matter closure parameters
+(Table~\ref{tab:constants_B}), and derived combinations, conventions,
+and observables (Table~\ref{tab:constants_C}).
+
+\begin{longtable}{@{}p{3.5cm}p{3.5cm}p{6cm}@{}}
+\caption{Native ECT structural outputs.}
+\label{tab:constants_A}\\
+\toprule
+Quantity & ECT status & Comment \\
+\midrule
+\endfirsthead
+\toprule
+Quantity & ECT status & Comment \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+$D=3$ (spatial dimensions) & Derived (A) & $O(4)\to O(3)$ SSB \\
+$c$ (vacuum signal speed) & Derived (A/B) & Cone speed $c_*=\sqrt{\beta/(\alpha-\beta)}$ \\
+$\hbar$ (action scale) & Derived (A/B) & Loop action $S_0$ from phase winding \\
+$G_N$ (gravitational coupling) & Derived (B) & Condensate stiffness $G_N=c_*^4/(8\pi\phi_0^2)$ \\
+Massless photon & Derived (A/B) & Unbroken $U(1)$ + gauge invariance \\
+Massless graviton & Derived (A) & Spin-2 orientation mode \\
+\end{longtable}
+
+\begin{longtable}{@{}p{3.5cm}p{2.5cm}p{7cm}@{}}
+\caption{Open gauge-matter closure parameters.}
+\label{tab:constants_B}\\
+\toprule
+Parameter & ECT status & Structural route \\
+\midrule
+\endfirsthead
+\toprule
+Parameter & ECT status & Structural route \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+$g_1,g_2,g_3$ (at $M_Z$) & Open & Induced gauge kinetics \\
+$\alpha_{\rm fs}=1/137$ & Open (route exists) & $Z_A\approx 10.9$ from matter loops (\S\ref{sec:alpha_fs}) \\
+$\sin^2\theta_W$ & Open & Ratio of gauge normalisations \\
+$v_{\rm EW}=246$\,GeV & Open & RG flow $\lambda(\mu)$ from Planck scale \\
+$\lambda_H$ & Open & Second condensate transition \\
+$y_f$ (Yukawa couplings) & Open (OP-Yukawa) & Fermion-condensate overlap integrals \\
+CKM matrix (4 params) & Open & Multi-generation Yukawa \\
+PMNS matrix (4--6 params) & Open & Neutrino sector not developed \\
+$\theta_{\rm QCD}$ & Open & Not yet addressed \\
+$N_{\rm gen}=3$ & Open (OP-generations) & Topological classification \\
+$N_{\rm colour}=3$ & Minimal closure hypothesis (C) & Minimal rank of the primary colour module compatible with an $SU(3)$-structured completion \\
+$\Lambda_{\rm eff}$ & Partial (B/Open) & Condensate background; not independent $\Lambda$ \\
+\end{longtable}
+
+\begin{longtable}{@{}p{3.5cm}p{3cm}p{6.5cm}@{}}
+\caption{Derived combinations, conventions, and observables.}
+\label{tab:constants_C}\\
+\toprule
+Quantity & Status & Comment \\
+\midrule
+\endfirsthead
+\toprule
+Quantity & Status & Comment \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+$e$ (elementary charge) & Follows from $\alpha+\hbar+c$ & Not independent target \\
+$\mu_0,\varepsilon_0$ & SI conventions & Fixed by $c$; not physics targets \\
+$\alpha_G$ & Follows from $G,\hbar,c,m$ & Derived combination \\
+$m_f$ (fermion masses) & Follow from $y_f\cdot v_{\rm EW}$ & Requires Table~\ref{tab:constants_B} inputs \\
+$m_W,m_Z,m_H$ & Follow from $g_i,v_{\rm EW},\lambda_H$ & Embedding (B/C) \\
+$H_0$ & Solution-dependent & Full cosmological model \\
+$n_s$ (spectral index) & ECT-native estimate & $1-n_s\sim\hat p/\ln(L/\xi_0)$; $\hat p$ not derived \\
+$\eta_B$ (baryon asymmetry) & Benchmark leptogenesis & $\sim 9\times10^{-10}$ vs observed $6\times10^{-10}$ \\
+$g-2$ & Precision observable & Requires full QED from ECT \\
+$\Omega_{\rm DM}$ & Reinterpreted & No DM particles; condensate dynamics \\
+\end{longtable}
+
+Several entries in Table~\ref{tab:constants_B} remain blocked not
+by technical incompleteness alone, but by the absence of an exact
+colour sector in the current formulation.
+This motivates the following consistency analysis.
+
+
+% ============================================================
+\subsection{Colour consistency requirement and candidate
+non-Abelian completions}
+\label{sec:colour_completion}
+
+\subsubsection*{Why exact colour is required for full closure}
+
+The present formulation of ECT fixes a substantial part of observed
+low-energy architecture, but full closure remains incomplete without
+an exact unbroken colour symmetry.
+Many formulas, laws, and constants can be sharpened only once a
+consistent non-Abelian strong sector is available.
+The current derivations reveal a reverse-engineered consistency
+requirement: any viable completion of the $\Phi$-medium compatible
+with the observed world must contain an exact unbroken colour sector.
+This is not retrofitting but a constraint extracted from the partial
+success of the present formulation.
+
+\subsubsection*{Strict obstruction: colour cannot reside in the
+condensate}
+
+\paragraph{Theorem.}
+\emph{Any nonzero ordered-branch condensate transforming nontrivially
+under an internal group~$G$ breaks~$G$ to the stabilizer of the
+condensate.  For $G=SU(3)$ and condensate in the fundamental
+representation, the stabilizer is $SU(2)$.  Therefore exact colour
+$SU(3)$ cannot be carried by the condensate.}
+
+\emph{Proof sketch.}
+Let $\langle\partial_A\Phi^i\rangle = u_0\,n_A\,\xi^i$ with
+$\xi^\dagger\xi=1$.
+The stabilizer of a nonzero vector $\xi\in\mathbb{C}^3$ under
+$SU(3)$ is $SU(2)$.
+In the gauged theory, the mass matrix for the colour connection modes
+is $M^2_{ab}\propto u_0^2\,\xi^\dagger T^a T^b\,\xi$, giving five
+massive and three massless gauge bosons:
+$SU(3)\to SU(2)$.~$\square$
+
+The triplet-condensate route is structurally excluded.
+The ordered branch must remain an internal singlet if exact colour
+is to survive.
+
+\subsubsection*{Reverse-engineered constraint on the medium}
+
+The minimal postulates~P1--P6 were formulated from objective
+considerations about Euclidean ordering, symmetry breaking, and the
+emergence of Lorentzian dynamics.
+They did not specify the full internal architecture required by
+observed physics.
+However, confronting the derived ECT structure with exact colour
+physics reveals an additional constraint: colour must reside in a
+separate internal sector of the medium that does not participate in
+the ordered-branch condensate.
+The condensate remains singlet; colour lives elsewhere.
+
+This is not an arbitrary retrofitting of the theory, but a
+reverse-engineered consistency constraint extracted from the partial
+success of the present formulation: having derived spacetime,
+gravity, the quantum action scale, and an electroweak-like gauge
+architecture, one can now identify what additional internal structure
+the medium must carry for compatibility with the observed strong
+interaction.
+
+\subsubsection*{Primary completion: a local complex rank-3 internal
+module with $SU(3)$-structure}
+
+\paragraph{Physical meaning.}
+The most economical candidate completion assumes that, in addition to
+the singlet ordered branch, the medium carries at each point a local
+complex rank-3 internal module
+$\mathcal{C}_x\simeq\mathbb{C}^3$.
+Physically, this means that the medium possesses three equivalent
+internal complex degrees of freedom of local structure, distinct from
+both the spacetime directions and the condensate order parameter
+itself.
+
+\paragraph{Non-rigidity as extension of existing logic.}
+The medium is not assumed to fix a globally rigid basis in this
+internal module.
+Local redefinitions of the internal complex frame carry no physical
+meaning.
+This extends the already adopted non-rigidity logic of the
+$\Phi$-medium~(P5) into the internal sector.
+In the presence of a Hermitian structure on the module, the natural
+local redundancy is a $U(3)$-type frame freedom.
+
+\paragraph{Reduction from $U(3)$ to $SU(3)$.}
+To obtain an $SU(3)$ colour symmetry rather than the larger $U(3)$
+frame redundancy, the completion must supply more than a complex
+rank-3 module alone.
+In addition to the Hermitian structure, one must require a
+distinguished nonvanishing complex volume form
+$\Omega\in\Lambda^3\mathcal{C}_x^*$, equivalently a local
+antisymmetric trilinear invariant~$\varepsilon_{abc}$.
+The physically admissible local frame changes are then those
+preserving both the Hermitian metric and this complex volume form.
+Their group is~$SU(3)$.
+
+Physically, this means that the medium may locally rearrange its
+three internal complex directions while preserving the elementary
+antisymmetric three-channel structure of the colour cell.
+Equivalently, the internal colour module is promoted from a
+$U(3)$-bundle to an $SU(3)$-bundle.
+
+This reduction from $U(3)$ to $SU(3)$ should be treated as part of
+the candidate completion of the medium, not as an already derived
+consequence of the current minimal ECT postulates.
+The $U(1)$ factor removed in this step should not be confused with
+the electromagnetic $U(1)$ already obtained from the compact phase
+sector: the two $U(1)$ symmetries have different origins and act on
+different degrees of freedom.
+
+\paragraph{Connection to observed physics.}
+The preserved antisymmetric invariant $\varepsilon_{abc}$ has a
+direct physical counterpart: in observed strong-interaction physics
+it is the tensor from which colour-singlet three-quark channels are
+constructed.
+The requirement that the medium preserve this trilinear form
+therefore admits a natural interpretation as the structural condition
+for the existence of colour-neutral baryonic channels.
+
+\paragraph{What is obtained.}
+Under this completion, an $SU(3)$ colour symmetry becomes
+structurally available as the local frame redundancy preserving the
+$SU(3)$-structure of the internal module, compatible with the singlet
+condensate.
+Colour-triplet excitations can be represented as sections
+of~$\mathcal{C}$.
+A non-Abelian connection becomes meaningful as internal frame
+transport.
+The strong sector becomes structurally accessible.
+
+\paragraph{Structural compatibility checks.}
+A limited but nontrivial compatibility check concerns gauge-sector
+counting.
+If the colour completion proposed here is combined with the
+electroweak-like sector already discussed elsewhere in ECT, then the
+expected adjoint dimensions become structurally available: $8$~for
+the colour sector, $3$~for the weak sector, and $1$~for the Abelian
+phase sector.
+This reproduces the Standard Model gauge-boson count at the level of
+symmetry dimensions only.
+It should not be confused with a derivation of the full electroweak
+and strong gauge dynamics, mass generation, or mixing structure.
+
+A second compatibility check concerns colour neutrality outside the
+strong sector.
+Degrees of freedom arising from the electroweak-like sector, the
+Abelian phase sector, and the singlet gravitational sector are all
+structurally independent of the colour module introduced here.
+They are therefore naturally colour-singlet.
+This is consistent with the observed colour neutrality of the
+non-strong gauge sector and of the gravitational interaction.
+Likewise, scalar and Goldstone-type excitations belonging to the
+singlet condensate sector remain colour-neutral by construction.
+
+If the proposed colour module is combined with the weak-sector
+doublet structure discussed elsewhere in ECT, then quark-like and
+lepton-like sectors can be accommodated in a structurally compatible
+way.
+In particular, one may consistently describe excitations that
+transform nontrivially under both the colour and weak sectors, as
+well as excitations that remain colour singlets while still
+transforming under the weak sector.
+This should not be confused with a full derivation of the Standard
+Model matter content: chirality, hypercharge assignments,
+right-handed singlets, and generation structure remain open.
+
+With colour excitations in the fundamental representation~$\mathbf{3}$
+of~$SU(3)$, the product
+$\mathbf{3}\otimes\bar{\mathbf{3}}$ contains a singlet
+(meson-like channel), while the antisymmetric contraction
+$\varepsilon_{abc}\,q^a q^b q^c$ provides a baryon-like singlet
+channel.
+In this sense, both meson-type and baryon-type colour-neutral
+channels are structurally available, although their actual
+bound-state dynamics remains open.
+
+\paragraph{What is not obtained.}
+This completion does not yet derive full QCD\@.
+The matter content details, chirality pattern, coupling
+strength~$g_s$, confinement mechanism, $\theta_{\rm QCD}$~sector,
+$\Lambda_{\rm QCD}$, and the full Standard Model representation
+structure (including hypercharge assignments and right-handed
+singlets) remain open.
+
+\subsubsection*{Updated status under the primary completion}
+
+\begin{longtable}{@{}p{3.2cm}p{3.2cm}p{3.5cm}p{3.1cm}@{}}
+\caption{Status changes under the primary colour completion.}
+\label{tab:colour_status}\\
+\toprule
+Item & Before completion & After completion & Still open \\
+\midrule
+\endfirsthead
+\toprule
+Item & Before completion & After completion & Still open \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Exact colour symmetry
+  & Missing & $SU(3)$ available under completion hypothesis & Dynamical realisation \\
+Strong-sector gauge structure
+  & Missing & Structurally available at symmetry level & Full Yang--Mills closure \\
+Gauge-sector counting
+  & Partial & Symmetry-level counting strengthened & Full dynamics and identification \\
+Colour neutrality of non-strong sectors
+  & Untested & Structurally consistent with the completion & Detailed sector identification \\
+Compatibility with EW sector
+  & Partial & Strengthened & Full matter embedding \\
+Meson/baryon channels
+  & Inaccessible & Singlet channels structurally available & Bound-state dynamics \\
+Strong-sector constants
+  & Inaccessible & Become principled targets & Not derived \\
+$\alpha_s(M_Z)$, $\Lambda_{\rm QCD}$
+  & Undefined (no colour group) & Definable within $SU(3)$ Yang--Mills & Running, matching not derived \\
+Proton/neutron mass ($\sim\!938$\,MeV)
+  & Inaccessible ($\sim\!99\%$ from QCD binding) & Accessible in principle via $SU(3)$ bound states & Binding dynamics open \\
+Confinement, asymptotic freedom
+  & No colour group to confine & Standard $SU(3)$ Yang--Mills properties become available & ECT-native derivation open \\
+$\alpha_{\rm fs}=1/137$ normalisation ($Z_A$)
+  & Quark loop contribution undefined & Quark charges well-defined; $Z_A$ computation strengthened (\S\ref{sec:alpha_fs}) & Full $Z_A$ calculation open \\
+Baryogenesis ($\eta_B$)
+  & Baryon number definition incomplete & Colour defines baryon number; leptogenesis benchmark strengthened & Full transport open \\
+Proton stability ($\tau_p$)
+  & Proton-decay selection rules not yet formulable without colour completion
+  & Three selection-rule patterns (I/II/III) become formulable
+    (\S\ref{sec:proton_stability})
+  & Pattern identification, decay channels, and coefficient structure open \\
+Instanton spectrum $m_n\sim n\times 1.6$\,GeV
+  & Physical interpretation unclear & Comparison with QCD hadron spectrum becomes meaningful & Dynamics not derived \\
+Colour-sensitive laws/formulas
+  & Blocked & Obstruction removed & Individual derivations open \\
+\end{longtable}
+
+\subsubsection*{Updated open questions under the primary completion}
+
+The primary completion improves consistency but does not end the
+programme.
+Its open questions are now sharper: why the internal module has rank
+three; why a distinguished antisymmetric trilinear form exists on the
+module; whether the non-Abelian connection acquires full Yang--Mills
+kinetics from ECT-native mechanisms; how quark representations and
+chirality arise; how hypercharge assignments and right-handed singlet
+structure emerge; whether confinement can be derived internally
+rather than imported from standard QCD intuition; whether
+strong-sector constants such as~$g_s$ and~$\Lambda_{\rm QCD}$ can be
+constrained or derived; and what baryon-number selection rules are
+realised in the completed low-energy theory, which controls proton
+stability~(\S\ref{sec:proton_stability}).
+A deeper completion might eventually relate the number of colours to
+matter-representation content, but no such relation is derived here.
+
+\subsubsection*{Alternative deeper geometric candidate: internal
+$G_2$~structure}
+
+\paragraph{Physical interpretation.}
+A deeper geometric possibility is that the medium carries, in
+addition to the ordered branch, an internal seven-dimensional real
+fibre~$\mathcal{I}_x$ endowed with a metric and an antisymmetric
+composition law of octonionic type.
+Physically, this means that the medium possesses not merely internal
+degrees of local structure, but a specific non-associative geometry
+of how those internal channels combine locally.
+The group preserving this internal composition structure is~$G_2$.
+
+\paragraph{Strict derivation of $SU(3)$.}
+If such an internal $G_2$~structure exists, choosing a unit internal
+direction $u\in\mathcal{I}_x$ reduces the automorphism group to its
+stabilizer:
+\begin{equation}
+  \mathrm{Stab}_{G_2}(u)=SU(3).
+  \label{eq:G2_stab}
+\end{equation}
+On the orthogonal six-dimensional subspace~$u^\perp$, the internal
+cross-product defines an almost-complex structure:
+\begin{equation}
+  J_u(v) = u\times v,\qquad J_u^2=-1,
+  \label{eq:G2_J}
+\end{equation}
+so that $u^\perp\simeq\mathbb{C}^3$.
+The colour triplet then appears not as a postulated rank-3 module but
+as the complex three-space orthogonal to a distinguished internal
+calibration direction.
+
+\paragraph{Relationship to the primary completion.}
+The $G_2$~route is not merely an alternative to the primary
+completion.
+It can be viewed as a possible deeper origin of it: the
+$SU(3)$-structure required by the primary completion arises naturally
+on~$u^\perp$.
+The $G_2$-compatible cross-product defines the complex
+structure~$J_u$, while the induced Hermitian form and complex volume
+form provide the $SU(3)$-structure whose components appear
+as~$\varepsilon_{abc}$ in an adapted complex basis.
+In this sense, the $G_2$~completion implies the primary completion,
+but not conversely.
+The two candidates are nested, not parallel.
+
+\paragraph{Why the $G_2$~route is not adopted as the primary
+completion.}
+This route requires an exceptional internal geometry---a
+seven-dimensional real fibre with octonionic composition law---that
+is not otherwise forced by the current ECT postulates.
+It is physically less transparent and more speculative than the
+rank-3 module completion.
+The $SU(3)$-structured rank-3 module completion is therefore adopted
+as the primary working hypothesis, while the $G_2$~route is recorded
+as a deeper candidate origin that may become preferable if future
+work uncovers independent evidence for an internal octonionic
+structure of the medium.
+
+
+
+
+% ============================================================
+\subsection{Proton stability and baryon number as a UV discriminant}
+\label{sec:proton_stability}
+% ============================================================
+
+\textit{Status: Level~C\@.  This subsection is conditional on the
+unresolved gauge/flavour completion.}
+
+\medskip
+Proton stability is not part of the already established strict core
+of ECT\@; it is a discriminant of how the presently open
+gauge/flavour completion closes.
+The proton lifetime answers a structural question: what low-energy
+baryon-number selection rules are realised in the completed theory.
+The detailed selection rules depend on the completed gauge/flavour
+structure, an essential unresolved part of which is the colour
+sector~(\S\ref{sec:colour_completion}).
+Proton stability is therefore a conditional discussion-level result.
+
+\subsubsection*{Three selection-rule patterns}
+
+The completed theory may realise several distinct baryon-number
+selection-rule patterns.
+
+\paragraph{Pattern~I: full low-energy protection.}
+The completed gauge/flavour sector enforces a selection rule
+forbidding low-energy baryon-violating operators relevant for proton
+decay and for the leading $\Delta B=2$ processes.
+In this case no low-energy proton-decay channel is generated within
+the completed effective theory.
+In a gravitationally complete setting such protection is more
+naturally realised through a gauged or discrete remnant than through
+an exact continuous global~$U(1)_B$, in line with general
+quantum-gravity arguments suggesting the absence of exact continuous
+global symmetries~\cite{BanksSeiberg2011,HarlowOoguri2021}.
+
+\paragraph{Pattern~II: partial protection.}
+$\Delta B=1$ operators are forbidden, but $\Delta B=2$ transitions
+remain allowed.
+Proton decay is absent---not because baryon number is exactly
+conserved, but because the completed low-energy selection rules
+forbid precisely the $\Delta B=1$ channel.
+More generally, the completed theory may preserve or violate
+different combinations such as $B$, $L$, and $B-L$, which determine
+the allowed operator classes.
+In this pattern the relevant observational tests are
+$n$--$\bar n$ oscillations and dinucleon decay rather than proton
+decay.
+
+\paragraph{Pattern~III: generic violation.}
+If the completed field content below $\Lambda_B$ is
+Standard-Model-like, no lighter baryon-violating mediators are
+present, and the leading local $\Delta B=1$ operators are the usual
+gauge-invariant dimension-six operators built from SM fields, then
+\begin{equation}
+  \label{eq:proton_dim6}
+  \mathcal{O}_B
+  \;\sim\;
+  \frac{C_B}{\Lambda_B^2}\,qqql.
+\end{equation}
+This is the natural leading EFT benchmark only under the specific
+hypothesis that the spectrum below $\Lambda_B$ is
+Standard-Model-like and that no lighter baryon-violating states
+alter the operator hierarchy.
+For the natural ECT ultraviolet scale
+$\Lambda_B\sim\phi_0\sim\bar M_{\rm Pl}$
+(in the present benchmark coinciding in order of magnitude with the
+UV threshold of the ordered branch) the proton lifetime is
+\begin{equation}
+  \label{eq:proton_tau}
+  \tau_p
+  \;\sim\;
+  \frac{\Lambda_B^4}{|C_B|^2\,m_p^5}
+  \;\sim\;
+  10^{41}\text{--}10^{42}\;\text{yr}
+  \qquad(C_B=\mathcal{O}(1)).
+\end{equation}
+The structural ECT result is the three-pattern classification above.
+The numerical lifetime $10^{41}$--$10^{42}\,$yr is the generic
+EFT benchmark of Pattern~III, not an ECT-native derived decay
+amplitude.
+
+\subsubsection*{Connection to baryogenesis}
+
+ECT already contains structural routes by which baryon number need
+not be exact: topological baryogenesis bias
+(\S\ref{sec:baryogenesis}), and electroweak sphaleron-like
+high-temperature $\Delta(B{+}L)$ violation in the emergent $SU(2)$
+sector---although the latter does not by itself generate observable
+$\Delta B=1$ nucleon decay at~$T=0$.
+These routes eliminate the automatic guarantee of proton stability
+but do not by themselves determine the completed low-energy
+baryon-number selection rules relevant for proton decay.
+
+Whether the same topological or sphaleron sector induces a local
+$\Delta B=1$ nucleon-decay operator at zero temperature remains
+open.
+If it does, the present-day decay rate is controlled by a
+zero-temperature Euclidean action (instanton/bounce-type suppression)
+or by the induced effective operator, \emph{not} by thermal
+Boltzmann suppression.
+
+\subsubsection*{Experimental context and comparison}
+
+The current Super-Kamiokande limit is
+$\tau_p(p\to e^+\pi^0)>2.4\times10^{34}\,$yr~\cite{SuperK2020};
+the expected sensitivity of
+Hyper-Kamiokande~\cite{HyperK2018} is of order $10^{35}\,$yr.
+
+Unlike conventional GUT models, ECT does not contain an intermediate
+unification scale $\Lambda_{\rm GUT}\sim10^{16}\,$GeV\@.
+In Pattern~III this pushes proton decay far beyond current and
+foreseeable sensitivity.
+In Patterns~I and~II the proton is stable.
+
+Observation of $\Delta B=1$ proton decay in the
+$10^{34}$--$10^{36}\,$yr window would exclude the proton-stable
+branches (Patterns~I and~II) and strongly disfavour Pattern~III with
+generic $C_B=\mathcal{O}(1)$.
+Nucleon-decay searches thereby directly probe the ultraviolet status
+of baryon number in ECT\@.
+
+The specific branching pattern ($p\to e^+\pi^0$,
+$p\to\bar\nu K^+$, etc.) is not fixed at the present stage, because
+it depends on the detailed UV realisation of the gauge/flavour
+sectors.
+
+\paragraph{Status summary.}
+This entire subsection is Level~C in the sense of
+Table~\ref{tab:ect-levels}: it depends on the unresolved
+gauge/flavour completion---especially the colour realisation---and on
+baryon-number selection rules not yet derived from first principles.
+
+\medskip\noindent
+\textbf{Open problem (OP-proton).}
+Derivation of baryon-number selection rules from the completed
+gauge/flavour sector;
+identification of which pattern (I/II/III) is realised;
+if Pattern~III, identification of decay channels and coefficient
+structure.
+
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
@@ -35275,7 +36496,9 @@ the full operational Bell programme beyond the present
 toy visibility threshold;
 the constructive strong-field shell/interface mechanism needed for
 an explicit Page-curve computation~(OP-Q13);
-the colour group $SU(3)$ and the electroweak scale $v_2$;
+the colour group $SU(3)$ and the electroweak scale $v_2$
+(a minimal colour completion is proposed in
+\S\ref{sec:colour_completion});
 the Yukawa hierarchy, three fermion generations, and
 $\alpha_{\rm fs}=1/137$
 (structural routes identified---overlap/tunnelling suppression,
@@ -35304,6 +36527,33 @@ Level~B or programme-level.
 Even so, the number of independent benchmark inputs is drastically
 compressed relative to the combined Standard Model + $\Lambda$CDM input
 set (see \S\ref{sec:parameter_compression}).
+
+
+\paragraph{Proton stability as a UV discriminant.}
+The completed gauge/flavour sector of ECT may realise one of three
+baryon-number selection-rule patterns
+(Section~\ref{sec:proton_stability}):
+full low-energy protection (no low-energy proton-decay channel
+generated, with leading $\Delta B=2$ processes also forbidden);
+partial protection ($\Delta B=1$ forbidden, $\Delta B=2$ allowed,
+proton stable but $n$--$\bar n$ oscillations and dinucleon decay
+possible);
+or generic Planck-suppressed $\Delta B=1$ violation
+($\tau_p\sim10^{41}$--$10^{42}\,$yr for $C_B=\mathcal{O}(1)$,
+an EFT benchmark rather than an ECT-native derived amplitude).
+All three patterns are consistent with the current
+Super-Kamiokande limit
+$\tau_p>2.4\times10^{34}\,$yr~\cite{SuperK2020}.
+Observation of $\Delta B=1$ proton decay in the
+$10^{34}$--$10^{36}\,$yr window would exclude the proton-stable
+branches (Patterns~I and~II) and strongly disfavour the generic
+dimension-six Planck-suppressed branch.
+The structural ECT result is the three-pattern classification
+itself; future derivation of the gauge/flavour baryon-number
+selection rules should decide which pattern is realised.
+Status: Level~C, because the result depends on the unresolved
+gauge/flavour completion and on selection rules not yet derived
+from first principles.
 
 \subsection*{Final outlook}
 
@@ -36078,7 +37328,11 @@ Z(\chi) \sim N_G\,u_0^4
 \int\frac{d^4k}{(2\pi)^4}\;\frac{k_w^4}
 {\bigl[\beta k_\perp^2 + \chi k_w^2\bigr]^3}\,,
 \end{equation}
-where $N_G = 3$ is the number of Goldstone modes.
+where $N_G = 3$ is the naive Goldstone-coordinate multiplicity
+entering the provisional loop counting (this should not be confused
+with the number of physically independent propagating soft asymptotic
+modes in the scalar-only integrable basis;
+see Section~\ref{sec:goldstone_integrability_main}).
 
 \emph{Anisotropic rescaling.}
 Set $k_w = \sqrt{\beta/\chi}\,p_w$, $k_\perp = p_\perp$.
@@ -42355,9 +43609,12 @@ bare~P3.
 \subsection{Generic subsystem--bath coupling class}
 \label{app:M1_coupling}
 
-In the broken phase the condensate supports $N_G=3$ gapless
-Goldstone-like orientation modes with linear dispersion
-$\omega_k=c_*|\mathbf{k}|$.
+In the broken phase the condensate supports $N_G=3$ naive
+Goldstone-coordinate orientation directions with linear dispersion
+$\omega_k=c_*|\mathbf{k}|$ at the free quadratic level
+(see Section~\ref{sec:goldstone_integrability_main} for the
+distinction between naive coordinate count and physically
+independent propagating soft content).
 For a localised subsystem with generalised coordinate~$q$, the
 coupling to these modes takes the generic form
 \begin{equation}
