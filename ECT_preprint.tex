@@ -21339,58 +21339,60 @@ The no-phantom statement should therefore be read as a discriminant of
 the present macroscopic closure, not as a theorem about every
 conceivable late-time completion of ECT.
 
-\paragraph{Cosmological coincidence problem (Level~B/C).}
+\paragraph{Cosmological coincidence question (open programmatic status).}
 \label{sec:cosmological_coincidence}
-The cosmological coincidence problem asks why we live in a cosmic
-epoch where the matter and dark-energy densities are of comparable
-magnitude, $\Omega_m\approx 0.315$ and
-$\Omega_\Lambda\approx 0.685$, despite $\rho_m\propto a^{-3}$
-redshifting by many orders of magnitude relative to a rigid
-cosmological constant over the history of the universe. Within
-$\Lambda$CDM, where $\rho_\Lambda$ is a fixed external constant,
-this near-equality is an unexplained numerical coincidence with no
-structural origin; the ratio $\rho_m/\rho_\Lambda$ sweeps through
-all values and happens to pass $\mathcal{O}(1)$ precisely at the
-present epoch.
-The present ordered-branch closure reframes this question without
-claiming to numerically solve it. Two structural observations
-follow from the condensate interpretation of dark energy developed
-above:
-\begin{enumerate}[label=(\roman*)]
-  \item In the thawing benchmark~\eqref{eq:w_thaw}, the
-    late-time dark-energy density is supplied by a slow-rolling
-    amplitude sector rather than by a rigid external constant. A
-    dynamical $\Lambda_{\rm eff}(\phi)$ that evolves on the
-    Hubble timescale is intrinsically capable of tracking the
-    dominant fluid over an extended cosmic epoch; this is the
-    structural ingredient that makes the ``why now'' question
-    well-posed in the first place, and it is absent by
-    construction in
-    $\Lambda$CDM~\cite{Zlatev1999}.
-  \item The calibrated ECT benchmark values $f_0\approx 0.26$ and
-    $\kappa\approx 4.3$, identified independently from the
-    no-phantom confrontation with DESI, correspond to the regime
-    $\rho_{\rm kin}/\rho_{\rm cond}\approx 0.26$, in which the
-    kinetic and potential contributions to the condensate energy
-    are naturally of the same order. In this regime the ECT
-    closure does not place the coincidence at an atypical instant
-    of an otherwise monotonically sweeping ratio; rather, the
-    thawing phase occupies a broad low-redshift window in which
-    $\Omega_\phi$ and $\Omega_m$ are of comparable magnitude.
-\end{enumerate}
-This reframing is \emph{organisational, not numerical}. It does
-not derive the present observed value of the ratio from
-first-principles microscopic parameters, and it does not address
-the separate and distinct residual fine-tuning
-$|V(\phi_0)|/\rho_\Lambda^{\rm obs}\sim 10^{120}$ (kept
-explicitly open in~OP-$\Lambda$3 above). What it does provide is
-a structurally well-posed mechanism in which the near-equality
-$\Omega_m\sim\Omega_\Lambda$ is a consequence of the dynamical
-condensate background rather than a numerical coincidence, at
-Level~B/C: the qualitative mechanism is in place, a quantitative
-benchmark is compatible with DESI at the $2\sigma$ level, but the
-full first-principles derivation of the ratio from microscopic
-condensate parameters remains open.
+Some discussions of late-time cosmology raise the so-called
+cosmological coincidence question: why $\Omega_m\approx 0.315$ and
+$\Omega_\Lambda\approx 0.685$ are of comparable order at the present
+epoch, despite $\rho_m\propto a^{-3}$ while a rigid cosmological
+constant does not redshift. The status of this question is debated:
+its force depends on the measure assumed on cosmological histories,
+on the treatment of observer selection, and on priors over cosmological
+parameters, and several authors regard it as a selection artefact of
+the $\Lambda$CDM parametrisation rather than a physically well-posed
+fine-tuning problem~\cite{BianchiRovelli2010}.
+
+In the present ordered-branch closure, dark energy is supplied by the
+slow-rolling amplitude sector of the same ordered condensate that
+generates Newton's constant, the causal speed $c_*$, and the reduced
+action scale $\hbar$, rather than by a rigid external constant added
+by hand. It is therefore natural to ask whether the present ECT
+thawing benchmark provides a materially different picture of the
+matter-to-dark-energy ratio
+\begin{equation}
+  r(z)\equiv \frac{\rho_m(z)}{\rho_\phi(z)}
+  = \frac{\Omega_{m0}}{\Omega_{\phi 0}}(1+z)^3
+    \exp\!\left[-2f_0\int_0^z \frac{e^{-\kappa z'}}{1+z'}\,dz'\right],
+  \label{eq:r_ratio_thaw}
+\end{equation}
+computed from the continuity equation
+$\dot\rho_\phi+3H(1+w)\rho_\phi=0$ with the calibrated thawing
+equation of state~\eqref{eq:w_thaw}. Numerical evaluation with the
+DESI-calibrated benchmark $(f_0,\kappa)\approx(0.26,4.3)$ yields
+$\rho_\phi(z=1)/\rho_{\phi 0}\approx 1.11$ and
+$\rho_\phi(z\!\to\!\infty)/\rho_{\phi 0}\approx 1.11$: in this
+benchmark the condensate dark-energy density varies by only
+${\approx}11\%$ across the entire observable redshift range. The
+order-unity window $r(z)\in[1/3,3]$ occupies $z\in[0,0.93]$ in
+the present ECT thawing closure versus $z\in[0,0.87]$ in pure
+$\Lambda$CDM~---~a widening of about $7\%$.
+
+We therefore do not regard the coincidence question as being
+materially softened by the present ECT benchmark, and we do not list
+coincidence alleviation among current ECT results. What can be stated
+honestly is narrower: ECT replaces a rigid external $\Lambda$ with a
+dynamical condensate amplitude tied to the same framework that
+generates $G_N$, $c_*$, and $\hbar$, so the question of the
+matter-to-dark-energy ratio is at least structurally well-posed
+rather than built in by hand. A first-principles derivation of
+$(\Omega_{m0},\Omega_{\phi 0})$, and any genuinely dynamical
+improvement over $\Lambda$CDM in the $r(z)$ window, remain open
+programmatic questions; they should not be confused with the
+separate residual fine-tuning
+$|V(\phi_0)|/\rho_\Lambda^{\rm obs}\sim 10^{120}$ kept open
+in~OP-$\Lambda$3 above, nor with the tracker/attractor question of
+initial-condition independence, which is not addressed by the current
+thawing benchmark.
 
 \paragraph{Falsifier for the dynamic-dark-energy programme.}
 The dynamic-dark-energy programme of ECT would fail if a completed
@@ -22352,16 +22354,14 @@ cleaner situation than the top-Yukawa-driven metastability of the
 Standard-Model electroweak
 vacuum~\cite{Degrassi2012,Buttazzo2013} (full one-loop and
 embedded-sector analysis open;
-\S\ref{sec:radial_mode}); and if dark energy is dynamical
-($w_0\neq -1$), the near-equality $\Omega_m\sim\Omega_\Lambda$ at
-the present epoch is reframed as a structural consequence of the
-slow-rolling condensate amplitude rather than a numerical
-coincidence of $\Lambda$CDM, with the ECT thawing benchmark
-$(f_0,\kappa)\approx(0.26,4.3)$ sitting in the regime where
-$\rho_{\rm kin}/\rho_{\rm cond}$ is $\mathcal{O}(1)$
-(\S\ref{sec:cosmological_coincidence}); the organisational
-reframing does not address the separate residual
-$10^{-120}$~fine-tuning~(OP-$\Lambda$3).
+\S\ref{sec:radial_mode}); and the matter-to-dark-energy ratio
+$r(z)=\rho_m/\rho_\phi$ in the calibrated ECT thawing benchmark
+$(f_0,\kappa)\approx(0.26,4.3)$ is only marginally wider than in pure
+$\Lambda$CDM (${\approx}7\%$ widening of the order-unity window),
+so the so-called cosmological coincidence question is kept as an open
+programmatic issue rather than as a current ECT result
+(\S\ref{sec:cosmological_coincidence}), and does not address the
+separate residual $10^{-120}$ fine-tuning~(OP-$\Lambda$3).
 
 
 %%% -----------------------------------------------------------
