@@ -26638,6 +26638,100 @@ bosonic/fermionic split without changing its mathematical status:
 the $\mathbb{Z}_2$ exchange dichotomy remains a topological statement,
 while P5 clarifies what is being exchanged physically.
 
+\paragraph{Smooth-branch exactness of fermionic exclusion
+(provisional no-go statement, Level~B).}
+\label{par:smooth_pauli_exactness}
+A natural question is whether the derived (rather than postulated)
+character of fermionic exclusion in ECT allows room for small
+violations of the Pauli principle in the presence of a
+spatially varying ordered condensate, such as inside strong
+gravitational fields or in dense astrophysical regimes. The answer
+obtained in the present framework is essentially the opposite of
+what a naive gradient estimate might suggest: smooth local
+inhomogeneity of the ordered condensate does not by itself
+furnish a mechanism for violating fermionic exclusion on the
+coherent ordered branch.
+
+For a local first-order fermionic EFT with nondegenerate kinetic
+coefficient $Z(\phi,n)$ and smooth background fields, a general
+condensate-dependent kinetic term of the form $i\,e\,Z(\phi,n)\,
+\psi^\dagger\partial_t\psi+\cdots$ can be brought to canonical
+form by the local field redefinition
+\begin{equation}
+  \chi_\alpha(x)\;\equiv\;[e(x)Z(\phi(x),n(x))]^{1/2}\,
+    \psi_\alpha(x),
+  \label{eq:psi_to_chi_normalisation}
+\end{equation}
+after which the equal-time anticommutator takes the standard
+canonical form
+\begin{equation}
+  \{\chi_\alpha(t,\mathbf{x}),\chi_\beta^\dagger(t,\mathbf{y})\}
+  = \delta_{\alpha\beta}\,\delta^{(3)}(\mathbf{x}-\mathbf{y}),
+  \label{eq:chi_CAR}
+\end{equation}
+and local interaction terms (including condensate-dependent mass
+$M(\phi,n)\bar\psi\psi$, the ECT preferred-direction coupling
+$\mu_5(\phi,n)\bar\psi\gamma^A n_A\psi$, and local
+four-fermion operators $C_k(\phi,n)\mathcal{O}_k^{(4f)}$) modify
+the dynamics of fermionic modes without altering the underlying
+exclusion algebra. A full technical exposition of the canonical
+normalisation procedure, the cancellation of linear-order
+background corrections, and the residual curvature-controlled
+scale at the packet level is given in
+Appendix~\ref{app:pauli_exactness}.
+
+\textit{Provisional no-go statement.}
+Consequently, if the eventual fermionic reconstruction closes to
+the standard local Grassmann/canonical anticommutation relation
+(CAR) structure, the Pauli exclusion principle remains exact
+throughout the smooth coherent ordered branch. Any genuine
+departure from standard fermionic statistics, if present at all
+in ECT, must therefore arise from one of the three following
+sources rather than from smooth local condensate gradients alone:
+\begin{enumerate}[label=(\roman*)]
+  \item \emph{Nonlocal branch mixing} --- sector couplings that
+    cannot be cast in the form of a local first-order fermionic
+    EFT on the coherent branch.
+  \item \emph{Topological or defect sectors of the ordered
+    condensate} beyond the ordinary coherent branch (e.g.\ 
+    condensate-defect backgrounds with nontrivial $\pi_k$
+    content; cf.\ the topological-sector catalogue in
+    Section~\ref{sec:particle_structure}).
+  \item \emph{Branch-transition / coherence-loss regions}, where
+    the ordered-branch description itself fails and the
+    fermionic reconstruction programme ceases to close.
+\end{enumerate}
+The present statement is formulated at the level of a
+provisional no-go structural observation, not a full theorem; its
+completion requires the fermionic reconstruction programme
+(OP-Q11) and is listed as a distinct target in~OP-Q21.
+
+\textit{Equivalence-principle aside.}
+A related way to see why ordinary strong gravity is not a viable
+Pauli-violation mechanism is that uniform acceleration can be
+locally removed by passing to a freely falling frame; the
+physically unremovable parameter is therefore the tidal tensor
+$\mathcal{E}_{ij}\sim\partial_i\partial_j\Phi_N
+\sim GM/R^3$, not the acceleration itself. Any residual
+dimensionless packet-level mismatch on a smooth background is
+accordingly controlled by combinations of the form
+$(\mathcal{E}\,L^2/c_*^2)^2$ with $L$ the packet overlap scale,
+which is already extremely small even in neutron-star cores and
+does not represent a violation of the exclusion algebra
+(see Appendix~\ref{app:pauli_exactness} for the explicit
+comparison with laboratory and astrophysical bounds).
+
+\textit{What this implies for astrophysical fermionic matter.}
+In particular, the present no-go statement removes ordinary
+strong-gravity neutron-star interiors from the list of
+plausible ECT-specific Pauli-violation windows: inside white
+dwarfs, neutron stars, and even stellar-mass black hole horizons,
+the exclusion algebra is preserved provided the fermionic EFT
+remains local and the kinetic coefficient is nondegenerate. Any
+ECT signature of nonstandard fermionic statistics should
+therefore be sought not in ordinary compact-object interiors, but
+in the three exceptional settings enumerated above.
+
 \subsubsection*{What is and is not claimed}
 
 The present subsection therefore establishes the topological and
@@ -34180,6 +34274,18 @@ quantum-gravity claims remains programme-level.
     correlators, including the CHSH-type correlation algebra and the
     Tsirelson bound, from condensate
     dynamics~(Section~\ref{sec:qs_entanglement}).
+  \item[OP-Q21] Smooth-branch exactness of the Pauli exclusion
+    principle and its admissible departures. Determine whether the
+    completed fermionic reconstruction of ECT enforces exact
+    canonical anticommutation relations throughout the smooth
+    coherent ordered branch, as provisionally indicated by the
+    canonical-normalisation no-go argument of
+    Section~\ref{sec:qs_statistics} and
+    Appendix~\ref{app:pauli_exactness}. If genuine departures from
+    standard fermionic statistics exist in ECT, identify the
+    precise nonlocal, topological-defect, or branch-transition
+    mechanism responsible, rather than attributing them to smooth
+    local condensate gradients.
 
   \medskip
   \textbf{PES-specific open targets}
@@ -43952,6 +44058,354 @@ It is conceptually aligned with the coherent branch:
 thermality need not signal fundamental microscopic randomness, but can
 arise from reduced access to an ordered underlying medium.
 This is a Level~B interpretive closure~(Section~\ref{sec:qs_vacuum_unified}).
+
+% ============================================================
+\section{Smooth-branch exactness of fermionic exclusion:
+canonical normalisation, curvature control, and numerical bounds}
+\label{app:pauli_exactness}
+% ============================================================
+
+\textit{Status: Level~B for the canonical-normalisation no-go
+argument within a local first-order fermionic EFT with smooth
+background fields. Level~B/open for the residual
+curvature-controlled packet-level mismatch estimate. Open (OP-Q21)
+for the full theorem, contingent on the completion of the
+fermionic reconstruction programme (OP-Q11). Connections:
+\S\ref{sec:qs_statistics} (exchange sectors and spinor
+compatibility), \S\ref{sec:qs_dirac} (representation-theoretic
+route to Dirac structure), \S\ref{sec:fifth_coupling} (ECT
+fermion--condensate coupling $\mu_5$).}
+
+\medskip
+This appendix collects the technical material underlying the
+provisional no-go statement of
+Section~\ref{sec:qs_statistics}:
+smooth local inhomogeneity of the ordered condensate does not
+provide a mechanism for violating fermionic exclusion on the
+coherent ordered branch. It proceeds in four steps. First, we
+write the most general local first-order fermionic EFT compatible
+with the present ECT framework
+(\S\ref{app:pauli:eft}). Second, we show that a condensate-dependent
+kinetic coefficient is absorbed into a local canonical
+normalisation, leaving the equal-time anticommutator in standard
+form (\S\ref{app:pauli:normalisation}). Third, we argue that even
+coarse-grained packet-level mismatch effects, which are not
+themselves violations of the exclusion algebra, scale with the
+tidal curvature of the emergent geometry rather than with
+acceleration
+(\S\ref{app:pauli:curvature}). Fourth, we tabulate the resulting
+numerical bounds across laboratory, stellar, and astrophysical
+regimes and compare them with current experimental bounds on
+Pauli-principle violation
+(\S\ref{app:pauli:numerics}).
+
+\subsection{General local fermionic EFT on the coherent ordered branch}
+\label{app:pauli:eft}
+
+On the smooth coherent ordered branch, the most general local
+first-order fermionic EFT consistent with the presently identified
+ECT structures---derived Dirac dynamics
+(\S\ref{sec:qs_dirac}), medium-ontological identification of
+fermionic excitations with spinor modes of the ordered condensate
+(\S\ref{sec:fermion_statistics}), and the ECT-specific
+preferred-direction coupling
+(\S\ref{sec:fifth_coupling})---can be written schematically as
+\begin{equation}
+\begin{split}
+  S_\psi\;=\;\int d^4x\,e(x)\,\Bigl[
+      &\tfrac{i}{2}\,Z(\phi,n)\,\bar\psi(x)\,\gamma^a\,
+        e_a{}^\mu(x)\!\stackrel{\leftrightarrow}{D}_\mu\!\psi(x) \\
+      &\;-\;M(\phi,n)\,\bar\psi(x)\psi(x) \\
+      &\;+\;\mu_5(\phi,n)\,\bar\psi(x)\gamma^A n_A(x)\psi(x) \\
+      &\;+\;\sum_k C_k(\phi,n)\,\mathcal{O}_k^{(4f)}(x)
+      \;+\;\cdots\Bigr],
+\end{split}
+\label{eq:pauli_app_general_EFT}
+\end{equation}
+where $e(x)=\det e^a{}_\mu(x)$ is the tetrad determinant of the
+emergent Lorentzian metric, $Z(\phi,n)$ is a smooth and strictly
+positive scalar function of the condensate amplitude and orientation,
+$M(\phi,n)$ is an effective mass, $\mu_5\bar\psi\gamma^A n_A\psi$
+is the ECT preferred-direction coupling discussed in
+Section~\ref{sec:fifth_coupling}, and $\mathcal{O}_k^{(4f)}$ are
+local four-fermion composite operators admitted by the symmetries
+of the ordered branch.
+
+The working assumption of this appendix is that the background
+fields are smooth (all spatial and temporal derivatives are finite
+and of order the characteristic condensate scales), the kinetic
+coefficient is nondegenerate ($Z(\phi,n)>Z_{\min}>0$ and
+$e(x)>0$ everywhere in the region of interest), there are no
+higher-time-derivative fermionic kinetic pathologies, and no
+nonlocal sector-mixing kernels coupling the ordered-branch
+fermionic sector to its exterior. These are precisely the
+conditions defining ``smooth coherent ordered branch'' for the
+purposes of the no-go statement.
+
+\subsection{Canonical normalisation and the equal-time anticommutator}
+\label{app:pauli:normalisation}
+
+Extracting the temporal part of the kinetic term
+in~\eqref{eq:pauli_app_general_EFT} yields, up to local rotations
+of the tetrad,
+\begin{equation}
+  \mathcal{L}_{\rm kin}^{(t)}(x)
+  \;\sim\;
+  i\,e(x)\,Z(\phi(x),n(x))\,\psi^\dagger(x)\,\partial_t\psi(x)
+  \;+\;\cdots,
+  \label{eq:pauli_app_temporal_kinetic}
+\end{equation}
+where the ellipsis denotes terms involving spatial derivatives and
+mass/interaction pieces that do not contribute to the equal-time
+canonical momentum. The canonical momentum conjugate to $\psi$ is
+then
+\begin{equation}
+  \Pi_\alpha(x)
+  \;=\;\frac{\partial\mathcal{L}}{\partial(\partial_t\psi_\alpha(x))}
+  \;=\;i\,e(x)\,Z(\phi(x),n(x))\,\psi^\dagger_\alpha(x),
+  \label{eq:pauli_app_canonical_momentum}
+\end{equation}
+and the equal-time canonical anticommutation relation
+\begin{equation}
+  \{\psi_\alpha(t,\mathbf{x}),\Pi_\beta(t,\mathbf{y})\}
+  \;=\;i\,\delta_{\alpha\beta}\,\delta^{(3)}(\mathbf{x}-\mathbf{y}),
+  \label{eq:pauli_app_psi_Pi_CAR}
+\end{equation}
+which in the present normalisation takes the background-weighted
+form
+\begin{equation}
+  \{\psi_\alpha(t,\mathbf{x}),\psi^\dagger_\beta(t,\mathbf{y})\}
+  \;=\;[e(x)Z(\phi(x),n(x))]^{-1}\,\delta_{\alpha\beta}\,
+    \delta^{(3)}(\mathbf{x}-\mathbf{y}).
+  \label{eq:pauli_app_psi_psi_CAR_weighted}
+\end{equation}
+
+Equation~\eqref{eq:pauli_app_psi_psi_CAR_weighted} is the technical
+object that a naive gradient-based argument would interpret as a
+modification of the exclusion algebra in the presence of a
+spatially varying condensate. The correct reading, however, is
+that $\psi$ is simply not the canonically normalised field. The
+local field redefinition
+\begin{equation}
+  \chi_\alpha(x)
+  \;\equiv\;[e(x)Z(\phi(x),n(x))]^{1/2}\,\psi_\alpha(x)
+  \label{eq:pauli_app_chi_definition}
+\end{equation}
+brings the kinetic term to canonical form and yields, at equal
+times,
+\begin{equation}
+  \{\chi_\alpha(t,\mathbf{x}),\chi^\dagger_\beta(t,\mathbf{y})\}
+  \;=\;\delta_{\alpha\beta}\,\delta^{(3)}(\mathbf{x}-\mathbf{y}),
+  \label{eq:pauli_app_chi_CAR}
+\end{equation}
+which is the standard canonical anticommutation relation in its
+unmodified form. Creation operators built from $\chi$ then
+satisfy $(\hat a_i^\dagger)^2=0$ mode by mode, and two-fermion
+states constructed from them are exactly antisymmetric.
+
+Three comments are in order.
+
+\paragraph{(i) Condensate-dependent mass and preferred-direction
+coupling do not alter the exclusion algebra.}
+The condensate-dependent mass term $M(\phi,n)\bar\psi\psi$ and
+the ECT preferred-direction coupling
+$\mu_5(\phi,n)\bar\psi\gamma^A n_A\psi$ do not contribute to the
+temporal kinetic term~\eqref{eq:pauli_app_temporal_kinetic} and
+hence do not modify the canonical momentum or the equal-time
+anticommutator. They modify the Dirac operator and the local mode
+functions, shifting energies, effective masses, and transport
+coefficients, but they do not act on the exclusion algebra
+itself.
+
+\paragraph{(ii) Local four-fermion operators modify dynamics, not
+statistics.}
+Local four-fermion operators
+$C_k(\phi,n)\mathcal{O}_k^{(4f)}$ are also absent from the
+temporal kinetic term at leading order in the first-order
+formulation, and therefore do not modify the canonical momentum
+conjugate to $\psi$. They can shift spectra, drive pairing or
+condensation phenomena, and modify effective equations of state,
+but on the operator-algebra level the fermionic exclusion
+structure is fixed by the kinetic term through the canonical
+anticommutation relation
+(\eqref{eq:pauli_app_chi_CAR}), not by the interaction sector.
+This is a standard feature of canonical fermionic field theory.
+
+\paragraph{(iii) Linear gradient contributions cancel for
+symmetric packets.}
+A naive gradient-based argument would proceed by expanding the
+background around a point $\mathbf{x}_0$ and retaining the linear
+term $\partial_i\ln[e(x)Z(x)]$. For a symmetrically localised
+one-particle wave packet, however, the linear expansion
+contributes with vanishing first moment,
+$\langle y^i\rangle\equiv\langle(x-x_0)^i\rangle=0$, and the
+leading physical correction begins only at second order in the
+background inhomogeneity. Furthermore, even this second-order
+correction is a packet-level mismatch of mode overlap integrals,
+not a violation of the equal-time
+anticommutator~\eqref{eq:pauli_app_chi_CAR}.
+
+These three observations close the canonical-normalisation
+argument at the level of the present local first-order EFT.
+
+\subsection{Curvature control, not acceleration control}
+\label{app:pauli:curvature}
+
+Even granting that no genuine modification of the exclusion
+algebra is produced by smooth local inhomogeneity, one may still
+ask whether a residual, purely coarse-grained packet-level
+mismatch can be tied to astrophysical observables. The key
+physical point is that a naive dimensional estimate based on
+local acceleration $g$ overstates the size of such an effect.
+
+In a local inertial frame, a uniform acceleration field can be
+removed entirely by a coordinate transformation; the physically
+irreducible parameter characterising deviations from free fall is
+the \emph{tidal tensor}
+\begin{equation}
+  \mathcal{E}_{ij}(x)
+  \;\sim\;\partial_i\partial_j\Phi_N(x)
+  \;\sim\;\frac{G M}{R^3}
+  \qquad\text{(dimensional estimate)},
+  \label{eq:pauli_app_tidal_tensor}
+\end{equation}
+i.e.\ the gradient of the gravitational acceleration, not the
+acceleration itself. Any coordinate-invariant packet-level
+mismatch on a smooth coherent-branch background should therefore
+be controlled by combinations of the form
+\begin{equation}
+  \varepsilon_{\rm packet}
+  \;\sim\;\left(\frac{\mathcal{E}\,L^2}{c_*^2}\right)^{\!2},
+  \label{eq:pauli_app_eps_packet}
+\end{equation}
+where $L$ is the spatial overlap scale of the two fermionic
+wave packets under comparison, and $\mathcal{E}$ is the
+characteristic tidal curvature scale of the
+background~\eqref{eq:pauli_app_tidal_tensor}.
+
+The scale~\eqref{eq:pauli_app_eps_packet} is a coarse-grained
+packet-level mismatch estimate, not a prediction of a physical
+Pauli violation. It does not represent a modification of the
+equal-time anticommutator~\eqref{eq:pauli_app_chi_CAR}, nor of
+the antisymmetry of many-fermion states in the canonical
+normalisation. Its purpose is solely to quantify how small a
+residual coarse-graining artefact can be, given the
+canonical-normalisation theorem above.
+
+\subsection{Numerical comparison with current bounds}
+\label{app:pauli:numerics}
+
+Table~\ref{tab:pauli_numerics} collects the characteristic
+values of the tidal curvature scale~\eqref{eq:pauli_app_tidal_tensor}
+and the resulting packet-level mismatch
+estimate~\eqref{eq:pauli_app_eps_packet} across a range of
+regimes of interest, from laboratory conditions relevant to the
+VIP-2 experiment to the interiors of neutron stars and stellar
+black-hole horizons. Characteristic overlap scales $L$ are taken
+to correspond to atomic ($\sim 5\times 10^{-11}$~m), electronic
+($\sim 10^{-12}$~m), and nuclear ($\sim 10^{-15}$~m) length
+scales, as appropriate to the regime.
+
+\begin{table}[h]
+\centering\small
+\renewcommand{\arraystretch}{1.3}
+\caption{Packet-level mismatch estimates
+from~\eqref{eq:pauli_app_eps_packet} across laboratory,
+stellar, and astrophysical regimes of interest. All numbers are
+order-of-magnitude estimates; $\mathcal{E}\sim GM/R^3$ is the
+characteristic tidal curvature scale and $L$ is the assumed
+fermionic overlap scale. Current experimental bounds on
+Pauli-principle violation are listed for comparison. None of the
+estimates below represents a genuine Pauli-violation prediction:
+they are upper bounds on residual packet-level mismatch within
+the smooth coherent branch, as discussed in the text.}
+\label{tab:pauli_numerics}
+\begin{tabular}{p{4.3cm}p{2.3cm}p{2.3cm}p{2.7cm}}
+\hline\hline
+Regime & $\mathcal{E}$ (s$^{-2}$) & $L$ (m) &
+  $\varepsilon_{\rm packet}$ \\
+\hline
+Earth laboratory, atomic scale &
+  $\sim 1.5\times 10^{-6}$ & $\sim 5\times 10^{-11}$ &
+  $\sim 2\times 10^{-87}$ \\
+White dwarf surface, atomic scale &
+  $\sim 4\times 10^{-4}$ & $\sim 5\times 10^{-11}$ &
+  $\sim 10^{-78}$ \\
+Neutron star core, tight electronic &
+  $\sim 10^{8}$ & $\sim 10^{-12}$ &
+  $\sim 10^{-66}$ \\
+Neutron star core, atomic-scale overlap &
+  $\sim 10^{8}$ & $\sim 5\times 10^{-11}$ &
+  $\sim 10^{-59}$ \\
+Neutron star core, nucleon scale &
+  $\sim 10^{8}$ & $\sim 10^{-15}$ &
+  $\sim 10^{-78}$ \\
+Stellar black hole horizon, nucleon scale &
+  $\sim 10^{9}$ & $\sim 10^{-15}$ &
+  $\sim 10^{-76}$ \\
+\hline
+\multicolumn{4}{l}{\textit{Current experimental bounds on Pauli
+  violation (for reference):}} \\
+VIP-2 (electrons, atomic)  &
+  \multicolumn{3}{l}{$\beta^2/2 < 3.4\times 10^{-42}$} \\
+Borexino (nucleons)  &
+  \multicolumn{3}{l}{$\beta^2/2 \lesssim 10^{-60}$} \\
+Ramberg--Snow (electrons)  &
+  \multicolumn{3}{l}{$\beta^2/2 \lesssim 10^{-26}$} \\
+\hline\hline
+\end{tabular}
+\end{table}
+
+Two features of Table~\ref{tab:pauli_numerics} are worth
+emphasising.
+
+First, even the most optimistic astrophysical entries
+(neutron-star cores with electronic overlap scales) lie many
+orders of magnitude below the current VIP-2 bound on electronic
+Pauli violation, and the nucleon-scale entries lie many orders
+below the Borexino bound. The scale
+$\varepsilon_{\rm packet}$ therefore does not approach any current
+experimental threshold in any of the regimes considered.
+
+Second, and more importantly, this numerical suppression is not
+the primary content of the no-go statement. Even if
+$\varepsilon_{\rm packet}$ were numerically larger, it would still
+not represent a violation of the exclusion algebra: it is a
+coarse-grained mode-overlap artefact at the packet level, not a
+deformation of the equal-time canonical anticommutator
+(\eqref{eq:pauli_app_chi_CAR}). The principal conclusion of this
+appendix is therefore the canonical-normalisation argument of
+\S\ref{app:pauli:normalisation}, not the numerical tabulation
+of~\S\ref{app:pauli:numerics}: ordinary strong-gravity neutron
+star interiors do not provide a viable ECT-specific window for
+Pauli violation, and any ECT signature of nonstandard fermionic
+statistics must be sought in the three exceptional settings
+identified in Section~\ref{sec:qs_statistics}---nonlocal branch
+mixing, topological-defect sectors, or regions where the
+coherent ordered branch description itself fails.
+
+\subsection*{Relation to the existing fermionic programme}
+
+The no-go statement developed here complements the existing
+fermionic programme of the main text in three ways. First, it
+extends the Level~A exchange-topology result of
+Section~\ref{sec:qs_statistics} by adding a conditional Level~B
+exactness property for the derived Pauli principle on smooth
+coherent-branch backgrounds. Second, it is consistent with, and
+strengthened by, the representation-theoretic route to Dirac
+structure of Section~\ref{sec:qs_dirac}, which identifies the
+canonically normalised spinorial excitations on which the
+present canonical-normalisation argument operates. Third, it
+makes explicit the connection between the ECT preferred-direction
+coupling $\mu_5\bar\psi\gamma^A n_A\psi$ of
+Section~\ref{sec:fifth_coupling} and the statistics sector:
+$\mu_5$ contributes to dynamics, not to the exclusion algebra.
+The full theorem---unconditional exactness of Pauli exclusion
+throughout the coherent branch, or an explicit identification
+of the nonlocal, topological-defect, or branch-transition
+mechanism responsible for any departures---remains a distinct
+target (OP-Q21) contingent on the completion of the fermionic
+reconstruction programme (OP-Q11).
 
 % ============================================================
 \section{Bath regimes, effective spectral structure, and the limits
