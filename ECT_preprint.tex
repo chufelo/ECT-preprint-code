@@ -26641,24 +26641,26 @@ while P5 clarifies what is being exchanged physically.
 \paragraph{Smooth-branch exactness of fermionic exclusion
 (provisional no-go statement, Level~B).}
 \label{par:smooth_pauli_exactness}
-A natural question is whether the derived (rather than postulated)
-character of fermionic exclusion in ECT allows room for small
-violations of the Pauli principle in the presence of a
-spatially varying ordered condensate, such as inside strong
-gravitational fields or in dense astrophysical regimes. The answer
+A natural question is whether the structurally derived
+(exchange-topological and representation-theoretic, rather than
+axiomatically postulated) route to fermionic exclusion in ECT
+allows room for small violations of the Pauli principle in the
+presence of a spatially varying ordered condensate, such as inside
+strong gravitational fields or in dense astrophysical regimes. The answer
 obtained in the present framework is essentially the opposite of
 what a naive gradient estimate might suggest: smooth local
 inhomogeneity of the ordered condensate does not by itself
 furnish a mechanism for violating fermionic exclusion on the
 coherent ordered branch.
 
-For a local first-order fermionic EFT with nondegenerate kinetic
-coefficient $Z(\phi,n)$ and smooth background fields, a general
-condensate-dependent kinetic term of the form $i\,e\,Z(\phi,n)\,
-\psi^\dagger\partial_t\psi+\cdots$ can be brought to canonical
-form by the local field redefinition
+For a local first-order fermionic EFT with a smooth and strictly
+positive temporal kinetic coefficient $\mathcal{K}(x)>0$ multiplying
+$i\,\psi^\dagger\partial_t\psi$, a general condensate-dependent
+temporal kinetic term of the form
+$i\,\mathcal{K}(x)\,\psi^\dagger\partial_t\psi+\cdots$
+can be brought to canonical form by the local field redefinition
 \begin{equation}
-  \chi_\alpha(x)\;\equiv\;[e(x)Z(\phi(x),n(x))]^{1/2}\,
+  \chi_\alpha(x)\;\equiv\;\mathcal{K}(x)^{1/2}\,
     \psi_\alpha(x),
   \label{eq:psi_to_chi_normalisation}
 \end{equation}
@@ -26724,13 +26726,25 @@ comparison with laboratory and astrophysical bounds).
 \textit{What this implies for astrophysical fermionic matter.}
 In particular, the present no-go statement removes ordinary
 strong-gravity neutron-star interiors from the list of
-plausible ECT-specific Pauli-violation windows: inside white
-dwarfs, neutron stars, and even stellar-mass black hole horizons,
-the exclusion algebra is preserved provided the fermionic EFT
-remains local and the kinetic coefficient is nondegenerate. Any
-ECT signature of nonstandard fermionic statistics should
-therefore be sought not in ordinary compact-object interiors, but
-in the three exceptional settings enumerated above.
+plausible ECT-specific Pauli-violation windows: inside ordinary
+white-dwarf and neutron-star interiors, and more generally
+throughout smooth coherent-branch regions where the local
+fermionic EFT remains valid and $\mathcal{K}(x)$ remains
+nondegenerate, the exclusion algebra is preserved. Any ECT
+signature of nonstandard fermionic statistics should therefore
+be sought not in ordinary compact-object interiors, but in the
+three exceptional settings enumerated above.
+
+\textit{Conditional on the fermionic reconstruction programme.}
+At the present stage, the no-go statement is therefore conditional
+not on the canonical-normalisation argument itself, which is
+technically complete within the local first-order EFT closure
+described above, but on the completion of the fermionic
+reconstruction from the exchange-topological and
+representation-theoretic sector
+(\S\ref{sec:qs_statistics},~\S\ref{sec:qs_dirac}) to the full
+operator-level canonical anticommutation
+structure~(OP-Q11,~OP-Q21).
 
 \subsubsection*{What is and is not claimed}
 
@@ -44083,8 +44097,8 @@ Section~\ref{sec:qs_statistics}:
 smooth local inhomogeneity of the ordered condensate does not
 provide a mechanism for violating fermionic exclusion on the
 coherent ordered branch. It proceeds in four steps. First, we
-write the most general local first-order fermionic EFT compatible
-with the present ECT framework
+write a representative local first-order fermionic EFT compatible
+with the presently identified ECT structures
 (\S\ref{app:pauli:eft}). Second, we show that a condensate-dependent
 kinetic coefficient is absorbed into a local canonical
 normalisation, leaving the equal-time anticommutator in standard
@@ -44102,9 +44116,9 @@ Pauli-principle violation
 \subsection{General local fermionic EFT on the coherent ordered branch}
 \label{app:pauli:eft}
 
-On the smooth coherent ordered branch, the most general local
-first-order fermionic EFT consistent with the presently identified
-ECT structures---derived Dirac dynamics
+On the smooth coherent ordered branch, a representative local
+first-order fermionic EFT compatible with the presently identified
+ECT structures---the structurally derived Dirac dynamics
 (\S\ref{sec:qs_dirac}), medium-ontological identification of
 fermionic excitations with spinor modes of the ordered condensate
 (\S\ref{sec:fermion_statistics}), and the ECT-specific
@@ -44146,23 +44160,30 @@ purposes of the no-go statement.
 \label{app:pauli:normalisation}
 
 Extracting the temporal part of the kinetic term
-in~\eqref{eq:pauli_app_general_EFT} yields, up to local rotations
-of the tetrad,
+in~\eqref{eq:pauli_app_general_EFT} yields, up to the choice of
+local frame and temporal foliation,
 \begin{equation}
   \mathcal{L}_{\rm kin}^{(t)}(x)
   \;\sim\;
-  i\,e(x)\,Z(\phi(x),n(x))\,\psi^\dagger(x)\,\partial_t\psi(x)
+  i\,\mathcal{K}(x)\,\psi^\dagger(x)\,\partial_t\psi(x)
   \;+\;\cdots,
+  \qquad \mathcal{K}(x)>0,
   \label{eq:pauli_app_temporal_kinetic}
 \end{equation}
-where the ellipsis denotes terms involving spatial derivatives and
-mass/interaction pieces that do not contribute to the equal-time
-canonical momentum. The canonical momentum conjugate to $\psi$ is
-then
+where $\mathcal{K}(x)$ is the resulting smooth and strictly
+positive temporal kinetic coefficient, and the ellipsis denotes
+terms involving spatial derivatives and mass/interaction pieces
+that do not contribute to the equal-time canonical momentum. In
+the schematic ECT EFT of
+Eq.~\eqref{eq:pauli_app_general_EFT} one has
+$\mathcal{K}(x)\sim e(x)Z(\phi(x),n(x))$ up to the choice of
+local frame and temporal foliation, so that all statements below
+apply to this EFT as a particular case. The canonical momentum
+conjugate to $\psi$ is then
 \begin{equation}
   \Pi_\alpha(x)
   \;=\;\frac{\partial\mathcal{L}}{\partial(\partial_t\psi_\alpha(x))}
-  \;=\;i\,e(x)\,Z(\phi(x),n(x))\,\psi^\dagger_\alpha(x),
+  \;=\;i\,\mathcal{K}(x)\,\psi^\dagger_\alpha(x),
   \label{eq:pauli_app_canonical_momentum}
 \end{equation}
 and the equal-time canonical anticommutation relation
@@ -44175,7 +44196,7 @@ which in the present normalisation takes the background-weighted
 form
 \begin{equation}
   \{\psi_\alpha(t,\mathbf{x}),\psi^\dagger_\beta(t,\mathbf{y})\}
-  \;=\;[e(x)Z(\phi(x),n(x))]^{-1}\,\delta_{\alpha\beta}\,
+  \;=\;\mathcal{K}(x)^{-1}\,\delta_{\alpha\beta}\,
     \delta^{(3)}(\mathbf{x}-\mathbf{y}).
   \label{eq:pauli_app_psi_psi_CAR_weighted}
 \end{equation}
@@ -44188,7 +44209,7 @@ that $\psi$ is simply not the canonically normalised field. The
 local field redefinition
 \begin{equation}
   \chi_\alpha(x)
-  \;\equiv\;[e(x)Z(\phi(x),n(x))]^{1/2}\,\psi_\alpha(x)
+  \;\equiv\;\mathcal{K}(x)^{1/2}\,\psi_\alpha(x)
   \label{eq:pauli_app_chi_definition}
 \end{equation}
 brings the kinetic term to canonical form and yields, at equal
@@ -44235,7 +44256,7 @@ This is a standard feature of canonical fermionic field theory.
 symmetric packets.}
 A naive gradient-based argument would proceed by expanding the
 background around a point $\mathbf{x}_0$ and retaining the linear
-term $\partial_i\ln[e(x)Z(x)]$. For a symmetrically localised
+term $\partial_i\ln\mathcal{K}(x)$. For a symmetrically localised
 one-particle wave packet, however, the linear expansion
 contributes with vanishing first moment,
 $\langle y^i\rangle\equiv\langle(x-x_0)^i\rangle=0$, and the
@@ -44310,15 +44331,17 @@ scales, as appropriate to the regime.
 \centering\small
 \renewcommand{\arraystretch}{1.3}
 \caption{Packet-level mismatch estimates
-from~\eqref{eq:pauli_app_eps_packet} across laboratory,
-stellar, and astrophysical regimes of interest. All numbers are
+from~\eqref{eq:pauli_app_eps_packet} across laboratory and
+compact-object regimes of interest. All numbers are
 order-of-magnitude estimates; $\mathcal{E}\sim GM/R^3$ is the
 characteristic tidal curvature scale and $L$ is the assumed
 fermionic overlap scale. Current experimental bounds on
-Pauli-principle violation are listed for comparison. None of the
-estimates below represents a genuine Pauli-violation prediction:
-they are upper bounds on residual packet-level mismatch within
-the smooth coherent branch, as discussed in the text.}
+\emph{genuine} Pauli-principle violation are listed only as an
+orientation scale; since $\varepsilon_{\rm packet}$ is not
+itself a Pauli-violation observable but a coarse-grained
+packet-level mismatch estimate, the comparison should not be read
+as a direct experimental confrontation. None of the estimates
+below represents a genuine Pauli-violation prediction.}
 \label{tab:pauli_numerics}
 \begin{tabular}{p{4.3cm}p{2.3cm}p{2.3cm}p{2.7cm}}
 \hline\hline
@@ -44340,9 +44363,6 @@ Neutron star core, atomic-scale overlap &
 Neutron star core, nucleon scale &
   $\sim 10^{8}$ & $\sim 10^{-15}$ &
   $\sim 10^{-78}$ \\
-Stellar black hole horizon, nucleon scale &
-  $\sim 10^{9}$ & $\sim 10^{-15}$ &
-  $\sim 10^{-76}$ \\
 \hline
 \multicolumn{4}{l}{\textit{Current experimental bounds on Pauli
   violation (for reference):}} \\
@@ -44360,12 +44380,13 @@ Two features of Table~\ref{tab:pauli_numerics} are worth
 emphasising.
 
 First, even the most optimistic astrophysical entries
-(neutron-star cores with electronic overlap scales) lie many
-orders of magnitude below the current VIP-2 bound on electronic
-Pauli violation, and the nucleon-scale entries lie many orders
-below the Borexino bound. The scale
-$\varepsilon_{\rm packet}$ therefore does not approach any current
-experimental threshold in any of the regimes considered.
+(neutron-star cores with electronic overlap scales) are
+enormously suppressed relative to the scales probed by existing
+searches for genuine Pauli-principle violation. This does not
+constitute a direct confrontation with VIP-2, Borexino, or
+Ramberg--Snow, because $\varepsilon_{\rm packet}$ is not the same
+observable; the comparison is included only to indicate how small
+the residual packet-level mismatch estimate is.
 
 Second, and more importantly, this numerical suppression is not
 the primary content of the no-go statement. Even if
