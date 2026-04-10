@@ -8255,14 +8255,19 @@ In the scalar-only ECT basis the fundamental degree of freedom is the
 condensate field $\Phi$; the ordered background is characterised by
 $Q_A=\partial_A\Phi = u_0\,n_A$, where $n_A$ is the derived orientation
 variable~(Section~\ref{sec:sector_map}).
-Amplitude fluctuations of the scalar field $\Phi$ around its
-vacuum expectation value $\phi_0$ define the radial
-mode~$\sigma$:
+Amplitude fluctuations of the gradient $Q_A=\partial_A\Phi$
+around its ordered background --- i.e.\ fluctuations of
+$u_0=|\langle\partial_A\Phi\rangle|$ --- define the radial
+mode~$\sigma$ with the polar decomposition
+$\partial_A\Phi=(u_0+\sigma)n_A$. Its characteristic mass scale
+is set by the curvature of the scalar potential at the broken-phase
+vacuum:
 \begin{equation}
-  \phi = \phi_0 + \sigma, \qquad
-  m_\sigma^2 = V''(\phi_0) \sim 2\lambda\,\phi_0^2.
+  m_\sigma^2 \sim V''(\phi_0) \sim 2\lambda\,\phi_0^2,
   \label{eq:sigma_mass_radial}
 \end{equation}
+where the proportionality accounts for EFT matching between the
+scalar potential and the gradient-sector fluctuation spectrum.
 For a generic quartic potential with minimum at $\phi_0$
 and with the matching $\phi_0\sim\bar{M}_{\rm Pl}$
 (Section~\ref{par:planck_scale}):
@@ -8276,7 +8281,7 @@ It therefore provides the natural heavy scale controlling the validity
 range of the broken-phase EFT.
 It is \emph{not} the Standard Model Higgs boson.
 
-The positivity $V''(u_0)>0$ established above gives tree-level local
+The positivity $V''(\phi_0)>0$ established above gives tree-level local
 stability of the primary radial sector within the stated condensate
 potential. A superficially analogous statement holds for the Standard
 Model only at tree level; at one loop the RG running of
@@ -22197,7 +22202,7 @@ equations already obtained; it is a reversal of the ontology
 assumed in standard approaches: the condensate is primary,
 geometry is secondary.
 Two further foundational issues find natural homes in the macroscopic
-branch: the primary condensate vacuum satisfies $V''(u_0)>0$ at
+branch: the primary condensate vacuum satisfies $V''(\phi_0)>0$ at
 tree level in the reduced radial sector, a structurally weaker but
 cleaner situation than the top-Yukawa-driven metastability of the
 Standard-Model electroweak
@@ -36604,7 +36609,7 @@ standard physics postulates $d=3+1$ without explanation.
 topological anti-prediction~(Level~A), resolving a long-standing
 tension with GUT frameworks that generically predict monopoles.
 (iii)~\emph{Vacuum stability}---the primary ordered condensate
-satisfies $V''(u_0)>0$ at tree level in the reduced radial sector.
+satisfies $V''(\phi_0)>0$ at tree level in the reduced radial sector.
 This is a structurally cleaner situation than the Standard-Model
 electroweak vacuum, whose RG-improved potential may be
 metastable~\cite{Degrassi2012,Buttazzo2013}. However, a full
