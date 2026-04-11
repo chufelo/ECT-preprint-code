@@ -5341,7 +5341,8 @@ Sections~\ref{sec:nonabelian_embedding} and~\ref{sec:ew_embedding}.
 \paragraph{Colour-like extension.}
 If the condensate carries suitable triplet structure in an internal
 sector, an $SU(3)$-type colour-like extension can be accommodated at
-the level of model building.
+the level of model building
+(see \S\ref{sec:colour_completion} for a candidate completion).
 At the present stage this remains a structural possibility rather than
 a derivation of QCD or confinement from the bare condensate action.
 This is discussed in Section~\ref{sec:nonabelian_embedding}.
@@ -6036,7 +6037,8 @@ condensate:
     (Section~\ref{sec:ew_embedding}).
   \item \textbf{$SU(3)$:} requires an additional colour-triplet
     internal structure with no direct spacetime counterpart; this
-    remains a model-level extension~(Level~C).
+    remains a model-level extension~(Level~C;
+    see \S\ref{sec:colour_completion}).
     In the present framework the $SU(3)$-like sector is taken to
     remain in the unbroken phase, which is structurally consistent with
     massless gluons and the absence of a colour-Higgs mechanism.
@@ -14167,7 +14169,14 @@ ordered condensate.
   \item Full universality of matter coupling is Level~B~(OP-matter).
   \item Explicit nonlinear source structure beyond linear EFT:
     Section~\ref{sec:mp_nonlinear}.
-  \item Coefficient $c_1$ not yet derived from first principles~(OP-c1).
+  \item Coefficient $c_1$ not yet derived from first
+    principles~(OP-c1).  In particular, determine whether the
+    completed tensor/orientation closure yields phenomenologically
+    viable functions $\mu(k,z)$, $\eta(k,z)$, and $\Sigma(k,z)$ on
+    cosmological linear scales, and whether their sign and scale
+    dependence can be simultaneously reconciled with weak lensing,
+    redshift-space distortions, CMB lensing, cluster lensing, and
+    the Hubble-sector benchmark.
   \item Matching of $K_n$, $\lambda_n$ to bare P3 condensate
     parameters~(OP2).
 \end{enumerate}
@@ -15229,9 +15238,12 @@ Phenomenon (cont.) & Expected NLEE channel & Qualitative expectation \\
 \endhead
 \bottomrule
 \endfoot
-Cosmic shear / weak lensing
-  & Gravitational slip $\gamma\!\neq\!1$ from $\Theta_{\mu\nu}$
-  & Modifies $\Sigma_{\rm lens}/\Sigma_{\rm dyn}$; testable by Euclid, Vera Rubin \\
+Cosmic shear / weak lensing ($S_8$ / lensing--growth sector)
+  & Orientation-stress contribution to $\eta(k,z)$ and $\Sigma(k,z)$;
+    possible mismatch between lensing and dynamical amplitudes
+  & High-priority discriminator: requires completed
+    $\mu(k,z)$, $\eta(k,z)$, $\Sigma(k,z)$ closure;
+    testable with Euclid, Rubin, DESI, and CMB lensing \\
 Void--galaxy correlations
   & $c_1(\bar\phi)$ environment-sensitive; enhanced in underdense regions
   & Possible amplification of void-lensing signal \\
@@ -15245,6 +15257,69 @@ Tidal / asymmetric environments
   & $\Theta_{\mu\nu}$ breaks spherical symmetry of galactic response
   & May contribute to tidal-tail dynamics and asymmetric rotation curves \\
 \end{longtable}
+
+\paragraph{$S_8$ / lensing--growth sector (Level~B/C).}
+
+A natural structural route in ECT to the often-discussed
+lensing--growth sector, commonly parametrised by
+$S_8\equiv\sigma_8\sqrt{\Omega_m/0.3}$,
+lies not in a scalar-only suppression of growth, but in the
+tensor/orientation sector through the orientation stress
+$\Theta_{\mu\nu}[n]$ entering the generalised Einstein equations.
+On linear sub-horizon scales it is natural to organise the
+phenomenology in the standard modified-gravity language
+\begin{equation}
+  -k^2\Psi = 4\pi G_N a^2\,\mu(k,z)\,\rho\Delta,
+  \qquad
+  \eta(k,z)\equiv\frac{\Phi}{\Psi},
+  \label{eq:mu_eta_def}
+\end{equation}
+\begin{equation}
+  -k^2(\Phi+\Psi)=8\pi G_N a^2\,\Sigma(k,z)\,\rho\Delta,
+  \qquad
+  \Sigma(k,z)=\frac{\mu(k,z)\,[1+\eta(k,z)]}{2}.
+  \label{eq:Sigma_def}
+\end{equation}
+Weak lensing and CMB lensing probe primarily~$\Sigma$, whereas
+galaxy clustering and redshift-space distortions probe
+primarily~$\mu$.
+
+The same $\Theta_{\mu\nu}[n]$ channel that already underlies the
+cluster-slip effect (Appendix~\ref{app:cluster_slip}) generically
+gives $\eta\neq 1$ and hence modifies~$\Sigma$.  The existence of
+gapless orientation modes is structurally guaranteed by the
+$O(4)\to O(3)$ breaking pattern, but the precise linear-response
+coefficients relevant for $\mu(k,z)$, $\eta(k,z)$, and $\Sigma(k,z)$
+are not fixed by symmetry alone and remain part of OP-$c_1$.
+The present cluster-level Einstein--aether proxy,
+for example
+$\gamma_{\rm cl}\approx(1-c_1/2)/(1+c_1/2)$,
+should therefore not be exported directly to cosmological linear
+perturbations: it is an illustrative cluster-scale proxy rather
+than a derived FRW-level $(\mu,\eta,\Sigma)$~closure;
+Appendix~\ref{app:cluster_to_cosmo} discusses this separation
+more explicitly.
+
+It is also important that the Hubble-sector and the
+lensing--growth sector are addressed by different layers of the
+same condensate architecture: the scalar background~$\phi_b(z)$
+governs the late-time $H_0$-shift mechanism
+(\S\ref{sec:mp_hubble}), whereas the perturbative orientation
+sector governs the possible slip/lensing route relevant
+for~$S_8$.  This is a structural feature of the framework rather
+than an ad hoc juxtaposition of unrelated ingredients.
+
+Observationally, the status of the $S_8$ sector is presently
+mixed rather than settled into a single sharp discrepancy, so the
+role of ECT here is best framed as a discriminating structural
+route rather than an already required correction.  ECT thus
+possesses a natural slip/lensing-driven route to the
+lensing--growth sector, but does not yet predict a resolved value
+of~$S_8$.  Success or failure of this route will be decided by
+the first-principles derivation of $\mu(k,z)$, $\eta(k,z)$,
+and~$\Sigma(k,z)$, together with their joint confrontation with
+weak lensing, RSD, CMB lensing, cluster lensing, and the
+Hubble-sector benchmark (see OP-$c_1$).
 
 \subsubsection*{Structural comparison with neighbouring frameworks}
 
@@ -37374,6 +37449,7 @@ BTFR slope = $4$ & Empirical fit & Algebraic consequence of the critical $\phi$-
 RAR and baseline critical acceleration $g^\dagger_0\!\approx\!cH_0/(2\pi)$ & Empirical regularity & Baseline consequence of the $\phi$-closure with identified condensate scale & B & \ref{sec:mp_galactic} \\
 Baryon asymmetry $\eta_B$ & Sakharov conditions + specific model & Ordering-transition out-of-equilibrium environment + benchmark leptogenesis closure & B & \ref{sec:mp_baryogenesis} \\
 Cluster-merger morphology (convergence peak location) & Depends on collisionless DM assumption & Follows the more compact baryonic component in the $\phi$-closure & B & \ref{sec:bullet_cluster} \\
+Lensing--growth sector ($S_8$, cosmic shear, CMB lensing) & Probe-dependent discrepancy / modified-gravity test sector & Orientation-stress route through $\mu(k,z)$, $\eta(k,z)$, $\Sigma(k,z)$; quantitative closure open & B--C & \ref{sec:nlee_observational_role}, OP-$c_1$ \\
 \midrule
 % ============================================================
 \multicolumn{5}{@{}l}{\textbf{Group 7 --- Long-standing mysteries and programme-level targets}}\\
@@ -37490,7 +37566,7 @@ GR screening in dense environments & Chameleon-type screening: $\phi$-sector fro
 Reverse coherence / $O(3)\!\to\!O(4)$ Euclidean segments & Temporary partial recoherences structurally admissible through reverse Euclidean segments; no analogue in standard QM collapse picture & Echo-type and recoherence protocols in quantum optics & B \\
 Indefinite causal order: structural route via reverse Euclidean segments & The ordered-branch two-sided Euclidean structure accommodates indefinite-causal-order protocols without additional postulates; $\Gamma_{\rm loop}$ degradation criterion & Quantum-switch experiments (Procopio--Walther) & B \\
 JWST early-galaxy enhancement & Correlated age/distance/growth mechanism shifts available formation-time budget; maturity factors derived from same $\phi_b(z)$ as Hubble shift & JWST spectroscopic surveys of $z\!>\!6$ galaxies & B \\
-Modified Poisson equation with orientation stress & Sub-horizon structure-formation modifier:\newline $\nabla^2\Phi_N = -4\pi G_{\rm eff}\bar\rho\delta$\newline $\quad{} - c_1 n^\alpha n^\beta\delta R_{\alpha\beta}$;\newline absent in scalar $\phi$-sector alone & Gravitational-slip $\Psi\!\neq\!\Phi$ from lensing vs.\ dynamics (Euclid, Rubin) & B \\
+Modified Poisson equation with orientation stress & Sub-horizon structure-formation modifier:\newline $\nabla^2\Phi_N = -4\pi G_{\rm eff}\bar\rho\delta$\newline $\quad{} - c_1 n^\alpha n^\beta\delta R_{\alpha\beta}$;\newline tensor/orientation source of $\mu(k,z)$, $\eta(k,z)$, $\Sigma(k,z)$ & Lensing--growth consistency tests, including the $S_8$ sector, from Euclid, Rubin, DESI, and CMB lensing & B \\
 CMB quadrupole deficit from horizon-scale suppression & Structural argument via coherent-branch boundary conditions; quantitative $\delta C_2/C_2$ derivation remains open & CMB low-$\ell$ multipole analysis & B/Open \\
 \end{longtable}
 }
@@ -43627,6 +43703,31 @@ This should be read as an order-of-magnitude parametrised estimate,
 not yet as a derived prediction.
 A first-principles determination of $c_1(\bar\phi)$ from the ECT
 action remains open~(OP-c1, OP-new-4).
+
+\subsection{From cluster-slip proxies to cosmological closure}
+\label{app:cluster_to_cosmo}
+
+For cosmological weak-lensing and growth observables, the relevant
+quantities are not the cluster-scale slip proxies themselves but the
+effective linear-response functions $\mu(k,z)$, $\eta(k,z)$, and
+$\Sigma(k,z)$, defined on linear sub-horizon scales by
+Eqs.~\eqref{eq:mu_eta_def}--\eqref{eq:Sigma_def},
+with $\Sigma=\mu(1+\eta)/2$.
+The existing Einstein--aether-inspired cluster proxy should therefore
+be read only as an illustrative strong-field / cluster-scale guide to
+the sign and magnitude of slip, not as the derived cosmological
+linear-perturbation closure.  The distinction is not merely one of
+scale but also of regime: the cluster proxy is a strong-field,
+environment-dependent illustration, whereas the $S_8$ sector requires
+a linear FRW perturbation closure.  The same ordered-condensate
+architecture that sets the gravitational sector also controls the
+orientation sector; however, the precise cosmological linear-response
+coefficients are not fixed by $G_N$ alone and remain part of
+OP-$c_1$.
+A genuine ECT confrontation with the lensing--growth sector therefore
+requires the first-principles derivation of the FRW-level
+$(\mu,\eta,\Sigma)$ functions from the tensor/orientation sector of
+the ordered condensate.
 
 \subsection{Note on double-counting}
 \label{app:cluster_doublecounting}
