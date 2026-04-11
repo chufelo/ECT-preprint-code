@@ -5768,34 +5768,104 @@ requires
 \end{equation}
 This is a moderate coefficient of order ten, not an extreme number.
 
-\paragraph{Induced gauge kinetics.}
-The Maxwell term may be partially or wholly induced by integrating
-out charged condensate modes:
+\paragraph{Electroweak structure of the ultraviolet problem.}
+The low-energy relation $\alpha_{\rm fs}=q^2/(4\pi Z_A)$ is defined
+in terms of the photon normalisation~$Z_A$.  However, above the
+electroweak scale~$M_W$ the photon is not a propagating eigenstate:
+the physically relevant gauge basis is
+$U(1)_Y\times SU(2)_L$, with independent gauge-kinetic
+normalisations~$Z_B$ for the hypercharge field~$B_\mu$ and~$Z_W$
+for the weak isospin field~$W_\mu^a$.  The low-energy photon
+kinetic term emerges only after electroweak symmetry breaking
+through the Weinberg mixing:
 \begin{equation}
-  Z_A(\mu)
-  = Z_A^{(0)}
-  + \sum_i c_i Q_i^2\,\ln\frac{\Lambda_*^2}{m_i^2}
-  + \Delta Z_A^{\rm nonpert}.
-  \label{eq:ZA_induced}
+  \frac{1}{e^2}=\frac{1}{g^{\prime 2}}+\frac{1}{g^2},
+  \qquad
+  \alpha_{\rm fs}^{-1}=\alpha_Y^{-1}+\alpha_2^{-1}.
+  \label{eq:alpha_ew_decomposition}
 \end{equation}
-For a single charged Dirac mode with $Q=1$, the one-loop contribution
-is $\Delta Z_A\sim Q^2\ln(\Lambda_*^2/m^2)/(12\pi^2)$.
-With $\ln(\Lambda_*^2/m^2)\sim 50$ (Planck-to-electroweak range),
-each mode contributes $\Delta Z_A\approx 0.42$.
-Achieving $Z_A\sim 10$--$11$ therefore requires an effective
-weighted sum $\sum_i c_i Q_i^2$ of order a few${\times}10$.
-This is not obviously impossible for an emergent sector with
-multiple charged species, bosonic contributions, and possible
-nonperturbative renormalisation, but the detailed accounting
-remains to be performed.
+Consequently, the ultraviolet problem for~$\alpha_{\rm fs}$ is not
+the determination of a single coefficient~$Z_A^{(0)}$ at the
+condensate scale, but of the pair~$(Z_B^{(0)},Z_W^{(0)})$ and the
+electroweak mixing angle~$\theta_W$ that relates them to the
+low-energy photon.
+
+\paragraph{Sharpened electroweak target after colour completion
+(Level~B/C).}
+The candidate $SU(3)$-structured colour completion of the medium
+(\S\ref{sec:colour_completion}) removes one of the earlier
+bookkeeping ambiguities: quark-like charged sectors are no longer
+entirely unspecified.  This sharpens the fine-structure problem but
+does not yet solve it.
+
+Using the observed Standard-Model electroweak couplings and the
+observed three-generation matter content only as an external
+benchmark (not as an ECT derivation), and employing the standard
+hypercharge normalisation with one-loop beta coefficients
+$b_Y=41/6$ and $b_2=-19/6$, one finds at the electroweak scale
+$\alpha_Y^{-1}(M_Z)\approx 98.4$ and
+$\alpha_2^{-1}(M_Z)\approx 29.6$.
+In particular, the observed three-generation Standard-Model
+matter content is used here only as benchmark input, not as a
+quantity already derived within ECT\@.
+Running to the primary condensate scale
+$\phi_0\approx 2.435\times 10^{18}$\,GeV yields
+\begin{equation}
+  \alpha_Y^{-1}(\phi_0)\approx 57,
+  \qquad
+  \alpha_2^{-1}(\phi_0)\approx 49,
+  \label{eq:ew_running_benchmark}
+\end{equation}
+corresponding to benchmark ultraviolet gauge-kinetic coefficients
+$Z_B^{\rm bench}\approx 4.6$ and $Z_W^{\rm bench}\approx 3.9$.
+These are moderate numbers of order unity, not extreme values.
+Within this external benchmark, purely loop-induced electroweak
+kinetic normalisations are not compatible with the observed
+low-energy couplings; any viable ECT closure must therefore
+contain a condensate-level contribution to the gauge sector.
+
+\paragraph{ECT structural connection.}
+In ECT both gauge-kinetic normalisations are expected to inherit
+from the same ordered condensate that already determines~$G_N$
+and~$\hbar$: $Z_B^{(0)}$ from the compact-phase stiffness
+$K_\theta^{\rm eff}\sim\phi_0^2$ and $Z_W^{(0)}$ from the
+orientation stiffness $\kappa_n\sim\phi_0^2$.
+Both sectors are anchored in the same ordered-condensate
+framework and are naturally controlled by the primary condensate
+scale~$\phi_0$, although the corresponding effective stiffness
+coefficients need not coincide exactly.
+Their ratio is therefore expected to become a structural output
+of the single-medium construction rather than a freely adjustable
+low-energy parameter.
+If the phase and orientation sectors contribute with comparable
+stiffnesses, one expects
+\begin{equation}
+  \sin^2\theta_W(\phi_0)=\mathcal{O}(1/2),
+  \label{eq:thetaW_UV_target}
+\end{equation}
+which is qualitatively compatible with the observed value
+$\sin^2\theta_W(M_Z)\approx 0.231$ after electroweak-scale
+running.  This plays a role loosely analogous to ultraviolet
+Weinberg-angle relations in unified gauge models, although the
+underlying mechanism here is different: in ECT it is tied to the
+relative condensate-sector stiffnesses rather than to
+simple-group embedding.
 
 \paragraph{Status.}
-ECT transfers the question ``why is $\alpha_{\rm fs}\approx 1/137$?''
-into a concrete calculational target: the determination of the
-emergent $U(1)$ normalisation $Z_A$ from condensate microphysics.
-The required magnitude $Z_A\sim 10.9$ is naturally achievable through
-induced gauge kinetics (Level~B structural route;
-full derivation open, OP-$\alpha_{\rm fs}$).
+ECT transfers the question ``why is
+$\alpha_{\rm fs}\approx 1/137$?'' into a concrete electroweak
+kinetic/mixing target.  The required UV normalisations are
+moderate, the bookkeeping problem is now better posed than before
+colour completion, and the Weinberg angle becomes a structural
+target rather than a postulated input.  The first-principles
+derivation of~$(Z_B^{(0)},Z_W^{(0)})$ from condensate
+microphysics, of the electroweak mixing angle, and hence
+of~$\alpha_{\rm fs}$ remains open
+(Level~B/C, OP-$\alpha_{\rm fs}$).
+Accordingly, $\alpha_{\rm fs}$ is not treated in ECT as an
+irreducible primitive constant, but as a sharpened electroweak
+kinetic/mixing target within the broader derivational map
+summarised in the Conclusion.
 Technical details are collected in
 Appendix~\ref{app:open_microphysics}.
 
@@ -40392,40 +40462,166 @@ The following estimates demonstrate that the required numerical
 targets lie in natural ranges rather than demanding extreme tuning.
 
 % ------------------------------------------------------------
-\subsection*{A.\ Fine-structure constant: emergent gauge
+\subsection*{A.\ Fine-structure constant: electroweak gauge
 normalisation}
 \label{app:alpha_fs_details}
 % ------------------------------------------------------------
 
+% --- A.1 Low-energy structural relation ---
+
 From~\eqref{eq:alpha_fs_ZA}, $\alpha_{\rm fs}=q^2/(4\pi Z_A)$.
-The observational target is $Z_A^{\rm IR}\approx 10.9$.
-On the UV side, the RG-evolved value at a high scale $\mu\sim
-M_{\rm Pl}$ is $Z_A^{\rm UV}\sim 9$--$10$, corresponding to
-$\alpha^{-1}(\mu_{\rm UV})\sim 110$--$120$.
+The observational target is $Z_A^{\rm IR}\approx 10.9$, a moderate
+coefficient of order ten.  The structural route identified in the
+main text reduces the fine-structure problem to the emergence and
+normalisation of gauge-field kinetics from condensate microphysics.
 
-For an induced gauge kinetic term arising from $N$ charged
-Dirac modes, the one-loop contribution per mode is
-\begin{equation}
-  \Delta Z_A \;=\; \frac{Q^2}{12\pi^2}
-  \ln\frac{\Lambda_*^2}{m^2}.
-  \label{eq:DeltaZA_oneloop}
-\end{equation}
-With $\ln(\Lambda_*^2/m^2)\sim 50$ and $Q=1$,
-$\Delta Z_A\approx 0.42$ per species.
-The required total $Z_A\sim 10$--$11$ therefore needs an effective
-charged-mode sum $\sum_i c_i Q_i^2\sim 21$--$26$.
-A fermionic Standard-Model-like content alone does not
-automatically saturate the required effective sum, so additional
-bosonic contributions, multiplicity factors, threshold effects,
-or nonperturbative renormalisation may be needed.
-The present estimate should therefore be understood only as an
-order-of-magnitude plausibility check, not as a completed
-derivation.
+% --- A.2 Why the UV problem is electroweak, not purely photonic ---
 
-\noindent\emph{Status:}
-ECT provides a structural Level~B route; the explicit derivation
-of $Z_A$ from condensate microphysics is an open calculational
-programme~(OP-$\alpha_{\rm fs}$).
+\subsubsection*{A.1\quad Why the ultraviolet problem is electroweak}
+
+Below the electroweak scale~$M_W$, the photon~$A_\mu$ is a mass
+eigenstate and $\alpha_{\rm fs}^{-1}=4\pi Z_A/q^2$ is a
+well-defined running quantity.  Above~$M_W$, however, the photon
+is not a propagating eigenstate.  The relevant ultraviolet gauge
+basis is $U(1)_Y\times SU(2)_L$, with independent gauge
+couplings~$g'$ and~$g$ (or equivalently $\alpha_Y$ and~$\alpha_2$)
+and independent gauge-kinetic normalisations~$Z_B$
+and~$Z_W$.  The electromagnetic coupling emerges only after
+electroweak symmetry breaking through
+\[
+  \alpha_{\rm fs}^{-1}
+  =\alpha_Y^{-1}+\alpha_2^{-1}.
+\]
+The correct ultraviolet calculational target is therefore the pair
+$(Z_B^{(0)},Z_W^{(0)})$ at the condensate scale~$\phi_0$,
+together with the electroweak mixing angle~$\theta_W$ that
+determines how these normalisations combine into the low-energy
+photon.
+
+% --- A.3 External electroweak benchmark ---
+
+\subsubsection*{A.2\quad External one-loop electroweak benchmark}
+
+Using the observed Standard-Model electroweak data only as an
+external benchmark (not as an ECT derivation), one proceeds as
+follows.  At the electroweak matching scale $M_Z=91.2$\,GeV, the
+measured values are $\alpha_{\rm em}^{-1}(M_Z)\approx 127.95$ and
+$\sin^2\theta_W(M_Z)\approx 0.2312$.  The standard electroweak
+decomposition gives
+\[
+  \alpha_Y^{-1}(M_Z)
+  =\alpha_{\rm em}^{-1}(M_Z)\cos^2\theta_W
+  \approx 98.4,
+  \qquad
+  \alpha_2^{-1}(M_Z)
+  =\alpha_{\rm em}^{-1}(M_Z)\sin^2\theta_W
+  \approx 29.6.
+\]
+Employing the standard hypercharge normalisation (not the
+GUT-normalised convention), the one-loop SM beta coefficients are
+$b_Y=41/6$ and $b_2=-19/6$.  The renormalisation group equations
+\[
+  \alpha_i^{-1}(\phi_0)
+  =\alpha_i^{-1}(M_Z)
+  -\frac{b_i}{2\pi}\,\ln\frac{\phi_0}{M_Z}
+\]
+with $\ln(\phi_0/M_Z)\approx 37.8$ yield
+\[
+  \alpha_Y^{-1}(\phi_0)\approx 57,
+  \qquad
+  \alpha_2^{-1}(\phi_0)\approx 49.
+\]
+These should be read as benchmark ultraviolet kinetic targets
+inferred from the external one-loop electroweak running, not yet
+as microscopic coefficients derived from the ECT action.  The
+corresponding benchmark coefficients are
+\[
+  Z_B^{\rm bench}\approx 4.6,
+  \qquad
+  Z_W^{\rm bench}\approx 3.9.
+\]
+
+Under the candidate colour completion
+(\S\ref{sec:colour_completion}), the effective charge-squared sum
+that enters the one-loop bookkeeping is
+$C_{\rm eff}=\sum_f N_{c,f}Q_f^2=8$
+for the observed three-generation benchmark
+(three lepton families contributing $3\times 1^2=3$; three
+up-type quarks contributing $3\times 3\times(2/3)^2=4$; three
+down-type quarks contributing $3\times 3\times(1/3)^2=1$).
+The observed three-generation Standard-Model matter content is
+used here only as benchmark input, not as a quantity already
+derived within ECT\@.
+
+% --- A.4 ECT structural interpretation ---
+
+\subsubsection*{A.3\quad ECT structural interpretation}
+
+In ECT the bare gauge-kinetic coefficients are not free parameters
+but structural outputs of the ordered condensate:
+$Z_B^{(0)}$ inherits from the compact-phase stiffness
+$K_\theta^{\rm eff}\sim\phi_0^2$ of the same condensate sector from
+which the $U(1)$ gauge structure emerges
+(\S\ref{sec:u1_emergence}), and $Z_W^{(0)}$ inherits from the
+orientation-sector stiffness $\kappa_n\sim\phi_0^2$ associated with
+the $O(4)\to O(3)$ symmetry breaking, from which the $SU(2)$-like
+gauge redundancy arises (\S\ref{sec:nonabelian_embedding}).
+Both sectors are anchored in the same ordered-condensate framework
+and are naturally controlled by the primary condensate
+scale~$\phi_0$, although the corresponding effective stiffness
+coefficients need not coincide exactly.
+
+The fine-structure constant is therefore structurally tied to the
+same condensate architecture that governs gravity and quantisation.
+
+At the benchmark level, the ultraviolet mixing angle can be
+expressed directly in terms of the two electroweak inverse
+couplings, or equivalently in terms of the corresponding benchmark
+kinetic targets:
+\[
+  \sin^2\theta_W(\phi_0)
+  =\frac{\alpha_2^{-1}(\phi_0)}
+        {\alpha_Y^{-1}(\phi_0)+\alpha_2^{-1}(\phi_0)}
+  =\frac{Z_W^{\rm bench}}{Z_B^{\rm bench}+Z_W^{\rm bench}}.
+\]
+If the phase and orientation sectors contribute with comparable
+stiffnesses ($K_\theta^{\rm eff}\approx\kappa_n$), one expects
+$\sin^2\theta_W(\phi_0)=\mathcal{O}(1/2)$.  The external benchmark
+value $\sin^2\theta_W(\phi_0)\approx 0.46$ is qualitatively
+compatible with this expectation.  The deviation from
+exactly~$1/2$ would encode the detailed structural difference
+between the phase and orientation sectors of the condensate.
+
+% --- A.5 Limitations and honest status ---
+
+\subsubsection*{A.4\quad Limitations and honest status}
+
+The external benchmark used above is subject to several
+limitations:
+(i)~two-loop and higher-order corrections to the beta coefficients
+have been ignored;
+(ii)~threshold corrections at intermediate scales ($m_t$, $M_W$,
+$M_Z$, $M_H$) have been treated as step functions rather than
+properly matched;
+(iii)~below~$M_Z$, hadronic vacuum-polarisation contributions
+cannot be honestly reduced to free quark thresholds; the low-energy
+running between the Thomson limit and~$M_Z$ involves
+nonperturbative QCD effects;
+(iv)~the observed SM three-generation matter content, hypercharge
+assignments, and right-handed singlet structure have been used as
+external inputs, not as quantities derived within ECT\@;
+(v)~the colour completion itself is a candidate route
+(Level~Open/C), not a proven theorem.
+
+The robust conclusion at the present stage is narrower: the
+benchmark ultraviolet electroweak kinetic targets are moderate
+rather than extreme, purely loop-induced electroweak kinetics are
+not compatible with the observed couplings within this benchmark,
+and the Weinberg angle becomes a structural target of the
+condensate-sector ratio.  A first-principles derivation
+of~$(Z_B^{(0)},Z_W^{(0)})$ from condensate microphysics remains
+a concrete open programme
+(Level~B/C, OP-$\alpha_{\rm fs}$).
 
 % ------------------------------------------------------------
 \subsection*{B.\ Three fermion generations: spectral counting}
