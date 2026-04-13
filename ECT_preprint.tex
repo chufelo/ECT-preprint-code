@@ -145,6 +145,14 @@ ECT therefore does not present a finished ultraviolet completion of
 all sectors, but it does provide a unified condensate architecture in
 which gravity, quantum structure, and large parts of cosmological
 phenomenology arise within a single ordered-medium framework.
+The Abelian gauge sector is derived from bundle covariance of the
+condensate phase, while a preferred chiral $SU(2)$ sector is
+structurally linked to the oriented broken phase.
+Together with emergent gravity and a generic fermion--condensate
+interaction (the director coupling), ECT provides a common
+pre-geometric origin for the known interaction sectors;
+the colour sector requires additional internal condensate structure
+beyond the minimal $O(4)$-breaking pattern.
 \end{abstract}
 
 
@@ -349,6 +357,7 @@ DP & Dynamical principle \\
 FLRW & Friedmann--Lema\^itre--Robertson--Walker (metric / cosmology) \\
 GEE & Generalised Einstein equations \\
 LISA & Laser Interferometer Space Antenna \\
+LiteBIRD & Lite satellite for the studies of B-mode polarization and Inflation from cosmic background Radiation Detection \\
 MICROSCOPE & Micro-Satellite \`a tra\^in\'ee Compens\'ee pour l'Observation du Principe d'\'Equivalence (satellite WEP test) \\
 NFW & Navarro--Frenk--White (dark-matter halo profile) \\
 NLO & Next-to-leading order \\
@@ -5738,6 +5747,32 @@ The analogy is structural, not an exact physical identification.
 The ECT condensate is not a material medium; it is the ordered
 background underlying the effective spacetime and interaction sectors.
 
+\paragraph{Interpretive example: the Aharonov--Bohm
+  effect~(Level~B).}
+The Aharonov--Bohm~(AB) effect---in which an observable phase shift
+occurs even in regions where the local field strength
+vanishes---is especially natural within the ECT gauge architecture.
+Because the compact phase $\theta(X)$ is already a primary structural
+ingredient of the coherent branch~(BR1), and the gauge connection
+$A_A$ arises as its local compensating field~(Layer~2 above), the
+AB phase shift
+\begin{equation}
+  \Delta\varphi
+  = \frac{e}{S_0}\oint A_\mu\,\mathrm{d}x^\mu
+  \label{eq:AB_phase}
+\end{equation}
+is directly interpretable as a nontrivial holonomy of the emergent
+$U(1)$ connection around a closed loop.
+This ties together local phase symmetry, the loop/winding structure of
+the coherent branch, and the physical significance of the gauge
+potential in a way that is structurally natural for the condensate
+framework.
+The standard AB phase formula is naturally accommodated in this
+picture; the gain at the present
+stage is interpretive rather than quantitative: the effect illustrates
+why the gauge potential, rather than only the field strength, carries
+physical information when phase is a primary condensate variable.
+
 \paragraph{What is strict and what remains matched.}
 Within the compact phase EFT, the Noether current, current
 conservation, and the homogeneous limit are strict results.
@@ -6608,6 +6643,15 @@ the dimensional estimate
 $\mu_5\sim m_f^2/\phi_0$ is Level~B.
 A first-principles derivation from condensate microdynamics remains
 open.}
+
+\paragraph{Terminology: director coupling.}
+By analogy with the director field of nematic liquid crystals and the
+anchoring energy in those systems, the coupling
+$\mathcal{L}_5=\mu_5\,\bar\Psi\gamma^A n_A\Psi$
+is henceforth referred to as the \emph{director coupling}.
+The order parameter $n_A$ plays the role of the liquid-crystal
+director; the coupling describes how fermionic excitations interact
+with the orientation of the ordered medium.
 
 \paragraph{Structural origin.}
 As discussed in Section~\ref{sec:condensate_symmetries}, the symmetry
@@ -7859,7 +7903,8 @@ Gauge couplings $(e,g,g',g_s)$
 Yukawa/matter-coupling structure
   & B/C & Embedded at the EFT level \\
 Chiral selection of $SU(2)_L$
-  & B & Structural possibility, not a first-principles derivation \\
+  & B+ & Orientation selects chirality structurally;
+    full internal-gauge derivation open (OP-GRAV-WEAK) \\
 \multicolumn{3}{l}{\textit{ECT-specific matter-sector deformation}} \\
 Preferred-direction operator
   $n_A\bar\Psi\gamma^A\Psi$
@@ -10992,6 +11037,34 @@ Fermions as collective condensate excitations
 \bottomrule
 \end{longtable}
 
+\paragraph{Physical interpretation of spin~(Level~B: interpretive).}
+The group-theoretic structures developed above admit a physical
+reading that clarifies what spin represents within the ECT framework.
+Spin should not be interpreted as the literal mechanical rotation of a
+localised material object in ordinary three-dimensional space.
+Rather, it may be interpreted as the spinorial orientation degree of
+freedom of a fermionic field compatible with the condensate symmetry
+structure: the two-valued
+character of spin-$\tfrac12$ states reflects the fact that the
+relevant covering group
+$Spin(4) \simeq SU(2)_L \times SU(2)_R$ admits representations
+requiring a $4\pi$ rotation for identity return---a natural
+group-theoretic property of spinorial fields on the ordered branch.
+After symmetry breaking and emergence of the Lorentzian sector, this
+structure reduces to the standard $SL(2,\mathbb{C})$ spinor
+description, but its geometric origin lies in the pre-Lorentzian
+Euclidean rotational symmetry.
+The magnetic moment of a spin-$\tfrac12$ field is then naturally
+understood as the response of this spinorial degree of freedom to the
+emergent $U(1)$ gauge sector~(Section~\ref{sec:u1_emergence}).
+
+\textit{Limitation.}
+The present formulation does not provide a first-principles
+derivation of the electron $g$-factor, hydrogenic fine structure,
+or the numerical value of $\alpha_{\rm fs}$.
+These remain open targets of the fermionic
+programme~(Section~\ref{sec:fermion_open}).
+
 \subsection{Structural Reconstruction of the Dirac Form}
 \label{sec:dirac_eq}
 
@@ -11268,9 +11341,29 @@ structures (as in the electroweak-like embedding of
 Section~\ref{sec:ew_embedding}), then the geometric asymmetry of the
 ordered branch may be reflected in a chiral asymmetry of the
 fermion--gauge coupling.
-At the present stage this should be read only as a structural route:
-ECT does not yet derive which chirality sector is selected, nor the
-detailed form of the weak-interaction vertex.
+The orientation of the condensate---specifically the sign of the
+four-volume form $\epsilon_{ABCD}\,n^A$ evaluated in the ordered
+phase---selects which of the two $SU(2)$ factors is identified with
+the residual stabiliser.
+Upon analytic continuation to the emergent Lorentzian sector, this
+maps to a definite chirality ($L$ or $R$).
+Thus the oriented condensate provides a structural explanation for
+why the weak interaction is maximally parity-violating---a feature
+that is postulated in the Standard Model but has a geometric origin
+in ECT\@.
+
+This does not yet constitute a complete first-principles derivation
+of the full Standard-Model weak gauge sector.
+Rather, it identifies a structurally preferred chiral $SU(2)$ sector
+whose phenomenological realisation is supplied by the electroweak
+condensate doublet (Section~\ref{sec:ew_embedding}).
+In particular, the corresponding connection is at this stage not yet
+shown to be an independent internal gauge field in the full
+Standard-Model sense, as opposed to a component of the emergent spin
+connection.
+A full derivation would need to demonstrate the existence of
+independent propagating spin-1 modes beyond those fixed by the
+metric~(OP-GRAV-WEAK; see Section~\ref{sec:common_origin}).
 
 \paragraph{Connection to the fifth-force coupling.}
 The ECT-specific deformation
@@ -11355,11 +11448,12 @@ SSB $O(4)\to O(3)$ distinguishes a preferred
   between the two Euclidean $SU(2)$ factors
   & A/B & Geometric statement (A); relevance for
     physical chirality is interpretive (B) \\
-The ordered condensate provides a setting in which
-  chiral asymmetry can arise
-  & B & Structural possibility, not derivation \\
+The oriented condensate selects one chiral $SU(2)$ sector
+  & B+ & Structural selection via four-volume
+    orientation \\
 Selection of $SU(2)_L$ as the physical weak factor
-  & B/C & Requires additional dynamical input \\
+  & B+ & Orientation selects chirality;
+    full internal-gauge status open (OP-GRAV-WEAK) \\
 Fermion--condensate coupling and chiral asymmetry
   share the same geometric source $n_A$
   & B & Common structural origin \\
@@ -11870,7 +11964,15 @@ completed:
     Section~\ref{sec:chirality});
   \item derive the origin of exactly three fermion generations
     (currently: no mechanism identified;
-    Section~\ref{sec:yukawa}).
+    Section~\ref{sec:yukawa});
+  \item derive quantitative atomic consequences of the fermionic
+    reconstruction---in particular the hydrogenic fine structure,
+    the microscopic origin of the fermionic $g$-factor, and
+    possible tiny orientation-sensitive corrections to atomic
+    energy levels associated with the preferred-direction/fifth-interaction
+    sector~(Section~\ref{sec:fifth_coupling});
+    this belongs to the interface between the fermionic programme
+    and the phenomenological discriminant programme.
 \end{enumerate}
 None of these steps has been completed.
 The fermionic sector is a structural reconstruction programme, not
@@ -22424,12 +22526,68 @@ These signatures should therefore be interpreted as a mixture of
 already-discussed observational tendencies and explicit ECT predictions,
 not as a closed confirmation set.
 
-\textit{ISW excess.}
-In voids, larger $G_{\rm eff}$ in low-density regions amplifies the
-ISW effect~(Level~B).  The CMB quadrupole deficit has a structural
-ECT argument from horizon-scale suppression (coherent-branch boundary
-conditions), but a quantitative derivation of $\delta C_2/C_2$ remains
-open~(Level~Open).
+\subsubsection{Integrated Sachs--Wolfe diagnostic}
+\label{sec:isw_diagnostic}
+
+Late-time evolution of the condensate response modifies the time
+dependence of the gravitational potentials and therefore the
+integrated Sachs--Wolfe (ISW) channel. In the present ECT benchmark,
+using the same $\varepsilon=0.01$ parameter as in the Hubble-tension
+discussion, we model this effect through the response function
+$\mu(a)=G_{\rm eff}(a)/G_N=a^{-2\varepsilon}$ and the associated
+lensing combination $\Sigma(a)=\mu(a)(1+\eta)/2$.
+
+At the semi-analytic Level~B considered here, the resulting
+ISW--tracer overlap proxy yields a modest enhancement of
+approximately $6\%$ in amplitude,
+\[
+A_{\rm proxy}=1.060,
+\]
+together with an internal source-power diagnostic
+\[
+\frac{\int \mathcal{F}_{\rm ECT}^2\,da}
+     {\int \mathcal{F}_{\Lambda{\rm CDM}}^2\,da}
+=1.108,
+\]
+corresponding to an $\sim 11\%$ excess in the source kernel.
+Illustrative phenomenological slip ans\"atze increase the proxy further
+to $A_{\rm proxy}=1.100$ for $\delta\eta=0.02$ and
+$A_{\rm proxy}=1.160$ for $\delta\eta=0.05$, but these should not be
+read as derived ECT predictions.
+
+The benchmark is not obviously in tension with the broad range of
+published ISW amplitude measurements
+(e.g.\ $A=0.96\pm0.30$ from unWISE$\times$Planck
+\cite{Krolewski2022}),
+but the comparison remains approximate:
+the present treatment uses an ISW--tracer overlap proxy rather than
+the observed $C_\ell^{Tg}$ estimator, and a full non-Limber
+Boltzmann-level calculation with realistic tracer windows remains
+future work. Figure~\ref{fig:isw_diagnostic} summarises the benchmark
+response functions and source evolution; the proxy-based
+comparison with published amplitudes is shown in
+Appendix~\ref{app:isw_diagnostic}, Fig.~\ref{fig:isw_vs_obs}.
+Full derivation and limitations are also given in
+Appendix~\ref{app:isw_diagnostic}.
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=0.95\textwidth]{figures/ect_isw_diagnostic_v3.png}
+  \caption{Semi-analytic ISW diagnostic for the ECT benchmark
+    $\varepsilon=0.01$.
+    (a)~Response functions $\mu(z)=G_{\rm eff}/G_N$ and
+    $\Sigma(z)=\mu(1+\eta)/2$.
+    (b)~ISW source kernel, normalised to the $\Lambda$CDM peak.
+    (c)~Cumulative source-kernel weight (diagnostic curve, not
+    observable).
+    (d)~Overlap proxy amplitude $A_{\rm proxy}(\varepsilon,\delta\eta)$.
+    The $\delta\eta\neq0$ cases are illustrative phenomenological
+    slip ans\"atze, not derived ECT predictions.
+    For the baseline case $\varepsilon=0.01$, the overlap proxy
+    gives $A_{\rm proxy}=1.060$.
+    Status: Level~B.}
+  \label{fig:isw_diagnostic}
+\end{figure}
 
 These observational handles connect directly to the falsifier logic
 summarised in Table~\ref{tab:ECT_predictions}, especially the
@@ -23097,6 +23255,116 @@ theory predicts either proton stability, or $\Delta B=2$ observables
 such as $n$--$\bar n$ oscillations and dinucleon decay, or a generic
 Planck-suppressed proton-decay benchmark
 (Section~\ref{sec:proton_stability}).
+
+\paragraph{Near-future observational discriminants.}
+Several observational programmes expected to deliver data within the
+next decade open discriminating channels directly relevant to the ECT
+framework.
+Unlike Table~\ref{tab:ECT_predictions}, which collects falsifiable
+predictions already linked to present ECT results,
+Table~\ref{tab:future_discriminants} includes both quantitative
+predictions connected to existing derivations and future
+discriminating channels for sectors that require further development
+before mission-ready forecasts can be claimed.
+Three observational windows are especially important:
+full-sky CMB polarisation (LiteBIRD~\cite{LiteBIRD2024}),
+precision ground-based CMB lensing and growth measurements
+(Simons Observatory~\cite{SimonsObs2019}, Euclid, Rubin/LSST),
+and low-frequency space-based gravitational-wave detection
+(LISA~\cite{LISA2017}).
+
+{\small
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{@{}p{0.04\textwidth}p{0.19\textwidth}p{0.24\textwidth}p{0.06\textwidth}p{0.18\textwidth}p{0.19\textwidth}@{}}
+\caption{Near-future observational discriminants for ECT.
+Rows marked Open or C identify discriminating observational channels
+rather than mission-ready forecasts.}
+\label{tab:future_discriminants}\\
+\toprule
+\# & Observable & ECT statement & Level & Mission / programme & Verdict if data conflict \\
+\midrule
+\endfirsthead
+\toprule
+\# & Observable & ECT statement & Level & Mission & Verdict if conflict \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+ND1 &
+Primordial tensor signal (large-angle CMB B-mode polarisation) &
+ECT ties primordial perturbations to early condensate dynamics;
+in the present benchmark cosmology this is implemented through
+condensate-driven inflation, while a more direct ordering-transition
+derivation remains future work.
+No ECT-native quantitative tensor spectrum is derived in the
+present paper &
+C / Open &
+LiteBIRD, Simons Observatory, BICEP Array &
+A robust detection of a primordial tensor spectrum incompatible
+with any viable condensate-based early-Universe completion of ECT
+would strongly constrain the present cosmological programme \\
+
+ND2 &
+CMB lensing and growth consistency &
+If the condensate-induced sector modifies late-time gravity through
+$G_{\rm eff}(z)$ and the anisotropic response
+$\Theta_{\mu\nu}[n]$, future lensing-plus-growth measurements
+provide a direct discriminating channel &
+B / C &
+Simons Observatory, Euclid, Rubin/LSST &
+Sub-percent agreement with GR/$\Lambda$CDM growth--lensing
+consistency across redshift would strongly limit the allowed
+condensate-response sector \\
+
+ND3 &
+GW propagation speed and possible dispersion &
+In the present ECT framework the tensor sector is expected to share
+the same emergent causal cone at leading order; any residual
+dispersion from higher-derivative condensate corrections should be
+strongly suppressed, but no quantitative LISA-band forecast is
+derived here &
+B &
+LISA &
+A clear leading-order mismatch between GW propagation and the ECT
+single-cone expectation would challenge the current tensor-sector
+closure \\
+
+ND4 &
+GW polarisation content &
+At the linearised level discussed here, the graviton sector
+reproduces the standard transverse-traceless tensor content;
+additional propagating scalar/vector GW modes are not established
+in the present formulation &
+B &
+LISA, PTA, 3G detectors &
+A confirmed detection of extra propagating scalar or vector GW
+polarisations would require revision of the present linearised
+ECT graviton sector \\
+
+ND5 &
+Standard-siren determination of $H_0$ &
+ECT allows a condensate-driven shift in the inferred expansion
+rate at the few-percent level in the benchmark scenario discussed
+in the cosmology section &
+B &
+LISA standard sirens &
+If future siren-based $H_0$ measurements show no room for the
+benchmark condensate-driven shift, the present ECT Hubble-shift
+scenario would be constrained \\
+
+\bottomrule
+\end{longtable}
+}
+
+\noindent
+A stochastic gravitational-wave background sourced by the
+$O(4)\!\to\!O(3)$ ordering dynamics is an additional potentially
+powerful discriminator, but a quantitative ECT spectrum
+$\Omega_{\rm GW}(f)$ remains to be derived.
+A future ECT derivation of the primordial scalar spectrum could
+further connect this programme to constraints on $n_s$, running,
+and non-Gaussianity.
 
 \subsection{Status table and open problems of the
 macroscopic branch}
@@ -24418,6 +24686,30 @@ continuity decomposition with action scale~$S_0$~(Level~A).
 A Schr\"odinger-type complex equation is then obtained as the
 natural complex recombination of that structure~(Level~B), especially
 in its observational form after $S_0=\hbar$ is identified.
+
+\paragraph{Relation to bound-state and spinorial
+  descriptions~(Level~B).}
+The Schr\"odinger-type equation~\eqref{eq:qs_schrodinger_type} should
+be understood as a low-energy envelope description.
+In bound systems---for example, a charged spinorial field in a
+Coulomb-like emergent $U(1)$
+background~(Section~\ref{sec:u1_emergence})---the full structural
+description is first gauge-coupled and, for fermionic matter,
+spinorial~(Section~\ref{sec:dirac_eq}).
+The Schr\"odinger orbital, with its familiar discrete eigenvalues and
+probability densities, then appears as the non-relativistic limit of
+that fuller spinorial structure: the regime in which velocities,
+binding energies, and spin-dependent relativistic corrections are all
+small compared with the rest scale.
+At the structural level, the discrete spectrum may be interpreted as
+arising from phase-consistency requirements on admissible bound
+configurations, in harmony with the winding/single-valuedness
+conditions of the coherent branch.
+This structural hierarchy---spinorial bound mode, non-relativistic
+envelope, Schr\"odinger orbital---does not add new quantitative content
+beyond what is already established above, but it clarifies the logical
+position of the Schr\"odinger equation within the broader ECT
+architecture.
 
 \subsubsection*{Why this is already structurally nontrivial}
 
@@ -36299,10 +36591,21 @@ open task.
 
 Several important limitations should be noted.
 
-(i)~The Standard Model gauge group $SU(3) \times SU(2) \times U(1)$ is
-embedded within the condensate structure but not derived from it.
-The colour group $SU(3)$ has no identified origin in the $O(4)$
-breaking pattern.
+(i)~The Abelian $U(1)$ gauge sector is derived from bundle covariance
+of the condensate phase fibre~(Level~A).
+A preferred chiral $SU(2)$ sector is structurally identified through
+the residual stabiliser and orientation of the broken
+phase~(Level~A for the gauge architecture; Level~B+ for the
+physical weak sector).
+The colour group $SU(3)_c$ cannot arise from the minimal
+$O(4)\to O(3)$ pattern
+($\dim\mathfrak{su}(3)>\dim\mathfrak{so}(4)$; see also
+\S\ref{sec:colour_completion}) and requires additional internal
+condensate structure~(Level~B).
+The full Standard-Model matching---observed matter
+representations, charge assignments, anomaly cancellation, and the
+Weinberg angle---remains open
+(Section~\ref{sec:common_origin}, Table~\ref{tab:op_gut}).
 
 (ii)~The galactic weak-field sector is currently implemented
 through an exploratory algebraic closure of the ordered-branch amplitude
@@ -36662,6 +36965,22 @@ $SU(3)\to SU(2)$.~$\square$
 The triplet-condensate route is structurally excluded.
 The ordered branch must remain an internal singlet if exact colour
 is to survive.
+
+\paragraph{Algebraic obstruction: dimensional exclusion.}
+A complementary, purely algebraic obstruction confirms this
+conclusion.
+The Lie algebra $\mathfrak{su}(3)$ has dimension~$8$, while
+$\mathfrak{so}(4)$ has dimension~$6$.
+Since a subalgebra cannot exceed the dimension of the ambient algebra,
+$\mathfrak{su}(3)\not\subset\mathfrak{so}(4)$.
+Therefore $SU(3)$ cannot arise as a direct subgroup or residual gauge
+factor of $O(4)$ by any mechanism---not only through the condensate
+stabiliser route excluded above, but through any algebraic embedding
+whatsoever.
+The maximal gauge structure derivable from the $O(4)\to O(3)$ pattern
+is $U(2)=(SU(2)\times U(1))/\mathbb{Z}_2$, which corresponds to the
+electroweak-type architecture established in
+Section~\ref{sec:nonabelian_embedding}.
 
 \subsubsection*{Reverse-engineered constraint on the medium}
 
@@ -37078,6 +37397,423 @@ identification of which pattern (I/II/III) is realised;
 if Pattern~III, identification of decay channels and coefficient
 structure.
 
+
+% ============================================================
+\subsection{Common pre-geometric origin of the interaction sectors}
+\label{sec:common_origin}
+% ============================================================
+
+\textit{Status: synthesis of results from
+Sections~\ref{sec:gauge_and_fifth}--\ref{sec:colour_completion}.
+This subsection collects the structural consequences of the ECT
+condensate for the fundamental interaction sectors and formulates
+the common-origin claim at the appropriate level of rigour.}
+
+\subsubsection*{Definition of ``unification'' in ECT}
+
+In this paper, ``unification'' does not mean embedding into a single
+simple Lie group (as in conventional GUT programmes based on $SU(5)$,
+$SO(10)$, or~$E_6$).
+It means emergence from a single pre-geometric condensate substrate
+through distinct but co-necessary sectors.
+Three levels are distinguished:
+\begin{description}[leftmargin=2.5em,style=unboxed,noitemsep]
+  \item[Common origin:]
+    all interaction sectors emerge from one condensate.
+  \item[Structural derivation:]
+    gauge groups are inevitable consequences of the condensate structure.
+  \item[Quantitative unification:]
+    coupling constants, charges, and representations follow from
+    condensate parameters.
+\end{description}
+The present work addresses common origin and structural derivation.
+Quantitative unification remains an open programme.
+
+\subsubsection*{Interaction-sector synthesis}
+
+Collecting the results of
+Sections~\ref{sec:gauge_and_fifth}--\ref{sec:colour_completion},
+the ECT condensate supports five distinct interaction sectors,
+all originating from the same ordered $\Phi$-medium:
+
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{@{}p{2.0cm}p{4.5cm}p{1.5cm}p{3.0cm}p{3.2cm}@{}}
+\caption{Interaction-sector synthesis: common pre-geometric origin.}
+\label{tab:interaction_synthesis}\\
+\toprule
+Sector & Mechanism in ECT & Level & What is derived & What remains open \\
+\midrule
+\endfirsthead
+\toprule
+Sector & Mechanism in ECT & Level & What is derived & What remains open \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Gravity
+  & Emergent $g_{\mu\nu}$ from $(\delta_{AB},\,n_A)$;
+    generalised Einstein equations
+  & A/B
+  & Metric, causal cone, tensor propagation
+  & Full NLEE coefficients \\
+EM ($U(1)$)
+  & Compact phase fibre; bundle covariance forces connection
+    and Maxwell-type dynamics
+    (Section~\ref{sec:u1_emergence})
+  & A
+  & Connection, covariant derivative, leading kinetic closure
+  & $U(1)_Y$ vs $U(1)_{\rm em}$ identification \\
+Weak ($SU(2)$)
+  & Residual stabiliser $O(3)$ of $O(4)\to O(3)$;
+    local orientation redundancy (P5);
+    $\mathfrak{so}(3)\cong\mathfrak{su}(2)$ bridge
+    (Section~\ref{sec:nonabelian_embedding})
+  & A (architecture);\newline B+ (physical weak sector)
+  & Gauge architecture, structural chiral selection
+    (Section~\ref{sec:chirality})
+  & Full internal weak-gauge derivation;
+    $\sin^2\!\theta_W$; matter representations \\
+Strong ($SU(3)_c$)
+  & Extended internal condensate structure;
+    reverse-engineered consistency requirement
+    (Section~\ref{sec:colour_completion})
+  & B
+  & Connection, QCD Lagrangian (once module specified)
+  & Intrinsic derivation;
+    why rank~3 \\
+Director coupling
+  & Lowest-dimension symmetry-allowed
+    fermion--condensate operator
+    $\mu_5\bar\Psi\gamma^A n_A\Psi$
+    (Section~\ref{sec:fifth_coupling})
+  & A (existence);\newline B (coefficient)
+  & Operator form, symmetry properties
+  & Coefficient from microdynamics \\
+\bottomrule
+\end{longtable}
+
+\subsubsection*{Why the electroweak architecture is maximal within
+the minimal condensate}
+
+The Lie algebra $\mathfrak{su}(3)$ has dimension~$8$, while
+$\mathfrak{so}(4)$ has dimension~$6$.
+Since $\dim\mathfrak{su}(3)>\dim\mathfrak{so}(4)$, the colour
+algebra cannot be a subalgebra of~$\mathfrak{so}(4)$.
+Therefore $SU(3)_c$ cannot arise as a direct subgroup or residual
+gauge factor of the minimal $O(4)\to O(3)$ breaking pattern.
+This supplements the dynamical obstruction of
+Section~\ref{sec:colour_completion} (colour-carrying condensate
+breaks $SU(3)\to SU(2)$) with an algebraic one: even setting
+dynamics aside, the algebra simply does not fit.
+
+Within the minimal $O(4)\to O(3)$ symmetry-breaking pattern, the
+electroweak-type $U(1)\times SU(2)$ architecture is the maximal
+direct gauge structure accessible without introducing additional
+internal condensate degrees of freedom.
+Any colour sector therefore requires additional internal structure
+beyond the minimal $O(4)$ data---exactly as realised in the
+primary completion of Section~\ref{sec:colour_completion}.
+
+This is a structural prediction of ECT\@: the qualitative distinction
+between the electroweak and strong sectors---a fact postulated in the
+Standard Model---is explained by the algebraic and dynamical
+constraints of the condensate.
+
+\subsubsection*{Two-storey electroweak architecture}
+
+The electroweak sector of ECT has a two-storey structure:
+\begin{description}[leftmargin=2.5em,style=unboxed,noitemsep]
+  \item[Geometric storey (Sections~\ref{sec:nonabelian_embedding},
+    \ref{sec:chirality}):]
+    The $O(4)\to O(3)$ SSB and P5 yield the
+    $SU(2)\times U(1)$ gauge architecture as a structural
+    redundancy of the ordered branch.
+    The oriented condensate provides a structural setting for chiral
+    asymmetry.
+  \item[Phenomenological storey
+    (Section~\ref{sec:ew_embedding}):]
+    The secondary condensate scale at $v_2=246$\,GeV realises
+    electroweak symmetry breaking and generates the observed
+    $W^\pm$, $Z$, and Higgs masses.
+\end{description}
+The first storey explains why $SU(2)\times U(1)$ exists as a gauge
+architecture; the second explains how it breaks.
+
+\subsubsection*{Director coupling: naming and status}
+
+The ECT-specific fermion--condensate coupling
+$\mu_5\bar\Psi\gamma^A n_A\Psi$
+(Section~\ref{sec:fifth_coupling}) is henceforth referred to as the
+\emph{director coupling}, by analogy with the director field of
+nematic liquid crystals and the anchoring energy in those systems.
+The order parameter $n_A$ plays the role of the director; the
+coupling describes how fermionic excitations interact with the
+orientation of the ordered medium.
+
+The director coupling is a generic ECT prediction: it is the
+lowest-dimension (dimension-4) condensate--fermion operator permitted
+by the symmetry content of the ordered branch.
+Its absence would require an additional symmetry
+($n_A\to -n_A$) that is not present after SSB\@.
+In the language of 't~Hooft naturalness, a vanishing coefficient
+would be technically unnatural.
+
+Observable signatures include spin precession
+$\omega_{\rm dir}\sim 10^{-10}$\,rad/s, a composition-dependent
+E\"otv\"os parameter $\eta\sim 10^{-15}$
+(within the MICROSCOPE-2 sensitivity range),
+and CP and Lorentz violation at the level
+$\delta c/c\sim\beta_{\rm dir}^2$.
+
+\subsubsection*{Coleman--Mandula remark}
+
+A standard concern about mixing spacetime and internal symmetries is
+the Coleman--Mandula theorem~\cite{ColemanMandula1967}.
+Its usual assumptions presuppose a Lorentzian S-matrix setting with
+nontrivial scattering amplitudes, a mass gap, and Poincar\'e
+invariance, whereas ECT begins at a pre-Lorentzian Euclidean
+substrate where none of these conditions are met at the fundamental
+level.
+Therefore the theorem does not straightforwardly apply to the
+pre-breaking condensate dynamics.
+A full reformulation for emergent settings remains outside the scope
+of the present work.
+This should not be read as a circumvention of the Coleman--Mandula
+theorem, but as a statement about the current level of analysis.
+
+\subsubsection*{Global electroweak structure and charge-lattice
+constraint}
+
+If the global electroweak structure group is taken to be
+\begin{equation}
+  U(2)=\frac{SU(2)\times U(1)}{\mathbb{Z}_2},
+  \label{eq:U2_global}
+\end{equation}
+then the allowed representations satisfy the compatibility condition
+\begin{equation}
+  2T + Y \in 2\mathbb{Z},
+  \label{eq:charge_lattice}
+\end{equation}
+where $T$ is the isospin and $Y$ the hypercharge.
+The electric charge operator $Q=T_3+Y/2$ is then constrained to a
+discrete lattice.
+This is a structural constraint on the charge lattice, not yet a
+derivation of the observed particle charge assignments; the full
+charge spectrum requires a derivation of the fermion representation
+content~(OP-GUT3b).
+
+The $\mathbb{Z}_2$ quotient is motivated by the $\mathbb{Z}_2$
+symmetry of the condensate potential $V(\Phi)=V(-\Phi)$, which
+identifies the centres of $SU(2)$ and $U(1)$.
+A more detailed investigation of the global group structure and its
+consequences for charge quantisation remains open.
+
+\subsubsection*{Hierarchical bosonic sectors}
+
+The bosonic content of ECT is best organised hierarchically, by
+structural level.
+The table below records the bosonic sectors retained in the current
+formulation at successive levels of condensate structure; it does not
+claim a final unique census of all possible emergent excitations.
+
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{@{}clcp{3.4cm}c@{}}
+\caption{Hierarchical bosonic sectors in ECT\@.}
+\label{tab:boson_hierarchy}\\
+\toprule
+Level & Particle & Spin & Origin & Status \\
+\midrule
+\endfirsthead
+\toprule
+Level & Particle & Spin & Origin & Status \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\multicolumn{5}{l}{\textit{Level~0: minimal condensate
+  ($O(4)\to O(3)$ SSB)}} \\
+0 & Graviton & 2 & Metric sector $\delta g_{\mu\nu}$ & A/B \\
+0 & $\chi$ (Goldstone) & 0 & Surviving $O(4)/O(3)$ mode & A/B \\
+0 & $\sigma$ (radial) & 0 & Radial condensate oscillation & A/B \\[4pt]
+\multicolumn{5}{l}{\textit{Level~1: compact phase fibre
+  ($U(1)$ bundle)}} \\
+1 & Photon & 1 & $U(1)$ phase gauge boson & A \\[4pt]
+\multicolumn{5}{l}{\textit{Level~2: electroweak condensate
+  ($v_2=246$\,GeV)}} \\
+2 & $W^\pm$ & 1 & $SU(2)$ gauge $+$ EW breaking & B+ \\
+2 & $Z^0$ & 1 & $SU(2)\times U(1)$ mixing & B+ \\
+2 & Higgs ($H$) & 1 & Radial mode of doublet & B+ \\[4pt]
+\multicolumn{5}{l}{\textit{Level~3: colour extension
+  (scenario~$\beta$)}} \\
+3 & 8 gluons & 1 & $SU(3)_c$ internal symmetry & B \\
+\bottomrule
+\end{longtable}
+
+Relative to the Standard Model, the current ECT formulation
+generically retains an additional condensate scalar sector,
+represented by the ultra-light $\chi$-mode
+($m_\chi\sim 10^{-33}$\,eV; fuzzy dark matter candidate) and the
+heavy radial mode~$\sigma$.
+The $\chi$-mode is potentially detectable through its cosmological
+effects (galactic rotation curves, large-scale structure), while
+$\sigma$ is expected to be too heavy
+($m_\sigma\sim\mathcal{O}(m_\phi)$) for direct observation at
+current collider energies.
+
+\subsubsection*{Comparison with other unification programmes}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{@{}p{2.6cm}p{2.8cm}cp{1.8cm}p{2.5cm}@{}}
+\caption{Comparison of interaction-sector scope.}
+\label{tab:unification_comparison}\\
+\toprule
+Framework & Gauge sector & Gravity & Parity violation & Additional
+  predictions \\
+\midrule
+\endfirsthead
+\toprule
+Framework & Gauge sector & Gravity & Parity violation & Additional
+  predictions \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Standard Model
+  & Postulated
+  & Absent
+  & Postulated
+  & --- \\
+GUT (SU(5), SO(10))
+  & Simple group
+  & Absent
+  & From representations
+  & Proton decay \\
+String theory
+  & In principle
+  & In principle
+  & Model-dependent
+  & Landscape \\
+Loop quantum gravity
+  & Not addressed
+  & Derived
+  & Not addressed
+  & Area spectrum \\
+Einstein--aether
+  & Not addressed
+  & Postulated $n_\mu$
+  & Not addressed
+  & Preferred-frame effects \\
+ECT
+  & Common origin (A/B)
+  & Derived
+  & Structural (B+)
+  & Director coupling,
+    $\chi$-mode, $\sigma$-mode \\
+\bottomrule
+\end{longtable}
+
+ECT is broader in scope than a conventional simple-group GUT,
+because it also addresses gravity, parity violation, and a fifth
+interaction channel within the same framework.
+Its notion of unification is structural/pre-geometric rather than
+simple-group theoretic.
+
+\subsubsection*{The common-origin claim}
+
+ECT provides a common pre-geometric origin for gravity, an
+inevitable Abelian gauge sector, a structurally selected chiral
+weak sector, and a generic director coupling.
+Under the structural completion of the colour sector
+(Section~\ref{sec:colour_completion}), the four known interactions
+share a common microscopic origin within one condensate framework.
+
+The present results concern the origin of the gauge architecture.
+They do not yet amount to a full derivation of the observed matter
+representations, charge assignments, anomaly cancellation, or the
+Weinberg angle.
+These belong to the open programme below.
+
+\subsubsection*{Open problems toward quantitative unification}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{@{}lp{6.5cm}p{2.5cm}@{}}
+\caption{Open problems toward quantitative unification.}
+\label{tab:op_gut}\\
+\toprule
+ID & Problem & Status \\
+\midrule
+\endfirsthead
+\toprule
+ID & Problem & Status \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+OP-GUT1
+  & Intrinsic derivation of $SU(3)_c$ from condensate structure
+    (algebraically impossible from $O(4)$ alone;
+     requires extended internal structure)
+  & Open \\
+OP-GUT2
+  & Derive fermion representations from condensate
+  & Open \\
+OP-GUT3a
+  & Global EW structure $\to$ charge lattice
+  & Partial (B+) \\
+OP-GUT3b
+  & Derive observed charge assignments of quarks and leptons
+  & Open \\
+OP-GUT4
+  & Relate $\alpha_s$, $\alpha_{\rm em}$, $G_N$ to condensate parameters
+  & Open \\
+OP-GUT5
+  & Three fermion generations; Yukawa hierarchy
+  & Open \\
+OP-GUT6a
+  & Local triangle anomaly cancellation
+  & Open (consistency test) \\
+OP-GUT6b
+  & Witten $SU(2)$ global $\mathbb{Z}_2$-anomaly
+  & Open (consistency test) \\
+OP-GUT7
+  & Weinberg angle $\sin^2\!\theta_W$ from condensate parameters
+  & Open \\
+OP-GUT8
+  & Director coupling coefficient from microphysics
+  & Open \\
+OP-GRAV-WEAK
+  & Independent spin-1 connection modes beyond metric sector
+  & Open \\
+OP-TORSION
+  & Propagating torsion in a possible first-order reformulation
+  & Open (speculative) \\
+\bottomrule
+\end{longtable}
+
+\subsubsection*{Speculative routes (beyond present scope)}
+
+Two further routes merit recording as possible future directions,
+although they lie beyond the present metric--condensate formulation:
+\begin{enumerate}[noitemsep]
+  \item \emph{Connection degrees of freedom beyond the metric.}
+    A key technical question is whether the oriented connection
+    sector contains independent spin-1 modes beyond those fixed by
+    the metric.
+    If so, these modes could underlie the weak interaction, providing
+    a geometric---rather than internal---derivation of the $SU(2)_L$
+    gauge sector~(OP-GRAV-WEAK).
+  \item \emph{Torsion-based reformulation.}
+    A first-order (Palatini-type) reformulation of ECT with
+    independent connection variables may render torsion components
+    propagating.
+    The self-dual torsion sector is a natural candidate for a
+    geometric origin of weak bosons.
+    However, the current metric--condensate formulation does not
+    include independent torsion variables, and this route lies
+    beyond the present scope~(OP-TORSION).
+\end{enumerate}
+
+
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
@@ -37420,6 +38156,22 @@ field equations has been performed across all phenomenological sectors
 (Table~\ref{tab:nlee_footprint}), identifying cluster-merger lensing
 and JWST perturbative growth as the most sensitive probes of the
 orientation-stress coefficient~$c_1$~(OP-c1).
+
+\paragraph{Common pre-geometric origin of fundamental interactions.}
+ECT now supports a hierarchical picture of the interaction sectors
+(Section~\ref{sec:common_origin}):
+an inevitable Abelian gauge sector from the compact phase fibre;
+a structurally selected chiral $SU(2)$ sector tied to the oriented
+broken phase and fermionic decomposition;
+and a colour sector that requires extended internal condensate
+structure beyond the minimal $O(4)$-breaking pattern
+(algebraically, $\dim\mathfrak{su}(3)>\dim\mathfrak{so}(4)$).
+Together with emergent gravity and the generic
+director coupling, ECT provides a common
+pre-geometric origin of the known interaction sectors.
+The full Standard-Model matching---matter representations, charge
+assignments, anomaly cancellation, Weinberg angle---remains an open
+programme~(Table~\ref{tab:op_gut}).
 
 These results do not yet constitute a final derivation of all known
 physics, but they already exclude classes of interpretation that would
@@ -39215,6 +39967,126 @@ assumption; not a strict consequence of the foundational assumptions
 P1--P4 alone.
 
 % ------------------------------------------------------------
+\section{LIV time-delay numerics}
+\label{app:liv_numerics}
+
+The benchmark ECT formula for photon time-of-flight delay due to
+Lorentz-invariance violation is (Eq.~\ref{eq:LIV_delay})
+\begin{equation}
+  \Delta t_{\rm LIV}
+  = \frac{(\alpha-\beta)}{\beta}\,
+    \frac{E}{M_{\rm Pl}\,c^2}\,\frac{L}{c}
+  \;\xrightarrow{\alpha=2\beta,\,\beta=1}\;
+  \frac{E}{M_{\rm Pl}\,c^2}\,\frac{L}{c}\,.
+\end{equation}
+Using $M_{\rm Pl}=1.22\times10^{19}$\,GeV and
+$1\,{\rm Gpc}=3.086\times10^{25}$\,m, one obtains
+\begin{equation}
+  \Delta t_{\rm LIV}
+  \approx 8.4\times10^{-3}\;
+  \biggl(\frac{E}{1\,{\rm GeV}}\biggr)
+  \biggl(\frac{L}{1\,{\rm Gpc}}\biggr)
+  \;{\rm s}\,.
+  \label{eq:liv_numerics}
+\end{equation}
+Representative values:
+\begin{longtable}{@{}p{3.6cm}p{3.6cm}p{3.6cm}p{3.6cm}@{}}
+\toprule
+$E$ (GeV) & $L$ (Gpc) & Source type & $\Delta t$ (s) \\
+\midrule
+\endfirsthead
+\toprule
+$E$ (GeV) & $L$ (Gpc) & Source type & $\Delta t$ (s) \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+$1$   & $4$   & Typical GRB     & $3.4\times10^{-2}$ \\
+$10$  & $4$   & Fermi-LAT GRB   & $3.4\times10^{-1}$ \\
+$10^3$ & $0.4$ & CTA blazar (TeV)& $3.4$ \\
+$10^4$ & $0.04$& CTA nearby AGN  & $3.4$ \\
+\bottomrule
+\end{longtable}
+The Fermi-LAT constraint from GRB~090510~\cite{Fermi_LIV_2009}
+sets $M_{\rm QG,1}>7.6\,M_{\rm Pl}$ for the linear
+dispersion relation, implying that the benchmark ECT prediction
+with $M_{\rm QG}=M_{\rm Pl}$ lies at the boundary of current
+exclusions.
+CTA~\cite{CTA2020} is expected to reach timing precision
+$\sim\!10^{-4}$\,s at TeV energies over $\sim\!0.1$--$1$\,Gpc
+baselines, directly probing the ECT prediction
+(Fig.~\ref{fig:liv_delay}).
+
+\label{app:retarded_kernel}
+
+\textit{Reference from main text: Section~\ref{sec:arrow_of_time},
+Result~A3.
+Status: Level~A in the quadratic Lorentzian sector.}
+
+\subsection*{Setup}
+
+After passing to the effective Lorentzian description
+(Section~\ref{sec:effective_metric}), small fluctuations satisfy:
+\begin{equation}
+  (\partial_t^2-c_*^2\nabla^2+M^2)\,\varphi(t,\mathbf{x})=J(t,\mathbf{x}).
+\end{equation}
+The retarded Green's function:
+\begin{equation}
+  (\partial_t^2-c_*^2\nabla^2+M^2)\,G_{\rm ret}(t,\mathbf{x})
+  =\delta(t)\,\delta^{(3)}(\mathbf{x}).
+\end{equation}
+
+\subsection*{Fourier representation and pole structure}
+
+\begin{equation}
+  \label{eq:Gret_Fourier}
+  G_{\rm ret}(\omega,\mathbf{k})
+  =\frac{1}{(\omega+i0^+)^2-\omega_k^2},
+  \qquad\omega_k=\sqrt{c_*^2k^2+M^2}.
+\end{equation}
+Both poles $\omega=\pm\omega_k-i0^+$ lie in the \emph{lower} half-plane.
+
+\subsection*{Proof that $G_{\rm ret}(t,\mathbf{x})=0$ for $t<0$}
+
+For $t<0$ the integrand $e^{-i\omega t}$ decays for $\text{Im}\,\omega\to+\infty$,
+so the $\omega$-contour closes in the upper half-plane.
+Since both poles lie in the lower half-plane, the Cauchy theorem gives:
+\begin{equation}
+  \label{eq:K_causal}
+  \boxed{G_{\rm ret}(t,\mathbf{x})=0\qquad(t<0).}
+\end{equation}
+
+\subsection*{Explicit form for $t>0$}
+
+\begin{equation}
+  \label{eq:Gret_explicit}
+  G_{\rm ret}(t,\mathbf{x})=\theta(t)\int\frac{d^3k}{(2\pi)^3}\,
+  \frac{\sin(\omega_k t)}{\omega_k}\,e^{i\mathbf{k}\cdot\mathbf{x}}.
+\end{equation}
+The factor $\theta(t)$ explicitly confirms~\eqref{eq:K_causal}.
+
+\subsection*{What follows and what does not}
+
+\textbf{Follows (Level~A, quadratic sector):}
+retarded linear-response kernel $G_{\rm ret}(t,\mathbf{x})=0$ for $t<0$;
+causality of the effective linear kernel in broken-phase EFT is strictly satisfied;
+condition~(ii) in the arrow-of-time argument (Section~\ref{sec:arrow_of_time})
+applies rigorously in the quadratic sector.
+
+\textbf{Superseded by the full symmetric-hyperbolic result:}
+Appendix~\ref{app:causal_hyperbolic} provides the explicit symmetric-hyperbolic
+reduction that upgrades the present quadratic result to Level~A for all
+perturbations in the Lorentzian ordered branch.
+
+\textbf{Does not follow from this appendix alone:}
+retardedness in defect-core regions or signature-changing domains~(OP5);
+Markovianity, ohmicity, Born rule, Pauli principle, OS reconstruction.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ------------------------------------------------------------------
 \section{Causal propagation for the full nonlinear ECT dynamics:
 complete symmetric-hyperbolic reduction}
 \label{app:causal_hyperbolic}
@@ -39398,171 +40270,6 @@ the \emph{full nonlinear} dynamics.
 The quadratic result is the special case of the present theorem obtained
 by linearising $c_*(|\partial\Phi|)\approx c_*$.
 
-
-\section{Retarded Causal Kernel: Proof That $K(\tau<0)=0$}
-
-% ------------------------------------------------------------------
-\section{LIV time-delay numerics}
-\label{app:liv_numerics}
-
-The benchmark ECT formula for photon time-of-flight delay due to
-Lorentz-invariance violation is (Eq.~\ref{eq:LIV_delay})
-\begin{equation}
-  \Delta t_{\rm LIV}
-  = \frac{(\alpha-\beta)}{\beta}\,
-    \frac{E}{M_{\rm Pl}\,c^2}\,\frac{L}{c}
-  \;\xrightarrow{\alpha=2\beta,\,\beta=1}\;
-  \frac{E}{M_{\rm Pl}\,c^2}\,\frac{L}{c}\,.
-\end{equation}
-Using $M_{\rm Pl}=1.22\times10^{19}$\,GeV and
-$1\,{\rm Gpc}=3.086\times10^{25}$\,m, one obtains
-\begin{equation}
-  \Delta t_{\rm LIV}
-  \approx 8.4\times10^{-3}\;
-  \biggl(\frac{E}{1\,{\rm GeV}}\biggr)
-  \biggl(\frac{L}{1\,{\rm Gpc}}\biggr)
-  \;{\rm s}\,.
-  \label{eq:liv_numerics}
-\end{equation}
-Representative values:
-\begin{longtable}{@{}p{3.6cm}p{3.6cm}p{3.6cm}p{3.6cm}@{}}
-\toprule
-$E$ (GeV) & $L$ (Gpc) & Source type & $\Delta t$ (s) \\
-\midrule
-\endfirsthead
-\toprule
-$E$ (GeV) & $L$ (Gpc) & Source type & $\Delta t$ (s) \\
-\midrule
-\endhead
-\bottomrule
-\endfoot
-$1$   & $4$   & Typical GRB     & $3.4\times10^{-2}$ \\
-$10$  & $4$   & Fermi-LAT GRB   & $3.4\times10^{-1}$ \\
-$10^3$ & $0.4$ & CTA blazar (TeV)& $3.4$ \\
-$10^4$ & $0.04$& CTA nearby AGN  & $3.4$ \\
-\bottomrule
-\end{longtable}
-The Fermi-LAT constraint from GRB~090510~\cite{Fermi_LIV_2009}
-sets $M_{\rm QG,1}>7.6\,M_{\rm Pl}$ for the linear
-dispersion relation, implying that the benchmark ECT prediction
-with $M_{\rm QG}=M_{\rm Pl}$ lies at the boundary of current
-exclusions.
-CTA~\cite{CTA2020} is expected to reach timing precision
-$\sim\!10^{-4}$\,s at TeV energies over $\sim\!0.1$--$1$\,Gpc
-baselines, directly probing the ECT prediction
-(Fig.~\ref{fig:liv_delay}).
-
-\label{app:retarded_kernel}
-
-\textit{Reference from main text: Section~\ref{sec:arrow_of_time},
-Result~A3.
-Status: Level~A in the quadratic Lorentzian sector.}
-
-\subsection*{Setup}
-
-After passing to the effective Lorentzian description
-(Section~\ref{sec:effective_metric}), small fluctuations satisfy:
-\begin{equation}
-  (\partial_t^2-c_*^2\nabla^2+M^2)\,\varphi(t,\mathbf{x})=J(t,\mathbf{x}).
-\end{equation}
-The retarded Green's function:
-\begin{equation}
-  (\partial_t^2-c_*^2\nabla^2+M^2)\,G_{\rm ret}(t,\mathbf{x})
-  =\delta(t)\,\delta^{(3)}(\mathbf{x}).
-\end{equation}
-
-\subsection*{Fourier representation and pole structure}
-
-\begin{equation}
-  \label{eq:Gret_Fourier}
-  G_{\rm ret}(\omega,\mathbf{k})
-  =\frac{1}{(\omega+i0^+)^2-\omega_k^2},
-  \qquad\omega_k=\sqrt{c_*^2k^2+M^2}.
-\end{equation}
-Both poles $\omega=\pm\omega_k-i0^+$ lie in the \emph{lower} half-plane.
-
-\subsection*{Proof that $G_{\rm ret}(t,\mathbf{x})=0$ for $t<0$}
-
-For $t<0$ the integrand $e^{-i\omega t}$ decays for $\text{Im}\,\omega\to+\infty$,
-so the $\omega$-contour closes in the upper half-plane.
-Since both poles lie in the lower half-plane, the Cauchy theorem gives:
-\begin{equation}
-  \label{eq:K_causal}
-  \boxed{G_{\rm ret}(t,\mathbf{x})=0\qquad(t<0).}
-\end{equation}
-
-\subsection*{Explicit form for $t>0$}
-
-\begin{equation}
-  \label{eq:Gret_explicit}
-  G_{\rm ret}(t,\mathbf{x})=\theta(t)\int\frac{d^3k}{(2\pi)^3}\,
-  \frac{\sin(\omega_k t)}{\omega_k}\,e^{i\mathbf{k}\cdot\mathbf{x}}.
-\end{equation}
-The factor $\theta(t)$ explicitly confirms~\eqref{eq:K_causal}.
-
-\subsection*{What follows and what does not}
-
-\textbf{Follows (Level~A, quadratic sector):}
-retarded linear-response kernel $G_{\rm ret}(t,\mathbf{x})=0$ for $t<0$;
-causality of the effective linear kernel in broken-phase EFT is strictly satisfied;
-condition~(ii) in the arrow-of-time argument (Section~\ref{sec:arrow_of_time})
-applies rigorously in the quadratic sector.
-
-\textbf{Superseded by the full symmetric-hyperbolic result:}
-Appendix~\ref{app:causal_hyperbolic} provides the explicit symmetric-hyperbolic
-reduction that upgrades the present quadratic result to Level~A for all
-perturbations in the Lorentzian ordered branch.
-
-\textbf{Does not follow from this appendix alone:}
-retardedness in defect-core regions or signature-changing domains~(OP5);
-Markovianity, ohmicity, Born rule, Pauli principle, OS reconstruction.
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% ------------------------------------------------------------------
-\section{Qubit information--decoherence numerics}
-\label{app:qubit_numerics}
-
-The qubit dephasing closure of Section~\ref{sec:pes_info_bound}
-uses a maximally coherent initial state
-$|\psi\rangle=(|0\rangle+|1\rangle)/\sqrt{2}$ subject to
-Gaussian dephasing with parameter~$\Gamma$.
-The system--environment mutual information is
-(Eq.~\ref{eq:info_decoherence})
-\begin{equation}
-  I(S{:}E)
-  = 2\,h_2\!\left(\frac{1+e^{-\Gamma}}{2}\right),
-\end{equation}
-where $h_2(p)=-p\ln p-(1-p)\ln(1-p)$ is the binary entropy.
-In bits: $I_{\rm bits}=I/(\ln 2)$.
-The residual coherence (visibility) is $V=e^{-\Gamma}$.
-
-Representative values (Fig.~\ref{fig:qubit_info_decoherence}):
-\begin{longtable}{@{}p{3.6cm}p{3.6cm}p{3.6cm}p{3.6cm}@{}}
-\toprule
-$\Gamma$ & $I$ [bits] & $V$ & Physical anchor \\
-\midrule
-\endfirsthead
-\toprule
-$\Gamma$ & $I$ [bits] & $V$ & Physical anchor \\
-\midrule
-\endhead
-\bottomrule
-\endfoot
-$0.006$ & $0.10$ & $0.994$ & Procopio~2015 (quantum switch) \\
-$0.062$ & $0.50$ & $0.940$ & Jacques~2007 (closed config.) \\
-$0.25$  & $1.00$ & $0.779$ & One-bit information threshold \\
-$0.347$ & $1.19$ & $0.707$ & Bell/CHSH crossover \\
-$1.0$   & $1.69$ & $0.368$ & Order-unity decoherence \\
-$3.0$   & $1.98$ & $0.050$ & Near-complete dephasing \\
-\bottomrule
-\end{longtable}
-The curve is monotonic: extracting more information requires
-stronger decoherence.
-This is a Level~B result of the specific dephasing closure;
-a protocol-independent bound remains open~(OP-PES-6).
 
 \section{Directed decoherence: proof that
   $\Gamma_{\rm irr}[q,q']\geq 0$}
@@ -40795,340 +41502,6 @@ up to sign convention.
 
 
 % ============================================================
-\section{Structural routes to open microphysical targets}
-\label{app:open_microphysics}
-% ============================================================
-
-This appendix collects technical details for the four structural
-routes identified in the main text: the fine-structure constant,
-the generation number, the Yukawa hierarchy, and the primordial
-perturbation spectrum.
-In each case, ECT already compresses the problem into a sharply
-localised calculational task.
-The following estimates demonstrate that the required numerical
-targets lie in natural ranges rather than demanding extreme tuning.
-
-% ------------------------------------------------------------
-\subsection*{A.\ Fine-structure constant: electroweak gauge
-normalisation}
-\label{app:alpha_fs_details}
-% ------------------------------------------------------------
-
-% --- A.1 Low-energy structural relation ---
-
-From~\eqref{eq:alpha_fs_ZA}, $\alpha_{\rm fs}=q^2/(4\pi Z_A)$.
-The observational target is $Z_A^{\rm IR}\approx 10.9$, a moderate
-coefficient of order ten.  The structural route identified in the
-main text reduces the fine-structure problem to the emergence and
-normalisation of gauge-field kinetics from condensate microphysics.
-
-% --- A.2 Why the UV problem is electroweak, not purely photonic ---
-
-\subsubsection*{A.1\quad Why the ultraviolet problem is electroweak}
-
-Below the electroweak scale~$M_W$, the photon~$A_\mu$ is a mass
-eigenstate and $\alpha_{\rm fs}^{-1}=4\pi Z_A/q^2$ is a
-well-defined running quantity.  Above~$M_W$, however, the photon
-is not a propagating eigenstate.  The relevant ultraviolet gauge
-basis is $U(1)_Y\times SU(2)_L$, with independent gauge
-couplings~$g'$ and~$g$ (or equivalently $\alpha_Y$ and~$\alpha_2$)
-and independent gauge-kinetic normalisations~$Z_B$
-and~$Z_W$.  The electromagnetic coupling emerges only after
-electroweak symmetry breaking through
-\[
-  \alpha_{\rm fs}^{-1}
-  =\alpha_Y^{-1}+\alpha_2^{-1}.
-\]
-The correct ultraviolet calculational target is therefore the pair
-$(Z_B^{(0)},Z_W^{(0)})$ at the condensate scale~$\phi_0$,
-together with the electroweak mixing angle~$\theta_W$ that
-determines how these normalisations combine into the low-energy
-photon.
-
-% --- A.3 External electroweak benchmark ---
-
-\subsubsection*{A.2\quad External one-loop electroweak benchmark}
-
-Using the observed Standard-Model electroweak data only as an
-external benchmark (not as an ECT derivation), one proceeds as
-follows.  At the electroweak matching scale $M_Z=91.2$\,GeV, the
-measured values are $\alpha_{\rm em}^{-1}(M_Z)\approx 127.95$ and
-$\sin^2\theta_W(M_Z)\approx 0.2312$.  The standard electroweak
-decomposition gives
-\[
-  \alpha_Y^{-1}(M_Z)
-  =\alpha_{\rm em}^{-1}(M_Z)\cos^2\theta_W
-  \approx 98.4,
-  \qquad
-  \alpha_2^{-1}(M_Z)
-  =\alpha_{\rm em}^{-1}(M_Z)\sin^2\theta_W
-  \approx 29.6.
-\]
-Employing the standard hypercharge normalisation (not the
-GUT-normalised convention), the one-loop SM beta coefficients are
-$b_Y=41/6$ and $b_2=-19/6$.  The renormalisation group equations
-\[
-  \alpha_i^{-1}(\phi_0)
-  =\alpha_i^{-1}(M_Z)
-  -\frac{b_i}{2\pi}\,\ln\frac{\phi_0}{M_Z}
-\]
-with $\ln(\phi_0/M_Z)\approx 37.8$ yield
-\[
-  \alpha_Y^{-1}(\phi_0)\approx 57,
-  \qquad
-  \alpha_2^{-1}(\phi_0)\approx 49.
-\]
-These should be read as benchmark ultraviolet kinetic targets
-inferred from the external one-loop electroweak running, not yet
-as microscopic coefficients derived from the ECT action.  The
-corresponding benchmark coefficients are
-\[
-  Z_B^{\rm bench}\approx 4.6,
-  \qquad
-  Z_W^{\rm bench}\approx 3.9.
-\]
-
-Under the candidate colour completion
-(\S\ref{sec:colour_completion}), the effective charge-squared sum
-that enters the one-loop bookkeeping is
-$C_{\rm eff}=\sum_f N_{c,f}Q_f^2=8$
-for the observed three-generation benchmark
-(three lepton families contributing $3\times 1^2=3$; three
-up-type quarks contributing $3\times 3\times(2/3)^2=4$; three
-down-type quarks contributing $3\times 3\times(1/3)^2=1$).
-The observed three-generation Standard-Model matter content is
-used here only as benchmark input, not as a quantity already
-derived within ECT\@.
-
-% --- A.4 ECT structural interpretation ---
-
-\subsubsection*{A.3\quad ECT structural interpretation}
-
-In ECT the electroweak gauge-kinetic coefficients are expected to
-arise as structural outputs of the ordered condensate rather than as
-independent primitive inputs:
-$Z_B^{(0)}$ inherits from the compact-phase stiffness
-$K_\theta^{\rm eff}\sim\phi_0^2$ of the same condensate sector from
-which the $U(1)$ gauge structure emerges
-(\S\ref{sec:u1_emergence}), and $Z_W^{(0)}$ inherits from the
-orientation-sector stiffness $\kappa_n\sim\phi_0^2$ associated with
-the $O(4)\to O(3)$ symmetry breaking, from which the $SU(2)$-like
-gauge redundancy arises (\S\ref{sec:nonabelian_embedding}).
-Both sectors are anchored in the same ordered-condensate framework
-and are naturally controlled by the primary condensate
-scale~$\phi_0$, although the corresponding effective stiffness
-coefficients need not coincide exactly.
-
-The fine-structure constant is therefore structurally tied to the
-same condensate architecture that governs gravity and quantisation.
-
-At the benchmark level, the ultraviolet mixing angle can be
-expressed directly in terms of the two electroweak inverse
-couplings, or equivalently in terms of the corresponding benchmark
-kinetic targets:
-\[
-  \sin^2\theta_W(\phi_0)
-  =\frac{\alpha_2^{-1}(\phi_0)}
-        {\alpha_Y^{-1}(\phi_0)+\alpha_2^{-1}(\phi_0)}
-  =\frac{Z_W^{\rm bench}}{Z_B^{\rm bench}+Z_W^{\rm bench}}.
-\]
-If the phase and orientation sectors contribute with comparable
-stiffnesses ($K_\theta^{\rm eff}\approx\kappa_n$), one expects
-$\sin^2\theta_W(\phi_0)=\mathcal{O}(1/2)$.  The external benchmark
-value $\sin^2\theta_W(\phi_0)\approx 0.46$ is qualitatively
-compatible with this expectation.  The deviation from
-exactly~$1/2$ would encode the detailed structural difference
-between the phase and orientation sectors of the condensate.
-
-% --- A.5 Limitations and honest status ---
-
-\subsubsection*{A.4\quad Limitations and honest status}
-
-The external benchmark used above is subject to several
-limitations:
-(i)~two-loop and higher-order corrections to the beta coefficients
-have been ignored;
-(ii)~threshold corrections at intermediate scales ($m_t$, $M_W$,
-$M_Z$, $M_H$) have been treated as step functions rather than
-properly matched;
-(iii)~below~$M_Z$, hadronic vacuum-polarisation contributions
-cannot be honestly reduced to free quark thresholds; the low-energy
-running between the Thomson limit and~$M_Z$ involves
-nonperturbative QCD effects;
-(iv)~the observed SM three-generation matter content, hypercharge
-assignments, and right-handed singlet structure have been used as
-external inputs, not as quantities derived within ECT\@;
-(v)~the colour completion itself is a candidate route
-(Level~Open/C), not a proven theorem.
-
-The robust conclusion at the present stage is narrower: the
-benchmark ultraviolet electroweak kinetic targets are moderate
-rather than extreme, purely loop-induced electroweak kinetics are
-not compatible with the observed couplings within this benchmark,
-and the Weinberg angle becomes a structural target of the
-condensate-sector ratio.  A first-principles derivation
-of~$(Z_B^{(0)},Z_W^{(0)})$ from condensate microphysics remains
-a concrete open programme
-(Level~B/C, OP-$\alpha_{\rm fs}$).
-
-% ------------------------------------------------------------
-\subsection*{B.\ Three fermion generations: spectral counting}
-\label{app:generations_details}
-% ------------------------------------------------------------
-
-In a toy model where the condensate profile after the ordering
-transition creates an effective potential of P\"oschl--Teller type
-for fermions, the number of normalizable bound states is
-$N_{\rm bound}\approx\lfloor\nu\rfloor$, where
-$\nu = y/\sqrt{2\lambda}$
-(Eq.~\eqref{eq:nu_bound}).
-
-\noindent
-\emph{Numerical window for three generations:}
-\renewcommand{\arraystretch}{1.2}
-\begin{longtable}{@{}p{3.6cm}p{3.6cm}p{3.6cm}p{3.6cm}@{}}
-\toprule
-$\lambda_{\rm eff}$ & $\sqrt{2\lambda_{\rm eff}}$ & $y$ range for $N_{\rm gen}=3$
-  & Comment \\
-\midrule
-\endfirsthead
-\toprule
-$\lambda_{\rm eff}$ & $\sqrt{2\lambda_{\rm eff}}$ & $y$ range for $N_{\rm gen}=3$
-  & Comment \\
-\midrule
-\endhead
-\bottomrule
-\endfoot
-$0.10$ & $0.447$ & $1.34$--$1.79$ & natural $y=O(1)$ \\
-$0.13$ & $0.510$ & $1.53$--$2.04$ & natural $y=O(1)$ \\
-\bottomrule
-\end{longtable}
-In all cases, three generations arise for $y\sim 1.3$--$2.0$,
-a natural range requiring no extreme tuning.
-The parameter $\lambda_{\rm eff}$ refers to the local effective
-profile entering the toy spectral problem; it is not yet identified
-with the fundamental quartic parameter of the full ECT action.
-The parameter $\lambda_{\rm eff}$ refers to the local effective
-profile entering the toy spectral problem; it is not yet
-identified with the fundamental quartic parameter of the full
-ECT action.
-
-The complementary topological route via the index of the
-internal Dirac operator $D_{\rm int}$ on the condensate
-background would give
-$N_L-N_R = \operatorname{Index}(D_{\rm int})$,
-providing protection of the family number as a
-spectral-topological invariant.
-For an $O(4)$-background carrying instanton number~$n$
-(from $\pi_3(S^3)=\mathbb{Z}$), the Atiyah--Singer index
-theorem gives $|n|$ zero modes per chirality.
-This does not by itself identify the observed family number
-with the instanton number; it only shows that topological
-protection of mode multiplicity is available in principle.
-The physical identification of the three Standard-Model
-families with such protected modes remains open.
-This does not by itself identify the observed family number
-with the instanton number; it only shows that topological
-protection of mode multiplicity is available in principle.
-The physical identification of the three Standard-Model
-families with such protected modes remains open.
-
-\noindent\emph{Status:} Level~B/C (structural route identified;
-strict derivation of exactly three families from the ECT
-condensate profile is open, OP-generations).
-
-% ------------------------------------------------------------
-\subsection*{C.\ Yukawa hierarchy: overlap and tunnelling
-suppression}
-\label{app:yukawa_details}
-% ------------------------------------------------------------
-
-If families correspond to three quasi-localised fermionic modes,
-then eigenvalues of the Yukawa matrix
-(Eq.~\eqref{eq:yukawa_overlap}) satisfy $y_i\sim y_0\, e^{-S_i}$,
-where $y_0\sim y_t\sim 1$ and $S_i$ measures the effective
-overlap suppression action.
-The observed Yukawa couplings require:
-
-\renewcommand{\arraystretch}{1.2}
-\begin{longtable}{@{}p{2.9cm}p{2.9cm}p{2.9cm}p{2.9cm}p{2.9cm}@{}}
-\toprule
-Sector & Heavy & Middle & Light & $\Delta S_{\rm heavy\to light}$\\
-\midrule
-\endfirsthead
-\toprule
-Sector & Heavy & Middle & Light & $\Delta S_{\rm heavy\to light}$\\
-\midrule
-\endhead
-\bottomrule
-\endfoot
-Up-type & $y_t\approx 0.99$ & $y_c\approx 7.3\times 10^{-3}$
-  & $y_u\approx 1.3\times 10^{-5}$ & $11.3$ \\
-Charged leptons & $y_\tau\approx 1.0\times 10^{-2}$
-  & $y_\mu\approx 6.1\times 10^{-4}$
-  & $y_e\approx 2.9\times 10^{-6}$ & $8.1$ \\
-\bottomrule
-\end{longtable}
-
-\noindent
-These require only moderate effective-action differences
-($\Delta S\sim 3$--$11$), which are quantitatively natural
-for quasi-localised modes with slightly different binding
-depths or tunnelling barriers.
-
-\noindent\emph{Status:} Level~B/C (the overlap/tunnelling mechanism
-is physically motivated and quantitatively plausible; the
-explicit computation of $Y_{ij}$ from condensate microphysics
-is open, OP-Yukawa).
-
-% ------------------------------------------------------------
-\subsection*{D.\ Primordial perturbations from the ECT critical-fluctuation route:
-estimate summary}
-\label{app:primordial_details}
-% ------------------------------------------------------------
-
-The critical-fluctuation route developed in
-Section~\ref{sec:primordial_estimates} yields two independent
-estimates for the spectral tilt:
-
-\renewcommand{\arraystretch}{1.2}
-\begin{longtable}{@{}p{4.8cm}p{4.8cm}p{4.8cm}@{}}
-\toprule
-Mechanism & Expression & Estimated $n_s$ \\
-\midrule
-\endfirsthead
-\toprule
-Mechanism & Expression & Estimated $n_s$ \\
-\midrule
-\endhead
-\bottomrule
-\endfoot
-Logarithmic $d{=}4$ correction
-  & $1-n_s\sim\hat p/\ln(L/\xi_0)$, $\hat p\sim 4$--$5$
-  & $0.964$--$0.971$ \\
-Gauge--Higgs anomalous dimension
-  & $1-n_s\sim 2|\gamma_H|\sim 0.025$
-  & $\sim 0.975$ \\
-Combined (with conversion correction)
-  & $1-n_s\sim 0.025+\delta_{\rm conv}$
-  & $\sim 0.96$--$0.97$ \\
-\bottomrule
-\end{longtable}
-
-\noindent
-The amplitude requires
-$\delta u_*/u_0\sim 5\times 10^{-5}$~\eqref{eq:amplitude_requirement},
-which is achievable through loop-scale weak/Higgs corrections
-($g^2/(16\pi^2)\sim 10^{-3}$--$10^{-2}$)
-supplemented by a modest conversion suppression factor.
-The logarithmic exponent $\hat p$ has not yet been derived
-within ECT; the quoted range should be read as the range
-needed for compatibility with the observed tilt.
-
-\noindent\emph{Status:} Level~B/C (the critical-fluctuation route
-is numerically compatible with observations; the full derivation
-including freeze-out dynamics and curvature transfer is open).
-
 \section{Non-Abelian local completion and the
 \texorpdfstring{$\mathfrak{so}(3)\cong\mathfrak{su}(2)$}{so(3)=su(2)} bridge}
 \label{app:nonabelian_completion}
@@ -41695,6 +42068,413 @@ effective gravitational response.
 This is fully consistent with the Macroscopic Physics discussion,
 but does not eliminate the need for observational matching.
 
+
+\section{Numerical algorithms}
+\label{app:algorithms}
+
+This appendix summarises the computational procedures used to generate
+the figures in this paper.  Full source code (Python~3 with NumPy,
+SciPy, and Matplotlib) is publicly available at
+\url{https://github.com/chufelo/ECT-preprint-code} .
+
+\subsection{Galaxy rotation curves}
+
+The present SPARC pipeline uses the practical ECT closure introduced in
+Section~\ref{sec:galactic_dynamics} and derived in
+Appendix~\ref{app:galactic_phi_closure}:
+\begin{equation}
+g(R)=\frac{1}{2}\left[g_N(R)+\sqrt{g_N^2(R)+4\,g_N(R)\,g^\dagger_{\rm eff}}\right],
+\end{equation}
+with baryonic input acceleration
+\begin{equation}
+g_N(R)=
+\frac{V_{\rm gas}^2(R)+\Upsilon_{\rm d}V_{\rm disk}^2(R)+
+\Upsilon_{\rm b}V_{\rm bul}^2(R)}{R}.
+\end{equation}
+The numerical fitting procedure, quality flags, and model-comparison
+protocol are documented in Appendix~\ref{app:sparc_computation}.
+
+The detailed construction of the baryonic input velocity
+($V_{\rm gas},V_{\rm disk},V_{\rm bul}$), the adopted
+mass-to-light ratios, the SPARC quality cuts, and the
+per-galaxy fitting workflow are all documented in
+Appendix~\ref{app:sparc_computation}.  They are not repeated
+here in order to avoid duplication between the generic
+algorithm appendix and the dedicated SPARC appendix.
+
+\subsection{RG running of $\lambda(\mu)$}
+
+The one-loop $\beta$-function (Section~\ref{sec:three_scales})
+is integrated numerically from $\mu = M_{\rm Pl}$ downward using a
+standard adaptive Runge--Kutta method, with boundary condition
+$\lambda(M_{\rm Pl}) \approx 10^{-3}$.
+This yields a parametrically small dimensionless gravitational coupling
+$g(M_{\rm Pl})=\lambda(M_{\rm Pl})/(8\pi)\approx4\times10^{-5}$
+(Eq.~\eqref{eq:g_dimensionless}).
+Since $\beta_\lambda>0$, $\lambda(\mu)$ decreases monotonically
+toward the infrared and $g(\mu)$ remains small across all
+sub-Planckian scales.
+The Landau pole of the pure scalar closure lies at
+$\mu_{\rm LP}\approx M_{\rm Pl}\,e^{5.26\times10^4}$
+(Eq.~\eqref{eq:landau_pole}), far above the physical EFT threshold
+$m_\sigma\sim M_{\rm Pl}$, and is therefore physically unreachable.
+
+\subsection{Figure production}
+
+All figures use publication-quality settings: serif font (Times New
+Roman), 9\,pt labels, inward tick marks, 220\,dpi output, with
+$\texttt{bbox\_inches='tight'}$.
+
+\paragraph{Regime diagram (Fig.~\ref{fig:regime_diagram}).}
+The regime diagram plots the ordered-branch amplitude variable
+$\phi = \frac{1}{\beta}\ln(u/u_\infty)$ against
+$\log_{10}(g/g_\dagger)$.
+The screening boundary is the locus where the chameleon-like
+mass $m_\phi(\rho)$ equals the inverse distance to the
+nearest mass source; to the right of this boundary (high $\phi$)
+gravity is screened and Newtonian.
+Representative astrophysical systems are placed at their
+estimated $(\phi,\,g/g_\dagger)$ values:
+Solar System ($\phi \approx 2.5$, $g/g_\dagger \sim 10^2$),
+spiral disk ($\phi \approx 0.5$, $g/g_\dagger \sim 1$),
+void dwarf ($\phi \approx -0.5$, $g/g_\dagger \sim 10^{-1.5}$),
+cosmic void ($\phi \approx -1$, $g/g_\dagger \sim 10^{-4}$).
+The script \texttt{fig\_regime\_diagram.py} in the code
+repository produces this figure.
+
+\section{Structural routes to open microphysical targets}
+\label{app:open_microphysics}
+% ============================================================
+
+This appendix collects technical details for the four structural
+routes identified in the main text: the fine-structure constant,
+the generation number, the Yukawa hierarchy, and the primordial
+perturbation spectrum.
+In each case, ECT already compresses the problem into a sharply
+localised calculational task.
+The following estimates demonstrate that the required numerical
+targets lie in natural ranges rather than demanding extreme tuning.
+
+% ------------------------------------------------------------
+\subsection*{A.\ Fine-structure constant: electroweak gauge
+normalisation}
+\label{app:alpha_fs_details}
+% ------------------------------------------------------------
+
+% --- A.1 Low-energy structural relation ---
+
+From~\eqref{eq:alpha_fs_ZA}, $\alpha_{\rm fs}=q^2/(4\pi Z_A)$.
+The observational target is $Z_A^{\rm IR}\approx 10.9$, a moderate
+coefficient of order ten.  The structural route identified in the
+main text reduces the fine-structure problem to the emergence and
+normalisation of gauge-field kinetics from condensate microphysics.
+
+% --- A.2 Why the UV problem is electroweak, not purely photonic ---
+
+\subsubsection*{A.1\quad Why the ultraviolet problem is electroweak}
+
+Below the electroweak scale~$M_W$, the photon~$A_\mu$ is a mass
+eigenstate and $\alpha_{\rm fs}^{-1}=4\pi Z_A/q^2$ is a
+well-defined running quantity.  Above~$M_W$, however, the photon
+is not a propagating eigenstate.  The relevant ultraviolet gauge
+basis is $U(1)_Y\times SU(2)_L$, with independent gauge
+couplings~$g'$ and~$g$ (or equivalently $\alpha_Y$ and~$\alpha_2$)
+and independent gauge-kinetic normalisations~$Z_B$
+and~$Z_W$.  The electromagnetic coupling emerges only after
+electroweak symmetry breaking through
+\[
+  \alpha_{\rm fs}^{-1}
+  =\alpha_Y^{-1}+\alpha_2^{-1}.
+\]
+The correct ultraviolet calculational target is therefore the pair
+$(Z_B^{(0)},Z_W^{(0)})$ at the condensate scale~$\phi_0$,
+together with the electroweak mixing angle~$\theta_W$ that
+determines how these normalisations combine into the low-energy
+photon.
+
+% --- A.3 External electroweak benchmark ---
+
+\subsubsection*{A.2\quad External one-loop electroweak benchmark}
+
+Using the observed Standard-Model electroweak data only as an
+external benchmark (not as an ECT derivation), one proceeds as
+follows.  At the electroweak matching scale $M_Z=91.2$\,GeV, the
+measured values are $\alpha_{\rm em}^{-1}(M_Z)\approx 127.95$ and
+$\sin^2\theta_W(M_Z)\approx 0.2312$.  The standard electroweak
+decomposition gives
+\[
+  \alpha_Y^{-1}(M_Z)
+  =\alpha_{\rm em}^{-1}(M_Z)\cos^2\theta_W
+  \approx 98.4,
+  \qquad
+  \alpha_2^{-1}(M_Z)
+  =\alpha_{\rm em}^{-1}(M_Z)\sin^2\theta_W
+  \approx 29.6.
+\]
+Employing the standard hypercharge normalisation (not the
+GUT-normalised convention), the one-loop SM beta coefficients are
+$b_Y=41/6$ and $b_2=-19/6$.  The renormalisation group equations
+\[
+  \alpha_i^{-1}(\phi_0)
+  =\alpha_i^{-1}(M_Z)
+  -\frac{b_i}{2\pi}\,\ln\frac{\phi_0}{M_Z}
+\]
+with $\ln(\phi_0/M_Z)\approx 37.8$ yield
+\[
+  \alpha_Y^{-1}(\phi_0)\approx 57,
+  \qquad
+  \alpha_2^{-1}(\phi_0)\approx 49.
+\]
+These should be read as benchmark ultraviolet kinetic targets
+inferred from the external one-loop electroweak running, not yet
+as microscopic coefficients derived from the ECT action.  The
+corresponding benchmark coefficients are
+\[
+  Z_B^{\rm bench}\approx 4.6,
+  \qquad
+  Z_W^{\rm bench}\approx 3.9.
+\]
+
+Under the candidate colour completion
+(\S\ref{sec:colour_completion}), the effective charge-squared sum
+that enters the one-loop bookkeeping is
+$C_{\rm eff}=\sum_f N_{c,f}Q_f^2=8$
+for the observed three-generation benchmark
+(three lepton families contributing $3\times 1^2=3$; three
+up-type quarks contributing $3\times 3\times(2/3)^2=4$; three
+down-type quarks contributing $3\times 3\times(1/3)^2=1$).
+The observed three-generation Standard-Model matter content is
+used here only as benchmark input, not as a quantity already
+derived within ECT\@.
+
+% --- A.4 ECT structural interpretation ---
+
+\subsubsection*{A.3\quad ECT structural interpretation}
+
+In ECT the electroweak gauge-kinetic coefficients are expected to
+arise as structural outputs of the ordered condensate rather than as
+independent primitive inputs:
+$Z_B^{(0)}$ inherits from the compact-phase stiffness
+$K_\theta^{\rm eff}\sim\phi_0^2$ of the same condensate sector from
+which the $U(1)$ gauge structure emerges
+(\S\ref{sec:u1_emergence}), and $Z_W^{(0)}$ inherits from the
+orientation-sector stiffness $\kappa_n\sim\phi_0^2$ associated with
+the $O(4)\to O(3)$ symmetry breaking, from which the $SU(2)$-like
+gauge redundancy arises (\S\ref{sec:nonabelian_embedding}).
+Both sectors are anchored in the same ordered-condensate framework
+and are naturally controlled by the primary condensate
+scale~$\phi_0$, although the corresponding effective stiffness
+coefficients need not coincide exactly.
+
+The fine-structure constant is therefore structurally tied to the
+same condensate architecture that governs gravity and quantisation.
+
+At the benchmark level, the ultraviolet mixing angle can be
+expressed directly in terms of the two electroweak inverse
+couplings, or equivalently in terms of the corresponding benchmark
+kinetic targets:
+\[
+  \sin^2\theta_W(\phi_0)
+  =\frac{\alpha_2^{-1}(\phi_0)}
+        {\alpha_Y^{-1}(\phi_0)+\alpha_2^{-1}(\phi_0)}
+  =\frac{Z_W^{\rm bench}}{Z_B^{\rm bench}+Z_W^{\rm bench}}.
+\]
+If the phase and orientation sectors contribute with comparable
+stiffnesses ($K_\theta^{\rm eff}\approx\kappa_n$), one expects
+$\sin^2\theta_W(\phi_0)=\mathcal{O}(1/2)$.  The external benchmark
+value $\sin^2\theta_W(\phi_0)\approx 0.46$ is qualitatively
+compatible with this expectation.  The deviation from
+exactly~$1/2$ would encode the detailed structural difference
+between the phase and orientation sectors of the condensate.
+
+% --- A.5 Limitations and honest status ---
+
+\subsubsection*{A.4\quad Limitations and honest status}
+
+The external benchmark used above is subject to several
+limitations:
+(i)~two-loop and higher-order corrections to the beta coefficients
+have been ignored;
+(ii)~threshold corrections at intermediate scales ($m_t$, $M_W$,
+$M_Z$, $M_H$) have been treated as step functions rather than
+properly matched;
+(iii)~below~$M_Z$, hadronic vacuum-polarisation contributions
+cannot be honestly reduced to free quark thresholds; the low-energy
+running between the Thomson limit and~$M_Z$ involves
+nonperturbative QCD effects;
+(iv)~the observed SM three-generation matter content, hypercharge
+assignments, and right-handed singlet structure have been used as
+external inputs, not as quantities derived within ECT\@;
+(v)~the colour completion itself is a candidate route
+(Level~Open/C), not a proven theorem.
+
+The robust conclusion at the present stage is narrower: the
+benchmark ultraviolet electroweak kinetic targets are moderate
+rather than extreme, purely loop-induced electroweak kinetics are
+not compatible with the observed couplings within this benchmark,
+and the Weinberg angle becomes a structural target of the
+condensate-sector ratio.  A first-principles derivation
+of~$(Z_B^{(0)},Z_W^{(0)})$ from condensate microphysics remains
+a concrete open programme
+(Level~B/C, OP-$\alpha_{\rm fs}$).
+
+% ------------------------------------------------------------
+\subsection*{B.\ Three fermion generations: spectral counting}
+\label{app:generations_details}
+% ------------------------------------------------------------
+
+In a toy model where the condensate profile after the ordering
+transition creates an effective potential of P\"oschl--Teller type
+for fermions, the number of normalizable bound states is
+$N_{\rm bound}\approx\lfloor\nu\rfloor$, where
+$\nu = y/\sqrt{2\lambda}$
+(Eq.~\eqref{eq:nu_bound}).
+
+\noindent
+\emph{Numerical window for three generations:}
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{@{}p{3.6cm}p{3.6cm}p{3.6cm}p{3.6cm}@{}}
+\toprule
+$\lambda_{\rm eff}$ & $\sqrt{2\lambda_{\rm eff}}$ & $y$ range for $N_{\rm gen}=3$
+  & Comment \\
+\midrule
+\endfirsthead
+\toprule
+$\lambda_{\rm eff}$ & $\sqrt{2\lambda_{\rm eff}}$ & $y$ range for $N_{\rm gen}=3$
+  & Comment \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+$0.10$ & $0.447$ & $1.34$--$1.79$ & natural $y=O(1)$ \\
+$0.13$ & $0.510$ & $1.53$--$2.04$ & natural $y=O(1)$ \\
+\bottomrule
+\end{longtable}
+In all cases, three generations arise for $y\sim 1.3$--$2.0$,
+a natural range requiring no extreme tuning.
+The parameter $\lambda_{\rm eff}$ refers to the local effective
+profile entering the toy spectral problem; it is not yet identified
+with the fundamental quartic parameter of the full ECT action.
+The parameter $\lambda_{\rm eff}$ refers to the local effective
+profile entering the toy spectral problem; it is not yet
+identified with the fundamental quartic parameter of the full
+ECT action.
+
+The complementary topological route via the index of the
+internal Dirac operator $D_{\rm int}$ on the condensate
+background would give
+$N_L-N_R = \operatorname{Index}(D_{\rm int})$,
+providing protection of the family number as a
+spectral-topological invariant.
+For an $O(4)$-background carrying instanton number~$n$
+(from $\pi_3(S^3)=\mathbb{Z}$), the Atiyah--Singer index
+theorem gives $|n|$ zero modes per chirality.
+This does not by itself identify the observed family number
+with the instanton number; it only shows that topological
+protection of mode multiplicity is available in principle.
+The physical identification of the three Standard-Model
+families with such protected modes remains open.
+This does not by itself identify the observed family number
+with the instanton number; it only shows that topological
+protection of mode multiplicity is available in principle.
+The physical identification of the three Standard-Model
+families with such protected modes remains open.
+
+\noindent\emph{Status:} Level~B/C (structural route identified;
+strict derivation of exactly three families from the ECT
+condensate profile is open, OP-generations).
+
+% ------------------------------------------------------------
+\subsection*{C.\ Yukawa hierarchy: overlap and tunnelling
+suppression}
+\label{app:yukawa_details}
+% ------------------------------------------------------------
+
+If families correspond to three quasi-localised fermionic modes,
+then eigenvalues of the Yukawa matrix
+(Eq.~\eqref{eq:yukawa_overlap}) satisfy $y_i\sim y_0\, e^{-S_i}$,
+where $y_0\sim y_t\sim 1$ and $S_i$ measures the effective
+overlap suppression action.
+The observed Yukawa couplings require:
+
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{@{}p{2.9cm}p{2.9cm}p{2.9cm}p{2.9cm}p{2.9cm}@{}}
+\toprule
+Sector & Heavy & Middle & Light & $\Delta S_{\rm heavy\to light}$\\
+\midrule
+\endfirsthead
+\toprule
+Sector & Heavy & Middle & Light & $\Delta S_{\rm heavy\to light}$\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Up-type & $y_t\approx 0.99$ & $y_c\approx 7.3\times 10^{-3}$
+  & $y_u\approx 1.3\times 10^{-5}$ & $11.3$ \\
+Charged leptons & $y_\tau\approx 1.0\times 10^{-2}$
+  & $y_\mu\approx 6.1\times 10^{-4}$
+  & $y_e\approx 2.9\times 10^{-6}$ & $8.1$ \\
+\bottomrule
+\end{longtable}
+
+\noindent
+These require only moderate effective-action differences
+($\Delta S\sim 3$--$11$), which are quantitatively natural
+for quasi-localised modes with slightly different binding
+depths or tunnelling barriers.
+
+\noindent\emph{Status:} Level~B/C (the overlap/tunnelling mechanism
+is physically motivated and quantitatively plausible; the
+explicit computation of $Y_{ij}$ from condensate microphysics
+is open, OP-Yukawa).
+
+% ------------------------------------------------------------
+\subsection*{D.\ Primordial perturbations from the ECT critical-fluctuation route:
+estimate summary}
+\label{app:primordial_details}
+% ------------------------------------------------------------
+
+The critical-fluctuation route developed in
+Section~\ref{sec:primordial_estimates} yields two independent
+estimates for the spectral tilt:
+
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{@{}p{4.8cm}p{4.8cm}p{4.8cm}@{}}
+\toprule
+Mechanism & Expression & Estimated $n_s$ \\
+\midrule
+\endfirsthead
+\toprule
+Mechanism & Expression & Estimated $n_s$ \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Logarithmic $d{=}4$ correction
+  & $1-n_s\sim\hat p/\ln(L/\xi_0)$, $\hat p\sim 4$--$5$
+  & $0.964$--$0.971$ \\
+Gauge--Higgs anomalous dimension
+  & $1-n_s\sim 2|\gamma_H|\sim 0.025$
+  & $\sim 0.975$ \\
+Combined (with conversion correction)
+  & $1-n_s\sim 0.025+\delta_{\rm conv}$
+  & $\sim 0.96$--$0.97$ \\
+\bottomrule
+\end{longtable}
+
+\noindent
+The amplitude requires
+$\delta u_*/u_0\sim 5\times 10^{-5}$~\eqref{eq:amplitude_requirement},
+which is achievable through loop-scale weak/Higgs corrections
+($g^2/(16\pi^2)\sim 10^{-3}$--$10^{-2}$)
+supplemented by a modest conversion suppression factor.
+The logarithmic exponent $\hat p$ has not yet been derived
+within ECT; the quoted range should be read as the range
+needed for compatibility with the observed tilt.
+
+\noindent\emph{Status:} Level~B/C (the critical-fluctuation route
+is numerically compatible with observations; the full derivation
+including freeze-out dynamics and curvature transfer is open).
 
 \section{Effective Action for Orientation Modes: Nonlinear Sigma-Model}
 \label{app:sigma_model}
@@ -44846,6 +45626,150 @@ This conclusion applies equally to the Universe-age analysis
 of~\S\ref{sec:universe_age}.
 
 
+% ==============================================================
+\section{Semi-analytic ISW diagnostic}
+\label{app:isw_diagnostic}
+% ==============================================================
+
+This appendix provides the derivation and supplementary figures
+supporting the ISW subsubsection in the main text
+(Subsection~\ref{sec:isw_diagnostic});
+the benchmark numbers quoted there are reproduced below.
+The calculation is at Level~B and uses the same cosmological
+benchmark parameter $\varepsilon=0.01$ as the Hubble-tension
+discussion (Section~\ref{sec:mp_hubble});
+it is \emph{not} fitted to ISW data.
+
+\subsection{Modified growth and ISW source}
+
+In the $\phi$-first closure (Section~\ref{sec:mp_nonlinear}),
+the effective gravitational coupling evolves as
+$\mu(a)\equiv G_{\rm eff}(a)/G_N = a^{-2\varepsilon}$,
+with $\varepsilon\approx 0.01$ in the present benchmark.
+The growth function $D(a)$ satisfies
+\begin{equation}
+  \label{eq:growth_isw}
+  D'' + \left(\frac{3}{a}+\frac{E'}{E}\right)D'
+  - \frac{3\,\Omega_m\,\mu(a)}{2\,a^5\,E^2}\,D = 0,
+\end{equation}
+where $E(a)=H(a)/H_0$ and primes denote $d/da$.
+In the quasi-static sub-horizon regime, the Newtonian potentials
+are related to the matter overdensity through
+the lensing-response function
+$\Sigma(a)=\mu(a)[1+\eta(a)]/2$,
+where $\eta\equiv\Phi/\Psi$ is the gravitational slip.
+The ISW source kernel is then
+\begin{equation}
+  \label{eq:isw_kernel}
+  \mathcal{F}(a)
+  = \frac{1}{a\,E(a)}\,\frac{d}{da}\!\left[
+    \frac{\Sigma(a)\,D(a)}{a}\right].
+\end{equation}
+In $\Lambda$CDM one has $\mu=\eta=\Sigma=1$;
+in the ECT benchmark $\mu(a)=a^{-2\varepsilon}$ with
+$\eta=1$ (baseline) or
+$\eta(a)=1+\delta\eta\,(1-a)$
+(illustrative phenomenological slip ansatz, \emph{not} derived
+from the ECT closure).
+
+\subsection{ISW--tracer overlap proxy}
+
+Because the ISW signal is concentrated at low multipoles
+$\ell\lesssim 20$, where the Limber approximation is unreliable,
+a full $C_\ell^{Tg}$ calculation requires non-Limber
+line-of-sight integration with spherical Bessel functions.
+In the absence of such a calculation, the present benchmark
+uses a simpler diagnostic: the ISW--tracer overlap amplitude
+proxy
+\begin{equation}
+  \label{eq:isw_proxy}
+  A_{\rm proxy}
+  \;=\;
+  \frac{\displaystyle\int da\;\mathcal{F}_{\rm ECT}(a)\,
+    W_g(a)\,D_{\rm ECT}(a)}
+  {\displaystyle\int da\;\mathcal{F}_{\Lambda{\rm CDM}}(a)\,
+    W_g(a)\,D_{\Lambda{\rm CDM}}(a)},
+\end{equation}
+where
+$W_g(a) = b\,n(z(a))/{a^2}$
+is the galaxy tracer window,
+$n(z)\propto z^2\exp(-z/0.35)$ is a toy unWISE-like
+redshift distribution,
+$b=1.5$ is an effective galaxy bias,
+and both growth functions are normalised to $D(a=1)=1$.
+This proxy measures the relative strength of the ISW--tracer
+overlap; it is \emph{not} the observed $C_\ell^{Tg}$ estimator
+and should not be compared with published ISW amplitudes
+as a one-to-one observable.
+
+\subsection{Benchmark results}
+
+With $\varepsilon=0.01$, $\eta=1$~(baseline):
+\begin{equation}
+  A_{\rm proxy} = 1.060,
+  \qquad
+  \frac{\int\mathcal{F}_{\rm ECT}^2\,da}
+       {\int\mathcal{F}_{\Lambda{\rm CDM}}^2\,da}
+  = 1.108
+  \quad(\text{source-power diagnostic}).
+\end{equation}
+With illustrative phenomenological slip ans\"atze
+(\emph{not} derived from ECT):
+$\delta\eta=0.02$ gives $A_{\rm proxy}=1.100$;
+$\delta\eta=0.05$ gives $A_{\rm proxy}=1.160$.
+
+These values lie within the broad range covered by
+current published ISW amplitude measurements
+(e.g.\ $A=0.96\pm0.30$ from unWISE$\times$Planck~\cite{Krolewski2022}),
+but this should not be interpreted as a formal statistical
+consistency test, since the proxy is not the observed estimator.
+
+The main-text Figure~\ref{fig:isw_diagnostic} shows the ECT response
+functions, source kernel, cumulative weight, and sensitivity map.
+Figure~\ref{fig:isw_vs_obs} below compares the proxy amplitude with
+published ISW measurements and shows the sensitivity to $\varepsilon$.
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=0.95\textwidth]{figures/ect_isw_vs_obs_v3.png}
+  \caption{ISW overlap proxy vs published amplitude measurements.
+    (a)~Proxy values for the ECT baseline and illustrative slip
+    ans\"atze compared with published ISW amplitudes from
+    unWISE$\times$Planck~\cite{Krolewski2022}, VST~ATLAS$\times$Planck,
+    AllWISE$\times$WMAP, and Planck~XXI combined.
+    The parameter $\varepsilon=0.01$ is taken from the Hubble-tension
+    benchmark and is not fitted to ISW data.
+    (b)~Sensitivity of the proxy to $\varepsilon$; the shaded band
+    shows the unWISE published amplitude range.
+    This is a proxy-based comparison, not a formal statistical test.
+    Status: Level~B.}
+  \label{fig:isw_vs_obs}
+\end{figure}
+
+\subsection{Limitations}
+
+\begin{itemize}
+  \item The calculation uses the parametrised
+    $\mu(a)=a^{-2\varepsilon}$ from the $\phi$-first closure,
+    not the full nonlinear generalised Einstein
+    equations~\eqref{eq:gen_EE}.
+  \item The gravitational slip $\eta\neq1$ from
+    $\Theta_{\mu\nu}[n]$ is not derived; the
+    $\delta\eta$ values are illustrative
+    phenomenological ans\"atze only.
+  \item The overlap proxy~\eqref{eq:isw_proxy} is not
+    $C_\ell^{Tg}$. A full non-Limber line-of-sight
+    calculation with spherical Bessel functions and
+    realistic tracer windows remains future work.
+  \item No void-specific ISW profile or CMB low-$\ell$
+    anomaly calculation is performed.
+\end{itemize}
+
+The computational script producing these results
+(\texttt{ect\_isw\_diagnostic.py}) is available in the
+code repository.
+
+
 % ============================================================
 % APPENDIX: DIMENSION AND NORMALIZATION AUDIT
 % ============================================================
@@ -44881,69 +45805,6 @@ The explicit calculation therefore belongs to Section~\ref{sec:quantum}.
 
 
 % ------------------------------------------------------------
-\section{Unified vacuum-response logic: boundaries, acceleration,
-time dependence, and horizons}
-\label{app:qs_vacuum_response}
-% ============================================================
-
-\textit{Status: Level~B for the unified interpretive closure.
-Level~A for the structural statement that the ordered vacuum supports
-nontrivial coherent correlators.
-Open~(OP-Q12): quantitative derivation of all four effects from the
-completed reduced coherent EFT.}
-
-\medskip
-The four effects discussed in
-Sections~\ref{sec:qs_casimir}--\ref{sec:qs_unruh}
-and~\ref{sec:qs_black_holes}---Casimir-type boundary response, particle
-production in time-dependent backgrounds, Unruh-type thermality, and
-Hawking-type horizon thermality---should be understood in ECT as
-different probes of the same ordered coherent vacuum, not as four
-unrelated phenomena.
-
-\subsection*{The unifying logic}
-
-In each case the physical question is how the coherent vacuum responds
-when one changes the accessibility structure of coherent modes:
-\begin{enumerate}[label=(\roman*)]
-  \item \textbf{Boundary problems:} part of the mode spectrum is
-    excluded geometrically; the vacuum response appears as a
-    boundary-dependent shift in effective energy~(Casimir-type).
-  \item \textbf{Time-dependent backgrounds:} mode definitions at early
-    and late times no longer coincide; the mismatch appears as
-    Bogoliubov-type particle production.
-  \item \textbf{Accelerated observers:} kinematic access to the coherent
-    vacuum is restricted observer-dependently; the reduced state takes
-    an approximately thermal form~(Unruh-type).
-  \item \textbf{Horizons:} division into exterior, shell, and inaccessible
-    sectors yields reduced-state thermality without requiring the global
-    state to be mixed~(Hawking-type).
-\end{enumerate}
-
-\subsection*{What is and is not claimed}
-
-ECT does not treat these effects as independent axioms of vacuum physics.
-It treats them as different manifestations of one ordered coherent vacuum
-under different restrictions on mode accessibility and coarse-graining.
-
-This appendix does not elevate the quantitative formulas of all four
-effects to Level~A.
-The precise temperatures, spectra, and amplitudes remain
-closure-dependent in several places.
-What it does support at a stronger structural level is the unified
-interpretation: the ordered coherent vacuum is the common object being
-probed in all four cases.
-
-\subsection*{Analogue-gravity connection}
-
-In this sense the analogue-gravity perspective is not merely illustrative
-in ECT.
-It is conceptually aligned with the coherent branch:
-thermality need not signal fundamental microscopic randomness, but can
-arise from reduced access to an ordered underlying medium.
-This is a Level~B interpretive closure~(Section~\ref{sec:qs_vacuum_unified}).
-
-% ============================================================
 \section{Smooth-branch exactness of fermionic exclusion:
 canonical normalisation, curvature control, and numerical bounds}
 \label{app:pauli_exactness}
@@ -45292,6 +46153,69 @@ of the nonlocal, topological-defect, or branch-transition
 mechanism responsible for any departures---remains a distinct
 target (OP-Q21) contingent on the completion of the fermionic
 reconstruction programme (OP-Q11).
+
+% ============================================================
+\section{Unified vacuum-response logic: boundaries, acceleration,
+time dependence, and horizons}
+\label{app:qs_vacuum_response}
+% ============================================================
+
+\textit{Status: Level~B for the unified interpretive closure.
+Level~A for the structural statement that the ordered vacuum supports
+nontrivial coherent correlators.
+Open~(OP-Q12): quantitative derivation of all four effects from the
+completed reduced coherent EFT.}
+
+\medskip
+The four effects discussed in
+Sections~\ref{sec:qs_casimir}--\ref{sec:qs_unruh}
+and~\ref{sec:qs_black_holes}---Casimir-type boundary response, particle
+production in time-dependent backgrounds, Unruh-type thermality, and
+Hawking-type horizon thermality---should be understood in ECT as
+different probes of the same ordered coherent vacuum, not as four
+unrelated phenomena.
+
+\subsection*{The unifying logic}
+
+In each case the physical question is how the coherent vacuum responds
+when one changes the accessibility structure of coherent modes:
+\begin{enumerate}[label=(\roman*)]
+  \item \textbf{Boundary problems:} part of the mode spectrum is
+    excluded geometrically; the vacuum response appears as a
+    boundary-dependent shift in effective energy~(Casimir-type).
+  \item \textbf{Time-dependent backgrounds:} mode definitions at early
+    and late times no longer coincide; the mismatch appears as
+    Bogoliubov-type particle production.
+  \item \textbf{Accelerated observers:} kinematic access to the coherent
+    vacuum is restricted observer-dependently; the reduced state takes
+    an approximately thermal form~(Unruh-type).
+  \item \textbf{Horizons:} division into exterior, shell, and inaccessible
+    sectors yields reduced-state thermality without requiring the global
+    state to be mixed~(Hawking-type).
+\end{enumerate}
+
+\subsection*{What is and is not claimed}
+
+ECT does not treat these effects as independent axioms of vacuum physics.
+It treats them as different manifestations of one ordered coherent vacuum
+under different restrictions on mode accessibility and coarse-graining.
+
+This appendix does not elevate the quantitative formulas of all four
+effects to Level~A.
+The precise temperatures, spectra, and amplitudes remain
+closure-dependent in several places.
+What it does support at a stronger structural level is the unified
+interpretation: the ordered coherent vacuum is the common object being
+probed in all four cases.
+
+\subsection*{Analogue-gravity connection}
+
+In this sense the analogue-gravity perspective is not merely illustrative
+in ECT.
+It is conceptually aligned with the coherent branch:
+thermality need not signal fundamental microscopic randomness, but can
+arise from reduced access to an ordered underlying medium.
+This is a Level~B interpretive closure~(Section~\ref{sec:qs_vacuum_unified}).
 
 % ============================================================
 \section{Bath regimes, effective spectral structure, and the limits
@@ -45688,6 +46612,48 @@ decoherence, measurement, and quantum--classical boundary phenomena.
 Full particle-physics predictions require the separate ECT particle
 programme, which is not the subject of this appendix.
 
+
+\section{Qubit information--decoherence numerics}
+\label{app:qubit_numerics}
+
+The qubit dephasing closure of Section~\ref{sec:pes_info_bound}
+uses a maximally coherent initial state
+$|\psi\rangle=(|0\rangle+|1\rangle)/\sqrt{2}$ subject to
+Gaussian dephasing with parameter~$\Gamma$.
+The system--environment mutual information is
+(Eq.~\ref{eq:info_decoherence})
+\begin{equation}
+  I(S{:}E)
+  = 2\,h_2\!\left(\frac{1+e^{-\Gamma}}{2}\right),
+\end{equation}
+where $h_2(p)=-p\ln p-(1-p)\ln(1-p)$ is the binary entropy.
+In bits: $I_{\rm bits}=I/(\ln 2)$.
+The residual coherence (visibility) is $V=e^{-\Gamma}$.
+
+Representative values (Fig.~\ref{fig:qubit_info_decoherence}):
+\begin{longtable}{@{}p{3.6cm}p{3.6cm}p{3.6cm}p{3.6cm}@{}}
+\toprule
+$\Gamma$ & $I$ [bits] & $V$ & Physical anchor \\
+\midrule
+\endfirsthead
+\toprule
+$\Gamma$ & $I$ [bits] & $V$ & Physical anchor \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+$0.006$ & $0.10$ & $0.994$ & Procopio~2015 (quantum switch) \\
+$0.062$ & $0.50$ & $0.940$ & Jacques~2007 (closed config.) \\
+$0.25$  & $1.00$ & $0.779$ & One-bit information threshold \\
+$0.347$ & $1.19$ & $0.707$ & Bell/CHSH crossover \\
+$1.0$   & $1.69$ & $0.368$ & Order-unity decoherence \\
+$3.0$   & $1.98$ & $0.050$ & Near-complete dephasing \\
+\bottomrule
+\end{longtable}
+The curve is monotonic: extracting more information requires
+stronger decoherence.
+This is a Level~B result of the specific dephasing closure;
+a protocol-independent bound remains open~(OP-PES-6).
 
 \section{Critical shell and black-hole information in ECT}
 \label{app:bh_info}
@@ -46977,79 +47943,9 @@ The purpose here is to locate ECT among its closest architectural
 neighbours, not to survey the full landscape.
 
 % ==============================================================
-\section{Numerical algorithms}
-\label{app:algorithms}
+\section{Retarded Causal Kernel: Proof That $K(\tau<0)=0$}
 
-This appendix summarises the computational procedures used to generate
-the figures in this paper.  Full source code (Python~3 with NumPy,
-SciPy, and Matplotlib) is publicly available at
-\url{https://github.com/chufelo/ECT-preprint-code} .
-
-\subsection{Galaxy rotation curves}
-
-The present SPARC pipeline uses the practical ECT closure introduced in
-Section~\ref{sec:galactic_dynamics} and derived in
-Appendix~\ref{app:galactic_phi_closure}:
-\begin{equation}
-g(R)=\frac{1}{2}\left[g_N(R)+\sqrt{g_N^2(R)+4\,g_N(R)\,g^\dagger_{\rm eff}}\right],
-\end{equation}
-with baryonic input acceleration
-\begin{equation}
-g_N(R)=
-\frac{V_{\rm gas}^2(R)+\Upsilon_{\rm d}V_{\rm disk}^2(R)+
-\Upsilon_{\rm b}V_{\rm bul}^2(R)}{R}.
-\end{equation}
-The numerical fitting procedure, quality flags, and model-comparison
-protocol are documented in Appendix~\ref{app:sparc_computation}.
-
-The detailed construction of the baryonic input velocity
-($V_{\rm gas},V_{\rm disk},V_{\rm bul}$), the adopted
-mass-to-light ratios, the SPARC quality cuts, and the
-per-galaxy fitting workflow are all documented in
-Appendix~\ref{app:sparc_computation}.  They are not repeated
-here in order to avoid duplication between the generic
-algorithm appendix and the dedicated SPARC appendix.
-
-\subsection{RG running of $\lambda(\mu)$}
-
-The one-loop $\beta$-function (Section~\ref{sec:three_scales})
-is integrated numerically from $\mu = M_{\rm Pl}$ downward using a
-standard adaptive Runge--Kutta method, with boundary condition
-$\lambda(M_{\rm Pl}) \approx 10^{-3}$.
-This yields a parametrically small dimensionless gravitational coupling
-$g(M_{\rm Pl})=\lambda(M_{\rm Pl})/(8\pi)\approx4\times10^{-5}$
-(Eq.~\eqref{eq:g_dimensionless}).
-Since $\beta_\lambda>0$, $\lambda(\mu)$ decreases monotonically
-toward the infrared and $g(\mu)$ remains small across all
-sub-Planckian scales.
-The Landau pole of the pure scalar closure lies at
-$\mu_{\rm LP}\approx M_{\rm Pl}\,e^{5.26\times10^4}$
-(Eq.~\eqref{eq:landau_pole}), far above the physical EFT threshold
-$m_\sigma\sim M_{\rm Pl}$, and is therefore physically unreachable.
-
-\subsection{Figure production}
-
-All figures use publication-quality settings: serif font (Times New
-Roman), 9\,pt labels, inward tick marks, 220\,dpi output, with
-$\texttt{bbox\_inches='tight'}$.
-
-\paragraph{Regime diagram (Fig.~\ref{fig:regime_diagram}).}
-The regime diagram plots the ordered-branch amplitude variable
-$\phi = \frac{1}{\beta}\ln(u/u_\infty)$ against
-$\log_{10}(g/g_\dagger)$.
-The screening boundary is the locus where the chameleon-like
-mass $m_\phi(\rho)$ equals the inverse distance to the
-nearest mass source; to the right of this boundary (high $\phi$)
-gravity is screened and Newtonian.
-Representative astrophysical systems are placed at their
-estimated $(\phi,\,g/g_\dagger)$ values:
-Solar System ($\phi \approx 2.5$, $g/g_\dagger \sim 10^2$),
-spiral disk ($\phi \approx 0.5$, $g/g_\dagger \sim 1$),
-void dwarf ($\phi \approx -0.5$, $g/g_\dagger \sim 10^{-1.5}$),
-cosmic void ($\phi \approx -1$, $g/g_\dagger \sim 10^{-4}$).
-The script \texttt{fig\_regime\_diagram.py} in the code
-repository produces this figure.
-
+% ------------------------------------------------------------------
 \section*{Data and Code Availability}
 \addcontentsline{toc}{part}{Data and Code Availability}
 
