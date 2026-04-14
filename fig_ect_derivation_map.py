@@ -101,7 +101,7 @@ digraph ECT {
   PES -> BORN;
 
   /* ===== GAUGE SECTOR (bridging both branches) ===== */
-  GAUGE [label=<Gauge &amp; Matter Sector<BR/><FONT POINT-SIZE="9">U(1) → photon   ·   SU(2) → W<SUP>±</SUP>, Z   ·   Higgs (v₂ ≈ 246 GeV)<BR/>Fermions: O(3) spinor reps   ·   SU(3): open   ·   3 gen.: open   [A/B/Open]</FONT>>,
+  GAUGE [label=<Gauge &amp; Matter Sector<BR/><FONT POINT-SIZE="9">U(1) → photon   ·   SU(2) → W<SUP>±</SUP>, Z   ·   Higgs (v₂ ≈ 246 GeV)<BR/>Fermions: O(3) spinor reps   ·   SU(3): open   ·   3 gen.: open<BR/>Neutrino: seesaw route (C)   ·   M<SUB>R</SUB><SUP>geom</SUP> ~ 10<SUP>10</SUP> GeV   [A/B/C/Open]</FONT>>,
         fillcolor="#ddd"];
   S0 -> GAUGE [xlabel=<phase>];
   TOPO -> GAUGE [xlabel=<spinor>];
@@ -126,12 +126,13 @@ digraph ECT {
   PRED -> FALS;
 
   /* ===== OPEN PROBLEMS ===== */
-  OPEN [label=<Major Open Fronts<BR/><FONT POINT-SIZE="9">S₀ = ℏ   ·   SU(3) colour   ·   Yukawa hierarchy   ·   α<SUB>fs</SUB> = 1/137<BR/>Full nonlinear GR   ·   Born rule unconditional   ·   Bell correlators<BR/>Page curve   ·   3 fermion generations</FONT>>,
+  OPEN [label=<Major Open Fronts<BR/><FONT POINT-SIZE="9">S₀ = ℏ   ·   SU(3) colour   ·   Yukawa hierarchy   ·   α<SUB>fs</SUB> = 1/137<BR/>Full nonlinear GR   ·   Born rule unconditional   ·   Bell correlators<BR/>Page curve   ·   3 fermion generations   ·   Proton stability (OP-proton)</FONT>>,
         fillcolor="white", style="rounded,dashed,filled"];
 
   FALS -> OPEN [style=dashed];
   BORN -> OPEN [style=dashed, constraint=false];
   BH -> OPEN [style=dashed, constraint=false];
+  GAUGE -> OPEN [style=dashed, constraint=false, xlabel=<B-number>];
 
   /* Minimal ranking */
   {rank=same; GR; S0}

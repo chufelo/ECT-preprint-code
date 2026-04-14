@@ -33,7 +33,7 @@ digraph PartI {
   PX [label=<P(X) theorem<BR/>no orientation stiffness<BR/>Level A, §3>];
   KG [label=<Klein–Gordon<BR/>equation<BR/>§3.6>];
   topo_anti [label=<Topological anti-predictions<BR/>π<SUB>0</SUB> = π<SUB>1</SUB> = π<SUB>2</SUB> = 0<BR/>No walls / strings / monopoles<BR/>§8>];
-  gauge [label=<Gauge fields<BR/>U(1), SU(2)<BR/>§7>];
+  gauge [label=<Gauge architecture<BR/>U(1) bundle (A) · SU(2) structural (B+)<BR/>§7>];
   schrodinger [label=<Schrödinger<BR/>equation<BR/>QS>];
 
   // === LEVEL B ===
@@ -45,25 +45,33 @@ digraph PartI {
   einstein [label=<Einstein eqs.<BR/>(linearised)<BR/>§6>];
   dirac [label=<Dirac eq.<BR/>§9>];
   second_law [label=<2nd law of<BR/>thermodynamics<BR/>§3.9>];
-  fifth [label=<5th force<BR/>ω<SUB>5</SUB>~10<SUP>−10</SUP> rad/s<BR/>§7.6>];
+  fifth [label=<Director coupling<BR/>μ₅ψ̄γ<SUP>A</SUP>n<SUB>A</SUB>ψ<BR/>§7.6>];
   skyrmion [label=<Skyrmion / texture sectors<BR/>π<SUB>3</SUB>(S³) = ℤ<BR/>m<SUB>n</SUB> ~ n × 1.6 GeV<BR/>§8>];
   LIV [label=<Planck-scale LIV<BR/>|δc/c| &lt; 10<SUP>−15</SUP><BR/>§10>];
-  seesaw [label=<Leptogenesis<BR/>η<SUB>B</SUB>~9 × 10<SUP>−10</SUP><BR/>§7>];
+  neutrino [label=<Neutrino sector §8.8<BR/>one-chiral weak route (B)<BR/>embedded neutrino preferred (C)<BR/>M<SUB>R</SUB><SUP>geom</SUP> = √(φ<SUB>0</SUB> v<SUB>2</SUB>)<BR/>PMNS intact; 0νββ discr.>];
   unruh [label=<Unruh effect<BR/>T<SUB>U</SUB>=ℏa/(2πc*k<SUB>B</SUB>)<BR/>QS>];
 
   // === OPEN ===
   node [fillcolor="white", style="rounded,dashed", fontcolor=black, penwidth=2];
-  SU3 [label=<SU(3),<BR/>α<SUB>s</SUB> [OPEN]>];
+  SU3 [label=<SU(3)<SUB>c</SUB> [OPEN]<BR/>dim su(3)=8 &gt; 6=dim so(4)<BR/>requires extended structure>];
   threegen [label=<3 generations<BR/>[OPEN]>];
+
+  // === NEW NODES from unification integration ===
+  node [fillcolor="#b8b8b8", fontcolor=black];
+  parity [label=<Parity violation<BR/>Oriented condensate<BR/>→ SU(2)<SUB>L</SUB> selected<BR/>§9>];
+
+  node [fillcolor="#ffffff", fontcolor=black];
+  boson_hier [label=<Hierarchical boson<BR/>spectrum (4 levels)<BR/>§Discussion>];
+  common_origin [label=<Common pre-geometric<BR/>origin of interactions<BR/>§Discussion>];
 
   // === RANKS ===
   {rank=same; P1; P2; P3; P4; Ph2; Ph1}
   {rank=same; P5; P6}
   {rank=same; lorentz; goldstone; GN; cstar}
   {rank=same; hbar; GE}
-  {rank=same; gauge; KG; einstein; unruh; schrodinger}
+  {rank=same; gauge; KG; einstein; unruh; schrodinger; parity}
   {rank=same; dirac; second_law}
-  {rank=same; SU3; fifth; threegen; seesaw}
+  {rank=same; SU3; fifth; threegen; neutrino; common_origin; boson_hier}
   {rank=same; topo_anti; skyrmion; LIV}
 
   // === EDGES ===
@@ -82,7 +90,8 @@ digraph PartI {
   P6 -> topo_anti [style=dashed];
   P6 -> skyrmion [style=dashed];
   gauge -> dirac;
-  dirac -> fifth; dirac -> seesaw;
+  dirac -> fifth; dirac -> neutrino;
+  gauge -> neutrino;
   einstein -> second_law;
   cstar -> LIV; GN -> LIV;
   KG -> schrodinger;
@@ -97,11 +106,19 @@ digraph PartI {
   gauge -> SU3 [style=dashed, color=gray50];
   gauge -> threegen [style=dashed, color=gray50];
 
+  // === NEW EDGES ===
+  gauge -> parity;
+  gauge -> common_origin [style=dashed];
+  parity -> common_origin [style=dashed];
+  fifth -> common_origin [style=dashed];
+  gauge -> boson_hier [style=dashed];
+  goldstone -> boson_hier [style=dashed];
+
   // === LEGEND ===
   node [shape=point, width=0, style=invis];
   spacer1 [label=""];
   topo_anti -> spacer1 [style=invis];
-  seesaw -> spacer1 [style=invis];
+  neutrino -> spacer1 [style=invis];
   LIV -> spacer1 [style=invis];
   SU3 -> spacer1 [style=invis];
   threegen -> spacer1 [style=invis];
