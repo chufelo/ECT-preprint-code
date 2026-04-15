@@ -9115,7 +9115,7 @@ ingredient is present:
   \item The two minima $\pm\phi_0$ are exactly degenerate
     ($\Delta V=0$).
     Coleman decay between degenerate minima has no driving force:
-    there is no energetically (or action-wise) preferred target.
+    there is no lower-action or lower-effective-potential target.
 \end{enumerate}
 Therefore, \textbf{Coleman vacuum decay is structurally inapplicable
 to the minimal ECT primary potential.}
@@ -9212,29 +9212,30 @@ This has three immediate consequences:
 
 \paragraph{Why Standard-Model metastability does not transfer.}
 
-The Standard-Model $\beta$-function for the Higgs quartic coupling is
+The Standard-Model running of the Higgs quartic differs qualitatively.
+At one loop, the schematic structure is
 \begin{equation}
   \beta_{\lambda_{\rm SM}}
-  = \frac{1}{16\pi^2}\bigl[
+  = \frac{1}{16\pi^2}\!\left[
     24\lambda_{\rm SM}^2
-    + (\text{gauge contributions})
-    - 12\,y_t^2\,\lambda_{\rm SM}
-    + \ldots
-  \bigr],
+    + \lambda_{\rm SM}\bigl(12y_t^2-9g^2-3g'^2\bigr)
+    - 6y_t^4
+    + \text{gauge quartic terms}
+  \right],
   \label{eq:vs_beta_SM}
 \end{equation}
-where the \emph{negative} top-Yukawa term $-12\,y_t^2\,\lambda_{\rm SM}$
-dominates and drives $\lambda_{\rm SM}(\mu)$ through zero near
-$\mu\sim 10^{10}\,$GeV.
-This is the sole mechanism responsible for the electroweak vacuum
-metastability.
+so that the large top-Yukawa contribution drives
+$\lambda_{\rm SM}(\mu)$ downward and, in the observed parameter range,
+eventually through zero near $\mu\sim10^{10}\,$GeV
+\cite{Degrassi2012,Buttazzo2013}.
+This is the origin of the familiar electroweak metastability story.
 
 In the primary ECT sector, this mechanism is absent:
 the primary condensate is a pure real scalar at the fundamental
-level, with no fermionic couplings.
-The only contribution to $\beta_\lambda$ is the positive self-coupling
-term $+3\lambda^2/(16\pi^2)$; there is no fermionic channel that
-could drive $\lambda$ downward.
+level, with no fermionic couplings in the strict scalar closure.
+The only one-loop contribution to $\beta_\lambda$ is the positive
+self-coupling term $+3\lambda^2/(16\pi^2)$; there is no fermionic
+channel that could drive $\lambda$ downward.
 This is therefore a \emph{genuine structural difference}, not merely
 a tree-level accident~(Level~B).
 
@@ -9244,20 +9245,19 @@ a tree-level accident~(Level~B).
 
 The surviving soft scalar $\chi$
 (Section~\ref{sec:goldstone_integrability_main}) is parametrically
-lighter than the radial mode: $m_\chi \ll m_\sigma$.
-Its one-loop contribution to the curvature of $V_{\rm eff}$ at the
-minimum is bounded by
-\begin{equation}
-  \bigl|V''_\chi(\phi_0)\bigr|
-  \lesssim \frac{m_\chi^2\,m_\sigma^2}{16\pi^2}
-  \ll V''(\phi_0) \sim m_\sigma^2,
-  \label{eq:vs_chi_bound}
-\end{equation}
-so the $\chi$-sector cannot overcome the tree-level restoring
-curvature at the minimum or create additional minima.
-This does not constitute a full constrained-determinant computation,
-but it establishes that the soft sector does not provide any
-identified destabilising channel in the minimal closure.
+softer than the Planck-heavy radial mode and does not provide any
+identified destabilising channel for the primary amplitude potential
+in the minimal closure.
+The integrability constraint sharply reduces the independent soft
+sector relative to a generic multi-field broken-symmetry system,
+and no analogue of the Standard-Model top-Yukawa destabilisation
+mechanism is present here.
+A full constrained fluctuation-determinant analysis for the coupled
+amplitude--orientation system has not yet been carried out, so the
+present statement should be read as follows:
+within the current minimal closure, the soft sector does not generate
+any identified mechanism capable of overturning the one-loop
+amplitude-sector stability result.
 
 \paragraph{Topological sectors.}
 
@@ -9320,9 +9320,11 @@ Thermal first-order transition &
   \textbf{No} &
   Article explicitly distinguishes the ordering
   transition from thermal bubble nucleation \\
-Spinodal decomposition ($\Phi\!=\!0\to\phi_0$) &
-  Already occurred &
-  The cosmological ordering transition \\
+Ordering / spinodal-like instability of the symmetric hilltop &
+  Structural analogue &
+  The cosmological ordering transition is closer to this class than
+  to Coleman nucleation, but its precise non-equilibrium mechanism
+  remains open \\
 Branch-to-branch ($\pi_3$ sector) &
   Not expected &
   Textures carry additional gradient action; no
@@ -9357,13 +9359,13 @@ R2 & A &
   stable domain walls, strings, or monopoles from the
   primary transition \\
 R3 & B &
-  One-loop amplitude-sector stability: $\beta_\lambda>0$
-  ensures $\lambda(\mu)>0$ across the EFT range; no
-  additional high-field minima \\
-R4 & B &
-  $\chi$-sector contribution bounded:
-  $|V''_\chi|/(16\pi^2)\ll V''(\phi_0)$; no identified
-  destabilising channel \\
+  In the strict scalar one-loop closure, $\beta_\lambda>0$
+  ensures $\lambda(\mu)>0$ across the broken-phase EFT range;
+  no Standard-Model-type high-field metastability channel arises \\
+R4 & B/Open &
+  No identified destabilising channel from the integrability-reduced
+  $\chi$ sector in the minimal closure; a full constrained
+  amplitude--orientation determinant analysis remains open \\
 R5 & A/B &
   $\Phi=0$ is a hilltop ($V''(0)<0$), not a metastable
   minimum; Coleman vacuum decay structurally inapplicable \\
@@ -9389,10 +9391,10 @@ metastability mechanism --- in which the running quartic coupling
 crosses zero at high scale --- does not operate in the primary
 ECT sector, because the $\beta$-function is strictly positive and
 there is no fermionic destabilising channel.
-All identified subleading contributions (soft orientation sector,
-topological sectors, embedded electroweak sector) either strengthen
-the stability conclusion or belong to separate, secondary
-programmes.
+All subleading sectors considered here (soft orientation sector,
+topological sectors, embedded electroweak sector) either do not
+provide any identified destabilising channel within the minimal
+closure or belong to separate, secondary programmes.
 
 The cosmological ordering transition $O(4)\to O(3)$ should be
 understood as a spinodal-type instability of the symmetric hilltop,
@@ -9434,48 +9436,27 @@ formation, defect-mediated processes) remain structurally natural
 in ECT, but none of them corresponds to a Coleman-type decay of the
 observed ordered branch~(see Table~\ref{tab:vs_taxonomy}).
 
-\subsubsection{Comparison with other theoretical frameworks}
+\subsubsection{Comparison with other frameworks}
 
-The vacuum-stability question arises differently in different
-theoretical settings.
-\begin{itemize}
-  \item \textbf{Standard Model.}
-    The electroweak vacuum is metastable because the top-Yukawa
-    coupling drives $\lambda_{\rm SM}(\mu)\to 0$ at high scale.
-    ECT's primary sector has no analogous fermionic channel;
-    $\beta_\lambda>0$ everywhere in the strict scalar closure.
+The vacuum-stability question takes different forms in different
+frameworks.
 
-  \item \textbf{Superfluid vacuum models}~\cite{Volovik2003}.
-    In Volovik's universe-as-superfluid picture, the vacuum is an
-    ordered medium and its stability is tied to the superfluid
-    phase.
-    ECT shares this condensate ontology but goes further:
-    the explicit vacuum manifold $S^3$ with
-    $\pi_0=\pi_1=\pi_2=0$ provides topological
-    anti-predictions (no domain walls, strings, or monopoles),
-    and the one-loop RG analysis gives a quantitative closure
-    absent in the superfluid analogy alone.
+In the Standard Model, the electroweak vacuum is metastable because
+the large top-Yukawa coupling drives the Higgs quartic downward at
+high scale, eventually sending $\lambda_{\rm SM}(\mu)$ through zero.
+In string-landscape settings, by contrast, vacuum decay is tied to the
+existence of many distinct local minima and transition channels
+between them.
 
-  \item \textbf{String landscape.}
-    In string-theoretic compactifications, the effective potential
-    generically contains exponentially many vacua
-    ($\mathcal{N}\sim 10^{500}$), and vacuum decay between them
-    is a major research area.
-    ECT offers a structurally different picture: the primary
-    potential has a single ordered branch (up to the
-    $\mathbb{Z}_2$ amplitude degeneracy), and the vacuum
-    manifold $S^3$ does not proliferate into a landscape of
-    competing minima.
-
-  \item \textbf{Emergent-gravity and analogue-gravity approaches}
-    (Jacobson~\cite{Jacobson2004},
-    CDT~\cite{Ambjorn2005}).
-    These frameworks typically do not address vacuum stability of
-    the underlying medium explicitly.
-    ECT, being formulated as a condensate theory from the outset,
-    naturally accommodates the question and provides a definite
-    answer at the one-loop level.
-\end{itemize}
+The primary ECT condensate differs structurally from both pictures.
+Within the strict scalar closure, there is no fermionic destabilising
+channel analogous to the Standard-Model top-Yukawa mechanism, and the
+minimal primary potential does not exhibit a landscape of competing
+isolated minima.
+The resulting vacuum-stability problem is therefore sharper and
+cleaner: the primary question is not decay from one metastable vacuum
+to another, but the stability of the single connected ordered branch
+and of its low-energy amplitude sector.
 
 
 \subsection{Emergence of the Graviton}
