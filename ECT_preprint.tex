@@ -135,8 +135,13 @@ persistent quantum sector, while substantial parts of standard quantum
 formalism are recovered or structurally motivated rather than
 postulated ab initio.  The Born rule remains only conditionally
 grounded through a Gleason-based route and is stated explicitly as
-open.  A shell-based decoherence model also provides a route to
-black-hole entropy and Page-curve-like information behaviour.
+open.  A shell-based decoherence model provides a route to
+black-hole entropy, Page-curve-like information behaviour, and a
+general boundary-layer area-law bound that recovers
+holographic-style entropy scaling as a structural property of the
+local condensate medium.  Abelian charge quantisation is traced to the compact-phase gauge
+origin of the condensate sector; the full observed charge spectrum
+remains open.
 
 Part~IV consolidates the framework through a map of native constants,
 open closure parameters, and derived observables, and formulates a
@@ -205,7 +210,16 @@ Principle of Euclidean Stationarity;
 fine-structure constant;
 lensing--growth sector;
 gravitational slip;
-Pauli exclusion
+Pauli exclusion;
+holographic entropy bound;
+area-law scaling;
+entanglement entropy;
+charge quantisation;
+Born rule;
+neutrino masses;
+seesaw mechanism;
+sterile neutrino;
+neutrinoless double-beta decay
 
 \newpage
 \setcounter{tocdepth}{2}
@@ -2468,17 +2482,19 @@ In particular, A5 does \emph{not} by itself imply:
 The step from directionality to monotonicity requires the Markovian
 closure~(Section~\ref{sec:second_law_basics}).
 
-\paragraph{Important caveat on the causal kernel.}
-The hyperbolic Lorentzian ordered branch provides the structural basis
-for retarded response~(A3).
-In the open-system reduction used here, this structural retardedness
-is encoded by a causal response kernel $K(\tau<0)=0$.
-A full first-principles derivation of the latter from ECT
-microdynamics---establishing that the environment of unresolved
-condensate modes inherits the retarded structure of the ordered
-branch---remains open~(OP1, OP5).
-Results A4 and A5 are therefore conditional on this identification,
-which is strongly motivated but not yet a closed theorem.
+\paragraph{Status of the causal kernel.}
+In the ordered Lorentzian branch, retarded support $K(\tau<0)=0$ is
+established at Level~A: first in the quadratic sector
+(Appendix~\ref{app:retarded_kernel}), then for the full nonlinear
+scalar dynamics by explicit symmetric-hyperbolic reduction
+(Appendix~\ref{app:causal_hyperbolic}).
+What is not yet derived is the full first-principles identification of
+the open-system response kernel entering the influence functional
+directly from Euclidean microdynamics, together with the auxiliary bath
+closures (ohmicity, Markov limit, environment modelling) used in the
+macroscopic irreversibility estimates.
+Results A4 and A5 are therefore conditional on those bath-closure
+assumptions, not on the retarded-support property itself.
 
 \paragraph{Result~A6: branch selection as the basis for a
 low-entropy initial sector.}
@@ -2597,8 +2613,8 @@ Low-entropy interpretation of initial branch
   & B & Depends on coarse graining \\
 Retarded structure of ordered $\Phi$-branch
   & A & App.~\ref{app:causal_hyperbolic} \\
-First-principles derivation of causal FV
-  environment kernel
+Open-system bath-kernel identification
+  from Euclidean microdynamics
   & C (open) & OP1, OP5 \\
 Strict monotonicity $dS/dw\geq 0$ at all times
   & B & Requires Markov;
@@ -2775,8 +2791,10 @@ down.
     alone~(OP1, OP5, OP-Q17).
   \item A first-principles derivation of the ohmic and Markovian closure
     from the condensate microstructure~(OP-Q15).
-  \item A first-principles derivation of the causal environment
-    kernel $K(\tau<0)=0$ from ECT microdynamics~(OP1, OP5).
+  \item A first-principles identification of the effective
+    open-system bath-response kernel from ECT microdynamics;
+    retarded support $K(\tau<0)=0$ itself is already Level~A
+    for the ordered branch~(OP1, OP5).
   \item Entropy production in strongly nonlinear branch dynamics.
   \item A rigorous measure on the configuration space (which would
     promote the state-counting argument from Level~B to Level~A).
@@ -2827,8 +2845,8 @@ Statistical speciality of initial branch
   & B & S6; no rigorous measure \\
 Entropy growth from domain dynamics
   & B & S9+S10 + coarse graining \\
-First-principles derivation of causal FV
-  environment kernel
+Open-system bath-kernel identification
+  from Euclidean microdynamics
   & C (open) & OP1, OP5 \\
 Ohmic effective closure
   & B & Phenomenological reduction \\
@@ -8560,19 +8578,85 @@ It is \emph{not} the Standard Model Higgs boson.
 
 The positivity $V''(\phi_0)>0$ established above gives tree-level local
 stability of the primary radial sector within the stated condensate
-potential. A superficially analogous statement holds for the Standard
-Model only at tree level; at one loop the RG running of
+potential.
+A superficially analogous statement holds for the Standard Model only
+at tree level; at one loop the RG running of
 $\lambda_{\rm SM}(\mu)$ driven by the top-Yukawa sector is known to
 render the electroweak vacuum
 metastable~\cite{Degrassi2012,Buttazzo2013}.
-The corresponding one-loop effective-potential analysis has not been
-carried out for the primary ECT condensate. The present tree-level
-result should therefore not be read as a full resolution of the
-electroweak metastability problem, but only as evidence that the
-primary condensate sector is structurally different from the
-Standard-Model Higgs vacuum in the reduced radial description.
-Whether this structural difference survives the full embedded
-electroweak matching and threshold analysis remains open.
+The primary ECT condensate differs from that situation in a structurally
+important way.
+
+\paragraph{One-loop stability of the primary amplitude sector.}
+\label{par:vacuum_stability_oneloop}
+
+In the strict scalar closure, the one-loop
+$\beta$-function~(Eq.~\eqref{eq:g_dimensionless},
+Section~\ref{sec:three_scales})
+\begin{equation}
+  \beta_\lambda = \frac{3\lambda^2}{16\pi^2} > 0
+  \label{eq:beta_lambda_stability}
+\end{equation}
+is positive for any $\lambda>0$.
+With the boundary condition
+$\lambda(M_{\rm Pl})\approx 10^{-3}$, the running coupling remains
+positive throughout the broken-phase EFT range and, within this strict
+scalar closure, does not cross zero before the formal Landau pole
+\eqref{eq:landau_pole}.
+Accordingly, the RG-improved amplitude-sector effective potential
+remains bounded from below within the validity range of the broken-phase
+description, and the Standard-Model-type high-field metastability
+channel does not arise in the primary condensate sector.
+
+The physical reason is equally important:
+the mechanism responsible for Standard-Model metastability --- the
+fermionic top-Yukawa contribution driving $\lambda_{\rm SM}$ through
+zero at high scale --- has no analogue in the primary ECT sector at
+this level, where the primary condensate is a pure real scalar.
+This is therefore a genuine structural difference from the Standard
+Model, not merely a tree-level accident (Level~B).
+
+\paragraph{No Coleman false vacuum in the minimal primary potential.}
+
+The symmetric stationary point $\Phi=0$ of the bare potential has
+$V''(0)=-\mu^2<0$: it is an unstable hilltop, not a metastable local
+minimum.
+Coleman vacuum decay~\cite{Coleman1977} requires a metastable minimum
+separated by a barrier from a deeper minimum; that structure is absent
+in the minimal ECT potential.
+The cosmological ordering transition $O(4)\to O(3)$ should therefore
+not be identified with Coleman-type false-vacuum decay.
+At the present level of the framework it is structurally closer to an
+ordering / branch-selection process than to nucleation from a
+metastable minimum (see Section~\ref{sec:foundational_consequences}).
+
+\paragraph{Subleading sectors and remaining scope.}
+
+The surviving soft scalar $\chi$
+(Section~\ref{sec:goldstone_integrability_main}) is parametrically soft
+relative to the Planck-heavy radial mode and does not provide any
+identified destabilising channel for the primary amplitude potential in
+the minimal closure.
+Likewise, the topological sectors classified by
+$\pi_3(S^3)=\mathbb{Z}$ (Section~\ref{sec:predicted_states})
+correspond to extended texture-like configurations rather than to a
+lower-action target vacuum of the Coleman type.
+
+If the conditional secondary transition
+(Section~\ref{sec:ew_particles}) realises a Standard-Model-like Higgs
+sector, the question of electroweak metastability belongs to that
+embedded sector rather than to the primary condensate itself.
+The corresponding threshold and matching problem remains part of the
+second-transition programme (OP-EW).
+
+Thus the current status is the following:
+tree-level local stability of the primary radial mode is established,
+and the standard one-loop RG analysis closes the Standard-Model-type
+metastability channel for the primary amplitude sector.
+What remains open is the full stability analysis of the entire ordered
+branch architecture, including constrained amplitude--orientation
+couplings, nonperturbative branch channels, and complete matching to
+extended sectors.
 
 \textbf{Spin and propagation.}
 The mode $\sigma$ is a Lorentz scalar (spin-0 in the emergent Lorentzian
@@ -16789,6 +16873,272 @@ Scenarios~A and~B are discussed there.
 
 
 
+% ==============================================================
+\subsection{Post-transition ordered-branch cosmological scenarios}
+\label{sec:post_transition}
+% ==============================================================
+
+\textit{Status: Level~B for the scenario classification and the
+structural conditions supporting the observed branch.
+Level~B/C for the ordered-domain growth analogy as a physical
+motivation for expansion.
+Open for expanding-branch selection from first principles, exact
+$\phi_b(z)$ trajectory, thermal completion of the hot Big-Bang
+history, and CMB-peak structure without particle dark matter.
+Connection: pre-Lorentzian
+regime~(\S\ref{sec:pre_lorentzian}),
+background
+reduction~(Eqs.~\eqref{eq:bg_reduction_friedmann}--\eqref{eq:bg_reduction_scalar}),
+far-future
+Scenarios~A/B~(\S\ref{sec:mp_flrw}),
+no-phantom
+result~(eq.~\eqref{eq:w_phi}),
+second law~(\S\ref{sec:second_law_basics}).}
+
+\subsubsection*{Problem statement: branch onset versus cosmological
+history}
+
+Two questions must be sharply distinguished.
+
+The first is why the $O(4)\to O(3)$ transition occurred at all.
+This is the full nonequilibrium transition problem~(OP3) and is not
+addressed here.
+
+The second is: given that an ordered Lorentzian branch has formed,
+which cosmological histories are dynamically admissible, structurally
+natural, or excluded?
+This is the question addressed in the present subsection.
+
+A further distinction is equally important: \emph{geometric branch
+onset is not identical to thermal Big-Bang completion}.
+The former provides Lorentzian metric, causal cone, and emergent time.
+The latter requires in addition entropy production, thermalisation,
+a radiation-dominated epoch, and BBN-compatible initial conditions.
+Thermal completion remains open.
+
+\subsubsection*{Admissible post-transition scenarios}
+
+The effective background dynamics of the ordered branch is governed
+by the scalar--tensor system
+Eqs.~\eqref{eq:bg_reduction_friedmann}--\eqref{eq:bg_reduction_scalar},
+developed in \S\ref{sec:mp_nonlinear}.
+Within the $\phi$-first closure, the qualitative post-transition
+behaviour is controlled by
+the sign and magnitude of the residual condensate energy~$U(\phi)$,
+the kinetic coupling~$\omega(\phi)$ and its sign (no-ghost condition),
+the gravitational screening function~$F(\phi)=e^{\beta\phi}$,
+and the matter/radiation content.
+
+The effective Friedmann equation admits both expanding and contracting
+solutions, $H=\pm\sqrt{\cdots}$.
+Positive condensate energy makes an expanding branch dynamically
+natural once that branch is selected, but it does not by itself
+derive the sign choice $H>0$.
+The deeper branch-selection problem therefore remains open.
+
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{@{}p{3.0cm}p{5.5cm}p{3.5cm}@{}}
+\caption{Qualitative post-transition cosmological branches in ECT.}
+\label{tab:post_transition_scenarios}\\
+\toprule
+Scenario & Structural conditions & ECT status \\
+\midrule
+\endfirsthead
+\toprule
+Scenario & Structural conditions & ECT status \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Expanding, early deceleration, late acceleration
+  & Ordered branch selected; $\rho_r,\rho_m$ dominate early;
+    $U(\phi)>0$ dominates late; $w_\phi\ge -1$
+  & Structurally natural; observationally preferred \\
+Asymptotic de~Sitter (Scenario~A of \S\ref{sec:mp_flrw})
+  & $\phi_b\to 0$, $u\to u_\infty$,
+    $G_{\rm eff}\to G_N$; residual condensate energy
+    $\to\mathrm{const}$
+  & Level~B; compatible with future-scenario
+    analysis \\
+Branch degeneration (Scenario~B of \S\ref{sec:mp_flrw})
+  & $\phi_b\to -\infty$, $u\to 0$,
+    $G_{\rm eff}$ grows; geometric branch eventually
+    degenerates
+  & Level~B; timescale closure-dependent \\
+Always decelerating
+  & $U(\phi)\to 0$ rapidly; no persistent vacuum-like
+    component
+  & Possible; observationally disfavoured \\
+Contracting branch
+  & $H<0$ sign choice
+  & Kinematically admissible; not structurally
+    preferred, but expanding-branch selection
+    remains open \\
+Bounce / oscillatory
+  & Turning points in $\phi$ dynamics; nontrivial
+    $U(\phi)$
+  & Not excluded; not developed \\
+Phantom ($w<-1$)
+  & Would require $\omega(\phi)<0$
+  & \textbf{Excluded} by no-phantom
+    bound~\eqref{eq:w_phi} \\
+\bottomrule
+\end{longtable}
+
+\subsubsection*{Why expansion is physically natural}
+
+The universal growth of ordered domains in phase-ordering systems
+provides a suggestive ECT analogy for why an expanding ordered
+branch is physically natural once ordered-domain formation begins.
+In condensed-matter systems undergoing a symmetry-breaking
+transition, ordered regions generically \emph{grow}---they expand
+into the surrounding disordered medium via Allen--Cahn /
+Kibble--Zurek-type dynamics.
+In ECT the ordered Lorentzian branch emerging from the disordered
+Euclidean medium is structurally analogous to such a growing
+ordered domain.
+
+This analogy strengthens the plausibility of the expanding branch
+(Level~B/C) but should not be mistaken for a theorem-level
+derivation of cosmological branch selection.
+A full proof would require the completed nonequilibrium condensate
+dynamics~(OP3).
+
+\subsubsection*{Minimal viable post-transition branch}
+
+A minimally viable post-transition ordered-branch history must
+satisfy the following conditions simultaneously:
+\begin{enumerate}[label=(\roman*)]
+  \item \emph{expanding ordered branch selected};
+  \item \emph{near-frozen early condensate background}:
+    $\phi_b(z)\approx\mathrm{const}$ and
+    $G_{\rm eff}(z)\approx G_N$ for $z\gg z_{\rm eq}$,
+    ensuring BBN and early-universe
+    compatibility~(\S\ref{sec:mp_flrw});
+  \item \emph{hot radiation epoch available}:
+    thermal completion of the hot Big-Bang branch,
+    including entropy production, thermalisation, and a
+    radiation-dominated era
+    (open---\S\ref{sec:pre_lorentzian});
+  \item \emph{delayed condensate dominance}:
+    $\rho_r\gg\rho_m\gg\rho_\phi$ early,
+    $\rho_\phi\gtrsim\rho_m$ late---so that matter/radiation
+    epochs precede dark-energy-like acceleration;
+  \item \emph{no-phantom behaviour}:
+    $w_\phi\ge -1$~(eq.~\eqref{eq:w_phi}; Level~B);
+  \item \emph{perturbation sector not grossly inconsistent}:
+    near-scale-invariant primordial spectrum
+    (\S\ref{sec:primordial_estimates}), structure growth
+    compatible with observed LSS
+    (\S\ref{sec:growth_slip}).
+\end{enumerate}
+
+ECT can make delayed condensate dominance structurally plausible
+if the post-transition condensate sector is nearly frozen at early
+times and only becomes relevant once matter dilution lowers
+$\rho_m$.
+This reduces the problem to a hierarchy/trajectory question for
+the effective condensate background, but does not yet provide a
+full first-principles solution of the observed late-time scale.
+
+\subsubsection*{Connection to the arrow of time}
+
+The post-transition evolution must be consistent with the emergent
+arrow of time established in the decoherence
+programme~(\S\ref{sec:second_law_basics}).
+In the ordered Lorentzian branch, irreversibility arises from
+$\Gamma_{\rm loop}\gg 1$: so that coarse-grained entropy increases
+along the physical thermodynamic arrow.
+For the observationally relevant expanding branch, the cosmological
+and thermodynamic arrows are therefore aligned.
+This supports the naturalness of the observed branch, but it does
+not by itself derive the sign choice $H>0$ over the contracting
+branch.
+
+\subsubsection*{Observational discriminants}
+
+The scenario classification connects to several observational
+channels already developed elsewhere in the paper.
+These are not new derivations but reinterpretations as
+\emph{branch discriminants}:
+\begin{enumerate}[label=(\roman*)]
+  \item \emph{no phantom crossing}: $w(z)\ge -1$
+    always~(eq.~\eqref{eq:w_phi}); ECT predicts thawing
+    $w_0>-1$, distinguishable from
+    $\Lambda$CDM ($w=-1$ exactly);
+    testable with DESI, Euclid, LSST;
+  \item \emph{running $G_{\rm eff}(z)$}: varies by
+    $O(\beta\,\Delta\phi_b)$ over cosmic history; constrained
+    by BBN, lunar laser ranging, pulsar
+    timing~(\S\ref{sec:mp_flrw});
+  \item \emph{correlated $\Delta H_0$--age--JWST signatures}:
+    the Hubble-shift mechanism ties these through the same
+    $\phi_b(z)$~(\S\ref{sec:hubble_jwst});
+  \item \emph{$S_8$ tension alleviation}: modified growth rate
+    from running $G_{\rm eff}$ and gravitational
+    slip~(\S\ref{sec:growth_slip});
+  \item \emph{Scenario~A versus B}: $|\dot{G}/G|$ measurably
+    nonzero $\to$ Scenario~B; $|\dot{G}/G|\to 0$ $\to$
+    Scenario~A~(\S\ref{sec:mp_flrw}).
+\end{enumerate}
+
+\subsubsection*{What is explained and what remains open}
+
+\emph{Structurally explained:}
+why an expanding, early-decelerating, late-accelerating history is
+a natural member of the ordered-branch scenario space once an
+expanding branch is selected;
+why phantom behaviour is excluded;
+why late acceleration with $w\approx -1$ is generic for slowly
+varying condensate backgrounds;
+why the cosmological and thermodynamic arrows of time align.
+
+\emph{Open:}
+\begin{enumerate}[label=(\roman*)]
+  \item the full nonequilibrium transition dynamics that selects
+    the ordered branch itself~(OP3);
+  \item the deeper principle selecting the expanding over the
+    contracting branch (suggestive analogy available; full
+    derivation requires OP3);
+  \item the exact background trajectory $\phi_b(z)$;
+  \item thermal completion of the hot Big-Bang history (entropy
+    production, thermalisation, radiation bath);
+  \item reproduction of precision early-universe observables---in
+    particular, the acoustic CMB peak
+    structure---without particle dark matter;
+  \item precision determination of the observed cosmological
+    parameters from a global ECT fit.
+\end{enumerate}
+
+\statussummary
+\textit{Level~A:}
+(i)~existence of a pre-ordered configuration regime without
+Lorentzian time;
+(ii)~the structural distinction between geometric branch onset
+and thermal hot-Big-Bang completion.
+
+\textit{Level~B:}
+(i)~effective FLRW/scalar-tensor reduction of the ordered branch;
+(ii)~no-phantom bound $w\ge -1$;
+(iii)~future Scenarios~A/B;
+(iv)~post-transition scenario classification
+(Table~\ref{tab:post_transition_scenarios});
+(v)~minimal viable post-transition branch conditions;
+(vi)~observational discriminants reinterpreted as branch
+discriminants.
+
+\textit{Level~B/C:}
+ordered-domain growth analogy as a physical motivation for
+expanding-branch naturalness.
+
+\textit{Open:}
+(i)~expanding-branch selection from first principles;
+(ii)~exact $\phi_b(z)$ trajectory;
+(iii)~thermal completion of the hot Big-Bang branch;
+(iv)~precision CMB acoustic structure without particle dark
+matter;
+(v)~precision global cosmological fit.
+
 % ============================================================
 \subsection{Horizon problem: branch coherence}
 \label{sec:inflation_alternatives}
@@ -23174,11 +23524,13 @@ assumed in standard approaches: the condensate is primary,
 geometry is secondary.
 Two further foundational issues find natural homes in the macroscopic
 branch: the primary condensate vacuum satisfies $V''(\phi_0)>0$ at
-tree level in the reduced radial sector, a structurally weaker but
-cleaner situation than the top-Yukawa-driven metastability of the
-Standard-Model electroweak
-vacuum~\cite{Degrassi2012,Buttazzo2013} (full one-loop and
-embedded-sector analysis open;
+tree level, and the one-loop RG analysis closes the SM-type
+metastability channel in the amplitude sector
+($\beta_\lambda>0$, \S\ref{par:vacuum_stability_oneloop}; Level~B),
+a structurally cleaner situation than the top-Yukawa-driven
+metastability of the Standard-Model electroweak
+vacuum~\cite{Degrassi2012,Buttazzo2013} (full branch-architecture
+and embedded-sector analysis open;
 \S\ref{sec:radial_mode}); and the matter-to-dark-energy ratio
 $r(z)=\rho_m/\rho_\phi$ in the calibrated ECT thawing benchmark
 $(f_0,\kappa)\approx(0.26,4.3)$ is only marginally wider than in pure
@@ -23249,12 +23601,12 @@ G~= global whole-framework closure problem.
 \endhead
 \bottomrule
 \endfoot
-\textsc{pass} & I & Condensate stability      & $V''(\phi_0)=2\mu^2>0$                                   & \S\ref{sec:ssb} \\
+\textsc{pass} & I & Condensate stability      & $V''(\phi_0)=2\mu^2>0$ (tree); $\beta_\lambda>0$ closes SM-type metastability (\S\ref{par:vacuum_stability_oneloop})                                   & \S\ref{sec:ssb} \\
 \textsc{pass} & I & Ghost-freedom             & Phys.\ mode $\lambda>0$ at $\alpha>\beta$                 & \S\ref{sec:ssb} \\
 \textsc{pass} & I & LIV bound                 & $|c_{\rm GW}/c-1|<6\times10^{-15}$ (GW170817)                    & \S\ref{sec:qs_black_holes} \\
 \textsc{pass} & I & Causality                 & Retarded propagation of ordered branch (Level~A); directed decoherence $\Gamma_{\rm irr}\geq 0$ (Level~A)                & \S\ref{sec:arrow_of_time} \\
 \textsc{prob.}& G & Second law $dS/dw\geq0$  & Level-A directional backbone + Level-B ohmic/Markov closure; full microscopic H-theorem open (OP-Q17) & \S\ref{sec:second_law_basics} \\
-\textsc{prob.}& III & Born measure              & Conditional uniqueness under C1--C3; unique outcome selection open (OP-Q19) & \S\ref{sec:born_rule} \\
+\textsc{prob.}& III & Born measure              & Quadratic structure from RP inner product; conditional uniqueness under C1--C3 via Gleason; unique outcome selection open (OP-Q19) & \S\ref{sec:born_rule} \\
 \textsc{part.}& II & Primordial perturbations $n_s$, $r$ & Critical O(4) fluctuation estimates yield $n_s\sim 0.96$--$0.97$ (\S\ref{sec:primordial_estimates}); full derivation open & \S\ref{sec:mp_cosmo} \\
 \textsc{part.}& II & Baryogenesis              & Sakharov-compatible environment (Level~B); $\eta_B$ benchmark only, not ECT-native derivation (OP7)            & \S\ref{sec:baryogenesis} \\
 \textsc{pass} & III & Unruh temperature         & $T_U=\hbar a/(2\pi c_*k_B)$ from $G_E(X,X')$         & \S\ref{sec:unruh} \\
@@ -23400,7 +23752,8 @@ D13 & UV safety of graviton & B/C & PES provides a structurally unified route fo
 
 Q-PES & Principle of Euclidean Stationarity (persistent-sector selection) & B & Organising principle linking compact phase, stationarity, and decoherence resistance; unifies physical reading but does not replace sector-specific derivations & \ref{sec:pes}, \ref{sec:pes_open} \\
 D14 & Full non-linear Einstein eqs.\ (anisotropic curv.\ term); $\phi$-first scalar-tensor IR closure (Appendix~\ref{app:phi_first_EFE}). Observational role assessed across five phenomenological sectors (Table~\ref{tab:nlee_footprint}); most consequential for cluster lensing and JWST growth & A/B & Riemann commutator identity (OP2 resolved at linear level); scalar-tensor closure = effective IR ansatz; $c_1$ undetermined (OP-c1) & \ref{sec:macroscopic}, \ref{sec:nlee_observational_role}, App.~\ref{app:curvature_coupling}, \ref{app:phi_first_EFE} \\
-D15 & First-principles derivation of the causal response kernel from ECT microdynamics & C & Retarded ordered-branch scalar dynamics provides the structural basis, but a non-circular derivation of the causal FV kernel from the bare ECT action is not yet complete & \ref{sec:second_law_basics}, \ref{sec:open_problems} \\
+D15a & Retarded support $K(\tau\!<\!0)\!=\!0$ in ordered Lorentzian branch & A & Quadratic pole proof + full nonlinear symmetric-hyperbolic reduction & \ref{sec:arrow_of_time}, \ref{app:retarded_kernel}, \ref{app:causal_hyperbolic} \\
+D15b & Open-system identification of bath response kernel / pre-branch origin of causal selection & C & Retarded ordered-branch dynamics provides the structural basis; full identification from Euclidean microdynamics not yet complete & \ref{sec:second_law_basics}, \ref{sec:open_problems} \\
 D16a & $U(1)$ gauge sector from compact phase fibre
   & A & Bundle covariance
   & \ref{sec:u1_emergence} \\
@@ -23428,6 +23781,9 @@ D24 & Gravitational stiffness matching: $G_N=c_*^4/(8\pi M_G^2)$; direct microsc
 D25 & Near-horizon critical scale in the present shell closure: $\rho_c=\ell_{\rm Pl}/\sqrt{3\pi}$ & B & Shell/interface ansatz; Tolman temperature as control parameter (C2b, open); not a universal first-principles theorem & \ref{sec:critical_shell} \\
 D26 & Conditional theorem: exact thermality excluded given finite-entropy shell + complete evaporation & B & Unitarity (natural) + finite shell + no infinite remnant & \ref{sec:no_exact_thermality} \\
 D27 & Shell-state dependence of Hawking channel: derived consequence of D26, not assumption & B & Conditions of D26 & \ref{app:conditional_theorem} \\
+D27b & General boundary-layer area bound (Theorem~\ref{thm:area_bound}) & A (scaling) / B (coeff.) & Locality + UV threshold + finite effective correlation length; coefficient and soft-sector closure open & \ref{sec:area_law} \\
+D27c & Compact-$U(1)$ Abelian charge lattice (Theorem~\ref{thm:charge_lattice}) & A & Compact condensate phase + group-theoretic representation theory; full SM charge pattern open & \ref{sec:charge_quantization} \\
+D27d & Post-transition cosmological scenario classification & B & Structural classification of expanding/contracting/accelerating branches; full transition dynamics and exact background trajectory open & \ref{sec:post_transition} \\
 D28 & Effective shell Hamiltonian structure (form, not coefficients) & C & GL criticality + Rindler geometry; coefficients open & \ref{app:chi_dynamics} \\
 D29 & Minimal shell--radiation coupling form $\mathcal{L}_{\rm int}=-\tfrac{g}{2}\delta\chi(\partial\varphi)^2$ & C & Locality + linearity; coefficient $g$ open & \ref{app:chi_dynamics} \\
 D30 & No-phantom late-time closure: $w_\phi\ge -1$ & B & Structural consequence of $\omega(\phi)>0$ in the $\phi$-first closure & \ref{sec:mp_flrw} \\
@@ -26650,6 +27006,281 @@ of $S_0=\hbar$.}
 For the present loop-based calculation status and the open
 first-principles derivation of the action scale~$S_0$, see
 Appendix~\ref{app:Sloop_calc}.
+
+% ==============================================================
+\subsection{Charge quantisation from the compact-phase gauge origin}
+\label{sec:charge_quantization}
+% ==============================================================
+
+\textit{Status: Level~A for the Abelian condensate-sector charge
+lattice (compact-U(1) group-theoretic route).
+Level~A/B for the canonical Dirac-quantisation corroboration
+(commutator route).
+Level~B for the electroweak $\mathbb{Z}_2$-quotient refinement
+and charge-lattice constraint $2T+Y\in 2\mathbb{Z}$.
+Open for the full observed electric-charge spectrum, hypercharge
+quantisation, and fermion representation content.
+Connection: compact phase
+sector~(\S\ref{sec:qs_phase_dynamics}),
+$U(1)$ emergence~(\S\ref{sec:u1_emergence}),
+Dirac quantisation
+condition~\eqref{eq:qs_dirac_quantization},
+electroweak
+structure~(\S\ref{sec:common_origin}).}
+
+\subsubsection*{Problem statement: conservation versus quantisation
+versus the observed charge spectrum}
+
+The emergence of a local $U(1)$ gauge symmetry in ECT immediately
+implies electric-charge conservation by Noether's theorem.
+This, however, is not yet the same as charge quantisation.
+Conservation states that a charge, once assigned, is preserved.
+Quantisation asks why the allowed charges belong to a discrete
+lattice rather than a continuum.
+Three levels must be kept sharply distinct:
+\begin{enumerate}[label=(\roman*)]
+  \item \emph{charge conservation},
+    $\partial_\mu J^\mu = 0$, which is
+    already established~(\S\ref{sec:u1_emergence});
+  \item \emph{Abelian charge quantisation},
+    $q \in \mathbb{Z}\cdot e_0$,
+    i.e.\ why charges form a discrete lattice;
+  \item \emph{the full observed Standard-Model charge pattern},
+    $Q = T_3+Y/2$ with specific values
+    $0,\;\pm e/3,\;\pm 2e/3,\;\pm e$,
+    which requires in addition electroweak embedding,
+    hypercharge quantisation, and a derivation of the fermion
+    representation content.
+\end{enumerate}
+The present subsection establishes~(ii) and clarifies why~(iii)
+remains open.
+
+\subsubsection*{The compact-phase route: why charge quantisation
+is structural in ECT}
+
+In standard QED, the gauge group $U(1)$ can in principle be
+either compact or noncompact~$\mathbb{R}$.
+Only the compact choice enforces charge quantisation; the
+noncompact group permits a continuous spectrum of charges.
+Which option nature realises is, within the standard framework,
+an empirical input.
+
+In ECT, this ambiguity does not arise.
+The $U(1)$ gauge sector is \emph{derived} from the compact phase
+of the condensate:
+$\theta\sim\theta+2\pi$~(\S\ref{sec:u1_emergence}).
+There is no consistent way to obtain a noncompact $\mathbb{R}$
+gauge group from a field whose phase is topologically $S^1$.
+Compactness is therefore not assumed---it is a structural
+consequence of the condensate architecture.
+
+\begin{theorem}[Compact-$U(1)$ charge lattice]
+\label{thm:charge_lattice}
+Let the condensate phase sector be compact,
+$\theta\sim\theta+2\pi$, and let the emergent Abelian gauge
+sector be the local gauge redundancy of this compact phase.
+Then any matter excitation transforming in a one-dimensional
+unitary representation of this compact $U(1)$ must carry charge
+\begin{equation}
+  \label{eq:charge_lattice_thm}
+  q_n = n\,e_0, \qquad n\in\mathbb{Z},
+\end{equation}
+where $e_0$ is the elementary Abelian charge unit of the
+condensate sector.
+\end{theorem}
+
+\paragraph{Proof.}
+A charged excitation transforms as
+$\psi\to e^{i\lambda\alpha(x)}\psi$
+under a local gauge transformation with parameter~$\alpha$.
+Because the gauge parameter is angular ($\alpha\sim\alpha+2\pi$),
+the transformation with $\alpha=2\pi$ is the identity element of
+compact $U(1)$.
+Physical single-valuedness therefore requires
+$e^{i2\pi\lambda}=1$, hence $\lambda\in\mathbb{Z}$.
+Restoring the elementary charge unit~$e_0$, the covariant
+derivative takes the form
+$D_\mu = \partial_\mu - in\,e_0\,A_\mu$,
+and the allowed charges are precisely
+$q_n=n\,e_0$.
+\hfill$\square$
+
+\paragraph{Status.}
+Theorem~\ref{thm:charge_lattice} is \textbf{Level~A}.
+It depends only on the compactness of~$\theta$
+(from the condensate construction), the gauge emergence via
+P5~(\S\ref{sec:u1_emergence}), and the representation theory of
+compact groups (a mathematical fact).
+It does \emph{not} require the canonical commutator
+candidate~\eqref{eq:qs_commutator_candidate}.
+
+\subsubsection*{Canonical corroboration (independent route)}
+
+A second, independent route to the same lattice is already present
+in the theory: if the charge operator is canonically conjugate to the
+compact phase,
+$[\hat{Q}_\theta,\hat{\theta}]=i\,S_0$~\eqref{eq:qs_commutator_candidate},
+then compactness of~$\theta$ again implies a discrete spectrum for
+$\hat{Q}_\theta$:
+$Q_\theta\in\mathbb{Z}\cdot S_0$~\eqref{eq:qs_dirac_quantization}.
+This route is Level~A/B because it leans on the operator/CCR side of
+the quantum programme.
+
+The two routes are logically independent: the group-theoretic route
+uses only compactness and representation theory; the canonical route
+uses compactness and the commutator.
+Their mutual consistency strengthens the structural case for Abelian
+charge quantisation.
+
+\subsubsection*{Loop/holonomy viewpoint}
+
+The same conclusion may be restated in the loop language natural
+to ECT\@.
+Transport of a charged excitation around a closed loop must return
+the same physical state up to an allowed $U(1)$ phase.
+Compatibility with the compact phase fibre forces the charge to lie
+on the discrete lattice $q/e_0\in\mathbb{Z}$.
+
+\subsubsection*{Electroweak conditional refinement}
+
+If the electroweak condensate sector is such that the simultaneous
+action of the common centre element
+$(-\mathbf{1},-1)\in SU(2)\times U(1)$ is physically redundant on
+the order parameter---as is natural for an even condensate potential
+$V(\Phi)=V(-\Phi)hBc--as is natural for
+an electroweak condensate sector with an even order-parameter
+potential and centre-insensitive vacuum structure---then the effective
+electroweak gauge structure is
+$U(2)=(SU(2)\times U(1))/\mathbb{Z}_2$~\eqref{eq:U2_global},
+and admissible representations satisfy
+$2T+Y\in 2\mathbb{Z}$~\eqref{eq:charge_lattice}
+(Level~B, conditional on the electroweak embedding).
+This sharpens the lattice structure beyond bare compact~$U(1)$.
+
+\subsubsection*{Anomaly cancellation as a self-consistency
+requirement}
+
+In ECT, anomaly cancellation is not an external aesthetic
+criterion but a non-negotiable self-consistency requirement: if
+the ordered branch produces an emergent chiral gauge sector, the
+emergent matter content \emph{must} be anomaly-free, otherwise the
+emergent gauge theory is inconsistent, contradicting the existence
+of the ordered branch itself.
+This does not yet derive the observed fermion representations, but
+it sharply constrains any acceptable completion: whatever matter
+representations emerge from the condensate, they must satisfy the
+standard anomaly-cancellation conditions.
+
+\subsubsection*{Neutrino compatibility}
+
+Within the charge-lattice constraint $2T+Y\in 2\mathbb{Z}$, a
+singlet with $T=0,\;Y=0$ has $Q=0$.
+This is naturally compatible with a sterile-neutrino-like state,
+fitting smoothly with the seesaw route already developed in the
+neutrino sector.
+This should be read as compatibility, not as an independent
+derivation of the neutrino charge.
+
+\subsubsection*{What remains open}
+
+The compact-$U(1)$ result does not yet derive the full observed
+Standard-Model electric-charge spectrum.
+In particular:
+\begin{enumerate}[label=(\roman*)]
+  \item the appearance of quark charges $\pm e/3$ and $\pm 2e/3$
+    requires the colour sector~(OP-GUT1) and the electroweak
+    representation content~(OP-GUT3b);
+  \item the precise equality $|Q_e|=|Q_p|$ requires
+    anomaly-consistent representations~(OP-GUT6);
+  \item the full observed charge pattern likely depends on the
+    global structure of the complete low-energy gauge group,
+    potentially of
+    $(SU(3)\times SU(2)\times U(1)_Y)/\Gamma$ type with
+    $\Gamma=\mathbb{Z}_6$, $\mathbb{Z}_3$, or
+    $\mathbb{Z}_2$~\cite{AharonyEtAl2013};
+  \item three fermion generations remain an open
+    problem~(OP-GUT5).
+\end{enumerate}
+
+\subsubsection*{Comparison with other routes to charge quantisation}
+
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{@{}p{2.2cm}p{3.2cm}p{3.2cm}p{3.2cm}@{}}
+\caption{Comparison of routes to charge quantisation.}
+\label{tab:charge_quant_comparison}\\
+\toprule
+Aspect & Standard QED & GUT embedding & ECT \\
+\midrule
+\endfirsthead
+\toprule
+Aspect & Standard QED & GUT embedding & ECT \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Why quantised
+  & Not explained ($U(1)$ can be noncompact)
+  & Group embedding forces it
+  & Compact-phase condensate origin~(Level~A) \\
+Status of derivation
+  & Empirical input
+  & GUT hypothesis required
+  & Structural from P3$+$P5 \\
+Fractional charges
+  & Empirical
+  & Predicted by rep content
+  & Requires EW$+$colour completion \\
+Anomaly role
+  & Empirical consistency check
+  & Automatic within GUT
+  & Self-consistency of ordered branch \\
+\bottomrule
+\end{longtable}
+
+\paragraph{Discriminant: ECT charge quantisation versus standard
+approaches.}
+The ECT route is architecturally distinct: it derives compact $U(1)$
+from the condensate phase rather than postulating it or embedding it
+in a larger group.
+This makes Abelian charge quantisation a structural medium property,
+not an empirical coincidence or a GUT-dependent consequence.
+The identification of the elementary condensate charge unit $e_0$
+with the observed electromagnetic coupling remains part of the
+broader gauge-matching programme~(OP-GUT4).
+
+\paragraph{Falsifier for the charge-quantisation programme.}
+The programme would be falsified if
+(i)~the condensate phase sector were shown to be topologically
+noncompact (contradicting the construction);
+(ii)~a completed ECT gauge/matter sector produced anomaly-violating
+representations;
+or (iii)~the electroweak/colour completion failed to reproduce the
+observed charge assignments.
+
+\statussummary
+\textit{Established~(Level~A):}
+(i)~compact $U(1)$ gauge group from condensate phase
+(Theorem~\ref{thm:charge_lattice});
+(ii)~Abelian charge lattice $q\in\mathbb{Z}\cdot e_0$;
+
+
+\textit{Architectural / consistency requirement:}
+(i)~anomaly cancellation as a mandatory self-consistency
+condition on any emergent chiral sector (consistency target,
+not yet a derived representation theorem).
+
+\textit{Conditional~(Level~A/B to B):}
+(i)~canonical Dirac
+quantisation~\eqref{eq:qs_dirac_quantization};
+(ii)~electroweak $\mathbb{Z}_2$ quotient and charge-lattice
+constraint $2T+Y\in 2\mathbb{Z}$.
+
+\textit{Open:}
+(i)~full observed electric-charge spectrum;
+(ii)~hypercharge quantisation from first principles;
+(iii)~full global gauge-group structure
+$(SU(3)\times SU(2)\times U(1)_Y)/\Gamma$;
+(iv)~observed fermion representation content.
 
 \FloatBarrier
 % ============================================================
@@ -29895,9 +30526,10 @@ Retarded propagation of the ordered-branch scalar is therefore Level~A
 for the full nonlinear branch, superseding the earlier quadratic-only
 restriction.
 In the open-system reduction, this retarded structure is encoded by a
-causal response kernel $K(\tau<0)=0$; a full first-principles
-derivation of this identification from ECT microdynamics remains
-open~(OP1, OP5).
+causal response kernel $K(\tau<0)=0$, which is established at Level~A
+for the ordered Lorentzian branch.
+What remains open is the full first-principles identification of the
+effective bath-response kernel from Euclidean microdynamics~(OP1, OP5).
 
 \subsubsection*{Low-entropy coherent initial sector}
 
@@ -32699,7 +33331,7 @@ conditional uniqueness via Gleason.}
 The earlier wording (``natural candidate'') can be sharpened.
 Once the coherent sector is equipped with a Hilbert-space
 projector structure and an additive probability measure on
-decohered alternatives, Gleason's theorem~(1957) forces:
+decohered alternatives, Gleason's theorem~\cite{Gleason1957} forces:
 the only probability assignment consistent with that structure is
 $P_\alpha=\mathrm{Tr}(\hat\rho\,P_\alpha)$, which for a pure
 state reduces to $P_\alpha=|\langle\phi_\alpha|\Psi\rangle|^2$.
@@ -32722,6 +33354,121 @@ but weaker than a bare-postulate theorem: the Born rule is
 conditionally unique once the coherent Hilbert/projector structure
 and additive probability measure on decohered alternatives are
 admitted.
+
+\subsubsection*{Reflection-positivity origin of the quadratic structure}
+
+The standard decision-theoretic routes to the Born rule
+(Deutsch~\cite{Deutsch1999}, Wallace~\cite{Wallace2012},
+Zurek~\cite{Zurek2005}) derive the quadratic weighting from
+rationality axioms imposed on an agent embedded in a branching
+quantum world.
+In ECT the quadratic structure has a different and more direct
+origin: it is naturally traced to the reflection-positivity
+construction of the physical inner product, rather than to an
+external rationality postulate.
+
+The Euclidean condensate functional
+measure~\eqref{eq:qs_euclidean_measure}
+provides the natural microscopic weight from which the emergent
+quadratic structure is reconstructed under the RP/OS
+assumptions.
+For functionals $F$,~$G$ supported in the half-space $w>0$,
+the OS route~(\S\ref{sec:qs_reflection_positivity}) defines a
+physical inner product:
+\begin{equation}
+  \label{eq:qs_rp_inner_product}
+  \langle F | G \rangle_{\rm phys}
+  = \int \mathcal{D}\Phi\;
+  (\Theta F[\Phi])^*\, G[\Phi]\;
+  e^{-S_E[\Phi]/S_0}.
+\end{equation}
+This inner product is quadratic in the amplitudes by
+construction: it is a defining property of the Euclidean measure
+and the reflection operation, not an auxiliary assumption about
+probability.
+RP guarantees a positive semi-definite OS form; after
+quotienting the RP-null states and completing the resulting
+positive semi-definite OS space, one obtains the physical Hilbert
+space $\mathcal{H}_{\rm phys}$ with positive-definite norm.
+
+Once the OS-reconstructed Hilbert space is in place, the diagonal
+elements of a reduced density matrix are automatically of the form
+\begin{equation}
+  \label{eq:qs_rp_diagonal}
+  \rho_{\alpha\alpha}
+  = \langle \alpha | \hat\rho | \alpha \rangle
+  = |\langle \alpha | \Psi \rangle|^2
+  \qquad \text{(pure state)}.
+\end{equation}
+This is not a probabilistic postulate.
+It is a consequence of the RP-defined inner product: the diagonal
+matrix elements inherit the quadratic structure
+of~$\langle\cdot|\cdot\rangle_{\rm phys}$.
+
+The full derivational chain within ECT is therefore:
+\begin{equation}
+  \label{eq:qs_born_chain}
+  \underbrace{S_E,\; S_0}_{\text{P1--P6}}
+  \;\xrightarrow{\;\text{RP}\;}
+  \underbrace{\mathcal{H}_{\rm phys},\;
+    \langle\cdot|\cdot\rangle}_{\text{quadratic}}
+  \;\xrightarrow{\;\text{decoh.}\;}
+  \underbrace{\text{projectors}}_{\text{(C2)}}
+  \;\xrightarrow{\;\text{Gleason}\;}
+  P_\alpha = |\langle\phi_\alpha|\Psi\rangle|^2.
+\end{equation}
+In this reading, the quadratic character of Born weights is not
+chosen, nor is it derived from decision-theoretic rationality.
+It is \emph{inherited} from the RP-inner-product structure of the
+Euclidean condensate measure.
+
+\paragraph{Comparison with decision-theoretic routes.}
+The Deutsch--Wallace programme starts from an assumed Hilbert space
+and derives the Born rule from rationality constraints on agents.
+ECT starts from a Euclidean functional measure and constructs the
+Hilbert space itself (via RP), so that the quadratic weighting
+emerges from the physics of the Euclidean condensate rather than
+from the rationality of hypothetical agents.
+The decision-theoretic step is therefore not required in the ECT
+route, though it remains available as an independent consistency
+check.
+
+\paragraph{Residual gap and honest status.}
+The RP route narrows the open gap compared to the formulation based
+on~(C1)--(C3) alone, but it does not close it completely:
+\begin{itemize}[nosep]
+  \item \textbf{(C1)}~is partially addressed: $\mathcal{H}_{\rm phys}$
+    is constructed at Level~A for Gaussian subsectors of the broken
+    phase, and the full interacting verification is a well-defined
+    constructive target~(OP-Q16);
+  \item \textbf{(C2)}~is structurally supported by the decoherence
+    programme~(\S\ref{sec:qs_decoherence}) but not yet established as
+    a strict projector-algebra theorem for decohered macroscopic
+    alternatives;
+  \item \textbf{(C3)}~is the mildest: additivity of probabilities for
+    mutually exclusive decohered alternatives is operationally
+    almost unavoidable.
+\end{itemize}
+
+\paragraph{Level summary for the RP/OS Born route.}
+\textit{Level~A:}
+Euclidean measure, Gaussian RP subsectors, emergence of positive
+quadratic norm in those subsectors.
+\textit{Level~B:}
+decohered branch structure, approximate projective alternatives,
+Born-type weights as structural consequence of reduced-state
+diagonals.
+\textit{Level~C\,/\,Open:}
+full first-principles closure of~(C1)--(C3) for the complete
+interacting coherent theory from bare P1--P6 alone.
+
+The Born rule in ECT therefore has the status of a
+\emph{conditionally unique consequence of the RP-defined Hilbert
+structure}, with the residual gap concentrated in the full
+interacting RP verification and the strict projector-algebra
+theorem for decohered branches.
+This is substantially stronger than a raw postulate but weaker
+than an unconditional theorem from bare postulates.
 
 \subsubsection*{Reduced density matrix viewpoint}
 
@@ -32847,15 +33594,23 @@ reduced-state structure is admitted.
 \textit{Established~(Level~A):}
 ECT distinguishes clearly between coherent amplitudes, decohered
 reduced sectors, and effective probability candidates.
+The Euclidean condensate measure and reflection positivity provide
+the quadratic inner-product structure from which Born-type weights
+are inherited in Gaussian subsectors of the broken phase.
 
 \textit{Level~B:}
 once assumptions~(C1)--(C3) are admitted, the quadratic Born rule is
-not merely plausible but conditionally unique via Gleason's theorem.
+not merely plausible but conditionally unique via
+Gleason's theorem~\cite{Gleason1957}.
+The RP/OS route partially closes~(C1) for Gaussian subsectors
+and structurally motivates~(C2) through the decoherence programme;
+(C3) is operationally mild.
 
 \textit{Open:}
-(i)~a first-principles derivation of the Hilbert/projector and
-probability-measure structure required by~(C1)--(C3);
-(ii)~a full first-principles derivation of the Born rule;
+(i)~full interacting RP verification beyond the Gaussian
+sector~(OP-Q16);
+(ii)~a strict projector-algebra theorem for decohered macroscopic
+alternatives~(C2);
 (iii)~a completed measurement-update theory.
 
 \paragraph{Summary.}
@@ -32893,12 +33648,18 @@ Aspect & Deutsch (1999)~\cite{Deutsch1999} &
 Framework
   & MWI + decision theory
   & MWI + decoherence
-  & Coherent branch + decoherence + conditional Gleason route \\
+  & Coherent branch + decoherence + RP/OS Hilbert construction
+    + conditional Gleason route \\
 Source of weights
   & Rationality axioms
   & Rationality + branch structure
   & Decohered reduced sectors; quadratic assignment conditionally
     unique once assumptions~(C1)--(C3) hold \\
+Origin of quadratic structure
+  & Decision-theoretic axiom
+  & Rationality + separability
+  & RP-defined inner product of the Euclidean condensate measure;
+    not externally postulated \\
 Decoherence
   & Not used
   & Postulated
@@ -33291,6 +34052,8 @@ However, the coherent ontology of ECT is wider than the
 smooth coherent branch.
 The present subsection develops that wider sector.
 
+\subsection{Defect sectors and their relation to the smooth branch}
+
 \subsubsection*{Why defect sectors are not excluded by BR1}
 
 The smooth coherent-sector rule~BR1 does not state that only smooth
@@ -33338,7 +34101,7 @@ In this sense, Section~\ref{sec:qs_conservation} describes the
 protected regime, while the present section describes the wider regime
 in which protection can break down.
 
-\subsubsection*{Types of defect and topological configurations}
+\subsection{Types of defect and topological configurations}
 
 The main structurally motivated classes of configurations outside the
 smooth coherent sector are:
@@ -33380,7 +34143,9 @@ sections, and cosmological relic abundance.
 Those belong to the constructive completion of the wider
 coherent branch and remain Level~B or open.
 
-\subsubsection*{Why this matters for the dark sector}
+\subsection{Connection to the dark sector}
+
+
 
 This wider sector naturally reopens the dark sector from the QS side.
 In Macroscopic Physics~(Section~\ref{sec:dark_sector}), the dark sector
@@ -33507,7 +34272,7 @@ defect and topological sectors are not external add-ons, but further
 configurations of the same ordered condensate whose smooth branch also
 supports non-factorisable coherent correlations.
 
-\subsubsection*{Measurement and observability status}
+\subsection{Measurement and observability status}
 
 Three observational levels can be distinguished:
 \begin{enumerate}[label=(\roman*)]
@@ -33570,7 +34335,7 @@ within the same overall condensate architecture.
 % ============================================================
 
 % ==============================================================
-\section{Black-Hole Thermodynamics, Hawking Radiation, and the Information Problem}
+\section{Black-Hole Thermodynamics, Information Problem, and Holographic-Style Entropy Bounds}
 \label{sec:qs_bh}
 % backward-compatibility aliases:
 \label{sec:qs_black_holes}\label{sec:no_exact_thermality}
@@ -34192,6 +34957,469 @@ interior profile, first-principles horizon thermodynamic coefficients,
 or a constructive Page curve; the numerical coefficient in the
 area-law entropy $S_{\rm shell}\sim A/\ell_*^2$ remains an open
 matching condition.
+
+% ==============================================================
+\subsection{Area-law scaling and holographic-style entropy bounds
+as boundary-layer properties of the ECT medium}
+\label{sec:area_law}
+% ==============================================================
+
+\textit{Status: Level~A for the structural area-scaling mechanism
+(locality + physical UV threshold + boundary-layer counting).
+Level~B for the generic coefficient $c_0=O(1)$, the matching to
+$1/(4\ell_{\rm Pl}^2)$, and the extension to soft/massless sectors.
+Open for covariant formulations, full bulk reconstruction, and
+exact microscopic entropy-capacity derivation.
+Connection: shell entropy~(\S\ref{app:shell_entropy}),
+conditional theorem~(\S\ref{app:conditional_theorem}),
+decoherence programme~(\S\ref{sec:qs_decoherence}),
+entanglement~(\S\ref{sec:qs_entanglement}),
+UV threshold~(\S\ref{par:uv_threshold}),
+medium character~(P5).}
+
+\subsubsection*{Problem statement: area law, holographic bound, and
+full holography}
+
+In black-hole physics, entropy scales with area rather than volume.
+In the broader quantum-gravity literature this motivates several
+related but conceptually distinct ideas:
+\begin{enumerate}[label=(\roman*)]
+  \item the Bekenstein--Hawking area law for black-hole
+    entropy~\cite{Bekenstein1973};
+  \item more general holographic-style entropy
+    bounds~\cite{Bekenstein1981,tHooft1993,Susskind1995};
+  \item the stronger holographic principle in the sense of bulk
+    encoding or reconstruction by boundary
+    data~\cite{Bousso2002}.
+\end{enumerate}
+These statements should not be conflated.
+An area law does not by itself imply full holography, and a
+shell-counting argument near horizons does not by itself establish
+a covariant entropy bound for arbitrary dynamical geometries.
+
+The ECT question is therefore:
+
+\emph{Can the area scaling of accessible entropy be understood as a
+structural property of a local condensate medium with a physical
+ultraviolet threshold?}
+
+The present subsection argues that the answer is positive at the
+level of a general boundary-layer area bound, while the exact
+coefficient, covariant formulations, and strong bulk
+reconstruction remain open.
+
+\subsubsection*{Structural ingredients already present in ECT}
+
+The following ingredients are already available within the
+framework:
+\begin{enumerate}[label=(\roman*)]
+  \item a \emph{physical UV threshold}
+    $\ell_*\sim m_\sigma^{-1}$, set by condensate microphysics
+    rather than imposed as an external
+    regulator~(\S\ref{par:uv_threshold});
+  \item a \emph{local medium picture}, in which distinct subsystems
+    communicate only through local condensate couplings across
+    interfaces~(S5);
+  \item a \emph{reduced-state interpretation} of mixedness,
+    already used elsewhere in the quantum
+    sector~(\S\ref{sec:qs_decoherence}, \S\ref{sec:qs_born});
+  \item an existing \emph{shell-entropy precedent}
+    $S_{\rm shell}\sim A\ln q/\ell_*^2$, showing that black-hole
+    area scaling arises naturally in a special
+    case~(\S\ref{app:shell_entropy});
+  \item an \emph{elliptic Euclidean architecture}, which makes
+    boundary control conceptually natural, although this is not
+    itself the proof of the entropy bound.
+\end{enumerate}
+These features make ECT unusually well suited to explain area
+scaling without postulating holography as a separate principle.
+
+\subsubsection*{Boundary-layer mechanism}
+
+Let $\Sigma$ be a smooth closed two-surface separating exterior
+and interior subsystems.
+The reduced state of the exterior observer is
+\begin{equation}
+  \label{eq:rho_ext_area}
+  \rho_{\rm ext}
+  = \mathrm{Tr}_{\rm int}\,|\Psi\rangle\langle\Psi|,
+  \qquad
+  S_{\rm red}(\Sigma)
+  = -\mathrm{Tr}(\rho_{\rm ext}\ln\rho_{\rm ext}).
+\end{equation}
+In a local medium with finite microscopic resolution,
+interior--exterior correlations are not generated uniformly
+throughout the bulk.
+They are mediated through a finite-thickness interfacial region
+near~$\Sigma$.
+If the relevant sectors have finite effective correlation length
+$\xi_{\rm eff}$, then only degrees of freedom within a layer of
+thickness $O(\xi_{\rm eff})$ around $\Sigma$ contribute
+appreciably to the reduced entropy associated with the split.
+
+Since the number of microscopic cells in that layer scales with
+the area of~$\Sigma$, area scaling follows.
+
+\paragraph{Supporting lemma (exponential clustering).}
+For the radial sector with mass gap $m_\sigma>0$, the connected
+two-point correlator satisfies
+$|\langle\Phi(x)\Phi(y)\rangle_c|\le C\,e^{-m_\sigma|x-y|}$
+(standard result for massive Euclidean
+fields~\cite{GlimmJaffe1987}).
+Cross-boundary correlations from the massive sector are therefore
+exponentially localised within a layer of thickness
+$\xi_{\rm cond}=O(m_\sigma^{-1})=O(\ell_*)$ around~$\Sigma$.
+
+\paragraph{Definition (effective local entropy capacity).}
+$s_*$ denotes the maximal entropy per UV cell under the adopted
+coarse-graining and energy restriction.
+We require only $s_*<\infty$ as an assumption; its exact value is
+not yet derived from first principles.
+
+\subsubsection*{General theorem}
+
+\begin{theorem}[General boundary-layer area bound in ECT]
+\label{thm:area_bound}
+Let $\Sigma$ be a smooth closed two-surface of area $A(\Sigma)$
+separating an exterior and an interior subsystem in the ordered
+branch of ECT\@.
+Suppose that:
+\begin{enumerate}[label=\textup{(\roman*)}]
+  \item the ordered condensate admits a physical UV threshold
+    $\ell_*\sim m_\sigma^{-1}$;
+  \item the sectors contributing appreciably to the reduced entropy
+    across $\Sigma$ have finite effective correlation length
+    $\xi_{\rm eff}=O(\ell_*)$;
+  \item under the adopted coarse-graining or energy restriction,
+    each UV cell has finite effective local entropy capacity
+    $s_*<\infty$;
+  \item subsystem couplings are local in the condensate medium.
+\end{enumerate}
+Then the reduced accessible entropy satisfies
+\begin{equation}
+  \label{eq:area_bound}
+  S_{\rm red}(\Sigma)
+  \;\le\;
+  c_0\,\frac{A(\Sigma)}{\ell_*^2},
+\end{equation}
+where $c_0=O(1)$ depends on the effective local entropy capacity
+and on the convention used for the finite-thickness boundary layer.
+\end{theorem}
+
+\subsubsection*{Proof}
+
+\textit{Step~1: locality restricts relevant correlations to a
+boundary layer.}
+Because couplings are local~(S5), interior degrees of freedom
+affect the exterior only through correlations transmitted across
+the interface.
+If the relevant sectors have finite effective correlation length
+$\xi_{\rm eff}$, then correlations between points whose distances
+from~$\Sigma$ exceed $\xi_{\rm eff}$ are strongly suppressed
+(exponentially for massive sectors, by the supporting lemma above).
+Hence only a layer of thickness $O(\xi_{\rm eff})$ contributes
+appreciably to the cross-interface reduced entropy.
+
+\textit{Step~2: number of microscopic cells in the layer.}
+The boundary-layer volume scales as
+$V_{\rm layer}\sim A(\Sigma)\,\xi_{\rm eff}$.
+With ultraviolet cell size $\ell_*$, the number of relevant cells
+is bounded by
+\begin{equation}
+  \label{eq:N_sigma}
+  \mathcal{N}_\Sigma
+  \sim
+  \frac{A(\Sigma)\,\xi_{\rm eff}}{\ell_*^3}.
+\end{equation}
+For $\xi_{\rm eff}=O(\ell_*)$, this reduces to
+$\mathcal{N}_\Sigma\sim A(\Sigma)/\ell_*^2$.
+
+\textit{Step~3: local entropy capacity bounds the total reduced
+entropy.}
+If each relevant UV cell carries at most finite effective entropy
+capacity $s_*$, then
+$S_{\rm red}(\Sigma)\le s_*\,\mathcal{N}_\Sigma$.
+Substituting the estimate for $\mathcal{N}_\Sigma$ yields
+\begin{equation}
+  S_{\rm red}(\Sigma)
+  \;\le\;
+  s_*\,\frac{A(\Sigma)\,\xi_{\rm eff}}{\ell_*^3}
+  \;\equiv\;
+  c_0\,\frac{A(\Sigma)}{\ell_*^2},
+\end{equation}
+with $c_0\sim s_*\,\xi_{\rm eff}/\ell_*=O(1)$.
+\hfill$\square$
+
+\subsubsection*{Interpretation}
+
+This theorem is deliberately modest in the right way.
+It does not derive the exact Bekenstein--Hawking coefficient.
+It does not derive a covariant Bousso-type bound.
+It does not establish full bulk reconstruction.
+
+What it does establish is a strong structural fact:
+\emph{in a local condensate medium with a physical ultraviolet
+threshold, the reduced accessible entropy associated with a
+subsystem split is naturally controlled by a boundary layer and
+therefore scales with area rather than volume.}
+
+In ECT, area scaling is therefore not a mysterious gravity-only
+postulate.
+It is a structural property of a local medium with finite
+microscopic resolution.
+
+\paragraph{Medium reading~(P5).}
+Under the medium interpretation~(P5), the area bound is not an
+external holographic postulate imposed on a gravitational theory.
+It is a structural property of the ordered medium itself: the
+information accessible to an external observer is limited by the
+boundary-layer channel, whose capacity scales with area.
+
+\subsubsection*{Relation to the black-hole shell result}
+
+The shell-entropy result developed
+earlier~(\S\ref{app:shell_entropy}),
+\begin{equation}
+  S_{\rm shell}\sim \frac{A\ln q}{\ell_*^2},
+\end{equation}
+now appears as a special case of the general theorem, with the
+identification $c_0\leftrightarrow\ln q$ up to precise
+conventions.
+
+The general theorem supplies the existence of an area-type bound,
+while the shell computation supplies a concrete black-hole
+realisation of it.
+
+The exact Bekenstein--Hawking coefficient corresponds to the
+matching condition
+\begin{equation}
+  \label{eq:area_matching}
+  \frac{\ln q}{\ell_*^2}
+  = \frac{1}{4\ell_{\rm Pl}^2}.
+\end{equation}
+In ECT the ultraviolet length entering the area law is tied to
+the condensate microphysics, naturally through
+$\ell_*\sim m_\sigma^{-1}$.
+The exact dimensionless coefficient depends on the effective local
+microstate capacity and possibly on additional condensate-sector
+structure, but is not yet derived from first principles.
+This should be presented as a matching condition, not as an
+already closed first-principles derivation.
+
+\subsubsection*{Entanglement-entropy bridge}
+
+The above result also clarifies the relation between ECT and the
+standard area law of entanglement entropy in continuum QFT.
+
+In continuum QFT, entanglement entropy across a surface is known
+to scale as area, but with a UV-divergent
+coefficient~\cite{BombelliKoulLeeSorkin1986,Srednicki1993}:
+\begin{equation}
+  S_{\rm ent}^{\rm QFT}\sim\frac{A}{\epsilon^2},
+\end{equation}
+where $\epsilon$ is a UV regulator.
+ECT does not merely reuse the same formula with an arbitrary
+cutoff.
+It replaces the formal regulator by a physical condensate
+threshold:
+\begin{equation}
+  \epsilon\;\to\;\ell_*\sim m_\sigma^{-1}.
+\end{equation}
+The result is therefore upgraded from a regulator-dependent
+divergence to a finite structural entropy bound:
+\begin{equation}
+  S_{\rm red}^{\rm ECT}
+  \;\lesssim\;
+  c_0\,\frac{A}{\ell_*^2}.
+\end{equation}
+ECT thereby provides a physical meaning for the microscopic scale
+entering the area law: the cutoff is not an artefact of
+calculational convenience but a physical property of the ordered
+medium.
+
+\subsubsection*{Role of the Euclidean elliptic structure}
+
+The Euclidean branch provides an additional architectural reason
+why boundary control is natural in ECT.
+Because the Euclidean condensate equation is elliptic, classical
+field configurations are naturally organised by boundary data.
+
+This makes boundary encoding conceptually native to ECT, but the
+actual entropy bound proven above rests on locality, physical UV
+threshold, finite effective correlation length, finite local
+entropy capacity, and reduced-state logic.
+The elliptic boundary-value property is therefore supportive
+architecture, not the central proof.
+
+\subsubsection*{Soft sectors and subleading corrections}
+
+The leading boundary-layer argument applies cleanly to sectors
+with finite $\xi_{\rm eff}$ and finite effective local entropy
+capacity.
+Soft or constrained sectors may modify this picture in subleading
+ways:
+Goldstone sectors,
+gauge-edge modes,
+long-range constrained sectors,
+and other nearly gapless collective excitations.
+
+Known QFT results suggest that such sectors typically preserve
+the leading area term while modifying coefficients or adding
+logarithmic corrections~\cite{Srednicki1993}.
+However, this has not yet been worked out explicitly within ECT.
+
+Therefore the present theorem should be understood as establishing
+the core area-law mechanism for sectors with finite effective
+correlation length, while the detailed treatment of soft-sector
+corrections remains open.
+
+\subsubsection*{Relation to the Page-curve and
+information-capacity programmes}
+
+The area-law theorem has an important consequence for the
+black-hole information programme.
+A bound of the form
+$S_{\rm shell}\lesssim c_0\,A/\ell_*^2$
+implies a finite effective shell information capacity under the
+adopted coarse-graining.
+This strengthens the shell-based Page-curve programme by
+removing one otherwise free assumption, namely the need to
+postulate a finite shell information reservoir by hand.
+
+However, this does not by itself derive a Page curve.
+Additional dynamical ingredients are still required:
+explicit information return mechanism, purification dynamics,
+and temporal correlation transfer.
+Thus the theorem narrows the gap but does not close it fully.
+
+\subsubsection*{Relation to the decoherence programme}
+
+The same interfacial logic clarifies the relation between
+entropy bounds and decoherence.
+The influence-functional machinery of
+ECT~(\S\ref{sec:qs_decoherence}) already describes how
+inaccessible degrees of freedom induce reduced-state evolution
+and decoherence in an observed subsystem.
+The present area-law result shows that, in a local medium with
+finite UV resolution, both reduced entropy and decoherence are
+controlled by the same boundary-layer architecture.
+
+This does not yet yield a new quantitative decoherence theorem,
+but it makes explicit that entropy generation and decoherence are
+two manifestations of the same reduced-description framework.
+
+\subsubsection*{From area law to holography: what is and is not
+derived}
+
+It is essential to distinguish:
+\begin{enumerate}[label=(\roman*)]
+  \item \emph{area-law entropy scaling}, which is now
+    structurally supported by the general boundary-layer theorem;
+  \item \emph{holographic-style entropy bounds}, which are
+    strongly suggested by the medium-native area scaling;
+  \item \emph{full holography} in the strong reconstruction
+    sense, which remains open.
+\end{enumerate}
+
+The correct summary is:
+
+\emph{ECT provides a medium-native structural route to
+holographic-style entropy bounds.
+It does not yet provide a full bulk-boundary duality or exact
+reconstruction theorem.}
+
+Unlike AdS/CFT, ECT currently has no analogue of a
+Ryu--Takayanagi extremal-surface prescription; the present
+result is an entropy-capacity bound from medium locality, not a
+geometrised entanglement functional.
+Modern quantum error correction reformulations of holography
+likewise remain outside the current scope.
+
+\subsubsection*{Comparison with other approaches}
+
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{@{}p{2.2cm}p{3.2cm}p{3.2cm}p{3.2cm}@{}}
+\caption{Comparison of area-law routes.}
+\label{tab:area_law_comparison}\\
+\toprule
+Aspect & AdS/CFT & LQG & ECT \\
+\midrule
+\endfirsthead
+\toprule
+Aspect & AdS/CFT & LQG & ECT \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Why area scaling
+  & Duality; extremal surfaces; boundary CFT
+  & Quantum-geometric state counting
+  & Boundary-layer entropy in a local medium with
+    physical UV threshold \\
+UV scale
+  & String / AdS completion
+  & Planck discreteness
+  & Condensate threshold
+    $\ell_*\!\sim\!m_\sigma^{-1}$ \\
+Exact coefficient
+  & Model-specific, often controlled
+  & Counting-dependent; Immirzi parameter
+  & Not yet derived; matching
+    condition~\eqref{eq:area_matching} \\
+Full bulk reconstruction
+  & Central feature
+  & Not standard
+  & Open \\
+Physical picture
+  & Gravity/gauge duality
+  & Quantum geometry
+  & Local ordered medium with reduced-state
+    boundary entropy \\
+\bottomrule
+\end{longtable}
+
+\paragraph{Discriminant: ECT area bound versus standard
+approaches.}
+The ECT route is architecturally distinct:
+it requires no gravity/gauge duality, no quantum-geometry
+discreteness, and no extra-dimensional construction.
+Area scaling arises from boundary-layer locality in a continuous
+ordered medium with a physical UV threshold.
+ECT suggests that area-law entropy bounds should be understood as
+generic interface properties of the ordered medium, not as
+features unique to black-hole gravity alone.
+
+\paragraph{Falsifier for the area-law programme.}
+The programme would be weakened if (i)~the condensate UV threshold
+$m_\sigma$ were shown to be incompatible with the BH matching
+condition~\eqref{eq:area_matching};
+(ii)~a completed ECT sector violated area scaling in a
+non-logarithmic way;
+or (iii)~soft-sector corrections were shown to dominate rather
+than remain subleading.
+
+\statussummary
+\textit{Strongly established structurally~(Level~A):}
+(i)~physical UV threshold $\ell_*\sim m_\sigma^{-1}$;
+(ii)~local-medium interpretation of subsystem splits;
+(iii)~boundary-layer route to area scaling
+(Theorem~\ref{thm:area_bound}).
+
+\textit{Partly established / conditional~(Level~B):}
+(i)~generic $c_0=O(1)$ coefficient;
+(ii)~extension to all soft, massless, and gauge-edge sectors
+(expected from known QFT results, not yet established in ECT);
+(iii)~exact matching to $1/(4\ell_{\rm Pl}^2)$;
+(iv)~shell entropy as special case;
+(v)~strengthened Page-curve architecture.
+
+\textit{Open:}
+(i)~covariant Bousso-like formulation;
+(ii)~full bulk-boundary reconstruction / strong holographic
+principle;
+(iii)~exact microscopic derivation of local entropy capacity
+$s_*$;
+(iv)~complete treatment of all constrained soft sectors.
 
 \subsection{Singularity, interior, and structural programme}
 \label{sec:bh_singularity_programme}
@@ -35201,12 +36429,14 @@ Amplitude / decoherence / probability distinction
     Eq.~\eqref{eq:qs_prob_logic} \\
 Born rule: conditional uniqueness via Gleason
   & Level~B~(conditional)
-  & Gleason: unique given Hilbert/projector structure;
-    not yet first-principles from bare~P3~(OP-Q7) \\
+  & Quadratic structure from RP inner product;
+    Gleason: unique given Hilbert/projector structure;
+    not yet first-principles from bare~P1--P6~(OP-Q7) \\
 Structural assumptions (C1)--(C3) for conditional Gleason route
-  & Level~B
-  & Hilbert/projector structure, orthogonal reduced alternatives, and
-    additive probability measure;
+  & Level~A/B
+  & (C1) partially closed by RP for Gaussian subsectors;
+    (C2) structurally supported by decoherence programme;
+    (C3) operationally mild;
     Section~\ref{sec:qs_born} \\
 Unique outcome selection beyond conditional Born weights
   & Open (OP-Q19)
@@ -35406,9 +36636,13 @@ quantum-gravity claims remains programme-level.
     Markov limit from the condensate bath without auxiliary closure
     assumptions~\eqref{eq:qs_ohmic}.
   \item[OP-Q7] Full first-principles emergence of the Hilbert-space
-    projector and probability-measure structure from bare P1--P4,
-    which would close the Gleason argument and ground the Born rule
-    as more than a conditional Level~B uniqueness statement.
+    projector and probability-measure structure from bare P1--P6.
+    The RP/OS route partially closes the Hilbert-space part for
+    Gaussian broken-phase subsectors~(Level~A); what remains is the
+    full interacting RP verification~(OP-Q16) and a strict
+    projector-algebra theorem for decohered macroscopic alternatives,
+    which would ground the Born rule as an unconditional theorem
+    rather than a conditional Level~B uniqueness statement.
   \item[OP-Q8] Completed measurement theory: branch update, pointer
     stability, and record formation.
   \item[OP-Q9] Dynamical classification, production, and stability of
@@ -35431,6 +36665,14 @@ quantum-gravity claims remains programme-level.
     effects (Casimir force, particle production rates, Unruh detector
     response) from the completed reduced coherent
     EFT~(Sections~\ref{sec:qs_casimir}--\ref{sec:qs_unruh}).
+  \item[OP-Q12c] Thermal completion of the hot Big-Bang branch:
+    entropy production, thermalisation, and radiation-bath
+    formation after geometric branch onset; CMB acoustic-peak
+    structure without particle dark matter.
+  \item[OP-Q12b] Covariant Bousso-type formulation of the
+    ECT area-law bound for dynamical horizons and null
+    hypersurfaces; full bulk-boundary reconstruction in the
+    strong holographic sense.
   \item[OP-Q13] Global nonlinear completion of the black-hole
     evaporation problem in the presence of a critical ordered-phase shell, including
     (i) explicit shell dynamics and profile,
@@ -35928,15 +37170,37 @@ In parallel, the coherent sector develops:
   (Di\'osi--Penrose as a limit), produces entropy growth
   and a Crooks-type fluctuation relation within the
   Gaussian--Markov closure~(Level~A/B).
-\item \emph{Born rule.} A conditional probability route via Gleason's
-  theorem is available once assumptions C1--C3 are
-  admitted~(Level~B/Open).
+\item \emph{Born rule.} The quadratic structure of Born weights
+  is traced to the RP-defined inner product of the Euclidean
+  condensate measure; conditional uniqueness via Gleason's
+  theorem once assumptions C1--C3 are
+  admitted~(Level~B; full interacting RP closure open).
 \item \emph{Exchange topology and spinors.} The
   $\pi_1(\mathcal{M}_2)=\mathbb{Z}_2$ result from
   $d_{\rm spatial}=3$ provides a structural route to fermionic
   statistics and Dirac structure~(Level~A).
 \item \emph{Entanglement.} Non-factorisable correlations are
   structurally available in the ordered medium~(Level~A).
+\item \emph{Area-law entropy scaling.} A general boundary-layer
+  area bound is established as a structural property of the local
+  condensate medium with physical UV threshold; holographic-style
+  entropy scaling is derived without postulating holography
+  (Theorem~\ref{thm:area_bound};
+  Level~A for scaling, Level~B for coefficient).
+\item \emph{Charge quantisation.} Abelian charge quantisation
+  $q\in\mathbb{Z}\cdot e_0$ is derived as a structural consequence
+  of the compact-phase condensate gauge origin
+  (Theorem~\ref{thm:charge_lattice}; Level~A);
+  the full observed Standard-Model charge spectrum remains open.
+\item \emph{Post-transition cosmological branch classification.}
+  ECT does not yet derive the full nonequilibrium transition or
+  the selection of the expanding branch from first principles,
+  but it already classifies the admissible ordered-branch
+  cosmologies strongly enough to identify an expanding,
+  early-decelerating, late-accelerating history as a structurally
+  natural observationally relevant class, while making thermal
+  completion and CMB-without-particle-CDM explicit open
+  problems~(\S\ref{sec:post_transition}).
 \item \emph{PES and operational closures.} The Principle of Euclidean
   Stationarity (PES) provides a unifying selection criterion for
   persistent configurations
@@ -37183,11 +38447,15 @@ $\rho_\Lambda^{\rm obs}\approx(2.3\times10^{-3}\,{\rm eV})^4$---a
 ratio of order $10^{-120}$---is not eliminated.
 Deriving a suppression mechanism remains an open problem~(OP-$\Lambda$3).
 
-(vii)~The derivation of thermodynamic irreversibility required a
-causal response kernel $K(\tau < 0) = 0$, which is structurally motivated
-by the Lorentzian causal structure of ECT (Section~\ref{sec:second_law}).
+(vii)~Retarded support $K(\tau<0)=0$ is established at Level~A for
+the ordered Lorentzian scalar branch
+(Appendices~\ref{app:retarded_kernel},~\ref{app:causal_hyperbolic}).
+The full open-system identification of the response kernel used in the
+influence-functional thermodynamic closure, and the associated
+ohmic/Markov/macroscopic bath assumptions, are not yet derived directly
+from Euclidean microdynamics.
 The effective second law holds within the Gaussian--Markov approximation;
-a full microscopic derivation remains open (OP-Q17).
+a full microscopic H-theorem remains open~(OP-Q17).
 
 (viii)~The exact Bell-correlator reconstruction is still at the
 programme level, the full nonlinear gravitational closure is only
@@ -37260,6 +38528,37 @@ constant (\S\ref{sec:alpha_fs}), spectral analysis of the
 condensate background for the generation
 number~(\S\ref{par:three_generations}), and overlap-integral
 computation for the Yukawa matrix~(\S\ref{par:yukawa_hierarchy}).
+
+\paragraph{Highest-priority uncovered structural problems.}
+Beyond the sector-specific items listed above, the following
+cross-cutting problems represent the largest remaining gaps
+between ECT and a complete physical theory, ordered by a
+combination of importance and proximity to existing ECT tools:
+\begin{enumerate}[nosep,label=(\arabic*)]
+  \item Full first-principles Born-rule closure
+    (close~(C1)--(C3) from bare P1--P6; \S\ref{sec:qs_born}).
+  \item Charge quantisation: Abelian lattice now established
+    (\S\ref{sec:charge_quantization}); full SM charge pattern,
+    hypercharge, and global gauge-group quotient remain open
+    from the topology of the compact-phase fibre.
+  \item Gauge anomaly cancellation from admissible condensate
+    excitations.
+  \item Full flavour architecture: generations, textures, CKM,
+    PMNS, phases, mass ordering.
+  \item Strong CP problem ($\theta_{\rm QCD}$).
+  \item Why the fundamental arena is 4D Euclidean and why the
+    emergent branch is specifically $3+1$.
+  \item Old cosmological-constant vacuum-energy problem
+    (OP-$\Lambda$3).
+  \item Holography, area law, and Bekenstein bound as general
+    medium properties; area-scaling mechanism now established
+    (\S\ref{sec:area_law}); covariant and reconstruction
+    extensions open.
+  \item Quantitative black-hole information closure and Page
+    curve beyond the current shell model.
+  \item Full low-energy QFT architecture: locality, cluster
+    decomposition, analyticity, crossing, S-matrix structure.
+\end{enumerate}
 
 (viii)~Full derivation of the primordial perturbation spectrum
 $(n_s, A_s, r)$ from the critical dynamics of the
@@ -38278,8 +39577,10 @@ OP-GUT2
   & Derive fermion representations from condensate
   & Open \\
 OP-GUT3a
-  & Global EW structure $\to$ charge lattice
-  & Partial (B+) \\
+  & Global EW structure $\to$ charge lattice;
+    Abelian lattice now established (Theorem~\ref{thm:charge_lattice}, Level~A);
+    EW $\mathbb{Z}_2$ refinement conditional~(B)
+  & Partially closed \\
 OP-GUT3b
   & Derive observed charge assignments of quarks and leptons
   & Open \\
@@ -38348,7 +39649,7 @@ although they lie beyond the present metric--condensate formulation:
 \section{Conclusion}
 \label{sec:conclusion}
 
-\subsection*{What has been achieved}
+\subsection{What has been achieved}
 
 \paragraph{Quantitative summary across all sectors.}
 Table~\ref{tab:ect_full_numerical} collects the principal
@@ -38563,13 +39864,14 @@ standard physics postulates $d=3+1$ without explanation.
 topological anti-prediction~(Level~A), resolving a long-standing
 tension with GUT frameworks that generically predict monopoles.
 (iii)~\emph{Vacuum stability}---the primary ordered condensate
-satisfies $V''(\phi_0)>0$ at tree level in the reduced radial sector.
-This is a structurally cleaner situation than the Standard-Model
-electroweak vacuum, whose RG-improved potential may be
-metastable~\cite{Degrassi2012,Buttazzo2013}. However, a full
-one-loop analysis of the primary condensate sector, and the
-inheritance of this stability by the electroweak secondary vacuum,
-remain open.
+satisfies $V''(\phi_0)>0$ at tree level, and the one-loop RG analysis
+of the strict scalar closure confirms that $\beta_\lambda>0$ prevents
+the Standard-Model-type high-field metastability channel from arising
+in the primary amplitude sector~(\S\ref{par:vacuum_stability_oneloop};
+Level~B). The minimal primary potential contains no Coleman false vacuum:
+$\Phi=0$ is a hilltop, not a metastable minimum.
+The inheritance of this stability by the electroweak secondary
+sector remains open as part of the second-transition programme.
 (iv)~\emph{Quantum gravity without quantising geometry}---gravity is
 a condensate response, not a fundamental geometric field; the graviton
 is a condensate excitation on a fixed Euclidean background, avoiding
@@ -38632,9 +39934,11 @@ Why no monopoles? &
   $\pi_2(S^3)=0$; GUT predicts them &
   A & Yes (anti-prediction) \\
 Vacuum stability (primary sector only) &
-  Tree-level local stability of the reduced radial condensate
-  sector; full one-loop and electroweak inheritance analysis open &
-  Open / Partial & No \\
+  Tree-level local + one-loop amplitude-sector stability (Level~B,
+  \S\ref{par:vacuum_stability_oneloop}); no Coleman false vacuum
+  in minimal potential; full branch-architecture and EW-inheritance
+  analysis open &
+  B (amplitude) / Open (branch) & No \\
 Quantum gravity &
   No metric quantisation; graviton = condensate mode &
   A/B & Yes (architecture) \\
@@ -38737,7 +40041,7 @@ These results do not yet constitute a final derivation of all known
 physics, but they already exclude classes of interpretation that would
 otherwise remain admissible.
 
-\subsection*{What remains open}
+\subsection{What remains open}
 
 The following central outputs remain Level~B or Open:
 the physical identification $S_0=\hbar$~(OP-Q2);
@@ -38814,7 +40118,7 @@ Status: Level~C, because the result depends on the unresolved
 gauge/flavour completion and on selection rules not yet derived
 from first principles.
 
-\subsection*{Final outlook}
+\subsection{Final outlook}
 
 The fairest conclusion is this:
 ECT is not yet a finished final theory, but it is already a serious and
@@ -38834,7 +40138,7 @@ thermality, with explicit status control at each link.
 The unfinished steps are now localised, named, and technically
 attackable.
 
-\subsection*{Comprehensive map: standard postulates and open problems of physics as ECT consequences}
+\subsection{Comprehensive map: standard postulates and open problems of physics as ECT consequences}
 \label{sec:postulates_reinterpreted}
 
 One of the defining features of the ECT programme is the unusual
@@ -38939,7 +40243,7 @@ Uncertainty principle $\Delta q\,\Delta p\!\ge\!\hbar/2$ & From CCR axioms & Rob
 Reflection positivity / OS reconstruction & Imposed on field theory & Derived within Gaussian broken-phase subsectors of the ordered branch & A & \ref{sec:qs_reflection_positivity} \\
 Global unitarity (Gaussian regime) & Postulate & Follows from reflection positivity and OS reconstruction & A & \ref{sec:qs_unitarity_status} \\
 Wavefunction collapse & Postulate & Decoherence at $\Gamma_{\rm loop}\!\gg\!1$; Euclidean-to-Lorentzian effective transition & B & \ref{sec:quantum_classical_boundary} \\
-Born rule $P\!=\!|\psi|^2$ & Postulate & Conditional uniqueness via Gleason's theorem under assumptions~(C1)--(C3) + decoherence; full first-principles derivation open & B / C & \ref{sec:qs_born} \\
+Born rule $P\!=\!|\psi|^2$ & Postulate & Quadratic structure traced to RP-defined inner product of the Euclidean condensate measure; conditional uniqueness via Gleason's theorem under~(C1)--(C3) + decoherence; full interacting RP closure open & B & \ref{sec:qs_born} \\
 Quantum tunnelling / interference & Wave-mechanical postulate & Two-sided Euclidean boundary dependence of the elliptic field equation & A / A--B & \ref{sec:path_dependence} \\
 Quantum entanglement & Interpretational puzzle & Non-factorisable correlations of reduced bipartite states of the common ordered medium & A--B / B & \ref{sec:qs_entanglement} \\
 Discrete energy levels & Boundary-condition consequence & Phase compactness + PES stationarity select the persistent discrete sector & B & \ref{sec:pes} \\
@@ -40989,8 +42293,10 @@ Consequently:
   \item Full H-theorem for the complete nonlinear branch~(OP1, OP5,
     OP-Q17).
   \item Extension beyond the quadratic sector of the ordered branch.
-  \item A first-principles derivation of the causal environment
-    kernel from ECT microdynamics~(OP1, OP5).
+  \item A first-principles identification of the effective
+    open-system bath-response kernel from ECT microdynamics,
+    beyond the already established retarded support of the
+    ordered-branch scalar dynamics~(OP1, OP5).
 \end{itemize}
 
 \subsection*{Relation to other appendices}
@@ -41004,8 +42310,10 @@ field~$\Phi$ via symmetric-hyperbolic reduction.
 In the open-system reduction used in the present appendix, this
 retarded structure is encoded by a causal response kernel
 $K(\tau<0)=0$.
-A full first-principles derivation of that kernel directly from ECT
-microdynamics remains open~(OP1, OP5).
+What remains open is the full first-principles identification
+of this effective bath-response kernel directly from Euclidean
+microdynamics, especially beyond the scalar smooth ordered
+branch and without auxiliary closure assumptions~(OP1, OP5).
 Appendix~\ref{app:ohmic_markov} provides the scaling analysis of the
 spectral density; it explains why the default is super-ohmic and
 what additional assumptions lead to ohmic behaviour.
@@ -48035,10 +49343,13 @@ Fundamental unitarity of condensate dynamics & Level~A & P2 \\
 Critical temperature $T_c = \phi_0\sqrt{6} \approx 5.96\times10^{18}$\,GeV (Dolan--Jackiw closure) & Level~B & Eq.~\eqref{eq:Tc_value} \\
 Critical shell at $\rho_c = \ell_{\rm Pl}/\sqrt{3\pi} \approx 0.33\,\ell_{\rm Pl}$ & Level~B & Eq.~\eqref{eq:rho_c_analytic} \\[4pt]
 \multicolumn{3}{@{}l}{\textit{Conditional theorem (T)}} \\[2pt]
+General boundary-layer area bound (Theorem~\ref{thm:area_bound}) & Level~A (scaling) / B (coeff.) & \S\ref{sec:area_law} \\
 State-dependence of emission channel required by unitarity + finite shell & Level~B & \S\ref{app:conditional_theorem} \\
 Exact Hawking thermality excluded throughout evaporation & Level~B & \S\ref{app:conditional_theorem} \\[4pt]
 \multicolumn{3}{@{}l}{\textit{Structural / effective model (S)}} \\[2pt]
 Area-scaling shell entropy & Level~B & \S\ref{app:shell_entropy} \\
+General boundary-layer area bound (Theorem~\ref{thm:area_bound}) & Level~A (scaling) / B (coefficient) & \S\ref{sec:area_law} \\
+Entanglement-entropy bridge (physical UV regulator) & Level~A & \S\ref{sec:area_law} \\
 GL outer asymptotics of $\chi$-field & Level~B & Eq.~\eqref{eq:chi_asym} \\
 Minimal near-horizon closure and effective mode equation & Level~B & Eq.~\eqref{eq:metric_closure} \\
 Finiteness of shell correction to Hawking channel & Level~B & Eq.~\eqref{eq:WKB_shell} \\
