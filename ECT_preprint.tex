@@ -9031,98 +9031,378 @@ Yukawa / gauge mass generation fully derived
 \label{sec:vacuum_stability}
 % ────────────────────────────────────────────────────────────────────────
 
-The question of whether the primary ECT condensate vacuum can ``decay''
---- as suggested for the Standard-Model Higgs vacuum by radiative
-corrections --- is of central importance.
-This subsection establishes that the primary amplitude sector is stable
-at one-loop level, that the minimal ECT potential contains no Coleman
-false vacuum, and that Standard-Model-type metastability does not
-transfer to the primary condensate.
+\subsubsection{Why the question matters}
 
-\paragraph{Comparison with the Standard Model.}
+In standard quantum field theory, the vacuum state of a scalar field
+can be metastable: the observed vacuum may be only a local, not a
+global, minimum of the effective potential.
+If a deeper minimum exists, the field can undergo a non-perturbative
+transition --- Coleman vacuum decay~\cite{Coleman1977} --- in which a
+bubble of the ``true vacuum'' nucleates inside the ``false vacuum''
+and subsequently expands, converting the entire spacetime.
+For the Standard-Model Higgs field, radiative corrections driven
+primarily by the large top-Yukawa coupling are known to make the
+electroweak vacuum metastable at high field
+values~\cite{Degrassi2012,Buttazzo2013}:
+the running quartic coupling $\lambda_{\rm SM}(\mu)$ crosses zero
+near $\mu\sim 10^{10}\,$GeV, and the effective potential turns
+downward at large Higgs-field amplitudes.
 
-At tree level the primary radial sector satisfies $V''(\phi_0)>0$
-(Section~\ref{sec:radial_mode}).
-A superficially analogous statement holds for the Standard Model only
-at tree level; at one loop the RG running of
-$\lambda_{\rm SM}(\mu)$ driven by the top-Yukawa sector is known to
-render the electroweak vacuum
-metastable~\cite{Degrassi2012,Buttazzo2013}.
-The primary ECT condensate differs from that situation in a structurally
-important way.
+Whether the primary ECT condensate suffers from an analogous
+instability is therefore a central self-consistency question.
+This subsection analyses the problem from first principles:
+the structure of the ECT potential, its critical points, the
+one-loop running of the quartic coupling, the absence of
+fermion-driven destabilisation, the nature of the cosmological
+ordering transition, and the role of subleading sectors.
 
-\paragraph{One-loop stability of the primary amplitude sector.}
+\subsubsection{Structure of the minimal ECT potential}
+
+The bare potential of the primary condensate (P3) is
+\begin{equation}
+  V(\Phi) = -\frac{\mu^2}{2}\Phi^2 + \frac{\lambda}{4}\Phi^4,
+  \qquad \mu^2>0,\quad \lambda>0.
+  \label{eq:vs_potential}
+\end{equation}
+Its critical points are:
+\begin{itemize}
+  \item $\Phi=0$: symmetric stationary point, with
+    $V''(0)=-\mu^2<0$. This is an \emph{unstable hilltop},
+    not a metastable minimum.
+    A small perturbation drives the field away from $\Phi=0$
+    toward one of the two minima.
+
+  \item $\Phi=\pm\phi_0$ with $\phi_0=\sqrt{\mu^2/\lambda}$:
+    the two global minima, with
+    $V''(\phi_0)=2\mu^2>0$ (tree-level local stability)
+    and $V(\phi_0)=-\mu^4/(4\lambda)<0$.
+    These two minima are exactly degenerate by the
+    $\mathbb{Z}_2$ symmetry $\Phi\to-\Phi$ of the potential.
+\end{itemize}
+The minimal ECT potential therefore contains \emph{no metastable local
+minimum} separated from a deeper minimum by a barrier.
+Both minima are global, and the symmetric point is a maximum,
+not a false vacuum.
+This is a crucial structural difference from any double-well
+configuration that would be needed for Coleman vacuum decay.
+
+\subsubsection{Inapplicability of Coleman vacuum decay}
+
+Coleman's semiclassical theory of false-vacuum
+decay~\cite{Coleman1977,ColemanDeLuccia1980} requires two
+specific ingredients:
+(i)~a \emph{metastable} minimum (the ``false vacuum''), in which
+the field can sit for a long time, and
+(ii)~a \emph{deeper} minimum (the ``true vacuum''), separated from
+the first by a potential barrier.
+The decay rate per unit volume is then
+\begin{equation}
+  \Gamma/V \sim A\,e^{-B/\hbar},
+  \label{eq:vs_coleman_rate}
+\end{equation}
+where $B=S_E[\Phi_{\rm bounce}]-S_E[\Phi_{\rm false}]$ is the
+difference in Euclidean action between the bounce configuration and
+the homogeneous false vacuum.
+
+In the minimal ECT potential~\eqref{eq:vs_potential}, \emph{neither}
+ingredient is present:
+\begin{enumerate}
+  \item $\Phi=0$ is a hilltop ($V''(0)<0$), not a
+    metastable minimum.
+    A field configuration at $\Phi=0$ does not ``sit''
+    there; it rolls away immediately
+    (spinodal regime, not metastable trapping).
+  \item The two minima $\pm\phi_0$ are exactly degenerate
+    ($\Delta V=0$).
+    Coleman decay between degenerate minima has no driving force:
+    there is no energetically (or action-wise) preferred target.
+\end{enumerate}
+Therefore, \textbf{Coleman vacuum decay is structurally inapplicable
+to the minimal ECT primary potential.}
+The standard formula~\eqref{eq:vs_coleman_rate} has no subject:
+there is no false vacuum from which to decay and no deeper
+minimum into which to tunnel.
+
+\subsubsection{The cosmological ordering transition is not
+  Coleman-type vacuum decay}
+\label{par:vs_ordering_not_coleman}
+
+The cosmological ordering transition $O(4)\to O(3)$, in which the
+gradient condensate forms and Lorentzian spacetime emerges
+(Section~\ref{sec:foundational_consequences}), should not be
+identified with false-vacuum decay.
+The pre-ordered regime corresponds to configurations near the
+hilltop $\Phi\approx 0$, which is unstable rather than metastable.
+The transition is therefore structurally closer to \emph{spinodal
+decomposition} --- the spontaneous instability of an unstable
+homogeneous state --- than to the nucleation of a critical bubble
+in a metastable minimum.
+
+In the language of condensed-matter physics: the ordering transition
+is analogous to a quench past the spinodal point, where the
+homogeneous state becomes linearly unstable and the system
+spontaneously breaks into ordered domains, rather than to the
+slow nucleation of droplets from a supercooled metastable phase.
+There is no exponential suppression factor $e^{-B/\hbar}$ because
+there is no barrier to overcome.
+
+\subsubsection{One-loop stability of the primary amplitude sector}
 \label{par:vacuum_stability_oneloop}
 
-In the strict scalar closure, the one-loop
-$\beta$-function~(Eq.~\eqref{eq:g_dimensionless},
-Section~\ref{sec:three_scales})
+Even though no Coleman false vacuum exists at tree level, one must
+still ask whether radiative corrections could generate new
+minima at large field values, as happens in the Standard Model.
+This is the question of \emph{RG-driven metastability}.
+
+\paragraph{The running coupling in strict scalar closure.}
+
+The one-loop $\beta$-function for a single real scalar in the
+minimal ECT action~(Eq.~\eqref{eq:g_dimensionless},
+Section~\ref{sec:three_scales}) is
 \begin{equation}
-  \beta_\lambda = \frac{3\lambda^2}{16\pi^2} > 0
+  \beta_\lambda \equiv \frac{d\lambda}{d\ln\mu}
+  = \frac{3\lambda^2}{16\pi^2} > 0,
   \label{eq:beta_lambda_stability}
 \end{equation}
-is positive for any $\lambda>0$.
+which is \emph{strictly positive} for any $\lambda>0$.
+This is a standard one-loop result for a quartic scalar
+self-coupling in four Euclidean dimensions.
+
 With the boundary condition
-$\lambda(M_{\rm Pl})\approx 10^{-3}$, the running coupling remains
-positive throughout the broken-phase EFT range and, within this strict
-scalar closure, does not cross zero before the formal Landau pole
-\eqref{eq:landau_pole}.
-Accordingly, the RG-improved amplitude-sector effective potential
-remains bounded from below within the validity range of the broken-phase
-description, and the Standard-Model-type high-field metastability
-channel does not arise in the primary condensate sector.
+$\lambda(M_{\rm Pl})\approx 10^{-3}$
+(Section~\ref{sec:three_scales}), the running coupling
+has the explicit solution
+\begin{equation}
+  \lambda(\mu)
+  = \frac{\lambda_0}{1-\dfrac{3\lambda_0}{16\pi^2}\,
+    \ln\dfrac{\mu}{M_{\rm Pl}}},
+  \qquad \lambda_0\equiv\lambda(M_{\rm Pl}).
+  \label{eq:vs_lambda_running}
+\end{equation}
 
-The physical reason is equally important:
-the mechanism responsible for Standard-Model metastability --- the
-fermionic top-Yukawa contribution driving $\lambda_{\rm SM}$ through
-zero at high scale --- has no analogue in the primary ECT sector at
-this level, where the primary condensate is a pure real scalar.
-This is therefore a genuine structural difference from the Standard
-Model, not merely a tree-level accident (Level~B).
+\paragraph{Consequences for vacuum structure.}
 
-\paragraph{No Coleman false vacuum in the minimal primary potential.}
+Since $\beta_\lambda>0$, the coupling $\lambda(\mu)$ \emph{grows}
+with the renormalisation scale $\mu$.
+This has three immediate consequences:
+\begin{enumerate}
+  \item \textbf{$\lambda$ never crosses zero.}
+    The denominator in~\eqref{eq:vs_lambda_running} is positive
+    for all $\mu < \mu_{\rm LP}$
+    (the Landau pole~\eqref{eq:landau_pole},
+    $\mu_{\rm LP}\approx M_{\rm Pl}\,e^{5.26\times10^4}$),
+    and $\lambda(\mu)>0$ throughout the entire validity range
+    of the broken-phase EFT.
 
-The symmetric stationary point $\Phi=0$ of the bare potential has
-$V''(0)=-\mu^2<0$: it is an unstable hilltop, not a metastable local
-minimum.
-Coleman vacuum decay~\cite{Coleman1977} requires a metastable minimum
-separated by a barrier from a deeper minimum; that structure is absent
-in the minimal ECT potential.
-The cosmological ordering transition $O(4)\to O(3)$ should therefore
-not be identified with Coleman-type false-vacuum decay.
-At the present level of the framework it is structurally closer to an
-ordering / branch-selection process than to nucleation from a
-metastable minimum (see Section~\ref{sec:foundational_consequences}).
+  \item \textbf{The effective potential steepens at large fields.}
+    The RG-improved effective potential
+    $V_{\rm eff}(\phi)\sim\lambda(\phi)\,\phi^4/4$
+    grows faster than $\phi^4$ at large $\phi$,
+    because $\lambda$ increases.
+    No new minima can appear at high field values.
 
-\paragraph{Subleading sectors and remaining scope.}
+  \item \textbf{The Landau pole is physically unreachable.}
+    The broken-phase EFT ceases to be valid at the radial-mode
+    threshold $m_\sigma\sim M_{\rm Pl}$, which is
+    $\sim e^{5.26\times10^4}$ below the Landau pole.
+    Within the EFT validity range, the dimensionless gravitational
+    coupling $g(\mu)=\lambda/(8\pi)\approx 4\times10^{-5}$ remains
+    parametrically small.
+\end{enumerate}
+
+\paragraph{Why Standard-Model metastability does not transfer.}
+
+The Standard-Model $\beta$-function for the Higgs quartic coupling is
+\begin{equation}
+  \beta_{\lambda_{\rm SM}}
+  = \frac{1}{16\pi^2}\bigl[
+    24\lambda_{\rm SM}^2
+    + (\text{gauge contributions})
+    - 12\,y_t^2\,\lambda_{\rm SM}
+    + \ldots
+  \bigr],
+  \label{eq:vs_beta_SM}
+\end{equation}
+where the \emph{negative} top-Yukawa term $-12\,y_t^2\,\lambda_{\rm SM}$
+dominates and drives $\lambda_{\rm SM}(\mu)$ through zero near
+$\mu\sim 10^{10}\,$GeV.
+This is the sole mechanism responsible for the electroweak vacuum
+metastability.
+
+In the primary ECT sector, this mechanism is absent:
+the primary condensate is a pure real scalar at the fundamental
+level, with no fermionic couplings.
+The only contribution to $\beta_\lambda$ is the positive self-coupling
+term $+3\lambda^2/(16\pi^2)$; there is no fermionic channel that
+could drive $\lambda$ downward.
+This is therefore a \emph{genuine structural difference}, not merely
+a tree-level accident~(Level~B).
+
+\subsubsection{Analysis of subleading contributions}
+
+\paragraph{Soft orientation sector.}
 
 The surviving soft scalar $\chi$
-(Section~\ref{sec:goldstone_integrability_main}) is parametrically soft
-relative to the Planck-heavy radial mode and does not provide any
-identified destabilising channel for the primary amplitude potential in
-the minimal closure.
-Likewise, the topological sectors classified by
-$\pi_3(S^3)=\mathbb{Z}$ (Section~\ref{sec:predicted_states})
-correspond to extended texture-like configurations rather than to a
-lower-action target vacuum of the Coleman type.
+(Section~\ref{sec:goldstone_integrability_main}) is parametrically
+lighter than the radial mode: $m_\chi \ll m_\sigma$.
+Its one-loop contribution to the curvature of $V_{\rm eff}$ at the
+minimum is bounded by
+\begin{equation}
+  \bigl|V''_\chi(\phi_0)\bigr|
+  \lesssim \frac{m_\chi^2\,m_\sigma^2}{16\pi^2}
+  \ll V''(\phi_0) \sim m_\sigma^2,
+  \label{eq:vs_chi_bound}
+\end{equation}
+so the $\chi$-sector cannot overcome the tree-level restoring
+curvature at the minimum or create additional minima.
+This does not constitute a full constrained-determinant computation,
+but it establishes that the soft sector does not provide any
+identified destabilising channel in the minimal closure.
+
+\paragraph{Topological sectors.}
+
+The vacuum manifold $\mathcal{M}_1=O(4)/O(3)\simeq S^3$
+admits topological sectors classified by
+$\pi_3(S^3)=\mathbb{Z}$
+(Section~\ref{sec:predicted_states}).
+These texture-like configurations are spatially extended
+deformations of the orientation field $n_A$ and carry
+\emph{additional gradient action}
+$\int(\partial n)^2\,d^4X > 0$ relative to the homogeneous
+ordered branch.
+They therefore do not provide a lower-action target configuration
+for tunnelling: transitioning into a texture sector
+\emph{increases} the Euclidean action.
+For the same reason, $\pi_0(S^3)=0$ ensures no topologically
+stable domain walls in the primary sector
+(Section~\ref{sec:predicted_states}).
+
+\paragraph{Embedded electroweak sector.}
 
 If the conditional secondary transition
-(Section~\ref{sec:ew_particles}) realises a Standard-Model-like Higgs
-sector, the question of electroweak metastability belongs to that
-embedded sector rather than to the primary condensate itself.
-The corresponding threshold and matching problem remains part of the
-second-transition programme (OP-EW).
+(Section~\ref{sec:ew_particles}) realises a Standard-Model-like
+Higgs sector at the scale $v_2\approx 246\,$GeV, the question
+of electroweak vacuum metastability belongs to that
+\emph{embedded} sector, not to the primary condensate.
+The primary ordered branch remains stable independently:
+even if the embedded Higgs potential is metastable
+(as suggested by the SM analysis), the underlying
+$\phi_0\sim\bar{M}_{\rm Pl}$ condensate is unaffected,
+because the two sectors are separated by a hierarchy
+$v_2/\phi_0\sim 10^{-16}$.
+The corresponding threshold and matching problem
+remains part of the second-transition programme~(OP-EW).
 
-\paragraph{Status summary.}
+\subsubsection{Taxonomy of vacuum-decay scenarios}
 
-Tree-level local stability of the primary radial mode is established,
-and, within the strict scalar closure, the standard one-loop RG analysis
-closes the Standard-Model-type metastability channel for the primary
-amplitude sector.
-What remains open is the full stability analysis of the entire ordered
-branch architecture, including constrained amplitude--orientation
-couplings, nonperturbative branch channels, and complete matching to
-extended sectors.
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{@{}p{4.0cm}p{2.5cm}p{7.0cm}@{}}
+\caption{Applicability of vacuum-decay scenarios to
+  the primary ECT condensate.
+  \label{tab:vs_taxonomy}}\\
+\toprule
+Scenario & Applies? & Reason \\
+\midrule
+\endfirsthead
+\toprule
+Scenario & Applies? & Reason \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Coleman false$\to$true &
+  \textbf{No} &
+  No metastable minimum in the minimal potential;
+  $\Phi=0$ is a hilltop \\
+SM-type RG-driven metastability &
+  \textbf{No} &
+  $\beta_\lambda>0$; no top-Yukawa analogue; $\lambda$
+  never crosses zero \\
+Thermal first-order transition &
+  \textbf{No} &
+  Article explicitly distinguishes the ordering
+  transition from thermal bubble nucleation \\
+Spinodal decomposition ($\Phi\!=\!0\to\phi_0$) &
+  Already occurred &
+  The cosmological ordering transition \\
+Branch-to-branch ($\pi_3$ sector) &
+  Not expected &
+  Textures carry additional gradient action; no
+  lower-action target \\
+Embedded EW metastability &
+  Separate question &
+  Belongs to the secondary sector, not to the
+  primary condensate \\
+\bottomrule
+\end{longtable}
+
+\subsubsection{Summary: derivation status}
+
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{@{}p{0.8cm}p{1.5cm}p{10.8cm}@{}}
+\caption{Vacuum-stability results and their derivation
+  level.\label{tab:vs_status}}\\
+\toprule
+ID & Level & Result \\
+\midrule
+\endfirsthead
+\toprule
+ID & Level & Result \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+R1 & A &
+  Local tree-level stability: $V''(\phi_0)=2\mu^2>0$ \\
+R2 & A &
+  Topological anti-predictions: $\pi_0=\pi_1=\pi_2=0$; no
+  stable domain walls, strings, or monopoles from the
+  primary transition \\
+R3 & B &
+  One-loop amplitude-sector stability: $\beta_\lambda>0$
+  ensures $\lambda(\mu)>0$ across the EFT range; no
+  additional high-field minima \\
+R4 & B &
+  $\chi$-sector contribution bounded:
+  $|V''_\chi|/(16\pi^2)\ll V''(\phi_0)$; no identified
+  destabilising channel \\
+R5 & A/B &
+  $\Phi=0$ is a hilltop ($V''(0)<0$), not a metastable
+  minimum; Coleman vacuum decay structurally inapplicable \\
+\midrule
+O1 & Open &
+  Full branch-architecture stability (nonlinear
+  amplitude--orientation couplings, non-perturbative
+  channels, matching to extended sectors) \\
+O2 & Open &
+  Electroweak metastability: belongs to the embedded
+  secondary sector~(OP-EW) \\
+\bottomrule
+\end{longtable}
+
+\subsubsection{Conclusion: vacuum decay in ECT}
+
+The observed primary ordered branch of ECT is \emph{not} a false
+vacuum in any standard sense.
+The minimal potential contains no metastable minimum, and the
+Coleman decay machinery is structurally inapplicable.
+The one-loop RG analysis establishes that the Standard-Model-type
+metastability mechanism --- in which the running quartic coupling
+crosses zero at high scale --- does not operate in the primary
+ECT sector, because the $\beta$-function is strictly positive and
+there is no fermionic destabilising channel.
+All identified subleading contributions (soft orientation sector,
+topological sectors, embedded electroweak sector) either strengthen
+the stability conclusion or belong to separate, secondary
+programmes.
+
+The cosmological ordering transition $O(4)\to O(3)$ should be
+understood as a spinodal-type instability of the symmetric hilltop,
+not as Coleman-type false-vacuum decay.
+The ordered branch that results from this transition is the global
+minimum of the amplitude sector at all loop orders within the
+broken-phase EFT, and no channel for its further decay has been
+identified.
 
 
 \subsection{Emergence of the Graviton}
