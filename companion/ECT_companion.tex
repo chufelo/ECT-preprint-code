@@ -63,7 +63,12 @@ galaxy rotation curves; baryonic Tully--Fisher relation;
 Hubble tension; dark energy; dark matter phenomenology;
 black-hole information problem; Principle of Euclidean Stationarity;
 fine-structure constant; lensing--growth sector;
-gravitational slip; Pauli exclusion
+gravitational slip; Pauli exclusion;
+holographic entropy bound; area-law scaling;
+entanglement entropy;
+Born rule;
+neutrino masses; seesaw mechanism;
+neutrinoless double-beta decay
 
 \newpage
 \setcounter{tocdepth}{2}
@@ -1050,7 +1055,7 @@ The Principle of Euclidean Stationarity (PES) is a key organising principle of E
 
 \section{Probability, the Born rule, and measurement}
 
-In standard quantum mechanics, the Born rule $P = |\psi|^2$ is a foundational axiom. In ECT it is not postulated but motivated as a consequence of decoherence: when the influence functional suppresses interference between branches, the remaining branches behave as classical alternatives whose weights are determined by the squared amplitude. The Born rule is structurally supported through the reflection-positive inner product (\emph{Level~B}): in the Hilbert space constructed via Osterwalder--Schrader, the squared modulus of the transition amplitude is automatically positive and normalised.
+In standard quantum mechanics, the Born rule $P = |\psi|^2$ is a foundational axiom. In ECT it is not postulated but traced to the reflection-positivity construction of the physical inner product: the Euclidean condensate measure, combined with the OS reconstruction, produces a Hilbert space whose inner product is quadratic in the amplitudes by construction. Once decoherence suppresses interference between branches, the remaining branches behave as classical alternatives whose weights inherit this quadratic structure. Conditional uniqueness then follows via Gleason's theorem (\emph{Level~B}): no other probability assignment is compatible with the Hilbert/projector structure.
 
 More broadly, ECT does not merely reinterpret the axioms of quantum mechanics; it changes their logical status from foundational postulates to reconstruction targets: Hilbert space is constructed (not postulated), unitarity follows from reflection positivity, the Born rule is motivated by decoherence, and ``collapse'' is identified with the Euclidean-to-Lorentzian transition at $\Gamma_{\rm loop}\sim 1$---no mystical observer is invoked.
 
@@ -1178,6 +1183,265 @@ The nontrivial sector $\pi_3(S^3) = \mathbb{Z}$ admits possible topological conf
 \textbf{What is not yet derived.}
 The present shell analysis does not yet derive the full interior profile, first-principles horizon thermodynamic coefficients, or a constructive Page curve.
 
+\section{Why entropy scales with area: the holographic bound as a medium property}
+\label{sec:pop_area_law}
+
+One of the deepest lessons of black-hole physics is that the maximum
+information content of a region of space scales not with its volume
+but with the area of its boundary.
+This observation, first made by
+Bekenstein and later elevated by 't~Hooft and Susskind into the
+\emph{holographic principle}, has shaped much of modern theoretical
+physics.
+In string theory it appears as the AdS/CFT duality; in loop quantum
+gravity it emerges from a counting of quantum-geometric states.
+In both cases, however, area scaling is tied to specific features of
+the gravitational theory.
+
+ECT offers a different perspective.
+In the condensate picture, area scaling is not a gravity-specific
+property at all.
+It is a \textbf{structural property of any local medium with finite
+microscopic resolution}.
+
+\paragraph{The physical mechanism.}
+Imagine dividing a region of the ordered condensate into ``inside''
+and ``outside'' by drawing a closed surface~$\Sigma$.
+An observer outside~$\Sigma$ cannot directly access the interior
+degrees of freedom.
+All that reaches the observer is mediated through a thin
+\emph{boundary layer} of condensate cells straddling~$\Sigma$.
+
+Why only a boundary layer?
+Because the condensate is local: each cell talks only to its
+immediate neighbours, and the massive radial mode~$\sigma$ ensures
+that correlations decay exponentially over a distance
+$\xi_{\rm cond}\sim\ell_*\sim m_\sigma^{-1}$
+(the condensate correlation length, comparable to the Planck
+length under the matching hypothesis).
+Cells deep inside the bulk have no direct line of communication
+with the exterior---their influence is screened by the intervening
+medium.
+
+The number of independent cells in this boundary layer scales with
+the area of~$\Sigma$ divided by~$\ell_*^2$.
+Since each cell carries at most a finite amount of information,
+the total accessible information is bounded by an area-type formula:
+\begin{equation}
+  S_{\rm red}(\Sigma)
+  \;\le\;
+  c_0\,\frac{A(\Sigma)}{\ell_*^2},
+  \qquad
+  c_0=O(1).
+\end{equation}
+This is the \textbf{general boundary-layer area bound} of ECT
+(\emph{Level~A for the scaling; Level~B for the exact coefficient}).
+
+\paragraph{Why this is not just a restatement of the QFT result.}
+In ordinary quantum field theory, entanglement entropy across a
+surface also scales with area---but with an ultraviolet-divergent
+coefficient that depends on a regulator.
+The result is mathematically correct but physically incomplete:
+the cutoff is artificial and its value is arbitrary.
+
+ECT upgrades this.
+The UV regulator is replaced by the \emph{physical} condensate
+threshold $\ell_*\sim m_\sigma^{-1}$, which is determined by the
+medium itself.
+The area law therefore becomes a finite, physically meaningful
+entropy bound rather than a formal divergence.
+
+\paragraph{Black-hole entropy as a special case.}
+The shell-entropy result discussed earlier,
+$S_{\rm shell}\sim A\ln q/\ell_*^2$,
+now appears as a specific instance of the general area bound.
+The shell is just the boundary layer closest to the horizon, and
+its entropy counts the condensate cells at that interface.
+The exact Bekenstein--Hawking coefficient $1/(4\ell_{\rm Pl}^2)$
+represents a matching condition between condensate parameters and
+gravitational units---not yet derived from first principles, but
+consistent.
+
+\paragraph{Strengthening the Page-curve programme.}
+The general area bound has an important consequence for the
+information paradox.
+If the shell entropy is area-bounded, then the shell carries
+only a \emph{finite} information reservoir.
+This finiteness was previously assumed in the conditional
+no-information-loss theorem; now it follows from the general
+area-law mechanism.
+The theorem's conclusion---that exact Hawking thermality is
+incompatible with unitary evaporation---is therefore on firmer
+structural ground.
+A complete Page-curve derivation still requires additional
+dynamical ingredients (information return mechanism, purification
+dynamics), which remain open.
+
+\paragraph{Connection to decoherence.}
+The same boundary-layer logic that bounds entropy also underlies
+decoherence.
+When a subsystem is embedded in the condensate medium, the
+inaccessible degrees of freedom beyond the interface act as an
+effective environment.
+Both the entanglement entropy and the decoherence rate are
+controlled by the same interfacial coupling layer.
+This is not a coincidence but a structural feature of the
+reduced-description framework: entropy and decoherence are two
+manifestations of the same boundary-mediated tracing-out.
+
+\paragraph{From area law to holography.}
+It is important not to overclaim.
+ECT establishes that reduced accessible entropy scales with area
+rather than volume---a holographic-\emph{style} entropy bound.
+What ECT does not yet establish is:
+\begin{itemize}[nosep]
+  \item a covariant entropy bound analogous to the Bousso bound
+    for dynamical horizons;
+  \item a full bulk-boundary reconstruction (a gravity/boundary
+    duality of the AdS/CFT type);
+  \item a complete holographic principle in the strongest
+    reconstruction sense.
+\end{itemize}
+The correct summary is:
+
+\emph{ECT provides a medium-native structural route to
+holographic-style entropy bounds without postulating holography
+as a separate principle.
+Full holography in the strong reconstruction sense remains open.}
+
+\paragraph{How ECT differs from other approaches.}
+In AdS/CFT, area scaling arises from a duality between a
+gravitational theory in the bulk and a conformal field theory on
+its boundary.
+In loop quantum gravity, it arises from counting discrete
+quantum-geometric states.
+In ECT, area scaling arises from a much simpler mechanism:
+boundary-layer locality in a continuous ordered medium with a
+physical ultraviolet threshold.
+No extra dimensions, no gravity/gauge duality, no discrete
+quantum geometry.
+ECT suggests that the holographic character of nature is not a
+deep mystery of quantum gravity but a generic interface property
+of a local ordered medium with finite microscopic resolution.
+
+\paragraph{What remains open.}
+The exact microscopic entropy capacity per UV cell, the detailed
+treatment of soft and gauge-edge sectors, and the covariant
+generalisation of the bound to null hypersurfaces all remain
+open.
+These are important targets for the programme, but they do not
+weaken the already established structural area-scaling mechanism.
+
+
+\section{Why electric charge is quantised}
+\label{sec:pop_charge}
+
+One of the oldest puzzles in fundamental physics is why electric
+charge comes in discrete units. In standard electrodynamics, the
+gauge group $U(1)$ can in principle be taken either as compact
+(the circle) or noncompact (the real line). Only the compact
+choice forces charges onto a discrete lattice; the noncompact
+choice allows a continuous range of charges. Within the standard
+framework, which option nature realises is simply an empirical fact.
+
+ECT removes this ambiguity structurally. The Abelian gauge sector is
+not postulated independently: it arises from the compact phase of the
+condensate,
+\[
+\theta \sim \theta + 2\pi.
+\]
+There is no consistent way to obtain a noncompact $\mathbb{R}$ gauge
+group from a field whose phase is topologically a circle. Compactness
+is therefore not an extra assumption; it is built into the condensate
+architecture.
+
+The consequence is immediate. Any matter excitation transforming
+under this compact $U(1)$ must carry a charge that is an integer
+multiple of the elementary condensate charge unit $e_0$:
+\[
+q = n\,e_0, \qquad n\in\mathbb{Z}.
+\]
+Continuous charges are simply not representable. In this sense,
+Abelian charge quantisation is a structural consequence of the
+compact-phase origin of the gauge sector (\emph{Level~A}).
+
+A second, independent route reaches the same conclusion through the
+canonical structure: the charge operator conjugate to the compact
+phase has a discrete spectrum for the same topological reason
+(\emph{Level~A/B}).
+
+\paragraph{What this does not yet explain.}
+This compact-$U(1)$ result gives the Abelian charge lattice
+$q\in \mathbb{Z}\cdot e_0$, but the \emph{observed} charge pattern of
+the Standard Model is richer: quarks carry charges $\pm e/3$ and
+$\pm 2e/3$, while leptons carry integer multiples of $e$.
+These values arise only after electroweak embedding,
+\[
+Q = T_3 + \frac{Y}{2},
+\]
+combined with the colour sector. Deriving the full observed charge
+spectrum therefore still requires hypercharge quantisation,
+anomaly-consistent matter representations, and the global structure
+of the full gauge group. ECT already provides the Abelian foundation;
+the full Standard-Model charge pattern remains part of the broader
+gauge/flavour programme.
+
+\section{Why the post-Big-Bang Universe developed the way it did}
+\label{sec:pop_post_transition}
+
+ECT already offers a new answer to one part of the Big-Bang
+question: the Big Bang is not the beginning of all reality but the
+boundary at which an ordered Lorentzian branch emerges from a
+pre-temporal Euclidean regime.  Before that boundary there is no
+physical time in the usual sense.
+
+But this still leaves a second question: once the ordered branch
+has formed, why does the Universe then evolve in the way we observe?
+
+ECT does not yet solve the full transition dynamics.  In particular,
+it does not yet derive from first principles why the expanding
+branch is selected rather than a contracting one, nor how the branch
+boundary is completed into a fully thermal hot Big-Bang history.
+
+What ECT \emph{can} already do is classify the kinds of
+post-transition histories that are allowed or excluded once the
+ordered branch exists.  The observed history belongs to a
+particularly natural class:
+\begin{itemize}[nosep]
+  \item ordinary radiation and matter dominate early;
+  \item the condensate background stays nearly frozen during the
+    early epochs, preserving standard cosmology;
+  \item the residual condensate energy is positive and becomes
+    important only late;
+  \item the effective equation of state stays at or above
+    $w=-1$, so the late acceleration is moderate.
+\end{itemize}
+
+In condensed-matter systems, when a disordered phase transitions
+to an ordered one, ordered domains generically \emph{grow} ---
+they expand into the surrounding disordered medium.  In ECT the
+ordered Lorentzian branch emerging from the disordered Euclidean
+medium is structurally analogous to such a growing ordered domain.
+This makes an expanding ordered branch physically natural once
+ordered-domain formation begins, though it does not yet amount to
+a first-principles derivation of expanding-branch selection over
+the contracting alternative.
+
+Other branches are also possible in principle.  A contracting
+branch is kinematically admissible but physically disfavoured by
+the growth analogy.  A future recollapse is possible if the
+condensate support weakens.  Strong phantom-like evolution
+($w<-1$) is excluded by the no-phantom bound of the healthy
+ordered branch.
+
+The theory therefore already reduces the question to a much
+sharper one: instead of asking only ``why did the Big Bang
+happen?'', it asks which ordered-branch cosmologies are
+structurally natural, which are fine-tuned, and which are
+excluded.  The observed history sits in the ``structurally
+natural'' class.  In other words, ECT already offers a geometric
+origin of the Big-Bang branch, but not yet a complete thermal
+origin of the hot radiation bath that must follow it.
 
 \section{The grandfather paradox}
 
@@ -1216,6 +1480,7 @@ From the coherent branch, ECT derives or structurally motivates:
 \item Schr\"odinger and KG equations as descendants (\emph{A/B}).
 \item Superposition, interference, Pauli exclusion (\emph{A/B}).
 \item Quantisation from compact-phase winding (\emph{A}).
+\item Abelian charge lattice from compact $U(1)$ gauge origin (\emph{A}).
 \item PES as organising principle (\emph{B}).
 \item Born rule from RP inner product (\emph{B}).
 \item Measurement through decoherence (\emph{A/B}).
@@ -1226,6 +1491,7 @@ From the coherent branch, ECT derives or structurally motivates:
 \item Gravitational decoherence channel (\emph{B}).
 \item No fundamental information loss in BH (\emph{structural, postulate-level}).
 \item BH entropy $\propto$ area; exact coefficient open (\emph{B}).
+\item General boundary-layer area-law bound (\emph{A for scaling; B for coefficient}).
 \item Page curve from shell model (\emph{B}).
 \item Quantum gravity dissolved by architecture (\emph{A/B}).
 \end{enumerate}
@@ -1243,6 +1509,8 @@ Decoherence time: $\tau_{\rm dec} = 1/(N_{\rm eff}\gamma)$.
 Casimir: boundary-sensitive vacuum response; provisional $3/2$ factor conditional on soft-mode counting and condensate-reflecting boundaries.
 
 BH entropy: $S = A/(4\ell_{\rm Pl}^2)$.
+
+General area-law bound: $S_{\rm red}(\Sigma)\le c_0\,A(\Sigma)/\ell_*^2$, $c_0=O(1)$.
 
 \subsection{Part~III derivation logic}
 
@@ -1351,7 +1619,7 @@ Complex Hilbert space / superposition & Axioms & Reflection-positive OS reconstr
 Schr\"odinger equation & Axiom & Non-relativistic limit of Klein--Gordon from coherent branch & B \\
 Canonical commutator $[\hat q,\hat p]=i\hbar$ & Postulate & Compact phase + coherent-branch Poisson brackets, normalised by $S_0$ & B \\
 Wavefunction collapse & Postulate & Decoherence at $\Gamma_{\rm loop}\gg 1$ & B \\
-Born rule $P=|\psi|^2$ & Postulate & Conditional Gleason route under (C1)--(C3) + decoherence & B / C \\
+Born rule $P=|\psi|^2$ & Postulate & Quadratic structure from RP inner product; conditional Gleason uniqueness under (C1)--(C3) + decoherence & B \\
 Pauli exclusion principle & Postulate & Exchange topology $\pi_1(\mathcal{M}_2)=\mathbb{Z}_2$ + OS reflection positivity & A / B \\
 Dirac equation & Postulated fermion dynamics & Minimal first-order closure on $\mathrm{Spin}(3)$ spinors of the ordered branch & B \\
 \midrule
@@ -1584,6 +1852,10 @@ These are stated explicitly as unsolved targets:
 
 \item \textbf{BH evaporation.} Page curve from toy model (Level~B); full dynamics open.
 
+\item \textbf{Full observed electric-charge pattern.} ECT now supports an Abelian charge lattice from the compact condensate phase, but the derivation of the full Standard-Model charge spectrum, hypercharge quantisation, anomaly-consistent representations, and the global gauge-group quotient remains open.
+
+\item \textbf{Holographic bound and strong holography.} ECT supports a medium-native area-law entropy bound (Level~A for scaling; Level~B for coefficient), but the exact microscopic coefficient, the treatment of soft/gauge-edge sectors, a covariant Bousso-type formulation, and full bulk-boundary reconstruction remain open.
+
 \item \textbf{High-$z$ background.} Self-consistent $\phi_b(z)$ at $z \gg 1$ not derived.
 
 \item \textbf{Gradient condensation (OP-grad).} Dynamical origin of ordered branch from bare P3: the deepest open problem.
@@ -1644,11 +1916,11 @@ Within its framework, ECT addresses several well-known open problems of modern p
 
 \item \textbf{Baryon asymmetry.} A benchmark leptogenesis closure yields $\eta_B \sim 9\times10^{-10}$ versus the observed $\sim 6\times10^{-10}$; this is a closure-level result, not yet a strict first-principles theorem (\emph{B}).
 
-\item \textbf{Black-hole information paradox.} Fundamental information loss structurally forbidden (\emph{A}); Page curve reproduced (\emph{B}).
+\item \textbf{Black-hole information paradox.} Fundamental information loss structurally forbidden (\emph{A}); Page curve reproduced (\emph{B}); general area-law entropy bound established (\emph{A/B}).
 
-\item \textbf{The measurement problem.} Decoherence and PES remove the need for a fundamental collapse postulate, but the full Born-rule closure remains conditional (\emph{B/Open}).
+\item \textbf{The measurement problem.} Decoherence and PES remove the need for a fundamental collapse postulate, but the full Born-rule closure remains conditional (\emph{B}; unconditional closure open).
 
-\item \textbf{The origin of quantum mechanics.} ECT provides a structural route to Hilbert space, superposition, and quantum dynamics from the condensate; the Born rule remains conditional rather than fully first-principles derived (\emph{A/B/C}).
+\item \textbf{The origin of quantum mechanics.} ECT provides a structural route to Hilbert space, superposition, and quantum dynamics from the condensate; the Born rule is conditionally unique via the RP/Gleason route but not yet fully first-principles derived (\emph{A/B}).
 
 \item \textbf{The arrow of time.} Derived from condensate ordering and decoherence monotonicity (\emph{A/B}).
 
@@ -1660,7 +1932,7 @@ Within its framework, ECT addresses several well-known open problems of modern p
 
 \item \textbf{Why no magnetic monopoles?} $\pi_2(S^3)=0$: topological anti-prediction. GUT frameworks generically predict monopoles; ECT excludes them (\emph{A}).
 
-\item \textbf{Vacuum stability.} The ordered condensate has $V''(\phi_0)>0$. In the Standard Model, the electroweak vacuum is metastable at $m_h=125$\,GeV (\emph{A}).
+\item \textbf{Vacuum stability.} In the primary condensate sector, the ordered branch is locally stable at tree level, and the standard one-loop scalar running closes the Standard-Model-type high-field metastability channel in the primary amplitude sector: here $\beta_\lambda>0$, unlike the Higgs sector of the Standard Model where the top-Yukawa contribution drives metastability. The symmetric point $\Phi=0$ is a hilltop, not a metastable minimum, so Coleman false-vacuum decay does not apply to the minimal primary potential. The full stability of the complete ordered branch architecture, and the question of whether a secondary embedded electroweak sector inherits this stability, remain open (\emph{B/Open}).
 
 \item \textbf{Quantum gravity.} ECT offers a structural route in which gravity appears as a condensate response and the graviton as an excitation of the ordered medium on a Euclidean background; the full quantum-gravity closure remains open (\emph{A/B}).
 
@@ -1738,7 +2010,7 @@ Fock as reconstruction target & Variable $N$ = condensate reconfiguration & Open
 \midrule
 Why $3\!+\!1$ dimensions? & $O(4)\!\to\!O(3)$ & A & Yes \\
 No monopoles & $\pi_2(S^3)\!=\!0$ & A & Anti-prediction \\
-Vacuum stability & $V''(\phi_0)\!>\!0$ & A & Yes \\
+Vacuum stability & Tree-level local stability; one-loop primary amplitude-sector stability; no Coleman false vacuum in minimal potential & B/Open & Yes \\
 Quantum gravity & No metric quantisation & A/B & Architecture \\
 Massless graviton & Spin-2 from ordered branch, gauge-protected & A/B & Structural \\
 \midrule
