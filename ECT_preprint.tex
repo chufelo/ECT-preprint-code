@@ -6813,6 +6813,10 @@ combination with complex flavour phases, is preserved; the conditional
 CPT backbone of Section~\ref{sec:discrete_symmetries} is not affected
 because $\mathcal{L}_5$ explicitly lies outside the reconstructible
 OS setup as a branch-selecting extension.
+As a vector bilinear, $\mathcal{L}_5$ does not modify the anomaly
+coefficients of the chiral gauge sector; the systematic anomaly
+architecture is discussed in
+Section~\ref{sec:anomaly_architecture}.
 
 \paragraph{Dimensional estimate and Planck suppression.}
 Since the bilinear $\bar\Psi\gamma^A n_A\Psi$ has mass dimension
@@ -12184,6 +12188,9 @@ chiral sector rather than the other, (ii)~how the electroweak gauge
 vertex acquires its observed chiral form, and (iii)~how the observed
 fermion representation content follows from the same mechanism.
 None of these steps has yet been completed.
+The quantum consistency of the selected chiral gauge sector under
+anomaly constraints is analysed in
+Section~\ref{sec:anomaly_architecture}.
 
 \renewcommand{\arraystretch}{1.2}
 \begin{longtable}{@{}p{6.7cm}p{2.2cm}p{5.6cm}@{}}
@@ -12566,6 +12573,9 @@ sectors is not affected by $\mathcal{L}_5$: the operator explicitly
 lies outside the reconstructible OS setup as a branch-selecting
 extension of the ordered-branch EFT, and therefore does not conflict
 with the exact CPT backbone of those sectors.
+Compatibility of $\mathcal{L}_5$ with standard anomaly cancellation,
+following from its vector-operator nature, is systematically analysed
+in~\S\ref{sec:anomaly_architecture}.
 
 \paragraph{Comparison with SME-type constructions.}
 A separate line of research, the Standard-Model Extension~(SME) of
@@ -12746,6 +12756,358 @@ Full CKM/PMNS-scale CP phenomenology
 \bottomrule
 \end{longtable}
 
+
+\subsection{Anomaly architecture of the emergent chiral gauge sector}
+\label{sec:anomaly_architecture}
+
+\textit{Status: consistency architecture.
+This subsection systematises what ECT inherits, what it already
+captures at the reconstructible ordered-branch electroweak level,
+and what remains open about the quantum consistency of the
+emergent chiral gauge sector.
+It is a consistency architecture, not a first-principles derivation
+of Standard-Model representation content.
+Layers~A and~B correspond to group-theoretic inputs and inherited
+anomaly consistency in reconstructible local sectors; Layer~C
+isolates the full Standard-Model completion and the ECT-native
+interpretation of the mixed $U(1)_Y$-gravitational condition in the
+emergent-graviton setting.}
+
+\paragraph{Transition from the discrete-symmetry subsection.}
+The previous subsection~(\S\ref{sec:discrete_symmetries}) established
+the discrete-symmetry backbone of the emergent matter sector:
+geometric precursors of $P$ and $T$ from $O(4)$ reflections, a
+group-theoretic basis for $C$, and a conditional CPT route for
+reconstructible local sectors.
+With these ingredients in place, the natural next consistency
+question is whether the emergent chiral gauge sector is
+quantum-mechanically consistent at the loop level.
+Anomaly cancellation is a \emph{non-negotiable self-consistency
+requirement} already recorded in the gauge-sector discussion
+(\S\ref{sec:common_origin}, ``Anomaly cancellation as a
+self-consistency requirement''): any acceptable fermionic completion
+of the ordered-branch gauge sector must satisfy it, otherwise the
+emergent gauge theory is inconsistent, contradicting the existence
+of the ordered branch itself.
+The present subsection organises the resulting architecture into
+three layers and attaches each outcome to the already-existing
+unification programme; the associated open problems are recorded
+in the existing OP-GUT unification programme, in particular
+OP-GUT3b and the OP-GUT6 consistency family
+(Table~\ref{tab:op_gut}).
+
+% ============================================================
+% Layer A
+% ============================================================
+\subsubsection*{Layer~A: Topological and group-theoretic inputs}
+
+\paragraph{A1. Load-bearing homotopy facts.}
+The relevant topological inputs for the anomaly-architecture
+discussion are:
+\begin{itemize}
+  \item $\pi_4(SU(2)) = \mathbb{Z}_2$ --- Witten global-anomaly
+    topology~\cite{Witten1982};
+  \item $\pi_3(SU(N)) = \mathbb{Z}$ for $N\ge 2$ ---
+    Chern--Pontryagin density / instanton background
+    relevant to the ABJ structure;
+  \item $\pi_1(U(1)) = \mathbb{Z}$ --- charge quantisation
+    lattice established in Theorem~\ref{thm:charge_lattice}
+    (\S\ref{sec:common_origin}).
+\end{itemize}
+All three are Level~A: group theory.
+
+\paragraph{A2. Ordered-branch chirality selection.}
+One chiral factor of $Spin(4)\simeq SU(2)_L\times SU(2)_R$ is
+dynamically selected by the ordered-branch orientation
+(\S\ref{sec:chirality} and \S\ref{sec:discrete_symmetries}, Layer~A).
+The selected chirality is labelled $L$ by convention matching the
+observed weak interactions; Level~B (structural route from the
+chirality-selection mechanism).
+
+% ============================================================
+% Layer B
+% ============================================================
+\subsubsection*{Layer~B: Inherited anomaly consistency of the
+  reconstructible electroweak ordered-branch sector}
+
+\paragraph{B1. Osterwalder--Schrader reconstruction enables
+standard one-loop analysis.}
+Once the Osterwalder--Schrader reconstruction closes for the local
+chiral gauge EFT (prerequisite inherited from
+\S\ref{sec:discrete_symmetries}, Layer~B), the standard
+Adler--Bell--Jackiw one-loop analysis applies directly to the
+reconstructed Lorentzian
+theory~\cite{StreaterWightman2000,Peskin1995,Weinberg1995}.
+ECT inherits the framework; it does not formulate a new
+ECT-specific anomaly theorem.
+This is a Level~B inheritance, conditional on OS closure.
+
+\paragraph{B2. Anomaly consistency conditions in the unified
+left-handed Weyl convention.}
+We adopt the unified left-handed Weyl convention throughout this
+subsection.
+Fermions are expressed as left-handed Weyl fields $Q$, $u^c$, $d^c$,
+$L$, $e^c$ (and optionally $\nu^c$).
+The Standard-Model hypercharge assignments in this convention are:
+\begin{equation}
+  Y_Q = +\tfrac{1}{6},\quad
+  Y_{u^c} = -\tfrac{2}{3},\quad
+  Y_{d^c} = +\tfrac{1}{3},\quad
+  Y_L = -\tfrac{1}{2},\quad
+  Y_{e^c} = +1,\quad
+  Y_{\nu^c} = 0.
+  \label{eq:hypercharges}
+\end{equation}
+The four local anomaly cancellation conditions are then:
+\begin{align}
+  [SU(3)]^2\,U(1)_Y &: \quad 2Y_Q + Y_{u^c} + Y_{d^c} = 0,
+    \label{eq:anom_3Y} \\
+  [SU(2)]^2\,U(1)_Y &: \quad 3Y_Q + Y_L = 0,
+    \label{eq:anom_2Y} \\
+  [U(1)_Y]^3 &: \quad 6Y_Q^3 + 3Y_{u^c}^3 + 3Y_{d^c}^3 + 2Y_L^3
+    + Y_{e^c}^3 (+Y_{\nu^c}^3) = 0,
+    \label{eq:anom_YYY} \\
+  U(1)_Y\text{-grav}^2 &: \quad 6Y_Q + 3Y_{u^c} + 3Y_{d^c} + 2Y_L
+    + Y_{e^c} (+Y_{\nu^c}) = 0.
+    \label{eq:anom_Ygrav}
+\end{align}
+Scope labels:~\eqref{eq:anom_2Y} is already meaningful at the
+electroweak ordered-branch level;~\eqref{eq:anom_Ygrav} is likewise
+meaningful once the charged matter content of the reconstructible
+ordered-branch sector is specified;~\eqref{eq:anom_3Y}
+and~\eqref{eq:anom_YYY} depend on the full Standard-Model completion
+and are therefore discussed in Layer~C.
+
+\paragraph{B3. Hard disclaimer.}
+In the presently reconstructed ordered-branch electroweak sector,
+the $[SU(2)]^2 U(1)_Y$ condition~\eqref{eq:anom_2Y} is already
+meaningful as an inherited consistency constraint.
+The mixed $U(1)_Y$-gravitational condition~\eqref{eq:anom_Ygrav}
+is likewise meaningful once the charged matter content of the
+reconstructible ordered-branch sector is specified.
+By contrast, the $[SU(3)]^2 U(1)_Y$ condition~\eqref{eq:anom_3Y}
+and the $[U(1)_Y]^3$ condition~\eqref{eq:anom_YYY} belong to the
+full Standard-Model completion and therefore remain conditional on
+the colour-sector origin (OP-GUT1) and on the derivation of the
+full fermion representation content and observed charge assignments
+(OP-GUT2, OP-GUT3b).
+F4 does not claim full Standard-Model anomaly closure inside current
+ECT; it systematises the anomaly architecture and identifies which
+consistency conditions are already meaningful in the ordered-branch
+electroweak sector and which still depend on the open
+colour/matter completion.
+
+\paragraph{B4. The preferred-direction operator
+$\mathcal{L}_5$ is anomaly-transparent.}
+The preferred-direction operator
+\begin{equation}
+  \mathcal{L}_5 = \mu_5\,\bar\Psi\gamma^\mu n_\mu\Psi,
+\end{equation}
+re-classified in \S\ref{sec:discrete_symmetries}, Layer~C as a
+CPT-odd, CP-odd, C-odd, P-even, T-even branch operator, does
+\emph{not} alter the chiral representation content of the fermions,
+their gauge charges, or the anomaly coefficients entering the
+anomaly polynomial.
+It is a background-vector bilinear insertion in the ordered-branch
+EFT, not a change in gauge representation data.
+Therefore it can affect branch-level phenomenology, dispersion
+relations, and discrete-symmetry properties, but it does not modify
+the standard chiral anomaly constraints of the emergent gauge
+sector.
+
+The anomaly coefficients are determined by the chiral representation
+content and gauge charges, not by background-vector bilinear
+insertions that leave this representation data unchanged.
+In this sense the anomaly structure is insensitive to the
+preferred-direction deformation $\mathcal{L}_5$: the operator
+modifies branch-level phenomenology, but not the anomaly
+coefficients entering the standard consistency conditions.
+
+In this sense the F3 reclassification of $\mathcal{L}_5$ has a
+concrete F4 payoff: despite being CPT-odd at the branch level,
+$\mathcal{L}_5$ is \emph{anomaly-transparent} with respect to the
+standard gauge-anomaly consistency conditions.
+This is a clean structural bridge from
+\S\ref{sec:discrete_symmetries} to the present subsection.
+
+\paragraph{B5. Witten global anomaly.}
+The standard Witten requirement is that the number of left-handed
+$SU(2)$ doublets be even.
+Per SM-like generation there are three coloured quark doublets $Q$
+plus one lepton doublet $L$, giving four doublets per generation;
+for an SM-like generation structure this gives $4\,N_{\rm gen}$,
+which is even for any integer $N_{\rm gen}\ge 1$.
+In ECT this is inherited as a consistency test once the fermion
+spectrum is fixed; it is automatically satisfied for an SM-like
+generation structure, but is not yet a first-principles derivation
+of that structure (OP-GUT5).
+
+\paragraph{B6. Connection to the instanton sector.}
+The triangle anomaly is structurally related to instanton-induced
+chiral charge violation through the Chern--Pontryagin density
+$\mathrm{tr}\,F\wedge F$.
+In this sense the anomaly architecture discussed here is naturally
+connected to the instanton sector already explored elsewhere in the
+manuscript.
+In particular, the standard relation between the ABJ anomaly and
+nonperturbative $SU(2)$ topological transitions carries over, on the
+same conditional basis as in B1 above, to the reconstructible
+ordered-branch sector of ECT.
+
+% ============================================================
+% Layer C
+% ============================================================
+\subsubsection*{Layer~C: Full Standard-Model completion and the
+  emergent-graviton aspect}
+
+\paragraph{C1. Specific hypercharge derivation remains open.}
+The specific values in~\eqref{eq:hypercharges} remain
+Standard-Model input; their derivation from condensate dynamics is
+recorded as OP-GUT3b and remains Open.
+
+\paragraph{C2. Scope of full Standard-Model anomaly closure.}
+The $[SU(3)]^2 U(1)_Y$ condition~\eqref{eq:anom_3Y} is directly
+conditional on the colour-sector completion (OP-GUT1).
+The $[U(1)_Y]^3$ condition~\eqref{eq:anom_YYY} depends on the full
+chiral matter content and the observed hypercharge assignments, and
+therefore remains conditional on the combined completion of the
+matter-representation problem (OP-GUT2) and the observed
+charge-assignment problem (OP-GUT3b).
+Thus the full Standard-Model anomaly closure remains
+completion-dependent in current ECT.
+
+\paragraph{C3. Mixed $U(1)_Y$-gravitational anomaly in the
+emergent-graviton setting.}
+In ordinary $3{+}1$-dimensional chiral gauge theory the relevant
+local gravitational consistency condition is the mixed
+$U(1)_Y$-gravitational anomaly constraint
+\begin{equation}
+  \sum_i Y_i = 0
+  \label{eq:mixed_grav_anomaly}
+\end{equation}
+over left-handed Weyl fermions.
+A local pure gravitational anomaly is not present in the ordinary
+4D setting.
+The ECT-specific question is therefore not whether a new 4D pure
+gravitational anomaly appears, but how the standard mixed
+$U(1)_Y$-gravitational consistency condition should be interpreted
+when the graviton itself is emergent from condensate collective
+modes rather than fundamental at the pre-emergent level.
+
+Since the ordered branch distinguishes a preferred direction $n^A$,
+the detailed ECT interpretation of gravitational consistency
+conditions should eventually be formulated in the language
+appropriate to the emergent condensate background rather than
+assumed from the outset.
+However, the present work does not establish any modification of
+the standard mixed $U(1)_Y$-gravitational condition.
+The conservative and technically correct statement is that ECT is
+expected to reproduce the usual long-wavelength
+condition~\eqref{eq:mixed_grav_anomaly}, while its precise
+pre-emergent interpretation remains open (OP-GUT6c).
+
+\paragraph{C4. 't Hooft matching: outlook.}
+A more ambitious future question is whether exact global symmetries
+of the ordered-branch pre-SM sector admit a meaningful 't Hooft
+anomaly-matching analysis with the infrared effective theory.
+Since the relevant exact global symmetries of the current ECT UV
+architecture have not yet been fully identified, this lies beyond
+the scope of the present subsection.
+
+% ============================================================
+% Closing sentences
+% ============================================================
+\paragraph{Anomaly cancellation does not explain the generation
+count.}
+Anomaly cancellation does not explain the existence of exactly
+three generations.
+That question remains part of the broader flavour/generation problem
+(OP-GUT5) and lies outside the present anomaly-architecture result.
+
+\paragraph{Disentanglement of three notions of ``anomaly''.}
+It is useful to keep three logically distinct notions separate:
+(i)~local ABJ triangle anomalies in reconstructible local sectors
+(Level~B, conditional on OS);
+(ii)~global topological Witten anomaly tied to $\pi_4(SU(2))$
+(Level~A for topology, Level~B for numerical check once the
+fermion spectrum is fixed);
+(iii)~'t Hooft anomaly matching between UV and IR descriptions,
+treated here only as a longer-term outlook.
+
+\paragraph{Consistency bridge.}
+The present subsection should therefore be read as a consistency
+bridge: it shows that current ECT is compatible with the standard
+anomaly template of a reconstructible ordered-branch chiral gauge
+sector, while leaving the full Standard-Model completion problem
+explicitly open.
+
+% ============================================================
+% Status table
+% ============================================================
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{@{}p{7.4cm}p{1.8cm}p{5.3cm}@{}}
+\caption{Anomaly architecture of the emergent chiral gauge sector:
+  status summary.}
+\label{tab:anomaly_architecture}\\
+\toprule
+Statement & Status & Comment \\
+\midrule
+\endfirsthead
+\toprule
+Statement & Status & Comment \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Compact $U(1)$ phase, charge lattice
+  $q\in\mathbb{Z}\cdot e_0$
+  & A
+  & Theorem~\ref{thm:charge_lattice}
+    (\S\ref{sec:common_origin}) \\
+Ordered-branch chiral $SU(2)$ selection
+  & B
+  & \S\ref{sec:chirality} and
+    \S\ref{sec:discrete_symmetries}, Layer~A \\
+$\pi_4(SU(2))=\mathbb{Z}_2$ Witten input
+  & A
+  & Group theory \\
+Standard one-loop anomaly analysis in reconstructible
+  local sectors
+  & B
+  & Conditional on OS / local EFT closure \\
+$[SU(2)]^2 U(1)_Y$ condition
+  & B
+  & Meaningful already at the electroweak
+    ordered-branch level \\
+Mixed $U(1)_Y$-gravitational condition
+  & B / conditional
+  & Meaningful once the charged matter content of the
+    reconstructible ordered-branch sector is specified \\
+$[SU(3)]^2 U(1)_Y$ and $[U(1)_Y]^3$ conditions
+  & Conditional / Open
+  & Depend on colour-sector and full matter completion
+    (OP-GUT1, OP-GUT2, OP-GUT3b) \\
+$\mathcal{L}_5$ does not modify anomaly coefficients
+  & B
+  & Vector bilinear; representation data unchanged \\
+Witten anomaly test for the emergent chiral $SU(2)$
+  sector
+  & B
+  & Once the fermion spectrum is fixed; automatic for an
+    SM-like generation structure \\
+Specific observed hypercharge assignments from
+  condensate dynamics
+  & Open
+  & OP-GUT3b \\
+ECT interpretation of mixed $U(1)_Y$-gravitational
+  condition with emergent graviton
+  & Open
+  & Extension OP-GUT6c \\
+$N_{\rm gen}=3$ from anomaly cancellation
+  & No
+  & Not constrained by anomalies alone (OP-GUT5) \\
+\bottomrule
+\end{longtable}
 
 \subsection{Yukawa couplings and fermion masses}
 \label{sec:yukawa}
@@ -28138,6 +28500,8 @@ This does not yet derive the observed fermion representations, but
 it sharply constrains any acceptable completion: whatever matter
 representations emerge from the condensate, they must satisfy the
 standard anomaly-cancellation conditions.
+A systematic anomaly architecture is developed
+in~\S\ref{sec:anomaly_architecture}.
 
 \subsubsection*{Neutrino compatibility}
 
@@ -40565,6 +40929,12 @@ OP-GUT6a
 OP-GUT6b
   & Witten $SU(2)$ global $\mathbb{Z}_2$-anomaly
   & Open (consistency test) \\
+OP-GUT6c
+  & ECT-native interpretation of the mixed
+    $U(1)_Y$-gravitational consistency condition in the
+    emergent-graviton setting
+    (\S\ref{sec:anomaly_architecture}, Layer~C)
+  & Open (structural) \\
 OP-GUT7
   & Weinberg angle $\sin^2\!\theta_W$ from condensate parameters
   & Open \\
@@ -40895,6 +41265,10 @@ Discrete-symmetry architecture &
   reconstruction; branch-pair layer on $S^3$; $\mathcal{L}_5$
   re-classified as CPT-odd phenomenological operator &
   A/B & Yes (ECT-native) \\
+Anomaly architecture &
+  EW anomaly constraints inherited; $\mathcal{L}_5$
+  anomaly-transparent; full SM completion open &
+  A/B/Open & Consistency bridge to OP-GUT6 \\
 Fock space as reconstruction target &
   Variable $N$ = condensate reconfiguration &
   Open & Yes (conceptual) \\

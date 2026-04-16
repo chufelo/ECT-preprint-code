@@ -113,6 +113,12 @@ digraph ECT {
   GAUGE -> CPT;
   FIFTH -> CPT [style=dashed];
 
+  /* ===== ANOMALY ARCHITECTURE (F4, §9.5) ===== */
+  ANOM [label=<Anomaly Architecture<BR/><FONT POINT-SIZE="9">Triangle + Witten inherited at EW · 𝓛₅ anomaly-transparent<BR/>Full SM anomaly closure conditional on colour/matter completion<BR/>Mixed U(1)-grav in emergent-graviton setting Open (OP-GUT6c)<BR/>[A/B/Open]</FONT>>,
+         fillcolor="#d3d3d3"];
+  GAUGE -> ANOM;
+  CPT -> ANOM;
+
   /* ===== PREDICTIONS & FALSIFIERS ===== */
   /* ===== Results/regime estimates ===== */
   RESULTS [label=<Results / Regime Estimates<BR/><FONT POINT-SIZE="9">Procopio, Jacques, Bell threshold<BR/>Qubit info bound   [B]</FONT>>];
@@ -132,7 +138,7 @@ digraph ECT {
   PRED -> FALS;
 
   /* ===== OPEN PROBLEMS ===== */
-  OPEN [label=<Major Open Fronts<BR/><FONT POINT-SIZE="9">S₀ = ℏ   ·   SU(3) colour   ·   Yukawa hierarchy   ·   α<SUB>fs</SUB> = 1/137<BR/>Full nonlinear GR   ·   Born rule unconditional   ·   Bell correlators<BR/>Page curve   ·   3 fermion generations   ·   Proton stability (OP-proton)<BR/>Full nonlinear CPT closure (OP-CPT1)   ·   Exact max parity pattern (OP-P1)<BR/>Branch-pair cosmology (OP-BRANCH1)</FONT>>,
+  OPEN [label=<Major Open Fronts<BR/><FONT POINT-SIZE="9">S₀ = ℏ   ·   SU(3) colour   ·   Yukawa hierarchy   ·   α<SUB>fs</SUB> = 1/137<BR/>Full nonlinear GR   ·   Born rule unconditional   ·   Bell correlators<BR/>Page curve   ·   3 fermion generations   ·   Proton stability (OP-proton)<BR/>Full nonlinear CPT closure (OP-CPT1)   ·   Exact max parity pattern (OP-P1)<BR/>Branch-pair cosmology (OP-BRANCH1)   ·   Mixed U(1)-grav in emergent-graviton (OP-GUT6c)</FONT>>,
         fillcolor="white", style="rounded,dashed,filled"];
 
   FALS -> OPEN [style=dashed];
@@ -140,6 +146,7 @@ digraph ECT {
   BH -> OPEN [style=dashed, constraint=false];
   GAUGE -> OPEN [style=dashed, constraint=false, xlabel=<B-number>];
   CPT -> OPEN [style=dashed, constraint=false];
+  ANOM -> OPEN [style=dashed, constraint=false];
 
   /* Minimal ranking */
   {rank=same; GR; S0}
