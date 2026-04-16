@@ -10999,7 +10999,9 @@ Cosmological $\sum m_\nu$ bound model-dependent under
     $G_{\rm eff}(z)$
   & Open & Quantitative bound requires Boltzmann/MCMC analysis \\
 Full flavour closure (generations, textures, PMNS, ordering)
-  & Open & Not yet addressed \\
+  & Open & Systematised architecturally
+    in~\S\ref{sec:flavour_architecture}; quantitative
+    derivation Open under OP-Yukawa/OP-generations \\
 \end{longtable}
 
 This closes the neutrino subsection at the level currently justified by
@@ -12939,6 +12941,8 @@ $\mathcal{L}_5$ is \emph{anomaly-transparent} with respect to the
 standard gauge-anomaly consistency conditions.
 This is a clean structural bridge from
 \S\ref{sec:discrete_symmetries} to the present subsection.
+Flavour structure is similarly anomaly-decoupled, as discussed
+in~\S\ref{sec:flavour_architecture}, Layer~B5.
 
 \paragraph{B5. Witten global anomaly.}
 The standard Witten requirement is that the number of left-handed
@@ -13212,6 +13216,9 @@ This route is Level~B/C: the structural mechanism is identified
 but the explicit computation of $Y_{ij}$ from condensate
 microphysics remains open~(OP-Yukawa).
 Details are in Appendix~\ref{app:open_microphysics}.
+The flavour architecture connecting the Yukawa overlap mechanism
+to CKM mixing and the seesaw embedding to PMNS is systematised
+in \S\ref{sec:flavour_architecture}.
 
 \paragraph{Three fermion generations: spectral route.}
 \label{par:three_generations}
@@ -13328,6 +13335,317 @@ Condensate-sector corrections to $y_f$
 Neutrino mass mechanism
   & C & Seesaw-type embedding;
     Section~\ref{sec:neutrino_particles} \\
+\bottomrule
+\end{longtable}
+
+\subsection{Flavour architecture of the emergent matter sector:
+  CKM and PMNS in ECT}
+\label{sec:flavour_architecture}
+
+\textit{Status: systematisation, not derivation.
+Sections~\ref{sec:discrete_symmetries}
+and~\ref{sec:anomaly_architecture} established the discrete-symmetry
+and anomaly backbone of the emergent chiral gauge sector.
+With three fermion generations and the Yukawa structure taken as
+external input~(\S\ref{sec:yukawa}, OP-Yukawa, OP-generations),
+the natural next question is whether the observed flavour
+structure---the CKM quark-mixing matrix and the PMNS lepton-mixing
+matrix---admits any ECT-native framing.
+This subsection is a consistency architecture, not a first-principles
+derivation.
+Layer~A records group-theoretic inputs; Layer~B organises structural
+routes already present in the preprint; Layer~C identifies open
+targets and concluding remarks.
+The three concrete derivation targets (CKM hierarchy, PMNS angles
+and CP phases, absolute neutrino spectrum) all fall under the
+existing flavour open-programme labels OP-Yukawa and OP-generations,
+with broader unification-level bookkeeping recorded under OP-GUT5
+in Table~\ref{tab:op_gut}.}
+
+\paragraph{Transition from the anomaly subsection.}
+The previous subsection~(\S\ref{sec:anomaly_architecture}) showed
+that the emergent chiral gauge sector inherits the standard
+anomaly-cancellation framework at the electroweak ordered-branch
+level, with the preferred-direction operator $\mathcal{L}_5$ being
+anomaly-transparent.
+A natural next question is how the off-diagonal flavour
+structure---the CKM and PMNS mixing matrices, the associated CP
+phases, and the absolute neutrino spectrum---relates to the
+already-established Yukawa-overlap mechanism of
+\S\ref{sec:yukawa} and the seesaw embedding of
+\S\ref{sec:neutrino_particles}.
+
+% ============================================================
+% Layer A
+% ============================================================
+\subsubsection*{Layer~A: Group-theoretic and structural inputs}
+
+\paragraph{A1. Flavour-group bookkeeping.}
+In an SM-like three-generation chiral matter sector without explicit
+sterile-neutrino fields, the maximal flavour symmetry of the kinetic
+terms is
+\begin{equation}
+  G_F^{\rm SM}
+  = U(3)_Q \times U(3)_{u^c} \times U(3)_{d^c}
+    \times U(3)_L \times U(3)_{e^c}.
+\end{equation}
+If the heavy sterile-neutrino sector is included explicitly (as
+structurally preferred in the seesaw embedding of
+\S\ref{sec:neutrino_particles}), this is enlarged by an additional
+factor $U(3)_N$ before the Majorana mass term is introduced; the
+Majorana sector then breaks part of this symmetry further.
+In the present subsection this distinction is used only as
+group-theoretic bookkeeping; no new flavour symmetry is derived from
+the condensate microdynamics.
+
+\paragraph{A2. Parameter counting.}
+For three generations the physical-parameter count is the standard
+one:
+\begin{itemize}
+  \item CKM: 3 angles + 1 CP phase = 4 parameters;
+  \item PMNS (Dirac case): 3 angles + 1 Dirac CP phase = 4
+    parameters;
+  \item PMNS (Majorana case, as structurally preferred by the
+    seesaw embedding of \S\ref{sec:neutrino_particles}):
+    + 2 Majorana phases = 6 parameters.
+\end{itemize}
+
+\paragraph{A3. Three generations as external input.}
+The number of fermion generations $N_{\rm gen}=3$ remains external
+input at the present stage (OP-generations;
+\S\ref{sec:yukawa}, \S\ref{par:three_generations}), addressed via
+the spectral route of the Yukawa subsection rather than within the
+flavour-architecture discussion presented here.
+
+% ============================================================
+% Layer B
+% ============================================================
+\subsubsection*{Layer~B: Structural routes already present, now
+  unified}
+
+\paragraph{B1. CKM as basis misalignment.}
+The CKM matrix
+\begin{equation}
+  V_{\rm CKM} = U_u^\dagger\, U_d,
+\end{equation}
+arising from the misalignment between up-type and down-type Yukawa
+diagonalising rotations, is a standard feature of chiral gauge
+theories with Yukawa couplings.
+This is a Level~A structural input; its specific numerical entries
+are not an ECT output.
+
+\paragraph{B2. Overlap-mechanism route to hierarchical CKM.}
+In the overlap/localisation picture of
+\S\ref{sec:yukawa}, hierarchical quark mixing is naturally
+associated with small off-diagonal overlap integrals between
+quasi-localised generation profiles.
+This makes a Wolfenstein-like hierarchy structurally plausible:
+\begin{equation}
+  |V_{us}| \gg |V_{cb}| \gg |V_{ub}|,
+\end{equation}
+with $V_{\rm CKM}$ remaining close to the identity.
+What ECT can presently claim is qualitative compatibility of the
+observed hierarchical pattern with exponentially suppressed
+inter-generation overlaps.
+It does not yet derive the specific numerical value of the
+Wolfenstein parameter $\lambda$, nor the higher parameters $A$,
+$\bar\rho$, $\bar\eta$ (Level~B; numerical derivation Open under
+OP-Yukawa).
+
+\paragraph{B3. ``CKM small / PMNS large'' as structural narrative.}
+The lepton sector plausibly differs structurally from the quark
+sector because charged leptons are governed by the same
+Yukawa-overlap logic as the charged fermions of
+\S\ref{sec:yukawa}, whereas light neutrinos arise through the
+separate seesaw/Weinberg-operator completion discussed in
+\S\ref{sec:neutrino_particles}.
+This makes a stronger basis misalignment in the lepton sector
+structurally plausible and provides a natural ECT narrative for
+the empirical ``CKM small / PMNS large'' dichotomy.
+However, the present framework does not derive the PMNS angles
+quantitatively (Level~B/C; narrative structural, quantitative
+derivation Open under OP-Yukawa).
+
+\paragraph{B4. CP phases live in the effective flavour structures.}
+In the present ECT framing, complex flavour phases may arise in
+the effective Yukawa matrices and, in the neutrino sector, also
+in the sterile/Majorana mass structure of the seesaw completion.
+This is the appropriate flavour-sector completion of the ``complex
+flavour phases'' already invoked in the F3 baryogenesis
+discussion~(\S\ref{sec:baryogenesis}).
+What can be claimed now is only that ECT has a structurally
+well-defined place where CKM and PMNS CP phases may enter: in the
+effective flavour matrices of the quark sector and, for neutrinos,
+in the combined Yukawa-plus-seesaw structure.
+The present framework does not derive the observed values of
+$\delta_{\rm CKM}$, $\delta_{\rm PMNS}$, or the Majorana phases
+(Level~B/C; values Open under OP-Yukawa).
+
+\paragraph{B5. Flavour structure is anomaly-decoupled.}
+The flavour structure ($Y_u$, $Y_d$, $Y_e$, $Y_\nu$ matrices) does
+not enter the anomaly coefficients of the chiral gauge sector;
+those coefficients depend only on the chiral representation content
+and the gauge charges
+(\S\ref{sec:anomaly_architecture}, Layer~B4).
+Flavour is therefore anomaly-decoupled, in the same sense as the
+preferred-direction coupling $\mathcal{L}_5$ is anomaly-transparent.
+This is the second structural payoff of the F3--F4--F8 chain
+(Level~B).
+
+\paragraph{B6. Near-alignment of flavour rotations in the overlap
+picture.}
+The near-rank-1 structure of the leading-order Yukawa matrix
+(\S\ref{sec:yukawa}, $Y\approx Y^{(0)}+\delta Y$ with
+$\mathrm{rank}(Y^{(0)})=1$) naturally favours near-alignment of the
+diagonalising rotations in flavour space.
+This makes the observed smallness of quark flavour mixing
+structurally plausible and helps maintain compatibility with the
+strong empirical suppression of flavour-changing processes.
+The standard GIM mechanism itself remains the usual one of the
+reconstructed electroweak theory; the ECT contribution here is a
+structural route to the near-alignment that makes such suppression
+natural rather than accidental
+(Level~B/C; structural route, not a derivation of specific FCNC
+rates).
+
+\paragraph{B7. PMNS/MSW phenomenological stability.}
+A useful stabilising feature of the ECT flavour architecture is
+that it does not spoil the standard leading-order PMNS/MSW
+oscillation framework already retained in the neutrino
+sector~(\S\ref{sec:neutrino_particles}); the open problem is not
+whether flavour phenomenology survives, but whether its detailed
+textures and parameters can be derived (Level~B; consistency check
+inherited from the neutrino discussion).
+
+% ============================================================
+% Layer C
+% ============================================================
+\subsubsection*{Layer~C: Open targets and concluding remarks}
+
+\paragraph{C1. Open programme under existing umbrella labels.}
+No new formal OP-IDs are introduced by F8.
+The three concrete derivation targets recorded here fall under the
+existing flavour open-programme labels:
+\begin{itemize}
+  \item CKM mixing angles and Wolfenstein hierarchy
+    (OP-Yukawa);
+  \item PMNS angles and Dirac/Majorana CP phases
+    (OP-Yukawa, with the neutrino-sector discussion in
+    \S\ref{sec:neutrino_particles});
+  \item absolute neutrino spectrum and ordering
+    (OP-Yukawa / neutrino programme).
+\end{itemize}
+Broader unification-level bookkeeping is recorded under OP-GUT5
+in Table~\ref{tab:op_gut}, while the detailed local flavour
+bookkeeping remains under OP-Yukawa and OP-generations in the
+fermionic-sector discussion.
+
+\paragraph{C2. Geometric anchor and the absolute neutrino scale.}
+The geometric anchor
+$M_R^{\rm geom}=\sqrt{\phi_0\,v_2}$,
+already discussed in the neutrino
+sector~(\S\ref{sec:neutrino_particles}), provides a natural scale
+at which the light-neutrino spectrum is pinned in the seesaw
+embedding.
+What remains open is the detailed internal hierarchy, ordering,
+and phase structure of the three light states on top of this
+anchor.
+Thus the present flavour subsection treats $M_R^{\rm geom}$ as a
+scale-setting consistency input rather than as a full derivation
+of the neutrino spectrum.
+
+\paragraph{C3. Baryogenesis connection.}
+The flavour architecture clarifies the flavour-sector part of the
+CP-violation bookkeeping used in the baryogenesis
+discussion~(\S\ref{sec:baryogenesis}): ECT contains a branch-level
+CP/CPT-odd channel through $\mathcal{L}_5$ (F3), while the fermionic
+completion may contain additional complex flavour phases in the
+quark and especially lepton sectors.
+In the present framework the baryogenesis estimate remains tied to
+the leptogenesis-style assumptions already stated
+in~\S\ref{sec:baryogenesis}; F8 does not claim that the CKM phase
+alone explains the observed baryon asymmetry.
+
+\paragraph{C4. Strong CP problem: longer-term outlook.}
+A longer-term question is how the flavour sector, the
+instanton/$\theta$-sector, and the open colour completion combine
+in the ECT framing of the strong CP problem; this remains outside
+the scope of the present subsection.
+
+% ============================================================
+% Disentanglement of three notions
+% ============================================================
+\paragraph{Disentanglement of three flavour-related notions.}
+It is useful to keep three notions separate:
+\begin{enumerate}[label=(\roman*)]
+  \item flavour mixing itself (CKM/PMNS matrices as basis
+    misalignment);
+  \item CP-violating flavour phases in the effective quark/lepton
+    mass structures;
+  \item baryogenesis, which in the present framework still relies
+    on the leptogenesis-style assumptions of
+    \S\ref{sec:baryogenesis} and uses the flavour phases only as
+    part of its CP-violation bookkeeping.
+\end{enumerate}
+All three coexist within the ECT architecture without
+contradiction.
+
+% ============================================================
+% Status table (exactly 10 rows)
+% ============================================================
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{@{}p{7.6cm}p{1.7cm}p{5.2cm}@{}}
+\caption{Flavour architecture of the emergent matter sector:
+  status summary.}
+\label{tab:flavour_architecture}\\
+\toprule
+Statement & Status & Comment \\
+\midrule
+\endfirsthead
+\toprule
+Statement & Status & Comment \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Standard flavour-group bookkeeping for three-generation matter
+  sectors
+  & A
+  & Optional sterile-sector extension for seesaw \\
+CKM as basis misalignment between up- and down-sector
+  diagonalisation
+  & A
+  & Standard field-theory structure \\
+ECT overlap mechanism provides a structural route to hierarchical
+  CKM mixing
+  & B
+  & Qualitative, not numerical \\
+ECT gives a natural narrative for ``CKM small / PMNS large'' via
+  different charged- and neutral-lepton mechanisms
+  & B/C
+  & Structural, not quantitative \\
+Complex flavour phases have a structurally well-defined place in
+  the effective Yukawa / seesaw sector
+  & B/C
+  & Not derived \\
+Flavour structure is anomaly-decoupled
+  & B
+  & Extends F4 \\
+Near-alignment of flavour rotations is structurally natural in the
+  overlap picture
+  & B/C
+  & Helps maintain FCNC suppression; distinct from the GIM
+    mechanism itself \\
+PMNS/MSW phenomenology remains intact at leading order
+  & B
+  & Already retained in the neutrino sector \\
+Exact CKM/PMNS parameters, CP phases, and neutrino spectrum from
+  condensate dynamics
+  & Open
+  & Under OP-Yukawa / OP-generations \\
+$N_{\rm gen}=3$ from ECT
+  & Open
+  & Outside F8; OP-generations \\
 \bottomrule
 \end{longtable}
 
@@ -19634,6 +19952,12 @@ speculative cosmological interpretation in which our observable
 matter-dominated branch is paired with an antipodal antimatter-dominated
 partner, the full Euclidean pair being CPT-symmetric; this is recorded
 as OP-BRANCH1 rather than as an established result.
+The complex flavour phases appear explicitly in the flavour-architecture
+subsection~(\S\ref{sec:flavour_architecture}), providing the
+flavour-sector part of the CP-violation bookkeeping.
+The baryogenesis estimate in the present section remains tied to
+the leptogenesis-style assumptions stated above and does not claim
+that the CKM phase alone explains the observed asymmetry.
 
 \textbf{(iii) Departure from thermal equilibrium: the ordering
 transition.}
@@ -40946,7 +41270,11 @@ OP-GUT4
   & Relate $\alpha_s$, $\alpha_{\rm em}$, $G_N$ to condensate parameters
   & Open \\
 OP-GUT5
-  & Three fermion generations; Yukawa hierarchy
+  & Three fermion generations; Yukawa hierarchy and flavour
+    closure (CKM mixing, PMNS mixing, CP phases, absolute
+    neutrino spectrum); systematised architecturally
+    in~\S\ref{sec:flavour_architecture} under OP-Yukawa /
+    OP-generations local labels
   & Open \\
 OP-GUT6a
   & Local triangle anomaly cancellation
@@ -41294,6 +41622,11 @@ Anomaly architecture &
   EW anomaly constraints inherited; $\mathcal{L}_5$
   anomaly-transparent; full SM completion open &
   A/B/Open & Consistency bridge to OP-GUT6 \\
+Flavour architecture &
+  CKM / PMNS systematisation via overlap + seesaw;
+  CP phases live in Yukawa/Majorana sector;
+  near-alignment of flavour rotations; anomaly-decoupled &
+  B/Open & Consistency bridge to OP-Yukawa \\
 Fock space as reconstruction target &
   Variable $N$ = condensate reconfiguration &
   Open & Yes (conceptual) \\

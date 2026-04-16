@@ -119,6 +119,12 @@ digraph ECT {
   GAUGE -> ANOM;
   CPT -> ANOM;
 
+  /* ===== FLAVOUR ARCHITECTURE (F8, §9.7) ===== */
+  FLAVOUR [label=<Flavour Architecture<BR/><FONT POINT-SIZE="9">CKM / PMNS from overlap + seesaw · Near-alignment of rotations<BR/>CP phases in Yukawa / Majorana sector · Flavour anomaly-decoupled<BR/>Numerical Open under OP-Yukawa / OP-generations<BR/>[B/Open]</FONT>>,
+           fillcolor="#d3d3d3"];
+  GAUGE -> FLAVOUR;
+  ANOM -> FLAVOUR;
+
   /* ===== PREDICTIONS & FALSIFIERS ===== */
   /* ===== Results/regime estimates ===== */
   RESULTS [label=<Results / Regime Estimates<BR/><FONT POINT-SIZE="9">Procopio, Jacques, Bell threshold<BR/>Qubit info bound   [B]</FONT>>];
@@ -138,7 +144,7 @@ digraph ECT {
   PRED -> FALS;
 
   /* ===== OPEN PROBLEMS ===== */
-  OPEN [label=<Major Open Fronts<BR/><FONT POINT-SIZE="9">S₀ = ℏ   ·   SU(3) colour   ·   Yukawa hierarchy   ·   α<SUB>fs</SUB> = 1/137<BR/>Full nonlinear GR   ·   Born rule unconditional   ·   Bell correlators<BR/>Page curve   ·   3 fermion generations   ·   Proton stability (OP-proton)<BR/>Full nonlinear CPT closure (OP-CPT1)   ·   Exact max parity pattern (OP-P1)<BR/>Branch-pair cosmology (OP-BRANCH1)   ·   Mixed U(1)-grav in emergent-graviton (OP-GUT6c)</FONT>>,
+  OPEN [label=<Major Open Fronts<BR/><FONT POINT-SIZE="9">S₀ = ℏ   ·   SU(3) colour   ·   Yukawa hierarchy   ·   α<SUB>fs</SUB> = 1/137<BR/>Full nonlinear GR   ·   Born rule unconditional   ·   Bell correlators<BR/>Page curve   ·   3 fermion generations   ·   Proton stability (OP-proton)<BR/>Full nonlinear CPT closure (OP-CPT1)   ·   Exact max parity pattern (OP-P1)<BR/>Branch-pair cosmology (OP-BRANCH1)   ·   Mixed U(1)-grav in emergent-graviton (OP-GUT6c)<BR/>Flavour closure: CKM/PMNS/CP phases/ν spectrum (OP-Yukawa)</FONT>>,
         fillcolor="white", style="rounded,dashed,filled"];
 
   FALS -> OPEN [style=dashed];
@@ -147,6 +153,7 @@ digraph ECT {
   GAUGE -> OPEN [style=dashed, constraint=false, xlabel=<B-number>];
   CPT -> OPEN [style=dashed, constraint=false];
   ANOM -> OPEN [style=dashed, constraint=false];
+  FLAVOUR -> OPEN [style=dashed, constraint=false];
 
   /* Minimal ranking */
   {rank=same; GR; S0}
