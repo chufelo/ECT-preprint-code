@@ -59,8 +59,8 @@ digraph ECT {
 
   COSMO [label=<Cosmology<BR/><FONT POINT-SIZE="9">Primordial n<SUB>s</SUB> ~ 0.96–0.97   ·   Λ<SUB>eff</SUB><BR/>Hubble tension route   [B]</FONT>>];
   GAL [label=<Galactic Dynamics<BR/><FONT POINT-SIZE="9">φ-branch   ·   BTFR slope = 4   ·   RAR<BR/>g<SUB>†</SUB> ~ cH₀/(2π)   [B]</FONT>>];
-  BH [label=<Black Holes &amp; Strong Field<BR/><FONT POINT-SIZE="9">Info destruction excluded [A]<BR/>Shell · BH thermo · Page curve [B/Open]</FONT>>];
-  FIFTH [label=<Director Coupling<BR/><FONT POINT-SIZE="9">μ₅ψ̄γ<SUP>A</SUP>n<SUB>A</SUB>ψ   [A/B]</FONT>>];
+  BH [label=<Black Holes &amp; Strong Field<BR/><FONT POINT-SIZE="9">Info destruction excluded [A]<BR/>Shell · BH thermo · Area law [A/B]<BR/>Page curve [B/Open]</FONT>>];
+  FIFTH [label=<5th Force<BR/><FONT POINT-SIZE="9">β₅ ~ m<SUB>f</SUB>/M<SUB>Pl</SUB>   [B]</FONT>>];
   CLUSTER [label=<Cluster Lensing<BR/><FONT POINT-SIZE="9">Bullet, A520, El Gordo<BR/>ν-closure rule   [B]</FONT>>];
 
   GR -> COSMO;
@@ -77,7 +77,7 @@ digraph ECT {
   SCHROD [label=<Schrödinger Equation<BR/><FONT POINT-SIZE="9">Canonical phase dynamics<BR/>Uncertainty principle   [A/B]</FONT>>];
   VACUUM [label=<Vacuum Response<BR/><FONT POINT-SIZE="9">Casimir (3/2)   ·   Unruh T<SUB>U</SUB><BR/>Particle production   [A/B]</FONT>>];
   DECOH [label=<Decoherence &amp; Arrow of Time<BR/><FONT POINT-SIZE="9">Influence functional   ·   Entropy<BR/>Crooks relation   [A/B]</FONT>>];
-  BORN [label=<Born Rule<BR/><FONT POINT-SIZE="9">Gleason route (C1–C3)   [B/Open]</FONT>>];
+  BORN [label=<Born Rule<BR/><FONT POINT-SIZE="9">RP + Gleason route   [B]</FONT>>];
   TOPO [label=<Exchange Topology &amp; Spinors<BR/><FONT POINT-SIZE="9">π₁(ℳ₂) = ℤ₂   ·   Dirac route<BR/>Entanglement   [A]</FONT>>];
 
   S0 -> SCHROD;
@@ -93,11 +93,17 @@ digraph ECT {
   PES -> BORN;
 
   /* ===== GAUGE SECTOR (bridging both branches) ===== */
-  GAUGE [label=<Gauge &amp; Matter Sector<BR/><FONT POINT-SIZE="9">U(1) bundle (A) · SU(2) structural (B+) · Higgs (v₂ ≈ 246 GeV)<BR/>Director coupling · SU(3): extended structure · 3 gen.: open   [A/B/Open]</FONT>>,
+  GAUGE [label=<Gauge &amp; Matter Sector<BR/><FONT POINT-SIZE="9">U(1) → photon · Charge lattice [A]   ·   SU(2) → W<SUP>±</SUP>, Z   ·   Higgs (v₂ ≈ 246 GeV)<BR/>Fermions: O(3) spinor reps   ·   SU(3): open   ·   3 gen.: open<BR/>Neutrino: seesaw route (C)   ·   M<SUB>R</SUB><SUP>geom</SUP> ~ 10<SUP>10</SUP> GeV   [A/B/C/Open]</FONT>>,
         fillcolor="#ddd"];
   S0 -> GAUGE [xlabel=<phase>];
   TOPO -> GAUGE [xlabel=<spinor>];
   FIFTH -> GAUGE [style=invis]; /* pull gauge down */
+
+  /* ===== DISCRETE-SYMMETRY ARCHITECTURE (F3, §9.4) ===== */
+  CPT [label=<Discrete-Symmetry Architecture<BR/><FONT POINT-SIZE="9">P, T, C · Conditional CPT via OS reconstruction<BR/>Branch-pair on S³ · 𝓛₅ → CPT-odd phenom. op.<BR/>[A/B; Open for full nonlinear closure]</FONT>>,
+         fillcolor="#d3d3d3"];
+  GAUGE -> CPT;
+  FIFTH -> CPT [style=dashed];
 
   /* ===== PREDICTIONS & FALSIFIERS ===== */
   /* ===== Results/regime estimates ===== */
@@ -118,13 +124,14 @@ digraph ECT {
   PRED -> FALS;
 
   /* ===== OPEN PROBLEMS ===== */
-  OPEN [label=<Major Open Fronts<BR/><FONT POINT-SIZE="9">S₀ = ℏ   ·   SU(3) extended structure   ·   Yukawa hierarchy   ·   α<SUB>fs</SUB> = 1/137<BR/>Full nonlinear GR   ·   Born rule unconditional   ·   Bell correlators<BR/>Page curve   ·   3 fermion generations   ·   Full weak-gauge derivation (OP-GRAV-WEAK)</FONT>>,
+  OPEN [label=<Major Open Fronts<BR/><FONT POINT-SIZE="9">S₀ = ℏ   ·   SU(3) colour   ·   Yukawa hierarchy   ·   α<SUB>fs</SUB> = 1/137<BR/>Full nonlinear GR   ·   Born rule unconditional   ·   Bell correlators<BR/>Page curve   ·   3 fermion generations   ·   Proton stability (OP-proton)<BR/>Full nonlinear CPT closure (OP-CPT1)   ·   Exact max parity pattern (OP-P1)<BR/>Branch-pair cosmology (OP-BRANCH1)</FONT>>,
         fillcolor="white", style="rounded,dashed,filled"];
 
   FALS -> OPEN [style=dashed];
   BORN -> OPEN [style=dashed, constraint=false];
   BH -> OPEN [style=dashed, constraint=false];
   GAUGE -> OPEN [style=dashed, constraint=false, xlabel=<B-number>];
+  CPT -> OPEN [style=dashed, constraint=false];
 
   /* Minimal ranking */
   {rank=same; GR; S0}
