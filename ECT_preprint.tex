@@ -20827,6 +20827,11 @@ At $z=10$: $D_{\rm ECT}/D_{\Lambda{\rm CDM}}\approx 1.024$.
 Setting $f(z)\equiv G_{\rm eff}(z)/G_N = e^{-\phi_b(z)}$,
 the effective rarity of a $\nu$-$\sigma$ peak becomes
 $\nu_{\rm eff}=\nu/\sqrt{f}$, giving
+(here $\phi_b(z)$ denotes the rescaled proxy profile used only in the
+local JWST benchmark ansatz, so that the benchmark factor $\beta$ is
+absorbed into the definition of the proxy field and should not be
+confused with the closure-field normalisation of
+\S\ref{sec:mp_hubble}, where $G_{\rm eff}=G_N e^{-\beta\phi}$)
 \begin{equation}
   \frac{n_{\rm ECT}}{n_{\Lambda{\rm CDM}}}
   = \exp\!\left[\frac{\nu^2}{2}\!\left(1-\frac{1}{f(z)}\right)\right].
@@ -24820,9 +24825,12 @@ The most useful current point (late-time-shift-priority, H1 benchmark) is
 \[
 \omega_0=30,\qquad \phi_0=-0.10,
 \]
-for which
+for which the present derived-parent scan returns an illustrative
+H1-level upward shift of order a few per cent (numerically $\sim 2.7\%$
+in the current implementation), to be read as a provisional scan
+output pending the dedicated Hubble re-audit. The background-age
+observables for the same point are
 \begin{gather*}
-\Delta H_0/H_0\approx 2.73\%\quad\text{(derived-parent point $(\omega_0,\phi_0)=(30,-0.10)$)},\\
 t_0\approx 13.02~{\rm Gyr},
 \qquad
 t_U(z=10)\approx 0.394~{\rm Gyr}.
@@ -24887,7 +24895,7 @@ resolved numerical sectors.
 
 \renewcommand{\arraystretch}{1.15}
 \begin{longtable}{@{}p{1.9cm}p{1.9cm}p{1.9cm}p{1.9cm}p{1.9cm}p{1.9cm}p{1.9cm}@{}}
-\caption{Representative derived-parent working points from the first few-percent H1 benchmark $(\omega_0,\phi_0)$ scan ($\beta=0.8$, $\mu=1.5$, $A_2=\mu^2/(6\beta^2)$, $A_3=A_4=0$).}\label{tab:derived_parent_working_points}\\
+\caption{Representative derived-parent working points from the first few-percent H1 benchmark $(\omega_0,\phi_0)$ scan ($\beta=0.8$, $\mu=1.5$, $A_2=\mu^2/(6\beta^2)$, $A_3=A_4=0$). The quoted $\Delta H_0/H_0$ entries are current derived-parent H1 scan outputs, not stabilised H2 observables; their precise interpretation remains subject to the dedicated Hubble re-audit.}\label{tab:derived_parent_working_points}\\
 \toprule
 Point & $\omega_0$ & $\phi_0$ & $\Delta H_0/H_0$ & $t_U(z\!=\!10)$ [Gyr] & $G_{\rm eff}/G_N$ & $D/D_{\rm ref}$ \\
 \midrule
