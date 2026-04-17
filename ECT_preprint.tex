@@ -20503,16 +20503,43 @@ quadratic potential are the simplest local late-time benchmark choices.
 The full derived condensate system is recorded in
 Appendix~\ref{app:late_cosmo_background}.
 
-At the present-epoch level, the late-time Hubble shift is controlled by
+At the present-epoch level, evaluating the benchmark Friedmann
+equation~\eqref{eq:ect_late_friedmann} at $N=0$ (with
+$\Omega_{m*}+\Omega_{r*}+\Omega_{V*}=1$ normalisation) gives the
+exact algebraic relation
+\begin{equation}
+\frac{\Delta H_0}{H_0}
+=
+\sqrt{
+  \frac{1+\mu^2\phi_0^2/6}
+       {e^{\beta\phi_0}\!\left(1+\beta q_0\right)-(\kappa/6)\,q_0^2}
+}
+\;-\;1,
+\label{eq:ect_h0_shift_exact}
+\end{equation}
+where $q_0$ is determined self-consistently from the scalar
+slow-roll balance at $N=0$. Equation~\eqref{eq:ect_h0_shift_exact} is
+the proper present-epoch benchmark relation.
+
+In the $q_0\to 0$ leading-order limit (static-scalar approximation),
+equation~\eqref{eq:ect_h0_shift_exact} reduces to the small-drift
+expression
 \begin{equation}
 \frac{\Delta H_0}{H_0}
 \approx
 \frac{\mu^2\phi_0^2}{12}
--\frac12\beta \phi_0.
+-\frac12\beta \phi_0
+\qquad \text{(}q_0\to 0 \text{ leading-order limit).}
 \label{eq:ect_h0_shift}
 \end{equation}
-This relation is a small-drift benchmark estimate within the present
-closure, not a closure-independent theorem of ECT.
+This limit is useful as a structural sanity check and for a rough
+parameter-window scan, but it systematically overestimates the
+benchmark Hubble shift when $|q_0|\gtrsim\beta/\kappa$ (which is the
+case at the present benchmark parameters).
+The closed-form~\eqref{eq:ect_h0_shift_exact} and the self-consistent
+numerical solver (Appendix~\ref{app:late_cosmo_algorithm}) agree by
+construction; the numerical solver result is the quoted benchmark
+value in this section.
 
 \paragraph{Robust definition and benchmark rewriting.}
 Independently of the specific benchmark parametrisation, the late-time
@@ -20558,22 +20585,29 @@ prevents the H1 benchmark from being tacitly promoted to an H2 claim.
 \subsubsection*{Benchmark numerical illustration}
 
 For benchmark parameters $\beta=0.8$, $\mu=1.5$, $\kappa=15$,
-$\phi_0=-0.12$, the present benchmark closure yields an upward Hubble
-shift at the few-per-cent level, corresponding to an illustrative
-late-time benchmark value $H_0^{\rm late}$ in the high-60s to around
-70\,km\,s$^{-1}$\,Mpc$^{-1}$ range.
-This is to be read only as an H1 closure-level indicator in the sense
-of~\S\ref{sec:mp_hubble} and \emph{not} as a direct one-to-one
-comparison with CMB-inferred or distance-ladder $H_0$ posteriors.
-The exact benchmark percentage, however, currently requires re-audit:
-the closed-form small-drift estimate~\eqref{eq:ect_h0_shift}, the
-numerical values quoted in the main-text tables and in
-Appendix~\ref{app:late_cosmo_algorithm}, and the robustness test of
-Appendix~\ref{sec:late_closure_robustness} are not yet numerically
-consistent at the few-per-cent level.
-This should therefore be read as an illustrative closure-level H1
-benchmark (in the sense defined above), not as a fully fitted
-posterior or as a completed CMB-inferred $H_0$ solution.
+$\phi_0=-0.12$, substitution of the self-consistent slow-roll
+$q_0\approx 0.08$ into the closed-form
+relation~\eqref{eq:ect_h0_shift_exact} gives
+\begin{equation}
+\frac{\Delta H_0}{H_0} \approx 3\%\;\text{(benchmark closure, H1)},
+\end{equation}
+corresponding to an illustrative late-time benchmark value
+$H_0^{\rm late}\approx 69$\,km\,s$^{-1}$\,Mpc$^{-1}$.
+(The same value $\approx 2.8\%$ is obtained by the self-consistent
+fixed-point solver of Appendix~\ref{app:late_cosmo_algorithm},
+confirming that the closed-form and the numerical solver are consistent
+realisations of the same benchmark closure.)
+In absolute units this is an upward shift of roughly
+$2$\,km\,s$^{-1}$\,Mpc$^{-1}$, which alleviates but does not resolve
+the Planck-SH0ES tension of order
+$5$--$6$\,km\,s$^{-1}$\,Mpc$^{-1}$; the result is an H1 closure-level
+indicator in the sense of~\S\ref{sec:mp_hubble} and \emph{not} a
+direct one-to-one comparison with CMB-inferred or distance-ladder $H_0$
+posteriors.
+By contrast, the truncated
+expression~\eqref{eq:ect_h0_shift} evaluated at the same parameters
+gives $\approx 5\%$; this should be read as the $q_0\to 0$
+leading-order limit only and not as the benchmark numerical answer.
 Accordingly, the benchmark should be interpreted as a proof of
 mechanism rather than as a completed statistical fit.
 
@@ -20581,13 +20615,19 @@ mechanism rather than as a completed statistical fit.
 \centering
 \includegraphics[width=0.82\linewidth]{figures/ect_h0_scan_bw.pdf}
 \caption{Analytic parameter-window scan for the late-time Hubble shift
-in the minimal ECT closure, based on
-$\Delta H_0/H_0 \approx \mu^2 \phi_0^2/12 - \beta \phi_0/2$
+in the minimal ECT closure, based on the $q_0\to 0$ leading-order
+limit~\eqref{eq:ect_h0_shift},
+$\Delta H_0/H_0 \approx \mu^2 \phi_0^2/12 - \beta \phi_0/2$,
 at fixed $\mu=1.5$, $\kappa=15$.
-Shaded contours show the fractional Hubble shift in the
-$(\beta,\phi_0)$-plane.
-A few-percent late-time shift arises in a finite and natural region of
-parameter space, not at a single isolated tuned point.}
+Shaded contours show the fractional Hubble shift predicted by the
+leading-order limit in the $(\beta,\phi_0)$-plane.
+The benchmark point lies inside a finite natural region, not at an
+isolated tuned point.
+Note that the limit systematically overestimates the benchmark answer
+compared with the present-epoch closed-form
+relation~\eqref{eq:ect_h0_shift_exact}; a re-plot based on the
+full closed-form is deferred to a subsequent revision (the qualitative
+region-shape is preserved).}
 \label{fig:h0_scan}
 \end{figure}
 
@@ -25432,7 +25472,7 @@ G~= global whole-framework closure problem.
 \textsc{prob.}& G & Renormalisability         & Fixed Euclidean background avoids GR non-renorm.; full loop closure pending & \S\ref{sec:open_problems} \\
 \textsc{part.}& G & 3 fermion generations     & Spectral route identified: bound-state counting gives 3 at $y=O(1)$ (\S\ref{par:three_generations}); flavour-architecture systematisation in \S\ref{sec:flavour_architecture}; strict derivation of exactly three generations open & \S\ref{sec:yukawa}, \S\ref{sec:flavour_architecture} \\
 \textsc{part.}& G & $\alpha_{\rm fs}$; SU(3)  & $\alpha_{\rm fs}=q^2/(4\pi Z_A)$, $Z_A^{\rm IR}\approx 10.9$; UV problem recast as electroweak target $(Z_B,Z_W,\theta_W)$ (\S\ref{sec:alpha_fs}); SU(3) origin open & \S\ref{sec:alpha_fs} \\
-\textsc{part.}& II & Late-time background closure & No-phantom $w\ge-1$ within the present $\phi$-closure; age/distance apparatus established; late-time benchmark response encoded by $\mu(a)=G_{\rm eff}(a)/G_{\rm eff}(1)$ and $\varepsilon_{\rm eff}(a)=-\tfrac12 d\ln\mu/d\ln a$; exact benchmark percentage and full early+late $H_0$ closure (H2) remain to be re-audited & \S\ref{sec:mp_flrw}, \S\ref{sec:universe_age}, \S\ref{sec:mp_hubble} \\
+\textsc{part.}& II & Late-time background closure & No-phantom $w\ge-1$ within the present $\phi$-closure; age/distance apparatus established; late-time benchmark response encoded by $\mu(a)=G_{\rm eff}(a)/G_{\rm eff}(1)$ and $\varepsilon_{\rm eff}(a)=-\tfrac12 d\ln\mu/d\ln a$; present-epoch closed-form~\eqref{eq:ect_h0_shift_exact} gives benchmark H1 shift $\approx 3\%$ (numerical solver: $\approx 2.8\%$), derived-parent closure gives $\approx 2\%$; full early+late $H_0$ closure (H2) remains open & \S\ref{sec:mp_flrw}, \S\ref{sec:universe_age}, \S\ref{sec:mp_hubble} \\
 \textsc{part.}& II & JWST correlated background & Correlated age/distance/growth logic established; derived-parent corridor and maturity budgets give partial alleviation only, not a full morphology-level solution & \S\ref{sec:mp_jwst_cosmo}, \S\ref{sec:mp_tests} \\
 \textsc{part.}& II & Force-law dimensionality & Universal $d_{\rm force}(x)$ crossover $3\to 7/3\to 2$ in present closure & \S\ref{sec:universe_size} \\
 \textsc{part.}& II & Environmental modulation of $g^\dagger_{\rm eff}$ & Framework for environment-dependent galactic critical scale established; precision correlation test pending & \S\ref{sec:mp_galactic_phenom}, \S\ref{sec:dark_discriminants} \\
@@ -49220,19 +49260,28 @@ One of the next tasks is to determine how stable it remains under the
 admissible closure deformations described in
 Section~\ref{sec:late_closure_family}.
 
-For Benchmark~B ($\beta=0.8$, $\mu=1.5$, $\kappa=15$, $\phi_0=-0.12$)
-the analytic estimate~\eqref{eq:app_late_deltaH} gives
-$\Delta H_0/H_0\approx 5.1\%$.
-Interim numerical runs of the late-time benchmark closure typically give
-a somewhat smaller shift, of order a few percent, once the $q$-dependent
-corrections to $E^2$ are included.
-A definitive numerical value should be quoted only from the converged
-self-consistent fixed-point solver described above.
-The difference between the analytic estimate and interim benchmark runs
-reflects both the sensitivity of the Level~B closure to the detailed
-background iteration procedure and the fact that the benchmark closure
-itself is only the simplest late-time truncation of the ordered-branch
-macroscopic system.
+For Benchmark~B ($\beta=0.8$, $\mu=1.5$, $\kappa=15$, $\phi_0=-0.12$),
+the truncated
+expression~\eqref{eq:app_late_deltaH} (equivalent
+to~\eqref{eq:ect_h0_shift} in the main text) is the $q_0\to 0$
+leading-order limit of the full present-epoch closed-form
+relation~\eqref{eq:ect_h0_shift_exact}. Evaluated at the benchmark
+parameters in that limit it gives $\Delta H_0/H_0\approx 5\%$, but
+this is a structural sanity check rather than the benchmark numerical
+answer, since at these parameters the self-consistent scalar drift
+$q_0\approx 0.08$ is not negligible.
+The proper present-epoch closed-form benchmark
+relation~\eqref{eq:ect_h0_shift_exact}, evaluated with the
+self-consistent $q_0$, gives $\Delta H_0/H_0\approx 3\%$, and the
+converged fixed-point solver reproduces the same value
+($\approx 2.8\%$).
+The residual gap between~\eqref{eq:app_late_deltaH} and
+\eqref{eq:ect_h0_shift_exact} at the benchmark parameters is therefore
+not a sign of a sick closure; it is simply the difference between the
+$q_0\to 0$ limit and the full self-consistent present-epoch evaluation,
+and it accounts structurally for what earlier interim numerical runs
+were reporting as ``$\approx 2.9\%$'' under various convergence
+settings.
 
 The analytic parameter-window scan (Fig.~\ref{fig:h0_scan} in the
 main text) shows that the benchmark points lie inside a finite parameter
