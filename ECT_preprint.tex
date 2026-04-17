@@ -17537,7 +17537,7 @@ Sector & Benchmark & NLEE channel & Role & Separability & Appendix \\
 \bottomrule
 \endfoot
 Hubble tension (\S\ref{sec:mp_hubble})
-  & $\Delta H_0/H_0\!\approx\!2.9\%$
+  & few-per-cent upward $H_0$ shift (benchmark H1 route)
   & $\Theta_{\mu\nu}\!\to\!0$ on FRW bkgd
   & Absorbed
   & Not separable
@@ -17986,6 +17986,13 @@ Accordingly, the Cassini constraint
 $|\gamma_{\rm PPN}-1|<2.3\times10^{-5}$~\cite{Bertotti2003}
 is satisfied provided the Solar-System environment lies in the screened
 GR regime described above.
+The present paper does not yet provide a quantitative transfer map
+between the screened local $\dot G/G$ regime and the cosmological
+ordered-branch drift encoded by $\varepsilon_{\rm eff}(a)$
+(\S\ref{sec:mp_hubble}): local bounds such as LLR or Cassini cannot
+therefore be converted into a direct constraint on the cosmological
+benchmark by simple one-to-one identification until that transfer
+map is derived.
 
 \paragraph{Beyond the screened limit.}
 Away from the screened/frozen-$\phi$ regime, the PPN parameters acquire
@@ -20390,10 +20397,12 @@ The quantitative magnitude of that shift remains closure-dependent.
 \paragraph{Sign theorem for the Hubble-shift route.}
 Within the present class of monotonic ordered-branch backgrounds,
 if the unscreened high-redshift branch satisfies
-$G_{\rm eff}(z)>G_N$ over the redshift range relevant to CMB
-calibration, then the inferred late-time Hubble scale obtained from
-a fixed acoustic-angle analysis is shifted upward relative to the
-screened $\Lambda$CDM limit.
+$G_{\rm eff}(z)>G_N$ over the late-time redshift range where the
+benchmark drift is active, then the inferred late-time Hubble scale
+obtained from a fixed acoustic-angle analysis is shifted upward
+relative to the screened $\Lambda$CDM limit (H1 statement; a full
+CMB-inferred $H_0$ theorem would require a genuine early+late
+pipeline in the sense of~\S\ref{sec:mp_hubble}, H2 discussion).
 
 \emph{Reason.}
 At fixed sound-horizon calibration and observed angular acoustic scale,
@@ -20442,6 +20451,10 @@ sufficiently early.
 The ECT Hubble mechanism is therefore localised in redshift: it is a
 late/intermediate-epoch effect of the ordered branch, not an
 unrestricted rescaling of the entire cosmological history.
+In particular, the benchmark slow drift is restricted to the late-time
+window and is not to be extrapolated unchanged back to recombination
+or BBN; this is what structurally prevents the H1 benchmark route from
+being tacitly promoted to an H2 CMB-inferred $H_0$ claim.
 
 \subsubsection*{Minimal benchmark closure}
 
@@ -20501,16 +20514,64 @@ At the present-epoch level, the late-time Hubble shift is controlled by
 This relation is a small-drift benchmark estimate within the present
 closure, not a closure-independent theorem of ECT.
 
+\paragraph{Robust definition and benchmark rewriting.}
+Independently of the specific benchmark parametrisation, the late-time
+effective response and its slope can be defined directly through the
+benchmark response function
+\begin{equation}
+  \mu(a)\equiv\frac{G_{\rm eff}(a)}{G_{\rm eff}(1)},
+  \qquad
+  \varepsilon_{\rm eff}(a)\equiv -\tfrac{1}{2}\,\frac{d\ln\mu}{d\ln a}.
+  \label{eq:epsilon_eff_def}
+\end{equation}
+Within the present $\phi$-first benchmark closure,
+$u/u_\infty=e^{\beta\phi}$ and $G_{\rm eff}(\phi)=1/(8\pi f(\phi))$
+with $f(\phi)=f_0e^{\beta\phi}$ give the benchmark rewriting
+\begin{equation}
+  \mu(a)=\exp\!\bigl[-\beta\bigl(\phi_b(a)-\phi_b(1)\bigr)\bigr],
+  \qquad
+  \varepsilon_{\rm eff}(a)=\frac{\beta}{2}\,q(a),
+  \qquad q=\frac{d\phi}{dN}.
+  \label{eq:epsilon_eff_benchmark}
+\end{equation}
+The constant value $\varepsilon=0.01$ imported below and in the
+ISW/JWST proxy sectors
+(\S\ref{sec:isw_diagnostic}, \S\ref{sec:mp_jwst_cosmo})
+is a late-time benchmark slope inside this closure, not an
+independently derived first-principles constant of ECT.
+
+\paragraph{H1 vs H2: what the present benchmark does and does not compute.}
+Two distinct statements must be kept separate.
+\emph{H1} is the late-time closure-level Hubble-shift route: the
+present benchmark computes a background-level upward shift of the
+late-time expansion scale within the chosen ordered-branch closure.
+\emph{H2} is a genuine CMB-inferred $H_0$ resolution: it requires a
+self-consistent early+late pipeline, including sound-horizon and
+angular-diameter-distance integrals calibrated to the observed CMB
+acoustic angle, and is \emph{not} implemented in the present paper.
+The present benchmark should therefore be read as a late-time
+closure-level route rather than as a completed CMB-to-local $H_0$
+resolution pipeline.
+The late-time localisation discussed below is what structurally
+prevents the H1 benchmark from being tacitly promoted to an H2 claim.
+
 \subsubsection*{Benchmark numerical illustration}
 
 For benchmark parameters $\beta=0.8$, $\mu=1.5$, $\kappa=15$,
-$\phi_0=-0.12$, the analytic estimate gives
-$\Delta H_0/H_0\approx 2.9\%$,
-corresponding to an illustrative value
-$H_0\approx 69.3\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$,
-intermediate between the Planck and SH0ES determinations.
-This should be read as an illustrative closure-level benchmark, not as
-a fully fitted posterior result.
+$\phi_0=-0.12$, the present benchmark closure yields an upward Hubble
+shift at the few-per-cent level, corresponding to an illustrative
+late-time value
+$H_0^{\rm late}$ intermediate between the Planck and SH0ES
+determinations.
+The exact benchmark percentage, however, currently requires re-audit:
+the closed-form small-drift estimate~\eqref{eq:ect_h0_shift}, the
+numerical values quoted in the main-text tables and in
+Appendix~\ref{app:late_cosmo_algorithm}, and the robustness test of
+Appendix~\ref{sec:late_closure_robustness} are not yet numerically
+consistent at the few-per-cent level.
+This should therefore be read as an illustrative closure-level H1
+benchmark (in the sense defined above), not as a fully fitted
+posterior or as a completed CMB-inferred $H_0$ solution.
 Accordingly, the benchmark should be interpreted as a proof of
 mechanism rather than as a completed statistical fit.
 
@@ -20597,8 +20658,8 @@ $\beta$ & 0.8 \\
 $\mu=m_\phi/H_0$ & 1.5 \\
 $\kappa=K_0/f_0$ & 15 \\
 $\phi_0=\phi(z{=}0)$ & $-0.12$ \\
-$\Delta H_0/H_0$ & $+2.9\%$ \\
-$H_0^{\rm late}$ & $69.4$\,km\,s$^{-1}$\,Mpc$^{-1}$ \\
+$\Delta H_0/H_0$ & few-per-cent (benchmark, re-audit pending) \\
+$H_0^{\rm late}$ & $\sim 69$--$70$\,km\,s$^{-1}$\,Mpc$^{-1}$ \\
 $t_0^{\rm ECT}$ & $13.1$\,Gyr \\
 $\Delta t_0/t_0$ & $-4.8\%$ \\
 $\Delta D_L/D_L$ at $z{=}10$ & $-5.4\%$ \\
@@ -20732,6 +20793,17 @@ independent family of extra cosmological fields.
 
 \paragraph{Layer~1: leading-order proxy analysis.}
 \label{sec:jwst}%  backward-compatibility alias
+The present subsection provides a leading proxy analysis rather than
+a full abundance pipeline. It does not yet implement the full chain
+$\mu(a)\to D(a)\to \text{collapse prescription}\to n(M,z)$: it only
+captures the leading response of the linear growth factor and the
+peak-rarity sensitivity.
+Accordingly, the numerical factors quoted below and in
+Table~\ref{tab:jwst_ps} should be read as indicative benchmark
+responses for the imported late-time slope used in the Hubble/ISW
+discussion, not as a precision abundance prediction or as an
+independent determination of $\varepsilon$.
+
 In the leading sub-horizon approximation, and neglecting explicit
 perturbations of the $\phi$-sector in the growth equation, one may
 write the standard continuity--Euler--Poisson system with the
@@ -20781,15 +20853,22 @@ $z$ & $\phi_b(z)$ & $f=e^{-\phi_b}$ & $\nu=5$ & $\nu=6$ \\
 \bottomrule
 \end{longtable}
 
-\textit{Quantitative assessment.}
-For the most anomalous JWST sources ($\nu\sim5$--6),
-the ECT $\phi$-mechanism predicts an overabundance of $\times2$--3
-relative to $\Lambda$CDM.
-The observed deficit is $\times10$--100~\cite{BoylanKolchin2023},
-so in its present controlled $\phi$-first form ECT \emph{alleviates
-but does not resolve} the JWST early-structure tension.
+\textit{Quantitative assessment at proxy level.}
+In the present illustrative benchmark proxy, for the most anomalous
+JWST sources ($\nu\sim5$--6) the response is at the level of
+order-unity enhancement (indicative factors $\times 1.7$--$2.6$ in
+Table~\ref{tab:jwst_ps}). The observed deficit is
+$\times10$--100~\cite{BoylanKolchin2023}, so even at face value the
+present Layer~1 proxy \emph{alleviates but does not resolve} the JWST
+early-structure tension. A full quantitative JWST assessment remains
+to be carried out in a self-consistent growth-to-abundance pipeline
+($\mu(a)\to D(a)\to \text{collapse prescription}\to n(M,z)$); the
+table is evaluated for the same imported late-time benchmark slope
+used in the Hubble/ISW proxy discussion and does not constitute an
+independent determination of~$\varepsilon$.
 With the background ansatz~\eqref{eq:Geff_z}, no additional
-numerical improvement over the leading-order estimate is obtained.
+numerical improvement over the leading-order proxy estimate is
+obtained within the present closure.
 
 The $\phi$-logic suggests that early-time global enhancement
 ($\phi_b<0$) and local screening in dense proto-galactic cores
@@ -21218,7 +21297,7 @@ Ordering transition out-of-equilibrium
   & baryogenesis compatibility \\
 
 Benchmark Hubble shift
-  & $\Delta H_0/H_0\approx 2.9\%$
+  & few-per-cent (H1 benchmark)
   & B bench.
   & \S\ref{sec:mp_hubble}
   & intermediate Planck/SH0ES \\
@@ -21851,9 +21930,10 @@ programme.
     order $13.0$--$13.5$~Gyr, with a representative benchmark near
     $13.1$~Gyr~(\S\ref{sec:universe_age}).
   \item The benchmark Hubble-shift mechanism yields an upward late-time
-    shift at the level of a few percent, with a representative value
-    $\Delta H_0/H_0\approx
-    2.9\%$~(\S\ref{sec:mp_hubble}).
+    shift at the few-per-cent level within the present H1 closure route
+    (\S\ref{sec:mp_hubble}); the exact benchmark percentage is not yet
+    stabilised between the analytic estimate, main-text tables, and
+    appendix values.
   \item In the current JWST benchmark layer, the galactic maturity
     channel is only modestly enhanced
     ($\mathcal{R}_{\rm gal}\sim1.2$), while the black-hole-assisted
@@ -24480,10 +24560,18 @@ At the present-epoch level, the late-time Hubble shift is controlled by
 \label{eq:ect_h0_shift_main}
 \end{equation}
 For benchmark parameters $\beta=0.8$, $\mu=1.5$, $\kappa=15$, $\phi_0=-0.12$
-this yields $\Delta H_0/H_0\approx 2.9\%$,
-corresponding to $H_0^{\rm late}\approx 69.3$\,km\,s$^{-1}$\,Mpc$^{-1}$.
+the closed-form estimate above yields an upward Hubble shift at the
+few-per-cent level.
+The exact numerical benchmark percentage is not yet stabilised: the
+small-drift analytic estimate, the interim benchmark-solver runs, and
+the admissible-deformation robustness test are not yet mutually
+consistent, and a definitive value should be quoted only from the
+converged fixed-point solver described in
+Appendix~\ref{app:late_cosmo_algorithm}.
 At the present stage this numerical value should be read as the output
-of a late-time Level~B ECT background closure.
+of a late-time Level~B ECT background closure (an H1 statement in the
+sense of~\S\ref{sec:mp_hubble}), not as a completed CMB-inferred
+$H_0$ solution.
 The intended background system is self-consistent at the level of the
 ECT scalar--tensor equations written below and in
 Appendix~\ref{app:late_cosmo_background}, but the detailed numerical
@@ -24607,8 +24695,8 @@ $\beta$ & 0.8 \\
 $\mu=m_\phi/H_0$ & 1.5 \\
 $\kappa=K_0/f_0$ & 15 \\
 $\phi_0=\phi(z=0)$ & $-0.12$ \\
-$\Delta H_0/H_0$ & $+2.9\%$ \\
-$H_0^{\rm late}$ & $69.4$\,km\,s$^{-1}$\,Mpc$^{-1}$ \\
+$\Delta H_0/H_0$ & few-per-cent (benchmark, re-audit pending) \\
+$H_0^{\rm late}$ & $\sim 69$--$70$\,km\,s$^{-1}$\,Mpc$^{-1}$ \\
 $t_0^{\rm ECT}$ & $13.1$\,Gyr \\
 $\Delta t_0/t_0$ & $-4.8\%$ \\
 $\Delta D_L/D_L$ at $z=10$ & $-5.4\%$ \\
@@ -24879,6 +24967,9 @@ using the same $\varepsilon=0.01$ parameter as in the Hubble-tension
 discussion, we model this effect through the response function
 $\mu(a)=G_{\rm eff}(a)/G_N=a^{-2\varepsilon}$ and the associated
 lensing combination $\Sigma(a)=\mu(a)(1+\eta)/2$.
+The ISW benchmark uses the same imported late-time benchmark slope as
+the Hubble discussion and therefore should not be read as an
+independent determination of~$\varepsilon$.
 
 At the semi-analytic Level~B considered here, the resulting
 ISW--tracer overlap proxy yields a modest enhancement of
@@ -25326,7 +25417,7 @@ G~= global whole-framework closure problem.
 \textsc{prob.}& G & Renormalisability         & Fixed Euclidean background avoids GR non-renorm.; full loop closure pending & \S\ref{sec:open_problems} \\
 \textsc{part.}& G & 3 fermion generations     & Spectral route identified: bound-state counting gives 3 at $y=O(1)$ (\S\ref{par:three_generations}); flavour-architecture systematisation in \S\ref{sec:flavour_architecture}; strict derivation of exactly three generations open & \S\ref{sec:yukawa}, \S\ref{sec:flavour_architecture} \\
 \textsc{part.}& G & $\alpha_{\rm fs}$; SU(3)  & $\alpha_{\rm fs}=q^2/(4\pi Z_A)$, $Z_A^{\rm IR}\approx 10.9$; UV problem recast as electroweak target $(Z_B,Z_W,\theta_W)$ (\S\ref{sec:alpha_fs}); SU(3) origin open & \S\ref{sec:alpha_fs} \\
-\textsc{part.}& II & Late-time background closure & No-phantom $w\ge-1$ within present $\phi$-closure; age/distance apparatus established; Hubble-shift mechanism closure-level, not final background completion & \S\ref{sec:mp_flrw}, \S\ref{sec:universe_age}, \S\ref{sec:mp_hubble} \\
+\textsc{part.}& II & Late-time background closure & No-phantom $w\ge-1$ within the present $\phi$-closure; age/distance apparatus established; late-time benchmark response encoded by $\mu(a)=G_{\rm eff}(a)/G_{\rm eff}(1)$ and $\varepsilon_{\rm eff}(a)=-\tfrac12 d\ln\mu/d\ln a$; exact benchmark percentage and full early+late $H_0$ closure (H2) remain to be re-audited & \S\ref{sec:mp_flrw}, \S\ref{sec:universe_age}, \S\ref{sec:mp_hubble} \\
 \textsc{part.}& II & JWST correlated background & Correlated age/distance/growth logic established; derived-parent corridor and maturity budgets give partial alleviation only, not a full morphology-level solution & \S\ref{sec:mp_jwst_cosmo}, \S\ref{sec:mp_tests} \\
 \textsc{part.}& II & Force-law dimensionality & Universal $d_{\rm force}(x)$ crossover $3\to 7/3\to 2$ in present closure & \S\ref{sec:universe_size} \\
 \textsc{part.}& II & Environmental modulation of $g^\dagger_{\rm eff}$ & Framework for environment-dependent galactic critical scale established; precision correlation test pending & \S\ref{sec:mp_galactic_phenom}, \S\ref{sec:dark_discriminants} \\
@@ -25498,7 +25589,7 @@ D28 & Effective shell Hamiltonian structure (form, not coefficients) & C & GL cr
 D29 & Minimal shell--radiation coupling form $\mathcal{L}_{\rm int}=-\tfrac{g}{2}\delta\chi(\partial\varphi)^2$ & C & Locality + linearity; coefficient $g$ open & \ref{app:chi_dynamics} \\
 D30 & No-phantom late-time closure: $w_\phi\ge -1$ & B & Structural consequence of $\omega(\phi)>0$ in the $\phi$-first closure & \ref{sec:mp_flrw} \\
 D31 & Age = Lorentzian ordered-branch duration & B & Conceptual reinterpretation; quantitative benchmark $t_0\sim 13.0$--$13.5$\,Gyr & \ref{sec:universe_age} \\
-D32 & Structural Hubble-shift mechanism: $\Delta H_0>0$ & B & Correlated with age, distance, JWST through same $\phi_b(z)$; benchmark $\Delta H_0/H_0\approx 2.9\%$ & \ref{sec:mp_hubble} \\
+D32 & Structural Hubble-shift mechanism: $\Delta H_0>0$ & B & Correlated with age, distance, JWST through same $\phi_b(z)$; benchmark few-per-cent H1 shift (exact value pending re-audit) & \ref{sec:mp_hubble} \\
 D33 & Correlated JWST background mechanism & B & Mixed effect: distance/time/growth all shift; BH-assisted channel more promising; partial alleviation only & \ref{sec:mp_jwst_cosmo} \\
 D34 & Force-law dimensionality $d_{\rm force}(x)$: $3\to 7/3\to 2$ & B & Universal curve from single-mode $\phi$-closure; independent of galaxy mass & \ref{sec:universe_size} \\
 D35 & Universal ordered-branch causal cone and local vacuum signal-speed bound & A & Retarded support + domain of dependence from symmetric hyperbolicity (Leray--Choquet-Bruhat) & \ref{subsec:sr_speed_bound}, \ref{app:causal_hyperbolic} \\
@@ -42147,7 +42238,7 @@ Topological mass ansatz $m_n\!\sim\!n\!\times\!1.6$\,GeV & Resonance-like struct
 Graviton polarisation: two TT modes only & Linearised condensate perturbation has no additional scalar or vector polarisations & Polarisation decomposition of stochastic GW background & B \\
 Linear LIV structure $\Delta t\!\propto\!EL/(M_{\rm Pl}c^2)$ at Planck-suppressed level & Species-independent leading LIV time-of-flight from director fluctuations; $\Delta t_{\rm GW}\!\lesssim\!10^{-64}$\,s for current GW sources & Multi-messenger GW/photon/neutrino timing & A / B \\
 No exact thermality in black-hole evaporation (conditional theorem) & Under unitarity + finite shell + complete evaporation, exact thermality is excluded; deviations structurally required & Late-stage evaporation spectrum (conceptual) & B \\
-Hubble-shift mechanism from ordered-branch $\phi$-background & Correlated shift of $H_0$, age, distance, and growth through a single $\phi_b(z)$ trajectory; benchmark $\Delta H_0/H_0\!\approx\!2.9\%$ & $H_0$ inferences vs CMB, JWST ages, late-time distance ladder & B \\
+Hubble-shift mechanism from ordered-branch $\phi$-background & Correlated shift of $H_0$, age, distance, and growth through a single $\phi_b(z)$ trajectory; benchmark few-per-cent H1 shift (exact value pending re-audit) & $H_0$ inferences vs CMB, JWST ages, late-time distance ladder & B \\
 \midrule
 \multicolumn{4}{@{}l}{\textit{Additional structural and observational handles}} \\
 \midrule
@@ -47515,10 +47606,11 @@ vacuum contribution determined by $U(0)$.
 
 \paragraph{C3.~Upward Hubble-shift sign theorem.}
 Within the class of monotonic ordered-branch backgrounds, if
-$G_{\rm eff}(z)>G_N$ over the redshift range relevant to CMB
-calibration, then the inferred late-time Hubble scale obtained from a
-fixed acoustic-angle analysis is shifted upward relative to the
-screened limit.
+$G_{\rm eff}(z)>G_N$ over the late-time redshift range where the
+benchmark drift is active, then the inferred late-time Hubble scale
+obtained from a fixed acoustic-angle analysis is shifted upward
+relative to the screened limit (H1 benchmark route; see
+\S\ref{sec:mp_hubble}).
 
 \emph{Reason.}
 At fixed sound-horizon calibration and observed angular acoustic scale,
