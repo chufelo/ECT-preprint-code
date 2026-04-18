@@ -1,0 +1,136 @@
+% ==================================================================
+% §15.5.4 REBUILT — Phase 1: Excluded and stress-test probes
+%
+% Part 4 of the §15.5 rebuild under the parallel-creation strategy.
+% Insert IMMEDIATELY AFTER §15.5.3 block.
+%
+% GPT round 9 final version (5 corrections applied):
+%   (1) Category (ii) closing paragraph softened: "enlarging the
+%       phenomenological description beyond the present ε-only layer"
+%       (not "incompatibility is structural in absolute sense").
+%   (2) BAO paragraph rephrased: methodology-limited, without
+%       "most naturally read as an artefact" (too confident).
+%   (3) A_lens paragraph rephrased without κ_A ∈ [2,4] numerics.
+%   (4) S_8 / σ_8 paragraphs: removed "independent of detailed proxy
+%       kernel choice within bracketed range"; rewritten in GPT's
+%       uniform-ε-mapping language.
+%   (5) SN Ia paragraph made neutral (no "placeholder removed"
+%       self-commentary).
+%
+% NO legacy Hubble compensation numbers anywhere.
+% NO specific legacy ε values.
+% ==================================================================
+
+\subsubsection*{\normalfont\textbf{15.5.4 \quad Excluded and stress-test probes}}
+\label{subsec:eps_excluded_rebuilt}
+
+Beyond the retained five-probe set of \S\ref{subsec:eps_retained_rebuilt},
+several additional cosmological channels were considered in the present
+analysis but are not used in the joint effective band of
+\S\ref{subsec:eps_joint_band_rebuilt}. We group them into three
+categories whose reasons for exclusion are structurally different.
+
+\paragraph{Category (i) --- methodology-limited channels.}
+These probes address the same effective $\varepsilon$-sector as the
+retained probes and could in principle re-enter the joint effective
+band at a later stage, but the present extraction pipelines are not
+yet explicit enough for headline use. The limitation is therefore
+methodological rather than structural.
+
+\begin{itemize}[leftmargin=1.4em,itemsep=2pt,topsep=4pt]
+\item \textbf{BAO (DESI 2024 DR1).} The present implementation uses a
+simplified shape-only treatment with independently fixed $\Omega_m$,
+diagonal covariance, and reduced-grid profiling of $H_0$ and $r_d$.
+Under this simplified pipeline the raw $1\sigma$ interval straddles
+$\varepsilon = 0$ and has a slightly negative central value. In the
+present paper this is treated as a methodology-limited result rather
+than as evidence against the $\varepsilon$-sector itself. Headline
+inclusion would require a full DESI likelihood with coupled
+$(\Omega_m, r_d, \varepsilon)$ fitting and the full covariance
+structure. The probe is therefore retained in the reproducibility
+pipeline, but excluded from the joint effective band.
+
+\item \textbf{$A_{\rm lens}$ CMB lensing.} The present treatment uses
+a linearised proxy of the form
+$A_{\rm lens} \approx 1 + \kappa_A\,\varepsilon$ rather than a full
+Boltzmann-level calculation. At this level the observational error bar
+is not the only uncertainty: the proxy mapping itself carries a
+substantial theoretical systematic. The resulting interval is
+therefore not robust enough for headline use. Headline inclusion would
+require a full \textsc{camb}/\textsc{class}-level analysis. The probe
+is retained in the reproducibility pipeline, but excluded from the
+joint effective band.
+\end{itemize}
+
+\paragraph{Category (ii) --- channels outside the present $\varepsilon$-sector.}
+These are distinct in kind from category~(i). In the present
+uniform-$\varepsilon$ diagnostic layer their raw $1\sigma$ support
+lies entirely at $\varepsilon < 0$. Under the physical prior
+$\varepsilon \geq 0$ adopted in \S\ref{subsec:eps_def_rebuilt},
+including them as $\varepsilon$-band constraints would therefore be a
+category error: the tension they report is not encoded in the present
+$\varepsilon$-sector as parameterised here.
+
+\begin{itemize}[leftmargin=1.4em,itemsep=2pt,topsep=4pt]
+\item \textbf{$S_8$ weak lensing (KiDS-1000).} In the present
+uniform-$\varepsilon$ mapping, the raw $1\sigma$ interval lies
+entirely at $\varepsilon < 0$. Within the $\varepsilon$-sector adopted
+here this does not act as an $\varepsilon$-band constraint but instead
+signals the separate $S_8$ tension, whose resolution is not encoded in
+a positive-drift $\varepsilon$ deformation. The probe is therefore
+classified as outside the present $\varepsilon$-sector rather than as
+a retained $\varepsilon$-channel.
+
+\item \textbf{$\sigma_8$ cluster counts.} The same structural pattern
+appears in the present simplified mapping: the raw $1\sigma$ support
+lies entirely in $\varepsilon < 0$. As for $S_8$ weak lensing, this
+identifies a tension outside the present $\varepsilon$-sector rather
+than a retained $\varepsilon$-band constraint. The probe is therefore
+excluded on structural, not merely methodological, grounds.
+\end{itemize}
+
+Unlike category~(i), the issue here is not merely an incomplete
+extraction pipeline. Within the present uniform-$\varepsilon$
+diagnostic layer, refining the $\varepsilon$-fit alone would not
+convert these probes into retained $\varepsilon$-band constraints:
+their raw support points outside the physical $\varepsilon$-sector
+adopted in \S\ref{subsec:eps_def_rebuilt}. Any successful treatment
+would therefore require enlarging the phenomenological description
+beyond the present $\varepsilon$-only layer, rather than simply
+improving the same extraction.
+
+\paragraph{Category (iii) --- non-independent or placeholder channels.}
+
+\begin{itemize}[leftmargin=1.4em,itemsep=2pt,topsep=4pt]
+\item \textbf{Age $t_0$.} Under self-consistent treatment with
+$H_0(\varepsilon)$ inherited from the Primary Hubble channel, the age
+test carries no independent $\varepsilon$-information. It is therefore
+treated as a downstream self-consistency note rather than as a
+retained $\varepsilon$-probe.
+
+\item \textbf{SN~Ia.} No retained SN~Ia $\varepsilon$-channel is
+included at the present stage. A genuine SN~Ia probe would require
+direct fitting to an observational supernova dataset with the full
+calibration and host-systematics chain. Such a pipeline is not yet
+implemented in the present analysis, so SN~Ia is not used in the
+joint effective band.
+\end{itemize}
+
+\paragraph{Cross-category principle.}
+Categories (i) and (ii) must be kept distinct. Category~(i) contains
+channels that could re-enter the retained set after a sufficiently
+upgraded extraction pipeline. Category~(ii) contains channels that,
+within the present uniform-$\varepsilon$ sector itself, do not
+function as $\varepsilon$-band constraints at all. Keeping this
+distinction explicit prevents low-$z$ structure tensions from being
+misrepresented as direct $\varepsilon$-band measurements.
+
+\paragraph{Bridge.}
+A short comparison of the present ECT effective-$\varepsilon$ result
+with alternative approaches to the same observational landscape is
+given in \S15.5.5.
+
+% ==================================================================
+% END §15.5.4 (rebuilt). §15.5.5--15.5.6 will be inserted here in
+% subsequent steps. DO NOT REMOVE existing §15.5 below.
+% ==================================================================
