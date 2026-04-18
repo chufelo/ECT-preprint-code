@@ -20353,10 +20353,130 @@ The present age estimates therefore already contain the dominant
 ordered-branch effect; any additional orientation-stress contribution
 is not independently identifiable at the current closure level.
 
+% ==================================================================
+% NEW §15.5 REBUILT — Phase 1: §15.5.1 Structural definition
+%
+% This block is Part 1 of the §15.5 rebuild under the parallel-creation
+% strategy (PROJECT_STRUCTURE.md §3.6). It is inserted IMMEDIATELY BEFORE
+% the existing §15.5 section. The existing §15.5 remains fully intact
+% below this block until all six subsections of the rebuild are complete
+% and approved (Phase 3 in §3.6).
+%
+% Subsections to be added to this block in subsequent steps:
+%   §15.5.2  Retained five-probe effective analysis
+%   §15.5.3  Joint effective allowed band and working benchmark
+%   §15.5.4  Excluded and stress-test probes
+%   §15.5.5  Comparison with other approaches
+%   §15.5.6  Interpretation and outlook
+%
+% DO NOT REMOVE the existing §15.5 below until the rebuild is complete.
+% ==================================================================
+
+\subsection*{\normalfont\textbf{Cosmological constraints on the effective drift parameter}%
+  \\[0.3ex]\normalfont\small\itshape (rebuilt version --- under construction)}
+\label{sec:cosmo_constraints_rebuilt}
+
+\subsubsection*{\normalfont\textbf{15.5.1 \quad Structural definition of the effective deformation parameter}}
+\label{subsec:eps_def_rebuilt}
+
+This subsection does not re-derive the drift sector from first principles. It fixes
+the meaning of the deformation parameter used in the cosmological analysis that follows
+and recalls the earlier structural motivation already established elsewhere in the
+preprint. Throughout \S15.5, $\varepsilon$ denotes the effective
+uniform-$\varepsilon$ parameter of the present analysis, not a first-principles
+constant of ECT. It is used as a common diagnostic layer in which several
+cosmological probes can be compared and translated into effective
+$\varepsilon$-ranges.
+
+\paragraph{Operational starting point.}
+The robust object is the normalized late-time gravitational response function,
+\begin{equation}
+  \mu(a) \;\equiv\; \frac{G_{\rm eff}(a)}{G_{\rm eff}(1)},
+  \qquad
+  \varepsilon_{\rm eff}(a) \;\equiv\; -\frac{1}{2}\,\frac{d\ln\mu}{d\ln a}.
+  \label{eq:mu_def_rebuilt}
+\end{equation}
+This definition does not yet assume that the drift sector is exactly described by a
+single constant.
+
+\paragraph{Adopted effective ansatz.}
+For the present retained-probe analysis we adopt the simplest one-parameter effective
+form. Its use here is motivated by the earlier ordered-branch response analysis in
+the preprint, where the effective gravitational response is tied to the condensate
+amplitude in the gravity-sector matching discussion (see~\S\ref{par:planck_scale}).
+In the present cosmological layer, the uniform-$\varepsilon$ ansatz is obtained by
+adopting an effective slow-drift parameterization for that amplitude,
+$u_0(a)\propto a^{\varepsilon}$, which yields
+\begin{equation}
+  \mu(a) \;=\; a^{-2\varepsilon},
+  \qquad\text{equivalently}\qquad
+  G_{\rm eff}(z) \;=\; G_N\,(1+z)^{2\varepsilon},
+  \label{eq:uniform_eps_ansatz_rebuilt}
+\end{equation}
+to be understood as a diagnostic effective layer.
+
+This step is part of the effective uniform-$\varepsilon$ parameterization used in
+\S15.5, not a first-principles derivation of the full closure-level drift dynamics.
+Any numerical interval quoted later in \S15.5 is accordingly to be read as an
+effective band under the retained five-probe uniform-$\varepsilon$ analysis, not as
+a first-principles prediction of ECT.
+
+\paragraph{Physical prior.}
+In the effective uniform-$\varepsilon$ parameterization used here, the intended
+three-stage ordered-branch relaxation picture of ECT motivates and, within the
+present diagnostic layer, requires the prior
+\begin{equation}
+  \varepsilon \;\geq\; 0.
+  \label{eq:eps_nonneg_rebuilt}
+\end{equation}
+Operationally, this is the statement that the cosmological response relaxes toward
+the present branch rather than drifting away from it.
+
+\paragraph{Operational consequence.}
+A cosmological channel whose fitted $1\sigma$ support lies entirely at
+$\varepsilon<0$ is not retained as a headline $\varepsilon$-probe in the present
+effective analysis. Within the uniform-$\varepsilon$ layer adopted here, such a
+result is interpreted either as evidence that the channel is probing physics outside
+the present $\varepsilon$-sector or as evidence that the simplified extraction
+pipeline is inadequate for that channel. The classification of such cases is given
+in \S15.5.4.
+
+\paragraph{Methodological status.}
+The parameter $\varepsilon$ is treated throughout \S15.5 at Level~B: empirically
+constrained under the retained five-probe set, the uniform-$\varepsilon$ ansatz,
+and the present analysis pipeline, with the $\Lambda$CDM-background proxy for the
+remaining cosmological parameters. No Level~A claim is made. In particular, \S15.5
+does not establish that a single constant $\varepsilon$ is the final physical
+description of the ECT drift sector. The ECT-native target remains a
+closure-derived epoch-dependent quantity $\varepsilon(z)$, logged as open problem
+\texttt{OP-Hubble-derive} (\S15.5.6).
+
+\paragraph{Bridge.}
+With this effective definition fixed, the next subsection identifies the retained
+probe set and explains what each probe actually constrains within the present
+methodology.
+
+% ==================================================================
+% END §15.5.1 (rebuilt). §15.5.2--15.5.6 will be inserted here in
+% subsequent steps. DO NOT REMOVE existing §15.5 below.
+% ==================================================================
+
 % ============================================================
 \subsection{Hubble tension: structural mechanism, benchmark closure, and robustness}
 \label{sec:mp_hubble}
 % ============================================================
+
+% ==================================================================
+% NOTE: This section is being rebuilt in parallel.
+%       See \ref{sec:cosmo_constraints_rebuilt} above for the new
+%       version under construction.
+%       Current status: \S15.5.1 (rebuilt) integrated,
+%       \S15.5.2--15.5.6 pending.
+%       Full migration inventory pending Step 2.0.
+%       DO NOT REMOVE this section until the rebuild is complete.
+%       Per-item migration annotations will be added during
+%       Step 2.0 inventory.
+% ==================================================================
 
 \textit{Status: Level~B. The structural direction of the $H_0$ shift
 (upward) follows from $G_{\rm eff}>G_N$ at high~$z$; the benchmark
