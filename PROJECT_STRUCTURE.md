@@ -2,7 +2,7 @@
 
 **Last updated:** April 18, 2026 | **Single source of truth** — update on every structural change.
 
-**Current active work:** §15.5 rebuild, Phase 1 (parallel creation). §15.5.1 v3 **INTEGRATED** into preprint (PDF page 246). Next: drafting §15.5.2.
+**Current active work:** §15.5 rebuild, Phase 1 (parallel creation). §15.5.1 + §15.5.2 integrated (PDF pp. 246–249). Next: drafting §15.5.3 (joint band + Benchmark A retention).
 
 ---
 
@@ -122,8 +122,8 @@ For §15.5.2 retained-probe table, exactly these columns in this order:
 | # | Subsection | Draft status | Integrated in preprint |
 |:-:|-----------|:------------:|:-----------------------:|
 | 15.5.1 | Structural definition | **🟢 v3 FINAL approved** | **✅ integrated 2026-04-18 (PDF p.246)** |
-| 15.5.2 | Retained 5-probe analysis | 🟡 ready to draft | — |
-| 15.5.3 | Joint band + benchmark | 🟡 queued | — |
+| 15.5.2 | Retained 5-probe analysis | **🟢 v2 FINAL approved (GPT round 5)** | **✅ integrated 2026-04-18 (PDF pp.247–249)** |
+| 15.5.3 | Joint band + benchmark | 🟡 next (Benchmark A retention + fig:h0_scan migration) | — |
 | 15.5.4 | Excluded probes | 🟡 queued | — |
 | 15.5.5 | Comparison with other approaches | 🟡 queued | — |
 | 15.5.6 | Interpretation and outlook | 🟡 queued | — |
@@ -190,7 +190,8 @@ Grayscale only; linestyles for distinction.
 
 | Date | Change |
 |------|--------|
-| 2026-04-18 | **§15.5.1 v3 INTEGRATED** into `ECT_preprint.tex` via parallel-creation strategy (§3.6 Phase 1). New `\subsection*{...rebuilt version --- under construction}` + `\subsubsection*{15.5.1 Structural definition...}` inserted immediately before existing §15.5 (line 20357). Labels: `sec:cosmo_constraints_rebuilt`, `subsec:eps_def_rebuilt`. Old §15.5 fully intact with top-of-section "rebuilt in parallel" annotation. **Page delta: 638 → 639 (+1).** Compile clean: 0 errors, 0 undefined refs, 0 multiply-defined labels; +1 overfull vbox (8.7pt, cosmetic). Backup: `ECT_preprint_BACKUP_v1_pre_s15_5_rebuild.tex` (MD5 a571bc9b71e0f47f354f551679b77320). Script: `scripts/insert_s15_5_1.py` |
+| 2026-04-18 | **§15.5.2 INTEGRATED** into `ECT_preprint.tex` via parallel-creation strategy (§3.6 Phase 1). New `\subsubsection*{15.5.2 Retained five-probe effective analysis}` + LOCKED 5-column retained-probe table + 5 per-probe paragraphs + non-independence paragraph, inserted after §15.5.1 block and before old §15.5 annotation. **GPT round 5 corrections applied**: Hubble "effective distance-ratio proxy" softening + explicit "H1-type extraction, not full H2/CMB pipeline" statement; JWST "representative enhancement target of order R~10" softening + explicit "proxy-level, not full structure-formation pipeline" statement; fσ_8 "raw likelihood maximum" wording; ISW explicit "linearised proxy ... rather than a full fit to C_ℓ^Tg estimator"; non-independence paragraph strengthened with shared-ingredient specifics; "working effective benchmark" removed from bridge (→ "joint effective band"); table Hubble/JWST rows hardened. **7 new labels resolved cleanly** (subsec:eps_retained_rebuilt, tab:eps_retained_probes_rebuilt, eq:eps_{hubble,jwst,cc,fsigma8,isw}_retained); PDF pp. 247–249. **Page delta: 639 → 641 (+2).** Compile: 0 errors, 0 undef refs, 0 multiply-defined. Numerics from `scripts/epsilon_convergence/result_ch{1,2,3,4,8}.json`. Backup: `ECT_preprint_BACKUP_v3_pre_s15_5_2.tex` (MD5 b019f1cb79bd47f3df43c8b193bcc4f0). Script: `scripts/insert_s15_5_2.py`. Companion no-loss inventory: `proposals/drafts_for_integration/02_s15_5_2_INVENTORY.md` (14 items of old §15.5 with Phase 3 disposition). |
+| 2026-04-18 | **§15.5.1 v3 INTEGRATED** into `ECT_preprint.tex` via parallel-creation strategy (§3.6 Phase 1). New `\subsection*{...rebuilt version --- under construction}` + `\subsubsection*{15.5.1 Structural definition...}` inserted immediately before existing §15.5 (line 20357). Labels: `sec:cosmo_constraints_rebuilt`, `subsec:eps_def_rebuilt`. Old §15.5 fully intact with top-of-section "rebuilt in parallel" annotation. **Page delta: 638 → 639 (+1).** Compile clean: 0 errors, 0 undefined refs, 0 multiply-defined labels; +1 overfull vbox (8.7pt, cosmetic). Backup: `ECT_preprint_BACKUP_v1_pre_s15_5_rebuild.tex` (MD5 a571bc9b71e0f47f354f551679b77320). Script: `scripts/insert_s15_5_1.py`. **GPT round 4 follow-up fixes (same commit):** placeholder TODO resolved to `\ref{par:planck_scale}`; `v_0` → `u_0` (notation alignment with rest of preprint); "controlled by" → "tied to" (softer phrasing per GPT). |
 | 2026-04-17 | Proposals v1→v3 + corrections; drafting phase began |
 | 2026-04-17 | **§15.5.1 v3 FINAL** approved (GPT review round 4 passed): opening does-not-re-derive statement; physical prior softened to "motivates and, within the present diagnostic layer, requires the prior"; operational consequence as decision-of-analysis ("is not retained as a headline ε-probe"); cross-ref placeholder added for v_0^{-2}; "retained five-probe uniform-ε analysis" shortened phrasing |
 | 2026-04-17 | Prepared `01_s15_5_1_LATEX_SNIPPET.tex` + `01_INSERTION_GUIDE.md` for user-side physical insertion |

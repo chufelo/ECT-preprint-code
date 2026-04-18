@@ -20457,9 +20457,220 @@ probe set and explains what each probe actually constrains within the present
 methodology.
 
 % ==================================================================
-% END §15.5.1 (rebuilt). §15.5.2--15.5.6 will be inserted here in
+% END §15.5.1 (rebuilt). §15.5.2 follows below.
+% ==================================================================
+
+% ==================================================================
+% §15.5.2 REBUILT — Phase 1: Retained five-probe effective analysis
+%
+% This block is Part 2 of the §15.5 rebuild under the parallel-creation
+% strategy (PROJECT_STRUCTURE.md §3.6). It is inserted IMMEDIATELY AFTER
+% the §15.5.1 block (label: subsec:eps_def_rebuilt) and BEFORE the
+% closing delimiter of the rebuild parent block.
+%
+% LOCKED 5-column retained-probe table schema (PROJECT_STRUCTURE.md §3.8).
+% Numerics from scripts/epsilon_convergence/result_ch{1..4,8}.json.
+% GPT v2 round 5 corrections applied (2026-04-18).
+% ==================================================================
+
+\subsubsection*{\normalfont\textbf{15.5.2 \quad Retained five-probe effective analysis}}
+\label{subsec:eps_retained_rebuilt}
+
+With the effective meaning of $\varepsilon$ fixed in
+\S\ref{subsec:eps_def_rebuilt}, we now specify which cosmological probes
+are retained for the present uniform-$\varepsilon$ analysis, what each
+of them actually constrains, and how their resulting effective intervals
+are to be interpreted.
+
+\paragraph{Retention criterion.}
+A probe is retained in \S15.5 only if it constrains the present
+effective $\varepsilon$-sector rather than a distinct physical sector,
+and if its extraction pipeline is sufficiently explicit that an
+effective interval can be stated without importing an uncontrolled
+external likelihood. Five probes satisfy this criterion under the
+uniform-$\varepsilon$ ansatz and the $\Lambda$CDM-background proxy
+$(\Omega_m = 0.315,\ \Omega_\Lambda = 0.685)$; all other probes
+considered in the present analysis are discussed in \S15.5.4.
+
+\begin{table}[htbp]
+\centering
+\renewcommand{\arraystretch}{1.25}
+\small
+\begin{tabular}{@{}p{2.6cm}p{3.1cm}p{3.4cm}p{3.0cm}p{1.6cm}@{}}
+\toprule
+\textbf{Probe} & \textbf{Nature of constraint} & \textbf{What is actually fitted} & \textbf{Kernel / epoch sensitivity} & \textbf{Role} \\
+\midrule
+Hubble $+\,r_s$ &
+two-sided effective extraction &
+$\varepsilon$ from the Hubble-channel distance-ratio proxy under the present simplified $r_s$ treatment &
+broad integrated kernel, CMB-era proxy scale to $z=0$ &
+Primary \\
+\addlinespace
+JWST early-galaxy excess &
+two-sided effective extraction (broad) &
+$\varepsilon$ from the Press--Schechter proxy for the high-$z$ abundance enhancement at $z\approx 8$--$12$ &
+high-$z$ structure-growth window &
+Primary \\
+\addlinespace
+Cosmic chronometers &
+one-sided consistency bound under $\varepsilon\geq 0$ &
+$\chi^2$ fit of $H(z)$ residuals in the $\Lambda$CDM-background proxy &
+direct late-time expansion, $0.07\leq z\leq 1.97$ &
+Consistency \\
+\addlinespace
+$f\sigma_8$ from RSD &
+one-sided consistency bound under $\varepsilon\geq 0$ &
+$\varepsilon$ in the linear-growth ODE likelihood &
+late-time growth, $z\lesssim 2$ &
+Consistency \\
+\addlinespace
+ISW amplitude &
+one-sided consistency bound under $\varepsilon\geq 0$ &
+$\varepsilon$ through the linearised ISW proxy amplitude &
+late-time potential evolution, $z\lesssim 2$ &
+Consistency \\
+\bottomrule
+\end{tabular}
+\caption{Retained five-probe set for the present effective
+uniform-$\varepsilon$ analysis. ``Primary'' probes provide two-sided
+effective extraction intervals; ``Consistency'' probes provide
+one-sided upper bounds under the physical prior
+$\varepsilon\geq 0$ introduced in \S\ref{subsec:eps_def_rebuilt}.}
+\label{tab:eps_retained_probes_rebuilt}
+\end{table}
+
+\paragraph{Two-sided vs upper-bound distinction.}
+Within the retained five-probe set, Hubble$+r_s$ and the JWST
+early-galaxy excess provide two-sided effective extraction intervals,
+whereas cosmic chronometers, $f\sigma_8$ from RSD, and the ISW
+amplitude are retained as late-time consistency channels whose raw
+likelihoods are compatible with $\varepsilon = 0$ and are therefore
+reported here as one-sided upper bounds under the physical prior
+$\varepsilon\geq 0$ introduced in \S\ref{subsec:eps_def_rebuilt}.
+
+\paragraph{Probe 1 --- Hubble $+\,r_s$ (two-sided effective extraction).}
+The SH0ES distance-ladder determination
+$H_0 = 73.04\pm1.04~\mathrm{km\,s^{-1}\,Mpc^{-1}}$~\cite{Riess2022}
+and the Planck 2018 base-$\Lambda$CDM value
+$H_0 = 67.4\pm0.5~\mathrm{km\,s^{-1}\,Mpc^{-1}}$~\cite{Planck2018}
+define an observed tension of $\sim 5\sigma$.
+Recent CCHP/JWST determinations fall near
+$H_0 \sim 70~\mathrm{km\,s^{-1}\,Mpc^{-1}}$~\cite{Freedman2024},
+intermediate between the two.
+The effective distance-ratio proxy adopted here for the Hubble-tension
+channel, evaluated within the uniform-$\varepsilon$ ansatz on the
+$\Lambda$CDM-background proxy and with the present simplified treatment
+of $r_s$, yields a two-sided effective interval centred at
+\begin{equation}
+  \varepsilon_{\rm H} \;=\; 0.032,
+  \qquad
+  \text{1\,\ensuremath{\sigma}:}\ [0.027,\,0.038],
+  \qquad
+  \text{2\,\ensuremath{\sigma}:}\ [0.021,\,0.043].
+  \label{eq:eps_hubble_retained}
+\end{equation}
+This should be read as an effective H1-type extraction under the
+present $r_s$ treatment, not as a full Boltzmann/CMB-likelihood
+implementation of the H2 programme.
+
+\paragraph{Probe 2 --- JWST early-galaxy excess (two-sided effective extraction; binding below).}
+Reported high-$z$ stellar-mass abundances at $z\approx 8$--$12$ suggest
+a representative enhancement target of order $R \sim 10$, with a broader
+observationally discussed range of roughly $3$--$100$, relative to
+baseline $\Lambda$CDM expectations for the relevant mass scales. A
+Press--Schechter proxy tying $G_{\rm eff}(z)$ to the halo mass function
+through the linear growth factor, on the same $\Lambda$CDM-background
+proxy and without full growth-ODE integration or halo-to-stellar-mass
+mapping, yields a two-sided effective interval centred at
+\begin{equation}
+  \varepsilon_{\rm JWST} \;=\; 0.042,
+  \qquad
+  \text{1\,\ensuremath{\sigma}:}\ [0.029,\,0.071],
+  \qquad
+  \text{2\,\ensuremath{\sigma}:}\ [0.013,\,0.179].
+  \label{eq:eps_jwst_retained}
+\end{equation}
+This interval should be read as a proxy-level effective extraction
+within the present Press--Schechter treatment, not as the result of a
+full structure-formation pipeline with transfer-function, baryonic, and
+halo-to-stellar-mass systematics propagated end-to-end. The lower edge
+$\varepsilon=0.029$ is the binding lower bound of the joint effective
+band reported in \S15.5.3.
+
+\paragraph{Probe 3 --- Cosmic chronometers (one-sided consistency bound under $\varepsilon\geq 0$).}
+Moresco-compilation $H(z)$ points at $z=0.07$--$1.97$ are fit against
+the effective expansion
+$H^{\rm ECT}(z) = H_0\sqrt{\Omega_m(1+z)^{3+2\varepsilon}
+  + \Omega_\Lambda(1+z)^{2\varepsilon}}$
+with $\Omega_m=0.315$ fixed and $(\varepsilon,H_0)$ varied. The raw
+best-fit $\varepsilon = 0.006$ is compatible with $\varepsilon=0$;
+under the physical prior the probe enters as a one-sided upper bound
+\begin{equation}
+  \varepsilon_{\rm CC}\ :\
+  \text{1\,\ensuremath{\sigma}\ upper } 0.087,\quad
+  \text{2\,\ensuremath{\sigma}\ upper } 0.150.
+  \label{eq:eps_cc_retained}
+\end{equation}
+The constraint is weak; its role is late-time consistency, not
+extraction.
+
+\paragraph{Probe 4 --- $f\sigma_8$ from RSD (one-sided consistency bound; binding above).}
+Fourteen RSD measurements at $z=0.07$--$1.94$ are fit by integrating
+the linear-growth ODE for the density contrast $\delta(a)$ with a
+modified Poisson source driven by $G_{\rm eff}(a)$, profiling
+$\sigma_8(0)$ freely. A strong $\sigma_8$--$\varepsilon$ degeneracy
+leaves the raw likelihood maximum near $\varepsilon \approx -0.06$,
+without a physically meaningful lower branch in the present ECT
+interpretation; under the physical prior this channel is therefore
+reported as a one-sided upper bound
+\begin{equation}
+  \varepsilon_{f\sigma_8}\ :\
+  \text{1\,\ensuremath{\sigma}\ upper } 0.036,\quad
+  \text{2\,\ensuremath{\sigma}\ upper } 0.120.
+  \label{eq:eps_fsigma8_retained}
+\end{equation}
+The $1\sigma$ upper is the binding upper bound of the joint effective
+band reported in \S15.5.3.
+
+\paragraph{Probe 5 --- ISW amplitude (one-sided consistency bound under $\varepsilon\geq 0$).}
+A linearised proxy $A_{\rm ISW}\approx 1+\kappa_A\,\varepsilon$, rather
+than a full fit to the observed $C_\ell^{Tg}$ estimator, is compared to
+Planck$+$CMB-cross-correlation data on the ISW window $z\lesssim 2$
+under $\Lambda$CDM-background Limber weights. The raw central
+$\varepsilon\approx -0.007$ is compatible with $\varepsilon=0$
+within a large $\sigma$; under the physical prior the probe enters as
+a one-sided upper bound
+\begin{equation}
+  \varepsilon_{\rm ISW}\ :\
+  \text{1\,\ensuremath{\sigma}\ upper } 0.043,\quad
+  \text{2\,\ensuremath{\sigma}\ upper } 0.093.
+  \label{eq:eps_isw_retained}
+\end{equation}
+Role: consistency, not extraction.
+
+\paragraph{Effective consistency window, not a global joint likelihood.}
+The retained five-probe set should not be read as a full statistically
+independent joint likelihood. It is an effective multi-probe
+comparison performed within a common diagnostic uniform-$\varepsilon$
+layer, with partially shared background and growth ingredients across
+some channels. The resulting band in \S15.5.3 is therefore an
+effective consistency window under the present methodology, not a
+first-principles ECT prediction and not a final global MCMC
+determination. In particular, Hubble and cosmic chronometers share
+background-expansion ingredients, while JWST, $f\sigma_8$, and ISW
+partially overlap in their dependence on late-time growth or potential
+evolution.
+
+\paragraph{Bridge.}
+The combined $1\sigma$ and $2\sigma$ intervals of these five effective
+channels, and the resulting joint effective band under the present
+methodology, are taken up in \S15.5.3.
+
+% ==================================================================
+% END §15.5.2 (rebuilt). §15.5.3--15.5.6 will be inserted here in
 % subsequent steps. DO NOT REMOVE existing §15.5 below.
 % ==================================================================
+
 
 % ============================================================
 \subsection{Hubble tension: structural mechanism, benchmark closure, and robustness}
@@ -20470,8 +20681,8 @@ methodology.
 % NOTE: This section is being rebuilt in parallel.
 %       See \ref{sec:cosmo_constraints_rebuilt} above for the new
 %       version under construction.
-%       Current status: \S15.5.1 (rebuilt) integrated,
-%       \S15.5.2--15.5.6 pending.
+%       Current status: \S15.5.1 and \S15.5.2 (rebuilt) integrated,
+%       \S15.5.3--15.5.6 pending.
 %       Full migration inventory pending Step 2.0.
 %       DO NOT REMOVE this section until the rebuild is complete.
 %       Per-item migration annotations will be added during
