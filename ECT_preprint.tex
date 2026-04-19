@@ -20806,7 +20806,7 @@ effective allowed band, identify the working benchmark used in the
 rebuilt \S15.5, and state its relationship to the earlier conservative
 illustrative point used in the previous preprint treatment of the
 Hubble mechanism
-(\S\ref{sec:universe_age}, \S\ref{subsec:eps_joint_band}).
+(\S\ref{sec:universe_age}).
 
 \paragraph{Headline result.}
 Under the retained five-probe set, within the uniform-$\varepsilon$
@@ -21322,19 +21322,19 @@ systematics.
 \paragraph{Age-viability ambiguity under Hubble mapping.}
 Evaluating the cosmic age self-consistently through the common
 background module of Appendix~\ref{app:eps_methodology} at the
-retained-band central value $\varepsilon = 0.0336$ gives two distinct
-numerical outcomes depending on which $H_0$-mapping is adopted: a
-baseline-background age of approximately $13.46~\mathrm{Gyr}$ at
-$H_0 = 67.4~\mathrm{km\,s^{-1}\,Mpc^{-1}}$, within
-$0.15\sigma$ of the Valcin et al.\ 2021 globular-cluster anchor
+retained-band central value gives two distinct numerical readings
+depending on which $H_0$-mapping is adopted: a baseline-background
+age of about $13.5~\mathrm{Gyr}$, close to the Valcin et al.\ 2021
+globular-cluster anchor
 $t_0 \geq 13.50 \pm 0.27~\mathrm{Gyr}$; or an inferred-$H_0$-mapped
-age of approximately $12.52~\mathrm{Gyr}$, roughly $3.6\sigma$ below
-the same anchor. This is recorded as a viability/self-consistency
-note, not as a new retained probe and not as a new formal open
-problem; its interpretation depends on which mapping is physically
-correct and is bound up with the closure-level derivation of
-$\varepsilon(z)$ itself (OP-Hubble-derive). A dedicated discussion is
-given in Appendix~\ref{app:eps_methodology} (AF.4).
+age of about $12.5~\mathrm{Gyr}$, which falls noticeably below that
+anchor. This is recorded as a viability/self-consistency note, not as
+a new retained probe and not as a new formal open problem; its
+interpretation depends on which mapping is physically correct and is
+bound up with the closure-level derivation of $\varepsilon(z)$ itself
+(OP-Hubble-derive). Exact technical values for the two mappings, and
+the precise sigma distance to the globular-cluster anchor, are
+collected in Appendix~\ref{app:eps_methodology} (AF.4).
 
 \paragraph{Parsimony and correlations.}
 In a closure-level extension, the same underlying drift mechanism
@@ -24753,168 +24753,49 @@ Appendix~\ref{app:late_cosmo_algorithm}. The retained-band
 methodology that replaces the earlier benchmark-centric narrative
 is collected in Appendix~\ref{app:eps_methodology}.
 
-\subsubsection*{Numerical robustness under admissible late-time deformations}
+\subsubsection*{Numerical robustness under admissible late-time deformations
+(legacy auxiliary layer)}
 \label{sec:late_cosmo_robustness_main}
 
-The benchmark results above should not be interpreted as if they were
-attached to a unique final late-time closure.
-As explained in Appendix~\ref{sec:late_closure_family}, the benchmark
-choice
-\[
-K(\phi)=K_0,
-\qquad
-V(\phi)=V_0+\frac12 m_\phi^2\phi^2
-\]
-is only the first explicit member of a wider admissible family of
-late-time amplitude-sector closures.
+\textit{Legacy pointer.} The earlier benchmark and derived-parent
+robustness scans --- including the admissible-deformation test of the
+amplitude-sector closure and the associated numerical stability
+checks --- are preserved for continuity in the late-time background
+appendices (Appendix~\ref{app:late_cosmo_background} and
+Appendix~\ref{app:late_cosmo_algorithm}) and should be read as
+legacy auxiliary material, not as the current cosmological headline.
+The current headline cosmological result is the retained five-probe
+band of \S\ref{subsec:eps_joint_band}; everything in the present
+legacy layer is kept only to document the numerical infrastructure
+on which the retained-band diagnostic pipeline is built.
 
-For this reason, the relevant numerical question is not only whether the
-benchmark closure produces a few-percent Hubble shift, but also whether
-its qualitative outputs remain stable under admissible deformations of
-the kinetic and potential sectors.
-The current article therefore distinguishes three layers:
-
-\begin{enumerate}
-  \item the structural late-time background system inherited from the
-  macroscopic ordered-branch reduction;
-  \item the benchmark closure used for the present figures and tables;
-  \item the wider admissible family of deformed closures to be tested
-  numerically against that benchmark.
-\end{enumerate}
-
-This distinction is essential for avoiding phenomenological overreach:
-the benchmark is scientifically useful only insofar as its qualitative
-outputs persist across admissible deformations of the parent closure.
-The present benchmark remains useful because it isolates the leading
-effect of condensate-amplitude drift with minimal parameter freedom.
-However, future numerical comparisons between the benchmark and deformed
-closures are required to determine which outputs are robust features of
-the ordered-branch logic and which are artefacts of the simplest
-truncation.
-This applies especially to the late inferred $H_0$, the age quantities
-$t_0$ and $t_U(z)$, the galaxy-lifetime grids
-$t_{\rm gal}(z_{\rm obs};z_{\rm form})$, and the growth proxy used in
-the current JWST discussion.
-
-A first code-level robustness check has already been performed for a
-mild admissible deformation of the benchmark closure, for example
-\[
-k_1=0.2,\qquad \lambda_3=0.1,
-\qquad k_2=\lambda_4=0.
-\]
-In this test the late-time Hubble shift remains close to the benchmark
-value:
-the benchmark run gives
-\[
-\Delta H_0/H_0 \approx 2.90\%,
-\]
-while the deformed run gives
-\[
-\Delta H_0/H_0 \approx 2.85\%.
-\]
-The present-age and JWST-age quantities change only weakly at the same
-level of deformation.
-All robustness statements in the present subsection refer to the
-benchmark late-time truncation, not yet to the full derived condensate
-background dynamics.
-This does not yet establish full robustness of the late-time closure,
-but it already shows that the benchmark result is not destroyed by mild
-admissible amplitude-sector deformations.
-
-\subsubsection*{Derived-parent condensate: parameter corridor, linear growth, and JWST maturity budget}
+\subsubsection*{Derived-parent condensate: legacy auxiliary scan
+and JWST maturity budget (legacy auxiliary layer)}
 \label{sec:derived_parent_jwst_main}
 
-Beyond the benchmark truncation, the first non-benchmark numerical layer
-is the
-full derived-parent condensate background with
-\[
-\omega(\phi)=\omega_0 e^{2\beta\phi},
-\qquad
-\Omega_U(\phi)=\Omega_{V*}+A_2\bigl(e^{\beta\phi}-1\bigr)^2,
-\]
-keeping $\beta=0.8$, $\mu=1.5$, $A_2=\mu^2/(6\beta^2)$, $A_3=A_4=0$.
-A first systematic scan over the $(\omega_0,\phi_0)$ plane identifies a
-few-percent H1 benchmark corridor with
-\[
-\omega_0\sim 25\text{--}40,
-\qquad
-\phi_0\sim -0.10\text{ to }-0.08,
-\]
-in which the late inferred Hubble shift is positive and the
-derived-parent background remains numerically viable.
-Three representative working points are summarised in
-Table~\ref{tab:derived_parent_working_points}.
-The most useful current point (late-time-shift-priority, H1 benchmark) is
-\[
-\omega_0=30,\qquad \phi_0=-0.10,
-\]
-for which the present derived-parent scan returns an illustrative
-H1-level upward shift of order a few per cent (numerically $\sim 2.7\%$
-in the current implementation), to be read as a provisional scan
-output pending the dedicated Hubble re-audit. The background-age
-observables for the same point are
-\begin{gather*}
-t_0\approx 13.02~{\rm Gyr},
-\qquad
-t_U(z=10)\approx 0.394~{\rm Gyr}.
-\end{gather*}
-
-For these same backgrounds, the full linear growth equation
-\[
-D^{\prime\prime}+\Bigl(2+\tfrac{H^{\prime}}{H}\Bigr)D^{\prime}
--\frac{3}{2}\Omega_m(z)\frac{G_{\rm eff}(z)}{G_N}D=0
-\]
-has been solved numerically on the derived-parent background
-(not replaced by a heuristic proxy);
-its derivation is given in Appendix~\ref{sec:ect_linear_growth_derivation}.
-The result is that the derived-parent corridor does \emph{not} resolve the
-JWST tension through linear growth alone: for the representative working
-points, $D(z=10)/D_{\rm ref}(z=10)\approx 0.98$--$0.99$,
-so growth is nearly neutral once Hubble friction is included.
-
-The combined maturity budget for the representative JWST anchor cases
-(JADES-GS-z14-0 at $z=14.32$, GN-z11 at $z=10.60$, a mini-quenched
-system at $z=7.3$, and RUBIES-EGS-QG-1 at $z=4.90$) shows:
-\begin{enumerate}
-  \item the background age of the Universe at observation is smaller
-  than in the reference history, requiring a minimum speed-up factor
-  $\mathcal R_{\rm req}\sim 1.19$--$1.24$ depending on the case;
-  \item the semi-analytic galaxy-assembly maturity factor
-  $\mathcal R_{\rm gal}\equiv (D_{\rm ECT}/D_{\rm ref})\cdot(t_{\rm ff}^{\rm ref}/t_{\rm ff}^{\rm ECT})\approx 1.21$--$1.23$
-  is close to and in several cases above the required threshold;
-  \item the BH-assisted maturity factor
-  $\mathcal R_{\rm BH}\equiv (D_{\rm ECT}/D_{\rm ref})\cdot(t_{\rm BH}^{\rm ref}/t_{\rm BH}^{\rm ECT})\approx 1.48$--$1.54$
-  is clearly above the required threshold.
-\end{enumerate}
-The precise definitions and status of these semi-analytic maturity
-factors are recorded in Appendix~\ref{sec:ect_maturity_factors}.
-These factors should be read as semi-analytic development budgets rather
-than direct morphology-level predictions.
-Therefore the present derived-parent ECT corridor already provides a
-quantitatively plausible partial mechanism for BH-assisted and compact-core
-driven early maturity, while for ordinary galaxy-assembly channels the
-compensation is close to but not yet unambiguously above the required level.
-This should be interpreted as a concrete partial result rather than a
-complete resolution.
-The corresponding numerical pipeline is recorded explicitly in
-Appendix~\ref{sec:derived_parent_pipeline}.
-The representative JWST cases are recorded internally in the
-late-cosmology apparatus.
-The comparative cosmological timeline is given in
-Fig.~\ref{fig:timeline}, while
+\textit{Legacy pointer.} The older derived-parent corridor, the
+$(\omega_0,\phi_0)$ working-point scan summarised in
+Table~\ref{tab:derived_parent_working_points}, and the associated
+semi-analytic JWST maturity budget (linear-growth solver on the
+derived-parent background, maturity factors
+$\mathcal R_{\rm gal}$ and $\mathcal R_{\rm BH}$, and the
+representative JWST anchor cases) are retained only as an auxiliary
+exploratory layer of the cosmological apparatus. The precise
+definitions, the full linear-growth derivation, the maturity factor
+conventions, and the numerical pipeline are recorded in the
+dedicated cosmology appendices
+(Appendix~\ref{sec:ect_linear_growth_derivation},
+Appendix~\ref{sec:ect_maturity_factors}, and
+Appendix~\ref{sec:derived_parent_pipeline}). The comparative
+cosmological timeline is given in Fig.~\ref{fig:timeline}, and
 Fig.~\ref{fig:ect_full_condensate_universe_evolution} shows the
-internal multi-sector organisation of the ECT picture itself.
-This figure should not be interpreted as a direct comparison of
-absolute cosmic ages with $\Lambda$CDM; its role is instead to
-organise the internal ECT layers: ordering, gravitational condensate
-evolution, electroweak condensation, and the observable Universe.
-The late-time amplitude-sector detail is also shown in
-Figure~\ref{fig:ect_full_condensate_universe_evolution}.
-The present late-time Hubble--JWST analysis resolves only the
-gravitational condensate amplitude sector~(ii) quantitatively;
-the other layers in Figure~\ref{fig:ect_full_condensate_universe_evolution}
-represent the current conceptual ECT picture rather than equally
-resolved numerical sectors.
+internal multi-sector organisation of the ECT picture itself, which
+should not be interpreted as a direct comparison of absolute cosmic
+ages with $\Lambda$CDM. The current headline cosmological extraction
+is the retained five-probe band of \S\ref{subsec:eps_joint_band} and
+Appendix~\ref{app:eps_extraction_hubble}--Appendix~\ref{app:eps_methodology};
+the present subsection and its table are \emph{not} the current
+cosmological headline.
 
 \renewcommand{\arraystretch}{1.15}
 \begin{longtable}{@{}p{1.9cm}p{1.9cm}p{1.9cm}p{1.9cm}p{1.9cm}p{1.9cm}p{1.9cm}@{}}
@@ -24953,57 +24834,34 @@ are reproduced in the retained \S\ref{sec:cosmo_constraints} layer.
 
 
 \FloatBarrier
-\subsubsection*{Observational signatures compatible with accelerated early development}
+\subsubsection*{Observational signatures compatible with accelerated
+early development}
 \label{sec:jwst_observational_signatures}
 
-The present ECT maturity mechanism suggests a set of qualitative
-observational signatures, some already discussed in the literature
-and others remaining as predictions.
-
-\paragraph{Already discussed observationally.}
-JWST has revealed early candidates for overmassive SMBHs relative to
-their stellar host galaxies~\cite{Juodzbalis2024,Maiolino2024},
-very early luminous and massive galaxy
-systems (including spectroscopically confirmed objects at
-$z\gtrsim 14$~\cite{Carniani2024}),
-and massive quiescent galaxies at unexpectedly high
-redshifts~\cite{deGraaff2024,Nanayakkara2024,BoylanKolchin2023}.
-A notable signature is the displacement of some early objects along the
+The retained-band cosmological framework of \S\ref{subsec:eps_joint_band}
+is consistent with, and motivated by, a set of qualitative observational
+signatures of accelerated early development already discussed in the
+literature. JWST has revealed early candidates for overmassive SMBHs
+relative to their stellar host
+galaxies~\cite{Juodzbalis2024,Maiolino2024}, very early luminous and
+massive galaxy systems (including spectroscopically confirmed objects
+at $z\gtrsim 14$~\cite{Carniani2024}), and massive quiescent galaxies
+at unexpectedly high
+redshifts~\cite{deGraaff2024,Nanayakkara2024,BoylanKolchin2023}. A
+notable signature is the displacement of some early objects along the
 $M_{\rm BH}$--$M_\star$ relation while remaining closer to the local
 $M_{\rm BH}$--$\sigma$ relation~\cite{Juodzbalis2024}, which is
 qualitatively consistent with a maturity channel where central compact
-objects develop faster than the stellar host component.
-This complements earlier evidence of unusually luminous and active
-objects at $z\sim 10$--$11$, such as GN-z11~\cite{Maiolino2024,Bunker2023}.
-These observations do not prove ECT, but they motivate precisely the
-accelerated maturity channels identified here.
-
-\paragraph{Qualitatively consistent with the present ECT mechanism.}
-The current derived-parent maturity budget particularly favours
-BH-assisted and compact-core driven maturity channels rather than a
-purely linear-growth solution.
-Objects that appear unusually mature or quiescent at high redshift are
-thus the most natural testing ground for the present mechanism.
-
-\paragraph{Predictions still to be tested.}
-The framework also predicts possible systematic shifts in velocity
-dispersions or virial speeds at fixed host mass, compact rapidly
-assembled massive hosts, and a potential dependence on environment
-through the background condensate history.
-These remain predictions rather than established results at the
-present stage.
-
-\paragraph{Status.}
-The present derived-parent results constitute the first non-benchmark
-numerical layer of the theory: they go beyond the earlier heuristic
-proxy analysis, but fall short of a full morphology-level calculation.
-Full linear growth has been solved on the derived-parent background;
-semi-analytic maturity factors have been combined with the background
-age budget; but a complete N-body or hydrodynamical structure-formation
-program remains an open next step.
-These signatures should therefore be interpreted as a mixture of
-already-discussed observational tendencies and explicit ECT predictions,
-not as a closed confirmation set.
+objects develop faster than the stellar host
+component~\cite{Maiolino2024,Bunker2023}. These observations do not
+prove ECT, but they motivate precisely the accelerated maturity
+channels that map onto the retained-band extraction from the JWST
+early-galaxy channel. The framework also predicts possible systematic
+shifts in velocity dispersions or virial speeds at fixed host mass,
+compact rapidly assembled massive hosts, and a potential dependence on
+environment through the background condensate history. These remain
+qualitative predictions rather than established closure-level results
+at the present stage.
 
 \subsubsection{Integrated Sachs--Wolfe diagnostic}
 \label{sec:isw_diagnostic}
@@ -25839,13 +25697,13 @@ ECT graviton sector \\
 
 ND5 &
 Standard-siren determination of $H_0$ &
-ECT allows a condensate-driven shift in the inferred expansion
-rate at the few-percent level in the benchmark scenario discussed
-in the cosmology section &
+ECT admits a condensate-driven shift in the inferred expansion
+rate at the few-percent level within the retained-band diagnostic
+layer (\S\ref{subsec:eps_joint_band}) &
 B &
 LISA standard sirens &
 If future siren-based $H_0$ measurements show no room for the
-benchmark condensate-driven shift, the present ECT Hubble-shift
+retained-band condensate-driven shift, the present ECT Hubble-shift
 scenario would be constrained \\
 
 ND6 &
@@ -46532,7 +46390,10 @@ should not be used to quote the current cosmological constraint on
 $\varepsilon$; the headline retained-band result is given in
 \S\ref{subsec:eps_joint_band}
 ($\varepsilon\in[0.0296,\,0.0376]$ at $1\sigma$) with methodology
-collected in Appendix~\ref{app:eps_methodology}.
+collected in Appendix~\ref{app:eps_methodology}. These values are
+preserved only for legacy reproducibility and numerical control; they
+must not be interpreted as retained-band central values or as a
+preferred closure-level point of the present paper.
 The material below is preserved only as a legacy reproducibility anchor
 for the benchmark late-time closure and the numerical control apparatus
 that underpins it.
