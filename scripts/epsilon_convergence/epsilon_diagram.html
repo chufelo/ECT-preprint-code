@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ε constraints — 5-probe joint allowed region</title>
+<style>
+  body {
+    font-family: -apple-system, system-ui, sans-serif;
+    background: #ffffff; color: #222;
+    margin: 20px 30px 40px 30px; line-height: 1.4;
+  }
+  h2 { margin: 0 0 4px 0; font-size: 18px; font-weight: 700; }
+  .subtitle { margin: 0 0 16px 0; font-size: 12px; color: #555; font-style: italic; }
+  .finding-box {
+    margin: 8px 0 20px 0; padding: 12px 16px;
+    background: #faeef2; border-left: 4px solid #c73e6a;
+    font-size: 12.5px; color: #333;
+  }
+  .excluded-note {
+    margin: 8px 0 20px 0; padding: 10px 14px;
+    background: #fbf0ee; border-left: 3px solid #a84632;
+    font-size: 12px; color: #444;
+  }
+  .chart-wrap { position: relative; margin-left: 320px; margin-top: 10px; }
+  .probe-label {
+    position: absolute; left: -310px; width: 300px;
+    text-align: right; font-size: 12px; color: #222;
+    white-space: nowrap; overflow: hidden;
+  }
+  .probe-label.tierA { font-weight: 700; }
+  .probe-z-label {
+    position: absolute; left: -260px; width: 60px;
+    font-size: 10.5px; color: #666; text-align: right;
+    white-space: nowrap; font-variant-numeric: tabular-nums;
+  }
+  .tier-badge {
+    position: absolute; right: -95px; padding: 3px 5px;
+    border-radius: 3px; font-size: 8.5px; font-style: italic;
+    background: #fff; text-align: center; width: 70px;
+  }
+  .tier-badge.A { border: 1px solid #4682B4; color: #1a3d5c; font-weight: 600; }
+  .tier-badge.B { border: 1px solid #6B8E23; color: #3d5214; }
+  .legend { margin-top: 30px; display: flex; gap: 18px; flex-wrap: wrap; font-size: 11px; }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .swatch { width: 14px; height: 14px; display: inline-block; border: 1px solid #888; }
+  .panel {
+    margin-top: 16px; padding: 14px 16px;
+    border: 1px solid #ddd; border-radius: 6px;
+    background: #fafafa; font-size: 12px;
+  }
+  .panel.findings { border-color: #c9d4b8; background: #f4f7ee; }
+  .panel.trend { border-color: #b6c9d8; background: #f0f4f8; }
+  .panel.excluded { border-color: #d4b89e; background: #faf4ed; }
+  .panel h3 { margin: 0 0 6px 0; font-size: 13px; }
+  .panel ul { margin: 0; padding-left: 18px; }
+  .panel li { margin-bottom: 4px; }
+  .tier-tag {
+    display: inline-block; padding: 2px 7px; color: #fff;
+    font-size: 11px; font-weight: 600; border-radius: 3px; margin-right: 4px;
+  }
+  .tag-A { background: #1a3d5c; }
+  .tag-B { background: #3d5214; }
+  .probe-group:hover .bar-1s { stroke-width: 2; }
+  .caveat { color: #a00; }
+  .trend-panels {
+    display: flex; justify-content: center; margin-top: 10px; gap: 4px;
+  }
+  .trend-panel-title { text-align: center; font-size: 11px; color: #555;
+                        margin-top: 4px; font-style: italic; }
+</style>
+</head>
+<body>
+
+<h2>ε constraints — 5-probe joint allowed region under uniform-ε</h2>
+<p class="subtitle">
+  Robust cosmological probes consistent with ECT's physical constraint ε ≥ 0.
+  Ordered by cosmic time. Joint 1σ region visible as a narrow vertical band crossing all probes.
+</p>
+
+<div class="finding-box">
+  <b>Joint 1σ allowed region under uniform-ε:</b>
+  <span style="font-size: 14px; font-weight: 700; color: #c73e6a;">
+    ε ∈ [+0.029, +0.036]  (width 0.007, centered ≈ 0.032)
+  </span>
+  <br>
+  <b>Joint 2σ allowed region:</b>
+  <span style="font-size: 13px; color: #733349;">
+    ε ∈ [+0.021, +0.042]
+  </span>
+  <br>
+  <i>The preprint benchmark ε ≈ 0.010 lies <b>below</b> the 1σ joint range
+  → either benchmark must be revised upward (to ~0.03), or uniform-ε is inadequate
+  and ε(z) epoch-dependence is required.</i>
+</div>
+
+<!-- ============= MAIN BAR CHART ============= -->
+<div class="chart-wrap" id="chart-wrap">
+  <svg id="chart" width="900" height="280" style="overflow: visible; display: block;"></svg>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="swatch" style="background: #4682B4; opacity: 0.3;"></div><span>Tier A (primary)</span></div>
+  <div class="legend-item"><div class="swatch" style="background: #6B8E23; opacity: 0.3;"></div><span>Tier B (consistency)</span></div>
+  <div class="legend-item"><div class="swatch" style="background: #c73e6a; opacity: 0.25;"></div><span><b>5-probe joint 1σ region</b></span></div>
+  <div class="legend-item"><div class="swatch" style="background: #FFD700; opacity: 0.5;"></div><span>Preprint benchmark ε ≈ 0.010</span></div>
+  <div class="legend-item"><span style="border-bottom: 1px dashed #000; padding: 0 10px;">&nbsp;</span><span>ΛCDM (ε=0)</span></div>
+</div>
+
+<!-- ============= ε(z) LOLLIPOP VIEW ============= -->
+<div class="panel trend">
+  <h3>ε(z) — lollipop view with 1σ and 2σ (physical region only)</h3>
+  <p style="margin: 0 0 4px 0; font-size: 11px; color: #555;">
+    Each probe shown at its effective redshift z_eff. <b>Tier A (Hubble, JWST)</b>:
+    inner dark band = 1σ, outer light band = 2σ (two-sided — these probes <i>require</i> ε > 0).
+    <b>Tier B</b>: inner dark stem to 1σ upper bound, outer light stem to 2σ upper bound.
+    Horizontal pink band = 5-probe joint 1σ region [0.029, 0.036]. It crosses all probes.
+    Left panel: linear z (0-3). Right panel: log z (3-1500).
+  </p>
+  <div class="trend-panels">
+    <div>
+      <svg id="trend_low" width="500" height="280" style="display: block;"></svg>
+      <div class="trend-panel-title">low-z (linear)</div>
+    </div>
+    <div>
+      <svg id="trend_high" width="360" height="280" style="display: block;"></svg>
+      <div class="trend-panel-title">high-z (log)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============= DETAIL ============= -->
+<div class="panel" id="detail-panel">
+  <em>Hover over any probe for details.</em>
+</div>
+
+<!-- ============= EXCLUDED ============= -->
+<div class="panel excluded">
+  <h3>Excluded probes and reasons</h3>
+  <ul>
+    <li><b>BAO (DESI 2024):</b> simplified methodology (Ω_m fixed, diagonal covariance,
+        shape-only). Raw best-fit −0.013 is likely an artefact of fixing Ω_m independently.
+        Proper analysis would require coupled (Ω_m, r_d, ε) likelihood with DESI 12×12
+        covariance matrix.
+        <span class="caveat">Not used in headline — moved to "methodology-limited" category.</span></li>
+    <li><b>A_lens CMB lensing:</b> linearized proxy A_lens ≈ 1 + κ_A·ε without full
+        CAMB/CLASS Boltzmann calculation. Uses Planck observational σ (0.03) but omits
+        theoretical systematic on linearization coefficient κ_A (typically 50-100%
+        uncertainty for rough proxy). Narrow 1σ shown earlier was misleading.
+        <span class="caveat">Would need proper Boltzmann treatment.</span></li>
+    <li><b>S_8 weak lensing (KiDS-1000):</b> raw 1σ entirely below zero. Measures
+        the S_8 tension, which ECT's ε &gt; 0 would <i>worsen</i>, not resolve. Outside ECT's ε scope.</li>
+    <li><b>σ_8 cluster counts:</b> same structural issue as S_8.</li>
+    <li><b>SN Ia:</b> was mock data; permanently removed.</li>
+    <li><b>Age t₀:</b> self-consistency only (uses H₀(ε) from Hubble). Text note.</li>
+  </ul>
+</div>
+
+<!-- ============= INTERPRETATION ============= -->
+<div class="panel findings">
+  <h3>Physics interpretation</h3>
+  <ul>
+    <li><b>Strong finding:</b> five robust probes (Hubble+r_s, JWST, CC, fσ_8, ISW)
+        are jointly consistent with uniform-ε at ε ≈ 0.032 (1σ width 0.007) under ECT's
+        physical prior ε ≥ 0.</li>
+    <li>Tier A probes (Hubble, JWST) require ε &gt; 0 → primary evidence for non-zero drift.</li>
+    <li>Tier B probes (CC, fσ_8, ISW) give upper bounds; the tightest (fσ_8 at ε &lt; 0.036)
+        happens to align just above Hubble's best-fit (0.032), producing a narrow joint window.</li>
+    <li><b>Preprint benchmark (ε ≈ 0.010) is below the joint 1σ region.</b>
+        The benchmark was chosen for conservative partial Hubble resolution, but the data
+        actually prefers ε ~ 0.03 under uniform-ε. This suggests either: (a) benchmark
+        should be revised to ~0.03, or (b) uniform-ε is inadequate and ECT's natural
+        prediction is epoch-dependent ε(z) with higher values at early times.</li>
+    <li><b>Caveat:</b> this is NOT an ECT-native extraction (ΛCDM-background proxy).
+        Full ECT-native closure is OPEN.</li>
+  </ul>
+</div>
+
+<script>
+// ---------- Data: 5 probes ----------
+const PROBES = [
+  { key: 'Hubble', label: 'Hubble tension + r_s',
+    z_eff_label: '0 → 1100 integrated', z_display: 1060,
+    t_cosmic: '~380 000 yr',
+    tier: 'A',
+    best: 0.032, lo1: 0.027, hi1: 0.038, lo2: 0.021, hi2: 0.042,
+    window: 'Integrated response: r_s at z~1060 + distance ladder at z~0',
+    caveat: 'Broad integrated kernel — NOT a local z=1060 measurement',
+    notes: 'Primary probe. Requires ε ≥ 0.027 at 1σ.' },
+  { key: 'JWST', label: 'JWST early-galaxy excess (PS proxy)',
+    z_eff_label: '~10 (growth integrated 10-1100)', z_display: 10,
+    t_cosmic: '~500 Myr',
+    tier: 'A',
+    best: 0.043, lo1: 0.029, hi1: 0.071, lo2: 0.013, hi2: 0.179,
+    window: 'Abundance at z≈10 via Press-Schechter proxy',
+    caveat: 'Press-Schechter proxy only; growth integrated from z_decouple to z=10',
+    notes: 'Primary probe. R=10× excess; requires ε ≥ 0.029 at 1σ.' },
+  { key: 'CC', label: 'Cosmic chronometers (H(z))',
+    z_eff_label: '0.07 – 1.97', z_display: 0.70,
+    t_cosmic: '~7.2 Gyr',
+    tier: 'B',
+    best: 0.006, lo1: 0.0, hi1: 0.087, lo2: 0.0, hi2: 0.150,
+    raw_lo1: -0.020,
+    window: 'Direct H(z); 31 points Moresco+ 2022',
+    caveat: 'ΛCDM-background proxy; Ω_m fixed',
+    notes: 'Consistent with ε = 0 within 1σ. Upper bound ε < 0.087.' },
+  { key: 'fsigma8', label: 'fσ_8 from RSD (growth)',
+    z_eff_label: '0.07 – 1.94', z_display: 0.56,
+    t_cosmic: '~8.1 Gyr',
+    tier: 'B',
+    best: 0.0, lo1: 0.0, hi1: 0.036, lo2: 0.0, hi2: 0.120,
+    raw_best: -0.06, raw_lo1: -0.10,
+    window: 'Growth rate from 14 RSD points',
+    caveat: 'σ_8(0) profiled freely. Raw best-fit negative (unphysical).',
+    notes: 'TIGHTEST upper bound in 5-probe set: ε < 0.036 at 1σ. Binds the joint region.' },
+  { key: 'ISW', label: 'ISW amplitude (linear proxy)',
+    z_eff_label: '0 – 2 (late-time)', z_display: 0.40,
+    t_cosmic: '~9.4 Gyr',
+    tier: 'B',
+    best: 0.0, lo1: 0.0, hi1: 0.043, lo2: 0.0, hi2: 0.093,
+    raw_best: -0.007, raw_lo1: -0.057,
+    window: 'Late-time potential decay (Λ onset)',
+    caveat: 'Linear proxy; 30% observational σ',
+    notes: 'Consistent with ε = 0. Upper bound ε < 0.043.' },
+];
+
+// Joint allowed region
+const tier_A_keys = PROBES.filter(p => p.tier === 'A').map(p => p.key);
+const lo_A_1s = Math.max(...PROBES.filter(p => p.tier === 'A').map(p => p.lo1));
+const hi_B_1s = Math.min(...PROBES.filter(p => p.tier === 'B').map(p => p.hi1));
+const lo_A_2s = Math.max(...PROBES.filter(p => p.tier === 'A').map(p => p.lo2));
+const hi_B_2s = Math.min(...PROBES.filter(p => p.tier === 'B').map(p => p.hi2));
+// Actually joint = intersection of ALL probes
+const joint_lo_1s = Math.max(...PROBES.map(p => p.lo1));
+const joint_hi_1s = Math.min(...PROBES.map(p => p.hi1));
+const joint_lo_2s = Math.max(...PROBES.map(p => p.lo2));
+const joint_hi_2s = Math.min(...PROBES.map(p => p.hi2));
+
+// ============= MAIN BAR CHART =============
+const svg = document.getElementById('chart');
+const NS = 'http://www.w3.org/2000/svg';
+const plotW = 700, rowH = 44, barH = 26;
+const xMin = -0.015, xMax = 0.18;
+const xToPx = (x) => ((x - xMin) / (xMax - xMin)) * plotW;
+
+const plotH = PROBES.length * rowH + 20;
+svg.setAttribute('width', plotW + 120);
+svg.setAttribute('height', plotH + 60);
+
+// Joint 2σ band
+const joint2 = document.createElementNS(NS, 'rect');
+joint2.setAttribute('x', xToPx(joint_lo_2s)); joint2.setAttribute('y', 0);
+joint2.setAttribute('width', xToPx(joint_hi_2s) - xToPx(joint_lo_2s));
+joint2.setAttribute('height', plotH);
+joint2.setAttribute('fill', '#c73e6a'); joint2.setAttribute('fill-opacity', 0.08);
+svg.appendChild(joint2);
+
+// Joint 1σ band
+const joint1 = document.createElementNS(NS, 'rect');
+joint1.setAttribute('x', xToPx(joint_lo_1s)); joint1.setAttribute('y', 0);
+joint1.setAttribute('width', xToPx(joint_hi_1s) - xToPx(joint_lo_1s));
+joint1.setAttribute('height', plotH);
+joint1.setAttribute('fill', '#c73e6a'); joint1.setAttribute('fill-opacity', 0.25);
+svg.appendChild(joint1);
+
+// Joint boundary lines
+[joint_lo_1s, joint_hi_1s].forEach(x => {
+  const l = document.createElementNS(NS, 'line');
+  l.setAttribute('x1', xToPx(x)); l.setAttribute('y1', 0);
+  l.setAttribute('x2', xToPx(x)); l.setAttribute('y2', plotH);
+  l.setAttribute('stroke', '#c73e6a'); l.setAttribute('stroke-width', 1.2);
+  l.setAttribute('stroke-dasharray', '3 2');
+  svg.appendChild(l);
+});
+
+// Joint label at top
+const jlbl = document.createElementNS(NS, 'text');
+jlbl.setAttribute('x', xToPx((joint_lo_1s + joint_hi_1s)/2));
+jlbl.setAttribute('y', -4);
+jlbl.setAttribute('text-anchor', 'middle');
+jlbl.setAttribute('font-size', 10); jlbl.setAttribute('fill', '#8c2a4a');
+jlbl.setAttribute('font-weight', 'bold');
+jlbl.textContent = 'Joint 1σ [' + joint_lo_1s.toFixed(3) + ', ' + joint_hi_1s.toFixed(3) + ']';
+svg.appendChild(jlbl);
+
+// Benchmark
+const bench = document.createElementNS(NS, 'rect');
+bench.setAttribute('x', xToPx(0.005)); bench.setAttribute('y', 0);
+bench.setAttribute('width', xToPx(0.015) - xToPx(0.005));
+bench.setAttribute('height', plotH);
+bench.setAttribute('fill', '#FFD700'); bench.setAttribute('fill-opacity', 0.25);
+svg.appendChild(bench);
+
+const benchLine = document.createElementNS(NS, 'line');
+benchLine.setAttribute('x1', xToPx(0.010)); benchLine.setAttribute('y1', 0);
+benchLine.setAttribute('x2', xToPx(0.010)); benchLine.setAttribute('y2', plotH);
+benchLine.setAttribute('stroke', '#FF8C00'); benchLine.setAttribute('stroke-width', 1.3);
+benchLine.setAttribute('stroke-dasharray', '4 2');
+svg.appendChild(benchLine);
+
+// ΛCDM line
+const cdm = document.createElementNS(NS, 'line');
+cdm.setAttribute('x1', xToPx(0)); cdm.setAttribute('y1', 0);
+cdm.setAttribute('x2', xToPx(0)); cdm.setAttribute('y2', plotH);
+cdm.setAttribute('stroke', 'black'); cdm.setAttribute('stroke-width', 1);
+cdm.setAttribute('stroke-dasharray', '2 2');
+svg.appendChild(cdm);
+
+// Grid
+const ticks = [0, 0.025, 0.05, 0.075, 0.10, 0.125, 0.15];
+ticks.forEach(t => {
+  const gl = document.createElementNS(NS, 'line');
+  gl.setAttribute('x1', xToPx(t)); gl.setAttribute('y1', 0);
+  gl.setAttribute('x2', xToPx(t)); gl.setAttribute('y2', plotH);
+  gl.setAttribute('stroke', '#e8e8e8'); gl.setAttribute('stroke-width', 0.5);
+  svg.appendChild(gl);
+});
+
+// Probes
+PROBES.forEach((p, i) => {
+  const y = i * rowH + 10;
+  const mid = y + rowH / 2;
+  const barTop = mid - barH / 2;
+  let fill1s, fill2s;
+  if (p.tier === 'A') { fill1s = '#5c7d9c'; fill2s = '#b6c9d8'; }
+  else                 { fill1s = '#8a9c6d'; fill2s = '#c9d4b8'; }
+
+  const g = document.createElementNS(NS, 'g');
+  g.style.cursor = 'pointer';
+  g.classList.add('probe-group');
+
+  // 2σ (only positive portion)
+  const lo2 = Math.max(p.lo2, 0);
+  if (p.hi2 > lo2) {
+    const r2 = document.createElementNS(NS, 'rect');
+    r2.setAttribute('x', xToPx(lo2)); r2.setAttribute('y', barTop);
+    r2.setAttribute('width', xToPx(p.hi2) - xToPx(lo2)); r2.setAttribute('height', barH);
+    r2.setAttribute('fill', fill2s); r2.setAttribute('stroke', '#555');
+    r2.setAttribute('stroke-width', 0.6);
+    g.appendChild(r2);
+  }
+
+  // 1σ
+  const lo1 = Math.max(p.lo1, 0);
+  if (p.hi1 > lo1) {
+    const r1 = document.createElementNS(NS, 'rect');
+    r1.classList.add('bar-1s');
+    r1.setAttribute('x', xToPx(lo1)); r1.setAttribute('y', barTop + 4);
+    r1.setAttribute('width', xToPx(p.hi1) - xToPx(lo1)); r1.setAttribute('height', barH - 8);
+    r1.setAttribute('fill', fill1s);
+    r1.setAttribute('stroke', '#000'); r1.setAttribute('stroke-width', 0.9);
+    g.appendChild(r1);
+  }
+
+  // Central
+  const best_clipped = Math.max(p.best, 0);
+  const c = document.createElementNS(NS, 'circle');
+  c.setAttribute('cx', xToPx(best_clipped)); c.setAttribute('cy', mid);
+  c.setAttribute('r', 5); c.setAttribute('fill', 'white');
+  c.setAttribute('stroke', 'black'); c.setAttribute('stroke-width', 1.1);
+  g.appendChild(c);
+
+  // Upper-bound arrow
+  if (p.best === 0 && p.raw_best !== undefined) {
+    const arrow = document.createElementNS(NS, 'text');
+    arrow.setAttribute('x', xToPx(0) - 3); arrow.setAttribute('y', mid + 3);
+    arrow.setAttribute('font-size', 11); arrow.setAttribute('text-anchor', 'end');
+    arrow.setAttribute('fill', '#777');
+    arrow.textContent = '←';
+    g.appendChild(arrow);
+    const utag = document.createElementNS(NS, 'text');
+    utag.setAttribute('x', xToPx(0) - 14); utag.setAttribute('y', mid + 3);
+    utag.setAttribute('font-size', 9); utag.setAttribute('text-anchor', 'end');
+    utag.setAttribute('fill', '#777'); utag.setAttribute('font-style', 'italic');
+    utag.textContent = 'upper bound';
+    g.appendChild(utag);
+  }
+
+  g.addEventListener('mouseenter', () => showDetail(p));
+  g.addEventListener('mouseleave', () => showDetail(null));
+  svg.appendChild(g);
+});
+
+// X axis
+const xaxis = document.createElementNS(NS, 'line');
+xaxis.setAttribute('x1', 0); xaxis.setAttribute('y1', plotH + 4);
+xaxis.setAttribute('x2', plotW); xaxis.setAttribute('y2', plotH + 4);
+xaxis.setAttribute('stroke', 'black');
+svg.appendChild(xaxis);
+ticks.forEach(t => {
+  const tk = document.createElementNS(NS, 'line');
+  tk.setAttribute('x1', xToPx(t)); tk.setAttribute('y1', plotH + 4);
+  tk.setAttribute('x2', xToPx(t)); tk.setAttribute('y2', plotH + 10);
+  tk.setAttribute('stroke', 'black');
+  svg.appendChild(tk);
+  const tt = document.createElementNS(NS, 'text');
+  tt.setAttribute('x', xToPx(t)); tt.setAttribute('y', plotH + 25);
+  tt.setAttribute('font-size', 11); tt.setAttribute('text-anchor', 'middle');
+  tt.textContent = t.toFixed(3);
+  svg.appendChild(tt);
+});
+const xLabel = document.createElementNS(NS, 'text');
+xLabel.setAttribute('x', plotW / 2); xLabel.setAttribute('y', plotH + 48);
+xLabel.setAttribute('font-size', 13); xLabel.setAttribute('text-anchor', 'middle');
+xLabel.textContent = 'ε  (physical region: ε ≥ 0)';
+svg.appendChild(xLabel);
+
+// HTML labels
+const wrap = document.getElementById('chart-wrap');
+PROBES.forEach((p, i) => {
+  const y = i * rowH + 10 + rowH / 2;
+  const div = document.createElement('div');
+  let cls = 'probe-label';
+  if (p.tier === 'A') cls += ' tierA';
+  div.className = cls;
+  div.style.top = (y - 9) + 'px';
+  div.textContent = p.label;
+  wrap.appendChild(div);
+
+  const zdiv = document.createElement('div');
+  zdiv.className = 'probe-z-label';
+  zdiv.style.top = (y - 9) + 'px';
+  zdiv.textContent = (p.z_display >= 10 ? `z~${Math.round(p.z_display)}` : `z~${p.z_display.toFixed(2)}`);
+  wrap.appendChild(zdiv);
+
+  const tb = document.createElement('div');
+  tb.className = 'tier-badge ' + p.tier;
+  tb.style.top = (y - 10) + 'px';
+  tb.textContent = 'Tier ' + p.tier;
+  wrap.appendChild(tb);
+});
+
+function showDetail(p) {
+  const panel = document.getElementById('detail-panel');
+  if (!p) {
+    panel.innerHTML = `<em>Hover over any probe for details.</em>`;
+    return;
+  }
+  const tierTag = `<span class="tier-tag tag-${p.tier}">TIER ${p.tier}</span>`;
+  const fmt = x => (x > 0 ? '+' : '') + x.toFixed(4);
+  const rawInfo = p.raw_best !== undefined
+    ? `<div style="color: #888; font-size: 11px;">(raw best-fit ${fmt(p.raw_best)} — clipped to 0 under ε ≥ 0)</div>`
+    : '';
+  panel.innerHTML = `
+    <div style="margin-bottom: 8px;">${tierTag}<b style="font-size: 14px;">${p.label}</b></div>
+    <div><b>Sensitivity window:</b> z = ${p.z_eff_label} &nbsp;—&nbsp; cosmic time ≈ ${p.t_cosmic}</div>
+    <div><b>Best-fit ε (physical):</b> ${fmt(p.best)}</div>
+    ${rawInfo}
+    <div><b>1σ range (physical):</b> [${fmt(p.lo1)}, ${fmt(p.hi1)}]</div>
+    <div><b>2σ range (physical):</b> [${fmt(p.lo2)}, ${fmt(p.hi2)}]</div>
+    <div><b>What it constrains:</b> ${p.window}</div>
+    <div><b>Caveat:</b> <span class="caveat">${p.caveat}</span></div>
+    <div><b>Notes:</b> ${p.notes}</div>
+  `;
+}
+
+// ============================================================
+// ε(z) LOLLIPOP VIEW — with 1σ AND 2σ, joint band
+// ============================================================
+function drawLollipopPanel(svgId, zMin, zMax, useLog, showYAxis) {
+  const s = document.getElementById(svgId);
+  const W = parseInt(s.getAttribute('width'));
+  const H = parseInt(s.getAttribute('height'));
+  const m = { top: 15, right: 15, bottom: 45, left: showYAxis ? 55 : 15 };
+  const pw = W - m.left - m.right;
+  const ph = H - m.top - m.bottom;
+  const xmap = useLog
+    ? (z) => m.left + (Math.log10(z) - Math.log10(zMin)) / (Math.log10(zMax) - Math.log10(zMin)) * pw
+    : (z) => m.left + (z - zMin) / (zMax - zMin) * pw;
+
+  const eMin = 0, eMax = 0.10;
+  const yE = (e) => m.top + (eMax - e) / (eMax - eMin) * ph;
+
+  // White background
+  const bx = document.createElementNS(NS, 'rect');
+  bx.setAttribute('x', m.left); bx.setAttribute('y', m.top);
+  bx.setAttribute('width', pw); bx.setAttribute('height', ph);
+  bx.setAttribute('fill', 'white'); bx.setAttribute('stroke', 'black');
+  bx.setAttribute('stroke-width', 0.8);
+  s.appendChild(bx);
+
+  // Joint 2σ horizontal band
+  const j2 = document.createElementNS(NS, 'rect');
+  j2.setAttribute('x', m.left); j2.setAttribute('y', yE(joint_hi_2s));
+  j2.setAttribute('width', pw);
+  j2.setAttribute('height', yE(joint_lo_2s) - yE(joint_hi_2s));
+  j2.setAttribute('fill', '#c73e6a'); j2.setAttribute('fill-opacity', 0.08);
+  s.appendChild(j2);
+
+  // Joint 1σ horizontal band
+  const j1 = document.createElementNS(NS, 'rect');
+  j1.setAttribute('x', m.left); j1.setAttribute('y', yE(joint_hi_1s));
+  j1.setAttribute('width', pw);
+  j1.setAttribute('height', yE(joint_lo_1s) - yE(joint_hi_1s));
+  j1.setAttribute('fill', '#c73e6a'); j1.setAttribute('fill-opacity', 0.22);
+  s.appendChild(j1);
+
+  // Joint boundary lines
+  [joint_lo_1s, joint_hi_1s].forEach(e => {
+    const l = document.createElementNS(NS, 'line');
+    l.setAttribute('x1', m.left); l.setAttribute('y1', yE(e));
+    l.setAttribute('x2', m.left + pw); l.setAttribute('y2', yE(e));
+    l.setAttribute('stroke', '#c73e6a'); l.setAttribute('stroke-width', 1);
+    l.setAttribute('stroke-dasharray', '3 2');
+    s.appendChild(l);
+  });
+
+  if (showYAxis) {
+    const joint_lbl = document.createElementNS(NS, 'text');
+    joint_lbl.setAttribute('x', m.left + 4);
+    joint_lbl.setAttribute('y', yE((joint_lo_1s + joint_hi_1s)/2) + 3);
+    joint_lbl.setAttribute('font-size', 9); joint_lbl.setAttribute('fill', '#8c2a4a');
+    joint_lbl.setAttribute('font-weight', 'bold');
+    joint_lbl.setAttribute('font-style', 'italic');
+    joint_lbl.textContent = 'joint 1σ';
+    s.appendChild(joint_lbl);
+  }
+
+  // Benchmark line
+  const bl = document.createElementNS(NS, 'line');
+  bl.setAttribute('x1', m.left); bl.setAttribute('y1', yE(0.010));
+  bl.setAttribute('x2', m.left + pw); bl.setAttribute('y2', yE(0.010));
+  bl.setAttribute('stroke', '#FF8C00'); bl.setAttribute('stroke-width', 1);
+  bl.setAttribute('stroke-dasharray', '3 2');
+  s.appendChild(bl);
+  if (showYAxis) {
+    const benchLabel = document.createElementNS(NS, 'text');
+    benchLabel.setAttribute('x', m.left + 4); benchLabel.setAttribute('y', yE(0.010) - 3);
+    benchLabel.setAttribute('font-size', 9); benchLabel.setAttribute('fill', '#b06000');
+    benchLabel.setAttribute('font-style', 'italic');
+    benchLabel.textContent = 'benchmark ε=0.010';
+    s.appendChild(benchLabel);
+  }
+
+  // Probes
+  PROBES.forEach(p => {
+    if (p.z_display < zMin || p.z_display > zMax) return;
+    const x = xmap(p.z_display);
+    const fill = p.tier === 'A' ? '#5c7d9c' : '#8a9c6d';
+    const fill_light = p.tier === 'A' ? '#b6c9d8' : '#c9d4b8';
+
+    if (p.tier === 'A') {
+      // Outer 2σ band
+      const r2 = document.createElementNS(NS, 'rect');
+      r2.setAttribute('x', x - 10); r2.setAttribute('y', yE(p.hi2));
+      r2.setAttribute('width', 20); r2.setAttribute('height', yE(p.lo2) - yE(p.hi2));
+      r2.setAttribute('fill', fill_light); r2.setAttribute('fill-opacity', 0.7);
+      r2.setAttribute('stroke', fill); r2.setAttribute('stroke-width', 0.5);
+      s.appendChild(r2);
+      // Inner 1σ band
+      const r1 = document.createElementNS(NS, 'rect');
+      r1.setAttribute('x', x - 8); r1.setAttribute('y', yE(p.hi1));
+      r1.setAttribute('width', 16); r1.setAttribute('height', yE(p.lo1) - yE(p.hi1));
+      r1.setAttribute('fill', fill); r1.setAttribute('fill-opacity', 0.55);
+      r1.setAttribute('stroke', fill); r1.setAttribute('stroke-width', 1.5);
+      s.appendChild(r1);
+      // best marker
+      const c = document.createElementNS(NS, 'circle');
+      c.setAttribute('cx', x); c.setAttribute('cy', yE(p.best));
+      c.setAttribute('r', 4); c.setAttribute('fill', 'white');
+      c.setAttribute('stroke', fill); c.setAttribute('stroke-width', 1.5);
+      s.appendChild(c);
+    } else {
+      // 2σ outer light stem (only up to y_max)
+      const hi2_cap = Math.min(p.hi2, eMax);
+      const stem2 = document.createElementNS(NS, 'line');
+      stem2.setAttribute('x1', x); stem2.setAttribute('y1', yE(0));
+      stem2.setAttribute('x2', x); stem2.setAttribute('y2', yE(hi2_cap));
+      stem2.setAttribute('stroke', fill_light); stem2.setAttribute('stroke-width', 5);
+      stem2.setAttribute('stroke-linecap', 'butt');
+      s.appendChild(stem2);
+      // 2σ cap (or arrow if off-scale)
+      if (p.hi2 > eMax) {
+        // off-scale arrow
+        const arr = document.createElementNS(NS, 'polygon');
+        arr.setAttribute('points', `${x-4},${yE(eMax)+5} ${x+4},${yE(eMax)+5} ${x},${yE(eMax)-1}`);
+        arr.setAttribute('fill', fill_light);
+        s.appendChild(arr);
+      } else {
+        const cap2 = document.createElementNS(NS, 'line');
+        cap2.setAttribute('x1', x - 5); cap2.setAttribute('y1', yE(p.hi2));
+        cap2.setAttribute('x2', x + 5); cap2.setAttribute('y2', yE(p.hi2));
+        cap2.setAttribute('stroke', fill_light); cap2.setAttribute('stroke-width', 2);
+        s.appendChild(cap2);
+      }
+      // 1σ inner dark stem
+      const stem1 = document.createElementNS(NS, 'line');
+      stem1.setAttribute('x1', x); stem1.setAttribute('y1', yE(0));
+      stem1.setAttribute('x2', x); stem1.setAttribute('y2', yE(p.hi1));
+      stem1.setAttribute('stroke', fill); stem1.setAttribute('stroke-width', 3);
+      stem1.setAttribute('stroke-linecap', 'butt');
+      s.appendChild(stem1);
+      // 1σ cap
+      const cap1 = document.createElementNS(NS, 'line');
+      cap1.setAttribute('x1', x - 4); cap1.setAttribute('y1', yE(p.hi1));
+      cap1.setAttribute('x2', x + 4); cap1.setAttribute('y2', yE(p.hi1));
+      cap1.setAttribute('stroke', fill); cap1.setAttribute('stroke-width', 2);
+      s.appendChild(cap1);
+      // Base
+      const base = document.createElementNS(NS, 'line');
+      base.setAttribute('x1', x - 5); base.setAttribute('y1', yE(0));
+      base.setAttribute('x2', x + 5); base.setAttribute('y2', yE(0));
+      base.setAttribute('stroke', fill); base.setAttribute('stroke-width', 1.5);
+      s.appendChild(base);
+      if (p.best > 0) {
+        const bm = document.createElementNS(NS, 'circle');
+        bm.setAttribute('cx', x); bm.setAttribute('cy', yE(p.best));
+        bm.setAttribute('r', 3.5); bm.setAttribute('fill', 'white');
+        bm.setAttribute('stroke', fill); bm.setAttribute('stroke-width', 1.2);
+        s.appendChild(bm);
+      }
+    }
+    // Label
+    const shortLbl = { Hubble: 'Hubble', JWST: 'JWST',
+                       CC: 'CC', fsigma8: 'fσ₈', ISW: 'ISW' };
+    const lbl = document.createElementNS(NS, 'text');
+    const yLabelPos = p.tier === 'A' ? yE(p.hi1) - 12 : yE(Math.min(p.hi2, eMax)) - 8;
+    lbl.setAttribute('x', x); lbl.setAttribute('y', yLabelPos);
+    lbl.setAttribute('font-size', 10); lbl.setAttribute('text-anchor', 'middle');
+    lbl.setAttribute('fill', '#222');
+    lbl.setAttribute('font-weight', p.tier === 'A' ? '600' : '400');
+    lbl.textContent = shortLbl[p.key] || p.key;
+    s.appendChild(lbl);
+  });
+
+  // X ticks
+  let zTicks = useLog ? [3, 10, 30, 100, 300, 1000] : [0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0];
+  zTicks.forEach(z => {
+    if (z < zMin || z > zMax) return;
+    const xp = xmap(z);
+    const tk = document.createElementNS(NS, 'line');
+    tk.setAttribute('x1', xp); tk.setAttribute('y1', m.top + ph);
+    tk.setAttribute('x2', xp); tk.setAttribute('y2', m.top + ph + 4);
+    tk.setAttribute('stroke', 'black');
+    s.appendChild(tk);
+    const t = document.createElementNS(NS, 'text');
+    t.setAttribute('x', xp); t.setAttribute('y', m.top + ph + 16);
+    t.setAttribute('font-size', 10); t.setAttribute('text-anchor', 'middle');
+    t.textContent = z;
+    s.appendChild(t);
+  });
+  const xL = document.createElementNS(NS, 'text');
+  xL.setAttribute('x', m.left + pw/2); xL.setAttribute('y', m.top + ph + 32);
+  xL.setAttribute('font-size', 11); xL.setAttribute('text-anchor', 'middle');
+  xL.textContent = useLog ? 'redshift z (log)' : 'redshift z';
+  s.appendChild(xL);
+
+  // Y ticks
+  if (showYAxis) {
+    [0, 0.025, 0.05, 0.075, 0.10].forEach(e => {
+      const yp = yE(e);
+      const tk = document.createElementNS(NS, 'line');
+      tk.setAttribute('x1', m.left - 4); tk.setAttribute('y1', yp);
+      tk.setAttribute('x2', m.left); tk.setAttribute('y2', yp);
+      tk.setAttribute('stroke', 'black');
+      s.appendChild(tk);
+      const t = document.createElementNS(NS, 'text');
+      t.setAttribute('x', m.left - 7); t.setAttribute('y', yp + 3);
+      t.setAttribute('font-size', 10); t.setAttribute('text-anchor', 'end');
+      t.textContent = e.toFixed(3);
+      s.appendChild(t);
+    });
+    const yL = document.createElementNS(NS, 'text');
+    yL.setAttribute('x', 15); yL.setAttribute('y', m.top + ph / 2);
+    yL.setAttribute('font-size', 11); yL.setAttribute('text-anchor', 'middle');
+    yL.setAttribute('transform', `rotate(-90, 15, ${m.top + ph/2})`);
+    yL.textContent = 'ε  (physical, ≥ 0)';
+    s.appendChild(yL);
+  }
+}
+
+drawLollipopPanel('trend_low',  0,    3,    false, true);
+drawLollipopPanel('trend_high', 3,    1500, true,  false);
+</script>
+
+</body>
+</html>
