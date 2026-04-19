@@ -66,10 +66,10 @@ fig, ax = plt.subplots(figsize=(7.8, 4.2))
 
 # Vertical joint 1sigma band
 ax.axvspan(joint_lo_1s, joint_hi_1s, color='0.35', alpha=0.35,
-           zorder=1, label=f'Joint $1\\sigma$ $[{joint_lo_1s:.3f},\\,{joint_hi_1s:.3f}]$')
+           zorder=1, label=f'Joint $1\\sigma$ $[{joint_lo_1s:.4f},\\,{joint_hi_1s:.4f}]$')
 # Vertical joint 2sigma band (lighter)
 ax.axvspan(joint_lo_2s, joint_hi_2s, color='0.75', alpha=0.25,
-           zorder=0, label=f'Joint $2\\sigma$ $[{joint_lo_2s:.3f},\\,{joint_hi_2s:.3f}]$')
+           zorder=0, label=f'Joint $2\\sigma$ $[{joint_lo_2s:.4f},\\,{joint_hi_2s:.4f}]$')
 
 # Bar for each probe
 y_positions = np.arange(len(results))[::-1]
@@ -111,9 +111,9 @@ ax.set_axisbelow(True)
 # Legend
 legend_elements = [
     Patch(facecolor='0.35', alpha=0.5,
-          label=f'Joint $1\\sigma$ band $[{joint_lo_1s:.3f},\\,{joint_hi_1s:.3f}]$'),
+          label=f'Joint $1\\sigma$ band $[{joint_lo_1s:.4f},\\,{joint_hi_1s:.4f}]$'),
     Patch(facecolor='0.75', alpha=0.4,
-          label=f'Joint $2\\sigma$ band $[{joint_lo_2s:.3f},\\,{joint_hi_2s:.3f}]$'),
+          label=f'Joint $2\\sigma$ band $[{joint_lo_2s:.4f},\\,{joint_hi_2s:.4f}]$'),
     Patch(facecolor='0.55', edgecolor='black', label='Per-probe $1\\sigma$'),
     Patch(facecolor='0.85', edgecolor='black', label='Per-probe $2\\sigma$'),
 ]
