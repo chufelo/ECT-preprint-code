@@ -2,7 +2,7 @@
 
 **Last updated:** April 18, 2026 | **Single source of truth** — update on every structural change.
 
-**Current active work:** §15.5 rebuild, **Phase 1 COMPLETE** — all six rebuilt subsections §15.5.1–§15.5.6 integrated (PDF pp. 246–254). Phase 3 switchover (retire old §15.5, redirect `\ref{sec:mp_hubble}`, move legacy numerics to Appendix X2) pending. Next immediate cascade tasks: OP-Hubble-derive entry in `sec:open_problems`, `fig_epsilon_constraints` grayscale regeneration, article-wide legacy-ε audit (§E.11), companion mirror (§E.10).
+**Current active work:** §15.5 rebuild, **Phase 2A — PROVISIONAL STATUS**. All six rebuilt subsections §15.5.1–§15.5.6 + Opening integrated (PDF pp. 246–254). **Main-text integration FROZEN** pending full retained-five-probe recalculation on the common `ect_background` module (H(z, ε), t₀(ε), t(z, ε)). **The retained joint band [0.029, 0.036] in §15.5.3 is provisional**: numerical values rely on ΛCDM-proxy pipelines for channels where ECT-native t₀(ε) matters (JWST critically; CC/fσ_8/ISW secondarily; Hubble+r_s weakly). Recalculation in progress: ch1_hubble ✅ (no shift, expected), ch2_jwst 🔴 (critical, in progress), ch3_isw / ch4_cc / ch8_fsigma8 pending. Appendix A1 draft exists but is **NOT to be integrated** until recalc is complete. Age t₀ remains Category (iii) excluded (not elevated to retained probe).
 
 ---
 
