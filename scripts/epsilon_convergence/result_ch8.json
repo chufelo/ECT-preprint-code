@@ -1,15 +1,17 @@
 {
-  "channel": "f\u03c3_8 RSD (Tier B)",
+  "channel": "fsigma_8 RSD (Tier B)",
   "tier": "Tier B",
   "eps_central": -0.12,
   "eps_lo_1s": -0.12,
-  "eps_hi_1s": 0.038000000000000006,
+  "eps_hi_1s": 0.03960490640758603,
   "eps_lo_2s": -0.12,
   "eps_hi_2s": 0.15,
   "sigma8_best": 0.9224005229919054,
   "chi2_min": 8.928179604195222,
   "dof": 12,
-  "t0_at_eps_central_Gyr": 15.164551851401416,
-  "caveat": "ECT-native background via ect_background; \u03c3_8(0) profiled; approximate compilation",
-  "notes": "Growth ODE integrated; \u03bc_G=a^{-2\u03b5}; 14 RSD points"
+  "t0_at_eps_central_Gyr": 13.791054925554327,
+  "at_boundary_lower": true,
+  "refinement_method": "grid [-0.12,+0.15] scan + Brent bracket for sigma edges",
+  "caveat": "ECT-native background via ect_background; sigma_8(0) profiled; grid-to-Brent refined; if best at lower boundary, 1s interval is [lower_grid, brent_upper] treated as one-sided upper bound after imposing eps>=0 prior.",
+  "notes": "Growth ODE; mu_G=a^{-2eps}; 14 RSD points; Brent-refined"
 }
