@@ -183,12 +183,42 @@ completeness on $\varepsilon$; the back-reaction of enhanced
 growth on the matter-era recombination physics; a full Boltzmann
 evolution of the spectrum of fluctuations in the ECT background.
 
-\subsection*{A2.4\quad Robustness check of the time-budget ansatz}
+\paragraph{Main physical finding of this channel.}
+At $\varepsilon > 0$ the background expansion in the common module
+is faster in the past than in $\Lambda$CDM, so the coordinate-time
+interval available for stellar assembly between $z_{\rm form}$ and
+$z_{\rm obs}$ is \emph{shorter}, not longer. This implies that a
+pure growth-enhancement treatment --- the standard high-$z$ ECT
+alleviation argument for the JWST excess, based on $R_{\rm PS}$
+alone --- \emph{overstates} the alleviation effect at a given
+$\varepsilon$, because it ignores the fact that less time has been
+available to convert the enhanced halo population into observable
+stellar mass. Once the reduced assembly-time budget is included
+through $R_{\rm time}$, the $\varepsilon$ required to reproduce a
+given observed excess $R_{\rm obs}$ is slightly \emph{larger} than
+in the PS-only proxy. Quantitatively, the central value shifts
+from $\varepsilon = 0.04245$ (PS only) to $\varepsilon = 0.04491$
+(PS $\times$ time). This is the opposite of the intuitive
+expectation that ECT would ``give more time'' for early galaxies.
+The net physical consequence is important: after this correction,
+the JWST-extracted interval overlaps the Hubble + $r_s$ interval
+of A1 more snugly than the PS-only proxy suggests. The retained
+joint band of \S\ref{subsec:eps_joint_band_rebuilt} therefore
+reflects two independent high-$z$ and low-$z$ extractions that are
+\emph{more}, not less, mutually consistent once the common
+background module is applied on the same footing to both channels.
 
-The linear form \eqref{eq:R_time} is the simplest defensible
-choice, but the true stellar-mass-vs-time dependence is not known
-at this precision. Two limiting cases bracket the physical
-possibilities:
+\subsection*{A2.4\quad Robustness checks}
+
+The default form \eqref{eq:R_time} is the simplest defensible
+choice for the time-budget factor, but two independent robustness
+axes are needed to defend the extracted interval: the functional
+scaling of stellar mass with assembly time, and the choice of the
+formation-redshift window itself.
+
+\paragraph{Axis 1: power-law scaling of the time-budget factor.}
+The linear form is physically motivated but not unique. Two
+limiting cases bracket the physical possibilities:
 \begin{itemize}
 \item \textbf{Linear scaling (default).} Stellar mass grows
   approximately as $M_* \propto \Delta t$: uniform conversion
@@ -203,7 +233,7 @@ possibilities:
   [\Delta t_{\rm ECT}/\Delta t_\Lambda]^p$.
 \end{itemize}
 For the central observational inputs $R_{\rm obs} = 10$,
-$\nu = 5$, $z_{\rm obs} = 10$, solving
+$\nu = 5$, $z_{\rm obs} = 10$, $z_{\rm form} = 20$, solving
 $R_{\rm PS}(\varepsilon) \cdot R_{\rm time}^{(p)}(\varepsilon) =
 R_{\rm obs}$ for $\varepsilon$ yields:
 \begin{center}
@@ -223,9 +253,44 @@ $p \in [0, 2]$ is approximately $+0.0028$ from the linear default
 (moving toward stronger-scaling), and $-0.0025$ in the opposite
 direction (no-time-budget limit). This total range of $\pm 0.003$
 is smaller than the observational $1\sigma$ width driven by $\nu$
-(approximately $\pm 0.025$). The time-budget ansatz therefore does
-not dominate the extracted interval; it is a secondary but
-physically required correction.
+(approximately $\pm 0.025$).
+
+\paragraph{Axis 2: formation-redshift window.}
+The default $z_{\rm form} = 20$ is representative of the
+progenitor era of the observed $z \approx 10$ population, but the
+true formation window is itself uncertain. Varying
+$z_{\rm form}$ over a range that brackets typical physically
+motivated choices, holding $p = 1$ and all observational inputs
+fixed at their central values, gives:
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+$z_{\rm form}$ & Extracted $\varepsilon_{\rm central}$ &
+$R_{\rm time}(\varepsilon_{\rm central})$ \\
+\hline
+$15$ & $0.04481$ & $0.8917$ \\
+$17$ & $0.04486$ & $0.8898$ \\
+$20$ (default) & $0.04491$ & $0.8875$ \\
+$22$ & $0.04494$ & $0.8862$ \\
+$25$ & $0.04497$ & $0.8846$ \\
+\hline
+\end{tabular}
+\end{center}
+The total range of central $\varepsilon$ across
+$z_{\rm form} \in [15, 25]$ is $\pm 0.0001$, two orders of
+magnitude below the observational $\nu$-width. The extraction is
+therefore essentially insensitive to the detailed geometry of the
+formation window: what matters is only the relative compression
+of the assembly interval, not its absolute duration.
+
+\paragraph{Conclusion from the two robustness axes.}
+The time-budget ansatz does not dominate the extracted interval.
+Across both axes considered, the residual uncertainty on
+$\varepsilon_{\rm central}$ from modelling choices is bounded by
+roughly $\pm 0.003$ (dominated by the $p$-scaling axis), an order
+of magnitude below the observational $1\sigma$ width of
+$\pm 0.025$ driven by $\nu$. The time-budget factor is therefore
+a secondary but physically required correction.
 
 
 \subsection*{A2.5\quad Extraction statistic}
@@ -361,10 +426,10 @@ main text is the $p=1$ result.
 
 \textit{(v) Formation redshift $z_{\rm form}$.}
 The default $z_{\rm form} = 20$ is representative but not unique.
-Varying $z_{\rm form} \in [15, 25]$ shifts $R_{\rm time}$ by a
-factor of order a few per cent; this shift is absorbed into the
-robustness bracket of A2.4 and does not materially modify the
-$1\sigma$ interval.
+The second robustness axis of A2.4 (variation over
+$z_{\rm form} \in [15,\,25]$) finds a residual shift in
+$\varepsilon_{\rm central}$ of only $\pm 0.0001$, so this choice is
+not a material source of uncertainty in the extracted interval.
 
 % ==================================================================
 % END Appendix (extraction, JWST early-galaxy channel).

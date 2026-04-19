@@ -1,0 +1,381 @@
+% ==================================================================
+% APPENDIX A6 — Methodology + benchmark achievability + age-viability
+%
+% FINAL DRAFT on freeze-checkpoint numbers (2026-04-19).
+% This appendix is referenced as \ref{app:eps_methodology}
+% throughout A1-A5 and §15.5.
+%
+% Structure:
+%   A6.1  Common background module: scope and role
+%   A6.2  What was and was not recomputed under the module
+%   A6.3  Freeze-checkpoint joint band: provisional but stable
+%   A6.4  Age-viability ambiguity under Hubble mapping (viability
+%         note, NOT a retained probe)
+%   A6.5  Benchmark achievability for the retained band (only)
+%   A6.6  Excluded probes: audit status and non-silent-dismissal
+%   A6.7  Methodological limitations and path forward
+%
+% Character (GPT r17-r21):
+%   A6 is the binding glue. Without it, A1-A5 are disconnected
+%   per-channel extractions. A6 makes the retained-five-probe
+%   analysis a coherent package.
+%
+% Target audience:
+%   - readers who need to understand why the retained band is
+%     "provisional but stable"
+%   - reviewers who will ask about age tension
+%   - anyone auditing excluded probes or asking "why aren't BAO
+%     and S_8 headline?"
+%
+% NO integration into preprint yet.
+% ==================================================================
+
+\section{Methodology of the common-background retained-pipeline,
+benchmark achievability, and the age-viability ambiguity}
+\label{app:eps_methodology}
+
+This appendix collects the methodological scaffolding for the
+retained-five-probe analysis of \S15.5. Its purpose is threefold:
+(i) to specify the common background module that A1--A5 all
+invoke, (ii) to state the current status of the retained joint
+band as ``provisional but stable under the first common-background
+recalc,'' and (iii) to discuss two issues that belong at this
+cross-channel level rather than in any single per-probe appendix
+---namely, the age-viability ambiguity under the Hubble mapping
+and the benchmark achievability for the retained band. The
+appendix closes with an audit of the excluded probes and a
+discussion of the methodological limitations still open after the
+freeze checkpoint.
+
+\subsection*{A6.1\quad The common background module: scope and
+role}
+
+All five retained per-probe extraction appendices (A1--A5) invoke
+a single background module, \texttt{ect\_background.py}, which
+functions as the single source of truth for the
+$\varepsilon$-deformed background quantities used across channels.
+Specifically, the module provides:
+\begin{itemize}
+\item the dimensionless Hubble rate
+$E_{\rm ECT}(z,\,\varepsilon)$ from
+\eqref{eq:eps_friedmann_A1};
+\item the Hubble rate
+$H(z,\,\varepsilon) = H_0 \cdot E_{\rm ECT}(z,\,\varepsilon)$
+at a user-supplied $H_0$;
+\item the cosmic age
+$t_0(\varepsilon)
+  = \int_0^{\infty}\frac{dz}{(1+z)\,H(z,\,\varepsilon)}$
+evaluated with a multi-segment quadrature to avoid
+round-off in the deep-matter-era integration range;
+\item the lookback time and age at arbitrary redshift,
+$t(z,\,\varepsilon)$, used in A2 to construct the
+stellar-assembly time-budget factor;
+\item the standard cosmological parameter constants
+($\Omega_m$, $\Omega_\Lambda$, $\Omega_r$, $\Omega_b$,
+$z_*$, $z_{\rm drag}$, $c$, $H_0^P$) adopted uniformly
+across channels.
+\end{itemize}
+At $\varepsilon = 0$ the module reproduces the published
+$\Lambda$CDM benchmarks ($t_0 \approx 13.79~{\rm Gyr}$) at
+better than $1\%$ precision once the integration range fix is
+applied. The module does not implement recombination-era or
+Boltzmann-level physics, nor does it implement the closure-level
+ECT background; it is a proxy that allows all per-channel
+extractions to share the same low- and late-$z$ numerical
+scaffolding.
+
+\subsection*{A6.2\quad What was and was not recomputed under the
+common module}
+
+In preparing the present checkpoint, each retained channel was
+re-expressed against the common module of A6.1. The level of
+physical completion, however, differs by channel. The following
+summary is the normative table: it is the reference that the
+``provisional but stable'' language of
+\S\ref{subsec:eps_retained_rebuilt} and
+\S\ref{subsec:eps_joint_band_rebuilt} points back to.
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Channel & Status after freeze &
+Comment \\
+\hline
+Hubble + $r_s$ (A1) &
+stable &
+No change from pre-recalc. \\
+& & Weak $t_0$ coupling at leading order. \\
+\hline
+JWST (A2) &
+materially revised; &
+Time-budget factor added; central $\varepsilon$ \\
+& appendix-level defence required &
+ shifted from $0.0425$ to $0.0449$. \\
+\hline
+Cosmic Chronometers (A3) &
+stable &
+Imported background; $H(z)$ shape probe. \\
+& & One-sided upper under $\varepsilon \geq 0$. \\
+\hline
+$f\sigma_8$ RSD (A4) &
+stable after grid-fix &
+Brent-refined $1\sigma$ upper
+$0.0396$. \\
+& & Raw negative best-fit explicit in A4.5. \\
+\hline
+ISW (A5) &
+provisional, proxy-level &
+$\kappa_{\rm ISW}$ \emph{not} recalibrated \\
+& & on common background. \\
+\hline
+\end{tabular}
+\end{center}
+\paragraph{Net effect.}
+Two channels carried no numerical change (Hubble, CC); two
+channels recovered or stabilised at their previously published
+values after re-grounding on the common module (fσ_8, ISW); one
+channel (JWST) received a materially new physical correction
+(time-budget factor). The net impact on the retained joint band
+is discussed in A6.3.
+
+\subsection*{A6.3\quad The freeze-checkpoint joint band: provisional
+but stable}
+
+The retained joint $1\sigma$ band after the common-background
+recalc is
+\begin{equation}
+\varepsilon
+\;\in\;
+[\,0.0296,\ 0.0376\,]
+\quad (1\sigma)
+\label{eq:joint_band_A6}
+\end{equation}
+with the $2\sigma$ extension $[\,0.0207,\,0.0425\,]$. The binding
+edges are the JWST lower-$1\sigma$ (A2, now $0.0296$ after the
+time-budget correction) and the Hubble + $r_s$ upper-$1\sigma$
+(A1, stable at $0.0376$). The $f\sigma_8$ upper-$1\sigma$
+($0.0396$, Brent-refined) is $0.002$ looser than the Hubble edge
+and does not bind; the cosmic-chronometer ($0.087$) and ISW
+($0.043$) upper edges are broader still.
+
+\paragraph{Interpretation.}
+This band is numerically stable enough to support appendix
+drafting, but not yet final enough for main-text updating. The
+overall numerical match of \eqref{eq:joint_band_A6} with the
+previous pre-recalc band $[\,0.029,\,0.036\,]$ (to three
+significant figures) indicates that the first common-background
+recalc preserves the retained-five-probe intersection at its
+previous location, within the precision of the present
+pipelines. This suggests numerical stability of the intersection
+under the first common-background recalc, but does not by itself
+establish the final retained result. Final confirmation is
+pending completion of two pieces of work: the fully rewritten
+JWST time-budget defence at appendix level (A2) and the
+ECT-native kernel recalibration for ISW (A5). Both are listed as
+methodology limitations in A6.7.
+
+\paragraph{What the band does and does not claim.}
+The band is the intersection of five independent $1\sigma$
+intervals on the uniform-$\varepsilon$ diagnostic layer. It does
+not claim to be a ``measurement of $\varepsilon$'': the
+uniform-$\varepsilon$ ansatz is itself a projection of a more
+general closure-level $\varepsilon(z)$ history onto a single
+effective parameter (cf.\ A1.7(iii)). The band is also not a
+direct fit to a first-principles ECT closure; it is the
+compatibility region under which the effective parameter
+simultaneously accommodates five independent observational
+channels at the present proxy level.
+
+\subsection*{A6.4\quad Age-viability ambiguity under Hubble mapping
+(viability note)}
+
+The $\varepsilon$-deformed background of A6.1 computes the cosmic
+age $t_0(\varepsilon)$ self-consistently. At the retained-band
+central value $\varepsilon = 0.032$, $t_0$ is approximately
+$13.46~{\rm Gyr}$ when the age integral is evaluated at the
+baseline Hubble constant $H_0 = H_0^P = 67.4~{\rm km\,s^{-1}\,Mpc^{-1}}$,
+and approximately $12.52~{\rm Gyr}$ when the same age integral is
+evaluated at the \emph{inferred} Hubble constant
+$H_0^{\rm inferred}(\varepsilon = 0.032) \approx 72.55~{\rm km\,s^{-1}\,Mpc^{-1}}$
+from the Hubble + $r_s$ mapping of \eqref{eq:H0_inferred_eps}.
+
+\paragraph{Comparison with observational age anchor.}
+The Valcin et al.\ 2021 globular-cluster age analysis
+\cite{Valcin2021} gives a largely model-independent lower bound
+$t_0 \geq 13.50 \pm 0.27~{\rm Gyr}$ on the cosmic age. The two
+mappings above yield qualitatively different comparisons:
+\begin{itemize}
+\item baseline-background mapping: $13.46~{\rm Gyr}$ is
+   within $0.15\sigma$ of the anchor --- acceptable;
+\item inferred-$H_0$ mapping: $12.52~{\rm Gyr}$ is
+   approximately $3.6\sigma$ below the anchor --- problematic.
+\end{itemize}
+\paragraph{Interpretation.}
+A nontrivial age-viability ambiguity appears once the Hubble
+extraction is combined with the uniform-$\varepsilon$ background
+interpretation. Whether this should be read as a genuine
+consistency tension or as an artefact of how the inferred $H_0$
+is mapped back into the background solution requires dedicated
+treatment that is \emph{not} performed at the uniform-$\varepsilon$
+diagnostic layer. Specifically, three interpretations are
+currently open:
+\begin{itemize}
+\item the baseline-background mapping is the physically correct
+  reading of ``cosmic age,'' because the ECT closure only
+  shifts the \emph{apparent} local Hubble constant without
+  altering the absolute cosmic expansion history;
+\item the inferred-$H_0$ mapping is the physically correct
+  reading, in which case the uniform-$\varepsilon$ ansatz
+  becomes inadequate near the retained-band central value and
+  a closure-level $\varepsilon(z)$ must decrease toward the
+  present;
+\item the globular-cluster age anchor is subject to calibration
+  systematics at the $\sim 1~{\rm Gyr}$ level, in which case
+  the observed tension is consistent with measurement
+  uncertainty.
+\end{itemize}
+None of these three interpretations is fixed by the
+Hubble + $r_s$ channel alone. The present appendix does not
+resolve the ambiguity.
+
+\paragraph{Status.}
+Age is \emph{not} a retained probe. It is \emph{not} a new formal
+open problem (OP-age-consistency is not introduced). It is
+recorded here as a viability/self-consistency note. Its
+resolution is part of the eventual closure-level ECT derivation
+of $\varepsilon(z)$ and $H_0$ from first principles (cf.\
+\S\ref{subsec:eps_outlook_rebuilt}), not a constraint to be added
+at the uniform-$\varepsilon$ level.
+
+\subsection*{A6.5\quad Benchmark achievability for the retained
+band (only)}
+
+``Benchmark achievability'' refers to the question: within the
+parameter space of the ECT ordered-branch closure, do there
+exist configurations $(\beta,\,\mu,\,\kappa,\,\phi_0,\,\ldots)$
+that yield a uniform-$\varepsilon$ projection in the retained
+band \eqref{eq:joint_band_A6}? The question is posed purely at
+the effective-diagnostic-layer level: can the retained band be
+reached?
+
+\paragraph{Scope.}
+The target of the benchmark achievability analysis is the
+retained band $[\,0.0296,\,0.0376\,]$ (\S A6.3) and nothing else.
+In particular, the age-viability ambiguity of A6.4 is not mixed
+into the benchmark target --- it remains a separate viability
+consideration at the closure-derivation level, not an additional
+constraint at the diagnostic level. This separation is
+deliberate: conflating the two would confuse the purpose of the
+benchmark achievability analysis and would cause the target
+interval to depend on which interpretation of the age-viability
+ambiguity one adopts.
+
+\paragraph{What is required.}
+A benchmark achievability demonstration must show that, at the
+closure level of the condensate theory
+(three-stage condensate closure at
+$u_0 \sim \phi_0 \sim \bar{M}_{\rm Pl}$,
+$v_2 \sim 246~{\rm GeV}$, and $v_{\rm gal} \sim$ kpc; cf.\
+\S\ref{subsec:eps_outlook_rebuilt}), at least one parameter
+configuration yields an effective $\varepsilon$ at late time in
+the range $[\,0.0296,\,0.0376\,]$ when projected onto the
+uniform-$\varepsilon$ diagnostic. No claim is made here that
+\emph{every} closure-level history produces a uniform-$\varepsilon$
+projection in this range, only that the range is reachable.
+
+\paragraph{Current status.}
+Benchmark achievability for the retained band is an open target:
+it has not been demonstrated in the present preprint. The
+closure-level derivation of $\varepsilon(z)$ from three-stage
+condensate dynamics is listed as open problem OP-Hubble-derive
+in \S\ref{subsec:eps_outlook_rebuilt}, and an explicit check of
+whether its output projection onto uniform-$\varepsilon$ lies in
+the retained band is part of that open program.
+
+\subsection*{A6.6\quad Excluded probes: audit status and
+non-silent-dismissal}
+
+Several probes that would naively contribute to a combined
+multi-messenger analysis are explicitly excluded from the
+retained joint band of \S\ref{subsec:eps_retained_rebuilt}. It
+is important that their exclusion not be read as a silent
+dismissal: the reasons for exclusion differ by probe, and each
+remains an open item at the closure-level program.
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Probe & Status & Nature of exclusion \\
+\hline
+BAO (DESI 2024) & excluded; audited & Raw best-fit
+$\varepsilon \approx -0.014$ \\
+& & under simplified pipeline; \\
+& & diagonal errors, shape-only. \\
+\hline
+$A_{\rm lens}$ CMB lensing & excluded; proxy only & Linearised
+without Boltzmann; \\
+& & theoretical systematic not included. \\
+\hline
+$S_8$ KiDS-1000 & excluded; outside sector & Raw $1\sigma$
+entirely negative; \\
+& & measures $S_8$ tension, not ECT $\varepsilon$. \\
+\hline
+$\sigma_8$ clusters & excluded; outside sector & Same as $S_8$. \\
+\hline
+SN Ia & excluded; not reinstated & Was a mock channel; permanently
+removed. \\
+\hline
+Age $t_0$ & excluded; viability only & See A6.4. \\
+\hline
+\end{tabular}
+\end{center}
+
+\paragraph{Key distinction: excluded $\neq$ silently dismissed.}
+All probes above have been audited at the level of the common
+background module (A6.1). Their exclusion from the headline joint
+band reflects a methodological judgement: at the present proxy
+level, either (a) the probe's central value and/or $1\sigma$
+lies in the unphysical region $\varepsilon < 0$, (b) the probe
+measures a quantity whose primary sensitivity lies outside the
+uniform-$\varepsilon$ sector, or (c) the probe's pipeline is
+proxy-level enough that including it in the headline intersection
+would be misleading. In no case has a probe been dropped simply
+because it disagrees with the retained band. Any probe could in
+principle re-enter the retained analysis under a closure-level
+full pipeline; but none enters the present freeze-checkpoint
+headline.
+
+\subsection*{A6.7\quad Methodological limitations and path forward}
+
+The following are known limitations of the present
+freeze-checkpoint retained pipeline, to be addressed in future
+work. They are stated here so that future revisions can be
+tracked against them:
+\begin{itemize}
+\item the common background module is a $\Lambda$CDM-proxy,
+  not a closure-level ECT background;
+\item the ISW kernel $\kappa_{\rm ISW}$ has not been recalibrated
+  on the common background (A5.3, A5.7(ii));
+\item the JWST time-budget factor has been defended at robustness
+  level for two axes (A2.4) but is still a proxy for the full
+  halo-to-stellar-mass pipeline;
+\item off-diagonal covariance has not been propagated for the
+  $f\sigma_8$ RSD compilation (A4.7(ii)) and the cosmic
+  chronometers compilation (A3.7(i));
+\item the joint band \eqref{eq:joint_band_A6} is not yet
+  promoted from provisional to final; main-text updating is
+  deferred until appendix-package completion and review;
+\item the age-viability ambiguity of A6.4 is not resolved at
+  the present layer.
+\end{itemize}
+
+\paragraph{Path forward.}
+The immediate step beyond the present freeze checkpoint is the
+closure-level derivation of $\varepsilon(z)$ from the three-stage
+condensate program, which is the content of open problem
+OP-Hubble-derive (\S\ref{subsec:eps_outlook_rebuilt}). The
+per-channel appendices A1--A5 and the present methodology
+appendix A6 together define the scaffolding against which the
+closure-level output will eventually be benchmarked.
+
+% ==================================================================
+% END Appendix A6 (methodology + benchmark + age-viability).
+% ==================================================================
