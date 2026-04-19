@@ -1,0 +1,1267 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Helvetica}
+\setmonofont{Courier New}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{xcolor}
+\usepackage{longtable,booktabs}
+\usepackage{float}
+\usepackage{placeins}
+
+\setstretch{1.10}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
+
+\titleclass{\part}{straight}
+\titleformat{\part}[display]{\centering\Large\bfseries}{Часть \thepart}{1em}{}
+\titlespacing*{\part}{0pt}{3ex plus 1ex}{2ex plus 0.5ex}
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection.}{0.5em}{}
+
+\graphicspath{{../figures/}}
+
+\setlength{\epigraphwidth}{0.65\textwidth}
+\renewcommand{\epigraphflush}{center}
+\renewcommand{\sourceflush}{center}
+
+\hypersetup{pdftitle={Евклидова конденсатная теория: нарративный компаньон},pdfauthor={Валерий Благовидов},pdflang={ru}}
+
+\title{\textbf{Евклидова конденсатная теория: нарративный компаньон}\\[6pt]
+\large От $\Phi$-среды к~пространству-времени, гравитации,\\
+квантовой механике и~наблюдательным предсказаниям}
+\author{Валерий Благовидов\thanks{Корреспонденция: \texttt{blagovidov@phystech.edu}, \texttt{vblagovidov@gmail.com}.~ORCID: \href{https://orcid.org/0009-0008-6707-7068}{0009-0008-6707-7068}.}}
+\date{Апрель 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Эта статья --- подробное нарративное сопровождение к~техническому препринту \emph{<<Euclidean Condensate Theory (ECT): Emergence of Spacetime, Quantum Mechanics, and Gravity from Spontaneous $O(4)$ Symmetry Breaking.>>} Она охватывает все основные темы препринта --- от~фундаментальной $\Phi$-среды и~её~постулатов, через возникновение лоренцева пространства-времени, гравитации, космологии, динамики галактик, квантовой механики, вакуумных эффектов, декогеренции, чёрных дыр и~наблюдательных предсказаний --- используя преимущественно повествовательные объяснения с~минимумом формул. Промежуточные математические выводы не~включены; вместо этого изложены логика, физические аргументы, ключевые результаты и~их~значимость в~форме, доступной физикам и~продвинутым студентам. Каждый результат классифицирован по~уровню вывода (A/B/C/Open), как в~техническом препринте.
+\end{abstract}
+
+\noindent\textbf{Сопровождение к:}
+\emph{``Euclidean Condensate Theory (ECT): Emergence of Spacetime,
+Quantum Mechanics, and Gravity from Spontaneous $O(4)$ Symmetry
+Breaking''}
+(\href{https://doi.org/10.5281/zenodo.18917930}{doi:10.5281/zenodo.18917930}).
+
+\medskip
+\noindent\textbf{Ключевые слова:}
+евклидова конденсатная теория; эмерджентное пространство-время; эмерджентная гравитация;
+эмерджентное время; спонтанное нарушение симметрии; $O(4)\to O(3)$;
+упорядоченный конденсат; квантовые основания; декогеренция;
+кривые вращения галактик; барионное соотношение Талли--Фишера;
+напряжение Хаббла; тёмная энергия; феноменология тёмного вещества;
+информационная проблема чёрных дыр; принцип евклидовой стационарности
+
+\newpage
+\setcounter{tocdepth}{2}
+\tableofcontents
+\newpage
+
+\section*{Введение}
+\addcontentsline{toc}{section}{Введение}
+
+Эта статья представляет подробное повествовательное изложение Евклидовой конденсатной теории (ECT) --- теоретической конструкции, в~которой лоренцево пространство-время, квантовая механика и~гравитация возникают из~спонтанного нарушения симметрии $O(4)\to O(3)$ единственного скалярного конденсата на~четырёхмерном евклидовом многообразии. Теория изложена в~техническом препринте, указанном выше; настоящая статья покрывает тот~же материал в~повествовательной форме, доступной более широкой аудитории, сохраняя только основные формулы и~ключевые результаты.
+
+ECT организована в~три основные Части. Часть~I (Основы) вводит $\Phi$-среду, шесть постулатов, механизм градиентной конденсации и~возникновение лоренцевой сигнатуры, волновых уравнений, калибровочных симметрий, стрелы времени и~квантования. Часть~II (Макроскопическая физика) развивает эмерджентную гравитацию, космологию, кривые вращения галактик, линзирование на~скоплениях, тёмный сектор и~наблюдательные предсказания. Часть~III (Квантовый сектор) развивает когерентную ветвь: реконструкцию гильбертова пространства, принцип евклидовой стационарности, запутанность, туннелирование, декогеренцию, квантовую гравитацию и~информационную проблему чёрных дыр. Часть~IV (Итоги) объединяет сравнения, ключевые уравнения, предсказания и~открытые проблемы.
+
+В~статье каждый результат классифицирован по~уровню вывода: Level~A (структурное следствие постулатов), Level~B (с~дополнительными замыканиями) или Open (явно заявленная нерешённая проблема). Классификация следует техническому препринту.
+
+\medskip
+\noindent\fbox{\parbox{0.95\textwidth}{
+\textbf{Уровни вывода, используемые в~статье:}\\
+\emph{Level~A} --- структурное следствие постулатов P1--P6 и~BR1; дополнительных допущений не~требуется.\\
+\emph{Level~B} --- требует заявленных замыканий, эффективных приближений или идентификаций.\\
+\emph{Open} --- явно заявленная нерешённая проблема или программная цель.
+}}
+
+%==============================================================
+\part{Основы: от $\Phi$-среды к~эмерджентным законам}
+\label{part:foundations_pop}
+%==============================================================
+
+\section{Мотивация: зачем ставить под вопрос основы?}
+\label{sec:pop_motivation}
+
+Современная физика покоится на~двух необычайно успешных столпах: общей теории относительности, описывающей гравитацию как кривизну гладкого четырёхмерного пространства-времени, и~квантовой теории поля, описывающей электромагнитное, слабое и~сильное взаимодействия как обмен квантами на~фиксированном пространственно-временном фоне. Несмотря на~замечательный эмпирический успех, эти две конструкции остаются фундаментально несовместимыми. Квантование гравитации стандартным способом порождает неконтролируемые бесконечности; обращение с~пространством-временем классически при квантовой материи приводит к~концептуальным парадоксам.
+
+Обе теории разделяют одно любопытное и~редко ставящееся под вопрос допущение: различие между пространством и~временем \emph{фундаментально}. Интервал пространства-времени
+\begin{equation}
+  ds^2 = -c^2 dt^2 + dx^2 + dy^2 + dz^2
+  \label{eq:pop_interval}
+\end{equation}
+содержит одну координату со~знаком минус и~три со~знаком плюс. Эта лоренцева сигнатура $(-,+,+,+)$ --- источник причинности, световых конусов и~того факта, что время течёт необратимо, а~пространство --- нет. Но~\emph{почему} этот знак минус существует?
+
+Ни~общая теория относительности, ни~Стандартная модель не~отвечают на~этот вопрос. Они его предполагают. Теория струн наследует его. Петлевая квантовая гравитация наследует его. Даже теория причинных множеств, пытающаяся построить пространство-время с~нуля, вводит причинную структуру вручную. Знак минус --- одно из~наиболее редко ставящихся под вопрос допущений в~физике.
+
+Есть глубокая теоретическая причина подозревать, что знак минус не~фундаментален. Евклидова сигнатура $(+,+,+,+)$ обладает более высокой симметрией --- группой вращений $O(4)$ с~$4\times3/2=6$ независимыми генераторами --- по~сравнению с~лоренцевой $O(3,1)$, у~которой лишь три вращения и~три буста. Во~всей физике фундаментальные законы обладают \emph{большей} симметрией, чем наблюдаемые состояния: гамильтониан ферромагнетика вращательно симметричен, но~намагниченное состояние выбирает направление; хиггсовский потенциал калибровочно-симметричен, но~вакуум выбирает определённую фазу. Естественно спросить, не~следует~ли пространство-время тому~же паттерну: высокосимметричная евклидова фаза, спонтанно нарушенная для~порождения лоренцева мира, в~котором мы~живём.
+
+Кроме того, формулировка квантовой механики через интеграл по~путям естественно связана с~евклидовым описанием через аналитическое продолжение $t \to -i\tau$. Многие из~наиболее мощных вычислительных инструментов квантовой теории поля --- инстантоны, решёточная калибровочная теория, непертурбативная перенормировка --- работают в~евклидовом пространстве. Это указывает на~то, что евклидово описание может быть более фундаментальным, чем просто вычислительный приём.
+
+Евклидова конденсатная теория (ECT) исследует именно эту возможность. Она предполагает, что глубочайший уровень реальности евклидов, а~лоренцево пространство-время, которое мы~наблюдаем, --- эмерджентное свойство упорядоченной фазы более симметричного вакуума. Если это верно, единственная идея влечёт далеко идущие следствия: не~только лоренцева метрика, но~гравитация, квантовая механика, стрела времени, второй закон термодинамики, скорость света, постоянная Планка, постоянная Ньютона и~даже структура элементарных частиц --- всё~это можно было~бы \emph{вывести} из~свойств $\Phi$-конденсата, а~не~постулировать независимо.
+
+
+\section{$\Phi$-среда: что это и~чем не~является}
+\label{sec:pop_medium}
+
+В~основе ECT лежит единственное вещественное скалярное поле~$\Phi$, определённое на~четырёхмерном евклидовом многообразии $\mathcal{M}^4$. Это многообразие не~имеет встроенного времени: все четыре координаты $X^A = (x, y, z, w)$ входят с~одной и~той~же положительно определённой евклидовой метрикой $\delta_{AB}$. Нет предпочтительного направления, причинной структуры, светового конуса.
+
+Поле~$\Phi$ --- единственная фундаментальная степень свободы. Его динамика управляется $O(4)$-инвариантным действием с~потенциалом самодействия --- потенциалом двойной ямы, знакомым из~механизма Хиггса и~сверхтекучести. Во~многих отношениях $\Phi$ аналогично параметру порядка сверхтекучей жидкости или ферромагнетика, но~действует на~гораздо более глубоком уровне: оно описывает среду, из~которой состоит само пространство-время.
+
+Важно понимать, чем $\Phi$ \emph{не~является}. Это не~квантовое поле, определённое на~заранее существующем пространстве-времени --- это предполагало~бы то~самое, что ECT стремится вывести. Это не~метрика и~не~гравитационное поле; те~возникнут позже как коллективные свойства. Это не~инфлатон, не~поле Хиггса, не~частица тёмного вещества, хотя некоторые его моды будут играть аналогичные роли на~определённых энергетических масштабах. И~это не~<<скрытая переменная>> в~квантово-механическом смысле. $\Phi$ --- \emph{допространственная, доквантовая, догравитационная} сущность.
+
+Тонкий, но~критически важный момент: <<физику>> $\Phi$ на~фундаментальном евклидовом уровне нельзя описывать, используя энергию, силу или потенциал в~их~обычном смысле. Эти понятия предполагают лоренцево время, которого ещё не~существует. Евклидово действие $S_E[\Phi]$ --- это функционал полевых конфигураций на~четырёхмерном многообразии, а~не~временной интеграл лагранжиана. Перенесение энергетического языка в~довременну́ю евклидову область --- распространённый источник путаницы, которого следует избегать.
+
+$\Phi$-среда имеет конкретные онтологические свойства, явно перечисленные в~техническом препринте (S1--S10): она непрерывна и~дифференцируема (S1); скалярна --- без~внутренней спиновой или индексной структуры на~фундаментальном уровне (S2); заполняет всё~четырёхмерное евклидово пространство (S3); её~динамика чисто реляционна --- нет внешних часов, нет предпочтительной системы отсчёта (S4); допускает упорядоченные и~неупорядоченные конфигурации (S5); ни~одна конфигурация не~привилегирована a~priori (S6); поддерживает как гладкие, так и~сингулярные (дефектные) конфигурации (S7); поточечные внутренние координаты --- описательные избыточности, а~не~наблюдаемые (S8); упорядочение не~обязано быть глобально однородным (S9); все топологические секторы, совместимые с~вакуумным многообразием, допустимы (S10). Эти свойства характеризуют конкретный тип физической среды, математическая формализация которой ведёт непосредственно к~постулатам.
+
+
+\section{Шесть постулатов: формализация $\Phi$-среды}
+\label{sec:pop_postulates}
+
+Постулаты ECT формализуют онтологические свойства $\Phi$-среды, описанные выше. Каждый постулат схватывает конкретное физическое свойство и~переводит его в~точное математическое утверждение.
+
+\textbf{P1 --- Four-dimensional Euclidean arena} (formalises S1, S3).
+Фундаментальная арена --- связное четырёхмерное евклидово многообразие $\mathcal{M}^4$ с~метрикой $\delta_{AB}$. Все четыре направления и~все точки изначально эквивалентны. Нет выделенной временно́й координаты на~фундаментальном уровне. Это максимальная симметрия четырёхмерного пространства с~положительно определённой метрикой.
+
+\textbf{P2 --- $O(4)$-invariant action} (formalises the symmetry of S3, S4).
+Динамика уважает полную вращательную симметрию четырёхмерного евклидова пространства: $S_E[\Phi] = S_E[\Lambda \cdot \Phi]$ для всех $\Lambda \in O(4)$. Это математическое выражение эквивалентности всех четырёх направлений в~ненарушенной фазе.
+
+\textbf{P3 --- Minimal scalar microdynamics} (formalises S1, S2).
+The fundamental field is a single real scalar $\Phi(X)$ with a minimal local action:
+\begin{equation}
+  S_E[\Phi] = \int d^4X\left\{
+  \frac{1}{2}(\partial_A\Phi)^2 + V(\Phi)\right\},
+  \qquad
+  V(\Phi) = -\frac{\mu^2}{2}\Phi^2 + \frac{\lambda}{4}\Phi^4,
+  \quad \mu^2 > 0.
+  \label{eq:pop_action}
+\end{equation}
+Потенциал двойной ямы имеет два минимума при~$\pm\phi_0$, где $\phi_0 = \sqrt{\mu^2/\lambda}$. Существенно, что ориентационная переменная $n_A$ не~входит в~это голое действие --- она возникает только после упорядочения вакуума.
+
+\textbf{P4 --- Ordered vacuum branch} (formalises S5, S9).
+Физически релевантный вакуум принадлежит упорядоченной ветви, характеризуемой ненулевым \emph{градиентным конденсатом}: $\langle\partial_A\Phi\rangle = u_0\,\delta_{Aw}$, $u_0 > 0$. Это спонтанно нарушает $O(4) \to O(3)$, выбирая предпочтительное евклидово направление $w$. Направление не~навязывается извне, а~выбирается спонтанно --- подобно тому, как ферромагнетик выбирает направление намагниченности ниже температуры Кюри.
+
+\textbf{P5 --- Medium character of the ordered branch} (formalises S8).
+Поточечные внутренние координаты эффективного параметра порядка --- в~частности, компактная фаза $\theta(X)$ и~локальная ориентация $n_A(X)$ --- являются описательными избыточностями, а~не~независимо наблюдаемыми степенями свободы. Физические наблюдаемые зависят только от~\emph{градиентных} и~\emph{голономных} (петлево-интегральных) данных.
+
+Это прямая аналогия с~физикой известных сред: в~сверхтекучей жидкости абсолютная фаза в~отдельной точке ненаблюдаема --- только градиенты фазы и~интегралы циркуляции несут физическую информацию. В~нематическом жидком кристалле поточечный угол директора ненаблюдаем --- только градиенты директора и~топологические дефекты физичны. P5 утверждает, что $\Phi$-среда обладает тем~же средовым характером.
+
+Следствие P5 глубоко: поскольку поточечные внутренние координаты --- избыточности, локальные переопределения $\theta(X)$ и~$n_A(X)$ должны трактоваться как локальные калибровочные избыточности. Это требует компенсирующих калибровочных связностей и~ведёт к~возникновению калибровочных симметрий (раздел~\ref{sec:pop_gauge}).
+
+\textbf{P6 --- Multiplicity of configurations and non-uniform ordering} (formalises S6, S9, S10).
+Ни~одна конфигурация не~выделена a~priori. Упорядоченные конфигурации не~обязаны быть глобально однородными: пространственно-переменные конденсатные фоны, доменные структуры и~переходные области --- всё~допустимо.
+
+In addition to these six postulates, the theory identifies a derived structural rule:
+
+\textbf{BR1 --- Smooth coherent sector} (derived from P3 + P4).
+В~гладком инфракрасном секторе упорядоченной ветви эффективный параметр порядка допускает полярную форму $\Phi_{\rm eff} = \rho\,e^{i\theta}$, и~однозначность фазы на~замкнутых контурах даёт условие обмотки: $\oint \partial_A\theta\,dX^A = 2\pi n$, $n \in \mathbb{Z}$. Это не~отдельный постулат, а~\emph{топологическое следствие} гладкого упорядочения. Оно вводит доквантовый масштаб действия $S_0$ и~петлевую секторную структуру, которая позже породит квантовое поведение (раздел~\ref{sec:pop_loops}).
+
+Что \emph{не~постулируется}, заслуживает особого внимания. ECT не~постулирует: внешнее время; лоренцеву сигнатуру; гильбертово пространство; правило Борна; уравнение Шрёдингера; гравитационное уравнение Ньютона; космологическую постоянную; частицы тёмного вещества; скорость света как фундаментальную константу. Всё~это либо выводится, либо структурно мотивировано в~рамках P1--P6 + BR1.
+
+
+\section{Спонтанное нарушение симметрии и~рождение времени}
+\label{sec:pop_ssb}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.88\textwidth]{fig_ect_architecture.pdf}
+\caption{Architectural overview of ECT\@. A single Euclidean $\Phi$-field undergoes $O(4) \to O(3)$ symmetry breaking through gradient condensation. Two complementary branches emerge: the geometric branch (gravity, cosmology, galactic dynamics) and the coherent branch (quantum mechanics, decoherence, vacuum effects). All of known physics is organised within this single structure. (\emph{Level~A for the branching architecture; individual arrows carry their own status labels in the preprint.})}
+\label{fig:pop_architecture}
+\end{figure}
+
+Спонтанное нарушение симметрии (SSB) --- один из~наиболее мощных организующих принципов в~физике. Сферический магнит не~имеет предпочтительного направления, пока не~охладится ниже температуры Кюри и~все спины не~выстроятся. Идеально круглый шарик на~вершине <<мексиканской шляпы>> не~имеет предпочтительного положения, пока не~скатится вниз и~не~выберет одну впадину. В~обоих случаях базовые законы симметричны, а~реализованное состояние --- нет.
+
+В~ECT $\Phi$-среда претерпевает аналогичный переход: симметрия $O(4)$ четырёхмерной евклидовой арены нарушается до~$O(3)$ (рис.~\ref{fig:pop_architecture}). Три направления остаются эквивалентными (они становятся <<пространством>>); одно ($w$) выделяется (оно становится зародышем <<времени>>).
+
+Механизм этого перехода --- \emph{градиентная конденсация}. В~упорядоченной фазе не~само поле~$\Phi$, а~его \emph{градиент} $\partial_A\Phi$ приобретает ненулевое среднее значение, указывающее в~определённом направлении: $\langle\partial_A\Phi\rangle = u_0\,\delta_{Aw}$. Это различие критически важно: ненулевое $\langle\Phi\rangle$ было~бы $O(4)$-инвариантным (поскольку $\Phi$ --- скаляр при~вращениях, скалярное среднее сохраняет все вращательные симметрии) и~не~произвело~бы никакого нарушения симметрии. Градиент $\partial_A\Phi$, напротив, преобразуется как \emph{вектор} при~$O(4)$. Его ненулевое среднее нарушает симметрию, выбирая направление --- подобно тому, как намагниченность $\langle\mathbf{M}\rangle$ в~ферромагнетике есть вектор, выбирающий направление и~нарушающий $O(3) \to O(2)$.
+
+The gradient field can be decomposed into an amplitude and a direction:
+\begin{equation}
+  \partial_A\Phi = u \cdot n_A,
+  \qquad u = |\partial\Phi| \geq 0,
+  \qquad n^A n_A = 1.
+  \label{eq:pop_polar}
+\end{equation}
+В~упорядоченном вакууме $\langle u \rangle = u_0$ и~$\langle n^A \rangle = \delta^A{}_w$. Это разложение --- ключ ко~всей теории. Каждая компонента играет особую физическую роль:
+
+\textbf{Амплитудная мода} ($u$; флуктуации $\sigma = u - u_0$): массивная, короткодействующая ($\xi_{\rm cond} \sim m_\sigma^{-1} \sim \ell_{\rm Pl}$), связанная с~гравитационной жёсткостью и~планковским масштабом. Играет роль, аналогичную бозону Хиггса, но~на~планковском, а~не~электрослабом масштабе.
+
+\textbf{Ориентационные моды} ($\delta n^A$): три безмассовых голдстоуновских бозона из~$O(4)/O(3) \simeq S^3$. На~линеаризованном уровне они порождают гравитон (спин-2), а~также два дополнительных связанных мода.
+
+\textbf{Фазовая мода} ($\theta$, в~когерентном секторе $\Phi_{\rm eff} = \rho\,e^{i\theta}$): связана с~калибровочными полями и~квантовой динамикой.
+
+Динамическое происхождение градиентной конденсации из~голого действия P3 --- открытая теоретическая программа (OP-grad в~препринте). Обобщённое кинетическое действие $P(X)$, $X = (\partial_A\Phi)^2$, с~минимумом при~$X = u_*^2 > 0$, обеспечивает естественную динамическую обстановку для~такой конденсации --- аналогично тому, как сверхтекучая жидкость развивает ненулевой сверхток, когда свободная энергия благоприятствует конечной конденсатной скорости. Теория устанавливает, что \emph{при~наличии} упорядоченной ветви (P4) следует богатая и~самосогласованная эффективная физика.
+
+Важный структурный результат (<<$P(X)$-теорема об~отсутствии ориентационной жёсткости>>, доказанная в~препринте) показывает, что чисто кинетическое действие $P(X)$ может генерировать градиентную конденсацию (ненулевое $u_0$), но~\emph{не~может} генерировать ориентационную жёсткость --- упругость, сопротивляющуюся изгибу направления конденсата. Ориентационная жёсткость должна приходить из~членов высших порядков или из~NLO-сектора ЭТП, и~именно эта жёсткость в~конечном счёте порождает гравитацию.
+
+
+\section{Как возникает лоренцева сигнатура}
+\label{sec:pop_lorentzian}
+
+Когда конденсат выбрал направление, физика малых возбуждений вокруг упорядоченного фона радикально меняется. Ключевая величина --- эффективный кинетический тензор $K^{AB}$, управляющий флуктуациями. В~техническом препринте доказана теорема единственности: наиболее общее квадратичное действие для~флуктуаций $\varphi$ вокруг упорядоченной ветви, совместимое с~остаточной $O(3)$-симметрией, имеет вид (\emph{Level~A}):
+\begin{equation}
+  S_{\rm eff} = \int d^4X \left[
+  \frac{\beta}{2}(\partial_A\varphi)^2
+  - \frac{\alpha}{2}(n^A\partial_A\varphi)^2
+  + \ldots\right],
+  \label{eq:pop_eft}
+\end{equation}
+so that
+$K^{AB} = \beta\,\delta^{AB} - \alpha\,n^A n^B$.
+
+Этот тензор имеет собственные значения $\beta$ (трёхкратно вырожденное, вдоль трёх направлений, перпендикулярных $n^A$) и~$\beta - \alpha$ (вдоль $n^A$). Анализ собственных значений выявляет три различных режима:
+
+\emph{Если $\alpha < \beta$:} Все собственные значения положительны. Эффективная метрика остаётся евклидовой. Нет времени, причинной структуры, волнового распространения.
+
+\emph{Если $\alpha = \beta$:} Одно собственное значение обращается в~нуль. Система на~евклидово-лоренцевой границе с~вырожденной, галилеевоподобной кинематикой.
+
+\emph{Если $\alpha > \beta$ (<<лоренцево окно>>):} Одно собственное значение отрицательно. Эффективная метрика приобретает лоренцеву сигнатуру $(-,+,+,+)$. Возмущения распространяются как волны с~конечной скоростью, и~возникает структура причинного конуса.
+
+ECT работает в~лоренцевом окне. В~каноническом варианте $(\alpha, \beta) = (2, 1)$ кинетический тензор сводится к~$K^{AB} = \delta^{AB} - 2\,n^An^B$ с~собственными значениями $(+1, +1, +1, -1)$ --- в~точности лоренцева сигнатура.
+
+The effective propagation speed is:
+\begin{equation}
+  c_* = \sqrt{\frac{\beta}{\alpha - \beta}},
+  \label{eq:pop_cstar}
+\end{equation}
+отождествляемой со~скоростью света (\emph{Level~A/B}).
+
+\textbf{Это центральный результат Части~I: знак минус в~интервале пространства-времени~\eqref{eq:pop_interval} не~предполагается, а~выводится.} Он~появляется потому, что градиентный конденсат нарушает $O(4)$ таким образом, что порождает анизотропный кинетический тензор с~одним отрицательным собственным значением. Статус вывода --- \emph{Level~A}: он~следует из~единственности кинетического тензора (доказанной как теорема) в~сочетании с~P4.
+
+\textbf{Сравнение с~другими теориями.} В~теории Эйнштейнова эфира (Jacobson, 2004) анизотропия вводится \emph{постулированным} векторным полем --- не~выводится из~скаляра. В~гравитации Хоржавы--Лифшица лоренц-инвариантность нарушается \emph{явно} на~фундаментальном уровне. В~причинных динамических триангуляциях (CDT) лоренцева структура навязывается как ограничение на~решётку. В~предложении Хартла--Хокинга без~границы евклидова арена --- вычислительный инструмент, а~не~фундаментальная сущность. Только в~ECT лоренцева сигнатура \emph{спонтанно генерируется} из~более симметричного евклидова субстрата, и~результат является теоремой, а~не~феноменологическим допущением.
+
+\FloatBarrier
+
+\section{Иерархия уравнений: от евклидовой краевой задачи к~уравнению Шрёдингера}
+\label{sec:pop_hierarchy}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.55\textwidth]{fig_equation_hierarchy.pdf}
+\caption{The ECT equation hierarchy. The fundamental Euclidean field equation (a four-dimensional boundary-value problem) generates the Klein--Gordon equation (after $t = w/c_*$), which in turn yields the Schr\"odinger equation (non-relativistic limit). Each level is a \emph{descendant} of the previous one, not an independent postulate. Standard quantum mechanics occupies the lowest rung. (\emph{Hierarchy structure: Level~A; specific forms: Level~A/B.})}
+\label{fig:pop_hierarchy}
+\end{figure}
+
+Возникновение лоренцевой сигнатуры имеет прямое следствие для~уравнений движения (рис.~\ref{fig:pop_hierarchy}). Евклидово уравнение поля $\delta^{AB}\partial_A\partial_B\Phi - V'(\Phi) = 0$ есть четырёхмерная \emph{краевая задача}: её~решения определяются данными на~\emph{всей границе} евклидовой области, а~не~начальными данными, распространяемыми вперёд во~времени.
+
+После установления упорядоченной ветви и~введения отождествления $t = w/c_*$ то~же~уравнение, ограниченное лоренцевым окном, становится \emph{уравнением Клейна--Гордона}: $\partial_t^2\varphi - c_*^2\nabla^2\varphi + m_{\rm eff}^2\varphi = 0$ (\emph{Level~A/B}).
+
+В~нерелятивистском пределе ($E \approx mc^2 + E_{\rm kin}$, $|E_{\rm kin}| \ll mc^2$) уравнение Клейна--Гордона сводится к~\emph{уравнению Шрёдингера}: $i\hbar\,\partial_t\psi = -\frac{\hbar^2}{2m}\nabla^2\psi + V\psi$ (\emph{Level~A/B}).
+
+Эта иерархия --- не~просто формальное наблюдение. Она кодирует физическое утверждение: уравнение Шрёдингера, которое стандартная квантовая механика принимает как стартовую аксиому, является \emph{самым узким, низкоэнергетическим потомком} более фундаментальной евклидовой динамики. Волновое уравнение \emph{выводится}, а~не~постулируется.
+
+Различие между задачей Коши (начальных значений) стандартной КМ и~краевой задачей ECT --- одно из~глубочайших структурных различий между двумя конструкциями. В~стандартной КМ начальные данные на~одном временно́м срезе однозначно определяют будущее. В~ECT фундаментальное уравнение ограничивает полевую конфигурацию на~\emph{всей} четырёхмерной области. Это имеет далеко идущие следствия для~запутанности, экспериментов отложенного выбора и~влияния будущих граничных условий на~нынешние конфигурации (см.~Часть~III).
+
+\FloatBarrier
+
+\section{Наследование причинного конуса и~урок GW170817}
+\label{sec:pop_cone}
+
+A critical question for any theory claiming to derive Lorentzian spacetime is: why is there a \emph{universal} speed of light? In the real world, photons, gravitons, and all massless particles share the same causal cone to extraordinary precision.
+
+In August 2017, the LIGO/Virgo gravitational-wave detectors observed the merger of two neutron stars --- an event designated \textbf{GW170817}. Just 1.7 seconds later (after a journey of 130 million light-years), the Fermi and INTEGRAL satellites detected a gamma-ray burst from the same source. This simultaneous arrival established that the speed of gravitational waves and the speed of light agree to better than one part in $10^{15}$: $|c_{\rm GW}/c - 1| < 6 \times 10^{-15}$.
+
+In many alternative gravity theories (Einstein--aether, Horndeski scalar-tensor models, massive gravity), such universality requires fine-tuning of multiple parameters. In the Standard Model Extension (SME), each particle sector carries an independent set of Lorentz-violation coefficients.
+
+ECT explains this universality as a \emph{structural theorem} (\emph{Level~A/B}). The argument is straightforward:
+(i)~The fundamental field is one: $\Phi$.
+(ii)~The kinetic tensor is one: $K^{AB}$.
+(iii)~All low-energy excitations --- scalar, phase, gauge, tensor --- propagate within the same ordered-branch EFT built on $K^{AB}$.
+(iv)~No second independent rank-2 tensor exists in the EFT that could give different sectors different speeds.
+
+The result is \textbf{cross-sector cone universality}:
+\begin{equation}
+  c_{\rm phase} = c_\gamma = c_{\rm GW} = c_*
+  \qquad\text{(\emph{Level~A/B})}.
+  \label{eq:pop_cone}
+\end{equation}
+The GW170817 observation is then not an unexplained coincidence but a \emph{structural consistency check} of ECT. This is one of the theory's most distinctive predictions: the universality of the speed of light is derived from the single-medium origin of all native low-energy sectors.
+
+ECT does admit Planck-suppressed higher-order corrections that can produce tiny sector-dependent speed differences at extreme energies. But arbitrary, unsuppressed, low-energy speed differences between sectors are structurally forbidden. If such differences were ever observed, ECT's one-cone universality would be falsified.
+
+
+\section{Три фундаментальных масштаба из одного поля}
+\label{sec:pop_scales}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.92\textwidth]{fig_condensate_scales.png}
+\caption{The three energy scales of the ECT condensate. A single scalar field generates the Planck/gravitational scale ($\phi_0 \sim 10^{18}$\,GeV), the electroweak scale ($v_2 \sim 246$\,GeV), and the galactic-phenomenology scale ($v_{\rm gal} \sim$ kpc). These are not independent mechanisms but three faces of the same condensate at different organisational levels. (\emph{Level~B for the hierarchy mechanism.})}
+\label{fig:pop_scales}
+\end{figure}
+
+A notable feature of ECT is that a single scalar field generates three distinct energy scales governing very different regimes of physics (Fig.~\ref{fig:pop_scales}):
+
+The \textbf{gravitational scale} $\phi_0 \sim 2.4 \times 10^{18}$\,GeV (the reduced Planck mass) arises from the symmetry-breaking amplitude of the condensate. It simultaneously determines Newton's constant, Planck's constant, and the speed of light through the matching relations (\emph{Level~B}):
+\begin{equation}
+  G_N = \frac{c_*^4}{8\pi\phi_0^2}, \qquad
+  \hbar = \frac{c_*\phi_0}{\sqrt{\lambda}}, \qquad
+  c_* = \sqrt{\frac{\beta}{\alpha-\beta}}.
+  \label{eq:pop_matching}
+\end{equation}
+The fact that a single condensate scale $\phi_0$ simultaneously determines $G$, $\hbar$, and $c$ is a non-trivial structural prediction: these three constants are not independent but are three projections of the same underlying condensate parameter.
+
+The \textbf{electroweak scale} $v_2 \sim 246$\,GeV corresponds to a second, subsidiary condensation within the $\Phi$-sector, generating masses for the $W$, $Z$ bosons, and the Higgs particle. The enormous hierarchy $\phi_0/v_2 \sim 10^{16}$ is addressed through a running-coupling argument: the self-coupling $\lambda$ runs logarithmically with energy and can generate the smaller scale through dimensional transmutation, similar to the mechanism that generates the QCD scale from the running of $\alpha_s$ (\emph{Level~B/Open}).
+
+The \textbf{galactic scale} $r_0 \sim$ kpc marks the transition between Newtonian and modified gravitational behaviour in galaxies, governed by the critical acceleration $g^\dagger \approx cH_0/(2\pi) \approx 1.1 \times 10^{-10}$\,m/s$^2$ (\emph{Level~B}).
+
+\FloatBarrier
+
+\section{Петли ECT, квантование и~происхождение $\hbar$}
+\label{sec:pop_loops}
+
+A distinctive feature of ECT is how quantisation emerges naturally from the compact-phase structure of the condensate, without being imposed as an axiom.
+
+In the coherent sector, the effective order parameter has the polar form $\Phi_{\rm eff} = \rho\,e^{i\theta}$, where $\theta$ is a compact (periodic) phase variable. The single-valuedness requirement (BR1) means that if we transport $\theta$ around any closed loop $\mathcal{C}$ in the Euclidean manifold, it must return to its original value:
+\begin{equation}
+  \oint_{\mathcal{C}} \partial_A\theta\,dX^A = 2\pi n,
+  \qquad n \in \mathbb{Z}.
+  \label{eq:pop_winding}
+\end{equation}
+This is not a quantum axiom --- it is a \emph{topological necessity} for any smooth, single-valued function with compact range.
+
+The consequence is immediate: the action associated with loop configurations is quantised. The minimal nontrivial loop ($n = 1$) carries a definite action:
+\begin{equation}
+  S_{\rm loop,min} = 2\pi S_0,
+  \label{eq:pop_Sloop}
+\end{equation}
+where the scale $S_0$ depends on the condensate parameters. Through the matching relation~\eqref{eq:pop_matching}, $S_0$ is identified with $\hbar$ (\emph{Level~B}).
+
+This means Planck's constant is not a mysterious fundamental quantity in ECT. It is the action scale set by the condensate's compact-phase structure --- just as the flux quantum $\Phi_0 = h/(2e)$ in a superconductor is set by the Cooper pair condensate, and the Bohr--Sommerfeld condition $\oint p\,dq = nh$ is set by the periodicity of classical action variables. All three are instances of the same mathematical mechanism: \emph{single-valuedness of a periodic order parameter implies quantisation}.
+
+The loop sectors partition the coherent branch into topologically distinct classes indexed by the integer $n$. Configurations in different sectors cannot be continuously deformed into each other. This is why quantum interference can arise in ECT without operator axioms: paths belonging to different winding sectors contribute to the path sum with different phase factors, producing constructive or destructive combination.
+
+
+\section{Стрела времени, второй закон и~почему время течёт}
+\label{sec:pop_arrow}
+
+In the Euclidean picture, the coordinate $w$ is just one of four equivalent spatial directions. There is no ``forward'' or ``backward'' in $w$, just as there is no ``forward'' in $x$. The arrow of time is not fundamental: it is \emph{emergent}.
+
+ECT constructs the thermodynamic arrow in two stages:
+
+\textbf{Stage 1: directional backbone (\emph{Level~A}).} In the Lorentzian branch, the effective dynamics admits a retarded causal structure: perturbations propagate forward along $w$ inside the emergent light cone. The dissipative kernel of the influence-functional formalism is positive-semidefinite ($\Gamma_{\rm irr} \geq 0$), meaning that off-diagonal histories are \emph{suppressed} rather than amplified. This gives the \emph{directionality} of decoherence.
+
+\textbf{Stage 2: entropy growth (\emph{Level~B}).} Under two additional effective-closure assumptions --- an ohmic spectral density and a Markovian regime --- the coarse-grained entropy satisfies:
+\begin{equation}
+  \frac{dS_{\rm ent}}{dw} = N_{\rm eff}\,\gamma
+  \left(\frac{dq}{dw}\right)^2 \geq 0,
+  \label{eq:pop_2ndlaw}
+\end{equation}
+where $N_{\rm eff}$ is the effective number of environmental modes and $\gamma$ is the decoherence rate per mode. The sign is anchored in the Level~A retarded structure; the explicit formula requires Level~B closure.
+
+The result is a three-regime picture:
+
+At the \emph{cosmological} level, the ordered branch defines the cosmic arrow; the second law holds to overwhelming accuracy.
+
+At the \emph{macroscopic} level ($N_{\rm eff} \gg 1$), the ratio of backward-to-forward transition probabilities is exponentially suppressed: $P_{\rm back}/P_{\rm fwd} = \exp(-2N_{\rm eff}\gamma\,\Delta w \cdot (\Delta q)^2/\ell^2)$. For a mole of gas at room temperature over a nanosecond, the exponent is $\sim 3.6 \times 10^{33}$ --- reverse trajectories are fantastically unlikely.
+
+At the \emph{quantum} level ($N_{\rm eff} \sim 1$), the exponent becomes tiny ($\sim 10^{-15}$), and effective time-reversibility is recovered --- consistent with the well-known fact that isolated quantum systems evolve reversibly.
+
+The second law is therefore not an independent postulate in ECT. Its directional backbone is Level~A; its full monotonicity is Level~B. What ECT adds beyond Boltzmann is a \emph{structural explanation} of why the initial condition is special: it is tied to ordered-branch selection (P4), not imposed ad hoc.
+
+
+\section{Спектр, ветвление, калибровочные симметрии и~частицы}
+\label{sec:pop_spectrum_etc}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.88\textwidth]{fig_gamma_crossover.pdf}
+\caption{The quantum--classical boundary. The dimensionless decoherence parameter $\Gamma_{\rm loop}$ determines whether a system behaves quantum-mechanically ($\Gamma_{\rm loop} \ll 1$) or classically ($\Gamma_{\rm loop} \gg 1$). The crossover at $\Gamma_{\rm loop} \sim 1$ defines the quantum--classical boundary. Different objects --- electron, C$_{60}$, bacterium, dust grain, cat --- occupy different positions on this scale. (\emph{Level~A for the crossover structure; Level~B for numerical estimates.})}
+\label{fig:pop_gamma}
+\end{figure}
+
+The ordered condensate supports three classes of excitations, each playing a distinct physical role:
+
+\textbf{Amplitude mode ($\sigma$):} Fluctuations of the gradient magnitude $u$ around $u_0$. This mode is massive ($m_\sigma^2 = 2\mu^2$, \emph{Level~A}), with correlation length $\xi_{\rm cond} \sim m_\sigma^{-1}$ identified with the Planck length (\emph{Level~B}). It is heavy, short-ranged, and plays a role analogous to the radial Higgs mode at the Planck scale.
+
+\textbf{Orientation modes ($\delta n^A$):} Three massless Goldstone bosons from $O(4)/O(3)$. Their dynamics generates the graviton (spin-2, massless) at the linearised level (\emph{Level~A}), plus constrained scalar/vector companions. An important structural point is that the amplitude mode is too heavy ($m_\sigma \sim M_{\rm Pl}$) for kpc-scale variations, ruling out naive scalar-field dark matter models --- a powerful constraint that uniquely selects the viable mechanism for galactic phenomenology (Part~II).
+
+\textbf{Phase mode ($\theta$):} In the coherent sector, phase fluctuations connect to gauge fields: the photon emerges as the gauge boson of the $U(1)$ phase symmetry (\emph{Level~A/B after P5}).
+
+The ordered condensate organises into two complementary branches (Fig.~\ref{fig:pop_gamma}): the \textbf{geometric branch} (Macroscopic Physics, long-wavelength, coarse-grained, $\Gamma_{\rm loop} \gg 1$) and the \textbf{coherent branch} (Quantum Sector, short-wavelength, phase-coherent, $\Gamma_{\rm loop} \ll 1$). Both originate from the same ordered condensate action $S_{\rm ord}[u, n]$ (\emph{Level~A}). The quantum--classical boundary corresponds to the crossover $\Gamma_{\rm loop} \sim 1$.
+
+\subsection{Калибровочные симметрии и~четыре фундаментальных взаимодействия}
+\label{sec:pop_gauge}
+
+ECT does not postulate gauge symmetries. It derives them from the internal structure of the $\Phi$-medium through P5. Since pointwise values of $\theta$ and $n_A$ are not observable, local redefinitions must leave physics unchanged --- requiring compensating gauge connections.
+
+\textbf{Electromagnetism (\emph{Level~A/B after P5}):} The compact phase $\theta$ generates a $U(1)$ gauge symmetry. Local phase rotations require a gauge field $A_\mu$ satisfying Maxwell's equations. The photon is the gauge boson of this emergent symmetry.
+
+\textbf{Weak interaction (\emph{Level~B}):} The $O(3)$ residual symmetry provides a natural $SU(2)$ structure. Combined with electroweak condensation at $v_2 \sim 246$\,GeV: $W^\pm$, $Z$ bosons and electroweak symmetry breaking.
+
+\textbf{Strong interaction (\emph{Level~B/Open}):} A structural route to $SU(3)$ colour exists through the orientation sector, but the full derivation remains open.
+
+\textbf{Gravity (\emph{Level~A/B}):} Gravity arises from orientation stiffness --- the condensate's resistance to bending of $n^A$ (Part~II).
+
+Thus all four fundamental interactions have a common condensate origin. Beyond these four, ECT predicts a \textbf{fifth, Planck-suppressed fermion--condensate coupling} (\emph{Level~B}): a spin-precession frequency $\omega_5 \sim 10^{-10}$\,rad/s and an E\"otv\"os parameter $\eta \sim 10^{-15}$, testable by MICROSCOPE-2.
+
+\subsection{Элементарные частицы}
+
+The particle spectrum includes the graviton (spin-2 from $\delta n^A$, \emph{Level~A}), photon ($U(1)$, \emph{Level~A/B}), $W^\pm$/$Z$ ($SU(2)$, \emph{Level~B}), Higgs (electroweak radial mode, \emph{Level~B}), gluons ($SU(3)$, \emph{Level~B/Open}), fermions ($O(3)$ spinors with Dirac equation reconstructed via vierbein formalism, \emph{Level~A/B}), and instantons ($m_n = n \times 1.6$\,GeV/$c^2$, \emph{Level~B}).
+
+What remains open (\emph{Level~Open}): the origin of three fermion generations; the Yukawa coupling hierarchy; the fine-structure constant $\alpha = 1/137$. Qualitative structural routes exist (e.g.\ generations may be related to topological sectors of $S^3$), but rigorous quantitative derivations do not.
+
+Figure~\ref{fig:pop_partI_logic} summarises the derivation logic of Part~I.
+
+
+\section{Заключение Части~I}
+
+\subsection{Основные результаты}
+
+From six postulates (P1--P6) and one derived branch rule (BR1), the following structures are obtained:
+
+\begin{enumerate}
+\item Lorentzian signature $(-,+,+,+)$ from $O(4)\to O(3)$ SSB (\emph{A}).
+\item Universal causal cone: all species share $c_*=c$ (\emph{A/B}).
+\item Equation hierarchy: Euclidean $\to$ KG $\to$ Schr\"odinger (\emph{A/B}).
+\item Arrow of time from monotonic decoherence (\emph{A}).
+\item Second law: $dS_{\rm ent}/dw \geq 0$ (\emph{A/B}).
+\item Branching into geometric and coherent sectors (\emph{A}).
+\item $U(1)$ electromagnetism from P5 (\emph{A/B}).
+\item $SU(2)$ weak sector (\emph{B}); $SU(3)$ colour (\emph{B/Open}).
+\item Graviton as spin-2 orientation mode (\emph{A}).
+\item $S_0 = \hbar$ from compact-phase winding (\emph{B}).
+\item Quantisation from loop-sector topology (\emph{A}).
+\item Fifth-force coupling $\beta_5 \sim m_f/\bar{M}_{\rm Pl}$ (\emph{B}).
+\end{enumerate}
+
+\subsection{Ключевые уравнения и~принципы Части~I}
+
+Effective kinetic tensor: $K^{AB} = \beta\,\delta^{AB} - \alpha\,n^An^B$ (uniqueness theorem).
+
+Propagation speed: $c_* = \sqrt{\beta/(\alpha-\beta)}$.
+
+Matching relations: $G_N = c_*^4/(8\pi\phi_0^2)$, $\hbar = c_*\phi_0/\sqrt{\lambda}$.
+
+Loop quantisation: $\oint \partial_A\theta\,dX^A = 2\pi n$; $S_{\rm loop,min} = 2\pi\hbar$.
+
+Cross-sector universality: $c_{\rm phase} = c_\gamma = c_{\rm GW} = c_*$.
+
+Second law: $dS_{\rm ent}/dw = N_{\rm eff}\gamma(dq/dw)^2 \geq 0$.
+
+\subsection{Предсказания Части~I}
+
+GW170817 consistency: $|c_{\rm GW}/c - 1| < 6\times10^{-15}$ (satisfied).
+
+Fifth force: $\omega_5 \sim 10^{-10}$\,rad/s, $\eta \sim 10^{-15}$ (MICROSCOPE-2).
+
+LIV: $\Delta t_{\rm GW} \sim 10^{-64}$\,s (Planck-suppressed, currently unobservable).
+
+Casimir enhancement $\times 3/2$ from three Goldstone modes.
+
+\subsection{Граф логики Части~I}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{fig_partI_derivation_logic_pop.pdf}
+\caption{Part~I derivation logic. From six postulates and BR1, the theory derives: Lorentzian signature, universal causal cone, equation hierarchy, arrow of time, second law, branching, gauge symmetries, particles, quantisation. Colours indicate Level~A, B, and Open status.}
+\label{fig:pop_partI_logic}
+\end{figure}
+
+Figure~\ref{fig:pop_partI_logic} shows the complete derivation architecture of Part~I.
+
+\FloatBarrier
+
+\newpage
+%==============================================================
+\part{Макроскопическая физика: гравитация, космология и~наблюдательные тесты}
+\label{part:macro_pop}
+%==============================================================
+
+\section{Специальная теория относительности как однородный предел}
+
+In the homogeneous ordered phase, where the condensate amplitude and direction are uniform throughout space, the effective metric reduces to the Minkowski form: $ds^2 = -c_*^2 dt^2 + dx^2 + dy^2 + dz^2$. All familiar consequences of special relativity follow as theorems: Lorentz transformations arise as the invariance group of the causal cone; time dilation and length contraction are kinematic consequences; $E^2 = p^2c^2 + m^2c^4$ follows from the effective wave equation. In ECT, special relativity is a \emph{derived limit} (\emph{Level~A}), not an independent postulate.
+
+
+\section{Эмерджентная гравитация и~обобщённые уравнения Эйнштейна}
+\label{sec:pop_gravity}
+
+Gravity in ECT is not a fundamental force. It arises as the effective response of the condensate to matter-induced deformations of the orientation field $n^A$ --- analogous to elastic stresses in a crystal lattice. When matter bends $n^A$ away from equilibrium, ``orientation stress'' acts as an effective gravitational field.
+
+The derivation proceeds through stages. The orientation stiffness $\kappa_n \sim u_0^2/m_\sigma^2 \sim \phi_0^2$ determines the energy cost of bending $n^A$. Linearising around the flat background, transverse-traceless fluctuations satisfy a spin-2 wave equation identical to linearised GR (\emph{Level~A/B}).
+
+At the nonlinear level, ECT derives \textbf{generalised Einstein equations (GEE)}:
+\begin{equation}
+  G_{\mu\nu} + \Lambda_{\rm eff}\,g_{\mu\nu}
+  = 8\pi G_{\rm eff}\,T_{\mu\nu} + \Theta_{\mu\nu}[n],
+  \label{eq:pop_gee}
+\end{equation}
+where $\Theta_{\mu\nu}[n]$ is the orientation-stress tensor (\emph{Level~B}). This term has no analogue in standard GR. It vanishes in homogeneous configurations but becomes dynamically important in three distinct observational domains:
+
+On \emph{galactic scales}, $\Theta_{\mu\nu}$ provides the additional acceleration that explains flat rotation curves without particle dark matter (Section~\ref{sec:pop_galaxies}).
+
+On \emph{cluster scales}, it modifies gravitational lensing morphology, reproducing the Bullet Cluster offset without dark matter halos (Section~\ref{sec:pop_clusters}).
+
+In \emph{cosmology}, the evolving $G_{\rm eff}$ and $\Theta_{\mu\nu}$ jointly address the Hubble tension and the JWST problem (Sections~\ref{sec:pop_hubble}--\ref{sec:pop_jwst}).
+
+Gravitational waves propagate at $c_*$ with two transverse-traceless modes (\emph{Level~A/B}), consistent with LIGO/Virgo. Weak-field and post-Newtonian limits reproduce Newtonian gravity and are compatible with Solar System tests (PPN parameters).
+
+
+\section{Эволюция конденсата и~космическая история}
+\label{sec:pop_evolution}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{ect_vs_lcdm_comparative_timeline_bw.pdf}
+\caption{Cosmic timeline comparison: $\Lambda$CDM (top) and ECT (bottom). The earliest epoch in ECT is a timeless Euclidean phase; the transition $O(4) \to O(3)$ creates time itself. The lower panel shows the condensate amplitude $u_0(t)$, scale factor $a(t)$, and effective gravitational coupling $G_{\rm eff}(t)$. (\emph{Level~A for the pre-Lorentzian regime; Level~B for the detailed timeline.})}
+\label{fig:pop_timeline}
+\end{figure}
+
+In $\Lambda$CDM, the universe begins at $t=0$ (the Big Bang singularity) and proceeds through inflation, nucleosynthesis, recombination, structure formation, and dark-energy domination. ECT tells a fundamentally different story (Fig.~\ref{fig:pop_timeline}).
+
+Before the $O(4) \to O(3)$ transition, there is no time at all. The universe exists as a four-dimensional Euclidean medium with full $O(4)$ symmetry. The concept of ``before'' has no meaning in the usual temporal sense. The Big Bang singularity is replaced by the ordering transition, at which the condensate amplitude $u_0$ grows from zero to its equilibrium value $\phi_0 \sim \bar{M}_{\rm Pl}$. This growth naturally produces a period of rapid ordered-branch expansion, replacing the standard inflationary postulate with a pre-Lorentzian Euclidean ordering picture.
+
+After the ordering is established, the evolution shares familiar milestones (nucleosynthesis, recombination, galaxy formation), but two features distinguish ECT from $\Lambda$CDM: the gravitational coupling $G_{\rm eff}$ evolves slowly with redshift, and the dark-energy component arises from residual condensate energy rather than from a cosmological constant.
+
+A notable consequence is the \textbf{age of the Lorentzian branch}. In ECT, ``the age of the universe'' refers to the duration of the ordered Lorentzian branch, not the time since a fundamental singularity. Because $G_{\rm eff}(z) > G_N$ at high redshift, the Hubble rate $H(z)$ is larger over part of cosmic history, which reduces the age integral $t_0 = \int_0^\infty dz/[(1+z)H(z)]$. Benchmark estimates give $t_0^{\rm ECT} \approx 13.0$--$13.5$\,Gyr, modestly shorter than the $\Lambda$CDM value of $\sim 13.8$\,Gyr (\emph{Level~B}). This reduction arises directly from the enhanced early-time gravity and is not a separate assumption. It has consequences for the JWST problem discussed below.
+
+At late times, ECT admits two scenarios: Scenario~A ($u_0 \to \text{const}$, eternal expansion) and Scenario~B ($u_0 \to 0$, recollapse on a timescale $\sim 10^{100}$\,years). Distinguishing these requires data not yet available.
+
+
+\section{Четыре классические космологические проблемы}
+\label{sec:pop_cosmo_problems}
+
+The standard Big Bang model faces four well-known puzzles. The conventional resolution invokes cosmic inflation --- a brief period of exponential expansion driven by a hypothetical inflaton field. While inflation is remarkably effective, it introduces its own unresolved issues: the inflaton has never been directly observed; inflation requires specific initial conditions to start (the initial homogeneity problem --- inflation itself needs a sufficiently uniform region to begin, yet it was introduced to \emph{explain} homogeneity); the measure problem makes probabilistic predictions ill-defined in the context of eternal inflation; and the trans-Planckian problem arises because CMB modes observed today had sub-Planckian wavelengths at the onset of inflation, potentially probing unknown physics.
+
+ECT resolves all four puzzles at the level of the ordering transition itself, without introducing an inflaton field and without encountering any of these difficulties.
+
+\subsection{Проблема горизонта}
+
+The cosmic microwave background (CMB) --- relic radiation from 380\,000 years after the Big Bang --- is uniform to one part in $10^5$ across the entire sky. In $\Lambda$CDM, opposite sides of the sky were never in causal contact at that epoch: their past light cones do not overlap. The uniformity is unexplained without inflation.
+
+In ECT, the resolution is structural (\emph{Level~A for the pre-ordered regime; Level~B for its cosmological realisation}). Before the $O(4) \to O(3)$ transition, the Euclidean phase has no causal structure at all: there are no light cones, no causal horizons, no ``regions out of contact.'' All points of $\mathcal{M}^4$ are connected by the Euclidean metric. Uniformity across the CMB is inherited from the symmetric pre-Lorentzian phase.
+
+\subsection{Проблема плоскости}
+
+Observations show $|\Omega_k| < 0.002$ (Planck 2018). In $\Lambda$CDM, this requires fine-tuning to $\sim 10^{-60}$.
+
+In ECT: the Euclidean manifold $\mathcal{M}^4$ in P1 is flat by construction ($\delta_{AB}$). Spatial flatness of the emergent Lorentzian geometry is a structural consequence of the flat substrate (\emph{Level~A}).
+
+\subsection{Проблема реликтов и~монополей}
+
+Grand Unified Theories predict massive topological defects (magnetic monopoles). None observed. In ECT: the vacuum manifold $S^3$ has $\pi_2(S^3) = 0$ --- \emph{no stable monopoles are topologically possible} (\emph{Level~A}).
+
+\subsection{Проблема первичных возмущений}
+
+The CMB contains tiny fluctuations ($\sim 10^{-5}$) with a nearly scale-invariant spectrum ($n_s = 0.9649 \pm 0.0042$, Planck 2018). In ECT, the ordered branch carries exactly one independent scalar perturbation mode at leading order (\emph{Level~A}). Plausible condensate-evolution scenarios produce $n_s \sim 0.967$ for 60 e-folds, consistent with observations. The full first-principles derivation of $n_s$, $r$, and $A_s$ remains \emph{Level~B/Open}.
+
+\subsection{Итог}
+
+All four problems are resolved without introducing an inflaton field, without fine-tuning initial conditions, and without the measure, trans-Planckian, and initial-homogeneity difficulties that inflation carries. The pre-Lorentzian Euclidean phase provides a natural starting point from which the Lorentzian ordered branch inherits uniformity, flatness, topological simplicity, and a single-mode perturbation sector. Phenomenological introduction of inflation is unnecessary.
+
+
+\section{Тёмный сектор в~ECT}
+\label{sec:pop_dark}
+
+The terms ``dark matter'' and ``dark energy'' were introduced phenomenologically to account for observations that standard gravity with visible matter alone cannot explain: flat rotation curves, gravitational lensing, large-scale structure, accelerated expansion. These phenomena are real and well-established. However, the entities postulated to explain them --- invisible particles (WIMPs, axions, sterile neutrinos) and a cosmological constant $\Lambda$ --- have never been directly confirmed despite decades of dedicated searches. ECT provides a unified structural explanation for the entire dark sector from the condensate dynamics, without introducing any new fundamental entities.
+
+\subsection{Тёмное вещество: отклик конденсата, не~частицы}
+
+In $\Lambda$CDM, the flat rotation curves of galaxies, gravitational lensing in clusters, and the large-scale structure of the universe are attributed to an invisible component --- dark matter particles --- constituting $\sim 27\%$ of the energy budget. Despite extensive experimental programmes spanning direct detection (LUX, XENON, PandaX, LZ), indirect detection (Fermi-LAT, AMS-02), and collider searches (LHC), no dark matter particle has ever been observed. The parameter space for WIMPs --- once the leading candidate --- is almost entirely excluded.
+
+In ECT, all observational phenomena attributed to dark matter arise from the nonlinear response of the condensate amplitude $\phi$ in weak gravitational fields (\emph{Level~B}). The orientation-stress tensor $\Theta_{\mu\nu}[n]$ in the generalised Einstein equations~\eqref{eq:pop_gee} provides additional effective gravitational acceleration in the regimes where dark matter is conventionally invoked: galaxy outskirts, cluster environments, and cosmological scales. Flat rotation curves, the BTFR, the RAR, and cluster lensing offsets are all reproduced without a single dark matter particle (Sections~\ref{sec:pop_galaxies}--\ref{sec:pop_clusters}).
+
+\subsection{Тёмная энергия: остаточная энергия конденсата, не~космологическая постоянная}
+
+In $\Lambda$CDM, the accelerated expansion of the universe is attributed to a cosmological constant $\Lambda$ --- a fixed parameter responsible for $\sim 68\%$ of the total energy budget. No fundamental theory explains its value, which differs from quantum field theory estimates by approximately 120 orders of magnitude (the cosmological constant problem).
+
+In ECT, what appears as dark energy is the \emph{residual amplitude energy} of the condensate: the difference between the current condensate state and its asymptotic equilibrium (\emph{Level~B}). This energy is inherently dynamical: the equation-of-state parameter satisfies $w_0 \neq -1$, unlike the fixed $w = -1$ of a cosmological constant. ECT predicts $w_0 \approx -0.83$, compatible with DESI 2024 results which found evidence for dynamical dark energy at $\sim 2.5\sigma$ significance. No independent cosmological constant is postulated. If $w = -1$ is confirmed with high precision by future surveys (DESI, Euclid), ECT's dark energy sector would be ruled out. Conversely, if dynamical dark energy ($w \neq -1$) is confirmed, ECT provides a structural explanation while $\Lambda$CDM does not.
+
+\subsection{Реинтерпретация тёмного сектора в~ECT}
+
+Within the minimal ECT benchmark developed here, the phenomena usually attributed to dark matter particles and a cosmological constant are reinterpreted as condensate-response effects rather than as evidence for new fundamental dark-sector ingredients. The present benchmark does not require dark matter particles or an independent cosmological constant to account for the observational data. This does not yet exclude every possible ECT extension with additional weakly coupled condensate excitations; it states only that the present framework does not need them.
+
+
+\section{Напряжение Хаббла}
+\label{sec:pop_hubble}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\textwidth]{ect_h0_scan_bw.pdf}
+\caption{The ECT Hubble-tension alleviation mechanism. The evolving effective gravitational coupling $G_{\rm eff}(z) > G_N$ at high redshift shifts the inferred Hubble constant upward by $\sim 3$\,km/s/Mpc. (\emph{Sign: Level~A structural prediction; magnitude: Level~B.})}
+\label{fig:pop_hubble}
+\end{figure}
+
+The Hubble constant $H_0$ measures the current expansion rate of the universe. Two independent methods give discrepant results: the Planck satellite, analysing the CMB assuming $\Lambda$CDM, infers $H_0 = 67.4 \pm 0.5$\,km/s/Mpc; the SH0ES team, using the cosmic distance ladder (Cepheids + Type~Ia supernovae), measures $H_0 = 73.0 \pm 1.0$\,km/s/Mpc. The discrepancy exceeds $5\sigma$ and is known as the \emph{Hubble tension} --- one of the most pressing open problems in cosmology.
+
+ECT offers a structural alleviation mechanism (Fig.~\ref{fig:pop_hubble}). At high redshift, the condensate was slightly less screened, meaning $G_{\rm eff}(z) > G_N$. Specifically, $G_{\rm eff}(z) \approx G_N(1+z)^{2\varepsilon}$, where $\varepsilon$ parametrises the late-time effective drift of the gravitational coupling within the uniform-$\varepsilon$ diagnostic layer. A five-probe cross-consistency analysis in the technical preprint (Hubble + $r_s$, JWST, cosmic chronometers, $f\sigma_8$ from RSD, and ISW), performed under a common background module and the physical prior $\varepsilon \geq 0$, yields a retained joint effective band $\varepsilon \in [0.0296,\,0.0376]$ at $1\sigma$ (centre $\approx 0.033$). At the band central value the upward shift of the CMB-inferred $H_0$ relative to Planck reaches the Planck-SH0ES gap of $\sim 5$\,km/s/Mpc at the baseline-background mapping level, with an accompanying age-viability note. The retained band is an empirical cross-probe consistency window, not a first-principles closure-level prediction; the closure-level derivation of $\varepsilon(z)$ (OP-Hubble-derive in the technical preprint) remains open.
+
+The \emph{sign} of the shift is a structural prediction (\emph{Level~A}): any ordered-branch background with $G_{\rm eff} > G_N$ at high~$z$ necessarily shifts $H_0$ upward. The magnitude is closure-dependent (\emph{Level~B}). The same condensate background simultaneously affects the age budget and early structure formation, producing correlated predictions rather than independent parameters.
+
+
+\section{Проблема ранних галактик JWST}
+\label{sec:pop_jwst}
+
+The James Webb Space Telescope (JWST), launched in December 2021, has detected galaxies at redshifts $z > 10$, when the universe was less than 500 million years old. Several are unexpectedly massive and mature --- containing old stellar populations, organised disk structures, and chemical enrichment that seem to require more formation time than $\Lambda$CDM allows. Standard structure formation with fixed $G_N$ cannot produce such objects quickly enough.
+
+ECT addresses this through two complementary mechanisms, both arising from the same ordered-branch condensate dynamics:
+
+First, the evolving $G_{\rm eff}(z) > G_N$ at high~$z$ means gravitational collapse was \emph{more efficient} in the early universe.
+
+Second, the GEE~\eqref{eq:pop_gee} include $\Theta_{\mu\nu}[n]$, which provides additional effective attraction beyond a simple scalar-tensor model.
+
+It is important to note that the shorter ECT age (Section~\ref{sec:pop_evolution}) means these high-redshift galaxies had \emph{even less} formation time available than in $\Lambda$CDM --- making the problem nominally worse. However, the two enhancement mechanisms (stronger gravity + orientation-stress attraction) more than compensate: the accelerated collapse rate outweighs the reduced time budget. These are not independent tuning parameters: the same condensate background that shifts $H_0$ upward also enhances early structure formation.
+
+
+\section{Кривые вращения галактик}
+\label{sec:pop_galaxies}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\textwidth]{set1_milky_way.pdf}
+\caption{Milky Way rotation curve. ECT (solid) fits the data with one parameter $r_0 = 14$\,kpc: $\chi^2/N = 2.95$. Newtonian prediction from baryons alone (dashed) falls off at large radii. (\emph{Level~B.})}
+\label{fig:pop_mw}
+\end{figure}
+
+When astronomers measure the orbital speeds of stars in spiral galaxies, they find that stars in the outskirts orbit much faster than predicted by the visible matter alone. In a Newtonian calculation, the rotation speed should decrease as $v \propto 1/\sqrt{R}$ beyond the luminous disk, but observations show flat rotation curves extending to many disk radii. The standard explanation invokes a halo of dark matter particles surrounding each galaxy.
+
+Despite decades of direct detection experiments (LUX, XENON, PandaX, LZ, and others), no dark matter particle has ever been observed. The parameter space for WIMPs --- once the leading candidate --- is almost entirely excluded. This persistent non-detection motivates consideration of alternative explanations.
+
+ECT provides one. The nonlinear dynamics of the macroscopic amplitude variable $\phi = \frac{1}{\beta}\ln(u/u_\infty)$, which measures the local ``degree of Lorentzianness'' of the vacuum, reproduces MOND-like dynamics on galactic scales without particle dark matter (\emph{Level~B}). In dense environments (Solar System, inner galaxy), $\phi$ is strongly screened and standard gravity is recovered. On galactic outskirts, the $\phi$-sector enters a nonlinear regime whose scale-invariant form gives:
+\begin{equation}
+  g(R) = \tfrac{1}{2}\bigl(g_N + \sqrt{g_N^2 + 4\,g_N\,g^\dagger}\bigr),
+  \label{eq:pop_interp}
+\end{equation}
+with $g^\dagger \approx cH_0/(2\pi)$. In the deep-field limit ($g_N \ll g^\dagger$): $g \approx \sqrt{g_N g^\dagger}$ (flat rotation curves). In the strong-field limit: $g \approx g_N$ (Newton recovered).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{set2_sparc_sample.pdf}
+\caption{Rotation-curve fits for a sample of SPARC galaxies, spanning a wide range of morphologies: from dwarf irregulars to massive spirals. ECT (solid) with one parameter per galaxy. (\emph{Level~B.})}
+\label{fig:pop_sparc}
+\end{figure}
+
+This has been tested against \textbf{165 galaxies from the SPARC database} (Fig.~\ref{fig:pop_mw}, \ref{fig:pop_sparc}). ECT fits each galaxy with a single parameter ($r_0$ or equivalently $g^\dagger_{\rm eff}$), achieving median $\chi^2/N \approx 2.95$ --- substantially better than $\Lambda$CDM with NFW dark matter halos ($\chi^2/N \approx 6.55$), which requires more parameters.
+
+\FloatBarrier
+
+\section{Барионное соотношение Талли--Фишера и~RAR}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.88\textwidth]{ect_btfr_new_bw.pdf}
+\caption{The baryonic Tully--Fisher relation (BTFR) from the SPARC sample. ECT predicts the exact algebraic slope~4 (solid line): $v_{\rm flat}^4 = G_N M_{\rm bar}\,g^\dagger$. (\emph{Slope: Level~A; $g^\dagger$ value: Level~B.})}
+\label{fig:pop_btfr}
+\end{figure}
+
+The BTFR --- $M_{\rm bar} \propto v_{\rm flat}^4$ --- is one of the tightest empirical correlations in extragalactic astronomy (Fig.~\ref{fig:pop_btfr}). In $\Lambda$CDM, reproducing it requires fine-tuning the dark matter halo for each galaxy. In ECT, the BTFR is an \emph{exact algebraic consequence} of the $\phi$-closure: $v_{\rm flat}^4 = G_N M_{\rm bar}\,g^\dagger$ with slope exactly~4 (\emph{Level~A}).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{ect_rar_new_6panel_bw.pdf}
+\caption{Radial acceleration relation (RAR) diagnostics from the SPARC sample. ECT reproduces the tight observed correlation between total and baryonic gravitational acceleration, with $g^\dagger \approx 1.1 \times 10^{-10}$\,m/s$^2$ matching the McGaugh et al.\ (2016) empirical value. (\emph{Level~B.})}
+\label{fig:pop_rar}
+\end{figure}
+
+The RAR (Fig.~\ref{fig:pop_rar}), discovered by McGaugh et al.\ (2016), is a direct prediction of the ECT interpolation law~\eqref{eq:pop_interp}. Unlike standard MOND where $g^\dagger$ is a universal constant, in ECT $g^\dagger$ depends on the local degree of Lorentzianness (\emph{Level~B}), leading to a testable environmental modulation.
+
+\FloatBarrier
+
+\section{Гравитационное линзирование на~скоплениях}
+\label{sec:pop_clusters}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\textwidth]{fig_bullet_main.png}
+\caption{Gravitational lensing in the Bullet Cluster (1E~0657-56). The lensing signal (contours) is offset from the X-ray gas (colour), conventionally attributed to collisionless dark matter. ECT reproduces this offset through the condensate $\phi$-closure without dark matter particles. (\emph{Level~B.})}
+\label{fig:pop_bullet}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{fig_cluster_suite_budget.png}
+\caption{Cluster-merger gravitational lensing in ECT. Results for the Bullet Cluster, El Gordo, MACS~J0025, and Abell~520, including lensing mass ratios and morphology classification. In Abell~520, the lensing peak falls on the gas core --- consistent with ECT but a direct tension point for collisionless dark matter models. (\emph{Level~B.})}
+\label{fig:pop_clusters}
+\end{figure}
+
+Galaxy-cluster mergers provide a critical dark-sector test. In a collision, the hot intracluster gas decelerates (electromagnetic interaction), while galaxies and any collisionless dark matter should pass through. In the Bullet Cluster, the lensing signal is offset from the gas toward the galaxies --- conventionally interpreted as evidence for collisionless dark matter halos.
+
+ECT addresses cluster lensing through the $\phi$-closure with chameleon screening (Fig.~\ref{fig:pop_clusters}). The $\Theta_{\mu\nu}$ contribution generates gravitational slip, producing lensing morphology consistent with observations (\emph{Level~B}).
+
+The case of \textbf{Abell~520} is particularly significant. In this system, the dominant lensing peak coincides with the \emph{gas-rich core}, not with the galaxy concentrations. This is a \emph{direct contradiction} to collisionless dark matter models, which predict that the lensing signal should track the collisionless component (galaxies). In ECT, this is the expected result: the gas core is locally more compact, so the $\phi$-enhancement is strongest there. A single rule generates galaxy-peaked lensing in Bullet/El~Gordo/MACS~J0025 and \emph{gas-peaked} lensing in Abell~520 --- a unified prediction absent in models requiring a fixed collisionless species.
+
+
+\section{Асимметрия материи и~антиматерии}
+
+The observable universe contains far more matter than antimatter: $\eta_B^{\rm obs} \approx 6 \times 10^{-10}$. This asymmetry requires baryon number violation, $C$/$CP$ violation, and departure from thermal equilibrium (the three Sakharov conditions, 1967). The Standard Model satisfies these conditions in principle but cannot quantitatively produce the observed asymmetry.
+
+ECT provides a structural framework in which all three Sakharov conditions are satisfied by native ordered-medium mechanisms (\emph{Level~A} for the structural possibility). The $O(4) \to O(3)$ transition provides out-of-equilibrium conditions; the fifth coupling $\mathcal{L}_5$ supplies $CP$ violation; defect-mediated topology changes in the condensate allow baryon number violation. The specific leptogenesis mechanism and the estimated $\eta_B \sim 9 \times 10^{-10}$ (factor 1.5 from observation) are \emph{Level~B}.
+
+
+
+
+
+\section{Заключение Части~II}
+
+\subsection{Основные результаты}
+
+From the ordered-branch EFT, the geometric branch produces:
+
+\begin{enumerate}
+\item Special Relativity as the homogeneous limit (\emph{A}).
+\item GEE with $\Theta_{\mu\nu}[n]$ (\emph{B}).
+\item Four cosmological problems resolved without inflation (\emph{A/B}).
+\item Dynamical dark energy $w_0 \approx -0.83$ (\emph{B}).
+\item Hubble tension: $\Delta H_0 \sim +3$\,km/s/Mpc (\emph{sign: A; magnitude: B}).
+\item JWST early galaxies via enhanced $G_{\rm eff}$ + $\Theta_{\mu\nu}$ (\emph{B}).
+\item 165 SPARC galaxies: $\chi^2/N \approx 2.95$ vs.\ $\Lambda$CDM 6.55 (\emph{B}).
+\item BTFR slope exactly 4 (\emph{A}).
+\item RAR: $g^\dagger \approx cH_0/(2\pi)$ (\emph{B}).
+\item Cluster lensing incl.\ Abell~520 gas-peaked (\emph{B}).
+\item Baryon asymmetry: Sakharov conditions natively (\emph{A/B}).
+\item Dark matter and dark energy eliminated (\emph{B}).
+\end{enumerate}
+
+\subsection{Ключевые уравнения и~принципы Части~II}
+
+Generalised Einstein equations: $G_{\mu\nu} + \Lambda_{\rm eff}g_{\mu\nu} = 8\pi G_{\rm eff}T_{\mu\nu} + \Theta_{\mu\nu}[n]$.
+
+Galactic interpolation: $g(R) = \frac{1}{2}(g_N + \sqrt{g_N^2 + 4g_Ng^\dagger})$.
+
+BTFR: $v_{\rm flat}^4 = G_N M_{\rm bar} g^\dagger$ (slope 4, algebraic).
+
+$G_{\rm eff}(z) \approx G_N(1+z)^{2\varepsilon}$, retained $\varepsilon \in [0.0296,\,0.0376]$ at $1\sigma$ (Hubble shift).
+
+\subsection{Наблюдательные тесты и~фальсификаторы}
+
+ECT is falsifiable. Key predictions of the macroscopic sector:
+
+\begin{itemize}
+\item BTFR slope = 4 (\emph{A}); $g^\dagger \propto cH_0$ (\emph{B}).
+\item Fifth force $\eta \sim 10^{-15}$ (\emph{B}); dark energy $w_0 \approx -0.83$ (\emph{B}).
+\item Environmental $g^\dagger$ modulation (\emph{B}); $M_{\rm max} = 2.17\,M_\odot$ (\emph{B}).
+\item CMB quadrupole deficit (\emph{B/Open}).
+\end{itemize}
+Full list with explanations is given in Part~IV, Section~\ref{sec:pop_predictions}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.88\textwidth]{fig_cosmo_predictions.png}
+\caption{ECT cosmological predictions and comparison with observations and $\Lambda$CDM. ECT provides correlated predictions for dark energy, the Hubble tension, the JWST problem, and galactic phenomenology from the same ordered-branch dynamics. (\emph{Level~B.})}
+\label{fig:pop_preds}
+\end{figure}
+
+\subsection{Граф логики Части~II}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{fig_partII_derivation_logic_pop.pdf}
+\caption{Part~II derivation logic. From the ordered-branch EFT, the geometric branch produces all macroscopic results listed above. Colours indicate derivation levels.}
+\label{fig:pop_partII_logic}
+\end{figure}
+
+The full derivation logic of Part~II is shown in Fig.~\ref{fig:pop_partII_logic}. The cosmological predictions are summarised in Fig.~\ref{fig:pop_preds}.
+
+%==============================================================
+\part{Квантовый сектор: когерентная ветвь}
+\label{part:quantum_pop}
+
+
+\section{ECT versus стандартная квантовая механика}
+\label{sec:pop_ect_vs_qm}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth]{fig_ect_vs_qm.pdf}
+\caption{Structural comparison of standard quantum mechanics (left) and ECT's coherent branch (right). Standard QM starts from axioms (Hilbert space, operators, Born rule, Schr\"odinger equation) and computes predictions. ECT derives these structures from the Euclidean condensate dynamics. The central column shows the structural origins that ECT provides for each axiom. (\emph{Level~A/B for the structural routes; Level~Open for the fully closed Born theorem.})}
+\label{fig:pop_ectvqm}
+\end{figure}
+
+Standard quantum mechanics answers the question ``how?'': given a Hamiltonian and an initial state, it prescribes how to compute probabilities. ECT aims to answer the additional question ``why?'': why do Hilbert spaces, operators, superposition, the Born rule, and decoherence exist at all? (Fig.~\ref{fig:pop_ectvqm}).
+
+The deepest structural distinction lies in the type of mathematical problem. In standard QM, the fundamental problem is the \emph{Cauchy problem} (initial-value problem): $i\hbar\,\partial_t\psi = H\psi$. Given the state at $t=0$, time evolution uniquely propagates it forward. In ECT, the fundamental problem is a \emph{boundary-value problem} on the Euclidean manifold: $\delta^{AB}\partial_A\partial_B\Phi - V'(\Phi) = 0$. The solution is constrained by data on the \emph{entire boundary} of the four-dimensional domain, not just on one time-slice.
+
+This has profound consequences. The Cauchy problem generates \emph{one-directional} evolution: past determines future, but not vice versa. The boundary-value problem generates a \emph{four-dimensionally self-consistent} configuration: future boundary conditions constrain the present just as past boundary conditions do. This is not retrocausality in the Lorentzian sense --- it is the normal functioning of a boundary-value problem. The probabilistic character of quantum mechanics, in ECT's view, arises not from fundamental indeterminacy but from coarse-graining: when untracked environmental modes are integrated out, the effective description of a subsystem becomes inherently statistical.
+
+
+\subsection{Детальное структурное сравнение: ECT vs стандартная КМ}
+
+The following comparison illustrates how ECT's coherent branch differs from standard quantum mechanics on specific physical examples.
+
+\textbf{The hydrogen atom.} In standard QM, one solves $H\psi = E\psi$ and obtains $E_n = -13.6/n^2$\,eV together with the probability densities $|\psi_{nlm}|^2$. In ECT, the hydrogenic spectrum arises from the four-dimensional Euclidean field equation for $\Phi$ together with the self-consistency condition in the $w$-direction expressed by single-valuedness: $\oint dw \cdot p_w = 2\pi S_0\,n$. The discrete spectrum is associated with self-consistency conditions on admissible condensate configurations, rather than with eigenvalues of a fundamentally probabilistic wave equation (\emph{Level~B}).
+
+\textbf{The double-slit experiment.} In standard QM, $\psi = \psi_1 + \psi_2$ and $P = |\psi_1 + \psi_2|^2$. In ECT, the interference pattern arises from one connected solution of the underlying elliptic boundary-value problem, whose effective Lorentzian projection contains contributions associated with both slit channels. The interference is a property of the four-dimensional field configuration, not of an abstract probability wave (\emph{Level~A/B}).
+
+\textbf{Measurement.} In standard QM, collapse is an extra postulate. In ECT, the detector belongs to the full boundary-value problem. At the reduced-description level, effective collapse is the subsystem manifestation of a Euclidean-to-Lorentzian transition under strong environmental locking ($\Gamma_{\rm loop} \gtrsim 1$). Multiple winding sectors coexist in the coherent regime; environmental coupling drives decoherence; when $\Gamma_{\rm loop} \gg 1$, interference is suppressed and a single classical outcome is selected (\emph{Level~A/B}).
+
+\textbf{Determinism.} The fundamental Euclidean equation is deterministic: one specifies boundary conditions and obtains one global field configuration. No probabilities, no collapse, no stochasticity at the deepest level. Statistical quantum mechanics appears because realistic observers never have access to the full condensate state. When environmental modes are integrated out, the subsystem acquires influence functionals, reduced density matrices, and effective probabilities. ECT stands to standard QM as microscopic Newtonian mechanics stands to statistical mechanics: deterministic underneath, probabilistic after coarse-graining (\emph{Level~A}).
+
+\textbf{``Future affects past.''} In standard QM, this does not arise because the theory is formulated as a forward-time Cauchy problem. In ECT, it is natural: for an elliptic equation, changing the boundary condition on one side changes the solution throughout the domain, including what the Lorentzian reading would call the ``past'' side. This is the structural reason why delayed-choice phenomena are naturally accommodated (\emph{Level~A/B}).
+
+\textbf{Unified origin of coherent and geometric branches.} A central structural claim of ECT: gravity and quantum coherence are not separate ingredients forced together, but two sectors of one ordered condensate. The long-wavelength sector is read geometrically (gravity); the coherent shorter-wavelength sector is read wave-mechanically (quantum). This is not ad hoc stitching --- it follows from the mode decomposition of the same condensate around the same ordered background (\emph{Level~A}).
+
+\textbf{What ECT already reproduces:} (i)~Schr\"odinger equation as non-relativistic limit; (ii)~Klein--Gordon from ordered branch; (iii)~action quantisation through $S_0$ and phase compactness; (iv)~decoherence and quantum--classical boundary; (v)~Euclidean-to-Lorentzian measurement reading; (vi)~spin discretisation from $O(3)$; (vii)~PES for persistent-state selection; (viii)~gravitational decoherence; (ix)~unified tunnelling and entanglement; (x)~cross-sector $S_0$ universality.
+
+\textbf{What remains open:} Born rule from first principles; complete measurement theorem; Bell correlators from condensate theory; three generations; $\alpha_{\rm fs} = 1/137$; full Yukawa hierarchy. These are open derivational targets, not failures of the framework.
+
+
+\section{Структура гильбертова пространства из рефлексивной положительности}
+
+One of the central results of Part~III is the reconstruction of Hilbert-space structure from Euclidean data, using the mathematical tool of \textbf{reflection positivity} (RP). If the Euclidean two-point function satisfies RP (a property proved for the ordered-branch correlator), the Osterwalder--Schrader reconstruction theorem (1975) guarantees the existence of a Hilbert space $\mathcal{H}$ with a positive-definite inner product, a self-adjoint Hamiltonian generating unitary time evolution, and canonical commutation relations $[q,p]=i\hbar$ (\emph{Level~A/B}).
+
+Standard QM uses the Osterwalder--Schrader theorem in the \emph{opposite} direction: starting from a quantum theory, it checks that the Euclidean continuation is well-defined. ECT uses it \emph{constructively}: starting from the Euclidean condensate, it \emph{builds} the Hilbert space. The quantum formalism is constructed, not assumed.
+
+
+\section{Суперпозиция, интерференция, обменная статистика и~принцип Паули}
+
+\textbf{Superposition} (\emph{Level~A/B}): The linearised fluctuation equation in the coherent branch is linear. Solutions can be added, producing superposition without any axiom.
+
+\textbf{Interference} (\emph{Level~A}): Arises from the compact-phase structure. Paths with different phase accumulations contribute to the functional integral with different factors $e^{iS/\hbar}$, producing constructive or destructive combination --- the same mechanism that produces interference in a superfluid.
+
+\textbf{Exchange statistics} (\emph{Level~A/B}): Connected to the topology of path configurations in the Euclidean manifold. Paths that exchange identical particles acquire a factor $+1$ (bosons) or $-1$ (fermions) depending on the topological class of the exchange. The spin-statistics connection (integer spin $\leftrightarrow$ bosons, half-integer $\leftrightarrow$ fermions) is structurally motivated (\emph{Level~A/B}); a fully rigorous derivation from bare P3 remains open.
+
+\textbf{Pauli exclusion principle} (\emph{Level~A/B}): For fermions, the $-1$ exchange factor means that configurations with two identical fermions in the same state contribute with opposite signs and cancel. Pauli exclusion is a consequence of exchange topology, not a separate axiom.
+
+In standard QM, all four of these properties are either postulated directly or follow from operator axioms that are themselves postulated. In ECT, they arise from the geometry and topology of the ordered condensate.
+
+
+\section{Принцип евклидовой стационарности}
+\label{sec:pop_pes}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.65\textwidth]{fig_pes_diagram.pdf}
+\caption{The Principle of Euclidean Stationarity (PES). Three conditions must be simultaneously satisfied: the configuration is an extremal of the Euclidean action (stationary), it is resistant to environmental decoherence ($\Gamma_{\rm loop}\ll1$), and it belongs to a well-defined phase-topological class (compact phase with integer winding). Their intersection defines the persistent configurations --- the ECT counterpart of observable quantum states. (\emph{Level~B.})}
+\label{fig:pop_pes}
+\end{figure}
+
+The Principle of Euclidean Stationarity (PES) is a key organising principle of ECT (Fig.~\ref{fig:pop_pes}). It is not a new postulate but an organising principle that emerges as a consequence of three already-established ingredients: the Euclidean-first ontology (P1), the compact-phase topology (BR1), and the influence-functional decoherence framework.
+
+\textbf{Statement.} The physically persistent and observable configurations are those that simultaneously: (i)~are stationary or quasi-stationary extremals of the Euclidean action; (ii)~maintain $\Gamma_{\rm loop} \ll 1$ (resist decoherence); (iii)~belong to an admissible phase-topological class (integer winding). Configurations failing any of these conditions decohere and are absorbed into the classical branch.
+
+\textbf{Physical consequences.} PES explains \emph{why} quantum systems settle into energy eigenstates: these are precisely the Euclidean-stationary configurations that survive environmental coupling. After the Wick rotation $w \to -ic_*t$, a Euclidean-stationary configuration with action $S_E$ corresponds to an energy eigenstate with energy $E = S_E/\Delta w$. The ground state corresponds to the lowest-action Euclidean extremal.
+
+\textbf{Relation to the principle of least action.} PES is more fundamental than the classical principle of least action. The latter is the $\Gamma_{\rm loop} \gg 1$ limit of PES: when decoherence is strong, only the single lowest-action path survives, and classical mechanics emerges. PES thus \emph{contains} the principle of least action as a limiting case while also explaining quantum behaviour.
+
+\textbf{Relation to discreteness.} The discreteness of atomic spectra, quantised energy levels, and all integer quantum numbers follow from PES: only integer-winding, action-stationary, decoherence-resistant configurations survive. This replaces the Bohr postulate (integer quantum numbers) with a structural selection mechanism.
+
+
+\section{Вероятность, правило Борна и~измерение}
+
+The Born rule $P = |\psi|^2$ is structurally motivated through the reflection-positive inner product (\emph{Level~B}). In the Hilbert space constructed via Osterwalder--Schrader, the squared modulus of the transition amplitude is automatically positive and normalised. The Born rule is not an independent axiom but a consequence of the Euclidean correlator structure.
+
+The measurement problem --- why does a quantum superposition appear to ``collapse'' upon measurement? --- is addressed through decoherence (\emph{Level~A/B}). The interaction between the measured system, the apparatus, and the condensate environment rapidly suppresses off-diagonal terms in the density matrix, producing effective collapse. No additional collapse postulate is needed. What remains open is a fully closed mathematical theorem deriving the Born rule without any extra closure input (\emph{Level~Open}).
+
+
+\section{Квантовая запутанность и~корреляции Белла}
+\label{sec:pop_entanglement}
+
+In standard QM, entanglement is a primitive property of the tensor-product Hilbert space. In ECT, it is a structural feature of the Euclidean condensate (\emph{Level~A/B}).
+
+In the coherent branch, subsystems are not fundamental isolates --- they are reduced sectors of a single ordered medium. Two subsystems sharing a common condensate with $\Gamma_{\rm loop} \ll 1$ are correlated through the Euclidean substrate without requiring Lorentzian signalling. Four-dimensional Euclidean coherence produces non-local (in the 3D Lorentzian sense) correlations: correlations that would be surprising if one thinks in terms of 3D local causality, but are entirely natural as correlations within a single 4D Euclidean field configuration.
+
+ECT does not violate Bell's theorem: it is not a local hidden-variable theory. The ``non-locality'' of entanglement is reinterpreted as common-medium correlation in the Euclidean arena, consistent with the no-signalling theorem. A full first-principles derivation of Bell-inequality-violating correlators and Tsirelson bounds remains open (\emph{Level~Open}).
+
+\textbf{Delayed-choice experiments} (Wheeler) receive a natural interpretation. In the boundary-value problem of ECT, future detector settings are part of the boundary data that constrain the Euclidean field configuration globally. This is not retrocausality --- it is the standard behaviour of a boundary-value problem.
+
+
+\section{Туннелирование}
+
+In standard QM, quantum tunnelling --- the ability of a particle to traverse a classically forbidden barrier --- is a consequence of wave mechanics, but its physical mechanism is mysterious. In ECT, tunnelling has a clear geometric interpretation (\emph{Level~A/B}).
+
+In the Euclidean picture, a ``classically forbidden'' region corresponds to a region where the Lorentzian kinetic energy would be negative. But in the Euclidean domain, all four directions are equivalent --- there is no distinction between ``classically allowed'' and ``classically forbidden.'' The field configuration simply passes through the barrier in the four-dimensional Euclidean space. After the Wick rotation, this Euclidean passage manifests as exponentially suppressed but nonzero amplitude on the other side of the barrier --- tunnelling.
+
+This is the same logic used in the standard instanton calculation, but ECT gives it an ontological reading: tunnelling is not a ``mysterious quantum effect'' but a natural consequence of the fact that the fundamental arena is Euclidean, and classically forbidden regions are an artefact of the Lorentzian projection.
+
+
+\section{Взаимодействия принадлежат лоренцевой ветви}
+
+A conceptually important distinction in ECT is that \emph{interaction} --- in the sense of one physical system exchanging energy, momentum, or information with another --- is fundamentally a Lorentzian concept (\emph{Level~A}).
+
+In the coherent branch ($\Gamma_{\rm loop} \ll 1$), what exists is not interaction but \emph{common-medium correlation}: subsystems share a coherent condensate configuration, and their effective descriptions are correlated through the Euclidean substrate. No energy exchange occurs; no signal is transmitted; no ``event'' in the Lorentzian sense takes place.
+
+Interaction requires decoherence: one subsystem must couple to another strongly enough that $\Gamma_{\rm loop}$ crosses the threshold $\sim 1$. At that point, the coherent correlations are converted into classical, Lorentzian, causal events --- energy is exchanged, momentum is transferred, information is communicated. Measurement, in this picture, is the process that converts Euclidean common-medium correlation into Lorentzian interaction.
+
+This separation explains why quantum systems can exhibit non-local correlations (entanglement) without violating causality: the correlations belong to the coherent Euclidean branch, while causal signalling belongs to the decoherent Lorentzian branch.
+
+
+\section{Влияние будущих граничных условий}
+\label{sec:pop_future}
+
+Because the fundamental ECT equation is a boundary-value problem on the Euclidean manifold (not a Cauchy problem), boundary data on \emph{all} sides of the domain constrain the solution. After the Wick rotation to Lorentzian signature, this means that future boundary conditions can constrain the present configuration.
+
+This is not backward-in-time causation in the Lorentzian sense. It is the standard mathematical property of boundary-value problems: the solution at any interior point depends on data everywhere on the boundary. In ECT, this property provides a natural framework for understanding delayed-choice experiments, quantum eraser phenomena, and the apparent ``retrocausal'' features of the two-state vector formalism (\emph{Level~A/B}).
+
+
+\section{Квантовые вакуумные эффекты}
+
+The ordered condensate is not an empty backdrop but a physically active medium. Its response to boundaries, acceleration, and cosmological expansion produces three classes of observable effects:
+
+\textbf{The Casimir effect} (\emph{Level~B}): In standard QED, the Casimir force between conducting plates arises from modified vacuum fluctuation modes. In ECT, the same mechanism operates, but the three Goldstone modes of the $O(4) \to O(3)$ breaking contribute additional vacuum pressure beyond the photon sector, producing an enhancement factor of $3/2$ compared to the standard QED prediction. This is a quantitative falsifiable prediction.
+
+\textbf{The Unruh effect} (\emph{Level~A/B}): An accelerated observer in the ECT vacuum perceives a thermal bath with temperature $T = \hbar a/(2\pi c k_B)$, identical to the standard prediction. The derivation traces this to the analytic continuation from the Euclidean frame to the Rindler frame.
+
+\textbf{Cosmological particle production} (\emph{Level~B}): At the $O(4) \to O(3)$ phase transition, the abrupt change in the condensate background creates real particle--antiparticle pairs, analogous to particle production in an expanding universe.
+
+
+\section{Декогеренция и~квантово-классическая граница}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.78\textwidth]{fig_qubit_info_decoherence.pdf}
+\caption{Decoherence regimes in ECT. The information content of a quantum system evolves differently depending on the environmental coupling strength $N_{\rm eff}\gamma$. For weak coupling (quantum regime), coherence is preserved. For strong coupling (classical regime), off-diagonal density matrix elements are exponentially suppressed. (\emph{Level~A/B.})}
+\label{fig:pop_qubit}
+\end{figure}
+
+ECT provides a unified influence-functional framework for decoherence (Fig.~\ref{fig:pop_qubit}), treating both environmental and gravitational channels through the same mathematical structure (\emph{Level~A/B}).
+
+\textbf{Environmental decoherence}: interaction with thermal photons, air molecules, phonons, and other environmental degrees of freedom.
+
+\textbf{Gravitational decoherence}: interaction with the condensate orientation field $n^A$. This is an ECT-specific prediction: the condensate itself acts as a universal decoherence bath, even in the absence of ordinary matter environments.
+
+The decoherence time is $\tau_{\rm dec} = 1/(N_{\rm eff}\gamma)$, where $N_{\rm eff}$ is the number of effective environmental modes and $\gamma$ is the coupling rate. Numerical estimates: free electron in vacuum, $\tau_{\rm dec} \gg 10^{10}$\,yr; fullerene C$_{60}$, $\tau_{\rm dec} \sim 10^{-6}$\,s (consistent with observed interference); dust grain in air, $\tau_{\rm dec} \sim 10^{-15}$\,s.
+
+
+\section{Квантовая гравитация в~ECT}
+\label{sec:pop_qg}
+
+In standard approaches, quantum gravity --- the unification of GR and QM --- is one of the central unsolved problems of physics. Loop quantum gravity, string theory, causal dynamical triangulations, and other programmes attempt to quantise the gravitational field on a pre-existing spacetime or to construct spacetime from more fundamental elements.
+
+ECT approaches quantum gravity from a fundamentally different direction (\emph{Level~A/B for the conceptual framework}). Since both gravity (geometric branch) and quantum mechanics (coherent branch) are emergent from the same ordered condensate, their unification is not a separate problem to be solved --- it is built into the architecture. The graviton (spin-2 orientation mode) and the quantum amplitude (coherent phase mode) originate from the same field $\Phi$ and propagate on the same kinetic tensor $K^{AB}$. There is no conceptual barrier to treating them consistently, because they are not fundamentally different entities.
+
+The practical difficulties remain: a full non-perturbative treatment of the condensate dynamics at the Planck scale ($\xi_{\rm cond} \sim \ell_{\rm Pl}$) requires understanding the UV completion of the ordered-branch EFT, which is an open problem (\emph{Level~Open}). But the conceptual problem --- ``how do you put gravity and quantum mechanics together?'' --- is dissolved by the single-medium architecture.
+
+
+\section{Термодинамика чёрных дыр и~информационная проблема}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{fig_bh_shell.pdf}
+\caption{The ECT picture of a black hole. The classical event horizon is replaced by a critical shell where the condensate amplitude reaches a critical value and the effective geometry transitions between regimes. Information is encoded in shell correlations. (\emph{Level~A for the no-information-loss argument; Level~B for the shell closure.})}
+\label{fig:pop_bh}
+\end{figure}
+
+If information falls into a black hole and the black hole evaporates via Hawking radiation, is the information lost? This is the information paradox --- one of the deepest problems in theoretical physics.
+
+ECT addresses it at two levels (Fig.~\ref{fig:pop_bh}).
+
+\textbf{Level~A (structural):} The total condensate state is never fundamentally mixed. In ECT, the apparent mixedness (thermal character) of Hawking radiation is a \emph{reduced-state} phenomenon: the external observer's density matrix $\rho_{\rm ext} = {\rm Tr}_{\rm shell,int}|\Psi\rangle\langle\Psi|$ is mixed because it traces over the shell and interior degrees of freedom, not because information has been destroyed. A conditional theorem establishes that exact thermality of the radiation is incompatible with unitary evaporation: if the condensate evolves unitarily (as posited), the radiation \emph{must} carry subtle correlations encoding the infalling information. This is a Level~A negative result: fundamental information loss is structurally forbidden.
+
+\textbf{Level~B (shell closure):} The event horizon is replaced by a \textbf{critical shell} --- a surface where the condensate amplitude reaches a critical value and the effective ordered-phase geometry transitions between regimes. Shell entropy scales with area: $S = A/(4\ell_{\rm Pl}^2)$ (Bekenstein--Hawking formula, derived). A finite-memory shell model reproduces a Page-curve-like behaviour. These results are model-based (Level~B), not yet a full first-principles derivation of black-hole evaporation. The classical singularity at $r=0$ is replaced by a Euclidean core where the condensate transitions from the Lorentzian ordered phase back to the Euclidean disordered phase.
+
+
+\section{Парадокс дедушки}
+
+ECT's emergent view of time dissolves the grandfather paradox structurally.
+
+Classical causal paradoxes of time travel arise from trying to maintain two incompatible assumptions: that one can move backward along the physical time axis, and that causal chains remain linearly irreversible. The contradiction appears because the traveller is imagined as re-entering an already fixed causal sequence from within that sequence.
+
+In the Euclidean picture, the coordinate $w$ is not a fundamental causal axis --- it is a spatial coordinate of the underlying substrate. Moving ``backward in $w$'' is not literal motion into an already-existing past; it is motion in the deeper Euclidean medium. The segment of $w$ that the agent leaves no longer contains that agent as an independent continuation, and worldlines can cross in the Euclidean picture without producing a contradiction of the classical type. Causal order belongs to the Lorentzian branch, where it emerges through the cone structure and where effectively irreversible macroscopic histories appear when $\Gamma_{\rm loop} \gg 1$.
+
+The paradox is not ``solved'' by imposing a rule such as ``the universe forbids inconsistencies.'' It is dissolved by recognising that Lorentzian causal intuitions have a limited domain of validity: they apply within the emergent branch, not at the fundamental Euclidean level.
+
+This is a conceptual statement about the ontology of time in ECT, not an operational claim that macroscopic backward time travel is physically available within the emergent Lorentzian branch.
+
+
+\section{Аналоговая лабораторная программа}
+
+ECT's structural parallels with condensed-matter systems suggest a programme of analogue experimental tests:
+
+Superfluid $^4$He and Bose--Einstein condensates: phase-winding quantisation, vortex dynamics, Goldstone spectrum, and the condensate-mediated correlation structure.
+
+Acoustic black holes (``dumb holes'') in BECs: analogue Hawking effect and critical-shell structure.
+
+Precision Casimir experiments: the predicted $\times 3/2$ enhancement factor from three Goldstone modes.
+
+Atom interferometry: gravitational decoherence channel predicted by ECT.
+
+
+\section{Заключение Части~III}
+
+\subsection{Основные результаты}
+
+From the coherent branch, ECT derives or structurally motivates:
+
+\begin{enumerate}
+\item Hilbert-space structure via reflection positivity (\emph{A/B}).
+\item Schr\"odinger and KG equations as descendants (\emph{A/B}).
+\item Superposition, interference, Pauli exclusion (\emph{A/B}).
+\item Quantisation from compact-phase winding (\emph{A}).
+\item PES as organising principle (\emph{B}).
+\item Born rule from RP inner product (\emph{B}).
+\item Measurement through decoherence (\emph{A/B}).
+\item Entanglement as common-medium correlation (\emph{A/B}).
+\item Tunnelling as Euclidean passage (\emph{A/B}).
+\item Casimir enhancement $\times 3/2$ (\emph{B}).
+\item Unruh temperature (\emph{A/B}).
+\item Gravitational decoherence channel (\emph{B}).
+\item No fundamental information loss in BH (\emph{A}).
+\item BH entropy $\propto$ area (\emph{B}).
+\item Page curve from shell model (\emph{B}).
+\item Quantum gravity dissolved by architecture (\emph{A/B}).
+\end{enumerate}
+
+\subsection{Ключевые уравнения и~принципы Части~III}
+
+Winding condition: $\oint \partial_A\theta\,dX^A = 2\pi n$.
+
+Elementary loop action: $S_{\rm loop,min} = 2\pi\hbar$.
+
+PES: persistent configurations = extremal $\cap$ decoherence-resistant $\cap$ phase-compact.
+
+Decoherence time: $\tau_{\rm dec} = 1/(N_{\rm eff}\gamma)$.
+
+Casimir ECT prediction: $F_{\rm ECT} = \frac{3}{2}F_{\rm QED}$.
+
+BH entropy: $S = A/(4\ell_{\rm Pl}^2)$.
+
+\subsection{Граф логики Части~III}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{fig_partIII_derivation_logic_pop.pdf}
+\caption{Part~III derivation logic. The coherent branch produces: Hilbert-space structure, wave equations, Born rule, decoherence, PES, vacuum effects, BH thermodynamics, and measurement theory. Colours indicate derivation levels.}
+\label{fig:pop_partIII_logic}
+\end{figure}
+
+Figure~\ref{fig:pop_partIII_logic} shows the complete derivation architecture of Part~III.
+
+
+\part{Итоги, сравнения и~перспективы}
+\label{part:summary_pop}
+
+
+\section{Архитектурное сравнение с~соседними программами}
+
+ECT is not the only attempt to address the foundational questions of physics. The following comparison locates it among its closest architectural neighbours.
+
+\textbf{General Relativity + Standard Model:} Time and Lorentzian structure are fundamental. Gauge group is postulated. Quantum axioms are primitive. Dark sector requires extra particles + $\Lambda$. BH information paradox is open.
+
+\textbf{Einstein--aether theory (Jacobson, 2004):} Lorentzian structure is fundamental; a preferred frame is added via a postulated unit vector $u^A$. In ECT, the orientation $n^A$ is derived from $\partial_A\Phi$, not postulated.
+
+\textbf{Ho\v{r}ava--Lifshitz gravity:} Lorentz invariance is broken \emph{explicitly} at the fundamental level. In ECT, it is broken \emph{spontaneously} from a higher symmetry.
+
+\textbf{Volovik's ``Universe in a Helium Droplet'':} Spacetime emerges from a condensate, but the analogy remains conceptual. ECT proposes that the condensate mechanism is the actual physical mechanism.
+
+\textbf{Causal Dynamical Triangulations:} Lorentzian structure is imposed as a lattice constraint. ECT derives it from continuous SSB.
+
+\textbf{Hartle--Hawking no-boundary proposal:} The Euclidean arena is a computational tool for defining path integrals. In ECT, it is the fundamental ontological entity.
+
+\textbf{MOND (Milgrom, 1983):} The critical acceleration $g^\dagger$ is a universal free constant. In ECT, it is derived from condensate dynamics and is environment-dependent.
+
+\textbf{Superfluid dark matter models:} Spacetime is pre-existing; a superfluid component is added as dark matter. In ECT, spacetime and the ``superfluid'' dynamics arise from the same condensate.
+
+In all cases, ECT distinguishes itself by deriving structures that other theories postulate, and by unifying the dark, gravitational, and quantum sectors within a single condensate framework.
+
+
+\section{Отличительные черты конструкции}
+
+Several features distinguish ECT from all other approaches:
+
+\textbf{Single-field origin:} Everything --- spacetime, gravity, quantum mechanics, gauge interactions, dark sector phenomena --- emerges from one scalar field $\Phi$.
+
+\textbf{No external time:} Time is derived from $O(4) \to O(3)$ SSB, not assumed. This is stricter than most quantum gravity approaches.
+
+\textbf{``How'' and ``why'':} ECT reproduces quantum equations \emph{and} explains why they take the form they do (compact phase structure, reflection positivity, boundary-value vs.\ Cauchy problem).
+
+\textbf{Honest epistemology:} Every result is classified as Level~A, B, or Open. No overclaiming.
+
+\textbf{Cross-sector universality of $S_0$:} The same action scale controls phase weighting, wave kinematics, canonical normalisation, and Born weights simultaneously. This is falsifiable: if different quantum layers required different scales, ECT would be refuted.
+
+\textbf{Unified dark sector:} Both ``dark matter'' and ``dark energy'' effects arise from condensate dynamics without new entities.
+
+\textbf{Minimal parameter count:} The entire theory is controlled by four parameters: $\mu^2$, $\lambda$, $\alpha$, $\beta$. In the canonical benchmark $(\alpha, \beta) = (2, 1)$, only \textbf{two parameters} remain: $\mu^2$ and $\lambda$. From these two numbers, ECT derives $G_N$, $\hbar$, $c$, the entire equation hierarchy, the gauge structure, the gravitational sector, galaxy rotation curves, cosmological evolution, and the quantum formalism --- without introducing any additional free parameters, phenomenological fields, or ad hoc assumptions. No other current framework achieves comparable scope with comparable economy.
+
+
+\section{Ключевые уравнения, законы и~принципы ECT}
+
+The following equations and principles define ECT not only qualitatively but in its applied, quantitative aspects:
+
+\textbf{Foundational action:}
+$S_E[\Phi] = \int d^4X\{\frac{1}{2}(\partial_A\Phi)^2 + V(\Phi)\}$, $V = -\frac{\mu^2}{2}\Phi^2 + \frac{\lambda}{4}\Phi^4$.
+
+\textbf{Gradient condensate:}
+$\langle\partial_A\Phi\rangle = u_0\,\delta_{Aw}$; breaks $O(4) \to O(3)$.
+
+\textbf{Effective kinetic tensor:}
+$K^{AB} = \beta\,\delta^{AB} - \alpha\,n^An^B$ (uniqueness theorem).
+
+\textbf{Propagation speed:}
+$c_* = \sqrt{\beta/(\alpha - \beta)}$ (= speed of light).
+
+\textbf{Matching relations:}
+$G_N = c_*^4/(8\pi\phi_0^2)$; \quad $\hbar = c_*\phi_0/\sqrt{\lambda}$.
+
+\textbf{Cross-sector cone universality:}
+$c_{\rm phase} = c_\gamma = c_{\rm GW} = c_*$.
+
+\textbf{Loop quantisation:}
+$\oint \partial_A\theta\,dX^A = 2\pi n$; \quad $S_{\rm loop,min} = 2\pi\hbar$.
+
+\textbf{Second law:}
+$dS_{\rm ent}/dw = N_{\rm eff}\gamma(dq/dw)^2 \geq 0$.
+
+\textbf{Generalised Einstein equations:}
+$G_{\mu\nu} + \Lambda_{\rm eff}g_{\mu\nu} = 8\pi G_{\rm eff}T_{\mu\nu} + \Theta_{\mu\nu}[n]$.
+
+\textbf{Galactic interpolation:}
+$g(R) = \frac{1}{2}(g_N + \sqrt{g_N^2 + 4g_Ng^\dagger})$.
+
+\textbf{BTFR:}
+$v_{\rm flat}^4 = G_N M_{\rm bar}\,g^\dagger$ (slope~4, algebraic).
+
+\textbf{Hubble evolution:}
+$G_{\rm eff}(z) \approx G_N(1+z)^{2\varepsilon}$, retained $\varepsilon \in [0.0296,\,0.0376]$ at $1\sigma$.
+
+\textbf{PES:}
+Persistent configurations = extremal $\cap$ decoherence-resistant $\cap$ phase-compact.
+
+\textbf{Decoherence time:}
+$\tau_{\rm dec} = 1/(N_{\rm eff}\gamma)$.
+
+\textbf{BH entropy:}
+$S = A/(4\ell_{\rm Pl}^2)$.
+
+\textbf{Casimir ECT:}
+$F_{\rm ECT} = \frac{3}{2}F_{\rm QED}$.
+
+
+\section{Фальсифицируемые предсказания}
+\label{sec:pop_predictions}
+
+Each prediction below is specific, quantitative, and testable:
+
+\begin{enumerate}
+\item \textbf{BTFR slope = 4} (\emph{A}). Algebraic consequence of the $\phi$-closure. A confirmed deviation would rule out the ECT galactic sector.
+
+\item \textbf{$g^\dagger \propto cH_0$} (\emph{B}). Links galactic and cosmological scales. Testable by comparing $g^\dagger$ from galaxies with independently measured $H_0$.
+
+\item \textbf{Fifth force: $\eta \sim 10^{-15}$} (\emph{B}). Within reach of MICROSCOPE-2 (current: $\eta < 10^{-14}$).
+
+\item \textbf{Dark energy: $w_0 \approx -0.83$} (\emph{B}). Distinguishable from $w=-1$ by DESI/Euclid. Confirmed $w=-1$ falsifies ECT dark energy.
+
+\item \textbf{Environmental modulation of $g^\dagger$} (\emph{B}). Field vs.\ cluster galaxies show different $g^\dagger$ --- absent in MOND.
+
+\item \textbf{Casimir $\times 3/2$} (\emph{B}). Three Goldstone modes add vacuum pressure. Testable in precision experiments.
+
+\item \textbf{$M_{\rm max} = 2.17\,M_\odot$} (\emph{B}). Cf.\ PSR~J0740+6620 ($2.14\,M_\odot$). Pulsar with $M > 2.2\,M_\odot$ constrains this.
+
+\item \textbf{CMB quadrupole deficit} (\emph{B/Open}). A structural argument for horizon-scale suppression exists, but the quantitative prediction of $\delta C_2/C_2$ remains open.
+
+\item \textbf{No dark matter particles} (\emph{B}). Detection of a DM particle falsifies this prediction.
+
+\item \textbf{$w \neq -1$} (\emph{B}). Dark energy is dynamical. Static $\Lambda$ at high precision rules out the mechanism.
+
+\item \textbf{LIV: $\Delta t_{\rm GW} \sim 10^{-64}$\,s} (\emph{A/B}). Planck-suppressed. GW170817 bound satisfied.
+\end{enumerate}
+
+\section{Открытые проблемы}
+
+These are stated explicitly as unsolved targets:
+
+\begin{enumerate}
+\item \textbf{Three fermion generations.} Qualitative routes exist (topological sectors of $S^3$); rigorous derivation of exactly three is not achieved.
+
+\item \textbf{Yukawa hierarchy.} Mass differences from $m_e \sim 0.5$\,MeV to $m_t \sim 173$\,GeV not derived.
+
+\item \textbf{$\alpha = 1/137$.} No first-principles prediction.
+
+\item \textbf{Renormalisability.} Probable on fixed Euclidean background; not proven.
+
+\item \textbf{Nonlinear GEE.} Structurally motivated (Level~B); full mathematical rigour not achieved.
+
+\item \textbf{Born rule.} Motivated via RP inner product (Level~B); not a first-principles theorem.
+
+\item \textbf{Bell correlators.} Medium-based entanglement established; explicit correlators not derived.
+
+\item \textbf{BH evaporation.} Page curve from toy model (Level~B); full dynamics open.
+
+\item \textbf{High-$z$ background.} Self-consistent $\phi_b(z)$ at $z \gg 1$ not derived.
+
+\item \textbf{Gradient condensation (OP-grad).} Dynamical origin of ordered branch from bare P3: the deepest open problem.
+\end{enumerate}
+
+\section{Полная карта выводов}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{fig_ect_derivation_map_pop.png}
+\caption{Complete ECT derivation map. The full logical architecture from the $\Phi$-medium and the six postulates through all four Parts of the theory. Colours indicate postulates (dark), phenomenological inputs (grey), Level~A (light grey), Level~B (white), and Open (dashed).}
+\label{fig:pop_fullmap}
+\end{figure}
+
+Figure~\ref{fig:pop_fullmap} shows the complete derivation architecture of ECT.
+
+
+\section{Проблемы физики, адресуемые ECT}
+
+Within its framework, ECT addresses several well-known open problems of modern physics:
+
+\begin{enumerate}
+\item \textbf{Unification of quantum mechanics and gravity.} Both emerge from the same ordered condensate. The unification is architectural, not forced (\emph{A/B}).
+
+\item \textbf{The origin of time.} Why does spacetime have signature $(-,+,+,+)$? Derived from $O(4)\to O(3)$ SSB (\emph{A}).
+
+\item \textbf{The dark matter problem.} No DM particle has been detected despite decades of searches. ECT reinterprets all observational phenomena as condensate dynamics; the minimal benchmark does not require DM particles (\emph{B}).
+
+\item \textbf{The cosmological constant problem.} QFT predicts $\Lambda$ that is $10^{120}\times$ too large. ECT replaces $\Lambda$ with dynamical condensate energy, naturally small (\emph{B}).
+
+\item \textbf{The Hubble tension.} $>5\sigma$ discrepancy. ECT provides structural alleviation through evolving $G_{\rm eff}$ (\emph{sign: A; magnitude: B}).
+
+\item \textbf{JWST early galaxies.} Enhanced early gravity + $\Theta_{\mu\nu}$ accelerate structure formation (\emph{B}).
+
+\item \textbf{Baryon asymmetry.} Native leptogenesis: $\eta_B \sim 9\times10^{-10}$ vs.\ observed $6\times10^{-10}$ (\emph{A/B}).
+
+\item \textbf{Black-hole information paradox.} Fundamental information loss structurally forbidden (\emph{A}); Page curve reproduced (\emph{B}).
+
+\item \textbf{The measurement problem.} Explained through decoherence, no collapse postulate (\emph{A/B}).
+
+\item \textbf{The origin of quantum mechanics.} Hilbert space, superposition, Born rule derived from condensate (\emph{A/B}).
+
+\item \textbf{The arrow of time.} Derived from condensate ordering and decoherence monotonicity (\emph{A/B}).
+
+\item \textbf{The need for inflation.} Four cosmological problems resolved without inflaton, avoiding inflation's paradoxes (\emph{A/B}).
+
+\item \textbf{The hierarchy problem.} $M_{\rm Pl}/M_{\rm EW} \sim 10^{16}$ addressed through running coupling (\emph{B/Open}).
+\end{enumerate}
+
+The breadth of problems addressed from a single starting point is a distinctive feature of the framework.
+
+
+\section{Заключение}
+
+ECT is an attempt to place spacetime, gravity, and quantum behaviour within a single pre-spacetime framework. In its current form, some parts of this programme are structural results, some are closure-dependent effective constructions, and some remain open.
+
+\textbf{What is established structurally (Level~A):}
+Lorentzian signature from $O(4) \to O(3)$ SSB; universal causal cone ($c_* = c$); the equation hierarchy (Euclidean $\to$ KG $\to$ Schr\"odinger); arrow of time from retarded decoherence; BTFR slope exactly~4; resolution of the horizon, flatness, and monopole problems; structural impossibility of fundamental information loss in black holes.
+
+\textbf{What is obtained at effective/closure level (Level~B):}
+Newton's constant, Planck's constant, and $c$ as condensate matching relations; generalised Einstein equations with $\Theta_{\mu\nu}$; dark energy as condensate residual energy ($w_0 \approx -0.83$); Hubble tension alleviation ($\Delta H_0 \sim +3$\,km/s/Mpc); galaxy rotation curves for 165 SPARC galaxies ($\chi^2/N \approx 2.95$); reinterpretation of the dark sector as condensate dynamics; decoherence and the quantum--classical boundary; BH area entropy and Page-curve-like behaviour from the shell model; PES; Casimir enhancement $\times 3/2$.
+
+\textbf{What remains an open programme:}
+Three fermion generations; Yukawa hierarchy; $\alpha = 1/137$; renormalisability; Born rule as first-principles theorem; Bell correlators; complete BH evaporation; gradient condensation from bare P3.
+
+The theory contains no dark matter particles, no cosmological constant, no inflaton, no separate quantum axioms, and no ad hoc collapse mechanism. With at most four bare parameters --- reducible to two in the canonical benchmark --- ECT addresses a scope that typically requires many independent inputs in the standard framework.
+
+Whether ECT ultimately becomes a viable theory of nature or remains a productive conceptual laboratory, it does something valuable: it demonstrates that spacetime, gravity, and quantum mechanics \emph{can} be derived from a common substrate, and it identifies the specific structures --- gradient condensation, compact-phase topology, orientation stiffness, and the Principle of Euclidean Stationarity --- that make this possible.
+
+If even partly correct, the deepest truth about reality is not that the universe \emph{contains} time, but that under the right conditions, the universe \emph{creates} it.
+
+\vspace{2em}
+\noindent\rule{\textwidth}{0.5pt}
+
+\noindent\textbf{Note.}
+This article is a narrative companion to:
+\emph{``Euclidean Condensate Theory (ECT): Emergence of Spacetime,
+Quantum Mechanics, and Gravity from Spontaneous $O(4)$ Symmetry
+Breaking''} by Valeriy Blagovidov (2026).
+Full preprint: \href{https://doi.org/10.5281/zenodo.18917930}{doi:10.5281/zenodo.18917930}.
+
+\medskip
+\centerline{\url{https://github.com/chufelo/ECT-preprint-code}}
+\medskip
+\centerline{Zenodo: \url{https://doi.org/10.5281/zenodo.18917930}}
+
+\end{document}
