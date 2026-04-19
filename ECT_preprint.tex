@@ -20911,13 +20911,11 @@ $(\alpha-\beta)_{\mathrm{eff}}(z)/(\alpha-\beta)_{\mathrm{eff}}(0)$
 \bottomrule
 \end{tabular}
 \caption{Parameterization-dependent ranges induced by the retained
-$1\sigma$ effective band (Eq.~\eqref{eq:eps_joint_band}). The entries
-are not direct observables and should not be read as first-principles
-ECT predictions. In particular, the second row uses an \emph{effective
-proxy rewriting} of the retained-band scaling and does not represent a
-physical redshift dependence of the vacuum constants~$(\alpha,\beta)$,
-of the fundamental combination~$(\alpha-\beta)$, or of the cone
-speed~$c_*$.}
+$1\sigma$ effective band (Eq.~\eqref{eq:eps_joint_band}). Entries are
+not direct observables. The second row is an \emph{effective proxy
+rewriting} of the retained-band scaling; it does not represent a
+physical redshift dependence of~$(\alpha,\beta)$, of~$(\alpha-\beta)$,
+or of the cone speed~$c_*$.}
 \label{tab:eps_scaling_benchmark_B}
 \end{table}
 
@@ -24718,282 +24716,37 @@ derived-parent numerical corridor, and finally the observational and
 strong-curvature tests built on top of those layers.
 
 \subsubsection*{Late-time cosmology: Hubble tension, age, and JWST implications
-(legacy benchmark layer)}
+(legacy pointer)}
 \label{sec:hubble_jwst}
 
-\textit{Legacy-layer disclaimer.}
-This subsection records the legacy late-time benchmark closure
-retained for methodological continuity and for the numerical
-infrastructure of the background solver. It should \emph{not} be
-read as the headline cosmological constraint on~$\varepsilon$,
-which is now given by the retained five-probe analysis in
-\S\ref{sec:cosmo_constraints} and
+\textit{Legacy-pointer note.}
+The present subsection is retained only as a pointer to earlier
+benchmark late-time cosmology material. The headline cosmological
+constraint on~$\varepsilon$ is given by the retained five-probe
+analysis in \S\ref{sec:cosmo_constraints}
+(\S\ref{subsec:eps_retained}--\S\ref{subsec:eps_outlook})
+together with
 Appendix~\ref{app:eps_extraction_hubble}--Appendix~\ref{app:eps_methodology}.
+Nothing in the present legacy pointer should be used to quote the
+current retained-five-probe constraint on~$\varepsilon$.
 
-\textit{Scope note.}
-The structural Hubble-tension mechanism is presented in
-\S\ref{sec:cosmo_constraints}; the age apparatus in \S\ref{sec:universe_age};
-and the cosmological JWST framework in \S\ref{sec:cosmo_constraints}.
-The present subsection retains the benchmark numerical layer, the
-derived-parent scan, and the auxiliary figures/tables supporting those
-frameworks.
-Nothing in the present legacy subsection should be used to quote the
-current retained-five-probe constraint on~$\varepsilon$; for the
-headline cosmological result, the reader should use
-\S\ref{subsec:eps_retained}--\ref{subsec:eps_outlook} together with
-Appendices~\ref{app:eps_extraction_hubble}--\ref{app:eps_methodology}.
+\paragraph{What was here previously.}
+Earlier drafts of this preprint carried an extended benchmark
+late-time closure subsection at this location, including an
+effective scalar--tensor action, a benchmark FRW closure, an analytic
+estimate of~$\Delta H_0/H_0$, a benchmark age~$t_0^{\rm ECT}\simeq
+13.1$~Gyr, and a longtable of benchmark numerical outputs. That
+material is not the headline result of the present version and is
+therefore removed from the main text as of the retained-band rebuild.
 
-The earlier phenomenological power-law background ansatz has been
-replaced by a benchmark late-time truncation of the derived condensate
-background dynamics.
-At the structural level, the parent system is the macroscopic
-ordered-branch background derived from the condensate amplitude
-$u=u_\infty e^{\beta\phi}$ and recorded in
-Appendix~\ref{app:late_cosmo_background},
-Section~\ref{sec:late_condensate_dynamics}.
-The present numerical results use the first late-time screened-branch
-truncation of that parent system, not an independently chosen scalar--
-tensor ansatz.
-
-At the parent-system level, the macroscopic condensate dynamics is
-controlled by the amplitude relation
-\[
-u=u_\infty e^{\beta\phi},
-\]
-so that
-\[
-F(\phi)=\frac{u}{u_\infty}=e^{\beta\phi},
-\qquad
-\omega(\phi)\propto e^{2\beta\phi},
-\qquad
-U(\phi)=W(u_\infty e^{\beta\phi}).
-\]
-The benchmark closure used below is the local screened-branch
-approximation of this derived system near $\phi=0$.
-
-The benchmark late-time truncation is then written in the effective
-scalar--tensor form
-\begin{equation}
-S_{\rm eff}
-=
-\int d^4x\,\sqrt{-g}\,
-\left[
-\frac12 f(\phi)R
--\frac12 K(\phi)(\partial\phi)^2
--V(\phi)
-+\mathcal L_m
-\right],
-\label{eq:late_cosmo_action_main}
-\end{equation}
-with effective gravitational stiffness and Newton coupling
-\[
-M_{\rm eff}^2(\phi)=f(\phi),
-\qquad
-G_{\rm eff}(\phi)=\frac{1}{8\pi f(\phi)}.
-\]
-
-For a homogeneous FRW background, the late-time expansion history
-is controlled by the coupled system for $H(z)$ and $\phi(z)$ obtained
-from the background reduction of the macroscopic closure
-(Section~\ref{sec:background_reduction_macro}).
-In the variable $N=\ln a$, the benchmark truncation of the derived ECT
-background system takes the form
-\begin{equation}
-E^2(N)
-=
-\frac{
-\Omega_{m*}e^{-3N}
-+\Omega_{r*}e^{-4N}
-+\Omega_{V*}
-+\frac{\mu^2}{6}\phi^2
-}{
-e^{\beta \phi}
--\frac{\kappa}{6}q^2
-+\beta e^{\beta \phi}q
-},
-\label{eq:ect_late_friedmann_main}
-\end{equation}
-where $E(N)=H/H_*$, $\phi(N)=\frac{1}{\beta}\ln(u/u_\infty)$,
-$q(N)=d\phi/dN$, and the benchmark Level~B closure is
-$f(\phi)=f_0 e^{\beta\phi}$,
-$K(\phi)=K_0$, $V(\phi)=V_0+\frac12 m_\phi^2\phi^2$.
-Here the exponential factor is structurally tied to the amplitude ratio
-$u/u_\infty=e^{\beta\phi}$, while the constant kinetic coefficient and the
-quadratic potential are the simplest local late-time benchmark choices.
-The corresponding full derived condensate background system is recorded
-in Appendix~\ref{app:late_cosmo_background},
-Eqs.~\eqref{eq:condensate_friedmann1}--\eqref{eq:condensate_scalar_N};
-the present benchmark closure is their local late-time truncation.
-The current numerical solver therefore tests only the benchmark member
-of the derived condensate family, not yet the full parent system.
-These equations should therefore be read as the control late-time
-implementation of the ordered-branch background, not as the final
-first-principles cosmological completion of ECT.
-
-At the present-epoch level, the late-time Hubble shift is controlled by
-\begin{equation}
-\frac{\Delta H_0}{H_0}
-\approx
-\frac{\mu^2\phi_0^2}{12}
--\frac12\beta \phi_0.
-\label{eq:ect_h0_shift_main}
-\end{equation}
-For benchmark parameters $\beta=0.8$, $\mu=1.5$, $\kappa=15$, $\phi_0=-0.12$
-the closed-form estimate above yields an upward Hubble shift at the
-few-per-cent level.
-The exact numerical benchmark percentage is not yet stabilised: the
-small-drift analytic estimate, the interim benchmark-solver runs, and
-the admissible-deformation robustness test are not yet mutually
-consistent, and a definitive value should be quoted only from the
-converged fixed-point solver described in
-Appendix~\ref{app:late_cosmo_algorithm}.
-At the present stage this numerical value should be read as the output
-of a late-time Level~B ECT background closure (an H1 statement in the
-sense of~\S\ref{subsec:eps_joint_band}), not as a completed CMB-inferred
-$H_0$ solution.
-The intended background system is self-consistent at the level of the
-ECT scalar--tensor equations written below and in
-Appendix~\ref{app:late_cosmo_background}, but the detailed numerical
-implementation remains benchmark-level until the full fixed-point
-background solver is used throughout.
-The numerical implementation roadmap corresponding to this closure is
-summarised in Appendix~\ref{sec:late_cosmo_roadmap}, the explicit
-article--solver interface contract is stated in
-Appendix~\ref{sec:late_cosmo_interface}, the expected reproducible
-numerical artefacts are listed in
-Appendix~\ref{sec:late_cosmo_artefacts}, and the numerical robustness
-programme for admissible late-time deformations is outlined in
-Appendix~\ref{sec:late_closure_robustness}.
-The corresponding analytic benchmark window is shown in
-Appendix~\ref{app:late_cosmo_algorithm}.
-
-Crucially, the late-time ECT background is not defined by assuming a
-$\Lambda$CDM expansion history as physical input.
-The role of any reference background is only comparative or, in interim
-numerical implementations, as an initial seed for convergence tests.
-The physical background of the closure is the solution of the ECT
-scalar--tensor system itself.
-
-The same background drift also changes the distance--redshift
-relation and available lookback time:
-\begin{equation}
-D_L(z)=(1+z)c_*\int_0^z \frac{dz'}{H(z')},
-\qquad
-t_{\rm lookback}(z)=\int_0^z \frac{dz'}{(1+z')H(z')}.
-\label{eq:ect_dist_time_18}
-\end{equation}
-\begin{equation}
-t_U(z)=\int_z^\infty \frac{dz'}{(1+z')H(z')},
-\qquad
-t_{\rm gal}(z_{\rm obs};z_{\rm form})
-=
-t_U(z_{\rm obs})-t_U(z_{\rm form}).
-\label{eq:ect_age_gal_18}
-\end{equation}
-The quantity $t_U(z)$ is the age of the Universe at the epoch of
-observation, while $t_{\rm gal}(z_{\rm obs};z_{\rm form})$ is the
-available lifetime of a galaxy observed at $z_{\rm obs}$ if it formed at
-$z_{\rm form}$.
-This distinction is essential for the JWST discussion.
-
-The benchmark run gives an ECT age of $13.1$\,Gyr, compared with the
-reference $\Lambda$CDM value $13.8$\,Gyr, with luminosity-distance
-shifts of $\Delta D_L/D_L\approx-5\%$ at $z=5$--12.
-These numbers refer to the benchmark screened-branch truncation and
-serve as the control late-time solution against which the
-derived-parent condensate runs are compared below.
-
-The quoted age-related numbers should still be read as interim
-late-time closure estimates, because the present numerical
-implementation of the high-redshift continuation is not yet the final
-self-consistent ECT completion of the background.
-
-The net effect on the JWST early-structure tension is mixed.
-Smaller luminosity distances ($\Delta D_L<0$) reduce the required
-intrinsic luminosities and stellar masses, partially softening the
-tension.  However, the same background also reduces the cosmic age
-at any fixed redshift ($\Delta t_{\rm lookback}<0$), leaving less
-time for early galaxy formation.  In the present benchmark these
-two effects are comparable in magnitude ($\approx 5\%$ each),
-so the overall JWST improvement is partial: distance inference
-softens, growth is slightly enhanced (growth proxy $\approx 1.017$
-at $z=10$), but the time budget worsens.  A stronger JWST
-improvement would require either a non-trivial early-time $\phi$-background
-history that localises the growth enhancement without compressing the
-formation time-window, or a full perturbation-level growth-equation
-analysis beyond the present heuristic $G_{\rm eff}/H^2$ proxy~(Level~Open):
-\begin{equation}
-D'' + \left(2+\frac{H'}{H}\right)D'
--\frac{3}{2}\Omega_m(z)\frac{G_{\rm eff}(z)}{G_N}D = 0.
-\label{eq:growth_ode}
-\end{equation}
-Solving~\eqref{eq:growth_ode} with the ECT background is a natural
-next step for a more definitive JWST assessment.
-
-The Hubble tension, the inferred age of the Universe, and part of the
-JWST early-structure tension are therefore not independent in the ECT
-framework: the same late/intermediate-time $\phi$-background that shifts
-$H_0$ also modifies inferred distances, cosmic ages, and the friction
-term relevant for structure growth~(Level~B; see
-Appendices~\ref{app:late_cosmo_background} and
-\ref{app:late_cosmo_algorithm}).
-
-A further consequence of the running $f(\phi)$ is that the galactic
-critical acceleration scale becomes epoch-dependent:
-\begin{equation}
-g^\dagger_{\rm bg}(z)=\frac{c_*\,H(z)}{2\pi},
-\label{eq:gdag_bg_z}
-\end{equation}
-so that $g^\dagger_{\rm bg}$ is not a universal constant but traces the
-background expansion history.  In the benchmark background, both the growth proxy
-$G_{\rm eff}/H^2$ and the ratio $g^\dagger_{\rm bg}(z)/g^\dagger_{\rm bg}(0)=E(z)$,
-confirming that in the critical-branch picture the effective acceleration
-scale at early times was much larger than today.
-The benchmark control diagnostics and the non-benchmark derived-parent
-parameter scans are summarised internally in the late-cosmology
-apparatus appendices; no figures are reproduced here in the retained
-\S\ref{sec:cosmo_constraints} layer.
-
-
-\renewcommand{\arraystretch}{1.15}
-\begin{longtable}{@{}p{10.5cm}p{5.0cm}@{}}
-\caption{Legacy benchmark late-time ECT cosmology closure retained for methodological continuity.}\label{tab:ect_hubble_jwst_summary}\\
-\toprule
-Quantity & Value \\
-\midrule
-\endfirsthead
-\toprule
-Quantity & Value \\
-\midrule
-\endhead
-\bottomrule
-\endfoot
-$\beta$ & 0.8 \\
-$\mu=m_\phi/H_0$ & 1.5 \\
-$\kappa=K_0/f_0$ & 15 \\
-$\phi_0=\phi(z=0)$ & $-0.12$ \\
-$\Delta H_0/H_0$ & few-per-cent (benchmark, re-audit pending) \\
-$H_0^{\rm late}$ & illustrative high-60s to $\sim 70$\,km\,s$^{-1}$\,Mpc$^{-1}$ (H1 benchmark only; re-audit pending; not for one-to-one comparison with Planck/SH0ES posteriors) \\
-$t_0^{\rm ECT}$ & $13.1$\,Gyr \\
-$\Delta t_0/t_0$ & $-4.8\%$ \\
-$\Delta D_L/D_L$ at $z=10$ & $-5.4\%$ \\
-Inferred $\Delta L/L$ at $z=10$ & $\approx -10\%$ \\
-Growth proxy $\mathcal{G}$ at $z=10$ (benchmark only) & $1.016$ \\
-$g^\dagger_{\rm bg}(z=10)/g^\dagger_{\rm bg}(0)$ & $21.5$ \\
-$t_{\rm U}(z=10)^{\rm ECT}$ (benchmark) & $0.44$\,Gyr \\
-$t_{\rm U}(z=10)^{\Lambda{\rm CDM}}$ (reference) & $0.47$\,Gyr \\
-Galaxy age (obs $z=10$, form $z=20$)$^{\rm ECT}$ (benchmark) & $0.27$\,Gyr \\
-Galaxy age (obs $z=10$, form $z=20$)$^{\Lambda{\rm CDM}}$ (reference) & $0.29$\,Gyr \\
-\bottomrule
-\end{longtable}
-
-\noindent
-\textit{Status note.}
-All entries in Table~\ref{tab:ect_hubble_jwst_summary} belong to the
-benchmark late-time control layer.
-They are useful for calibration, comparison, and numerical stability
-checks, but they should not yet be read as outputs of the final
-self-consistent ECT background branch.
+\paragraph{Where the content now lives.}
+The derived macroscopic ordered-branch background system to which
+the earlier benchmark was a local truncation is recorded in
+Appendix~\ref{app:late_cosmo_background}; its numerical algorithm
+and admissible-deformation robustness programme are recorded in
+Appendix~\ref{app:late_cosmo_algorithm}. The retained-band
+methodology that replaces the earlier benchmark-centric narrative
+is collected in Appendix~\ref{app:eps_methodology}.
 
 \subsubsection*{Numerical robustness under admissible late-time deformations}
 \label{sec:late_cosmo_robustness_main}
@@ -48438,7 +48191,10 @@ is provided in the present preprint. The present subsection
 therefore states the benchmark-achievability target and the
 criteria that a future closure-level demonstration must satisfy,
 rather than claiming that such a demonstration has already been
-completed.
+completed. To make this fully explicit: no closure-parameter-space
+construction yielding the retained band has yet been carried out in
+the present work; benchmark achievability is therefore a programme
+target rather than an established result of the current paper.
 
 \subsection*{AF.6\quad Excluded probes: audit status and
 non-silent-dismissal}
