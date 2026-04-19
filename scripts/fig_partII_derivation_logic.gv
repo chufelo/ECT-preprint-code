@@ -1,0 +1,102 @@
+digraph PartII {
+  rankdir=TB;
+  fontname="Helvetica";
+  node [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", margin="0.12,0.06"];
+  edge [fontname="Helvetica", fontsize=8];
+  splines=true;
+  nodesep=0.35;
+  ranksep=0.50;
+  newrank=true;
+  labeljust=c;
+
+  // === LEVEL A ===
+  node [fillcolor="#b8b8b8"];
+  partI [label=<Part I outputs<BR/>(P1–P6, BR1, DP)<BR/>§§2–10>, fontsize=11];
+  sr [label=<Special Relativity<BR/>ds² = η<SUB>μν</SUB> dX<SUP>μ</SUP> dX<SUP>ν</SUP><BR/>§12>];
+  metric [label=<Effective metric<BR/>diag(β, β, β, −(α−β))<BR/>§13.1>];
+  source [label=<Conserved source<BR/>∂<SUB>A</SUB> T<SUP>AB</SUP> = 0<BR/>§13.3>];
+  cgw [label=<GW speed<BR/>c<SUB>GW</SUB> = c*<BR/>(GW170817 ✓)<BR/>§13.8>];
+  weakfield [label=<Screened Newtonian<BR/>limit<BR/>§13.6>];
+  flatness [label=<k = 0<BR/>(P1 + macrocoherence)<BR/>§14.3>];
+  monopole [label=<π<SUB>2</SUB>(S³) = 0<BR/>no primary monopoles<BR/>§14.4>];
+  scalar_mode [label=<Single scalar<BR/>perturbation mode<BR/>§14.5>];
+
+  // === LEVEL B ===
+  node [fillcolor="#ffffff"];
+  bridge [label=<Bridge §11<BR/>Inherited inputs<BR/>(β &lt; α &lt; 4β, c*, u<SUB>0</SUB>, K<SUP>AB</SUP>)>];
+  GN [label=<G<SUB>N</SUB> matching<BR/>G<SUB>N</SUB> = c*<SUP>4</SUP>/(8π M<SUB>G</SUB><SUP>2</SUP>)<BR/>§13.4>];
+  closure [label=<Nonlinear φ-closure §13.5<BR/>GEE: G<SUB>eff</SUB>, Λ<SUB>eff</SUB>, Θ<SUB>μν</SUB>>];
+  closure_funcs [label=<Closure functions<BR/>F = exp(βφ)<BR/>ω = ω<SUB>0</SUB> exp(2βφ)<BR/>U = W(u<SUB>∞</SUB> exp(βφ))<BR/>(Level B: forms derived)<BR/>§13.5, App.>];
+  nophantom [label=<No-phantom bound<BR/>w(z) ≥ −1<BR/>(ω(φ) &gt; 0)<BR/>§15.1>];
+  hubble [label=<Retained-band ε analysis<BR/>ε ∈ [0.0296, 0.0376]<BR/>(5-probe joint, 1σ)<BR/>§15.5>];
+  jwst [label=<JWST extraction<BR/>ε<SUB>JWST</SUB> lower edge<BR/>binds retained band<BR/>§15.5, A2>];
+  age [label=<Age apparatus<BR/>t<SUB>0</SUB> = 13.46 Gyr<BR/>(baseline H<SUB>0</SUB> map)<BR/>§15.4>];
+  baryogenesis [label=<Sakharov-compatible<BR/>baryogenesis env.<BR/>§15.3>];
+  rotcurves [label=<Rotation curves<BR/>165 SPARC galaxies<BR/>1 param/galaxy<BR/>§16.3>];
+  btfr [label=<BTFR slope 4<BR/>(algebraic)<BR/>§16.3>];
+  rar [label=<RAR<BR/>σ ≈ 0.13 dex<BR/>§16.4>];
+  gdagger [label=<Baseline scale<BR/>g<SUP>†</SUP><SUB>0</SUB> = cH<SUB>0</SUB>/(2π)<BR/>≈ 1.04×10⁻¹⁰ m/s²<BR/>§16.3>];
+  envmod [label=<Environmental<BR/>modulation<BR/>g<SUP>†</SUP><SUB>0</SUB> → g<SUP>†</SUP><SUB>eff</SUB><BR/>(F1)<BR/>§16.1>];
+  cluster [label=<Cluster-merger<BR/>lensing morphology<BR/>(Bullet+3 systems)<BR/>(F10)<BR/>§16.2>];
+  darkDM [label=<No particle DM<BR/>for galactic<BR/>discrepancy<BR/>§17.2>];
+  darkDE [label=<Dark energy =<BR/>ordered-branch<BR/>background<BR/>§17.3>];
+  tests [label=<13 Falsifiable<BR/>predictions<BR/>F1–F13<BR/>§18.1>, fontsize=11];
+
+  // === OPEN ===
+  node [fillcolor="white", style="rounded,dashed", penwidth=2];
+  open_eft [label=<EFT parameters<BR/>Z<SUB>u</SUB>, W(u), β<BR/>from bare P3<BR/>(Open: OP-grad)>];
+  open_ns [label=<ECT-native n<SUB>s</SUB>, r<BR/>(Open: OP3)>];
+  open_fractions [label=<Cosmological<BR/>fraction budget<BR/>(Open)>];
+  open_phi_bvp [label=<Full φ boundary-<BR/>value solver<BR/>(Open)>];
+
+  // === EDGES ===
+  partI -> bridge [style=bold, penwidth=2];
+  bridge -> sr; bridge -> metric; bridge -> source;
+  metric -> GN; metric -> cgw;
+  {GN; source} -> closure;
+  closure -> closure_funcs; closure -> weakfield;
+  weakfield -> rotcurves;
+  {sr; closure} -> flatness;
+  {sr; closure} -> monopole;
+  {sr; closure} -> scalar_mode;
+  closure_funcs -> nophantom;
+  closure_funcs -> hubble;
+  closure_funcs -> age;
+  {hubble; age} -> jwst;
+  closure -> baryogenesis;
+  rotcurves -> btfr; rotcurves -> rar;
+  weakfield -> gdagger;
+  gdagger -> envmod;
+  {rotcurves; envmod} -> cluster;
+  {rotcurves; envmod} -> darkDM;
+  {nophantom; hubble} -> darkDE;
+  {darkDM; darkDE; envmod; cluster; cgw} -> tests;
+  closure_funcs -> open_eft [style=dashed, color=gray50];
+  scalar_mode -> open_ns [style=dashed, color=gray50];
+  darkDE -> open_fractions [style=dashed, color=gray50];
+  rotcurves -> open_phi_bvp [style=dashed, color=gray50];
+
+  // === LEGEND AT BOTTOM ===
+  node [shape=point, width=0, style=invis];
+  spacer1 [label=""];
+  tests -> spacer1 [style=invis];
+  open_fractions -> spacer1 [style=invis];
+  open_phi_bvp -> spacer1 [style=invis];
+  btfr -> spacer1 [style=invis];
+  rar -> spacer1 [style=invis];
+
+  node [shape=plaintext, style="", fillcolor=white];
+  legend [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="4" CELLPADDING="6" COLOR="black">
+      <TR><TD COLSPAN="7"><B>Legend</B></TD></TR>
+      <TR>
+        <TD BGCOLOR="#b8b8b8">Structural / Level A</TD>
+        <TD BGCOLOR="#ffffff" BORDER="1">Closure-level / Level B</TD>
+        <TD BORDER="1" STYLE="DASHED">Open problem</TD>
+        <TD>——→ Strict derivation</TD>
+        <TD>– – → Requires assumptions</TD>
+      </TR>
+    </TABLE>
+  >];
+  spacer1 -> legend [style=invis];
+}

@@ -17542,7 +17542,7 @@ Sector & Benchmark & NLEE channel & Role & Separability & Appendix \\
 \bottomrule
 \endfoot
 Hubble tension (\S\ref{subsec:eps_joint_band})
-  & few-per-cent upward $H_0$ shift (benchmark H1 route)
+  & retained-band-compatible H1-route shift
   & $\Theta_{\mu\nu}\!\to\!0$ on FRW bkgd
   & Absorbed
   & Not separable
@@ -21294,7 +21294,9 @@ $\varepsilon(z)$ from ECT (OP-Hubble-derive below). Within the
 present diagnostic layer neither route is attempted here, and both
 readings of the retained band --- ``constant $\varepsilon$'' and
 ``kernel-averaged projection of $\varepsilon(z)$'' --- remain
-empirically admissible.
+empirically admissible. The present retained band therefore
+supports constancy only at the level of effective compatibility,
+not at the level of closure-level derivation.
 
 \paragraph{Diagnostic layer, not final closure.}
 The uniform-$\varepsilon$ treatment is used here as a diagnostic
@@ -21586,35 +21588,23 @@ Ordering transition out-of-equilibrium
   & \S\ref{sec:mp_baryogenesis}
   & baryogenesis compatibility \\
 
-Benchmark Hubble shift
-  & few-per-cent (H1 benchmark)
-  & B bench.
-  & \S\ref{subsec:eps_joint_band}
-  & H1 closure-level only; not a direct comparison with Planck/SH0ES posteriors \\
+Retained five-probe effective band
+  & $\varepsilon\in[0.0296,0.0376]$ ($1\sigma$), $[0.0207,0.0425]$ ($2\sigma$)
+  & B diag.
+  & \S\ref{subsec:eps_joint_band}, App.~\ref{app:eps_methodology}
+  & headline cosmological constraint on the effective uniform-$\varepsilon$ parameter \\
 
-Benchmark Lorentzian age
-  & $t_0^{\rm ECT}\sim 13.0$--$13.5$\,Gyr
-  & B bench.
-  & \S\ref{sec:universe_age}
-  & compatible with lower bounds \\
+JWST extraction with time-budget correction
+  & $\varepsilon_{\rm JWST}\in[0.0296,0.0786]$ ($1\sigma$)
+  & B diag.
+  & \S\ref{subsec:eps_joint_band}, App.~\ref{app:eps_extraction_jwst}
+  & lower edge binds the retained band \\
 
-JWST: galaxy-assembly channel
-  & $\mathcal{R}_{\rm gal}\sim 1.2$
-  & B bench.
-  & \S\ref{subsec:eps_joint_band}
-  & modest alleviation \\
-
-JWST: BH-assisted channel
-  & $\mathcal{R}_{\rm BH}\sim 1.5$
-  & B bench.
-  & \S\ref{subsec:eps_joint_band}
-  & more promising \\
-
-Leading halo enhancement
-  & factor $\sim2$--3 at extreme peaks
-  & B bench.
-  & \S\ref{subsec:eps_joint_band}
-  & partial alleviation \\
+Age-viability note
+  & baseline mapping acceptable; inferred-$H_0$ mapping problematic
+  & B note
+  & App.~\ref{app:eps_methodology} (A6.4)
+  & viability/self-consistency note, not a retained probe \\
 \end{longtable}
 }
 
@@ -24743,8 +24733,18 @@ truncation used as the present control solution, the first non-benchmark
 derived-parent numerical corridor, and finally the observational and
 strong-curvature tests built on top of those layers.
 
-\subsubsection*{Late-time cosmology: Hubble tension, age, and JWST implications}
+\subsubsection*{Late-time cosmology: Hubble tension, age, and JWST implications
+(legacy benchmark layer)}
 \label{sec:hubble_jwst}
+
+\textit{Legacy-layer disclaimer.}
+This subsection records the legacy late-time benchmark closure
+retained for methodological continuity and for the numerical
+infrastructure of the background solver. It should \emph{not} be
+read as the headline cosmological constraint on~$\varepsilon$,
+which is now given by the retained five-probe analysis in
+\S\ref{sec:cosmo_constraints} and
+Appendix~\ref{app:eps_extraction_hubble}--Appendix~\ref{app:eps_methodology}.
 
 \textit{Scope note.}
 The structural Hubble-tension mechanism is presented in
@@ -24969,7 +24969,7 @@ apparatus appendices; no figures are reproduced here in the retained
 
 \renewcommand{\arraystretch}{1.15}
 \begin{longtable}{@{}p{10.5cm}p{5.0cm}@{}}
-\caption{Summary of the benchmark late-time ECT cosmology closure.}\label{tab:ect_hubble_jwst_summary}\\
+\caption{Legacy benchmark late-time ECT cosmology closure retained for methodological continuity.}\label{tab:ect_hubble_jwst_summary}\\
 \toprule
 Quantity & Value \\
 \midrule
@@ -42507,7 +42507,7 @@ Topological mass ansatz $m_n\!\sim\!n\!\times\!1.6$\,GeV & Resonance-like struct
 Graviton polarisation: two TT modes only & Linearised condensate perturbation has no additional scalar or vector polarisations & Polarisation decomposition of stochastic GW background & B \\
 Linear LIV structure $\Delta t\!\propto\!EL/(M_{\rm Pl}c^2)$ at Planck-suppressed level & Species-independent leading LIV time-of-flight from director fluctuations; $\Delta t_{\rm GW}\!\lesssim\!10^{-64}$\,s for current GW sources & Multi-messenger GW/photon/neutrino timing & A / B \\
 No exact thermality in black-hole evaporation (conditional theorem) & Under unitarity + finite shell + complete evaporation, exact thermality is excluded; deviations structurally required & Late-stage evaporation spectrum (conceptual) & B \\
-Hubble-shift mechanism from ordered-branch $\phi$-background & Correlated shift of $H_0$, age, distance, and growth through a single $\phi_b(z)$ trajectory; benchmark few-per-cent H1 shift (exact value pending re-audit) & $H_0$ inferences vs CMB, JWST ages, late-time distance ladder & B \\
+Hubble-shift mechanism from ordered-branch $\phi$-background & Correlated shift of $H_0$, age, distance, and growth through a single $\phi_b(z)$ trajectory; retained-band diagnostic-layer extraction yields $\varepsilon \in [0.0296,\,0.0376]$ at $1\sigma$ (\S\ref{subsec:eps_joint_band}) & $H_0$ inferences vs CMB, JWST ages, late-time distance ladder & B \\
 \midrule
 \multicolumn{4}{@{}l}{\textit{Additional structural and observational handles}} \\
 \midrule
@@ -53552,16 +53552,17 @@ ECT-native kernel recalibration for ISW (A5). Both are listed as
 methodology limitations in A6.7.
 
 \paragraph{What the band does and does not claim.}
-The band is the intersection of five independent $1\sigma$
-intervals on the uniform-$\varepsilon$ diagnostic layer. It does
-not claim to be a ``measurement of $\varepsilon$'': the
-uniform-$\varepsilon$ ansatz is itself a projection of a more
+The band is the intersection of five retained $1\sigma$ intervals
+obtained from observationally distinct channels with different
+kernels and different dominant systematics. It is not a
+statistically rigorous global likelihood, and it should not be
+read as a direct measurement of a first-principles ECT parameter.
+Rather, it is the compatibility region of the uniform-$\varepsilon$
+diagnostic layer under the present retained-pipeline methodology.
+The uniform-$\varepsilon$ ansatz is itself a projection of a more
 general closure-level $\varepsilon(z)$ history onto a single
-effective parameter (cf.\ A1.7(iii)). The band is also not a
-direct fit to a first-principles ECT closure; it is the
-compatibility region under which the effective parameter
-simultaneously accommodates five independent observational
-channels at the present proxy level.
+effective parameter (cf.\ A1.7(iii)), not a first-principles
+prediction.
 
 \subsection*{A6.4\quad Age-viability ambiguity under Hubble mapping
 (viability note)}
@@ -53606,10 +53607,10 @@ currently open:
   becomes inadequate near the retained-band central value and
   a closure-level $\varepsilon(z)$ must decrease toward the
   present;
-\item the globular-cluster age anchor is subject to calibration
-  systematics at the $\sim 1~{\rm Gyr}$ level, in which case
-  the observed tension is consistent with measurement
-  uncertainty.
+\item additional astrophysical or calibration systematics in
+  the stellar-age anchor may broaden the effective comparison
+  window, although no specific quantitative widening is assumed
+  here.
 \end{itemize}
 None of these three interpretations is fixed by the
 Hubble + $r_s$ channel alone. The present appendix does not
@@ -53624,8 +53625,8 @@ of $\varepsilon(z)$ and $H_0$ from first principles (cf.\
 \S\ref{subsec:eps_outlook}), not a constraint to be added
 at the uniform-$\varepsilon$ level.
 
-\subsection*{A6.5\quad Benchmark achievability for the retained
-band (only)}
+\subsection*{A6.5\quad Benchmark-achievability target and
+outstanding task}
 
 ``Benchmark achievability'' refers to the question: within the
 parameter space of the ECT ordered-branch closure, do there
@@ -53668,6 +53669,14 @@ condensate dynamics is listed as open problem OP-Hubble-derive
 in \S\ref{subsec:eps_outlook}, and an explicit check of
 whether its output projection onto uniform-$\varepsilon$ lies in
 the retained band is part of that open program.
+
+\paragraph{Explicit scope caveat.}
+No explicit closure-space scan or constructive existence proof
+is provided in the present preprint. The present subsection
+therefore states the benchmark-achievability target and the
+criteria that a future closure-level demonstration must satisfy,
+rather than claiming that such a demonstration has already been
+completed.
 
 \subsection*{A6.6\quad Excluded probes: audit status and
 non-silent-dismissal}
