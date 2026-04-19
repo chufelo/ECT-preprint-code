@@ -87,8 +87,11 @@ the fully technical glossary is in the preprint (Tables of Symbols and
 Abbreviations). The items below cover the companion itself.
 
 \medskip
-\noindent\textbf{Abbreviations.}\\[2pt]
-\begin{tabular}{@{}p{2.6cm}p{12.6cm}@{}}
+\begin{longtable}{@{}p{2.6cm}p{12.6cm}@{}}
+\multicolumn{2}{@{}l}{\textbf{Abbreviations.}} \\[4pt]
+\endfirsthead
+\multicolumn{2}{@{}l}{\textbf{Abbreviations (continued).}} \\[4pt]
+\endhead
 \textbf{ECT} & Euclidean Condensate Theory (this work) \\
 \textbf{SSB} & Spontaneous symmetry breaking \\
 \textbf{EFT} & Effective field theory \\
@@ -144,11 +147,14 @@ Abbreviations). The items below cover the companion itself.
 \textbf{LSST} & Legacy Survey of Space and Time (Vera C.~Rubin Observatory) \\
 \textbf{LHC} & Large Hadron Collider \\
 \textbf{GUT} & Grand unified theory \\
-\end{tabular}
+\end{longtable}
 
 \medskip
-\noindent\textbf{Principal symbols.}\\[2pt]
-\begin{tabular}{@{}p{2.6cm}p{12.6cm}@{}}
+\begin{longtable}{@{}p{2.6cm}p{12.6cm}@{}}
+\multicolumn{2}{@{}l}{\textbf{Principal symbols.}} \\[4pt]
+\endfirsthead
+\multicolumn{2}{@{}l}{\textbf{Principal symbols (continued).}} \\[4pt]
+\endhead
 $\Phi$ & Fundamental scalar field on the $4$D Euclidean manifold (the $\Phi$-medium). \\
 $X^A$, $n_A$ & Euclidean coordinates / orientation variable selected by gradient condensation. \\
 $\mu^2,\lambda$ & Bare-potential mass and self-coupling parameters ($V=-\tfrac{\mu^2}{2}\Phi^2+\tfrac{\lambda}{4}\Phi^4$). \\
@@ -166,7 +172,7 @@ $f\sigma_8(z)$, $r_s$ & RSD growth observable / sound horizon; retained-band pro
 $t_0^{\rm ECT}$ & Age of the Lorentzian branch; retained-band indicator $\sim 13.5$\,Gyr baseline-$H_0$ / $\sim 12.5$\,Gyr inferred-$H_0$. \\
 $g_\dagger$ & Critical acceleration $\propto cH_0$; galactic-rotation baseline scale. \\
 $\Lambda$CDM & Standard cosmological model: cold dark matter + cosmological constant. \\
-\end{tabular}
+\end{longtable}
 
 \newpage
 \setcounter{tocdepth}{2}
@@ -751,13 +757,6 @@ Within the minimal ECT benchmark developed here, the phenomena usually attribute
 \section{The Hubble tension}
 \label{sec:pop_hubble}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.82\textwidth]{ect_h0_scan_bw.pdf}
-\caption{The ECT Hubble-tension alleviation mechanism. The evolving effective gravitational coupling $G_{\rm eff}(z) > G_N$ at high redshift shifts the late-time $H_0$ scale upward; at the retained joint-band central value $\varepsilon \approx 0.033$ the shift is compatible with an upward $H_0$ shift of the observed Planck--SH0ES size, $\sim 5$\,km/s/Mpc, at the baseline-background mapping level (an accompanying age-viability note attends this central value). (\emph{Sign: Level~A structural prediction; magnitude: Level~B diagnostic-layer indicator.})}
-\label{fig:pop_hubble}
-\end{figure}
-
 The Hubble constant $H_0$ measures the current expansion rate of the universe. Two independent methods give discrepant results: the Planck satellite, analysing the CMB assuming $\Lambda$CDM, infers $H_0 = 67.4 \pm 0.5$\,km/s/Mpc; the SH0ES team, using the cosmic distance ladder (Cepheids + Type~Ia supernovae), measures $H_0 = 73.0 \pm 1.0$\,km/s/Mpc. The discrepancy exceeds $5\sigma$ and is known as the \emph{Hubble tension} --- one of the most pressing open problems in cosmology.
 
 \paragraph{Physical meaning of the drift parameter $\varepsilon$.}
@@ -770,7 +769,7 @@ Before describing the ECT alleviation mechanism, it is useful to explain what th
 \label{fig:pop_eps_constraints}
 \end{figure}
 
-ECT offers a structural alleviation mechanism (Fig.~\ref{fig:pop_hubble}). At high redshift, the condensate was slightly less screened, meaning $G_{\rm eff}(z) > G_N$. Specifically, $G_{\rm eff}(z) \approx G_N(1+z)^{2\varepsilon}$, where $\varepsilon$ parametrises the late-time effective drift of the gravitational coupling within the uniform-$\varepsilon$ diagnostic layer. A five-probe cross-consistency analysis in the technical preprint (Hubble + $r_s$, JWST, cosmic chronometers, $f\sigma_8$ from RSD, and ISW), performed under a common background module and the physical prior $\varepsilon \geq 0$, yields a retained joint effective band $\varepsilon \in [0.0296,\,0.0376]$ at $1\sigma$ (centre $\approx 0.033$). At the band central value the upward shift of the CMB-inferred $H_0$ relative to Planck is compatible with an upward shift of the observed Planck--SH0ES size, $\sim 5$\,km/s/Mpc, at the baseline-background mapping level, with an accompanying age-viability note discussed below. The shift is therefore compatible with the observed tension within this effective diagnostic layer, but the retained band is an empirical cross-probe consistency window, not a first-principles closure-level prediction, and the present preprint does not yet implement the full CMB-inferred early+late $H_0$ pipeline. The closure-level derivation of $\varepsilon(z)$ from three-stage condensate dynamics (called OP-Hubble-derive in the technical preprint) remains the central open problem for promoting the alleviation mechanism to a derived result.
+ECT offers a structural alleviation mechanism (Fig.~\ref{fig:pop_eps_constraints}). At high redshift, the condensate was slightly less screened, meaning $G_{\rm eff}(z) > G_N$. Specifically, $G_{\rm eff}(z) \approx G_N(1+z)^{2\varepsilon}$, where $\varepsilon$ parametrises the late-time effective drift of the gravitational coupling within the uniform-$\varepsilon$ diagnostic layer. A five-probe cross-consistency analysis in the technical preprint (Hubble + $r_s$, JWST, cosmic chronometers, $f\sigma_8$ from RSD, and ISW), performed under a common background module and the physical prior $\varepsilon \geq 0$, yields a retained joint effective band $\varepsilon \in [0.0296,\,0.0376]$ at $1\sigma$ (centre $\approx 0.033$). At the band central value the upward shift of the CMB-inferred $H_0$ relative to Planck is compatible with an upward shift of the observed Planck--SH0ES size, $\sim 5$\,km/s/Mpc, at the baseline-background mapping level, with an accompanying age-viability note discussed below. The shift is therefore compatible with the observed tension within this effective diagnostic layer, but the retained band is an empirical cross-probe consistency window, not a first-principles closure-level prediction, and the present preprint does not yet implement the full CMB-inferred early+late $H_0$ pipeline. The closure-level derivation of $\varepsilon(z)$ from three-stage condensate dynamics (called OP-Hubble-derive in the technical preprint) remains the central open problem for promoting the alleviation mechanism to a derived result.
 
 The \emph{sign} of the shift is a structural prediction (\emph{Level~A}): any ordered-branch background with $G_{\rm eff} > G_N$ at high~$z$ necessarily shifts $H_0$ upward. The magnitude is closure-dependent (\emph{Level~B}). The same condensate background simultaneously affects the age budget and early structure formation, producing correlated predictions rather than independent parameters.
 
