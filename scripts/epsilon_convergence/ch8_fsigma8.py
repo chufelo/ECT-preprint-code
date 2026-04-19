@@ -157,8 +157,8 @@ if __name__ == "__main__":
     print(f"Redshift range: [{z_data.min():.2f}, {z_data.max():.2f}]")
     print()
 
-    # Grid scan
-    eps_grid = np.linspace(-0.06, 0.12, 91)
+    # Grid scan (extended range to avoid lower-bound boundary artefact)
+    eps_grid = np.linspace(-0.12, 0.15, 136)
     chi2_grid = np.zeros_like(eps_grid)
     s8_grid   = np.zeros_like(eps_grid)
     for i, e in enumerate(eps_grid):
