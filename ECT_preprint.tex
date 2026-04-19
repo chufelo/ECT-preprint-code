@@ -17541,7 +17541,7 @@ Sector & Benchmark & NLEE channel & Role & Separability & Appendix \\
 \endhead
 \bottomrule
 \endfoot
-Hubble tension (\S\ref{sec:mp_hubble})
+Hubble tension (\S\ref{subsec:eps_joint_band})
   & few-per-cent upward $H_0$ shift (benchmark H1 route)
   & $\Theta_{\mu\nu}\!\to\!0$ on FRW bkgd
   & Absorbed
@@ -17553,7 +17553,7 @@ Universe age (\S\ref{sec:universe_age})
   & Absorbed
   & Not separable
   & \ref{app:nlee_background} \\
-JWST / growth (\S\ref{sec:mp_jwst_cosmo})
+JWST / growth (\S\ref{subsec:eps_joint_band})
   & BH channel $>\!\mathcal R_{\rm req}$; gal.\ channel borderline
   & $\Theta_{\mu\nu}$ in sub-horizon Poisson; $\eta_\Theta\!\sim\!|c_1|$
   & Reinforcing only; not primary
@@ -17675,7 +17675,7 @@ It is also important that the Hubble-sector and the
 lensing--growth sector are addressed by different layers of the
 same condensate architecture: the scalar background~$\phi_b(z)$
 governs the late-time $H_0$-shift mechanism
-(\S\ref{sec:mp_hubble}), whereas the perturbative orientation
+(\S\ref{sec:cosmo_constraints}), whereas the perturbative orientation
 sector governs the possible slip/lensing route relevant
 for~$S_8$.  This is a structural feature of the framework rather
 than an ad hoc juxtaposition of unrelated ingredients.
@@ -17994,7 +17994,7 @@ GR regime described above.
 The present paper does not yet provide a quantitative transfer map
 between the screened local $\dot G/G$ regime and the cosmological
 ordered-branch drift encoded by $\varepsilon_{\rm eff}(a)$
-(\S\ref{sec:mp_hubble}): local bounds such as LLR or Cassini cannot
+(\S\ref{sec:cosmo_constraints}): local bounds such as LLR or Cassini cannot
 therefore be converted into a direct constraint on the cosmological
 benchmark by simple one-to-one identification until that transfer
 map is derived.
@@ -19789,8 +19789,8 @@ $G_{\rm eff}(z)=G_N e^{-\beta\phi_b(z)}$
 and the non-phantom dark-energy contribution discussed in
 \S\ref{sec:mp_flrw}.
 The rate of this drift determines the magnitude of the
-Hubble-tension alleviation~(\S\ref{sec:mp_hubble}) and the
-JWST early-galaxy enhancement~(\S\ref{sec:mp_jwst_cosmo}).
+Hubble-tension alleviation~(\S\ref{subsec:eps_joint_band}) and the
+JWST early-galaxy enhancement~(\S\ref{subsec:eps_joint_band}).
 
 The figures below should be read as closure-level visualisations of the
 qualitative ordered-branch history, not as outputs of a fully solved
@@ -20280,7 +20280,7 @@ give Lorentzian branch ages of order
 \end{equation}
 depending on the chosen closure-level parameters.
 A specific benchmark screened-branch truncation
-(\S\ref{sec:mp_hubble}) gives
+(\S\ref{subsec:eps_joint_band}) gives
 \[
 t_0^{\rm ECT}\approx 13.1~{\rm Gyr}.
 \]
@@ -20319,7 +20319,7 @@ The detailed age budget relevant for specific early galaxies is encoded
 not only in $t_0$ and $t_U(z)$, but in the galaxy-lifetime quantity
 $t_{\rm gal}(z_{\rm obs};\,z_{\rm form})$ defined above.
 Its role in the JWST discussion is taken up in
-\S\ref{sec:mp_jwst_cosmo}.
+\S\ref{subsec:eps_joint_band}.
 
 \paragraph{Correlated age--distance observables.}
 The age of the Lorentzian branch, the luminosity distance, the Hubble
@@ -20359,33 +20359,23 @@ ordered-branch effect; any additional orientation-stress contribution
 is not independently identifiable at the current closure level.
 
 % ==================================================================
-% NEW §15.5 REBUILT — Phase 1: §15.5.1 Structural definition
-%
-% This block is Part 1 of the §15.5 rebuild under the parallel-creation
-% strategy (PROJECT_STRUCTURE.md §3.6). It is inserted IMMEDIATELY BEFORE
-% the existing §15.5 section. The existing §15.5 remains fully intact
-% below this block until all six subsections of the rebuild are complete
-% and approved (Phase 3 in §3.6).
-%
-% Subsections to be added to this block in subsequent steps:
-%   §15.5.2  Retained five-probe effective analysis
-%   §15.5.3  Joint effective allowed band and working benchmark
-%   §15.5.4  Excluded and stress-test probes
-%   §15.5.5  Comparison with other approaches
-%   §15.5.6  Interpretation and outlook
-%
-% DO NOT REMOVE the existing §15.5 below until the rebuild is complete.
+% §15.5 COSMOLOGICAL CONSTRAINTS ON THE EFFECTIVE DRIFT PARAMETER
+% Finalised 2026-04-19 (Phase 3 switchover).
+% Six subsections: 15.5.1 (structural definition), 15.5.2 (retained
+% five-probe analysis), 15.5.3 (joint band + benchmark), 15.5.4
+% (excluded probes), 15.5.5 (comparison), 15.5.6 (interpretation+outlook).
+% Supporting appendices: A1 (Hubble+r_s), A2 (JWST), A3 (CC), A4 (fsigma_8),
+% A5 (ISW), A6 (methodology).
 % ==================================================================
 
-\subsection*{\normalfont\textbf{Cosmological constraints on the effective drift parameter}%
-  \\[0.3ex]\normalfont\small\itshape (rebuilt version --- under construction)}
-\label{sec:cosmo_constraints_rebuilt}
+\subsection{Cosmological constraints on the effective drift parameter}
+\label{sec:cosmo_constraints}
 
 % ==================================================================
 % §15.5 OPENING — Introductory part of the cosmological ε-section
 % Phase 2 Step 1 — FINAL (GPT round 14 applied: 5 corrections).
 %
-% Inserted between \label{sec:cosmo_constraints_rebuilt} and
+% Inserted between \label{sec:cosmo_constraints} and
 % \subsubsection*{15.5.1 Structural definition ...}.
 %
 % GPT round 14 corrections:
@@ -20448,7 +20438,7 @@ at work.
 Throughout \S15.5 $\varepsilon$ is treated as an effective diagnostic
 parameter rather than as a first-principles constant of ECT. The
 retained-five-probe joint band reported in
-\S\ref{subsec:eps_joint_band_rebuilt} is an empirical result under the
+\S\ref{subsec:eps_joint_band} is an empirical result under the
 stated methodology, not a measurement of a fundamental theoretical
 quantity and not a global statistical combination of independent
 likelihoods. A first-principles closure-level derivation of the full
@@ -20465,19 +20455,19 @@ averaged over the kernel of each probe. Distinguishing these two
 possibilities belongs to the closure-level extension.
 
 The section is organised as follows.
-\S\ref{subsec:eps_def_rebuilt} fixes the structural meaning of
+\S\ref{subsec:eps_def} fixes the structural meaning of
 $\varepsilon$ within ECT and states the effective uniform-$\varepsilon$
-ansatz. \S\ref{subsec:eps_retained_rebuilt} specifies the retained
+ansatz. \S\ref{subsec:eps_retained} specifies the retained
 five probes, what each of them actually constrains, and introduces the
 two-sided vs one-sided-upper-bound distinction.
-\S\ref{subsec:eps_joint_band_rebuilt} reports the joint effective
+\S\ref{subsec:eps_joint_band} reports the joint effective
 allowed band and fixes the working benchmark.
-\S\ref{subsec:eps_excluded_rebuilt} discusses the channels not
+\S\ref{subsec:eps_excluded} discusses the channels not
 retained, in three structurally distinct categories, together with the
 reasons for their exclusion.
-\S\ref{subsec:eps_comparison_rebuilt} places the result in the context
+\S\ref{subsec:eps_comparison} places the result in the context
 of alternative proposals for the same observational pattern.
-\S\ref{subsec:eps_outlook_rebuilt} states what the analysis
+\S\ref{subsec:eps_outlook} states what the analysis
 establishes and what it does not, logs the first-principles open
 problem \textbf{OP-Hubble-derive}, and outlines directions of future
 work. The six subsections above give the synthesis and the
@@ -20490,13 +20480,13 @@ common background module, the per-channel extraction pipelines, and
 the cross-channel methodology (including the age-viability note of
 A6.4 and the benchmark achievability statement of A6.5). Channels not
 retained in the joint band are still discussed explicitly in
-\S\ref{subsec:eps_excluded_rebuilt}, together with the reasons why
+\S\ref{subsec:eps_excluded}, together with the reasons why
 they are methodologically limited, structurally outside the present
 $\varepsilon$-sector, or not independent enough to serve as primary
 constraints.
 
 \subsubsection*{\normalfont\textbf{15.5.1 \quad Structural definition of the effective deformation parameter}}
-\label{subsec:eps_def_rebuilt}
+\label{subsec:eps_def}
 
 This subsection does not re-derive the drift sector from first principles. It fixes
 the meaning of the deformation parameter used in the cosmological analysis that follows
@@ -20513,7 +20503,7 @@ The robust object is the normalized late-time gravitational response function,
   \mu(a) \;\equiv\; \frac{G_{\rm eff}(a)}{G_{\rm eff}(1)},
   \qquad
   \varepsilon_{\rm eff}(a) \;\equiv\; -\frac{1}{2}\,\frac{d\ln\mu}{d\ln a}.
-  \label{eq:mu_def_rebuilt}
+  \label{eq:mu_def}
 \end{equation}
 This definition does not yet assume that the drift sector is exactly described by a
 single constant.
@@ -20530,7 +20520,7 @@ $u_0(a)\propto a^{\varepsilon}$, which yields
   \mu(a) \;=\; a^{-2\varepsilon},
   \qquad\text{equivalently}\qquad
   G_{\rm eff}(z) \;=\; G_N\,(1+z)^{2\varepsilon},
-  \label{eq:uniform_eps_ansatz_rebuilt}
+  \label{eq:uniform_eps_ansatz}
 \end{equation}
 to be understood as a diagnostic effective layer.
 
@@ -20546,7 +20536,7 @@ three-stage ordered-branch relaxation picture of ECT motivates and, within the
 present diagnostic layer, requires the prior
 \begin{equation}
   \varepsilon \;\geq\; 0.
-  \label{eq:eps_nonneg_rebuilt}
+  \label{eq:eps_nonneg}
 \end{equation}
 Operationally, this is the statement that the cosmological response relaxes toward
 the present branch rather than drifting away from it.
@@ -20584,7 +20574,7 @@ methodology.
 %
 % This block is Part 2 of the §15.5 rebuild under the parallel-creation
 % strategy (PROJECT_STRUCTURE.md §3.6). It is inserted IMMEDIATELY AFTER
-% the §15.5.1 block (label: subsec:eps_def_rebuilt) and BEFORE the
+% the §15.5.1 block (label: subsec:eps_def) and BEFORE the
 % closing delimiter of the rebuild parent block.
 %
 % LOCKED 5-column retained-probe table schema (PROJECT_STRUCTURE.md §3.8).
@@ -20593,10 +20583,10 @@ methodology.
 % ==================================================================
 
 \subsubsection*{\normalfont\textbf{15.5.2 \quad Retained five-probe effective analysis}}
-\label{subsec:eps_retained_rebuilt}
+\label{subsec:eps_retained}
 
 With the effective meaning of $\varepsilon$ fixed in
-\S\ref{subsec:eps_def_rebuilt}, we now specify which cosmological probes
+\S\ref{subsec:eps_def}, we now specify which cosmological probes
 are retained for the present uniform-$\varepsilon$ analysis, what each
 of them actually constrains, and how their resulting effective intervals
 are to be interpreted.
@@ -20654,8 +20644,8 @@ Consistency \\
 uniform-$\varepsilon$ analysis layer. ``Primary'' probes provide two-sided
 effective extraction intervals; ``Consistency'' probes provide
 one-sided upper bounds under the physical prior
-$\varepsilon\geq 0$ introduced in \S\ref{subsec:eps_def_rebuilt}.}
-\label{tab:eps_retained_probes_rebuilt}
+$\varepsilon\geq 0$ introduced in \S\ref{subsec:eps_def}.}
+\label{tab:eps_retained_probes}
 \end{table}
 
 \paragraph{Two-sided vs upper-bound distinction.}
@@ -20665,7 +20655,7 @@ whereas cosmic chronometers, $f\sigma_8$ from RSD, and the ISW
 amplitude are retained as late-time consistency channels whose raw
 likelihoods are compatible with $\varepsilon = 0$ and are therefore
 reported here as one-sided upper bounds under the physical prior
-$\varepsilon\geq 0$ introduced in \S\ref{subsec:eps_def_rebuilt}.
+$\varepsilon\geq 0$ introduced in \S\ref{subsec:eps_def}.
 In the one-sided cases quoted below, the reported $1\sigma$ and
 $2\sigma$ bounds are the upper edges of the corresponding raw
 intervals after imposing the physical prior $\varepsilon \geq 0$;
@@ -20806,7 +20796,7 @@ methodology, are taken up in \S15.5.3.
 %
 % This block is Part 3 of the §15.5 rebuild under the parallel-creation
 % strategy (PROJECT_STRUCTURE.md §3.6). Insert IMMEDIATELY AFTER
-% §15.5.2 block (label: subsec:eps_retained_rebuilt) and BEFORE
+% §15.5.2 block (label: subsec:eps_retained) and BEFORE
 % the existing old §15.5.
 %
 % GPT round 7 (10 corrections) + user directive 2026-04-18 applied:
@@ -20825,28 +20815,28 @@ methodology, are taken up in \S15.5.3.
 % ==================================================================
 
 \subsubsection*{\normalfont\textbf{15.5.3 \quad Joint effective allowed band and working benchmark}}
-\label{subsec:eps_joint_band_rebuilt}
+\label{subsec:eps_joint_band}
 
 With the five effective channels specified in
-\S\ref{subsec:eps_retained_rebuilt}, we now report the resulting joint
+\S\ref{subsec:eps_retained}, we now report the resulting joint
 effective allowed band, identify the working benchmark used in the
 rebuilt \S15.5, and state its relationship to the earlier conservative
 illustrative point used in the previous preprint treatment of the
 Hubble mechanism
-(\S\ref{sec:universe_age}, \S\ref{sec:mp_hubble}).
+(\S\ref{sec:universe_age}, \S\ref{subsec:eps_joint_band}).
 
 \paragraph{Headline result.}
 Under the retained five-probe set, within the uniform-$\varepsilon$
-effective ansatz of \S\ref{subsec:eps_def_rebuilt}, under the physical
+effective ansatz of \S\ref{subsec:eps_def}, under the physical
 prior $\varepsilon \geq 0$, and within the present methodology of
-\S\ref{subsec:eps_retained_rebuilt}, the intersection of the $1\sigma$
+\S\ref{subsec:eps_retained}, the intersection of the $1\sigma$
 intervals of the two Primary channels with the $1\sigma$ upper bounds
 of the three Consistency channels defines the joint effective band
 \begin{equation}
   \varepsilon \in [+0.0296,\,+0.0376]\ (1\sigma),
   \qquad
   \varepsilon \in [+0.0207,\,+0.0425]\ (2\sigma).
-  \label{eq:eps_joint_band_rebuilt}
+  \label{eq:eps_joint_band}
 \end{equation}
 The $1\sigma$ band is bounded below by the JWST channel (lower edge
 $\varepsilon = 0.0296$, eq.~\eqref{eq:eps_jwst_retained}) and bounded
@@ -20886,7 +20876,7 @@ does not represent a measurement of a fundamental parameter of the
 theory, nor a direct reconstruction of an epoch-dependent
 $\varepsilon(z)$. It is an effective consistency window under the
 uniform-$\varepsilon$ ansatz, the $\Lambda$CDM-background proxy, and
-the retention/likelihood choices of \S\ref{subsec:eps_retained_rebuilt}.
+the retention/likelihood choices of \S\ref{subsec:eps_retained}.
 
 \paragraph{Why the band is nevertheless informative.}
 Three qualitative observations make the band a non-trivial consistency
@@ -20909,7 +20899,7 @@ therefore not generated by the least constraining channel alone.
 The working cosmological benchmark of the present analysis is the
 retained five-probe effective band itself, which we refer to as
 \emph{Benchmark B}. In this sense, Benchmark B is not a single number
-but the interval in Eq.~\eqref{eq:eps_joint_band_rebuilt}. For purely
+but the interval in Eq.~\eqref{eq:eps_joint_band}. For purely
 illustrative scaling estimates, one may use the arithmetic midpoint of
 the retained $1\sigma$ band, $\varepsilon \approx 0.032$, but only as
 an auxiliary representative value. It should not be interpreted as a
@@ -20937,7 +20927,7 @@ $(\alpha - \beta)(z)/(\alpha - \beta)_0$ under the retained band
 \end{tabular}
 \caption{Parameterization-dependent ranges induced by the retained
 $1\sigma$ effective band
-(Eq.~\eqref{eq:eps_joint_band_rebuilt}). The entries are not direct
+(Eq.~\eqref{eq:eps_joint_band}). The entries are not direct
 observables and should not be read as first-principles ECT
 predictions.}
 \label{tab:eps_scaling_benchmark_B}
@@ -20986,12 +20976,12 @@ reasons, are discussed in \S15.5.4.
 % ==================================================================
 
 \subsubsection*{\normalfont\textbf{15.5.4 \quad Excluded and stress-test probes}}
-\label{subsec:eps_excluded_rebuilt}
+\label{subsec:eps_excluded}
 
-Beyond the retained five-probe set of \S\ref{subsec:eps_retained_rebuilt},
+Beyond the retained five-probe set of \S\ref{subsec:eps_retained},
 several additional cosmological channels were considered in the present
 analysis but are not used in the joint effective band of
-\S\ref{subsec:eps_joint_band_rebuilt}. We group them into three
+\S\ref{subsec:eps_joint_band}. We group them into three
 categories whose reasons for exclusion are qualitatively different.
 
 \paragraph{Category (i) --- methodology-limited channels.}
@@ -21031,7 +21021,7 @@ and is deferred to a future Boltzmann-level treatment.
 These are distinct in kind from category~(i). In the present
 uniform-$\varepsilon$ diagnostic layer their raw $1\sigma$ support
 lies entirely at $\varepsilon < 0$. Under the physical prior
-$\varepsilon \geq 0$ adopted in \S\ref{subsec:eps_def_rebuilt},
+$\varepsilon \geq 0$ adopted in \S\ref{subsec:eps_def},
 including them as $\varepsilon$-band constraints would therefore be a
 category error: the tension they report is not encoded in the present
 $\varepsilon$-sector as parameterised here.
@@ -21060,7 +21050,7 @@ extraction pipeline. Within the present uniform-$\varepsilon$
 diagnostic layer, refining the $\varepsilon$-fit alone would not
 convert these probes into retained $\varepsilon$-band constraints:
 their raw support points outside the physical $\varepsilon$-sector
-adopted in \S\ref{subsec:eps_def_rebuilt}. Any successful treatment
+adopted in \S\ref{subsec:eps_def}. Any successful treatment
 would therefore require enlarging the phenomenological description
 beyond the present $\varepsilon$-only layer, rather than simply
 improving the same extraction.
@@ -21137,13 +21127,13 @@ given in \S15.5.5.
 % ==================================================================
 
 \subsubsection*{\normalfont\textbf{15.5.5 \quad Comparison with other approaches}}
-\label{subsec:eps_comparison_rebuilt}
+\label{subsec:eps_comparison}
 
 The retained five-probe effective band of
-\S\ref{subsec:eps_joint_band_rebuilt} can be briefly placed in the
+\S\ref{subsec:eps_joint_band} can be briefly placed in the
 context of alternative proposals addressing the same observational
 pattern discussed in
-\S\S\ref{subsec:eps_retained_rebuilt}--\ref{subsec:eps_excluded_rebuilt},
+\S\S\ref{subsec:eps_retained}--\ref{subsec:eps_excluded},
 namely the Hubble discrepancy, the JWST high-redshift abundance
 anomaly, and the associated late-time consistency channels.
 
@@ -21153,7 +21143,7 @@ discrepancy or the JWST early-galaxy excess within its minimal
 parameter space. In practice, these tensions are typically discussed
 either in terms of residual systematics or by extending the baseline
 model in different directions, while the late-time consistency probes
-retained in \S\ref{subsec:eps_retained_rebuilt} are already part of
+retained in \S\ref{subsec:eps_retained} are already part of
 the standard $\Lambda$CDM fitting framework~\cite{Planck2018}.
 
 \paragraph{Early Dark Energy.}
@@ -21204,7 +21194,7 @@ Three qualifications are stated explicitly. First, the retained
 five-probe set is a restricted subset of the broader cosmological
 dataset; BAO, $A_{\rm lens}$, and the $S_8$-sector probes contribute
 uncertainties and tensions not captured in the joint effective band
-(\S\ref{subsec:eps_excluded_rebuilt}). Second, the comparison above is
+(\S\ref{subsec:eps_excluded}). Second, the comparison above is
 with schematic representatives of alternative proposals, not with
 their full modern pipelines. Third, the ECT treatment of the
 $\varepsilon$-sector in \S15.5 is effective, not first-principles;
@@ -21224,7 +21214,7 @@ the $\varepsilon$-sector, are discussed in \S15.5.6.
 % §15.5.6 REBUILT — Phase 1: Interpretation and outlook
 %
 % Part 6 (FINAL) of the §15.5 rebuild. Insert IMMEDIATELY AFTER
-% §15.5.5 block (label: subsec:eps_comparison_rebuilt) and BEFORE
+% §15.5.5 block (label: subsec:eps_comparison) and BEFORE
 % the existing old §15.5.
 %
 % GPT round 13 (6 corrections) applied:
@@ -21250,20 +21240,20 @@ the $\varepsilon$-sector, are discussed in \S15.5.6.
 % ==================================================================
 
 \subsubsection*{\normalfont\textbf{15.5.6 \quad Interpretation and outlook}}
-\label{subsec:eps_outlook_rebuilt}
+\label{subsec:eps_outlook}
 
 With the retained five-probe effective band of
-\S\ref{subsec:eps_joint_band_rebuilt} and its methodological context of
-\S\S\ref{subsec:eps_retained_rebuilt}--\ref{subsec:eps_comparison_rebuilt}
+\S\ref{subsec:eps_joint_band} and its methodological context of
+\S\S\ref{subsec:eps_retained}--\ref{subsec:eps_comparison}
 in place, we close this subsection by stating what the analysis
 establishes, what it does not, and where the ECT $\varepsilon$-sector
 programme stands.
 
 \paragraph{What the analysis establishes.}
 Under the stated assumptions (the uniform-$\varepsilon$ ansatz of
-\S\ref{subsec:eps_def_rebuilt}, the $\Lambda$CDM-background proxy, the
+\S\ref{subsec:eps_def}, the $\Lambda$CDM-background proxy, the
 physical prior $\varepsilon \geq 0$, and the retention criteria of
-\S\ref{subsec:eps_retained_rebuilt}), the five retained probes admit a
+\S\ref{subsec:eps_retained}), the five retained probes admit a
 narrow joint effective allowed band. ECT's three-stage
 condensate-closure picture is compatible with this result at the
 diagnostic-layer level. The compatibility of a single effective
@@ -21320,7 +21310,7 @@ A first-principles ECT derivation of the cosmological drift
 parameter --- specifically, the closure-level function
 $\varepsilon(z)$ implied by the three-stage condensate closure,
 together with its mapping to the effective uniform-$\varepsilon$
-analysis layer of \S\ref{subsec:eps_def_rebuilt} --- remains open.
+analysis layer of \S\ref{subsec:eps_def} --- remains open.
 For reference within the present rebuilt \S15.5, we denote this task
 by \textbf{OP-Hubble-derive}.
 
@@ -21328,10 +21318,10 @@ by \textbf{OP-Hubble-derive}.
 Three methodological improvements are noted here without being logged
 as formal open problems, since each is a question of extending an
 analysis pipeline rather than a structural theoretical gap. The BAO
-channel of \S\ref{subsec:eps_excluded_rebuilt} requires a full DESI
+channel of \S\ref{subsec:eps_excluded} requires a full DESI
 likelihood with a coupled $(\Omega_m, r_d, \varepsilon)$ fit before it
 can be considered for the joint band at headline level. The
-$A_{\rm lens}$ channel of \S\ref{subsec:eps_excluded_rebuilt} requires
+$A_{\rm lens}$ channel of \S\ref{subsec:eps_excluded} requires
 a full Boltzmann-level implementation before it can be similarly
 considered. A genuine SN~Ia $\varepsilon$-channel requires a real
 observational supernova pipeline with full SH0ES and host-galaxy
@@ -21368,10 +21358,10 @@ its quantitative realisation belongs to OP-Hubble-derive.
 Three distinct layers coexist in the present treatment and should be
 kept separate: the ECT structural motivation for a cosmological
 deformation of the gravitational response
-(\S\ref{subsec:eps_def_rebuilt}); the uniform-$\varepsilon$ diagnostic
+(\S\ref{subsec:eps_def}); the uniform-$\varepsilon$ diagnostic
 layer adopted in \S15.5 and constrained empirically by the retained
 five-probe band
-(\S\S\ref{subsec:eps_retained_rebuilt}--\ref{subsec:eps_joint_band_rebuilt});
+(\S\S\ref{subsec:eps_retained}--\ref{subsec:eps_joint_band});
 and the closure-level $\varepsilon(z)$ derivation that remains open
 (OP-Hubble-derive). No statement in the rebuilt \S15.5 should be read
 as belonging to the first-principles closure level unless explicitly
@@ -21398,820 +21388,6 @@ methodology.
 
 
 
-
-
-
-% ============================================================
-\subsection{Hubble tension: structural mechanism, benchmark closure, and robustness}
-\label{sec:mp_hubble}
-% ============================================================
-
-% ==================================================================
-% NOTE: This section is being rebuilt in parallel.
-%       See \ref{sec:cosmo_constraints_rebuilt} above for the new
-%       version under construction.
-%       Current status: \S15.5.1--\S15.5.6 (rebuilt) integrated.
-%       Phase 1 of the rebuild complete; Phase 3 switchover pending.
-%       Full migration inventory pending Step 2.0.
-%       DO NOT REMOVE this section until the rebuild is complete.
-%       Per-item migration annotations will be added during
-%       Step 2.0 inventory.
-% ==================================================================
-
-\textit{Status: Level~B. The structural direction of the $H_0$ shift
-(upward) follows from $G_{\rm eff}>G_N$ at high~$z$; the benchmark
-magnitude $\Delta H_0/H_0\approx 3\%$ is closure-dependent.}
-
-\paragraph{Bridge from the age apparatus.}
-The age and distance quantities defined in \S\ref{sec:universe_age}
-are all controlled by the same ordered-branch background~$H(z)$.
-The present subsection asks whether the resulting inferred $H_0$ can
-partially alleviate the observed Hubble tension.
-
-\paragraph{Observational landscape.}
-The Planck 2018 base-$\Lambda$CDM analysis
-gives~\cite{Planck2018}
-$H_0=(67.4\pm0.5)\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$,
-while the SH0ES distance-ladder determination
-gives~\cite{Riess2022}
-$H_0=73.04\pm1.04\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$,
-corresponding to a tension at roughly the $5\sigma$ level.
-Recent CCHP/JWST determinations fall
-near $H_0\sim 70\,\mathrm{km\,s^{-1}\,Mpc^{-1}}$~\cite{Freedman2024},
-intermediate between the two.
-
-\paragraph{Structural mechanism.}
-Within the $\phi$-first closure, the condensate background drift
-$\phi_b(z)$ modifies the effective gravitational coupling, which in the
-present closure is realised approximately as
-$G_{\rm eff}(z)\approx G_N e^{-\beta\phi_b(z)}$.
-If $\phi_b<0$ at high~$z$ (ordered branch not yet fully screened),
-then $G_{\rm eff}>G_N$, and the angular diameter distance to the
-last scattering surface decreases at fixed acoustic angle~$\theta_*$,
-which a CMB-calibrated analysis interprets as a higher~$H_0$.
-The sign of the shift is structurally fixed within the present class of
-monotonic ordered-branch backgrounds: if $G_{\rm eff}>G_N$ at high~$z$,
-the inferred late-time Hubble scale is shifted upward.
-The quantitative magnitude of that shift remains closure-dependent.
-
-\paragraph{Sign theorem for the Hubble-shift route.}
-Within the present class of monotonic ordered-branch backgrounds,
-if the unscreened high-redshift branch satisfies
-$G_{\rm eff}(z)>G_N$ over the late-time redshift range where the
-benchmark drift is active, then the inferred late-time Hubble scale
-obtained from a fixed acoustic-angle analysis is shifted upward
-relative to the screened $\Lambda$CDM limit (H1 statement; a full
-CMB-inferred $H_0$ theorem would require a genuine early+late
-pipeline in the sense of~\S\ref{sec:mp_hubble}, H2 discussion).
-
-\emph{Reason.}
-At fixed sound-horizon calibration and observed angular acoustic scale,
-a reduction of the high-redshift angular-diameter distance induced by
-enhanced effective gravity is compensated by a higher inferred
-late-time expansion scale.
-\hfill$\square$
-
-\paragraph{Not a $\Lambda$CDM deformation by fiat.}
-The ECT background used here is not obtained by postulating a modified
-$\Lambda$CDM fit function and adding an extra phenomenological
-parameter by hand.
-It is the homogeneous solution of the ordered-branch scalar--tensor
-closure, with the same condensate background that also controls the
-age and distance apparatus discussed in \S\ref{sec:universe_age}.
-
-\paragraph{Correlated-sign prediction.}
-In the present closure the same condensate background $\phi_b(z)$
-controls the effective gravitational coupling, the background Hubble
-history, the luminosity-distance relation, and the Lorentzian branch
-age.
-Therefore any upward shift in the inferred late-time Hubble scale is
-not an isolated effect: it is correlated with a shift in age and
-distance observables and, in the later JWST discussion
-(\S\ref{sec:mp_jwst_cosmo}), with the available formation-time budget
-for early structures.
-
-\paragraph{Structural $w_0$--$H_0$ correlation.}
-Within the present $\phi$-first closure, the same slow condensate drift
-that generates a non-phantom late-time dark-energy branch also shifts
-the background expansion history and hence the inferred Hubble scale.
-In this sense ECT predicts a correlation between the sign and magnitude
-of the late-time deviation from $w=-1$ and the sign and magnitude of the
-Hubble-shift effect, although the quantitative relation remains
-closure-dependent.
-At leading order, this late-time drift is controlled by the same
-single ordered-branch scalar sector identified earlier, rather than by
-an independent multi-field cosmological background.
-
-\paragraph{BBN localisation of the Hubble mechanism.}
-The late-time branch drift responsible for the Hubble-shift effect
-cannot be extrapolated unchanged to arbitrarily high redshift.
-As discussed in \S\ref{sec:mp_flrw}, consistency with primordial
-nucleosynthesis requires the condensate background to saturate
-sufficiently early.
-The ECT Hubble mechanism is therefore localised in redshift: it is a
-late/intermediate-epoch effect of the ordered branch, not an
-unrestricted rescaling of the entire cosmological history.
-In particular, the benchmark slow drift is restricted to the late-time
-window and is not to be extrapolated unchanged back to recombination
-or BBN; this is what structurally prevents the H1 benchmark route from
-being tacitly promoted to an H2 CMB-inferred $H_0$ claim.
-
-\subsubsection*{Minimal benchmark closure}
-
-At the structural level, the parent system is the macroscopic
-ordered-branch background derived from the condensate amplitude
-$u=u_\infty e^{\beta\phi}$ and recorded in
-Appendix~\ref{app:late_cosmo_background}.
-The benchmark late-time truncation is written in the effective
-scalar--tensor form
-\begin{equation}
-S_{\rm eff}
-=
-\int d^4x\,\sqrt{-g}\,
-\left[
-\frac12 f(\phi)R
--\frac12 K(\phi)(\partial\phi)^2
--V(\phi)
-+\mathcal{L}_m
-\right],
-\label{eq:late_cosmo_action}
-\end{equation}
-with $G_{\rm eff}(\phi)=1/(8\pi f(\phi))$.
-For a homogeneous FRW background in the variable $N=\ln a$, the
-benchmark truncation takes the form
-\begin{equation}
-E^2(N)
-=
-\frac{
-\Omega_{m*}e^{-3N}
-+\Omega_{r*}e^{-4N}
-+\Omega_{V*}
-+\frac{\mu^2}{6}\phi^2
-}{
-e^{\beta \phi}
--\frac{\kappa}{6}q^2
-+\beta e^{\beta \phi}q
-},
-\label{eq:ect_late_friedmann}
-\end{equation}
-where $E(N)=H/H_*$, $q(N)=d\phi/dN$, and the benchmark Level~B
-closure is $f(\phi)=f_0 e^{\beta\phi}$, $K(\phi)=K_0$,
-$V(\phi)=V_0+\frac12 m_\phi^2\phi^2$.
-The exponential factor is structurally tied to the amplitude ratio
-$u/u_\infty=e^{\beta\phi}$; the constant kinetic coefficient and
-quadratic potential are the simplest local late-time benchmark choices.
-The full derived condensate system is recorded in
-Appendix~\ref{app:late_cosmo_background}.
-
-At the present-epoch level, evaluating the benchmark Friedmann
-equation~\eqref{eq:ect_late_friedmann} at $N=0$ (with
-$\Omega_{m*}+\Omega_{r*}+\Omega_{V*}=1$ normalisation) gives the
-exact algebraic relation
-\begin{equation}
-\frac{\Delta H_0}{H_0}
-=
-\sqrt{
-  \frac{1+\mu^2\phi_0^2/6}
-       {e^{\beta\phi_0}\!\left(1+\beta q_0\right)-(\kappa/6)\,q_0^2}
-}
-\;-\;1,
-\label{eq:ect_h0_shift_exact}
-\end{equation}
-where $q_0$ is determined self-consistently from the scalar
-slow-roll balance at $N=0$. Equation~\eqref{eq:ect_h0_shift_exact} is
-the proper present-epoch benchmark relation.
-
-In the $q_0\to 0$ leading-order limit (static-scalar approximation),
-equation~\eqref{eq:ect_h0_shift_exact} reduces to the small-drift
-expression
-\begin{equation}
-\frac{\Delta H_0}{H_0}
-\approx
-\frac{\mu^2\phi_0^2}{12}
--\frac12\beta \phi_0
-\qquad \text{(}q_0\to 0 \text{ leading-order limit).}
-\label{eq:ect_h0_shift}
-\end{equation}
-This limit is useful as a structural sanity check and for a rough
-parameter-window scan, but it systematically overestimates the
-benchmark Hubble shift when $|q_0|\gtrsim\beta/\kappa$ (which is the
-case at the present benchmark parameters).
-The closed-form~\eqref{eq:ect_h0_shift_exact} and the self-consistent
-numerical solver (Appendix~\ref{app:late_cosmo_algorithm}) agree by
-construction; the numerical solver result is the quoted benchmark
-value in this section.
-
-\paragraph{Robust definition and benchmark rewriting.}
-Independently of the specific benchmark parametrisation, the late-time
-effective response and its slope can be defined directly through the
-benchmark response function
-\begin{equation}
-  \mu(a)\equiv\frac{G_{\rm eff}(a)}{G_{\rm eff}(1)},
-  \qquad
-  \varepsilon_{\rm eff}(a)\equiv -\tfrac{1}{2}\,\frac{d\ln\mu}{d\ln a}.
-  \label{eq:epsilon_eff_def}
-\end{equation}
-Within the present $\phi$-first benchmark closure,
-$u/u_\infty=e^{\beta\phi}$ and $G_{\rm eff}(\phi)=1/(8\pi f(\phi))$
-with $f(\phi)=f_0e^{\beta\phi}$ give the benchmark rewriting
-\begin{equation}
-  \mu(a)=\exp\!\bigl[-\beta\bigl(\phi_b(a)-\phi_b(1)\bigr)\bigr],
-  \qquad
-  \varepsilon_{\rm eff}(a)=\frac{\beta}{2}\,q(a),
-  \qquad q=\frac{d\phi}{dN}.
-  \label{eq:epsilon_eff_benchmark}
-\end{equation}
-The constant value $\varepsilon=0.01$ imported below and in the
-ISW/JWST proxy sectors
-(\S\ref{sec:isw_diagnostic}, \S\ref{sec:mp_jwst_cosmo})
-is a late-time benchmark slope inside this closure, not an
-independently derived first-principles constant of ECT.
-
-\paragraph{H1 vs H2: what the present benchmark does and does not compute.}
-Two distinct statements must be kept separate.
-\emph{H1} is the late-time closure-level Hubble-shift route: the
-present benchmark computes a background-level upward shift of the
-late-time expansion scale within the chosen ordered-branch closure.
-\emph{H2} is a genuine CMB-inferred $H_0$ resolution: it requires a
-self-consistent early+late pipeline, including sound-horizon and
-angular-diameter-distance integrals calibrated to the observed CMB
-acoustic angle, and is \emph{not} implemented in the present paper.
-The present benchmark should therefore be read as a late-time
-closure-level route rather than as a completed CMB-to-local $H_0$
-resolution pipeline.
-The late-time localisation discussed below is what structurally
-prevents the H1 benchmark from being tacitly promoted to an H2 claim.
-
-\subsubsection*{Benchmark numerical illustration}
-
-For benchmark parameters $\beta=0.8$, $\mu=1.5$, $\kappa=15$,
-$\phi_0=-0.12$, substitution of the self-consistent slow-roll
-$q_0\approx 0.08$ into the closed-form
-relation~\eqref{eq:ect_h0_shift_exact} gives
-\begin{equation}
-\frac{\Delta H_0}{H_0} \approx 3\%\;\text{(benchmark closure, H1)},
-\end{equation}
-corresponding to an illustrative late-time benchmark value
-$H_0^{\rm late}\approx 69$\,km\,s$^{-1}$\,Mpc$^{-1}$.
-(The same value $\approx 2.8\%$ is obtained by the self-consistent
-fixed-point solver of Appendix~\ref{app:late_cosmo_algorithm},
-confirming that the closed-form and the numerical solver are consistent
-realisations of the same benchmark closure.)
-In absolute units this is an upward shift of roughly
-$2$\,km\,s$^{-1}$\,Mpc$^{-1}$, which alleviates but does not resolve
-the Planck-SH0ES tension of order
-$5$--$6$\,km\,s$^{-1}$\,Mpc$^{-1}$; the result is an H1 closure-level
-indicator in the sense of~\S\ref{sec:mp_hubble} and \emph{not} a
-direct one-to-one comparison with CMB-inferred or distance-ladder $H_0$
-posteriors.
-By contrast, the truncated
-expression~\eqref{eq:ect_h0_shift} evaluated at the same parameters
-gives $\approx 5\%$; this should be read as the $q_0\to 0$
-leading-order limit only and not as the benchmark numerical answer.
-Accordingly, the benchmark should be interpreted as a proof of
-mechanism rather than as a completed statistical fit.
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.82\linewidth]{figures/ect_h0_scan_bw.pdf}
-\caption{Parameter-window scan for the late-time Hubble shift
-in the minimal ECT benchmark closure in the $(\beta,\phi_0)$-plane
-at fixed $\mu=1.5$, $\kappa=15$.
-Solid contours with shaded grey levels show the fractional Hubble shift
-$\Delta H_0/H_0$ predicted by the exact present-epoch closed-form
-benchmark relation~\eqref{eq:ect_h0_shift_exact}, evaluated with the
-self-consistent slow-roll $q_0$.
-Dashed contours show the same quantity computed from the $q_0\to 0$
-leading-order limit~\eqref{eq:ect_h0_shift}; the dashed contours
-systematically overestimate the closed-form contours because the
-limit drops the self-consistent scalar drift.
-The benchmark point (star, $\beta=0.8$, $\phi_0=-0.12$) lies in a
-finite natural region of parameter space; at this point the closed-form
-gives $\approx 2.8\%$ whereas the $q_0\to 0$ limit gives
-$\approx 5.1\%$, illustrating the systematic offset discussed in
-the main text.}
-\label{fig:h0_scan}
-\end{figure}
-
-Figure~\ref{fig:h0_scan} shows that the benchmark Hubble shift
-is representative of a finite parameter domain rather than a fine-tuned
-point, supporting the Level~B status of the present closure.
-
-\subsubsection*{Robustness under admissible late-time deformations}
-
-The benchmark results above should not be interpreted as if they were
-attached to a unique final late-time closure.
-The benchmark choice $K(\phi)=K_0$, $V(\phi)=V_0+\frac12 m_\phi^2\phi^2$
-is only the first explicit member of a wider admissible family of
-late-time amplitude-sector closures
-(Appendix~\ref{sec:late_closure_family}).
-The article therefore distinguishes three layers:
-\begin{enumerate}[noitemsep]
-  \item the structural late-time background system inherited from the
-    macroscopic ordered-branch reduction;
-  \item the benchmark closure used for the present figures and tables;
-  \item the wider admissible family of deformed closures to be tested
-    numerically against that benchmark.
-\end{enumerate}
-
-A first code-level robustness check has been performed for a mild
-admissible deformation ($k_1=0.2$, $\lambda_3=0.1$,
-$k_2=\lambda_4=0$).
-The benchmark run gives $\Delta H_0/H_0 \approx 2.90\%$,
-while the deformed run gives $\Delta H_0/H_0 \approx 2.85\%$.
-The benchmark mechanism therefore persists under mild admissible
-deformations of the closure, although the quantitative shift remains
-closure-dependent.
-
-\subsubsection*{Epoch-dependent acceleration scale}
-
-A further consequence of the running $f(\phi)$ is that the galactic
-critical acceleration scale becomes epoch-dependent:
-\begin{equation}
-g^\dagger_{\rm bg}(z)=\frac{c_*\,H(z)}{2\pi},
-\label{eq:gdag_bg_z_hubble}
-\end{equation}
-so that $g^\dagger_{\rm bg}$ is not a universal constant but traces the
-background expansion history.
-At the present epoch this reduces to the baseline critical scale
-$g^\dagger_0\sim cH_0/(2\pi)$ used later in the galactic branch.
-The quantity $g^\dagger_{\rm bg}(z)$ should therefore be read as the
-background-cosmology ancestor of the effective galactic scale
-$g^\dagger_{\rm eff}$ rather than as an unrelated new parameter.
-
-\subsubsection*{Benchmark summary}
-
-{\small
-\renewcommand{\arraystretch}{1.15}
-\begin{longtable}{@{}p{7.2cm}p{7.2cm}@{}}
-\caption{Summary of the benchmark late-time ECT cosmology closure
-(Hubble-related outputs).}\label{tab:ect_hubble_summary}\\
-\hline\hline
-Quantity & Value \\
-\hline
-\endfirsthead
-\hline\hline
-Quantity (cont.) & Value \\
-\hline
-\endhead
-\hline
-\endfoot
-\hline\hline
-\endlastfoot
-$\beta$ & 0.8 \\
-$\mu=m_\phi/H_0$ & 1.5 \\
-$\kappa=K_0/f_0$ & 15 \\
-$\phi_0=\phi(z{=}0)$ & $-0.12$ \\
-$\Delta H_0/H_0$ & few-per-cent (benchmark, re-audit pending) \\
-$H_0^{\rm late}$ & illustrative high-60s to $\sim 70$\,km\,s$^{-1}$\,Mpc$^{-1}$ (H1 benchmark only; re-audit pending; not for one-to-one comparison with Planck/SH0ES posteriors) \\
-$t_0^{\rm ECT}$ & $13.1$\,Gyr \\
-$\Delta t_0/t_0$ & $-4.8\%$ \\
-$\Delta D_L/D_L$ at $z{=}10$ & $-5.4\%$ \\
-\end{longtable}
-}
-
-\begin{figure*}[htb]
-\centering
-\includegraphics[width=\textwidth]{figures/ect_hubble_jwst_background_bw.pdf}
-\caption{\textbf{Benchmark control figure.}
-Late-time ECT background solution for the benchmark screened-branch
-truncation ($\beta=0.8$, $\mu=1.5$, $\kappa=15$, $\phi_0=-0.12$).
-\textbf{Panel~(a):} dimensionless expansion history $E(z)$.
-\textbf{Panel~(b):} relative shift in the luminosity distance.
-\textbf{Panel~(c):} lookback-time shift and present-age comparison.
-\textbf{Panel~(d):} benchmark growth proxy $G_{\rm eff}/H^2$ and
-$g^\dagger_{\rm bg}(z)/g^\dagger_{\rm bg}(0)=E(z)$.
-Panels~(c) and~(d) are also relevant for the JWST discussion
-(\S\ref{sec:mp_jwst_cosmo}).}
-\label{fig:ect_hubble_background}
-\end{figure*}
-
-\paragraph{What is established and what remains open.}
-At the structural level, ECT provides a mechanism by which a drifting
-ordered-branch condensate background modifies the late-time Hubble
-inference.
-The sign correlation between Hubble, age, and distance shifts follows
-from the fact that all three are controlled by the same background
-history~$H(z)$.
-Within the present benchmark closure this yields a modest upward shift
-of the inferred Hubble scale, partially alleviating the tension.
-What remains open is the full posterior fit of the closure to the data,
-the self-consistent derivation of $\phi_b(z)$, and the precise
-quantitative relation between the Hubble shift and the correlated age /
-JWST observables.
-
-\paragraph{What this does not yet establish.}
-The sign theorem above does not by itself determine the magnitude of
-the Hubble-shift effect.
-In particular, the present analysis does not yet provide a unique
-first-principles value of $\Delta H_0$, does not replace a full global
-likelihood analysis of CMB+BAO+SN data, and does not establish that
-the benchmark closure used here is the unique viable ECT late-time
-background.
-The current result is therefore a structural route to partial
-alleviation, not a completed precision-cosmology fit.
-
-\paragraph{Role of the full nonlinear field equations.}
-The benchmark Hubble-shift estimate is derived entirely from the scalar
-$\phi$-sector of the ordered-branch closure.
-The full nonlinear field equations~\eqref{eq:gen_EE} additionally
-contain the anisotropic orientation stress
-$\Theta_{\mu\nu}[n]$~\eqref{eq:Theta_n}.
-In the homogeneous FRW regime, however, the orientation sector is
-absorbed into the background causal structure
-(\S\ref{sec:background_reduction_macro}), and $\Theta_{\mu\nu}$ does
-not contribute a separately identifiable term to the Friedmann equation.
-Within the present formalism, no independently extractable background
-contribution from the orientation sector is therefore available;
-the late-time Hubble shift is dominated by the scalar amplitude sector.
-A detailed justification is given in
-Appendix~\ref{app:nlee_background}.
-For a systematic assessment of the orientation-stress footprint across
-all phenomenological sectors, see~\S\ref{sec:nlee_observational_role}.
-
-% ============================================================
-\subsection{Early galaxy formation and the JWST connection}
-\label{sec:mp_jwst_cosmo}
-% ============================================================
-
-\textit{Status: Level~B. The structural mechanism is the correlated
-modification of distance, age, and growth observables by the same
-ordered-branch background $\phi_b(z)$. Quantitative results remain
-closure-dependent.}
-
-\paragraph{Structural claim versus benchmark claim.}
-The structural claim of the present subsection is limited:
-if the ordered-branch background increases the effective early-time
-growth and relaxes the late-time age budget in the sense described
-above, then the formation-time tension for early luminous structures
-is reduced relative to the screened reference branch.
-The benchmark magnitude of that reduction remains closure-dependent.
-
-\paragraph{Bridge from the Hubble and age subsections.}
-The Hubble-tension mechanism of \S\ref{sec:mp_hubble} and the JWST
-early-galaxy problem are not independent in ECT.
-The same condensate background $\phi_b(z)$ that shifts the late inferred
-Hubble scale also modifies luminosity distances, the available
-Lorentzian formation time, and the growth environment for early
-structures.
-The present subsection collects these effects into a single cosmological
-JWST framework.
-
-\paragraph{Observational landscape.}
-JWST has revealed unexpectedly massive galaxies and supermassive black
-holes at redshifts $z\gtrsim 10$, where the available Lorentzian branch
-age is below $\sim 0.5$~Gyr in standard cosmological
-calibrations~\cite{Labbe2023,Finkelstein2022,Carniani2024,BoylanKolchin2023}.
-The tension is not just one of luminosity inference: it simultaneously
-concerns stellar mass, black-hole mass, compactness, and the time
-available for assembly relative to conventional $\Lambda$CDM
-expectations.
-
-\paragraph{Structural mechanism.}
-In the present ECT closure, a high-redshift branch with
-$G_{\rm eff}(z)>G_N$ produces three competing effects.
-First, smaller luminosity distances reduce the inferred intrinsic
-luminosities and masses of observed sources.
-Second, the same background history modifies the age of the Lorentzian
-branch at fixed redshift and hence the available formation-time budget.
-Third, enhanced effective gravitational strength can accelerate local
-collapse and black-hole growth.
-The net JWST impact is therefore necessarily mixed: some effects help,
-others partially compensate them.
-
-\paragraph{Correlated background constraint.}
-A distinctive feature of ECT is that the JWST time budget is not an
-independent cosmological knob.
-The same background $H(z)$ determines the age of the Lorentzian branch,
-the luminosity-distance relation, the inferred late $H_0$, and the
-available formation time
-$t_{\rm gal}(z_{\rm obs};\,z_{\rm form})$ introduced in
-\S\ref{sec:universe_age}.
-Any closure that improves one of these sectors necessarily shifts the
-others as well.
-This correlated structure sharply constrains the admissible background
-histories.
-At leading order this means that the JWST-sector deformation is driven
-by the same single ordered-branch scalar background, not by an
-independent family of extra cosmological fields.
-
-\paragraph{Layer~1: leading-order proxy analysis.}
-\label{sec:jwst}%  backward-compatibility alias
-The present subsection provides a leading proxy analysis rather than
-a full abundance pipeline. It does not yet implement the full chain
-$\mu(a)\to D(a)\to \text{collapse prescription}\to n(M,z)$: it only
-captures the leading response of the linear growth factor and the
-peak-rarity sensitivity.
-Accordingly, the numerical factors quoted below and in
-Table~\ref{tab:jwst_ps} should be read as indicative benchmark
-responses for the imported late-time slope used in the Hubble/ISW
-discussion, not as a precision abundance prediction or as an
-independent determination of $\varepsilon$.
-
-In the leading sub-horizon approximation, and neglecting explicit
-perturbations of the $\phi$-sector in the growth equation, one may
-write the standard continuity--Euler--Poisson system with the
-effective coupling:
-\begin{equation}
-  \ddot\delta + 2H\dot\delta
-  - 4\pi G_{\rm eff}(z)\,\bar\rho\,\delta = 0.
-  \label{eq:growth_ode_proxy}
-\end{equation}
-At leading order in $\varepsilon$ this gives
-\begin{equation}
-  \frac{D_{\rm ECT}(z)}{D_{\Lambda{\rm CDM}}(z)}
-  \approx 1 + \varepsilon\ln(1+z) + O(\varepsilon^2).
-  \label{eq:D_ECT_proxy}
-\end{equation}
-At $z=10$: $D_{\rm ECT}/D_{\Lambda{\rm CDM}}\approx 1.024$.
-
-\textit{Halo abundance (Press--Schechter).}
-Setting $f(z)\equiv G_{\rm eff}(z)/G_N = e^{-\phi_b(z)}$,
-the effective rarity of a $\nu$-$\sigma$ peak becomes
-$\nu_{\rm eff}=\nu/\sqrt{f}$, giving
-(here $\phi_b(z)$ denotes the rescaled proxy profile used only in the
-local JWST benchmark ansatz, so that the benchmark factor $\beta$ is
-absorbed into the definition of the proxy field and should not be
-confused with the closure-field normalisation of
-\S\ref{sec:mp_hubble}, where $G_{\rm eff}=G_N e^{-\beta\phi}$)
-\begin{equation}
-  \frac{n_{\rm ECT}}{n_{\Lambda{\rm CDM}}}
-  = \exp\!\left[\frac{\nu^2}{2}\!\left(1-\frac{1}{f(z)}\right)\right].
-  \label{eq:PS_phi}
-\end{equation}
-Illustrative values for a slow-roll background profile are given in
-Table~\ref{tab:jwst_ps}.
-
-\renewcommand{\arraystretch}{1.2}
-\begin{longtable}{@{}p{2.9cm}p{2.9cm}p{2.9cm}p{2.9cm}p{2.9cm}@{}}
-\caption{Halo abundance enhancement in ECT vs.\ $\Lambda$CDM, eq.~\eqref{eq:PS_phi} for an illustrative slow-roll profile. $\nu$ = peak rarity parameter; JWST anomalies correspond to $\nu\sim5$--6. The ansatz $\phi_b(z)=-2\varepsilon\ln(1+z)$ gives $f(z)=e^{-\phi_b}$; specific $\varepsilon$ is illustrative only.}\label{tab:jwst_ps}\\
-\toprule
-$z$ & $\phi_b(z)$ & $f=e^{-\phi_b}$ & $\nu=5$ & $\nu=6$ \\
-\midrule
-\endfirsthead
-\toprule
-$z$ & $\phi_b(z)$ & $f=e^{-\phi_b}$ & $\nu=5$ & $\nu=6$ \\
-\midrule
-\endhead
-\bottomrule
-\endfoot
- 7  & $-0.043$ & 1.043 & $\times 1.7$ & $\times 2.1$ \\
-10  & $-0.048$ & 1.049 & $\times 1.8$ & $\times 2.3$ \\
-12  & $-0.052$ & 1.053 & $\times 1.9$ & $\times 2.5$ \\
-15  & $-0.055$ & 1.057 & $\times 2.0$ & $\times 2.6$ \\
-\bottomrule
-\end{longtable}
-
-\textit{Quantitative assessment at proxy level.}
-In the present illustrative benchmark proxy, for the most anomalous
-JWST sources ($\nu\sim5$--6) the response is at the level of
-order-unity enhancement (indicative factors $\times 1.7$--$2.6$ in
-Table~\ref{tab:jwst_ps}). The observed deficit is
-$\times10$--100~\cite{BoylanKolchin2023}, so even at face value the
-present Layer~1 proxy \emph{alleviates but does not resolve} the JWST
-early-structure tension. A full quantitative JWST assessment remains
-to be carried out in a self-consistent growth-to-abundance pipeline
-($\mu(a)\to D(a)\to \text{collapse prescription}\to n(M,z)$); the
-table is evaluated for the same imported late-time benchmark slope
-used in the Hubble/ISW proxy discussion and does not constitute an
-independent determination of~$\varepsilon$.
-It should also not be conflated with the later derived-parent JWST
-maturity pipeline of Appendix~\ref{app:late_cosmo_background}, which
-includes a solved background, solved linear growth, and semi-analytic
-maturity factors beyond the present local proxy ansatz
-$\phi_b(z)=-2\varepsilon\ln(1+z)$.
-With the background ansatz~\eqref{eq:Geff_z}, no additional
-numerical improvement over the leading-order proxy estimate is
-obtained within the present closure.
-
-The $\phi$-logic suggests that early-time global enhancement
-($\phi_b<0$) and local screening in dense proto-galactic cores
-may ultimately be described within a single amplitude-sector framework.
-A derivation of this mechanism from the full nonlinear $\phi$-equation,
-and the question of whether a nontrivial background history $\phi_b(z)$
-could provide stronger early enhancement, are left as open
-problems~(Section~\ref{sec:open_problems}).
-Thus, linear-growth proxies and halo-count enhancement alone alleviate
-the tension but do not resolve it.
-
-\paragraph{Layer~2: derived-parent background and maturity analysis.}
-A more refined assessment uses the derived-parent condensate background
-(Appendix~\ref{app:late_cosmo_background}) together with the full
-linear growth equation
-\begin{equation}
-D'' + \left(2+\frac{H'}{H}\right)D'
--\frac{3}{2}\,\Omega_m(z)\,\frac{G_{\rm eff}(z)}{G_N}\,D = 0,
-\label{eq:growth_ode_cosmo}
-\end{equation}
-supplemented by the age budget
-$t_{\rm gal}(z_{\rm obs};\,z_{\rm form})$~(\S\ref{sec:universe_age})
-and by semi-analytic maturity factors for galaxy assembly and black-hole
-growth~(Appendix~\ref{sec:ect_maturity_factors}).
-In this second layer the solved linear-growth enhancement is found to be
-near-neutral, whereas the local maturity channels remain more effective.
-The present derived-parent corridor therefore points not to a
-``linear-growth-only'' resolution, but to a mixed mechanism in which
-background evolution and accelerated local development both contribute.
-
-For representative working points, the solved linear-growth factor at
-$z\sim10$ remains close to the reference value, while the semi-analytic
-maturity factors satisfy approximately
-\[
-\mathcal{R}_{\rm gal}\sim 1.2,
-\qquad
-\mathcal{R}_{\rm BH}\sim 1.5.
-\]
-This means that, at the benchmark level, the purely galactic-assembly
-channel is only marginally improved, whereas the black-hole-assisted
-channel appears more viable.
-These numerical factors should be read as derived-parent benchmark
-diagnostics, not as closure-independent ECT predictions.
-The detailed parameter corridor, working-point table, and visual
-summaries are presented in
-Appendix~\ref{sec:derived_parent_pipeline} and
-Figure~\ref{fig:ect_jwst_anchor_budget}.
-
-The key qualitative lesson of the two-layer analysis is therefore
-clear: within the present controlled ECT framework, background-only
-linear-growth enhancement is too small to resolve the JWST tension by
-itself, whereas mixed scenarios involving accelerated local maturity
-channels --- especially BH-assisted ones --- remain significantly more
-promising.
-
-\renewcommand{\arraystretch}{1.3}
-{\small
-\begin{longtable}{@{}p{3.8cm}p{4.8cm}p{5.9cm}@{}}
-\caption{Two-layer JWST analysis summary.}
-\label{tab:jwst_two_layer}\\
-\hline\hline
-Layer & Result & Status \\
-\hline
-\endfirsthead
-\hline\hline
-Layer (cont.) & Result & Status \\
-\hline
-\endhead
-\hline
-\endfoot
-\hline\hline
-\endlastfoot
-Layer~1: leading-order / Press--Schechter
-  & Halo enhancement $\times2$--3 at $\nu\sim5$--6
-  & Alleviates only partially \\
-Layer~2: derived-parent + maturity
-  & $D(z{=}10)\approx$ neutral; $\mathcal{R}_{\rm gal}\sim1.2$;
-    $\mathcal{R}_{\rm BH}\sim1.5$
-  & BH-assisted channel more promising than pure galaxy assembly \\
-\end{longtable}
-}
-
-\FloatBarrier
-
-
-\begin{figure*}[htb]
-\centering
-\includegraphics[width=\textwidth]{figures/ect_jwst_anchor_budget_bw.pdf}
-\caption{Age-budget and maturity-budget comparison for representative
-JWST anchor cases, evaluated at the late-time-shift-priority working point (H1 benchmark)
-($\omega_0=30$, $\phi_0=-0.10$).
-\textbf{Panel~(a):} age of the Universe at the redshift of observation
-in the reference ($\Lambda$CDM) and ECT derived-parent backgrounds.
-\textbf{Panel~(b):} required speed-up $\mathcal R_{\rm req}$, and the
-achieved semi-analytic maturity factors $\mathcal R_{\rm gal}$ (galaxy
-assembly) and $\mathcal R_{\rm BH}$ (BH-assisted channel).
-The comparison shows that the present ECT corridor achieves
-$\mathcal R_{\rm gal}\approx\mathcal R_{\rm req}$ for most cases and
-$\mathcal R_{\rm BH}>\mathcal R_{\rm req}$ for all cases.
-These factors are semi-analytic development budgets, not morphology-level
-predictions.
-Numerical inputs, anchor-case bookkeeping, and budget definitions are
-documented in Appendix~\ref{sec:derived_parent_pipeline} and
-Appendix~\ref{sec:ect_maturity_factors}.}
-\label{fig:ect_jwst_anchor_budget}
-\end{figure*}
-
-\begin{figure*}[htb]
-\centering
-\includegraphics[width=\textwidth]{figures/ect_condensate_param_scan_bw.pdf}
-\caption{First derived-parent parameter scan in the $(\omega_0,\phi_0)$
-plane at fixed $\beta=0.8$, $\mu=1.5$, $A_2=\mu^2/(6\beta^2)$, $A_3=A_4=0$.
-Panels show (top-left) the late inferred Hubble shift, (top-right) the
-derived-parent cosmic age, (bottom-left) $t_U(z=10)$, and
-(bottom-right) the effective gravitational coupling at $z=10$.
-Navy boxes indicate the first few-percent H1 benchmark corridor.
-The labelled points \textbf{B} (balanced), \textbf{H} (late-time-shift-priority),
-and \textbf{A} (age-priority) are the working points used in the
-linear-growth and JWST maturity analysis
-(Table~\ref{tab:derived_parent_working_points}).
-The scan construction, selection criteria, and derived-parent workflow
-are documented in Appendix~\ref{sec:derived_parent_pipeline}.}
-\label{fig:ect_condensate_param_scan}
-\end{figure*}
-
-\begin{figure*}[htb]
-\centering
-\includegraphics[width=\textwidth]{figures/ect_derived_parent_comparison_bw.pdf}
-\caption{Comparison between the benchmark control mode and the
-preferred derived-parent working points.
-\textbf{Panel~(a):} expansion history.
-\textbf{Panel~(b):} effective gravitational coupling $G_{\rm eff}/G_N$.
-\textbf{Panel~(c):} solved linear growth factor $D(z)/D_{\rm ref}(z)$
-(not a heuristic proxy): the enhancement at $z=10$ is near-neutral once
-Hubble friction is included.
-\textbf{Panel~(d):} local maturity-channel acceleration factors
-$t_{\rm ff}^{\rm ref}/t_{\rm ff}^{\rm ECT}\propto\sqrt{G_{\rm eff}/G_N}$
-(collapse) and
-$t_{\rm BH}^{\rm ref}/t_{\rm BH}^{\rm ECT}\propto G_{\rm eff}/G_N$
-(BH-growth-like).
-This figure makes explicit that the ECT mechanism for early maturity is
-not driven by linear growth alone, but by the combination of background
-evolution and accelerated local development channels.
-The numerical setup and the derived-parent comparison workflow are
-documented in Appendix~\ref{sec:derived_parent_pipeline}.}
-\label{fig:ect_derived_parent_comparison}
-\end{figure*}
-\FloatBarrier
-
-The article-facing numerical and schematic artefacts used in this
-subsection correspond to the reproducibility outputs listed in
-Appendix~\ref{sec:late_cosmo_artefacts}.
-
-\paragraph{Layer~3: potential orientation-stress enhancement.}
-Beyond the two layers analysed above, the full nonlinear field
-equations~\eqref{eq:gen_EE} contain a further potential channel.
-The anisotropic orientation stress
-$\Theta_{\mu\nu}[n]$~\eqref{eq:Theta_n} modifies the sub-horizon
-Poisson equation at the perturbation level and thereby shifts the
-effective gravitational coupling governing local collapse and growth.
-As shown in Appendix~\ref{app:nlee_jwst_growth}, this introduces a
-dimensionless proxy parameter $\eta_\Theta\sim|c_1|$~(OP-c1) that
-enhances both maturity factors:
-$\mathcal{R}_{\rm gal}^{\rm full}\approx
-\mathcal{R}_{\rm gal}\sqrt{1+\eta_\Theta}$ and
-$\mathcal{R}_{\rm BH}^{\rm full}\approx
-\mathcal{R}_{\rm BH}(1+\eta_\Theta)$.
-Since the BH-assisted channel already satisfies
-$\mathcal{R}_{\rm BH}>\mathcal{R}_{\rm req}$ for all anchor cases,
-any $\eta_\Theta>0$ only strengthens this result.
-For the borderline galaxy-assembly channel, even a modest positive $\eta_\Theta$ would relax the tension in the
-borderline galaxy-assembly channel, potentially shifting a marginal
-case toward a more comfortable one.
-The orientation-stress enhancement is therefore not the primary JWST
-mechanism; it is a reinforcing third layer, most useful for the
-borderline channel that is not yet comfortably covered by the scalar
-$\phi$-sector alone.
-The quantitative magnitude remains contingent on the first-principles
-derivation of $c_1$~(OP-c1).
-For a systematic comparison of the orientation-stress footprint across
-all phenomenological sectors, see~\S\ref{sec:nlee_observational_role}.
-
-\paragraph{BBN and saturation bound.}
-The same saturation logic that constrains the Hubble-shift mechanism
-(\S\ref{sec:mp_hubble}) also constrains the JWST enhancement.
-The condensate background cannot drift arbitrarily far at high redshift:
-consistency with the early homogeneous branch requires sufficiently
-early saturation toward the screened regime.
-Therefore the JWST enhancement is bounded from above; it cannot be
-increased without limit simply by making $G_{\rm eff}(z)$ larger and
-larger at early times.
-
-\paragraph{What ECT does not claim.}
-ECT does not presently claim a full resolution of the JWST tension.
-In the current controlled framework, the effect is mixed:
-distance inference is softened, age budgets are modified, and local
-maturity channels are accelerated, but the full morphology-level and
-population-level problem is not yet solved.
-A complete assessment would require self-consistent high-redshift
-background evolution, nonlinear collapse modelling, and ultimately
-N-body / hydrodynamic simulations.
-
-\paragraph{Relation to the age and Hubble subsections.}
-The JWST sector is therefore not an independent add-on.
-It is a downstream consequence of the same ordered-branch background
-already used in \S\ref{sec:universe_age} and \S\ref{sec:mp_hubble}:
-one and the same $\phi_b(z)$ controls age, distance, Hubble shift, and
-the effective environment for early development.
-
-\paragraph{What is established and what remains open.}
-At Level~B, ECT provides a correlated cosmological mechanism linking the
-JWST sector to the same ordered-branch background that also shifts the
-late inferred Hubble scale and the Lorentzian age budget.
-The leading-order proxy layer already gives the correct sign of the
-effect but only a modest enhancement.
-The derived-parent layer shows that linear growth alone is close to
-neutral, while local maturity channels---especially BH-assisted
-ones---are more promising.
-What remains open is the fully self-consistent high-redshift branch
-completion, morphology-level predictions, and a full numerical
-structure-formation programme.
-
-\paragraph{What the present JWST discussion does not yet provide.}
-The present analysis does not constitute a full forward model of
-galaxy formation within ECT.
-It provides a structural cosmological route by which the available
-formation-time budget can increase, but not a completed prediction of
-the observed abundance function, luminosity function, or morphology
-distribution of early galaxies.
 
 
 
@@ -22383,19 +21559,19 @@ Correlated observables
 Upward Hubble-shift mechanism
   & possible upward late-time shift from ordered-branch drift
   & B struct.
-  & \S\ref{sec:mp_hubble}
+  & \S\ref{subsec:eps_joint_band}
   & Hubble tension \\
 
 $w_0$--$H_0$ correlation
   & one $\phi_b(z)$ drives both
   & B struct.
-  & \S\ref{sec:mp_hubble}
+  & \S\ref{subsec:eps_joint_band}
   & joint late-time fits \\
 
 BBN-localised drift
   & high-$z$ saturation required
   & B struct.
-  & \S\ref{sec:mp_hubble}
+  & \S\ref{subsec:eps_joint_band}
   & BBN consistency \\
 
 Three-stage condensate evolution
@@ -22413,7 +21589,7 @@ Ordering transition out-of-equilibrium
 Benchmark Hubble shift
   & few-per-cent (H1 benchmark)
   & B bench.
-  & \S\ref{sec:mp_hubble}
+  & \S\ref{subsec:eps_joint_band}
   & H1 closure-level only; not a direct comparison with Planck/SH0ES posteriors \\
 
 Benchmark Lorentzian age
@@ -22425,19 +21601,19 @@ Benchmark Lorentzian age
 JWST: galaxy-assembly channel
   & $\mathcal{R}_{\rm gal}\sim 1.2$
   & B bench.
-  & \S\ref{sec:mp_jwst_cosmo}
+  & \S\ref{subsec:eps_joint_band}
   & modest alleviation \\
 
 JWST: BH-assisted channel
   & $\mathcal{R}_{\rm BH}\sim 1.5$
   & B bench.
-  & \S\ref{sec:mp_jwst_cosmo}
+  & \S\ref{subsec:eps_joint_band}
   & more promising \\
 
 Leading halo enhancement
   & factor $\sim2$--3 at extreme peaks
   & B bench.
-  & \S\ref{sec:jwst}
+  & \S\ref{subsec:eps_joint_band}
   & partial alleviation \\
 \end{longtable}
 }
@@ -22635,11 +21811,11 @@ Cosmic age interpretation & Time since Big-Bang singularity
 Hubble tension & Discrepancy between early- and late-inferred $H_0$ &
   Possible upward late-time shift from ordered-branch background
   drift; structurally correlated with age and distance
-  sectors~(\S\ref{sec:mp_hubble}) \\
+  sectors~(\S\ref{subsec:eps_joint_band}) \\
 JWST early galaxies & Requires unusually rapid early assembly or new
   physics & Mixed mechanism: distance, age, and growth all shift
   together; BH-assisted channel more promising than pure
-  linear-growth enhancement~(\S\ref{sec:mp_jwst_cosmo}) \\
+  linear-growth enhancement~(\S\ref{subsec:eps_joint_band}) \\
 Age--distance--Hubble--JWST relation & Often analysed as partly
   separate tensions & All controlled by the same ordered-branch
   background $H(z)$, hence structurally
@@ -23023,7 +22199,7 @@ programme.
   \item The Hubble-shift mechanism, the age shift, and the JWST
     background effects are structurally correlated because they are
     driven by the same condensate background
-    $\phi_b(z)$~(\S\S\ref{sec:mp_hubble}--\ref{sec:mp_jwst_cosmo}).
+    $\phi_b(z)$~(\S\ref{sec:cosmo_constraints}).
   \item The ordering transition supplies the strongest ECT-native
     Sakharov ingredient by naturally providing an out-of-equilibrium
     environment~(\S\ref{sec:mp_baryogenesis}).
@@ -23045,7 +22221,7 @@ programme.
     $13.1$~Gyr~(\S\ref{sec:universe_age}).
   \item The benchmark Hubble-shift mechanism yields an upward late-time
     shift at the few-per-cent level within the present H1 closure route
-    (\S\ref{sec:mp_hubble}); the exact benchmark percentage is not yet
+    (\S\ref{subsec:eps_joint_band}); the exact benchmark percentage is not yet
     stabilised between the analytic estimate, main-text tables, and
     appendix values.
   \item In the current JWST benchmark layer, the galactic maturity
@@ -23053,11 +22229,11 @@ programme.
     ($\mathcal{R}_{\rm gal}\sim1.2$), while the black-hole-assisted
     channel is more promising
     ($\mathcal{R}_{\rm BH}\sim
-    1.5$)~(\S\ref{sec:mp_jwst_cosmo}).
+    1.5$)~(\S\ref{subsec:eps_joint_band}).
   \item The leading halo-abundance enhancement remains moderate
     (factor $\sim2$--3), so the present ECT framework alleviates but
     does not yet fully resolve the JWST
-    tension~(\S\ref{sec:jwst}, \S\ref{sec:mp_jwst_cosmo}).
+    tension~(\S\ref{subsec:eps_joint_band}).
 \end{enumerate}
 
 \noindent
@@ -25166,7 +24342,7 @@ Within the present ordered-branch background closure, the same
 background history that drives $w(z)$ away from $-1$ also controls the
 epoch-dependent baseline critical acceleration
 $g^\dagger_{\rm bg}(z)=c_*H(z)/(2\pi)$
-(\S\ref{sec:mp_hubble}, eq.~\eqref{eq:gdag_bg_z_hubble}).
+(\S\ref{sec:cosmo_constraints}).
 In this sense the dark-energy and galactic-dynamics sectors of ECT are
 not treated as independent: both are sourced by one common background
 history $\phi_b(z)$ in the current closure.
@@ -25557,7 +24733,7 @@ dark-sector excitations belongs instead to the Quantum Sector.
 The present subsection does not introduce a new independent sector of the
 theory.  It collects the numerical and observational consequences of the
 ordered-branch programme already developed in
-Sections~\ref{sec:mp_hubble}--\ref{sec:mp_dark}.
+Sections~\ref{sec:cosmo_constraints}--\ref{sec:mp_dark}.
 Its structural basis is the ordered branch itself~(P4) together with the
 admissibility of non-uniform or slowly evolving branch responses at the
 macroscopic level~(P6).
@@ -25572,8 +24748,8 @@ strong-curvature tests built on top of those layers.
 
 \textit{Scope note.}
 The structural Hubble-tension mechanism is presented in
-\S\ref{sec:mp_hubble}; the age apparatus in \S\ref{sec:universe_age};
-and the cosmological JWST framework in \S\ref{sec:mp_jwst_cosmo}.
+\S\ref{sec:cosmo_constraints}; the age apparatus in \S\ref{sec:universe_age};
+and the cosmological JWST framework in \S\ref{sec:cosmo_constraints}.
 The present subsection retains the benchmark numerical layer, the
 derived-parent scan, and the auxiliary figures/tables supporting those
 frameworks.
@@ -25684,7 +24860,7 @@ converged fixed-point solver described in
 Appendix~\ref{app:late_cosmo_algorithm}.
 At the present stage this numerical value should be read as the output
 of a late-time Level~B ECT background closure (an H1 statement in the
-sense of~\S\ref{sec:mp_hubble}), not as a completed CMB-inferred
+sense of~\S\ref{subsec:eps_joint_band}), not as a completed CMB-inferred
 $H_0$ solution.
 The intended background system is self-consistent at the level of the
 ECT scalar--tensor equations written below and in
@@ -25700,8 +24876,7 @@ Appendix~\ref{sec:late_cosmo_artefacts}, and the numerical robustness
 programme for admissible late-time deformations is outlined in
 Appendix~\ref{sec:late_closure_robustness}.
 The corresponding analytic benchmark window is shown in
-Appendix~\ref{app:late_cosmo_algorithm},
-Fig.~\ref{fig:h0_scan}.
+Appendix~\ref{app:late_cosmo_algorithm}.
 
 Crucially, the late-time ECT background is not defined by assuming a
 $\Lambda$CDM expansion history as physical input.
@@ -25781,14 +24956,14 @@ g^\dagger_{\rm bg}(z)=\frac{c_*\,H(z)}{2\pi},
 \label{eq:gdag_bg_z}
 \end{equation}
 so that $g^\dagger_{\rm bg}$ is not a universal constant but traces the
-background expansion history.  Panel~(d) of
-Fig.~\ref{fig:ect_hubble_background} shows both the growth proxy
+background expansion history.  In the benchmark background, both the growth proxy
 $G_{\rm eff}/H^2$ and the ratio $g^\dagger_{\rm bg}(z)/g^\dagger_{\rm bg}(0)=E(z)$,
 confirming that in the critical-branch picture the effective acceleration
 scale at early times was much larger than today.
-Figure~\ref{fig:ect_hubble_background} should be interpreted as the
-benchmark control figure; the non-benchmark derived-parent results are
-summarised in Figures~\ref{fig:ect_condensate_param_scan}--\ref{fig:ect_jwst_anchor_budget}.
+The benchmark control diagnostics and the non-benchmark derived-parent
+parameter scans are summarised internally in the late-cosmology
+apparatus appendices; no figures are reproduced here in the retained
+\S\ref{sec:cosmo_constraints} layer.
 
 
 
@@ -25977,8 +25152,8 @@ This should be interpreted as a concrete partial result rather than a
 complete resolution.
 The corresponding numerical pipeline is recorded explicitly in
 Appendix~\ref{sec:derived_parent_pipeline}.
-The representative JWST cases are also summarised visually in
-Figure~\ref{fig:ect_jwst_anchor_budget}.
+The representative JWST cases are recorded internally in the
+late-cosmology apparatus.
 The comparative cosmological timeline is given in
 Fig.~\ref{fig:timeline}, while
 Fig.~\ref{fig:ect_full_condensate_universe_evolution} shows the
@@ -26014,10 +25189,9 @@ Age-priority & 25 & $-0.08$ & $+1.59\%$ & $0.390$ & $1.53$ & $0.980$ \\
 \bottomrule
 \end{longtable}
 
-The corresponding visual summary of the parameter scan and the
-working-point selection is given in
-Figures~\ref{fig:ect_condensate_param_scan} and
-\ref{fig:ect_derived_parent_comparison}.
+The corresponding parameter scan and working-point selection are
+recorded internally in the late-cosmology apparatus; no figures
+are reproduced in the retained \S\ref{sec:cosmo_constraints} layer.
 
 
 
@@ -26175,7 +25349,7 @@ and their discriminants.
 
 \paragraph{Summary pointer to the retained cosmological band.}
 The cross-probe effective constraint obtained in the rebuilt
-\S\ref{subsec:eps_joint_band_rebuilt} combines the per-channel
+\S\ref{subsec:eps_joint_band} combines the per-channel
 extractions of Appendix~\ref{app:eps_extraction_hubble} through
 Appendix~\ref{app:eps_extraction_isw} under the common background
 module of Appendix~\ref{app:eps_methodology}, and yields a retained
@@ -26186,7 +25360,7 @@ uniform-$\varepsilon$ diagnostic layer; it is an empirical
 consistency window, not a first-principles closure-level
 prediction, and its interpretation at closure level remains the
 content of open problem OP-Hubble-derive
-(\S\ref{subsec:eps_outlook_rebuilt}). An age-viability note,
+(\S\ref{subsec:eps_outlook}). An age-viability note,
 discussed in A6.4, accompanies the band at its present central
 value.
 
@@ -26309,7 +25483,7 @@ establishes the following main results:
     Hubble-tension alleviation, and supplies the age/lookback apparatus
     used in the JWST analysis. Its empirical closure under the
     uniform-$\varepsilon$ diagnostic layer is the retained five-probe
-    joint band of \S\ref{subsec:eps_joint_band_rebuilt},
+    joint band of \S\ref{subsec:eps_joint_band},
     $\varepsilon \in [0.0296,\,0.0376]$ at $1\sigma$, as assembled
     from the per-probe extractions of
     Appendix~\ref{app:eps_extraction_hubble}--Appendix~\ref{app:eps_extraction_isw}
@@ -26424,7 +25598,7 @@ $\eta_B$ (leptogenesis) & $\sim9\times10^{-10}$
 $|c_{\rm GW}/c-1|$ (GW170817) & $<6\times10^{-15}$ & $<6\times10^{-15}$ & Already satisfied \\
 $w_0$ (DESI 2024) & $-0.83$ & $-0.827$ & Closure consistency \\
 Retained joint $\varepsilon$ band ($1\sigma$) & $[0.0296,\,0.0376]$
-  & 5-probe intersection (\S\ref{subsec:eps_joint_band_rebuilt})
+  & 5-probe intersection (\S\ref{subsec:eps_joint_band})
   & Diagnostic-layer effective result \\
 \end{longtable}
 
@@ -26560,8 +25734,8 @@ G~= global whole-framework closure problem.
 \textsc{prob.}& G & Renormalisability         & Fixed Euclidean background avoids GR non-renorm.; full loop closure pending & \S\ref{sec:open_problems} \\
 \textsc{part.}& G & 3 fermion generations     & Spectral route identified: bound-state counting gives 3 at $y=O(1)$ (\S\ref{par:three_generations}); flavour-architecture systematisation in \S\ref{sec:flavour_architecture}; strict derivation of exactly three generations open & \S\ref{sec:yukawa}, \S\ref{sec:flavour_architecture} \\
 \textsc{part.}& G & $\alpha_{\rm fs}$; SU(3)  & $\alpha_{\rm fs}=q^2/(4\pi Z_A)$, $Z_A^{\rm IR}\approx 10.9$; UV problem recast as electroweak target $(Z_B,Z_W,\theta_W)$ (\S\ref{sec:alpha_fs}); SU(3) origin open & \S\ref{sec:alpha_fs} \\
-\textsc{part.}& II & Late-time background closure & No-phantom $w\ge-1$ within the present $\phi$-closure; age/distance apparatus established; late-time benchmark response encoded by $\mu(a)=G_{\rm eff}(a)/G_{\rm eff}(1)$ and $\varepsilon_{\rm eff}(a)=-\tfrac12 d\ln\mu/d\ln a$; present-epoch closed-form~\eqref{eq:ect_h0_shift_exact} gives benchmark H1 shift $\approx 3\%$ (numerical solver: $\approx 2.8\%$), derived-parent closure gives $\approx 2\%$; full early+late $H_0$ closure (H2) remains open & \S\ref{sec:mp_flrw}, \S\ref{sec:universe_age}, \S\ref{sec:mp_hubble} \\
-\textsc{part.}& II & JWST correlated background & Correlated age/distance/growth logic established; derived-parent corridor and maturity budgets give partial alleviation only, not a full morphology-level solution & \S\ref{sec:mp_jwst_cosmo}, \S\ref{sec:mp_tests} \\
+\textsc{part.}& II & Late-time background closure & No-phantom $w\ge-1$ within the present $\phi$-closure; age/distance apparatus established; late-time diagnostic-layer response under the uniform-$\varepsilon$ ansatz yields retained five-probe joint effective band $\varepsilon \in [0.0296,\,0.0376]$ at $1\sigma$ ($[0.0207,\,0.0425]$ at $2\sigma$); full early+late $H_0$ closure (H2) and closure-level $\varepsilon(z)$ derivation (OP-Hubble-derive) remain open & \S\ref{sec:mp_flrw}, \S\ref{sec:universe_age}, \S\ref{subsec:eps_joint_band} \\
+\textsc{part.}& II & JWST correlated background & Correlated age/distance/growth logic established; derived-parent corridor and maturity budgets give partial alleviation only, not a full morphology-level solution & \S\ref{subsec:eps_joint_band}, \S\ref{sec:mp_tests} \\
 \textsc{part.}& II & Force-law dimensionality & Universal $d_{\rm force}(x)$ crossover $3\to 7/3\to 2$ in present closure & \S\ref{sec:universe_size} \\
 \textsc{part.}& II & Environmental modulation of $g^\dagger_{\rm eff}$ & Framework for environment-dependent galactic critical scale established; precision correlation test pending & \S\ref{sec:mp_galactic_phenom}, \S\ref{sec:dark_discriminants} \\
 \textsc{part.}& II & Galactic dark-sector reinterpretation & Galactic mass discrepancy addressed by $\phi$-closure without particle dark matter; cosmological fraction budget still open & \S\ref{sec:dark_matter_interp} \\
@@ -26732,8 +25906,8 @@ D28 & Effective shell Hamiltonian structure (form, not coefficients) & C & GL cr
 D29 & Minimal shell--radiation coupling form $\mathcal{L}_{\rm int}=-\tfrac{g}{2}\delta\chi(\partial\varphi)^2$ & C & Locality + linearity; coefficient $g$ open & \ref{app:chi_dynamics} \\
 D30 & No-phantom late-time closure: $w_\phi\ge -1$ & B & Structural consequence of $\omega(\phi)>0$ in the $\phi$-first closure & \ref{sec:mp_flrw} \\
 D31 & Age = Lorentzian ordered-branch duration & B & Conceptual reinterpretation; quantitative benchmark $t_0\sim 13.0$--$13.5$\,Gyr & \ref{sec:universe_age} \\
-D32 & Structural Hubble-shift mechanism: $\Delta H_0>0$ & B & Correlated with age, distance, JWST through same $\phi_b(z)$; benchmark few-per-cent H1 shift (exact value pending re-audit) & \ref{sec:mp_hubble} \\
-D33 & Correlated JWST background mechanism & B & Mixed effect: distance/time/growth all shift; BH-assisted channel more promising; partial alleviation only & \ref{sec:mp_jwst_cosmo} \\
+D32 & Structural Hubble-shift mechanism: $\Delta H_0>0$ & B & Correlated with age, distance, JWST through same $\phi_b(z)$; retained-band diagnostic-layer extraction yields $\varepsilon \in [0.0296,\,0.0376]$ at $1\sigma$ & \ref{subsec:eps_joint_band} \\
+D33 & Correlated JWST background mechanism & B & Mixed effect: distance/time/growth all shift; JWST channel contributes the retained-band lower edge $\varepsilon\approx 0.0296$ (two-sided); partial alleviation only & \ref{subsec:eps_joint_band} \\
 D34 & Force-law dimensionality $d_{\rm force}(x)$: $3\to 7/3\to 2$ & B & Universal curve from single-mode $\phi$-closure; independent of galaxy mass & \ref{sec:universe_size} \\
 D35 & Universal ordered-branch causal cone and local vacuum signal-speed bound & A & Retarded support + domain of dependence from symmetric hyperbolicity (Leray--Choquet-Bruhat) & \ref{subsec:sr_speed_bound}, \ref{app:causal_hyperbolic} \\
 D36 & Vacuum photon/GW realisation of the same cone in minimal inheritance routes & A/B & Minimal gauge/tensor route; cone inheritance from same $K^{AB}$ & \ref{subsec:sr_speed_bound}, \ref{sec:cone_inheritance} \\
@@ -48549,7 +47723,7 @@ maturity factors~\eqref{eq:ect_maturity_factors} to
 \paragraph{Implications.}
 Since the BH-assisted channel already satisfies
 $\mathcal{R}_{\rm BH}>\mathcal{R}_{\rm req}$ for all anchor cases
-(Table~\ref{tab:jwst_two_layer}), any $\eta_\Theta>0$ only
+(see the retained \S\ref{sec:cosmo_constraints} analysis), any $\eta_\Theta>0$ only
 strengthens this result.
 For the galaxy-assembly channel, which is borderline
 ($\mathcal{R}_{\rm gal}\approx\mathcal{R}_{\rm req}$), even a modest
@@ -48753,7 +47927,7 @@ $G_{\rm eff}(z)>G_N$ over the late-time redshift range where the
 benchmark drift is active, then the inferred late-time Hubble scale
 obtained from a fixed acoustic-angle analysis is shifted upward
 relative to the screened limit (H1 benchmark route; see
-\S\ref{sec:mp_hubble}).
+\S\ref{sec:cosmo_constraints}).
 
 \emph{Reason.}
 At fixed sound-horizon calibration and observed angular acoustic scale,
@@ -50301,12 +49475,9 @@ pipeline described in Appendix~\ref{sec:derived_parent_pipeline}.
 
 \paragraph{Derived-parent comparison and anchor-case figures.}
 The current article also requires visual artefacts for:
-(i)~benchmark-versus-derived-parent background comparison
-(Fig.~\ref{fig:ect_derived_parent_comparison}),
-(ii)~the derived-parent parameter scan with labelled working points
-(Fig.~\ref{fig:ect_condensate_param_scan}),
-(iii)~the JWST anchor-case budget comparison
-(Fig.~\ref{fig:ect_jwst_anchor_budget}),
+(i)~benchmark-versus-derived-parent background comparison,
+(ii)~the derived-parent parameter scan with labelled working points,
+(iii)~the JWST anchor-case budget comparison,
 and (iv)~the schematic full evolution of the condensate sectors and
 observable Universe
 (Fig.~\ref{fig:ect_full_condensate_universe_evolution}).
@@ -50349,30 +49520,27 @@ admissible closure deformations described in
 Section~\ref{sec:late_closure_family}.
 
 For Benchmark~B ($\beta=0.8$, $\mu=1.5$, $\kappa=15$, $\phi_0=-0.12$),
-the truncated
-expression~\eqref{eq:app_late_deltaH} (equivalent
-to~\eqref{eq:ect_h0_shift} in the main text) is the $q_0\to 0$
-leading-order limit of the full present-epoch closed-form
-relation~\eqref{eq:ect_h0_shift_exact}. Evaluated at the benchmark
-parameters in that limit it gives $\Delta H_0/H_0\approx 5\%$, but
-this is a structural sanity check rather than the benchmark numerical
-answer, since at these parameters the self-consistent scalar drift
+the truncated expression~\eqref{eq:app_late_deltaH} is the $q_0\to 0$
+leading-order limit of the full present-epoch closed-form relation
+for the benchmark Hubble shift. Evaluated at the benchmark parameters
+in that limit it gives $\Delta H_0/H_0\approx 5\%$, but this is a
+structural sanity check rather than the benchmark numerical answer,
+since at these parameters the self-consistent scalar drift
 $q_0\approx 0.08$ is not negligible.
-The proper present-epoch closed-form benchmark
-relation~\eqref{eq:ect_h0_shift_exact}, evaluated with the
-self-consistent $q_0$, gives $\Delta H_0/H_0\approx 3\%$, and the
-converged fixed-point solver reproduces the same value
+The proper present-epoch closed-form benchmark relation, evaluated
+with the self-consistent $q_0$, gives $\Delta H_0/H_0\approx 3\%$,
+and the converged fixed-point solver reproduces the same value
 ($\approx 2.8\%$).
-The residual gap between~\eqref{eq:app_late_deltaH} and
-\eqref{eq:ect_h0_shift_exact} at the benchmark parameters is therefore
-not a sign of a sick closure; it is simply the difference between the
-$q_0\to 0$ limit and the full self-consistent present-epoch evaluation,
-and it accounts structurally for what earlier interim numerical runs
-were reporting as ``$\approx 2.9\%$'' under various convergence
-settings.
+The residual gap between~\eqref{eq:app_late_deltaH} and the
+full closed-form benchmark expression at the benchmark parameters is
+therefore not a sign of a sick closure; it is simply the difference
+between the $q_0\to 0$ limit and the full self-consistent present-epoch
+evaluation, and it accounts structurally for what earlier interim
+numerical runs were reporting as ``$\approx 2.9\%$'' under various
+convergence settings.
 
-The analytic parameter-window scan (Fig.~\ref{fig:h0_scan} in the
-main text) shows that the benchmark points lie inside a finite parameter
+The analytic parameter-window scan within this closure shows that
+the benchmark points lie inside a finite parameter
 region producing a few-percent late-time Hubble shift, confirming that
 the benchmark is representative rather than finely tuned.
 
@@ -50492,7 +49660,7 @@ supporting the ISW subsubsection in the main text
 the benchmark numbers quoted there are reproduced below.
 The calculation is at Level~B and uses the same cosmological
 benchmark parameter $\varepsilon=0.01$ as the Hubble-tension
-discussion (Section~\ref{sec:mp_hubble});
+discussion (Section~\ref{sec:cosmo_constraints});
 it is \emph{not} fitted to ISW data.
 
 \subsection{Modified growth and ISW source}
@@ -52840,8 +52008,8 @@ rebuilt \S15.5. It is not a full CMB-to-local inference pipeline and
 does not by itself establish a complete H2-level resolution of the
 Hubble tension. Its output is the one-dimensional
 $\varepsilon$-interval quoted for the Hubble + $r_s$ row of
-Table~\ref{tab:eps_retained_probes_rebuilt}, extracted under the
-uniform-$\varepsilon$ ansatz of \S\ref{subsec:eps_def_rebuilt} and
+Table~\ref{tab:eps_retained_probes}, extracted under the
+uniform-$\varepsilon$ ansatz of \S\ref{subsec:eps_def} and
 the common background module described in
 Appendix~\ref{app:eps_methodology}. The forward-modelling machinery
 --- the late-time ordered-branch background and its auxiliary
@@ -52868,7 +52036,7 @@ precision by the Planck mission~\cite{Planck2018}. A shift in the
 inferred late-time expansion rate arises once the late-time
 gravitational response function is allowed to differ from the
 $\Lambda$CDM form. In the effective uniform-$\varepsilon$ layer of
-\S\ref{subsec:eps_def_rebuilt} this response is parametrised by
+\S\ref{subsec:eps_def} this response is parametrised by
 \begin{equation}
 \frac{G_{\rm eff}(z)}{G_N} \;=\; (1+z)^{2\varepsilon}.
 \label{eq:Geff_uniform_eps_A1}
@@ -53041,8 +52209,8 @@ common background module
 The $1\sigma$ width $\Delta\varepsilon^{1\sigma} \approx 0.0109$
 inherits approximately linearly from $\sigma_{\rm tot}$. This is
 the numerical content of the Hubble + $r_s$ row of
-Table~\ref{tab:eps_retained_probes_rebuilt} in
-\S\ref{subsec:eps_retained_rebuilt}.
+Table~\ref{tab:eps_retained_probes} in
+\S\ref{subsec:eps_retained}.
 
 \paragraph{Background-level cosmic age at the extracted
 $\varepsilon_*$.}
@@ -53106,7 +52274,7 @@ $\varepsilon(z)$.}
 The uniform-$\varepsilon$ ansatz treats $\varepsilon$ as
 epoch-independent. A first-principles $\varepsilon(z)$ from
 three-stage condensate closure --- the content of OP-Hubble-derive
-(\S\ref{subsec:eps_outlook_rebuilt}) --- would reshape the width
+(\S\ref{subsec:eps_outlook}) --- would reshape the width
 of the retained interval and in general would not map one-to-one
 onto a constant $\varepsilon$. The retained interval derived here
 should therefore be read as the projection of the true
@@ -53196,7 +52364,7 @@ power spectrum, a higher star-formation efficiency, a more
 top-heavy IMF, or --- relevant here --- a cosmological-epoch
 enhancement of the gravitational response at high $z$. In the
 effective uniform-$\varepsilon$ layer of
-\S\ref{subsec:eps_def_rebuilt}, the response function
+\S\ref{subsec:eps_def}, the response function
 $G_{\rm eff}(z)/G_N = (1+z)^{2\varepsilon}$ enters the high-$z$
 growth history, raising both linear-growth amplitude and the tail
 of the collapsed halo mass function at a given formation redshift.
@@ -53339,7 +52507,7 @@ expectation that ECT would ``give more time'' for early galaxies.
 The net physical consequence is important: after this correction,
 the JWST-extracted interval overlaps the Hubble + $r_s$ interval
 of A1 more snugly than the PS-only proxy suggests. The retained
-joint band of \S\ref{subsec:eps_joint_band_rebuilt} therefore
+joint band of \S\ref{subsec:eps_joint_band} therefore
 reflects two independent high-$z$ and low-$z$ extractions that are
 \emph{more}, not less, mutually consistent once the common
 background module is applied on the same footing to both channels.
@@ -53557,7 +52725,7 @@ at $z_{\rm obs}$ itself --- would invalidate
 $R_{\rm time}(\varepsilon)$ and reduce the JWST channel to its
 pre-recalc proxy form. In the present treatment, the linear
 default is adopted with explicit bracket, and the extracted
-interval quoted in \S\ref{subsec:eps_retained_rebuilt} of the
+interval quoted in \S\ref{subsec:eps_retained} of the
 main text is the $p=1$ result.
 
 \textit{(v) Formation redshift $z_{\rm form}$.}
@@ -53628,7 +52796,7 @@ distance-ladder, no sound-horizon anchor, and no high-redshift
 extrapolation; its systematics are dominated by stellar-population
 modelling rather than by cosmological assumptions. In the
 effective uniform-$\varepsilon$ layer of
-\S\ref{subsec:eps_def_rebuilt}, the $\varepsilon$-deformation enters
+\S\ref{subsec:eps_def}, the $\varepsilon$-deformation enters
 the late-time Hubble rate directly through
 \eqref{eq:eps_friedmann_A1}, and the present channel tests whether
 a non-zero $\varepsilon$ is compatible with this ensemble of
@@ -53724,7 +52892,7 @@ $\varepsilon$ in a broad range surrounding zero.
 
 \paragraph{Imposing the physical prior.}
 Under the physical prior $\varepsilon \geq 0$ of
-\S\ref{subsec:eps_def_rebuilt}, the cosmic chronometers channel
+\S\ref{subsec:eps_def}, the cosmic chronometers channel
 admits
 \begin{equation}
 [\varepsilon_{\rm lo}^{1\sigma},\,\varepsilon_{\rm hi}^{1\sigma}]
@@ -53757,7 +52925,7 @@ data lever-arm is modest.
 
 \paragraph{Channel character.}
 In the language of
-\S\ref{subsec:eps_retained_rebuilt}, the cosmic chronometers
+\S\ref{subsec:eps_retained}, the cosmic chronometers
 channel is a consistency channel rather than a primary extraction
 channel. Its principal role in the retained-five-probe intersection
 is to exclude large values of $\varepsilon$ at late times
@@ -53855,7 +53023,7 @@ in the rebuilt \S15.5. Unlike the Hubble + $r_s$ and JWST channels
 of A1 and A2, the present channel has a raw statistical best-fit
 in the unphysical region $\varepsilon < 0$. This does not in
 itself invalidate the channel: the physical prior of
-\S\ref{subsec:eps_def_rebuilt} restricts $\varepsilon \geq 0$, and
+\S\ref{subsec:eps_def} restricts $\varepsilon \geq 0$, and
 once this restriction is imposed the channel delivers a
 well-defined one-sided upper bound on $\varepsilon$. The
 explanation of the negative raw minimum and its interpretation
@@ -53878,7 +53046,7 @@ measured through the Kaiser-factor-plus-higher-order modelling of
 the multipole expansion of the galaxy two-point correlation
 function at each survey redshift. In the effective
 uniform-$\varepsilon$ layer of
-\S\ref{subsec:eps_def_rebuilt}, a non-zero $\varepsilon$ enters the
+\S\ref{subsec:eps_def}, a non-zero $\varepsilon$ enters the
 linear growth through the deformation of both the background
 expansion rate \eqref{eq:eps_friedmann_A1} and the effective
 Poisson source,
@@ -53999,11 +53167,11 @@ so a statistical preference for suppressed growth maps naturally
 onto $\varepsilon < 0$ at the profile-$\chi^2$ level. This effect
 is the same data feature that is discussed in the literature
 under the heading of the $S_8$ or $\sigma_8$ tension (see
-excluded probes in \S\ref{subsec:eps_excluded_rebuilt}).
+excluded probes in \S\ref{subsec:eps_excluded}).
 
 \paragraph{Physical prior and clipping.}
 The uniform-$\varepsilon$ ansatz of
-\S\ref{subsec:eps_def_rebuilt} restricts $\varepsilon \geq 0$
+\S\ref{subsec:eps_def} restricts $\varepsilon \geq 0$
 on physical grounds (for the effective layer in question, a
 negative $\varepsilon$ would correspond to growth suppression at
 all epochs, including the high-$z$ epoch where the JWST channel
@@ -54096,7 +53264,7 @@ The negative raw best-fit reflects an observational feature of
 the RSD compilation (consistency with modest growth suppression
 relative to $\Lambda$CDM at $z \lesssim 1$) rather than an ECT
 prediction of $\varepsilon < 0$. The uniform-$\varepsilon$
-diagnostic of \S\ref{subsec:eps_def_rebuilt} restricts
+diagnostic of \S\ref{subsec:eps_def} restricts
 $\varepsilon \geq 0$; the resulting retained bound
 \eqref{eq:eps_fsigma8_retained_A4} is therefore a one-sided
 upper limit.
@@ -54209,7 +53377,7 @@ universe the gravitational potential is constant in time on large
 scales, and the ISW signal vanishes; the presence of dark
 energy causes $\dot\Phi \neq 0$ at low $z$, which gives a
 non-zero cross-correlation. In the effective uniform-$\varepsilon$
-layer of \S\ref{subsec:eps_def_rebuilt}, the deformation of the
+layer of \S\ref{subsec:eps_def}, the deformation of the
 expansion rate through \eqref{eq:eps_friedmann_A1} modifies the
 late-time decay of $\Phi$, and the amplitude of the resulting
 ISW signal deviates from its $\Lambda$CDM value.
@@ -54327,7 +53495,7 @@ the observational bracket on $A_{\rm ISW}$ through
 The ISW channel is a consistency channel only. Its retained upper
 bound is broader than those of A1--A4 and does not bind the joint
 interval. Its principal role in
-\S\ref{subsec:eps_retained_rebuilt} is to demonstrate that the
+\S\ref{subsec:eps_retained} is to demonstrate that the
 retained joint band $[0.0296,\,0.0376]$ is compatible with an
 independent late-time observable, \emph{not} to contribute
 evidential weight to the band.
@@ -54379,7 +53547,7 @@ A self-consistent recalculation would, in principle, shift
 $\kappa_{\rm ISW}$ by an unknown amount; the present checkpoint
 therefore treats the retained ISW interval as provisional, and
 the numerical value quoted in
-\S\ref{subsec:eps_retained_rebuilt} is inherited from the
+\S\ref{subsec:eps_retained} is inherited from the
 $\Lambda$CDM-background calibration.
 
 \textit{(iii) Large observational uncertainty.}
@@ -54498,8 +53666,8 @@ re-expressed against the common module of A6.1. The level of
 physical completion, however, differs by channel. The following
 summary is the normative table: it is the reference that the
 ``provisional but stable'' language of
-\S\ref{subsec:eps_retained_rebuilt} and
-\S\ref{subsec:eps_joint_band_rebuilt} points back to.
+\S\ref{subsec:eps_retained} and
+\S\ref{subsec:eps_joint_band} points back to.
 \begin{center}
 \begin{tabular}{|l|l|l|}
 \hline
@@ -54649,7 +53817,7 @@ open problem (OP-age-consistency is not introduced). It is
 recorded here as a viability/self-consistency note. Its
 resolution is part of the eventual closure-level ECT derivation
 of $\varepsilon(z)$ and $H_0$ from first principles (cf.\
-\S\ref{subsec:eps_outlook_rebuilt}), not a constraint to be added
+\S\ref{subsec:eps_outlook}), not a constraint to be added
 at the uniform-$\varepsilon$ level.
 
 \subsection*{A6.5\quad Benchmark achievability for the retained
@@ -54681,7 +53849,7 @@ closure level of the condensate theory
 (three-stage condensate closure at
 $u_0 \sim \phi_0 \sim \bar{M}_{\rm Pl}$,
 $v_2 \sim 246~{\rm GeV}$, and $v_{\rm gal} \sim$ kpc; cf.\
-\S\ref{subsec:eps_outlook_rebuilt}), at least one parameter
+\S\ref{subsec:eps_outlook}), at least one parameter
 configuration yields an effective $\varepsilon$ at late time in
 the range $[\,0.0296,\,0.0376\,]$ when projected onto the
 uniform-$\varepsilon$ diagnostic. No claim is made here that
@@ -54693,7 +53861,7 @@ Benchmark achievability for the retained band is an open target:
 it has not been demonstrated in the present preprint. The
 closure-level derivation of $\varepsilon(z)$ from three-stage
 condensate dynamics is listed as open problem OP-Hubble-derive
-in \S\ref{subsec:eps_outlook_rebuilt}, and an explicit check of
+in \S\ref{subsec:eps_outlook}, and an explicit check of
 whether its output projection onto uniform-$\varepsilon$ lies in
 the retained band is part of that open program.
 
@@ -54702,7 +53870,7 @@ non-silent-dismissal}
 
 Several probes that would naively contribute to a combined
 multi-messenger analysis are explicitly excluded from the
-retained joint band of \S\ref{subsec:eps_retained_rebuilt}. It
+retained joint band of \S\ref{subsec:eps_retained}. It
 is important that their exclusion not be read as a silent
 dismissal: the reasons for exclusion differ by probe, and each
 remains an open item at the closure-level program.
@@ -54777,7 +53945,7 @@ tracked against them:
 The immediate step beyond the present freeze checkpoint is the
 closure-level derivation of $\varepsilon(z)$ from the three-stage
 condensate program, which is the content of open problem
-OP-Hubble-derive (\S\ref{subsec:eps_outlook_rebuilt}). The
+OP-Hubble-derive (\S\ref{subsec:eps_outlook}). The
 per-channel appendices A1--A5 and the present methodology
 appendix A6 together define the scaffolding against which the
 closure-level output will eventually be benchmarked.
