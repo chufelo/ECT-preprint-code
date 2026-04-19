@@ -25253,66 +25253,18 @@ not as a closed confirmation set.
 
 Late-time evolution of the condensate response modifies the time
 dependence of the gravitational potentials and therefore the
-integrated Sachs--Wolfe (ISW) channel. In the present ECT benchmark,
-using the same $\varepsilon=0.01$ parameter as in the Hubble-tension
-discussion, we model this effect through the response function
-$\mu(a)=G_{\rm eff}(a)/G_N=a^{-2\varepsilon}$ and the associated
-lensing combination $\Sigma(a)=\mu(a)(1+\eta)/2$.
-The ISW benchmark uses the same imported late-time benchmark slope as
-the Hubble discussion and therefore should not be read as an
-independent determination of~$\varepsilon$.
-
-At the semi-analytic Level~B considered here, the resulting
-ISW--tracer overlap proxy yields a modest enhancement of
-approximately $6\%$ in amplitude,
-\[
-A_{\rm proxy}=1.060,
-\]
-together with an internal source-power diagnostic
-\[
-\frac{\int \mathcal{F}_{\rm ECT}^2\,da}
-     {\int \mathcal{F}_{\Lambda{\rm CDM}}^2\,da}
-=1.108,
-\]
-corresponding to an $\sim 11\%$ excess in the source kernel.
-Illustrative phenomenological slip ans\"atze increase the proxy further
-to $A_{\rm proxy}=1.100$ for $\delta\eta=0.02$ and
-$A_{\rm proxy}=1.160$ for $\delta\eta=0.05$, but these should not be
-read as derived ECT predictions.
-
-The benchmark is not obviously in tension with the broad range of
-published ISW amplitude measurements
-(e.g.\ $A=0.96\pm0.30$ from unWISE$\times$Planck
-\cite{Krolewski2022}),
-but the comparison remains approximate:
-the present treatment uses an ISW--tracer overlap proxy rather than
-the observed $C_\ell^{Tg}$ estimator, and a full non-Limber
-Boltzmann-level calculation with realistic tracer windows remains
-future work. Figure~\ref{fig:isw_diagnostic} summarises the benchmark
-response functions and source evolution; the proxy-based
-comparison with published amplitudes is shown in
-Appendix~\ref{app:isw_diagnostic}, Fig.~\ref{fig:isw_vs_obs}.
-Full derivation and limitations are also given in
-Appendix~\ref{app:isw_diagnostic}.
-
-\begin{figure}[p]
-  \centering
-  \includegraphics[width=0.95\textwidth]{figures/ect_isw_diagnostic_v3.png}
-  \caption{Semi-analytic ISW diagnostic for the ECT benchmark
-    $\varepsilon=0.01$.
-    (a)~Response functions $\mu(z)=G_{\rm eff}/G_N$ and
-    $\Sigma(z)=\mu(1+\eta)/2$.
-    (b)~ISW source kernel, normalised to the $\Lambda$CDM peak.
-    (c)~Cumulative source-kernel weight (diagnostic curve, not
-    observable).
-    (d)~Overlap proxy amplitude $A_{\rm proxy}(\varepsilon,\delta\eta)$.
-    The $\delta\eta\neq0$ cases are illustrative phenomenological
-    slip ans\"atze, not derived ECT predictions.
-    For the baseline case $\varepsilon=0.01$, the overlap proxy
-    gives $A_{\rm proxy}=1.060$.
-    Status: Level~B.}
-  \label{fig:isw_diagnostic}
-\end{figure}
+integrated Sachs--Wolfe (ISW) channel. Within the rebuilt late-time
+analysis of \S\ref{sec:cosmo_constraints}, the ISW response is treated
+as one of the retained five probes used to constrain the effective
+uniform-$\varepsilon$ diagnostic parameter. The full ISW
+extraction --- the response function $\mu(a)=G_{\rm eff}(a)/G_N$, the
+ISW--tracer overlap proxy, its observational inputs, the extraction
+statistic, the $1\sigma$/$2\sigma$ interval, and the associated
+methodological limitations --- is given in
+Appendix~\ref{app:eps_extraction_isw}. Under the prior $\varepsilon\geq 0$
+motivated in \S\ref{subsec:eps_def}, the ISW channel is retained as a
+one-sided consistency bound whose upper edge enters the joint retained
+band of \S\ref{subsec:eps_joint_band}.
 
 These observational handles connect directly to the falsifier logic
 summarised in Table~\ref{tab:ECT_predictions}, especially the
@@ -49650,154 +49602,6 @@ of~\S\ref{sec:universe_age}.
 
 
 % ==============================================================
-\section{Semi-analytic ISW diagnostic}
-\label{app:isw_diagnostic}
-% ==============================================================
-
-This appendix provides the derivation and supplementary figures
-supporting the ISW subsubsection in the main text
-(Subsection~\ref{sec:isw_diagnostic});
-the benchmark numbers quoted there are reproduced below.
-The calculation is at Level~B and uses the same cosmological
-benchmark parameter $\varepsilon=0.01$ as the Hubble-tension
-discussion (Section~\ref{sec:cosmo_constraints});
-it is \emph{not} fitted to ISW data.
-
-\subsection{Modified growth and ISW source}
-
-In the $\phi$-first closure (Section~\ref{sec:mp_nonlinear}),
-the effective gravitational coupling evolves as
-$\mu(a)\equiv G_{\rm eff}(a)/G_N = a^{-2\varepsilon}$,
-with $\varepsilon\approx 0.01$ in the present benchmark.
-The growth function $D(a)$ satisfies
-\begin{equation}
-  \label{eq:growth_isw}
-  D'' + \left(\frac{3}{a}+\frac{E'}{E}\right)D'
-  - \frac{3\,\Omega_m\,\mu(a)}{2\,a^5\,E^2}\,D = 0,
-\end{equation}
-where $E(a)=H(a)/H_0$ and primes denote $d/da$.
-In the quasi-static sub-horizon regime, the Newtonian potentials
-are related to the matter overdensity through
-the lensing-response function
-$\Sigma(a)=\mu(a)[1+\eta(a)]/2$,
-where $\eta\equiv\Phi/\Psi$ is the gravitational slip.
-The ISW source kernel is then
-\begin{equation}
-  \label{eq:isw_kernel}
-  \mathcal{F}(a)
-  = \frac{1}{a\,E(a)}\,\frac{d}{da}\!\left[
-    \frac{\Sigma(a)\,D(a)}{a}\right].
-\end{equation}
-In $\Lambda$CDM one has $\mu=\eta=\Sigma=1$;
-in the ECT benchmark $\mu(a)=a^{-2\varepsilon}$ with
-$\eta=1$ (baseline) or
-$\eta(a)=1+\delta\eta\,(1-a)$
-(illustrative phenomenological slip ansatz, \emph{not} derived
-from the ECT closure).
-
-\subsection{ISW--tracer overlap proxy}
-
-Because the ISW signal is concentrated at low multipoles
-$\ell\lesssim 20$, where the Limber approximation is unreliable,
-a full $C_\ell^{Tg}$ calculation requires non-Limber
-line-of-sight integration with spherical Bessel functions.
-In the absence of such a calculation, the present benchmark
-uses a simpler diagnostic: the ISW--tracer overlap amplitude
-proxy
-\begin{equation}
-  \label{eq:isw_proxy}
-  A_{\rm proxy}
-  \;=\;
-  \frac{\displaystyle\int da\;\mathcal{F}_{\rm ECT}(a)\,
-    W_g(a)\,D_{\rm ECT}(a)}
-  {\displaystyle\int da\;\mathcal{F}_{\Lambda{\rm CDM}}(a)\,
-    W_g(a)\,D_{\Lambda{\rm CDM}}(a)},
-\end{equation}
-where
-$W_g(a) = b\,n(z(a))/{a^2}$
-is the galaxy tracer window,
-$n(z)\propto z^2\exp(-z/0.35)$ is a toy unWISE-like
-redshift distribution,
-$b=1.5$ is an effective galaxy bias,
-and both growth functions are normalised to $D(a=1)=1$.
-This proxy measures the relative strength of the ISW--tracer
-overlap; it is \emph{not} the observed $C_\ell^{Tg}$ estimator
-and should not be compared with published ISW amplitudes
-as a one-to-one observable.
-
-\subsection{Benchmark results}
-
-With $\varepsilon=0.01$, $\eta=1$~(baseline):
-\begin{equation}
-  A_{\rm proxy} = 1.060,
-  \qquad
-  \frac{\int\mathcal{F}_{\rm ECT}^2\,da}
-       {\int\mathcal{F}_{\Lambda{\rm CDM}}^2\,da}
-  = 1.108
-  \quad(\text{source-power diagnostic}).
-\end{equation}
-With illustrative phenomenological slip ans\"atze
-(\emph{not} derived from ECT):
-$\delta\eta=0.02$ gives $A_{\rm proxy}=1.100$;
-$\delta\eta=0.05$ gives $A_{\rm proxy}=1.160$.
-
-These values lie within the broad range covered by
-current published ISW amplitude measurements
-(e.g.\ $A=0.96\pm0.30$ from unWISE$\times$Planck~\cite{Krolewski2022}),
-but this should not be interpreted as a formal statistical
-consistency test, since the proxy is not the observed estimator.
-
-The main-text Figure~\ref{fig:isw_diagnostic} shows the ECT response
-functions, source kernel, cumulative weight, and sensitivity map.
-Figure~\ref{fig:isw_vs_obs} below compares the proxy amplitude with
-published ISW measurements and shows the sensitivity to $\varepsilon$.
-
-\begin{figure}[htbp!]
-  \centering
-  \includegraphics[width=0.95\textwidth]{figures/ect_isw_vs_obs_v3.png}
-  \caption{ISW overlap proxy vs published amplitude measurements.
-    (a)~Proxy values for the ECT baseline and illustrative slip
-    ans\"atze compared with published ISW amplitudes from
-    unWISE$\times$Planck~\cite{Krolewski2022}, VST~ATLAS$\times$Planck,
-    AllWISE$\times$WMAP, and Planck~XXI combined.
-    The parameter $\varepsilon=0.01$ is taken from the Hubble-tension
-    benchmark and is not fitted to ISW data.
-    (b)~Sensitivity of the proxy to $\varepsilon$; the shaded band
-    shows the unWISE published amplitude range.
-    This is a proxy-based comparison, not a formal statistical test.
-    Status: Level~B.}
-  \label{fig:isw_vs_obs}
-\end{figure}
-
-\FloatBarrier
-
-\subsection{Limitations}
-
-\begin{itemize}
-  \item The calculation uses the parametrised
-    $\mu(a)=a^{-2\varepsilon}$ from the $\phi$-first closure,
-    not the full nonlinear generalised Einstein
-    equations~\eqref{eq:gen_EE}.
-  \item The gravitational slip $\eta\neq1$ from
-    $\Theta_{\mu\nu}[n]$ is not derived; the
-    $\delta\eta$ values are illustrative
-    phenomenological ans\"atze only.
-  \item The overlap proxy~\eqref{eq:isw_proxy} is not
-    $C_\ell^{Tg}$. A full non-Limber line-of-sight
-    calculation with spherical Bessel functions and
-    realistic tracer windows remains future work.
-  \item No void-specific ISW profile or CMB low-$\ell$
-    anomaly calculation is performed.
-\end{itemize}
-
-The computational script producing these results
-(\texttt{ect\_isw\_diagnostic.py}) is available in the
-code repository.
-
-
-% ============================================================
-% APPENDIX: DIMENSION AND NORMALIZATION AUDIT
-% ============================================================
 \section{Why the Explicit Estimate of $S_0$ Is Deferred}
 \label{app:Sloop_calc}
 
