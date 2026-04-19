@@ -20478,7 +20478,7 @@ Appendix~\ref{app:eps_extraction_hubble} through
 Appendix~\ref{app:eps_methodology}, which collectively expose the
 common background module, the per-channel extraction pipelines, and
 the cross-channel methodology (including the age-viability note of
-A6.4 and the benchmark achievability statement of A6.5). Channels not
+AF.4 and the benchmark achievability statement of AF.5). Channels not
 retained in the joint band are still discussed explicitly in
 \S\ref{subsec:eps_excluded}, together with the reasons why
 they are methodologically limited, structurally outside the present
@@ -21344,7 +21344,7 @@ note, not as a new retained probe and not as a new formal open
 problem; its interpretation depends on which mapping is physically
 correct and is bound up with the closure-level derivation of
 $\varepsilon(z)$ itself (OP-Hubble-derive). A dedicated discussion is
-given in Appendix~\ref{app:eps_methodology} (A6.4).
+given in Appendix~\ref{app:eps_methodology} (AF.4).
 
 \paragraph{Parsimony and correlations.}
 In a closure-level extension, the same underlying drift mechanism
@@ -21603,7 +21603,7 @@ JWST extraction with time-budget correction
 Age-viability note
   & baseline mapping acceptable; inferred-$H_0$ mapping problematic
   & B note
-  & App.~\ref{app:eps_methodology} (A6.4)
+  & App.~\ref{app:eps_methodology} (AF.4)
   & viability/self-consistency note, not a retained probe \\
 \end{longtable}
 }
@@ -25313,7 +25313,7 @@ consistency window, not a first-principles closure-level
 prediction, and its interpretation at closure level remains the
 content of open problem OP-Hubble-derive
 (\S\ref{subsec:eps_outlook}). An age-viability note,
-discussed in A6.4, accompanies the band at its present central
+discussed in AF.4, accompanies the band at its present central
 value.
 
 
@@ -47906,6 +47906,1978 @@ necessarily correlated with a specific sign pattern in the other three
 observables.
 
 % ==============================================================
+\section{Extraction of the effective uniform-$\varepsilon$ interval
+from the Hubble + $r_s$ channel}
+\label{app:eps_extraction_hubble}
+
+This appendix derives an effective H1-type extraction of
+$\varepsilon$ from the simplified Hubble + $r_s$ channel used in the
+rebuilt \S15.5. It is not a full CMB-to-local inference pipeline and
+does not by itself establish a complete H2-level resolution of the
+Hubble tension. Its output is the one-dimensional
+$\varepsilon$-interval quoted for the Hubble + $r_s$ row of
+Table~\ref{tab:eps_retained_probes}, extracted under the
+uniform-$\varepsilon$ ansatz of \S\ref{subsec:eps_def} and
+the common background module described in
+Appendix~\ref{app:eps_methodology}. The forward-modelling machinery
+--- the late-time ordered-branch background and its auxiliary
+numerical algorithms --- is collected in
+Appendix~\ref{app:late_cosmo_background} and
+Appendix~\ref{app:late_cosmo_algorithm}. The present appendix is the
+inverse step: given observational inputs and the uniform-$\varepsilon$
+ansatz, to extract the one-dimensional $\varepsilon$-interval that
+this single channel admits at the common-background level.
+
+\subsection*{AE.1\quad Physics of the probe}
+
+The Hubble tension is not simply a discrepancy between two direct
+measurements of $H_0$: it is a mismatch between the local
+distance-ladder value and the $H_0$ inferred from the acoustic
+angular scale once the sound horizon $r_s$ is modelled. This is why
+the present channel is naturally a Hubble + $r_s$ channel rather
+than a pure $H_0$-only constraint. The local distance-ladder
+determination $H_0^{\rm SH0ES}$ uses Cepheid-calibrated Type~Ia
+supernovae and is insensitive to sound-horizon physics. The
+CMB-based determination $H_0^{\rm Planck}$ is obtained from the
+acoustic-scale angle $\theta_s = r_s / D_A(z_*)$, measured to high
+precision by the Planck mission~\cite{Planck2018}. A shift in the
+inferred late-time expansion rate arises once the late-time
+gravitational response function is allowed to differ from the
+$\Lambda$CDM form. In the effective uniform-$\varepsilon$ layer of
+\S\ref{subsec:eps_def} this response is parametrised by
+\begin{equation}
+\frac{G_{\rm eff}(z)}{G_N} \;=\; (1+z)^{2\varepsilon}.
+\label{eq:Geff_uniform_eps_A1}
+\end{equation}
+Under this parametrisation, both the low-redshift distance integral
+(entering $H_0^{\rm Planck}$ through $D_A(z_*)$) and the high-redshift
+sound-horizon integral (entering $r_s$) are modified. The channel
+therefore tests $\varepsilon$ through the joint constraint imposed
+by a fixed, precisely measured $\theta_s$ and an independently
+determined local $H_0$. The output of the extraction is an H1-type
+effective band for $\varepsilon$: a range of values for which the
+common-background module, deformed by $(1+z)^{2\varepsilon}$,
+shifts the CMB-inferred $H_0$ upward into statistical compatibility
+with the local distance-ladder value.
+
+\subsection*{AE.2\quad Observational inputs}
+
+The two anchoring values are
+$H_0^{\rm Planck} = 67.4 \pm 0.5~\mathrm{km\,s^{-1}\,Mpc^{-1}}$
+from Planck~2018 in $\Lambda$CDM~\cite{Planck2018} and
+$H_0^{\rm SH0ES} = 73.04 \pm 1.04~\mathrm{km\,s^{-1}\,Mpc^{-1}}$
+from the SH0ES distance-ladder analysis~\cite{Riess2022}. The target
+shift to be accommodated is therefore
+\begin{equation}
+\Delta H_0^{\rm obs}
+\;\equiv\; H_0^{\rm SH0ES} - H_0^{\rm Planck}
+\;\approx\; 5.64~\mathrm{km\,s^{-1}\,Mpc^{-1}},
+\qquad
+\sigma_{\rm tot} \;=\; \sqrt{\sigma_P^2 + \sigma_{\rm SH}^2}
+\;\approx\; 1.15~\mathrm{km\,s^{-1}\,Mpc^{-1}}.
+\end{equation}
+The acoustic-scale measurement $\theta_s$ is taken as fixed at the
+Planck value; the $\varepsilon$-scan is carried out at fixed
+$\theta_s$, such that the $\varepsilon$-deformation modifies $r_s$
+and $D_A(z_*)$ in correlated ways.
+
+\subsection*{AE.3\quad ECT-side model and extraction scope}
+
+Under the uniform-$\varepsilon$ ansatz, the dimensionless Hubble rate
+reads
+\begin{equation}
+E_{\rm ECT}^2(z,\varepsilon)
+\;=\; \Omega_r\,(1+z)^4
+\;+\; \Omega_m\,(1+z)^{3+2\varepsilon}
+\;+\; \Omega_\Lambda\,(1+z)^{2\varepsilon},
+\label{eq:eps_friedmann_A1}
+\end{equation}
+with $\Omega_m = 0.315$, $\Omega_r = 9.2 \times 10^{-5}$,
+$\Omega_\Lambda = 1 - \Omega_m - \Omega_r$ adopted as the common
+background proxy (see Appendix~\ref{app:eps_methodology} for the
+background-module framing and its role as the single source of
+truth for all retained extraction channels). The low-redshift
+distance integral is
+\begin{equation}
+I(\varepsilon) \;=\; \int_0^{z_*}
+\frac{dz}{E_{\rm ECT}(z,\varepsilon)},
+\qquad z_* = 1089.80,
+\end{equation}
+and the sound horizon at the drag epoch is
+\begin{equation}
+r_s(\varepsilon)
+\;=\; \int_{z_{\rm drag}}^{\infty}
+\frac{c_s(z)}{H_0^P\,E_{\rm ECT}(z,\varepsilon)}\,dz,
+\qquad z_{\rm drag} = 1059.94,
+\end{equation}
+with the baryon--photon sound speed
+$c_s(z) = c/\sqrt{3(1+R(z))}$,
+$R(z) = (3\Omega_b / 4\Omega_r)(1+z)^{-1}$, $\Omega_b = 0.0493$.
+At fixed $\theta_s$, the inferred $H_0$ under
+$\varepsilon$-deformation becomes
+\begin{equation}
+H_0^{\rm inferred}(\varepsilon)
+\;=\; H_0^P \cdot
+\frac{I(\varepsilon)}{I(0)}
+\cdot
+\frac{r_s(0)}{r_s(\varepsilon)}.
+\label{eq:H0_inferred_eps}
+\end{equation}
+For $\varepsilon > 0$, the sound-horizon integral decreases by a
+larger fractional amount than the distance integral, so the ratio
+in \eqref{eq:H0_inferred_eps} exceeds unity and $H_0^{\rm inferred}$
+is pushed upward.
+
+\paragraph{Held fixed under the present proxy.}
+$\Omega_m = 0.315$, $\Omega_\Lambda$, $\Omega_r$, $\Omega_b$; the
+baryon--photon sound-speed form $c_s(z)$; $z_* = 1089.80$,
+$z_{\rm drag} = 1059.94$; the acoustic-scale anchor $\theta_s$.
+
+\paragraph{Varied.}
+$\varepsilon$ only (one-dimensional scan). Through
+\eqref{eq:eps_friedmann_A1} the variation of $\varepsilon$
+propagates automatically, via the common background module, into
+$E(z)$, $H(z)$, $I(\varepsilon)$, $r_s(\varepsilon)$, and
+$H_0^{\rm inferred}(\varepsilon)$.
+
+\paragraph{Not included at this proxy level.}
+A full Boltzmann-level recombination pipeline; a full CMB
+likelihood; a joint fit of early-time parameters together with
+$\varepsilon$; and an ECT-closure-level background replacing the
+$\Lambda$CDM proxy. The consequences of each of these omissions
+are addressed in AE.7.
+
+\subsection*{AE.4\quad Extraction statistic}
+
+The $\varepsilon$-dependent prediction for the Hubble-tension shift
+is
+\begin{equation}
+\Delta H_0^{\rm pred}(\varepsilon)
+\;=\; H_0^{\rm inferred}(\varepsilon) - H_0^P.
+\end{equation}
+The single-parameter chi-squared for this channel is
+\begin{equation}
+\chi^2(\varepsilon)
+\;=\;
+\left[\,
+\frac{\Delta H_0^{\rm pred}(\varepsilon) - \Delta H_0^{\rm obs}}
+     {\sigma_{\rm tot}}
+\,\right]^{\!2}.
+\label{eq:chi2_hubble_eps}
+\end{equation}
+This is the only quantity minimised in the present extraction; no
+additional nuisance-parameter profiling is performed at this proxy
+level.
+
+\subsection*{AE.5\quad Interval definition and origin of the width}
+
+In this one-parameter framework the best-fit $\varepsilon_*$ is
+defined by the minimum of $\chi^2(\varepsilon)$, which coincides
+with the unique root of $\Delta H_0^{\rm pred}(\varepsilon) =
+\Delta H_0^{\rm obs}$ in the physical region $\varepsilon \geq 0$.
+The $1\sigma$ interval is defined by $\Delta\chi^2 \leq 1$ about
+this minimum, the $2\sigma$ interval by $\Delta\chi^2 \leq 4$.
+Both are obtained by Brent root-finding on the equivalent
+conditions
+$\Delta H_0^{\rm pred}(\varepsilon) =
+\Delta H_0^{\rm obs} \pm \sigma_{\rm tot}$
+and
+$\Delta H_0^{\rm pred}(\varepsilon) =
+\Delta H_0^{\rm obs} \pm 2\sigma_{\rm tot}$.
+
+\paragraph{Origin of the $1\sigma$ width.}
+The width of the $1\sigma$ interval is determined by the curvature
+of the one-parameter profile $\chi^2(\varepsilon)$ around its
+minimum under the adopted observational uncertainty
+$\sigma_{\rm tot}$. It therefore reflects the uncertainty of the
+present proxy extraction of $\varepsilon$ from the adopted
+observational inputs, not a first-principles uncertainty of the
+ECT closure parameters. A narrower or wider $\sigma_{\rm tot}$
+would shrink or widen the interval accordingly; a fundamentally
+different proxy setup, or a full ECT-closure-level background
+replacing the common proxy of AE.3, would in general reshape both
+the location and the width of the interval.
+
+\paragraph{Numerical outcome.}
+Direct numerical evaluation of the integrals in AE.3 through the
+common background module
+(\texttt{ect\_background.py}, consumed by
+\texttt{ch1\_hubble.py}) yields
+\begin{align}
+\varepsilon_*
+&\;=\; 0.0323,
+\label{eq:eps_hubble_central}
+\\[2pt]
+[\varepsilon_{\rm lo}^{1\sigma},\,\varepsilon_{\rm hi}^{1\sigma}]
+&\;=\; [\,0.0267,\ 0.0376\,],
+\\[2pt]
+[\varepsilon_{\rm lo}^{2\sigma},\,\varepsilon_{\rm hi}^{2\sigma}]
+&\;=\; [\,0.0207,\ 0.0425\,].
+\end{align}
+The $1\sigma$ width $\Delta\varepsilon^{1\sigma} \approx 0.0109$
+inherits approximately linearly from $\sigma_{\rm tot}$. This is
+the numerical content of the Hubble + $r_s$ row of
+Table~\ref{tab:eps_retained_probes} in
+\S\ref{subsec:eps_retained}.
+
+\paragraph{Background-level cosmic age at the extracted
+$\varepsilon_*$.}
+Computed through the same common background module, the
+age-of-universe at the Hubble best-fit is
+$t_0(\varepsilon_* = 0.0323) \approx 13.46~{\rm Gyr}$, compared
+with $t_0(\varepsilon = 0) \approx 13.79~{\rm Gyr}$ at the
+$\Lambda$CDM baseline. The role of this quantity --- and the
+distinction between the background cosmic age at fixed baseline
+$H_0^P$ and the age under the inferred-$H_0$ mapping of
+\eqref{eq:H0_inferred_eps} --- is discussed in
+Appendix~\ref{app:eps_methodology} as an age-viability ambiguity,
+and is not used as an independent $\varepsilon$-constraint here.
+
+\subsection*{AE.6\quad Figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\textwidth]{figures/fig_hubble_rs_extraction_bw.pdf}
+\caption{Extraction of the effective $\varepsilon$-interval from the
+Hubble + $r_s$ channel, under the common background module of
+Appendix~\ref{app:eps_methodology}. The solid black curve is
+$\chi^2(\varepsilon)$ defined by \eqref{eq:chi2_hubble_eps}. The
+darker gray band is the $1\sigma$ interval $[0.027,\,0.038]$
+($\Delta\chi^2 \leq 1$); the lighter gray band is the $2\sigma$
+interval $[0.021,\,0.043]$ ($\Delta\chi^2 \leq 4$). The dotted
+vertical line marks the best-fit
+$\varepsilon_* \approx 0.0323$. Horizontal dashed lines indicate
+the $\Delta\chi^2 = 1$ and $\Delta\chi^2 = 4$ reference levels.
+All shading and line styles are grayscale per preprint
+convention.}
+\label{fig:hubble_rs_extraction}
+\end{figure}
+
+\subsection*{AE.7\quad Methodological limitations}
+
+Four limitations are stated explicitly. The first three are
+inherited by every other per-probe extraction appendix of this
+family; the fourth is more specific.
+
+\textit{(i) $\Lambda$CDM-background common proxy.}
+The common background module uses a $\Lambda$CDM-best-fit
+parameter set as external input, and the $\varepsilon$-deformation
+is applied on top. A fully ECT-closure-level extraction would
+replace this proxy by the derived ordered-branch background of
+Appendix~\ref{app:late_cosmo_background} rather than a fit
+obtained under a different theoretical assumption set.
+
+\textit{(ii) Simplified sound-horizon integral.}
+The sound-horizon integral is computed with a simplified
+baryon--photon sound speed $c_s(z)$, a $z_{\rm drag} = 1059.94$
+anchor, and neutrino effects absorbed into $\Omega_r$. At the
+level of the absolute $r_s$ this introduces a few-per-cent
+discrepancy with the Planck~2018 value; however, only the ratio
+$r_s(\varepsilon) / r_s(0)$ enters the extraction
+\eqref{eq:H0_inferred_eps}, and this ratio is more robust than
+either absolute value.
+
+\textit{(iii) Uniform-$\varepsilon$ ansatz vs closure-level
+$\varepsilon(z)$.}
+The uniform-$\varepsilon$ ansatz treats $\varepsilon$ as
+epoch-independent. A first-principles $\varepsilon(z)$ from
+three-stage condensate closure --- the content of OP-Hubble-derive
+(\S\ref{subsec:eps_outlook}) --- would reshape the width
+of the retained interval and in general would not map one-to-one
+onto a constant $\varepsilon$. The retained interval derived here
+should therefore be read as the projection of the true
+$\varepsilon(z)$ history onto the uniform-$\varepsilon$
+diagnostic layer, not as a measurement of a fundamental constant.
+
+\textit{(iv) Age--$H_0$ mapping is not fixed by this channel.}
+The background module computes $t_0(\varepsilon)$
+self-consistently. However, the physical interpretation of the
+cosmic age at the extracted $\varepsilon_*$ depends on which of
+two mappings is adopted: (a) the baseline-background age at fixed
+$H_0^P = 67.4~\mathrm{km\,s^{-1}\,Mpc^{-1}}$, which is acceptable
+with respect to direct age anchors; or (b) the age under the
+inferred-$H_0^{\rm inferred}(\varepsilon_*)$ mapping
+\eqref{eq:H0_inferred_eps}, which is more sensitive to the same
+anchors. Nothing in the Hubble + $r_s$ channel alone discriminates
+between these two mappings: the channel determines $\varepsilon_*$
+only via $\theta_s$-preservation. The interpretation of this
+ambiguity and its implications are discussed as the age-viability
+ambiguity in Appendix~\ref{app:eps_methodology}; this appendix
+does not use the cosmic age as an independent constraint on
+$\varepsilon$.
+
+% ==================================================================
+% END Appendix (extraction, Hubble + r_s channel).
+% ==================================================================
+
+% ==================================================================
+% APPENDIX A2 — JWST early-galaxy excess: extraction of ε.
+%
+% FINAL DRAFT on freeze-checkpoint numbers (2026-04-19).
+% Numerics: scripts/epsilon_convergence/ch2_jwst.py, result_ch2.json
+% Background: scripts/epsilon_convergence/ect_background.py
+%
+% Structure (unified per-probe template shared with A1, A3-A5):
+%   AG.1  Physics of the probe
+%   AG.2  Observational inputs
+%   AG.3  ECT-side model and extraction scope
+%         (growth enhancement + stellar-assembly time-budget factor)
+%   AG.4  Robustness check of the time-budget ansatz
+%   AG.5  Extraction statistic
+%   AG.6  Interval definition and origin of the width
+%   AG.7  Figure
+%   AG.8  Methodological limitations
+%
+% Applied corrections:
+%   - GPT r17/r18: time-budget factor R_time introduced from
+%     reduced Δt between z_form and z_obs under ε>0 background;
+%     composition rule R_total = R_PS × R_time explicitly defended.
+%   - GPT r19: controlled robustness check linear vs nonlinear Δt
+%     scaling; ansatz not dogmatic but bracket-defined.
+%   - GPT r20: physics, observable, ECT model, extraction procedure,
+%     origin of 1σ/2σ all explicit.
+%
+% NO legacy numbers. NO integration into preprint yet.
+% ==================================================================
+
+\section{Methodology of the common-background retained-pipeline,
+benchmark achievability, and the age-viability ambiguity}
+\label{app:eps_methodology}
+
+This appendix collects the methodological scaffolding for the
+retained-five-probe analysis of \S15.5. Its purpose is threefold:
+(i) to specify the common background module that A1--A5 all
+invoke, (ii) to state the current status of the retained joint
+band as ``provisional but stable under the first common-background
+recalc,'' and (iii) to discuss two issues that belong at this
+cross-channel level rather than in any single per-probe appendix
+---namely, the age-viability ambiguity under the Hubble mapping
+and the benchmark achievability for the retained band. The
+appendix closes with an audit of the excluded probes and a
+discussion of the methodological limitations still open after the
+freeze checkpoint.
+
+\subsection*{AF.1\quad The common background module: scope and
+role}
+
+All five retained per-probe extraction appendices (A1--A5) invoke
+a single background module, \texttt{ect\_background.py}, which
+functions as the single source of truth for the
+$\varepsilon$-deformed background quantities used across channels.
+Specifically, the module provides:
+\begin{itemize}
+\item the dimensionless Hubble rate
+$E_{\rm ECT}(z,\,\varepsilon)$ from
+\eqref{eq:eps_friedmann_A1};
+\item the Hubble rate
+$H(z,\,\varepsilon) = H_0 \cdot E_{\rm ECT}(z,\,\varepsilon)$
+at a user-supplied $H_0$;
+\item the cosmic age
+$t_0(\varepsilon)
+  = \int_0^{\infty}\frac{dz}{(1+z)\,H(z,\,\varepsilon)}$
+evaluated with a multi-segment quadrature to avoid
+round-off in the deep-matter-era integration range;
+\item the lookback time and age at arbitrary redshift,
+$t(z,\,\varepsilon)$, used in A2 to construct the
+stellar-assembly time-budget factor;
+\item the standard cosmological parameter constants
+($\Omega_m$, $\Omega_\Lambda$, $\Omega_r$, $\Omega_b$,
+$z_*$, $z_{\rm drag}$, $c$, $H_0^P$) adopted uniformly
+across channels.
+\end{itemize}
+At $\varepsilon = 0$ the module reproduces the published
+$\Lambda$CDM benchmarks ($t_0 \approx 13.79~{\rm Gyr}$) at
+better than $1\%$ precision once the integration range fix is
+applied. The module does not implement recombination-era or
+Boltzmann-level physics, nor does it implement the closure-level
+ECT background; it is a proxy that allows all per-channel
+extractions to share the same low- and late-$z$ numerical
+scaffolding.
+
+\subsection*{AF.2\quad What was and was not recomputed under the
+common module}
+
+In preparing the present checkpoint, each retained channel was
+re-expressed against the common module of AF.1. The level of
+physical completion, however, differs by channel. The following
+summary is the normative table: it is the reference that the
+``provisional but stable'' language of
+\S\ref{subsec:eps_retained} and
+\S\ref{subsec:eps_joint_band} points back to.
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Channel & Status after freeze &
+Comment \\
+\hline
+Hubble + $r_s$ (A1) &
+stable &
+No change from pre-recalc. \\
+& & Weak $t_0$ coupling at leading order. \\
+\hline
+JWST (A2) &
+materially revised; &
+Time-budget factor added; central $\varepsilon$ \\
+& appendix-level defence required &
+ shifted from $0.0425$ to $0.0449$. \\
+\hline
+Cosmic Chronometers (A3) &
+stable &
+Imported background; $H(z)$ shape probe. \\
+& & One-sided upper under $\varepsilon \geq 0$. \\
+\hline
+$f\sigma_8$ RSD (A4) &
+stable after grid-fix &
+Brent-refined $1\sigma$ upper
+$0.0396$. \\
+& & Raw negative best-fit explicit in AI.5. \\
+\hline
+ISW (A5) &
+provisional, proxy-level &
+$\kappa_{\rm ISW}$ \emph{not} recalibrated \\
+& & on common background. \\
+\hline
+\end{tabular}
+\end{center}
+\paragraph{Net effect.}
+Two channels carried no numerical change (Hubble, CC); two
+channels recovered or stabilised at their previously published
+values after re-grounding on the common module ($f\sigma_8$, ISW); one
+channel (JWST) received a materially new physical correction
+(time-budget factor). The net impact on the retained joint band
+is discussed in AF.3.
+
+\subsection*{AF.3\quad The provisional retained-band result under the
+common-background pipeline}
+
+The retained joint $1\sigma$ band after the common-background
+recalc is
+\begin{equation}
+\varepsilon
+\;\in\;
+[\,0.0296,\ 0.0376\,]
+\quad (1\sigma)
+\label{eq:joint_band_A6}
+\end{equation}
+with the $2\sigma$ extension $[\,0.0207,\,0.0425\,]$. The binding
+edges are the JWST lower-$1\sigma$ (A2, now $0.0296$ after the
+time-budget correction) and the Hubble + $r_s$ upper-$1\sigma$
+(A1, stable at $0.0376$). The $f\sigma_8$ upper-$1\sigma$
+($0.0396$, Brent-refined) is $0.002$ looser than the Hubble edge
+and does not bind; the cosmic-chronometer ($0.087$) and ISW
+($0.043$) upper edges are broader still.
+
+\paragraph{Interpretation.}
+This band is numerically stable enough to support appendix
+drafting, but not yet final enough for main-text updating. The
+overall numerical match of \eqref{eq:joint_band_A6} with the
+previous pre-recalc band $[\,0.029,\,0.036\,]$ (to three
+significant figures) indicates that the first common-background
+recalc preserves the retained-five-probe intersection at its
+previous location, within the precision of the present
+pipelines. This suggests numerical stability of the intersection
+under the first common-background recalc, but does not by itself
+establish the final retained result. Final confirmation is
+pending completion of two pieces of work: the fully rewritten
+JWST time-budget defence at appendix level (A2) and the
+ECT-native kernel recalibration for ISW (A5). Both are listed as
+methodology limitations in AF.7.
+
+\paragraph{What the band does and does not claim.}
+The band is the intersection of five retained $1\sigma$ intervals
+obtained from observationally distinct channels with different
+kernels and different dominant systematics. It is not a
+statistically rigorous global likelihood, and it should not be
+read as a direct measurement of a first-principles ECT parameter.
+Rather, it is the compatibility region of the uniform-$\varepsilon$
+diagnostic layer under the present retained-pipeline methodology.
+The uniform-$\varepsilon$ ansatz is itself a projection of a more
+general closure-level $\varepsilon(z)$ history onto a single
+effective parameter (cf.\ AE.7(iii)), not a first-principles
+prediction.
+
+\subsection*{AF.4\quad Age-viability ambiguity under Hubble mapping
+(viability note)}
+
+The $\varepsilon$-deformed background of AF.1 computes the cosmic
+age $t_0(\varepsilon)$ self-consistently. At the retained-band
+central value $\varepsilon = 0.032$, $t_0$ is approximately
+$13.46~{\rm Gyr}$ when the age integral is evaluated at the
+baseline Hubble constant $H_0 = H_0^P = 67.4~{\rm km\,s^{-1}\,Mpc^{-1}}$,
+and approximately $12.52~{\rm Gyr}$ when the same age integral is
+evaluated at the \emph{inferred} Hubble constant
+$H_0^{\rm inferred}(\varepsilon = 0.032) \approx 72.55~{\rm km\,s^{-1}\,Mpc^{-1}}$
+from the Hubble + $r_s$ mapping of \eqref{eq:H0_inferred_eps}.
+
+\paragraph{Comparison with observational age anchor.}
+The Valcin et al.\ 2021 globular-cluster age analysis
+\cite{Valcin2021} gives a largely model-independent lower bound
+$t_0 \geq 13.50 \pm 0.27~{\rm Gyr}$ on the cosmic age. The two
+mappings above yield qualitatively different comparisons:
+\begin{itemize}
+\item baseline-background mapping: $13.46~{\rm Gyr}$ is
+   within $0.15\sigma$ of the anchor --- acceptable;
+\item inferred-$H_0$ mapping: $12.52~{\rm Gyr}$ is
+   approximately $3.6\sigma$ below the anchor --- problematic.
+\end{itemize}
+\paragraph{Interpretation.}
+A nontrivial age-viability ambiguity appears once the Hubble
+extraction is combined with the uniform-$\varepsilon$ background
+interpretation. Whether this should be read as a genuine
+consistency tension or as an artefact of how the inferred $H_0$
+is mapped back into the background solution requires dedicated
+treatment that is \emph{not} performed at the uniform-$\varepsilon$
+diagnostic layer. Specifically, three interpretations are
+currently open:
+\begin{itemize}
+\item the baseline-background mapping is the physically correct
+  reading of ``cosmic age,'' because the ECT closure only
+  shifts the \emph{apparent} local Hubble constant without
+  altering the absolute cosmic expansion history;
+\item the inferred-$H_0$ mapping is the physically correct
+  reading, in which case the uniform-$\varepsilon$ ansatz
+  becomes inadequate near the retained-band central value and
+  a closure-level $\varepsilon(z)$ must decrease toward the
+  present;
+\item additional astrophysical or calibration systematics in
+  the stellar-age anchor may broaden the effective comparison
+  window, although no specific quantitative widening is assumed
+  here.
+\end{itemize}
+None of these three interpretations is fixed by the
+Hubble + $r_s$ channel alone. The ambiguity does not arise from
+the stellar-age anchor itself, but from which Hubble mapping is
+regarded as physically appropriate within the uniform-$\varepsilon$
+layer. The present appendix does not resolve the ambiguity.
+
+\paragraph{Status.}
+Age is \emph{not} a retained probe. It is \emph{not} a new formal
+open problem (OP-age-consistency is not introduced). It is
+recorded here as a viability/self-consistency note. Its
+resolution is part of the eventual closure-level ECT derivation
+of $\varepsilon(z)$ and $H_0$ from first principles (cf.\
+\S\ref{subsec:eps_outlook}), not a constraint to be added
+at the uniform-$\varepsilon$ level.
+
+\subsection*{AF.5\quad Benchmark-achievability target and
+outstanding task}
+
+``Benchmark achievability'' refers to the question: within the
+parameter space of the ECT ordered-branch closure, do there
+exist configurations $(\beta,\,\mu,\,\kappa,\,\phi_0,\,\ldots)$
+that yield a uniform-$\varepsilon$ projection in the retained
+band \eqref{eq:joint_band_A6}? The question is posed purely at
+the effective-diagnostic-layer level: can the retained band be
+reached?
+
+\paragraph{Scope.}
+The target of the benchmark achievability analysis is the
+retained band $[\,0.0296,\,0.0376\,]$ (\S AF.3) and nothing else.
+In particular, the age-viability ambiguity of AF.4 is not mixed
+into the benchmark target --- it remains a separate viability
+consideration at the closure-derivation level, not an additional
+constraint at the diagnostic level. This separation is
+deliberate: conflating the two would confuse the purpose of the
+benchmark achievability analysis and would cause the target
+interval to depend on which interpretation of the age-viability
+ambiguity one adopts.
+
+\paragraph{What is required.}
+A benchmark achievability demonstration must show that, at the
+closure level of the condensate theory
+(three-stage condensate closure at
+$u_0 \sim \phi_0 \sim \bar{M}_{\rm Pl}$,
+$v_2 \sim 246~{\rm GeV}$, and $v_{\rm gal} \sim$ kpc; cf.\
+\S\ref{subsec:eps_outlook}), at least one parameter
+configuration yields an effective $\varepsilon$ at late time in
+the range $[\,0.0296,\,0.0376\,]$ when projected onto the
+uniform-$\varepsilon$ diagnostic. No claim is made here that
+\emph{every} closure-level history produces a uniform-$\varepsilon$
+projection in this range, only that the range is reachable.
+
+\paragraph{Current status.}
+Benchmark achievability for the retained band is an open target:
+it has not been demonstrated in the present preprint. The
+closure-level derivation of $\varepsilon(z)$ from three-stage
+condensate dynamics is listed as open problem OP-Hubble-derive
+in \S\ref{subsec:eps_outlook}, and an explicit check of
+whether its output projection onto uniform-$\varepsilon$ lies in
+the retained band is part of that open program.
+
+\paragraph{Explicit scope caveat.}
+No explicit closure-space scan or constructive existence proof
+is provided in the present preprint. The present subsection
+therefore states the benchmark-achievability target and the
+criteria that a future closure-level demonstration must satisfy,
+rather than claiming that such a demonstration has already been
+completed.
+
+\subsection*{AF.6\quad Excluded probes: audit status and
+non-silent-dismissal}
+
+Several probes that would naively contribute to a combined
+multi-messenger analysis are explicitly excluded from the
+retained joint band of \S\ref{subsec:eps_retained}. It
+is important that their exclusion not be read as a silent
+dismissal: the reasons for exclusion differ by probe, and each
+remains an open item at the closure-level program.
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Probe & Status & Nature of exclusion \\
+\hline
+BAO (DESI 2024) & excluded; audited & Raw best-fit
+$\varepsilon \approx -0.014$ \\
+& & under simplified pipeline; \\
+& & diagonal errors, shape-only. \\
+\hline
+$A_{\rm lens}$ CMB lensing & excluded; proxy only & Linearised
+without Boltzmann; \\
+& & theoretical systematic not included. \\
+\hline
+$S_8$ KiDS-1000 & excluded; outside sector & Raw $1\sigma$
+entirely negative; \\
+& & measures $S_8$ tension, not ECT $\varepsilon$. \\
+\hline
+$\sigma_8$ clusters & excluded; outside sector & Same as $S_8$. \\
+\hline
+SN Ia & excluded; not reinstated & Was a mock channel; permanently
+removed. \\
+\hline
+Age $t_0$ & excluded; viability only & See AF.4. \\
+\hline
+\end{tabular}
+\end{center}
+
+\paragraph{Key distinction: excluded $\neq$ silently dismissed.}
+All probes above have been audited at the level of the common
+background module (AF.1). Their exclusion from the headline joint
+band reflects a methodological judgement: at the present proxy
+level, either (a) the probe's central value and/or $1\sigma$
+lies in the unphysical region $\varepsilon < 0$, (b) the probe
+measures a quantity whose primary sensitivity lies outside the
+uniform-$\varepsilon$ sector, or (c) the probe's pipeline is
+proxy-level enough that including it in the headline intersection
+would be misleading. In no case has a probe been dropped simply
+because it disagrees with the retained band. Any probe could in
+principle re-enter the retained analysis under a closure-level
+full pipeline; but none enters the present retained-pipeline
+headline.
+
+\subsection*{AF.7\quad Methodological limitations and path forward}
+
+The following are known limitations of the present
+present retained-pipeline approximation, to be addressed in future
+work. They are stated here so that future revisions can be
+tracked against them:
+\begin{itemize}
+\item the common background module is a $\Lambda$CDM-proxy,
+  not a closure-level ECT background;
+\item the ISW kernel $\kappa_{\rm ISW}$ has not been recalibrated
+  on the common background (AJ.3, AJ.7(ii));
+\item the JWST time-budget factor has been defended at robustness
+  level for two axes (AG.4) but is still a proxy for the full
+  halo-to-stellar-mass pipeline;
+\item off-diagonal covariance has not been propagated for the
+  $f\sigma_8$ RSD compilation (AI.7(ii)) and the cosmic
+  chronometers compilation (AH.7(i));
+\item the joint band \eqref{eq:joint_band_A6} is not yet
+  promoted from provisional to final; main-text updating is
+  deferred until appendix-package completion and review;
+\item the age-viability ambiguity of AF.4 is not resolved at
+  the present layer.
+\end{itemize}
+
+\paragraph{Path forward.}
+The immediate step beyond the present freeze checkpoint is the
+closure-level derivation of $\varepsilon(z)$ from the three-stage
+condensate program, which is the content of open problem
+OP-Hubble-derive (\S\ref{subsec:eps_outlook}). The
+per-channel appendices A1--A5 and the present methodology
+appendix A6 together define the scaffolding against which the
+closure-level output will eventually be benchmarked.
+
+% ==================================================================
+% END Appendix A6 (methodology + benchmark + age-viability).
+% ==================================================================
+
+% ==================================================================
+% END: Integration block A1-A6.
+% ==================================================================
+
+% ==============================================================
+\section{Extraction of the effective uniform-$\varepsilon$ interval
+from the JWST early-galaxy channel}
+\label{app:eps_extraction_jwst}
+
+This appendix derives the effective uniform-$\varepsilon$ interval
+from the JWST early-galaxy excess, as used in the rebuilt \S15.5.
+Unlike the Hubble + $r_s$ channel (Appendix~\ref{app:eps_extraction_hubble}),
+the JWST extraction depends on two distinct $\varepsilon$-effects
+acting on the observable: enhanced high-$z$ structure growth (which
+pushes the extracted $\varepsilon$ downward for fixed observed
+excess) and a shortened stellar-assembly time budget between
+formation and observation (which pushes the extracted $\varepsilon$
+upward). The present extraction treats both effects on the same
+common background module, as required by GPT r17/r18 and consistent
+with the present appendix-level methodology of
+Appendix~\ref{app:eps_methodology}. The combination of the two
+effects gives a well-defined interval, but the specific functional
+form of the time-budget factor is not unique; a controlled
+robustness check is therefore included (\S AG.4) rather than a
+single dogmatic ansatz.
+
+\subsection*{AG.1\quad Physics of the probe}
+
+JWST observations of galaxies at $z \sim 8\text{--}12$ have
+revealed a population of unusually bright and massive objects
+compared with the abundance predicted by $\Lambda$CDM
+extrapolations of low-$z$ halo mass functions. Interpreted as a
+tension, it admits several parametric responses: a harder initial
+power spectrum, a higher star-formation efficiency, a more
+top-heavy IMF, or --- relevant here --- a cosmological-epoch
+enhancement of the gravitational response at high $z$. In the
+effective uniform-$\varepsilon$ layer of
+\S\ref{subsec:eps_def}, the response function
+$G_{\rm eff}(z)/G_N = (1+z)^{2\varepsilon}$ enters the high-$z$
+growth history, raising both linear-growth amplitude and the tail
+of the collapsed halo mass function at a given formation redshift.
+The observable excess $R_{\rm obs}$ --- the ratio of observed to
+$\Lambda$CDM-predicted halo (or stellar) abundance at the
+detection redshift --- therefore carries an imprint of $\varepsilon$
+through two physically distinct mechanisms.
+
+
+\subsection*{AG.2\quad Observational inputs}
+
+The excess factor $R_{\rm obs}$ is not a single unambiguous number.
+Different authors, sample selections, stellar-mass calibrations,
+and IMF assumptions yield values in the range
+$R_{\rm obs} \in [3,\,100]$ with a representative central value
+$R_{\rm obs} \approx 10$ at $z \approx 10$. The observation is
+parametrised here by (i) the detection redshift $z_{\rm obs} = 10$,
+(ii) a fiducial peak height for the objects in question
+$\nu_{\rm central} = 5$ (with a bracket $\nu \in [4, 6]$), and (iii)
+the representative central excess $R_{\rm obs} = 10$ with its
+bracket $R_{\rm obs} \in [3, 100]$. The extraction does not treat
+any of these as Gaussian; the $1\sigma$ and $2\sigma$ intervals of
+AG.6 are defined by the bracket variations, as detailed below. The
+formation redshift is taken as $z_{\rm form} = 20$ by default,
+representative of the progenitor era of the observed population.
+
+\subsection*{AG.3\quad ECT-side model and extraction scope}
+
+The model prediction is decomposed into two factors acting
+multiplicatively on the observable:
+\begin{equation}
+R_{\rm total}(\varepsilon)
+\;=\;
+R_{\rm PS}(\varepsilon)
+\;\cdot\;
+R_{\rm time}(\varepsilon).
+\label{eq:R_total_jwst}
+\end{equation}
+
+\paragraph{Growth-enhancement factor $R_{\rm PS}(\varepsilon)$.}
+Under the uniform-$\varepsilon$ ansatz, the enhancement of linear
+growth during the matter era raises the amplitude of density
+fluctuations at fixed initial spectrum. At the relevant high-$z$
+scale, the Press-Schechter tail ratio between ECT and $\Lambda$CDM
+for the same halo peak height $\nu$ is approximately
+\begin{equation}
+R_{\rm PS}(\varepsilon)
+\;=\;
+\exp\!\left[\,\frac{\nu^2}{2}\,\bigl(1 - f^{-1}\bigr)\right],
+\qquad
+f \;\equiv\; (1 + z_{\rm obs})^{2\varepsilon}.
+\label{eq:R_PS}
+\end{equation}
+This factor is a monotonically increasing function of $\varepsilon$:
+stronger growth enhancement produces more tail halos for the same
+observational threshold. For the central observational inputs
+$R_{\rm obs} = 10$, $\nu = 5$, $z_{\rm obs} = 10$, this alone would
+give $\varepsilon \approx 0.0425$.
+
+
+\paragraph{Stellar-assembly time-budget factor
+$R_{\rm time}(\varepsilon)$.}
+The observable at $z_{\rm obs}$ is not instantaneously-formed
+collapsed halo abundance; it is stellar (or quasi-stellar) mass
+assembled during the interval between formation and observation.
+Under $\varepsilon > 0$, the common background module
+(\texttt{ect\_background.py}) yields $H(z, \varepsilon) > H(z, 0)$
+at all $z$ in the past of the present era, and therefore a reduced
+coordinate-time interval $\Delta t(z_{\rm form} \to z_{\rm obs})$
+compared with the $\Lambda$CDM reference. To first approximation
+the observable stellar mass at $z_{\rm obs}$ scales linearly with
+the available assembly time, giving
+\begin{equation}
+R_{\rm time}(\varepsilon)
+\;=\;
+\frac{\Delta t_{\rm ECT}(z_{\rm form} \to z_{\rm obs},\,\varepsilon)}
+     {\Delta t_{\Lambda}(z_{\rm form} \to z_{\rm obs},\,0)},
+\qquad
+\Delta t_X(\cdot)
+\;\equiv\; t_X(z_{\rm obs}) - t_X(z_{\rm form}),
+\label{eq:R_time}
+\end{equation}
+where $t_X(z)$ is computed through the common background module.
+Explicit evaluation for the fiducial $z_{\rm form} = 20$,
+$z_{\rm obs} = 10$ gives $R_{\rm time}(0) = 1$ (by construction)
+and $R_{\rm time}(0.032) \approx 0.923$. That is, $\varepsilon > 0$
+compresses the assembly window by roughly $8\%$ relative to
+$\Lambda$CDM at the retained-band central value.
+
+\paragraph{Why multiplicative, not additive.} The two factors
+operate at different stages of the observable chain:
+$R_{\rm PS}(\varepsilon)$ is the population-statistical enhancement
+of collapsed halo abundance, while $R_{\rm time}(\varepsilon)$ is
+the per-object conversion of halo mass into observable
+(stellar) mass through the available assembly-time budget.
+Because an observed object is both (a) drawn from the enhanced
+population and (b) constrained by the reduced assembly interval,
+the excess at the observable level factorises as the product in
+\eqref{eq:R_total_jwst}. An additive combination would be
+dimensionally inconsistent at the ratio-of-excess-factor level.
+
+
+\paragraph{Held fixed under the present proxy.} $z_{\rm obs} = 10$;
+$z_{\rm form} = 20$ (default); cosmological parameters
+$\Omega_m = 0.315$, $\Omega_\Lambda$, $\Omega_r$ as in the common
+background module; the Press-Schechter tail form
+\eqref{eq:R_PS} at fixed $\nu$.
+
+\paragraph{Varied.}
+$\varepsilon$ is the primary scan parameter. The peak height $\nu$
+and the observational excess $R_{\rm obs}$ are varied over their
+observational brackets to define the $1\sigma$ and $2\sigma$
+ranges. In the robustness check of AG.4, the power-law index of
+the time-budget ansatz is also varied.
+
+\paragraph{Not included at this proxy level.}
+A full nonlinear halo-to-stellar-mass conversion pipeline; the
+full dependence of the IMF, dust attenuation, and survey
+completeness on $\varepsilon$; the back-reaction of enhanced
+growth on the matter-era recombination physics; a full Boltzmann
+evolution of the spectrum of fluctuations in the ECT background.
+
+\paragraph{Main physical finding of this channel.}
+At $\varepsilon > 0$ the background expansion in the common module
+is faster in the past than in $\Lambda$CDM, so the coordinate-time
+interval available for stellar assembly between $z_{\rm form}$ and
+$z_{\rm obs}$ is \emph{shorter}, not longer. This implies that a
+pure growth-enhancement treatment --- the standard high-$z$ ECT
+alleviation argument for the JWST excess, based on $R_{\rm PS}$
+alone --- \emph{overstates} the alleviation effect at a given
+$\varepsilon$, because it ignores the fact that less time has been
+available to convert the enhanced halo population into observable
+stellar mass. Once the reduced assembly-time budget is included
+through $R_{\rm time}$, the $\varepsilon$ required to reproduce a
+given observed excess $R_{\rm obs}$ is slightly \emph{larger} than
+in the PS-only proxy. Quantitatively, the central value shifts
+from $\varepsilon = 0.04245$ (PS only) to $\varepsilon = 0.04491$
+(PS $\times$ time). This is the opposite of the intuitive
+expectation that ECT would ``give more time'' for early galaxies.
+The net physical consequence is important: after this correction,
+the JWST-extracted interval overlaps the Hubble + $r_s$ interval
+of A1 more snugly than the PS-only proxy suggests. The retained
+joint band of \S\ref{subsec:eps_joint_band} therefore
+reflects two independent high-$z$ and low-$z$ extractions that are
+\emph{more}, not less, mutually consistent once the common
+background module is applied on the same footing to both channels.
+
+\subsection*{AG.4\quad Robustness checks}
+
+The default form \eqref{eq:R_time} is the simplest defensible
+choice for the time-budget factor, but two independent robustness
+axes are needed to defend the extracted interval: the functional
+scaling of stellar mass with assembly time, and the choice of the
+formation-redshift window itself.
+
+\paragraph{Axis 1: power-law scaling of the time-budget factor.}
+The linear form is physically motivated but not unique. Two
+limiting cases bracket the physical possibilities:
+\begin{itemize}
+\item \textbf{Linear scaling (default).} Stellar mass grows
+  approximately as $M_* \propto \Delta t$: uniform conversion
+  of gas to stars during the assembly window. This gives
+  \eqref{eq:R_time} as stated.
+\item \textbf{Stronger scaling (robustness bracket).} If stellar
+  mass tracks the accretion rate times the accretion time
+  (consistent with rapid early-epoch build-up), then
+  $M_* \propto (\Delta t)^p$ with $p \in [1.5,\,2]$ is physically
+  plausible at very high $z$. In this case
+  $R_{\rm time}^{(p)}(\varepsilon) =
+  [\Delta t_{\rm ECT}/\Delta t_\Lambda]^p$.
+\end{itemize}
+For the central observational inputs $R_{\rm obs} = 10$,
+$\nu = 5$, $z_{\rm obs} = 10$, $z_{\rm form} = 20$, solving
+$R_{\rm PS}(\varepsilon) \cdot R_{\rm time}^{(p)}(\varepsilon) =
+R_{\rm obs}$ for $\varepsilon$ yields:
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+Time-budget index $p$ & Extracted $\varepsilon_{\rm central}$ \\
+\hline
+$p = 0$ (no time budget, PS only)     & $0.04245$ \\
+$p = 1$ (linear; default)             & $0.04491$ \\
+$p = 1.5$                             & $0.04626$ \\
+$p = 2$                               & $0.04771$ \\
+\hline
+\end{tabular}
+\end{center}
+The shift of the central $\varepsilon$ across the bracket
+$p \in [0, 2]$ is approximately $+0.0028$ from the linear default
+(moving toward stronger-scaling), and $-0.0025$ in the opposite
+direction (no-time-budget limit). This total range of $\pm 0.003$
+is smaller than the observational $1\sigma$ width driven by $\nu$
+(approximately $\pm 0.025$).
+
+\paragraph{Axis 2: formation-redshift window.}
+The default $z_{\rm form} = 20$ is representative of the
+progenitor era of the observed $z \approx 10$ population, but the
+true formation window is itself uncertain. Varying
+$z_{\rm form}$ over a range that brackets typical physically
+motivated choices, holding $p = 1$ and all observational inputs
+fixed at their central values, gives:
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+$z_{\rm form}$ & Extracted $\varepsilon_{\rm central}$ &
+$R_{\rm time}(\varepsilon_{\rm central})$ \\
+\hline
+$15$ & $0.04481$ & $0.8917$ \\
+$17$ & $0.04486$ & $0.8898$ \\
+$20$ (default) & $0.04491$ & $0.8875$ \\
+$22$ & $0.04494$ & $0.8862$ \\
+$25$ & $0.04497$ & $0.8846$ \\
+\hline
+\end{tabular}
+\end{center}
+The total range of central $\varepsilon$ across
+$z_{\rm form} \in [15, 25]$ is $\pm 0.0001$, two orders of
+magnitude below the observational $\nu$-width. The extraction is
+therefore essentially insensitive to the detailed geometry of the
+formation window: what matters is only the relative compression
+of the assembly interval, not its absolute duration.
+
+\paragraph{Conclusion from the two robustness axes.}
+The time-budget ansatz does not dominate the extracted interval.
+Across both axes considered, the residual uncertainty on
+$\varepsilon_{\rm central}$ from modelling choices is bounded by
+roughly $\pm 0.003$ (dominated by the $p$-scaling axis), an order
+of magnitude below the observational $1\sigma$ width of
+$\pm 0.025$ driven by $\nu$. The time-budget factor is therefore
+a secondary but physically required correction.
+
+
+\subsection*{AG.5\quad Extraction statistic}
+
+The present channel uses bracket-based interval definition rather
+than a Gaussian $\chi^2$. For given observational brackets of
+$\nu$ and $R_{\rm obs}$, the extracted $\varepsilon$-interval is
+defined by the condition
+\begin{equation}
+R_{\rm PS}(\varepsilon, \nu) \cdot R_{\rm time}(\varepsilon)
+\;=\; R_{\rm obs},
+\label{eq:jwst_condition}
+\end{equation}
+inverted for $\varepsilon$ at each value of $\nu$ and $R_{\rm obs}$
+in the bracket. The inversion is carried out by Brent root-finding
+on $\varepsilon \in [10^{-4}, 0.30]$ at the default linear
+time-budget ansatz ($p = 1$).
+
+\subsection*{AG.6\quad Interval definition and origin of the width}
+
+\paragraph{Central value.} Setting
+$\nu = \nu_{\rm central} = 5$, $R_{\rm obs} = 10$,
+$z_{\rm obs} = 10$, $z_{\rm form} = 20$, and $p = 1$, the
+extracted central value is $\varepsilon_* = 0.0449$. Under the
+background module at this $\varepsilon$, the cosmic age and the
+assembly-window width are
+$t_0(\varepsilon_*) \approx 13.33~{\rm Gyr}$,
+$t(z_{\rm obs} = 10, \varepsilon_*) \approx 410~{\rm Myr}$.
+
+\paragraph{$1\sigma$ interval.} Holding $R_{\rm obs} = 10$ fixed
+and varying $\nu \in [\nu_{\rm low}, \nu_{\rm high}] = [4, 6]$
+--- the range representative of the relevant observed peak
+heights --- gives
+\begin{equation}
+[\varepsilon_{\rm lo}^{1\sigma},\,\varepsilon_{\rm hi}^{1\sigma}]
+\;=\;
+[\,0.0296,\ 0.0786\,]
+\quad (\text{varying } \nu\text{ at fixed } R_{\rm obs}).
+\label{eq:eps_jwst_1sigma}
+\end{equation}
+
+\paragraph{$2\sigma$ interval.} Further varying $R_{\rm obs}$ over
+its full observational bracket $[3, 100]$ gives
+\begin{equation}
+[\varepsilon_{\rm lo}^{2\sigma},\,\varepsilon_{\rm hi}^{2\sigma}]
+\;=\;
+[\,0.0136,\ 0.2177\,]
+\quad (\text{varying }\nu\text{ and }R_{\rm obs}).
+\label{eq:eps_jwst_2sigma}
+\end{equation}
+
+\paragraph{Origin of the width.}
+The width of the $1\sigma$ interval is dominated by the
+observational uncertainty of the peak height $\nu$; the time-budget
+ansatz contributes secondary shifts as quantified in AG.4. The
+$2\sigma$ interval is substantially wider because the observational
+bracket on the excess factor $R_{\rm obs}$ (between $3$ and $100$)
+is itself broad. Unlike the Hubble + $r_s$ channel, the present
+interval reflects the current state of high-$z$ stellar-mass
+calibration rather than a clean statistical uncertainty. A narrower
+$R_{\rm obs}$ bracket, from deeper JWST follow-up, would tighten
+the interval; no improvement in the ECT model alone shrinks it.
+
+
+\subsection*{AG.7\quad Figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.84\textwidth]{figures/fig_jwst_extraction_bw.pdf}
+\caption{Decomposition of the JWST extraction into the two
+$\varepsilon$-dependent factors $R_{\rm PS}(\varepsilon)$ and
+$R_{\rm time}(\varepsilon)$, under the common background module of
+Appendix~\ref{app:eps_methodology}. Upper panel: the
+Press-Schechter growth-enhancement factor $R_{\rm PS}$ rises
+monotonically with $\varepsilon$, while the stellar-assembly
+time-budget factor $R_{\rm time}$ decreases. Their product
+$R_{\rm total}(\varepsilon)$ (solid dark curve) crosses the
+observational target $R_{\rm obs} = 10$ at $\varepsilon \approx
+0.045$. Lower panel: the extracted $\varepsilon$-interval
+$[0.030,\,0.079]$ ($1\sigma$, bracket on peak height $\nu$) and
+$[0.014,\,0.218]$ ($2\sigma$, bracket on both $\nu$ and
+$R_{\rm obs}$) shown as grayscale shaded bands. Robustness check
+of AG.4 also superposed as vertical lines at
+$\varepsilon(p = 0)$, $\varepsilon(p = 1.5)$, $\varepsilon(p = 2)$.
+All shading and line styles are grayscale per preprint convention.}
+\label{fig:jwst_extraction}
+\end{figure}
+
+\subsection*{AG.8\quad Methodological limitations}
+
+\textit{(i) Proxy-level Press-Schechter tail.}
+The use of the closed-form Press-Schechter tail
+\eqref{eq:R_PS} is a high-$\nu$ approximation. At fixed $\nu$,
+corrections from the full Sheth-Tormen-type peak-background
+split amount to order-unity factors at the level of $R_{\rm PS}$,
+and must be absorbed into the observational bracket on
+$R_{\rm obs}$. A fully consistent treatment would replace
+\eqref{eq:R_PS} by a numerical halo mass function integrated
+over the relevant mass range for each $\varepsilon$, using the
+ECT-background growth history from the common module. This is
+beyond the scope of the present retained-pipeline implementation.
+
+\textit{(ii) $\Lambda$CDM-background common proxy.}
+As in AE.7(i), the background module uses a $\Lambda$CDM-best-fit
+parameter set as external input. A closure-level background
+would, in general, reshape both $R_{\rm PS}$ and $R_{\rm time}$
+through modified matter-era growth and modified $t(z)$.
+
+\textit{(iii) Bracket-based interval rather than Gaussian
+$\chi^2$.}
+Because $R_{\rm obs}$ and $\nu$ are not Gaussian-distributed
+observables in the present compilation, the reported interval is
+defined by variation over physically-motivated brackets rather
+than by $\Delta\chi^2$ contours. This is more transparent for a
+quantity dominated by calibration uncertainty, but it means the
+$1\sigma$ and $2\sigma$ intervals should not be interpreted as
+strict Gaussian confidence regions.
+
+\textit{(iv) Time-budget ansatz.}
+The specific form of $R_{\rm time}$ relies on the assumption that
+observed stellar mass at $z_{\rm obs}$ tracks the integrated
+assembly time. The robustness check of AG.4 brackets this at
+$\pm 0.002$ in the extracted central $\varepsilon$. A truly
+dogmatic departure from this scaling --- for example, if the
+stellar mass observed at $z_{\rm obs}$ is only weakly coupled to
+the assembly interval and is instead dominated by a narrow burst
+at $z_{\rm obs}$ itself --- would invalidate
+$R_{\rm time}(\varepsilon)$ and reduce the JWST channel to its
+pre-recalc proxy form. In the present treatment, the linear
+default is adopted with explicit bracket, and the extracted
+interval quoted in \S\ref{subsec:eps_retained} of the
+main text is the $p=1$ result.
+
+\textit{(v) Formation redshift $z_{\rm form}$.}
+The default $z_{\rm form} = 20$ is representative but not unique.
+The second robustness axis of AG.4 (variation over
+$z_{\rm form} \in [15,\,25]$) finds a residual shift in
+$\varepsilon_{\rm central}$ of only $\pm 0.0001$, so this choice is
+not a material source of uncertainty in the extracted interval.
+
+% ==================================================================
+% END Appendix (extraction, JWST early-galaxy channel).
+% ==================================================================
+
+% ==================================================================
+% APPENDIX A3 — Cosmic Chronometers: extraction of ε.
+%
+% FINAL DRAFT on freeze-checkpoint numbers (2026-04-19).
+% Numerics: scripts/epsilon_convergence/ch4_cosmic_chronometers.py
+% Background: scripts/epsilon_convergence/ect_background.py
+%
+% Structure (unified per-probe template shared with A1, A2, A4-A5):
+%   AH.1  Physics of the probe
+%   AH.2  Observational inputs
+%   AH.3  ECT-side model and extraction scope
+%   AH.4  Extraction statistic
+%   AH.5  Interval definition and origin of the width
+%   AH.6  Figure
+%   AH.7  Methodological limitations
+%
+% Character of this channel (GPT r21):
+%   Direct late-time expansion probe; one-sided upper bound under
+%   physical prior; true consistency channel, not primary extraction.
+%
+% NO integration into preprint yet.
+% ==================================================================
+
+\section{Extraction of the effective uniform-$\varepsilon$ interval
+from the cosmic chronometers channel}
+\label{app:eps_extraction_cc}
+
+This appendix derives the effective uniform-$\varepsilon$ interval
+from the cosmic chronometers channel used in the rebuilt \S15.5.
+Unlike the Hubble + $r_s$ channel of A1, which uses a shift in the
+CMB-inferred $H_0$ together with a sound-horizon anchor, the
+cosmic chronometers channel directly constrains the late-time
+Hubble rate $H(z)$ at $0 \lesssim z \lesssim 2$ through the
+differential ageing of passively evolving stellar populations. As
+a result, it is a direct probe of late-time expansion history and
+does not require any matter-era or recombination-era modelling. In
+the present retained-pipeline it functions as a late-time
+consistency channel: it admits a broad one-sided upper bound on
+$\varepsilon$ after imposing the physical prior
+$\varepsilon \geq 0$, and does not by itself extract a non-trivial
+lower edge in the physical region.
+
+\subsection*{AH.1\quad Physics of the probe}
+
+The cosmic chronometers technique measures the Hubble rate at
+cosmological redshifts by treating the differential ageing of
+massive, passively evolving galaxies as an effective clock:
+\begin{equation}
+H(z) \;=\; -\frac{1}{1+z}\,\frac{dz}{dt},
+\end{equation}
+where $dz/dt$ is estimated from pairs of such galaxies at close
+but distinct redshifts, so that $dt$ is inferred from stellar
+population synthesis. The method requires no cosmological
+distance-ladder, no sound-horizon anchor, and no high-redshift
+extrapolation; its systematics are dominated by stellar-population
+modelling rather than by cosmological assumptions. In the
+effective uniform-$\varepsilon$ layer of
+\S\ref{subsec:eps_def}, the $\varepsilon$-deformation enters
+the late-time Hubble rate directly through
+\eqref{eq:eps_friedmann_A1}, and the present channel tests whether
+a non-zero $\varepsilon$ is compatible with this ensemble of
+$H(z)$ measurements.
+
+\subsection*{AH.2\quad Observational inputs}
+
+The data used here is a representative subset of the Moresco+2022
+cosmic chronometers compilation \cite{Moresco2022}, consisting of
+31 measurements of $H(z)$ at $z \in [0.07,\,1.97]$. Each
+measurement is treated as Gaussian with diagonal observational
+uncertainty $\sigma_{H_i}$, ranging from approximately
+$4~\mathrm{km\,s^{-1}\,Mpc^{-1}}$ at the most precise points to
+$\sim 60~\mathrm{km\,s^{-1}\,Mpc^{-1}}$ at the least-constrained
+ones. The full off-diagonal covariance of the Moresco+2022
+compilation, which includes shared systematic contributions from
+stellar population synthesis modelling, is not used at this
+proxy level; the present treatment is therefore optimistic on
+statistical weight and represents an upper bound on the
+constraining power of the channel.
+
+\subsection*{AH.3\quad ECT-side model and extraction scope}
+
+Under the uniform-$\varepsilon$ ansatz, the model prediction at
+each data redshift is computed through the common background
+module (\texttt{ect\_background.py}) as
+\begin{equation}
+H_{\rm ECT}(z,\, H_0,\, \varepsilon)
+\;=\; H_0 \cdot E_{\rm ECT}(z,\, \varepsilon),
+\end{equation}
+with $E_{\rm ECT}$ given by \eqref{eq:eps_friedmann_A1}. The fit
+has two free parameters: $\varepsilon$ (the primary quantity of
+interest) and $H_0$ (profiled over). Since the cosmic chronometers
+data do not directly anchor the absolute normalisation of $H(z)$,
+$H_0$ is profiled rather than fixed, which broadens the constraint
+on $\varepsilon$ relative to any anchored analysis.
+
+\paragraph{Held fixed under the present proxy.}
+$\Omega_m = 0.315$, $\Omega_\Lambda$, $\Omega_r$; the diagonal
+observational uncertainty structure (no off-diagonal covariance);
+the Moresco+2022 compilation as external input.
+
+\paragraph{Varied.}
+Both $\varepsilon$ and $H_0$ are varied. $\varepsilon$ is scanned
+over a one-dimensional grid; at each value of $\varepsilon$,
+$H_0$ is optimised by bounded scalar minimisation over
+$H_0 \in [50,\,100]~\mathrm{km\,s^{-1}\,Mpc^{-1}}$.
+
+\paragraph{Not included at this proxy level.}
+The full Moresco+2022 covariance with shared stellar-population
+systematics; a joint fit of $(\Omega_m, H_0, \varepsilon)$ with
+$\Omega_m$ floated; redshift-dependence of the
+stellar-population-modelling systematic; late-time deviations from
+the uniform-$\varepsilon$ ansatz.
+
+\subsection*{AH.4\quad Extraction statistic}
+
+The extraction statistic is the profile chi-squared
+\begin{equation}
+\chi^2(\varepsilon) \;=\;
+\min_{H_0}\,\sum_{i=1}^{31}
+\left[\,\frac{H_i^{\rm obs} - H_{\rm ECT}(z_i, H_0, \varepsilon)}
+{\sigma_{H_i}}\,\right]^{\!2}.
+\label{eq:chi2_cc_eps}
+\end{equation}
+The best-fit is defined by the minimum of $\chi^2(\varepsilon)$,
+the $1\sigma$ interval by $\Delta\chi^2 \leq 1$, and the $2\sigma$
+interval by $\Delta\chi^2 \leq 4$, computed directly on the
+one-dimensional profile.
+
+\subsection*{AH.5\quad Interval definition and origin of the width}
+
+\paragraph{Numerical outcome.}
+Direct numerical evaluation through the common background module
+yields
+\begin{align}
+\varepsilon_*
+&\;=\; +0.005,
+\\[2pt]
+H_0^{\rm prof}(\varepsilon_*)
+&\;\approx\; 68.2~\mathrm{km\,s^{-1}\,Mpc^{-1}},
+\\[2pt]
+\chi^2_{\min} / {\rm dof}
+&\;\approx\; 14.5 / 29.
+\end{align}
+The raw $1\sigma$ interval (before imposing any physical prior)
+covers $\varepsilon \in [-0.020,\,+0.087]$; the raw $2\sigma$
+interval extends from $-0.020$ to the scan upper edge
+$+0.150$. The best-fit $\varepsilon_*$ is statistically
+indistinguishable from zero, and the profile is very shallow:
+within $\Delta\chi^2 \leq 1$ the data admits any value of
+$\varepsilon$ in a broad range surrounding zero.
+
+\paragraph{Imposing the physical prior.}
+Under the physical prior $\varepsilon \geq 0$ of
+\S\ref{subsec:eps_def}, the cosmic chronometers channel
+admits
+\begin{equation}
+[\varepsilon_{\rm lo}^{1\sigma},\,\varepsilon_{\rm hi}^{1\sigma}]
+\;=\;
+[\,0,\ 0.087\,],
+\qquad
+[\varepsilon_{\rm lo}^{2\sigma},\,\varepsilon_{\rm hi}^{2\sigma}]
+\;=\;
+[\,0,\ 0.150\,].
+\label{eq:eps_cc_retained_A3}
+\end{equation}
+The lower edges are set by the physical prior rather than by the
+data, and the channel functions as a one-sided upper bound in the
+physical region.
+
+\paragraph{Origin of the width.}
+The $1\sigma$ upper edge $\approx 0.087$ reflects the curvature of
+$\chi^2(\varepsilon)$ at fixed profiled $H_0$ under the assumed
+diagonal observational uncertainty structure. The dominant
+contribution to this width is the statistical uncertainty of the
+individual $H(z)$ measurements; the profiling of $H_0$ absorbs
+any overall normalisation shift, so the extracted
+$\varepsilon$-constraint is driven purely by the redshift-dependent
+\emph{shape} of $H(z)$. The constraint is weak because
+$E_{\rm ECT}(z, \varepsilon)$ is only mildly sensitive to
+$\varepsilon$ in the data redshift range $z < 2$: the
+$(1+z)^{2\varepsilon}$ factor enters multiplicatively but is close
+to unity at small $\varepsilon$ and moderate $z$, so the
+data lever-arm is modest.
+
+\paragraph{Channel character.}
+In the language of
+\S\ref{subsec:eps_retained}, the cosmic chronometers
+channel is a consistency channel rather than a primary extraction
+channel. Its principal role in the retained-five-probe intersection
+is to exclude large values of $\varepsilon$ at late times
+--- in particular, to limit the uniform-$\varepsilon$ ansatz to
+values compatible with the observed $H(z)$ shape in
+$z < 2$. It does not contribute a lower edge to the joint band; the
+binding lower edge of the retained interval is set by the JWST
+channel of A2.
+
+\subsection*{AH.6\quad Figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\textwidth]{figures/fig_cc_extraction_bw.pdf}
+\caption{Extraction of the effective $\varepsilon$-interval from
+the cosmic chronometers channel, under the common background
+module of Appendix~\ref{app:eps_methodology}. Top panel: data
+points of Moresco+2022 (31 measurements, $z \in [0.07,\,1.97]$)
+shown with error bars; the $\Lambda$CDM best-fit curve (dotted)
+and the ECT curve at the retained-band central value
+$\varepsilon = 0.032$ (solid) are overlaid. Bottom panel: profile
+$\chi^2(\varepsilon)$ with $\Delta\chi^2 = 1$ and $\Delta\chi^2 = 4$
+levels marked as horizontal gray lines; the raw minimum near
+$\varepsilon \approx +0.005$ is indistinguishable from zero within
+the data. All shading and line styles are grayscale per preprint
+convention.}
+\label{fig:cc_extraction}
+\end{figure}
+
+\subsection*{AH.7\quad Methodological limitations}
+
+\textit{(i) Diagonal covariance only.}
+The full Moresco+2022 covariance has substantial off-diagonal
+contributions from shared stellar-population systematics. Their
+inclusion would broaden the $1\sigma$ and $2\sigma$ intervals
+modestly; the present treatment is therefore more optimistic than
+a fully correlated analysis.
+
+\textit{(ii) $\Omega_m$ held fixed.}
+Cosmic chronometers cannot simultaneously determine $\Omega_m$,
+$H_0$, and $\varepsilon$ without external priors. Fixing
+$\Omega_m = 0.315$ at the $\Lambda$CDM-best-fit value, as in the
+common background module, is a standard proxy choice; letting
+$\Omega_m$ float broadens the constraint on $\varepsilon$
+considerably and reduces the channel to a near-trivial constraint.
+
+\textit{(iii) $\Lambda$CDM-background common proxy.}
+As in AE.7(i) and AG.8(ii), the common background module uses a
+$\Lambda$CDM-best-fit parameter set as external input; the
+$\varepsilon$-deformation is applied on top. A closure-level
+background would replace this proxy.
+
+\textit{(iv) Sub-compilation of Moresco+2022.}
+The present analysis uses a representative 31-point subset of the
+published Moresco+2022 compilation rather than the full catalogue.
+The extracted upper bound is representative but not maximally
+constraining.
+
+% ==================================================================
+% END Appendix (extraction, cosmic chronometers channel).
+% ==================================================================
+
+% ==================================================================
+% APPENDIX A4 — fσ_8 from RSD: extraction of ε.
+%
+% FINAL DRAFT on freeze-checkpoint numbers (2026-04-19).
+% Numerics: scripts/epsilon_convergence/ch8_fsigma8.py, result_ch8.json
+% Background: scripts/epsilon_convergence/ect_background.py
+%
+% Structure (unified per-probe template shared with A1-A3, A5):
+%   AI.1  Physics of the probe
+%   AI.2  Observational inputs
+%   AI.3  ECT-side model and extraction scope
+%   AI.4  Extraction statistic
+%   AI.5  Interval definition and origin of the width
+%         (EXPLICIT treatment of negative raw best-fit)
+%   AI.6  Figure
+%   AI.7  Methodological limitations
+%
+% Critical point (GPT r21 requirement):
+%   Raw minimum lies in ε < 0. Physical prior ε ≥ 0 clips that branch.
+%   Retained result is therefore an UPPER BOUND only, not a
+%   two-sided extraction. This must be stated explicitly.
+%
+% NO integration into preprint yet.
+% ==================================================================
+
+\section{Extraction of the effective uniform-$\varepsilon$ interval
+from the $f\sigma_8$ RSD channel}
+\label{app:eps_extraction_fsigma8}
+
+This appendix derives the effective uniform-$\varepsilon$ upper
+bound from the $f\sigma_8$ redshift-space-distortion channel used
+in the rebuilt \S15.5. Unlike the Hubble + $r_s$ and JWST channels
+of A1 and A2, the present channel has a raw statistical best-fit
+in the unphysical region $\varepsilon < 0$. This does not in
+itself invalidate the channel: the physical prior of
+\S\ref{subsec:eps_def} restricts $\varepsilon \geq 0$, and
+once this restriction is imposed the channel delivers a
+well-defined one-sided upper bound on $\varepsilon$. The
+explanation of the negative raw minimum and its interpretation
+are given below.
+
+\subsection*{AI.1\quad Physics of the probe}
+
+Redshift-space distortions (RSD) probe the linear-theory growth
+rate $f(z) = d\ln D/d\ln a$ through the anisotropy of the
+galaxy-galaxy clustering signal in redshift space. The
+observationally accessible quantity is
+\begin{equation}
+f\sigma_8(z)
+\;\equiv\; f(z)\cdot\sigma_8(z),
+\qquad
+\sigma_8(z)
+\;=\; \sigma_8(0)\cdot D(z)/D(0),
+\end{equation}
+measured through the Kaiser-factor-plus-higher-order modelling of
+the multipole expansion of the galaxy two-point correlation
+function at each survey redshift. In the effective
+uniform-$\varepsilon$ layer of
+\S\ref{subsec:eps_def}, a non-zero $\varepsilon$ enters the
+linear growth through the deformation of both the background
+expansion rate \eqref{eq:eps_friedmann_A1} and the effective
+Poisson source,
+\begin{equation}
+\mu_G(a, \varepsilon) \;=\; a^{-2\varepsilon},
+\label{eq:mu_G}
+\end{equation}
+so the growth-factor ODE in $N = \ln a$ is modified as
+\begin{equation}
+\frac{d^2 D}{dN^2}
+\;+\;
+\left[\,2 + \frac{d\ln E}{dN}\,\right]\frac{dD}{dN}
+\;=\;
+\frac{3}{2}\,\Omega_m(a,\varepsilon)\,\mu_G(a,\varepsilon)\, D.
+\label{eq:growth_ode_fsigma8}
+\end{equation}
+The integration through the common background module gives the
+$\varepsilon$-dependent growth history $D(z, \varepsilon)$ and
+the corresponding growth rate $f(z, \varepsilon)$.
+
+\subsection*{AI.2\quad Observational inputs}
+
+The data used here is a representative compilation of 14
+$f\sigma_8(z)$ measurements from BOSS DR12, 6dFGS, eBOSS, VIPERS,
+and related surveys at $z \in [0.067,\,1.944]$. Each measurement
+is treated as Gaussian with its published diagonal uncertainty
+$\sigma_{f\sigma_8,\,i}$. The off-diagonal cross-correlations
+between surveys (arising, e.g., from overlapping sky coverage or
+shared survey-selection functions) are not used at this proxy
+level.
+
+\subsection*{AI.3\quad ECT-side model and extraction scope}
+
+The model prediction at each data redshift is
+\begin{equation}
+f\sigma_8^{\rm model}(z_i;\, \varepsilon,\, \sigma_8^{(0)})
+\;=\; f(z_i, \varepsilon) \cdot
+\sigma_8^{(0)} \cdot D(z_i, \varepsilon) / D(0, \varepsilon),
+\end{equation}
+where $D(z, \varepsilon)$ is obtained by integrating
+\eqref{eq:growth_ode_fsigma8} through the common background module
+with matter-era initial conditions, and $\sigma_8^{(0)}$ is the
+$z = 0$ matter power amplitude treated as a nuisance parameter
+(profiled). This choice is deliberately conservative: since the
+absolute normalisation of $\sigma_8$ is tied to the CMB amplitude
+$A_s$ through a $\varepsilon$-dependent growth history, fixing it
+would introduce an implicit $\varepsilon$-correlation. Profiling
+instead tests only the \emph{shape} of $f\sigma_8(z)$ versus
+redshift.
+
+\paragraph{Held fixed under the present proxy.}
+$\Omega_m = 0.315$, $\Omega_\Lambda$, $\Omega_r$; the deformed
+Poisson source form \eqref{eq:mu_G}; the matter-era initial
+conditions $D \propto a$ at $a_{\rm init} = 10^{-3}$; the
+14-point RSD compilation with diagonal errors.
+
+\paragraph{Varied.}
+$\varepsilon$ is the primary scan parameter; $\sigma_8^{(0)}$ is
+profiled at each $\varepsilon$ by bounded scalar minimisation over
+$\sigma_8^{(0)} \in [0.5,\,1.1]$.
+
+\paragraph{Not included at this proxy level.}
+Off-diagonal covariance of the RSD compilation; scale-dependence
+of $\mu_G$ (e.g., from non-trivial spatial structure of the
+effective Poisson source); non-linear RSD corrections; systematic
+effects of the Kaiser approximation used in the underlying
+observational analyses; Alcock-Paczynski corrections.
+
+\subsection*{AI.4\quad Extraction statistic}
+
+The profile chi-squared is
+\begin{equation}
+\chi^2(\varepsilon)
+\;=\;
+\min_{\sigma_8^{(0)}}\,\sum_{i=1}^{14}
+\left[\,\frac{(f\sigma_8)^{\rm obs}_i
+- (f\sigma_8)^{\rm model}(z_i; \varepsilon, \sigma_8^{(0)})}
+{\sigma_i}\,\right]^{\!2}.
+\label{eq:chi2_fsigma8_eps}
+\end{equation}
+The scan is performed on a dense grid $\varepsilon \in [-0.12,\,+0.15]$
+(136 points). The $1\sigma$ and $2\sigma$ edges are then refined by
+Brent bracket root-finding on the bracket-crossings of
+$\chi^2(\varepsilon) - \chi^2_{\min} = 1$ and $= 4$ respectively,
+avoiding grid-spacing bias.
+
+\subsection*{AI.5\quad Interval definition and origin of the width}
+
+The $f\sigma_8$ RSD channel deserves special care because its
+\emph{raw} statistical best-fit in the unrestricted scan falls
+deep in the unphysical region $\varepsilon < 0$. This is a
+feature of the data-and-model combination as it stands, and
+should not be obscured.
+
+\paragraph{Raw statistical result.}
+Direct numerical evaluation on the extended grid
+$\varepsilon \in [-0.12,\,+0.15]$ gives a raw minimum at the lower
+grid boundary, $\varepsilon_{\rm raw} \approx -0.12$, with
+profiled $\sigma_8^{(0)} \approx 0.92$ and
+$\chi^2_{\min}/{\rm dof} \approx 8.93/12$. The $\chi^2$ profile is
+very shallow: $\Delta\chi^2 \leq 1$ is satisfied everywhere from
+the grid lower edge up to the Brent-refined upper edge
+$\varepsilon = +0.03960$; $\Delta\chi^2 \leq 4$ extends from the
+grid lower edge up to the grid upper edge
+$\varepsilon = +0.150$.
+
+\paragraph{Interpretation of the negative raw minimum.}
+The statistical preference for $\varepsilon < 0$ in the present
+pipeline arises because the measured $f\sigma_8(z)$ at the
+relevant survey redshifts lies somewhat below the prediction of
+the $\Lambda$CDM + common-background model with
+$\sigma_8^{(0)}$ at Planck's best-fit value; equivalently, the
+observed growth rate at $z \lesssim 1$ is mildly slower than
+$\Lambda$CDM would predict. The $\varepsilon$-deformation
+parametrisation \eqref{eq:mu_G} produces growth enhancement for
+$\varepsilon > 0$ and growth suppression for $\varepsilon < 0$,
+so a statistical preference for suppressed growth maps naturally
+onto $\varepsilon < 0$ at the profile-$\chi^2$ level. This effect
+is the same data feature that is discussed in the literature
+under the heading of the $S_8$ or $\sigma_8$ tension (see
+excluded probes in \S\ref{subsec:eps_excluded}).
+
+\paragraph{Physical prior and clipping.}
+The uniform-$\varepsilon$ ansatz of
+\S\ref{subsec:eps_def} restricts $\varepsilon \geq 0$
+on physical grounds (for the effective layer in question, a
+negative $\varepsilon$ would correspond to growth suppression at
+all epochs, including the high-$z$ epoch where the JWST channel
+independently requires enhancement). Under this prior, the raw
+negative branch is not an admissible solution of the
+uniform-$\varepsilon$ diagnostic: it is not clipped because it is
+statistically inconvenient, but because it is inconsistent with
+the same ansatz that the other retained channels test.
+
+\paragraph{Retained interval under the physical prior.}
+Once the physical prior is imposed, the $f\sigma_8$ channel
+contributes a one-sided upper bound only:
+\begin{align}
+[\varepsilon_{\rm lo}^{1\sigma},\,\varepsilon_{\rm hi}^{1\sigma}]
+&\;=\;
+[\,0,\ 0.0396\,],
+\label{eq:eps_fsigma8_retained_A4}
+\\[2pt]
+[\varepsilon_{\rm lo}^{2\sigma},\,\varepsilon_{\rm hi}^{2\sigma}]
+&\;=\;
+[\,0,\ 0.150\,]_{\rm grid-limited}.
+\end{align}
+The lower edges are set by the physical prior; the $1\sigma$
+upper edge $0.0396$ is obtained by Brent refinement on the
+$\Delta\chi^2 = 1$ crossing; the $2\sigma$ upper edge reaches the
+numerical scan boundary, so it is grid-limited rather than
+data-limited.
+
+\paragraph{Origin of the $1\sigma$ upper edge.}
+The $1\sigma$ upper edge $0.0396$ is the point at which the
+$\chi^2$ profile crosses $\chi^2_{\min} + 1$ from below on the
+physically admissible branch $\varepsilon \geq 0$. The width is
+controlled by two effects: (i) the statistical uncertainty of the
+individual $f\sigma_8$ measurements, and (ii) the shape-dependence
+of $f\sigma_8(z)$ on $\varepsilon$ through the growth history.
+The second effect is only modest at $z < 2$, because the
+$\varepsilon$-deformation enters growth through
+$(1 + z)^{2\varepsilon}$, which gives a weak lever-arm at moderate
+$z$ and small $\varepsilon$. This is why the channel delivers
+only a loose upper bound rather than a narrow two-sided
+extraction.
+
+\paragraph{Methodological history.}
+An earlier coarser scan over $\varepsilon \in [-0.06,\,+0.12]$
+yielded an apparent $1\sigma$ upper of $0.058$. That result was
+a grid-boundary artefact: the true minimum of the shallow
+$\chi^2$ profile lies at even more negative $\varepsilon$ than
+the old grid permitted, which biased the $\chi^2_{\min}$ value
+and therefore shifted the $\Delta\chi^2 = 1$ crossing upward. On
+the extended grid $[-0.12,\,+0.15]$ with Brent refinement, the
+artefact is removed and the $1\sigma$ upper edge stabilises at
+$0.0396$, which coincides with the previously published value of
+$0.036$ to within Brent precision. This is discussed at greater
+length in Appendix~\ref{app:eps_methodology}.
+
+\paragraph{Channel character.}
+The $f\sigma_8$ RSD channel is, in the retained-five-probe
+analysis, a consistency channel delivering a one-sided upper
+bound. Its role in the joint band is to exclude moderately large
+$\varepsilon$, and it is currently close to binding on the upper
+edge of the retained interval (together with the Hubble + $r_s$
+channel of A1).
+
+\subsection*{AI.6\quad Figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\textwidth]{figures/fig_fsigma8_extraction_bw.pdf}
+\caption{Extraction of the effective $\varepsilon$-interval from
+the $f\sigma_8$ RSD channel, under the common background module of
+Appendix~\ref{app:eps_methodology}. Top panel: the 14 RSD data
+points with 1$\sigma$ error bars; the $\Lambda$CDM model ($\varepsilon = 0$,
+dotted) and the ECT model at the retained-band central value
+$\varepsilon = 0.032$ (solid) are overlaid. Bottom panel: profile
+$\chi^2(\varepsilon)$ on the extended grid
+$\varepsilon \in [-0.12,\,+0.15]$; the raw minimum sits at the
+lower grid boundary, the Brent-refined $1\sigma$ upper edge is at
+$\varepsilon = 0.0396$, and the physical prior $\varepsilon \geq 0$
+is marked by the vertical gray line. The retained $1\sigma$
+interval $[0,\,0.0396]$ is shaded darker gray; the $2\sigma$
+upper-edge extension is shown lighter. All shading and line styles
+are grayscale per preprint convention.}
+\label{fig:fsigma8_extraction}
+\end{figure}
+
+\subsection*{AI.7\quad Methodological limitations}
+
+\textit{(i) Data-level growth preference.}
+The negative raw best-fit reflects an observational feature of
+the RSD compilation (consistency with modest growth suppression
+relative to $\Lambda$CDM at $z \lesssim 1$) rather than an ECT
+prediction of $\varepsilon < 0$. The uniform-$\varepsilon$
+diagnostic of \S\ref{subsec:eps_def} restricts
+$\varepsilon \geq 0$; the resulting retained bound
+\eqref{eq:eps_fsigma8_retained_A4} is therefore a one-sided
+upper limit.
+
+\textit{(ii) Diagonal covariance only.}
+Off-diagonal cross-correlations between surveys have not been
+propagated. Their inclusion would broaden the $1\sigma$ interval
+modestly; the present treatment is therefore optimistic.
+
+\textit{(iii) $\sigma_8^{(0)}$ profiled as nuisance.}
+The amplitude $\sigma_8^{(0)}$ is profiled rather than fixed,
+since its absolute calibration is tied to the CMB amplitude $A_s$
+through a $\varepsilon$-dependent growth history. Profiling is
+conservative and tests only the \emph{shape} of $f\sigma_8(z)$;
+a fixed-$\sigma_8^{(0)}$ analysis would give a tighter but more
+prior-dependent constraint.
+
+\textit{(iv) Linear growth theory.}
+The growth-factor ODE \eqref{eq:growth_ode_fsigma8} is the
+linear-theory equation. At $z \lesssim 0.5$, mildly non-linear
+corrections to the growth factor and to the RSD observable
+itself are present; they are absorbed into the diagonal observational
+uncertainty in the present compilation.
+
+\textit{(v) $\Lambda$CDM-background common proxy.}
+As in AE.7(i) and AG.8(ii), the common background module uses a
+$\Lambda$CDM-best-fit parameter set as external input; the
+$\varepsilon$-deformation is applied on top. A closure-level
+background would modify both the background expansion and the
+Poisson source $\mu_G$ consistently, in a way that cannot be
+reduced to a single parameter $\varepsilon$.
+
+\textit{(vi) Grid-refinement history.}
+The earlier coarser-grid $1\sigma$ upper of $0.058$ was removed in
+the present checkpoint as a numerical artefact of the grid scan;
+the Brent-refined value $0.0396$ is stable with respect to further
+grid tightening, but depends on the extended scan range
+$[-0.12,\,+0.15]$ being wide enough to bracket the true profile
+minimum in $\varepsilon < 0$. This is discussed in
+Appendix~\ref{app:eps_methodology}.
+
+% ==================================================================
+% END Appendix (extraction, fσ_8 RSD channel).
+% ==================================================================
+
+% ==================================================================
+% APPENDIX A5 — ISW amplitude: extraction of ε (PROVISIONAL proxy).
+%
+% FINAL DRAFT on freeze-checkpoint numbers (2026-04-19).
+% Numerics: scripts/epsilon_convergence/ch3_isw.py, result_ch3.json
+% Background: scripts/epsilon_convergence/ect_background.py
+%         (USED for bookkeeping consistency only; kernel κ_ISW
+%          NOT recalibrated on ECT-native background)
+%
+% Structure (unified per-probe template shared with A1-A4):
+%   AJ.1  Physics of the probe
+%   AJ.2  Observational inputs
+%   AJ.3  ECT-side model and extraction scope
+%         (WITH EXPLICIT PROVISIONAL LABELLING per GPT r21)
+%   AJ.4  Extraction statistic
+%   AJ.5  Interval definition and origin of the width
+%   AJ.6  Figure
+%   AJ.7  Methodological limitations
+%
+% Character of this channel (GPT r21 requirement of maximum honesty):
+%   Proxy-level only.
+%   Kernel NOT recalibrated on common background.
+%   Kept as provisional consistency channel.
+%   NOT at the same epistemic level as A1/A2/A3/A4.
+%   Must be stated up front and repeatedly.
+%
+% NO integration into preprint yet.
+% ==================================================================
+
+\section{Extraction of the effective uniform-$\varepsilon$ interval
+from the ISW channel (provisional proxy)}
+\label{app:eps_extraction_isw}
+
+This appendix derives the effective uniform-$\varepsilon$ upper
+bound from the late-time Integrated Sachs-Wolfe (ISW) amplitude.
+The present extraction is deliberately presented as a
+\emph{provisional proxy}, not as an extraction at the same
+epistemic level as A1--A4. The reasons are stated up front and in
+each subsection:
+\begin{itemize}
+  \item the $\varepsilon$-dependence of the observable is
+        linearised,
+  \item the proportionality coefficient $\kappa_{\rm ISW}$ is
+        calibrated against a $\Lambda$CDM-background Limber
+        weight function and has \emph{not} been recalibrated
+        against the common ECT background of
+        Appendix~\ref{app:eps_methodology} in the present
+        freeze checkpoint,
+  \item the observational uncertainty is very large (of order
+        $30\%$) and the channel cannot by itself extract a
+        non-trivial central value.
+\end{itemize}
+The retained result of this channel is therefore a broad
+one-sided upper bound under the physical prior
+$\varepsilon \geq 0$, whose numerical value is unchanged between
+the pre-recalc and the post-recalc retained-pipeline and whose
+interpretation is consistency-checking rather than evidential.
+
+\subsection*{AJ.1\quad Physics of the probe}
+
+The late-time ISW effect is the cross-correlation between the
+CMB temperature anisotropy and tracers of the large-scale
+gravitational potential $\Phi$ at low redshift. In a matter-only
+universe the gravitational potential is constant in time on large
+scales, and the ISW signal vanishes; the presence of dark
+energy causes $\dot\Phi \neq 0$ at low $z$, which gives a
+non-zero cross-correlation. In the effective uniform-$\varepsilon$
+layer of \S\ref{subsec:eps_def}, the deformation of the
+expansion rate through \eqref{eq:eps_friedmann_A1} modifies the
+late-time decay of $\Phi$, and the amplitude of the resulting
+ISW signal deviates from its $\Lambda$CDM value.
+
+\subsection*{AJ.2\quad Observational inputs}
+
+The observable is the measured amplitude of the cross-correlation
+between the Planck CMB temperature map and the unWISE galaxy
+catalogue, parametrised as a rescaling of the $\Lambda$CDM
+prediction:
+\begin{equation}
+A_{\rm ISW}^{\rm obs} \;=\; 0.96 \pm 0.30,
+\end{equation}
+from Krolewski et al.\ 2022 \cite{Krolewski2022}. The central
+value is $1\sigma$ below the $\Lambda$CDM-based prediction
+$A_{\rm ISW}^{\Lambda} = 1$; the uncertainty of $30\%$ is
+intrinsically large, and the measurement cannot be sharpened
+within the present pipeline.
+
+\subsection*{AJ.3\quad ECT-side model and extraction scope
+(provisional)}
+
+At the provisional-proxy level used here, the
+$\varepsilon$-dependence of the ISW amplitude is approximated by
+the linearised form
+\begin{equation}
+A_{\rm ISW}^{\rm model}(\varepsilon)
+\;=\;
+1 + \kappa_{\rm ISW}\,\varepsilon,
+\qquad
+\kappa_{\rm ISW} \;\approx\; 6,
+\label{eq:A_ISW_model}
+\end{equation}
+where the coefficient $\kappa_{\rm ISW}$ was obtained from a
+single-zoomed Limber integration of the ISW weight function under
+a $\Lambda$CDM background. This coefficient has \emph{not} been
+recalibrated against the common ECT background of
+Appendix~\ref{app:eps_methodology} in the present checkpoint.
+The justification for this deferral is stated in the
+present common-background methodology (A6): a genuine ECT-background
+recalibration of $\kappa_{\rm ISW}$ would require re-integrating
+the full late-time ISW weight function $W_{\rm ISW}(z)$ under
+$H(z, \varepsilon)$, $t(z, \varepsilon)$, and $\dot\Phi(z, \varepsilon)$
+trajectories, which is beyond the scope of Phase 2A.
+
+\paragraph{Held fixed under the present proxy.}
+The linearised form \eqref{eq:A_ISW_model}; the
+$\Lambda$CDM-background-calibrated coefficient
+$\kappa_{\rm ISW} = 6$; the Krolewski+2024 observational anchor.
+
+\paragraph{Varied.}
+$\varepsilon$ only.
+
+\paragraph{Not included at this proxy level.}
+Any nonlinear dependence of $A_{\rm ISW}$ on $\varepsilon$;
+recalibration of $\kappa_{\rm ISW}$ on the common ECT background;
+cross-correlations with other late-time probes (weak lensing,
+$f\sigma_8$) that would share systematic effects; full Boltzmann
+evolution of $\dot\Phi$ under the ECT deformation.
+
+\subsection*{AJ.4\quad Extraction statistic}
+
+The one-parameter model gives the inversion
+\begin{equation}
+\varepsilon(A_{\rm ISW})
+\;=\;
+\frac{A_{\rm ISW} - 1}{\kappa_{\rm ISW}}.
+\end{equation}
+The raw best-fit and the raw $1\sigma$ and $2\sigma$ intervals
+follow from the $\pm 1\sigma$ and $\pm 2\sigma$ observational
+brackets on $A_{\rm ISW}^{\rm obs}$.
+
+\subsection*{AJ.5\quad Interval definition and origin of the width}
+
+\paragraph{Raw result.}
+Direct inversion of $A_{\rm ISW}^{\rm obs} = 0.96 \pm 0.30$ gives
+\begin{align}
+\varepsilon_{\rm raw}
+&\;=\; -0.0067,
+\\[2pt]
+[\varepsilon_{\rm lo}^{1\sigma},\,\varepsilon_{\rm hi}^{1\sigma}]_{\rm raw}
+&\;=\; [\,-0.057,\ +0.043\,],
+\\[2pt]
+[\varepsilon_{\rm lo}^{2\sigma},\,\varepsilon_{\rm hi}^{2\sigma}]_{\rm raw}
+&\;=\; [\,-0.107,\ +0.093\,].
+\end{align}
+The raw best-fit is indistinguishable from zero within the
+observational uncertainty.
+
+\paragraph{Retained interval under the physical prior.}
+Imposing $\varepsilon \geq 0$, the ISW channel contributes a
+one-sided upper bound:
+\begin{align}
+[\varepsilon_{\rm lo}^{1\sigma},\,\varepsilon_{\rm hi}^{1\sigma}]
+&\;=\;
+[\,0,\ 0.0433\,],
+\\[2pt]
+[\varepsilon_{\rm lo}^{2\sigma},\,\varepsilon_{\rm hi}^{2\sigma}]
+&\;=\;
+[\,0,\ 0.0933\,].
+\end{align}
+The interval was numerically unchanged between the pre-recalc and
+the post-recalc retained pipelines, reflecting the fact that
+$\kappa_{\rm ISW}$ has not yet been recalibrated.
+
+\paragraph{Origin of the width.}
+The $\pm 30\%$ observational uncertainty on $A_{\rm ISW}^{\rm obs}$
+is the sole driver of the width. There is no fitting at all: the
+channel is a direct algebraic inversion of a linearised
+one-parameter model, and the reported interval simply reflects
+the observational bracket on $A_{\rm ISW}$ through
+\eqref{eq:A_ISW_model}.
+
+\paragraph{Channel character.}
+The ISW channel is a consistency channel only. Its retained upper
+bound is broader than those of A1--A4 and does not bind the joint
+interval. Its principal role in
+\S\ref{subsec:eps_retained} is to demonstrate that the
+retained joint band $[0.0296,\,0.0376]$ is compatible with an
+independent late-time observable, \emph{not} to contribute
+evidential weight to the band.
+
+\subsection*{AJ.6\quad Figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\textwidth]{figures/fig_isw_extraction_bw.pdf}
+\caption{Extraction of the effective $\varepsilon$-upper bound
+from the ISW channel, at the provisional proxy level described
+in AJ.3. The linearised model
+$A_{\rm ISW}(\varepsilon) = 1 + \kappa_{\rm ISW}\varepsilon$ with
+$\kappa_{\rm ISW} = 6$ (solid line) is compared with the
+observational anchor $A_{\rm ISW}^{\rm obs} = 0.96 \pm 0.30$
+(horizontal darker gray band: $1\sigma$; lighter: $2\sigma$). The
+inverted $\varepsilon$-intervals (shown along the
+$\varepsilon$-axis below) are clipped to the physical region
+$\varepsilon \geq 0$, yielding the retained one-sided upper bounds
+$[0,\,0.0433]$ ($1\sigma$) and $[0,\,0.0933]$ ($2\sigma$). The
+text ``$\kappa_{\rm ISW}$ not recalibrated'' is placed on the
+figure to reinforce the provisional status. All shading and line
+styles are grayscale per preprint convention.}
+\label{fig:isw_extraction}
+\end{figure}
+
+\subsection*{AJ.7\quad Methodological limitations}
+
+\textit{(i) Linearised $\varepsilon$-dependence.}
+The form \eqref{eq:A_ISW_model} truncates the
+$\varepsilon$-dependence at linear order. For
+$|\varepsilon| \gtrsim 0.05$ the linear approximation begins to
+break down, and a non-linear recalculation of
+$A_{\rm ISW}(\varepsilon)$ would be required to make the
+extracted bound quantitative at the retained-band level. Since the
+retained $1\sigma$ upper $0.043$ is close to this boundary, the
+bound should be read as an order-of-magnitude consistency check
+rather than a precise constraint.
+
+\textit{(ii) $\kappa_{\rm ISW}$ not recalibrated on common
+background.}
+The coefficient $\kappa_{\rm ISW} = 6$ was calibrated under
+$\Lambda$CDM-background Limber weights. On the common ECT
+background of Appendix~\ref{app:eps_methodology}, the late-time
+ISW weight function $W_{\rm ISW}(z)$ is modified through both
+$H(z, \varepsilon)$ (which changes the conformal-time kernel) and
+$\dot\Phi(z, \varepsilon)$ (which changes the source amplitude).
+A self-consistent recalculation would, in principle, shift
+$\kappa_{\rm ISW}$ by an unknown amount; the present checkpoint
+therefore treats the retained ISW interval as provisional, and
+the numerical value quoted in
+\S\ref{subsec:eps_retained} is inherited from the
+$\Lambda$CDM-background calibration.
+
+\textit{(iii) Large observational uncertainty.}
+The $\pm 30\%$ uncertainty on $A_{\rm ISW}^{\rm obs}$ is
+intrinsically large and cannot be reduced within the present
+pipeline. Even a perfectly recalibrated $\kappa_{\rm ISW}$ would
+not sharpen the retained interval below approximately
+$[0,\,0.03]$ at $1\sigma$.
+
+\textit{(iv) Epistemic status.}
+The ISW channel is not at the same epistemic level as A1--A4. In
+the retained-five-probe analysis it functions as a consistency
+check only: it does not bind any edge of the joint band, and its
+numerical value is unchanged between the pre-recalc and
+post-recalc pipelines. Any future strengthening of the ISW bound
+(e.g., through kernel recalibration on the common background or
+through tighter $A_{\rm ISW}^{\rm obs}$ measurements) would
+naturally be incorporated into a future iteration of the retained
+pipeline.
+
+% ==================================================================
+% END Appendix (extraction, ISW channel, provisional proxy).
+% ==================================================================
+
+% ==================================================================
+% APPENDIX A6 — Methodology + benchmark achievability + age-viability
+%
+% FINAL DRAFT on freeze-checkpoint numbers (2026-04-19).
+% This appendix is referenced as \ref{app:eps_methodology}
+% throughout A1-A5 and §15.5.
+%
+% Structure:
+%   AF.1  Common background module: scope and role
+%   AF.2  What was and was not recomputed under the module
+%   AF.3  Freeze-checkpoint joint band: provisional but stable
+%   AF.4  Age-viability ambiguity under Hubble mapping (viability
+%         note, NOT a retained probe)
+%   AF.5  Benchmark achievability for the retained band (only)
+%   AF.6  Excluded probes: audit status and non-silent-dismissal
+%   AF.7  Methodological limitations and path forward
+%
+% Character (GPT r17-r21):
+%   A6 is the binding glue. Without it, A1-A5 are disconnected
+%   per-channel extractions. A6 makes the retained-five-probe
+%   analysis a coherent package.
+%
+% Target audience:
+%   - readers who need to understand why the retained band is
+%     "provisional but stable"
+%   - reviewers who will ask about age tension
+%   - anyone auditing excluded probes or asking "why aren't BAO
+%     and S_8 headline?"
+%
+% NO integration into preprint yet.
+% ==================================================================
+
 \section{Derivation of the force-law effective dimensionality}
 \label{app:deff_method}
 
@@ -51765,2015 +53737,6 @@ that cannot be compressed into a single table row.
 The purpose here is to locate ECT among its closest architectural
 neighbours, not to survey the full landscape.
 
-% ==================================================================
-% BEGIN: Integration block A1-A6 (eps-extraction appendices).
-% Phase 2A Appendix Cycle — finalised 2026-04-19.
-% All per-probe extractions of uniform-ε + methodology + age-viability.
-% GPT r17-r22 review chain approved for integration.
-% ==================================================================
-
-% ==================================================================
-% APPENDIX A1 — Hubble + r_s: extraction of ε under uniform-ε def.
-%
-% FINAL DRAFT on freeze-checkpoint numbers (2026-04-19).
-% Numerics: scripts/epsilon_convergence/ch1_hubble.py, result_ch1.json
-% Background: scripts/epsilon_convergence/ect_background.py
-% Figure:    scripts/fig_hubble_rs_extraction.py -> grayscale PDF
-%
-% Structure (unified per-probe template for A2-A5):
-%   A1.1  Physics of the probe
-%   A1.2  Observational inputs
-%   A1.3  ECT-side model and extraction scope
-%   A1.4  Extraction statistic
-%   A1.5  Interval definition and origin of the width
-%   A1.6  Figure
-%   A1.7  Methodological limitations
-%
-% Applied corrections:
-%   - GPT r16: H1-type framing upfront; no "resolves" language;
-%     "held fixed / varied / not included" block; origin-of-width
-%     paragraph; "why r_s matters physically" motivation.
-%   - GPT r18/r19: no "ECT-native" overclaim; freeze-provisional
-%     framing; t_0 treated as background quantity computed
-%     self-consistently via ect_background; age-viability ambiguity
-%     flagged as pending A6 interpretation (not asserted here).
-%
-% NO legacy numbers (3%, 0.010, 69 km/s/Mpc).
-% NO integration into preprint yet — this is a frozen draft only.
-% ==================================================================
-
-\section{Extraction of the effective uniform-$\varepsilon$ interval
-from the Hubble + $r_s$ channel}
-\label{app:eps_extraction_hubble}
-
-This appendix derives an effective H1-type extraction of
-$\varepsilon$ from the simplified Hubble + $r_s$ channel used in the
-rebuilt \S15.5. It is not a full CMB-to-local inference pipeline and
-does not by itself establish a complete H2-level resolution of the
-Hubble tension. Its output is the one-dimensional
-$\varepsilon$-interval quoted for the Hubble + $r_s$ row of
-Table~\ref{tab:eps_retained_probes}, extracted under the
-uniform-$\varepsilon$ ansatz of \S\ref{subsec:eps_def} and
-the common background module described in
-Appendix~\ref{app:eps_methodology}. The forward-modelling machinery
---- the late-time ordered-branch background and its auxiliary
-numerical algorithms --- is collected in
-Appendix~\ref{app:late_cosmo_background} and
-Appendix~\ref{app:late_cosmo_algorithm}. The present appendix is the
-inverse step: given observational inputs and the uniform-$\varepsilon$
-ansatz, to extract the one-dimensional $\varepsilon$-interval that
-this single channel admits at the common-background level.
-
-\subsection*{A1.1\quad Physics of the probe}
-
-The Hubble tension is not simply a discrepancy between two direct
-measurements of $H_0$: it is a mismatch between the local
-distance-ladder value and the $H_0$ inferred from the acoustic
-angular scale once the sound horizon $r_s$ is modelled. This is why
-the present channel is naturally a Hubble + $r_s$ channel rather
-than a pure $H_0$-only constraint. The local distance-ladder
-determination $H_0^{\rm SH0ES}$ uses Cepheid-calibrated Type~Ia
-supernovae and is insensitive to sound-horizon physics. The
-CMB-based determination $H_0^{\rm Planck}$ is obtained from the
-acoustic-scale angle $\theta_s = r_s / D_A(z_*)$, measured to high
-precision by the Planck mission~\cite{Planck2018}. A shift in the
-inferred late-time expansion rate arises once the late-time
-gravitational response function is allowed to differ from the
-$\Lambda$CDM form. In the effective uniform-$\varepsilon$ layer of
-\S\ref{subsec:eps_def} this response is parametrised by
-\begin{equation}
-\frac{G_{\rm eff}(z)}{G_N} \;=\; (1+z)^{2\varepsilon}.
-\label{eq:Geff_uniform_eps_A1}
-\end{equation}
-Under this parametrisation, both the low-redshift distance integral
-(entering $H_0^{\rm Planck}$ through $D_A(z_*)$) and the high-redshift
-sound-horizon integral (entering $r_s$) are modified. The channel
-therefore tests $\varepsilon$ through the joint constraint imposed
-by a fixed, precisely measured $\theta_s$ and an independently
-determined local $H_0$. The output of the extraction is an H1-type
-effective band for $\varepsilon$: a range of values for which the
-common-background module, deformed by $(1+z)^{2\varepsilon}$,
-shifts the CMB-inferred $H_0$ upward into statistical compatibility
-with the local distance-ladder value.
-
-\subsection*{A1.2\quad Observational inputs}
-
-The two anchoring values are
-$H_0^{\rm Planck} = 67.4 \pm 0.5~\mathrm{km\,s^{-1}\,Mpc^{-1}}$
-from Planck~2018 in $\Lambda$CDM~\cite{Planck2018} and
-$H_0^{\rm SH0ES} = 73.04 \pm 1.04~\mathrm{km\,s^{-1}\,Mpc^{-1}}$
-from the SH0ES distance-ladder analysis~\cite{Riess2022}. The target
-shift to be accommodated is therefore
-\begin{equation}
-\Delta H_0^{\rm obs}
-\;\equiv\; H_0^{\rm SH0ES} - H_0^{\rm Planck}
-\;\approx\; 5.64~\mathrm{km\,s^{-1}\,Mpc^{-1}},
-\qquad
-\sigma_{\rm tot} \;=\; \sqrt{\sigma_P^2 + \sigma_{\rm SH}^2}
-\;\approx\; 1.15~\mathrm{km\,s^{-1}\,Mpc^{-1}}.
-\end{equation}
-The acoustic-scale measurement $\theta_s$ is taken as fixed at the
-Planck value; the $\varepsilon$-scan is carried out at fixed
-$\theta_s$, such that the $\varepsilon$-deformation modifies $r_s$
-and $D_A(z_*)$ in correlated ways.
-
-\subsection*{A1.3\quad ECT-side model and extraction scope}
-
-Under the uniform-$\varepsilon$ ansatz, the dimensionless Hubble rate
-reads
-\begin{equation}
-E_{\rm ECT}^2(z,\varepsilon)
-\;=\; \Omega_r\,(1+z)^4
-\;+\; \Omega_m\,(1+z)^{3+2\varepsilon}
-\;+\; \Omega_\Lambda\,(1+z)^{2\varepsilon},
-\label{eq:eps_friedmann_A1}
-\end{equation}
-with $\Omega_m = 0.315$, $\Omega_r = 9.2 \times 10^{-5}$,
-$\Omega_\Lambda = 1 - \Omega_m - \Omega_r$ adopted as the common
-background proxy (see Appendix~\ref{app:eps_methodology} for the
-background-module framing and its role as the single source of
-truth for all retained extraction channels). The low-redshift
-distance integral is
-\begin{equation}
-I(\varepsilon) \;=\; \int_0^{z_*}
-\frac{dz}{E_{\rm ECT}(z,\varepsilon)},
-\qquad z_* = 1089.80,
-\end{equation}
-and the sound horizon at the drag epoch is
-\begin{equation}
-r_s(\varepsilon)
-\;=\; \int_{z_{\rm drag}}^{\infty}
-\frac{c_s(z)}{H_0^P\,E_{\rm ECT}(z,\varepsilon)}\,dz,
-\qquad z_{\rm drag} = 1059.94,
-\end{equation}
-with the baryon--photon sound speed
-$c_s(z) = c/\sqrt{3(1+R(z))}$,
-$R(z) = (3\Omega_b / 4\Omega_r)(1+z)^{-1}$, $\Omega_b = 0.0493$.
-At fixed $\theta_s$, the inferred $H_0$ under
-$\varepsilon$-deformation becomes
-\begin{equation}
-H_0^{\rm inferred}(\varepsilon)
-\;=\; H_0^P \cdot
-\frac{I(\varepsilon)}{I(0)}
-\cdot
-\frac{r_s(0)}{r_s(\varepsilon)}.
-\label{eq:H0_inferred_eps}
-\end{equation}
-For $\varepsilon > 0$, the sound-horizon integral decreases by a
-larger fractional amount than the distance integral, so the ratio
-in \eqref{eq:H0_inferred_eps} exceeds unity and $H_0^{\rm inferred}$
-is pushed upward.
-
-\paragraph{Held fixed under the present proxy.}
-$\Omega_m = 0.315$, $\Omega_\Lambda$, $\Omega_r$, $\Omega_b$; the
-baryon--photon sound-speed form $c_s(z)$; $z_* = 1089.80$,
-$z_{\rm drag} = 1059.94$; the acoustic-scale anchor $\theta_s$.
-
-\paragraph{Varied.}
-$\varepsilon$ only (one-dimensional scan). Through
-\eqref{eq:eps_friedmann_A1} the variation of $\varepsilon$
-propagates automatically, via the common background module, into
-$E(z)$, $H(z)$, $I(\varepsilon)$, $r_s(\varepsilon)$, and
-$H_0^{\rm inferred}(\varepsilon)$.
-
-\paragraph{Not included at this proxy level.}
-A full Boltzmann-level recombination pipeline; a full CMB
-likelihood; a joint fit of early-time parameters together with
-$\varepsilon$; and an ECT-closure-level background replacing the
-$\Lambda$CDM proxy. The consequences of each of these omissions
-are addressed in A1.7.
-
-\subsection*{A1.4\quad Extraction statistic}
-
-The $\varepsilon$-dependent prediction for the Hubble-tension shift
-is
-\begin{equation}
-\Delta H_0^{\rm pred}(\varepsilon)
-\;=\; H_0^{\rm inferred}(\varepsilon) - H_0^P.
-\end{equation}
-The single-parameter chi-squared for this channel is
-\begin{equation}
-\chi^2(\varepsilon)
-\;=\;
-\left[\,
-\frac{\Delta H_0^{\rm pred}(\varepsilon) - \Delta H_0^{\rm obs}}
-     {\sigma_{\rm tot}}
-\,\right]^{\!2}.
-\label{eq:chi2_hubble_eps}
-\end{equation}
-This is the only quantity minimised in the present extraction; no
-additional nuisance-parameter profiling is performed at this proxy
-level.
-
-\subsection*{A1.5\quad Interval definition and origin of the width}
-
-In this one-parameter framework the best-fit $\varepsilon_*$ is
-defined by the minimum of $\chi^2(\varepsilon)$, which coincides
-with the unique root of $\Delta H_0^{\rm pred}(\varepsilon) =
-\Delta H_0^{\rm obs}$ in the physical region $\varepsilon \geq 0$.
-The $1\sigma$ interval is defined by $\Delta\chi^2 \leq 1$ about
-this minimum, the $2\sigma$ interval by $\Delta\chi^2 \leq 4$.
-Both are obtained by Brent root-finding on the equivalent
-conditions
-$\Delta H_0^{\rm pred}(\varepsilon) =
-\Delta H_0^{\rm obs} \pm \sigma_{\rm tot}$
-and
-$\Delta H_0^{\rm pred}(\varepsilon) =
-\Delta H_0^{\rm obs} \pm 2\sigma_{\rm tot}$.
-
-\paragraph{Origin of the $1\sigma$ width.}
-The width of the $1\sigma$ interval is determined by the curvature
-of the one-parameter profile $\chi^2(\varepsilon)$ around its
-minimum under the adopted observational uncertainty
-$\sigma_{\rm tot}$. It therefore reflects the uncertainty of the
-present proxy extraction of $\varepsilon$ from the adopted
-observational inputs, not a first-principles uncertainty of the
-ECT closure parameters. A narrower or wider $\sigma_{\rm tot}$
-would shrink or widen the interval accordingly; a fundamentally
-different proxy setup, or a full ECT-closure-level background
-replacing the common proxy of A1.3, would in general reshape both
-the location and the width of the interval.
-
-\paragraph{Numerical outcome.}
-Direct numerical evaluation of the integrals in A1.3 through the
-common background module
-(\texttt{ect\_background.py}, consumed by
-\texttt{ch1\_hubble.py}) yields
-\begin{align}
-\varepsilon_*
-&\;=\; 0.0323,
-\label{eq:eps_hubble_central}
-\\[2pt]
-[\varepsilon_{\rm lo}^{1\sigma},\,\varepsilon_{\rm hi}^{1\sigma}]
-&\;=\; [\,0.0267,\ 0.0376\,],
-\\[2pt]
-[\varepsilon_{\rm lo}^{2\sigma},\,\varepsilon_{\rm hi}^{2\sigma}]
-&\;=\; [\,0.0207,\ 0.0425\,].
-\end{align}
-The $1\sigma$ width $\Delta\varepsilon^{1\sigma} \approx 0.0109$
-inherits approximately linearly from $\sigma_{\rm tot}$. This is
-the numerical content of the Hubble + $r_s$ row of
-Table~\ref{tab:eps_retained_probes} in
-\S\ref{subsec:eps_retained}.
-
-\paragraph{Background-level cosmic age at the extracted
-$\varepsilon_*$.}
-Computed through the same common background module, the
-age-of-universe at the Hubble best-fit is
-$t_0(\varepsilon_* = 0.0323) \approx 13.46~{\rm Gyr}$, compared
-with $t_0(\varepsilon = 0) \approx 13.79~{\rm Gyr}$ at the
-$\Lambda$CDM baseline. The role of this quantity --- and the
-distinction between the background cosmic age at fixed baseline
-$H_0^P$ and the age under the inferred-$H_0$ mapping of
-\eqref{eq:H0_inferred_eps} --- is discussed in
-Appendix~\ref{app:eps_methodology} as an age-viability ambiguity,
-and is not used as an independent $\varepsilon$-constraint here.
-
-\subsection*{A1.6\quad Figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.82\textwidth]{figures/fig_hubble_rs_extraction_bw.pdf}
-\caption{Extraction of the effective $\varepsilon$-interval from the
-Hubble + $r_s$ channel, under the common background module of
-Appendix~\ref{app:eps_methodology}. The solid black curve is
-$\chi^2(\varepsilon)$ defined by \eqref{eq:chi2_hubble_eps}. The
-darker gray band is the $1\sigma$ interval $[0.027,\,0.038]$
-($\Delta\chi^2 \leq 1$); the lighter gray band is the $2\sigma$
-interval $[0.021,\,0.043]$ ($\Delta\chi^2 \leq 4$). The dotted
-vertical line marks the best-fit
-$\varepsilon_* \approx 0.0323$. Horizontal dashed lines indicate
-the $\Delta\chi^2 = 1$ and $\Delta\chi^2 = 4$ reference levels.
-All shading and line styles are grayscale per preprint
-convention.}
-\label{fig:hubble_rs_extraction}
-\end{figure}
-
-\subsection*{A1.7\quad Methodological limitations}
-
-Four limitations are stated explicitly. The first three are
-inherited by every other per-probe extraction appendix of this
-family; the fourth is more specific.
-
-\textit{(i) $\Lambda$CDM-background common proxy.}
-The common background module uses a $\Lambda$CDM-best-fit
-parameter set as external input, and the $\varepsilon$-deformation
-is applied on top. A fully ECT-closure-level extraction would
-replace this proxy by the derived ordered-branch background of
-Appendix~\ref{app:late_cosmo_background} rather than a fit
-obtained under a different theoretical assumption set.
-
-\textit{(ii) Simplified sound-horizon integral.}
-The sound-horizon integral is computed with a simplified
-baryon--photon sound speed $c_s(z)$, a $z_{\rm drag} = 1059.94$
-anchor, and neutrino effects absorbed into $\Omega_r$. At the
-level of the absolute $r_s$ this introduces a few-per-cent
-discrepancy with the Planck~2018 value; however, only the ratio
-$r_s(\varepsilon) / r_s(0)$ enters the extraction
-\eqref{eq:H0_inferred_eps}, and this ratio is more robust than
-either absolute value.
-
-\textit{(iii) Uniform-$\varepsilon$ ansatz vs closure-level
-$\varepsilon(z)$.}
-The uniform-$\varepsilon$ ansatz treats $\varepsilon$ as
-epoch-independent. A first-principles $\varepsilon(z)$ from
-three-stage condensate closure --- the content of OP-Hubble-derive
-(\S\ref{subsec:eps_outlook}) --- would reshape the width
-of the retained interval and in general would not map one-to-one
-onto a constant $\varepsilon$. The retained interval derived here
-should therefore be read as the projection of the true
-$\varepsilon(z)$ history onto the uniform-$\varepsilon$
-diagnostic layer, not as a measurement of a fundamental constant.
-
-\textit{(iv) Age--$H_0$ mapping is not fixed by this channel.}
-The background module computes $t_0(\varepsilon)$
-self-consistently. However, the physical interpretation of the
-cosmic age at the extracted $\varepsilon_*$ depends on which of
-two mappings is adopted: (a) the baseline-background age at fixed
-$H_0^P = 67.4~\mathrm{km\,s^{-1}\,Mpc^{-1}}$, which is acceptable
-with respect to direct age anchors; or (b) the age under the
-inferred-$H_0^{\rm inferred}(\varepsilon_*)$ mapping
-\eqref{eq:H0_inferred_eps}, which is more sensitive to the same
-anchors. Nothing in the Hubble + $r_s$ channel alone discriminates
-between these two mappings: the channel determines $\varepsilon_*$
-only via $\theta_s$-preservation. The interpretation of this
-ambiguity and its implications are discussed as the age-viability
-ambiguity in Appendix~\ref{app:eps_methodology}; this appendix
-does not use the cosmic age as an independent constraint on
-$\varepsilon$.
-
-% ==================================================================
-% END Appendix (extraction, Hubble + r_s channel).
-% ==================================================================
-
-% ==================================================================
-% APPENDIX A2 — JWST early-galaxy excess: extraction of ε.
-%
-% FINAL DRAFT on freeze-checkpoint numbers (2026-04-19).
-% Numerics: scripts/epsilon_convergence/ch2_jwst.py, result_ch2.json
-% Background: scripts/epsilon_convergence/ect_background.py
-%
-% Structure (unified per-probe template shared with A1, A3-A5):
-%   A2.1  Physics of the probe
-%   A2.2  Observational inputs
-%   A2.3  ECT-side model and extraction scope
-%         (growth enhancement + stellar-assembly time-budget factor)
-%   A2.4  Robustness check of the time-budget ansatz
-%   A2.5  Extraction statistic
-%   A2.6  Interval definition and origin of the width
-%   A2.7  Figure
-%   A2.8  Methodological limitations
-%
-% Applied corrections:
-%   - GPT r17/r18: time-budget factor R_time introduced from
-%     reduced Δt between z_form and z_obs under ε>0 background;
-%     composition rule R_total = R_PS × R_time explicitly defended.
-%   - GPT r19: controlled robustness check linear vs nonlinear Δt
-%     scaling; ansatz not dogmatic but bracket-defined.
-%   - GPT r20: physics, observable, ECT model, extraction procedure,
-%     origin of 1σ/2σ all explicit.
-%
-% NO legacy numbers. NO integration into preprint yet.
-% ==================================================================
-
-\section{Extraction of the effective uniform-$\varepsilon$ interval
-from the JWST early-galaxy channel}
-\label{app:eps_extraction_jwst}
-
-This appendix derives the effective uniform-$\varepsilon$ interval
-from the JWST early-galaxy excess, as used in the rebuilt \S15.5.
-Unlike the Hubble + $r_s$ channel (Appendix~\ref{app:eps_extraction_hubble}),
-the JWST extraction depends on two distinct $\varepsilon$-effects
-acting on the observable: enhanced high-$z$ structure growth (which
-pushes the extracted $\varepsilon$ downward for fixed observed
-excess) and a shortened stellar-assembly time budget between
-formation and observation (which pushes the extracted $\varepsilon$
-upward). The present extraction treats both effects on the same
-common background module, as required by GPT r17/r18 and consistent
-with the present appendix-level methodology of
-Appendix~\ref{app:eps_methodology}. The combination of the two
-effects gives a well-defined interval, but the specific functional
-form of the time-budget factor is not unique; a controlled
-robustness check is therefore included (\S A2.4) rather than a
-single dogmatic ansatz.
-
-\subsection*{A2.1\quad Physics of the probe}
-
-JWST observations of galaxies at $z \sim 8\text{--}12$ have
-revealed a population of unusually bright and massive objects
-compared with the abundance predicted by $\Lambda$CDM
-extrapolations of low-$z$ halo mass functions. Interpreted as a
-tension, it admits several parametric responses: a harder initial
-power spectrum, a higher star-formation efficiency, a more
-top-heavy IMF, or --- relevant here --- a cosmological-epoch
-enhancement of the gravitational response at high $z$. In the
-effective uniform-$\varepsilon$ layer of
-\S\ref{subsec:eps_def}, the response function
-$G_{\rm eff}(z)/G_N = (1+z)^{2\varepsilon}$ enters the high-$z$
-growth history, raising both linear-growth amplitude and the tail
-of the collapsed halo mass function at a given formation redshift.
-The observable excess $R_{\rm obs}$ --- the ratio of observed to
-$\Lambda$CDM-predicted halo (or stellar) abundance at the
-detection redshift --- therefore carries an imprint of $\varepsilon$
-through two physically distinct mechanisms.
-
-
-\subsection*{A2.2\quad Observational inputs}
-
-The excess factor $R_{\rm obs}$ is not a single unambiguous number.
-Different authors, sample selections, stellar-mass calibrations,
-and IMF assumptions yield values in the range
-$R_{\rm obs} \in [3,\,100]$ with a representative central value
-$R_{\rm obs} \approx 10$ at $z \approx 10$. The observation is
-parametrised here by (i) the detection redshift $z_{\rm obs} = 10$,
-(ii) a fiducial peak height for the objects in question
-$\nu_{\rm central} = 5$ (with a bracket $\nu \in [4, 6]$), and (iii)
-the representative central excess $R_{\rm obs} = 10$ with its
-bracket $R_{\rm obs} \in [3, 100]$. The extraction does not treat
-any of these as Gaussian; the $1\sigma$ and $2\sigma$ intervals of
-A2.6 are defined by the bracket variations, as detailed below. The
-formation redshift is taken as $z_{\rm form} = 20$ by default,
-representative of the progenitor era of the observed population.
-
-\subsection*{A2.3\quad ECT-side model and extraction scope}
-
-The model prediction is decomposed into two factors acting
-multiplicatively on the observable:
-\begin{equation}
-R_{\rm total}(\varepsilon)
-\;=\;
-R_{\rm PS}(\varepsilon)
-\;\cdot\;
-R_{\rm time}(\varepsilon).
-\label{eq:R_total_jwst}
-\end{equation}
-
-\paragraph{Growth-enhancement factor $R_{\rm PS}(\varepsilon)$.}
-Under the uniform-$\varepsilon$ ansatz, the enhancement of linear
-growth during the matter era raises the amplitude of density
-fluctuations at fixed initial spectrum. At the relevant high-$z$
-scale, the Press-Schechter tail ratio between ECT and $\Lambda$CDM
-for the same halo peak height $\nu$ is approximately
-\begin{equation}
-R_{\rm PS}(\varepsilon)
-\;=\;
-\exp\!\left[\,\frac{\nu^2}{2}\,\bigl(1 - f^{-1}\bigr)\right],
-\qquad
-f \;\equiv\; (1 + z_{\rm obs})^{2\varepsilon}.
-\label{eq:R_PS}
-\end{equation}
-This factor is a monotonically increasing function of $\varepsilon$:
-stronger growth enhancement produces more tail halos for the same
-observational threshold. For the central observational inputs
-$R_{\rm obs} = 10$, $\nu = 5$, $z_{\rm obs} = 10$, this alone would
-give $\varepsilon \approx 0.0425$.
-
-
-\paragraph{Stellar-assembly time-budget factor
-$R_{\rm time}(\varepsilon)$.}
-The observable at $z_{\rm obs}$ is not instantaneously-formed
-collapsed halo abundance; it is stellar (or quasi-stellar) mass
-assembled during the interval between formation and observation.
-Under $\varepsilon > 0$, the common background module
-(\texttt{ect\_background.py}) yields $H(z, \varepsilon) > H(z, 0)$
-at all $z$ in the past of the present era, and therefore a reduced
-coordinate-time interval $\Delta t(z_{\rm form} \to z_{\rm obs})$
-compared with the $\Lambda$CDM reference. To first approximation
-the observable stellar mass at $z_{\rm obs}$ scales linearly with
-the available assembly time, giving
-\begin{equation}
-R_{\rm time}(\varepsilon)
-\;=\;
-\frac{\Delta t_{\rm ECT}(z_{\rm form} \to z_{\rm obs},\,\varepsilon)}
-     {\Delta t_{\Lambda}(z_{\rm form} \to z_{\rm obs},\,0)},
-\qquad
-\Delta t_X(\cdot)
-\;\equiv\; t_X(z_{\rm obs}) - t_X(z_{\rm form}),
-\label{eq:R_time}
-\end{equation}
-where $t_X(z)$ is computed through the common background module.
-Explicit evaluation for the fiducial $z_{\rm form} = 20$,
-$z_{\rm obs} = 10$ gives $R_{\rm time}(0) = 1$ (by construction)
-and $R_{\rm time}(0.032) \approx 0.923$. That is, $\varepsilon > 0$
-compresses the assembly window by roughly $8\%$ relative to
-$\Lambda$CDM at the retained-band central value.
-
-\paragraph{Why multiplicative, not additive.} The two factors
-operate at different stages of the observable chain:
-$R_{\rm PS}(\varepsilon)$ is the population-statistical enhancement
-of collapsed halo abundance, while $R_{\rm time}(\varepsilon)$ is
-the per-object conversion of halo mass into observable
-(stellar) mass through the available assembly-time budget.
-Because an observed object is both (a) drawn from the enhanced
-population and (b) constrained by the reduced assembly interval,
-the excess at the observable level factorises as the product in
-\eqref{eq:R_total_jwst}. An additive combination would be
-dimensionally inconsistent at the ratio-of-excess-factor level.
-
-
-\paragraph{Held fixed under the present proxy.} $z_{\rm obs} = 10$;
-$z_{\rm form} = 20$ (default); cosmological parameters
-$\Omega_m = 0.315$, $\Omega_\Lambda$, $\Omega_r$ as in the common
-background module; the Press-Schechter tail form
-\eqref{eq:R_PS} at fixed $\nu$.
-
-\paragraph{Varied.}
-$\varepsilon$ is the primary scan parameter. The peak height $\nu$
-and the observational excess $R_{\rm obs}$ are varied over their
-observational brackets to define the $1\sigma$ and $2\sigma$
-ranges. In the robustness check of A2.4, the power-law index of
-the time-budget ansatz is also varied.
-
-\paragraph{Not included at this proxy level.}
-A full nonlinear halo-to-stellar-mass conversion pipeline; the
-full dependence of the IMF, dust attenuation, and survey
-completeness on $\varepsilon$; the back-reaction of enhanced
-growth on the matter-era recombination physics; a full Boltzmann
-evolution of the spectrum of fluctuations in the ECT background.
-
-\paragraph{Main physical finding of this channel.}
-At $\varepsilon > 0$ the background expansion in the common module
-is faster in the past than in $\Lambda$CDM, so the coordinate-time
-interval available for stellar assembly between $z_{\rm form}$ and
-$z_{\rm obs}$ is \emph{shorter}, not longer. This implies that a
-pure growth-enhancement treatment --- the standard high-$z$ ECT
-alleviation argument for the JWST excess, based on $R_{\rm PS}$
-alone --- \emph{overstates} the alleviation effect at a given
-$\varepsilon$, because it ignores the fact that less time has been
-available to convert the enhanced halo population into observable
-stellar mass. Once the reduced assembly-time budget is included
-through $R_{\rm time}$, the $\varepsilon$ required to reproduce a
-given observed excess $R_{\rm obs}$ is slightly \emph{larger} than
-in the PS-only proxy. Quantitatively, the central value shifts
-from $\varepsilon = 0.04245$ (PS only) to $\varepsilon = 0.04491$
-(PS $\times$ time). This is the opposite of the intuitive
-expectation that ECT would ``give more time'' for early galaxies.
-The net physical consequence is important: after this correction,
-the JWST-extracted interval overlaps the Hubble + $r_s$ interval
-of A1 more snugly than the PS-only proxy suggests. The retained
-joint band of \S\ref{subsec:eps_joint_band} therefore
-reflects two independent high-$z$ and low-$z$ extractions that are
-\emph{more}, not less, mutually consistent once the common
-background module is applied on the same footing to both channels.
-
-\subsection*{A2.4\quad Robustness checks}
-
-The default form \eqref{eq:R_time} is the simplest defensible
-choice for the time-budget factor, but two independent robustness
-axes are needed to defend the extracted interval: the functional
-scaling of stellar mass with assembly time, and the choice of the
-formation-redshift window itself.
-
-\paragraph{Axis 1: power-law scaling of the time-budget factor.}
-The linear form is physically motivated but not unique. Two
-limiting cases bracket the physical possibilities:
-\begin{itemize}
-\item \textbf{Linear scaling (default).} Stellar mass grows
-  approximately as $M_* \propto \Delta t$: uniform conversion
-  of gas to stars during the assembly window. This gives
-  \eqref{eq:R_time} as stated.
-\item \textbf{Stronger scaling (robustness bracket).} If stellar
-  mass tracks the accretion rate times the accretion time
-  (consistent with rapid early-epoch build-up), then
-  $M_* \propto (\Delta t)^p$ with $p \in [1.5,\,2]$ is physically
-  plausible at very high $z$. In this case
-  $R_{\rm time}^{(p)}(\varepsilon) =
-  [\Delta t_{\rm ECT}/\Delta t_\Lambda]^p$.
-\end{itemize}
-For the central observational inputs $R_{\rm obs} = 10$,
-$\nu = 5$, $z_{\rm obs} = 10$, $z_{\rm form} = 20$, solving
-$R_{\rm PS}(\varepsilon) \cdot R_{\rm time}^{(p)}(\varepsilon) =
-R_{\rm obs}$ for $\varepsilon$ yields:
-\begin{center}
-\begin{tabular}{|c|c|}
-\hline
-Time-budget index $p$ & Extracted $\varepsilon_{\rm central}$ \\
-\hline
-$p = 0$ (no time budget, PS only)     & $0.04245$ \\
-$p = 1$ (linear; default)             & $0.04491$ \\
-$p = 1.5$                             & $0.04626$ \\
-$p = 2$                               & $0.04771$ \\
-\hline
-\end{tabular}
-\end{center}
-The shift of the central $\varepsilon$ across the bracket
-$p \in [0, 2]$ is approximately $+0.0028$ from the linear default
-(moving toward stronger-scaling), and $-0.0025$ in the opposite
-direction (no-time-budget limit). This total range of $\pm 0.003$
-is smaller than the observational $1\sigma$ width driven by $\nu$
-(approximately $\pm 0.025$).
-
-\paragraph{Axis 2: formation-redshift window.}
-The default $z_{\rm form} = 20$ is representative of the
-progenitor era of the observed $z \approx 10$ population, but the
-true formation window is itself uncertain. Varying
-$z_{\rm form}$ over a range that brackets typical physically
-motivated choices, holding $p = 1$ and all observational inputs
-fixed at their central values, gives:
-\begin{center}
-\begin{tabular}{|c|c|c|}
-\hline
-$z_{\rm form}$ & Extracted $\varepsilon_{\rm central}$ &
-$R_{\rm time}(\varepsilon_{\rm central})$ \\
-\hline
-$15$ & $0.04481$ & $0.8917$ \\
-$17$ & $0.04486$ & $0.8898$ \\
-$20$ (default) & $0.04491$ & $0.8875$ \\
-$22$ & $0.04494$ & $0.8862$ \\
-$25$ & $0.04497$ & $0.8846$ \\
-\hline
-\end{tabular}
-\end{center}
-The total range of central $\varepsilon$ across
-$z_{\rm form} \in [15, 25]$ is $\pm 0.0001$, two orders of
-magnitude below the observational $\nu$-width. The extraction is
-therefore essentially insensitive to the detailed geometry of the
-formation window: what matters is only the relative compression
-of the assembly interval, not its absolute duration.
-
-\paragraph{Conclusion from the two robustness axes.}
-The time-budget ansatz does not dominate the extracted interval.
-Across both axes considered, the residual uncertainty on
-$\varepsilon_{\rm central}$ from modelling choices is bounded by
-roughly $\pm 0.003$ (dominated by the $p$-scaling axis), an order
-of magnitude below the observational $1\sigma$ width of
-$\pm 0.025$ driven by $\nu$. The time-budget factor is therefore
-a secondary but physically required correction.
-
-
-\subsection*{A2.5\quad Extraction statistic}
-
-The present channel uses bracket-based interval definition rather
-than a Gaussian $\chi^2$. For given observational brackets of
-$\nu$ and $R_{\rm obs}$, the extracted $\varepsilon$-interval is
-defined by the condition
-\begin{equation}
-R_{\rm PS}(\varepsilon, \nu) \cdot R_{\rm time}(\varepsilon)
-\;=\; R_{\rm obs},
-\label{eq:jwst_condition}
-\end{equation}
-inverted for $\varepsilon$ at each value of $\nu$ and $R_{\rm obs}$
-in the bracket. The inversion is carried out by Brent root-finding
-on $\varepsilon \in [10^{-4}, 0.30]$ at the default linear
-time-budget ansatz ($p = 1$).
-
-\subsection*{A2.6\quad Interval definition and origin of the width}
-
-\paragraph{Central value.} Setting
-$\nu = \nu_{\rm central} = 5$, $R_{\rm obs} = 10$,
-$z_{\rm obs} = 10$, $z_{\rm form} = 20$, and $p = 1$, the
-extracted central value is $\varepsilon_* = 0.0449$. Under the
-background module at this $\varepsilon$, the cosmic age and the
-assembly-window width are
-$t_0(\varepsilon_*) \approx 13.33~{\rm Gyr}$,
-$t(z_{\rm obs} = 10, \varepsilon_*) \approx 410~{\rm Myr}$.
-
-\paragraph{$1\sigma$ interval.} Holding $R_{\rm obs} = 10$ fixed
-and varying $\nu \in [\nu_{\rm low}, \nu_{\rm high}] = [4, 6]$
---- the range representative of the relevant observed peak
-heights --- gives
-\begin{equation}
-[\varepsilon_{\rm lo}^{1\sigma},\,\varepsilon_{\rm hi}^{1\sigma}]
-\;=\;
-[\,0.0296,\ 0.0786\,]
-\quad (\text{varying } \nu\text{ at fixed } R_{\rm obs}).
-\label{eq:eps_jwst_1sigma}
-\end{equation}
-
-\paragraph{$2\sigma$ interval.} Further varying $R_{\rm obs}$ over
-its full observational bracket $[3, 100]$ gives
-\begin{equation}
-[\varepsilon_{\rm lo}^{2\sigma},\,\varepsilon_{\rm hi}^{2\sigma}]
-\;=\;
-[\,0.0136,\ 0.2177\,]
-\quad (\text{varying }\nu\text{ and }R_{\rm obs}).
-\label{eq:eps_jwst_2sigma}
-\end{equation}
-
-\paragraph{Origin of the width.}
-The width of the $1\sigma$ interval is dominated by the
-observational uncertainty of the peak height $\nu$; the time-budget
-ansatz contributes secondary shifts as quantified in A2.4. The
-$2\sigma$ interval is substantially wider because the observational
-bracket on the excess factor $R_{\rm obs}$ (between $3$ and $100$)
-is itself broad. Unlike the Hubble + $r_s$ channel, the present
-interval reflects the current state of high-$z$ stellar-mass
-calibration rather than a clean statistical uncertainty. A narrower
-$R_{\rm obs}$ bracket, from deeper JWST follow-up, would tighten
-the interval; no improvement in the ECT model alone shrinks it.
-
-
-\subsection*{A2.7\quad Figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.84\textwidth]{figures/fig_jwst_extraction_bw.pdf}
-\caption{Decomposition of the JWST extraction into the two
-$\varepsilon$-dependent factors $R_{\rm PS}(\varepsilon)$ and
-$R_{\rm time}(\varepsilon)$, under the common background module of
-Appendix~\ref{app:eps_methodology}. Upper panel: the
-Press-Schechter growth-enhancement factor $R_{\rm PS}$ rises
-monotonically with $\varepsilon$, while the stellar-assembly
-time-budget factor $R_{\rm time}$ decreases. Their product
-$R_{\rm total}(\varepsilon)$ (solid dark curve) crosses the
-observational target $R_{\rm obs} = 10$ at $\varepsilon \approx
-0.045$. Lower panel: the extracted $\varepsilon$-interval
-$[0.030,\,0.079]$ ($1\sigma$, bracket on peak height $\nu$) and
-$[0.014,\,0.218]$ ($2\sigma$, bracket on both $\nu$ and
-$R_{\rm obs}$) shown as grayscale shaded bands. Robustness check
-of A2.4 also superposed as vertical lines at
-$\varepsilon(p = 0)$, $\varepsilon(p = 1.5)$, $\varepsilon(p = 2)$.
-All shading and line styles are grayscale per preprint convention.}
-\label{fig:jwst_extraction}
-\end{figure}
-
-\subsection*{A2.8\quad Methodological limitations}
-
-\textit{(i) Proxy-level Press-Schechter tail.}
-The use of the closed-form Press-Schechter tail
-\eqref{eq:R_PS} is a high-$\nu$ approximation. At fixed $\nu$,
-corrections from the full Sheth-Tormen-type peak-background
-split amount to order-unity factors at the level of $R_{\rm PS}$,
-and must be absorbed into the observational bracket on
-$R_{\rm obs}$. A fully consistent treatment would replace
-\eqref{eq:R_PS} by a numerical halo mass function integrated
-over the relevant mass range for each $\varepsilon$, using the
-ECT-background growth history from the common module. This is
-beyond the scope of the present retained-pipeline implementation.
-
-\textit{(ii) $\Lambda$CDM-background common proxy.}
-As in A1.7(i), the background module uses a $\Lambda$CDM-best-fit
-parameter set as external input. A closure-level background
-would, in general, reshape both $R_{\rm PS}$ and $R_{\rm time}$
-through modified matter-era growth and modified $t(z)$.
-
-\textit{(iii) Bracket-based interval rather than Gaussian
-$\chi^2$.}
-Because $R_{\rm obs}$ and $\nu$ are not Gaussian-distributed
-observables in the present compilation, the reported interval is
-defined by variation over physically-motivated brackets rather
-than by $\Delta\chi^2$ contours. This is more transparent for a
-quantity dominated by calibration uncertainty, but it means the
-$1\sigma$ and $2\sigma$ intervals should not be interpreted as
-strict Gaussian confidence regions.
-
-\textit{(iv) Time-budget ansatz.}
-The specific form of $R_{\rm time}$ relies on the assumption that
-observed stellar mass at $z_{\rm obs}$ tracks the integrated
-assembly time. The robustness check of A2.4 brackets this at
-$\pm 0.002$ in the extracted central $\varepsilon$. A truly
-dogmatic departure from this scaling --- for example, if the
-stellar mass observed at $z_{\rm obs}$ is only weakly coupled to
-the assembly interval and is instead dominated by a narrow burst
-at $z_{\rm obs}$ itself --- would invalidate
-$R_{\rm time}(\varepsilon)$ and reduce the JWST channel to its
-pre-recalc proxy form. In the present treatment, the linear
-default is adopted with explicit bracket, and the extracted
-interval quoted in \S\ref{subsec:eps_retained} of the
-main text is the $p=1$ result.
-
-\textit{(v) Formation redshift $z_{\rm form}$.}
-The default $z_{\rm form} = 20$ is representative but not unique.
-The second robustness axis of A2.4 (variation over
-$z_{\rm form} \in [15,\,25]$) finds a residual shift in
-$\varepsilon_{\rm central}$ of only $\pm 0.0001$, so this choice is
-not a material source of uncertainty in the extracted interval.
-
-% ==================================================================
-% END Appendix (extraction, JWST early-galaxy channel).
-% ==================================================================
-
-% ==================================================================
-% APPENDIX A3 — Cosmic Chronometers: extraction of ε.
-%
-% FINAL DRAFT on freeze-checkpoint numbers (2026-04-19).
-% Numerics: scripts/epsilon_convergence/ch4_cosmic_chronometers.py
-% Background: scripts/epsilon_convergence/ect_background.py
-%
-% Structure (unified per-probe template shared with A1, A2, A4-A5):
-%   A3.1  Physics of the probe
-%   A3.2  Observational inputs
-%   A3.3  ECT-side model and extraction scope
-%   A3.4  Extraction statistic
-%   A3.5  Interval definition and origin of the width
-%   A3.6  Figure
-%   A3.7  Methodological limitations
-%
-% Character of this channel (GPT r21):
-%   Direct late-time expansion probe; one-sided upper bound under
-%   physical prior; true consistency channel, not primary extraction.
-%
-% NO integration into preprint yet.
-% ==================================================================
-
-\section{Extraction of the effective uniform-$\varepsilon$ interval
-from the cosmic chronometers channel}
-\label{app:eps_extraction_cc}
-
-This appendix derives the effective uniform-$\varepsilon$ interval
-from the cosmic chronometers channel used in the rebuilt \S15.5.
-Unlike the Hubble + $r_s$ channel of A1, which uses a shift in the
-CMB-inferred $H_0$ together with a sound-horizon anchor, the
-cosmic chronometers channel directly constrains the late-time
-Hubble rate $H(z)$ at $0 \lesssim z \lesssim 2$ through the
-differential ageing of passively evolving stellar populations. As
-a result, it is a direct probe of late-time expansion history and
-does not require any matter-era or recombination-era modelling. In
-the present retained-pipeline it functions as a late-time
-consistency channel: it admits a broad one-sided upper bound on
-$\varepsilon$ after imposing the physical prior
-$\varepsilon \geq 0$, and does not by itself extract a non-trivial
-lower edge in the physical region.
-
-\subsection*{A3.1\quad Physics of the probe}
-
-The cosmic chronometers technique measures the Hubble rate at
-cosmological redshifts by treating the differential ageing of
-massive, passively evolving galaxies as an effective clock:
-\begin{equation}
-H(z) \;=\; -\frac{1}{1+z}\,\frac{dz}{dt},
-\end{equation}
-where $dz/dt$ is estimated from pairs of such galaxies at close
-but distinct redshifts, so that $dt$ is inferred from stellar
-population synthesis. The method requires no cosmological
-distance-ladder, no sound-horizon anchor, and no high-redshift
-extrapolation; its systematics are dominated by stellar-population
-modelling rather than by cosmological assumptions. In the
-effective uniform-$\varepsilon$ layer of
-\S\ref{subsec:eps_def}, the $\varepsilon$-deformation enters
-the late-time Hubble rate directly through
-\eqref{eq:eps_friedmann_A1}, and the present channel tests whether
-a non-zero $\varepsilon$ is compatible with this ensemble of
-$H(z)$ measurements.
-
-\subsection*{A3.2\quad Observational inputs}
-
-The data used here is a representative subset of the Moresco+2022
-cosmic chronometers compilation \cite{Moresco2022}, consisting of
-31 measurements of $H(z)$ at $z \in [0.07,\,1.97]$. Each
-measurement is treated as Gaussian with diagonal observational
-uncertainty $\sigma_{H_i}$, ranging from approximately
-$4~\mathrm{km\,s^{-1}\,Mpc^{-1}}$ at the most precise points to
-$\sim 60~\mathrm{km\,s^{-1}\,Mpc^{-1}}$ at the least-constrained
-ones. The full off-diagonal covariance of the Moresco+2022
-compilation, which includes shared systematic contributions from
-stellar population synthesis modelling, is not used at this
-proxy level; the present treatment is therefore optimistic on
-statistical weight and represents an upper bound on the
-constraining power of the channel.
-
-\subsection*{A3.3\quad ECT-side model and extraction scope}
-
-Under the uniform-$\varepsilon$ ansatz, the model prediction at
-each data redshift is computed through the common background
-module (\texttt{ect\_background.py}) as
-\begin{equation}
-H_{\rm ECT}(z,\, H_0,\, \varepsilon)
-\;=\; H_0 \cdot E_{\rm ECT}(z,\, \varepsilon),
-\end{equation}
-with $E_{\rm ECT}$ given by \eqref{eq:eps_friedmann_A1}. The fit
-has two free parameters: $\varepsilon$ (the primary quantity of
-interest) and $H_0$ (profiled over). Since the cosmic chronometers
-data do not directly anchor the absolute normalisation of $H(z)$,
-$H_0$ is profiled rather than fixed, which broadens the constraint
-on $\varepsilon$ relative to any anchored analysis.
-
-\paragraph{Held fixed under the present proxy.}
-$\Omega_m = 0.315$, $\Omega_\Lambda$, $\Omega_r$; the diagonal
-observational uncertainty structure (no off-diagonal covariance);
-the Moresco+2022 compilation as external input.
-
-\paragraph{Varied.}
-Both $\varepsilon$ and $H_0$ are varied. $\varepsilon$ is scanned
-over a one-dimensional grid; at each value of $\varepsilon$,
-$H_0$ is optimised by bounded scalar minimisation over
-$H_0 \in [50,\,100]~\mathrm{km\,s^{-1}\,Mpc^{-1}}$.
-
-\paragraph{Not included at this proxy level.}
-The full Moresco+2022 covariance with shared stellar-population
-systematics; a joint fit of $(\Omega_m, H_0, \varepsilon)$ with
-$\Omega_m$ floated; redshift-dependence of the
-stellar-population-modelling systematic; late-time deviations from
-the uniform-$\varepsilon$ ansatz.
-
-\subsection*{A3.4\quad Extraction statistic}
-
-The extraction statistic is the profile chi-squared
-\begin{equation}
-\chi^2(\varepsilon) \;=\;
-\min_{H_0}\,\sum_{i=1}^{31}
-\left[\,\frac{H_i^{\rm obs} - H_{\rm ECT}(z_i, H_0, \varepsilon)}
-{\sigma_{H_i}}\,\right]^{\!2}.
-\label{eq:chi2_cc_eps}
-\end{equation}
-The best-fit is defined by the minimum of $\chi^2(\varepsilon)$,
-the $1\sigma$ interval by $\Delta\chi^2 \leq 1$, and the $2\sigma$
-interval by $\Delta\chi^2 \leq 4$, computed directly on the
-one-dimensional profile.
-
-\subsection*{A3.5\quad Interval definition and origin of the width}
-
-\paragraph{Numerical outcome.}
-Direct numerical evaluation through the common background module
-yields
-\begin{align}
-\varepsilon_*
-&\;=\; +0.005,
-\\[2pt]
-H_0^{\rm prof}(\varepsilon_*)
-&\;\approx\; 68.2~\mathrm{km\,s^{-1}\,Mpc^{-1}},
-\\[2pt]
-\chi^2_{\min} / {\rm dof}
-&\;\approx\; 14.5 / 29.
-\end{align}
-The raw $1\sigma$ interval (before imposing any physical prior)
-covers $\varepsilon \in [-0.020,\,+0.087]$; the raw $2\sigma$
-interval extends from $-0.020$ to the scan upper edge
-$+0.150$. The best-fit $\varepsilon_*$ is statistically
-indistinguishable from zero, and the profile is very shallow:
-within $\Delta\chi^2 \leq 1$ the data admits any value of
-$\varepsilon$ in a broad range surrounding zero.
-
-\paragraph{Imposing the physical prior.}
-Under the physical prior $\varepsilon \geq 0$ of
-\S\ref{subsec:eps_def}, the cosmic chronometers channel
-admits
-\begin{equation}
-[\varepsilon_{\rm lo}^{1\sigma},\,\varepsilon_{\rm hi}^{1\sigma}]
-\;=\;
-[\,0,\ 0.087\,],
-\qquad
-[\varepsilon_{\rm lo}^{2\sigma},\,\varepsilon_{\rm hi}^{2\sigma}]
-\;=\;
-[\,0,\ 0.150\,].
-\label{eq:eps_cc_retained_A3}
-\end{equation}
-The lower edges are set by the physical prior rather than by the
-data, and the channel functions as a one-sided upper bound in the
-physical region.
-
-\paragraph{Origin of the width.}
-The $1\sigma$ upper edge $\approx 0.087$ reflects the curvature of
-$\chi^2(\varepsilon)$ at fixed profiled $H_0$ under the assumed
-diagonal observational uncertainty structure. The dominant
-contribution to this width is the statistical uncertainty of the
-individual $H(z)$ measurements; the profiling of $H_0$ absorbs
-any overall normalisation shift, so the extracted
-$\varepsilon$-constraint is driven purely by the redshift-dependent
-\emph{shape} of $H(z)$. The constraint is weak because
-$E_{\rm ECT}(z, \varepsilon)$ is only mildly sensitive to
-$\varepsilon$ in the data redshift range $z < 2$: the
-$(1+z)^{2\varepsilon}$ factor enters multiplicatively but is close
-to unity at small $\varepsilon$ and moderate $z$, so the
-data lever-arm is modest.
-
-\paragraph{Channel character.}
-In the language of
-\S\ref{subsec:eps_retained}, the cosmic chronometers
-channel is a consistency channel rather than a primary extraction
-channel. Its principal role in the retained-five-probe intersection
-is to exclude large values of $\varepsilon$ at late times
---- in particular, to limit the uniform-$\varepsilon$ ansatz to
-values compatible with the observed $H(z)$ shape in
-$z < 2$. It does not contribute a lower edge to the joint band; the
-binding lower edge of the retained interval is set by the JWST
-channel of A2.
-
-\subsection*{A3.6\quad Figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.82\textwidth]{figures/fig_cc_extraction_bw.pdf}
-\caption{Extraction of the effective $\varepsilon$-interval from
-the cosmic chronometers channel, under the common background
-module of Appendix~\ref{app:eps_methodology}. Top panel: data
-points of Moresco+2022 (31 measurements, $z \in [0.07,\,1.97]$)
-shown with error bars; the $\Lambda$CDM best-fit curve (dotted)
-and the ECT curve at the retained-band central value
-$\varepsilon = 0.032$ (solid) are overlaid. Bottom panel: profile
-$\chi^2(\varepsilon)$ with $\Delta\chi^2 = 1$ and $\Delta\chi^2 = 4$
-levels marked as horizontal gray lines; the raw minimum near
-$\varepsilon \approx +0.005$ is indistinguishable from zero within
-the data. All shading and line styles are grayscale per preprint
-convention.}
-\label{fig:cc_extraction}
-\end{figure}
-
-\subsection*{A3.7\quad Methodological limitations}
-
-\textit{(i) Diagonal covariance only.}
-The full Moresco+2022 covariance has substantial off-diagonal
-contributions from shared stellar-population systematics. Their
-inclusion would broaden the $1\sigma$ and $2\sigma$ intervals
-modestly; the present treatment is therefore more optimistic than
-a fully correlated analysis.
-
-\textit{(ii) $\Omega_m$ held fixed.}
-Cosmic chronometers cannot simultaneously determine $\Omega_m$,
-$H_0$, and $\varepsilon$ without external priors. Fixing
-$\Omega_m = 0.315$ at the $\Lambda$CDM-best-fit value, as in the
-common background module, is a standard proxy choice; letting
-$\Omega_m$ float broadens the constraint on $\varepsilon$
-considerably and reduces the channel to a near-trivial constraint.
-
-\textit{(iii) $\Lambda$CDM-background common proxy.}
-As in A1.7(i) and A2.8(ii), the common background module uses a
-$\Lambda$CDM-best-fit parameter set as external input; the
-$\varepsilon$-deformation is applied on top. A closure-level
-background would replace this proxy.
-
-\textit{(iv) Sub-compilation of Moresco+2022.}
-The present analysis uses a representative 31-point subset of the
-published Moresco+2022 compilation rather than the full catalogue.
-The extracted upper bound is representative but not maximally
-constraining.
-
-% ==================================================================
-% END Appendix (extraction, cosmic chronometers channel).
-% ==================================================================
-
-% ==================================================================
-% APPENDIX A4 — fσ_8 from RSD: extraction of ε.
-%
-% FINAL DRAFT on freeze-checkpoint numbers (2026-04-19).
-% Numerics: scripts/epsilon_convergence/ch8_fsigma8.py, result_ch8.json
-% Background: scripts/epsilon_convergence/ect_background.py
-%
-% Structure (unified per-probe template shared with A1-A3, A5):
-%   A4.1  Physics of the probe
-%   A4.2  Observational inputs
-%   A4.3  ECT-side model and extraction scope
-%   A4.4  Extraction statistic
-%   A4.5  Interval definition and origin of the width
-%         (EXPLICIT treatment of negative raw best-fit)
-%   A4.6  Figure
-%   A4.7  Methodological limitations
-%
-% Critical point (GPT r21 requirement):
-%   Raw minimum lies in ε < 0. Physical prior ε ≥ 0 clips that branch.
-%   Retained result is therefore an UPPER BOUND only, not a
-%   two-sided extraction. This must be stated explicitly.
-%
-% NO integration into preprint yet.
-% ==================================================================
-
-\section{Extraction of the effective uniform-$\varepsilon$ interval
-from the $f\sigma_8$ RSD channel}
-\label{app:eps_extraction_fsigma8}
-
-This appendix derives the effective uniform-$\varepsilon$ upper
-bound from the $f\sigma_8$ redshift-space-distortion channel used
-in the rebuilt \S15.5. Unlike the Hubble + $r_s$ and JWST channels
-of A1 and A2, the present channel has a raw statistical best-fit
-in the unphysical region $\varepsilon < 0$. This does not in
-itself invalidate the channel: the physical prior of
-\S\ref{subsec:eps_def} restricts $\varepsilon \geq 0$, and
-once this restriction is imposed the channel delivers a
-well-defined one-sided upper bound on $\varepsilon$. The
-explanation of the negative raw minimum and its interpretation
-are given below.
-
-\subsection*{A4.1\quad Physics of the probe}
-
-Redshift-space distortions (RSD) probe the linear-theory growth
-rate $f(z) = d\ln D/d\ln a$ through the anisotropy of the
-galaxy-galaxy clustering signal in redshift space. The
-observationally accessible quantity is
-\begin{equation}
-f\sigma_8(z)
-\;\equiv\; f(z)\cdot\sigma_8(z),
-\qquad
-\sigma_8(z)
-\;=\; \sigma_8(0)\cdot D(z)/D(0),
-\end{equation}
-measured through the Kaiser-factor-plus-higher-order modelling of
-the multipole expansion of the galaxy two-point correlation
-function at each survey redshift. In the effective
-uniform-$\varepsilon$ layer of
-\S\ref{subsec:eps_def}, a non-zero $\varepsilon$ enters the
-linear growth through the deformation of both the background
-expansion rate \eqref{eq:eps_friedmann_A1} and the effective
-Poisson source,
-\begin{equation}
-\mu_G(a, \varepsilon) \;=\; a^{-2\varepsilon},
-\label{eq:mu_G}
-\end{equation}
-so the growth-factor ODE in $N = \ln a$ is modified as
-\begin{equation}
-\frac{d^2 D}{dN^2}
-\;+\;
-\left[\,2 + \frac{d\ln E}{dN}\,\right]\frac{dD}{dN}
-\;=\;
-\frac{3}{2}\,\Omega_m(a,\varepsilon)\,\mu_G(a,\varepsilon)\, D.
-\label{eq:growth_ode_fsigma8}
-\end{equation}
-The integration through the common background module gives the
-$\varepsilon$-dependent growth history $D(z, \varepsilon)$ and
-the corresponding growth rate $f(z, \varepsilon)$.
-
-\subsection*{A4.2\quad Observational inputs}
-
-The data used here is a representative compilation of 14
-$f\sigma_8(z)$ measurements from BOSS DR12, 6dFGS, eBOSS, VIPERS,
-and related surveys at $z \in [0.067,\,1.944]$. Each measurement
-is treated as Gaussian with its published diagonal uncertainty
-$\sigma_{f\sigma_8,\,i}$. The off-diagonal cross-correlations
-between surveys (arising, e.g., from overlapping sky coverage or
-shared survey-selection functions) are not used at this proxy
-level.
-
-\subsection*{A4.3\quad ECT-side model and extraction scope}
-
-The model prediction at each data redshift is
-\begin{equation}
-f\sigma_8^{\rm model}(z_i;\, \varepsilon,\, \sigma_8^{(0)})
-\;=\; f(z_i, \varepsilon) \cdot
-\sigma_8^{(0)} \cdot D(z_i, \varepsilon) / D(0, \varepsilon),
-\end{equation}
-where $D(z, \varepsilon)$ is obtained by integrating
-\eqref{eq:growth_ode_fsigma8} through the common background module
-with matter-era initial conditions, and $\sigma_8^{(0)}$ is the
-$z = 0$ matter power amplitude treated as a nuisance parameter
-(profiled). This choice is deliberately conservative: since the
-absolute normalisation of $\sigma_8$ is tied to the CMB amplitude
-$A_s$ through a $\varepsilon$-dependent growth history, fixing it
-would introduce an implicit $\varepsilon$-correlation. Profiling
-instead tests only the \emph{shape} of $f\sigma_8(z)$ versus
-redshift.
-
-\paragraph{Held fixed under the present proxy.}
-$\Omega_m = 0.315$, $\Omega_\Lambda$, $\Omega_r$; the deformed
-Poisson source form \eqref{eq:mu_G}; the matter-era initial
-conditions $D \propto a$ at $a_{\rm init} = 10^{-3}$; the
-14-point RSD compilation with diagonal errors.
-
-\paragraph{Varied.}
-$\varepsilon$ is the primary scan parameter; $\sigma_8^{(0)}$ is
-profiled at each $\varepsilon$ by bounded scalar minimisation over
-$\sigma_8^{(0)} \in [0.5,\,1.1]$.
-
-\paragraph{Not included at this proxy level.}
-Off-diagonal covariance of the RSD compilation; scale-dependence
-of $\mu_G$ (e.g., from non-trivial spatial structure of the
-effective Poisson source); non-linear RSD corrections; systematic
-effects of the Kaiser approximation used in the underlying
-observational analyses; Alcock-Paczynski corrections.
-
-\subsection*{A4.4\quad Extraction statistic}
-
-The profile chi-squared is
-\begin{equation}
-\chi^2(\varepsilon)
-\;=\;
-\min_{\sigma_8^{(0)}}\,\sum_{i=1}^{14}
-\left[\,\frac{(f\sigma_8)^{\rm obs}_i
-- (f\sigma_8)^{\rm model}(z_i; \varepsilon, \sigma_8^{(0)})}
-{\sigma_i}\,\right]^{\!2}.
-\label{eq:chi2_fsigma8_eps}
-\end{equation}
-The scan is performed on a dense grid $\varepsilon \in [-0.12,\,+0.15]$
-(136 points). The $1\sigma$ and $2\sigma$ edges are then refined by
-Brent bracket root-finding on the bracket-crossings of
-$\chi^2(\varepsilon) - \chi^2_{\min} = 1$ and $= 4$ respectively,
-avoiding grid-spacing bias.
-
-\subsection*{A4.5\quad Interval definition and origin of the width}
-
-The $f\sigma_8$ RSD channel deserves special care because its
-\emph{raw} statistical best-fit in the unrestricted scan falls
-deep in the unphysical region $\varepsilon < 0$. This is a
-feature of the data-and-model combination as it stands, and
-should not be obscured.
-
-\paragraph{Raw statistical result.}
-Direct numerical evaluation on the extended grid
-$\varepsilon \in [-0.12,\,+0.15]$ gives a raw minimum at the lower
-grid boundary, $\varepsilon_{\rm raw} \approx -0.12$, with
-profiled $\sigma_8^{(0)} \approx 0.92$ and
-$\chi^2_{\min}/{\rm dof} \approx 8.93/12$. The $\chi^2$ profile is
-very shallow: $\Delta\chi^2 \leq 1$ is satisfied everywhere from
-the grid lower edge up to the Brent-refined upper edge
-$\varepsilon = +0.03960$; $\Delta\chi^2 \leq 4$ extends from the
-grid lower edge up to the grid upper edge
-$\varepsilon = +0.150$.
-
-\paragraph{Interpretation of the negative raw minimum.}
-The statistical preference for $\varepsilon < 0$ in the present
-pipeline arises because the measured $f\sigma_8(z)$ at the
-relevant survey redshifts lies somewhat below the prediction of
-the $\Lambda$CDM + common-background model with
-$\sigma_8^{(0)}$ at Planck's best-fit value; equivalently, the
-observed growth rate at $z \lesssim 1$ is mildly slower than
-$\Lambda$CDM would predict. The $\varepsilon$-deformation
-parametrisation \eqref{eq:mu_G} produces growth enhancement for
-$\varepsilon > 0$ and growth suppression for $\varepsilon < 0$,
-so a statistical preference for suppressed growth maps naturally
-onto $\varepsilon < 0$ at the profile-$\chi^2$ level. This effect
-is the same data feature that is discussed in the literature
-under the heading of the $S_8$ or $\sigma_8$ tension (see
-excluded probes in \S\ref{subsec:eps_excluded}).
-
-\paragraph{Physical prior and clipping.}
-The uniform-$\varepsilon$ ansatz of
-\S\ref{subsec:eps_def} restricts $\varepsilon \geq 0$
-on physical grounds (for the effective layer in question, a
-negative $\varepsilon$ would correspond to growth suppression at
-all epochs, including the high-$z$ epoch where the JWST channel
-independently requires enhancement). Under this prior, the raw
-negative branch is not an admissible solution of the
-uniform-$\varepsilon$ diagnostic: it is not clipped because it is
-statistically inconvenient, but because it is inconsistent with
-the same ansatz that the other retained channels test.
-
-\paragraph{Retained interval under the physical prior.}
-Once the physical prior is imposed, the $f\sigma_8$ channel
-contributes a one-sided upper bound only:
-\begin{align}
-[\varepsilon_{\rm lo}^{1\sigma},\,\varepsilon_{\rm hi}^{1\sigma}]
-&\;=\;
-[\,0,\ 0.0396\,],
-\label{eq:eps_fsigma8_retained_A4}
-\\[2pt]
-[\varepsilon_{\rm lo}^{2\sigma},\,\varepsilon_{\rm hi}^{2\sigma}]
-&\;=\;
-[\,0,\ 0.150\,]_{\rm grid-limited}.
-\end{align}
-The lower edges are set by the physical prior; the $1\sigma$
-upper edge $0.0396$ is obtained by Brent refinement on the
-$\Delta\chi^2 = 1$ crossing; the $2\sigma$ upper edge reaches the
-numerical scan boundary, so it is grid-limited rather than
-data-limited.
-
-\paragraph{Origin of the $1\sigma$ upper edge.}
-The $1\sigma$ upper edge $0.0396$ is the point at which the
-$\chi^2$ profile crosses $\chi^2_{\min} + 1$ from below on the
-physically admissible branch $\varepsilon \geq 0$. The width is
-controlled by two effects: (i) the statistical uncertainty of the
-individual $f\sigma_8$ measurements, and (ii) the shape-dependence
-of $f\sigma_8(z)$ on $\varepsilon$ through the growth history.
-The second effect is only modest at $z < 2$, because the
-$\varepsilon$-deformation enters growth through
-$(1 + z)^{2\varepsilon}$, which gives a weak lever-arm at moderate
-$z$ and small $\varepsilon$. This is why the channel delivers
-only a loose upper bound rather than a narrow two-sided
-extraction.
-
-\paragraph{Methodological history.}
-An earlier coarser scan over $\varepsilon \in [-0.06,\,+0.12]$
-yielded an apparent $1\sigma$ upper of $0.058$. That result was
-a grid-boundary artefact: the true minimum of the shallow
-$\chi^2$ profile lies at even more negative $\varepsilon$ than
-the old grid permitted, which biased the $\chi^2_{\min}$ value
-and therefore shifted the $\Delta\chi^2 = 1$ crossing upward. On
-the extended grid $[-0.12,\,+0.15]$ with Brent refinement, the
-artefact is removed and the $1\sigma$ upper edge stabilises at
-$0.0396$, which coincides with the previously published value of
-$0.036$ to within Brent precision. This is discussed at greater
-length in Appendix~\ref{app:eps_methodology}.
-
-\paragraph{Channel character.}
-The $f\sigma_8$ RSD channel is, in the retained-five-probe
-analysis, a consistency channel delivering a one-sided upper
-bound. Its role in the joint band is to exclude moderately large
-$\varepsilon$, and it is currently close to binding on the upper
-edge of the retained interval (together with the Hubble + $r_s$
-channel of A1).
-
-\subsection*{A4.6\quad Figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.82\textwidth]{figures/fig_fsigma8_extraction_bw.pdf}
-\caption{Extraction of the effective $\varepsilon$-interval from
-the $f\sigma_8$ RSD channel, under the common background module of
-Appendix~\ref{app:eps_methodology}. Top panel: the 14 RSD data
-points with 1$\sigma$ error bars; the $\Lambda$CDM model ($\varepsilon = 0$,
-dotted) and the ECT model at the retained-band central value
-$\varepsilon = 0.032$ (solid) are overlaid. Bottom panel: profile
-$\chi^2(\varepsilon)$ on the extended grid
-$\varepsilon \in [-0.12,\,+0.15]$; the raw minimum sits at the
-lower grid boundary, the Brent-refined $1\sigma$ upper edge is at
-$\varepsilon = 0.0396$, and the physical prior $\varepsilon \geq 0$
-is marked by the vertical gray line. The retained $1\sigma$
-interval $[0,\,0.0396]$ is shaded darker gray; the $2\sigma$
-upper-edge extension is shown lighter. All shading and line styles
-are grayscale per preprint convention.}
-\label{fig:fsigma8_extraction}
-\end{figure}
-
-\subsection*{A4.7\quad Methodological limitations}
-
-\textit{(i) Data-level growth preference.}
-The negative raw best-fit reflects an observational feature of
-the RSD compilation (consistency with modest growth suppression
-relative to $\Lambda$CDM at $z \lesssim 1$) rather than an ECT
-prediction of $\varepsilon < 0$. The uniform-$\varepsilon$
-diagnostic of \S\ref{subsec:eps_def} restricts
-$\varepsilon \geq 0$; the resulting retained bound
-\eqref{eq:eps_fsigma8_retained_A4} is therefore a one-sided
-upper limit.
-
-\textit{(ii) Diagonal covariance only.}
-Off-diagonal cross-correlations between surveys have not been
-propagated. Their inclusion would broaden the $1\sigma$ interval
-modestly; the present treatment is therefore optimistic.
-
-\textit{(iii) $\sigma_8^{(0)}$ profiled as nuisance.}
-The amplitude $\sigma_8^{(0)}$ is profiled rather than fixed,
-since its absolute calibration is tied to the CMB amplitude $A_s$
-through a $\varepsilon$-dependent growth history. Profiling is
-conservative and tests only the \emph{shape} of $f\sigma_8(z)$;
-a fixed-$\sigma_8^{(0)}$ analysis would give a tighter but more
-prior-dependent constraint.
-
-\textit{(iv) Linear growth theory.}
-The growth-factor ODE \eqref{eq:growth_ode_fsigma8} is the
-linear-theory equation. At $z \lesssim 0.5$, mildly non-linear
-corrections to the growth factor and to the RSD observable
-itself are present; they are absorbed into the diagonal observational
-uncertainty in the present compilation.
-
-\textit{(v) $\Lambda$CDM-background common proxy.}
-As in A1.7(i) and A2.8(ii), the common background module uses a
-$\Lambda$CDM-best-fit parameter set as external input; the
-$\varepsilon$-deformation is applied on top. A closure-level
-background would modify both the background expansion and the
-Poisson source $\mu_G$ consistently, in a way that cannot be
-reduced to a single parameter $\varepsilon$.
-
-\textit{(vi) Grid-refinement history.}
-The earlier coarser-grid $1\sigma$ upper of $0.058$ was removed in
-the present checkpoint as a numerical artefact of the grid scan;
-the Brent-refined value $0.0396$ is stable with respect to further
-grid tightening, but depends on the extended scan range
-$[-0.12,\,+0.15]$ being wide enough to bracket the true profile
-minimum in $\varepsilon < 0$. This is discussed in
-Appendix~\ref{app:eps_methodology}.
-
-% ==================================================================
-% END Appendix (extraction, fσ_8 RSD channel).
-% ==================================================================
-
-% ==================================================================
-% APPENDIX A5 — ISW amplitude: extraction of ε (PROVISIONAL proxy).
-%
-% FINAL DRAFT on freeze-checkpoint numbers (2026-04-19).
-% Numerics: scripts/epsilon_convergence/ch3_isw.py, result_ch3.json
-% Background: scripts/epsilon_convergence/ect_background.py
-%         (USED for bookkeeping consistency only; kernel κ_ISW
-%          NOT recalibrated on ECT-native background)
-%
-% Structure (unified per-probe template shared with A1-A4):
-%   A5.1  Physics of the probe
-%   A5.2  Observational inputs
-%   A5.3  ECT-side model and extraction scope
-%         (WITH EXPLICIT PROVISIONAL LABELLING per GPT r21)
-%   A5.4  Extraction statistic
-%   A5.5  Interval definition and origin of the width
-%   A5.6  Figure
-%   A5.7  Methodological limitations
-%
-% Character of this channel (GPT r21 requirement of maximum honesty):
-%   Proxy-level only.
-%   Kernel NOT recalibrated on common background.
-%   Kept as provisional consistency channel.
-%   NOT at the same epistemic level as A1/A2/A3/A4.
-%   Must be stated up front and repeatedly.
-%
-% NO integration into preprint yet.
-% ==================================================================
-
-\section{Extraction of the effective uniform-$\varepsilon$ interval
-from the ISW channel (provisional proxy)}
-\label{app:eps_extraction_isw}
-
-This appendix derives the effective uniform-$\varepsilon$ upper
-bound from the late-time Integrated Sachs-Wolfe (ISW) amplitude.
-The present extraction is deliberately presented as a
-\emph{provisional proxy}, not as an extraction at the same
-epistemic level as A1--A4. The reasons are stated up front and in
-each subsection:
-\begin{itemize}
-  \item the $\varepsilon$-dependence of the observable is
-        linearised,
-  \item the proportionality coefficient $\kappa_{\rm ISW}$ is
-        calibrated against a $\Lambda$CDM-background Limber
-        weight function and has \emph{not} been recalibrated
-        against the common ECT background of
-        Appendix~\ref{app:eps_methodology} in the present
-        freeze checkpoint,
-  \item the observational uncertainty is very large (of order
-        $30\%$) and the channel cannot by itself extract a
-        non-trivial central value.
-\end{itemize}
-The retained result of this channel is therefore a broad
-one-sided upper bound under the physical prior
-$\varepsilon \geq 0$, whose numerical value is unchanged between
-the pre-recalc and the post-recalc retained-pipeline and whose
-interpretation is consistency-checking rather than evidential.
-
-\subsection*{A5.1\quad Physics of the probe}
-
-The late-time ISW effect is the cross-correlation between the
-CMB temperature anisotropy and tracers of the large-scale
-gravitational potential $\Phi$ at low redshift. In a matter-only
-universe the gravitational potential is constant in time on large
-scales, and the ISW signal vanishes; the presence of dark
-energy causes $\dot\Phi \neq 0$ at low $z$, which gives a
-non-zero cross-correlation. In the effective uniform-$\varepsilon$
-layer of \S\ref{subsec:eps_def}, the deformation of the
-expansion rate through \eqref{eq:eps_friedmann_A1} modifies the
-late-time decay of $\Phi$, and the amplitude of the resulting
-ISW signal deviates from its $\Lambda$CDM value.
-
-\subsection*{A5.2\quad Observational inputs}
-
-The observable is the measured amplitude of the cross-correlation
-between the Planck CMB temperature map and the unWISE galaxy
-catalogue, parametrised as a rescaling of the $\Lambda$CDM
-prediction:
-\begin{equation}
-A_{\rm ISW}^{\rm obs} \;=\; 0.96 \pm 0.30,
-\end{equation}
-from Krolewski et al.\ 2022 \cite{Krolewski2022}. The central
-value is $1\sigma$ below the $\Lambda$CDM-based prediction
-$A_{\rm ISW}^{\Lambda} = 1$; the uncertainty of $30\%$ is
-intrinsically large, and the measurement cannot be sharpened
-within the present pipeline.
-
-\subsection*{A5.3\quad ECT-side model and extraction scope
-(provisional)}
-
-At the provisional-proxy level used here, the
-$\varepsilon$-dependence of the ISW amplitude is approximated by
-the linearised form
-\begin{equation}
-A_{\rm ISW}^{\rm model}(\varepsilon)
-\;=\;
-1 + \kappa_{\rm ISW}\,\varepsilon,
-\qquad
-\kappa_{\rm ISW} \;\approx\; 6,
-\label{eq:A_ISW_model}
-\end{equation}
-where the coefficient $\kappa_{\rm ISW}$ was obtained from a
-single-zoomed Limber integration of the ISW weight function under
-a $\Lambda$CDM background. This coefficient has \emph{not} been
-recalibrated against the common ECT background of
-Appendix~\ref{app:eps_methodology} in the present checkpoint.
-The justification for this deferral is stated in the
-present common-background methodology (A6): a genuine ECT-background
-recalibration of $\kappa_{\rm ISW}$ would require re-integrating
-the full late-time ISW weight function $W_{\rm ISW}(z)$ under
-$H(z, \varepsilon)$, $t(z, \varepsilon)$, and $\dot\Phi(z, \varepsilon)$
-trajectories, which is beyond the scope of Phase 2A.
-
-\paragraph{Held fixed under the present proxy.}
-The linearised form \eqref{eq:A_ISW_model}; the
-$\Lambda$CDM-background-calibrated coefficient
-$\kappa_{\rm ISW} = 6$; the Krolewski+2024 observational anchor.
-
-\paragraph{Varied.}
-$\varepsilon$ only.
-
-\paragraph{Not included at this proxy level.}
-Any nonlinear dependence of $A_{\rm ISW}$ on $\varepsilon$;
-recalibration of $\kappa_{\rm ISW}$ on the common ECT background;
-cross-correlations with other late-time probes (weak lensing,
-$f\sigma_8$) that would share systematic effects; full Boltzmann
-evolution of $\dot\Phi$ under the ECT deformation.
-
-\subsection*{A5.4\quad Extraction statistic}
-
-The one-parameter model gives the inversion
-\begin{equation}
-\varepsilon(A_{\rm ISW})
-\;=\;
-\frac{A_{\rm ISW} - 1}{\kappa_{\rm ISW}}.
-\end{equation}
-The raw best-fit and the raw $1\sigma$ and $2\sigma$ intervals
-follow from the $\pm 1\sigma$ and $\pm 2\sigma$ observational
-brackets on $A_{\rm ISW}^{\rm obs}$.
-
-\subsection*{A5.5\quad Interval definition and origin of the width}
-
-\paragraph{Raw result.}
-Direct inversion of $A_{\rm ISW}^{\rm obs} = 0.96 \pm 0.30$ gives
-\begin{align}
-\varepsilon_{\rm raw}
-&\;=\; -0.0067,
-\\[2pt]
-[\varepsilon_{\rm lo}^{1\sigma},\,\varepsilon_{\rm hi}^{1\sigma}]_{\rm raw}
-&\;=\; [\,-0.057,\ +0.043\,],
-\\[2pt]
-[\varepsilon_{\rm lo}^{2\sigma},\,\varepsilon_{\rm hi}^{2\sigma}]_{\rm raw}
-&\;=\; [\,-0.107,\ +0.093\,].
-\end{align}
-The raw best-fit is indistinguishable from zero within the
-observational uncertainty.
-
-\paragraph{Retained interval under the physical prior.}
-Imposing $\varepsilon \geq 0$, the ISW channel contributes a
-one-sided upper bound:
-\begin{align}
-[\varepsilon_{\rm lo}^{1\sigma},\,\varepsilon_{\rm hi}^{1\sigma}]
-&\;=\;
-[\,0,\ 0.0433\,],
-\\[2pt]
-[\varepsilon_{\rm lo}^{2\sigma},\,\varepsilon_{\rm hi}^{2\sigma}]
-&\;=\;
-[\,0,\ 0.0933\,].
-\end{align}
-The interval was numerically unchanged between the pre-recalc and
-the post-recalc retained pipelines, reflecting the fact that
-$\kappa_{\rm ISW}$ has not yet been recalibrated.
-
-\paragraph{Origin of the width.}
-The $\pm 30\%$ observational uncertainty on $A_{\rm ISW}^{\rm obs}$
-is the sole driver of the width. There is no fitting at all: the
-channel is a direct algebraic inversion of a linearised
-one-parameter model, and the reported interval simply reflects
-the observational bracket on $A_{\rm ISW}$ through
-\eqref{eq:A_ISW_model}.
-
-\paragraph{Channel character.}
-The ISW channel is a consistency channel only. Its retained upper
-bound is broader than those of A1--A4 and does not bind the joint
-interval. Its principal role in
-\S\ref{subsec:eps_retained} is to demonstrate that the
-retained joint band $[0.0296,\,0.0376]$ is compatible with an
-independent late-time observable, \emph{not} to contribute
-evidential weight to the band.
-
-\subsection*{A5.6\quad Figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.82\textwidth]{figures/fig_isw_extraction_bw.pdf}
-\caption{Extraction of the effective $\varepsilon$-upper bound
-from the ISW channel, at the provisional proxy level described
-in A5.3. The linearised model
-$A_{\rm ISW}(\varepsilon) = 1 + \kappa_{\rm ISW}\varepsilon$ with
-$\kappa_{\rm ISW} = 6$ (solid line) is compared with the
-observational anchor $A_{\rm ISW}^{\rm obs} = 0.96 \pm 0.30$
-(horizontal darker gray band: $1\sigma$; lighter: $2\sigma$). The
-inverted $\varepsilon$-intervals (shown along the
-$\varepsilon$-axis below) are clipped to the physical region
-$\varepsilon \geq 0$, yielding the retained one-sided upper bounds
-$[0,\,0.0433]$ ($1\sigma$) and $[0,\,0.0933]$ ($2\sigma$). The
-text ``$\kappa_{\rm ISW}$ not recalibrated'' is placed on the
-figure to reinforce the provisional status. All shading and line
-styles are grayscale per preprint convention.}
-\label{fig:isw_extraction}
-\end{figure}
-
-\subsection*{A5.7\quad Methodological limitations}
-
-\textit{(i) Linearised $\varepsilon$-dependence.}
-The form \eqref{eq:A_ISW_model} truncates the
-$\varepsilon$-dependence at linear order. For
-$|\varepsilon| \gtrsim 0.05$ the linear approximation begins to
-break down, and a non-linear recalculation of
-$A_{\rm ISW}(\varepsilon)$ would be required to make the
-extracted bound quantitative at the retained-band level. Since the
-retained $1\sigma$ upper $0.043$ is close to this boundary, the
-bound should be read as an order-of-magnitude consistency check
-rather than a precise constraint.
-
-\textit{(ii) $\kappa_{\rm ISW}$ not recalibrated on common
-background.}
-The coefficient $\kappa_{\rm ISW} = 6$ was calibrated under
-$\Lambda$CDM-background Limber weights. On the common ECT
-background of Appendix~\ref{app:eps_methodology}, the late-time
-ISW weight function $W_{\rm ISW}(z)$ is modified through both
-$H(z, \varepsilon)$ (which changes the conformal-time kernel) and
-$\dot\Phi(z, \varepsilon)$ (which changes the source amplitude).
-A self-consistent recalculation would, in principle, shift
-$\kappa_{\rm ISW}$ by an unknown amount; the present checkpoint
-therefore treats the retained ISW interval as provisional, and
-the numerical value quoted in
-\S\ref{subsec:eps_retained} is inherited from the
-$\Lambda$CDM-background calibration.
-
-\textit{(iii) Large observational uncertainty.}
-The $\pm 30\%$ uncertainty on $A_{\rm ISW}^{\rm obs}$ is
-intrinsically large and cannot be reduced within the present
-pipeline. Even a perfectly recalibrated $\kappa_{\rm ISW}$ would
-not sharpen the retained interval below approximately
-$[0,\,0.03]$ at $1\sigma$.
-
-\textit{(iv) Epistemic status.}
-The ISW channel is not at the same epistemic level as A1--A4. In
-the retained-five-probe analysis it functions as a consistency
-check only: it does not bind any edge of the joint band, and its
-numerical value is unchanged between the pre-recalc and
-post-recalc pipelines. Any future strengthening of the ISW bound
-(e.g., through kernel recalibration on the common background or
-through tighter $A_{\rm ISW}^{\rm obs}$ measurements) would
-naturally be incorporated into a future iteration of the retained
-pipeline.
-
-% ==================================================================
-% END Appendix (extraction, ISW channel, provisional proxy).
-% ==================================================================
-
-% ==================================================================
-% APPENDIX A6 — Methodology + benchmark achievability + age-viability
-%
-% FINAL DRAFT on freeze-checkpoint numbers (2026-04-19).
-% This appendix is referenced as \ref{app:eps_methodology}
-% throughout A1-A5 and §15.5.
-%
-% Structure:
-%   A6.1  Common background module: scope and role
-%   A6.2  What was and was not recomputed under the module
-%   A6.3  Freeze-checkpoint joint band: provisional but stable
-%   A6.4  Age-viability ambiguity under Hubble mapping (viability
-%         note, NOT a retained probe)
-%   A6.5  Benchmark achievability for the retained band (only)
-%   A6.6  Excluded probes: audit status and non-silent-dismissal
-%   A6.7  Methodological limitations and path forward
-%
-% Character (GPT r17-r21):
-%   A6 is the binding glue. Without it, A1-A5 are disconnected
-%   per-channel extractions. A6 makes the retained-five-probe
-%   analysis a coherent package.
-%
-% Target audience:
-%   - readers who need to understand why the retained band is
-%     "provisional but stable"
-%   - reviewers who will ask about age tension
-%   - anyone auditing excluded probes or asking "why aren't BAO
-%     and S_8 headline?"
-%
-% NO integration into preprint yet.
-% ==================================================================
-
-\section{Methodology of the common-background retained-pipeline,
-benchmark achievability, and the age-viability ambiguity}
-\label{app:eps_methodology}
-
-This appendix collects the methodological scaffolding for the
-retained-five-probe analysis of \S15.5. Its purpose is threefold:
-(i) to specify the common background module that A1--A5 all
-invoke, (ii) to state the current status of the retained joint
-band as ``provisional but stable under the first common-background
-recalc,'' and (iii) to discuss two issues that belong at this
-cross-channel level rather than in any single per-probe appendix
----namely, the age-viability ambiguity under the Hubble mapping
-and the benchmark achievability for the retained band. The
-appendix closes with an audit of the excluded probes and a
-discussion of the methodological limitations still open after the
-freeze checkpoint.
-
-\subsection*{A6.1\quad The common background module: scope and
-role}
-
-All five retained per-probe extraction appendices (A1--A5) invoke
-a single background module, \texttt{ect\_background.py}, which
-functions as the single source of truth for the
-$\varepsilon$-deformed background quantities used across channels.
-Specifically, the module provides:
-\begin{itemize}
-\item the dimensionless Hubble rate
-$E_{\rm ECT}(z,\,\varepsilon)$ from
-\eqref{eq:eps_friedmann_A1};
-\item the Hubble rate
-$H(z,\,\varepsilon) = H_0 \cdot E_{\rm ECT}(z,\,\varepsilon)$
-at a user-supplied $H_0$;
-\item the cosmic age
-$t_0(\varepsilon)
-  = \int_0^{\infty}\frac{dz}{(1+z)\,H(z,\,\varepsilon)}$
-evaluated with a multi-segment quadrature to avoid
-round-off in the deep-matter-era integration range;
-\item the lookback time and age at arbitrary redshift,
-$t(z,\,\varepsilon)$, used in A2 to construct the
-stellar-assembly time-budget factor;
-\item the standard cosmological parameter constants
-($\Omega_m$, $\Omega_\Lambda$, $\Omega_r$, $\Omega_b$,
-$z_*$, $z_{\rm drag}$, $c$, $H_0^P$) adopted uniformly
-across channels.
-\end{itemize}
-At $\varepsilon = 0$ the module reproduces the published
-$\Lambda$CDM benchmarks ($t_0 \approx 13.79~{\rm Gyr}$) at
-better than $1\%$ precision once the integration range fix is
-applied. The module does not implement recombination-era or
-Boltzmann-level physics, nor does it implement the closure-level
-ECT background; it is a proxy that allows all per-channel
-extractions to share the same low- and late-$z$ numerical
-scaffolding.
-
-\subsection*{A6.2\quad What was and was not recomputed under the
-common module}
-
-In preparing the present checkpoint, each retained channel was
-re-expressed against the common module of A6.1. The level of
-physical completion, however, differs by channel. The following
-summary is the normative table: it is the reference that the
-``provisional but stable'' language of
-\S\ref{subsec:eps_retained} and
-\S\ref{subsec:eps_joint_band} points back to.
-\begin{center}
-\begin{tabular}{|l|l|l|}
-\hline
-Channel & Status after freeze &
-Comment \\
-\hline
-Hubble + $r_s$ (A1) &
-stable &
-No change from pre-recalc. \\
-& & Weak $t_0$ coupling at leading order. \\
-\hline
-JWST (A2) &
-materially revised; &
-Time-budget factor added; central $\varepsilon$ \\
-& appendix-level defence required &
- shifted from $0.0425$ to $0.0449$. \\
-\hline
-Cosmic Chronometers (A3) &
-stable &
-Imported background; $H(z)$ shape probe. \\
-& & One-sided upper under $\varepsilon \geq 0$. \\
-\hline
-$f\sigma_8$ RSD (A4) &
-stable after grid-fix &
-Brent-refined $1\sigma$ upper
-$0.0396$. \\
-& & Raw negative best-fit explicit in A4.5. \\
-\hline
-ISW (A5) &
-provisional, proxy-level &
-$\kappa_{\rm ISW}$ \emph{not} recalibrated \\
-& & on common background. \\
-\hline
-\end{tabular}
-\end{center}
-\paragraph{Net effect.}
-Two channels carried no numerical change (Hubble, CC); two
-channels recovered or stabilised at their previously published
-values after re-grounding on the common module ($f\sigma_8$, ISW); one
-channel (JWST) received a materially new physical correction
-(time-budget factor). The net impact on the retained joint band
-is discussed in A6.3.
-
-\subsection*{A6.3\quad The provisional retained-band result under the
-common-background pipeline}
-
-The retained joint $1\sigma$ band after the common-background
-recalc is
-\begin{equation}
-\varepsilon
-\;\in\;
-[\,0.0296,\ 0.0376\,]
-\quad (1\sigma)
-\label{eq:joint_band_A6}
-\end{equation}
-with the $2\sigma$ extension $[\,0.0207,\,0.0425\,]$. The binding
-edges are the JWST lower-$1\sigma$ (A2, now $0.0296$ after the
-time-budget correction) and the Hubble + $r_s$ upper-$1\sigma$
-(A1, stable at $0.0376$). The $f\sigma_8$ upper-$1\sigma$
-($0.0396$, Brent-refined) is $0.002$ looser than the Hubble edge
-and does not bind; the cosmic-chronometer ($0.087$) and ISW
-($0.043$) upper edges are broader still.
-
-\paragraph{Interpretation.}
-This band is numerically stable enough to support appendix
-drafting, but not yet final enough for main-text updating. The
-overall numerical match of \eqref{eq:joint_band_A6} with the
-previous pre-recalc band $[\,0.029,\,0.036\,]$ (to three
-significant figures) indicates that the first common-background
-recalc preserves the retained-five-probe intersection at its
-previous location, within the precision of the present
-pipelines. This suggests numerical stability of the intersection
-under the first common-background recalc, but does not by itself
-establish the final retained result. Final confirmation is
-pending completion of two pieces of work: the fully rewritten
-JWST time-budget defence at appendix level (A2) and the
-ECT-native kernel recalibration for ISW (A5). Both are listed as
-methodology limitations in A6.7.
-
-\paragraph{What the band does and does not claim.}
-The band is the intersection of five retained $1\sigma$ intervals
-obtained from observationally distinct channels with different
-kernels and different dominant systematics. It is not a
-statistically rigorous global likelihood, and it should not be
-read as a direct measurement of a first-principles ECT parameter.
-Rather, it is the compatibility region of the uniform-$\varepsilon$
-diagnostic layer under the present retained-pipeline methodology.
-The uniform-$\varepsilon$ ansatz is itself a projection of a more
-general closure-level $\varepsilon(z)$ history onto a single
-effective parameter (cf.\ A1.7(iii)), not a first-principles
-prediction.
-
-\subsection*{A6.4\quad Age-viability ambiguity under Hubble mapping
-(viability note)}
-
-The $\varepsilon$-deformed background of A6.1 computes the cosmic
-age $t_0(\varepsilon)$ self-consistently. At the retained-band
-central value $\varepsilon = 0.032$, $t_0$ is approximately
-$13.46~{\rm Gyr}$ when the age integral is evaluated at the
-baseline Hubble constant $H_0 = H_0^P = 67.4~{\rm km\,s^{-1}\,Mpc^{-1}}$,
-and approximately $12.52~{\rm Gyr}$ when the same age integral is
-evaluated at the \emph{inferred} Hubble constant
-$H_0^{\rm inferred}(\varepsilon = 0.032) \approx 72.55~{\rm km\,s^{-1}\,Mpc^{-1}}$
-from the Hubble + $r_s$ mapping of \eqref{eq:H0_inferred_eps}.
-
-\paragraph{Comparison with observational age anchor.}
-The Valcin et al.\ 2021 globular-cluster age analysis
-\cite{Valcin2021} gives a largely model-independent lower bound
-$t_0 \geq 13.50 \pm 0.27~{\rm Gyr}$ on the cosmic age. The two
-mappings above yield qualitatively different comparisons:
-\begin{itemize}
-\item baseline-background mapping: $13.46~{\rm Gyr}$ is
-   within $0.15\sigma$ of the anchor --- acceptable;
-\item inferred-$H_0$ mapping: $12.52~{\rm Gyr}$ is
-   approximately $3.6\sigma$ below the anchor --- problematic.
-\end{itemize}
-\paragraph{Interpretation.}
-A nontrivial age-viability ambiguity appears once the Hubble
-extraction is combined with the uniform-$\varepsilon$ background
-interpretation. Whether this should be read as a genuine
-consistency tension or as an artefact of how the inferred $H_0$
-is mapped back into the background solution requires dedicated
-treatment that is \emph{not} performed at the uniform-$\varepsilon$
-diagnostic layer. Specifically, three interpretations are
-currently open:
-\begin{itemize}
-\item the baseline-background mapping is the physically correct
-  reading of ``cosmic age,'' because the ECT closure only
-  shifts the \emph{apparent} local Hubble constant without
-  altering the absolute cosmic expansion history;
-\item the inferred-$H_0$ mapping is the physically correct
-  reading, in which case the uniform-$\varepsilon$ ansatz
-  becomes inadequate near the retained-band central value and
-  a closure-level $\varepsilon(z)$ must decrease toward the
-  present;
-\item additional astrophysical or calibration systematics in
-  the stellar-age anchor may broaden the effective comparison
-  window, although no specific quantitative widening is assumed
-  here.
-\end{itemize}
-None of these three interpretations is fixed by the
-Hubble + $r_s$ channel alone. The ambiguity does not arise from
-the stellar-age anchor itself, but from which Hubble mapping is
-regarded as physically appropriate within the uniform-$\varepsilon$
-layer. The present appendix does not resolve the ambiguity.
-
-\paragraph{Status.}
-Age is \emph{not} a retained probe. It is \emph{not} a new formal
-open problem (OP-age-consistency is not introduced). It is
-recorded here as a viability/self-consistency note. Its
-resolution is part of the eventual closure-level ECT derivation
-of $\varepsilon(z)$ and $H_0$ from first principles (cf.\
-\S\ref{subsec:eps_outlook}), not a constraint to be added
-at the uniform-$\varepsilon$ level.
-
-\subsection*{A6.5\quad Benchmark-achievability target and
-outstanding task}
-
-``Benchmark achievability'' refers to the question: within the
-parameter space of the ECT ordered-branch closure, do there
-exist configurations $(\beta,\,\mu,\,\kappa,\,\phi_0,\,\ldots)$
-that yield a uniform-$\varepsilon$ projection in the retained
-band \eqref{eq:joint_band_A6}? The question is posed purely at
-the effective-diagnostic-layer level: can the retained band be
-reached?
-
-\paragraph{Scope.}
-The target of the benchmark achievability analysis is the
-retained band $[\,0.0296,\,0.0376\,]$ (\S A6.3) and nothing else.
-In particular, the age-viability ambiguity of A6.4 is not mixed
-into the benchmark target --- it remains a separate viability
-consideration at the closure-derivation level, not an additional
-constraint at the diagnostic level. This separation is
-deliberate: conflating the two would confuse the purpose of the
-benchmark achievability analysis and would cause the target
-interval to depend on which interpretation of the age-viability
-ambiguity one adopts.
-
-\paragraph{What is required.}
-A benchmark achievability demonstration must show that, at the
-closure level of the condensate theory
-(three-stage condensate closure at
-$u_0 \sim \phi_0 \sim \bar{M}_{\rm Pl}$,
-$v_2 \sim 246~{\rm GeV}$, and $v_{\rm gal} \sim$ kpc; cf.\
-\S\ref{subsec:eps_outlook}), at least one parameter
-configuration yields an effective $\varepsilon$ at late time in
-the range $[\,0.0296,\,0.0376\,]$ when projected onto the
-uniform-$\varepsilon$ diagnostic. No claim is made here that
-\emph{every} closure-level history produces a uniform-$\varepsilon$
-projection in this range, only that the range is reachable.
-
-\paragraph{Current status.}
-Benchmark achievability for the retained band is an open target:
-it has not been demonstrated in the present preprint. The
-closure-level derivation of $\varepsilon(z)$ from three-stage
-condensate dynamics is listed as open problem OP-Hubble-derive
-in \S\ref{subsec:eps_outlook}, and an explicit check of
-whether its output projection onto uniform-$\varepsilon$ lies in
-the retained band is part of that open program.
-
-\paragraph{Explicit scope caveat.}
-No explicit closure-space scan or constructive existence proof
-is provided in the present preprint. The present subsection
-therefore states the benchmark-achievability target and the
-criteria that a future closure-level demonstration must satisfy,
-rather than claiming that such a demonstration has already been
-completed.
-
-\subsection*{A6.6\quad Excluded probes: audit status and
-non-silent-dismissal}
-
-Several probes that would naively contribute to a combined
-multi-messenger analysis are explicitly excluded from the
-retained joint band of \S\ref{subsec:eps_retained}. It
-is important that their exclusion not be read as a silent
-dismissal: the reasons for exclusion differ by probe, and each
-remains an open item at the closure-level program.
-\begin{center}
-\begin{tabular}{|l|l|l|}
-\hline
-Probe & Status & Nature of exclusion \\
-\hline
-BAO (DESI 2024) & excluded; audited & Raw best-fit
-$\varepsilon \approx -0.014$ \\
-& & under simplified pipeline; \\
-& & diagonal errors, shape-only. \\
-\hline
-$A_{\rm lens}$ CMB lensing & excluded; proxy only & Linearised
-without Boltzmann; \\
-& & theoretical systematic not included. \\
-\hline
-$S_8$ KiDS-1000 & excluded; outside sector & Raw $1\sigma$
-entirely negative; \\
-& & measures $S_8$ tension, not ECT $\varepsilon$. \\
-\hline
-$\sigma_8$ clusters & excluded; outside sector & Same as $S_8$. \\
-\hline
-SN Ia & excluded; not reinstated & Was a mock channel; permanently
-removed. \\
-\hline
-Age $t_0$ & excluded; viability only & See A6.4. \\
-\hline
-\end{tabular}
-\end{center}
-
-\paragraph{Key distinction: excluded $\neq$ silently dismissed.}
-All probes above have been audited at the level of the common
-background module (A6.1). Their exclusion from the headline joint
-band reflects a methodological judgement: at the present proxy
-level, either (a) the probe's central value and/or $1\sigma$
-lies in the unphysical region $\varepsilon < 0$, (b) the probe
-measures a quantity whose primary sensitivity lies outside the
-uniform-$\varepsilon$ sector, or (c) the probe's pipeline is
-proxy-level enough that including it in the headline intersection
-would be misleading. In no case has a probe been dropped simply
-because it disagrees with the retained band. Any probe could in
-principle re-enter the retained analysis under a closure-level
-full pipeline; but none enters the present retained-pipeline
-headline.
-
-\subsection*{A6.7\quad Methodological limitations and path forward}
-
-The following are known limitations of the present
-present retained-pipeline approximation, to be addressed in future
-work. They are stated here so that future revisions can be
-tracked against them:
-\begin{itemize}
-\item the common background module is a $\Lambda$CDM-proxy,
-  not a closure-level ECT background;
-\item the ISW kernel $\kappa_{\rm ISW}$ has not been recalibrated
-  on the common background (A5.3, A5.7(ii));
-\item the JWST time-budget factor has been defended at robustness
-  level for two axes (A2.4) but is still a proxy for the full
-  halo-to-stellar-mass pipeline;
-\item off-diagonal covariance has not been propagated for the
-  $f\sigma_8$ RSD compilation (A4.7(ii)) and the cosmic
-  chronometers compilation (A3.7(i));
-\item the joint band \eqref{eq:joint_band_A6} is not yet
-  promoted from provisional to final; main-text updating is
-  deferred until appendix-package completion and review;
-\item the age-viability ambiguity of A6.4 is not resolved at
-  the present layer.
-\end{itemize}
-
-\paragraph{Path forward.}
-The immediate step beyond the present freeze checkpoint is the
-closure-level derivation of $\varepsilon(z)$ from the three-stage
-condensate program, which is the content of open problem
-OP-Hubble-derive (\S\ref{subsec:eps_outlook}). The
-per-channel appendices A1--A5 and the present methodology
-appendix A6 together define the scaffolding against which the
-closure-level output will eventually be benchmarked.
-
-% ==================================================================
-% END Appendix A6 (methodology + benchmark + age-viability).
-% ==================================================================
-
-% ==================================================================
-% END: Integration block A1-A6.
-% ==================================================================
-
-% ==============================================================
 \section{Retarded Causal Kernel: Proof That $K(\tau<0)=0$}
 
 % ------------------------------------------------------------------
