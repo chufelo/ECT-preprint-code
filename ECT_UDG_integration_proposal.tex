@@ -1,0 +1,280 @@
+% !TEX program = pdflatex
+% Integration proposal v2 (post-GPT-round2) for DM-deficient UDG stress
+% test into the ECT preprint.
+%
+% Changes vs v1:
+%   - Dropped Proposal D (footnote to internal working PDF).
+%   - Weakened accent on G_eff(X) as "main rescue path"; G_eff is listed
+%     equal-footing with history-dependent Xi and orientation-sector.
+%   - Removed "isolated-field DM-deficient dwarfs should exist" as a
+%     preprint prediction; replaced with honest statement that the theory
+%     does not yet make such a prediction.
+%   - Executive recommendation now reads A + B only.
+%
+% This is still internal working document, NOT for publication.
+
+\documentclass[11pt]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+
+\title{Proposal (v2): DM-deficient UDG stress test --- minimal integration\\
+into the ECT preprint}
+\author{Internal working document --- NOT for publication}
+\date{2026-04-20}
+
+\begin{document}
+\maketitle
+
+\section*{Executive recommendation}
+
+\textbf{Recommendation:} Integrate at minimal-commitment level:
+\begin{enumerate}
+\item One new row in {\tt tab:future\_discriminants} (ND-13).
+\item One short paragraph (~150 words) in the existing galactic-closure
+discussion, referencing the ND-13 entry.
+\item \textbf{No standalone subsection.} Claiming a derivation would
+overstate the current theoretical state.
+\item \textbf{No footnote reference} to any internal working notes as
+semi-official supplement to the preprint.
+\end{enumerate}
+
+\textbf{Rationale.} DF4/FCC~224 observations are public, well-known,
+and will be raised by any careful reviewer regardless of whether the
+preprint addresses them. Pre-emptive honest disclosure with a clear
+``open discriminant'' label is safer than silent omission. A full
+subsection would invite scrutiny of unsupported claims. A short honest
+acknowledgement is defensible and strengthens the paper's scientific
+credibility. What is \emph{not} recommended is any claim that the
+current preprint explains DF4, or that the dynamical $G_{\rm eff}(\phi)$
+degree of freedom already provides an intra-preprint rescue mechanism:
+the preprint does not derive the connection between $G_{\rm eff}(\phi)$
+and the practical galactic closure.
+
+\bigskip\hrule\bigskip
+
+\section{Text proposed for integration}
+
+\subsection{Proposal A: {\tt tab:future\_discriminants} row ND-13}
+
+\textit{Goal:} Add one row to the discriminants table already in the
+preprint.
+
+\textbf{Row format} (matching the existing table structure):
+
+\begin{quote}\small
+\textbf{ND-13: Dark-matter-deficient ultra-diffuse galaxies.}
+\textit{Class: galactic kinematics stress test.}
+
+\textbf{Observable.} Stellar (and GC) velocity dispersion
+$\sigma_{\rm obs}$ of ultra-diffuse galaxies identified via top-heavy
+GCLF and low $M_{\rm dyn}/M_{\rm bar}$ signatures. Reference sample:
+DF4 (\cite{Danieli2022DF4}, $\sigma=6.3^{+2.5}_{-1.6}$ km\,s$^{-1}$,
+$M_\star\simeq 1.5\times 10^{8}M_\odot$, $R_e\simeq 1.6$~kpc);
+FCC~224 (\cite{Buzzo2025FCC224,Tang2025FCC224},
+$\sigma\simeq 7.8$ km\,s$^{-1}$); DF2
+(\cite{Trujillo2019DF2,Shen2021DF2TRGB}) which remains observationally
+ambiguous. DF4, and probably FCC~224, exhibit tracer kinematics
+consistent with baryon-only dynamical mass in the probed region; DF2
+remains observationally ambiguous.
+
+\textbf{Current closure prediction.} The practical Level-B galactic
+closure~(eq.~\ref{eq:ect_rotation_closure_main}) at the baseline
+$g^\dagger_{\rm eff}=g^\dagger_0$ tends to the MOND-like
+$\sigma\sim\sqrt{g_N g^\dagger_0}\,R_{1/2}$ branch for these systems,
+giving $\sigma\sim 18$--$25$ km\,s$^{-1}$ (Wolf proxy within the
+S\'ersic half-mass radius). Baryon-only Newtonian values lie at
+$\sigma\sim 8$--$14$ km\,s$^{-1}$, much closer to the observed
+$\sigma\sim 6$--$8$ km\,s$^{-1}$. These quoted ranges are diagnostic
+proxy-level comparisons (Wolf/Jeans-style stress-test estimates), not
+yet production-level ECT fits with matched tracer-family, aperture,
+and full anisotropic modelling.
+
+\textbf{Status.} Open stress test of the current Level-B closure, not
+a solved consequence of it. The minimal density-only Level-B
+ansatz~(eq.~\ref{eq:gdagger_env_main}) for $\Xi$ does not naturally
+accommodate both the low-dispersion systems (DF4, probably FCC~224)
+and matched DM-rich controls such as NGC~5846-UDG1
+(\cite{Forbes2021NGC5846UDG1}, $\sigma=17\pm 2$ km\,s$^{-1}$ at
+comparable $M_\star$, $R_e$, and group density) within a single
+simple environmental scalar law. The presently known sample is small
+and not selection-neutral: several candidates were identified through
+unusual GC-population markers, so the class properties should be
+treated as provisional rather than population-level conclusions.
+
+\textbf{Possible theory-level directions for a future completion.}
+Dynamical $G_{\rm eff}(\phi)$ in eq.~\ref{eq:gen_EE},
+history-dependent extensions of $\Xi$ within the broader
+ECT-compatible class noted in \S\ref{sec:env_sector}, and
+orientation-sector coupling through $\alpha_{\rm ECT}$ in
+eq.~\ref{eq:gen_EE}. These belong to structures already present in the
+broader framework, but none is presently derived for the galactic
+closure; addressing them is an open problem linked to OP3.
+
+\textbf{Distinctive prediction.} A future rescue mechanism should make
+a definite statement about whether isolated-field DM-deficient dwarfs
+are expected or forbidden in ECT; at present the theory does not yet
+make that prediction. Additional observational tightening is expected
+from matched DM-rich UDG controls (NGC~5846-UDG1, VCC~1287) and from
+isolated-field searches.
+
+\textbf{Comparative standing.} $\Lambda$CDM with bullet-dwarf
+formation reproduces the observed $\sigma$
+values~\cite{Ogiya2018DF2tidal,Moreno2022DMfree,vanDokkum2022bullet}
+through partial dark-halo stripping; any ECT-compatible rescue path
+will need to reach comparable explanatory power to remain competitive
+on this class of objects.
+\end{quote}
+
+\subsection{Proposal B: short paragraph in body of paper}
+
+\textit{Location:} After the SPARC rotation-curve fit discussion and
+before the discussion of $\Xi$ environmental modulation.
+
+\textit{Proposed text} (~150 words):
+
+\begin{quote}\small
+The matched-mass population of pressure-supported ultra-diffuse
+galaxies contains both DM-rich objects (NGC~5846-UDG1 with
+$\sigma=17\pm 2$ km\,s$^{-1}$ at $M_\star\sim 10^{8}M_\odot$ and
+$R_e\sim 2$~kpc, consistent with the RAR) and DM-deficient objects
+(DF4, FCC~224, with $\sigma\sim 6$--$8$ km\,s$^{-1}$ at comparable
+$M_\star$ and $R_e$). The current practical closure of the $\phi$-first
+galactic sector~(eq.~\ref{eq:ect_rotation_closure_main}) is a Level-B
+interpolation with Newtonian and deep-MOND asymptotics; the exact
+$\Xi$-law remains open (OP3). At the baseline
+$g^\dagger_{\rm eff}=g^\dagger_0$, the closure is consistent with the
+matched DM-rich control at the proxy-comparison level, but tends to
+over-predict $\sigma$ on the DM-deficient case by a factor of order
+three. DF4 and probably FCC~224 therefore constitute empirical
+stress tests of the present Level-B closure: they are not a solved
+consequence of current ECT, but an open discriminator for any future
+completion of $\Xi(\rho_{\rm env},\bar\phi_{\rm env},\ldots)$ and/or
+of the broader time-dependent/orientation sector. We list this as
+entry ND-13 in tab.~\ref{tab:future_discriminants}. The $\Lambda$CDM
+bullet-dwarf interpretation remains a viable comparator.
+\end{quote}
+
+\subsection{Proposal C: no standalone subsection}
+
+A standalone subsection titled, e.g., ``DM-deficient UDGs in ECT''
+would suggest that ECT provides a derived explanation. It does not.
+Including such a subsection without a derivation would be
+scientifically incorrect at the current state of the theory.
+\textbf{Recommendation: do not include.}
+
+\subsection{(Dropped) Proposal D: footnote to internal working notes}
+
+Dropped. Internal working documents should not be referenced from the
+published preprint as semi-official supplements. If they become
+relevant in a future version of the theory, they will be cited as
+proper supplementary material at that time.
+
+\section{What the integration delivers to the paper}
+
+\begin{enumerate}
+\item \textbf{Honest disclosure} of a known observational tension, which
+any astronomy-literate reviewer will test the paper against.
+\item \textbf{Scientific credibility} from explicit acknowledgement of
+where the theory currently stands, rather than silent omission.
+\item \textbf{Concrete falsifiable discriminant}: the ND-13 entry gives
+future observers a clear target for constraining ECT.
+\item \textbf{Pointers, not claims}, to candidate theory-level
+directions (dynamical $G_{\rm eff}(\phi)$, history-dependent $\Xi$,
+orientation-sector), explicitly flagged as not-yet-derived.
+\item \textbf{Fair comparison to $\Lambda$CDM}: explicit acknowledgement
+that bullet-dwarf dark-matter-stripped simulations exist and are
+competitive on this class of objects.
+\end{enumerate}
+
+\section{What the integration does \emph{not} claim}
+
+\begin{enumerate}
+\item Does not claim that ECT explains DF4 or FCC~224.
+\item Does not claim that a derived rescue mechanism exists.
+\item Does not introduce any new phenomenology outside the preprint.
+\item Does not advertise $G_{\rm eff}(\phi)$ as a solved intra-preprint
+rescue path; it is listed equal-footing with other theory-level
+directions, all labeled as not-yet-derived.
+\item Does not reference internal working notes as a semi-official
+supplement.
+\item Does not claim that ``$\bar\phi_{\rm local}\to 0^-$'' implies
+Newton-like DF4 within the current closure.
+\end{enumerate}
+
+\section{Word count estimate}
+
+\begin{tabular}{lr}
+\toprule
+Element & Words added to preprint\\
+\midrule
+{\tt tab:future\_discriminants} ND-13 row & $\sim 330$\\
+Body paragraph (Proposal B) & $\sim 160$\\
+\midrule
+\textbf{Total (A + B)} & $\sim 490$\\
+\bottomrule
+\end{tabular}
+
+Current preprint $\sim 670$ pages; addition $\sim 0.1\%$ in volume,
+scientifically valuable, low risk.
+
+\section{What happens if we do not integrate}
+
+\textbf{Risk 1:} arXiv endorser sees the DF4/FCC~224 literature, expects
+the preprint to acknowledge it, does not find anything, and declines
+endorsement with a note such as ``should at least acknowledge known
+stress tests.''
+
+\textbf{Risk 2:} A first informed reader of the posted preprint writes
+a public comment citing DF4/FCC~224. The paper loses the opportunity
+to frame the issue on its own terms.
+
+\textbf{Risk 3:} The claimed galactic-sector success rings hollow to
+experts aware of specific dwarfs that strain the closure.
+
+All three risks are mitigated by the minimal Proposal A + B integration.
+None is mitigated by waiting or by hoping reviewers will not notice.
+
+\section{What happens if the integration is accepted}
+
+\textbf{Gain 1:} The paper passes the honesty test for astronomers
+reviewing the galactic-sector claims.
+
+\textbf{Gain 2:} The paper provides a concrete target for future work,
+anchoring the programmatic research agenda on ECT's galactic sector
+to a specific OP3-linked open problem.
+
+\textbf{Gain 3:} The arXiv endorser sees a preprint that handles its
+own challenges openly, which typically improves endorsement prospects.
+
+\textbf{Gain 4:} Any future ECT publication that resolves
+$\Xi(\rho_{\rm env},\bar\phi_{\rm env},\ldots)$ (or provides a
+derivation of a suppression route via $G_{\rm eff}(\phi)$,
+non-quasi-static $\phi$-dynamics, or orientation-sector effects) can
+cite ND-13 as a previously flagged open discriminator rather than as
+a newly-discovered problem.
+
+\section{Decision to be made by Valera}
+
+\begin{enumerate}
+\item[Decision 1:] Integrate Proposal A (table entry ND-13)?
+\emph{Recommended: yes.}
+
+\item[Decision 2:] Integrate Proposal B (short body paragraph)?
+\emph{Recommended: yes, if A is accepted.}
+
+\item[Decision 3:] Integrate Proposal C (standalone subsection)?
+\emph{Recommended: no.}
+\end{enumerate}
+
+\textbf{Recommended minimum:} A + B.
+
+Once Valera confirms which proposals to accept, the exact LaTeX insert
+locations (anchors in {\tt ECT\_preprint.tex}) and final wording can
+be finalized and committed via the standard backup--edit--compile--push
+workflow. GPT review of the resulting inserts should precede the push.
+
+\end{document}

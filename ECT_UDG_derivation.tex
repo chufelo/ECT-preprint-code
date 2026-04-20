@@ -1,0 +1,461 @@
+% !TEX program = pdflatex
+% ECT UDG stress test: consolidated method --- v4 (post-GPT-round2).
+%
+% Version 4 changes vs v3 (applying GPT's second-round critique):
+%   - Removed "Data cannot falsify theory, only closure" philosophical shortcut
+%   - S3 FCC 224: demoted numerical factor to order-unity proxy claim only
+%   - S1 UFDs: demoted from "validation" to "side diagnostic"
+%   - S2 GCs: kept as Newton sanity check (no change in status)
+%   - S4 G_eff(X): substantial weakening. No longer "substantive finding".
+%     Now a "candidate theory-level direction" only; no derivation connects
+%     preprint's G_eff(phi) to practical galactic closure for DF4/FCC 224.
+%   - Removed "not new phenomenology" rhetorical claim (unsupported)
+%   - Removed dimensional plausibility hand-wave for delta-phi ~ -ln(10)/beta
+%   - Honest classification (III): G_eff path listed equal-footing with others
+%   - Conclusion: G_eff not singled out as "most promising"; all candidate
+%     routes listed neutrally
+%   - Abstract: removed claim that G_eff "is structurally present in preprint"
+%
+% This document is INTERNAL WORKING NOTES, not a subsection for publication.
+
+\documentclass[11pt]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{longtable}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\title{DM-deficient UDGs as a stress test of the current ECT Level-B\\
+galactic closure --- consolidated diagnostic notes}
+\author{ECT working notes --- v4 consolidated (internal)}
+\date{2026-04-20}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This v4 supersedes v1 (which incorrectly promoted
+$\bar\phi_{\rm local}\to 0^-\Rightarrow g^\dagger_{\rm eff}\to 0$ to
+a derived consequence; that inverted the preprint's own regime
+ordering at \S44487--44508) and v2--v3 (honest in structure but still
+overstated the status of the intra-preprint $G_{\rm eff}(X)$ route).
+The present version (i) integrates a three-level framework D/C/T
+separating Data, Closure test, and Theory interpretation; (ii) supplies
+the inverse-problem closed form
+$\Xi_{\rm req}=r(r-1)\,g_N/g^\dagger_0$ with its correct evaluation at
+$R_{1/2}$; (iii) documents nuisance and uncertainty budget in which the
+stress-test signature is robust; (iv) notes that the preprint's full
+field equations contain a dynamical $G_{\rm eff}(\phi)$ which makes a
+suppression route structurally \emph{conceivable} but --- critically
+--- \emph{no derivation in the attached preprint maps that degree of
+freedom onto the present galactic closure for DF4/FCC 224}; (v) lists
+secondary factors as future work; and (vi) provides a minimal
+integration proposal for the preprint. The scientific bottom line:
+DF4 and probably FCC 224 remain sharp stress tests of the current
+Level-B galactic closure, not explained consequences of it.
+\end{abstract}
+
+\section{Framework: three levels D, C, T}
+
+Three levels must be kept strictly separate.
+
+\paragraph{Level D (Data).} What is directly measured for each object:
+$\sigma_{\rm obs}$ (or $v_{\rm rot}$), $M_\star$, $R_e$, $D$, $n$
+(S\'ersic), environment proxies (host mass, projected distance), tracer
+family (stars vs GCs vs HI), aperture $R_{\rm ap}$, quality flag
+$Q_{\rm eq}\in\{{\rm relaxed, possibly\_disturbed, disturbed}\}$.
+
+\paragraph{Level C (Closure test).} What the current practical galactic
+closure predicts: for each object, compute the required $\Xi_{\rm req}$
+such that the closure reproduces observed kinematics. Compare to the
+expected range $\Xi\sim O(1)$ for normal galaxies on the RAR.
+
+\paragraph{Level T (Theory interpretation).} What Level-C results imply
+for ECT: if $\Xi_{\rm req}$ extreme, the closure is strained at the
+object; this does \emph{not} falsify the full ECT field equations
+[eq.~17251]; only the current Level-B closure is directly tested.
+
+\paragraph{Honesty boundary.} In the present context the data directly
+test the current Level-B galactic closure; they constrain the broader
+theory only through whatever future derivation is able to connect the
+full field equations to that closure. No such derivation is given in
+the attached preprint.
+
+\section{Base equations (preprint anchors)}
+
+\begin{enumerate}
+\item[{[A1]}] Full time-dependent IR action [\S17224]:
+$$
+S_{\rm IR}=\int d^4x\sqrt{-g}\left[\tfrac{\bar M_{\rm Pl}^2}{2}e^{\beta\phi}R
+-\tfrac{\bar M_{\rm Pl}^2}{2}\omega(\phi)(\partial_\mu\phi)^2 - U(\phi)+\mathcal L_{\rm mat}\right].
+$$
+
+\item[{[A2]}] Generalized Einstein eqs [\S17248] with dynamical
+$G_{\rm eff}(\phi)$, $\Lambda_{\rm eff}(\phi)$ and orientation term
+$\alpha_{\rm ECT}(n_\mu n_\lambda R^\lambda_\nu + \ldots)$.
+
+\item[{[A3]}] Quasi-static local $\phi$-equation [\S22486]:
+$K(\phi)\Box_{\rm static}\phi \approx (8\pi G_N/c^4)\rho_{\rm bar}\xi_1(\phi)$.
+
+\item[{[A4]}] Practical galactic closure [\S23519]:
+$$
+g(R)=\tfrac{1}{2}\left[g_N(R)+\sqrt{g_N^2(R)+4g_N(R)\,g^\dagger_{\rm eff}}\right]
+$$
+with limits $g\to g_N$ (Newton, large $g_N$) and $g\to\sqrt{g_N g^\dagger_{\rm eff}}$
+(deep-MOND, small $g_N$). Exactly two asymptotic branches; no third
+independent low-$g$ Newtonian branch exists within this closure.
+
+\item[{[A5]}] Environment-modulated critical scale [\S22873]:
+$g^\dagger_{\rm eff} = g^\dagger_0\,\Xi(\rho_{\rm env}, \bar\phi_{\rm env},\ldots)$,
+with baseline $g^\dagger_0 = cH_0/(2\pi)\approx 1.04\times 10^{-10}\,\text{m/s}^2$.
+
+\item[{[A6]}] Level-B minimal ansatz [\S23718]:
+$\Xi = 1/\sqrt{1+\rho_{\rm env}/\rho_*}$. Preprint explicitly flags this
+as Level-B interpolation, not a first-principles derivation; exact
+$\Xi$-law remains open (OP3) [\S51895].
+
+\item[{[A7]}] Regime ordering [\S44487]: in the preprint's own notation
+the nonlinear branch activates at small local $g_N$, not via
+$\bar\phi_{\rm local}\to 0^-$ as a separate trigger for
+$g^\dagger_{\rm eff}\to 0$. The v1 draft inverted this; v4 respects it.
+
+\item[{[A8]}] SPARC-fitted distribution of $\Xi$: median 0.86, MW 1.72.
+DDO 154 (void dwarf) reproduced at baseline [\S23325].
+\end{enumerate}
+
+\section{Method: closed form and forward simulation}
+
+\subsection{Closed-form inverse: $\Xi_{\rm req}$ from $\sigma_{\rm obs}$}
+
+Inverting [A4] at $R=R_{1/2}=(4/3)R_e$ with Wolf-type mass estimator:
+$$
+r \equiv \frac{M_{\rm dyn}}{M_{\rm bar}}\bigg|_{R_{1/2}}
+= \frac{g(R_{1/2})}{g_N(R_{1/2})}
+= \tfrac{1}{2}\left[1+\sqrt{1+4y}\right], \quad y\equiv\frac{g^\dagger_{\rm eff}}{g_N}
+$$
+$$
+\boxed{\;y = r(r-1), \qquad \Xi_{\rm req} = r(r-1)\cdot\frac{g_N(R_{1/2})}{g^\dagger_0}\;}
+$$
+
+Remaining phenomenology:
+\begin{itemize}
+\item[{[PHEN-1]}] Wolf estimator $M_{\rm dyn,1/2} = 4\sigma^2 R_{1/2}/G$:
+isotropic-Plummer proxy, uncertainty factor $\sim 1.3$.
+\item[{[PHEN-2]}] $M_{\rm bar,1/2}=f_e M_\star$ with $f_e\approx 0.5$:
+$\pm 20\%$ profile uncertainty.
+\end{itemize}
+Further reduction requires Jeans with explicit profile (\S~\ref{sec:jeans}).
+
+\subsection{Jeans forward model (reduction, not elimination, of phenomenology)}
+\label{sec:jeans}
+
+Isotropic spherical Jeans equation:
+$$
+\sigma_r^2(r) = \frac{1}{\nu(r)J_\beta(r)}\int_r^\infty \nu(s)\,g(s)\,J_\beta(s)\,ds,
+\quad
+J_\beta(r) = \exp\!\left(\int^r\!\!\frac{2\beta(u)}{u}\,du\right),
+$$
+with $\nu(r)$ the deprojected tracer density and $g(r)$ from [A4] at
+trial $\Xi$. LOS projection and aperture averaging as standard:
+$$
+\sigma_{\rm los}^2(R)=\frac{2}{I(R)}\int_R^\infty\!
+\left(1-\beta\tfrac{R^2}{r^2}\right)\frac{\nu(r)\sigma_r^2(r)\,r\,dr}{\sqrt{r^2-R^2}},
+$$
+$$
+\langle\sigma_{\rm los}^2\rangle_{\rm ap}
+= \frac{\int_0^{R_{\rm ap}}W(R)\,I(R)\,\sigma_{\rm los}^2(R)\,2\pi R\,dR}
+{\int_0^{R_{\rm ap}}W(R)\,I(R)\,2\pi R\,dR}.
+$$
+
+For DF4 (isotropic Plummer, $M/L=2$, $D=20$~Mpc): direct Jeans returns
+$\sigma_N^{\rm Jeans}=7.97$~km\,s$^{-1}$ vs Wolf-proxy 6.15~km\,s$^{-1}$
+(ratio 1.30). The qualitative stress-test conclusion is unchanged:
+$\Xi_{\rm req}\ll 1$ required for DF4 regardless of proxy vs Jeans.
+
+\subsection{Benchmark comparison grid}
+
+For each object, compute predictions under four independent benchmarks
+and never mix them:
+$$
+\begin{array}{ll}
+\text{N:}&\text{Newton, } g=g_N\\
+\text{M0:}&\text{MOND-AQUAL at }a_0=1.2\times 10^{-10}\,\text{m s}^{-2}\\
+\text{ME:}&\text{MOND with EFE modification}\\
+\text{E0:}&\text{Current ECT closure [A4] at Level-B }\Xi\text{ [A6]}
+\end{array}
+$$
+Of these, only E0 is ECT; N/M0/ME are astrophysics-community references.
+
+\subsection{Posterior on $\Xi$ (correct final output)}
+
+Per object:
+$$
+P(\Xi\mid\text{data}) \propto \int d\theta\,\mathcal{L}(\text{data}\mid\Xi,\theta)\,\pi(\Xi)\,\pi(\theta)
+$$
+with $\theta = \{M/L, D, \beta(r), n, R_{\rm ap}, f_{\rm int}, M_{\rm host}, d_{3D}, Q_{\rm eq}\}$.
+Distance $D$ sampled jointly with $M_\star\propto D^2$ and $R_e\propto D$
+covariantly. Small-$N$ tracers: individual-velocity likelihood
+$\mathcal{L}=\prod_i\mathcal{N}(v_i\mid\bar v,\sqrt{\sigma_m^2+\delta_i^2})$
+with optional interloper mixture.
+
+\section{Numerical diagnostic: six objects}
+
+Using Wolf-based $\Xi_{\rm req}$ at $R_{1/2}$, central values with
+nuisance bands summarised separately (\S~\ref{sec:nuisance}):
+
+\begin{longtable}{@{}l r r r r r l@{}}
+\toprule
+Object & $M_\star/10^8M_\odot$ & $R_e$/kpc & $\sigma_{\rm obs}$/km\,s$^{-1}$ &
+$M_{\rm dyn}/M_{\rm bar}$ & $\Xi_{\rm req}$ & Class\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+DF4           & 1.5  & 1.6  & $6.3^{+2.5}_{-1.6}$ & $1.1$   & $\sim 10^{-3}$      & III (stress-low) \\
+FCC 224       & 1.74 & 1.89 & $7.8^{+6.7}_{-4.4}$ & $1.6$   & $\sim 2\times 10^{-2}$ & III (stress-low) \\
+DF2           & 1.3  & 2.2  & $[8.6,\,14.9]$      & $3$--$9$ & $0.1$--$1.4$        & borderline \\
+NGC 5846-UDG1 & 1.1  & 2.1  & $17\pm 2$           & $13.7$  & $\sim 1.6$          & II (normal RAR) \\
+Dragonfly 44  & 3.0  & 4.7  & $33\pm 3$           & $42.3$  & $\sim 8.9$          & II (upper tail) \\
+AGC 114905    & \multicolumn{5}{l}{Gas-rich rotator; spherical Jeans not applicable; disc solver required}& II$'$ \\
+\end{longtable}
+
+Matched-pair observation: DF4 and NGC~5846-UDG1 have comparable
+$M_\star\sim 10^8M_\odot$, $R_e\sim 2$~kpc, and comparable group-scale
+environment, yet their inferred $\Xi_{\rm req}$ differ by $\sim 10^3$.
+
+\subsection{Side diagnostics and sanity checks}
+
+\paragraph{S1. Ultra-faint dwarfs (side diagnostic, not validation).}
+For $M_\star\sim 10^3$--$10^7\,M_\odot$ (Draco, Sculptor, Fornax,
+Segue~I, Willman~I), the Wolf-based method returns $\Xi_{\rm req}$
+anywhere from $\sim 2$ to $\sim 10^3$. This is not a ``method works''
+result --- it is simply the statement that the Wolf-proxy chain does not
+obviously collapse outside the UDG target mass range. The spread is
+driven by known, well-documented effects (binary-star $\sigma$
+inflation, tidal non-equilibrium, radial anisotropy, small-$N$
+statistics) that are orthogonal to the UDG stress-test conclusion.
+Listed here only for context.
+
+\paragraph{S2. Globular clusters (Newton sanity check).}
+47~Tuc, $\omega$~Cen, M13, M15: $g_N/g^\dagger_0 \gtrsim 15$, placing
+them safely in the $g_N\gg g^\dagger_{\rm eff}$ branch of [A4]. The
+closure returns $g\to g_N$ automatically, independent of $\Xi$. This is
+the trivial Newton-recovery check and is listed for completeness.
+
+\paragraph{S3. FCC 224 non-sphericity.}
+FCC~224 is prolate with $\varepsilon\simeq 0.36$. Spherical Jeans
+should therefore be treated only as an order-unity proxy for this
+object; no reliable numerical correction factor can be claimed from
+the attached preprint alone. The central $\Xi_{\rm req}$ value for
+FCC~224 should be read as order-of-magnitude, not precision. This does
+not change the qualitative classification of FCC~224 as stress-low.
+
+\paragraph{S4. $G_{\rm eff}(\phi)$: a candidate theory-level direction only.}
+The generalized field equations [A2] contain a dynamical $G_{\rm eff}(\phi)$,
+which in principle makes a suppression route structurally conceivable.
+In a pure forward parameter scan at fixed $\Xi=1$, simply replacing
+$G_N$ by $\eta\,G_N$ with $\eta\in[0.1,0.3]$ reduces the predicted
+$\sigma$ for DF4 from $\sim 19$~km\,s$^{-1}$ to $\sim 6$--$10$~km\,s$^{-1}$,
+which would fall in the observed band.
+\textbf{This is not a derivation.} The preprint does not contain a
+derivation that maps the $G_{\rm eff}(\phi)$ degree of freedom of
+eqs.~[A1]--[A2] onto the current practical galactic closure [A4] for
+DF4/FCC~224: [A4] is written in terms of $g_N(R)$ and
+$g^\dagger_{\rm eff}$, not in terms of $G_{\rm eff}(\phi)$. Promoting
+the parameter scan above to an ``intra-ECT rescue mechanism'' would
+therefore require an additional connecting derivation, which is not
+available in the attached files.
+
+\paragraph{S5. Selection rate.}
+Approximately 3 confirmed DM-deficient UDGs out of $\sim 500$ screened
+($\sim 0.6\%$), consistent in order of magnitude with the $\sim 1\%$
+rate predicted by $\Lambda$CDM bullet-dwarf scenarios [Moreno+2022].
+Any future ECT-compatible rescue mechanism will need to be consistent
+with this observed rate.
+
+\section{Nuisance and uncertainty budget}
+\label{sec:nuisance}
+
+For DF4, total $\Xi_{\rm req}$ uncertainty across independent nuisances:
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Source & Multiplicative factor on $\Xi_{\rm req}$\\
+\midrule
+Distance $D\in[13,25]$ Mpc (covariant) & $\sim 10\times$\\
+$M/L\in[1,4]$ & $\sim 10\times$\\
+Small-$N$ at 95\% CL on $\sigma$ & $\sim 100\times$\\
+Anisotropy $\beta\in[-0.5,0.5]$ & $\sim 1.5\times$\\
+Proxy $\to$ Jeans & $\sim 1.3\times$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Combined 95\% CL: $\log_{10}\Xi_{\rm req}\in[-4,\,-0.5]$ for DF4. The
+entire interval lies below the RAR-normal range $\Xi\sim O(1)$. The
+stress-test classification is therefore robust to nuisance variations;
+only the numerical value of $\Xi_{\rm req}$ is imprecise.
+
+\section{Structural inadequacy of the density-only $\Xi$-ansatz}
+
+This is a structural observation, not an impossibility theorem.
+
+The Level-B ansatz [A6] $\Xi = 1/\sqrt{1+\rho_{\rm env}/\rho_*}$ gives
+$\Xi\leq 1$ for any $\rho_{\rm env}$, and depends monotonically on a
+single environmental scalar. For the matched pair DF4 vs
+NGC~5846-UDG1:
+\begin{itemize}
+\item comparable $M_\star,R_e$ (both $\sim 10^8 M_\odot$, $\sim 2$ kpc),
+\item comparable group environment,
+\item inferred $\Xi_{\rm req}$ differing by $\sim 10^3$.
+\end{itemize}
+A density-only ansatz would need a $\rho_{\rm env}$ contrast of order
+$10^6$ to accommodate this --- not observed. Therefore the minimal
+Level-B ansatz [A6] is \emph{structurally insufficient} for this class
+of objects. This does not rule out ECT-compatible environment laws in
+general; the preprint explicitly allows more general functional forms
+[\S23722] as part of the open problem OP3.
+
+\section{EFE benchmark (external to ECT)}
+
+As a benchmark parallel to the ECT analysis, the MOND-with-EFE
+expectation gives, for the four pressure-supported systems:
+
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Object & $M_{\rm host}/M_\odot$ & $d_{\rm proj}$/kpc & $g_{\rm ext}/a_0$\\
+\midrule
+DF4           & $10^{11}$        & 80  & $0.018$ \\
+FCC 224       & $3\times10^{10}$ & 70  & $0.007$ \\
+NGC 5846-UDG1 & $5\times10^{11}$ & 100 & $0.058$ \\
+Dragonfly 44  & $10^{13}$        & 500 & $0.046$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+$g_{\rm ext}/a_0\ll 1$ for all four: EFE screening is minor and does
+not numerically discriminate DF4 from the matched DM-rich control
+NGC~5846-UDG1 (which in fact has a somewhat larger $g_{\rm ext}/a_0$,
+not smaller). EFE is therefore rejected as the explanatory mechanism
+for DF4's Newton-like kinematics. This is a benchmark-level
+observation; the current ECT closure [A4] does not contain an explicit
+$g_{\rm ext}$ dependence, so the MOND-EFE comparison is strictly
+outside the current ECT formulation.
+
+\section{Honest classification of status}
+
+\begin{description}
+\item[(I) Supported by the current preprint.]
+\begin{itemize}
+\item Closure [A4] has exactly two asymptotic regimes (Newton,
+deep-MOND); no third low-$g$ Newtonian branch.
+\item Applied to normal RAR galaxies the method returns
+$\Xi_{\rm req}\sim O(1)$.
+\item Applied to DF4 and FCC~224 the method returns
+$\Xi_{\rm req}\ll 1$ robustly under nuisance variation.
+\item The Level-B density-only $\Xi$-ansatz [A6] is structurally
+insufficient for the DF4 vs NGC~5846-UDG1 matched pair.
+\end{itemize}
+
+\item[(II) Reduced-phenomenology upgrades (not yet carried out fully).]
+\begin{itemize}
+\item Full Jeans with S\'ersic deprojection and aperture matching,
+replacing the Wolf proxy.
+\item Posterior $P(\Xi\mid\text{data})$ replacing central-value numbers.
+\item Same-tracer, same-aperture discipline for matched-control logic.
+\end{itemize}
+
+\item[(III) Candidate theory-level directions (none derived in preprint).]
+\begin{itemize}
+\item Dynamical $G_{\rm eff}(\phi)$ in [A2] could in principle supply
+an additional suppression route, but no derivation is given in the
+attached files that maps this degree of freedom onto the present
+galactic closure for DF4/FCC~224.
+\item Non-equilibrium time-dependent $\phi$-dynamics (M1): requires
+$c_\ast\ll c$ near criticality, which is not in the current preprint.
+\item Orientation-sector coupling via $\alpha_{\rm ECT}$ (M2): would
+require a new derivation at galactic scale.
+\item History-dependent extensions of $\Xi$ (M3) within the broader
+class [\S23722]: requires OP3 resolution.
+\item Topological/instanton memory [\S31972]: not connected to the
+galactic sector in the preprint.
+\end{itemize}
+None of (III) is promoted to ``rescue'' status here.
+
+\item[(IV) Cannot be claimed.]
+\begin{itemize}
+\item DF4/FCC~224 are \emph{not} explained by the current closure.
+\item No rescue mechanism is yet derived from first principles in the
+attached preprint.
+\item The matched-control comparison is a structural challenge, not a
+formal impossibility theorem.
+\item ``$\bar\phi_{\rm local}\to 0^-\Rightarrow g^\dagger_{\rm eff}\to 0
+\Rightarrow$ Newton'' is \emph{not} a derived consequence of the
+attached preprint.
+\end{itemize}
+\end{description}
+
+\section{Future-work factors (secondary, not essential here)}
+
+The following are second-order for the current stress-test diagnosis;
+they improve precision of $\Xi_{\rm req}$ or enable more ambitious
+analyses, but none alters the qualitative conclusion. Listed as
+reminders for future work.
+
+\begin{itemize}
+\item Rotation in ``pressure-supported'' dwarfs (DF2 has measurable rotation).
+\item GC tracer survival bias and orbital-family selection effects.
+\item Mass-sheet degeneracy in external-field analyses.
+\item Preprint's 5th-force $L_5=\beta\bar\Psi\gamma^A n_A\Psi$
+contribution (Planck-suppressed at galactic scale).
+\item Time-since-event correlation with $\Xi_{\rm req}$ via stellar
+ages.
+\item Spatial $\Xi(R)$ variation within single galaxy (IFU test).
+\item Joint ensemble posterior across the whole UDG sample.
+\item CMB / early-universe cross-checks for any long-memory mechanism.
+\item Interloper mixture modeling in small-$N$ tracer samples.
+\item Proper 3D HI cube modeling for AGC~114905.
+\item $\Lambda$CDM partial DM halo survival as direct competitor model.
+\item Stellar age-metallicity degeneracy in $M/L$.
+\item IMF universality assumption.
+\end{itemize}
+
+\section{Integration proposal for the preprint (minimal)}
+
+This document is \emph{internal working notes}, not a subsection for
+publication. Recommended integration is minimal and is specified in
+the companion document {\tt ECT\_UDG\_integration\_proposal.tex}:
+\begin{itemize}
+\item one row in {\tt tab:future\_discriminants} (entry ND-13);
+\item one short paragraph (~150 words) in the galactic-closure
+section;
+\item \textbf{no} standalone subsection;
+\item \textbf{no} claim of derived rescue;
+\item \textbf{no} claim that $G_{\rm eff}(\phi)$ solves DF4;
+\item \textbf{no} advertisement of the present working notes as a
+semi-official supplement to the preprint.
+\end{itemize}
+
+\section{Conclusion}
+
+\begin{quote}
+The attached preprint already contains a consistent $\phi$-first
+galactic closure. DF4 and probably FCC~224 remain sharp stress tests
+of that current Level-B closure, not explained consequences of it.
+Candidate theory-level routes worth investigating include dynamical
+$G_{\rm eff}(\phi)$, non-quasi-static $\phi$-dynamics,
+orientation-sector effects, and history-dependent extensions of $\Xi$;
+none is presently derived for the galactic closure. The right
+integration into the preprint is as an open future discriminant
+linked to OP3, not as an explained consequence of the theory.
+\end{quote}
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}

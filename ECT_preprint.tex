@@ -23948,8 +23948,8 @@ The retained five-probe cosmological band for the effective drift
 parameter $\varepsilon$ obtained in \S\ref{subsec:eps_joint_band}
 should not be read as a direct refit parameter for the present
 low-redshift SPARC analysis. The galactic sector developed here is
-a local ordered-branch closure formulated in terms of $r_0$,
-$g_\dagger$, and the environment-sensitive effective critical scale
+a local ordered-branch closure formulated in terms of
+$g_\dagger$ and the environment-sensitive effective critical scale
 $g_\dagger^{\rm eff}$. What the cosmological result does provide is
 a consistency pressure toward a mild common late-time drift of the
 underlying background response. In the galactic sector, this should
@@ -23963,6 +23963,31 @@ $\varepsilon$ into the present $z\!\approx\!0$ galactic fits is
 made here; such a step would require an explicit closure-level
 derivation of how the cosmological drift sector projects onto the
 local galactic branch variables.
+
+\paragraph{Known stress test: DM-deficient ultra-diffuse galaxies.}
+The matched-mass population of pressure-supported ultra-diffuse
+galaxies contains both DM-rich objects (NGC~5846-UDG1 with
+$\sigma\approx 17$~km\,s$^{-1}$ at $M_\star\sim 10^{8}M_\odot$ and
+$R_e\sim 2$~kpc, consistent with the RAR) and DM-deficient objects
+(NGC~1052--DF4 and FCC~224 with $\sigma\sim 6$--$8$~km\,s$^{-1}$ at
+comparable $M_\star$ and $R_e$). The current practical closure of the
+$\phi$-first galactic sector~(eq.~\ref{eq:ect_rotation_closure_main})
+is a Level-B interpolation with Newtonian and deep-MOND asymptotics;
+the exact $\Xi$-law remains open (OP3). At the baseline
+$g^\dagger_{\rm eff}=g^\dagger_0$, the closure is consistent with the
+matched DM-rich control at the proxy-comparison level, but tends to
+over-predict $\sigma$ on the DM-deficient case by a factor of order
+three. NGC~1052--DF4 and probably FCC~224 therefore constitute
+empirical stress tests of the present Level-B closure: they are not a
+solved consequence of current ECT, but an open discriminator for any
+future completion of
+$\Xi(\rho_{\rm env},\bar\phi_{\rm env},\ldots)$ and/or of the broader
+time-dependent or orientation sector. A full diagnostic treatment ---
+formula, numerical table, nuisance budget, matched-pair observation,
+candidate theory-level directions, and comparison with the
+$\Lambda$CDM bullet-dwarf interpretation --- is given in
+Appendix~\ref{app:udg_stress_test}. This class is included as entry
+ND-13 in Table~\ref{tab:future_discriminants}.
 
 % ==============================================================
 \FloatBarrier
@@ -25311,7 +25336,7 @@ Prediction & ECT & Obs./comp. & Status \\
 BTFR slope & $4$ (algebraic) & $3.98\pm0.08$ & Structural \\
 $g^\dagger_0$ (ECT baseline) & $1.04\times10^{-10}$\,m/s$^2$
   & $a_0\approx1.2\times10^{-10}$ (McGaugh) & Benchmark consistency \\
-MW rotation ($r_0=14$\,kpc) & $\chi^2/N=2.95$ & $\Lambda$CDM comparison: $6.55$
+MW rotation ($g^\dagger_{\rm eff}\approx 1.72\,g^\dagger_0$) & $\chi^2/N=2.95$ & $\Lambda$CDM comparison: $6.55$
   & Comparative fit \\
 $n_s$ (critical-fluct.\ corridor) & $0.96$--$0.97$ & $0.965\pm0.004$ & Programme-level estimate \\
 $\eta_B$ (leptogenesis) & $\sim9\times10^{-10}$
@@ -26017,6 +26042,48 @@ BH evaporation (as opposed to reduced-state apparent mixedness)
 would falsify the core postulate-P2 + reduced-state-logic
 closure; a confirmed non-Page-curve evolution of observer-
 accessible radiation would also falsify it \\
+
+ND13 &
+Dark-matter-deficient ultra-diffuse galaxies (DF4, FCC~224; DF2
+ambiguous) &
+DF4 and probably FCC~224 exhibit tracer kinematics consistent with
+baryon-only dynamical mass in the probed region; the current
+practical Level-B galactic
+closure~(eq.~\ref{eq:ect_rotation_closure_main}) at the baseline
+$g^\dagger_{\rm eff}=g^\dagger_0$ tends toward the deep-MOND branch
+for these systems and thereby over-predicts the observed
+line-of-sight dispersion by a factor of order three.  The minimal
+density-only Level-B
+ansatz~(eq.~\ref{eq:gdagger_env_main}) for $\Xi$ does not naturally
+accommodate both the low-dispersion stress-test objects and matched
+DM-rich controls such as NGC~5846-UDG1 within a single simple
+environmental scalar law.  The presently known sample is small and
+not selection-neutral.  A full diagnostic treatment is given in
+Appendix~\ref{app:udg_stress_test}.  Possible theory-level directions
+for a future completion (dynamical $G_{\rm eff}(\phi)$ in
+eq.~\ref{eq:gen_EE}, history-dependent extensions of $\Xi$, and
+orientation-sector coupling) belong to structures already present in
+the broader framework, but none is presently derived for the galactic
+closure; addressing them is linked to OP3.  $\Lambda$CDM with
+bullet-dwarf formation
+\cite{Ogiya2018DF2tidal,Moreno2022DMfree,vanDokkum2022bullet}
+reproduces the observed dispersions through partial dark-halo
+stripping and remains a viable comparator &
+B (structural, open) &
+Archival: DF4 \cite{Danieli2022DF4},
+FCC~224 \cite{Buzzo2025FCC224,Tang2025FCC224},
+DF2 \cite{Trujillo2019DF2,Shen2021DF2TRGB},
+NGC~5846-UDG1 \cite{Forbes2021NGC5846UDG1};
+future: isolated-field DM-deficient searches, IFU $\sigma(R)$
+profiles, matched DM-rich controls &
+Observation-side: if the sample expands and the proxy-level tension
+persists or worsens under same-tracer same-aperture matched
+analysis, the minimal Level-B $\Xi$-ansatz is disfavoured and a
+completion via $G_{\rm eff}(\phi)$, history-dependent $\Xi$, or the
+orientation sector becomes necessary.  Theory-side: a derivation
+that maps the dynamical $G_{\rm eff}(\phi)$ degree of freedom onto
+the practical galactic closure is required before any ECT rescue
+can be claimed \\
 
 \bottomrule
 \end{longtable}
@@ -41267,7 +41334,7 @@ MOND and lower than MOND on the clean sub-sample
 (Table~\ref{tab:sparc_summary_main}).
 The Milky Way rotation curve is reproduced with
 $\chi^2/N = 2.95$ using a single free parameter
-$r_0 = 14$~kpc, compared with $\chi^2/N = 6.55$ for the
+$g^\dagger_{\rm eff}\approx 1.72\,g^\dagger_0$, compared with $\chi^2/N = 6.55$ for the
 standard $\Lambda$CDM NFW fit.
 The preferred baseline scale clusters around $cH_0/(2\pi)$, with
 galaxy-to-galaxy scatter that may reflect genuine environment
@@ -51900,6 +51967,508 @@ Two elements are not yet uniquely derived:
   The galaxy-to-galaxy scatter in $g_\dagger^{\rm eff}$ is a physical
   ECT prediction, not a shortcoming.
 \end{itemize}
+
+\section{Diagnostic stress test of the current Level-B galactic
+closure: dark-matter-deficient ultra-diffuse galaxies}
+\label{app:udg_stress_test}
+
+This appendix is a \emph{diagnostic appendix}: it applies the current
+practical galactic closure
+\eqref{eq:ect_rotation_closure_main} as an \emph{inverse-problem
+probe} to a class of observed objects --- the dark-matter-deficient
+ultra-diffuse galaxies (UDGs) --- and documents the resulting
+stress test.  It does not propose a rescue mechanism and does not
+claim that the current closure explains these objects.  Its purpose
+is to record, in one place and with one consistent methodology, the
+empirical tension between the current Level-B closure and the
+low-dispersion UDG class, the accompanying nuisance budget, the
+matched-pair observation, and the theory-level directions that a
+future completion of ECT's galactic sector would need to address.
+
+\textit{Status: diagnostic.  The scientific conclusions below are of
+the form ``the current Level-B closure is strained on this object'',
+not ``ECT predicts this observation''.  No rescue mechanism is
+derived here.}
+
+\subsection{Purpose and scope}
+\label{app:udg:purpose}
+
+The preprint's main galactic sector (\S\ref{sec:galactic_dynamics})
+and the derivation-status appendix
+(App.~\ref{app:rar_derivation_status}) establish that the current
+practical closure \eqref{eq:ect_rotation_closure_main} has two
+asymptotic branches --- Newtonian at large $g_N$ and deep-MOND at
+small $g_N$ --- and that the minimal
+ansatz~\eqref{eq:gdagger_env_main} for the environment modulator
+$\Xi$ is an open element of the Level-B construction (OP3).  For
+SPARC-like normal galaxies this closure reproduces the observed
+radial-acceleration phenomenology at the level documented in
+App.~\ref{app:galactic_phi_closure} and
+App.~\ref{app:sparc_computation}.
+
+Three objects of the DM-deficient UDG class --- NGC~1052--DF4
+\cite{Danieli2022DF4,vanDokkum2018}, FCC~224
+\cite{Buzzo2025FCC224,Tang2025FCC224}, and the observationally
+ambiguous NGC~1052--DF2
+\cite{Trujillo2019DF2,Shen2021DF2TRGB,vanDokkum2018} ---
+have line-of-sight velocity dispersions consistent with
+baryon-only Newtonian mass within their probed radii.  A
+matched-mass DM-rich control (NGC~5846-UDG1
+\cite{Forbes2021NGC5846UDG1}) lies on the standard RAR.  This
+appendix quantifies the resulting inverse-problem diagnostic.
+
+\subsection{Inverse-problem closed form: $\Xi_{\rm req}$ from
+$\sigma_{\rm obs}$}
+\label{app:udg:inverse_closed_form}
+
+At a fixed radius $R$, the practical closure
+\eqref{eq:ect_rotation_closure_main} reads
+\begin{equation}
+g(R)=\tfrac{1}{2}\!\left[g_N(R)+\sqrt{g_N^2(R)+4g_N(R)\,g^\dagger_{\rm eff}}\right],
+\qquad
+g^\dagger_{\rm eff}=g^\dagger_0\,\Xi,
+\label{eq:app_udg_closure}
+\end{equation}
+with $g^\dagger_0=cH_0/(2\pi)\simeq 1.04\times 10^{-10}\,\text{m s}^{-2}$.
+Define the local dynamical/baryonic ratio
+\begin{equation}
+r(R)\equiv\frac{M_{\rm dyn}(<R)}{M_{\rm bar}(<R)}
+=\frac{g(R)}{g_N(R)}.
+\end{equation}
+Solving \eqref{eq:app_udg_closure} for $r$ gives
+\begin{equation}
+r=\tfrac{1}{2}\!\left[1+\sqrt{1+4y}\right],
+\qquad y\equiv\frac{g^\dagger_{\rm eff}}{g_N(R)},
+\end{equation}
+whence the clean inversion
+\begin{equation}
+\boxed{\;
+y=r(r-1),
+\qquad
+\Xi_{\rm req}(R)
+=\frac{r(r-1)\,g_N(R)}{g^\dagger_0}.
+\;}
+\label{eq:app_udg_xi_req}
+\end{equation}
+This is a closed-form inverse of
+\eqref{eq:app_udg_closure}.  For a pressure-supported system the
+right-hand side is evaluated at the Wolf half-mass radius
+$R_{1/2}\simeq\tfrac{4}{3}R_e$, where the isotropic Wolf estimator
+\cite{Wolf2010} gives
+\begin{equation}
+M_{\rm dyn,1/2}=4\sigma_{\rm los}^2\,R_{1/2}/G,
+\qquad
+M_{\rm bar,1/2}\simeq\tfrac{1}{2}M_\star,
+\label{eq:app_udg_wolf}
+\end{equation}
+so that $r_{\rm obs}=\sigma_{\rm los,obs}^2/\sigma_N^2$ with
+$\sigma_N^2\equiv (3/32)GM_\star/R_e$ the Newtonian Wolf proxy for
+isotropic Plummer.  Formula \eqref{eq:app_udg_xi_req} is \emph{not}
+a prediction of $\Xi$; it is the value of $\Xi$ that the current
+closure would need at this object to reproduce the observed
+kinematics, given proxy assumptions \eqref{eq:app_udg_wolf}.
+
+The remaining closure-level phenomenology is limited to: (i)~the
+Wolf coefficient $4$, valid for isotropic Plummer with $\sim 30\%$
+uncertainty in the proxy relation; (ii)~the half-mass fraction
+$f_e=0.5$ for Plummer, varying by $\sim 20\%$ across plausible
+S\'ersic indices.  Reducing these requires a full Jeans forward
+model~(\S\ref{app:udg:jeans_upgrade}).
+
+\subsection{Jeans upgrade path (phenomenology reduction, not elimination)}
+\label{app:udg:jeans_upgrade}
+
+A stricter treatment replaces \eqref{eq:app_udg_wolf} by the
+isotropic spherical Jeans equation
+\begin{equation}
+\sigma_r^2(r)=\frac{1}{\nu(r)J_\beta(r)}
+\int_r^\infty\!\nu(s)\,g(s)\,J_\beta(s)\,ds,
+\qquad
+J_\beta(r)=\exp\!\left(\int^r\!\frac{2\beta(u)}{u}du\right),
+\end{equation}
+followed by line-of-sight projection and aperture averaging,
+\begin{equation}
+\sigma_{\rm los}^2(R)=\frac{2}{I(R)}
+\int_R^\infty\!\!\left(1-\beta\frac{R^2}{r^2}\right)
+\frac{\nu(r)\sigma_r^2(r)\,r\,dr}{\sqrt{r^2-R^2}},
+\qquad
+\langle\sigma_{\rm los}^2\rangle_{\rm ap}=
+\frac{\int_0^{R_{\rm ap}}\!W I\,\sigma_{\rm los}^2\,R\,dR}
+{\int_0^{R_{\rm ap}}\!W I\,R\,dR},
+\end{equation}
+with $\nu(r)$ the deprojected tracer density from the observed
+photometry, $\beta(r)$ the anisotropy, and $g(r)$ from
+\eqref{eq:app_udg_closure} at trial $\Xi$.  For DF4 under isotropic
+Plummer, $M/L=2$, and $D=20$~Mpc, a direct Jeans integration
+returns $\sigma_N^{\rm Jeans}\simeq 8.0$~km\,s$^{-1}$ against the
+Wolf-proxy value $\sigma_N^{\rm proxy}\simeq 6.2$~km\,s$^{-1}$
+(ratio $1.30$).  The qualitative conclusion --- that DF4 requires
+$\Xi_{\rm req}\ll 1$ under the current closure --- is unchanged.
+The Jeans upgrade reduces but does not eliminate the residual
+phenomenology, which still contains the observational inputs
+$M/L$, $\beta(r)$, tracer family, aperture, and interloper
+fraction.
+
+\subsection{Numerical stress-test diagnostic}
+\label{app:udg:numerical}
+
+Applying \eqref{eq:app_udg_xi_req} at $R_{1/2}=\tfrac{4}{3}R_e$ to the
+six reference objects gives Table~\ref{tab:udg_stress_test}.  The
+quoted $\Xi_{\rm req}$ values are central diagnostic proxy-level
+estimates; the full 95\% CL bands are summarised separately
+in~\S\ref{app:udg:nuisance}.
+
+\begin{longtable}{@{}l r r r r l@{}}
+\caption{Proxy-level diagnostic of the current Level-B galactic
+closure \eqref{eq:app_udg_closure} evaluated at
+$R_{1/2}=\tfrac{4}{3}R_e$ using the isotropic Plummer Wolf
+estimator.  Central values only; 95\% CL bands
+in~\S\ref{app:udg:nuisance}.  AGC~114905 is a gas-rich rotator and
+requires a disc kinematic solver rather than a spherical Jeans
+proxy; it is listed for completeness of the UDG-class coverage.
+DF2 remains observationally ambiguous.}
+\label{tab:udg_stress_test}\\
+\toprule
+Object & $M_\star/10^8M_\odot$ & $R_e$/kpc &
+$\sigma_{\rm obs}$/km\,s$^{-1}$ & $r=M_{\rm dyn}/M_{\rm bar}$ &
+$\Xi_{\rm req}$\\
+\midrule
+\endfirsthead
+\toprule
+Object & $M_\star/10^8M_\odot$ & $R_e$/kpc &
+$\sigma_{\rm obs}$/km\,s$^{-1}$ & $r=M_{\rm dyn}/M_{\rm bar}$ &
+$\Xi_{\rm req}$\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+NGC 1052--DF4        & 1.5  & 1.6  & $6.3^{+2.5}_{-1.6}$ & $\sim 1.1$ & $\sim 10^{-3}$ \\
+FCC~224              & 1.74 & 1.89 & $7.8^{+6.7}_{-4.4}$ & $\sim 1.6$ & $\sim 2\times 10^{-2}$ \\
+NGC 1052--DF2        & 1.3  & 2.2  & $[8.6,\,14.9]$      & $3$--$9$   & $0.1$--$1.4$ (ambiguous) \\
+NGC~5846-UDG1        & 1.1  & 2.1  & $17\pm 2$           & $\sim 14$  & $\sim 1.6$ \\
+Dragonfly 44         & 3.0  & 4.7  & $33\pm 3$           & $\sim 42$  & $\sim 8.9$ \\
+AGC~114905 (rotator) & \multicolumn{5}{l}{Disc solver required; not included in this spherical diagnostic} \\
+\end{longtable}
+
+The structural observation is that within the six-object diagnostic
+sample, the current closure at the baseline
+$g^\dagger_{\rm eff}=g^\dagger_0$ returns $\Xi_{\rm req}\sim O(1)$
+for normal RAR objects (NGC~5846-UDG1) and the upper tail
+(Dragonfly~44), but $\Xi_{\rm req}\ll 1$ for NGC~1052--DF4 and
+FCC~224 at their central observed dispersions.  NGC~1052--DF2
+remains observationally ambiguous because its dispersion bracket
+spans an order of magnitude across the
+$\sigma\approx 8$--$15$~km\,s$^{-1}$ range discussed in the
+literature.
+
+\subsection{Matched-pair observation}
+\label{app:udg:matched_pair}
+
+The ECT-relevant tension is sharpest in the matched pair
+NGC~1052--DF4 vs NGC~5846-UDG1: comparable $M_\star\sim 10^{8}M_\odot$,
+comparable $R_e\sim 2$~kpc, comparable group-scale environment, but
+central-value $\Xi_{\rm req}$ values differing by three orders of
+magnitude.  Because the minimal density-only Level-B
+ansatz~\eqref{eq:gdagger_env_main} depends only on the single
+environmental scalar $\rho_{\rm env}$ and is monotonic in it, it
+does not naturally accommodate both endpoints of such a matched
+pair within a single simple environmental scalar law.  This is a
+structural observation, not an impossibility theorem: the broader
+ECT-compatible class of $\Xi$-functions noted
+in~\S\ref{app:rar_derivation_status} remains open at OP3.
+
+\subsection{Nuisance and uncertainty budget}
+\label{app:udg:nuisance}
+
+For DF4, propagating independent nuisances through
+\eqref{eq:app_udg_xi_req} gives the diagnostic budget in
+Table~\ref{tab:udg_nuisance}.  The multiplicative factors act on
+$\Xi_{\rm req}$ for a fixed observational central value of
+$\sigma_{\rm obs}$.
+
+\begin{longtable}{@{}l l@{}}
+\caption{Independent nuisance factors affecting the proxy-level
+$\Xi_{\rm req}$ diagnostic for NGC~1052--DF4.  All factors are
+multiplicative on $\Xi_{\rm req}$.  Combined 95\% CL:
+$\log_{10}\Xi_{\rm req}\in[-4,\,-0.5]$.}
+\label{tab:udg_nuisance}\\
+\toprule
+Source & Multiplicative factor on $\Xi_{\rm req}$\\
+\midrule
+\endfirsthead
+\bottomrule
+\endfoot
+Distance $D\in[13,25]$~Mpc (covariant with $M_\star\propto D^2$, $R_e\propto D$) & $\sim 10\times$\\
+Stellar mass-to-light ratio $M/L\in[1,4]$ (SPS-driven) & $\sim 10\times$\\
+Small-$N$ Gaussian posterior at 95\% CL on $\sigma$ (7 GC tracers) & $\sim 100\times$\\
+Anisotropy $\beta\in[-0.5,0.5]$ & $\sim 1.5\times$\\
+Wolf-proxy $\to$ Jeans upgrade & $\sim 1.3\times$\\
+\end{longtable}
+
+The entire 95\% CL band for $\log_{10}\Xi_{\rm req}$ at DF4 lies
+below the normal RAR band $\Xi\sim O(1)$.  The proxy-level
+\emph{classification} of DF4 as a stress test of the current
+closure is therefore robust to nuisance variations; only the
+numerical value of $\Xi_{\rm req}$ is imprecise.  The present
+bookkeeping is diagnostic-level: a posterior $P(\Xi\mid\text{data})$
+with joint sampling of the full nuisance vector
+$\theta=\{M/L,D,\beta,n,R_{\rm ap},f_{\rm int},M_{\rm host},d_{\rm 3D},Q_{\rm eq}\}$
+is the appropriate next step.
+
+\subsection{External field effect benchmark}
+\label{app:udg:efe}
+
+A benchmark parallel to the ECT diagnostic is the external field
+effect (EFE) characteristic of MOND-class theories.  Estimating
+$g_{\rm ext}\simeq GM_{\rm host}/d_{\rm proj}^2$ for the four
+pressure-supported reference objects:
+
+\begin{longtable}{@{}l c c c@{}}
+\caption{External field amplitudes for the four spherical UDG
+reference objects, for the MOND-EFE benchmark.  $a_0=1.2\times
+10^{-10}\,\text{m s}^{-2}$ is the standard MOND acceleration
+scale.  All four values lie far below $a_0$; EFE screening is
+minor.}
+\label{tab:udg_efe}\\
+\toprule
+Object & $M_{\rm host}/M_\odot$ & $d_{\rm proj}$/kpc & $g_{\rm ext}/a_0$\\
+\midrule
+\endfirsthead
+\bottomrule
+\endfoot
+NGC 1052--DF4        & $\sim 10^{11}$   & $\sim 80$  & $\sim 0.02$\\
+FCC~224              & $\sim 3\times 10^{10}$ & $\sim 70$  & $\sim 0.007$\\
+NGC~5846-UDG1        & $\sim 5\times 10^{11}$ & $\sim 100$ & $\sim 0.06$\\
+Dragonfly~44 (Coma)  & $\sim 10^{13}$   & $\sim 500$ & $\sim 0.05$\\
+\end{longtable}
+
+EFE screening is therefore minor for all four objects and, within
+this benchmark, does not numerically distinguish DF4 from the
+matched DM-rich control NGC~5846-UDG1.  This observation is
+benchmark-level: the current ECT closure
+\eqref{eq:app_udg_closure} does not carry an explicit
+$g_{\rm ext}$ dependence, and the MOND-EFE comparison is strictly
+outside the ECT formulation.
+
+\subsection{Side diagnostics and sanity checks}
+\label{app:udg:side_checks}
+
+\paragraph{Ultra-faint dwarfs (side diagnostic, not validation).}
+Applied to Milky-Way dwarf spheroidals at
+$M_\star\sim 10^3$--$10^7 M_\odot$ (Draco, Sculptor, Fornax,
+Segue~I, Willman~I), the same Wolf-based proxy returns
+$\Xi_{\rm req}\in[\sim 2,\sim 10^3]$.  This is not a validation of
+the proxy chain: the spread is driven by well-documented effects
+orthogonal to the UDG stress test (binary-star inflation of
+$\sigma_{\rm obs}$, tidal non-equilibrium, radial anisotropy, and
+small-$N$ statistics) and merely confirms that the proxy does not
+collapse outside the UDG target mass range.
+
+\paragraph{Globular clusters (Newton sanity check).}
+For 47~Tuc, $\omega$~Cen, M13, M15, the ratio
+$g_N/g^\dagger_0\gtrsim 15$ places these systems safely in the
+$g_N\gg g^\dagger_{\rm eff}$ branch of
+\eqref{eq:app_udg_closure}, where the closure returns
+$g\to g_N$ independently of $\Xi$.  This is the trivial Newton
+recovery check at high density.
+
+\paragraph{FCC~224 non-sphericity.}
+FCC~224 is prolate with observed apparent ellipticity
+$\varepsilon\simeq 0.36$ \cite{Buzzo2025FCC224}.  Spherical
+Jeans should therefore be treated only as an order-unity proxy
+for this object; no reliable numerical non-spherical correction
+factor can be claimed within the present diagnostic.  The central
+$\Xi_{\rm req}$ value for FCC~224 in
+Table~\ref{tab:udg_stress_test} should accordingly be read as
+order-of-magnitude.  This does not change its qualitative
+classification as a stress-test object.
+
+\paragraph{Selection rate.}
+Approximately 3 confirmed DM-deficient UDGs among $\sim 500$
+screened dwarfs with kinematic follow-up translates to
+$\sim 0.6\%$ incidence \cite{Moreno2022DMfree}, consistent in
+order of magnitude with the $\sim 1\%$ rate of collision-stripped
+systems predicted by $\Lambda$CDM bullet-dwarf
+simulations~\cite{Ogiya2018DF2tidal,vanDokkum2022bullet}.  Any
+future ECT-compatible rescue mechanism will need to be consistent
+with this observed rate.
+
+\subsection{Selection and sample caveats}
+\label{app:udg:sample}
+
+The presently known DM-deficient UDG sample is small and
+\emph{not} selection-neutral: several candidates were identified
+through unusual globular-cluster-population markers
+(top-heavy GCLF, excess luminous GCs for the host stellar mass).
+The class properties inferred from this sample should therefore be
+treated as provisional rather than as population-level conclusions.
+Whether the class persists under selection-neutral future
+surveys is itself part of the discriminant content of ND-13 in
+Table~\ref{tab:future_discriminants}.
+
+\subsection{Comparison with the $\Lambda$CDM bullet-dwarf interpretation}
+\label{app:udg:lcdm}
+
+In the $\Lambda$CDM + bullet-dwarf scenario
+\cite{Ogiya2018DF2tidal,Moreno2022DMfree,vanDokkum2022bullet},
+the DM-deficient UDGs arise as post-collisional remnants of
+high-speed galaxy encounters in which the dark halos of the two
+progenitors decouple from the stars and proceed approximately
+ballistically, leaving two stellar remnants embedded in
+essentially baryon-only potentials.  This scenario reproduces the
+observed low dispersions through partial dark-halo stripping,
+predicts a small-but-non-zero incidence rate compatible with the
+$\sim 1\%$ screened-population observation, and places at least one
+candidate (the compact dwarfs near NGC~1052 \cite{vanDokkum2022bullet})
+in the same post-collision alignment.
+
+The $\Lambda$CDM comparator therefore sits on fully derived
+astrophysics, not on open elements of the underlying theory.  Any
+future ECT-compatible rescue will need to reach comparable
+explanatory power --- at minimum, reproduce the central dispersion
+values of NGC~1052--DF4 and FCC~224 while remaining consistent
+with the matched control NGC~5846-UDG1 and with the standard RAR
+across the wider UDG population --- before it can be promoted to a
+preferred interpretation within ECT.
+
+\subsection{Possible theory-level directions for a future completion}
+\label{app:udg:directions}
+
+The full ECT field equations \eqref{eq:gen_EE} contain several
+structural degrees of freedom not yet propagated through to the
+practical galactic closure \eqref{eq:app_udg_closure}.  The
+following are candidate directions for a future completion that
+could in principle address the DM-deficient UDG class.  None is
+presently derived for the galactic closure; each is listed here
+only as a label for future work.  The list is neutral with respect
+to which direction is more promising.
+\begin{enumerate}
+\item \textbf{Dynamical $G_{\rm eff}(\phi)$} in~\eqref{eq:gen_EE}.
+  The generalised field equations contain a dynamical
+  $G_{\rm eff}(\phi)$ entering through the $e^{\beta\phi}R$
+  coefficient of the action~\eqref{eq:phi_first_action}.  A derivation
+  mapping that degree of freedom onto the practical closure
+  \eqref{eq:app_udg_closure} --- so that local disturbances of
+  $\bar\phi$ appear in the observable $\sigma$ --- is not provided
+  in the present preprint.  The route is structurally conceivable
+  but not a derived result.
+\item \textbf{History-dependent extensions of $\Xi$} within the
+  broader ECT-compatible class described
+  in~\S\ref{app:rar_derivation_status}.  The minimal
+  ansatz~\eqref{eq:gdagger_env_main} depends only on the
+  instantaneous environmental density.  An extension allowing
+  $\Xi$ to depend on the local history of the condensate (e.g.\
+  elapsed time since a relaxation-disrupting event) is within the
+  open class at OP3, but no explicit form is constructed here.
+\item \textbf{Orientation-sector coupling} through
+  $\alpha_{\rm ECT}(n_\mu n_\lambda R^\lambda_\nu+\ldots)$ of
+  \eqref{eq:gen_EE}.  An orientation-sensitive modification of
+  the galactic closure is available in principle from the
+  broader theory, but is not carried out here.
+\item \textbf{Non-quasi-static $\phi$-dynamics} breaking the
+  quasi-static assumption
+  of~\eqref{eq:phi_eom_local}.  If the local condensate
+  response time were comparable to the galactic dynamical time,
+  the practical closure would acquire an additional
+  time-dependent branch not captured by \eqref{eq:app_udg_closure};
+  demonstrating this regime on the galactic scale requires a
+  derivation that is not in the present preprint.
+\end{enumerate}
+
+The present appendix records the diagnostic; it does not promote
+any of these routes to a solved intra-ECT rescue mechanism.
+
+\subsection{Physical interpretation of the diagnostic}
+\label{app:udg:interpretation}
+
+Within the language of the current practical galactic closure, the
+stress test has the following minimal physical reading.  The
+closure \eqref{eq:app_udg_closure} admits two asymptotic branches:
+Newtonian at $g_N\gg g^\dagger_{\rm eff}$ and deep-MOND at
+$g_N\ll g^\dagger_{\rm eff}$.  In the DM-deficient UDGs the local
+$g_N$ is small enough to enter the deep-MOND branch at the
+baseline $g^\dagger_{\rm eff}=g^\dagger_0$, but the
+\emph{observed} kinematics are Newton-like.  Within the scope of
+the present closure, the only way to describe this within the
+same single closure and the same asymptotic structure is to
+interpret the closure as requiring a sharply suppressed local
+$g^\dagger_{\rm eff}$ at these objects relative to the global
+baseline $g^\dagger_0$.  This is the content of the diagnostic
+$\Xi_{\rm req}\ll 1$ inferred above.  Whether such a suppression
+arises from any of the directions
+in~\S\ref{app:udg:directions} is an open question.
+
+\subsection{Open questions tied to OP3}
+\label{app:udg:open_questions}
+
+The diagnostic of this appendix refines and sharpens the open
+problem OP3 (exact environment law for $g^\dagger$) listed in the
+main text.  Concretely:
+
+\begin{itemize}
+\item OP3a: Construct or exclude the density-only ansatz class.  Is
+  there \emph{any} choice of $\Xi(\rho_{\rm env})$ with
+  monotonically decreasing behaviour in the group-density regime
+  that simultaneously reproduces matched DM-rich and DM-deficient
+  UDGs at the observed levels?  The matched-pair observation
+  in~\S\ref{app:udg:matched_pair} suggests not, but does not rule
+  it out formally.
+\item OP3b: Specify the additional variable.  If OP3a closes
+  negatively, which of the directions
+  in~\S\ref{app:udg:directions} supplies the additional
+  environment/history variable that completes $\Xi$?
+\item OP3c: Derive the galactic-scale effective action.  Perform
+  the derivation that connects the dynamical
+  $G_{\rm eff}(\phi)$ of \eqref{eq:gen_EE} to the practical
+  galactic closure \eqref{eq:app_udg_closure}; only after this
+  derivation can $G_{\rm eff}$-based effects on $\sigma_{\rm obs}$
+  be claimed as ECT-internal rather than parametric.
+\item OP3d: Predict the incidence rate.  Any completion that
+  accommodates DF4 and FCC~224 must also be consistent with the
+  observed $\sim 0.6\%$--$1\%$ incidence of DM-deficient UDGs in
+  the screened dwarf population.
+\end{itemize}
+
+\subsection{What this appendix does and does not establish}
+\label{app:udg:status}
+
+\emph{Established here:}
+\begin{itemize}
+\item The practical galactic closure \eqref{eq:app_udg_closure} has
+  exactly two asymptotic branches (Newton, deep-MOND); no third
+  low-$g$ Newtonian branch exists within it.
+\item Applied to normal RAR galaxies the diagnostic returns
+  $\Xi_{\rm req}\sim O(1)$.
+\item Applied to DF4 and (probably) FCC~224 the diagnostic returns
+  $\Xi_{\rm req}\ll 1$ robustly under the nuisance budget of
+  Table~\ref{tab:udg_nuisance}.
+\item The minimal density-only Level-B $\Xi$-ansatz is
+  structurally insufficient for the DF4 vs NGC~5846-UDG1 matched
+  pair.
+\end{itemize}
+
+\emph{Not established here:}
+\begin{itemize}
+\item DF4 and FCC~224 are \emph{not} explained by the current
+  closure.
+\item No rescue mechanism is derived.  In particular,
+  $G_{\rm eff}(\phi)$ is listed as a candidate direction on equal
+  footing with the other items in~\S\ref{app:udg:directions}; it
+  is not promoted to a solved intra-preprint mechanism.
+\item The proposition
+  ``$\bar\phi_{\rm local}\to 0^-\Rightarrow g^\dagger_{\rm eff}\to 0
+  \Rightarrow$ Newton'' is \emph{not} a derived consequence of the
+  attached preprint and must not be read into the above
+  diagnostic.
+\item The matched-pair comparison in
+  \S\ref{app:udg:matched_pair} is a structural observation, not a
+  formal impossibility theorem about all ECT-compatible
+  $\Xi$-functions.
+\end{itemize}
+
+The integration target of this appendix is therefore the
+discriminant entry ND-13 of Table~\ref{tab:future_discriminants},
+not a claim of explanatory success.
 
 \section{Numerical algorithm for late-time ECT cosmology: Hubble tension, age, and JWST background}
 \label{app:late_cosmo_algorithm}
