@@ -1,0 +1,90 @@
+digraph TwoLevelOntology {
+  rankdir=TB;
+  fontname="Helvetica";
+  pad="0.2";
+  node [fontname="Helvetica", fontsize=10, shape=box,
+        style="rounded,filled", margin="0.14,0.07"];
+  edge [fontname="Helvetica", fontsize=9];
+  splines=true;
+  nodesep=0.35;
+  ranksep=0.75;
+  labeljust=c;
+
+  // =====================================================
+  // LEVEL I  — full condensate (top)
+  // =====================================================
+  node [fillcolor="#404040", fontcolor=white];
+  level_I [label=<<B>Level I</B>&#x2003;&#x2014;&#x2003;Full condensate description<BR/>
+                    One globally unitary Euclidean condensate<BR/>
+                    No independent quantised metric field<BR/>
+                    No fundamental collapse<BR/>
+                    Non-factorisable correlations intrinsic>];
+
+  // =====================================================
+  // Reduction map  — middle (dark grey)
+  // =====================================================
+  node [fillcolor="#808080", fontcolor=white, shape=box, style="filled"];
+  reduction [label=<Reduction map &#x03C1; = Tr<SUB>env</SUB> |&#x03A8;&#x27E9;&#x27E8;&#x03A8;|<BR/>
+                    (partial trace over unresolved condensate modes)>];
+
+  // =====================================================
+  // Level IIa / IIb  — middle row (light grey)
+  // =====================================================
+  node [fillcolor="#b8b8b8", fontcolor=black, shape=box,
+        style="rounded,filled"];
+  level_IIa [label=<<B>Level IIa</B>&#x2003;Reduced coherent-effective regime<BR/>
+                     &#x0393;<SUB>loop</SUB> &#x226A; 1&#x2003;(mesoscopic)<BR/>
+                     Coherent common-medium structure intact<BR/>
+                     Interference survives&#x2003;&middot;&#x2003;Reduced, not classical>];
+  level_IIb [label=<<B>Level IIb</B>&#x2003;Reduced macroscopic classical-looking<BR/>
+                     &#x0393;<SUB>loop</SUB> &#x226B; 1&#x2003;(macroscopic)<BR/>
+                     Strong locking + decoherence<BR/>
+                     Effective Newton / Einstein gravity&#x2003;&middot;&#x2003;Apparent<BR/>
+                     irreversibility, reduced thermality, stochasticity>];
+
+  // =====================================================
+  // Outcomes — bottom row (lightest grey)
+  // =====================================================
+  node [fillcolor="#e4e4e4", fontcolor=black, shape=box,
+        style="rounded,filled"];
+  gie_allowed [label=<<B>GIE structurally allowed</B><BR/>
+                       Correlated common-medium loophole class<BR/>
+                       (Trillo&#x2013;Navascu&#xE9;s-type route)<BR/>
+                       No violation of reduced-state logic>];
+  gie_noop    [label=<<B>Standard no-go logic applies</B><BR/>
+                       Local classical factorising channel<BR/>
+                       No gravity-induced entanglement<BR/>
+                       BMV no-go applies straightforwardly>];
+
+  // =====================================================
+  // Caveat (bottom)
+  // =====================================================
+  node [fillcolor="#ffffff", fontcolor=black, shape=box,
+        style="rounded,filled", penwidth=1];
+  caveat [label=<<B>Architectural caveat.</B> &#x201C;Classicality&#x201D; in ECT is not a separate<BR/>
+                  ontological sector but a regime of reduced description. Denying a<BR/>
+                  fundamental quantised metric is <I>not</I> denying the quantum character<BR/>
+                  of the underlying medium.>];
+
+  // =====================================================
+  // Ranks
+  // =====================================================
+  {rank=same; level_I}
+  {rank=same; reduction}
+  {rank=same; level_IIa; level_IIb}
+  {rank=same; gie_allowed; gie_noop}
+  {rank=same; caveat}
+
+  // =====================================================
+  // Edges
+  // =====================================================
+  level_I -> reduction [label="partial tracing"];
+  reduction -> level_IIa [label=<&#x0393;<SUB>loop</SUB> &#x226A; 1>];
+  reduction -> level_IIb [label=<&#x0393;<SUB>loop</SUB> &#x226B; 1>];
+  level_IIa -> gie_allowed;
+  level_IIb -> gie_noop;
+
+  // Invisible edges for alignment
+  gie_allowed -> caveat [style=invis];
+  gie_noop    -> caveat [style=invis];
+}

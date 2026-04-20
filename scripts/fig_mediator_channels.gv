@@ -1,0 +1,103 @@
+digraph MediatorChannels {
+  rankdir=TB;
+  fontname="Helvetica";
+  pad="0.2";
+  node [fontname="Helvetica", fontsize=10, shape=box,
+        style="rounded,filled", margin="0.14,0.07"];
+  edge [fontname="Helvetica", fontsize=9];
+  splines=true;
+  nodesep=0.35;
+  ranksep=0.75;
+  labeljust=c;
+
+  // =====================================================
+  // TOP: Unified reduced mediator
+  // =====================================================
+  node [fillcolor="#404040", fontcolor=white];
+  root [label=<<B>Reduced gravitational mediator in ECT</B><BR/>
+                (after reduction from Level I to Level II)<BR/>
+                Two physically distinct channels&#x2003;+&#x2003;mixed sector>];
+
+  // =====================================================
+  // Mid layer: three branches
+  // =====================================================
+  // phi-channel
+  node [fillcolor="#b8b8b8", fontcolor=black];
+  phi_ch [label=<<B>&#x03C6;-channel</B>&#x2003;&#x2014;&#x2003;scalar distinguishability<BR/>
+                  Quasi-static &#x03B4;&#x03C6; sourced by mass distribution<BR/>
+                  Two branches source two distinguishable condensate configs<BR/>
+                  &#x2192; Reduced-state decoherence channel>];
+
+  // delta n_A channel
+  delta_ch [label=<<B>&#x03B4;n<SUB>A</SUB>-channel</B>&#x2003;&#x2014;&#x2003;orientation / tensor<BR/>
+                    Projects onto symmetric effective-metric channel<BR/>
+                    Massless spin-2 excitation (graviton) at linearised level<BR/>
+                    &#x2192; Candidate entangling mediator>];
+
+  // Mixed sector
+  node [fillcolor="#d8d8d8", fontcolor=black];
+  mixed_ch [label=<<B>Mixed scalar&#x2013;orientation sector</B><BR/>
+                    Decoherence and entangling capacity<BR/>
+                    dress one another in general>];
+
+  // =====================================================
+  // Consequences row (phi)
+  // =====================================================
+  node [fillcolor="#ffffff", fontcolor=black];
+  decoh_grav [label=<Di&#xF3;si&#x2013;Penrose-like<BR/>gravitational decoherence<BR/>
+                      &#x03C4;<SUB>dec</SUB><SUP>grav</SUP> &#x223C; &#x210F; R / (G<SUB>N</SUB> m&#xB2;)>];
+  m_guide [label=<Heuristic scalar-sector scale<BR/>
+                   m<SUB>guide</SUB> &#x223C; &#x221A;(&#x210F; R / G<SUB>N</SUB> &#x03C4;<SUB>exp</SUB>)<BR/>
+                   &#x2013; NOT a GIE prediction,<BR/>
+                   &#x2013; scalar orienting scale only>];
+
+  // =====================================================
+  // Consequences row (delta)
+  // =====================================================
+  entangling [label=<Candidate reduced entangling mediator<BR/>
+                      Common-medium orientation correlations<BR/>
+                      retarded, non-factorising channel>];
+  orient_ts  [label=<Orientation-sector<BR/>characteristic timescale<BR/>
+                      (first-principles value: open)>];
+
+  // =====================================================
+  // Open problem (dashed, at bottom)
+  // =====================================================
+  node [fillcolor="#ffffff", fontcolor=black, style="rounded,dashed",
+        penwidth=2];
+  op_q22 [label=<<B>OP-Q22</B>&#x2003;&#x03B4;n<SUB>A</SUB> entangling mediator<BR/>
+                  from influence-functional derivation<BR/>
+                  (retarded, common-medium, non-factorising)<BR/>
+                  on the Euclidean condensate path integral>];
+
+  // =====================================================
+  // Ranks
+  // =====================================================
+  {rank=same; root}
+  {rank=same; phi_ch; delta_ch; mixed_ch}
+  {rank=same; decoh_grav; entangling}
+  {rank=same; m_guide; orient_ts}
+  {rank=same; op_q22}
+
+  // =====================================================
+  // Edges
+  // =====================================================
+  root -> phi_ch;
+  root -> delta_ch;
+  root -> mixed_ch [style=dashed];
+
+  phi_ch -> decoh_grav;
+  decoh_grav -> m_guide;
+
+  delta_ch -> entangling;
+  entangling -> orient_ts;
+  orient_ts -> op_q22 [style=dashed, color=gray50];
+
+  // Warning edge: m_guide inherited from scalar channel
+  m_guide -> entangling [style=dashed, color=gray50,
+                         label="scalar-sector scale\ncannot replace\norientation channel"];
+
+  // Mixed sector contributes to both
+  mixed_ch -> decoh_grav [style=dashed, color=gray50];
+  mixed_ch -> entangling [style=dashed, color=gray50];
+}
