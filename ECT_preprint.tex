@@ -276,7 +276,11 @@ sound horizon;
 Planck--SH0ES discrepancy;
 Hubble-sector effective drift parameter;
 JWST early-galaxy maturity budget;
-age-viability note
+age-viability note;
+dark-matter-deficient ultra-diffuse galaxies;
+NGC~1052--DF4;
+FCC~224;
+matched-pair galactic stress test
 
 \newpage
 \setcounter{tocdepth}{2}
@@ -422,6 +426,7 @@ DESI & Dark Energy Spectroscopic Instrument \\
 DM & Dark matter \\
 ECT & Euclidean Condensate Theory (this work) \\
 EFE & Einstein field equations \\
+UDG & Ultra-diffuse galaxy \\
 EOM & Equation of motion \\
 GR & General relativity \\
 GW & Gravitational wave \\
@@ -23987,7 +23992,7 @@ formula, numerical table, nuisance budget, matched-pair observation,
 candidate theory-level directions, and comparison with the
 $\Lambda$CDM bullet-dwarf interpretation --- is given in
 Appendix~\ref{app:udg_stress_test}. This class is included as entry
-ND-13 in Table~\ref{tab:future_discriminants}.
+ND-13 in Table~\ref{tab:future_discriminants}. The Wolf/Jeans-style analysis used there is explicitly diagnostic: the quantity $\Xi_{\rm req}$ reported is not a prediction of $\Xi$, but the value the present closure would need to reproduce the observed kinematics under proxy-level assumptions; an honest programme for closing the open $\Xi$-law is tied to OP3.
 
 % ==============================================================
 \FloatBarrier
@@ -24085,6 +24090,12 @@ The most distinctive new prediction is the environmental modulation
 of $g^\dagger_{\rm eff}$~(F1, Table~\ref{tab:ECT_predictions}),
 which is absent in frameworks with a strictly universal acceleration
 scale and is directly testable with existing data.
+A known stress test of the present Level-B closure is the class of
+dark-matter-deficient ultra-diffuse galaxies (NGC~1052--DF4,
+FCC~224); these are listed as entry ND-13 in
+Table~\ref{tab:future_discriminants} and discussed diagnostically
+in Appendix~\ref{app:udg_stress_test}, and they are not claimed to
+be explained by the current closure.
 For the cosmological sector of the ordered-branch programme, see the
 summary in Section~\ref{sec:mp_cosmo_status}.
 
@@ -52150,6 +52161,32 @@ Dragonfly 44         & 3.0  & 4.7  & $33\pm 3$           & $\sim 42$  & $\sim 8.
 AGC~114905 (rotator) & \multicolumn{5}{l}{Disc solver required; not included in this spherical diagnostic} \\
 \end{longtable}
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.92\linewidth]{figures/fig_udg_stress_test.pdf}
+\caption{DM-deficient ultra-diffuse galaxy stress test of the current
+Level-B galactic closure.  Central-value diagnostic
+$\Xi_{\rm req}=r(r-1)\,g_N/g^\dagger_0$ evaluated at
+$R_{1/2}=(4/3)R_e$ via the isotropic Wolf estimator, shown on a
+logarithmic vertical axis for the five spherical reference objects
+(AGC~114905 is a gas-rich rotator and requires a disc solver, not a
+spherical Jeans proxy; it is therefore not plotted).  The shaded
+horizontal band marks the RAR-normal range $\Xi\sim O(1)$
+recovered for ordinary galaxies.  Error bars are the $95\%$~CL
+nuisance band obtained by propagating distance covariance,
+$M/L$~uncertainty, the small-$N$ posterior on $\sigma$ for DF4's
+seven globular-cluster tracers, and anisotropy $\beta\in[-0.5,0.5]$
+(see Table~\ref{tab:udg_nuisance}).  The horizontal layout exposes
+the stress-test character: DF4 and FCC~224 sit $2$--$3$ decades below
+the RAR-normal band, while matched-mass DM-rich control
+NGC~5846-UDG1 falls inside it and Dragonfly~44 sits at the upper
+tail.  DF2 is observationally ambiguous across the reported
+$\sigma\in[8.6,14.9]$~km\,s$^{-1}$ bracket.  This figure is a
+diagnostic readout of what $\Xi$ the present closure would need at
+each object, not a prediction of $\Xi$ from ECT.}
+\label{fig:udg_stress_test}
+\end{figure}
+
 The structural observation is that within the six-object diagnostic
 sample, the current closure at the baseline
 $g^\dagger_{\rm eff}=g^\dagger_0$ returns $\Xi_{\rm req}\sim O(1)$
@@ -52175,7 +52212,11 @@ does not naturally accommodate both endpoints of such a matched
 pair within a single simple environmental scalar law.  This is a
 structural observation, not an impossibility theorem: the broader
 ECT-compatible class of $\Xi$-functions noted
-in~\S\ref{app:rar_derivation_status} remains open at OP3.
+in~\S\ref{app:rar_derivation_status} remains open at OP3.  The
+comparison is structural rather than a perfectly matched
+same-tracer same-aperture twin test: it is intended to expose a
+tension within the present closure, not to serve as a one-to-one
+dynamical twin.
 
 \subsection{Nuisance and uncertainty budget}
 \label{app:udg:nuisance}
@@ -52215,17 +52256,16 @@ with joint sampling of the full nuisance vector
 $\theta=\{M/L,D,\beta,n,R_{\rm ap},f_{\rm int},M_{\rm host},d_{\rm 3D},Q_{\rm eq}\}$
 is the appropriate next step.
 
-\subsection{External field effect benchmark}
+\subsection{External-field benchmark}
 \label{app:udg:efe}
 
-A benchmark parallel to the ECT diagnostic is the external field
-effect (EFE) characteristic of MOND-class theories.  Estimating
+A benchmark parallel to the ECT diagnostic is the external-field effect characteristic of MOND-class theories.  Estimating
 $g_{\rm ext}\simeq GM_{\rm host}/d_{\rm proj}^2$ for the four
 pressure-supported reference objects:
 
 \begin{longtable}{@{}l c c c@{}}
 \caption{External field amplitudes for the four spherical UDG
-reference objects, for the MOND-EFE benchmark.  $a_0=1.2\times
+reference objects, for the MOND external-field benchmark.  $a_0=1.2\times
 10^{-10}\,\text{m s}^{-2}$ is the standard MOND acceleration
 scale.  All four values lie far below $a_0$; EFE screening is
 minor.}
@@ -52247,7 +52287,7 @@ this benchmark, does not numerically distinguish DF4 from the
 matched DM-rich control NGC~5846-UDG1.  This observation is
 benchmark-level: the current ECT closure
 \eqref{eq:app_udg_closure} does not carry an explicit
-$g_{\rm ext}$ dependence, and the MOND-EFE comparison is strictly
+$g_{\rm ext}$ dependence, and the MOND external-field comparison is strictly
 outside the ECT formulation.
 
 \subsection{Side diagnostics and sanity checks}
@@ -52428,6 +52468,36 @@ main text.  Concretely:
   observed $\sim 0.6\%$--$1\%$ incidence of DM-deficient UDGs in
   the screened dwarf population.
 \end{itemize}
+
+\subsection{Future-work factors (secondary)}
+\label{app:udg:futurework}
+
+The following are second-order for the present stress-test
+diagnosis; they refine the precision of $\Xi_{\rm req}$ or enable
+more ambitious analyses but do not alter the qualitative
+classification above.  Listed here as reminders for a full programme
+of UDG-sector work.
+
+\begin{itemize}
+\item Rotation in ``pressure-supported'' dwarfs (DF2 has measurable rotation).
+\item Globular-cluster tracer survival bias and orbital-family selection effects.
+\item Mass-sheet degeneracy in external-field analyses.
+\item The preprint's 5th-force $L_5=\beta\bar\Psi\gamma^A n_A\Psi$ contribution (Planck-suppressed at galactic scale).
+\item Time-since-event correlation with $\Xi_{\rm req}$ via stellar ages.
+\item Spatial $\Xi(R)$ variation within a single galaxy (IFU test).
+\item Joint ensemble posterior across the whole UDG sample.
+\item CMB / early-universe cross-checks for any long-memory mechanism.
+\item Interloper mixture modelling in small-$N$ tracer samples.
+\item Proper 3D HI cube modelling for AGC~114905 and other disc rotators.
+\item $\Lambda$CDM partial DM halo survival as the direct competitor baseline.
+\item Stellar age--metallicity degeneracy in $M/L$.
+\item IMF universality assumption in the derivation of $M_\star$.
+\end{itemize}
+
+None of these items is pursued here; they are registered so that the
+next iteration of the galactic closure programme can treat them
+jointly with the main theory-level directions in
+\S\ref{app:udg:directions}.
 
 \subsection{What this appendix does and does not establish}
 \label{app:udg:status}
