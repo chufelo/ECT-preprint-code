@@ -1,0 +1,185 @@
+% =============================================================================
+% APPENDIX: Technical details of Theorem 1 (Cosmological constant subsection)
+% Included via \input{App_CC_technical} in ECT_preprint.tex
+% =============================================================================
+
+\section{Technical details for the emergent unimodular decoupling
+theorem}
+\label{app:cc_technical}
+
+This appendix collects the explicit derivations underlying the
+cosmological constant analysis of Section~\ref{sec:cc_problem}. We
+give (i) the rank-one determinant identity with the admissible-variation
+argument; (ii) the Jacobian cancellation identity for the classical
+baseline; (iii) the FRW reduction leading to the slow-branch equation
+of state; and (iv) the dimensional-consistency audit of the infrared
+scaling with the pseudo-Goldstone candidate.
+
+
+\subsection{Rank-one determinant identity and fixed-determinant
+property}
+\label{app:rank1}
+
+The matrix determinant lemma states, for a symmetric $4\times 4$
+matrix $M$ and a 4-vector $n$,
+\begin{equation}
+\det(M + c\,n n^{\mathsf T})
+\;=\; (1 + c\,n^{\mathsf T} M^{-1} n)\,\det M\,,
+\label{eq:matrix_det_lemma}
+\end{equation}
+provided $M$ is invertible. Specialising to $M = \beta\,\delta$ and
+$c = -\alpha$:
+\begin{align}
+\det(\beta\,\delta^{AB} - \alpha\,n^A n^B)
+&\;=\; \beta^4 \cdot \Bigl(1 - \tfrac{\alpha}{\beta}\,n^A
+\delta_{AB} n^B\Bigr)\,.
+\label{eq:K_det_general_app}
+\end{align}
+
+In the ordered branch the orientation field satisfies the
+constraint $n^A(x)\,\delta_{AB}\,n^B(x) = 1$, reflecting that $|n|$
+is not an independent degree of freedom (amplitude variation is
+described by the radial mode $\phi$). Substituting:
+\begin{equation}
+\det K^{AB} \;=\; \beta^4\left(1 - \tfrac{\alpha}{\beta}\right)
+\;=\; \beta^3(\beta - \alpha) \;=\; -\beta^3(\alpha - \beta)\,,
+\label{eq:detK_app}
+\end{equation}
+independent of $n^A(x)$.
+
+From the densitized-metric identification $K^{AB} \propto
+\sqrt{-g_{\mathrm{eff}}}\,g_{\mathrm{eff}}^{AB}$ and
+$\det(\sqrt{-g}\,g^{\mu\nu}) = -g$ in four dimensions,
+\begin{equation}
+\det K^{AB} \;=\; -\,g_{\mathrm{eff}}\,,
+\qquad
+\sqrt{-g_{\mathrm{eff}}} \;=\;
+\sqrt{\beta^3(\alpha-\beta)} \;=\; \frac{\beta^2}{c_*}\,,
+\label{eq:sqrt_g_value_app}
+\end{equation}
+using $c_*^2 = \beta/(\alpha-\beta)$.
+
+\paragraph{Vanishing variation on the constraint surface.} An
+admissible variation $\delta n^A$ preserves the normalization
+$n^A\delta_{AB}n^B=1$, hence $\delta_{AB} n^A \delta n^B = 0$. Differentiating
+\eqref{eq:K_det_general_app},
+\begin{equation}
+\frac{\partial(\det K)}{\partial n^A}
+\;=\; -2\alpha\beta^3\, \delta_{AB} n^B\,,
+\end{equation}
+hence
+\begin{equation}
+\delta(\det K)
+\;=\; -2\alpha\beta^3\,(\delta_{AB} n^B \delta n^A) \;=\; 0\,,
+\end{equation}
+so $\delta\sqrt{-g_{\mathrm{eff}}} = 0$ on admissible variations, as
+stated in Theorem~1(iii) of the main text.
+
+
+\subsection{Jacobian cancellation identity for the classical
+baseline}
+\label{app:jacobian_cc}
+
+The fundamental ECT action is $S_E[q] = \int_M d^4 x_E\,
+\mathcal{L}_E(q,\partial q)$ with $q^a$ collectively denoting
+$\Phi$, $n^A$, and auxiliary fields. Crucially, the emergent metric
+$g_{\mathrm{eff}}^{AB}[q]$ is a functional of the condensate fields
+rather than an independent dynamical variable; there is no variation
+step ``by $g_{\mu\nu}$''.
+
+Under the shift $\mathcal{L}_E \to \mathcal{L}_E + C$ for a
+field-independent constant $C\in\mathbb{R}$:
+(a) $\partial C/\partial q^a = \partial C/\partial(\partial_A q^a)
+= 0$, so every Euler--Lagrange equation is unchanged; (b) the
+classical solutions $q^a(x)$ are unchanged; (c) the emergent metric
+$g_{\mathrm{eff}}^{AB}[q(x)]$ is unchanged on each classical
+solution. Specialising to $C = V(\phi_0)$ establishes Theorem~1(iv).
+
+The result is non-trivial in the ECT context precisely because
+$g_{\mathrm{eff}}$ is emergent. In standard general relativity with
+an independent $g_{\mu\nu}$, the same shift generates $C\sqrt{-g}$,
+whose variation produces $\sim C g_{\mu\nu}\sqrt{-g}$ -- the standard
+cosmological-constant source. That mechanism is unavailable here.
+
+
+\subsection{FRW reduction and equation of state}
+\label{app:frw_cc}
+
+On an FRW background, spatial isotropy selects a single
+long-wavelength ordered-branch degree of freedom $q(t)$. The
+minimal homogeneous effective Lagrangian is
+\begin{equation}
+L_{\mathrm{IR}}[q; a] \;=\; a^3 \left[
+\tfrac{1}{2} Z_q\, \dot q^2 - V_{\mathrm{IR}}(q) \right],
+\label{eq:frw_lagrangian_app}
+\end{equation}
+with infrared stiffness $Z_q$ and residual infrared potential
+$V_{\mathrm{IR}}(q)$. Crucially, $V_{\mathrm{IR}}(q)$ is the
+dynamical dressing of the potential around the ordered-branch
+minimum; it is not $V(\phi_0)$, which is decoupled by Theorem~1(iv).
+This distinction resolves the apparent tension between the
+decoupling theorem and the dark-energy picture used in
+Sec.~\ref{sec:mp_late_cosmology}.
+
+From \eqref{eq:frw_lagrangian_app},
+\begin{align}
+\rho_q &\;=\; \tfrac{1}{2} Z_q \dot q^2 + V_{\mathrm{IR}}(q)\,,
+\\
+p_q &\;=\; \tfrac{1}{2} Z_q \dot q^2 - V_{\mathrm{IR}}(q)\,,
+\\
+w_q &\;=\; \frac{r - 1}{r + 1}\,,
+\qquad r \equiv
+\frac{\tfrac12 Z_q \dot q^2}{V_{\mathrm{IR}}(q)}\,.
+\end{align}
+For $r \ll 1$ (slow-branch regime), $w_q \simeq -1 + 2r$,
+reproducing the main-text formula $w_0 = -1 +
+2\rho_{\mathrm{kin}}/(3\rho_{\mathrm{cond}})$ upon identification
+$\rho_{\mathrm{kin}}=\tfrac12 Z_q\dot q^2$ and
+$\rho_{\mathrm{cond}}=V_{\mathrm{IR}}(q)$.
+
+\subsection{Dimensional audit of the infrared scaling}
+\label{app:ir_audit_cc}
+
+The observed $\rho_\Lambda$ has dimensions mass$^4$. After blocking
+the direct UV channel (Theorem~1), the scale $M_{\mathrm{Pl}}^4$ is
+not available as a direct source. Available infrared scales are the
+emergent gravitational stiffness $M_{\mathrm{Pl}}^2$ (from the
+Sakharov/Adler induced-gravity mechanism~\cite{Sakharov1967,Adler1982})
+and the Hubble scale $H_0$ (only dimensionful IR curvature/time
+scale).
+
+Dimensionally consistent combinations of mass$^4$ from
+$\{M_{\mathrm{Pl}}^2, H_0\}$ without directly invoking
+$M_{\mathrm{Pl}}^4$ are $M_{\mathrm{Pl}}^2 H_0^2$, $M_{\mathrm{Pl}}
+H_0^3$, and $H_0^4$. With $M_{\mathrm{Pl}}/H_0 \sim 10^{60}$, these
+evaluate to $10^{-47}$, $10^{-107}$, $10^{-167}\,\mathrm{GeV}^4$
+respectively; only the first matches observation at the
+order-of-magnitude level.
+
+\paragraph{Pseudo-Goldstone realization.} For a pseudo-Goldstone
+$\theta$ of mass $m_G$ and decay constant $f_G$, the natural infrared
+energy density is $\rho_G \sim m_G^2 f_G^2$, obtained from
+$V_G(\theta) \sim m_G^2\theta^2$ at $\theta \sim f_G$. Using the ECT
+values $m_G \sim H_0$ and $f_G \sim \phi_0 \sim M_{\mathrm{Pl}}$
+(Sec.~\ref{subsec:goldstone_cc}),
+\begin{equation}
+\rho_G \;\sim\; m_G^2 f_G^2 \;\sim\; H_0^2 M_{\mathrm{Pl}}^2\,,
+\end{equation}
+reproducing the IR scaling with $c_\Lambda = O(1)$ via independent
+inputs: $m_G$ comes from the pseudo-Goldstone (dark-matter-candidate)
+sector, $f_G$ from the gravitational SSB scale. Neither is tuned
+here.
+
+\paragraph{Scope.} The estimate $\rho_G \sim H_0^2 M_{\mathrm{Pl}}^2$
+is a consistency check, not a derivation. Upgrading it to a
+prediction requires a first-principles derivation of $m_G$ from ECT
+parameters (Open Problem~O4) and an analysis of the cosmological
+evolution of the Goldstone condensate. The holographic bound of
+Cohen--Kaplan--Nelson~\cite{CohenKaplanNelson1999} states
+$\rho \lesssim M_{\mathrm{Pl}}^2/L_{\mathrm{IR}}^2$; the ECT estimate
+saturates this bound with $L_{\mathrm{IR}}\sim H_0^{-1}$, which is an
+independent phenomenological consistency check.
+
+% =============================================================================
+% END OF APPENDIX App_CC_technical
+% =============================================================================

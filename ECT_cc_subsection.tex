@@ -1,0 +1,680 @@
+% =============================================================================
+% COSMOLOGICAL CONSTANT SUBSECTION -- Included via \input{} in ECT_preprint.tex
+% Integrated 2026-04-22.
+% =============================================================================
+
+\section{Vacuum Offset Decoupling and the Cosmological Constant Problem}
+\label{sec:cc_problem}
+
+\subsection{Statement of the problem in the standard framework}
+\label{subsec:cc_statement}
+
+The cosmological constant problem is the sharpest quantitative failure of
+the standard framework combining general relativity with quantum field
+theory on a fixed Lorentzian background. In that framework, the
+gravitational action contains a term
+\begin{equation}
+S_\Lambda \;=\; -\,\Lambda \int d^4 x \, \sqrt{-g}\,,
+\label{eq:cc_standard}
+\end{equation}
+whose coefficient is, on the observational side,
+\begin{equation}
+\rho_{\Lambda,\mathrm{obs}} \;\approx\; 10^{-47}\,\mathrm{GeV}^4
+\;\approx\; \Omega_\Lambda \cdot \rho_c
+\;\approx\; 2\,M_{\mathrm{Pl}}^2 H_0^2\,,
+\label{eq:rho_obs}
+\end{equation}
+with $\Omega_\Lambda \approx 0.69$, critical density
+$\rho_c = 3 H_0^2 M_{\mathrm{Pl}}^2$, and reduced Planck mass
+$M_{\mathrm{Pl}} = 2.435\times 10^{18}\,\mathrm{GeV}$. On the theoretical
+side, the same coefficient receives naive quantum zero-point
+contributions of order $M_{\mathrm{Pl}}^4$, exceeding the observed value
+by approximately $120$ orders of magnitude. The standard resolution is
+to tune the bare $\Lambda$ against the quantum contributions to leave
+the observed residue; this fine-tuning is not stabilized by any
+symmetry~\cite{Weinberg1989,Carroll2001,Polchinski2006}. Within the
+standard framework, $\rho_{\Lambda,\mathrm{obs}}$ is therefore not
+derived; it is an input fitted to data.
+
+We show in this section that ECT, by virtue of its emergent-metric
+architecture, modifies the structure of the problem. The direct channel
+by which vacuum energy enters the gravitational action in
+eq.~\eqref{eq:cc_standard} is blocked in the leading ordered-branch
+sector of ECT. Blocking this channel reformulates the question: the
+observed late-time acceleration must then arise from infrared
+ordered-branch physics rather than from a UV vacuum baseline. We
+establish the structural result rigorously, delimit its scope honestly,
+and present a motivated infrared estimate consistent with observation.
+Technical details of the theorem proof, the FRW reduction, and the
+Goldstone-based infrared scaling are collected in
+Appendix~\ref{app:cc_technical}.
+
+
+\subsection{Three distinct objects}
+\label{subsec:three_objects}
+
+To avoid conflations that pervade the standard discussion, we
+distinguish from the outset three logically separate quantities
+frequently bundled under the label ``vacuum energy.''
+\paragraph{Object A: classical baseline offset $V(\phi_0)$.}
+The value of the scalar potential at its ordered-branch minimum
+$\Phi = \phi_0$. This is a constant property of the fundamental
+Euclidean Lagrangian $\mathcal{L}_E$ with no local $x$-dependence.
+
+\paragraph{Object B: zero-derivative quantum contribution
+$\Gamma_{\mathrm{vac}}^{(0)}$.} The part of the perturbative effective
+action that contains no derivatives of background fields. In the
+standard QFT-on-Lorentzian-background calculation, this produces the
+$\sim M_{\mathrm{Pl}}^4$ zero-point contribution through the
+$a_0$ heat-kernel coefficient.
+
+\paragraph{Object C: long-wavelength infrared source
+$\rho_\Lambda^{\mathrm{IR}}$.} The effective energy density entering
+the cosmological (FRW) equations as an approximately dark-energy-like
+source, i.e.\ the quantity actually driving the observed late-time
+acceleration.
+
+In standard general relativity coupled to quantum field theory on an
+independent dynamical metric, Objects A and B feed directly into the
+coefficient $\Lambda$ in eq.~\eqref{eq:cc_standard} and are therefore
+bundled into Object C. The naturalness problem is precisely this
+bundling. In ECT we will show that Object~A decouples unconditionally,
+and Object~B decouples under a stated condition; Object~C must then be
+provided by independent infrared physics.
+
+\subsection{Main theorem: emergent unimodular decoupling}
+\label{subsec:main_theorem}
+
+We work in the leading ordered-branch ansatz of ECT, defined by the
+structure of the kinetic tensor governing fluctuations of the relevant
+emergent-metric sector:
+\begin{equation}
+K^{AB}(x) \;=\; \beta\,\delta^{AB} - \alpha\, n^A(x)\, n^B(x)\,,
+\qquad \delta_{AB} n^A(x) n^B(x) = 1\,,
+\label{eq:KAB_cc}
+\end{equation}
+with constant parameters $\alpha,\beta$ satisfying the Lorentzian-phase
+condition $\alpha > \beta > 0$. The emergent effective metric is
+identified through the densitized-inverse-metric relation
+\begin{equation}
+K^{AB}(x) \;\propto\; \sqrt{-g_{\mathrm{eff}}(x)}\,
+g_{\mathrm{eff}}^{AB}(x)\,,
+\label{eq:K_geff_identification}
+\end{equation}
+with a field-independent proportionality factor. Admissible variations
+of the emergent metric are those induced by variations of $n^A$
+preserving the unit constraint and by variations of other condensate
+fields.
+
+\paragraph{Theorem~1 (Emergent unimodular decoupling).}
+Under the ansatz \eqref{eq:KAB_cc} and the identification
+\eqref{eq:K_geff_identification}:
+\begin{description}
+\item[(i)] \textbf{Fixed determinant.} The determinant of $K^{AB}$ is
+independent of $n^A(x)$:
+\begin{equation}
+\det K^{AB} \;=\; \beta^4\,\Big(1 - \tfrac{\alpha}{\beta}\,n^A
+\delta_{AB} n^B\Big) \;=\; \beta^3(\beta - \alpha)\,.
+\label{eq:detK}
+\end{equation}
+
+\item[(ii)] \textbf{Constant emergent volume element.} As a consequence
+of (i),
+\begin{equation}
+\sqrt{-g_{\mathrm{eff}}[n^A(x)]} \;=\;
+\mathrm{const}\cdot \sqrt{-\det K^{AB}} \;=\;
+\frac{\beta^2}{c_*}\,,
+\label{eq:sqrt_g_const}
+\end{equation}
+where we used $c_*^2 = \beta/(\alpha-\beta)$.
+
+\item[(iii)] \textbf{Vanishing variation.} For admissible variations
+$\delta n^A$ preserving $n^A n_A = 1$,
+\begin{equation}
+\delta \sqrt{-g_{\mathrm{eff}}[n]} \;=\; 0\,.
+\label{eq:delta_sqrt_g}
+\end{equation}
+\item[(iv)] \textbf{Object A decoupling (unconditional).}
+The classical baseline offset $V(\phi_0)$ does not contribute to the
+local equations of motion for any admissible field:
+\begin{equation}
+\frac{\delta}{\delta q^a(x)}
+\int d^4 y \, V(\phi_0) \;=\; 0
+\quad \text{for all admissible } q^a \in \{n^A,\Phi,\ldots\}\,.
+\label{eq:A_decoupling}
+\end{equation}
+This conclusion follows from the Jacobian-cancellation identity: a
+field-independent constant in $\mathcal{L}_E$ contributes only an
+additive constant to the action, which drops out of all Euler--Lagrange
+equations. It is independent of the structure of the fluctuation
+operator.
+
+\item[(v)] \textbf{Object B decoupling (conditional on H1).}
+\emph{If and only if} the full quadratic fluctuation operator contains
+no additional field-dependent prefactors multiplying $K^{AB}$ beyond
+those allowed by \eqref{eq:K_geff_identification} -- a condition
+labeled H1, stated precisely in Sec.~\ref{subsec:H1_cc} -- the
+zero-derivative quantum contribution $\Gamma_{\mathrm{vac}}^{(0)}$
+reduces to a constant-volume term
+\begin{equation}
+\Gamma_{\mathrm{vac}}^{(0)} \;\propto\;
+\Lambda_{\mathrm{UV}}^4 \int d^4 x \, \sqrt{-g_{\mathrm{eff}}}
+\;=\; \frac{\Lambda_{\mathrm{UV}}^4\,\beta^2}{c_*}
+\int d^4 x \;=\; \mathrm{const}\cdot \mathrm{Vol}_4\,,
+\label{eq:B_decoupling}
+\end{equation}
+and does not source local emergent gravitational dynamics. If H1 fails,
+the UV sensitivity is transferred into the scalar/radial sector
+effective potential rather than into a direct cosmological-constant
+term; see Sec.~\ref{subsec:H1_cc} for details.
+\end{description}
+
+\paragraph{Proof outline.} Part (i) is the rank-one determinant
+identity $\det(\beta I - \alpha n n^{\mathsf T}) = \beta^4(1 -
+(\alpha/\beta) n^{\mathsf T} n)$, evaluated with $n^{\mathsf T} n = 1$.
+Part (ii) follows from \eqref{eq:K_geff_identification} together with
+the densitized-metric identity $\det(\sqrt{-g}\,g^{\mu\nu}) = -g$ in
+four dimensions. Part (iii) is immediate from (ii): on the constraint
+surface $n^A n_A = 1$, admissible variations satisfy
+$n^A \delta n_A = 0$, and
+$\partial(\det K)/\partial n^A = -2\alpha\beta^3 n_A$, so
+$\delta(\det K) = 0$. Part (iv) is the Jacobian-cancellation identity.
+Part (v) combines (ii) and (iv) under the prefactor assumption H1.
+Explicit derivations are given in Appendix~\ref{app:cc_technical}.
+$\blacksquare$
+
+\paragraph{Corollary (direct UV channel blocking).}
+In the leading ordered-branch sector of ECT, the standard direct
+channel by which a vacuum baseline $V(\phi_0)$ or a zero-derivative
+loop contribution enters the gravitational action as a coefficient of
+$\int\sqrt{-g}$ with unsuppressed $M_{\mathrm{Pl}}^4$ strength is not
+operative. Object~A is decoupled unconditionally; Object~B is decoupled
+conditional on H1. Neither feeds directly into Object~C in this sector.
+
+\subsection{The condition H1 and its logical status}
+\label{subsec:H1_cc}
+
+Theorem~1(v) decouples Object~B from Object~C conditionally on an
+absence of additional field-dependent prefactors. Here we state the
+condition precisely and analyze the two branches of outcomes.
+
+\paragraph{Condition H1.} Let $\chi(x)$ denote a generic low-energy
+fluctuation of the ordered-branch sector, and let the full quadratic
+action be
+\begin{equation}
+S^{(2)}[\chi] \;=\; \frac{1}{2} \int d^4 x_E \left[
+\mathcal{K}^{AB}(\phi, n, \ldots)\, \partial_A\chi\, \partial_B\chi
+\,+\, \mathcal{M}^2(\phi, n, \ldots)\, \chi^2
+\right].
+\label{eq:full_quadratic_cc}
+\end{equation}
+\textbf{H1} states that the kinetic matrix decomposes as
+\begin{equation}
+\mathcal{K}^{AB}(\phi, n, \ldots)
+\;=\; K^{AB}(n) \cdot [\text{field-independent constant}]\,,
+\label{eq:H1_cc}
+\end{equation}
+i.e.\ no dynamical scalar prefactor $Z(\phi)$, no mixing-induced
+effective prefactor, and no other field-dependent multiplier of
+$K^{AB}$ in the zero-derivative sector.
+\paragraph{Two branches.}
+
+\emph{H1 holds.} Theorem~1(v) applies and Object~B decouples exactly
+like Object~A. In the leading ordered-branch sector, both the classical
+baseline offset and the one-loop zero-derivative contribution are
+inert for the local emergent gravitational dynamics.
+
+\emph{H1 fails with a scalar prefactor $Z(\phi)$.} Then
+$\mathcal{K}^{AB}(\phi,n) = Z(\phi)\bigl(\beta\delta^{AB} -
+\alpha n^A n^B\bigr)$, so $\det\mathcal{K} = Z(\phi)^4\det K$ and
+$\sqrt{-g_{\mathrm{eff}}^{(\chi)}} \propto Z(\phi)^2$. The one-loop
+zero-derivative contribution becomes
+\begin{equation}
+\Gamma_{\mathrm{vac}}^{(0)} \;\propto\;
+\Lambda_{\mathrm{UV}}^4 \int d^4 x\, Z(\phi(x))^2\,,
+\qquad
+\frac{\delta \Gamma_{\mathrm{vac}}^{(0)}}{\delta \phi(x)}
+\;\sim\; \Lambda_{\mathrm{UV}}^4\, Z(\phi)\,Z'(\phi) \neq 0\,.
+\label{eq:H1_broken_correction}
+\end{equation}
+The UV sensitivity then manifests as a large correction to the
+effective scalar potential, i.e.\ as a scalar naturalness / hierarchy
+problem for the radial sector, \emph{not} as a direct
+cosmological-constant contribution in the constrained ordered-branch
+metric sector.
+
+\paragraph{Object~A is unaffected by H1.} Regardless of whether H1
+holds, Object~A (the classical $V(\phi_0)$) decouples, because its
+decoupling follows from the Jacobian identity alone (Theorem~1(iv)).
+\paragraph{Status.} H1 is a condition on the full quadratic
+fluctuation operator derived from the fundamental ECT Lagrangian. Its
+verification requires explicit expansion of $\mathcal{L}_E[\Phi]$
+around the ordered branch $\Phi = \phi_0 + \chi$, $\langle \partial_A
+\Phi\rangle = u_0\, n_A$, and inspection of the resulting quadratic
+form. This verification is listed as Open Problem~O1 in
+Sec.~\ref{subsec:cc_open}. Until it is completed, the present text
+treats Theorem~1(v) as a result conditional on H1.
+
+
+\subsection{Connection to unimodular gravity}
+\label{subsec:unimodular_cc}
+
+The fixed-determinant property \eqref{eq:sqrt_g_const} is structurally
+analogous to the defining condition of unimodular gravity
+\cite{HenneauxTeitelboim1989,Alvarez2005,PadillaSaltas2015}. In
+unimodular gravity, the metric determinant is fixed by fiat
+($\sqrt{-g} = \epsilon_0$), and the field equations are the traceless
+part of the Einstein equations. Known consequences
+\cite{NgVanDam1990,Smolin2009} include that the cosmological constant
+enters as an integration constant, and that it is immune to
+renormalization contributions from the bulk dynamics in the standard
+formulation. ECT exhibits a similar decoupling structure, with two
+qualitatively important differences.
+
+First, the constraint is derived, not postulated: in standard
+unimodular gravity, $\sqrt{-g} = \epsilon_0$ is imposed externally,
+while in ECT \eqref{eq:sqrt_g_const} follows from the algebraic
+constraint $n^A n_A = 1$ together with the ordered-branch kinetic
+structure \eqref{eq:KAB_cc}. No Lagrange multiplier is needed. Second,
+admissible variations are more restricted: in unimodular gravity the
+metric is fundamental but constrained; in ECT the metric is emergent,
+and all admissible variations are already variations of condensate
+fields.
+
+These differences make the ECT decoupling structurally stronger than
+the textbook unimodular construction. However, they also mean that the
+quantum-theoretic non-renormalization theorems of Ng and van
+Dam~\cite{NgVanDam1990} and Smolin~\cite{Smolin2009}, formulated for
+unimodular gravity with a fundamental (constrained) metric and a
+specific quantization scheme, do not automatically transfer. We
+regard the structural analogy as established; a formal
+non-renormalization theorem for emergent unimodular-like structures in
+ECT is listed as Open Problem~O3 in Sec.~\ref{subsec:cc_open}.
+
+\subsection{Interplay with Weinberg's no-go theorem}
+\label{subsec:weinberg_cc}
+
+Weinberg's no-go theorem \cite{Weinberg1989} establishes that no
+\emph{local, Lorentz-covariant} mechanism within \emph{quantum field
+theory on a fixed Lorentzian background with an independent dynamical
+metric} can dynamically adjust $\Lambda$ to small values without
+fine-tuning. Its framework assumptions include an independent
+dynamical metric, standard Lorentz-invariant path-integral quantization
+in the Lorentzian sector, and the standard local-effective-action
+structure.
+
+ECT does not satisfy these framework assumptions. The fundamental
+background is Euclidean (postulate~P1), the Lorentzian sector is
+emergent (P5), and the metric is a composite object built from
+orientation and condensate fields rather than an independent variable.
+As a consequence, ECT lies outside the standard assumptions of
+Weinberg's no-go theorem, and that theorem does not directly exclude
+an ECT-based resolution. This does not in itself constitute a
+solution, but it does remove one of the principal structural obstacles
+that prevents such a solution in the standard framework.
+
+\subsection{FRW reduction and connection to the equation of state}
+\label{subsec:frw_cc}
+
+Once Objects A and (conditionally) B decouple, the observed late-time
+acceleration must arise from the infrared dynamics of the ordered
+branch itself -- Object~C. In ECT this is consistent with, and
+complementary to, the dark-energy picture developed in
+Sec.~\ref{sec:mp_late_cosmology}: dark energy is identified with the
+residual dynamical condensate energy rather than with a fundamental
+cosmological constant.
+
+\paragraph{Minimal homogeneous reduction.} On an FRW background, the
+surviving long-wavelength degree of freedom of the ordered branch is a
+slowly varying order parameter $q(t)$, constructed from the condensate
+amplitude and/or the orientation field. The minimal homogeneous
+effective Lagrangian is
+\begin{equation}
+L_{\mathrm{IR}}[q; a] \;=\; a^3 \left[ \tfrac{1}{2} Z_q\, \dot q^2
+\,-\, V_{\mathrm{IR}}(q) \right],
+\label{eq:frw_lagrangian_cc}
+\end{equation}
+with $Z_q$ the effective infrared stiffness and $V_{\mathrm{IR}}(q)$
+the residual infrared potential. $V_{\mathrm{IR}}$ is \emph{not} the
+UV baseline $V(\phi_0)$ (which is decoupled by Theorem~1(iv)) but its
+slowly varying long-wavelength dressing. The energy density and
+pressure are
+\begin{align}
+\rho_q &\;=\; \tfrac{1}{2} Z_q \dot q^2 + V_{\mathrm{IR}}(q)\,,
+\label{eq:rho_q_cc} \\
+p_q &\;=\; \tfrac{1}{2} Z_q \dot q^2 - V_{\mathrm{IR}}(q)\,.
+\label{eq:p_q_cc}
+\end{align}
+In the slow-branch regime $Z_q \dot q^2 \ll V_{\mathrm{IR}}(q)$,
+$w_q = p_q/\rho_q \approx -1$, consistent with dark-energy-like
+behavior. Deviations from $w = -1$ arise when the kinetic contribution
+is non-negligible.
+
+\paragraph{Connection to the ECT equation-of-state prediction.} The
+reduction
+\eqref{eq:frw_lagrangian_cc}--\eqref{eq:p_q_cc} provides the formal
+grounding for the dark-energy formula appearing in
+Sec.~\ref{sec:mp_late_cosmology},
+\begin{equation}
+w_0 \;=\; -1 + \frac{2\rho_{\mathrm{kin}}}{3\rho_{\mathrm{cond}}}\,,
+\end{equation}
+upon identifying $\rho_{\mathrm{kin}} = \tfrac12 Z_q \dot q^2$ and
+$\rho_{\mathrm{cond}} = V_{\mathrm{IR}}(q)$. The ECT value
+$w_0 \approx -0.83$ (for $\rho_{\mathrm{kin}}/\rho_{\mathrm{cond}}
+\approx 0.26$) is therefore an explicit instance of the general
+slow-branch reduction. It is numerically comparable to recent
+observational indications of $w_0 \neq -1$, including the DESI-era
+analysis~\cite{DESI2024}, subject to the full observational
+discussion elsewhere in this paper. The present theorem establishes
+the structural permissibility of this picture: the ``condensate
+energy'' that plays the role of dark energy is not the UV baseline
+$V(\phi_0)$ but its slowly varying infrared dressing.
+
+
+\subsection{Infrared estimate for $\rho_{\Lambda}^{\mathrm{IR}}$}
+\label{subsec:IR_estimate_cc}
+
+With the direct UV channel blocked, the observed dark-energy scale
+must be provided by infrared ordered-branch physics. Here we derive
+the natural parametric estimate and place it in context.
+
+\paragraph{Dimensional scaling after UV channel blocking.} The
+observed $\rho_\Lambda$ has dimensions mass$^4$. After the closure of
+the direct UV channel in the leading sector, the scale
+$M_{\mathrm{Pl}}^4$ is \emph{not} available to feed directly into
+Object~C. Among the remaining scales accessible to an infrared
+effective description on FRW: the emergent
+gravitational stiffness scale $M_{\mathrm{Pl}}^2$ (setting the
+coefficient of the induced Einstein--Hilbert term, in the sense of
+Sakharov-induced gravity~\cite{Sakharov1967,Adler1982}), and the
+infrared cosmological scale $H_0$ (the only dimensionful
+curvature/time scale in the long-wavelength cosmological effective
+theory).
+
+The unique parametric combination of dimensions mass$^4$ that does not
+invoke the decoupled UV scale $M_{\mathrm{Pl}}^4$ directly is
+\begin{equation}
+\boxed{\;\rho_\Lambda^{\mathrm{IR}} \;\sim\; c_\Lambda\,
+M_{\mathrm{Pl}}^2 H_0^2\,,
+\qquad c_\Lambda = O(1)\text{ or smaller.}\;}
+\label{eq:IR_estimate_cc}
+\end{equation}
+This is a \emph{motivated scaling estimate}, not a derivation from
+first principles. The coefficient $c_\Lambda$ is not fixed by the
+present argument.
+
+\paragraph{Numerical evaluation.} With $M_{\mathrm{Pl}} =
+2.435\times 10^{18}\,\mathrm{GeV}$ and
+$H_0 \approx 1.44\times 10^{-42}\,\mathrm{GeV}$,
+\begin{equation}
+M_{\mathrm{Pl}}^2 H_0^2 \;\approx\; 1.2\times 10^{-47}\,\mathrm{GeV}^4\,,
+\end{equation}
+of the same order as the observed
+$\rho_{\Lambda,\mathrm{obs}} \approx 10^{-47}\,\mathrm{GeV}^4$.
+
+\paragraph{What this does and does not establish.} In standard QFT
+coupled to general relativity, obtaining the observed small
+$\rho_{\Lambda,\mathrm{obs}}$ from a UV contribution
+$\sim M_{\mathrm{Pl}}^4$ requires a cancellation at the $10^{-121}$
+relative level between unrelated quantities. In ECT, by contrast, the
+direct UV contribution is decoupled in the leading sector, and the
+scaling of the remaining infrared source is set by the only available
+infrared physics; no cross-scale cancellation is invoked. What remains
+is a bounded $O(1)$ determination problem for $c_\Lambda$. This
+reformulation does not, in itself, constitute a first-principles
+calculation; computing $c_\Lambda$ is Open Problem~O2
+(Sec.~\ref{subsec:cc_open}).
+
+
+\subsection{Possible microphysical realization: pseudo-Goldstone modes}
+\label{subsec:goldstone_cc}
+
+Eq.~\eqref{eq:IR_estimate_cc} is a scaling law. A plausible
+microphysical realization of it within the ECT architecture is the
+pseudo-Goldstone sector associated with the spontaneous breaking
+$\mathrm{O}(4)\to\mathrm{O}(3)$.
+
+\paragraph{The Goldstone sector.} The
+$\mathrm{O}(4)\to\mathrm{O}(3)$ breaking at scale $\phi_0$ produces
+three Goldstone bosons. As discussed in
+Sec.~\ref{sec:mp_late_cosmology}, the ECT spectrum features
+pseudo-Goldstones with a small mass scale
+$m_G \sim 10^{-33}\,\mathrm{eV}$, which is of order $H_0$, consistent
+with the fuzzy-dark-matter candidate scale. In the standard
+construction of spontaneous symmetry breaking, the Goldstone decay
+constant coincides with the breaking scale, $f_G \sim \phi_0$. In the
+ECT hierarchy $\phi_0 \sim \bar M_{\mathrm{Pl}}$.
+
+\paragraph{Scaling of the contribution to $\rho_\Lambda$.} A
+pseudo-Goldstone mode $\theta$ of mass $m_G$ and decay constant $f_G$,
+evolving slowly on cosmological scales, contributes an infrared energy
+density controlled by its potential. For a quadratic potential near
+the minimum,
+\begin{equation}
+V_G(\theta) \;\sim\; m_G^2\, \theta^2\,,
+\qquad
+\rho_G \;\sim\; m_G^2\, f_G^2\,,
+\label{eq:rho_G_cc}
+\end{equation}
+where the second estimate takes $\theta$ at the natural Goldstone
+field scale $f_G$. Using $m_G \sim H_0$ and $f_G \sim M_{\mathrm{Pl}}$,
+\begin{equation}
+\rho_G \;\sim\; H_0^2\, M_{\mathrm{Pl}}^2\,,
+\end{equation}
+matching the scaling \eqref{eq:IR_estimate_cc} with
+$c_\Lambda = O(1)$.
+
+\paragraph{Status of this realization.} This is a \emph{plausible
+candidate realization} of the scaling within the ECT architecture,
+provided that the mass scale $m_G \sim H_0$ and the decay-constant
+scale $f_G \sim \phi_0$ are both maintained in the cosmological
+regime. The mass scale is an independent feature of the ECT
+pseudo-Goldstone sector, not adjusted here to reproduce the
+dark-energy value. A first-principles derivation of $m_G$ from the
+ECT parameters $(\mu,\lambda,\alpha,\beta)$, together with the
+cosmological evolution of the Goldstone condensate, is required to
+upgrade Eq.~\eqref{eq:rho_G_cc} from a consistency check to a
+prediction. This task is part of the broader programme on the ECT
+particle spectrum (Open Problem~O4 of
+Sec.~\ref{subsec:cc_open}).
+
+\subsection{Comparison with other approaches}
+\label{subsec:comparison_cc}
+
+Table~\ref{tab:cc_approaches} summarizes the status of the
+cosmological constant problem in principal existing approaches and in
+ECT. The comparison is restricted to structural features; numerical
+precision varies and is not the object of the comparison.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Summary of approaches to the cosmological constant problem.
+``Fine-tuning'' refers to the relative precision with which unrelated
+UV and IR scales must cancel in the given framework.}
+\label{tab:cc_approaches}
+\begin{tabular}{p{3.2cm} p{3.5cm} p{3.2cm} p{4.0cm}}
+\toprule
+\textbf{Approach} &
+\textbf{Status of $\rho_{\Lambda,\mathrm{obs}}$} &
+\textbf{UV fine-tuning} &
+\textbf{Structural mechanism} \\
+\midrule
+$\Lambda$CDM + QFT (standard) &
+Input, fitted &
+$\sim 10^{-121}$ required &
+None \\Unimodular gravity~\cite{HenneauxTeitelboim1989} &
+Integration constant &
+Absent for UV in standard formulation; input for IR &
+$\sqrt{-g} = \epsilon_0$ imposed \\
+Anthropic selection~\cite{Weinberg1987} &
+Upper bound only &
+Avoided via multiverse &
+Structure-formation bound \\
+Holographic bound~\cite{CohenKaplanNelson1999} &
+$\lesssim M_{\mathrm{Pl}}^2 / L_{\mathrm{IR}}^2$ &
+Phenomenological &
+UV--IR relation \\
+Quintessence (generic) &
+$V(\varphi)$ tuned &
+Transferred to $V$ &
+Slow-roll scalar \\
+\textbf{ECT (present work)} &
+IR scaling estimate $\sim M_{\mathrm{Pl}}^2 H_0^2$; coefficient open &
+Direct UV vacuum-to-$\Lambda$ cancellation absent in leading ordered-branch sector &
+\emph{Emergent} unimodular decoupling from $n^A n_A = 1$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two features distinguish ECT from related approaches. First, the
+unimodular-like condition is not postulated but derived from the
+kinematic constraint $n^A n_A = 1$ together with the ordered-branch
+kinetic structure; this places no additional restriction on the
+theory beyond what is already required for emergent Lorentzian
+signature. Second, the infrared estimate \eqref{eq:IR_estimate_cc} is
+potentially realized by a mode already present in the ECT spectrum
+(Sec.~\ref{subsec:goldstone_cc}), rather than by a phenomenologically
+introduced scalar.
+
+
+\subsection{Status summary: Level A / B / C}
+\label{subsec:levels_cc}
+
+We adopt the accuracy grading used throughout this work. The results
+of this section have the following status.
+
+\paragraph{Level A (rigorously established within the leading
+ordered-branch sector).}
+\begin{enumerate}
+\item In the leading ordered-branch ansatz \eqref{eq:KAB_cc}, the
+determinant of $K^{AB}$ is independent of $n^A(x)$; consequently
+$\sqrt{-g_{\mathrm{eff}}} = \beta^2/c_*$ is constant on the
+admissible configuration space [Theorem~1(i)--(iii)].
+\item Object~A (classical $V(\phi_0)$) decouples unconditionally from
+local emergent gravitational dynamics [Theorem~1(iv)].
+\item Under condition H1, Object~B (zero-derivative loop
+contribution) likewise decouples [Theorem~1(v)]; if H1 fails, the UV
+sensitivity is transferred to the scalar sector as a naturalness
+problem distinct from the cosmological constant problem.
+\item The standard direct UV-vacuum-to-$\Lambda$ channel of
+GR-coupled QFT is therefore blocked in the leading ordered-branch
+sector, conditionally on H1 for Object~B and unconditionally for
+Object~A.
+\item Weinberg's no-go theorem~\cite{Weinberg1989} does not apply in
+its standard form to ECT, because ECT does not satisfy its framework
+assumptions; therefore that theorem does not directly exclude an
+ECT-based resolution.
+\end{enumerate}
+
+\paragraph{Level B (strong, but subject to verification).}
+\begin{enumerate}
+\setcounter{enumi}{5}
+\item The structural analogy of ECT leading-sector dynamics with
+unimodular gravity is tight, but the quantum non-renormalization
+theorems of Ng--van Dam and
+Smolin~\cite{NgVanDam1990,Smolin2009} have not been formally
+transferred to the emergent setting.
+\item Condition H1 is expected to hold to leading order in the ECT
+expansion, but its verification against the full Lagrangian is an
+open computation (O1).
+\end{enumerate}
+
+\paragraph{Level C (motivated estimate).}
+\begin{enumerate}
+\setcounter{enumi}{7}
+\item The infrared estimate $\rho_\Lambda^{\mathrm{IR}} \sim c_\Lambda
+M_{\mathrm{Pl}}^2 H_0^2$ is a motivated scaling consistent with
+observation at the order-of-magnitude level, with a plausible
+candidate microphysical realization in the pseudo-Goldstone sector.
+The coefficient $c_\Lambda$ is not fixed by the present argument.
+\end{enumerate}
+\paragraph{What is and is not claimed.}
+We claim: (a) structural blocking of the direct classical
+vacuum-to-$\Lambda$ channel; (b) conditional structural blocking of
+the zero-derivative loop contribution; (c) reformulation of the
+observed cosmological constant as an infrared branch effect
+compatible with $w_0 \approx -1$; (d) a motivated scaling estimate
+matching observation at order-of-magnitude level;
+(e) inapplicability of Weinberg's no-go theorem in its standard form.
+
+We do not claim: (a) that the cosmological constant problem is fully
+solved; (b) that a first-principles derivation of
+$\rho_{\Lambda,\mathrm{obs}}$ has been obtained; (c) that the
+Ng--van Dam non-renormalization theorem has been formally imported
+into ECT; (d) that all quantum vacuum contributions decouple in the
+full theory beyond the leading sector; (e) that the pseudo-Goldstone
+realization is established as the cosmological source; it is a
+plausible candidate only.
+
+
+\subsection{Open problems}
+\label{subsec:cc_open}
+
+We list the technical questions whose resolution is required to
+elevate the Level~B and Level~C results to Level~A. These constitute
+the reformulated OP-$\Lambda$3 programme.
+
+\begin{description}
+\item[O1.] \textit{Verification of H1 in the full quadratic operator.}
+Expand the fundamental ECT Lagrangian around the ordered branch and
+identify the full structure of the quadratic fluctuation operator.
+Determine whether any field-dependent prefactor $Z(\phi)$ or
+mixing-induced effective prefactor modifies $K^{AB}$ in the
+zero-derivative sector. If H1 holds, Object~B decouples exactly; if
+H1 fails, classify the residual UV sensitivity as a scalar
+naturalness problem distinct from the cosmological constant problem.
+
+\item[O2.] \textit{Explicit FRW-reduced equations of motion for the
+ordered-branch mode.} Derive the effective equations of motion for
+$q(t)$ on an FRW background from the full ECT Lagrangian, identify
+$Z_q$ and $V_{\mathrm{IR}}(q)$ in terms of
+$(\mu,\lambda,\alpha,\beta,u_0)$, and compute the coefficient
+$c_\Lambda$.
+
+\item[O3.] \textit{Formal analogue of Ng--van Dam for emergent
+unimodular structures.} Establish (or refute) a non-renormalization
+theorem for $\Lambda$ in the emergent unimodular-like setting of ECT.
+This requires a careful treatment of the path-integral measure on the
+orientation field $n^A$ and of the admissible variations beyond the
+classical level.
+\item[O4.] \textit{First-principles derivation of $m_G \sim H_0$.}
+Derive the pseudo-Goldstone mass scale from the explicit
+symmetry-breaking structure of the ECT Lagrangian, relating it to
+the parameters $(\mu,\lambda,\alpha,\beta)$ and to cosmological
+inputs. This is necessary to upgrade Sec.~\ref{subsec:goldstone_cc}
+from a consistency check to a prediction.
+
+\item[O5.] \textit{Beyond leading ansatz.} Extend Theorem~1 to
+higher-order corrections to $K^{AB}$ of the form
+$\beta\delta^{AB} - \alpha n^A n^B + \gamma(\partial n)^2 \delta^{AB}
++ \cdots$, and assess the size of any induced violation of the
+fixed-determinant property.
+\end{description}
+
+
+\subsection{Summary}
+\label{subsec:cc_summary}
+
+The cosmological constant problem in ECT is reformulated, not fully
+solved. The direct UV channel of the standard framework --
+$V(\phi_0)\to\Lambda g_{\mu\nu}$ via an independent dynamical
+metric -- is structurally blocked in the leading ordered-branch
+sector of ECT, because the emergent metric determinant is fixed by
+the kinematic constraint $n^A n_A = 1$. The direct $10^{120}$-level
+cancellation between a UV vacuum baseline and the observed
+cosmological term is therefore absent in that sector. What remains is
+an infrared determination problem for the effective late-time
+source. The natural parametric scaling $\rho_\Lambda \sim
+M_{\mathrm{Pl}}^2 H_0^2$ is consistent with observation at the
+order-of-magnitude level and admits a plausible realization through
+the pseudo-Goldstone sector, though neither the scaling coefficient
+nor the realization is established as a derived prediction. The
+outstanding technical tasks (H1 verification, explicit FRW
+coefficient, non-renormalization analogue) are listed as Open
+Problems O1--O5 and together constitute the reformulated
+OP-$\Lambda$3 programme.
+
+% =============================================================================
+% END OF COSMOLOGICAL CONSTANT SUBSECTION
+% =============================================================================

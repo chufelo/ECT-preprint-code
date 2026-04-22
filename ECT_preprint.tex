@@ -14255,7 +14255,7 @@ schematically in Figure~\ref{fig:partI_derivation_logic}.}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/fig_partI_derivation_logic.pdf}
+\includegraphics[width=\textwidth,height=0.82\textheight,keepaspectratio]{figures/fig_partI_derivation_logic.pdf}
 \caption{Derivation logic of Part~I (Foundations).
 The diagram separates the causal/ordered-branch structure from the
 phase/winding structure and summarises the foundational outputs of
@@ -19622,6 +19622,10 @@ transition (including $A_s$, $n_s$, and $r$), and the nonlinear relic
 spectrum of the nontrivial $\pi_3(S^3)$ texture sector.
 
 % ==============================================================
+% --- Vacuum offset decoupling & CC problem ---
+\input{ECT_cc_subsection}
+
+% ==============================================================
 \section{Cosmology from the Ordered Branch}
 \label{sec:mp_late_cosmology}
 % ==============================================================
@@ -24723,29 +24727,53 @@ dark energy is not an abstract ``vacuum energy'' but the dynamical
 residue of the $O(4)\to O(3)$ phase transition.
 The effective cosmological term~$\Lambda_{\rm eff}(\phi)$ is a
 functional of the condensate background, not a rigid external
-constant; and the physical cutoff on loop contributions is the
+constant; the physical cutoff on loop contributions is the
 radial-mode mass~$m_\sigma\sim M_{\rm Pl}$, not a formally infinite
-regulator.
-These are structural improvements, but they do not by themselves
-solve the residual $10^{-120}$ fine-tuning
-(see~``Cosmological-constant fine-tuning status'' below).
+regulator; and the emergent unimodular decoupling of the ordered
+branch---established in Section~\ref{sec:cc_problem}---blocks the
+direct standard channel by which a vacuum baseline $V(\phi_0)$ would
+source a cosmological-constant term in the leading ordered-branch
+sector.
+The net effect is to reformulate the cosmological-constant problem
+from a catastrophic UV cancellation problem to an infrared
+determination problem for the effective late-time source
+(see~``Cosmological-constant fine-tuning status'' below for the
+precise status).
 
 \paragraph{Cosmological-constant fine-tuning status.}
 For the quartic potential $V(\Phi)=-\mu^2\Phi^2/2+\lambda\Phi^4/4$,
 the broken minimum gives $V(\phi_0)=-\mu^4/(4\lambda)$---a large
 negative tree-level contribution.
-The observed late-time accelerated expansion is therefore not derived
-from the bare quartic minimum in the present closure.
-ECT does reframe the problem: loop contributions to the vacuum energy
-are finite with physical cutoff $m_\sigma\sim M_{\rm Pl}$ rather than
-formally infinite, and $\Lambda_{\rm eff}$ is a dynamical functional
-of the condensate background rather than a rigid external constant.
-These are structural improvements, but the residual fine-tuning between
-$|V(\phi_0)|\sim\lambda M_{\rm Pl}^4/4$ and
-$\rho_\Lambda^{\rm obs}\approx(2.3\times10^{-3}\,{\rm eV})^4$---a
-ratio of order $10^{-120}$---is not eliminated in minimal ECT.
-Deriving a mechanism that suppresses this contribution to the observed
-level remains an open problem~(OP-$\Lambda$3).
+In a standard general-relativistic framework this contribution would
+gravitate as a cosmological constant of order
+$|V(\phi_0)|\sim\lambda M_{\rm Pl}^4/4$, overshooting the observed
+$\rho_\Lambda^{\rm obs}\approx(2.3\times10^{-3}\,{\rm eV})^4$ by roughly
+$10^{120}$. In ECT the situation is qualitatively different.
+Section~\ref{sec:cc_problem} establishes an emergent unimodular
+decoupling theorem showing that, in the leading ordered-branch sector,
+the effective metric determinant is fixed by the kinematic constraint
+$n^A n_A = 1$ and the classical baseline $V(\phi_0)$ does not source
+the local emergent gravitational dynamics (Theorem~1(iv)).
+Conditional on a one-line spectral assumption on the full quadratic
+fluctuation operator (condition~H1, discussed in the same section),
+zero-derivative one-loop contributions are absorbed into the same
+fixed-determinant structure.
+The direct $10^{120}$-level cancellation between a UV vacuum baseline
+and the observed cosmological term is therefore absent in the leading
+ordered-branch sector of ECT.
+What remains is an infrared determination problem for the effective
+late-time source: the natural scaling
+$\rho_\Lambda\sim c_\Lambda M_{\rm Pl}^2 H_0^2$ is consistent with
+observation at the order-of-magnitude level, but the dimensionless
+coefficient $c_\Lambda=\mathcal{O}(1)$ is not yet derived from first
+principles.
+Three tasks remain open---verification of condition~H1 against the
+full ECT Lagrangian, explicit first-principles computation of
+$c_\Lambda$, and the formal quantum non-renormalization analogue of
+the Ng--van Dam theorem~\cite{NgVanDam1990} in the emergent unimodular
+setting. These are listed as O1, O2, O3 in
+Section~\ref{subsec:cc_open} and together constitute the reformulated
+OP-$\Lambda$3.
 
 \paragraph{Meaning of dynamic dark energy in ECT.}
 In the present ordered-branch cosmology, ``dynamic dark energy'' does
@@ -24994,11 +25022,10 @@ rather than being fixed by a strictly rigid external constant. A first-principle
 $(\Omega_{m0},\Omega_{\phi 0})$, and any genuinely dynamical
 improvement over $\Lambda$CDM in the $r(z)$ window, remain open
 programmatic questions; they should not be confused with the
-separate residual fine-tuning
-$|V(\phi_0)|/\rho_\Lambda^{\rm obs}\sim 10^{120}$ kept open
-in~OP-$\Lambda$3 above, nor with the tracker/attractor question of
-initial-condition independence, which is not addressed by the current
-thawing benchmark.
+separate direct UV-vacuum-to-$\Lambda$ channel addressed by the
+emergent unimodular decoupling of Section~\ref{sec:cc_problem},
+nor with the tracker/attractor question of initial-condition
+independence, which is not addressed by the current thawing benchmark.
 
 \paragraph{Falsifier for the dynamic-dark-energy programme.}
 The dynamic-dark-energy programme of ECT would fail if a completed
@@ -25398,7 +25425,7 @@ Figure~\ref{fig:partII_derivation_logic}.}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/fig_partII_derivation_logic.pdf}
+\includegraphics[width=\textwidth,height=0.82\textheight,keepaspectratio]{figures/fig_partII_derivation_logic.pdf}
 \caption{Derivation logic of Part~II (Macroscopic Physics).
 Starting from the Part~I outputs inherited through the bridge
 of Section~\ref{sec:bridge_inputs},
@@ -25656,7 +25683,8 @@ $\Lambda$CDM (about $7\%$ for the illustrative order-unity window).
 We therefore keep the so-called cosmological coincidence question as
 an open programmatic issue rather than as a current ECT result
 (\S\ref{sec:cosmological_coincidence}); this point is separate from
-the residual $10^{-120}$ fine-tuning in OP-$\Lambda$3.
+the direct UV-vacuum-to-$\Lambda$ channel addressed by the emergent
+unimodular decoupling of Section~\ref{sec:cc_problem}.
 
 
 %%% -----------------------------------------------------------
@@ -40675,7 +40703,7 @@ and~\ref{tab:ect-levels}.
 
 \begin{figure}[p]
 \centering
-\includegraphics[width=\textwidth]{figures/fig_ect_derivation_map.png}
+\includegraphics[width=\textwidth,height=0.82\textheight,keepaspectratio]{figures/fig_ect_derivation_map.png}
 \caption{Derivation map of ECT\@.
 The directed graph traces the logical chain from the foundational
 $\Phi$-medium and postulates~(P1--P6), through
@@ -41841,24 +41869,43 @@ Open tasks: explicit loop power counting~(OP-UV1),
 two-loop RG of the condensate--graviton system~(OP-UV3), and OS
 proof for the spin-2 sector~(OP-OS1).
 
-(vi)~The cosmological-constant problem is not solved at first-principles
-level in minimal ECT.
+(vi)~The cosmological-constant problem is structurally reformulated
+in ECT, though not fully solved at first-principles level.
 For the bare quartic potential
 $V(\Phi)=-\mu^2\Phi^2/2+\lambda\Phi^4/4$,
 the broken minimum gives a large negative tree-level contribution
 $V(\phi_0)=-\mu^4/(4\lambda)$.
-The observed late-time accelerated expansion is not derived from this
-bare minimum but only from the ordered-branch macroscopic closure.
-Loop contributions to the vacuum energy are finite with physical
-cutoff $m_\sigma$ (rather than formally infinite), and
-$\Lambda_{\rm eff}$ is a dynamical functional of the condensate
-background rather than a rigid constant---both structural improvements
-over the naive EFT estimate.
-However, the residual fine-tuning between
-$|V(\phi_0)|\sim\lambda M_{\rm Pl}^4/4$ and
-$\rho_\Lambda^{\rm obs}\approx(2.3\times10^{-3}\,{\rm eV})^4$---a
-ratio of order $10^{-120}$---is not eliminated.
-Deriving a suppression mechanism remains an open problem~(OP-$\Lambda$3).
+In a standard general-relativistic setting this contribution would
+gravitate as a cosmological constant of order $\lambda M_{\rm Pl}^4/4$,
+overshooting the observed
+$\rho_\Lambda^{\rm obs}\approx(2.3\times10^{-3}\,{\rm eV})^4$ by a
+factor of order $10^{120}$.
+In ECT the direct channel by which this UV baseline would enter the
+gravitational action is blocked: the emergent unimodular decoupling
+theorem of Section~\ref{sec:cc_problem} shows that, in the leading
+ordered-branch sector, the fixed-determinant structure
+$\sqrt{-g_{\rm eff}}=\beta^2/c_*$ makes the classical baseline
+$V(\phi_0)$ inert for the local emergent gravitational dynamics
+(Theorem~1(iv)), and---conditional on a one-line spectral assumption
+on the full quadratic fluctuation operator (condition~H1)---the same
+fixed-determinant structure absorbs the zero-derivative one-loop
+contribution. Loop contributions are moreover finite with physical
+cutoff $m_\sigma$, and $\Lambda_{\rm eff}$ is a dynamical functional
+of the condensate background rather than a rigid constant.
+The direct $10^{120}$-level cancellation between a UV vacuum baseline
+and the observed cosmological term is therefore absent in the leading
+ordered-branch sector. What remains is an infrared determination
+problem: the natural scaling
+$\rho_\Lambda\sim c_\Lambda M_{\rm Pl}^2 H_0^2$
+is consistent with observation at the order-of-magnitude level, but
+the dimensionless coefficient $c_\Lambda=\mathcal{O}(1)$ is not yet
+derived from first principles.
+Reformulated OP-$\Lambda$3 therefore splits into three technical open
+problems (O1--O3 of Section~\ref{subsec:cc_open}): verification of
+condition~H1 against the full ECT Lagrangian, explicit
+first-principles computation of $c_\Lambda$ on an FRW background, and
+a formal analogue of the Ng--van Dam non-renormalization
+theorem~\cite{NgVanDam1990} in the emergent unimodular setting.
 
 (vii)~Retarded support $K(\tau<0)=0$ is established at Level~A for
 the ordered Lorentzian scalar branch
@@ -41963,8 +42010,16 @@ combination of importance and proximity to existing ECT tools:
   \item Strong CP problem ($\theta_{\rm QCD}$).
   \item Why the fundamental arena is 4D Euclidean and why the
     emergent branch is specifically $3+1$.
-  \item Old cosmological-constant vacuum-energy problem
-    (OP-$\Lambda$3).
+  \item Reformulated cosmological-constant problem
+    (Section~\ref{sec:cc_problem}): the direct UV vacuum-to-$\Lambda$
+    channel is blocked in the leading ordered-branch sector by the
+    emergent unimodular decoupling theorem; what remains open is the
+    first-principles computation of the infrared coefficient
+    $c_\Lambda$ in $\rho_\Lambda\sim c_\Lambda M_{\rm Pl}^2 H_0^2$,
+    verification of condition~H1 against the full Lagrangian, and
+    the formal analogue of the Ng--van Dam non-renormalization
+    theorem (O1--O3 of Section~\ref{subsec:cc_open}; legacy label:
+    OP-$\Lambda$3).
   \item Holography, area law, and Bekenstein bound as general
     medium properties; area-scaling mechanism now established
     (\S\ref{sec:area_law}); covariant and reconstruction
@@ -43767,7 +43822,7 @@ Right-handed neutrino scale $M_R$ & Free parameter in seesaw & $M_R^{\rm geom}\!
 Quantum gravity (UV completion) & Open problem & Structurally unified route: graviton as condensate excitation governed by the same $S_0$; full closure open & B--C & \ref{sec:graviton},\newline\ref{sec:pes} \\
 Measurement problem & Open problem & Decoherence-based $\Gamma_{\rm loop}$ criterion + PES + conditional Born rule via Gleason & B & \ref{sec:quantum_classical_boundary},\newline\ref{sec:pes},\newline\ref{sec:qs_born} \\
 Particle stability (generic) & Empirical / symmetry-protected & PES proximity to the stationary minimally disturbing sector & Open programme & \ref{sec:pes} \\
-Cosmological-constant fine tuning ($10^{-120}$) & Open problem & Open programmatic issue (OP-$\Lambda$3); not claimed as a current ECT result & Open & \ref{sec:cosmological_coincidence} \\
+Cosmological-constant problem ($10^{120}$ UV-vs-IR mismatch) & Catastrophic fine-tuning (standard framework) & Direct UV vacuum-to-$\Lambda$ channel blocked in leading ordered-branch sector by emergent unimodular decoupling (Theorem~1, Sec.~\ref{sec:cc_problem}); IR scaling $\sim M_{\rm Pl}^2 H_0^2$ matches observation at order-of-magnitude level; coefficient $c_\Lambda$ open & A (UV channel blocking, cond.\ H1); C (IR coefficient) & \ref{sec:cc_problem} \\
 \end{longtable}
 }
 
@@ -43916,6 +43971,9 @@ experimental exposure.
 \renewcommand{\thesubsection}{\AlphAlph{\value{section}}.\arabic{subsection}}
 \part*{Appendices}
 \addcontentsline{toc}{part}{Appendices}
+
+% --- Technical details for the cosmological constant subsection ---
+\input{App_CC_technical}
 
 \section{From the Basic Physical Premises of ECT to the
 Lorentz-Order-Field Programme: Full Derivation Chain}
@@ -49492,7 +49550,7 @@ Table~\ref{tab:eps_retained_probes} in
 $\varepsilon_*$.}
 Computed through the same common background module, the
 age-of-universe at the Hubble best-fit is
-$t_0(\varepsilon_* = 0.0323) \approx 13.46~{\rm Gyr}$, compared
+$t_0(\varepsilon_* = 0.0323) \approx 13.5~{\rm Gyr}$, compared
 with $t_0(\varepsilon = 0) \approx 13.79~{\rm Gyr}$ at the
 $\Lambda$CDM baseline. The role of this quantity --- and the
 distinction between the background cosmic age at fixed baseline
@@ -49741,7 +49799,7 @@ prediction.
 The $\varepsilon$-deformed background of AF.1 computes the cosmic
 age $t_0(\varepsilon)$ self-consistently. At the retained-band
 central value $\varepsilon = 0.032$, $t_0$ is approximately
-$13.46~{\rm Gyr}$ when the age integral is evaluated at the
+$13.5~{\rm Gyr}$ when the age integral is evaluated at the
 baseline Hubble constant $H_0 = H_0^P = 67.4~{\rm km\,s^{-1}\,Mpc^{-1}}$,
 and approximately $12.52~{\rm Gyr}$ when the same age integral is
 evaluated at the \emph{inferred} Hubble constant
@@ -49754,7 +49812,7 @@ The Valcin et al.\ 2021 globular-cluster age analysis
 $t_0 \geq 13.50 \pm 0.27~{\rm Gyr}$ on the cosmic age. The two
 mappings above yield qualitatively different comparisons:
 \begin{itemize}
-\item baseline-background mapping: $13.46~{\rm Gyr}$ is
+\item baseline-background mapping: $13.5~{\rm Gyr}$ is
    within $0.15\sigma$ of the anchor --- acceptable;
 \item inferred-$H_0$ mapping: $12.52~{\rm Gyr}$ is
    approximately $3.6\sigma$ below the anchor --- problematic.
