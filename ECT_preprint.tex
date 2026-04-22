@@ -124,6 +124,21 @@ a characteristic acceleration scale, and rotation-curve fits without
 particle dark matter.  The same orientation-stress sector also
 provides a structural route to cluster-lensing effects and to the
 lensing--growth ($S_8$) sector through gravitational slip.
+A separate structural result of Part~II is an emergent unimodular
+decoupling theorem for the vacuum-offset channel of the
+cosmological-constant problem: the effective metric determinant is
+fixed by the kinematic constraint $n^A n_A=1$, which renders the
+classical baseline $V(\phi_0)$ inert for local emergent gravity
+(Level~A) and---conditional on a one-line spectral assumption on
+the full quadratic fluctuation operator (condition~H1)---absorbs
+the zero-derivative one-loop vacuum contribution; the direct
+$10^{120}$-level UV-to-IR cancellation characteristic of the
+standard framework is therefore absent in the leading ordered-branch
+sector, and what remains is a bounded infrared determination problem
+$\rho_\Lambda\sim c_\Lambda M_{\rm Pl}^2 H_0^2$ with
+$c_\Lambda=\mathcal{O}(1)$, consistent with observation at the
+order-of-magnitude level and admitting a plausible pseudo-Goldstone
+realisation.
 The late-time cosmological sector is further constrained by a
 retained five-probe effective analysis yielding a narrow common
 band for a single diagnostic deformation parameter~$\varepsilon$,
@@ -280,7 +295,14 @@ age-viability note;
 dark-matter-deficient ultra-diffuse galaxies;
 NGC~1052--DF4;
 FCC~224;
-matched-pair galactic stress test
+matched-pair galactic stress test;
+cosmological constant problem;
+emergent unimodular gravity;
+vacuum-offset decoupling;
+infrared dark-energy scaling;
+pseudo-Goldstone dark energy;
+ultralight scalar dark matter;
+holographic effective-field-theory bound
 
 \newpage
 \setcounter{tocdepth}{2}
@@ -398,7 +420,18 @@ $t_U(z)$ & Age of the Universe at redshift~$z$ on the retained-band background &
 $m_{\rm guide}$ & Heuristic scalar-sector orienting mass scale, $m_{\rm guide}\sim\sqrt{\hbar R/(G_N\,\tau_{\rm exp})}$ (eq.~\ref{eq:m_guide}; Section~\ref{sec:gie_regime_guidance}); Level~B, not a first-principles entangling crossover mass & kg \\
 $\Delta n_A$ & Persistent asymptotic orientation shift (ECT reading of gravitational memory); Section~\ref{sec:ir_memory} & --- \\
 $S_{\rm gen}(\Sigma)$ & Generalised (holographic) entropy $\mathrm{Area}(\partial\Sigma)/4G_N + S_{\rm bulk}(\Sigma)$; Section~\ref{sec:bh_islands_comparative} & --- \\
-$\partial\Sigma$ & Quantum extremal surface boundary in holographic entanglement computations; Section~\ref{sec:bh_islands_comparative} & --- \\
+$\partial\Sigma$ & Quantum extremal surface boundary in holographic entanglement computations; Section~\ref{sec:bh_islands_comparative} & --- \\[4pt]
+
+\multicolumn{3}{@{}l}{\textit{Vacuum offset decoupling and cosmological constant (Section~\ref{sec:cc_problem})}} \\[2pt]
+$c_\Lambda$ & Dimensionless infrared coefficient in $\rho_\Lambda\sim c_\Lambda\,M_{\rm Pl}^2 H_0^2$; $\mathcal{O}(1)$ estimate, not yet derived (OP-$\Lambda$3 reformulated; O2) & dimensionless \\
+$Z_q$ & Infrared stiffness of the surviving FRW ordered-branch mode $q(t)$; expected $\sim M_{\rm Pl}^2$ structurally & GeV$^2$ \\
+$V_{\rm IR}(q)$ & Residual infrared potential of the ordered-branch mode; distinct from the decoupled UV baseline $V(\phi_0)$ & GeV$^4$ \\
+$\rho_\Lambda^{\rm IR}$ & Effective infrared source in the Friedmann equation (Object~C); not equal to $V(\phi_0)$ or $\Gamma_{\rm vac}^{(0)}$ & GeV$^4$ \\
+$\Gamma_{\rm vac}^{(0)}$ & Zero-derivative one-loop vacuum contribution (Object~B); decouples conditional on~H1 (Theorem~1(v)) & GeV$^4$ \\
+$q(t)$ & Surviving long-wavelength ordered-branch mode on FRW background (condensate-amplitude / orientation scalar) & various \\
+$f_G$ & Pseudo-Goldstone decay constant; $f_G\sim\phi_0\sim\bar M_{\rm Pl}$ in ECT & GeV \\
+$m_G$ & Pseudo-Goldstone mass; $m_G\sim 10^{-33}$\,eV $\sim H_0$ in ECT (fuzzy-DM candidate scale) & eV \\
+$L_{\rm IR}$ & Infrared length scale in Cohen--Kaplan--Nelson holographic bound $\rho\lesssim M_{\rm Pl}^2/L_{\rm IR}^2$; ECT estimate saturates with $L_{\rm IR}\sim H_0^{-1}$ & m \\
 \end{longtable}
 
 \section*{List of Abbreviations}
@@ -447,6 +480,7 @@ FDU & Fulling--Davies--Unruh (effect) \\
 UDW & Unruh--DeWitt (detector model) \\
 EFT & Effective field theory \\
 FP & Fierz--Pauli (linearized gravity Lagrangian) \\
+CKN & Cohen--Kaplan--Nelson (holographic-type effective-field-theory bound relating UV cutoff to IR length scale) \\
 IR & Infrared (low-energy regime) \\
 UV & Ultraviolet (high-energy regime) \\
 DE & Dark energy \\
@@ -21751,6 +21785,36 @@ Age-viability note
   & B note
   & App.~\ref{app:eps_methodology} (AF.4)
   & viability/self-consistency note, not a retained probe \\
+
+Vacuum-offset decoupling: $V(\phi_0)$ inert
+  & classical baseline offset $V(\phi_0)$ does not source local emergent gravity (Theorem~1(iv))
+  & A
+  & \S\ref{sec:cc_problem}, \S\ref{subsec:main_theorem}
+  & removes standard $\Lambda$ channel for the bare quartic minimum \\
+
+Zero-derivative loop-vacuum decoupling
+  & absorbed into fixed determinant $\sqrt{-g_{\rm eff}}=\beta^2/c_*$ (Theorem~1(v))
+  & A, conditional on~H1
+  & \S\ref{subsec:main_theorem}, \S\ref{subsec:H1_cc}
+  & blocks direct UV channel for vacuum baseline \\
+
+Infrared dark-energy scale
+  & $\rho_\Lambda\sim c_\Lambda M_{\rm Pl}^2 H_0^2$ with $c_\Lambda=\mathcal{O}(1)$; $M_{\rm Pl}^2 H_0^2\approx 1.2\times 10^{-47}\,\text{GeV}^4$
+  & C (motivated scaling)
+  & \S\ref{subsec:IR_estimate_cc}
+  & observed dark-energy density at order-of-magnitude level \\
+
+$w_0\approx -1$ as slow-branch instance
+  & $w_0 = -1 + 2\rho_{\rm kin}/(3\rho_{\rm cond})$ grounded by FRW reduction of the ordered-branch mode (Appendix~\ref{app:frw_cc})
+  & A/B structural
+  & \S\ref{subsec:frw_cc}
+  & DESI-era $w_0\neq -1$ indication \\
+
+Pseudo-Goldstone realisation of IR scaling
+  & $\rho_G\sim m_G^2 f_G^2\sim H_0^2 M_{\rm Pl}^2$ with $m_G\sim H_0$, $f_G\sim\phi_0\sim \bar M_{\rm Pl}$
+  & C (plausible candidate)
+  & \S\ref{subsec:goldstone_cc}
+  & consistent with fuzzy-DM / ultralight-scalar bounds \\
 \end{longtable}
 }
 
@@ -25470,6 +25534,16 @@ phenomenology, and the corresponding dark-sector reinterpretation.
 The strongest current outputs of the chapter are:
 the structural flatness result $k=0$,
 the elimination of the primary monopole channel,
+the emergent unimodular decoupling theorem for the vacuum-offset
+channel of the cosmological-constant problem
+(Section~\ref{sec:cc_problem}; Theorem~1): fixed
+$\sqrt{-g_{\rm eff}}=\beta^2/c_*$ from $n^A n_A = 1$ renders
+the classical baseline $V(\phi_0)$ inert for the local emergent
+gravity (Level~A), and absorbs the zero-derivative one-loop
+contribution under condition~H1 (Level~A conditional); the direct
+$10^{120}$-level cancellation characteristic of the standard
+framework is absent, and what remains is a bounded IR determination
+problem $\rho_\Lambda\sim c_\Lambda M_{\rm Pl}^2 H_0^2$,
 the no-phantom bound $w(z)\ge -1$ within the present cosmological
 closure,
 the BTFR slope~$4$ in the critical galactic branch,
@@ -25874,6 +25948,7 @@ Macroscopic entropy growth & Reduced-state decoherence with effective bath assum
 Universal causal cone & Single $g_{\mu\nu}(n)$ in IR EFT & derived \\
 LV suppression & Higher-dim.\ ops., $\delta c/c\sim(E/\Lambda)^2$ & derived \\
 Proton stability & Three selection-rule patterns conditional on gauge/flavour completion (\S\ref{sec:proton_stability}) & conditional (Level~C) \\
+Cosmological-constant UV decoupling & Fixed determinant $\sqrt{-g_{\rm eff}}=\beta^2/c_*$ from kinematic constraint $n^A n_A=1$ (Theorem~1, Sec.~\ref{sec:cc_problem}); classical baseline $V(\phi_0)$ inert for local emergent gravity; zero-derivative loop contribution absorbed under condition~H1; residual IR scaling $\rho_\Lambda\sim c_\Lambda M_{\rm Pl}^2 H_0^2$ open & derived (Level~A; Obj.~B conditional on~H1; IR coefficient $c_\Lambda$ open, Level~C) \\
 \hline
 
 \end{longtable}
@@ -26093,6 +26168,26 @@ Direct-detection, LHC, indirect &
 Present $\phi$-branch-only dark-matter reading falsified
 (broader ECT completions with additional condensate sectors
 would still remain logically possible) \\
+
+F15 & Vacuum-offset decoupling: classical $V(\phi_0)$ does not
+gravitate in the leading ordered-branch sector
+(Theorem~1(iv), Sec.~\ref{sec:cc_problem}) &
+No detectable $\Lambda$-scale contribution from the bare quartic
+minimum &
+Cosmological and solar-system $\Lambda$-channel tests;
+unimodular-gravity-type analyses &
+Emergent unimodular decoupling refuted if a detectable
+UV-vacuum-to-$\Lambda$ channel is isolated \\
+
+F16 & Fuzzy-DM / ultralight-scalar sector at $m_G\sim H_0$
+(Sec.~\ref{subsec:goldstone_cc}) &
+Ultralight scalar with $m_G\sim 10^{-33}$\,eV and decay constant
+$f_G\sim\bar M_{\rm Pl}$; $\rho_G\sim m_G^2 f_G^2$ of order
+observed dark-energy density &
+CMB/LSS constraints on ultralight scalars; pulsar-timing
+wavefield searches; structure-formation imprints &
+Pseudo-Goldstone realisation of the IR scaling disfavoured if
+$m_G$ or $f_G$ forced outside the quoted ranges \\
 
 \bottomrule
 \end{longtable}
@@ -43086,6 +43181,37 @@ OP-GRAV-WEAK
 OP-TORSION
   & Propagating torsion in a possible first-order reformulation
   & Open (speculative) \\
+OP-$\Lambda$3-O1
+  & Verification of condition~H1 on the full quadratic fluctuation
+    operator in the leading ordered-branch sector
+    (Section~\ref{subsec:H1_cc}); decides whether Theorem~1(v)
+    decoupling of Object~B is unconditional or transferred to the
+    scalar-hierarchy sector
+  & Open \\
+OP-$\Lambda$3-O2
+  & First-principles computation of the infrared coefficient
+    $c_\Lambda$ in $\rho_\Lambda\sim c_\Lambda M_{\rm Pl}^2 H_0^2$
+    via the FRW-reduced ordered-branch equations for $Z_q$ and
+    $V_{\rm IR}(q)$ (Section~\ref{subsec:frw_cc})
+  & Open \\
+OP-$\Lambda$3-O3
+  & Formal non-renormalization analogue of the Ng--van Dam
+    unimodular-gravity theorem~\cite{NgVanDam1990,Smolin2009} in
+    the emergent unimodular-like setting of ECT
+    (Section~\ref{subsec:unimodular_cc})
+  & Open \\
+OP-$\Lambda$3-O4
+  & First-principles derivation of the pseudo-Goldstone mass scale
+    $m_G\sim H_0$ from ECT parameters
+    $(\mu,\lambda,\alpha,\beta)$; required to upgrade the
+    Goldstone candidate realization of the IR scaling to a
+    prediction (Section~\ref{subsec:goldstone_cc})
+  & Open \\
+OP-$\Lambda$3-O5
+  & Extension of Theorem~1 beyond the leading ordered-branch ansatz
+    $K^{AB}=\beta\delta^{AB}-\alpha n^A n^B$; assessment of
+    higher-order corrections to the fixed-determinant property
+  & Open \\
 \bottomrule
 \end{longtable}
 
@@ -43971,9 +44097,6 @@ experimental exposure.
 \renewcommand{\thesubsection}{\AlphAlph{\value{section}}.\arabic{subsection}}
 \part*{Appendices}
 \addcontentsline{toc}{part}{Appendices}
-
-% --- Technical details for the cosmological constant subsection ---
-\input{App_CC_technical}
 
 \section{From the Basic Physical Premises of ECT to the
 Lorentz-Order-Field Programme: Full Derivation Chain}
@@ -48194,6 +48317,15 @@ $c_2=c_3=c_4=0$).  The general four-parameter case follows
 by identical steps with the full tensor $K^{ABCD}$
 \eqref{eq:Theta_n}; the explicit form is given in
 \cite{Jacobson2004}.
+
+% ============================================================
+% ============================================================
+% --- Technical details for the cosmological-constant subsection ---
+% Referenced from Part II, Section~\ref{sec:cc_problem}.
+% Placed here adjacent to the late-time cosmology appendix below,
+% which is the thematically closest existing appendix.
+% ============================================================
+\input{App_CC_technical}
 
 % ============================================================
 \section{Late-time $\phi$-first cosmological background apparatus}
