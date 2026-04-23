@@ -1,13 +1,12 @@
 digraph PartIV {
   rankdir=TB;
   fontname="Helvetica";
-  size="6.5,10.5!";
-  ratio=fill;
+  // no size/ratio constraints: let ranksep control vertical spacing directly
   node [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", margin="0.10,0.06"];
   edge [fontname="Helvetica", fontsize=8, color="black", penwidth=1.0];
   splines=polyline;
   nodesep=0.22;
-  ranksep=0.09;
+  ranksep=0.10;
   newrank=true;
   labeljust=c;
 
@@ -207,7 +206,7 @@ digraph PartIV {
   forward_inputs -> directional [label="future\nwork on"];
 
   // =====================================================
-  // LEGEND (HTML-table node, Part-II-style, placed alongside openlist)
+  // LEGEND (HTML-table node, Part-II-style; placed one layer BELOW openlist)
   // =====================================================
   node [shape=plaintext, style="", fillcolor=white, penwidth=1.0];
   legend [label=<
@@ -225,6 +224,6 @@ digraph PartIV {
       </TR>
     </TABLE>
   >];
-  {rank=same; legend; openlist}
-  legend -> openlist [style=invis, weight=100];
+  // Legend sits strictly below openlist as its own bottom layer
+  openlist -> legend [style=invis, weight=1000, minlen=1];
 }
