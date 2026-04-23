@@ -40566,14 +40566,76 @@ outlook sections of the paper.
 \label{sec:reverse_methodology}
 % ============================================================
 
-\textit{Status: placeholder for forthcoming development
-(to be filled in a dedicated session).}
+\textit{Status: Methodological.  This section does not
+present new physics; it articulates the methodology of reverse analysis
+used throughout Part~IV and its relation to the forward programme of
+Parts~I--III.}
 
-This section will articulate the methodology of \emph{reverse analysis}
-as used throughout Part~IV: its role as a closure/consistency layer on
-top of the forward derivations of Parts~I--III, its scope, its
-limitations, and why it is legitimate as a scientific method when
-clearly distinguished from forward derivation.
+\paragraph{Scope.}
+Reverse analysis as used in Part~IV is a closure/consistency layer on
+top of the forward derivations of Parts~I--III.  It is not a
+substitute for forward derivation, and must be used under explicit
+rules.  At best it delivers Level~B; more commonly Level~C.
+
+\paragraph{Distinction from forward derivation.}
+Forward derivation in ECT starts from P1--P6 and deduces consequences;
+this is how Parts~I--III are structured, and it is the only route to
+Level~A results.  Reverse analysis starts from the partial success of
+the forward programme together with empirical constraints from
+observed physics, and identifies what minimal additional structure,
+beyond P1--P6, the medium must carry for consistency.
+
+\paragraph{Legitimacy.}
+Reverse analysis is scientifically legitimate when, and only when,
+every reverse-engineered constraint is traceable to a specific
+consistency obstruction uncovered by forward work.  An example already
+present in the article is the obstruction theorem (§2) showing that
+exact colour cannot reside in the condensate; this leads to the
+reverse-engineered requirement that the medium must carry a separate
+internal module for colour.  That is reverse analysis used correctly.
+
+\paragraph{Relation to the forward programme.}
+Part~IV should be read not as a second derivation of the gauge and
+fermion architecture, but as a reverse-analysis closure layer built on
+top of the forward programme already developed in
+Sections~\ref{sec:chirality}, \ref{sec:anomaly_architecture},
+\ref{sec:yukawa}, \ref{sec:flavour_architecture}, and in the
+colour-consistency analysis now collected in~\S\ref{sec:colour_completion}.
+It does not replace the existing structural routes to chirality or to
+three generations; it clarifies which exact-colour completions are
+compatible with those routes and which unresolved questions remain
+blocked even after the P7 completion layer.
+
+\paragraph{Rules of engagement.}
+Five rules govern reverse analysis as applied in Part~IV:
+(i)~every reverse-engineered constraint must point back to a forward
+obstruction;
+(ii)~new postulates must be geometric or structural, never numerical
+or phenomenological;
+(iii)~outcomes are restricted to admissible classes---never derive
+desired results such as specific masses or couplings via reverse
+reasoning;
+(iv)~any residual freedom in the completion must be catalogued as
+Open;
+(v)~reverse-engineered postulates must be flagged as such (e.g.\ P7)
+and not confused with the primary postulates~P1--P6.
+
+\paragraph{What Part~IV does within these rules.}
+Section~\ref{sec:colour_completion} was already reverse-engineered in
+prior versions of the article and is now placed here as the natural
+home for the colour-completion layer.
+Sections~\ref{sec:min_colour_eft}--\ref{sec:anomaly_constraints}
+derive the admissible EFT class and matter-consistency constraints
+assuming P7.
+Section~\ref{sec:su3_closure_table} catalogues how reverse analysis
+clarifies earlier conditional results.
+Section~\ref{sec:proton_stability} is a physical hypothesis about
+proton stability conditional on the completion.
+Section~\ref{sec:topological_strong_cp} acknowledges honestly that
+even reverse analysis does not close the strong CP problem in the
+minimal setup.
+Section~\ref{sec:part4_status} summarises closures and remaining open
+questions.
 
 % ============================================================
 \section{Colour consistency requirement and candidate
@@ -40910,26 +40972,214 @@ structure of the medium.
 \label{sec:min_colour_eft}
 % ============================================================
 
-\textit{Status: placeholder for forthcoming development.}
+\textit{Status: Level~B structural result.  The admissible
+operator class and its obstructions are derived; the background-level
+triviality result is a clean negative structural finding.  No
+quantitative strong-sector prediction is claimed.}
 
-This section will present the minimal local gauge-invariant colour EFT
-compatible with P7 and with the singlet ordered branch: allowed
-operators $Z(\phi)F^2$, $\Theta(\phi)F\tilde F$, structurally
-constrained anisotropic couplings, the exclusion of tree-level gluon
-mass terms, and the exclusion of the direct colour-Higgs route.
+\paragraph{Setup.}
+Given P7 (\S\ref{sec:colour_completion}): exact local $SU(3)$ acting
+on an internal module $\mathcal{C}\simeq\mathbb{C}^3$ with Hermitian
+form $h$ and fixed complex volume form~$\Omega$, while the
+ordered-branch condensate fields $\phi$ and $n^\mu$ remain colour
+singlets.  We ask: what is the most general renormalisable local
+gauge-invariant effective Lagrangian for the colour connection
+$A_\mu^a$ compatible with this structure?
+
+\paragraph{Minimal admissible lagrangian.}
+Only singlet operators in $\phi$ and $n^\mu$ are allowed.  At leading
+order:
+\begin{equation}
+\mathcal{L}_{\rm col}^{\rm min}
+= -\tfrac{1}{4}\,Z(\phi)\,F^a_{\mu\nu}F^{a\mu\nu}
+- \tfrac{1}{4}\,Y(\phi)\,\bigl(n^\mu F^a_{\mu\rho}\bigr)
+                          \bigl(n^\nu F_\nu^{\,a\rho}\bigr)
++ \frac{\Theta(\phi)}{32\pi^2}\,F^a_{\mu\nu}\tilde F^{a\mu\nu}
++ \mathcal{L}_{\rm matter}^{(3)}
++ \cdots
+\label{eq:min_colour_eft}
+\end{equation}
+with $Z(\phi)>0$ for positivity.  Additional consistency requires
+\begin{equation}
+Z(\phi) + Y(\phi)\,\Xi(n,k) > 0
+\label{eq:min_colour_positivity}
+\end{equation}
+for all physically admissible propagation directions~$k$, where
+$\Xi(n,k)$ encodes the directional structure induced by the
+anisotropic operator, so that no ghost or negative-norm instability is
+introduced by the anisotropic deformation.
+$\mathcal{L}_{\rm matter}^{(3)}$ collects coloured matter sections
+of~$\mathcal{C}$.
+
+\paragraph{Status of the anisotropic operator.}
+The operator $Y(\phi)(n\!\cdot\!F)(n\!\cdot\!F)$ is admissible as part
+of the minimal EFT basis, but it is not a phenomenologically active
+leading-order channel.  It shares the rank-2 directional structure
+$n_\mu n_\nu$ that enters the generalised Einstein equations of
+Part~II through the ECT anisotropy coefficient $\alpha_{\rm ECT}$;
+structural consistency with the observational bounds on that
+coefficient makes $|Y_0/Z_0|$ subleading, and positivity
+(eq.~\ref{eq:min_colour_positivity}) provides a second constraint
+independent of phenomenology.  The anisotropic term should therefore
+be viewed as part of the admissible operator basis rather than as a
+physically active IR channel.  The IR-relevant leading operators are
+$Z(\phi)F^2$ and $\Theta(\phi)F\tilde F$.
+
+\paragraph{Obstruction theorems.}
+Three obstruction statements follow from~(\ref{eq:min_colour_eft}) and
+rule out naive colour mass-generation routes.
+
+\emph{Theorem~1 (no tree-level gluon mass).}\ \ A gauge-invariant
+Proca-type term $m_g^2\,A_\mu^a A^{a\mu}$ is forbidden by the exactness
+of~$SU(3)$.  The minimal admissible EFT provides no tree-level route
+to a gluon mass.
+
+\emph{Theorem~2 (no Higgs-colour route).}\ \ Since the ordered
+condensate is a colour singlet by the obstruction theorem
+of~\S\ref{sec:colour_completion}, there is no colour-charged Higgs
+field in the minimal completion.  The direct colour-Higgs
+mass-generation route is structurally excluded.
+
+\emph{Theorem~3 (oscillator tower $\ne$ physical colour spectrum).}\ \ 
+Any linearly spaced tower $m_n=n\,\omega$ arising from oscillator
+quantisation around a quadratic vacuum minimum belongs, at best, to
+internal medium excitations.  The physical colour gauge-invariant
+spectrum is not captured by such a tower; any strong-sector mass gap
+in the exact colour sector must arise nonperturbatively.
+
+\paragraph{Three-scale consistency condition.}
+The ECT condensate carries three widely separated scales (Part~I,
+three-scale architecture).  The coupling functions $Z(\phi)$, $Y(\phi)$,
+$\Theta(\phi)$ must admit an RG-cascade interpretation compatible with
+this architecture.  In particular, in the UV regime
+($\mu\gg M_\ast$) decoupling must hold---$Z(\phi)\to\text{const}$,
+$Y(\phi)\to 0$, $\Theta(\phi)\to\text{const}$---so that at high
+energies standard asymptotically free Yang--Mills/QCD is recovered and
+known high-energy strong phenomenology is not distorted.
+
+\paragraph{Background-level triviality (central negative result).}
+At strictly constant background couplings $Z_0,Y_0,\Theta_0$
+independent of~$\phi$, canonical normalisation of the gauge field
+yields $g_{\rm eff}(M_\ast)=g_s(M_\ast)/\sqrt{Z_0}$, so the minimal
+EFT reduces to standard pure Yang--Mills with a redefined matching
+convention.  Consequently, the colour-sector completion does not yet
+generate independent predictive strong-sector physics beyond a
+redefinition of matching conventions and a possible theta-angle
+problem (\S\ref{sec:topological_strong_cp}).  Nontrivial ECT content
+begins only when the coupling functions have genuine condensate
+dependence---e.g.\ operators such as $\delta\phi\,F^2$ and
+$\delta\phi\,F\tilde F$---or when the microphysical origin of the
+matching data is derived from ECT primary postulates.
+
+\paragraph{What this section claims and does not claim.}
+Claimed: the minimal admissible operator class~(\ref{eq:min_colour_eft}),
+the three obstruction theorems above, the three-scale consistency
+condition, and the background-level triviality result.  ECT with~P7
+constrains the admissible form of a colour-sector EFT and the class of
+medium couplings compatible with exact colour.  Not claimed: a
+derivation of~$\Lambda_{\rm QCD}$, of confinement, of the glueball
+spectrum, or of~$g_s$.  All quantitative strong-sector observables
+remain inherited from standard QCD phenomenology, constrained by the
+admissible EFT structure above but not independently derived.
 
 % ============================================================
 \section{Anomaly constraints and matter-sector consistency}
 \label{sec:anomaly_constraints}
 % ============================================================
 
-\textit{Status: placeholder for forthcoming development.}
+\textit{Status: Level~B structural layer.  This section
+does not replace the anomaly architecture already analysed
+in~\S\ref{sec:anomaly_architecture}; its purpose is narrower: to
+restate the anomaly constraints specifically in the presence of P7 and
+the exact-colour completion.}
 
-This section will collect the quantum consistency conditions on the
-exact colour sector: $SU(3)^3$ anomaly cancellation ($N_3=N_{\bar 3}$),
-mixed anomalies ($SU(3)^2U(1)$, $SU(2)^2U(1)$, gravitational), Witten
-global anomaly, and an optional mention of 't~Hooft anomaly matching
-as a future consistency condition between UV and IR descriptions.
+\paragraph{Setup.}
+Given P7 (\S\ref{sec:colour_completion}) and the admissible colour EFT
+of~\S\ref{sec:min_colour_eft}, quantum consistency of the matter
+sector requires anomaly cancellation in the usual sense.  The content
+below is standard; its role in Part~IV is to make explicit how the
+anomaly architecture carries over once exact colour has been added as
+an external internal module.
+
+\paragraph{$SU(3)^3$ anomaly.}
+For coloured fermions in representations $R_i$, the cubic anomaly
+condition is
+\[
+  \sum_i \mathcal{A}(R_i) = 0,
+  \qquad
+  \mathcal{A}(\mathbf{3})=+1,\quad
+  \mathcal{A}(\bar{\mathbf{3}})=-1.
+\]
+In the minimal realisation with matter restricted to fundamental and
+antifundamental colour representations, anomaly cancellation forces
+$N_{\mathbf{3}}=N_{\bar{\mathbf{3}}}$, i.e.\ vector-like colour
+content.  Anomaly-free chiral $SU(3)$ realisations exist with exotic
+representation assignments (e.g.\ adjoint combined with rank-2
+symmetric), but none are realised in nature; we do not pursue them
+here.
+
+\paragraph{Mixed anomalies with additional gauge factors.}
+Introducing additional gauge factors to accommodate chirality, the
+following mixed anomalies must cancel:
+\begin{equation*}
+  \begin{array}{ll}
+    SU(3)^2\cdot U(1): & \sum_i q_i\,T(R_i)=0, \\[2pt]
+    SU(2)^2\cdot U(1): & \sum_{\rm doublets} q_L = 0, \\[2pt]
+    U(1)^3:            & \sum_i q_i^3 = 0, \\[2pt]
+    U(1)\cdot\text{grav}^2: & \sum_i q_i = 0.
+  \end{array}
+\end{equation*}
+For the one-generation Standard-Model content
+$\{Q_L,u_R,d_R,L_L,e_R\}$, these constraints fix hypercharges up to
+normalisation.  With sterile-neutrino freedom a singlet can be added
+without disturbing anomaly balance; this is relevant for the neutrino
+discussion of~\S\ref{sec:neutrino_particles} and for the proton
+stability discussion of~\S\ref{sec:proton_stability}.
+
+\paragraph{Witten global anomaly.}
+Any ECT completion with an $SU(2)$ weak factor must satisfy the Witten
+global anomaly constraint: the total number of left-handed $SU(2)$
+doublets must be even.  With four doublets per generation and three
+generations the count is twelve, and the anomaly is absent.
+
+\paragraph{'t~Hooft anomaly matching.}
+If the ECT completion admits distinct UV (medium microphysics) and IR
+(emergent SM-like EFT) descriptions, global anomalies must match
+between the two.  This is a nontrivial structural constraint on the
+microphysical completion and is flagged as Open
+(\S\ref{sec:part4_status}).
+
+\paragraph{Baryon number and Harlow--Ooguri compatibility.}
+The proton-stability treatment of~\S\ref{sec:proton_stability}
+maintains $U(1)_B$ as a selection rule.  The Harlow--Ooguri
+no-global-symmetries argument for quantum gravity is consistent with
+this: $U(1)_B$ must not be a fundamental exact global symmetry but a
+selection rule emergent from the detailed gauge and matter structure.
+A subtler concern is the global $U(1)$ carried by the complex volume
+form $\Omega$ in P7: whether this is gauged, broken, or protected at
+the quantum level is Open (\S\ref{sec:part4_status}).
+
+\paragraph{Local structure does not determine the global quotient.}
+The local gauge structure discussed here does not determine the global
+quotient $\bigl(SU(3)\times SU(2)\times U(1)\bigr)/\Gamma$, which
+remains an additional completion-level question tied to charge
+quantisation and global bundle structure.  It is flagged as Open.
+
+\paragraph{What this section claims and does not claim.}
+Claimed: once matter is added, anomaly cancellation must hold; in the
+minimal realisation with fundamental/antifundamental colour matter,
+colour is vector-like and chirality requires extended gauge structure;
+the Standard-Model gauge group is a natural phenomenologically
+relevant candidate extension compatible with the observed matter
+sector, with hypercharges fixed by anomaly cancellation once the
+one-generation matter content is assumed; Witten global anomaly is
+respected for three generations; baryon number must be a selection
+rule rather than a fundamental symmetry.  Not claimed: uniqueness of
+the Standard-Model gauge group; derivation of the matter
+representations from ECT primary postulates; derivation of hypercharge
+normalisation from ECT; derivation of three generations as a theorem;
+determination of the global quotient $\Gamma$; derivation of the
+sterile-neutrino status.
 
 % ============================================================
 \section{Closure of SU(3)-dependent questions from earlier parts}
@@ -41092,30 +41342,171 @@ structure.
 \label{sec:topological_strong_cp}
 % ============================================================
 
-\textit{Status: placeholder for forthcoming development.}
+\textit{Status: Level~C, Open.  Part~IV sharpens the
+strong CP problem within ECT rather than solves it.}
 
-This section will honestly record the status of the strong CP problem
-under the ECT/P7 framework: the reopening of strong CP through
-$\Theta(\phi)F\tilde F$, and the enumeration of possible resolution
-routes (CP-symmetric ordered-branch background; axion-like relaxation
-via a pseudoscalar Goldstone; geometric constraint from the complex
-volume form of the internal module). No resolution is claimed.
+\paragraph{The topological coupling is unavoidable.}
+The operator $\Theta(\phi)\,F^a_{\mu\nu}\tilde F^{a\mu\nu}/(32\pi^2)$
+in the minimal EFT~(eq.~\ref{eq:min_colour_eft}) is gauge-invariant
+and compatible with all ECT symmetries.  No ECT postulate forbids it
+at the Lagrangian level.
+
+\paragraph{Reopening of strong CP.}
+At background $\phi=\phi_0$, the effective theta parameter is
+$\theta_{\rm eff}\equiv\Theta(\phi_0)$.  The experimental bound from
+the neutron electric dipole moment is
+$|\theta_{\rm eff}|\lesssim 10^{-10}$.  Without a mechanism, the
+natural expectation is $\theta_{\rm eff}=\mathcal{O}(1)$.  ECT with~P7
+and the minimal EFT therefore reproduces the strong CP problem rather
+than solving it.
+
+\paragraph{Possible resolution routes, all currently Open.}
+
+\emph{R1 --- CP-symmetric ordered branch.}\ \ Postulate that the
+ordered condensate background respects CP as a residual symmetry,
+forcing $\Theta(\phi_0)\in\{0,\pi\}$.  This would require additional
+structural input on the CP properties of the medium, which has not
+been derived from the postulates P1--P7.
+
+\emph{R2 --- axion-like relaxation.}\ \ Dynamical relaxation of
+$\Theta(\phi)$ via a pseudoscalar mode with the required anomaly
+coupling to $F\tilde F$.  The existing ordered-branch soft modes do
+not presently supply a demonstrated axion-like degree of freedom: the
+$O(4)\to O(3)$ Goldstones are scalars, not pseudoscalars, and do not
+possess the required anomaly coupling.  Any axion-type resolution
+would require additional pseudoscalar structure and an explicit
+anomaly coupling, neither of which is available in the minimal P7
+completion.
+
+\emph{R3 --- geometric obstruction from $\Omega$.}\ \ The fixed
+complex volume form in P7, together with appropriate CP-transformation
+properties of $\mathcal{C}$, could in principle structurally force
+$\Theta\equiv 0$.  R3 is conceptually attractive because it would
+solve the problem without introducing a new low-energy field, but at
+present no geometric derivation enforcing $\Theta\equiv 0$ is
+available.
+
+\paragraph{Related observables.}
+The $\eta'$ mass and the Witten--Veneziano relation
+$m_{\eta'}^2\approx 4N_f\chi_{\rm top}/f_\pi^2$ link topological
+susceptibility to measured hadron phenomenology.  Any ECT-specific
+contribution through $\Theta(\phi)$ must preserve this IR relation.
+
+\paragraph{Final status.}
+ECT with P7 and the minimal EFT does not solve the strong CP problem.
+Accordingly, Part~IV sharpens the strong CP problem within ECT rather
+than solving it.  Resolution is flagged for future work, with the
+three routes above representing the currently identified lines of
+attack.
 
 % ============================================================
 \section{What Part IV closes and what remains open}
 \label{sec:part4_status}
 % ============================================================
 
-\textit{Status: placeholder for forthcoming development.}
+\textit{Status: Summary of Part~IV.  All claims in Part~IV
+are Level~B or Level~C.  Part~IV does not add Level~A derivations of
+strong-sector physics.}
 
-This section will summarise what Part~IV closes (exact-colour
-completion class, obstruction theorems, admissible EFT class, matter
-consistency constraints) and what remains open ($g_s$, confinement,
-$\Lambda_{\rm QCD}$, strong CP resolution, full matter completion,
-number of generations as theorem). Directional hypotheses (chirality
-from P7+$n^\mu$ deepening, three-generation deepening via rank-3
-structure, Swampland compatibility) will be briefly listed as items
-for future development.
+\paragraph{Closures (structural, Level~B except where noted).}
+Exact colour completion as a closure requirement
+(\S\ref{sec:colour_completion}, reverse-engineered).  Exact colour
+cannot reside in the ordered condensate
+(\S\ref{sec:colour_completion}, obstruction theorem; Level~A within
+ECT).  Dimensional obstruction $\mathfrak{su}(3)\not\subset\mathfrak{so}(4)$
+(\S\ref{sec:colour_completion}, algebraic; Level~A).  Primary completion
+pattern: exact $SU(3)$ on a rank-3 complex internal module with
+Hermitian form and fixed complex volume form
+(\S\ref{sec:colour_completion}).  Alternative deeper candidate: $G_2$
+route via octonionic structure
+(\S\ref{sec:colour_completion}).  Minimal admissible local
+gauge-invariant EFT under P7
+(\S\ref{sec:min_colour_eft}).  Three obstruction theorems: no
+tree-level gluon mass, no Higgs-colour route, oscillator tower not
+the physical colour spectrum
+(\S\ref{sec:min_colour_eft}).  Structural bound on the anisotropic
+colour channel via the gravity-sector anisotropy analogy
+(\S\ref{sec:min_colour_eft}).  Background-level triviality result: the
+minimal EFT at constant couplings reduces to standard QCD with a
+redefined matching convention, so physical ECT content appears only
+through $\phi$-dependence of the couplings
+(\S\ref{sec:min_colour_eft}).  Anomaly-cancellation layer for the
+matter sector
+(\S\ref{sec:anomaly_constraints}).  In the minimal realisation,
+vector-like colour content; anomaly cancellation identifies a narrow
+class of chiral-compatible extensions, among which the Standard-Model
+gauge structure remains the principal phenomenologically relevant
+candidate; hypercharges are fixed up to normalisation once the
+standard one-generation matter content is assumed
+(\S\ref{sec:anomaly_constraints}).  Baryon number as a selection rule
+compatible with the quantum-gravity no-global-symmetry requirement
+(\S\ref{sec:anomaly_constraints},
+\S\ref{sec:proton_stability}).  Proton-stability framework placed in
+the correct architectural layer
+(\S\ref{sec:proton_stability}).
+
+\paragraph{Non-replacement statement.}
+Part~IV does not replace the existing structural routes to chirality
+and three generations developed in~\S\ref{sec:chirality} and
+Appendix~\ref{app:open_microphysics}.  Its role is to clarify which
+exact-colour completions are compatible with those routes and which
+unresolved questions remain blocked even after P7.
+
+\paragraph{Remains Open.}
+O1.\ Identification of the matching scale $M_\ast$ within ECT.
+O2.\ Derivation of $g_s(M_\ast)$ from ECT microphysics.
+O3.\ Confinement (Wilson-loop area law) on ECT background.
+O4.\ Full glueball spectrum with mass ratios.
+O5.\ Exact numerical value of $\Lambda_{\rm col}$ beyond standard-QCD
+matching.
+O6.\ Strong CP resolution (R1/R2/R3 all unresolved,
+\S\ref{sec:topological_strong_cp}).
+O7.\ Complete matter-content derivation (representations from first
+principles).
+O8.\ Sterile-neutrino status: required, permitted, or forbidden by ECT.
+O9.\ Yukawa hierarchy as derivation rather than pattern.
+O10.\ Three generations as theorem rather than spectral route.
+O11.\ CKM/PMNS matrices.
+O12.\ Global quotient structure
+$\bigl(SU(3)\times SU(2)\times U(1)\bigr)/\Gamma$---identification of
+$\Gamma$.
+O13.\ Topological obstructions (e.g.\ Stiefel--Whitney classes) on the
+colour bundle over emergent spacetime.
+O14.\ 't~Hooft anomaly matching UV $\leftrightarrow$ IR.
+O15.\ Status of the global $U(1)$ carried by the complex volume form
+$\Omega$.
+O16.\ Yang--Mills existence and mass gap in the Clay sense: structurally
+a different question (pure YM on $\mathbb{R}^4$ with fundamental
+Poincaré invariance) and not addressed by Part~IV.
+O17.\ Relation of the P7 colour completion to the chirality and flavour
+programme of~\S\ref{sec:chirality}--\S\ref{sec:flavour_architecture}:
+whether the exact-colour layer merely coexists with that programme or
+helps sharpen it into a more unified matter-sector closure.
+
+\paragraph{Directional remarks (future work; not claimed here).}
+D1.~\emph{Chirality deepening via P7 and $n^\mu$.}\ \ The combined
+orientation structure carried by the Lorentzian director $n^\mu$ and
+the complex volume form $\Omega$ may provide a structural link to the
+V--A chirality of Standard-Model fermions; at present a conjectural
+pointer, not pursued here.
+D2.~\emph{Three-generation deepening via rank-3 structure.}\ \ The
+internal module has rank~3 and the observed fermion generation count
+is~3; intriguing but presently non-theorem-level.
+D3.~\emph{SM as a natural IR-compatible configuration.}\ \ Given the
+constraints of~\S\ref{sec:min_colour_eft}--\S\ref{sec:anomaly_constraints},
+the SM gauge structure may arise as a natural IR-compatible
+configuration within the broader space of P7-admissible completions;
+no dynamical selection mechanism is established.
+D4.~\emph{Swampland compatibility.}\ \ Several Swampland conjectures
+(No Global Symmetries, Weak Gravity, Completeness) appear naturally
+realised in ECT+P7; systematic analysis is future work.
+
+\paragraph{Final note on claims level.}
+All of Part~IV is Level~B or~C.  Quantitative strong-sector observables
+($\Lambda_{\rm QCD}$, confinement, glueball masses) remain inherited
+from standard Yang--Mills and QCD phenomenology, constrained by the
+admissible EFT structure of~\S\ref{sec:min_colour_eft} but not
+independently derived.
 
 \clearpage
 \part{Summary, Comparisons, and Outlook}
