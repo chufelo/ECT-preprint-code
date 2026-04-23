@@ -1,0 +1,113 @@
+digraph PartIVpop {
+  rankdir=TB;
+  margin="0.05,0.05";
+  pad="0.2";
+  fontname="Helvetica";
+  node [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", margin="0.10,0.06"];
+  edge [fontname="Helvetica", fontsize=8, color="black", penwidth=1.0];
+  splines=polyline;
+  nodesep=0.22;
+  ranksep=0.10;
+  newrank=true;
+  labeljust=c;
+
+  // LAYER 1: forward inputs
+  { rank=same;
+    node [fillcolor="#b8b8b8"];
+    forward [label=<Forward programme<BR/>(Parts I–III)<BR/>chirality, anomalies,<BR/>flavour, fermions>];
+  }
+
+  // LAYER 2: obstructions (Level A)
+  { rank=same;
+    node [fillcolor="#b8b8b8"];
+    obs_alg [label=<Algebraic obstruction<BR/>𝔰𝔲(3) ⊄ 𝔰𝔬(4)>];
+    obs_cond [label=<No colour condensate<BR/>(singlet-only)>];
+  }
+
+  // LAYER 3: P7
+  { rank=same;
+    node [fillcolor="#ffffff", penwidth=2.0];
+    P7 [label=<<B>Postulate P7</B><BR/>internal colour cell<BR/>(rank-3 complex module<BR/>+ h, Ω)<BR/>⇒ local SU(3)>];
+    node [penwidth=1.0];
+  }
+
+  // LAYER 4: two branches + directional
+  { rank=same;
+    node [fillcolor="#ffffff"];
+    minimal_eft [label=<Minimal colour EFT<BR/>under P7>];
+    anomaly [label=<Anomaly layer<BR/>restated under P7>];
+    node [fillcolor="white", style="rounded,dashed,filled", penwidth=1.5];
+    directional [label=<Directional remarks<BR/>(chirality, generations,<BR/>Swampland —<BR/>conjectural)>];
+    node [style="rounded,filled", penwidth=1.0];
+  }
+
+  // LAYER 5: obstruction theorems (A) + central result (B, bold)
+  { rank=same;
+    node [fillcolor="#b8b8b8"];
+    obst_theo [label=<Obstruction theorems:<BR/>no gluon mass,<BR/>no Higgs-colour route,<BR/>oscillator tower ≠ spectrum>];
+    node [fillcolor="#ffffff", penwidth=1.8];
+    triv [label=<<B>Central negative result</B><BR/>background-level<BR/>triviality>];
+    node [fillcolor="#ffffff", penwidth=1.0];
+    sm_cand [label=<SM gauge group<BR/>as natural candidate<BR/>(not unique)>];
+  }
+
+  // LAYER 6: reframes
+  { rank=same;
+    node [fillcolor="#ffffff"];
+    strong_cp [label=<Strong CP<BR/>reopened, not resolved<BR/>(R1/R2/R3 Open)>];
+    three_way [label=<Three-way distinction:<BR/>colour scale / mass gap /<BR/>glueball spectrum;<BR/>Clay ≠ ECT problem>];
+  }
+
+  // LAYER 7: final status
+  { rank=same;
+    node [fillcolor="white", style="rounded,dashed,filled", penwidth=1.5];
+    open_all [label=<Open problems<BR/>(g<SUB>s</SUB>, confinement,<BR/>glueball spectrum,<BR/>strong CP, matter rep.,<BR/>θ<SUB>QCD</SUB>, …)>];
+    node [style="rounded,filled", penwidth=1.0];
+  }
+
+  // EDGES
+  forward -> obs_alg;
+  forward -> obs_cond;
+  obs_alg -> P7;
+  obs_cond -> P7;
+  P7 -> minimal_eft;
+  P7 -> anomaly;
+  P7 -> directional [style=dashed];
+
+  minimal_eft -> obst_theo;
+  minimal_eft -> triv;
+  minimal_eft -> strong_cp;
+  anomaly -> sm_cand;
+
+  triv -> three_way;
+  obst_theo -> three_way;
+
+  strong_cp -> open_all;
+  three_way -> open_all;
+  sm_cand -> open_all;
+  directional -> open_all [style=dashed];
+
+  // non-replacement
+  edge [style=dashed, color="black"];
+  forward -> open_all [label="reclassified,\nnot replaced"];
+
+  // LEGEND (HTML-table node, same style as Part II / Part III pop versions)
+  edge [style=solid];
+  node [shape=plaintext, style="", fillcolor=white, penwidth=1.0];
+  legend [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="3" CELLPADDING="5" COLOR="black">
+      <TR><TD COLSPAN="4"><B>Legend — Part IV (companion)</B></TD></TR>
+      <TR>
+        <TD BGCOLOR="#b8b8b8">Level A<BR/>(obstruction / structural)</TD>
+        <TD BGCOLOR="#ffffff" BORDER="1">Level B<BR/>(derived under P7)</TD>
+        <TD BORDER="1" STYLE="DASHED">Level C / Open<BR/>(conjectural / open)</TD>
+        <TD BGCOLOR="#ffffff" BORDER="2">Central node<BR/>(bold outline)</TD>
+      </TR>
+      <TR>
+        <TD COLSPAN="2"><B>Solid arrow:</B> logical dependence</TD>
+        <TD COLSPAN="2"><B>Dashed arrow:</B> non-replacement / future work</TD>
+      </TR>
+    </TABLE>
+  >];
+  open_all -> legend [style=invis, weight=1000, minlen=1];
+}
