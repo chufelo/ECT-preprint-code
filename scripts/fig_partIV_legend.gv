@@ -1,0 +1,35 @@
+digraph Legend {
+  rankdir=LR;
+  fontname="Helvetica";
+  bgcolor="white";
+  node [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", margin="0.12,0.06"];
+  edge [fontname="Helvetica", fontsize=9];
+  splines=false;
+  nodesep=0.30;
+  ranksep=0.40;
+
+  // Four node-shading samples
+  { rank=same;
+    lg_A [label=<Level A<BR/>algebraic / obstruction>, fillcolor="#b8b8b8"];
+    lg_B [label=<Level B<BR/>structural, derived>, fillcolor="#ffffff"];
+    lg_C [label=<Level C<BR/>honest non-derivation>, fillcolor="white", style="rounded,dashed,filled", penwidth=1.5];
+    lg_bold [label=<Central node<BR/>bold outline>, fillcolor="#ffffff", penwidth=2.0];
+  }
+
+  // Edge examples
+  { rank=same;
+    es1 [label="", shape=point, width=0.08];
+    es2 [label="", shape=point, width=0.08];
+    ed1 [label="", shape=point, width=0.08];
+    ed2 [label="", shape=point, width=0.08];
+  }
+
+  es1 -> es2 [label="  solid = logical dependence", style=solid, penwidth=1.2, fontsize=10, constraint=false];
+  ed1 -> ed2 [label="  dashed = non-replacement link / future-work pointer", style=dashed, penwidth=1.2, fontsize=10, constraint=false];
+
+  // Force the two edge-pair anchors to be visible but small, and positioned below the node samples
+  lg_A -> es1 [style=invis];
+  lg_B -> es2 [style=invis];
+  lg_C -> ed1 [style=invis];
+  lg_bold -> ed2 [style=invis];
+}
