@@ -401,7 +401,7 @@ Once the ordered branch is established and we introduce the identification $t = 
 
 In the non-relativistic limit ($E \approx mc^2 + E_{\rm kin}$, $|E_{\rm kin}| \ll mc^2$), the Klein--Gordon equation reduces to the \emph{Schr\"odinger equation}: $i\hbar\,\partial_t\psi = -\frac{\hbar^2}{2m}\nabla^2\psi + V\psi$ (\emph{Level~A/B}).
 
-This hierarchy is not merely a formal observation. It encodes a physical claim: the Schr\"odinger equation, which standard quantum mechanics takes as its starting axiom, is the \emph{narrowest, lowest-energy descendant} of a more fundamental Euclidean dynamics. The wave equation is \emph{derived}, not postulated.
+This hierarchy is not merely a formal observation. It encodes a physical claim: the Schr\"odinger-type coherent equation, which standard quantum mechanics takes as its starting axiom, emerges as the \emph{narrowest, lowest-energy descendant} of a more fundamental Euclidean dynamics.  The wave equation is \emph{reconstructed as an effective low-energy descendant}, not postulated; the identification of the emergent ordered-branch equation with the exact textbook Schr\"odinger equation of non-relativistic quantum mechanics is a Level-B matching step rather than a fully closed Level-A theorem.
 
 The distinction between the Cauchy (initial-value) problem of standard QM and the boundary-value problem of ECT is one of the deepest structural differences between the two frameworks. In standard QM, initial data on one time-slice determine the future uniquely. In ECT, the fundamental equation constrains the field configuration on the \emph{entire} four-dimensional domain. This has far-reaching consequences for entanglement, delayed-choice experiments, and the influence of future boundary conditions on present configurations (see Part~III).
 
@@ -1044,123 +1044,80 @@ This has profound consequences. The Cauchy problem generates \emph{one-direction
 
 \subsection{Detailed structural comparison: ECT vs standard QM}
 
-The following comparison illustrates how ECT's coherent branch differs from standard quantum mechanics on specific physical examples.
+The following examples show how ECT's coherent branch differs from standard quantum mechanics on specific physical situations.  The format is the same in each case: what the standard formalism does, what the ECT condensate picture says instead, what the ECT reading explains beyond the standard account, and the present status of the reformulation.
 
-\textbf{The hydrogen atom.}
-In standard QM, one solves $H\psi = E\psi$ and obtains
-$E_n = -13.6/n^2$\,eV together with the probability densities
-$|\psi_{nlm}|^2$.
-ECT gives a structurally richer picture of the same system.
+\paragraph{The hydrogen atom.}
+\begin{description}[leftmargin=2.8cm, style=nextline]
+\item[Standard QM.] One solves the time-independent Schr\"odinger equation with a Coulomb potential and obtains the discrete levels $E_n = -13.6/n^2\,$eV together with the probability densities $|\psi_{nlm}|^2$.
+\item[ECT (physical picture).] The atom exists not in a fundamentally given Lorentzian spacetime but in the symmetry-broken condensate background that supports both the emergent spacetime and the quantum dynamics.  The electron is a spinorial field compatible with that background; the proton is a localised composite source in the emergent gauge sector; the electromagnetic binding is interpreted within the emergent $U(1)$ sector rather than introduced as an extra fundamental ingredient.  The atom as a whole is a self-consistent bound configuration of these condensate structures.  At the structural level, the discrete levels are understood as arising because only certain regular, phase-consistent, single-valued solutions are admissible---in harmony with the winding/single-valuedness conditions of the coherent branch.
+\item[What this explains.] Why the spectrum is discrete at all: discreteness appears as a self-consistency condition on admissible condensate configurations rather than as the eigenvalue condition of a fundamentally probabilistic wave equation.  The familiar Schr\"odinger orbital, with its $|\psi_{nlm}|^2$ densities, is recovered as the non-relativistic envelope limit of the deeper spinorial and gauge-coupled description.
+\item[Status.] Structural interpretation (\emph{Level~B}): a completed first-principles numerical derivation of the full hydrogenic spectrum, including fine structure, Lamb shift, hyperfine splitting, and the value of $\alpha_{\rm fs}=1/137$, has not yet been carried out within ECT and is an open derivational target (\emph{Level~Open}).
+\end{description}
 
-The atom exists not in a fundamentally given Lorentzian spacetime
-but in the symmetry-broken condensate background that supports the
-emergent spacetime and quantum dynamics (Layer~1: background).
-The electron is described as a spinorial field compatible with the
-condensate geometry and the emergent Lorentzian sector; it is not
-yet derived as a collective excitation of the bare bosonic
-condensate (Layer~2: electron).
-The proton is treated as a localised composite source in the
-emergent gauge sector; its full microscopic internal origin
-(colour structure) is not yet derived from first principles
-(Layer~3: proton).
-The electromagnetic binding interaction is interpreted within the
-emergent $U(1)$ gauge sector, rather than being introduced in ECT
-as an independent fundamental ingredient external to the condensate
-framework (Layer~4: electromagnetic bond).
-The atom as a whole is a self-consistent bound configuration
-involving the protonic source, the electronic spinorial field,
-the $U(1)$ gauge connection, and the surrounding
-condensate-supported spacetime and quantum
-background (Layer~5: bound state).
+\paragraph{The double-slit experiment.}
+\begin{description}[leftmargin=2.8cm, style=nextline]
+\item[Standard QM.] The incoming wave packet is evolved through the apparatus as a Cauchy (initial-value) problem; the observed fringe pattern is computed from $P = |\psi_1 + \psi_2|^2$, where $\psi_1$ and $\psi_2$ are the amplitudes associated with the two slits.
+\item[ECT (physical picture).] One solves a global boundary-value problem for the condensate configuration, with source, screen, slits, and detector geometry entering as boundary and constraint data.  The fringe pattern is the reduced Lorentzian imprint of a single globally admissible Euclidean configuration.
+\item[What this explains.] Why interference exists at all.  The pattern is not the coexistence of two realised trajectories: it is the visible trace of one globally constrained four-dimensional configuration on a reduced Lorentzian slice.  Loss of interference when which-path information leaks into the environment is the same condensate--environment response that drives decoherence: $\Gamma_{\rm loop}\ll 1\to\Gamma_{\rm loop}\gtrsim 1$, with off-diagonal cross-slit terms suppressed as the medium ceases to remain phase-coherent.
+\item[Status.] Structural reformulation (\emph{Level~A/B}); not a first-principles derivation of the full laboratory setup from the microscopic condensate action.
+\end{description}
 
-The ground state~$1s$ is the lowest regular, node-free,
-spherically symmetric bound mode consistent with these structural
-ingredients.
-At the structural level, discrete levels may be understood as
-arising because only certain regular, phase-consistent,
-single-valued solutions are admissible---in
-harmony with the winding/single-valuedness conditions of the
-coherent branch:
-$\oint dw \cdot p_w = 2\pi S_0\,n$ (\emph{Level~B}).
+\paragraph{The Aharonov--Bohm effect.}
+\begin{description}[leftmargin=2.8cm, style=nextline]
+\item[Standard QM.] A charged particle acquires an observable phase shift $\Delta\varphi = (e/\hbar)\oint A_\mu\,dx^\mu$ even in regions where the electromagnetic field strength vanishes, provided the path encircles a non-trivial gauge flux.
+\item[ECT (physical picture).] The compact phase $\theta(X)$ of the condensate is already a primary structural variable of the coherent branch, and the gauge connection $A_A$ arises as its local compensating field.  The AB phase shift is then a direct manifestation of a non-trivial holonomy of the emergent $U(1)$ connection around a closed loop.
+\item[What this explains.] Why the effect is natural rather than anomalous.  Phase and loops are fundamental ingredients of the ECT quantum sector, so non-trivial holonomy is exactly the kind of phenomenon one should expect when quantum dynamics emerges from phase-sensitive loop structure; the observational $\hbar$ appears once the identification $S_0=\hbar$ is adopted.
+\item[Status.] Interpretive structural match (\emph{Level~B}); quantitative agreement with standard QM is inherited through the identification of the two phases.
+\end{description}
 
-\emph{From Dirac to Schr\"odinger.}
-The full structural description of hydrogen is first spinorial and
-gauge-coupled.
-The Schr\"odinger orbital, with its familiar $|\psi_{nlm}|^2$
-probability densities, is the non-relativistic envelope limit---the
-regime where velocities, binding energies, and spin-dependent
-relativistic corrections are small compared with the rest scale.
-Within ECT, the familiar Schr\"odinger description is therefore
-treated as a low-energy effective level of description rather than
-the deepest structural level.
+\paragraph{Measurement and outcome selection.}
+\begin{description}[leftmargin=2.8cm, style=nextline]
+\item[Standard QM.] Outcome selection is described through the collapse postulate: upon measurement the state projects onto an eigenstate of the observable, with probability $|\langle\text{eigenstate}|\psi\rangle|^2$.
+\item[ECT (physical picture).] The detector is treated as part of the full physical system and therefore belongs to the global boundary-value problem.  In the coherent regime ($\Gamma_{\rm loop}\ll 1$) multiple winding sectors coexist without a definite outcome; environmental coupling to many modes drives the decoherence functional $\Gamma[q]$ to grow; when $\Gamma_{\rm loop}\gtrsim 1$ the off-diagonal interference terms are suppressed and an effectively classical single-branch outcome emerges.  Effective ``collapse'' is read as the subsystem manifestation of this Euclidean-to-Lorentzian regime transition.
+\item[What this explains.] Why a definite outcome appears at all without any external ``collapse'' postulate; why the statistical weights inherit a Born-type form (the Hilbert/projector structure produced by the OS reconstruction makes the weights quadratic in the amplitudes, with conditional Gleason uniqueness once standard closure assumptions are admitted).
+\item[Status.] Structural measurement reading, not yet a complete detector-level theorem; a full microscopic derivation of outcome selection from the bare condensate action remains open (\emph{Level~Open}, OP-Q8).
+\end{description}
 
-\emph{What remains open.}
-The current framework does not yet derive hydrogenic fine structure,
-the Lamb shift, hyperfine splitting, or the numerical value of
-$\alpha_{\rm fs}=1/137$.
-These are open derivational targets (\emph{Level~Open}).
+\paragraph{Determinism at the fundamental level.}
+\begin{description}[leftmargin=2.8cm, style=nextline]
+\item[Standard QM.] Unitary evolution is deterministic for the amplitude, but the measured outcomes are intrinsically probabilistic; the Born rule is a foundational axiom.
+\item[ECT (physical picture).] The fundamental Euclidean equation is deterministic at the field level: specify boundary conditions on the four-dimensional domain, and one global field configuration $\Phi(X)$ follows.  No probabilities, no collapse, no stochasticity at the deepest level.  Statistical quantum mechanics appears because realistic observers never have access to the full condensate state: untracked environmental modes are integrated out, the subsystem picks up an influence functional, a reduced density matrix, and effective Born-type probabilities.
+\item[What this explains.] Why quantum probabilities are operationally unavoidable even though the underlying field theory is globally deterministic.  The relation of ECT to standard QM is the same as the relation of microscopic Newtonian mechanics to classical statistical mechanics: deterministic underneath, probabilistic after coarse-graining.
+\item[Status.] Structural reading (\emph{Level~A} for the determinism of the Euclidean equation; \emph{Level~B} for the reduction chain to operational Born-type probabilities).
+\end{description}
 
-\textbf{The double-slit experiment.}
-In standard QM, $\psi = \psi_1 + \psi_2$ and
-$P = |\psi_1 + \psi_2|^2$.
-In ECT, the interference pattern is interpreted as arising from a
-connected solution of the underlying elliptic boundary-value
-problem, whose effective
-Lorentzian projection contains contributions associated with both
-slit channels.
-The interference is a property of the four-dimensional field
-configuration, not merely of the effective probability-amplitude
-description
-(\emph{Level~A/B}).
-The slit arrangement constrains the families of admissible
-phase-coherent condensate configurations; the detected pattern
-emerges from their coherent recombination.
-On this reading, the wavefunction is the effective envelope of a
-deeper phase-coherent condensate response.
+\paragraph{``Future affects past'' and delayed-choice phenomena.}
+\begin{description}[leftmargin=2.8cm, style=nextline]
+\item[Standard QM.] The theory is formulated as a forward-time Cauchy problem; retrocausal language is not part of the fundamental description and appears only as an interpretive remark about delayed-choice experiments.
+\item[ECT (physical picture).] For an elliptic boundary-value problem, changing the boundary condition on one side of the domain changes the solution throughout the domain, including the part that the Lorentzian reading identifies as ``past''.  This is not retrocausality in the signalling sense; it is the normal behaviour of a boundary-value problem.  Apparent retrocausality reflects the mismatch between global boundary conditions and a local temporal slicing of the reduced Lorentzian branch.
+\item[What this explains.] Why delayed-choice-type phenomena can be accommodated naturally within ECT without invoking mysterious backward influences in Lorentzian time.
+\item[Status.] Structural accommodation (\emph{Level~A/B}); not a completed first-principles derivation of any specific laboratory delayed-choice setup.
+\end{description}
 
-\emph{Loss of interference and decoherence.}
-When which-path information is coupled to the environment, the
-relevant phase coherence is lost: the influence functional from the
-environmental modes suppresses the off-diagonal (cross-slit)
-terms.
-In the ECT language, this is precisely the transition
-$\Gamma_{\rm loop} \ll 1 \to \Gamma_{\rm loop} \gtrsim 1$
-described in the decoherence section---interference vanishes not
-because of a mysterious collapse, but because the
-condensate-plus-environment response ceases to remain
-phase-coherent (\emph{Level~A/B}).
+\paragraph{Unified origin of the coherent and geometric branches.}
+\begin{description}[leftmargin=2.8cm, style=nextline]
+\item[Standard physics.] General relativity describes gravity; quantum mechanics describes microscopic coherence; how the two fit together is the canonical problem of quantum gravity.
+\item[ECT (physical picture).] Both branches arise from the same ordered condensate.  The long-wavelength sector is read geometrically (generalised Einstein equations with orientation-stress corrections); the shorter-wavelength coherent sector is read wave-mechanically (through the Klein--Gordon and Schr\"odinger-type limits).  They are not separate ingredients glued together but two regimes of one mode decomposition around the same ordered background.
+\item[What this explains.] Why it is structurally consistent at all to describe gravity and quantum coherence in one framework without ``quantising gravity'' in the usual sense: ECT embeds both sectors in one common substrate.  Coherent fluctuations back-react on the geometric side through the same condensate dynamics.
+\item[Status.] Core structural claim (\emph{Level~A} for the mode decomposition itself); a completed quantitative back-reaction programme remains open.
+\end{description}
 
-\textbf{The Aharonov--Bohm effect.}
-In standard QM, a charged particle acquires an observable phase
-shift $\Delta\varphi = (e/\hbar)\oint A_\mu\,dx^\mu$ even in
-regions where the electromagnetic field strength vanishes.
-In the observational regime this is the standard $\hbar$-based form;
-within the ECT coherent branch it corresponds to the same
-phase-holonomy structure after the identification $S_0=\hbar$.
-In ECT, this is especially natural: the compact phase $\theta(X)$
-is already a primary structural variable of the coherent branch,
-and the gauge connection $A_A$ arises as its local compensating
-field.
-The AB phase shift is therefore a direct manifestation of a
-nontrivial holonomy of the emergent $U(1)$ connection around a
-closed loop.
-Phase and loops are fundamental ingredients of the ECT quantum
-sector, so the Aharonov--Bohm effect is not an odd addition to the
-theory but exactly the kind of phenomenon one should expect when
-quantum dynamics emerges from phase-sensitive loop
-structure (\emph{Level~B: interpretive}).
+\paragraph{What ECT already reproduces.}
+\begin{enumerate}[label=(\roman*)]
+\item The Schr\"odinger-type coherent sector as the non-relativistic limit of the ordered branch;
+\item the Klein--Gordon sector from the ordered-branch equation after the identification $t = w/c_*$;
+\item uncertainty relations together with a structural route to phase quantisation through phase compactness, with the identification of the universal action scale $S_0$ with $\hbar$ remaining a Level-B matching rather than a fully closed Level-A theorem;
+\item decoherence and the quantum--classical boundary through the influence-functional formalism;
+\item a structural Euclidean-to-Lorentzian reading of measurement as a regime transition, while a complete measurement theorem remains open;
+\item a structural route linking spin-sector discreteness to the residual symmetry and topology of the ordered branch after $O(4)\to O(3)$, rather than a fully closed derivation of the complete spin sector;
+\item the Principle of Euclidean Stationarity, which selects the persistent sector of admissible configurations;
+\item a structural derivation route for gravitational decoherence from the condensate as a universal bath, without inserting the Di\'osi--Penrose formula as an independent postulate;
+\item a common Euclidean structural basis for tunnelling and entanglement, understood at present as a structural bridge based on Euclidean connectivity rather than as an identity theorem reducing one phenomenon to the other;
+\item cross-sector persistence of a common action scale $S_0$ across the effective sectors discussed in Part~III.
+\end{enumerate}
 
-\textbf{Measurement.} In standard QM, collapse is an extra postulate. In ECT, the detector belongs to the full boundary-value problem. At the reduced-description level, effective collapse is the subsystem manifestation of a Euclidean-to-Lorentzian transition under strong environmental locking ($\Gamma_{\rm loop} \gtrsim 1$). Multiple winding sectors coexist in the coherent regime; environmental coupling drives decoherence; when $\Gamma_{\rm loop} \gg 1$, interference is suppressed and a single classical outcome is selected (\emph{Level~A/B}).
-
-\textbf{Determinism.} The fundamental Euclidean equation is deterministic: one specifies boundary conditions and obtains one global field configuration. No probabilities, no collapse, no stochasticity at the deepest level. Statistical quantum mechanics appears because realistic observers never have access to the full condensate state. When environmental modes are integrated out, the subsystem acquires influence functionals, reduced density matrices, and effective probabilities. ECT stands to standard QM as microscopic Newtonian mechanics stands to statistical mechanics: deterministic underneath, probabilistic after coarse-graining (\emph{Level~A}).
-
-\textbf{``Future affects past.''} In standard QM, this does not arise because the theory is formulated as a forward-time Cauchy problem. In ECT, it is natural: for an elliptic equation, changing the boundary condition on one side changes the solution throughout the domain, including what the Lorentzian reading would call the ``past'' side. This is the structural reason why delayed-choice phenomena are naturally accommodated (\emph{Level~A/B}).
-
-\textbf{Unified origin of coherent and geometric branches.} A central structural claim of ECT: gravity and quantum coherence are not separate ingredients forced together, but two sectors of one ordered condensate. The long-wavelength sector is read geometrically (gravity); the coherent shorter-wavelength sector is read wave-mechanically (quantum). This is not ad hoc stitching --- it follows from the mode decomposition of the same condensate around the same ordered background (\emph{Level~A}).
-
-\textbf{What ECT already reproduces:} (i)~Schr\"odinger equation as non-relativistic limit; (ii)~Klein--Gordon from ordered branch; (iii)~action quantisation through $S_0$ and phase compactness; (iv)~decoherence and quantum--classical boundary; (v)~Euclidean-to-Lorentzian measurement reading; (vi)~spin discretisation from $O(3)$; (vii)~PES for persistent-state selection; (viii)~gravitational decoherence; (ix)~unified tunnelling and entanglement; (x)~cross-sector $S_0$ universality.
-
-\textbf{What remains open:} Born rule from first principles; complete measurement theorem; Bell correlators from condensate theory; three generations; $\alpha_{\rm fs} = 1/137$; full Yukawa hierarchy. These are open derivational targets, not failures of the framework.
+\paragraph{What remains open.}
+The Born rule from first principles beyond the present closures; a complete theorem of measurement beyond the current $\Gamma_{\rm loop}$-based framework; Bell correlators directly from the condensate theory beyond toy visibility proxies; the detailed origin of three generations; the exact value of $\alpha_{\rm fs}=1/137$; the full Yukawa hierarchy.  These are presented as open derivational targets, not as failures of the framework.
 
 
 \section{Hilbert-space structure from reflection positivity}
