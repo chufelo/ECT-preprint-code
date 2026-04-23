@@ -40719,6 +40719,44 @@ interaction.
 \subsubsection*{Primary completion: a local complex rank-3 internal
 module with $SU(3)$-structure}
 
+\paragraph{Formal statement as a reverse-engineered postulate.}
+\textit{The content that follows is collected below as a formal
+reverse-engineered postulate~P7, distinct from the primary
+postulates~P1--P6 and subject to the methodological rules
+of~\S\ref{sec:reverse_methodology}.  P7 supplies the minimal
+geometric structure required for consistency of ECT with an exact
+unbroken colour sector, given the obstruction theorems established
+above.}
+
+\begin{quote}
+\textbf{Postulate~P7 (internal colour module of the medium).}\quad
+In addition to the primary postulates~P1--P6, the ordered medium
+carries at each spacetime point a local complex internal module of
+rank three,
+$\mathcal{C}_x\simeq\mathbb{C}^3$,
+equipped with
+(i)~a Hermitian form $h$ on~$\mathcal{C}_x$, and
+(ii)~a fixed nonvanishing complex volume form
+$\Omega\in\Lambda^3\mathcal{C}_x^\ast$.
+The ordered-branch condensate fields $\phi$ and $n^\mu$ transform
+trivially under $\mathcal{C}_x$---i.e.\ they are internal singlets.
+Physically meaningless local redefinitions of the internal complex
+frame are precisely those preserving both $h$ and $\Omega$; the
+resulting local frame-redundancy group is~$SU(3)$.
+\label{postulate:P7}
+\end{quote}
+
+\paragraph{Status of~P7.}
+P7 is a reverse-engineered structural postulate, not a derivation from
+P1--P6.  It is introduced here because the obstruction theorems above
+demonstrate that no extension of P1--P6 internal to the condensate
+branch can accommodate exact $SU(3)$, while an external internal
+module equipped with the data $(h,\Omega)$ does.  The remainder of
+this section, and Sections~\ref{sec:min_colour_eft}--\ref{sec:part4_status}
+of Part~IV, unpack the physical meaning and structural consequences
+of~P7.  The status of each consequence (Level~A, B, or~C) is indicated
+locally.
+
 \paragraph{Physical meaning.}
 The most economical candidate completion assumes that, in addition to
 the singlet ordered branch, the medium carries at each point a local
@@ -41186,14 +41224,173 @@ sterile-neutrino status.
 \label{sec:su3_closure_table}
 % ============================================================
 
-\textit{Status: placeholder for forthcoming development.}
+\textit{Status: Level~B bookkeeping.  This section does not
+add new derivations; it collects and reclassifies SU(3)-dependent
+questions raised in Parts~I--III in the light of the P7 completion
+layer and the anomaly constraints of~\S\ref{sec:anomaly_constraints}.}
 
-This section will collect, in tabular form, questions and programme
-items in Parts~I--III whose status was conditional on the
-unresolved exact-colour sector. For each, the table will record:
-where the issue was raised, what aspect was Open or conditional, how
-Part~IV clarifies or closes it via the P7 completion layer and the
-anomaly constraints above, and the residual status.
+\paragraph{Purpose.}
+Several questions and programme items in Parts~I--III were left with
+a status conditional on the unresolved exact-colour sector.
+Part~IV formalises P7 and the admissible EFT class, so those items
+can now be reclassified.  The table below records, for each item:
+(i)~where the issue was raised;
+(ii)~its status before Part~IV;
+(iii)~what Part~IV adds;
+(iv)~its status after Part~IV, using a restricted label set.
+
+\paragraph{Status label convention.}
+\emph{Closed structurally.}\ The specific structural question is
+resolved at Level~A or~B within reverse analysis (a full dynamical
+derivation may still be open).
+\emph{Sharpened.}\ A Level~B or~C route existed before; Part~IV adds
+constraints that make the formulation more precise without deriving
+the item.
+\emph{Reframed.}\ The item was implicitly present or ill-posed before
+Part~IV; it is now explicitly posed or moved to a different
+architectural layer.
+\emph{Still open.}\ No substantive change; retained for completeness.
+
+\paragraph{Coverage table.}
+
+\needspace{4\baselineskip}
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{@{}p{3.3cm}p{3.1cm}p{4.6cm}p{2.3cm}@{}}
+\caption{Coverage of SU(3)-dependent questions from Parts~I--III after
+the Part~IV completion layer.}
+\label{tab:su3_coverage}\\
+\toprule
+Issue & Status before Part~IV & What Part~IV adds & Status after Part~IV \\
+\midrule
+\endfirsthead
+\toprule
+Issue & Status before Part~IV & What Part~IV adds & Status after Part~IV \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Exact colour completion of the medium
+  (OP-GUT1; \S\ref{sec:colour_completion})
+  & Missing; reverse-engineered requirement
+  & P7 formalised as reverse-engineered postulate
+    (\S\ref{sec:colour_completion}); three obstruction theorems;
+    rank-3 complex internal module with Hermitian form and fixed
+    complex volume form
+  & Closed structurally \\
+Minimal admissible colour EFT
+  (new layer; \S\ref{sec:min_colour_eft})
+  & Not formulated
+  & Minimal operator class $Z(\phi)F^2 + Y(\phi)(n\!\cdot\!F)^2 +
+    \Theta(\phi)F\tilde F$; no gluon mass; no Higgs-colour route;
+    oscillator tower $\ne$ physical colour spectrum;
+    background-level triviality result
+  & Closed structurally \\
+Anomaly architecture of emergent chiral gauge sector
+  (\S\ref{sec:anomaly_architecture}; OP-GUT6~family)
+  & EW anomaly constraints inherited at ordered-branch level (B);
+    full SM closure conditional on colour
+  & P7-compatible restatement; SU(3)$^3$ cancellation; Witten global
+    anomaly consistent with three generations; mixed-anomaly layer
+    (\S\ref{sec:anomaly_constraints})
+  & Sharpened \\
+Chirality and $SU(2)_L$ selection
+  (\S\ref{sec:chirality})
+  & Level~B structural possibility via $Spin(4)\simeq SU(2)_L\times SU(2)_R$
+  & Compatibility with exact colour confirmed; anomaly-consistent
+    chiral extension identified as natural candidate; deepening via
+    P7+$n^\mu$ flagged as directional item~D1
+    (\S\ref{sec:part4_status})
+  & Sharpened \\
+Three fermion generations
+  (\S\ref{sec:flavour_architecture}; par.~\ref{par:three_generations};
+  App.~\ref{app:open_microphysics})
+  & Spectral route, $y\sim 1.3$--$2.0$; Level~B/C; strict derivation
+    open (OP-generations)
+  & Anomaly consistency for $N_{\rm gen}=3$ (Witten even-doublet
+    count); rank-3 structural pointer flagged as directional item~D2
+  & Sharpened \\
+Matter representations (OP-GUT2)
+  & Open
+  & Admissible matter class narrowed by $SU(3)^3$ and mixed-anomaly
+    cancellation requirements
+  & Sharpened \\
+Charge assignments / hypercharges
+  (OP-GUT3b)
+  & Partial (charge lattice established, Level~A);
+    observed assignments Open
+  & Hypercharges fixed up to normalisation by anomaly cancellation
+    once the one-generation matter content is assumed
+  & Sharpened \\
+Strong-sector constants
+  $g_s$, $\alpha_s(M_Z)$, $\Lambda_{\rm QCD}$ (OP-GUT4)
+  & Open; no colour group to carry them
+  & Inherited from standard QCD phenomenology within the admissible
+    EFT class; background-level triviality shows constant-coupling
+    ECT adds no predictive content beyond matching redefinition
+  & Reframed \\
+Confinement and glueball spectrum
+  & Inaccessible without colour group; naive oscillator-tower
+    interpretation of $m_n=n\,\omega$ circulated informally
+  & Theorem on oscillator tower $\ne$ physical colour spectrum;
+    strong-sector gap must arise nonperturbatively;
+    confinement inherited, not derived
+  & Reframed \\
+Strong CP problem ($\theta_{\rm QCD}$)
+  & Not explicitly posed in the ECT framework
+  & Reopened through $\Theta(\phi)F\tilde F$ with three honestly
+    scoped resolution routes R1/R2/R3
+    (\S\ref{sec:topological_strong_cp})
+  & Reframed \\
+Proton stability and baryon number
+  (\S\ref{sec:proton_stability}; OP-proton)
+  & Three selection-rule patterns (I/II/III); conditional on
+    gauge/flavour completion
+  & Baryon number role clarified as selection rule compatible with
+    Harlow--Ooguri; framework placed in its architectural layer
+  & Sharpened \\
+Neutrino sector; sterile status
+  (\S\ref{sec:neutrino_particles})
+  & Level~B; sterile right-handed singlet route admissible
+  & Anomaly cancellation allows a singlet without disturbing balance;
+    required/permitted/forbidden status flagged as Open~(O8)
+  & Sharpened \\
+Global quotient $\bigl(SU(3)\times SU(2)\times U(1)\bigr)/\Gamma$
+  & Implicit; not explicitly raised
+  & Explicitly flagged as Open~(O12): local gauge structure does not
+    determine the global quotient
+  & Reframed \\
+Yang--Mills existence and mass gap (Clay sense)
+  & Not addressed
+  & Explicitly identified as structurally a different problem
+    (pure YM on $\mathbb{R}^4$ with fundamental Poincaré invariance);
+    not addressed by Part~IV
+  & Reframed \\
+\bottomrule
+\end{longtable}
+
+\paragraph{Pattern.}
+The table shows a consistent pattern.  Items that were reverse-engineered
+consistency requirements (colour completion; admissible EFT class) are
+\emph{closed structurally} at the level that reverse analysis can
+achieve.  Items that already had a forward Level~B/C route in
+Parts~I--III (chirality, three generations, anomaly architecture,
+matter representations, hypercharges, proton stability, neutrino
+sector) are \emph{sharpened}: their precise formulation gains explicit
+consistency constraints, but Part~IV does not turn them into
+derivations.  Items that were implicit or ill-posed within ECT are
+\emph{reframed}: they are now explicitly on the ledger.  Items with no
+structural content addressable by reverse analysis (strong-sector
+quantitative constants, confinement, glueball spectrum) remain
+inherited from standard QCD phenomenology rather than derived.
+
+\paragraph{What the table is not.}
+The table is a bookkeeping device, not a results table.  No row
+represents a new Level~A derivation.  Rows labelled ``Closed
+structurally'' record only that the \emph{structural} consistency
+question has been resolved at the reverse-analysis level; the
+corresponding \emph{dynamical} questions (confinement, $\Lambda_{\rm QCD}$,
+bound-state spectrum) remain on the Open list
+of~\S\ref{sec:part4_status}.
 
 % ============================================================
 \section{Proton stability and baryon number as a UV discriminant}
