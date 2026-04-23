@@ -27627,6 +27627,14 @@ extremal action and saddle dominance, and
 Section~\ref{sec:qs_conservation} shows how the conserved structures of
 the variational foundation are inherited by the coherent sector.
 
+The full logical hierarchy of effective equations in ECT---from the
+fundamental Euclidean condensate equation through the ordered-branch
+equation to the relativistic Klein--Gordon sector and the
+nonrelativistic Schr\"odinger limit---together with the detailed
+structural comparison with the standard quantum formalism, is
+collected as the capstone of Part~III in
+Section~\ref{sec:qm_capstone}.
+
 \subsection{Wave dynamics, real-time parametrisation, and
   Schr\"odinger-type evolution}
 \label{sec:qs_wave}
@@ -40460,8 +40468,954 @@ correlation to classical event, and decoherence is medium-driven
 branch selection.
 
 Having outlined the intended reconstruction logic of the quantum
-sector, it is important to state explicitly what classes of future
-results would directly threaten this particular ECT route.
+sector, it is useful to set out the structural comparison between
+ECT and the standard quantum formalism in more detail, in a form
+directly parallel to the status map above.
+
+% ==============================================================
+\subsection{ECT as a foundational framework for quantum mechanics:
+structural comparison with the standard formalism}
+\label{sec:qm_capstone}
+% ==============================================================
+
+\textit{Status: comparative and pedagogical synthesis of results
+established in the preceding sections of Part~III.  No new physical
+results are introduced here.  The role of this subsection is to
+organise the structural comparison between ECT and the standard
+quantum formalism along three explicit axes: ontology of the
+primary object, type of mathematical problem, and origin of the
+statistical description.  The formal status ledger of the same
+material, organised by derivational level and keyed to the
+open-problem labels, is given separately in
+Section~\ref{sec:qs_minimal_core}; current limitations of the
+formulation are collected in Section~\ref{sec:limitations}.}
+
+Standard quantum mechanics is extraordinarily successful as an
+effective predictive formalism.  It begins, however, from postulated
+structures: a complex amplitude, Hilbert-space evolution, a
+probability rule for observed outcomes, and canonical commutation
+relations.  ECT asks a different question.  It does not begin by
+asking how to compute quantum predictions more efficiently, but why
+the quantum formalism takes the shape it does at all.  In this sense
+the relation between ECT and standard quantum mechanics is not one
+of direct replacement but of explanatory depth: standard quantum
+mechanics describes the effective coherent sector, whereas ECT
+attempts to identify the deeper condensate structure from which that
+sector emerges.
+
+% ------------------------------------------------------------------
+\subsubsection*{Two different questions answered by two theories}
+\label{sec:qm_capstone_two_questions}
+% ------------------------------------------------------------------
+
+The architectural contrast between the two frameworks is best
+introduced by the primary question each of them answers.  Standard
+quantum mechanics answers \emph{how to calculate} the statistical
+predictions of a wide class of experiments; its axioms are adopted
+precisely because they are operationally successful.  ECT asks
+\emph{why} the quantum rules take the form they do, treating the
+axioms of standard quantum mechanics not as foundational primitives
+but as reconstruction targets of a deeper ordered-medium dynamics.
+Table~\ref{tab:qm_capstone_two_questions} summarises the resulting
+contrast along the main structural axes.
+
+{\small
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{@{}p{3.3cm}p{5.3cm}p{5.3cm}@{}}
+\caption{Two questions, two frameworks.  Each row records the
+fundamental ingredient on which the two theories differ at the
+architectural level; detailed cross-references to Part~III are
+given in the concept-mapping
+Table~\ref{tab:qm_capstone_concept_mapping} below.}
+\label{tab:qm_capstone_two_questions}\\
+\toprule
+Aspect & Standard quantum mechanics & Euclidean Condensate Theory \\
+\midrule
+\endfirsthead
+\toprule
+Aspect & Standard quantum mechanics & Euclidean Condensate Theory \\
+\midrule
+\endhead
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
+Primary question & How to compute observed outcomes efficiently
+  & Why the quantum formalism has the structure it has \\
+Status of axioms & Foundational postulates (Hilbert space, Born
+  rule, canonical commutators)
+  & Reconstruction targets from condensate dynamics \\
+Primary physical object & Complex amplitude $\psi(x,t)$
+  & Real condensate configuration $\Phi(X)$ \\
+Arena & $3{+}1$ Lorentzian spacetime, assumed as background
+  & $4$D Euclidean manifold; Lorentzian branch emergent \\
+Role of time & Fundamental external parameter
+  & Emergent after $O(4)\!\to\!O(3)$ symmetry breaking \\
+Role of causal speed & Speed of light postulated
+  & Effective $c_*$ fixed by condensate matching
+    ($c_*^2=\beta/(\alpha-\beta)$ in the ordered branch) \\
+Role of $\hbar$ & Fundamental universal constant
+  & Action scale $S_0$ tied to phase compactness
+    (identification with $\hbar$: Level-B matching,
+    see \S\ref{sec:qs_hbar}) \\
+Role of probability & Primitive (Born rule)
+  & Reduced-description phenomenon of a globally fixed
+    configuration \\
+Causal structure & Built in from the start
+  & Emergent on the ordered branch for $\alpha>\beta$ \\
+Type of mathematical problem & Forward-time Cauchy problem for
+  amplitude
+  & Global boundary-value problem for a physical field \\
+\end{longtable}
+}
+
+The contrast summarised above should not be read as an argument
+that standard quantum mechanics is ``wrong''.  Standard quantum
+mechanics remains the appropriate effective description for
+laboratory subsystems; ECT does not compete with it as a
+calculational tool.  Rather, the table records that ECT is not
+merely a reformulation of the same question in different language:
+the two frameworks ask, and answer, logically different questions.
+The remainder of this subsection unpacks this contrast
+systematically.
+
+% ------------------------------------------------------------------
+\subsubsection*{Hierarchy of effective equations}
+\label{sec:qm_capstone_hierarchy}
+% ------------------------------------------------------------------
+
+ECT does not merely reproduce the standard equations of quantum
+mechanics; it provides a \emph{hierarchy} of more fundamental
+equations of which the usual quantum equations are limiting cases.
+The hierarchy is summarised in
+Fig.~\ref{fig:equation_hierarchy} and
+Table~\ref{tab:qm_capstone_hierarchy}.  Each level is an already
+established sector of Part~III; the role of the hierarchy is to
+display their logical organisation in one place.
+
+\paragraph{Level~0: Euclidean condensate equation.}
+At the most fundamental level one has the Euclidean field equation
+\begin{equation}
+  \label{eq:ect_euclidean_fundamental}
+  \delta^{AB}\partial_A\partial_B \Phi - V'(\Phi)=0,
+\end{equation}
+which is the Euler--Lagrange equation of the bare Euclidean
+micro-action~\eqref{eq:ECT_action}; it is written here only to
+display the logical hierarchy, not as a new independent postulate.
+It is a four-dimensional elliptic equation for the condensate field
+$\Phi$.  At this level there is no distinguished time coordinate, no
+$\hbar$, and no built-in probabilistic interpretation.  All four
+coordinates are spatial from the Euclidean point of view, and
+solutions are determined by boundary data on the full
+four-dimensional domain.
+
+\paragraph{Level~1: ordered-branch equation after SSB.}
+After spontaneous symmetry breaking $O(4)\to O(3)$, the ordered
+branch is governed by an effective kinetic tensor $K^{AB}$, so that
+the relevant fluctuation equation takes the form
+\begin{equation}
+  \label{eq:ect_ordered_branch_wave}
+  K^{AB}\partial_A\partial_B\chi + m_\sigma^2\chi = 0.
+\end{equation}
+In the ordered branch the kinetic tensor is not arbitrary but is
+fixed, within the present EFT closure, by the unique form
+\begin{equation}
+  K^{AB}=\beta\,\delta^{AB}-\alpha\,n^A n^B,
+\end{equation}
+as established earlier in the Foundations part (see in particular
+Eq.~\eqref{eq:ordered_branch_euclidean_eft} and the subsequent
+uniqueness discussion).  For a homogeneous background with
+$n^A=\delta^A_w$, this gives
+$K^{AB}=\mathrm{diag}(\beta,\beta,\beta,\beta-\alpha)$,
+so that the Lorentzian regime is controlled by the sign of
+$\beta-\alpha$, equivalently by
+\begin{equation}
+  c_*^2=\frac{\beta}{\alpha-\beta}.
+\end{equation}
+Thus $\alpha>\beta$ corresponds to the Lorentzian ordered branch,
+$\alpha<\beta$ to the Euclidean side, and $\alpha=\beta$ to the
+singular boundary between them.  This level is already more general
+than standard quantum mechanics because it contains both Euclidean
+and Lorentzian sectors within the same dynamical framework.
+
+\paragraph{Level~2: relativistic Lorentzian wave equation.}
+In the ordered Lorentzian branch ($\alpha>\beta$), after the real
+parametrisation $t=w/c_*$, the fluctuation equation takes the
+relativistic Klein--Gordon form~\eqref{eq:KG}
+(see Section~\ref{sec:qs_wave_kinematics} for the derivation).
+A separate formal continuation $w_E\to\pm i c_* t$ may still be
+used when relating Euclidean coherent amplitudes to Lorentzian
+phase evolution; the first step is the derivation of real-time
+dynamics in the ordered branch, while the second is only a
+translation of Euclidean coherent amplitudes into Lorentzian phase
+language.
+
+\paragraph{Level~3: nonrelativistic Schr\"odinger-type limit.}
+Finally, in the nonrelativistic limit (extraction of the
+rest-energy phase $\psi = e^{-im c_*^2 t/\hbar}\chi$ and neglect of
+terms of order $v^2/c_*^2$) one obtains the Schr\"odinger-type
+coherent equation~\eqref{eq:qs_schrodinger_type}, with its
+identification with the standard Schr\"odinger equation of textbook
+quantum mechanics remaining a Level-B reconstruction step
+(see~\S\ref{sec:qs_wave}).  The usual Schr\"odinger equation is
+therefore not taken as fundamental in ECT: it is the narrowest
+endpoint of a four-level hierarchy.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.55\textwidth]{figures/fig_equation_hierarchy.pdf}
+\caption{Logical hierarchy of ECT equations.  The Schr\"odinger
+equation (Level~3) appears as the narrowest low-energy descendant
+of a deeper chain consisting of the Euclidean condensate equation
+(Level~0), the ordered-branch field equation after symmetry
+breaking (Level~1), and the relativistic Klein--Gordon equation in
+the ordered branch (Level~2).  The downward arrows denote distinct
+reduction steps: $O(4)\to O(3)$ symmetry breaking, real
+ordered-branch parametrisation $t=w/c_*$, and the nonrelativistic
+limit.  The figure summarises the logical organisation of equations
+discussed in the text; it does not assert that all steps are
+established at the same derivational level.  The displayed
+equations are representative schematic forms; they are not a claim
+that all intermediate reductions are exhausted by the boxed
+expressions alone.}
+\label{fig:equation_hierarchy}
+\end{figure}
+
+{\small
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{@{}p{0.7cm}p{3.3cm}p{2.3cm}p{2.3cm}p{2.3cm}p{2.3cm}@{}}
+\caption{Hierarchy of effective equations in ECT, together with
+the type of problem they define, the data needed to solve them, and
+their standard-QM counterpart.}
+\label{tab:qm_capstone_hierarchy}\\
+\toprule
+Lv. & Equation & Regime & Mathematical type & Data &
+  Standard-QM analogue \\
+\midrule
+\endfirsthead
+\toprule
+Lv. & Equation & Regime & Mathematical type & Data &
+  Standard-QM analogue \\
+\midrule
+\endhead
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
+0 & $\delta^{AB}\partial_A\partial_B\Phi=V'(\Phi)$
+  & Pre-SSB, full 4D Euclidean
+  & Elliptic
+  & Global BVP on $\partial\mathcal{M}$
+  & none \\
+1 & $K^{AB}\partial_A\partial_B\chi+m_\sigma^2\chi=0$,
+    $K^{AB}=\beta\delta^{AB}-\alpha n^A n^B$
+  & Post-SSB, both signatures
+  & Elliptic for $\alpha<\beta$, hyperbolic for $\alpha>\beta$
+  & BVP or IVP depending on regime
+  & none \\
+2 & $(\Box-m^2)\chi=0$, $t=w/c_*$
+  & Ordered Lorentzian branch ($\alpha>\beta$)
+  & Hyperbolic
+  & Cauchy data on $t=\mathrm{const}$
+  & Klein--Gordon \\
+3 & $i\hbar\,\partial_t\psi=H\psi$
+  & Nonrelativistic limit
+  & Parabolic/effective
+  & Cauchy data at $t=0$
+  & Schr\"odinger-type sector \\
+\end{longtable}
+}
+
+% ------------------------------------------------------------------
+\subsubsection*{What the ordered-branch equation contains beyond
+Schr\"odinger}
+\label{sec:qm_capstone_beyond_schr}
+% ------------------------------------------------------------------
+
+The ordered-branch equation~\eqref{eq:ect_ordered_branch_wave} is
+strictly more general than the Schr\"odinger-type coherent
+equation~\eqref{eq:qs_schrodinger_type}, in several essential
+ways.  The following items are not new physical results; they are
+collected here because they are direct structural consequences of
+the derivations carried out earlier in Part~III.
+
+\begin{enumerate}[label=(\roman*)]
+\item \emph{Both signatures in one equation.}  For $\alpha<\beta$,
+the effective equation remains elliptic and describes the Euclidean
+coherent sector, where there is no causal ordering and solutions
+depend on boundary data from the full domain.  For $\alpha>\beta$,
+the equation becomes hyperbolic and supports causal propagation.
+Standard Schr\"odinger dynamics describes only the already-selected
+Lorentzian side, and only in its nonrelativistic limit.
+\item \emph{Relativistic parent.}  Level~2 is manifestly a
+Klein--Gordon-type relativistic sector, not a nonrelativistic
+residue.  The nonrelativistic limit appears only at Level~3.
+\item \emph{Manifest role of $c_*$.}  The causal cone of Level~2 is
+fixed by the condensate stiffness through
+$c_*^2=\beta/(\alpha-\beta)$.  In standard quantum mechanics the
+speed of light is an external input.
+\item \emph{Manifest role of $S_0$.}  The action scale $S_0$ enters
+the ordered-branch description through the compact-phase quantisation
+condition $\oint dw\,p_w=2\pi S_0\,n$
+(see Section~\ref{sec:qs_hbar}).  Identification with $\hbar$ is a
+Level-B matching; the quantisation structure itself is already
+Level~A.
+\item \emph{Gravitational coupling.}  The same ordered background
+that fixes the coherent wave equation also fixes the
+long-wavelength geometric sector discussed in Part~II.  Coherent
+propagation and emergent geometry are not independent sectors but
+two complementary descriptions of the same ordered condensate.
+\item \emph{New structural phenomena.}  The ordered-branch equation
+naturally accommodates two-sided boundary dependence of coherent
+amplitudes, a Euclidean-to-Lorentzian reading of measurement, a
+gravitational decoherence route from condensate distinguishability,
+and a structural bridge between tunnelling and entanglement through
+Euclidean connectivity.  None of these is part of the Schr\"odinger
+sector.
+\end{enumerate}
+
+The upshot of items~(i)--(vi) is that the ordered-branch equation
+is the correct structural parent for both coherent quantum dynamics
+and the emergent Lorentzian sector; Schr\"odinger dynamics is the
+narrowest of its descendants, not its starting point.
+
+% ------------------------------------------------------------------
+\subsubsection*{Ontological comparison: $\Phi$ versus $\psi$}
+\label{sec:qm_capstone_ontology}
+% ------------------------------------------------------------------
+
+The difference between standard quantum mechanics and ECT is not
+only in the type of equation each uses, but also in the ontological
+status of the primary object.  Standard quantum mechanics builds
+its predictions on the complex amplitude $\psi(x,t)$, which is not
+itself a physical field in ordinary spacetime but a mathematical
+object whose squared modulus provides probability densities for
+measurement outcomes.  ECT, by contrast, builds its predictions on
+a real physical condensate configuration $\Phi(X)$ on the
+Euclidean four-manifold; this configuration is the underlying
+physical medium of the theory, and amplitude-level quantum
+descriptions arise only after reduction to the appropriate
+effective branch and subsystem.  Table~\ref{tab:qm_capstone_ontology}
+summarises this contrast.
+
+{\small
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{@{}p{3.6cm}p{5.2cm}p{5.2cm}@{}}
+\caption{Ontological status of the primary object in the two
+frameworks.}
+\label{tab:qm_capstone_ontology}\\
+\toprule
+Aspect & $\psi$ in standard QM & $\Phi$ in ECT \\
+\midrule
+\endfirsthead
+\toprule
+Aspect & $\psi$ in standard QM & $\Phi$ in ECT \\
+\midrule
+\endhead
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
+Type of object & Complex-valued amplitude
+  & Real scalar condensate field \\
+Physical interpretation & Not a physical field on spacetime;
+  a mathematical object used to compute probabilities
+  & Physical configuration of the underlying ordered medium \\
+Arena & $3{+}1$ Lorentzian spacetime, taken as a background
+  & $4$D Euclidean manifold; Lorentzian spacetime is emergent \\
+Role of time & Explicit parameter in the evolution equation
+  & Absent at Level~0; emerges only in the ordered branch \\
+How it is fixed & Initial data at $t=0$, evolved forward
+  & Boundary data on $\partial\mathcal{M}$ in the full 4D domain \\
+Role in measurement & Collapses/projects onto an eigenbasis
+  & Does not collapse; measurement reads as an
+    effective-branch transition (see below) \\
+Access by observer & Direct calculational object
+  & Full condensate configuration is rarely accessible;
+    subsystem access only \\
+\end{longtable}
+}
+
+Formally, the key statement is:
+
+\begin{quote}
+\emph{In standard quantum mechanics the primary formal object is
+the probability amplitude $\psi$.  In ECT the deeper object is not
+an amplitude on spacetime but a physical condensate configuration
+$\Phi(X)$ on the Euclidean manifold, from which amplitude-level
+quantum descriptions arise only after reduction to the appropriate
+effective branch and subsystem.}
+\end{quote}
+
+This ontological difference is a precondition for everything that
+follows in this subsection.  In particular, once the primary object
+is $\Phi(X)$ rather than $\psi$, it is natural to ask what type of
+mathematical problem $\Phi(X)$ solves, how probabilistic descriptions
+arise from it, and how the standard quantum phenomena are recast in
+the new language.
+
+% ------------------------------------------------------------------
+\subsubsection*{Epistemological comparison: boundary-value versus
+Cauchy problem}
+\label{sec:qm_capstone_epistemology}
+% ------------------------------------------------------------------
+
+Once the primary object is fixed ontologically, the form of the
+mathematical problem follows.  Standard quantum mechanics formulates
+the dynamics of $\psi$ as a forward-time Cauchy problem: one
+specifies $\psi(x,0)$ and evolves it forward to obtain $\psi(x,t)$.
+In ECT the fundamental
+equation~\eqref{eq:ect_euclidean_fundamental} is solved instead as a
+\emph{global boundary-value problem}: one specifies boundary data on
+the full four-dimensional domain, and the solution $\Phi(X)$ is the
+configuration of a real physical condensate field throughout the
+Euclidean four-space.  There is no preferred direction of evolution;
+the solution is determined globally, much as the solution of
+Laplace's equation inside a region is fixed by boundary values on
+its surface.  Table~\ref{tab:qm_capstone_bvp_vs_cauchy} summarises
+the contrast.
+
+{\small
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{@{}p{3.3cm}p{5.3cm}p{5.3cm}@{}}
+\caption{Boundary-value versus Cauchy description of quantum
+dynamics in ECT and standard quantum mechanics.}
+\label{tab:qm_capstone_bvp_vs_cauchy}\\
+\toprule
+Aspect & Standard quantum mechanics & Euclidean Condensate Theory \\
+\midrule
+\endfirsthead
+\toprule
+Aspect & Standard quantum mechanics & Euclidean Condensate Theory \\
+\midrule
+\endhead
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
+Mathematical type & Parabolic Schr\"odinger equation; hyperbolic
+  Klein--Gordon equation
+  & Elliptic Euclidean condensate equation
+    (Level~0); signature switches within Level~1 \\
+Problem type & Cauchy initial-value problem
+  & Global boundary-value problem \\
+Data & Initial amplitude $\psi(x,0)$
+  & Boundary data on $\partial\mathcal{M}$ \\
+Domain & $3{+}1$ spacetime, evolved forward in $t$
+  & Full $4$D Euclidean manifold, solved globally \\
+Notion of determinism & Unitary forward evolution of amplitudes
+  & Global fixation of the configuration $\Phi(X)$ \\
+What counts as prediction & Probabilities $|\psi|^2$ at later times
+  & Subsystem observables extracted from $\Phi(X)$ \\
+Why probabilities appear & Postulated (Born rule) as an axiom
+  & Reduced-description phenomenon after partial access and
+    coarse-graining \\
+Role of future boundary data & None (initial-value problem)
+  & Co-determines $\Phi(X)$ together with past boundary data \\
+\end{longtable}
+}
+
+Several consequences follow from this difference.
+
+\paragraph{Origin of probabilities.}
+In standard quantum mechanics, $P=|\psi|^2$ is postulated.  In ECT,
+probabilities arise only after incomplete description.  If one does
+not track all $\sim\!10^{23}$ modes of the condensate and keeps only
+a subsystem, then the environmental modes are integrated out, an
+influence functional is produced
+(see Section~\ref{sec:influence_functional}), and an effective
+probabilistic description emerges.  At the fundamental level,
+however, $\Phi(X)$ is fixed by the full boundary data.
+
+\paragraph{What fixes a measurement outcome.}
+In standard quantum mechanics, collapse is an extra postulate.  In
+ECT, the detector is treated as part of the full physical system
+and therefore belongs, in principle, to the global boundary-value
+problem.  At the reduced-description level, effective collapse is
+then read as the subsystem manifestation of a
+Euclidean-to-Lorentzian transition under strong environmental
+locking~(\S\ref{sec:pes_measurement}).  This should be understood
+as a structural reading of measurement, not as a completed
+microscopic solution of realistic detector dynamics from the bare
+condensate action.
+
+\paragraph{Future boundary data and apparent retrocausality.}
+In standard quantum mechanics, forward time evolution makes
+``future affects past'' a non-statement at the fundamental level.
+In ECT it is natural: for an elliptic equation, changing the
+boundary condition on one side changes the solution throughout the
+region, including what the Lorentzian reading would call the
+``past'' side.  The full solution is constrained globally; apparent
+retrocausality reflects the mismatch between global boundary
+conditions and a local temporal slicing of the reduced Lorentzian
+branch.  This is the structural reason why delayed-choice-type
+phenomena can be accommodated naturally in ECT; it is not, by
+itself, a completed first-principles derivation of a laboratory
+delayed-choice setup.
+
+\paragraph{Determinism is not the same as practical predictability.}
+The above underlying determinism must not be confused with
+practical predictability.  ECT does not imply that observers can
+compute all outcomes from accessible laboratory data.  On the
+contrary, once the relevant subsystem is extracted from the full
+condensate configuration and the untracked modes are coarse-grained
+over, an effective statistical description becomes unavoidable.
+The claim is therefore not that quantum probabilities disappear
+operationally, but that they need not be fundamental at the deepest
+level.  This distinction is the analogue of the distinction between
+microscopic Newtonian determinism and the practical necessity of
+statistical mechanics.
+
+% ------------------------------------------------------------------
+\subsubsection*{Origin of the statistical description}
+\label{sec:qm_capstone_statistics_origin}
+% ------------------------------------------------------------------
+
+The ontological and epistemological comparisons above converge on a
+single explanatory axis that deserves its own statement.  In
+standard quantum mechanics the statistical description is a
+primitive of the theory: the Born rule is one of its founding
+axioms.  In ECT the statistical description is not a primitive but
+a consequence of how observers access the condensate.  Standard
+quantum mechanics is statistical not because the underlying physics
+must itself be fundamentally statistical, but because the
+accessible description is reduced, branch-dependent, and
+coarse-grained with respect to the full Euclidean condensate
+configuration.
+
+In this perspective, probability appears not as a fundamental rule
+but as a reduced-description phenomenon.  The full Euclidean
+configuration is globally constrained by its boundary data, but an
+observer typically has access only to an effective branch, a
+restricted subsystem, and a finite set of tracked variables.
+Integrating out the untracked condensate modes produces an
+influence functional~(\S\ref{sec:influence_functional}) whose
+effect on the reduced dynamics is that of a stochastic environment.
+The resulting loss of complete information is what makes the
+effective Lorentzian description statistical.  Standard quantum
+probabilities are then interpreted as the operational shadow of a
+deeper but only partially accessible
+condensate-level solution.
+
+This route ties together several structural elements of Part~III
+that might otherwise appear disconnected.  Decoherence through the
+influence functional~(\S\ref{sec:qs_decoherence}), the
+information--decoherence bound~(\S\ref{sec:pes_info_bound}), the
+quantum--classical boundary as a regime change~(\S\ref{sec:qs_measurement}),
+the conditional Gleason-based route to the Born
+rule~(\S\ref{sec:qs_born}), and entanglement as common-medium
+correlation~(\S\ref{sec:qs_entanglement}) are, in this reading,
+different facets of one statement: the Lorentzian statistical
+description is the reduced-subsystem image of a globally fixed
+Euclidean configuration.  Once this is granted, the Born rule, the
+role of decoherence, and the apparent stochasticity of measurement
+cease to be independent postulates and become jointly controlled by
+the same reduction pattern.
+
+This is the central explanatory claim of ECT with respect to the
+statistical content of standard quantum mechanics.
+
+% ------------------------------------------------------------------
+\subsubsection*{Interpretive mapping of standard-QM concepts onto
+ECT}
+\label{sec:qm_capstone_concept_map}
+% ------------------------------------------------------------------
+
+The content of the preceding parts of Part~III can be organised as
+a mapping between the main conceptual primitives of standard
+quantum mechanics and their ECT counterparts.
+Table~\ref{tab:qm_capstone_concept_mapping} records this mapping
+together with the present status of each item.  It is intended as a
+reading guide, not as an independent source of results; the status
+column is consistent with the more formal ledger in
+Section~\ref{sec:qs_minimal_core}.
+
+{\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{@{}p{2.6cm}p{3.4cm}p{4.4cm}p{3.0cm}@{}}
+\caption{Concept mapping between standard quantum mechanics and
+ECT.  The \emph{Status} column uses the same Level-A / Level-B /
+Open language as Section~\ref{sec:qs_minimal_core}.}
+\label{tab:qm_capstone_concept_mapping}\\
+\toprule
+Concept & Status in standard QM & ECT origin/route &
+  Status in ECT \\
+\midrule
+\endfirsthead
+\toprule
+Concept & Status in standard QM & ECT origin/route &
+  Status in ECT \\
+\midrule
+\endhead
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
+Superposition & Primitive axiom
+  & Coherent regime $\Gamma_{\rm loop}\ll 1$ of the Euclidean
+    branch, with no Lorentzian ordering yet enforced
+  & Level~A structural
+    (\S\ref{sec:path_dependence}) \\
+Born rule & Primitive axiom
+  & Reduced-description probabilities after integrating out
+    untracked modes; conditional Gleason route once
+    assumptions~(C1)--(C3) are admitted
+  & Level~B conditional
+    (\S\ref{sec:qs_born}) \\
+State reduction & Primitive/interpretational
+  & Structural reading as a Euclidean-to-Lorentzian regime
+    transition at $\Gamma_{\rm loop}\gtrsim 1$
+  & Structural reading; full theorem open
+    (\S\ref{sec:pes_measurement}, OP-Q8) \\
+Uncertainty principle & Theorem from commutators
+  & Robertson--Schr\"odinger inequality with $S_0$ on the coherent
+    branch
+  & Level~A
+    (\S\ref{sec:uncertainty}) \\
+Canonical commutators & Primitive
+  & Poisson-bracket structure of the smooth coherent branch
+    together with phase compactness
+  & Level~A
+    (\S\ref{sec:qs_ccr}) \\
+Entanglement & Non-separable two-party states
+  & Reduced-state correlations inherited from a common condensate
+    configuration; no-signalling preserved
+  & Structural; full Bell-correlator derivation open
+    (\S\ref{sec:qs_entanglement}, OP-Q20) \\
+Tunnelling & Barrier penetration via WKB
+  & Traversal through the fourth Euclidean direction of admissible
+    condensate configurations
+  & Level~B structural
+    (\S\ref{sec:pes_tunnelling}) \\
+Identical particles & Symmetrisation postulate
+  & Exchange-sector topology
+    $\pi_1(\mathcal{M}_2)=\mathbb{Z}_2$ in the ordered branch
+  & Level~A
+    (\S\ref{sec:qs_statistics}) \\
+Spin-statistics & Spin-statistics theorem in QFT
+  & Residual-symmetry and exchange-topology route in the ordered
+    branch
+  & Open
+    (\S\ref{sec:qs_statistics}, OP-Q11) \\
+Action scale $\hbar$ & Fundamental constant
+  & Action scale $S_0$ from compact phase and winding
+    classification
+  & Level~A quantisation structure; Level-B identification
+    (\S\ref{sec:qs_hbar}) \\
+Charge quantisation & Topological/empirical
+  & Compact-phase $U(1)$ gauge origin
+  & Level~A structural route
+    (\S\ref{sec:charge_quantization}) \\
+Decoherence & Added phenomenology
+  & Influence-functional coupling of the coherent sector to
+    untracked condensate modes
+  & Level~B closure
+    (\S\ref{sec:qs_decoherence}) \\
+\end{longtable}
+}
+
+The table is intentionally shorter than the full status ledger: its
+purpose is to show that the main conceptual primitives of standard
+quantum mechanics acquire explicit structural counterparts in ECT,
+together with their derivational level.
+
+% ------------------------------------------------------------------
+\subsubsection*{Illustrative examples}
+\label{sec:qm_capstone_examples}
+% ------------------------------------------------------------------
+
+The structural comparison above is best seen on several concrete
+examples.  The examples below are not new derivations.  They are
+interpretive reformulations of standard quantum phenomena in ECT
+language, with the present status of each reformulation stated
+explicitly.  Each entry uses the same template so that the contrast
+can be read off directly.
+
+\paragraph{Double-slit interference.}
+\begin{description}[leftmargin=2.8cm, style=nextline]
+\item[Standard QM.] One specifies the incoming wave packet and
+evolves the amplitude through the two-slit apparatus as a Cauchy
+problem; the observed pattern is computed from
+$|\psi_1+\psi_2|^2$, where $\psi_1$ and $\psi_2$ are the amplitudes
+associated with the two slits.
+\item[ECT.] One solves a global boundary-value problem for the
+condensate configuration, with the source, screen, slits, and
+detector geometry entering as boundary and constraint data.  The
+fringe pattern is the reduced Lorentzian imprint of the globally
+admissible Euclidean configuration.
+\item[What is computed.] The same observed fringe intensity; the
+reduction from the full Euclidean configuration to the effective
+Lorentzian amplitude reproduces the usual $|\psi_1+\psi_2|^2$
+interference law.
+\item[What is explained.] Why the interference pattern exists at
+all.  It is not the coexistence of several realised trajectories,
+but the visible imprint of one globally constrained Euclidean
+configuration on a reduced Lorentzian slice.
+\item[Status.] Structural reformulation (Level~B).  Not a
+first-principles computation of the full laboratory setup from the
+microscopic condensate action.
+\end{description}
+
+\paragraph{Quantum tunnelling.}
+\begin{description}[leftmargin=2.8cm, style=nextline]
+\item[Standard QM.] One computes a transmission coefficient,
+typically by WKB matching across a classically forbidden region;
+the exponential suppression $T\sim\exp(-2\int |p|\,dx/\hbar)$
+follows.
+\item[ECT.] The classically forbidden Lorentzian region is
+reinterpreted as a projection of an admissible Euclidean
+configuration.  A configuration that is forbidden in the reduced
+Lorentzian reading can remain perfectly admissible in the
+underlying Euclidean problem.
+\item[What is computed.] The WKB exponent, which the ECT route must
+reproduce as the Lorentzian projection of the Euclidean action
+along the underbarrier segment.
+\item[What is explained.] Why barrier penetration occurs at all.
+Classically forbidden regions in the Lorentzian description
+correspond to accessible regions in the Euclidean domain; the
+barrier is not crossed by a classical Lorentzian trajectory but
+bypassed through Euclidean connectivity.
+\item[Status.] Structural reading (Level~B); the route underlies
+the structural bridge between tunnelling and entanglement through
+Euclidean connectivity (\S\ref{sec:pes_tunnelling},
+\S\ref{sec:qs_entanglement}), but does not yet amount to a full
+theorem of all tunnelling observables from first principles.
+\end{description}
+
+\paragraph{Measurement and outcome selection.}
+\begin{description}[leftmargin=2.8cm, style=nextline]
+\item[Standard QM.] Outcome selection is described through the
+collapse or projection postulate at the amplitude level:
+$\psi\mapsto P_k\psi/\|P_k\psi\|$ with probability $\|P_k\psi\|^2$.
+\item[ECT.] Measurement is read structurally as a transition
+between two regimes of one and the same condensate theory:
+coherent Euclidean behaviour ($\Gamma_{\rm loop}\ll 1$) and a
+Lorentzian ordered branch with irreversible effective recording
+($\Gamma_{\rm loop}\gtrsim 1$).  See Fig.~\ref{fig:measurement_EL}.
+\item[What is computed.] The effective Born-type probabilities are
+reproduced through the conditional Gleason-based route once
+assumptions~(C1)--(C3) are admitted (\S\ref{sec:qs_born}); the
+quantum--classical boundary is characterised operationally by the
+decoherence functional $\Gamma[q]$.
+\item[What is explained.] Why a definite outcome appears at all,
+and why the statistical weights follow the Born-type rule in the
+reduced description.  What is operationally described as
+stochastic outcome selection is the subsystem-level manifestation
+of a globally fixed but only partially accessible configuration,
+with the Euclidean-to-Lorentzian transition playing the role
+usually attributed to collapse language
+(\S\ref{sec:pes_measurement}).
+\item[Status.] Structural measurement reading, not yet a complete
+detector-level theorem.  A full microscopic derivation of outcome
+selection from the bare condensate action remains open (OP-Q8).
+\end{description}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.82\textwidth]{figures/fig_measurement_EL.pdf}
+\caption{Structural reading of quantum measurement in ECT as a
+Euclidean-to-Lorentzian transition.  In the coherent regime
+($\Gamma_{\rm loop}\ll 1$) multiple winding sectors coexist without
+a definite outcome.  Environmental coupling to
+$N_{\rm eff}\gg 1$ modes drives the decoherence functional
+$\Gamma[q]$ to grow.  When $\Gamma_{\rm loop}\gtrsim 1$ the
+off-diagonal interference terms are suppressed and an effectively
+classical (Lorentzian) single-branch outcome is selected.  This
+should be read as a structural flow, not as a completed microscopic
+derivation of realistic detector dynamics.}
+\label{fig:measurement_EL}
+\end{figure}
+
+\paragraph{EPR-type correlations and entanglement.}
+\begin{description}[leftmargin=2.8cm, style=nextline]
+\item[Standard QM.] Entangled states are non-separable and can
+violate Bell-type inequalities up to the Tsirelson bound
+$2\sqrt{2}$; the phenomenon is often described in the language of
+nonlocal influences between spacelike separated parties.
+\item[ECT.] Correlated subsystems are understood as inheriting
+their reduced structure from one common condensate configuration.
+Correlations do not arise from interaction or from superluminal
+influence, but from the shared embedding of subsystems within a
+single condensate configuration.
+\item[What is computed.] Nonclassical visibility and Bell-type
+violations appear naturally in reduced-state descriptions of a
+common-medium theory; the toy CHSH crossover threshold
+$\Gamma_{\rm loop}=\ln\sqrt{2}$ is used as an operational marker
+(\S\ref{sec:qs_minimal_core}).
+\item[What is explained.] Why nonclassical correlations are
+\emph{natural} in a common-medium theory rather than paradoxical:
+they are not the output of a forbidden signal, but a reduced-state
+imprint of a shared underlying configuration.
+\item[Status.] Structural bridge (Level~B); no-signalling is
+preserved.  The explanation is \emph{not} yet a derivation of the
+full Bell correlators or of the Tsirelson bound from first
+principles (OP-Q20).  The presently available CHSH crossover is an
+operational proxy, not a derivation of the CHSH algebra.
+\end{description}
+
+\paragraph{Identical particles and exchange statistics.}
+\begin{description}[leftmargin=2.8cm, style=nextline]
+\item[Standard QM.] Particle statistics is imposed through
+symmetrisation (bosons) or antisymmetrisation (fermions) of many-body
+wave functions, with the boson/fermion dichotomy accepted as a
+primitive.
+\item[ECT.] Exchange statistics follows from the topology of
+configuration space in the ordered branch.  The exchange-sector
+topology $\pi_1(\mathcal{M}_2)=\mathbb{Z}_2$ classifies admissible
+two-body exchanges and underwrites the boson/fermion dichotomy as a
+structural feature rather than an axiom
+(\S\ref{sec:qs_statistics}).
+\item[What is computed.] The same symmetric/antisymmetric structure
+of many-body amplitudes, now read off from the two-class
+configuration-space topology.
+\item[What is explained.] Why there are exactly two species of
+identical-particle behaviour in three spatial dimensions, and why
+the dichotomy is not optional.  The ECT reading places the origin of
+particle statistics at the level of configuration-space topology
+rather than at the level of a symmetrisation axiom.
+\item[Status.] Level~A for the exchange-sector topology itself; a
+completed spin-statistics theorem remains open (OP-Q11).
+\end{description}
+
+\paragraph{Hydrogen atom and discrete spectra.}
+\begin{description}[leftmargin=2.8cm, style=nextline]
+\item[Standard QM.] One solves the time-independent Schr\"odinger
+equation $H\psi=E\psi$ with the Coulomb potential and obtains
+$E_n=-13.6/n^2\,$eV together with the densities $|\psi_{nlm}|^2$.
+\item[ECT.] The intended structural picture is that the hydrogenic
+spectrum arises from the four-dimensional Euclidean field equation
+for $\Phi$ together with the self-consistency condition in the
+$w$-direction expressed by the single-valuedness constraint
+$\oint dw\,p_w=2\pi S_0\,n$.
+\item[What is computed.] The discrete spectrum is identified with
+the set of admissible global condensate configurations that satisfy
+the self-consistency condition.  The numerical reproduction of
+$E_n=-13.6/n^2\,$eV from first principles requires the completed
+matching $S_0\equiv\hbar$ and the detailed solution of the coupled
+condensate/electromagnetic problem.
+\item[What is explained.] Why the spectrum is discrete at all:
+discrete spectra appear as self-consistency conditions on admissible
+global condensate configurations rather than as eigenvalues of a
+fundamentally probabilistic wave equation.
+\item[Status.] Level~B structural interpretation; a completed
+first-principles derivation of the full hydrogenic spectrum has not
+been carried out within ECT in this paper.
+\end{description}
+
+% ------------------------------------------------------------------
+\subsubsection*{Determinism at the fundamental level}
+\label{sec:qm_capstone_determinism}
+% ------------------------------------------------------------------
+
+The Level-0 Euclidean
+equation~\eqref{eq:ect_euclidean_fundamental} is deterministic.
+There are no probabilities, no wave-function collapse, and no
+intrinsic stochasticity.  One specifies the full boundary data and
+obtains one global field configuration.  Statistical quantum
+mechanics then appears not because nature is fundamentally
+probabilistic, but because realistic observers never have access to
+the full condensate state.  When environmental modes are integrated
+out, the subsystem acquires an influence functional, reduced
+density matrices, and effective probabilities.
+
+In this sense ECT stands to standard quantum mechanics as
+microscopic Newtonian mechanics stands to classical statistical
+mechanics: deterministic underneath, probabilistic after
+coarse-graining.  The $\sim\!10^{23}$ untracked condensate modes
+play the role of the untracked molecular degrees of freedom; the
+influence functional plays the role of the reduction from the full
+phase-space distribution to the relevant thermodynamic variables;
+the Born rule plays the role of the emergent statistical law.  The
+analogy is not perfect---the ECT reduction is field-theoretic and
+involves both Euclidean/Lorentzian regime transitions and the
+selection of a smooth coherent branch---but it captures the
+correct direction of the reduction: from global determinism, via
+partial access, to effective probabilistic predictions.
+
+This point is central for the interpretation of ECT.  It implies
+that one may in principle formulate descriptive, non-statistical
+equations for the quantum world at the fundamental level, while
+accepting that the effective subsystem description remains
+probabilistic in practice.
+
+% ------------------------------------------------------------------
+\subsubsection*{What ECT already reproduces, and what remains open}
+\label{sec:qm_capstone_what_reproduces}
+% ------------------------------------------------------------------
+
+It is useful to close the comparison with a reader-oriented summary
+of what has already been structurally obtained in Part~III and what
+remains open.  The following two lists are deliberately organised as
+a comparison with standard quantum mechanics rather than as an
+internal ledger of ECT results; the latter is given separately in
+Section~\ref{sec:qs_minimal_core}.
+
+ECT already provides, at varying levels of rigour, the following
+structural outputs:
+\begin{enumerate}[label=(\roman*)]
+\item the Schr\"odinger sector as a nonrelativistic limit of the
+ordered branch;
+\item the Klein--Gordon sector from the ordered-branch equation in
+the real parametrisation $t=w/c_*$;
+\item uncertainty relations together with a structural route to
+phase quantisation through phase compactness, with the identification
+of the universal action scale $S_0$ with $\hbar$ remaining a
+Level-B matching rather than a fully closed Level-A theorem;
+\item decoherence and the quantum--classical boundary through the
+influence-functional formalism;
+\item a structural Euclidean-to-Lorentzian reading of measurement as
+a regime transition, while a complete measurement theorem remains
+open within the present formulation (see also OP-Q8);
+\item a structural route linking spin-sector discreteness to the
+residual symmetry and topology of the ordered branch after
+$O(4)\to O(3)$, rather than a fully closed derivation of the
+complete spin sector;
+\item the Principle of Euclidean Stationarity, which selects the
+persistent sector of admissible configurations;
+\item a structural derivation route for gravitational decoherence
+from the condensate as a universal bath, without inserting the
+Di\'osi--Penrose formula as an independent postulate;
+\item a common Euclidean structural basis for tunnelling and
+entanglement, understood at present as a structural bridge based
+on Euclidean connectivity rather than as an identity theorem
+reducing one phenomenon to the other;
+\item cross-sector persistence of a common action scale $S_0$, with
+its full identification across all effective sectors tied to the
+same matching programme discussed elsewhere in Part~III.
+\end{enumerate}
+
+On the other hand, ECT does not yet fully derive:
+\begin{enumerate}[label=(\roman*)]
+\item the full Born rule from first principles beyond the present
+closures;
+\item a complete theorem of measurement beyond the current
+$\Gamma_{\rm loop}$-based framework;
+\item Bell correlators directly from the condensate theory beyond
+toy visibility proxies;
+\item the detailed origin of three generations;
+\item the exact value of $\alpha_{\rm fs}$;
+\item the full Yukawa hierarchy.
+\end{enumerate}
+These should be presented as open derivational targets, not as
+failures of the framework.
+
+The list above is intended as a reader-oriented comparison between
+ECT and the standard quantum formalism.  A stricter status map of
+the quantum sector, organised by derivational level
+(Level~A / Level~A-B / Level~B / Open) and linked to the
+corresponding open-problem labels, is given separately in
+Section~\ref{sec:qs_minimal_core}.  The present limitations of the
+formulation are collected in Section~\ref{sec:limitations}.  The
+two summaries serve different purposes: the present one is
+comparative and pedagogical, whereas Section~\ref{sec:qs_minimal_core}
+is the more formal status ledger of what is already structurally
+established and what remains open.
+
+Having set out the structural comparison between ECT and the
+standard quantum formalism, it is natural to state explicitly what
+classes of future results would directly threaten this particular
+ECT route.
+
 
 % ==============================================================
 \subsection{ECT-specific falsifiers in the quantum-gravity and decoherence sector}
@@ -42576,511 +43530,6 @@ electroweak/Yukawa hierarchy are not yet derived---but the
 architectural ambition itself distinguishes ECT from approaches that
 accept the standard input list.
 
-% ------------------------------------------------------------------
-\subsection{Comparison with alternative quantum interpretations}
-\label{sec:comparison_interpretations}
-
-\paragraph{Cramer's transactional interpretation (TI).}
-Cramer~(1986)~\cite{Cramer1986} models every quantum interaction as
-an exchange of ``offer'' (retarded) and ``confirmation'' (advanced)
-waves between emitter and absorber.
-ECT shares with TI the structural idea that the relevant coherent-sector
-description is not exhausted by a purely one-sided Lorentzian-causal
-picture.
-In TI this appears as the advanced--retarded offer/confirmation
-language.
-In ECT it appears through the two-sided boundary sensitivity of the
-Euclidean coherent branch.
-The similarity is therefore real but not an identity:
-TI is an interpretation of the standard quantum formalism, whereas ECT
-locates the two-sided structure in a specific Euclidean condensate
-ontology.
-The present comparison is conceptual and structural; it is not the
-claim that TI is fully derived as a special case of ECT.
-ECT therefore does not adopt the literal offer/confirmation-wave
-ontology of TI.
-The overlap lies only in the structural rejection of a primitively
-one-sided temporal description.
-
-\paragraph{Page--Wootters mechanism.}
-Page \& Wootters~(1983)~\cite{PageWootters1983} proposed that effective
-time can arise from entanglement between a ``clock'' subsystem and the
-rest of the universe within a globally stationary state.
-ECT is compatible with the broad philosophical motivation of that move:
-at the deepest Euclidean level, no external physical time is assumed.
-The difference lies in the mechanism.
-In the Page--Wootters construction, time is recovered from relational
-correlations internal to the quantum state.
-In ECT, by contrast, temporal ordering is tied to the
-$O(4)\to O(3)$ symmetry-breaking structure of the condensate and to the
-emergence of the ordered Lorentzian branch.
-The two approaches are therefore not competitors at the same level:
-Page--Wootters is an internal reconstruction of time within quantum
-theory, whereas ECT proposes a deeper physical origin for why such a
-time-bearing branch exists at all.
-For that reason, the Page--Wootters mechanism would, in an ECT reading,
-belong to the physics internal to an already available coherent quantum
-sector, whereas the ECT question is earlier: why a time-bearing ordered
-branch emerges at all.
-
-
-% ============================================================
-\subsection{ECT as a foundational framework for quantum mechanics}
-\label{sec:ect_vs_qm}
-% ============================================================
-
-% ------------------------------------------------------------------
-\subsubsection*{From descriptive quantum mechanics to a deeper
-underlying level}
-
-Standard quantum mechanics was historically formulated as a successful
-predictive framework: superposition, the Born rule, state reduction,
-and canonical commutation relations are introduced as operational
-postulates that correctly describe observed phenomena.
-In that sense, standard quantum mechanics answers primarily the
-question of \emph{how to calculate}.
-By contrast, if ECT is correct, then quantum mechanics is not
-fundamental in its usual postulatory form, but rather an effective
-sector emerging from a deeper condensate-based structure.
-ECT therefore aims to answer not only \emph{how} quantum phenomena
-are computed, but also \emph{why} the quantum rules take the form
-they do.
-
-In this reading, the quantum sector is expected to arise as an effective
-sector of ECT.
-At the present stage, however, this reconstruction is incomplete:
-the detailed origin of three generations, the exact value of
-$\alpha_{\rm fs}$, and the full Yukawa hierarchy remain open
-derivational targets within the framework.
-
-This distinction may be illustrated by several examples.
-In standard quantum mechanics, the Born rule is accepted as a
-primitive statement: one computes probabilities as $|\psi|^2$.
-In ECT, only a conditional route to the same structure is presently
-available: in the coherent branch, $\psi$ is associated with the
-Euclidean propagator, while $|\psi|^2$ appears naturally in reduced
-descriptions once forward/backward amplitudes and environmental
-coarse-graining are combined.
-At the present stage this should be read as a structural and
-closure-level route, not as a completed first-principles derivation
-of the full Born rule.
-Likewise, in standard quantum mechanics $\hbar$ is a fundamental
-constant, whereas in ECT it is interpreted as the action scale $S_0$
-fixed by the condensate.
-Superposition is postulated in standard quantum mechanics, whereas in
-ECT it corresponds to the Euclidean regime
-$\Gamma_{\rm loop}\ll 1$, in which no Lorentzian causal ordering has
-yet been enforced.
-State reduction is postulated in the Copenhagen reading, whereas in
-ECT it is interpreted as a Euclidean-to-Lorentzian transition driven
-by environmental locking, $\Gamma_{\rm loop}\gg 1$.
-
-% ------------------------------------------------------------------
-\subsubsection*{Hierarchy of equations: Schr\"odinger as a limiting
-case}
-
-ECT does not merely reproduce the standard equations of quantum
-mechanics.
-Rather, it provides a hierarchy of more fundamental equations of which
-the usual quantum equations are limiting cases.
-
-At the most fundamental level one has the Euclidean field equation
-\begin{equation}
-  \label{eq:ect_euclidean_fundamental}
-  \delta^{AB}\partial_A\partial_B \Phi - V'(\Phi)=0,
-\end{equation}
-Equation~\eqref{eq:ect_euclidean_fundamental} is simply the
-Euler--Lagrange equation of the bare Euclidean
-micro-action~\eqref{eq:ECT_action}; it is written here only to
-display the logical hierarchy, not as a new independent postulate.
-It is a four-dimensional elliptic equation for the condensate
-field $\Phi$.
-At this level there is no distinguished time coordinate, no $\hbar$,
-and no built-in probabilistic interpretation.
-All four coordinates are spatial from the Euclidean point of view,
-and solutions are determined by boundary data on the full
-four-dimensional domain.
-
-After spontaneous symmetry breaking $O(4)\to O(3)$, the ordered
-branch is governed by an effective kinetic tensor $K^{AB}$, so that
-the relevant fluctuation equation takes the form
-\begin{equation}
-  \label{eq:ect_ordered_branch_wave}
-  K^{AB}\partial_A\partial_B\chi + m_\sigma^2\chi = 0.
-\end{equation}
-In the ordered branch the kinetic tensor is not arbitrary but is fixed,
-within the present EFT closure, by the unique form
-\begin{equation}
-  K^{AB}=\beta\,\delta^{AB}-\alpha\,n^A n^B,
-\end{equation}
-as established earlier in the Foundations part
-(see in particular Eq.~\eqref{eq:ordered_branch_euclidean_eft} and the
-subsequent uniqueness discussion).
-For a homogeneous background with $n^A=\delta^A_w$, this gives
-\[
-K^{AB}=\mathrm{diag}(\beta,\beta,\beta,\beta-\alpha),
-\]
-so that the Lorentzian regime is controlled by the sign of
-$\beta-\alpha$, equivalently by
-\begin{equation}
-  c_*^2=\frac{\beta}{\alpha-\beta}.
-\end{equation}
-Thus $\alpha>\beta$ corresponds to the Lorentzian ordered branch,
-$\alpha<\beta$ to the Euclidean side, and $\alpha=\beta$ to the
-singular boundary between them.
-This level is already more general than standard quantum mechanics
-because it contains both Euclidean and Lorentzian sectors within the
-same dynamical framework.
-
-In the ordered Lorentzian branch, after the real parametrisation
-$t=w/c_*$, the fluctuation equation takes the relativistic
-Klein--Gordon form~\eqref{eq:KG}.
-A separate formal continuation $w_E\to \pm i c_* t$ may still be used when
-relating Euclidean coherent amplitudes to Lorentzian phase evolution.
-The first step is the derivation of real-time dynamics in the ordered branch
-through the real parametrisation $t=w/c_*$;
-the second is only a translation of Euclidean coherent amplitudes into
-Lorentzian phase language.
-Finally, in the nonrelativistic limit one recovers the Schr\"odinger
-equation.
-
-Thus the usual Schr\"odinger equation is not taken as fundamental.
-It is the narrowest endpoint of a four-level hierarchy:
-(i)~the Euclidean condensate equation,
-(ii)~the ordered-branch equation after symmetry breaking,
-(iii)~the relativistic Lorentzian wave equation,
-(iv)~the nonrelativistic Schr\"odinger limit.
-This hierarchy is one of the central structural results of ECT
-(Fig.~\ref{fig:equation_hierarchy}).
-The figure should therefore be read as a structural hierarchy of
-effective equations, with the epistemic status of each step specified
-in the surrounding discussion.
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.55\textwidth]{figures/fig_equation_hierarchy.pdf}
-\caption{Logical hierarchy of ECT equations.
-The Schr\"odinger equation (Level~3) appears as the narrowest
-low-energy descendant of a deeper chain consisting of the Euclidean
-condensate equation (Level~0), the ordered-branch field equation
-after symmetry breaking (Level~1), and the relativistic
-Klein--Gordon equation in the ordered branch (Level~2).
-The downward arrows denote distinct reduction steps:
-$O(4)\to O(3)$ symmetry breaking, real ordered-branch parametrisation
-$t=w/c_*$, and the nonrelativistic limit.
-The figure summarises the logical organisation of equations discussed
-in the text; it does not assert that all steps are established at
-the same derivational level.
-The displayed equations are representative schematic forms;
-they are not a claim that all intermediate reductions are
-exhausted by the boxed expressions alone.}
-\label{fig:equation_hierarchy}
-\end{figure}
-
-
-% ------------------------------------------------------------------
-\subsubsection*{What the ordered-branch ECT equation contains beyond
-Schr\"odinger}
-
-The ordered-branch equation is more general than the Schr\"odinger
-equation in several essential ways.
-
-First, it covers both regimes.
-For $\alpha<\beta$, the effective equation remains elliptic and
-describes the Euclidean coherent sector, where there is no causal
-ordering and solutions depend on boundary data from the full domain.
-For $\alpha>\beta$, the equation becomes Lorentzian and supports
-causal propagation.
-Standard Schr\"odinger dynamics describes only the already-selected
-Lorentzian side, and only in its nonrelativistic limit.
-
-Second, the ordered-branch equation is naturally tied to gravity.
-The same condensate structure that yields the coherent wave equation
-also yields the long-wavelength geometric sector.
-In that sense, the quantity that controls coherent propagation and the
-quantity that controls emergent geometry are not foreign to each
-other: both arise from the same ordered condensate background.
-
-Third, the ordered-branch equation accommodates phenomena that
-standard Schr\"odinger theory does not explain at the same structural
-level.
-These include two-sided dependence on boundary data, the
-Euclidean-to-Lorentzian transition, gravitational decoherence from
-condensate distinguishability, and the structural relation between
-tunnelling and entanglement through Euclidean connectivity.
-
-% ------------------------------------------------------------------
-
-\subsubsection*{Solutions of descriptive ECT equations versus
-statistical quantum equations}
-
-This is one of the deepest points of the comparison.
-
-In standard quantum mechanics, the equation
-$i\hbar\partial_t\psi = H\psi$ is solved as a \emph{Cauchy problem}:
-one specifies $\psi(x,0)$ and evolves forward in time to obtain
-$\psi(x,t)$.
-The solution $\psi$ is a complex amplitude whose squared modulus gives
-probability densities.
-Predictions are extracted as expectation values
-$\langle O\rangle=\langle\psi|O|\psi\rangle$, that is, ensemble
-averages.
-In this formalism, $\psi$ is not itself a directly physical field in
-ordinary spacetime, but a mathematical object used to compute
-probabilities.
-
-In ECT, the fundamental
-equation~\eqref{eq:ect_euclidean_fundamental} is solved as a
-\emph{boundary-value problem}: one specifies boundary data on the
-full four-dimensional domain, and the solution $\Phi(X)$ is the
-configuration of a real physical condensate field throughout Euclidean
-four-space.
-There is no preferred direction of evolution; the solution is
-determined globally, much as the solution of Laplace's equation inside
-a region is fixed by boundary values on its surface.
-
-Several key differences follow.
-
-\emph{Origin of probabilities.}\enspace
-In standard quantum mechanics, $P=|\psi|^2$ is postulated.
-In ECT, probabilities arise only after incomplete description.
-If one does not track all $\sim\!10^{23}$ modes of the condensate
-and keeps only a subsystem, then the environmental modes are
-integrated out, an influence functional is produced, and an effective
-probabilistic description emerges.
-At the fundamental level, however, $\Phi(X)$ is fixed by the full
-boundary data.
-
-\emph{What fixes a measurement outcome.}\enspace
-In standard quantum mechanics, collapse is an extra postulate.
-In ECT, the detector is treated as part of the full physical system and
-therefore belongs, in principle, to the global boundary-value problem.
-At the reduced-description level, effective collapse is then read as the
-subsystem manifestation of a Euclidean-to-Lorentzian transition under
-strong environmental locking.
-This should be understood as a structural reading of measurement
-(Fig.~\ref{fig:measurement_EL}), not as
-a completed microscopic solution of realistic detector dynamics from the
-bare condensate action.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.82\textwidth]{figures/fig_measurement_EL.pdf}
-\caption{Structural reading of quantum measurement in ECT as a
-Euclidean-to-Lorentzian transition.  In the coherent regime
-($\Gamma_{\rm loop}\ll 1$) multiple winding sectors coexist without a
-definite outcome.  Environmental coupling to $N_{\rm eff}\gg 1$ modes
-drives the decoherence functional $\Gamma[q]$ to grow.  When
-$\Gamma_{\rm loop}\gtrsim 1$ the off-diagonal interference terms are
-suppressed and an effectively classical (Lorentzian) single-branch
-outcome is selected.  This should be read as a structural flow, not
-as a completed microscopic derivation of realistic detector dynamics.}
-\label{fig:measurement_EL}
-\end{figure}
-
-
-\emph{``Future affects past''.}\enspace
-In standard quantum mechanics, this does not arise at the fundamental
-level because the theory is formulated as a forward-time evolution
-problem.
-In ECT, it is natural: for an elliptic equation, changing the
-boundary condition on one side changes the solution throughout the
-region, including what the Lorentzian reading would call the ``past''
-side.
-This is the structural reason why delayed-choice-type phenomena can be
-accommodated naturally within ECT; it is not, by itself, a completed
-first-principles derivation of a laboratory delayed-choice setup.
-
-\emph{Example: the hydrogen atom.}\enspace
-In standard quantum mechanics one solves $H\psi = E\psi$ and
-obtains $E_n=-13.6/n^2$\,eV together with the densities
-$|\psi_{nlm}|^2$.
-In ECT, the intended structural picture is that the hydrogenic spectrum
-should arise from the four-dimensional Euclidean field equation for
-$\Phi$ together with the self-consistency condition in the
-$w$-direction expressed by the single-valuedness constraint
-$\oint dw\cdot p_w = 2\pi S_0\, n$.
-In that reading, the discrete spectrum is associated with
-self-consistency conditions on admissible condensate configurations,
-rather than with eigenvalues of a fundamentally probabilistic wave
-equation.
-At the present stage this should be read as a structural interpretation
-of the hydrogenic spectrum, not yet as a completed first-principles
-derivation carried through in full spectral detail.
-
-\emph{Example: the double-slit experiment.}\enspace
-In standard quantum mechanics, $\psi=\psi_1+\psi_2$ and
-$P=|\psi_1+\psi_2|^2$.
-In ECT, the double-slit pattern is read as arising from one connected
-solution of the underlying elliptic boundary-value problem, whose
-effective Lorentzian projection contains contributions associated with
-both slit channels.
-This should be read as an interpretive and structural reformulation,
-not as a claim that the present article has solved the full laboratory
-setup from first principles at the microscopic condensate level.
-
-% ------------------------------------------------------------------
-\subsubsection*{Determinism at the fundamental level}
-
-The level-0 Euclidean equation is deterministic.
-There are no probabilities, no wavefunction collapse, and no
-intrinsic stochasticity.
-One specifies the full boundary conditions and obtains one global
-field configuration.
-
-Statistical quantum mechanics then appears not because nature is
-fundamentally probabilistic, but because realistic observers never
-have access to the full condensate state.
-When environmental modes are integrated out, the subsystem acquires
-an influence functional, reduced density matrices, and effective
-probabilities.
-In this sense ECT stands to standard quantum mechanics as microscopic
-Newtonian mechanics stands to statistical mechanics: deterministic
-underneath, probabilistic after coarse-graining.
-
-This point is central for the interpretation of ECT.
-It implies that one may in principle formulate descriptive,
-non-statistical equations for the quantum world at the fundamental
-level, while accepting that the effective subsystem description
-remains probabilistic in practice.
-
-% ------------------------------------------------------------------
-\subsubsection*{Unified origin of the coherent and geometric branches}
-
-One of the strongest claims of ECT is that gravity and quantum
-coherence are not separate ingredients forced together after the fact,
-but two sectors of one ordered condensate theory.
-
-Both branches emerge from the same ordered
-action~\eqref{eq:ordered_branch_euclidean_eft}.
-More precisely, they arise as two complementary descriptions of the same
-ordered medium under different coarse-grainings and mode selections:
-the long-wavelength sector is read geometrically, whereas the coherent
-shorter-wavelength sector is read dynamically in wave-mechanical form.
-The theory therefore does not begin with ``gravity plus quantum
-mechanics'' as separate ingredients; it begins with one ordered
-condensate whose different sectors generate both.
-From this same action one obtains two complementary sectors:
-the \emph{geometric branch}, corresponding to long-wavelength
-variations of $u$ and $n_A$, leading to the generalised Einstein
-sector with $G_{\rm eff}(x)$, $\Lambda_{\rm eff}(x)$, and the
-additional tensor structure built from $n_\mu n_\nu$;
-and the \emph{coherent branch}, corresponding to shorter-wavelength
-fluctuations $\chi$ on the ordered background, leading through the
-relativistic wave equation to the Schr\"odinger limit.
-
-This is not an ad hoc stitching of two unrelated theories.
-The split follows directly from the mode decomposition of the same
-condensate around the same ordered background.
-In this sense, ECT does not ``quantise gravity'' in the usual way;
-it embeds both gravity and quantum mechanics into one common
-substrate.
-
-The generalised Einstein sector already contains quantities of the
-form $G_{\rm eff}(X)$ and $\Lambda_{\rm eff}(X)$, and tensor
-structures involving the ordered direction $n_\mu$.
-Conversely, coherent fluctuations affect the effective amplitude
-sector and thereby back-react on the geometric side.
-Thus the route by which coherent fluctuations back-react on the
-geometric sector is not introduced from outside as an unrelated
-semiclassical prescription, but is structurally rooted in the dynamics
-of one and the same condensate action.
-A completed quantitative backreaction programme, however, remains open.
-
-This unification of the coherent and geometric branches is one of the
-most important structural results of ECT.
-
-% ------------------------------------------------------------------
-\subsubsection*{What ECT already reproduces, and what remains open}
-
-If ECT is correct, then quantum mechanics should in principle arise as an
-effective sector of the theory.
-At present, this claim is only partly realised: some standard structures
-have already been structurally recovered, whereas others remain open
-derivational targets.
-It is therefore important to separate what has already been
-structurally obtained from what remains open.
-
-ECT already provides, at varying levels of rigour, the following
-structural outputs:
-\begin{enumerate}[label=(\roman*)]
-\item the Schr\"odinger sector as a nonrelativistic limit of the ordered
-branch;
-\item the Klein--Gordon sector from the ordered-branch equation in the
-real parametrisation $t=w/c_*$;
-\item uncertainty and action quantisation through the role of $S_0$ and
-phase compactness;
-\item decoherence and the quantum--classical boundary through the
-influence-functional formalism;
-\item the Euclidean-to-Lorentzian interpretation of measurement;
-\item the physical origin of spin discretisation via the residual
-symmetry structure after $O(4)\to O(3)$;
-\item the Principle of Euclidean Stationarity, which selects the
-persistent sector of admissible configurations;
-\item gravitational decoherence without inserting the
-Di\'osi--Penrose formula as an independent postulate;
-\item a unified Euclidean basis for both tunnelling and entanglement;
-\item cross-sector universality of the action scale $S_0$.
-\end{enumerate}
-
-On the other hand, ECT does not yet fully derive:
-\begin{enumerate}[label=(\roman*)]
-\item the full Born rule from first principles beyond the present
-closures;
-\item a complete theorem of measurement beyond the current
-$\Gamma_{\rm loop}$-based framework;
-\item Bell correlators directly from the condensate theory beyond toy
-visibility proxies;
-\item the detailed origin of three generations;
-\item the exact value of $\alpha_{\rm fs}$;
-\item the full Yukawa hierarchy.
-\end{enumerate}
-These should be presented as open derivational targets, not as
-failures of the framework.
-
-% ------------------------------------------------------------------
-\subsubsection*{Summary of the comparison}
-
-Standard quantum mechanics is an effective statistical theory of
-subsystems, formulated in terms of a probabilistic amplitude $\psi$
-and a forward-time Cauchy problem.
-ECT proposes a deeper level in which the fundamental object is the
-physical condensate field $\Phi(X)$, governed by a global
-four-dimensional boundary-value problem.
-Quantum mechanics is then recovered as the effective coherent-sector
-description obtained after projection to the relevant subsystem,
-formal Euclidean--Lorentzian amplitude translation, and coarse-graining
-over untracked condensate modes.
-
-ECT therefore aims not only to reproduce the effective formalism of
-quantum mechanics, but to explain why that formalism takes the shape
-it does (Fig.~\ref{fig:ect_vs_qm}).
-It seeks to explain why the formalism has the structure it does, why
-probabilities appear, why superposition exists, why collapse is seen,
-why $\hbar$ is universal, and how the coherent quantum branch and the
-geometric gravitational branch arise from one common substrate.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.75\textwidth]{figures/fig_ect_vs_qm.pdf}
-\caption{Structural comparison of standard quantum mechanics (left) and
-ECT (right). Standard QM is formulated as a Cauchy initial-value
-problem with probability as a fundamental axiom (Born rule).
-ECT begins from an elliptic boundary-value problem on a Euclidean
-domain; time, probability, and measurement emerge as effective features
-of the symmetry-broken ordered branch.
-The rows are representative contrasts, not an exhaustive list of all
-structural differences.}
-\label{fig:ect_vs_qm}
-\end{figure}
-
-
-In this sense, ECT does not replace standard quantum mechanics as a
-laboratory calculation tool; it proposes a deeper level from which
-standard quantum mechanics emerges as an effective, statistically
-formulated subsystem theory.
-
-
 {
 \small
 \renewcommand{\arraystretch}{1.2}
@@ -43172,6 +43621,169 @@ The point is not that ECT solves all problems, but that it pursues a
 distinctive architectural strategy---single ordered medium, emergent
 spacetime and quantum structure, cross-sector falsifiers---that is
 worth comparing on its own terms.
+
+% ------------------------------------------------------------------
+\subsection{Comparison with alternative quantum interpretations}
+\label{sec:comparison_interpretations}
+
+\paragraph{Cramer's transactional interpretation (TI).}
+Cramer~(1986)~\cite{Cramer1986} models every quantum interaction as
+an exchange of ``offer'' (retarded) and ``confirmation'' (advanced)
+waves between emitter and absorber.
+ECT shares with TI the structural idea that the relevant coherent-sector
+description is not exhausted by a purely one-sided Lorentzian-causal
+picture.
+In TI this appears as the advanced--retarded offer/confirmation
+language.
+In ECT it appears through the two-sided boundary sensitivity of the
+Euclidean coherent branch.
+The similarity is therefore real but not an identity:
+TI is an interpretation of the standard quantum formalism, whereas ECT
+locates the two-sided structure in a specific Euclidean condensate
+ontology.
+The present comparison is conceptual and structural; it is not the
+claim that TI is fully derived as a special case of ECT.
+ECT therefore does not adopt the literal offer/confirmation-wave
+ontology of TI.
+The overlap lies only in the structural rejection of a primitively
+one-sided temporal description.
+
+\paragraph{Page--Wootters mechanism.}
+Page \& Wootters~(1983)~\cite{PageWootters1983} proposed that effective
+time can arise from entanglement between a ``clock'' subsystem and the
+rest of the universe within a globally stationary state.
+ECT is compatible with the broad philosophical motivation of that move:
+at the deepest Euclidean level, no external physical time is assumed.
+The difference lies in the mechanism.
+In the Page--Wootters construction, time is recovered from relational
+correlations internal to the quantum state.
+In ECT, by contrast, temporal ordering is tied to the
+$O(4)\to O(3)$ symmetry-breaking structure of the condensate and to the
+emergence of the ordered Lorentzian branch.
+The two approaches are therefore not competitors at the same level:
+Page--Wootters is an internal reconstruction of time within quantum
+theory, whereas ECT proposes a deeper physical origin for why such a
+time-bearing branch exists at all.
+For that reason, the Page--Wootters mechanism would, in an ECT reading,
+belong to the physics internal to an already available coherent quantum
+sector, whereas the ECT question is earlier: why a time-bearing ordered
+branch emerges at all.
+
+
+% ==============================================================
+\subsection{ECT as a foundational framework for quantum mechanics}
+\label{sec:ect_vs_qm}
+% ==============================================================
+
+The detailed structural comparison between ECT and the standard
+quantum formalism---covering the hierarchy of effective equations,
+the boundary-value versus Cauchy problem, the ontological distinction
+between $\Phi$ and $\psi$, the origin of the statistical description,
+the concept mapping onto the standard quantum primitives, and the
+illustrative examples of interference, tunnelling, measurement,
+entanglement, and identical particles---is developed as the capstone
+of Part~III in Section~\ref{sec:qm_capstone}.  The role of the
+present subsection is not to duplicate that material, but to close
+two pan-structural threads of the comparison that naturally belong
+to the summary chapter: the common origin of the coherent and
+geometric branches of ECT, and a compact overall summary of the
+ECT-versus-QM relation that also serves as a bridge to the broader
+architectural comparison with neighbouring programmes.
+
+% ------------------------------------------------------------------
+\subsubsection*{Unified origin of the coherent and geometric branches}
+
+One of the strongest claims of ECT is that gravity and quantum
+coherence are not separate ingredients forced together after the fact,
+but two sectors of one ordered condensate theory.
+
+Both branches emerge from the same ordered
+action~\eqref{eq:ordered_branch_euclidean_eft}.
+More precisely, they arise as two complementary descriptions of the same
+ordered medium under different coarse-grainings and mode selections:
+the long-wavelength sector is read geometrically, whereas the coherent
+shorter-wavelength sector is read dynamically in wave-mechanical form.
+The theory therefore does not begin with ``gravity plus quantum
+mechanics'' as separate ingredients; it begins with one ordered
+condensate whose different sectors generate both.
+From this same action one obtains two complementary sectors:
+the \emph{geometric branch}, corresponding to long-wavelength
+variations of $u$ and $n_A$, leading to the generalised Einstein
+sector with $G_{\rm eff}(x)$, $\Lambda_{\rm eff}(x)$, and the
+additional tensor structure built from $n_\mu n_\nu$;
+and the \emph{coherent branch}, corresponding to shorter-wavelength
+fluctuations $\chi$ on the ordered background, leading through the
+relativistic wave equation to the Schr\"odinger limit.
+
+This is not an ad hoc stitching of two unrelated theories.
+The split follows directly from the mode decomposition of the same
+condensate around the same ordered background.
+In this sense, ECT does not ``quantise gravity'' in the usual way;
+it embeds both gravity and quantum mechanics into one common
+substrate.
+
+The generalised Einstein sector already contains quantities of the
+form $G_{\rm eff}(X)$ and $\Lambda_{\rm eff}(X)$, and tensor
+structures involving the ordered direction $n_\mu$.
+Conversely, coherent fluctuations affect the effective amplitude
+sector and thereby back-react on the geometric side.
+Thus the route by which coherent fluctuations back-react on the
+geometric sector is not introduced from outside as an unrelated
+semiclassical prescription, but is structurally rooted in the dynamics
+of one and the same condensate action.
+A completed quantitative backreaction programme, however, remains open.
+
+This unification of the coherent and geometric branches is one of the
+most important structural results of ECT.
+
+% ------------------------------------------------------------------
+\subsubsection*{Summary of the comparison}
+
+Standard quantum mechanics is an effective statistical theory of
+subsystems, formulated in terms of a probabilistic amplitude $\psi$
+and a forward-time Cauchy problem.
+ECT proposes a deeper level in which the fundamental object is the
+physical condensate field $\Phi(X)$, governed by a global
+four-dimensional boundary-value problem.
+Quantum mechanics is then recovered as the effective coherent-sector
+description obtained after projection to the relevant subsystem,
+formal Euclidean--Lorentzian amplitude translation, and
+coarse-graining over untracked condensate modes; the step-by-step
+structural content of this reduction is the subject of
+Section~\ref{sec:qm_capstone}.
+
+ECT therefore aims not only to reproduce the effective formalism of
+quantum mechanics, but to explain why that formalism takes the shape
+it does (Fig.~\ref{fig:ect_vs_qm}).
+It seeks to explain why the formalism has the structure it does, why
+probabilities appear, why superposition exists, why collapse is seen,
+why $\hbar$ is universal, and how the coherent quantum branch and the
+geometric gravitational branch arise from one common substrate.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth]{figures/fig_ect_vs_qm.pdf}
+\caption{Structural comparison of standard quantum mechanics (left) and
+ECT (right). Standard QM is formulated as a Cauchy initial-value
+problem with probability as a fundamental axiom (Born rule).
+ECT begins from an elliptic boundary-value problem on a Euclidean
+domain; time, probability, and measurement emerge as effective features
+of the symmetry-broken ordered branch.
+The rows are representative contrasts, not an exhaustive list of all
+structural differences; the full comparison, with tables and
+illustrative examples, is developed in Section~\ref{sec:qm_capstone}.}
+\label{fig:ect_vs_qm}
+\end{figure}
+
+
+In this sense, ECT does not replace standard quantum mechanics as a
+laboratory calculation tool; it proposes a deeper level from which
+standard quantum mechanics emerges as an effective, statistically
+formulated subsystem theory.
+
+
+
+
 
 %--------------------------------------------------------------
 \subsection{Phenomenological reach and observational diagnostics}
