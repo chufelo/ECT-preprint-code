@@ -1,77 +1,115 @@
 digraph PartIV {
   rankdir=TB;
   fontname="Helvetica";
-  node [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", margin="0.09,0.05"];
+  node [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", margin="0.10,0.06"];
   edge [fontname="Helvetica", fontsize=8, color="black", penwidth=1.0];
-  splines=true;
-  nodesep=0.14;
-  ranksep=0.20;
+  splines=polyline;
+  nodesep=0.25;
+  ranksep=0.14;
   newrank=true;
   labeljust=c;
-  ratio="1.20";
 
   // =====================================================
-  // LAYER 1: FORWARD INPUTS (from Parts I-III)
-  // dark fill = Level A inputs
+  // LAYER 1 — FORWARD INPUTS
   // =====================================================
-  node [fillcolor="#b8b8b8"];
-  forward_inputs [label=<Forward programme (Parts I–III)<BR/>P1–P6; partial closures<BR/>on chirality, anomaly architecture,<BR/>Yukawa / flavour, fermion sector>, fontsize=10];
+  { rank=same;
+    node [fillcolor="#b8b8b8"];
+    forward_inputs [label=<Forward programme (Parts I–III)<BR/>P1–P6; partial closures on chirality,<BR/>anomaly architecture, Yukawa / flavour,<BR/>fermion sector>, fontsize=10];
+  }
 
   // =====================================================
-  // LAYER 2: REVERSE-ANALYSIS LAYER
+  // LAYER 2 — METHODOLOGY + OBSTRUCTIONS (reverse-analysis entry)
   // =====================================================
-  // Level A: strict obstruction theorems (dark)
-  node [fillcolor="#b8b8b8"];
-  obs_algebra [label=<Dimensional obstruction<BR/>𝔰𝔲(3) ⊄ 𝔰𝔬(4)<BR/>Level A, §2>];
-  obs_condensate [label=<No colour condensate<BR/>SU(3) broken to SU(2)<BR/>by triplet VEV<BR/>Level A, §2>];
-
-  // Level B: P7 postulate (white with bold outline)
-  node [fillcolor="#ffffff", penwidth=1.8];
-  methodology [label=<Reverse-analysis<BR/>methodology<BR/>5 rules, §1>];
-  P7 [label=<<B>Postulate P7</B><BR/>rank-3 module 𝒞 ≃ ℂ³<BR/>Hermitian form h<BR/>complex volume form Ω<BR/>⇒ local SU(3), §2>, penwidth=2.0];
-  node [penwidth=1.0];
+  { rank=same;
+    node [fillcolor="#ffffff"];
+    methodology [label=<Reverse-analysis<BR/>methodology<BR/>5 rules, §1>];
+    node [fillcolor="#b8b8b8"];
+    obs_algebra [label=<Dimensional obstruction<BR/>𝔰𝔲(3) ⊄ 𝔰𝔬(4)<BR/>Level A, §2>];
+    obs_condensate [label=<No colour condensate<BR/>SU(3) → SU(2)<BR/>by triplet VEV<BR/>Level A, §2>];
+  }
 
   // =====================================================
-  // LAYER 3: STRUCTURAL CONSEQUENCES
+  // LAYER 3 — POSTULATE P7 (central node)
   // =====================================================
-  // Level A obstructions in EFT sector (dark)
-  node [fillcolor="#b8b8b8"];
-  no_gluon_mass [label=<No tree-level<BR/>gluon mass<BR/>(gauge invariance)<BR/>Level A, §3>];
-  no_higgs_colour [label=<No Higgs-colour<BR/>route (singlet<BR/>condensate)<BR/>Level A, §3>];
-  no_oscillator [label=<Oscillator tower<BR/>≠ physical colour<BR/>spectrum<BR/>Level A, §3>];
-
-  // Level B: minimal EFT + admissible operators
-  node [fillcolor="#ffffff"];
-  min_eft [label=<Minimal admissible<BR/>colour EFT<BR/>Z(φ)F², Y(φ)(n·F)²,<BR/>Θ(φ)FF̃<BR/>§3>];
-  y_alpha [label=<Structural link<BR/>Y(φ) ↔ α<SUB>ECT</SUB><BR/>via shared n<SUP>μ</SUP><BR/>§3>];
-  lambda_col [label=<Λ<SUB>col</SUB><SUP>ECT</SUP> form<BR/>dim. transmutation<BR/>classificatory only<BR/>eq. ref, §3>];
-  triviality [label=<<B>Central negative</B><BR/><B>result</B>: background-<BR/>level triviality<BR/>§3>, penwidth=1.8];
-  three_scale [label=<Three-scale<BR/>consistency<BR/>UV decoupling<BR/>§3>];
-
-  // Level B: anomaly layer (restatement of existing sec 9.5)
-  anomaly_restatement [label=<P7-specific<BR/>restatement of<BR/>anomaly architecture<BR/>§9.5 &amp; §4>];
-  anomaly_su33 [label=<SU(3)³ anomaly<BR/>N<SUB>3</SUB> = N<SUB>3̄</SUB> in<BR/>minimal realisation<BR/>§4>];
-  anomaly_mixed [label=<Mixed anomalies<BR/>SU(3)²U(1), SU(2)²U(1),<BR/>U(1)³, grav.<BR/>§4>];
-  witten_ga [label=<Witten global anomaly<BR/>3 generations ⇒ 12<BR/>doublets, even ✓<BR/>§4>];
-  thooft_match [label=<'t Hooft anomaly<BR/>matching UV ↔ IR<BR/>open, §4>];
-  sm_candidate [label=<SM gauge group<BR/>as natural candidate<BR/>(not unique)<BR/>§4>];
+  { rank=same;
+    node [fillcolor="#ffffff", penwidth=2.0];
+    P7 [label=<<B>Postulate P7</B><BR/>rank-3 module 𝒞 ≃ ℂ³<BR/>Hermitian form h<BR/>complex volume form Ω<BR/>⇒ local SU(3), §2>];
+    node [penwidth=1.0];
+  }
 
   // =====================================================
-  // LAYER 4: STATUS LAYER
+  // LAYER 4 — TWO MAIN BRANCHES
   // =====================================================
-  node [fillcolor="#ffffff", penwidth=1.5];
-  coverage [label=<Coverage table<BR/>(Table 5):<BR/>closed / sharpened /<BR/>reframed / open<BR/>§5>];
-  strong_cp [label=<Strong CP reopened<BR/>R1/R2/R3 Open<BR/>§7>];
-  witten_ven [label=<Witten–Veneziano<BR/>consistency target<BR/>cleanest channel<BR/>§7>];
-  proton [label=<Proton stability<BR/>placed in correct<BR/>architectural layer<BR/>§6>];
-  three_way [label=<Three-way distinction:<BR/>colour scale / mass gap /<BR/>glueball spectrum;<BR/>Clay = different problem<BR/>§8>];
-  bridging [label=<Bridging statement:<BR/>N<SUB>gen</SUB>=3, θ<SUB>QCD</SUB>,<BR/>flavour closure<BR/>NOT converted<BR/>§5>];
+  { rank=same;
+    node [fillcolor="#ffffff"];
+    min_eft [label=<Minimal admissible<BR/>colour EFT<BR/>Z(φ)F², Y(φ)(n·F)²,<BR/>Θ(φ)F F̃<BR/>§3>];
+    anomaly_restatement [label=<P7-specific restatement<BR/>of anomaly architecture<BR/>§9.5 &amp; §4>];
+    proton [label=<Proton stability<BR/>placed in correct<BR/>architectural layer<BR/>§6>];
+    node [fillcolor="white", style="rounded,dashed,filled", penwidth=1.5];
+    directional [label=<4 directional remarks<BR/>D1–D4 (conjectural)<BR/>§8>];
+    node [style="rounded,filled", penwidth=1.0];
+  }
 
-  // OPEN items (dashed outline)
-  node [fillcolor="white", style="rounded,dashed,filled", penwidth=1.5];
-  openlist [label=<17 Open problems<BR/>O1–O17, §8>];
-  directional [label=<4 directional remarks<BR/>D1–D4 (conjectural)<BR/>§8>];
-  node [style="rounded,filled", penwidth=1.0];
+  // =====================================================
+  // LAYER 5 — OBSTRUCTION THEOREMS OF THE EFT (all Level A)
+  // =====================================================
+  { rank=same;
+    node [fillcolor="#b8b8b8"];
+    no_gluon_mass [label=<No tree-level<BR/>gluon mass<BR/>Level A, §3>];
+    no_higgs_colour [label=<No Higgs-colour<BR/>route<BR/>Level A, §3>];
+    no_oscillator [label=<Oscillator tower ≠<BR/>physical colour<BR/>spectrum<BR/>Level A, §3>];
+  }
+
+  // =====================================================
+  // LAYER 6 — EFT STRUCTURAL PROPERTIES (Level B)
+  // =====================================================
+  { rank=same;
+    node [fillcolor="#ffffff"];
+    y_alpha [label=<Structural link<BR/>Y(φ) ↔ α<SUB>ECT</SUB><BR/>via shared n<SUP>μ</SUP><BR/>§3>];
+    lambda_col [label=<Λ<SUB>col</SUB><SUP>ECT</SUP> form<BR/>dim. transmutation<BR/>classificatory only<BR/>§3>];
+    triviality [label=<<B>Central negative result</B><BR/>background-level<BR/>triviality<BR/>§3>, penwidth=1.8];
+    three_scale [label=<Three-scale<BR/>consistency<BR/>UV decoupling<BR/>§3>];
+  }
+
+  // =====================================================
+  // LAYER 7 — ANOMALY DETAILS (Level B)
+  // =====================================================
+  { rank=same;
+    node [fillcolor="#ffffff"];
+    anomaly_su33 [label=<SU(3)³ anomaly<BR/>N<SUB>3</SUB>=N<SUB>3̄</SUB><BR/>(minimal real.)<BR/>§4>];
+    anomaly_mixed [label=<Mixed anomalies<BR/>SU(3)²U(1), SU(2)²U(1),<BR/>U(1)³, grav.<BR/>§4>];
+    witten_ga [label=<Witten global anomaly<BR/>3 gen. = 12 doublets,<BR/>even ✓<BR/>§4>];
+    thooft_match [label=<'t Hooft anomaly<BR/>matching UV ↔ IR<BR/>open, §4>];
+  }
+
+  // =====================================================
+  // LAYER 8 — STATUS LAYER: MAIN AGGREGATORS
+  // =====================================================
+  { rank=same;
+    node [fillcolor="#ffffff", penwidth=1.5];
+    coverage [label=<Coverage table<BR/>(Table 5)<BR/>closed / sharpened /<BR/>reframed / open<BR/>§5>];
+    sm_candidate [label=<SM gauge group<BR/>as natural candidate<BR/>(not unique)<BR/>§4>];
+    strong_cp [label=<Strong CP<BR/>reopened<BR/>R1/R2/R3 Open<BR/>§7>];
+    three_way [label=<Three-way distinction<BR/>colour scale / gap /<BR/>glueball spectrum;<BR/>Clay = different<BR/>§8>];
+  }
+
+  // =====================================================
+  // LAYER 9 — FINAL STATUS
+  // =====================================================
+  { rank=same;
+    node [fillcolor="#ffffff"];
+    bridging [label=<Bridging statement<BR/>N<SUB>gen</SUB>=3, θ<SUB>QCD</SUB>,<BR/>flavour closure<BR/>NOT converted<BR/>§5>];
+    witten_ven [label=<Witten–Veneziano<BR/>consistency target<BR/>cleanest channel<BR/>§7>];
+  }
+
+  // =====================================================
+  // LAYER 10 — OPEN PROBLEMS (terminal node)
+  // =====================================================
+  { rank=same;
+    node [fillcolor="white", style="rounded,dashed,filled", penwidth=1.5];
+    openlist [label=<17 Open problems<BR/>O1–O17, §8>];
+    node [style="rounded,filled", penwidth=1.0];
+  }
 
   // =====================================================
   // EDGES — solid = logical dependence
@@ -79,44 +117,102 @@ digraph PartIV {
   forward_inputs -> methodology;
   forward_inputs -> obs_algebra;
   forward_inputs -> obs_condensate;
+
+  methodology -> P7;
   obs_algebra -> P7;
   obs_condensate -> P7;
-  methodology -> P7;
+
   P7 -> min_eft;
   P7 -> anomaly_restatement;
+  // (proton stability depends on baryon-number selection rule from anomaly layer)
+  anomaly_restatement -> proton;
+  P7 -> directional [style=dashed];
 
+  // EFT branch -> obstructions
   min_eft -> no_gluon_mass;
   min_eft -> no_higgs_colour;
   min_eft -> no_oscillator;
+
+  // EFT branch -> structural properties
   min_eft -> y_alpha;
   min_eft -> lambda_col;
   min_eft -> triviality;
   min_eft -> three_scale;
 
+  // EFT structural properties feed coverage table
+  y_alpha -> coverage;
+  lambda_col -> coverage;
+  three_scale -> coverage;
+
+  // anomaly branch -> details
   anomaly_restatement -> anomaly_su33;
   anomaly_restatement -> anomaly_mixed;
   anomaly_restatement -> witten_ga;
   anomaly_restatement -> thooft_match;
-  anomaly_mixed -> sm_candidate;
-  witten_ga -> sm_candidate;
 
-  // status layer dependencies
+  // downstream aggregation
   min_eft -> coverage;
   anomaly_restatement -> coverage;
+  anomaly_su33 -> sm_candidate;
+  anomaly_mixed -> sm_candidate;
+  witten_ga -> sm_candidate;
+  sm_candidate -> coverage;
   min_eft -> strong_cp;
-  strong_cp -> witten_ven;
-  P7 -> proton;
   triviality -> three_way;
   no_oscillator -> three_way;
-  coverage -> bridging;
-  coverage -> openlist;
-  bridging -> openlist;
-  P7 -> directional [style=dashed];
 
-  // =====================================================
-  // DASHED edges = non-replacement link to forward programme
-  // =====================================================
+  // obstructions contribute to coverage / three-way (cluster link for clarity)
+  no_gluon_mass -> coverage;
+  no_higgs_colour -> coverage;
+
+  // final layer
+  coverage -> bridging;
+  strong_cp -> witten_ven;
+  strong_cp -> openlist;
+
+  // open list is the final sink
+  bridging -> openlist;
+  coverage -> openlist;
+  three_way -> openlist;
+  sm_candidate -> openlist;
+  thooft_match -> openlist;
+  witten_ven -> openlist;
+  proton -> openlist;
+  directional -> openlist [style=dashed];
+
+  // Non-replacement connection to forward programme (dashed)
   edge [style=dashed, color="black"];
   forward_inputs -> coverage [label="reclassified, not replaced"];
   forward_inputs -> directional [label="future work on"];
+
+  // =====================================================
+  // LEGEND
+  // =====================================================
+  subgraph cluster_legend {
+    label="Legend";
+    fontname="Helvetica";
+    fontsize=11;
+    style="rounded";
+    color="black";
+    margin=10;
+    rank=sink;
+
+    node [fontname="Helvetica", fontsize=9, shape=box, style="rounded,filled", margin="0.08,0.04", width=1.8, height=0.35];
+    edge [style=invis];
+
+    lg_A [label=<Level A<BR/>(algebraic/obstruction)>, fillcolor="#b8b8b8"];
+    lg_B [label=<Level B<BR/>(structural, derived)>, fillcolor="#ffffff", penwidth=1.0];
+    lg_C [label=<Level C<BR/>(honest non-derivation)>, fillcolor="white", style="rounded,dashed,filled", penwidth=1.5];
+    lg_central [label=<Central node<BR/>(bold outline)>, fillcolor="#ffffff", penwidth=2.0];
+
+    lg_A -> lg_B -> lg_C -> lg_central;
+
+    lg_edge_solid_src [label="X", shape=point, width=0.01, style=invis];
+    lg_edge_solid_dst [label="Y", shape=point, width=0.01, style=invis];
+    lg_edge_dashed_src [label="X", shape=point, width=0.01, style=invis];
+    lg_edge_dashed_dst [label="Y", shape=point, width=0.01, style=invis];
+
+    lg_note [label=<Edges:  solid = logical dependence<BR ALIGN="LEFT"/>dashed = non-replacement link or future-work pointer<BR ALIGN="LEFT"/>>, fillcolor="white", shape=plaintext, style="", penwidth=0];
+    lg_C -> lg_note [style=invis];
+  }
 }
