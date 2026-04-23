@@ -40882,7 +40882,7 @@ singlets) remain open.
 
 \subsubsection*{Updated status under the primary completion}
 
-\begin{longtable}{@{}p{3.6cm}p{3.6cm}p{3.9cm}p{3.5cm}@{}}
+\begin{longtable}{@{}p{0.22\textwidth}p{0.24\textwidth}p{0.30\textwidth}p{0.18\textwidth}@{}}
 \caption{Status changes under the primary colour completion.}
 \label{tab:colour_status}\\
 \toprule
@@ -41304,7 +41304,7 @@ architectural layer.
 
 \needspace{4\baselineskip}
 \renewcommand{\arraystretch}{1.2}
-\begin{longtable}{@{}p{3.3cm}p{3.1cm}p{4.6cm}p{2.3cm}@{}}
+\begin{longtable}{@{}p{0.22\textwidth}p{0.22\textwidth}p{0.33\textwidth}p{0.17\textwidth}@{}}
 \caption{Coverage of SU(3)-dependent questions from Parts~I--III after
 the Part~IV completion layer.}
 \label{tab:su3_coverage}\\
@@ -41345,18 +41345,22 @@ Anomaly architecture of emergent chiral gauge sector
 Chirality and $SU(2)_L$ selection
   (\S\ref{sec:chirality})
   & Level~B structural possibility via $Spin(4)\simeq SU(2)_L\times SU(2)_R$
-  & Compatibility with exact colour confirmed; anomaly-consistent
-    chiral extension identified as natural candidate; deepening via
-    P7+$n^\mu$ flagged as directional item~D1
-    (\S\ref{sec:part4_status})
+  & Confirmed that the existing chirality route and the P7 exact-colour
+    completion live in structurally disjoint sectors and therefore do
+    not conflict; anomaly cancellation identifies chiral extensions
+    (\S\ref{sec:anomaly_constraints}) compatible with that route;
+    deepening via P7+$n^\mu$ flagged as directional item~D1, not a
+    derivation
   & Sharpened \\
 Three fermion generations
   (\S\ref{sec:flavour_architecture}; par.~\ref{par:three_generations};
   App.~\ref{app:open_microphysics})
   & Spectral route, $y\sim 1.3$--$2.0$; Level~B/C; strict derivation
     open (OP-generations)
-  & Anomaly consistency for $N_{\rm gen}=3$ (Witten even-doublet
-    count); rank-3 structural pointer flagged as directional item~D2
+  & Verified that $N_{\rm gen}=3$ is consistent with the Witten
+    even-doublet constraint under P7 (twelve $SU(2)$ doublets in total);
+    the rank-3 structural coincidence remains a pointer (D2), not a
+    derivation; strict generation-count derivation remains open
   & Sharpened \\
 Matter representations (OP-GUT2)
   & Open
@@ -41709,42 +41713,105 @@ attack.
 are Level~B or Level~C.  Part~IV does not add Level~A derivations of
 strong-sector physics.}
 
-\paragraph{Closures (structural, Level~B except where noted).}
-Exact colour completion as a closure requirement
-(\S\ref{sec:colour_completion}, reverse-engineered).  Exact colour
-cannot reside in the ordered condensate
-(\S\ref{sec:colour_completion}, obstruction theorem; Level~A within
-ECT).  Dimensional obstruction $\mathfrak{su}(3)\not\subset\mathfrak{so}(4)$
-(\S\ref{sec:colour_completion}, algebraic; Level~A).  Primary completion
-pattern: exact $SU(3)$ on a rank-3 complex internal module with
-Hermitian form and fixed complex volume form
-(\S\ref{sec:colour_completion}).  Alternative deeper candidate: $G_2$
-route via octonionic structure
-(\S\ref{sec:colour_completion}).  Minimal admissible local
-gauge-invariant EFT under P7
-(\S\ref{sec:min_colour_eft}).  Three obstruction theorems: no
-tree-level gluon mass, no Higgs-colour route, oscillator tower not
-the physical colour spectrum
-(\S\ref{sec:min_colour_eft}).  Structural bound on the anisotropic
-colour channel via the gravity-sector anisotropy analogy
-(\S\ref{sec:min_colour_eft}).  Background-level triviality result: the
-minimal EFT at constant couplings reduces to standard QCD with a
-redefined matching convention, so physical ECT content appears only
-through $\phi$-dependence of the couplings
-(\S\ref{sec:min_colour_eft}).  Anomaly-cancellation layer for the
-matter sector
-(\S\ref{sec:anomaly_constraints}).  In the minimal realisation,
-vector-like colour content; anomaly cancellation identifies a narrow
-class of chiral-compatible extensions, among which the Standard-Model
-gauge structure remains the principal phenomenologically relevant
-candidate; hypercharges are fixed up to normalisation once the
-standard one-generation matter content is assumed
-(\S\ref{sec:anomaly_constraints}).  Baryon number as a selection rule
-compatible with the quantum-gravity no-global-symmetry requirement
-(\S\ref{sec:anomaly_constraints},
-\S\ref{sec:proton_stability}).  Proton-stability framework placed in
-the correct architectural layer
-(\S\ref{sec:proton_stability}).
+\paragraph{Closures of Part~IV.}
+The structural closures delivered by Part~IV are summarised in
+Table~\ref{tab:part4_closures}.  All claims are Level~B within
+reverse analysis except for two algebraic/obstruction statements
+that are Level~A within ECT as indicated.  Every row is honestly
+either a derived theorem, an explicit obstruction, a consistency
+statement with a pre-existing forward result, or a clearly labelled
+non-derivation (``inherited'' or ``placed in correct layer'').
+
+\needspace{6\baselineskip}
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{@{}p{0.28\textwidth}p{0.46\textwidth}p{0.18\textwidth}@{}}
+\caption{Structural closures of Part~IV.}
+\label{tab:part4_closures}\\
+\toprule
+Closure & Nature of the closure (what is actually demonstrated) & Level / locus \\
+\midrule
+\endfirsthead
+\toprule
+Closure & Nature of the closure (what is actually demonstrated) & Level / locus \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Exact colour completion as a closure \emph{requirement}
+  & Reverse-engineered from the partial success of the forward
+    programme: without an exact colour sector, multiple items in
+    Parts~I--III cannot be closed
+  & Reverse-engineered; \S\ref{sec:colour_completion} \\
+Colour cannot reside in the ordered condensate
+  & Obstruction theorem: nonzero condensate in any colour-charged
+    representation breaks $SU(3)$ to a proper subgroup
+  & Level~A; \S\ref{sec:colour_completion} \\
+$\mathfrak{su}(3)\not\subset\mathfrak{so}(4)$
+  & Algebraic obstruction: $\dim\mathfrak{su}(3)=8>6=\dim\mathfrak{so}(4)$,
+    so no subalgebra embedding is possible
+  & Level~A; \S\ref{sec:colour_completion} \\
+Primary completion pattern
+  & Postulate P7 formalised: rank-3 complex internal module with
+    Hermitian form and fixed complex volume form, reducing the
+    $U(3)$ frame-redundancy to $SU(3)$
+  & Reverse-engineered postulate; \S\ref{sec:colour_completion} \\
+Alternative deeper candidate ($G_2$)
+  & Explicit octonionic route preserved in the text; not adopted as
+    primary
+  & Alternative; \S\ref{sec:colour_completion} \\
+Minimal admissible colour EFT
+  & Derived operator class $Z(\phi)F^2+Y(\phi)(n{\cdot}F)^2+
+    \Theta(\phi)F\tilde F$ with positivity conditions
+  & Level~B; \S\ref{sec:min_colour_eft} \\
+No tree-level gluon mass; no Higgs-colour route
+  & Obstruction theorems derived from exact unbroken $SU(3)$ and the
+    singlet character of the condensate
+  & Level~B; \S\ref{sec:min_colour_eft} \\
+Oscillator tower is not the physical colour spectrum
+  & Obstruction theorem: a linearly spaced oscillator tower is
+    incompatible with gauge-invariant physical spectra of an exact
+    colour sector
+  & Level~B; \S\ref{sec:min_colour_eft} \\
+Structural bound on anisotropic colour channel
+  & Derived from shared $n_\mu n_\nu$ structure with the
+    gravity-sector anisotropy $\alpha_{\rm ECT}$ of Part~II
+  & Level~B; \S\ref{sec:min_colour_eft} \\
+Dimensional-transmutation form of $\Lambda_{\rm col}^{\rm ECT}$
+  & Classificatory form derived (eq.~\ref{eq:Lambda_col_ECT});
+    recovers standard QCD transmutation at $Z_0\to 1$
+  & Level~C, classificatory; \S\ref{sec:min_colour_eft} \\
+Background-level triviality (central result)
+  & Derived: at constant $Z_0,Y_0,\Theta_0$ the minimal EFT reduces
+    to standard pure YM with a matching-convention redefinition
+  & Level~B; \S\ref{sec:min_colour_eft} \\
+Anomaly-consistency layer under P7
+  & $SU(3)^3$, mixed $SU(3)^2\!\cdot\!U(1)$, $SU(2)^2\!\cdot\!U(1)$,
+    $U(1)^3$, $U(1)\!\cdot\!{\rm grav}^2$ constraints restated
+    P7-compatibly; Witten $\mathbb{Z}_2$ respected
+  & Level~B, restatement; \S\ref{sec:anomaly_constraints} \\
+Hypercharge determination (SM one-generation content)
+  & Hypercharges fixed by anomaly cancellation up to normalisation
+    \emph{once} the standard matter content is assumed; not derived
+    from ECT primary postulates
+  & Level~B, conditional; \S\ref{sec:anomaly_constraints} \\
+Baryon number as a selection rule
+  & Emergent selection rule rather than exact global symmetry;
+    compatible with Harlow--Ooguri no-global-symmetry argument
+  & Level~B; \S\ref{sec:anomaly_constraints},
+    \S\ref{sec:proton_stability} \\
+Proton-stability framework placed in the correct layer
+  & Selection-rule patterns I/II/III now live in the gauge-completion
+    layer where they belong
+  & Architectural; \S\ref{sec:proton_stability} \\
+Structural reopening of strong CP under P7
+  & $\Theta(\phi_0)F\tilde F$ is not forbidden by P7, so the minimal
+    completion reopens (does not solve) strong CP
+  & Level~C, reopening; \S\ref{sec:topological_strong_cp} \\
+Coverage reclassification of SU(3)-dependent issues
+  & Thirteen earlier SU(3)-dependent items explicitly reclassified
+    (Table~\ref{tab:su3_coverage})
+  & Level~B, bookkeeping; \S\ref{sec:su3_closure_table} \\
+\end{longtable}
 
 \paragraph{Non-replacement statement.}
 Part~IV does not replace the existing structural routes to chirality
@@ -41754,53 +41821,137 @@ exact-colour completions are compatible with those routes and which
 unresolved questions remain blocked even after P7.
 
 \paragraph{Remains Open.}
-O1.\ Identification of the matching scale $M_\ast$ within ECT.
-O2.\ Derivation of $g_s(M_\ast)$ from ECT microphysics.
-O3.\ Confinement (Wilson-loop area law) on ECT background.
-O4.\ Full glueball spectrum with mass ratios.
-O5.\ Exact numerical value of $\Lambda_{\rm col}$ beyond standard-QCD
-matching.
-O6.\ Strong CP resolution (R1/R2/R3 all unresolved,
-\S\ref{sec:topological_strong_cp}).
-O7.\ Complete matter-content derivation (representations from first
-principles).
-O8.\ Sterile-neutrino status: required, permitted, or forbidden by ECT.
-O9.\ Yukawa hierarchy as derivation rather than pattern.
-O10.\ Three generations as theorem rather than spectral route.
-O11.\ CKM/PMNS matrices.
-O12.\ Global quotient structure
-$\bigl(SU(3)\times SU(2)\times U(1)\bigr)/\Gamma$---identification of
-$\Gamma$.
-O13.\ Topological obstructions (e.g.\ Stiefel--Whitney classes) on the
-colour bundle over emergent spacetime.
-O14.\ 't~Hooft anomaly matching UV $\leftrightarrow$ IR.
-O15.\ Status of the global $U(1)$ carried by the complex volume form
-$\Omega$.
-O16.\ Yang--Mills existence and mass gap in the Clay sense: structurally
-a different question (pure YM on $\mathbb{R}^4$ with fundamental
-Poincaré invariance) and not addressed by Part~IV.
-O17.\ Relation of the P7 colour completion to the chirality and flavour
-programme of~\S\ref{sec:chirality}--\S\ref{sec:flavour_architecture}:
-whether the exact-colour layer merely coexists with that programme or
-helps sharpen it into a more unified matter-sector closure.
+The items explicitly not closed by Part~IV are collected in
+Table~\ref{tab:part4_open}.  For each we record the nature of the
+residual obstruction and the section that discusses it.
+
+\needspace{6\baselineskip}
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{@{}p{0.04\textwidth}p{0.38\textwidth}p{0.36\textwidth}p{0.14\textwidth}@{}}
+\caption{Problems remaining open after Part~IV.}
+\label{tab:part4_open}\\
+\toprule
+ID & Item & Why still open & Locus \\
+\midrule
+\endfirsthead
+\toprule
+ID & Item & Why still open & Locus \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+O1 & Identification of the matching scale $M_\ast$
+   & Multiple structurally natural candidates; no ECT-specific
+     selector established
+   & \S\ref{sec:min_colour_eft} \\
+O2 & Derivation of $g_s(M_\ast)$
+   & Colour coupling is matching data; microphysical origin not
+     supplied by P7
+   & \S\ref{sec:min_colour_eft} \\
+O3 & Confinement (Wilson-loop area law)
+   & Nonperturbative dynamics inaccessible from reverse analysis;
+     inherited from standard YM
+   & \S\ref{sec:min_colour_eft} \\
+O4 & Full glueball spectrum
+   & Bound-state dynamics; requires nonperturbative strong-sector
+     computation not supplied by the admissible EFT class
+   & \S\ref{sec:min_colour_eft} \\
+O5 & Numerical value of $\Lambda_{\rm col}$
+   & Matching data; any ECT-specific shift requires
+     $\phi$-dependent couplings beyond constant background
+   & \S\ref{sec:min_colour_eft} \\
+O6 & Strong CP resolution (R1/R2/R3)
+   & None of the three identified routes currently derives
+     $\Theta(\phi_0)=0$ from ECT postulates
+   & \S\ref{sec:topological_strong_cp} \\
+O7 & Complete matter-content derivation
+   & Anomaly cancellation narrows but does not uniquely fix the
+     matter representations
+   & \S\ref{sec:anomaly_constraints} \\
+O8 & Sterile-neutrino status in ECT
+   & A singlet is admissible without disturbing anomaly balance,
+     but no ECT postulate selects required/forbidden/permitted
+   & \S\ref{sec:anomaly_constraints} \\
+O9 & Yukawa hierarchy as derivation
+   & Structural routes in Part~I remain Level~B/C; not addressed
+     by the completion layer
+   & \S\ref{sec:yukawa} \\
+O10 & Three generations as a theorem
+    & Spectral route of~\S\ref{par:three_generations} remains
+      the forward proposal; P7 does not convert it into a theorem
+    & \S\ref{sec:flavour_architecture};
+      App.~\ref{app:open_microphysics} \\
+O11 & CKM/PMNS mixing matrices
+    & Flavour-closure problem; not addressed by the completion
+      layer
+    & \S\ref{sec:flavour_architecture} \\
+O12 & Global quotient $\bigl(SU(3)\times SU(2)\times U(1)\bigr)/\Gamma$
+    & Local gauge structure does not determine the global quotient;
+      identification of $\Gamma$ requires bundle-level structure
+    & \S\ref{sec:anomaly_constraints} \\
+O13 & Stiefel--Whitney and related topological obstructions on the
+      colour bundle
+    & Requires bundle-level topological analysis not performed here
+    & \S\ref{sec:anomaly_constraints} \\
+O14 & 't~Hooft anomaly matching UV$\leftrightarrow$IR
+    & UV medium microphysics not supplied; matching cannot be
+      verified
+    & \S\ref{sec:anomaly_constraints} \\
+O15 & Status of the global $U(1)$ carried by $\Omega$
+    & Whether gauged, broken, or quantum-mechanically protected is
+      not fixed by P7
+    & \S\ref{sec:anomaly_constraints} \\
+O16 & Yang--Mills existence and mass gap (Clay sense)
+    & Structurally a different question: pure YM on $\mathbb{R}^4$
+      with fundamental Poincaré invariance and Wightman/OS axioms;
+      not in the setting of ECT+P7
+    & \S\ref{sec:topological_strong_cp};
+      \S\ref{sec:part4_status} \\
+O17 & Deeper relation between P7 and the chirality/flavour programme
+    & Whether exact-colour layer merely coexists with or sharpens
+      the matter-sector routes of~\S\ref{sec:chirality}--\S\ref{sec:flavour_architecture}
+    & \S\ref{sec:chirality}--\S\ref{sec:flavour_architecture} \\
+\end{longtable}
 
 \paragraph{Directional remarks (future work; not claimed here).}
-D1.~\emph{Chirality deepening via P7 and $n^\mu$.}\ \ The combined
-orientation structure carried by the Lorentzian director $n^\mu$ and
-the complex volume form $\Omega$ may provide a structural link to the
-V--A chirality of Standard-Model fermions; at present a conjectural
-pointer, not pursued here.
-D2.~\emph{Three-generation deepening via rank-3 structure.}\ \ The
-internal module has rank~3 and the observed fermion generation count
-is~3; intriguing but presently non-theorem-level.
-D3.~\emph{SM as a natural IR-compatible configuration.}\ \ Given the
-constraints of~\S\ref{sec:min_colour_eft}--\S\ref{sec:anomaly_constraints},
-the SM gauge structure may arise as a natural IR-compatible
-configuration within the broader space of P7-admissible completions;
-no dynamical selection mechanism is established.
-D4.~\emph{Swampland compatibility.}\ \ Several Swampland conjectures
-(No Global Symmetries, Weak Gravity, Completeness) appear naturally
-realised in ECT+P7; systematic analysis is future work.
+The following remarks are conjectural pointers, collected in
+Table~\ref{tab:part4_directional}.  None is a theorem; none is
+pursued quantitatively in this preprint.
+
+\needspace{4\baselineskip}
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{@{}p{0.05\textwidth}p{0.32\textwidth}p{0.55\textwidth}@{}}
+\caption{Directional remarks from Part~IV.}
+\label{tab:part4_directional}\\
+\toprule
+ID & Direction & Content and status \\
+\midrule
+\endfirsthead
+\toprule
+ID & Direction & Content and status \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+D1 & Chirality deepening via P7 and $n^\mu$
+   & The orientation data carried by the Lorentzian director $n^\mu$
+     and the complex volume form $\Omega$ may provide a structural
+     link to the V--A chirality of Standard-Model fermions.
+     Conjectural pointer; not pursued here. \\
+D2 & Three-generation deepening via rank-3 structure
+   & The internal module has rank~3 and the observed fermion
+     generation count is~3.  Intriguing structural coincidence;
+     presently non-theorem-level. \\
+D3 & SM as a natural IR-compatible configuration
+   & Given~\S\ref{sec:min_colour_eft}--\S\ref{sec:anomaly_constraints},
+     the SM gauge structure may emerge as a natural IR-compatible
+     configuration among P7-admissible completions; no dynamical
+     selection mechanism is established. \\
+D4 & Swampland compatibility
+   & No-Global-Symmetries, Weak-Gravity, and Completeness
+     conjectures appear naturally realised in ECT+P7; systematic
+     analysis is future work. \\
+\end{longtable}
 
 \paragraph{Three distinct questions in the strong sector.}
 It is useful to keep three structurally different questions apart,
@@ -41834,6 +41985,85 @@ All of Part~IV is Level~B or~C.  Quantitative strong-sector observables
 from standard Yang--Mills and QCD phenomenology, constrained by the
 admissible EFT structure of~\S\ref{sec:min_colour_eft} but not
 independently derived.
+
+% ============================================================
+\section{Synthesis of Part~IV}
+\label{sec:part4_synthesis}
+% ============================================================
+
+\textit{Status: Overview.  No new claims are made in this section; it
+collects and depicts the structure of Part~IV schematically.}
+
+\paragraph{Overall picture.}
+Part~IV operates as a closure/consistency layer above the forward
+programme of Parts~I--III (\S\ref{sec:reverse_methodology}).
+Starting from the obstruction theorems already present in the colour
+consistency analysis (\S\ref{sec:colour_completion}), it formalises
+the minimal reverse-engineered postulate P7 (rank-3 complex internal
+module with Hermitian form and fixed complex volume form), derives
+the minimal admissible colour EFT under P7
+(\S\ref{sec:min_colour_eft}), and restates the anomaly-cancellation
+layer in the presence of the completion
+(\S\ref{sec:anomaly_constraints}).
+The coverage table (\S\ref{sec:su3_closure_table}) reclassifies the
+SU(3)-dependent questions of Parts~I--III against the four status
+labels \emph{Closed structurally}, \emph{Sharpened}, \emph{Reframed},
+\emph{Still open}.
+Proton stability (\S\ref{sec:proton_stability}) then lives in its
+proper architectural layer, and the topological sector
+(\S\ref{sec:topological_strong_cp}) is honestly recorded as
+\emph{sharpening rather than solving} the strong CP problem.
+Section~\ref{sec:part4_status} collects closures, open items, and
+directional remarks in tabular form
+(Tables~\ref{tab:part4_closures}, \ref{tab:part4_open},
+\ref{tab:part4_directional}).
+
+\paragraph{Derivation logic of Part~IV.}
+The logical structure of Part~IV is shown in
+Figure~\ref{fig:partIV_derivation_logic}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth,height=0.82\textheight,keepaspectratio]{figures/fig_partIV_derivation_logic.pdf}
+\caption{Derivation logic of Part~IV (Reverse Analysis, SU(3)
+Completion, and Structural Constraints).
+The diagram is organised into four layers:
+(i)~the forward inputs from Parts~I--III (the postulates P1--P6 and
+the partial closures they support);
+(ii)~the reverse-analysis layer (the obstruction theorems forcing
+externalisation of colour, and the formalisation of P7);
+(iii)~the structural-consequences layer (the minimal admissible
+colour EFT, its obstruction theorems, the dimensional-transmutation
+form of $\Lambda_{\rm col}^{\rm ECT}$, the central background-level
+triviality result, and the anomaly-consistency layer); and
+(iv)~the status layer (coverage reclassification, proton stability
+placed in the correct layer, strong CP reopened, and the tabular
+closures/open/directional ledgers).
+Node shading: dark = Level~A (algebraic or obstruction), light =
+Level~B (structural/derived within reverse analysis), dashed outline
+= Level~C or honest non-derivation.
+Solid arrows denote logical dependence; dashed arrows denote the
+non-replacement connection to the forward programme of Parts~I--III.}
+\label{fig:partIV_derivation_logic}
+\end{figure}
+
+\paragraph{Final statement for Part~IV.}
+Part~IV converts a pre-existing colour-completion consistency block
+and a pre-existing proton-stability discussion into a coherent
+reverse-analysis chapter with a formalised postulate~P7, a derived
+admissible EFT class, an anomaly-consistency layer, a coverage
+bookkeeping of SU(3)-dependent questions, a tabular ledger of
+closures, open items, and directional remarks, and a synthesis
+figure.
+Its results are Level~B within reverse analysis, with two Level~A
+obstruction statements internal to ECT, and one Level~C classificatory
+formula.
+The strong-sector quantitative observables remain inherited from
+standard Yang--Mills and QCD phenomenology, constrained by P7 but
+not independently derived.
+Part~IV neither derives nor closes the remaining strong-sector open
+problems; it sharpens what they are and reclassifies what changes
+under the exact-colour completion layer.
 
 \clearpage
 \part{Summary, Comparisons, and Outlook}
