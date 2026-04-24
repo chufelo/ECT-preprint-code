@@ -569,7 +569,7 @@ RSD & Redshift-space distortions \\
 SH0ES & Supernovae and $H_0$ for the Equation of State (local Hubble-constant programme) \\
 NLEE & Non-linear Einstein equations (or non-linear extensions of generalised Einstein equations) \\
 H1 & Late-time $\varepsilon$-route to the Hubble sector (pre-retained-band scan classification); unrelated to the CC spectral condition $H_\Lambda$ below \\
-$H_\Lambda$ & Spectral condition on the full quadratic fluctuation operator used \emph{only} in the emergent unimodular decoupling theorem (Sec.~\ref{subsec:H1_cc}); controls whether the zero-derivative one-loop vacuum contribution collapses to a fixed-volume term. Unrelated to the Hubble-sector H1 route. \\
+$H_\Lambda$ & Spectral condition on the full quadratic fluctuation operator used \emph{only} in the emergent unimodular decoupling theorem (Sec.~\ref{subsec:Hlambda_cc}); controls whether the zero-derivative one-loop vacuum contribution collapses to a fixed-volume term. Unrelated to the Hubble-sector H1 route. \\
 H2 & Full early+late CMB-inferred $H_0$ closure (retained-band target, open) \\
 BMV & Bose--Mazumdar--Morley / Marletto--Vedral (gravity-induced entanglement proposal, Section~\ref{sec:ect_gie}) \\
 BMS & Bondi--Metzner--Sachs (asymptotic symmetry group, Section~\ref{sec:ir_bms}) \\
@@ -9818,21 +9818,44 @@ g^{\rm eff}_{AB}
 \qquad
 G^{AC}_{\rm eff}\,g^{\rm eff}_{CB}=\delta^{A}{}_{B},
 \end{equation}
-so that, after introducing the real ordered-branch time coordinate
-$t=w/c_*$, the background metric in the canonical benchmark is
-$\eta_{AB}=\mathrm{diag}(-1,1,1,1)$ and
-$g^{\rm eff}_{AB}=\eta_{AB}+h_{AB}$.
-The induced symmetric effective-metric perturbation is
+After passing from the Euclidean coordinate ordering $(x^1,x^2,x^3,w)$
+to the Lorentzian coordinate ordering $x^\mu=(t,\mathbf{x})$, with
+$t=w/c_*$, the canonical benchmark $(\alpha,\beta)=(2,1)$ gives the
+familiar background
+\[
+\eta_{\mu\nu}=\mathrm{diag}(-1,1,1,1);
+\]
+in the original Euclidean coordinate ordering the same covariant
+background reads $\mathrm{diag}(1,1,1,-1)$.
+We write $g^{\rm eff}_{AB}=\bar g^{\rm eff}_{AB}+h_{AB}$, with $h_{AB}$
+the covariant perturbation that enters the Fierz--Pauli closure below.
+The perturbation of the inverse effective metric is
 \begin{equation}
-\label{eq:graviton_field}
+\label{eq:delta_G_eff_graviton}
 \delta G^{AB}_{\rm eff}
 \;=\; -\,\alpha\!\left(
 \bar n^{A}\,\delta n^{B} + \delta n^{A}\,\bar n^{B}
 \right) + O(\delta n^2),
 \end{equation}
-with $h_{AB}$ the corresponding perturbation of the covariant metric
-$g^{\rm eff}_{AB}$ obtained by inverting~\eqref{eq:geff_cov_graviton} at linear
-order.
+and the corresponding covariant-metric perturbation, obtained by
+varying the inverse relation $G^{AC}_{\rm eff}\,g^{\rm eff}_{CB}
+=\delta^A{}_B$, is
+\begin{equation}
+\label{eq:graviton_field}
+h_{AB}
+\;\equiv\; \delta g^{\rm eff}_{AB}
+\;=\; -\,\frac{\alpha}{\beta(\alpha-\beta)}
+\!\left(
+\bar n_{A}\,\delta n_{B} + \delta n_{A}\,\bar n_{B}
+\right) + O(\delta n^2).
+\end{equation}
+For the canonical benchmark $(\alpha,\beta)=(2,1)$ this specialises to
+\[
+h_{AB}
+\;=\; -2\!\left(
+\bar n_{A}\,\delta n_{B} + \delta n_{A}\,\bar n_{B}
+\right) + O(\delta n^2).
+\]
 The candidate spin-2 graviton sector is identified with the
 transverse-traceless part of this induced effective-metric
 perturbation, rather than with a direct degree of freedom of $n_A$
@@ -14756,8 +14779,7 @@ condensate medium~(OP-Q11).
 singles out exactly three equivalent spatial directions and one
 distinguished temporal seed; standard physics postulates $d=3+1$
 without explanation.
-(vi)~\emph{Massless graviton:} the spin-2 mode emerges from SSB with
-$m_g=0$ protected by gauge structure~(Level~A/B).
+(vi)~\emph{Massless spin-2 sector:} linearised effective-metric channel admits a massless Fierz--Pauli reconstruction with $m_g=0$; non-perturbative proof from the bare condensate action remains open~(Level~A/B for the linear EFT reconstruction).
 
 
 \subsection{What Part~I derives and what it does not}
@@ -21882,9 +21904,9 @@ Vacuum-offset decoupling: $V(\phi_0)$ inert
   & removes standard $\Lambda$ channel for the bare quartic minimum \\
 
 Zero-derivative loop-vacuum decoupling
-  & absorbed into fixed determinant $\sqrt{-g_{\rm eff}}=\beta^2/c_*$ (Theorem~\ref{thm:cc_decoupling}(v))
+  & absorbed into fixed determinant $\sqrt{-\det K^{AB}}=\beta^2/c_*$ (Theorem~\ref{thm:cc_decoupling}(v))
   & A, conditional on~$H_\Lambda$
-  & \S\ref{subsec:main_theorem}, \S\ref{subsec:H1_cc}
+  & \S\ref{subsec:main_theorem}, \S\ref{subsec:Hlambda_cc}
   & blocks direct UV channel for vacuum baseline \\
 
 Infrared dark-energy scale
@@ -25625,7 +25647,7 @@ the elimination of the primary monopole channel,
 \emph{the resolution at Level~A of the classical
 cosmological-constant catastrophe}
 (Section~\ref{sec:cc_problem}; Theorem~\ref{thm:cc_decoupling}): fixed
-$\sqrt{-g_{\rm eff}}=\beta^2/c_*$ from $n^A n_A = 1$ renders
+$\sqrt{-\det K^{AB}}=\beta^2/c_*$ from $n^A n_A = 1$ renders
 the classical baseline $V(\phi_0)$ inert for the local emergent
 gravity (Theorem~\ref{thm:cc_decoupling}(iv), unconditional), and absorbs the
 zero-derivative one-loop vacuum contribution under condition~$H_\Lambda$
@@ -26039,7 +26061,7 @@ Macroscopic entropy growth & Reduced-state decoherence with effective bath assum
 Universal causal cone & Single $g_{\mu\nu}(n)$ in IR EFT & derived \\
 LV suppression & Higher-dim.\ ops., $\delta c/c\sim(E/\Lambda)^2$ & derived \\
 Proton stability & Three selection-rule patterns conditional on gauge/flavour completion (\S\ref{sec:proton_stability}) & conditional (Level~C) \\
-Cosmological-constant UV decoupling & Fixed determinant $\sqrt{-g_{\rm eff}}=\beta^2/c_*$ from the kinematic constraint $n^A n_A=1$ (Theorem~\ref{thm:cc_decoupling}, Sec.~\ref{sec:cc_problem}); the classical baseline $V(\phi_0)$ is inert for local emergent gravity (Theorem~\ref{thm:cc_decoupling}(iv), unconditional), while the zero-derivative loop contribution is absorbed only conditional on $H_\Lambda$ (Theorem~\ref{thm:cc_decoupling}(v)); the direct $10^{120}$-level UV-to-IR cancellation of the standard framework is thereby absent in the leading ordered-branch sector; separately, the IR coefficient $c_\Lambda$ remains open (Level~C) & \textbf{derived (Level~A for Object~A; $H_\Lambda$-conditional for Object~B)}; IR coefficient $c_\Lambda$ open (Level~C) \\
+Cosmological-constant UV decoupling & Fixed determinant $\sqrt{-\det K^{AB}}=\beta^2/c_*$ from the kinematic constraint $n^A n_A=1$ (Theorem~\ref{thm:cc_decoupling}, Sec.~\ref{sec:cc_problem}); the classical baseline $V(\phi_0)$ is inert for local emergent gravity (Theorem~\ref{thm:cc_decoupling}(iv), unconditional), while the zero-derivative loop contribution is absorbed only conditional on $H_\Lambda$ (Theorem~\ref{thm:cc_decoupling}(v)); the direct $10^{120}$-level UV-to-IR cancellation of the standard framework is thereby absent in the leading ordered-branch sector; separately, the IR coefficient $c_\Lambda$ remains open (Level~C) & \textbf{derived (Level~A for Object~A; $H_\Lambda$-conditional for Object~B)}; IR coefficient $c_\Lambda$ open (Level~C) \\
 \hline
 
 \end{longtable}
@@ -26439,11 +26461,11 @@ $\eta < 10^{-16}$ would constrain the coupling coefficient \\
 
 ND8 &
 Gravitational decoherence of levitated mesoscopic masses &
-ECT predicts a Di\'{o}si--Penrose-like scalar-channel
+ECT realises a Di\'{o}si--Penrose-like scalar-channel
 reduced-state decoherence timescale
 $\tau^{\rm grav}_{\rm dec}\sim\hbar R/(G_N m^2)$
 (eq.~\ref{eq:tau_DP_ECT});
-structurally determined by $\xi_{\rm cond}\sim\ell_{\rm Pl}$
+as a condensate-sector contribution to the reduced influence functional. The leading timescale is not unique to ECT; the ECT-specific content is the condensate-origin interpretation, with characteristic scale $\xi_{\rm cond}\sim\ell_{\rm Pl}$
 rather than by a free collapse scale;
 quantitative anchors in Table~\ref{tab:pes_diosi} &
 B &
@@ -34269,16 +34291,17 @@ condensate architecture rather than introducing it as an unrelated
 external formalism.
 
 % ------------------------------------------------------------------
-\subsection{Gravitational decoherence: ECT-specific predictions}
+\subsection{Gravitational decoherence: ECT realisation of a DP-type scaling}
 \label{sec:results_gravitational}
 
 \textit{Status: Level~B.  Within the present condensate-based closure,
 the gravitational decoherence timescale is recovered from condensate
 distinguishability rather than postulated independently as in the
-original Di\'osi--Penrose proposals.
-The numerical estimates below are therefore ECT-specific at the level
-of this closure: standard quantum mechanics does not produce them
-without an additional postulate.}
+original Di\'osi--Penrose proposals. The leading numerical estimates
+below are not unique to ECT---they coincide with the
+Di\'osi--Penrose gravitational self-energy scaling. The ECT-specific
+content is the proposed origin of this scaling as condensate-sector
+distinguishability and the associated pattern of subleading corrections.}
 
 The gravitational decoherence timescale for a solid sphere of
 radius~$R$ and density~$\rho$ in superposition of two positions
@@ -34444,9 +34467,9 @@ C$_{60}$ ($10^{-6}$\,Pa) & $\tau_{\rm dec}\gg1$\,ms & Interference \checkmark & 
 C$_{60}$ ($10^{-4}$\,Pa) & $\tau_{\rm dec}\sim1$\,ms & Degradation & Regime consistency \\
 Fein 25\,000\,amu & Environmental & Interference \checkmark & Regime consistency \\
 Procopio switch & $V=0.994\pm0.002 \Rightarrow \Gamma_{\rm loop}^{(\exp)}=0.006\pm0.002$ & ICO visible & Visibility-based interpretive consistency \\
-Nanosphere 1\,$\mu$m & $\tau_{\rm grav}\sim38$\,ms & Not yet tested & ECT-specific prediction \\
-Nanosphere 100\,nm & $\tau_{\rm grav}\sim1$\,hr & Not yet tested & ECT-specific prediction \\
-Crossover (UHV) & $m_{\rm cross}\sim10^{-16}$\,kg & Not yet tested & ECT-specific prediction \\
+Nanosphere 1\,$\mu$m & $\tau_{\rm grav}\sim38$\,ms & Not yet tested & DP-type leading scale; ECT-specific origin/subleading \\
+Nanosphere 100\,nm & $\tau_{\rm grav}\sim1$\,hr & Not yet tested & DP-type leading scale; ECT-specific origin/subleading \\
+Crossover (UHV) & $m_{\rm cross}\sim10^{-16}$\,kg & Not yet tested & Closure-level crossover; not unique leading DP scale \\
 Cavity cat & Open target within present closure
   & Measured decoherence times (Brune 1996)
   & Programme-level target \\
@@ -40484,8 +40507,8 @@ Two results of Part~III have no direct analogue in standard quantum
 mechanics.
 First, gravitational decoherence is derived from the condensate acting
 as a universal decoherence bath, without the Di\'osi--Penrose
-postulate; the nanosphere prediction
-$\tau_{\rm grav}\sim 38$\,ms is ECT-specific and within reach of
+postulate; the nanosphere scale
+$\tau_{\rm grav}\sim38$\,ms is a testable DP-type leading scale, whose ECT-specific content is its condensate-origin interpretation and the predicted pattern of subleading condensate-sector corrections, within reach of
 levitated-nanoparticle experiments~(\S\ref{sec:results_gravitational}).
 Second, a quantitative recoherence suppression law
 $P_{\rm back}/P_{\rm fwd}=e^{-\Gamma_{\rm loop}}$ is predicted;
@@ -44213,7 +44236,7 @@ In ECT the direct channel by which this UV baseline would enter the
 gravitational action is blocked: the emergent unimodular decoupling
 theorem of Section~\ref{sec:cc_problem} shows that, in the leading
 ordered-branch sector, the fixed-determinant structure
-$\sqrt{-g_{\rm eff}}=\beta^2/c_*$ makes the classical baseline
+$\sqrt{-\det K^{AB}}=\beta^2/c_*$ makes the classical baseline
 $V(\phi_0)$ inert for the local emergent gravitational dynamics
 (Theorem~\ref{thm:cc_decoupling}(iv); Level~A, unconditional), and---conditional on a
 one-line spectral assumption on the full quadratic fluctuation
@@ -44480,7 +44503,7 @@ $c$ (vacuum signal speed) & Derived (A/B) & Cone speed $c_*=\sqrt{\beta/(\alpha-
 $\hbar$ (action scale) & Derived (A/B) & Loop action $S_0$ from phase winding \\
 $G_N$ (gravitational coupling) & Derived (B) & Condensate stiffness $G_N=c_*^4/(8\pi M_G^2)$ \\
 Massless photon & Derived (A/B) & Unbroken $U(1)$ + gauge invariance \\
-Massless graviton & Derived (A) & Spin-2 orientation mode \\
+Massless spin-2 sector & Derived (A/B, linear EFT); full proof open & Spin-2 orientation mode in Fierz--Pauli reconstruction \\
 \end{longtable}
 
 \begin{longtable}{@{}p{3.9cm}p{2.8cm}p{7.8cm}@{}}
@@ -44958,7 +44981,7 @@ OP-TORSION
 OP-$\Lambda$3-O1
   & Verification of condition~$H_\Lambda$ on the full quadratic fluctuation
     operator in the leading ordered-branch sector
-    (Section~\ref{subsec:H1_cc}); decides whether Theorem~\ref{thm:cc_decoupling}(v)
+    (Section~\ref{subsec:Hlambda_cc}); decides whether Theorem~\ref{thm:cc_decoupling}(v)
     decoupling of Object~B is unconditional or transferred to the
     scalar-hierarchy sector
   & Open \\
@@ -45057,7 +45080,7 @@ $n_s$ (corridor) & $0.96$--$0.97$ & $0.965\!\pm\!0.004$ & corridor & II \\
 $|\delta c/c|$ & $<\!10^{-15}$ & $<\!10^{-15}$ & \checkmark & II \\
 $w_0$ (DESI) & $-0.83$ & $-0.827$ & \checkmark & II \\
 $\eta_B$ & $9\!\times\!10^{-10}$ & $6\!\times\!10^{-10}$ & $\sim\!1.5\times$ & II \\
-CC catastrophe ($10^{120}$ UV--IR mismatch) & Structurally absent in leading ordered-branch sector (Theorem~\ref{thm:cc_decoupling}, \S\ref{sec:cc_problem}) & ``Open problem'' in standard framework & \textbf{Resolved (Level~A)} & II \\
+CC catastrophe ($10^{120}$ UV--IR mismatch) & Classical/direct vacuum channel absent in leading ordered-branch sector (Theorem~\ref{thm:cc_decoupling}(iv), \S\ref{sec:cc_problem}); zero-derivative loop-vacuum channel conditional on $H_\Lambda$; observed IR value treated separately & ``Open problem'' in standard framework & Object~A resolved (Level~A); Object~B $H_\Lambda$-conditional; IR value Level~C & II \\
 $\rho_{\Lambda,\rm obs}$ scale & $c_\Lambda M_{\rm Pl}^2 H_0^2\!\sim\!10^{-47}\,{\rm GeV}^4$ & $\sim\!10^{-47}\,{\rm GeV}^4$ & Order-of-magnitude match (Level~C) & II \\
 \midrule
 \multicolumn{5}{l}{\textit{Neutrino sector (Part~I)}} \\
@@ -45204,7 +45227,7 @@ destruction;
 the resolution at Level~A of the classical
 cosmological-constant catastrophe via the emergent unimodular
 decoupling theorem of Section~\ref{sec:cc_problem}
-(fixed $\sqrt{-g_{\rm eff}}=\beta^2/c_*$ from the kinematic
+(fixed $\sqrt{-\det K^{AB}}=\beta^2/c_*$ from the kinematic
 constraint $n^A n_A=1$ makes the classical baseline $V(\phi_0)$
 inert for local emergent gravity; conditional on the one-line
 spectral assumption~$H_\Lambda$, the same fixed-determinant structure
@@ -45234,8 +45257,8 @@ and Fock space is a reconstruction target, not a foundational axiom.
 
 \paragraph{Distinctive quantitative handles.}
 Gravitational decoherence is derived from condensate dynamics without
-the Di\'osi--Penrose postulate; the nanosphere prediction
-$\tau_{\rm grav}\sim 38$\,ms is ECT-specific and testable.
+the Di\'osi--Penrose postulate; the nanosphere scale
+$\tau_{\rm grav}\sim38$\,ms is a testable DP-type leading scale, whose ECT-specific content is its condensate-origin interpretation and the predicted pattern of subleading condensate-sector corrections.
 A recoherence suppression law
 $P_{\rm back}/P_{\rm fwd}=e^{-\Gamma_{\rm loop}}$ is
 predicted; standard QM provides no analogous relation.
@@ -45295,10 +45318,13 @@ the question by replacing a rigid external $\Lambda$ with a dynamical
 condensate amplitude tied to the same framework that generates $G_N$,
 $c_*$, and $\hbar$, but a genuine dynamical solution of the coincidence
 problem remains open~(reframing only; Open).
-(vi)~\emph{Massless graviton}---the spin-2 mode emerges from SSB with
-$m_g=0$ protected by the gauge structure of the ordered
-branch~(Level~A/B), consistent with the LIGO bound
-$m_g<1.2\times10^{-22}$~eV.
+(vi)~\emph{Massless spin-2 sector}---the induced effective-metric
+sector admits a massless spin-2 interpretation at the linearised
+Fierz--Pauli level, with $m_g=0$ protected within that effective gauge
+description. A non-perturbative proof of exact graviton masslessness
+from the bare condensate action remains open~(Level~A/B for the
+linear EFT reconstruction; full completion open), consistently with
+the LIGO bound $m_g<1.2\times10^{-22}$~eV.
 
 \noindent
 Table~\ref{tab:ect_distinctive} collects the distinctive outputs
@@ -45373,14 +45399,14 @@ Vacuum stability (primary sector only) &
 Quantum gravity &
   No metric quantisation; graviton = condensate mode &
   A/B & Yes (architecture) \\
-Massless graviton &
-  $m_g=0$ from SSB + gauge protection &
-  A/B & Structural \\
+Massless spin-2 sector &
+  Linearised effective-metric channel admits Fierz--Pauli massless spin-2 reconstruction; non-perturbative proof from the bare condensate action remains open &
+  A/B; full proof open & Structural \\
 Cosmological coincidence &
   Dynamical $\Lambda_{\rm eff}(\phi)$, not rigid $\Lambda$ &
   B/Open & Reframing \\
 Cosmological-constant catastrophe &
-  \textbf{Resolved at Level~A for the classical/direct vacuum channel}: $V(\phi_0)$ is inert for emergent gravity via fixed $\sqrt{-g_{\rm eff}}=\beta^2/c_*$ from $n^A n_A=1$ (Theorem~\ref{thm:cc_decoupling}(iv), Sec.~\ref{sec:cc_problem}); the extension of this decoupling to the zero-derivative loop sector is conditional on $H_\Lambda$ (Theorem~\ref{thm:cc_decoupling}(v)); no direct $10^{120}$ cross-scale cancellation is invoked &
+  \textbf{Resolved at Level~A for the classical/direct vacuum channel}: $V(\phi_0)$ is inert for emergent gravity via fixed $\sqrt{-\det K^{AB}}=\beta^2/c_*$ from $n^A n_A=1$ (Theorem~\ref{thm:cc_decoupling}(iv), Sec.~\ref{sec:cc_problem}); the extension of this decoupling to the zero-derivative loop sector is conditional on $H_\Lambda$ (Theorem~\ref{thm:cc_decoupling}(v)); no direct $10^{120}$ cross-scale cancellation is invoked &
   \textbf{A} for Object~A; $H_\Lambda$-conditional for Object~B & Yes (structural resolution) \\
 $\rho_{\Lambda,\rm obs}$ numerical value &
   IR scaling $\sim M_{\rm Pl}^2 H_0^2$ matches observation at order-of-magnitude; $c_\Lambda=\mathcal{O}(1)$ remains open; a possible pseudo-Goldstone realization exists if $m_G\sim H_0$ and $f_G\sim \bar M_{\rm Pl}$ (Sec.~\ref{subsec:goldstone_cc}) &
@@ -45750,7 +45776,7 @@ Right-handed neutrino scale $M_R$ & Free parameter in seesaw & $M_R^{\rm geom}\!
 Quantum gravity (UV completion) & Open problem & Structurally unified route: graviton as condensate excitation governed by the same $S_0$; full closure open & B--C & \ref{sec:graviton},\newline\ref{sec:pes} \\
 Measurement problem & Open problem & Decoherence-based $\Gamma_{\rm loop}$ criterion + PES + conditional Born rule via Gleason & B & \ref{sec:quantum_classical_boundary},\newline\ref{sec:pes},\newline\ref{sec:qs_born} \\
 Particle stability (generic) & Empirical / symmetry-protected & PES proximity to the stationary minimally disturbing sector & Open programme & \ref{sec:pes} \\
-Cosmological-constant problem ($10^{120}$ UV-vs-IR mismatch) & Catastrophic fine-tuning (standard framework) & \textbf{Resolved at Level~A}: fixed determinant $\sqrt{-g_{\rm eff}}=\beta^2/c_*$ from $n^A n_A=1$ makes $V(\phi_0)$ inert for emergent gravity (Theorem~\ref{thm:cc_decoupling}(iv), unconditional); zero-derivative loop absorbed under $H_\Lambda$ (Theorem~\ref{thm:cc_decoupling}(v)); separately, the \emph{value} of $\rho_{\Lambda,\rm obs}$ scales as $\sim M_{\rm Pl}^2 H_0^2$ at order-of-magnitude (Level~C), with coefficient $c_\Lambda=\mathcal{O}(1)$ open; a possible pseudo-Goldstone realization exists if $m_G\sim H_0$ and $f_G\sim \bar M_{\rm Pl}$ & \textbf{A} (catastrophe resolution); C (numerical value of $\rho_{\Lambda,\rm obs}$) & \ref{sec:cc_problem} \\
+Cosmological-constant problem ($10^{120}$ UV-vs-IR mismatch) & Catastrophic fine-tuning (standard framework) & \textbf{Resolved at Level~A}: fixed determinant $\sqrt{-\det K^{AB}}=\beta^2/c_*$ from $n^A n_A=1$ makes $V(\phi_0)$ inert for emergent gravity (Theorem~\ref{thm:cc_decoupling}(iv), unconditional); zero-derivative loop absorbed under $H_\Lambda$ (Theorem~\ref{thm:cc_decoupling}(v)); separately, the \emph{value} of $\rho_{\Lambda,\rm obs}$ scales as $\sim M_{\rm Pl}^2 H_0^2$ at order-of-magnitude (Level~C), with coefficient $c_\Lambda=\mathcal{O}(1)$ open; a possible pseudo-Goldstone realization exists if $m_G\sim H_0$ and $f_G\sim \bar M_{\rm Pl}$ & \textbf{A} (catastrophe resolution); C (numerical value of $\rho_{\Lambda,\rm obs}$) & \ref{sec:cc_problem} \\
 \end{longtable}
 }
 
@@ -45846,7 +45872,7 @@ Hubble-shift mechanism from ordered-branch $\phi$-background & Correlated shift 
 \midrule
 \multicolumn{4}{@{}l}{\textit{Additional structural and observational handles}} \\
 \midrule
-Nanosphere gravitational decoherence crossover & Derived mass scale $m_{\rm cross}\!\sim\!10^{-16}$\,kg at which gravitational decoherence dominates over environmental; no analogue in standard QM without the Di\'osi--Penrose postulate & Nanosphere interferometry (UHV, $\sim\!400$\,nm) & B \\
+Nanosphere gravitational decoherence crossover & Closure-level mass scale $m_{\rm cross}\!\sim\!10^{-16}$\,kg at which a DP-type gravitational channel would dominate over environmental decoherence; in ECT this channel is interpreted as condensate-sector distinguishability rather than as an independent collapse postulate & Nanosphere interferometry (UHV, $\sim\!400$\,nm) & B \\
 Variable Newton's constant $G_{\rm eff}(\phi)$ & $G_{\rm eff}\!=\!G_N e^{-\beta\phi}$: gravitational coupling varies with condensate amplitude; absent in pure GR & Late-time growth of structure, distance-ladder systematics & B \\
 Force-law dimensionality crossover $d_{\rm force}:\;3\!\to\!7/3\!\to\!2$ & Universal acceleration-dependent curve from single-mode $\phi$-closure; mass-independent & Pointwise $d_{\rm force}$ from SPARC rotation curves & B \\
 Redshift dependence $g^\dagger(z)$ & Critical acceleration scale evolves cosmologically via $\phi$-background; RAR intercept shift at $z\!>\!0.5$ & JWST, SKA high-$z$ kinematic surveys & B \\
