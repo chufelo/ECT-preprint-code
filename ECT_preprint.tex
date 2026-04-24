@@ -23096,6 +23096,13 @@ $4\pi\mathcal{S}_{\rm m}$. When an SI mass density
 $\rho_{\rm SI}$ is quoted explicitly, the corresponding matter energy
 density is $\rho_{\rm m}=\rho_{\rm SI}c^2$; the conversion factors are
 kept explicit only in the numerical estimates.
+This convention is used only for the dimensionless AQUAL-like
+amplitude equation. In Appendix~\ref{app:lof_full_derivation}, where the
+local quasistatic trace balance is written as an energy-density
+condition, the source is instead denoted
+$\rho_{\rm m}\equiv\rho c^2$. The two notations therefore refer to
+different normalisations of the same non-relativistic matter source:
+$\mathcal{S}_{\rm m}=\rho_{\rm m}/c^4=\rho/c^2$.
 
 \paragraph{Full interpolating equation.}
 The complete static equation, valid from the Newtonian to the
@@ -46631,24 +46638,26 @@ vacuum relaxes to $\phi = 0$, approaching the critical boundary.
 \subsubsection{Derivation of screening}
 \label{app:lof:screening_derivation}
 
-Expanding $\phi = \bar\phi(\rho) + \delta\phi$ around the
+Expanding $\phi = \bar\phi(\rho_{\rm m}) + \delta\phi$ around the
 local equilibrium:
 \begin{equation}
 K(\bar\phi)\,\nabla^2\delta\phi
-- m_\phi^2(\rho)\,\delta\phi
-= -\frac{4\pi}{c^2}\,\delta\rho\,,
+- m_\phi^2(\rho_{\rm m})\,\delta\phi
+= -4\pi\,\delta\rho_{\rm m}\,,
 \end{equation}
 with effective mass
 \begin{equation}
-m_\phi^2(\rho)
-= \frac{U_0''(\bar\phi(\rho))
-        + 4\pi\rho/(\bar\chi^2 c^2)}
-       {K(\bar\phi(\rho))}\,.
+m_\phi^2(\rho_{\rm m})
+= \frac{U_0''(\bar\phi(\rho_{\rm m}))
+        + 4\pi\rho_{\rm m}/\bar\chi^2}
+       {K(\bar\phi(\rho_{\rm m}))}\,.
 \label{eq:app_mphi}
 \end{equation}
-The term $4\pi\rho/(\bar\chi^2 c^2)$ arises from the
+The term $4\pi\rho_{\rm m}/\bar\chi^2$ arises from the
 $\chi$-dependence of the trace equation and is always positive.
-For convex $U_0$, both numerator terms increase with $\rho$.
+For convex $U_0$, both numerator terms increase with $\rho_{\rm m}$.
+Equivalently, in terms of the SI mass density,
+$\delta\rho_{\rm m}=c^2\delta\rho$.
 In the one-loop estimate $K \propto e^{-\phi/2}$
 (Section~\ref{app:lof:oneloop_calc}), which \emph{decreases} at
 larger $\bar\phi$, further reinforcing the growth of $m_\phi^2$.
@@ -46986,8 +46995,11 @@ needed for flat rotation curves with the correct mass dependence.
 \subsubsection{The interpolating equation}
 
 Combining the linear and nonlinear branches:
-(Here $\rho$ denotes the baryonic mass density and
-$\rho/c^2=-T/c^4$ is the corresponding geometric source.)
+(Here $\rho$ denotes the baryonic mass density, while
+$\mathcal{S}_{\rm m}\equiv\rho/c^2=-T/c^4$ is the corresponding
+geometric trace source. This is distinct from the energy-density
+notation $\rho_{\rm m}=\rho c^2$ used in the local equilibrium
+balance above.)
 \begin{equation}
 \nabla\cdot\left[
   \mu_\phi\!\left(
@@ -47387,7 +47399,7 @@ below by $\zeta_\gamma$.
 Using $M_{\rm Pl}=1.22\times10^{19}$\,GeV and
 $1\,{\rm Gpc}=3.086\times10^{25}$\,m, one obtains
 \begin{equation}
-  \Delta t_{\rm LIV}
+  \Delta t_{\rm LIV}^{(\zeta_\gamma=1)}
   \approx 8.4\times10^{-3}\;
   \biggl(\frac{E}{1\,{\rm GeV}}\biggr)
   \biggl(\frac{L}{1\,{\rm Gpc}}\biggr)
@@ -47397,11 +47409,11 @@ $1\,{\rm Gpc}=3.086\times10^{25}$\,m, one obtains
 Representative values:
 \begin{longtable}{@{}p{3.6cm}p{3.6cm}p{3.6cm}p{3.6cm}@{}}
 \toprule
-$E$ (GeV) & $L$ (Gpc) & Source type & $\Delta t$ (s) \\
+$E$ (GeV) & $L$ (Gpc) & Source type & $\Delta t^{(\zeta_\gamma=1)}$ (s) \\
 \midrule
 \endfirsthead
 \toprule
-$E$ (GeV) & $L$ (Gpc) & Source type & $\Delta t$ (s) \\
+$E$ (GeV) & $L$ (Gpc) & Source type & $\Delta t^{(\zeta_\gamma=1)}$ (s) \\
 \midrule
 \endhead
 \bottomrule
