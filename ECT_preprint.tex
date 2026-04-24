@@ -23135,9 +23135,9 @@ deep-MOND regime, takes the AQUAL-like form
 \end{equation}
 with
 \begin{equation}
-\mu_\phi(x) \to 1 \quad (x \ll 1)\,,
+\mu_\phi(x) \to 1 \quad (x \gg 1)\,,
 \qquad
-\mu_\phi(x) \to x \quad (x \gg 1)\,.
+\mu_\phi(x) \to x \quad (x \ll 1)\,.
 \label{eq:mu_limits_main}
 \end{equation}
 The key structural difference from standard MOND is that the
@@ -23570,7 +23570,7 @@ distinguished from a postulated MOND interpolation law:
 
 \item \textbf{RAR asymptotics.}
   For near-spherical symmetry, $g=|\nabla\Phi|$,
-  $g_N=GM_b(<r)/r^2$, the field equation gives:
+  $g_N=G_N M_b(<r)/r^2$, the field equation gives:
   \begin{equation}
     \mu\!\left(\frac{g}{g_\dagger}\right)g=g_N.
     \label{eq:rar_algebraic}
@@ -24591,10 +24591,11 @@ In the present practical galactic implementation, one fitted
 effective critical acceleration~$g^\dagger_{\rm eff}$ is assigned
 per galaxy, while the corresponding transition radius $r_*$ is a
 derived quantity.
-The most distinctive new prediction is the environmental modulation
-of $g^\dagger_{\rm eff}$~(F1, Table~\ref{tab:ECT_predictions}),
-which is absent in frameworks with a strictly universal acceleration
-scale and is directly testable with existing data.
+The most distinctive closure-level environmental handle is the
+modulation of $g^\dagger_{\rm eff}$~(F1,
+Table~\ref{tab:ECT_predictions}), which is absent in frameworks with
+a strictly universal acceleration scale and is directly testable with
+existing data.
 A known stress test of the present Level-B closure is the class of
 dark-matter-deficient ultra-diffuse galaxies (NGC~1052--DF4,
 FCC~224); these are listed as entry ND-13 in
@@ -26246,7 +26247,7 @@ in mind.
 
 {\small
 \begin{longtable}{@{}p{0.039\textwidth}p{0.232\textwidth}p{0.223\textwidth}p{0.213\textwidth}p{0.184\textwidth}@{}}
-\caption{Falsifiable predictions of the ECT framework. F1 (environmental modulation of $g_\dagger$) is the most distinctive new prediction; F3 is satisfied at the effective scalar--tensor level.}
+\caption{Falsifiable predictions of the ECT framework. F1 (environmental modulation of $g_\dagger$) is the most distinctive closure-level environmental handle; F3 is satisfied at the effective scalar--tensor level.}
 \label{tab:ECT_predictions}\\
 
 \toprule
@@ -30976,7 +30977,7 @@ Pauli-violation mechanism is that uniform acceleration can be
 locally removed by passing to a freely falling frame; the
 physically unremovable parameter is therefore the tidal tensor
 $\mathcal{E}_{ij}\sim\partial_i\partial_j\Phi_N
-\sim GM/R^3$, not the acceleration itself. Any residual
+\sim G_N M/R^3$, not the acceleration itself. Any residual
 dimensionless packet-level mismatch on a smooth background is
 accordingly controlled by combinations of the form
 $(\mathcal{E}\,L^2/c_*^2)^2$ with $L$ the packet overlap scale,
@@ -47030,8 +47031,8 @@ equilibrium balance above.)
 = \frac{4\pi G_N\rho}{c^2}\,,
 \label{eq:app_aqual}
 \end{equation}
-with $\mu_\phi(x) \to 1$ ($x \ll 1$) and
-$\mu_\phi(x) \to x$ ($x \gg 1$).
+with $\mu_\phi(x) \to 1$ ($x \gg 1$) and
+$\mu_\phi(x) \to x$ ($x \ll 1$).
 
 \subsubsection{Spherical solution in the deep-MOND branch}
 
@@ -54502,7 +54503,7 @@ M_{\rm bar,1/2}\simeq\tfrac{1}{2}M_\star,
 \label{eq:app_udg_wolf}
 \end{equation}
 so that $r_{\rm obs}=\sigma_{\rm los,obs}^2/\sigma_N^2$ with
-$\sigma_N^2\equiv (3/32)GM_\star/R_e$ the Newtonian Wolf proxy for
+$\sigma_N^2\equiv (3/32)G_N M_\star/R_e$ the Newtonian Wolf proxy for
 isotropic Plummer.  Formula \eqref{eq:app_udg_xi_req} is \emph{not}
 a prediction of $\Xi$; it is the value of $\Xi$ that the current
 closure would need at this object to reproduce the observed
@@ -54652,7 +54653,7 @@ is the appropriate next step.
 \label{app:udg:efe}
 
 A benchmark parallel to the ECT diagnostic is the external-field effect characteristic of MOND-class theories.  Estimating
-$g_{\rm ext}\simeq GM_{\rm host}/d_{\rm proj}^2$ for the four
+$g_{\rm ext}\simeq G_N M_{\rm host}/d_{\rm proj}^2$ for the four
 pressure-supported reference objects:
 
 \begin{longtable}{@{}l c c c@{}}
@@ -55601,7 +55602,7 @@ scales, as appropriate to the regime.
 {\small
 \renewcommand{\arraystretch}{1.3}
 \begin{longtable}{@{}p{5.0cm}p{3.0cm}p{3.0cm}p{3.5cm}@{}}
-\caption{Packet-level mismatch estimates from~\eqref{eq:pauli_app_eps_packet} across laboratory and compact-object regimes of interest. All numbers are order-of-magnitude estimates; $\mathcal{E}\sim GM/R^3$ is the characteristic tidal curvature scale and $L$ is the assumed fermionic overlap scale. Current experimental bounds on \emph{genuine} Pauli-principle violation are listed only as an orientation scale; since $\varepsilon_{\rm packet}$ is not itself a Pauli-violation observable but a coarse-grained packet-level mismatch estimate, the comparison should not be read as a direct experimental confrontation. None of the estimates below represents a genuine Pauli-violation prediction.}\label{tab:pauli_numerics}\\
+\caption{Packet-level mismatch estimates from~\eqref{eq:pauli_app_eps_packet} across laboratory and compact-object regimes of interest. All numbers are order-of-magnitude estimates; $\mathcal{E}\sim G_N M/R^3$ is the characteristic tidal curvature scale and $L$ is the assumed fermionic overlap scale. Current experimental bounds on \emph{genuine} Pauli-principle violation are listed only as an orientation scale; since $\varepsilon_{\rm packet}$ is not itself a Pauli-violation observable but a coarse-grained packet-level mismatch estimate, the comparison should not be read as a direct experimental confrontation. None of the estimates below represents a genuine Pauli-violation prediction.}\label{tab:pauli_numerics}\\
 \toprule
 Regime & $\mathcal{E}$ (s$^{-2}$) & $L$ (m) &
   $\varepsilon_{\rm packet}$ \\
