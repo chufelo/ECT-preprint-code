@@ -8686,14 +8686,27 @@ giving
 \begin{equation}
   g_\chi^2 \sim \left(\frac{k}{\bar{M}_{\rm Pl}}\right)^2.
 \end{equation}
-At galactic scales
-$k\sim\hbar/r_{\rm gal}\sim10^{-42}\,{\rm GeV}$:
-$g_\chi^2\sim10^{-120}$.
-At laboratory energies $k\sim k_BT\sim10^{-9}\,{\rm GeV}$:
-$g_\chi^2\sim10^{-54}$.
-Both values are negligible compared to any currently observable
+At galactic scales the relevant inverse-length scale is
+\[ k_{\rm gal}\sim r_{\rm gal}^{-1}
+   \sim 10^{-36}\text{--}10^{-37}\,{\rm GeV} \]
+for $r_{\rm gal}\sim1$--$10$\,kpc. Hence
+\[ g_\chi^2\sim
+   \left(\frac{k_{\rm gal}}{\bar M_{\rm Pl}}\right)^2
+   \sim10^{-108}\text{--}10^{-110}. \]
+This is still completely negligible. If instead one uses a Gpc-scale
+cosmological wavelength, then $k\sim10^{-42}$\,GeV and
+$g_\chi^2\sim10^{-121}$.
+
+At room-temperature laboratory scales,
+$k\sim k_B T\sim2.6\times10^{-11}\,{\rm GeV}$ ($T=300$\,K),
+which gives $g_\chi^2\sim10^{-58}$.
+For optical/eV-scale laboratory probes one may instead use
+$k\sim10^{-9}$\,GeV, giving $g_\chi^2\sim10^{-55}$.
+Both estimates are negligible compared to any currently observable
 coupling, including the ECT fifth-force coupling
-$\beta_5\sim m_f/\phi_0\sim10^{-18}$
+$\beta_5\sim m_f/\phi_0$, whose value ranges from
+$\sim10^{-22}$ for electrons to $\sim10^{-19}$ for nucleon-scale
+fermions and up to $\sim10^{-16}$ for the top quark
 (Section~\ref{sec:fifth_force}), which is itself below current
 experimental reach.
 Under this standard derivative-coupling assumption, the $\chi$-mode
@@ -34326,7 +34339,10 @@ $\tau\sim38$\,ms) is the nearest quantitative target for levitated
 nanoparticle experiments~\cite{Aspelmeyer2014,RomeroIsart2012}.
 An observation of decoherence at this timescale in a vacuum sufficiently
 good to eliminate environmental channels would constitute a direct test
-of the ECT gravitational-decoherence prediction.
+of a DP-type gravitational-decoherence channel. For ECT specifically,
+the discriminating content would be the condensate-origin interpretation,
+the absence of a freely fitted collapse scale, and any subleading
+condensate-profile corrections.
 
 % ------------------------------------------------------------------
 \subsection{Environmental--gravitational crossover}
@@ -46473,15 +46489,23 @@ f\,R = -\frac{8\pi}{c^4}\,T
 \item Weak gradients: $K(\partial\phi)^2 \ll |fR|$ and
   $3\Box f \ll fR$. This is satisfied when
   $|\delta\phi| \ll 1$ locally.
-\item Galactic regime: $V(\phi) \ll 4\pi\rho/c^2$, i.e.\
-  the condensate potential energy is small compared to the
-  matter source. For a galaxy with
-  $\rho \sim 10^{-22}\,$kg/m$^3$ this gives
-  $V \ll 10^{-4}\,$GeV$^4$, easily satisfied.
+\item Galactic regime: in units where $c=\hbar=1$, the local
+  condensate potential contribution must be small compared with the
+  matter energy density sourcing the quasistatic trace equation,
+  \[ V(\phi)\ll \rho_{\rm m},\qquad \rho_{\rm m}\equiv \rho c^2 . \]
+  For a representative galactic density
+  $\rho\sim10^{-22}\,{\rm kg\,m^{-3}}$ one has
+  \[ \rho c^2 \simeq 9\times10^{-6}\,{\rm J\,m^{-3}}
+     \simeq 4\times10^{-43}\,{\rm GeV}^4 , \]
+  so the required condition is
+  $V(\phi)\ll10^{-43}\,{\rm GeV}^4$, not $10^{-4}\,{\rm GeV}^4$.
+  In this appendix this should be read as a local weak-potential
+  assumption on the IR condensate sector, not as an automatically
+  satisfied numerical fact.
 \end{enumerate}
 Under these conditions~\eqref{eq:app_full_trace} reduces to
 \begin{equation}
-f\,R \;\approx\; \frac{8\pi\rho}{c^2} + 2V\,.
+f\,R \;\approx\; 8\pi\rho_{\rm m} + 2V\qquad (c=\hbar=1),
 \label{eq:app_trace_quasistatic}
 \end{equation}
 \emph{Physical meaning:} non-relativistic matter produces
