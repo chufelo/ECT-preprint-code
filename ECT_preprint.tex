@@ -2392,7 +2392,7 @@ linear-LIV constraint scale for short-GRB timing; the actual bound
 is expressed as $M_{\rm QG,1}>7.6\,M_{\rm Pl}$ and depends on the
 sign, source model, photon-energy range, and intrinsic-lag
 treatment.
-the dashed horizontal line indicates the projected CTA
+The dashed horizontal line indicates the projected CTA
 sensitivity ($\sim\!10^{-4}$\,s).
 The filled circle marks the unit-coefficient reference point
 $E=10$\,GeV, $L=4$\,Gpc, for which
@@ -22331,10 +22331,10 @@ coherence properties.
 \caption{Force-law effective dimensionality in ECT.
 \textbf{(a)}~$d_{\rm force}(r)$ for three galaxy masses,
 computed analytically from the $\phi$-closure
-$\mu(g_{\rm obs}/g_\dagger)\,g_{\rm obs} = GM/r^2$.
+$\mu(g_{\rm obs}/g_\dagger)\,g_{\rm obs} = G_N M/r^2$.
 In the screened regime ($g_{\rm obs} \gg g_\dagger$):
 $d_{\rm force} \to 3$ (Newtonian).
-Beyond the transition radius $r_* = \sqrt{GM/g_\dagger}$
+Beyond the transition radius $r_* = \sqrt{G_N M/g_\dagger}$
 (filled dots): $d_{\rm force} \to 2$
 ($g \propto 1/r \Rightarrow v_{\rm flat} = \mathrm{const}$).
 At $r_*$ (where $x = g_{\rm obs}/g_\dagger = 1$):
@@ -22434,7 +22434,7 @@ effectively two-dimensional force-law regime at low acceleration.
 \paragraph{Representative transition radii.}
 The characteristic transition radius
 \[
-r_*=\sqrt{\frac{GM}{g^\dagger}}
+r_*=\sqrt{\frac{G_N M}{g^\dagger}}
 \]
 marks the point at which the force law begins to leave the
 near-Newtonian regime.
@@ -26221,7 +26221,10 @@ list of ``predictions'' would misrepresent the structure of the
 present framework. There are five logically distinct kinds of
 empirical statements:
 (i)~\emph{hard structural discriminants} of the core framework
-(e.g.\ F1, F10, F11, F12, F13; ND6);
+(e.g.\ F10, F11, F12, F13; ND6), together with closure-level
+environmental discriminants such as F1, whose null result constrains
+$\gamma$ and $U_0''(\bar\phi_{\rm env})$ rather than falsifying the
+entire amplitude mechanism;
 (ii)~\emph{already-satisfied consistency requirements} such as
 $c_T = c$ from GW170817 (F3) and Solar-System screening (F2), which
 ECT must and does satisfy but which are not fresh forecasts;
@@ -47159,9 +47162,15 @@ observational systematics.
 Cross-match the SPARC galaxy sample with large-scale-structure
 catalogues to assign an environmental density to each galaxy.
 Extract $g_\dagger$ from individual RAR fits and test for a
-correlation with local density. A positive correlation would
-support ECT; absence of correlation at the $\lesssim\!10\%$
-level would constrain the parameter $\gamma$.
+correlation with local density. A positive correlation would support the environmental-response
+route of the $\phi$-first closure. Absence of correlation at the
+$\lesssim\!10\%$ level would constrain the calibrated combination
+\[
+\gamma\,\frac{4\pi\bar\rho_{{\rm m},\,{\rm env}}}
+{U_0''(\bar\phi_{\rm env})}
+\]
+and the density-only environment ansatz, rather than falsifying the
+ordered-branch amplitude mechanism as a whole.
 
 
 %%% ===========================================================
@@ -53322,7 +53331,7 @@ d_{\rm force}(r)
 \end{equation}
 where $p_N(r) \equiv -d\ln g_N/d\ln r$.
 
-For a point mass, $g_N = GM/r^2$ gives $p_N = 2$.
+For a point mass, $g_N = G_N M/r^2$ gives $p_N = 2$.
 
 \subsection{Specific result for $\mu(x) = x/\sqrt{1+x^2}$}
 
@@ -53381,7 +53390,7 @@ The rotation velocity $v^2 = r\,g \propto r^{2-d_{\rm force}}$:
 
 The transition $x = 1$ occurs at
 \begin{equation}
-r_* = \sqrt{\frac{GM}{g_\dagger(\phi_{\rm env})}}\,.
+r_* = \sqrt{\frac{G_N M}{g_\dagger(\phi_{\rm env})}}\,.
 \end{equation}
 Representative values:
 $r_*(10^8\,M_\odot) \approx 0.3\,$kpc,
