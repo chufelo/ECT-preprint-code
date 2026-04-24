@@ -131,7 +131,7 @@ metric determinant is fixed by the kinematic constraint
 $n^A n_A=1$, which renders the classical baseline $V(\phi_0)$ inert
 for local emergent gravity (unconditionally) and---conditional on a
 one-line spectral assumption on the full quadratic fluctuation
-operator (condition~H1)---absorbs the zero-derivative one-loop
+operator (condition~$H_\Lambda$)---absorbs the zero-derivative one-loop
 vacuum contribution; the direct $10^{120}$-level UV-to-IR
 cancellation characteristic of the standard framework is therefore
 structurally absent in the leading ordered-branch sector.
@@ -473,7 +473,7 @@ $c_\Lambda$ & Dimensionless infrared coefficient in $\rho_\Lambda\sim c_\Lambda\
 $Z_q$ & Infrared stiffness of the surviving FRW ordered-branch mode $q(t)$; expected $\sim M_{\rm Pl}^2$ structurally & GeV$^2$ \\
 $V_{\rm IR}(q)$ & Residual infrared potential of the ordered-branch mode; distinct from the decoupled UV baseline $V(\phi_0)$ & GeV$^4$ \\
 $\rho_\Lambda^{\rm IR}$ & Effective infrared source in the Friedmann equation (Object~C); not equal to $V(\phi_0)$ or $\Gamma_{\rm vac}^{(0)}$ & GeV$^4$ \\
-$\Gamma_{\rm vac}^{(0)}$ & Zero-derivative one-loop vacuum contribution (Object~B); decouples conditional on~H1 (Theorem~1(v)) & GeV$^4$ \\
+$\Gamma_{\rm vac}^{(0)}$ & Zero-derivative one-loop vacuum contribution (Object~B); decouples conditional on~$H_\Lambda$ (Theorem~\ref{thm:cc_decoupling}(v)) & GeV$^4$ \\
 $q(t)$ & Surviving long-wavelength ordered-branch mode on FRW background (condensate-amplitude / orientation scalar) & various \\
 $f_G$ & Pseudo-Goldstone decay-constant scale entering the possible infrared realization of $\rho_{\Lambda,\rm obs}$; expected to be of order $\phi_0$ in the ECT architecture & GeV \\
 $m_G$ & Putative pseudo-Goldstone mass scale in the possible infrared realization; if $m_G\sim H_0$, the order-of-magnitude estimate $\rho_\Lambda\sim M_{\rm Pl}^2H_0^2$ follows naturally & eV \\
@@ -568,7 +568,8 @@ ISW & Integrated Sachs--Wolfe (effect / cross-correlation with large-scale trace
 RSD & Redshift-space distortions \\
 SH0ES & Supernovae and $H_0$ for the Equation of State (local Hubble-constant programme) \\
 NLEE & Non-linear Einstein equations (or non-linear extensions of generalised Einstein equations) \\
-H1 & Late-time $\varepsilon$-route to the Hubble sector (pre-retained-band scan classification) \\
+H1 & Late-time $\varepsilon$-route to the Hubble sector (pre-retained-band scan classification); unrelated to the CC spectral condition $H_\Lambda$ below \\
+$H_\Lambda$ & Spectral condition on the full quadratic fluctuation operator used \emph{only} in the emergent unimodular decoupling theorem (Sec.~\ref{subsec:H1_cc}); controls whether the zero-derivative one-loop vacuum contribution collapses to a fixed-volume term. Unrelated to the Hubble-sector H1 route. \\
 H2 & Full early+late CMB-inferred $H_0$ closure (retained-band target, open) \\
 BMV & Bose--Mazumdar--Morley / Marletto--Vedral (gravity-induced entanglement proposal, Section~\ref{sec:ect_gie}) \\
 BMS & Bondi--Metzner--Sachs (asymptotic symmetry group, Section~\ref{sec:ir_bms}) \\
@@ -2611,6 +2612,9 @@ Once the ordered branch satisfies $\alpha>\beta$, the distinguished
 coordinate $w$ becomes time-like in the effective kinetic tensor.
 The corresponding physical time is introduced by the real
 parametrisation $t=w/c_*$, with
+\[
+c_*^2=\frac{\beta}{\alpha-\beta}.
+\]
 It is only at this point---not before---that the word ``time'' acquires
 physical meaning.
 
@@ -9778,39 +9782,57 @@ Keeping these three levels distinct is essential for an honest reading
 of the graviton claim in ECT.
 
 \textbf{Step 1: effective metric.}
-The condensate background defines an effective metric through the
-propagation structure of perturbations.
-For the general two-parameter form with parameters $\alpha$ and $\beta$,
-the effective inverse metric is
+The condensate background defines an effective inverse metric through
+the principal symbol of ordered-branch perturbations, using the same
+unique kinetic tensor~$K^{AB}$ established by
+Theorem~\ref{thm:tensor_uniqueness}:
 \begin{equation}
 \label{eq:geff}
-G^{AB}_{\rm eff} = \delta^{AB} - (\alpha-\beta)\,n^A n^B.
+G^{AB}_{\rm eff} \;=\; K^{AB}
+\;=\; \beta\,\delta^{AB} \;-\; \alpha\,n^A n^B,
+\qquad n_A n^A = 1 .
 \end{equation}
-In the broken-symmetry vacuum $\langle n_A\rangle=\delta_{Aw}$ one
+Equivalently, using the projectors
+$P_{\parallel}^{AB}=n^A n^B$ and
+$P_{\perp}^{AB}=\delta^{AB}-n^A n^B$,
+\[
+G^{AB}_{\rm eff}
+\;=\; \beta\,P_{\perp}^{AB}
+\;-\; (\alpha-\beta)\,P_{\parallel}^{AB}.
+\]
+In the broken-symmetry vacuum $\langle n^A\rangle=\delta^A_{\,w}$ one
 obtains
 \[
-G^{AB}_{\rm eff}=\mathrm{diag}(1,1,1,1-\alpha+\beta),
+G^{AB}_{\rm eff}=\mathrm{diag}(\beta,\beta,\beta,\beta-\alpha),
 \]
-which has Lorentzian signature for $\alpha>\beta$.
+which has Lorentzian signature for $\alpha>\beta>0$.
 In the canonical benchmark $(\alpha,\beta)=(2,1)$ this reduces to
-$\mathrm{diag}(1,1,1,-1)$.
-The corresponding covariant metric is
+$\mathrm{diag}(1,1,1,-1)$, so that
+$c_*^2=\beta/(\alpha-\beta)=1$.
+The corresponding covariant effective metric is
 \begin{equation}
-\label{eq:geff_cov_legacy}
-g^{\rm eff}_{AB} = \delta_{AB}
-+ \frac{\alpha-\beta}{(\beta+1)-\alpha}\,n_A n_B
-\approx \eta_{AB} + h_{AB},
+\label{eq:geff_cov_graviton}
+g^{\rm eff}_{AB}
+\;=\; \frac{1}{\beta}\,P^{\perp}_{AB}
+\;-\; \frac{1}{\alpha-\beta}\,P^{\parallel}_{AB},
+\qquad
+G^{AC}_{\rm eff}\,g^{\rm eff}_{CB}=\delta^{A}{}_{B},
 \end{equation}
-where, after introducing the real ordered-branch time coordinate $t=w/c_*$ and with
-$\alpha=2\beta$, $\beta=1$, the background metric is
-$\eta_{AB}=\mathrm{diag}(-1,1,1,1)$.
+so that, after introducing the real ordered-branch time coordinate
+$t=w/c_*$, the background metric in the canonical benchmark is
+$\eta_{AB}=\mathrm{diag}(-1,1,1,1)$ and
+$g^{\rm eff}_{AB}=\eta_{AB}+h_{AB}$.
 The induced symmetric effective-metric perturbation is
 \begin{equation}
 \label{eq:graviton_field}
-h_{AB}
-= -(\alpha-\beta)\!\left(\delta_{Aw}\,\delta n_B + \delta_{Bw}\,\delta n_A\right)
-+ O(\delta n^2).
+\delta G^{AB}_{\rm eff}
+\;=\; -\,\alpha\!\left(
+\bar n^{A}\,\delta n^{B} + \delta n^{A}\,\bar n^{B}
+\right) + O(\delta n^2),
 \end{equation}
+with $h_{AB}$ the corresponding perturbation of the covariant metric
+$g^{\rm eff}_{AB}$ obtained by inverting~\eqref{eq:geff_cov_graviton} at linear
+order.
 The candidate spin-2 graviton sector is identified with the
 transverse-traceless part of this induced effective-metric
 perturbation, rather than with a direct degree of freedom of $n_A$
@@ -21854,14 +21876,14 @@ Age-viability note
   & viability/self-consistency note, not a retained probe \\
 
 Vacuum-offset decoupling: $V(\phi_0)$ inert
-  & classical baseline offset $V(\phi_0)$ does not source local emergent gravity (Theorem~1(iv))
+  & classical baseline offset $V(\phi_0)$ does not source local emergent gravity (Theorem~\ref{thm:cc_decoupling}(iv))
   & A
   & \S\ref{sec:cc_problem}, \S\ref{subsec:main_theorem}
   & removes standard $\Lambda$ channel for the bare quartic minimum \\
 
 Zero-derivative loop-vacuum decoupling
-  & absorbed into fixed determinant $\sqrt{-g_{\rm eff}}=\beta^2/c_*$ (Theorem~1(v))
-  & A, conditional on~H1
+  & absorbed into fixed determinant $\sqrt{-g_{\rm eff}}=\beta^2/c_*$ (Theorem~\ref{thm:cc_decoupling}(v))
+  & A, conditional on~$H_\Lambda$
   & \S\ref{subsec:main_theorem}, \S\ref{subsec:H1_cc}
   & blocks direct UV channel for vacuum baseline \\
 
@@ -24883,8 +24905,8 @@ unimodular decoupling theorem of Section~\ref{sec:cc_problem}: the
 emergent metric determinant is fixed by the kinematic constraint
 $n^A n_A = 1$ and the classical baseline $V(\phi_0)$ therefore does
 not source the local emergent gravitational dynamics
-(Theorem~1(iv)). Conditional on a one-line spectral assumption on
-the full quadratic fluctuation operator (condition~H1, discussed in
+(Theorem~\ref{thm:cc_decoupling}(iv)). Conditional on a one-line spectral assumption on
+the full quadratic fluctuation operator (condition~$H_\Lambda$, discussed in
 the same section), the zero-derivative one-loop vacuum contribution
 is absorbed into the same fixed-determinant structure.
 No cross-scale cancellation between the UV vacuum baseline and the
@@ -24897,7 +24919,7 @@ the dimensionless coefficient $c_\Lambda=\mathcal{O}(1)$ is not yet
 derived from first principles; this is a distinct Level~C
 determination question that should not be conflated with the
 Level~A resolution of the catastrophe.
-The outstanding technical tasks---verification of condition~H1
+The outstanding technical tasks---verification of condition~$H_\Lambda$
 against the full ECT Lagrangian, explicit first-principles
 computation of $c_\Lambda$, and the formal quantum
 non-renormalization analogue of the Ng--van Dam
@@ -25602,12 +25624,12 @@ the structural flatness result $k=0$,
 the elimination of the primary monopole channel,
 \emph{the resolution at Level~A of the classical
 cosmological-constant catastrophe}
-(Section~\ref{sec:cc_problem}; Theorem~1): fixed
+(Section~\ref{sec:cc_problem}; Theorem~\ref{thm:cc_decoupling}): fixed
 $\sqrt{-g_{\rm eff}}=\beta^2/c_*$ from $n^A n_A = 1$ renders
 the classical baseline $V(\phi_0)$ inert for the local emergent
-gravity (Theorem~1(iv), unconditional), and absorbs the
-zero-derivative one-loop vacuum contribution under condition~H1
-(Theorem~1(v)); the direct $10^{120}$-level cancellation
+gravity (Theorem~\ref{thm:cc_decoupling}(iv), unconditional), and absorbs the
+zero-derivative one-loop vacuum contribution under condition~$H_\Lambda$
+(Theorem~\ref{thm:cc_decoupling}(v)); the direct $10^{120}$-level cancellation
 characteristic of the standard framework is structurally absent;
 separately, the \emph{value} of $\rho_{\Lambda,\rm obs}$ itself is
 a distinct Level~C determination problem with natural scaling
@@ -26017,7 +26039,7 @@ Macroscopic entropy growth & Reduced-state decoherence with effective bath assum
 Universal causal cone & Single $g_{\mu\nu}(n)$ in IR EFT & derived \\
 LV suppression & Higher-dim.\ ops., $\delta c/c\sim(E/\Lambda)^2$ & derived \\
 Proton stability & Three selection-rule patterns conditional on gauge/flavour completion (\S\ref{sec:proton_stability}) & conditional (Level~C) \\
-Cosmological-constant UV decoupling & Fixed determinant $\sqrt{-g_{\rm eff}}=\beta^2/c_*$ from the kinematic constraint $n^A n_A=1$ (Theorem~1, Sec.~\ref{sec:cc_problem}); the classical baseline $V(\phi_0)$ is inert for local emergent gravity (Theorem~1(iv), unconditional), while the zero-derivative loop contribution is absorbed only conditional on H1 (Theorem~1(v)); the direct $10^{120}$-level UV-to-IR cancellation of the standard framework is thereby absent in the leading ordered-branch sector; separately, the IR coefficient $c_\Lambda$ remains open (Level~C) & \textbf{derived (Level~A for Object~A; H1-conditional for Object~B)}; IR coefficient $c_\Lambda$ open (Level~C) \\
+Cosmological-constant UV decoupling & Fixed determinant $\sqrt{-g_{\rm eff}}=\beta^2/c_*$ from the kinematic constraint $n^A n_A=1$ (Theorem~\ref{thm:cc_decoupling}, Sec.~\ref{sec:cc_problem}); the classical baseline $V(\phi_0)$ is inert for local emergent gravity (Theorem~\ref{thm:cc_decoupling}(iv), unconditional), while the zero-derivative loop contribution is absorbed only conditional on $H_\Lambda$ (Theorem~\ref{thm:cc_decoupling}(v)); the direct $10^{120}$-level UV-to-IR cancellation of the standard framework is thereby absent in the leading ordered-branch sector; separately, the IR coefficient $c_\Lambda$ remains open (Level~C) & \textbf{derived (Level~A for Object~A; $H_\Lambda$-conditional for Object~B)}; IR coefficient $c_\Lambda$ open (Level~C) \\
 \hline
 
 \end{longtable}
@@ -26240,7 +26262,7 @@ would still remain logically possible) \\
 
 F15 & Vacuum-offset decoupling: classical $V(\phi_0)$ does not
 gravitate in the leading ordered-branch sector
-(Theorem~1(iv), Sec.~\ref{sec:cc_problem}) &
+(Theorem~\ref{thm:cc_decoupling}(iv), Sec.~\ref{sec:cc_problem}) &
 No detectable $\Lambda$-scale contribution from the bare quartic
 minimum &
 Cosmological and solar-system $\Lambda$-channel tests;
@@ -33601,13 +33623,24 @@ orders of magnitude higher, around the levitated-nanoparticle frontier.
 \textit{Di\'osi 1987~\cite{Diosi1987}; Penrose 1996~\cite{Penrose1996}.}
 
 Di\'osi and Penrose propose that quantum superpositions of massive
-objects collapse with timescale $\tau_{\rm DP}=\hbar/E_G$, where
+objects collapse with a timescale $\tau_{\rm DP}=\hbar/E_G$, where
+$E_G$ is the self-gravitational energy of the difference between the
+two mass distributions $\rho_1,\rho_2$ of the superposed branches:
 \begin{equation}
   \label{eq:E_G_DP}
-  E_G = G_N\!\iint
-    \frac{|\psi(\mathbf{r})|^2\,|\psi(\mathbf{r}')|^2}
+  E_G
+  = \frac{G_N}{2}\!\iint
+    \frac{[\rho_1(\mathbf{r})-\rho_2(\mathbf{r})]\,
+           [\rho_1(\mathbf{r}')-\rho_2(\mathbf{r}')]}
          {|\mathbf{r}-\mathbf{r}'|}\,d^3r\,d^3r'.
 \end{equation}
+For a rigid body of mass $m$ split into two branches at separation
+$d\gtrsim R$ (object size $R$), the leading geometry-dependent
+heuristic estimate is
+$E_G\sim G_N m^2/R$ (self-energy normalisation)
+or $E_G\sim G_N m^2/d$ (separation-dominated regime),
+giving $\tau_{\rm DP}\sim \hbar R/(G_N m^2)$ at the self-energy
+scale.
 In ECT, gravitational decoherence is not introduced as a separate
 fundamental law.
 It is read as the contribution of the graviton-like condensate sector
@@ -33622,9 +33655,18 @@ Di\'osi--Penrose form
   = \frac{\hbar}{E_G}
   = \tau_{\rm DP}.
 \end{equation}
-ECT therefore reproduces the Di\'osi--Penrose scaling as a limiting
-case of the condensate decoherence functional in the
-gravity-dominated regime.
+ECT therefore \emph{realises} the Di\'osi--Penrose scaling as a
+limiting case of the condensate decoherence functional in the
+gravity-dominated regime. The numerical timescale is not unique to
+ECT: it coincides at leading order with the DP estimate and with
+other collapse models that share the same gravitational self-energy
+input. The ECT-specific content is the \emph{origin} of this rate
+as condensate-sector distinguishability rather than a postulated
+collapse law. A positive nanosphere signal at the predicted scale
+would therefore support the ECT closure only when combined with
+tests that exclude ordinary environmental decoherence and that
+distinguish ECT from DP-collapse models through subleading
+condensate-sector corrections.
 
 \renewcommand{\arraystretch}{1.3}
 \begin{longtable}{@{}p{3.4cm}p{3.4cm}p{2.5cm}p{2.5cm}p{2.5cm}@{}}
@@ -43767,8 +43809,9 @@ geometric gravitational branch arise from one common substrate.
 ECT (right). Standard QM is formulated as a Cauchy initial-value
 problem with probability as a fundamental axiom (Born rule).
 ECT begins from an elliptic boundary-value problem on a Euclidean
-domain; time, probability, and measurement emerge as effective features
-of the symmetry-broken ordered branch.
+domain; time emerges on the ordered branch, while probability and
+measurement are treated as reduced-sector reconstruction targets.
+The Born rule and detector-level outcome selection remain open.
 The rows are representative contrasts, not an exhaustive list of all
 structural differences; the full comparison, with tables and
 illustrative examples, is developed in Section~\ref{sec:qm_capstone}.}
@@ -44172,11 +44215,11 @@ theorem of Section~\ref{sec:cc_problem} shows that, in the leading
 ordered-branch sector, the fixed-determinant structure
 $\sqrt{-g_{\rm eff}}=\beta^2/c_*$ makes the classical baseline
 $V(\phi_0)$ inert for the local emergent gravitational dynamics
-(Theorem~1(iv); Level~A, unconditional), and---conditional on a
+(Theorem~\ref{thm:cc_decoupling}(iv); Level~A, unconditional), and---conditional on a
 one-line spectral assumption on the full quadratic fluctuation
-operator (condition~H1)---the same fixed-determinant structure
+operator (condition~$H_\Lambda$)---the same fixed-determinant structure
 absorbs the zero-derivative one-loop vacuum contribution
-(Theorem~1(v); Level~A conditional).
+(Theorem~\ref{thm:cc_decoupling}(v); Level~A conditional).
 No cross-scale cancellation between UV and IR scales is invoked at
 any stage, and Weinberg's no-go theorem in its standard form does
 not apply to the ECT framework.
@@ -44195,7 +44238,7 @@ is a dynamical functional of the condensate background rather than
 a rigid constant.
 Reformulated OP-$\Lambda$3 therefore splits into three technical
 open problems (O1--O3 of Section~\ref{subsec:cc_open}):
-verification of condition~H1 against the full ECT Lagrangian,
+verification of condition~$H_\Lambda$ against the full ECT Lagrangian,
 explicit first-principles computation of $c_\Lambda$ on an FRW
 background, and a formal analogue of the Ng--van Dam
 non-renormalization theorem~\cite{NgVanDam1990} in the emergent
@@ -44310,7 +44353,7 @@ combination of importance and proximity to existing ECT tools:
     emergent unimodular decoupling theorem; what remains open is the
     first-principles computation of the infrared coefficient
     $c_\Lambda$ in $\rho_\Lambda\sim c_\Lambda M_{\rm Pl}^2 H_0^2$,
-    verification of condition~H1 against the full Lagrangian, and
+    verification of condition~$H_\Lambda$ against the full Lagrangian, and
     the formal analogue of the Ng--van Dam non-renormalization
     theorem (O1--O3 of Section~\ref{subsec:cc_open}; legacy label:
     OP-$\Lambda$3).
@@ -44913,9 +44956,9 @@ OP-TORSION
   & Propagating torsion in a possible first-order reformulation
   & Open (speculative) \\
 OP-$\Lambda$3-O1
-  & Verification of condition~H1 on the full quadratic fluctuation
+  & Verification of condition~$H_\Lambda$ on the full quadratic fluctuation
     operator in the leading ordered-branch sector
-    (Section~\ref{subsec:H1_cc}); decides whether Theorem~1(v)
+    (Section~\ref{subsec:H1_cc}); decides whether Theorem~\ref{thm:cc_decoupling}(v)
     decoupling of Object~B is unconditional or transferred to the
     scalar-hierarchy sector
   & Open \\
@@ -44939,7 +44982,7 @@ OP-$\Lambda$3-O4
     prediction (Section~\ref{subsec:goldstone_cc})
   & Open \\
 OP-$\Lambda$3-O5
-  & Extension of Theorem~1 beyond the leading ordered-branch ansatz
+  & Extension of Theorem~\ref{thm:cc_decoupling} beyond the leading ordered-branch ansatz
     $K^{AB}=\beta\delta^{AB}-\alpha n^A n^B$; assessment of
     higher-order corrections to the fixed-determinant property
   & Open \\
@@ -45014,7 +45057,7 @@ $n_s$ (corridor) & $0.96$--$0.97$ & $0.965\!\pm\!0.004$ & corridor & II \\
 $|\delta c/c|$ & $<\!10^{-15}$ & $<\!10^{-15}$ & \checkmark & II \\
 $w_0$ (DESI) & $-0.83$ & $-0.827$ & \checkmark & II \\
 $\eta_B$ & $9\!\times\!10^{-10}$ & $6\!\times\!10^{-10}$ & $\sim\!1.5\times$ & II \\
-CC catastrophe ($10^{120}$ UV--IR mismatch) & Structurally absent in leading ordered-branch sector (Theorem~1, \S\ref{sec:cc_problem}) & ``Open problem'' in standard framework & \textbf{Resolved (Level~A)} & II \\
+CC catastrophe ($10^{120}$ UV--IR mismatch) & Structurally absent in leading ordered-branch sector (Theorem~\ref{thm:cc_decoupling}, \S\ref{sec:cc_problem}) & ``Open problem'' in standard framework & \textbf{Resolved (Level~A)} & II \\
 $\rho_{\Lambda,\rm obs}$ scale & $c_\Lambda M_{\rm Pl}^2 H_0^2\!\sim\!10^{-47}\,{\rm GeV}^4$ & $\sim\!10^{-47}\,{\rm GeV}^4$ & Order-of-magnitude match (Level~C) & II \\
 \midrule
 \multicolumn{5}{l}{\textit{Neutrino sector (Part~I)}} \\
@@ -45164,7 +45207,7 @@ decoupling theorem of Section~\ref{sec:cc_problem}
 (fixed $\sqrt{-g_{\rm eff}}=\beta^2/c_*$ from the kinematic
 constraint $n^A n_A=1$ makes the classical baseline $V(\phi_0)$
 inert for local emergent gravity; conditional on the one-line
-spectral assumption~H1, the same fixed-determinant structure
+spectral assumption~$H_\Lambda$, the same fixed-determinant structure
 absorbs the zero-derivative one-loop vacuum contribution; no
 $10^{120}$ cross-scale cancellation is invoked; the numerical value
 of $\rho_{\Lambda,\mathrm{obs}}$ is a distinct Level~C
@@ -45222,9 +45265,10 @@ mass ordering---remains open.
 Beyond its technical outputs, ECT provides structural routes into
 several long-standing foundational questions that standard physics
 leaves unanswered:
-(i)~\emph{Why $3+1$ dimensions?}---the $O(4)\to O(3)$ transition
+(i)~\emph{Why $3+1$ dimensions?}---given the P1 postulate of a
+four-dimensional Euclidean arena, the $O(4)\to O(3)$ ordered branch
 singles out exactly three spatial directions and one temporal seed;
-standard physics postulates $d=3+1$ without explanation.
+the deeper origin of four-dimensionality itself remains OP0.
 (ii)~\emph{Why no magnetic monopoles?}---$\pi_2(S^3)=0$ is a strict
 topological anti-prediction~(Level~A), resolving a long-standing
 tension with GUT frameworks that generically predict monopoles.
@@ -45237,15 +45281,20 @@ Level~B). The minimal primary potential contains no Coleman false vacuum:
 $\Phi=0$ is a hilltop, not a metastable minimum.
 The inheritance of this stability by the electroweak secondary
 sector remains open as part of the second-transition programme.
-(iv)~\emph{Quantum gravity without quantising geometry}---gravity is
-a condensate response, not a fundamental geometric field; the graviton
-is a condensate excitation on a fixed Euclidean background, avoiding
-the non-renormalisability of metric quantisation.
-(v)~\emph{Cosmological coincidence}---if dark energy is dynamical
-($w_0\neq -1$) rather than a rigid $\Lambda$, the near-equality
-$\Omega_m\sim\Omega_\Lambda$ at the present epoch may have a
-dynamical explanation through the evolution of the condensate
-background~(Level~B/Open).
+(iv)~\emph{Quantum gravity without primitive metric quantisation}---
+gravity is treated as a condensate response rather than as a fundamental
+geometric field; the graviton is a candidate condensate excitation on a
+fixed Euclidean background. This reframes the usual perturbative
+non-renormalisability problem of quantised GR, but does not yet prove
+UV finiteness or perturbative renormalisability of the full ECT quantum
+sector~(architecture; UV completion open).
+(v)~\emph{Cosmological coincidence}---the present ECT thawing
+benchmark does not materially widen the order-unity
+matter-to-dark-energy window relative to $\Lambda$CDM; ECT reframes
+the question by replacing a rigid external $\Lambda$ with a dynamical
+condensate amplitude tied to the same framework that generates $G_N$,
+$c_*$, and $\hbar$, but a genuine dynamical solution of the coincidence
+problem remains open~(reframing only; Open).
 (vi)~\emph{Massless graviton}---the spin-2 mode emerges from SSB with
 $m_g=0$ protected by the gauge structure of the ordered
 branch~(Level~A/B), consistent with the LIGO bound
@@ -45308,8 +45357,10 @@ Fock space as reconstruction target &
 \multicolumn{4}{l}{\textit{Foundational questions addressed}} \\
 \midrule
 Why $3\!+\!1$ dimensions? &
-  $O(4)\!\to\!O(3)$: 3~spatial + 1~temporal &
-  A & Yes \\
+  $O(4)\!\to\!O(3)$: 3~spatial + 1~temporal;
+  conditional on P1 (4D Euclidean arena postulate);
+  deeper origin of four-dimensionality = OP0 &
+  A (conditional on P1) & Yes (structural) \\
 Why no monopoles? &
   $\pi_2(S^3)=0$; GUT predicts them &
   A & Yes (anti-prediction) \\
@@ -45329,8 +45380,8 @@ Cosmological coincidence &
   Dynamical $\Lambda_{\rm eff}(\phi)$, not rigid $\Lambda$ &
   B/Open & Reframing \\
 Cosmological-constant catastrophe &
-  \textbf{Resolved at Level~A for the classical/direct vacuum channel}: $V(\phi_0)$ is inert for emergent gravity via fixed $\sqrt{-g_{\rm eff}}=\beta^2/c_*$ from $n^A n_A=1$ (Theorem~1(iv), Sec.~\ref{sec:cc_problem}); the extension of this decoupling to the zero-derivative loop sector is conditional on H1 (Theorem~1(v)); no direct $10^{120}$ cross-scale cancellation is invoked &
-  \textbf{A} for Object~A; H1-conditional for Object~B & Yes (structural resolution) \\
+  \textbf{Resolved at Level~A for the classical/direct vacuum channel}: $V(\phi_0)$ is inert for emergent gravity via fixed $\sqrt{-g_{\rm eff}}=\beta^2/c_*$ from $n^A n_A=1$ (Theorem~\ref{thm:cc_decoupling}(iv), Sec.~\ref{sec:cc_problem}); the extension of this decoupling to the zero-derivative loop sector is conditional on $H_\Lambda$ (Theorem~\ref{thm:cc_decoupling}(v)); no direct $10^{120}$ cross-scale cancellation is invoked &
+  \textbf{A} for Object~A; $H_\Lambda$-conditional for Object~B & Yes (structural resolution) \\
 $\rho_{\Lambda,\rm obs}$ numerical value &
   IR scaling $\sim M_{\rm Pl}^2 H_0^2$ matches observation at order-of-magnitude; $c_\Lambda=\mathcal{O}(1)$ remains open; a possible pseudo-Goldstone realization exists if $m_G\sim H_0$ and $f_G\sim \bar M_{\rm Pl}$ (Sec.~\ref{subsec:goldstone_cc}) &
   C & Yes (Level~C estimate) \\
@@ -45699,7 +45750,7 @@ Right-handed neutrino scale $M_R$ & Free parameter in seesaw & $M_R^{\rm geom}\!
 Quantum gravity (UV completion) & Open problem & Structurally unified route: graviton as condensate excitation governed by the same $S_0$; full closure open & B--C & \ref{sec:graviton},\newline\ref{sec:pes} \\
 Measurement problem & Open problem & Decoherence-based $\Gamma_{\rm loop}$ criterion + PES + conditional Born rule via Gleason & B & \ref{sec:quantum_classical_boundary},\newline\ref{sec:pes},\newline\ref{sec:qs_born} \\
 Particle stability (generic) & Empirical / symmetry-protected & PES proximity to the stationary minimally disturbing sector & Open programme & \ref{sec:pes} \\
-Cosmological-constant problem ($10^{120}$ UV-vs-IR mismatch) & Catastrophic fine-tuning (standard framework) & \textbf{Resolved at Level~A}: fixed determinant $\sqrt{-g_{\rm eff}}=\beta^2/c_*$ from $n^A n_A=1$ makes $V(\phi_0)$ inert for emergent gravity (Theorem~1(iv), unconditional); zero-derivative loop absorbed under H1 (Theorem~1(v)); separately, the \emph{value} of $\rho_{\Lambda,\rm obs}$ scales as $\sim M_{\rm Pl}^2 H_0^2$ at order-of-magnitude (Level~C), with coefficient $c_\Lambda=\mathcal{O}(1)$ open; a possible pseudo-Goldstone realization exists if $m_G\sim H_0$ and $f_G\sim \bar M_{\rm Pl}$ & \textbf{A} (catastrophe resolution); C (numerical value of $\rho_{\Lambda,\rm obs}$) & \ref{sec:cc_problem} \\
+Cosmological-constant problem ($10^{120}$ UV-vs-IR mismatch) & Catastrophic fine-tuning (standard framework) & \textbf{Resolved at Level~A}: fixed determinant $\sqrt{-g_{\rm eff}}=\beta^2/c_*$ from $n^A n_A=1$ makes $V(\phi_0)$ inert for emergent gravity (Theorem~\ref{thm:cc_decoupling}(iv), unconditional); zero-derivative loop absorbed under $H_\Lambda$ (Theorem~\ref{thm:cc_decoupling}(v)); separately, the \emph{value} of $\rho_{\Lambda,\rm obs}$ scales as $\sim M_{\rm Pl}^2 H_0^2$ at order-of-magnitude (Level~C), with coefficient $c_\Lambda=\mathcal{O}(1)$ open; a possible pseudo-Goldstone realization exists if $m_G\sim H_0$ and $f_G\sim \bar M_{\rm Pl}$ & \textbf{A} (catastrophe resolution); C (numerical value of $\rho_{\Lambda,\rm obs}$) & \ref{sec:cc_problem} \\
 \end{longtable}
 }
 
