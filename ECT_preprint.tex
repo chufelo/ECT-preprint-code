@@ -23098,23 +23098,23 @@ infrared branch of the ordered-branch amplitude response.
 \paragraph{Source normalisation convention.}
 In the AQUAL-like equations below the symbol~$\rho$ denotes the
 ordinary baryonic mass density unless stated otherwise. The geometric
-source inherited from the trace equation is the combination
+source inherited from the Einstein trace is the curvature-density
+combination
 \[
-\mathcal{S}_{\rm m}\equiv -T/c^4 \simeq \rho/c^2
+\mathcal{S}_{\rm m}
+\equiv
+\frac{G_N\rho}{c^2}
+=
+\frac{G_N\rho_{\rm m}}{c^4},
+\qquad
+\rho_{\rm m}\equiv\rho c^2 .
 \]
-for non-relativistic matter. Thus the right-hand side
-$4\pi\rho/c^2$ in Eq.~\eqref{eq:aqual_phi_main} should be read as
-$4\pi\mathcal{S}_{\rm m}$. When an SI mass density
-$\rho_{\rm SI}$ is quoted explicitly, the corresponding matter energy
-density is $\rho_{\rm m}=\rho_{\rm SI}c^2$; the conversion factors are
-kept explicit only in the numerical estimates.
-This convention is used only for the dimensionless AQUAL-like
-amplitude equation. In Appendix~\ref{app:lof_full_derivation}, where the
-local quasistatic trace balance is written as an energy-density
-condition, the source is instead denoted
-$\rho_{\rm m}\equiv\rho c^2$. The two notations therefore refer to
-different normalisations of the same non-relativistic matter source:
-$\mathcal{S}_{\rm m}=\rho_{\rm m}/c^4=\rho/c^2$.
+Thus the right-hand side of Eq.~\eqref{eq:aqual_phi_main} should be
+read as $4\pi\mathcal{S}_{\rm m}=4\pi G_N\rho/c^2$. In the local
+quasistatic trace-balance derivation of
+Appendix~\ref{app:lof_full_derivation}, the same matter source is
+written in energy-density normalisation as $\rho_{\rm m}$; the two
+notations differ only by the fixed conversion factors shown above.
 
 \paragraph{Full interpolating equation.}
 The complete static equation, valid from the Newtonian to the
@@ -23126,7 +23126,7 @@ deep-MOND regime, takes the AQUAL-like form
     \frac{|\nabla\phi|}{\phi_*(\phi)}
   \right)\nabla\phi
 \right]
-= \frac{4\pi\rho}{c^2}\,,
+= \frac{4\pi G_N\rho}{c^2}\,,
 }
 \label{eq:aqual_phi_main}
 \end{equation}
@@ -47008,17 +47008,17 @@ needed for flat rotation curves with the correct mass dependence.
 
 Combining the linear and nonlinear branches:
 (Here $\rho$ denotes the baryonic mass density, while
-$\mathcal{S}_{\rm m}\equiv\rho/c^2=-T/c^4$ is the corresponding
-geometric trace source. This is distinct from the energy-density
-notation $\rho_{\rm m}=\rho c^2$ used in the local equilibrium
-balance above.)
+$\mathcal{S}_{\rm m}\equiv G_N\rho/c^2=G_N\rho_{\rm m}/c^4$
+is the corresponding curvature source. This is distinct from the
+energy-density notation $\rho_{\rm m}=\rho c^2$ used in the local
+equilibrium balance above.)
 \begin{equation}
 \nabla\cdot\left[
   \mu_\phi\!\left(
     \frac{|\nabla\phi|}{\phi_*(\phi)}
   \right)\nabla\phi
 \right]
-= \frac{4\pi\rho}{c^2}\,,
+= \frac{4\pi G_N\rho}{c^2}\,,
 \label{eq:app_aqual}
 \end{equation}
 with $\mu_\phi(x) \to 1$ ($x \ll 1$) and
@@ -47030,13 +47030,13 @@ For $\mu_\phi(x) = x$, integrating~\eqref{eq:app_aqual} over
 a sphere of radius $r$ enclosing baryonic mass $M$:
 \begin{equation}
 4\pi r^2 \cdot \frac{|\phi'|^2}{\phi_*}
-= \frac{4\pi M}{c^2}\,.
+= \frac{4\pi G_N M}{c^2}\,.
 \end{equation}
 Solving for $|\phi'|$:
 \begin{equation}
-|\phi'|^2 = \frac{M\,\phi_*}{c^2\,r^2}\,,
+|\phi'|^2 = \frac{G_N M\,\phi_*}{c^2\,r^2}\,,
 \qquad
-|\phi'| = \sqrt{\frac{M\,\phi_*}{c^2}}\;\frac{1}{r}\,.
+|\phi'| = \sqrt{\frac{G_N M\,\phi_*}{c^2}}\;\frac{1}{r}\,.
 \label{eq:app_phiprime}
 \end{equation}
 
@@ -47045,8 +47045,8 @@ Solving for $|\phi'|$:
 From~\eqref{eq:app_force_phi}:
 \begin{equation}
 |a_\phi| = \frac{c^2}{2}|\phi'|
-= \frac{c^2}{2}\sqrt{\frac{M\phi_*}{c^2}}\;\frac{1}{r}
-= \frac{\sqrt{GM g_\dagger}}{r}\,,
+= \frac{c^2}{2}\sqrt{\frac{G_N M\phi_*}{c^2}}\;\frac{1}{r}
+= \frac{\sqrt{G_N M g_\dagger}}{r}\,,
 \end{equation}
 where
 \begin{equation}
@@ -47055,9 +47055,9 @@ g_\dagger \equiv \frac{c^2\,\phi_*}{4}\,.
 \end{equation}
 \emph{Caveat:} the factor $4$ arises from the specific
 normalisation of the source term in the $\phi$-equation.
-The relation between the source coefficient $4\pi/c^2$ and
-the kinetic normalisation $K_0$ involves the one-loop
-coefficient $Z(\chi)$, which is scheme-dependent.
+The relation between the curvature source coefficient
+$4\pi G_N/c^2$ and the kinetic normalisation $K_0$ involves the
+one-loop coefficient $Z(\chi)$, which is scheme-dependent.
 The robust result is the \emph{proportionality}
 $g_\dagger \propto c^2\phi_*$; the $\mathcal{O}(1)$ coefficient
 requires a more careful matching (OP-new-2).
@@ -47066,12 +47066,12 @@ requires a more careful matching (OP-new-2).
 
 For a circular orbit $v^2/r = |a_\phi|$:
 \begin{equation}
-v^2 = r\cdot\frac{\sqrt{GMg_\dagger}}{r}
-= \sqrt{GMg_\dagger}\,.
+v^2 = r\cdot\frac{\sqrt{G_N Mg_\dagger}}{r}
+= \sqrt{G_N Mg_\dagger}\,.
 \end{equation}
 Therefore:
 \begin{equation}
-\boxed{v^4 = G\,M\,g_\dagger(\phi_{\rm gal})\,.}
+\boxed{v^4 = G_N\,M\,g_\dagger(\phi_{\rm gal})\,.}
 \end{equation}
 The exponent $v^4 \propto M$ is \emph{exact} within the
 deep-MOND branch. It follows algebraically from the
@@ -47119,19 +47119,31 @@ environmental variation is predicted:
 \frac{4\pi\gamma}{U_0''(\bar\phi_{\rm env})}\,
 \delta\rho_{{\rm m},\,{\rm env}}\,.
 \end{equation}
-Equivalently, in terms of the SI mass-density contrast
-$\delta\rho_{\rm env}$,
-$\delta\rho_{{\rm m},\,{\rm env}}=c^2\delta\rho_{\rm env}$.
-As an illustrative estimate, the dimensionless density contrast
-$\delta\rho_{{\rm m},\,{\rm env}}/\bar\rho_{{\rm m},\,{\rm cosm}}$
-equals
-$\delta\rho_{\rm env}/\bar\rho_{\rm cosm}$; taking this contrast to be
-$\sim 10$ for cluster versus field environments and assuming $\gamma
-\sim 1$ and that $U_0''$ does not change dramatically, one obtains
-$\delta g_\dagger/g_\dagger\sim\mathcal{O}(10\%)$.
-Since $\gamma$ is not yet derived from first principles,
-this number should be treated as an order-of-magnitude
-indication.
+It is useful to write the estimate in dimensionless form,
+\[
+\frac{\delta g_\dagger}{g_\dagger}
+\simeq
+\gamma\left(
+\frac{4\pi\bar\rho_{{\rm m},\,{\rm env}}}
+     {U_0''(\bar\phi_{\rm env})}
+\right)
+\frac{\delta\rho_{{\rm m},\,{\rm env}}}
+     {\bar\rho_{{\rm m},\,{\rm env}}}\,.
+\]
+The density contrast
+$\delta\rho_{{\rm m},\,{\rm env}}/\bar\rho_{{\rm m},\,{\rm env}}$ equals
+$\delta\rho_{\rm env}/\bar\rho_{\rm env}$ in SI units. A
+$\sim10\%$ environmental modulation follows only for the illustrative
+closure
+\[
+\gamma\,\frac{4\pi\bar\rho_{{\rm m},\,{\rm env}}}
+      {U_0''(\bar\phi_{\rm env})}
+\sim10^{-2}
+\]
+combined with a cluster-versus-field density contrast of order~10.
+Since neither $\gamma$ nor $U_0''$ is yet derived from first
+principles, this number should be treated as an order-of-magnitude
+target, not as a calibrated prediction.
 The observed intrinsic scatter in the RAR
 ($\sigma \approx 0.13\,$dex $\approx 35\%$)
 is consistent with a signal of this order but also includes
@@ -47173,7 +47185,8 @@ $\phi = \ln(\chi/\chi_{\rm vac})$ as natural variable & Derived &
 $U_{\rm eff} = U_0 - 4\pi\rho_{\rm m}\phi$ & Leading quasistatic approximation &
   Trace equation plus $|V|\ll\rho_{\rm m}$ \\
 $d\bar\phi/d\rho_{\rm m} > 0$ & Leading quasistatic approximation & Stable $U_0$ \\
-Screening: $m_\phi^2$ grows with $\rho$ & Derived (Q) &
+Screening: $m_\phi^2$ grows with $\rho_{\rm m}$
+(equivalently with SI mass density $\rho$) & Leading quasistatic approximation &
   Convex $U_0$ \\
 $K(\phi) \propto e^{-\phi/2}$ & One-loop &
   Gradient expansion \\
@@ -48418,12 +48431,16 @@ sharply distinguished.
 \subsection{Primary condensate quantities}
 \label{app:dim_primary}
 
-In the present convention, the fundamental field has dimension
-$[\Phi]=\text{GeV}\cdot\text{m}$ in SI-natural hybrid units,
-or $[\Phi]=1$ (dimensionless) in fully natural units
-$\hbar=c=1$ with lengths measured in GeV$^{-1}$.
-The following table uses natural units $\hbar=c=1$
-for definiteness.
+Throughout this appendix we use natural units $\hbar=c=1$ unless
+explicit SI conversion factors are displayed. Coordinates have
+dimension $[X^A]={\rm GeV}^{-1}$, derivatives have
+dimension $[\partial_A]={\rm GeV}$, and a canonically normalised
+four-dimensional scalar has mass dimension one,
+\[
+[\Phi]={\rm GeV}.
+\]
+Consequently $[\phi_0]={\rm GeV}$ and
+$[u_0]=[\partial_A\Phi]={\rm GeV}^2$, as shown in the table below.
 
 \renewcommand{\arraystretch}{1.3}
 \begin{longtable}{@{}p{4.8cm}p{4.8cm}p{4.8cm}@{}}
