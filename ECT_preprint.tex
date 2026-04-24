@@ -2337,21 +2337,35 @@ In canonical units ($\beta=1$) this corresponds to $\alpha=2\beta=2$.
 \paragraph{LIV time delay: ECT prediction.}
 At energies $E\gtrsim M_{\rm Pl}c^2$, the condensate director
 $n^A$ fluctuates isotropically, so the effective metric acquires
-a Planck-scale correction. The photon time-of-flight delay over
-distance $L$ for a photon of energy $E$ is
+a Planck-scale correction.
+
+\paragraph{LIV time delay: unit-coefficient benchmark and bounds.}
+At high energies, higher-dimension operators associated with the
+ordered-branch tensor may generate an energy-dependent photon
+time-of-flight delay. The most conservative phenomenological
+parametrisation is
 \begin{equation}
   \Delta t_{\rm LIV}
   \;\approx\;
-  \frac{(\alpha-\beta)}{\beta}\,\frac{E}{M_{\rm Pl}c^2}\,\frac{L}{c}
-  \;\xrightarrow{\alpha=2\beta,\,\beta=1}\;
-  \frac{E}{M_{\rm Pl}c^2}\,\frac{L}{c}\,.
+  \zeta_\gamma\,
+  \frac{(\alpha-\beta)}{\beta}\,\frac{E}{M_{\rm Pl}c^2}\,\frac{L}{c},
   \label{eq:LIV_delay}
 \end{equation}
-For a GRB at $L\sim4\,{\rm Gpc}$ with $E\sim10$\,GeV (Fermi-LAT),
-$\Delta t_{\rm LIV}\sim10^{-2}$\,s~--- at the boundary of current
-Fermi constraints. CTA~\cite{CTA2020} will probe
-$\Delta t/L\sim10^{-21}$\,s\,m$^{-1}$, directly testing
-Eq.~\eqref{eq:LIV_delay}.
+where $\zeta_\gamma$ is a dimensionless coefficient encoding the
+sector-specific higher-order EFT matching. The unit-coefficient
+benchmark $\zeta_\gamma=1$ is useful as a scale estimate, but it
+should not be treated as a retained ECT prediction without the EFT
+matching.
+
+For $L\sim4$\,Gpc and $E\sim10$\,GeV one obtains
+$\Delta t_{\rm LIV}\simeq 0.34\,\zeta_\gamma$\,s.
+The Fermi-LAT GRB~090510 bound, often quoted as
+$M_{\rm QG,1}>7.6\,M_{\rm Pl}$ for a linear dispersion law,
+implies roughly $|\zeta_\gamma|\lesssim0.13$ for the same sign and
+propagation model. Thus the unit-coefficient linear photon
+benchmark is already strongly constrained; a viable ECT photon-sector
+LIV signal requires a suppressed coefficient, a different sign/model
+treatment, or a quadratic leading correction.
 
 \textbf{ECT interpretation:} LIV effects are attributed to
 sub-condensate structure and are expected to be controlled by the same
@@ -2371,10 +2385,12 @@ The grey band marks the Fermi-LAT constrained region
 ($\Delta t \gtrsim 10^{-2}$\,s for short-GRB timing);
 the dashed horizontal line indicates the projected CTA
 sensitivity ($\sim\!10^{-4}$\,s).
-The filled circle marks the reference point $E=10$\,GeV,
-$L=4$\,Gpc ($\Delta t\approx 0.34$\,s).
-The benchmark prediction is at the boundary of current constraints
-and directly testable by CTA at TeV energies.
+The filled circle marks the unit-coefficient reference point
+$E=10$\,GeV, $L=4$\,Gpc, for which
+$\Delta t\simeq 0.34\,\zeta_\gamma$\,s. This point should be read as a
+benchmark scale, not as a retained prediction with coefficient one;
+current Fermi-LAT bounds require a suppressed effective photon
+coefficient in a linear dispersion model.
 Numerical details are given in
 Appendix~\ref{app:liv_numerics}.}
 \label{fig:liv_delay}
@@ -23063,6 +23079,15 @@ frameworks~\cite{Milgrom1983,BekensteinMilgrom1984}
 the AQUAL equation structure is postulated;
 ECT reproduces the same effective structure as the critical
 infrared branch of the ordered-branch amplitude response.
+
+\paragraph{Source normalisation convention.}
+In the AQUAL-like equations below the symbol~$\rho$ denotes the
+geometric source density in the normalisation inherited from the
+trace equation, i.e.\ the combination that appears as $-T/c^4$ in
+the effective Einstein trace. When an SI mass density
+$\rho_{\rm SI}$ is quoted explicitly, the corresponding matter
+energy density is $\rho_{\rm m}=\rho_{\rm SI}c^2$; the conversion
+factors are kept explicit only in the numerical estimates.
 
 \paragraph{Full interpolating equation.}
 The complete static equation, valid from the Newtonian to the
@@ -46516,54 +46541,69 @@ quasistatic limit.
 \paragraph{Step~4: homogeneous equilibrium.}
 Substituting~\eqref{eq:app_trace_quasistatic}
 into~\eqref{eq:app_phi_eom} in the spatially homogeneous
-limit ($\Box\phi = 0$, $(\partial\phi)^2 = 0$):
+limit ($\Box\phi = 0$, $(\partial\phi)^2 = 0$) gives
 \begin{equation}
-\frac{1}{2}\left(\frac{8\pi\rho}{c^2} + 2V\right)
-- V'(\bar\phi) = 0\,.
+\frac{1}{2}\left(8\pi\rho_{\rm m}+2V\right)
+- V'(\bar\phi) = 0,
+\qquad
+\rho_{\rm m}\equiv \rho c^2 .
 \end{equation}
-Rearranging:
+Equivalently,
 \begin{equation}
-V'(\bar\phi) - V(\bar\phi) = \frac{4\pi\rho}{c^2}\,.
-\label{eq:app_balance}
+V'(\bar\phi)-V(\bar\phi)=4\pi\rho_{\rm m}.
+\label{eq:app_balance_exact}
 \end{equation}
-Defining $U_0(\phi) \equiv V(\phi) - V(0)$, this gives
+Under the weak-potential assumption stated above,
+$|V|\ll \rho_{\rm m}$, this reduces at leading order to
 \begin{equation}
-U_0'(\bar\phi) = \frac{4\pi\rho}{c^2}\,.
+V'(\bar\phi)\simeq 4\pi\rho_{\rm m}.
+\end{equation}
+Defining $U_0(\phi)\equiv V(\phi)-V(0)$, the leading quasistatic
+equilibrium condition is therefore
+\begin{equation}
+U_0'(\bar\phi)\simeq 4\pi\rho_{\rm m}.
 \label{eq:app_equilibrium}
 \end{equation}
 
-\emph{Key observation:} equation~\eqref{eq:app_equilibrium} has
-the form $U_0'(\bar\phi) = A\rho$ with
-$A = 4\pi/c^2$. This coefficient is \emph{fixed} by the
-structure of the effective Einstein equations; it is not a free
-coupling constant. Integrating, the equilibrium condition is
-equivalent to the minimum of
+\emph{Key observation:} at leading order the equilibrium condition
+has the form $U_0'(\bar\phi)=A\rho_{\rm m}$ with $A=4\pi$. This
+coefficient is fixed by the structure of the effective Einstein
+equations; it is not a free coupling constant. Equivalently, the
+leading local equilibrium is the minimum of
 \begin{equation}
 \boxed{
-U_{\rm eff}(\phi;\rho)
-= U_0(\phi) - \frac{4\pi\rho}{c^2}\,\phi\,.
+U_{\rm eff}(\phi;\rho_{\rm m})
+=
+U_0(\phi)-4\pi\rho_{\rm m}\phi .
 }
 \label{eq:app_Ueff}
 \end{equation}
+Corrections from the retained $V(\bar\phi)$ term are subleading
+under the local weak-potential assumption.
 In the original variable $\chi$ the medium term reads
-$-A\rho\ln\chi$, confirming that the coupling is
-\emph{logarithmic} in $\chi$ but \emph{linear} in
-$\phi = \ln(\chi/\chi_{\rm vac})$.
+$-A\rho_{\rm m}\ln\chi$, confirming that the coupling is
+logarithmic in $\chi$ but linear in
+$\phi=\ln(\chi/\chi_{\rm vac})$.
 
-\paragraph{Step~5: sign of $d\bar\phi/d\rho$.}
-Differentiating~\eqref{eq:app_equilibrium} implicitly:
+\paragraph{Step~5: sign of $d\bar\phi/d\rho_{\rm m}$.}
+Differentiating~\eqref{eq:app_equilibrium} implicitly gives
 \begin{equation}
-U_0''(\bar\phi)\,\frac{d\bar\phi}{d\rho}
-= \frac{4\pi}{c^2}\,.
+U_0''(\bar\phi)\,
+\frac{d\bar\phi}{d\rho_{\rm m}}
+\simeq 4\pi .
 \end{equation}
-Since $U_0''(\bar\phi) > 0$ at a stable minimum:
+Since $U_0''(\bar\phi)>0$ at a stable minimum,
 \begin{equation}
 \boxed{
-\frac{d\bar\phi}{d\rho}
-= \frac{4\pi/c^2}{U_0''(\bar\phi)} > 0\,.
+\frac{d\bar\phi}{d\rho_{\rm m}}
+\simeq
+\frac{4\pi}{U_0''(\bar\phi)}
+>0 .
 }
 \label{eq:app_sign}
 \end{equation}
+Equivalently, with respect to the SI mass density $\rho$,
+$d\bar\phi/d\rho = c^2\,d\bar\phi/d\rho_{\rm m}>0$.
 
 \paragraph{Physical interpretation.}
 This result formalises Premise~2. The mechanism is indirect:
@@ -47089,9 +47129,9 @@ level would constrain the parameter $\gamma$.
 $G_{\rm eff} = 1/(8\pi M_*^2\chi)$ & Derived & ECT action matching \\
 $\phi = \ln(\chi/\chi_{\rm vac})$ as natural variable & Derived &
   Force law + coupling structure \\
-$U_{\rm eff} = U_0 - (4\pi\rho/c^2)\phi$ & Derived (Q) &
-  Quasistatic trace equation \\
-$d\bar\phi/d\rho > 0$ & Derived (Q) & Stable $U_0$ \\
+$U_{\rm eff} = U_0 - 4\pi\rho_{\rm m}\phi$ & Leading quasistatic approximation &
+  Trace equation plus $|V|\ll\rho_{\rm m}$ \\
+$d\bar\phi/d\rho_{\rm m} > 0$ & Leading quasistatic approximation & Stable $U_0$ \\
 Screening: $m_\phi^2$ grows with $\rho$ & Derived (Q) &
   Convex $U_0$ \\
 $K(\phi) \propto e^{-\phi/2}$ & One-loop &
@@ -47359,14 +47399,19 @@ $10^4$ & $0.04$& CTA nearby AGN  & $3.4$ \\
 \bottomrule
 \end{longtable}
 The Fermi-LAT constraint from GRB~090510~\cite{Fermi_LIV_2009}
-sets $M_{\rm QG,1}>7.6\,M_{\rm Pl}$ for the linear
-dispersion relation, implying that the benchmark ECT prediction
-with $M_{\rm QG}=M_{\rm Pl}$ lies at the boundary of current
-exclusions.
-CTA~\cite{CTA2020} is expected to reach timing precision
-$\sim\!10^{-4}$\,s at TeV energies over $\sim\!0.1$--$1$\,Gpc
-baselines, directly probing the ECT prediction
-(Fig.~\ref{fig:liv_delay}).
+sets $M_{\rm QG,1}>7.6\,M_{\rm Pl}$ for the linear dispersion
+relation. Therefore the unit-coefficient benchmark
+$M_{\rm QG}=M_{\rm Pl}$ is already excluded for the same sign and
+propagation model. In ECT the retained phenomenological statement
+is not a fixed coefficient-one photon prediction, but the
+structural possibility of Planck-suppressed higher-dimension
+propagation effects with sector-dependent matching coefficient
+$\zeta_\gamma$.
+An instrumental timing precision of $\sim\!10^{-4}$\,s over
+$0.1$--$1$\,Gpc corresponds to
+$\Delta t/L\sim 3\times10^{-29}$--$3\times10^{-30}$\,s\,m$^{-1}$,
+although intrinsic source lags dominate the actual astrophysical
+sensitivity (Fig.~\ref{fig:liv_delay}).
 
 \label{app:retarded_kernel}
 
