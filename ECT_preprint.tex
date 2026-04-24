@@ -979,7 +979,7 @@ Within this new framework the coupling of $\phi$ to
 baryonic matter is not postulated but induced geometrically
 through the trace of the effective scalar--tensor field
 equations, yielding the central result
-$d\bar\phi/d\rho > 0$: matter stabilises the Lorentzian
+$d\bar\phi/d\rho_{\rm m}>0$, or equivalently $d\bar\phi/d\rho>0$ for the SI mass density: matter stabilises the Lorentzian
 phase.  In dense environments a chameleon-type screening
 mechanism restores standard gravity; on galactic outskirts,
 where the vacuum approaches the
@@ -2370,10 +2370,13 @@ treatment, or a quadratic leading correction.
 
 \textbf{ECT interpretation:} LIV effects are attributed to
 sub-condensate structure and are expected to be controlled by the same
-ordered background tensor.  In this sense they are not introduced as
-independent sector-by-sector parameters.  Their detailed suppression
-pattern, however, remains part of the higher-order EFT analysis and
-should not be overstated at the present stage.
+ordered background tensor. In this sense they are not introduced as
+arbitrary, unrelated sector-by-sector postulates. However, the effective
+matching coefficients, such as $\zeta_\gamma$ in the photon sector, may
+be sector-dependent after integrating out the microscopic condensate
+degrees of freedom. Their detailed suppression pattern remains part of
+the higher-order EFT analysis and should not be overstated at the
+present stage.
 
 \begin{figure}[H]
 \centering
@@ -14703,18 +14706,24 @@ This two-step result is one of the central non-circular outputs of
 Part~I and should be kept conceptually separate from later
 decoherence- or PES-based arguments.
 
-\paragraph{Lorentz-invariance violation: linear, species-independent
-structure (Level~B).}
-At Planck-suppressed energies, condensate-director fluctuations
-suggest a linear time-of-flight correction of the form
+\paragraph{Lorentz-invariance violation: structural benchmark, not a fixed coefficient prediction
+(Level~B/Open).}
+Part~I identifies the ordered-branch tensor structure from which
+Planck-suppressed higher-dimension propagation operators may arise.
+For the photon sector this is represented phenomenologically by the
+time-of-flight benchmark
 \[
-\Delta t_{\rm LIV}\propto \frac{E}{M_{\rm Pl}c^2}\,\frac{L}{c},
+\Delta t_{\rm LIV}\propto
+\zeta_\gamma\,
+\frac{E}{M_{\rm Pl}c^2}\,\frac{L}{c},
 \]
-with no species dependence at leading order because all sectors
-probe the same condensate director field (Fig.~\ref{fig:liv_delay}).
-The precise observational mapping of this structure belongs to
-the later phenomenological programme and is not part of the
-present foundational closure~(Section~\ref{sec:effective_metric}).
+where the matching coefficient $\zeta_\gamma$ is not fixed by the
+present foundational closure. The unit-coefficient photon benchmark is
+already constrained by Fermi--LAT and should be read only as a scale
+estimate (Fig.~\ref{fig:liv_delay}). The GW-sector estimate used later is quadratic and
+effectively negligible for current sources. A full operator-level
+unification of photon, neutrino, and GW propagation corrections remains
+open~(Section~\ref{sec:effective_metric}).
 
 \paragraph{Matching relations for emergent fundamental constants
 (Level~A/B).}
@@ -22802,24 +22811,27 @@ $\phi$-equation~\eqref{eq:phi_eom_local} under the
 quasi-static approximation; a first-principles derivation from
 bare~P3 remains open~(OP-screen).}
 
-Since matter drives $\bar\phi(\rho)$ upward
-(eq.~\eqref{eq:phi_eom_local}), the ordered-branch amplitude
-variable acquires an
-effective mass for perturbations around the local equilibrium.
-Expanding $\phi = \bar\phi(\rho) + \delta\phi$, small fluctuations
-obey a Yukawa-type equation with effective mass (Level~B):
+Since matter drives $\bar\phi(\rho_{\rm m})$ upward
+(Appendix~\ref{app:lof_full_derivation}), the ordered-branch amplitude
+variable acquires an effective mass for perturbations around the local
+equilibrium. Expanding
+$\phi=\bar\phi(\rho_{\rm m})+\delta\phi$, small fluctuations obey a
+Yukawa-type equation with effective mass (Level~B):
 \begin{equation}
-m_\phi^2(\rho)
-= \frac{U_0''(\bar\phi(\rho))
-        + 4\pi\rho/(\bar\chi^2 c^2)}
-       {K(\bar\phi(\rho))}\,.
+m_\phi^2(\rho_{\rm m})
+=
+\frac{U_0''(\bar\phi(\rho_{\rm m}))
++4\pi\rho_{\rm m}/\bar\chi^2}
+{K(\bar\phi(\rho_{\rm m}))}\,.
 \label{eq:mphi_main}
 \end{equation}
-Both numerator terms are positive and increase with $\rho$ for
-convex $U_0$; in the one-loop estimate $K \propto e^{-\phi/2}$,
-which \emph{decreases} at larger $\bar\phi$ and thus reinforces
-the growth of $m_\phi^2$ (Level~B; $U_0$ not yet derived from
-bare~P3, OP3).  Hence $m_\phi$ grows with density,
+Equivalently, for an SI mass-density perturbation
+$\delta\rho$, one has $\delta\rho_{\rm m}=c^2\delta\rho$.
+Both numerator terms are positive and increase with $\rho_{\rm m}$
+for convex $U_0$; in the one-loop estimate
+$K\propto e^{-\phi/2}$, which decreases at larger $\bar\phi$ and thus
+reinforces the growth of $m_\phi^2$ (Level~B; $U_0$ not yet derived
+from bare~P3, OP3).  Hence $m_\phi$ grows with density,
 and the Yukawa screening length $\lambda_\phi = 1/m_\phi$ shrinks
 in dense environments. This is the mechanism that screens
 the fifth-force contribution of $\phi$ inside galaxies and in the
@@ -45748,7 +45760,7 @@ Speed of light $c$ & Fundamental constant & $c_*^2\!=\!\beta/(\alpha\!-\!\beta)$
 Gravitational constant $G_N$ & Fundamental constant & Geometric EFT matching $G_N\!=\!c_*^4/(8\pi M_G^2)$ with $M_G\!\sim\!\bar M_{\rm Pl}$ & B & \ref{sec:mp_matching} \\
 Planck constant $\hbar$ & Fundamental constant & Structural action scale $S_0$ from the coherent-branch loop programme; identification $S_0\!=\!\hbar$ & A--B / B & \ref{sec:hbar_status},\,\ref{sec:qs_hbar} \\
 Universal causal cone & Postulate & Single effective metric $g_{\mu\nu}(n)$ inherited by all sectors; symmetric hyperbolicity (Leray--Choquet-Bruhat) & A & \ref{subsec:sr_speed_bound} \\
-LIV suppression $\delta c/c\!\sim\!(E/\Lambda)^2$ & Not guaranteed & Higher-dim operators from condensate director fluctuations & A & \ref{sec:effective_metric} \\
+Planck-suppressed propagation corrections & Not guaranteed & Higher-dimension ordered-branch operators may generate photon-sector time-of-flight benchmarks and quadratic GW-sector corrections; the coefficients and operator unification are not fixed in the present closure & B/Open & \ref{sec:effective_metric},\,\ref{sec:mp_gw} \\
 \midrule
 % ============================================================
 \multicolumn{5}{@{}l}{\textbf{Group 2 --- Quantum mechanics postulates}}\\
@@ -46480,14 +46492,14 @@ The physically relevant gradient is $\nabla\phi$, not
 $\nabla\chi$.
 
 \emph{Reason~2: matter coupling linearises.} From the
-quasistatic trace equation (derived below), the effective
+quasistatic trace equation (derived below), the leading effective
 medium potential is
-$U_{\rm eff}(\chi;\rho) = U_0(\chi) - A\rho\ln\chi$.
-In $\phi = \ln(\chi/\chi_{\rm vac})$ this becomes
-$\tilde{U}_0(\phi) - A\rho\,\phi$, which is \emph{linear}
-in $\phi$. The density $\rho$ acts as an external field
-conjugate to $\phi$, exactly as an external magnetic field acts
-on the magnetisation in ferromagnetism.
+$U_{\rm eff}(\chi;\rho_{\rm m})=U_0(\chi)-A\rho_{\rm m}\ln\chi$.
+In $\phi=\ln(\chi/\chi_{\rm vac})$ this becomes
+$\tilde U_0(\phi)-A\rho_{\rm m}\phi$, which is \emph{linear}
+in $\phi$. The matter energy density $\rho_{\rm m}$ acts as an
+external field conjugate to $\phi$, exactly as an external magnetic
+field acts on the magnetisation in ferromagnetism.
 
 \emph{Reason~3: critical regime.} The deep-IR scale-invariant
 form of the free-energy density is most naturally written as a
@@ -47097,20 +47109,26 @@ qualitatively alters the mass dependence of the force law.
 \label{app:lof:env}
 
 Since $g_\dagger$ depends on $\phi_{\rm gal}$, and
-$\phi_{\rm gal}$ is set by the ambient density through the
-equilibrium condition~\eqref{eq:app_equilibrium}, a systematic
+$\phi_{\rm gal}$ is set by the ambient matter energy density through
+the equilibrium condition~\eqref{eq:app_equilibrium}, a systematic
 environmental variation is predicted:
 \begin{equation}
 \frac{\delta g_\dagger}{g_\dagger}
 = \gamma\,\delta\phi_{\rm env}
-= \frac{\gamma \cdot 4\pi/(c^2)}{U_0''(\bar\phi_{\rm env})}
-  \,\delta\rho_{\rm env}\,.
+\simeq
+\frac{4\pi\gamma}{U_0''(\bar\phi_{\rm env})}\,
+\delta\rho_{{\rm m},\,{\rm env}}\,.
 \end{equation}
-As an illustrative estimate: taking $\gamma \sim 1$ and
-$\delta\rho_{\rm env}/\bar\rho_{\rm cosm} \sim 10$
-(cluster vs.\ field), and assuming $U_0''$ does not change
-dramatically, one obtains
-$\delta g_\dagger/g_\dagger \sim \mathcal{O}(10\%)$.
+Equivalently, in terms of the SI mass-density contrast
+$\delta\rho_{\rm env}$,
+$\delta\rho_{{\rm m},\,{\rm env}}=c^2\delta\rho_{\rm env}$.
+As an illustrative estimate, the dimensionless density contrast
+$\delta\rho_{{\rm m},\,{\rm env}}/\bar\rho_{{\rm m},\,{\rm cosm}}$
+equals
+$\delta\rho_{\rm env}/\bar\rho_{\rm cosm}$; taking this contrast to be
+$\sim 10$ for cluster versus field environments and assuming $\gamma
+\sim 1$ and that $U_0''$ does not change dramatically, one obtains
+$\delta g_\dagger/g_\dagger\sim\mathcal{O}(10\%)$.
 Since $\gamma$ is not yet derived from first principles,
 this number should be treated as an order-of-magnitude
 indication.
@@ -47232,7 +47250,7 @@ in which:
 \item the relevant galactic degree of freedom is the
   macroscopic amplitude variable $\phi$ of the ordered branch;
 \item matter stabilises the ordered branch toward its screened Lorentzian/macroscopic regime
-  ($d\bar\phi/d\rho > 0$, derived);
+  ($d\bar\phi/d\rho_{\rm m}>0$, equivalently $d\bar\phi/d\rho>0$ for SI mass density; derived);
 \item dense regions screen the scalar sector
   (chameleon-type, derived);
 \item dilute near-critical regions activate a nonlinear
@@ -54155,8 +54173,16 @@ present closure, not as first-principles predictions.
 
 \paragraph{Setup.}
 In the quasi-static regime the effective $\phi$-mass is
-$m_\phi^2(\rho) \approx [U_0''(\bar\phi) +
-4\pi\rho/(\bar\chi^2 c^2)] / K(\bar\phi)$.
+\[
+m_\phi^2(\rho_{\rm m})
+\approx
+\frac{U_0''(\bar\phi)+4\pi\rho_{\rm m}/\bar\chi^2}{K(\bar\phi)} ,
+\qquad
+\rho_{\rm m}\equiv\rho c^2 .
+\]
+Here quoted densities $\rho$ in kg\,m$^{-3}$ are ordinary SI mass
+densities; the field equation uses the corresponding matter energy
+density $\rho_{\rm m}$.
 For the benchmark one-loop kinetic closure
 $K(\phi) \propto e^{-\phi/2}$ and a convex $U_0$, both the
 numerator and the denominator work in the same direction:
@@ -54170,7 +54196,7 @@ the effective mass.
 At terrestrial densities
 $\rho \sim 10^3$\,kg\,m$^{-3}$ and Solar-System densities
 $\rho \sim 1$\,kg\,m$^{-3}$ the density term
-$4\pi\rho/(\bar\chi^2 c^2)$ overwhelmingly dominates over
+$4\pi\rho_{\rm m}/\bar\chi^2$ overwhelmingly dominates over
 $U_0''(\bar\phi)$. The resulting $m_\phi$ is driven far above
 any astrophysically relevant inverse length, so that
 $\lambda_\phi \ll 1$\,AU.
