@@ -2334,12 +2334,13 @@ Observational support is provided by the bound
 $|c_{\rm GW}-c_\gamma|/c<10^{-15}$~\cite{LIGO_Virgo_GW170817_2017}.
 In canonical units ($\beta=1$) this corresponds to $\alpha=2\beta=2$.
 
-\paragraph{LIV time delay: ECT prediction.}
-At energies $E\gtrsim M_{\rm Pl}c^2$, the condensate director
-$n^A$ fluctuates isotropically, so the effective metric acquires
-a Planck-scale correction.
+\paragraph{LIV time delay: structural benchmark and bounds.}
+At sufficiently high energies the condensate director sector may induce
+higher-dimension propagation operators. The coefficient of the leading
+photon-sector operator is not fixed in the present EFT closure; the
+unit-coefficient expression below is therefore a benchmark scale, not a
+retained coefficient-level ECT prediction.
 
-\paragraph{LIV time delay: unit-coefficient benchmark and bounds.}
 At high energies, higher-dimension operators associated with the
 ordered-branch tensor may generate an energy-dependent photon
 time-of-flight delay. The most conservative phenomenological
@@ -2377,9 +2378,11 @@ should not be overstated at the present stage.
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.78\textwidth]{figures/fig_liv_delay.pdf}
-\caption{ECT benchmark prediction for the LIV photon time-of-flight
-delay $\Delta t_{\rm LIV}=(E/M_{\rm Pl}c^2)(L/c)$
-(Eq.~\ref{eq:LIV_delay}) as a function of photon energy~$E$
+\caption{Unit-coefficient benchmark for the LIV photon time-of-flight
+delay
+$\Delta t_{\rm LIV}=\zeta_\gamma(E/M_{\rm Pl}c^2)(L/c)$
+with $\zeta_\gamma=1$ in the plotted reference curves
+(Eq.~\ref{eq:LIV_delay}), shown as a function of photon energy~$E$
 for several source distances~$L$.
 The grey band marks the Fermi-LAT constrained region
 ($\Delta t \gtrsim 10^{-2}$\,s for short-GRB timing);
@@ -23082,12 +23085,17 @@ infrared branch of the ordered-branch amplitude response.
 
 \paragraph{Source normalisation convention.}
 In the AQUAL-like equations below the symbol~$\rho$ denotes the
-geometric source density in the normalisation inherited from the
-trace equation, i.e.\ the combination that appears as $-T/c^4$ in
-the effective Einstein trace. When an SI mass density
-$\rho_{\rm SI}$ is quoted explicitly, the corresponding matter
-energy density is $\rho_{\rm m}=\rho_{\rm SI}c^2$; the conversion
-factors are kept explicit only in the numerical estimates.
+ordinary baryonic mass density unless stated otherwise. The geometric
+source inherited from the trace equation is the combination
+\[
+\mathcal{S}_{\rm m}\equiv -T/c^4 \simeq \rho/c^2
+\]
+for non-relativistic matter. Thus the right-hand side
+$4\pi\rho/c^2$ in Eq.~\eqref{eq:aqual_phi_main} should be read as
+$4\pi\mathcal{S}_{\rm m}$. When an SI mass density
+$\rho_{\rm SI}$ is quoted explicitly, the corresponding matter energy
+density is $\rho_{\rm m}=\rho_{\rm SI}c^2$; the conversion factors are
+kept explicit only in the numerical estimates.
 
 \paragraph{Full interpolating equation.}
 The complete static equation, valid from the Newtonian to the
@@ -45908,7 +45916,7 @@ Fifth force $\beta_5\!\sim\!m_f/\phi_0$ & ECT-specific preferred-direction fermi
 Environmental modulation of $g^\dagger_{\rm eff}$ & Galactic critical acceleration scale correlated with ambient density & SPARC $\times$ 2MRS/SDSS cross-correlation & B \\
 Topological mass ansatz $m_n\!\sim\!n\!\times\!1.6$\,GeV & Resonance-like structure of candidate topological sector states & LHC / future collider & C \\
 Graviton polarisation: two TT modes in the completed linear closure & If the induced effective-metric sector closes exactly to the Fierz--Pauli form, only the two transverse-traceless tensor polarisations propagate; exact TT projection and ghost-freedom remain open verification tasks & Polarisation decomposition of stochastic GW background & B/Open \\
-Linear LIV structure $\Delta t\!\propto\!EL/(M_{\rm Pl}c^2)$ at Planck-suppressed level & Species-independent leading LIV time-of-flight from director fluctuations; $\Delta t_{\rm GW}\!\lesssim\!10^{-64}$\,s for current GW sources & Multi-messenger GW/photon/neutrino timing & A / B \\
+Planck-suppressed LIV benchmark & Higher-dimension ordered-branch corrections may generate $\Delta t_{\rm LIV}\propto \zeta_\gamma E L/(M_{\rm Pl}c^2)$; the unit-coefficient linear photon benchmark is already constrained by Fermi--LAT, so a retained signal requires suppressed EFT matching, sector dependence, or quadratic leading behaviour. The GW-sector estimate remains quadratic and negligible for current sources & Multi-messenger photon/GW/neutrino timing & B/Open \\
 No exact thermality in black-hole evaporation (conditional theorem) & Under unitarity + finite shell + complete evaporation, exact thermality is excluded; deviations structurally required & Late-stage evaporation spectrum (conceptual) & B \\
 Hubble-shift mechanism from ordered-branch $\phi$-background & Correlated shift of $H_0$, age, distance, and growth through a single $\phi_b(z)$ trajectory; retained-band diagnostic-layer extraction yields $\varepsilon \in [0.0296,\,0.0376]$ at $1\sigma$ (\S\ref{subsec:eps_joint_band}) & $H_0$ inferences vs CMB, JWST ages, late-time distance ladder & B \\
 \midrule
@@ -45929,19 +45937,20 @@ CMB quadrupole deficit from horizon-scale suppression & Structural argument via 
 
 \paragraph{Reading the ECT-specific prediction table.}
 The entries in Table~\ref{tab:ect_specific_predictions} are not
-of uniform maturity. Some (such as the linear LIV structure and the absence of extra
-graviton polarisations at the linearised level) are strict or
-near-strict structural consequences at Level~A/A--B. Others (such as the
-environmental modulation of $g^\dagger_{\rm eff}$ and the fifth
-coupling $\beta_5$) are structural closures of the present
-framework at Level~B, in the sense that they would be directly
-excluded by a null result in the relevant experimental channel.
-Others still (such as the topological mass ansatz $m_n$) are
-phenomenological ansatz-level predictions at Level~C. The table
-is therefore best read as the falsifiability side of the
-framework: it identifies the observational channels through which
-ECT can be directly tested against structural possibilities that
-are absent or not formulated in standard physics.
+of uniform maturity. Some entries are structural routes rather than
+coefficient-level predictions. In particular, photon-sector LIV requires
+an EFT matching coefficient already constrained by Fermi--LAT, and the
+absence of extra graviton polarisations is tied to completion of the
+linear Fierz--Pauli closure. Other entries, such as environmental
+modulation of $g^\dagger_{\rm eff}$ and the fifth coupling
+$\beta_5$, are Level~B structural closures of the present framework,
+in the sense that they would be directly excluded by a null result in
+the relevant experimental channel. Others still (such as the topological
+mass ansatz $m_n$) are phenomenological ansatz-level predictions at
+Level~C. The table is therefore best read as the falsifiability side of
+the framework: it identifies the observational channels through which
+ECT can be directly tested against structural possibilities that are
+absent or not formulated in standard physics.
 
 \paragraph{Closing remark on the two tables.}
 Taken together, Tables~\ref{tab:postulates_reinterpreted}
@@ -46608,11 +46617,11 @@ $d\bar\phi/d\rho = c^2\,d\bar\phi/d\rho_{\rm m}>0$.
 \paragraph{Physical interpretation.}
 This result formalises Premise~2. The mechanism is indirect:
 \begin{equation}
-\rho > 0
+\rho_{\rm m}>0
 \;\xrightarrow{\text{Einstein}}\;
 R > 0
 \;\xrightarrow{\phi\text{-eq.}}\;
-\bar\phi(\rho) > \bar\phi(0) = 0\,.
+\bar\phi(\rho_{\rm m}) > \bar\phi(0) = 0\,.
 \end{equation}
 Baryonic matter creates positive curvature, which through the
 $e^{\beta\phi} R$ coupling pushes $\phi$ upward. The vacuum is driven
@@ -46977,6 +46986,8 @@ needed for flat rotation curves with the correct mass dependence.
 \subsubsection{The interpolating equation}
 
 Combining the linear and nonlinear branches:
+(Here $\rho$ denotes the baryonic mass density and
+$\rho/c^2=-T/c^4$ is the corresponding geometric source.)
 \begin{equation}
 \nabla\cdot\left[
   \mu_\phi\!\left(
@@ -47361,15 +47372,18 @@ P1--P4 alone.
 \section{LIV time-delay numerics}
 \label{app:liv_numerics}
 
-The benchmark ECT formula for photon time-of-flight delay due to
-Lorentz-invariance violation is (Eq.~\ref{eq:LIV_delay})
+The unit-coefficient benchmark formula for photon time-of-flight delay
+due to Lorentz-invariance violation follows from
+Eq.~\eqref{eq:LIV_delay} by setting $\zeta_\gamma=1$:
 \begin{equation}
-  \Delta t_{\rm LIV}
+  \Delta t_{\rm LIV}^{(\zeta_\gamma=1)}
   = \frac{(\alpha-\beta)}{\beta}\,
     \frac{E}{M_{\rm Pl}\,c^2}\,\frac{L}{c}
   \;\xrightarrow{\alpha=2\beta,\,\beta=1}\;
   \frac{E}{M_{\rm Pl}\,c^2}\,\frac{L}{c}\,.
 \end{equation}
+For general photon-sector matching one multiplies the numerical values
+below by $\zeta_\gamma$.
 Using $M_{\rm Pl}=1.22\times10^{19}$\,GeV and
 $1\,{\rm Gpc}=3.086\times10^{25}$\,m, one obtains
 \begin{equation}
