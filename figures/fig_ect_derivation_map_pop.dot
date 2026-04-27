@@ -1,3 +1,17 @@
+/*
+ * ECT complete derivation map — FINAL (grey-scale, GPT-audit 2026-04-21)
+ *
+ * Grey-scale palette with distinct block types:
+ *   Tier 0 Phi-medium     #4a4a4a + white text, thick black border
+ *   Foundational P1-P6    #6e6e6e + white text
+ *   Completion P_C        #8a8a8a + dashed border (Discussion-level)
+ *   SSB                   #9a9a9a
+ *   Lorentzian            #b0b0b0
+ *   Branches              #c0c0c0
+ *   Derived sectors       #d0d0d0 (A/B/C ... any derived content)
+ *   Predictions/Falsif.   #e5e5e5 (slightly lighter)
+ *   Open problems         white + dashed bold border
+ */
 
 digraph ECT {
   rankdir=TB;
@@ -5,63 +19,70 @@ digraph ECT {
   node [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled",
         fillcolor="#f0f0f0", color="#333333", penwidth=1.2, margin="0.14,0.07"];
   edge [fontname="Helvetica", fontsize=8, color="#555555", penwidth=1.0];
-  splines=true;
-  nodesep=0.4;
-  ranksep=0.5;
-  size="7.5,16";
-  ratio=compress;
+  splines="polyline";
+  nodesep=0.15;
+  ranksep=0.20;
+  esep="+2";
+  concentrate=false;
+  compound=true;
+  ratio="1.25";
+  size="20,25";
 
   /* ===== TIER 0: Phi-medium ===== */
-  PHI [label=<Φ-medium<BR/><FONT POINT-SIZE="9">4D Euclidean manifold (ℳ⁴, δ<SUB>AB</SUB>)   ·   Scalar condensate field Φ</FONT>>,
-       fillcolor="#c0c0c0", penwidth=2.2, fontsize=11];
+  PHI [label=<<FONT COLOR="white"><B>&#934;-medium</B></FONT><BR/><FONT POINT-SIZE="9" COLOR="white">4D Euclidean manifold (&#8499;&#8308;, &#948;<SUB>AB</SUB>)  &#183;  Scalar condensate field &#934;</FONT>>,
+       fillcolor="#4a4a4a", color="black", penwidth=2.2, fontsize=11];
 
-  /* ===== TIER 1: Postulates ===== */
+  /* ===== TIER 1: Foundational Postulates P1-P6 ===== */
   subgraph cluster_postulates {
-    label=<Foundational Postulates P1–P6>; labeljust=l;
-    style=dashed; color="#888888"; fontsize=9; fontname="Helvetica";
-    P1 [label=<P1: 4D Euclidean arena (ℳ⁴, δ<SUB>AB</SUB>)>, fillcolor="#d9d9d9"];
-    P2 [label=<P2: O(4)-invariant action S<SUB>E</SUB>[Ψ]>, fillcolor="#d9d9d9"];
-    P3 [label=<P3: Minimal scalar microdynamics>, fillcolor="#d9d9d9"];
-    P4 [label=<P4: Ordered vacuum branch ⟨∂Φ⟩ ≠ 0>, fillcolor="#d9d9d9"];
-    P5 [label=<P5: Medium character → gauge redundancy>, fillcolor="#d9d9d9"];
-    P6 [label=<P6: Multiplicity of configurations>, fillcolor="#d9d9d9"];
+    label=<<B>Foundational Postulates P1&#8211;P6</B>>; labeljust=l;
+    style=dashed; color="#666666"; fontsize=9; fontname="Helvetica";
+    P1 [label=<<FONT COLOR="white"><B>P1</B>: 4D Euclidean arena</FONT>>, fillcolor="#6e6e6e"];
+    P2 [label=<<FONT COLOR="white"><B>P2</B>: O(4)-invariant S<SUB>E</SUB>[&#936;]</FONT>>, fillcolor="#6e6e6e"];
+    P3 [label=<<FONT COLOR="white"><B>P3</B>: Minimal scalar microdyn.</FONT>>, fillcolor="#6e6e6e"];
+    P4 [label=<<FONT COLOR="white"><B>P4</B>: Ordered branch &#10216;&#8706;&#934;&#10217;&#8800;0</FONT>>, fillcolor="#6e6e6e"];
+    P5 [label=<<FONT COLOR="white"><B>P5</B>: Medium character</FONT>>, fillcolor="#6e6e6e"];
+    P6 [label=<<FONT COLOR="white"><B>P6</B>: Multiplicity of configs</FONT>>, fillcolor="#6e6e6e"];
     {rank=same; P1; P2}
     {rank=same; P3; P4}
     {rank=same; P5; P6}
   }
   PHI -> P1 [style=invis]; PHI -> P2 [style=invis];
-  P1 -> P3 [style=invis]; P2 -> P4 [style=invis];
-  P3 -> P5 [style=invis]; P4 -> P6 [style=invis];
+
+  /* ===== TIER 1b: Completion hypothesis (Discussion-level) ===== */
+  subgraph cluster_completion {
+    label=<<I>Completion hypothesis (Discussion)</I>>; labeljust=l;
+    style=dashed; color="#666666"; fontsize=9; fontname="Helvetica";
+    PC [label=<<B>Candidate internal colour completion P<SUB>C</SUB></B><BR/><FONT POINT-SIZE="9">Separate local complex rank-3 module<BR/>with SU(3)-structure &#183; Reverse-engineered<BR/>from consistency of observed physics</FONT>>,
+        fillcolor="#8a8a8a", color="#333333", penwidth=1.4, style="rounded,filled,dashed", fontcolor="white"];
+  }
+  PHI -> PC [style=invis];
 
   /* ===== TIER 2: SSB ===== */
-  SSB [label=<O(4) → O(3) Spontaneous Symmetry Breaking<BR/><FONT POINT-SIZE="9">Preferred direction n<SUB>A</SUB> = δ<SUB>Aw</SUB>   ·   Ordered condensate background</FONT>>,
-       fillcolor="#b5b5b5", penwidth=1.8, fontsize=10];
+  SSB [label=<<B>O(4) &#8594; O(3) Spontaneous Symmetry Breaking</B><BR/><FONT POINT-SIZE="9">Preferred direction n<SUB>A</SUB> = &#948;<SUB>Aw</SUB>  &#183;  Ordered condensate background</FONT>>,
+       fillcolor="#c8c8c8", penwidth=1.5, fontsize=10];
   P5 -> SSB; P6 -> SSB;
 
   /* ===== TIER 3: Emergent Lorentzian ===== */
-  LOR [label=<Emergent Lorentzian Structure<BR/><FONT POINT-SIZE="9">K<SUP>AB</SUP> = βδ<SUP>AB</SUP> − αn<SUP>A</SUP>n<SUP>B</SUP>   ·   α &gt; β<BR/>c<SUB>*</SUB>² = β/(α−β)   ·   Causal cone   ·   Arrow of time</FONT>>,
-       fillcolor="#c8c8c8", penwidth=1.5, fontsize=10];
-  SSB -> LOR [xlabel=<  α &gt; β >];
+  LOR [label=<<B>Emergent Lorentzian Structure</B><BR/><FONT POINT-SIZE="9">K<SUP>AB</SUP> = &#946;&#948;<SUP>AB</SUP> &#8722; &#945;n<SUP>A</SUP>n<SUP>B</SUP>  &#183;  &#945; &gt; &#946;<BR/>c<SUB>*</SUB>&#178; = &#946;/(&#945;&#8722;&#946;)  &#183;  Causal cone</FONT>>,
+       fillcolor="#dcdcdc", penwidth=1.3, fontsize=10];
+  SSB -> LOR [xlabel=<  &#945; &gt; &#946;  >];
 
   /* ===== TIER 4: Two branches ===== */
-  MBRANCH [label=<Macroscopic / Tensor Branch (Part II)>,
-           fillcolor="#d3d3d3", fontsize=10];
-  QBRANCH [label=<Quantum / Coherent Branch (Part III)>,
-           fillcolor="#d3d3d3", fontsize=10];
+  MBRANCH [label=<<B>Macroscopic / Tensor Branch</B><BR/>(Part II)>, fillcolor="#e8e8e8", fontsize=10];
+  QBRANCH [label=<<B>Quantum / Coherent Branch</B><BR/>(Part III)>, fillcolor="#e8e8e8", fontsize=10];
   LOR -> MBRANCH;
   LOR -> QBRANCH;
   {rank=same; MBRANCH; QBRANCH}
 
-  /* ===== MACRO BRANCH (left) ===== */
-  GR [label=<General Relativity<BR/><FONT POINT-SIZE="9">Fierz–Pauli → Einstein eqs.<BR/>Θ<SUB>μν</SUB>[n,φ], G<SUB>eff</SUB>, Λ<SUB>eff</SUB>   [A/B]</FONT>>];
-
+  /* ===== MACROSCOPIC BRANCH ===== */
+  GR [label=<<B>General Relativity</B><BR/><FONT POINT-SIZE="9">Fierz&#8211;Pauli &#8594; Einstein eqs.<BR/>&#920;<SUB>&#956;&#957;</SUB>[n,&#966;]  &#183;  G<SUB>eff</SUB>, &#923;<SUB>eff</SUB></FONT>>, fillcolor="white"];
   MBRANCH -> GR;
 
-  COSMO [label=<Cosmology<BR/><FONT POINT-SIZE="9">Primordial n<SUB>s</SUB> ~ 0.96–0.97   ·   Λ<SUB>eff</SUB><BR/>Hubble tension route   [B]</FONT>>];
-  GAL [label=<Galactic Dynamics<BR/><FONT POINT-SIZE="9">φ-branch   ·   BTFR slope = 4   ·   RAR<BR/>g<SUB>†</SUB> ~ cH₀/(2π)   [B]</FONT>>];
-  BH [label=<Black Holes &amp; Strong Field<BR/><FONT POINT-SIZE="9">Info destruction excluded [A]<BR/>Shell · BH thermo · Area law [A/B]<BR/>Page curve [B/Open]</FONT>>];
-  FIFTH [label=<5th Force<BR/><FONT POINT-SIZE="9">β₅ ~ m<SUB>f</SUB>/M<SUB>Pl</SUB>   [B]</FONT>>];
-  CLUSTER [label=<Cluster Lensing<BR/><FONT POINT-SIZE="9">Bullet, A520, El Gordo<BR/>ν-closure rule   [B]</FONT>>];
+  COSMO [label=<<B>Cosmology</B><BR/><FONT POINT-SIZE="9">&#923;<SUB>eff</SUB>  &#183;  Hubble-tension route<BR/>(n<SUB>s</SUB>, A<SUB>s</SUB>, r) native route: <I>open</I></FONT>>, fillcolor="white"];
+  GAL [label=<<B>Galactic Dynamics</B><BR/><FONT POINT-SIZE="9">&#966;-branch  &#183;  BTFR slope = 4<BR/>RAR  &#183;  g<SUB>&#8224;</SUB> &#8764; cH&#8320;/(2&#960;)</FONT>>, fillcolor="white"];
+  BH [label=<<B>Black Holes &amp; Strong Field</B><BR/><FONT POINT-SIZE="9">Info destruction excluded<BR/>Shell &#183; BH thermo &#183; Area law<BR/>Page curve: <I>open</I></FONT>>, fillcolor="white"];
+  FIFTH [label=<<B>5th Force</B><BR/><FONT POINT-SIZE="9">&#946;&#8325; &#8764; m<SUB>f</SUB>/M<SUB>Pl</SUB><BR/>M<SUB>max</SUB> &#8776; 2.17 M<SUB>&#8857;</SUB></FONT>>, fillcolor="white"];
+  CLUSTER [label=<<B>Cluster Lensing</B><BR/><FONT POINT-SIZE="9">Bullet, A520, El Gordo<BR/>&#957;-closure rule</FONT>>, fillcolor="white"];
 
   GR -> COSMO;
   GR -> GAL;
@@ -69,16 +90,19 @@ digraph ECT {
   GAL -> FIFTH;
   GAL -> CLUSTER;
 
-  /* ===== QUANTUM BRANCH (right) ===== */
-  S0 [label=<Action Scale S₀<BR/><FONT POINT-SIZE="9">Winding sectors   ·   Phase quantisation   [A]</FONT>>];
-
+  /* ===== QUANTUM BRANCH ===== */
+  /* Action scale split (GPT fix 4): S_0 existence vs S_0 = hbar matching */
+  S0 [label=<<B>Distinguished action scale S&#8320;</B><BR/><FONT POINT-SIZE="9">Winding sectors  &#183;  Phase quantisation<BR/>(existence, structural)</FONT>>, fillcolor="white"];
+  S0HBAR [label=<<B>S&#8320; = &#8463; matching</B><BR/><FONT POINT-SIZE="9">Physical identification<BR/>(<I>not first-principles, open</I>)</FONT>>,
+          fillcolor="white", style="rounded,filled,dashed", penwidth=1.8];
   QBRANCH -> S0;
+  S0 -> S0HBAR [style=dashed];
 
-  SCHROD [label=<Schrödinger Equation<BR/><FONT POINT-SIZE="9">Canonical phase dynamics<BR/>Uncertainty principle   [A/B]</FONT>>];
-  VACUUM [label=<Vacuum Response<BR/><FONT POINT-SIZE="9">Casimir (3/2)   ·   Unruh T<SUB>U</SUB><BR/>Particle production   [A/B]</FONT>>];
-  DECOH [label=<Decoherence &amp; Arrow of Time<BR/><FONT POINT-SIZE="9">Influence functional   ·   Entropy<BR/>Crooks relation   [A/B]</FONT>>];
-  BORN [label=<Born Rule<BR/><FONT POINT-SIZE="9">RP + Gleason route   [B]</FONT>>];
-  TOPO [label=<Exchange Topology &amp; Spinors<BR/><FONT POINT-SIZE="9">π₁(ℳ₂) = ℤ₂   ·   Dirac route<BR/>Entanglement   [A]</FONT>>];
+  SCHROD [label=<<B>Schr&#246;dinger Equation</B><BR/><FONT POINT-SIZE="9">Canonical phase dynamics<BR/>Uncertainty principle</FONT>>, fillcolor="white"];
+  VACUUM [label=<<B>Vacuum Response</B><BR/><FONT POINT-SIZE="9">Casimir (3/2)  &#183;  Unruh T<SUB>U</SUB><BR/>Particle production</FONT>>, fillcolor="white"];
+  DECOH [label=<<B>Decoherence &amp; Arrow of Time</B><BR/><FONT POINT-SIZE="9">Influence functional<BR/>Entropy  &#183;  Crooks relation</FONT>>, fillcolor="white"];
+  BORN [label=<<B>Born Rule</B><BR/><FONT POINT-SIZE="9">RP + Gleason conditional<BR/>(full Born: <I>open</I>)</FONT>>, fillcolor="white"];
+  TOPO [label=<<B>Exchange Topology &amp; Spinors</B><BR/><FONT POINT-SIZE="9">&#960;&#8321;(&#8499;&#8322;) = &#8484;&#8322;  &#183;  Dirac route<BR/>Entanglement</FONT>>, fillcolor="white"];
 
   S0 -> SCHROD;
   S0 -> VACUUM;
@@ -87,66 +111,101 @@ digraph ECT {
   LOR -> TOPO [style=dashed, xlabel=<d<SUB>sp</SUB>=3>];
 
   /* ===== PES ===== */
-  PES [label=<PES<BR/><FONT POINT-SIZE="9">Euclidean Stationarity<BR/>Selection criterion   [B]</FONT>>];
+  PES [label=<<B>PES</B><BR/><FONT POINT-SIZE="9">Euclidean Stationarity<BR/>Selection criterion</FONT>>, fillcolor="white"];
   DECOH -> PES;
   S0 -> PES [style=dashed];
   PES -> BORN;
 
-  /* ===== GAUGE SECTOR (bridging both branches) ===== */
-  GAUGE [label=<Gauge &amp; Matter Sector<BR/><FONT POINT-SIZE="9">U(1) → photon · Charge lattice [A]   ·   SU(2) → W<SUP>±</SUP>, Z   ·   Higgs (v₂ ≈ 246 GeV)<BR/>Fermions: O(3) spinor reps   ·   SU(3): open   ·   3 gen.: open<BR/>Neutrino: seesaw route (C)   ·   M<SUB>R</SUB><SUP>geom</SUP> ~ 10<SUP>10</SUP> GeV   [A/B/C/Open]</FONT>>,
-        fillcolor="#ddd"];
-  S0 -> GAUGE [xlabel=<phase>];
-  TOPO -> GAUGE [xlabel=<spinor>];
-  FIFTH -> GAUGE [style=invis]; /* pull gauge down */
+  /* ===== GAUGE SECTOR — split into 4 nodes per GPT fix 1 ===== */
+  ABELIAN [label=<<B>Abelian gauge sector</B><BR/><FONT POINT-SIZE="9">U(1) phase route &#8594; photon-like sector<BR/>Charge lattice  &#183;  Full QED <I>open</I></FONT>>, fillcolor="white"];
+  EW [label=<<B>Electroweak architecture</B><BR/><FONT POINT-SIZE="9">Pre-locking SU(2)<SUB>orient</SUB>&#215;U(1)<SUB>&#952;</SUB> &#8594; U(1)<SUB>diag</SUB><BR/>Hopf-fibered S&#179; vacuum (App. Hopf-locking)<BR/>v&#8322;= &#966;<SUB>0</SUB> exp(&#8722;&#8459;<SUB>EW</SUB>), &#8459;<SUB>EW</SUB>&#8776;36.8<BR/>Layered OP-EW-* programme</FONT>>, fillcolor="white"];
+  FERMIONS [label=<<B>Fermionic reconstruction</B><BR/><FONT POINT-SIZE="9">O(3) spinor reps  &#183;  Dirac route<BR/>Neutrino: seesaw  &#183;  M<SUB>R</SUB><SUP>geom</SUP> &#8764; 10&#185;&#8304; GeV<BR/>Yukawa / flavour: <I>open</I></FONT>>, fillcolor="white"];
+  COLOUR [label=<<B>Colour completion</B><BR/><FONT POINT-SIZE="9">SU(3)<SUB>c</SUB> via separate internal module<BR/>(P<SUB>C</SUB>, reverse-engineered)<BR/>&#945;<SUB>s</SUB>, &#923;<SUB>QCD</SUB>, confinement: <I>open</I></FONT>>,
+          fillcolor="white", style="rounded,filled,dashed", penwidth=1.4];
 
-  /* ===== DISCRETE-SYMMETRY ARCHITECTURE (F3, §9.4) ===== */
-  CPT [label=<Discrete-Symmetry Architecture<BR/><FONT POINT-SIZE="9">P, T, C · Conditional CPT via OS reconstruction<BR/>Branch-pair on S³ · 𝓛₅ → CPT-odd phenom. op.<BR/>[A/B; Open for full nonlinear closure]</FONT>>,
-         fillcolor="#d3d3d3"];
-  GAUGE -> CPT;
+  S0 -> ABELIAN [xlabel=<phase>];
+  S0 -> EW;
+  TOPO -> FERMIONS [xlabel=<spinor>];
+  ABELIAN -> EW [style=dashed];
+  EW -> FERMIONS [style=dashed];
+  PC -> COLOUR [color="#666666", penwidth=1.2, style=dashed];
+  FIFTH -> ABELIAN [style=invis];
+
+  /* ===== DISCRETE-SYMMETRY ARCHITECTURE ===== */
+  CPT [label=<<B>Discrete-symmetry architecture</B><BR/><FONT POINT-SIZE="9">P, T, C  &#183;  Conditional CPT (OS reconstruction)<BR/>Branch-pair on S&#179;  &#183;  Full nonlinear closure: <I>open</I></FONT>>, fillcolor="white"];
+  EW -> CPT;
+  FERMIONS -> CPT [style=dashed];
   FIFTH -> CPT [style=dashed];
 
-  /* ===== ANOMALY ARCHITECTURE (F4, §9.5) ===== */
-  ANOM [label=<Anomaly Architecture<BR/><FONT POINT-SIZE="9">Triangle + Witten inherited at EW · 𝓛₅ anomaly-transparent<BR/>Full SM anomaly closure conditional on colour/matter completion<BR/>Mixed U(1)-grav in emergent-graviton setting Open (OP-GUT6c)<BR/>[A/B/Open]</FONT>>,
-         fillcolor="#d3d3d3"];
-  GAUGE -> ANOM;
+  /* ===== ANOMALY ARCHITECTURE ===== */
+  ANOM [label=<<B>Anomaly architecture</B><BR/><FONT POINT-SIZE="9">Triangle + Witten inherited at EW<BR/>Full SM closure under completion (P<SUB>C</SUB>)<BR/>Mixed U(1)-grav: <I>open</I></FONT>>, fillcolor="white"];
+  EW -> ANOM;
   CPT -> ANOM;
 
-  /* ===== FLAVOUR ARCHITECTURE (F8, §9.7) ===== */
-  FLAVOUR [label=<Flavour Architecture<BR/><FONT POINT-SIZE="9">CKM / PMNS from overlap + seesaw · Near-alignment of rotations<BR/>CP phases in Yukawa / Majorana sector · Flavour anomaly-decoupled<BR/>Numerical Open under OP-Yukawa / OP-generations<BR/>[B/Open]</FONT>>,
-           fillcolor="#d3d3d3"];
-  GAUGE -> FLAVOUR;
+  /* ===== FLAVOUR ARCHITECTURE ===== */
+  FLAVOUR [label=<<B>Flavour architecture</B><BR/><FONT POINT-SIZE="9">CKM/PMNS from overlap + seesaw<BR/>CP phases in Yukawa / Majorana<BR/>Numerical closure: <I>open</I></FONT>>, fillcolor="white"];
+  FERMIONS -> FLAVOUR;
   ANOM -> FLAVOUR;
 
-  /* ===== PREDICTIONS & FALSIFIERS ===== */
-  /* ===== Results/regime estimates ===== */
-  RESULTS [label=<Results / Regime Estimates<BR/><FONT POINT-SIZE="9">Procopio, Jacques, Bell threshold<BR/>Qubit info bound   [B]</FONT>>];
+  /* ===== PREDICTIONS split per GPT fix 6: cross-sector vs macroscopic ===== */
+  RESULTS [label=<<B>Results / Regime estimates</B><BR/><FONT POINT-SIZE="9">Procopio, Jacques<BR/>Bell threshold &#183; Qubit info bound</FONT>>, fillcolor="white"];
   DECOH -> RESULTS;
   PES -> RESULTS;
-  RESULTS -> PRED;
 
-    PRED [label=<Quantitative Predictions<BR/><FONT POINT-SIZE="9">LIV: |δc/c| &lt; 10⁻¹⁵   ·   Casimir: 3/2 × QED   ·   g<SUB>†</SUB> ≈ 1.1×10⁻¹⁰ m/s²<BR/>BTFR slope = 4   ·   n<SUB>s</SUB> ~ 0.96–0.97   ·   Env.-dep. g<SUB>†</SUB></FONT>>,
-       fillcolor="#d0d0d0", penwidth=1.5];
-  FALS [label=<Cross-Sector Architectural Falsifiers<BR/><FONT POINT-SIZE="9">Single c<SUB>*</SUB>   ·   Single S₀   ·   Single UV threshold m<SUB>σ</SUB><BR/>No DM particles in lab   ·   Env.-dep. transition morphology</FONT>>,
-       fillcolor="#d0d0d0", penwidth=1.5];
+  PRED_XS [label=<<B>Cross-sector predictions</B><BR/><FONT POINT-SIZE="9">LIV: |&#948;c/c| &lt; 10&#8315;&#185;&#8309;  &#183;  Casimir: 3/2 &#215; QED<BR/>Single c<SUB>*</SUB>  &#183;  Common S&#8320;  &#183;  No lab DM (minimal closure)</FONT>>,
+           fillcolor="#f0f0f0", penwidth=1.5];
+  PRED_MACRO [label=<<B>Macroscopic / astrophysical predictions</B><BR/><FONT POINT-SIZE="9">g<SUB>&#8224;</SUB> &#8776; 1.1&#215;10&#8315;&#185;&#8304; m/s&#178;  &#183;  BTFR slope = 4<BR/>Env.-dep. g<SUB>&#8224;</SUB>  &#183;  M<SUB>max</SUB> &#8776; 2.17 M<SUB>&#8857;</SUB></FONT>>,
+              fillcolor="#f0f0f0", penwidth=1.5];
+  FALS [label=<<B>Cross-sector architectural falsifiers</B><BR/><FONT POINT-SIZE="9">Single c<SUB>*</SUB>, S&#8320;, UV threshold m<SUB>&#963;</SUB><BR/>No DM particles in lab<BR/>Env.-dep. transition morphology</FONT>>,
+         fillcolor="#f0f0f0", penwidth=1.5];
 
-  GAUGE -> PRED;
-  CLUSTER -> PRED [constraint=false];
-  COSMO -> PRED [constraint=false];
-  VACUUM -> PRED [constraint=false];
-  PRED -> FALS;
+  RESULTS -> PRED_XS;
+  VACUUM  -> PRED_XS;
+  CLUSTER -> PRED_MACRO [constraint=false];
+  COSMO   -> PRED_MACRO [constraint=false];
+  GAL     -> PRED_MACRO [constraint=false];
+  BH      -> PRED_MACRO [constraint=false];
+  PRED_XS    -> FALS;
+  PRED_MACRO -> FALS;
 
-  /* ===== OPEN PROBLEMS ===== */
-  OPEN [label=<Major Open Fronts<BR/><FONT POINT-SIZE="9">S₀ = ℏ   ·   SU(3) colour   ·   Yukawa hierarchy   ·   α<SUB>fs</SUB> = 1/137<BR/>Full nonlinear GR   ·   Born rule unconditional   ·   Bell correlators<BR/>Page curve   ·   3 fermion generations   ·   Proton stability (OP-proton)<BR/>Full nonlinear CPT closure (OP-CPT1)   ·   Exact max parity pattern (OP-P1)<BR/>Branch-pair cosmology (OP-BRANCH1)   ·   Mixed U(1)-grav in emergent-graviton (OP-GUT6c)<BR/>Flavour closure: CKM/PMNS/CP phases/ν spectrum (OP-Yukawa)</FONT>>,
-        fillcolor="white", style="rounded,dashed,filled"];
+  /* ===== OPEN PROBLEMS — article-native wording per GPT fix 7 ===== */
+  OPEN [label=<<B>Major open fronts</B><BR/><FONT POINT-SIZE="9">Strict identification S&#8320; = &#8463;  &#183;  Full first-principles Born rule<BR/>Full low-energy QFT architecture  &#183;  Full weak-gauge derivation<BR/>Full SM charge pattern  &#183;  Gauge anomaly cancellation<BR/>Full flavour closure (Yukawa, generations, &#957;-sector)<BR/>Why rank three / exact colour completion (P<SUB>C</SUB>)<BR/>Full nonlinear CPT (OP-CPT1)  &#183;  Page curve beyond shell<BR/>Full nonlinear GR  &#183;  Bell correlators  &#183;  &#945;<SUB>fs</SUB> = 1/137</FONT>>,
+        fillcolor="white", style="rounded,dashed,filled", penwidth=1.8];
 
   FALS -> OPEN [style=dashed];
-  BORN -> OPEN [style=dashed, constraint=false];
+  BORN -> OPEN [style=dashed];
+  S0HBAR -> OPEN [style=dashed, constraint=false];
   BH -> OPEN [style=dashed, constraint=false];
-  GAUGE -> OPEN [style=dashed, constraint=false, xlabel=<B-number>];
-  CPT -> OPEN [style=dashed, constraint=false];
-  ANOM -> OPEN [style=dashed, constraint=false];
-  FLAVOUR -> OPEN [style=dashed, constraint=false];
+  COLOUR -> OPEN [style=dashed];
+  CPT -> OPEN [style=dashed];
+  ANOM -> OPEN [style=dashed];
+  FLAVOUR -> OPEN [style=dashed];
 
   /* Minimal ranking */
   {rank=same; GR; S0}
+
+  /* ===== LEGEND — simplified per GPT fix: single status system, compact ===== */
+  LEGEND [shape=plaintext, fillcolor=white, label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="3" CELLPADDING="5" COLOR="black">
+      <TR><TD COLSPAN="4"><B>Legend &#8211; ECT complete derivation map</B></TD></TR>
+      <TR>
+        <TD BGCOLOR="#4a4a4a"><FONT COLOR="white">&#934;-medium (Tier 0)</FONT></TD>
+        <TD BGCOLOR="#6e6e6e"><FONT COLOR="white">Foundational postulate (P1&#8211;P6)</FONT></TD>
+        <TD BGCOLOR="#8a8a8a"><FONT COLOR="white">Completion candidate (Discussion)</FONT></TD>
+        <TD BGCOLOR="#c8c8c8">SSB</TD>
+      </TR>
+      <TR>
+        <TD BGCOLOR="#dcdcdc">Lorentzian emergence</TD>
+        <TD BGCOLOR="#e8e8e8">Branches (Macro / Quantum / Topology)</TD>
+        <TD BGCOLOR="white" BORDER="1">Derived sector</TD>
+        <TD BGCOLOR="#f0f0f0" BORDER="1"><B>Predictions / Falsifiers</B></TD>
+      </TR>
+      <TR>
+        <TD BGCOLOR="white" BORDER="1" STYLE="DASHED">Open problem</TD>
+        <TD COLSPAN="3"><B>Solid arrow:</B> strict derivation  &#183;  <B>Dashed arrow:</B> assumption / open route</TD>
+      </TR>
+    </TABLE>
+  >];
+  FALS -> LEGEND [style=invis];
+  OPEN -> LEGEND [style=invis];
 }
