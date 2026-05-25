@@ -42117,6 +42117,29 @@ of Part~IV, unpack the physical meaning and structural consequences
 of~P7.  The status of each consequence (Level~A, B, or~C) is indicated
 locally.
 
+\paragraph{Closure route toward a derivation of P7.}
+A first-principles derivation of P7 from condensate dynamics would
+require a zero-mode construction of the colour-completion datum.
+The desired statement is
+\begin{equation}
+  \mathcal{C}_x \simeq \ker\mathcal{D}_{\rm defect}(x),
+  \qquad
+  \dim_{\mathbb{C}}\,\ker\mathcal{D}_{\rm defect}=3,
+  \label{eq:p7_zero_mode_target}
+\end{equation}
+for a condensate-internal operator $\mathcal{D}_{\rm defect}$ on
+stable defects or internal condensate sectors, with the Hermitian
+form $h$ and the complex volume form $\Omega$ induced by the
+condensate inner product and orientation data rather than postulated.
+The colour gauge connection would then arise as the
+Berry--Wilczek--Zee connection on the resulting zero-mode bundle, and
+the structure-preserving automorphism group would coincide with the
+$SU(3)_c$ frame redundancy of P7.
+Until such an index/zero-mode theorem is supplied, the colour sector
+in ECT is structurally completed but not derived from the minimal
+condensate dynamics; the closure programme is recorded as a target
+in~\S\ref{sec:closure_targets}.
+
 \paragraph{Physical meaning.}
 The most economical candidate completion assumes that, in addition to
 the singlet ordered branch, the medium carries at each point a local
@@ -44611,6 +44634,195 @@ but the explicit computation remains open.
 
 
 %--------------------------------------------------------------
+\subsection{Closure targets: from structural reduction to first-principles derivation}
+\label{sec:closure_targets}
+
+Several central outputs of ECT presented in this paper have the status
+of \emph{structural reductions}: the original physics problem has been
+reduced to a sharper mathematical closure problem, but a complete
+derivation from the minimal postulates and completion data remains
+open. This subsection records those closure targets explicitly.
+The purpose is not to weaken the results obtained above, but to fix
+the boundary between established derivation, structural reduction,
+phenomenological matching, and future work.
+
+\paragraph{Colour sector.}
+The reduction is the algebraic realisation of $SU(3)_c$ as the
+structure-preserving automorphism group of a rank-three complex
+fibre with Hermitian form $h$ and complex volume form $\Omega$
+(\S\ref{sec:colour_completion}, P7).
+The closure task is the zero-mode programme: construct a
+condensate-internal operator $\mathcal{D}_{\rm defect}$ whose
+stable-defect or internal-sector kernel has
+$\dim_{\mathbb{C}}\ker\mathcal{D}_{\rm defect}=3$, derive $(h,\Omega)$
+from the condensate inner product and orientation data, and identify
+the colour gauge field as the Berry--Wilczek--Zee connection on the
+zero-mode bundle.
+Completion of this programme would promote the colour-completion
+datum from an algebraic extension to a condensate-derived result.
+
+\paragraph{Quantum of action.}
+The identification $S_0=\hbar$ is currently a Level-B matching:
+within the reduced $U(1)$-extended phase-loop EFT the elementary
+coherent loop satisfies $S_{\rm elem}=2\pi S_0$, and $S_0$ is then
+matched to the observed quantum of action
+(\S\ref{sec:hbar_status}).
+This is supported by the compact phase condition
+\[
+  \oint \partial_A\theta\,dX^A=2\pi n,
+\]
+mathematically analogous at the level of compact phase winding to
+the quantisation of circulation in superfluid
+helium~\cite{Donnelly1991} and of magnetic flux in
+superconductors~\cite{Abrikosov1957}, but it is not yet a proof of
+a global variational lower bound across all admissible
+configurations.
+
+The Level-A closure task has three parts:
+(i)~prove a universal lower bound
+$S_{\rm loop}[\rho,\theta]\geq 2\pi S_0\,|n|$ for all admissible
+coherent configurations, not only for the fixed-core ansatz;
+(ii)~prove a universality theorem showing that the same $S_0$
+normalises coherent amplitudes in all low-energy sectors;
+(iii)~reconstruct the canonical commutators, Hilbert/projector
+structure, and Born weights from the condensate measure.
+Items~(i)--(ii) would promote $S_0$ to a universal condensate action
+quantum; item~(iii) is required to promote the full
+quantum-mechanical architecture to a first-principles theorem
+(OP-Q2, OP-Q7).
+
+\paragraph{Electroweak hierarchy.}
+The electroweak scale is currently fixed by matching to the Fermi
+constant,
+\[
+  v_2=(\sqrt{2}\,G_F)^{-1/2}\simeq 246~{\rm GeV},
+\]
+and is used as the secondary ordering scale of the electroweak
+sector.
+ECT does not yet derive this scale from the minimal condensate
+dynamics.
+The structural reduction is to the computation of a non-polynomial
+alignment logarithm
+\[
+  \mathcal{I}_{\rm EW}=\ln(\phi_0/v_2)\simeq 36.8.
+\]
+A possible closure route is to derive an alignment beta-function
+from the phase--orientation sector,
+\[
+  \mu\,\frac{d g_{\rm align}}{d\mu}
+  =\beta_{\rm align}(g_{\rm align},\ldots),
+\]
+and to show that the second ordering step occurs at a critical
+coupling $g_{\rm align}(v_2)=g_{\rm crit}$, giving
+\[
+  \mathcal{I}_{\rm EW}
+  =\int_{g_{\rm UV}}^{g_{\rm crit}}
+  \frac{dg}{\beta_{\rm align}(g)}.
+\]
+A complete derivation would also have to connect this ordering scale
+to the chiral fermion/Yukawa sector, electroweak boson masses,
+neutrino-sector matching, and director-coupling suppression.
+Until that calculation is performed, ECT reduces the electroweak
+hierarchy problem to the origin of $\mathcal{I}_{\rm EW}$ but does
+not claim to solve it.
+
+\paragraph{Fine-structure constant.}
+The fine-structure constant is not derived in the present formulation.
+Following the structural route of
+\S\ref{sec:alpha_fs} and Appendix~\ref{app:alpha_fs_details}, the IR
+problem is reduced to the computation of emergent gauge kinetic
+normalisations and charge-lattice data.
+Before electroweak breaking, one must compute the condensate-induced
+kinetic coefficients $Z_B,Z_W$ and the corresponding charge
+normalisations $q_Y,q_2$, with
+\[
+  \alpha_Y^{-1}(\mu)=\frac{4\pi Z_B(\mu)}{q_Y^2},
+  \qquad
+  \alpha_2^{-1}(\mu)=\frac{4\pi Z_W(\mu)}{q_2^2}.
+\]
+At the electroweak matching scale,
+\[
+  e^{-2}(\mu_{\rm EW})
+  =g_Y^{-2}(\mu_{\rm EW})+g_2^{-2}(\mu_{\rm EW}),
+  \qquad
+  \alpha_{\rm fs}^{-1}(\mu_{\rm EW})=4\pi\,e^{-2}(\mu_{\rm EW}),
+\]
+after which the QED coupling is run through the appropriate
+thresholds down to the electron scale.
+The closure task is therefore to derive $Z_B,Z_W$, the
+charge-lattice normalisations $(q_Y,q_2)$, the Weinberg angle
+$\theta_W$, and the threshold-corrected RG flow from condensate
+data.
+No simple geometric value such as $1/(4\pi^2)$ is claimed for
+$\alpha_{\rm fs}$ in any limit; the relevant UV data are the pair
+$(Z_B^{(0)},Z_W^{(0)})$ and $\theta_W$, not a single geometric
+coefficient.
+
+\paragraph{Ghost-freedom and unitarity.}
+Within the retained scalar/coherent ordered-branch closures, the
+quadratic Hamiltonian positivity checks rule out the corresponding
+scalar ghost at that level.
+This does not yet constitute a complete unitarity theorem for the
+full metric/orientation sector.
+The spin-2 closure task comprises:
+(i)~the complete quadratic expansion of the condensate action around
+the broken vacuum for all scalar, vector, and tensor perturbation
+modes;
+(ii)~verification of the constraint algebra and projection onto
+exactly two transverse-traceless polarisations in the massless
+spin-2 sector;
+(iii)~exclusion of Boulware--Deser-type scalar
+ghosts~\cite{BoulwareDeser1972}, or any analogous extra
+constraint-violating scalar mode, beyond the linearised
+approximation;
+(iv)~Osterwalder--Schrader reflection
+positivity~\cite{OsterwalderSchrader1973} of the Euclidean
+condensate measure, sufficient for reconstruction of a unitary
+Lorentzian theory.
+Items~(iii)--(iv) remain necessary before any nonperturbative
+unitarity claim can be made (OP-OS1, OP-UV3).
+
+\paragraph{Born rule and measurement.}
+The decoherence functionals in ECT suppress interference between
+branches and help define the quantum--classical boundary, but
+decoherence alone does not select a single outcome and does not fix
+the Born weights.
+The current route is conditional (\S\ref{sec:qs_status}): once the
+required Hilbert-space/projector assumptions are in place,
+Gleason-type arguments constrain the admissible probability rule.
+The closure task is to derive those assumptions, the pointer basis,
+outcome selection, and the Born weights from the bare condensate
+dynamics.
+A complete account must also remain compatible with Bell
+correlations, no-signalling, and the Tsirelson bound
+(OP-Q7, OP-Q20).
+
+\paragraph{Additional high-priority closure tasks.}
+The broader list of uncovered structural problems is summarised in
+\S\ref{sec:limitations} and tracked in the central
+registry~\S\ref{sec:open_problems}.
+For completeness, the most important cross-cutting targets that are
+not yet developed in the preceding paragraphs include:
+charge quantisation and the full Standard-Model hypercharge pattern
+(with the global discrete quotient);
+gauge and gravitational anomaly cancellation;
+flavour and mixing (three generations, CKM, PMNS, the CP phase, and
+the neutrino mass ordering);
+Bell--Tsirelson saturation and no-signalling closure;
+locality, cluster decomposition, analyticity, and microcausality of
+the reconstructed Lorentzian theory;
+black-hole entropy and Page-curve reconstruction from the condensate
+description of horizon regions;
+cosmological perturbations $(P(k), n_s, r,$ non-Gaussianity$)$ from
+the Euclidean ordering transition;
+the modified-gravity functions $\mu(k,z)$, $\eta(k,z)$, $\Sigma(k,z)$
+for linear perturbations, separated from the local galactic-scale
+closure;
+and full UV closure including power counting, counterterm
+classification, loop closure, and reflection positivity.
+
+
+%--------------------------------------------------------------
 \subsection{Future directions and programme closure}
 \label{sec:future_directions}
 
@@ -45072,21 +45284,33 @@ collective condensate response enhances the bare estimate.
 The $\eta\sim 10^{-15}$ window should be read as a target sensitivity
 rather than a sharp present prediction.
 
-\subsubsection*{Coleman--Mandula remark}
+\subsubsection*{Coleman--Mandula compatibility}
 
-A standard concern about mixing spacetime and internal symmetries is
-the Coleman--Mandula theorem~\cite{ColemanMandula1967}.
-Its usual assumptions presuppose a Lorentzian S-matrix setting with
-nontrivial scattering amplitudes, a mass gap, and Poincar\'e
-invariance, whereas ECT begins at a pre-Lorentzian Euclidean
-substrate where none of these conditions are met at the fundamental
-level.
-Therefore the theorem does not straightforwardly apply to the
-pre-breaking condensate dynamics.
-A full reformulation for emergent settings remains outside the scope
-of the present work.
-This should not be read as a circumvention of the Coleman--Mandula
-theorem, but as a statement about the current level of analysis.
+The Coleman--Mandula theorem~\cite{ColemanMandula1967} constrains the
+possible exact symmetries of a nontrivial Poincar\'e-invariant, unitary
+Lorentzian $S$-matrix under the usual analyticity and mass-gap
+assumptions, with the graded extension provided by the
+Haag--{\L}opuszanski--Sohnius theorem~\cite{HLS1975}.
+
+ECT does not claim a Coleman--Mandula-forbidden mixing of
+Poincar\'e generators with internal gauge generators within the
+low-energy Lorentzian $S$-matrix.
+In the Ordered Branch, after Lorentzian spacetime and scattering states
+have emerged, the effective low-energy theory is required to retain
+the standard Coleman--Mandula-compatible product structure between
+spacetime symmetry and internal gauge redundancy, up to the usual
+gauge identifications.
+
+The common origin proposed in ECT lies instead at the
+pre-Lorentzian Euclidean condensate level.
+At that level there is no fundamental causal Lorentzian manifold, no
+fundamental Poincar\'e group, and no asymptotic Lorentzian $S$-matrix.
+The Coleman--Mandula restrictions therefore apply downstream, to the
+reconstructed Lorentzian scattering theory, not to the pre-geometric
+condensate data themselves.
+This is not a claim that ECT violates or algebraically circumvents the
+theorem; it is a statement that the completed low-energy EFT must
+remain compatible with it.
 
 \subsubsection*{Global electroweak structure and charge-lattice
 constraint}
