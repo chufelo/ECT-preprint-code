@@ -1,0 +1,135 @@
+% ============================================================
+% OP3_thermal_D1_blocks_v1.tex  (EXACT INSERTION BLOCKS for review;
+% NOT yet implemented). Scope per GPT: definitions + L1-L5 (fixes
+% applied) + KZ scaffold + minimal status echo. No references, no
+% OP3.1/OP3.2 status change, nothing in the pre-Lorentzian section.
+% ============================================================
+
+% ---------- ANCHOR 1 ----------
+% Insert AFTER the sentence "Thermal completion remains open."
+% (end of the subsubsection "Problem statement: branch onset versus
+% cosmological history"), BEFORE \subsubsection*{Admissible
+% post-transition scenarios}:
+
+\paragraph{Thermal-completion bookkeeping ledger (Level~B
+conditional).}
+The following necessary bookkeeping constraints hold for any
+thermal-completion mechanism, conditional on the FLRW reduction of
+the ordered branch; they constrain OP3.3 but do not close it, and
+no mechanism is implied.
+Notation: $\rho_{\rm onset}$ is the ordered-branch \emph{effective}
+energy density at branch onset, defined after emergence/matching
+within the FLRW reduction --- not an energy statement at the
+pre-emergent Euclidean level; $T_{\rm th}$ is the
+thermal-completion temperature at which a standard
+radiation-dominated bath is first established (no inflationary
+reheating mechanism is assumed); $w_{\rm pre}$ is the
+time-averaged effective equation of state of the dominant
+condensate sector between onset and thermal completion, with
+$w_{\rm pre}\ge-1$ by the no-phantom
+bound~\eqref{eq:w_phi} and $w_{\rm pre}\le1$ by the standard
+kinetic ceiling.
+\emph{(L1) Conversion ceiling.}
+If at any moment a fraction of $\rho_{\rm onset}$ were converted
+into an instantly thermalised bath, its temperature obeys
+$T_{\max}\le\bigl(30\,\rho_{\rm onset}/\pi^2
+g_*(T_{\max})\bigr)^{1/4}$; this is a ceiling, not a prediction
+--- if conversion is inefficient or delayed,
+$T_{\rm th}\ll T_{\max}$.
+Conditional on the Planck-threshold matching estimate for
+$\rho_{\rm onset}$, the ceiling is of order $M_{\rm Pl}$.
+\emph{(L2) Radiation-domination floor.}
+Any completion must deliver
+$T_{\rm th}\gtrsim T^{\min}_{\rm BBN}\sim\text{few~MeV}$, the
+lowest thermal-completion temperature compatible with standard BBN
+and neutrino decoupling; the numerical value is
+literature-dependent and is to be cited after source verification.
+\emph{(L3) Pre-thermal expansion corridor.}
+With $\rho_{\rm th}=\tfrac{\pi^2}{30}g_*(T_{\rm th})T_{\rm th}^4$
+and an approximately constant $w_{\rm pre}>-1$, the dilution law
+$\rho\propto a^{-3(1+w_{\rm pre})}$ gives
+\[
+N_{\rm pre}
+:=\ln\frac{a_{\rm th}}{a_{\rm onset}}
+=\frac{1}{3(1+w_{\rm pre})}
+ \ln\frac{\rho_{\rm onset}}{\rho_{\rm th}} ,
+\qquad w_{\rm pre}>-1 ;
+\]
+the case $w_{\rm pre}\to-1$ degenerates (quasi--de-Sitter-like
+behaviour) and requires separate treatment.
+For fixed $\rho_{\rm onset}$, $T_{\rm th}$, and $g_*(T_{\rm th})$,
+this equation gives only a bookkeeping corridor for the duration
+of the pre-thermal ordered-branch epoch; it is not a prediction of
+$w_{\rm pre}$ or of $N_{\rm pre}$.
+\emph{(L4) $G_{\rm eff}$-settling condition.}
+BBN compatibility requires
+$\bigl|\Delta G_{\rm eff}/G_N\bigr|_{T\sim{\rm MeV}}
+\le\varepsilon_G^{\rm BBN}$, where $\varepsilon_G^{\rm BBN}$ is an
+observational tolerance to be cited after source verification;
+translating this inequality into a constraint on $\phi_b$ or other
+ECT scalar variables is model-dependent and must use the article's
+current scalar-tensor closure.
+This restates minimal-viable condition~(ii) quantitatively; no
+relaxation mechanism is claimed.
+\emph{(L5) Entropy compatibility.}
+The comoving entropy of the bath at thermal completion,
+$S=\tfrac{2\pi^2}{45}g_{*s}(T_{\rm th})\,T_{\rm th}^3\,
+a_{\rm th}^3\,V_c$, is, if subsequent evolution is approximately
+adiabatic, comparable with the observed entropy in the present
+observable Universe, $S_{\rm obs}\sim10^{88}$, after specifying
+the comoving-volume convention $V_c$; non-adiabatic late evolution
+would modify this accounting.
+Combined with L1--L3 this is an accounting identity linking
+$(\rho_{\rm onset},w_{\rm pre},N_{\rm pre},T_{\rm th})$; the
+mechanism of entropy production is not derived and is not implied.
+
+\paragraph{Late-stage Kibble--Zurek scaffold (Open; definition
+recorded).}
+\emph{Definition (late-stage ordering window).}
+Validity domain: an effective Lorentzian ordered-branch
+description exists; coarse-grained ordering variables and an
+ordering time parameter are meaningful; the passage through the
+ordering threshold is characterised by an effective quench-like
+rate in the already Lorentzian ordered branch.
+Input data: relaxation time $\tau(\epsilon)$ and correlation
+length $\xi(\epsilon)$ of the ordering variables near threshold,
+and a freeze-out scale $\hat\xi$, if standard Kibble--Zurek
+matching conditions can be justified in the late-stage
+ordered-branch regime.
+Output target: a characteristic domain/texture correlation-volume
+scale --- for pointlike relic counts one would estimate
+$n\sim\hat\xi^{-3}$; for the $\pi_3(S^3)$ texture sectors
+(Appendix~\ref{app:relic_homotopy}) this is a domain/texture
+correlation-volume estimate, not an automatically conserved defect
+number.
+Such estimates constrain possible residual gradient/defect energy
+contributions, which must remain compatible with the bookkeeping
+ledger above; they are not an entropy source.
+\emph{Open problem (OP3.3, sharpened).}
+Exhibit the ECT-native $\tau(\epsilon),\xi(\epsilon)$ from the
+ordered-branch EFT and justify the matching assumptions; no
+exponents are computed here and no claim is made.
+\emph{Firewall.}
+The scaffold applies only after an effective Lorentzian
+description exists; it is not an account of the pre-temporal
+Euclidean ordering event, which belongs to OP3.1.
+
+% ---------- ANCHOR 2 ----------
+% In the OP3.3 decomposition item, REPLACE:
+%   "(open; once an ordered Lorentzian description is available, the
+%   late stage of the transition may admit a Kibble--Zurek-like
+%   effective description, which cannot be naively extrapolated to
+%   the pre-temporal Euclidean ordering event itself)"
+% WITH:
+%   "(open; a conditional bookkeeping ledger and a late-stage
+%   Kibble--Zurek scaffold are recorded below as necessary
+%   constraints and a definition/open-problem pair; neither can be
+%   extrapolated to the pre-temporal Euclidean ordering event
+%   itself)"
+
+% ---------- ANCHOR 3 ----------
+% In the \statussummary Level~B list, AFTER item (vii) (conditional
+% persistence criterion), APPEND:
+%   "(viii)~thermal-completion bookkeeping ledger (conditional
+%   necessary constraints L1--L5; mechanism open)."
+% No other status lines change; OP3.1/OP3.2 untouched.
