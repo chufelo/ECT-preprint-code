@@ -573,6 +573,7 @@ RG & Renormalisation group \\
 SN & Supernova (type~Ia unless stated otherwise) \\
 MWI & Many-worlds interpretation \\
 ABJ & Adler--Bell--Jackiw (anomaly; Section~\ref{sec:anomaly_architecture}) \\
+WZW & Wess--Zumino--Witten (flavour-anomaly term/sector) \\
 CAR & Canonical anticommutation relations (Section~\ref{sec:fermion_statistics}) \\
 OS & Osterwalder--Schrader (axioms / reconstruction theorem; Section~\ref{sec:qs_reflection_positivity}) \\
 RP & Reflection positivity \\
@@ -13778,8 +13779,8 @@ reduces to
 \end{equation}
 recovering \eqref{eq:anom_solution_structure} at $N_c=3$.
 Apart from the all-zero and degenerate branches (structure as
-above), an SM-like family therefore exists for \emph{every}
-$N_c\ge2$:
+above), the local anomaly equations admit an SM-like hypercharge
+family for \emph{every} $N_c\ge2$:
 $\{Y_{u^c},Y_{d^c}\}=\{-(N_c{+}1)Y_Q,\,(N_c{-}1)Y_Q\}$.
 For $N_c\ge2$, the electroweak Witten condition ($N_c+1$
 left-handed doublets per generation) imposes $N_c$ \emph{odd} ---
@@ -13800,8 +13801,9 @@ $N_c(Q_u^2-Q_d^2)=1$
 Hence charge integrality, atom neutrality, and the two-flavour
 pion--photon sector are all blind to $N_c$; phenomenological
 information sensitive to $N_c$ exists in the $N_f\ge3$
-WZW/flavour-anomaly sector (e.g.\
-$\eta\to\pi^+\pi^-\gamma\propto N_c^2$) and in the $R$-ratio
+Wess--Zumino--Witten (WZW)/flavour-anomaly sector (for example
+through explicit $N_c$-dependent terms in
+$\eta\to\pi^+\pi^-\gamma$) and in the $R$-ratio
 class \cite{BarWiese2001}.
 \emph{No-overclaim statement.}
 Anomaly cancellation (including the Witten condition) constrains
@@ -13910,6 +13912,11 @@ Solution structure of the one-generation anomaly system
   & Two nontrivial assignments up to normalisation and
     $u^c\!\leftrightarrow\!d^c$ relabelling; degenerate branch
     excluded by inherited charged-lepton input \\
+$N_c$-dependent classification at general $N_c$
+  & A cand.
+  & Local conditions admit an SM-like hypercharge family for every
+    $N_c\ge2$ \eqref{eq:anom_Nc_structure}; Witten imposes $N_c$
+    odd; the colour rank is not selected by anomalies alone \\
 $B{-}L$ flat direction for a free-hypercharge singlet
   $\nu^c$
   & A cand.
@@ -26735,7 +26742,7 @@ G~= global whole-framework closure problem.
 \textsc{open} & G & Full non-perturbative ghost-freedom and exact TT closure of emergent graviton sector & Completion-level question tied to gauge/gravity closure (OP3) & \S\ref{sec:graviton}, \S\ref{sec:open_problems} \\
 \textsc{pass} & I & LIV empirical compatibility & $|c_{\rm GW}/c-1|<6\times10^{-15}$ from GW170817 in the current EFT parametrisation; Planck-suppressed GW delay $\Delta t_{\rm GW}\sim 10^{-64}$\,s; operator-level unification of LIV parametrisations remains open & \S\ref{sec:qs_black_holes} \\
 \textsc{part.} & I & Discrete-symmetry architecture of emergent matter sector & Three-layer architecture: geometric backbone (Level~A); conditional CPT route via Osterwalder--Schrader reconstruction for reconstructible local sectors (A/B); $\mathcal{L}_5$ reclassified as CPT-odd vector bilinear (B); full nonlinear CPT closure open (OP-CPT1) & \S\ref{sec:discrete_symmetries} \\
-\textsc{part.} & I & Anomaly architecture of emergent chiral gauge sector & Electroweak anomaly constraints inherited at ordered-branch level (B), explicitly verified for the inherited assignments (A); $\mathcal{L}_5$ anomaly-transparent (representation-data lemma, A cand.); one-generation solution structure classified (A cand.); full Standard-Model closure conditional on colour / matter completion (OP-GUT6 family) & \S\ref{sec:anomaly_architecture} \\
+\textsc{part.} & I & Anomaly architecture of emergent chiral gauge sector & Electroweak anomaly constraints inherited at ordered-branch level (B), explicitly verified for the inherited assignments (A); $\mathcal{L}_5$ anomaly-transparent (representation-data lemma, A cand.); one-generation solution structure classified (A cand.); $N_c$-dependent classification: colour rank not selected by anomalies alone, $N_c$ odd only (A cand.); full Standard-Model closure conditional on colour / matter completion (OP-GUT6 family) & \S\ref{sec:anomaly_architecture} \\
 \textsc{part.} & G & Flavour architecture (CKM/PMNS) & CKM as basis misalignment (A); overlap route to hierarchical mixing (B); ``CKM small / PMNS large'' structural narrative (B/C); quantitative flavour closure open under OP-Yukawa / OP-generations & \S\ref{sec:flavour_architecture} \\
 \textsc{pass} & I & Causality                 & Retarded propagation of ordered branch (Level~A); directed decoherence $\Gamma_{\rm irr}\geq 0$ (Level~A)                & \S\ref{sec:arrow_of_time} \\
 \textsc{prob.}& G & Second law $dS/dw\geq0$  & Level-A directional backbone + Level-B ohmic/Markov closure; full microscopic H-theorem open (OP-Q17) & \S\ref{sec:second_law_basics} \\
@@ -26894,7 +26901,9 @@ D16b & Preferred chiral $SU(2)$ sector
   & B+ & Structural selection; full internal gauge derivation open
   & \ref{sec:nonabelian_embedding}, \ref{sec:chirality} \\
 D16c & $SU(3)_c$ colour sector
-  & B & Requires extended internal condensate structure
+  & B & Requires extended internal condensate structure; anomaly
+    cancellation does not select the colour rank ($N_c$ odd only,
+    \S\ref{sec:anomaly_architecture})
   & \ref{sec:colour_completion} \\
 D16d & Neutrino sector: one-chiral route, sterile interpretation,
     $M_R^{\rm geom}$ anchor, PMNS intact
