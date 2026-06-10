@@ -19066,7 +19066,8 @@ In the pre-ordered configuration regime:
 \end{itemize}
 What \emph{is} present: the Euclidean arena~(P1), the condensate
 field~$\Phi$~(P3) with its $O(4)$-invariant action~(P2), and the
-ordering-potential landscape governing the branch-selection problem.
+ordering-potential landscape governing the branch-formation and
+ordering problem~(OP3.1).
 
 \paragraph{Characteristic scales~(matching estimates).}
 The ordering scale is set by the radial symmetry-breaking scale
@@ -19201,9 +19202,12 @@ Scenarios~A and~B are discussed there.
 structural conditions supporting the observed branch.
 Level~B/C for the ordered-domain growth analogy as a physical
 motivation for expansion.
-Open for expanding-branch selection from first principles, exact
+Branch orientation~(OP3.2) partially clarified: time-reversal
+covariance lemma~(Level~A) and conditional persistence
+criterion~(Level~B) below.
+Open for first-principles ordering dynamics~(OP3.1), exact
 $\phi_b(z)$ trajectory, thermal completion of the hot Big-Bang
-history, and CMB-peak structure without particle dark matter.
+history~(OP3.3), and CMB-peak structure without particle dark matter.
 Connection: pre-Lorentzian
 regime~(\S\ref{sec:pre_lorentzian}),
 background
@@ -19212,7 +19216,8 @@ far-future
 Scenarios~A/B~(\S\ref{sec:mp_flrw}),
 no-phantom
 result~(eq.~\eqref{eq:w_phi}),
-second law~(\S\ref{sec:second_law_basics}).}
+second law~(\S\ref{sec:second_law_basics}),
+arrow of time~(\S\ref{sec:arrow_of_time}).}
 
 \subsubsection*{Problem statement: branch onset versus cosmological
 history}
@@ -19222,6 +19227,24 @@ Two questions must be sharply distinguished.
 The first is why the $O(4)\to O(3)$ transition occurred at all.
 This is the full nonequilibrium transition problem~(OP3) and is not
 addressed here.
+For status bookkeeping it is useful to decompose OP3 into four
+sub-problems of different difficulty:
+\emph{OP3.1} --- the ordering mechanism itself, including the
+microscopic derivation of the closure functions from bare~P3
+(open; possible routes include configuration-space measure/saddle
+selection and, more speculatively, stochastic-quantisation-type
+relaxational formalisms);
+\emph{OP3.2} --- branch orientation: why the observed branch expands
+(partially clarified below by a time-reversal covariance lemma and a
+conditional Level~B persistence criterion);
+\emph{OP3.3} --- thermal completion: entropy production,
+thermalisation, radiation domination, and BBN-compatible initial data
+(open; once an ordered Lorentzian description is available, the late
+stage of the transition may admit a Kibble--Zurek-like effective
+description, which cannot be naively extrapolated to the pre-temporal
+Euclidean ordering event itself);
+\emph{OP3.4} --- relics of the ordering event (open observational
+programme).
 
 The second is: given that an ordered Lorentzian branch has formed,
 which cosmological histories are dynamically admissible, structurally
@@ -19253,7 +19276,66 @@ solutions, $H=\pm\sqrt{\cdots}$.
 Positive condensate energy makes an expanding branch dynamically
 natural once that branch is selected, but it does not by itself
 derive the sign choice $H>0$.
-The deeper branch-selection problem therefore remains open.
+The branch-orientation question~(OP3.2) is partially clarified by the
+following statements.
+
+\paragraph{Lemma: time-reversal covariance of the homogeneous
+background system~(Level~A).}
+The homogeneous background equations
+\eqref{eq:bg_reduction_friedmann}--\eqref{eq:bg_reduction_scalar}
+are covariant under the simultaneous reversal
+$t\mapsto -t$, $H\mapsto -H$, $\dot\phi\mapsto-\dot\phi$,
+$\dot F\mapsto-\dot F$, with $\dot H$, $\ddot\phi$, and
+$\ddot F$ unchanged.
+Hence, before a thermodynamic arrow and retarded boundary conditions
+are specified, the sign of $H$ alone does not define an invariant
+physical distinction: an expanding solution in one parametrisation is
+paired with a contracting solution in the reversed parametrisation.
+This removes a purely parametrisation-dependent part of the
+expansion-versus-contraction question, but it does not by itself
+select the observed branch.
+Once the thermodynamic arrow and retarded support are fixed
+(\S\ref{sec:arrow_of_time}), the physical branch-orientation
+problem remains and is addressed conditionally below.
+
+\paragraph{No-bounce sublemma (spatially flat positive-potential/no-ghost
+sector; Level~A conditional).}
+Within the retained spatially flat homogeneous background system, at a
+putative regular bounce, $H=0$, the Friedmann
+constraint~\eqref{eq:bg_reduction_friedmann} reduces to
+\[
+0=\frac{\rho_m+\rho_r+U(\phi)}{\bar M_{\rm Pl}^2}
++\tfrac12\,\omega(\phi)\dot\phi^2 ,
+\]
+since the $-3H\dot F$ term vanishes identically at $H=0$.
+If $F>0$, $\omega>0$, $\rho_m,\rho_r\ge0$, and $U\ge0$ in the
+relevant neighbourhood, this constraint admits no nontrivial
+solution; a regular bounce is therefore excluded, and the sign of $H$
+cannot change within the ordered EFT.
+If spatial curvature, $U<0$, or scalar--tensor derivative dynamics
+outside the retained closure dominate, the exclusion does not apply
+and the bounce question reopens.
+
+\paragraph{Conditional persistence criterion~(Level~B).}
+Assume $F>0$, $\omega>0$ (no-ghost), $\rho_m,\rho_r\ge0$, a
+non-negative (or non-dominantly negative) condensate potential in the
+onset neighbourhood, controlled scalar--tensor derivative terms, and
+the absence of an internal bounce mechanism (sublemma above).
+Then a branch born contracting with respect to the thermodynamic
+arrow cannot turn around inside the ordered EFT and generically
+evolves toward larger density, temperature, and curvature, hence
+toward the breakdown criterion of the ordered branch
+(\S\ref{par:singularity_programme}), on a timescale of order
+$|H_{\rm onset}|^{-1}$ --- which is of order $M_{\rm Pl}^{-1}$ only
+under the Planck-threshold matching estimate.
+The expanding branch instead moves away from the breakdown boundary
+in the non-phantom, positive-energy sector.
+The observed expanding cosmology is therefore interpreted not as a
+sign chosen by the local Friedmann constraint, but as the persistent
+ordered branch.
+This is a Level~B conditional criterion, not a first-principles
+derivation of expansion; the underlying ordering dynamics remains
+open~(OP3.1).
 
 \renewcommand{\arraystretch}{1.25}
 \begin{longtable}{@{}p{3.0cm}p{5.5cm}p{3.5cm}@{}}
@@ -19290,13 +19372,18 @@ Always decelerating
   & Possible; observationally disfavoured \\
 Contracting branch
   & $H<0$ sign choice
-  & Kinematically admissible; not structurally
-    preferred, but expanding-branch selection
-    remains open \\
+  & Kinematically admissible; disfavoured by the
+    conditional persistence criterion (evolves
+    toward the breakdown boundary); first-principles
+    selection remains open~(OP3.1) \\
 Bounce / oscillatory
   & Turning points in $\phi$ dynamics; nontrivial
     $U(\phi)$
-  & Not excluded; not developed \\
+  & Excluded in the positive-potential/no-ghost
+    sector by the Friedmann constraint (no-bounce
+    sublemma); admissible only if $U<0$ or
+    scalar--tensor derivative terms dominate;
+    not developed \\
 Phantom ($w<-1$)
   & Would require $\omega(\phi)<0$
   & \textbf{Excluded} by no-phantom
@@ -19304,7 +19391,7 @@ Phantom ($w<-1$)
 \bottomrule
 \end{longtable}
 
-\subsubsection*{Why expansion is physically natural}
+\subsubsection*{Why the persistent branch is expected to be expanding}
 
 The universal growth of ordered domains in phase-ordering systems
 provides a suggestive ECT analogy for why an expanding ordered
@@ -19316,6 +19403,11 @@ Kibble--Zurek-type dynamics.
 In ECT the ordered Lorentzian branch emerging from the disordered
 Euclidean medium is structurally analogous to such a growing
 ordered domain.
+The analogy is meant only for the late/post-ordered part of the
+transition, where an effective Lorentzian description and
+coarse-grained ordering variables are already meaningful; it is not a
+direct application of Kibble--Zurek scaling to the pre-temporal
+Euclidean ordering event.
 
 This analogy strengthens the plausibility of the expanding branch
 (Level~B/C) but should not be mistaken for a theorem-level
@@ -19434,7 +19526,9 @@ why the cosmological and thermodynamic arrows of time align.
 (i)~existence of a pre-ordered configuration regime without
 Lorentzian time;
 (ii)~the structural distinction between geometric branch onset
-and thermal hot-Big-Bang completion.
+and thermal hot-Big-Bang completion;
+(iii)~time-reversal covariance of the homogeneous background
+equations.
 
 \textit{Level~B:}
 (i)~effective FLRW/scalar-tensor reduction of the ordered branch;
@@ -19444,14 +19538,20 @@ and thermal hot-Big-Bang completion.
 (Table~\ref{tab:post_transition_scenarios});
 (v)~minimal viable post-transition branch conditions;
 (vi)~observational discriminants reinterpreted as branch
-discriminants.
+discriminants;
+(vii)~conditional persistence criterion for the expanding branch
+orientation (under explicit positivity, no-ghost, and no-bounce
+assumptions).
 
 \textit{Level~B/C:}
 ordered-domain growth analogy as a physical motivation for
 expanding-branch naturalness.
 
 \textit{Open:}
-(i)~expanding-branch selection from first principles;
+(i)~first-principles ordering dynamics~(OP3.1); the branch
+orientation~(OP3.2) is reduced to a conditional persistence
+criterion whose assumptions (potential positivity at onset,
+controlled scalar--tensor derivative terms) remain themselves open;
 (ii)~exact $\phi_b(z)$ trajectory;
 (iii)~thermal completion of the hot Big-Bang branch;
 (iv)~precision CMB acoustic structure without particle dark
@@ -26461,7 +26561,7 @@ D26 & Conditional theorem: exact thermality excluded given finite-entropy shell 
 D27 & Shell-state dependence of Hawking channel: derived consequence of D26, not assumption & B & Conditions of D26 & \ref{app:conditional_theorem} \\
 D27b & General boundary-layer area bound (Theorem~\ref{thm:area_bound}) & A (scaling) / B (coeff.) & Locality + UV threshold + finite effective correlation length; coefficient and soft-sector closure open & \ref{sec:area_law} \\
 D27c & Compact-$U(1)$ Abelian charge lattice (Theorem~\ref{thm:charge_lattice}) & A & Compact condensate phase + group-theoretic representation theory; full SM charge pattern open & \ref{sec:charge_quantization} \\
-D27d & Post-transition cosmological scenario classification & B & Structural classification of expanding/contracting/accelerating branches; full transition dynamics and exact background trajectory open & \ref{sec:post_transition} \\
+D27d & Post-transition scenario classification and conditional branch-orientation persistence criterion & B & Structural classification of expanding/contracting/accelerating branches; orientation criterion conditional (positivity, no-ghost, no-bounce); full transition dynamics (OP3.1) and exact background trajectory open & \ref{sec:post_transition} \\
 D28 & Effective shell Hamiltonian structure (form, not coefficients) & C & GL criticality + Rindler geometry; coefficients open & \ref{app:chi_dynamics} \\
 D29 & Minimal shell--radiation coupling form $\mathcal{L}_{\rm int}=-\tfrac{g}{2}\delta\chi(\partial\varphi)^2$ & C & Locality + linearity; coefficient $g$ open & \ref{app:chi_dynamics} \\
 D30 & No-phantom late-time closure: $w_\phi\ge -1$ & B & Structural consequence of $\omega(\phi)>0$ in the $\phi$-first closure & \ref{sec:mp_flrw} \\
@@ -27108,7 +27208,7 @@ Cosmological / black-hole singularity as ordered-branch breakdown
 \hline
 \multicolumn{4}{@{}l}{\textit{Open problems (macroscopic branch)}} \\
 OP2: microscopic derivation of $M_G$ from ordered-branch parameters & Open & Open & Full EFT \\
-OP3: derivation of effective $\phi$-closure parameters from bare P3 & Open & Open & OP-grad (functional forms derived) \\
+OP3.1: ordering mechanism and derivation of effective $\phi$-closure parameters from bare P3 & Open & Open & OP-grad (functional forms derived); OP3.2 partially clarified by the conditional persistence criterion \\
 OP-gauge: explicit two-TT-polarisation proof in full ECT language & Open & Open & OP-gauge \\
 OP-matter: first-principles matter universality & Open & Open & OP-matter \\
 OP-c1: coefficient $c_1$ in anisotropic response $\Theta_{\mu\nu}$ & Open & Open & OP-c1 \\
