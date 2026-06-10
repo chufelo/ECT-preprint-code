@@ -1,0 +1,158 @@
+% ============================================================
+% OP_GUT1_zeromode_programme_v1.tex  (PROPOSAL-ONLY)
+% Sharpening of the colour zero-mode problem: axioms, admissible
+% backgrounds, route taxonomy, precise sub-problems, failure
+% modes. NO candidate operator constructed, NO existence claim,
+% NO preprint edits by this file.
+% ============================================================
+\section*{OP-GUT1 zero-mode programme (proposal-only)}
+
+\subsection*{0. Scope}
+This document sharpens the block ``Definition (the colour
+zero-mode problem) / Open problem (OP-GUT1, sharpened)'' of
+\S colour\_completion into a workable programme: precise axioms
+for $\mathcal D_{\rm defect}$, the admissible background classes
+already present in the ECT defect ontology, a taxonomy of three
+candidate routes with honest assessments, and exact formulations
+of the induced-$(h,\Omega)$ sub-problems.
+Everything below is Open; nothing upgrades P7.
+
+\subsection*{1. Axioms for $\mathcal D_{\rm defect}$ (sharpened)}
+\begin{enumerate}
+  \item Locality: a differential operator built pointwise from the
+    minimal condensate data $(\rho,\theta,n^A)$ and their
+    derivatives; no external structure.
+  \item Ellipticity, first-order Dirac type preferred (kernel
+    robustness, index tools).
+  \item Equivariance under the residual ordered-branch symmetry
+    $O(3)\times U(1)_\theta$.
+  \item A fixed $U(1)_\theta$ charge assignment on the domain
+    bundle: the $\theta$-action is the natural candidate for the
+    complex structure on the kernel (multiplication by~$i$), since
+    a \emph{complex} rank-3 module is required, not a real one.
+  \item Spectral gap separating the would-be zero modes from the
+    continuum on the relevant backgrounds, so that
+    $\ker\mathcal D_{\rm defect}$ forms a smooth bundle over
+    spacetime and the Berry--Wilczek--Zee connection is defined
+    (no level crossing along physical paths).
+\end{enumerate}
+
+\subsection*{2. Admissible backgrounds (grounded in the existing
+ontology)}
+Per \S ``Types of defect and topological configurations'' and
+app.~relic\_homotopy:
+(i)~$\theta$-winding / vortex-core configurations (compact phase
+fibre; modulus suppression at the core);
+(ii)~$\pi_3(S^3)=\mathbb Z$ texture/skyrmion sectors --- the only
+nontrivial homotopy class of the primary $O(4)\to O(3)$ breaking
+($\pi_1=\pi_2=0$: no strings, no monopoles);
+(iii)~domain-wall-like / interface configurations, including
+ordered--Euclidean interfaces at the BR1 boundary;
+(iv)~composite configurations.
+The ontology itself is marked ``not yet fully classified''; the
+programme inherits that conditionality explicitly.
+
+\subsection*{3. Route taxonomy (no commitments)}
+\textbf{R1 --- index/charge route ($\theta$-winding
+backgrounds).}
+Dirac-type operators coupled to winding-$n$ vortex backgrounds
+generically have $\dim\ker=|n|$ by Jackiw--Rossi/Callias-type
+counting (references to be page-verified before any use:
+Jackiw--Rossi NPB 190 (1981) 681; Callias CMP 62 (1978) 213;
+E.~Weinberg PRD 24 (1981) 2669).
+Honest assessment: this route \emph{transforms} the rank problem
+rather than solving it --- $\dim_{\mathbb C}\ker=3$ becomes ``why
+are $|n|=3$ cores the relevant stable objects'', a
+charge-selection question (energetics of binding three elementary
+cores?) that is itself entirely open.
+Recordable as a structural observation; no claim.
+
+\textbf{R2 --- representation/degeneracy route (residual-symmetry
+multiplet).}
+The kernel carries an irreducible multiplet of the residual
+$O(3)$; the three-dimensional vector representation would give
+$\dim_{\mathbb R}\ker=3$, complexified to $\mathbb C^3$ by the
+$U(1)_\theta$ action (axiom~4).
+Two striking structural matches, recorded as \emph{questions},
+not results:
+(a)~the antisymmetric invariant $\varepsilon_{abc}$ of P7 would
+be the $\varepsilon_{ijk}$ of the residual $O(3)$ vector triple
+product, i.e.\ $\Omega$ induced by rotational geometry;
+(b)~$N_c=3$ would tie to $d_{\rm spatial}=3$.
+Honest flag: this is the most ECT-native candidate and also the
+most seductive (numerological risk); the existence of such a
+triplet kernel is completely open and must never be asserted.
+
+\textbf{R3 --- interface route.}
+Localised modes on ordered--Euclidean or inter-branch interfaces
+(Jackiw--Rebbi-type localisation); counting data unclear; least
+developed; listed for completeness.
+
+\textbf{R4 --- $G_2$ reduction.}
+Nested deeper candidate ($u^\perp\simeq\mathbb C^3$); deferred to
+the separate $G_2$ mini-round by review decision; listed only for
+completeness of the taxonomy.
+
+\subsection*{4. The induced-$(h,\Omega)$ sub-problems, made
+precise}
+\textbf{(h).} For elliptic $\mathcal D_{\rm defect}$ the
+fibrewise $L^2$ inner product on $\ker$ supplies $h$
+automatically; the substantive content is smoothness of the
+kernel bundle (axiom~5), not the metric.
+\textbf{($\Omega$).} The $U(3)\to SU(3)$ reduction is equivalent
+to a canonical trivialisation of the complex determinant line of
+the kernel bundle:
+\[
+\Omega\ \text{exists canonically}
+\iff
+c_1\bigl(\det\nolimits_{\mathbb C}\ker\mathcal D_{\rm defect}\bigr)=0
+\ \text{with a preferred section from condensate orientation data.}
+\]
+This turns the ``why $SU(3)$ rather than $U(3)$'' question into a
+precise index-bundle condition.
+Route-specific candidates: in R2, $\Omega=\varepsilon_{ijk}$ from
+the residual $O(3)$; in R1, only a non-canonical ordering of
+winding modes --- a recorded weakness of R1.
+\textbf{(BWZ).} The colour connection is the Berry--Wilczek--Zee
+connection of the smooth kernel bundle; its Yang--Mills kinetics
+is \emph{not} part of this programme (separate question, partially
+addressed by the minimal colour EFT section).
+
+\subsection*{5. Failure modes (recorded honestly)}
+Generic $\dim\ker=0$ on natural backgrounds; kernel real with no
+$\theta$-complexification; $|n|=3$ selection unjustified (R1);
+level crossing destroying the bundle; $c_1\neq0$ obstruction to
+$\Omega$; and even full success would leave Yang--Mills kinetics,
+$g_s$, confinement, and OP-GUT2 representations open.
+Consistency check inherited from the $N_c$ classification: any
+successful mechanism must produce a \emph{complex} triplet
+(chiral-anomaly-relevant), and the classification guarantees that
+no anomaly argument can substitute for it.
+
+\subsection*{6. Deliverables if approved (future round; nothing
+executed now)}
+D1 (small): a ``Candidate routes (all Open)'' paragraph after the
+``Open problem (OP-GUT1, sharpened)'' block: R1--R3 in three
+sentences each, plus the two precise sub-statements (R1
+rank$\to$charge transformation; $\Omega\iff$ determinant-line
+trivialisation).
+D2 (optional): bib additions JackiwRossi1981 / Callias1978 /
+WeinbergE1981 after page-level verification.
+D3: statuses untouched everywhere; P7 remains a postulate;
+OP-GUT1 remains Open/Reframed.
+
+\subsection*{7. Questions for GPT}
+(Q1)~Approve the route taxonomy R1--R3 (R4 deferred) for eventual
+publication shape?
+(Q2)~Is the R2 double observation
+($\Omega\leftrightarrow\varepsilon_{ijk}$ of residual $O(3)$;
+$N_c=3\leftrightarrow d_{\rm spatial}=3$) admissible in the text
+as an explicitly flagged open question with firewalls, or too
+seductive to print at all?
+(Q3)~Include the determinant-line/$c_1$ reformulation of
+$U(3)\to SU(3)$ as a precise sub-problem statement?
+(Q4)~Include the R1 reformulation (rank selection $\mapsto$
+charge-3 selection, energetics open) --- useful honesty or
+unnecessary speculation?
+(Q5)~Reference set for D2: Jackiw--Rossi + Callias + E.~Weinberg,
+or a subset?

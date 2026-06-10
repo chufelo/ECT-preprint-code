@@ -1,0 +1,168 @@
+% ============================================================
+% OP_GUT1_zeromode_programme_v2.tex  (PROPOSAL-ONLY; v2 per GPT
+% review of v1). Changes: "Axioms" -> "Working requirements";
+% Dirac type = working class; U(1)_theta = natural candidate (not
+% "only source of i"); theta-winding cores explicitly not primary
+% pi_1 strings; R1 schematic under suitable hypotheses; R2
+% downgraded to high-risk diagnostic with internalisation test;
+% Omega restated as determinant-line/trivialisation problem (no
+% "Omega iff c_1=0"); BWZ firewall strengthened; deliverables
+% minimal, no refs until page-verified.
+% NO candidate operator constructed, NO existence claim, NO
+% preprint edits by this file.
+% ============================================================
+\section*{OP-GUT1 zero-mode programme, v2 (proposal-only)}
+
+\subsection*{0. Scope}
+Sharpens the ``Definition (the colour zero-mode problem) / Open
+problem (OP-GUT1, sharpened)'' block of \S colour\_completion into
+a workable programme.
+Everything below is Open; nothing upgrades P7; OP-GUT1 remains
+Open/Reframed.
+
+\subsection*{1. Working requirements for $\mathcal D_{\rm defect}$}
+\begin{enumerate}
+  \item Locality: a differential operator built pointwise from the
+    minimal condensate data $(\rho,\theta,n^A)$ and their
+    derivatives; no external structure.
+  \item Working class --- first pass: elliptic first-order
+    Dirac-type operators, chosen because index tools control their
+    kernels.  Higher-order or non-Dirac operators are outside this
+    first pass, not excluded.
+  \item Equivariance under the residual ordered-branch symmetry
+    $O(3)\times U(1)_\theta$.
+  \item A fixed $U(1)_\theta$ charge assignment on the domain
+    bundle: the $\theta$-action is a natural candidate source of
+    the complex structure on the kernel, because the colour module
+    required by P7 is complex rather than real.
+  \item Spectral gap separating the would-be zero modes from the
+    continuum on the relevant backgrounds, so that
+    $\ker\mathcal D_{\rm defect}$ forms a smooth bundle over
+    spacetime and the Berry--Wilczek--Zee connection is defined
+    (no level crossing along physical paths).
+\end{enumerate}
+
+\subsection*{2. Admissible backgrounds (grounded in the existing
+ontology)}
+Per \S ``Types of defect and topological configurations'' and
+app.~relic\_homotopy:
+(i)~$\theta$-winding / vortex-core configurations.
+These $\theta$-winding cores are not primary $O(4)\to O(3)$
+strings; they rely on the compact phase fibre and require separate
+stability analysis --- there is no conflict with
+$\pi_1(S^3)=0$.
+(ii)~$\pi_3(S^3)=\mathbb Z$ texture/skyrmion sectors --- the only
+nontrivial homotopy class of the primary breaking
+($\pi_1=\pi_2=0$: no primary strings, no monopoles).
+(iii)~Domain-wall-like / interface configurations, including
+ordered--Euclidean interfaces at the BR1 boundary.
+(iv)~Composite configurations.
+The ontology itself is marked ``not yet fully classified''; the
+programme inherits that conditionality explicitly.
+
+\subsection*{3. Route taxonomy (no commitments)}
+\textbf{R1 --- index/charge route ($\theta$-winding backgrounds;
+schematic).}
+In suitable Jackiw--Rossi/Callias-type settings, the index can
+count zero modes in terms of winding/charge data, schematically
+$\dim\ker\sim|n|$; the applicability of any such counting to an
+ECT-native operator depends on mass profile, asymptotics, boundary
+conditions, and Fredholmness, none of which are established here.
+Honesty statement (retained): R1 would \emph{reduce} rank-3 to the
+stability/selection of charge-3 cores --- a charge-selection
+question (energetics of binding three elementary cores?) that is
+itself entirely open --- it would not solve rank selection.
+References (Jackiw--Rossi; Callias; optionally E.~Weinberg) to be
+added only after page-level verification.
+
+\textbf{R2 --- residual-symmetry degeneracy diagnostic
+(high-risk).}
+One may ask whether an internal kernel degeneracy could transform
+as a three-dimensional multiplet under a residual symmetry
+naturally available in the ordered branch.  The tempting candidate
+is the vector representation of residual $O(3)$, later
+complexified by a $U(1)_\theta$ charge.  This is not yet a colour
+construction: spatial rotations cannot simply be identified with
+an internal colour gauge symmetry, and any viable mechanism must
+explain why the resulting threefold degeneracy is an internal,
+gaugeable fibre rather than an ordinary spatial vector multiplet.
+The observations $\Omega\sim\varepsilon_{ijk}$ and
+$N_c=3\sim d_{\rm spatial}=3$ may be recorded only as diagnostic
+prompts, not as explanatory claims.
+This route is useful mainly as a warning: any
+$d_{\rm spatial}=3$ argument must pass the internalisation test.
+
+\textbf{R3 --- interface route.}
+Localised modes on ordered--Euclidean or inter-branch interfaces
+(Jackiw--Rebbi-type localisation); counting data unclear; least
+developed; listed for completeness.
+
+\textbf{R4 --- $G_2$ reduction.}
+Nested deeper candidate ($u^\perp\simeq\mathbb C^3$); deferred to
+the separate $G_2$ mini-round by review decision; listed only for
+completeness of the taxonomy.
+
+\subsection*{4. The induced-$(h,\Omega)$ sub-problems, made
+precise}
+\textbf{(h).}
+For elliptic $\mathcal D_{\rm defect}$ the fibrewise $L^2$ inner
+product on $\ker$ supplies $h$ automatically; the substantive
+content is smoothness of the kernel bundle (requirement~5), not
+the metric.
+\textbf{($\Omega$): the determinant-line / trivialisation
+problem.}
+For a smooth complex rank-3 kernel bundle
+$E=\ker\mathcal D_{\rm defect}$, an $SU(3)$-structure requires a
+Hermitian metric and a nowhere-vanishing complex volume form
+$\Omega\in\Gamma(\det E^*)$, equivalently a trivialisation of the
+determinant line $\det E$.
+The topological obstruction is measured by $c_1(\det E)$;
+vanishing $c_1$ is the first necessary global condition, while a
+canonical $\Omega$ would require an additional preferred
+trivialisation, plausibly tied to condensate orientation data.
+Thus the question ``why $SU(3)$ rather than $U(3)$'' becomes a
+precise determinant-line/trivialisation problem, not a solved
+result.
+\textbf{(BWZ).}
+The colour connection is the Berry--Wilczek--Zee connection of the
+smooth kernel bundle.
+A BWZ connection on a kernel bundle gives a candidate gauge
+connection; it does not by itself derive the Yang--Mills action,
+the coupling $g_s$, or confinement (kinetics partially addressed,
+separately, by the minimal colour EFT section).
+
+\subsection*{5. Failure modes (recorded honestly)}
+Generic $\dim\ker=0$ on natural backgrounds; kernel real with no
+$\theta$-complexification; $|n|=3$ selection unjustified (R1);
+failure of the internalisation test (R2): threefold degeneracy
+that remains a spatial multiplet is not colour; level crossing
+destroying the bundle; nontrivial $c_1(\det E)$ or no preferred
+trivialisation; and even full success would leave Yang--Mills
+kinetics, $g_s$, confinement, and OP-GUT2 representations open.
+Consistency check inherited from the $N_c$ classification: any
+successful mechanism must produce a complex triplet, and the
+classification guarantees that no anomaly argument can substitute
+for it.
+
+\subsection*{6. Deliverables if approved (future round; nothing
+executed now)}
+D1 (small): a short ``Candidate routes (all Open)'' paragraph
+after the ``Open problem (OP-GUT1, sharpened)'' block: R1 and R3
+in two--three sentences each, the R1 rank$\to$charge honesty
+statement, and the determinant-line/trivialisation sub-problem
+statement.
+R2: per review, either omitted from the main text or included
+only as a single-sentence high-risk diagnostic with the
+internalisation-test warning --- decision requested below.
+D2: no new references in the first implementation; Jackiw--Rossi
+and Callias added only after page-level verification (E.~Weinberg
+optional).
+D3: statuses untouched everywhere; P7 remains a postulate;
+OP-GUT1 remains Open/Reframed; no status upgrades.
+
+\subsection*{7. Residual questions for GPT}
+(Q1)~For D1: include R2 as the single-sentence diagnostic with
+the internalisation warning, or omit it from the main text
+entirely (kept only in this proposal)?
+(Q2)~Implement directly from this v2 sketch (D1 as specified), or
+require one more proposal containing the exact LaTeX block first?
