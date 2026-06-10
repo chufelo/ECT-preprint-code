@@ -1,0 +1,158 @@
+% ============================================================
+% OP_Q11_pagelevel_verification_v2.tex  (FINAL, for GPT sign-off)
+% Page-level verification of the Q11 Euclidean spinor/OS
+% conventions against the ORIGINAL constructions, read in full:
+%   [L] Luscher, Commun. Math. Phys. 54, 283-292 (1977) (PDF, 10 pp.)
+%   [OS] Osterwalder-Schrader, Helv. Phys. Acta 46, 277-302 (1973)
+%        (e-periodica scan, 27 pp., DOI 10.5169/seals-114484)
+% plus the previously verified [KU] arXiv:1012.5601 (full text),
+% [KU'] arXiv:1005.3751 (excerpt), hep-lat/0306014 App. B (excerpt),
+% Williams CMP 38, 65 (1974) (introduction).
+% NO preprint edits made; proposed edits listed in Sec. 4 for
+% approval.
+% ============================================================
+\section*{Q11 page-level convention verification (final)}
+
+\subsection*{1. Findings, item by item (with page/equation cites)}
+
+\textbf{(1) Hermitian Euclidean gammas} (ours: eq.~q11\_eucl\_gamma).
+[L] footnote~5, p.~286: ``The $\gamma$-matrices used are euclidean
+ones, i.e. $\{\gamma_\mu,\gamma_\nu\}=2\delta_{\mu\nu}$;
+$\gamma_\mu^+=\gamma_\mu$'' --- \emph{verbatim} our convention;
+explicit chiral representation in his eq.~(32).
+[OS] p.~282: $\gamma_E^0=\gamma^0$, $\gamma_E^j=+i\gamma^j$
+(Bjorken--Drell side), hermitian, Euclidean Clifford algebra;
+$p_E=\sum p_l\gamma_l^E$.
+Note: [OS] Wick-map runs from the $(+,-,-,-)$ BD convention while
+our eq.~q11\_wick\_map runs from $(-,+,+,+)$; both land on the same
+hermitian Euclidean algebra. Our conventions block already labels
+the map as a convention-matching statement only --- no change
+needed.
+
+\textbf{(2) Fermionic time reflection with $\gamma_0$ and species
+exchange} (ours: eq.~q11\_eucl\_theta\_spinor).
+[OS] eqs.~(4.1)--(4.3), pp.~290--291: unitary involution $\Theta$
+(``time inversion followed by charge conjugation'') exchanging the
+doubled species $\Psi^{(1)}\!\leftrightarrow\!\Psi^{(2)}$ with the
+matrix $\gamma_0$ and mode conjugation.
+[L] p.~284, below eq.~(4): $\theta$ = euclidean time reflection,
+conjugation $\mathcal O\to\mathcal O^+$ with the explicit example
+$\psi^+=\gamma_0\bar\psi$ (Grassmann conjugation per Berezin, his
+ref.~[8]).
+[KU] eqs.~(16)--(17): verbatim our form.
+Verdict: our $\theta\psi=\bar\psi\gamma_0$,
+$\theta\bar\psi=\gamma_0\psi$ is the Berezin-variable form of
+exactly this structure.
+
+\textbf{(3) Antilinearity and order reversal} (ours:
+eq.~q11\_eucl\_theta\_spinor, third relation).
+[L] eq.~(5): $(\mathcal O_1,\mathcal O_2)
+=\langle\theta(\mathcal O_1^+)\mathcal O_2\rangle$, antilinear in
+the first slot; Grassmann conjugation is an anti-involution
+(order-reversing), per Berezin.
+[OS] antilinearity realised at form level via
+$(\,\Theta X,Y\,)$ with mode conjugation in eqs.~(4.2)--(4.3).
+[KU] eqs.~(18)--(19): verbatim.
+
+\textbf{(4) Form order, weight, pairing} (ours:
+eq.~q11\_graded\_os\_form with $e^{-S_E/S_0}$, pairing $+S_E$).
+[L] eq.~(4): $\langle\theta(\mathcal O^+)\mathcal O\rangle\ge0$,
+reflected element \emph{first}; weight $e^{+A}$ (his eqs.~(1),(6):
+expectations $Z^{-1}\!\int\!\mathcal DU\,\mathcal D\bar\psi\,
+\mathcal D\psi\,\phi_1\cdots\phi_n\,e^{A}$).
+[OS] \S4.1: $\langle X,Y\rangle=(\Theta X,Y)$, reflected element
+first; positivity by Lemma~4.1 (p.~292), extended to interacting
+Green's functions in \S6 (announced p.~278).
+[KU]~(1012.5601): $\langle\theta(F)F\rangle\ge0$ with $e^{-S}$;
+[KU$'$]~(1005.3751): $e^{+A}$ --- both action signs occur even
+within one author pair.
+Verdict: the original [L] uses the combination
+$(e^{+A},\ \Theta\text{-first})$; ours is
+$(e^{-S_E},\ F\text{-first})$ --- exactly two global signs apart
+(pairing convention $\times$ quadratic-level reordering), i.e. the
+same projector-positive branch.
+The appendix~(b) statement (``Standard formulations state
+reflection positivity as $\langle(\Theta F)F\rangle\ge0$, with
+action-sign, measure-ordering, and pairing conventions that vary
+between sources'') is verified \emph{verbatim} at page level.
+
+\textbf{(5) Grassmann positivity in the originals; commuting case.}
+[L] Propositions~1--2 (pp.~287--289): strictly positive transfer
+matrix and OS positivity for Grassmann Wilson fermions
+($0<K<1/6$).
+[OS] Lemma~4.1 + \S6: positive semi-definite form, positivity
+axiom verified.
+Neither source considers the commuting/symmetric alternative ---
+recorded as absent; the converse (negative-mode) side of Q11.1a is
+\emph{our} added content, as claimed.
+
+\textbf{(6) Doubling.}
+[OS] \S3.2, pp.~284--285, verbatim: the naive single-field ansatz
+fails (``non-hermitian, hence a fortiori not positive definite''),
+``A way out is to double the number of fields'' ---
+$\Psi^{(1)},\Psi^{(2)}$ independent.
+[L] independent classical Grassmann $\psi,\bar\psi$; operator
+$\psi_n$ without canonical anticommutator (his eq.~(12)).
+Our independent Berezin pair $(\psi,\bar\psi)$ is this doubling.
+
+\textbf{(7) Non-hermitian Euclidean action $\leftrightarrow$
+$\Theta$-adjoint.}
+[OS] Introduction item~III (p.~278): the fermionic Euclidean
+action is non-hermitian and ``the adjoint transformation
+$V\to V^*$ is related to Euclidean time inversion'' --- the same
+structure as our conventions block~(iii) (Euclidean adjoint defined
+through $\Theta$).
+
+\subsection*{2. Conclusion}
+All checklist items (L1)--(L5), (O1)--(O5) are verified with
+page/equation citations; no mismatches found.
+The trial conventions of \S qs\_reflection\_positivity are a
+faithful Berezin-variable presentation of the original
+Osterwalder--Schrader / L\"uscher constructions, with the order
+and action-sign related by the documented two-global-sign
+equivalence.
+The residual review condition (c) of Appendix~app:q11\_os\_test is
+discharged.
+
+\subsection*{3. Proposed status change (for GPT sign-off)}
+Q11.1a: candidate Level~A $\to$ \textbf{Level~A} (mathematical
+result for the free minimal Euclidean Dirac kernel; ECT application
+Q11.1b unchanged at Level~B conditional; Q11.2/Q11.3 unchanged;
+Q11.4 open).
+
+\subsection*{4. Edit sites upon approval (no edits made yet)}
+\begin{enumerate}
+  \item Appendix (c): rewrite as completed verification with the
+    page/equation citations above (sources: Luscher1977,
+    OsterwalderSchraderFermi1973, KikukawaUsui2011).
+  \item Proposition Q11.1a status line: remove ``candidate'' and
+    the review-condition clause; state verification completed
+    (Appendix).
+  \item First mention in the OP-Q11 decomposition paragraph:
+    ``candidate Level~A ... pending'' $\to$ ``Level~A mathematical
+    result (conventions verified against the original OS/L\"uscher
+    constructions; Appendix)''.
+  \item Status longtable row Q11.1a: ``A candidate (math.)'' $\to$
+    ``A (math.)''; comment updated.
+  \item fermion\_open item (ii): ``candidate mathematical result''
+    $\to$ ``Level~A mathematical result (free kernel)''.
+  \item Part III graph node q11\_spinstat: ``Q11.1a cand.~A'' $\to$
+    ``Q11.1a A''; regenerate figures from
+    fig\_partIII\_vertical\_v2.gv.
+  \item Companion: one-word alignment (``convention-fixed candidate
+    calculation'' $\to$ ``convention-fixed calculation'' +
+    ``verified against the original Euclidean Fermi-field
+    constructions'').
+  \item Consistency sweep: any remaining ``candidate'' tied
+    specifically to Q11.1a (grep); Q11.1b/AN-statuses untouched.
+\end{enumerate}
+
+\subsection*{5. Honest limits}
+The verification covers the defining data and the positivity
+statements of the originals; it does not re-derive their theorems.
+[L]/[OS] prove the Grassmann-side positivity for their kernels
+(Wilson lattice / free continuum with doubling); our Q11.1a
+statement is for the free minimal continuum kernel in our
+conventions, with our own two-family calculation and our own
+converse; the originals are used to verify \emph{conventions},
+not to import theorems.
