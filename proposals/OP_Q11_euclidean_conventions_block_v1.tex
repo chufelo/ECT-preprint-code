@@ -1,0 +1,118 @@
+% ============================================================
+% PROPOSAL: Euclidean spinor / OS conventions block
+% Version: v1 (2026-06-10). STATUS: DRAFT FOR GPT REVIEW.
+% The LAST blocker before the Q11 implementation package.
+% Deliberately short: conventions only, no new results.
+% Proposed placement: new \paragraph at the start of
+% \S sec:qs_reflection_positivity (where the scalar reflection
+% \Theta is already defined), with a one-sentence forward pointer
+% from \S sec:dirac_eq.
+% ============================================================
+
+\paragraph{Euclidean spinor conventions and the graded OS form.}
+For the spinorial extension of the OS programme the following
+conventions are fixed once and used throughout.
+\emph{(i) Gammas.}
+Euclidean gamma matrices are hermitian and satisfy
+\begin{equation}
+  \{\gamma_A,\gamma_B\}=2\delta_{AB},
+  \qquad
+  \gamma_A^{\dagger}=\gamma_A,
+  \qquad A,B\in\{0,1,2,3\},
+  \label{eq:q11_eucl_gamma}
+\end{equation}
+with $\gamma_0$ associated to the distinguished direction $w$
+(equivalently the ordered-branch time, $t=w$).
+For the mostly-plus Lorentzian convention used in the ordered
+branch, $\eta_{\mu\nu}=\mathrm{diag}(-1,1,1,1)$
+(as fixed earlier in the article), a compatible Wick map to the
+Lorentzian matrices of \S\ref{sec:dirac_eq} is
+\begin{equation}
+  \gamma^0_L = i\gamma_0,\qquad
+  \gamma^i_L=\gamma_i,
+  \label{eq:q11_wick_map}
+\end{equation}
+up to the harmless overall sign convention for $\gamma^0_L$.
+With this choice
+$\{\gamma^\mu_L,\gamma^\nu_L\}=2\eta^{\mu\nu}$.
+This relation is a convention-matching statement; the Euclidean OS
+calculation below uses only the hermitian Euclidean matrices
+$\gamma_A$.
+\emph{(ii) Kernel.}
+The free minimal Euclidean Dirac operator and two-point kernel are
+\begin{equation}
+  D_E=\gamma_A\partial_A+m,\qquad m>0,
+  \qquad
+  S_E=D_E^{-1},
+  \qquad
+  \tilde S_E(p)=\frac{m-i\gamma_Ap_A}{p^2+m^2},
+  \label{eq:q11_eucl_dirac_kernel}
+\end{equation}
+with the Berezin pairing
+$\langle\psi_\alpha(x)\bar\psi_\beta(y)\rangle
+=S_{E,\alpha\beta}(x-y)$ for Grassmann fields $\psi$, $\bar\psi$.
+\emph{(iii) Reflection.}
+The OS reflection is the same $\Theta:(w,\vec x)\mapsto(-w,\vec x)$
+already used in the scalar subsectors; on spinor fields it acts
+antilinearly, reverses operator order, and carries the spinorial
+reflection matrix $\gamma_0$ for the Dirac variables used here
+(if the spinor sector is later rewritten in Majorana or
+charge-conjugated variables, the reflection matrix and adjoint must
+be translated accordingly):
+\begin{equation}
+  \Theta\psi(x)=\bar\psi(\Theta x)\,\gamma_0,
+  \qquad
+  \Theta\bar\psi(x)=\gamma_0\,\psi(\Theta x),
+  \qquad
+  \Theta(AB)=\Theta(B)\,\Theta(A).
+  \label{eq:q11_eucl_theta_spinor}
+\end{equation}
+The Euclidean adjoint of a smeared field polynomial is defined
+through this $\Theta$-operation together with complex conjugation
+of coefficients.
+\emph{(iv) Graded OS form.}
+For elements $F,G$ of the field algebra supported in the half-space
+$w>0$, the OS sesquilinear form is
+\begin{equation}
+  (F,G)\;\equiv\;\bigl\langle F\cdot\Theta G\bigr\rangle_E ,
+  \label{eq:q11_graded_os_form}
+\end{equation}
+with the operator order fixed as written; for Grassmann fields the
+two possible orderings differ by the reordering sign, and
+\eqref{eq:q11_graded_os_form} is the order convention used in the
+spinorial OS test below.
+Its positivity properties are not assumed here; they are checked
+explicitly in the free-kernel calculation.
+The scalar reflection-positivity formula of this section is the
+restriction of \eqref{eq:q11_graded_os_form} to the bosonic subalgebra.
+\emph{(v) Scope and status.}
+These conventions lie in the standard Euclidean Fermi-field OS
+family (Osterwalder--Schrader Fermi fields; transfer-matrix
+constructions), with $\gamma_0$ here playing the role usually
+denoted $\gamma_4$.
+They are fixed at the level of the free minimal first-order kernel;
+Majorana/charge-conjugated reformulations, higher-derivative
+kernels, and the interacting sector would require separate
+treatment.
+The conventions themselves carry no derivational content
+(definition-level; no Level assignment); all statements proved with
+them inherit their own Levels.
+
+% ------------------------------------------------------------
+% Forward pointer to add in \S sec:dirac_eq (one sentence):
+% ------------------------------------------------------------
+% "The Euclidean counterpart of these conventions (hermitian
+% gammas, the Euclidean Dirac kernel, and the graded OS reflection
+% structure) is fixed in \S\ref{sec:qs_reflection_positivity} and
+% used in the spin--statistics analysis."
+%
+% ------------------------------------------------------------
+% Bookkeeping notes (for the implementation package):
+% - new labels: eq:q11_eucl_gamma, eq:q11_eucl_dirac_kernel,
+%   eq:q11_eucl_theta_spinor, eq:q11_graded_os_form
+% - symbol list additions: gamma_A (Euclidean), D_E, S_E, Theta on
+%   spinors, (F,G) graded OS form, sigma (reordering sign — only if
+%   the appendix calculation is inserted)
+% - no bibliography additions strictly required; optional: OS 1973
+%   Fermi-fields reference if not already present
+% ============================================================

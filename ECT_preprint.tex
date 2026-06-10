@@ -433,7 +433,9 @@ $\Gamma[q]$ & Decoherence functional & --- \\
 $\Gamma_{\rm loop}$ & Decoherence/locking functional; classicality crossover at $\Gamma_{\rm loop}\sim1$ & dimensionless \\
 $N_{\rm eff}$ & Effective environmental degrees of freedom & --- \\
 $\gamma$ & Decoherence rate per mode & s$^{-1}$ \\
-$\tau_{\rm dec}$ & Decoherence time: $1/(N_{\rm eff}\gamma)$ & s \\[4pt]
+$\tau_{\rm dec}$ & Decoherence time: $1/(N_{\rm eff}\gamma)$ & s \\
+$\gamma_A$ & Hermitian Euclidean Dirac matrices, $\{\gamma_A,\gamma_B\}=2\delta_{AB}$ (eq.~\ref{eq:q11_eucl_gamma}); Wick map $\gamma^0_L=i\gamma_0$, $\gamma^i_L=\gamma_i$ & --- \\
+$D_E$, $S_E$ & Euclidean Dirac operator $D_E=\gamma_A\partial_A+m$ and two-point kernel $S_E=D_E^{-1}$ (eq.~\ref{eq:q11_eucl_dirac_kernel}) & --- \\[4pt]
 \multicolumn{3}{@{}l}{\textit{Macroscopic Physics (Sections~\ref{sec:macroscopic}--\ref{sec:mp_cosmo})}} \\[2pt]
 $\Theta_{\mu\nu}$ & Orientation-stress tensor from $n^A$ dynamics; appears in generalised Einstein equations & --- \\
 $\mathcal{H}$ & Hilbert space; subscripted: $\mathcal{H}_{\rm ext}$, $\mathcal{H}_{\rm shell}$, $\mathcal{H}_{\rm int}$ (BH decomposition) & --- \\
@@ -570,6 +572,7 @@ QS & Quantum sector (Part~III of this paper) \\
 RG & Renormalisation group \\
 SN & Supernova (type~Ia unless stated otherwise) \\
 MWI & Many-worlds interpretation \\
+CAR & Canonical anticommutation relations (Section~\ref{sec:fermion_statistics}) \\
 OS & Osterwalder--Schrader (axioms / reconstruction theorem; Section~\ref{sec:qs_reflection_positivity}) \\
 RP & Reflection positivity \\
 CC & Cosmic chronometers (differential-ages $H(z)$ probe) \\
@@ -12254,6 +12257,12 @@ ECT-specific fermion--condensate coupling.
 Section~\ref{sec:fermion_statistics} outlines the structural route
 toward spin-statistics, and Section~\ref{sec:fermion_open}
 summarises the open programme.
+The Euclidean counterpart of the present conventions (hermitian
+gammas, the Euclidean Dirac kernel, and the graded OS reflection
+structure) is fixed in \S\ref{sec:qs_reflection_positivity} and
+used in the spin--statistics analysis of
+Section~\ref{sec:fermion_statistics} and
+Appendix~\ref{app:q11_os_test}.
 
 \subsection{Spinor structure in the condensate background}
 \label{sec:spinor_structure}
@@ -14471,6 +14480,120 @@ Within the fermionic sector, these questions belong to the open
 programme summarised in Section~\ref{sec:fermion_open}
 (Open; OP-Q11).
 
+\paragraph{Decomposition of OP-Q11 and the Euclidean OS route.}
+For status bookkeeping OP-Q11 is decomposed, analogously to OP3,
+into:
+\emph{Q11.1a} --- the OS spin--statistics test for a free minimal
+Euclidean $Spin(4)$ Dirac kernel (candidate Level~A mathematical
+result, pending final convention reconciliation; below);
+\emph{Q11.1b} --- its application to the ECT spinor quadratic
+subsector (Level~B conditional);
+\emph{Q11.2} --- descent into the ordered branch (Level~B
+conditional);
+\emph{Q11.3} --- CAR/Fock reconstruction (Level~B conditional);
+\emph{Q11.4} --- the full interacting fermionic sector (open).
+ECT identifies a native Euclidean route to the spin--statistics
+connection: in a free minimal Euclidean $Spin(4)$ Dirac kernel, OS
+positivity is compatible with the Grassmann/antisymmetric
+quantisation and excludes the corresponding commuting/symmetric
+half-integer spinor quantisation under the assumptions stated
+below.
+Applying this route to ECT fermions remains conditional on deriving
+or verifying the ECT spinor quadratic kernel and its
+reflection-positive structure.
+The present subsection thereby retains its structural/topological
+content unchanged; the new material upgrades only the free
+spinor-kernel statement, not the full fermionic sector.
+
+\paragraph{Proposition Q11.1a: OS spin--statistics test for a free
+minimal Euclidean $Spin(4)$ Dirac kernel (candidate Level~A;
+mathematical statement).}
+For a local, minimal, first-order Euclidean Dirac kernel
+transforming in a half-integer representation of
+$Spin(4)\simeq SU(2)_L\times SU(2)_R$, with the OS reflection
+data fixed in \S\ref{sec:qs_reflection_positivity}
+(eqs.~\ref{eq:q11_eucl_gamma}--\ref{eq:q11_graded_os_form}) and a
+positive mass gap $m>0$, the Grassmann Gaussian construction gives
+a reflection-positive reconstruction.
+Conversely, the corresponding commuting/symmetric quantisation of
+the same half-integer local spinor kernel fails reflection
+positivity.
+The statistics assignment itself is not among the assumptions: the
+comparison is between the Grassmann/antisymmetric and the
+commuting/symmetric construction for the \emph{same} quadratic
+spinor kernel.
+\emph{Scope restriction.}
+For the minimal Dirac kernel considered here, the leading local
+half-integer quadratic operator has the first-order
+$\gamma_A\partial_A+m$ structure; more general local
+higher-derivative spinor kernels would require a separate RP
+analysis and are not covered by Q11.1a.
+\emph{Proof.}
+Appendix~\ref{app:q11_os_test}.
+Sketch: the half-space contour evaluation reduces the graded OS
+form, at fixed spatial momentum, to spinor-space matrices; for the
+Grassmann construction both elementary quadratic families yield
+orthogonal projectors (hence non-negative forms), while for the
+commuting construction the statistics-dependent reordering sign
+leaves a matrix with spectrum $\{0,-1\}$ and an explicit
+negative-norm test function exists.
+Status: candidate Level~A mathematical result for the free minimal
+Euclidean Dirac kernel; the trial-convention reconciliation against
+the Euclidean Fermi-field OS literature is recorded in
+Appendix~\ref{app:q11_os_test}.
+
+\paragraph{Q11.1b: conditional ECT application (Level~B).}
+Q11.1a may become a Level~A mathematical theorem once the recorded
+convention reconciliation is completed, but Q11.1b is not Level~A
+unless the ECT spinor quadratic kernel itself is obtained from the
+condensate construction and shown to satisfy the stated OS
+assumptions.
+The Dirac form of \S\ref{sec:dirac_eq} currently enters with
+Level~B inputs, and the established reflection-positivity results
+cover the free quadratic scalar subsectors.
+The composite/effective character of the ECT fermionic fields does
+not invalidate the route, but it precludes claiming a
+first-principles Level~A ECT derivation of fermionic statistics at
+this stage.
+
+\paragraph{Q11.2: descent to the ordered branch (Level~B
+conditional).}
+The $Spin(4)\to Spin(3)$ breaking pattern carries the half-integer
+representation content into the ordered Lorentzian branch.
+This group-theoretic descent is not by itself a spin--statistics
+theorem.
+The descent additionally requires:
+\begin{enumerate}[label=(\roman*)]
+  \item compatibility of the OS reflection $\Theta$ with the
+    ordered-branch time $t=w$;
+  \item continuity of the half-integer representation content
+    across the breaking pattern $Spin(4)\to Spin(3)$;
+  \item ordinary $3{+}1$-dimensional exchange topology,
+    $\pi_1(\mathcal M_2)=\mathbb Z_2$, with no effective anyonic
+    sector for fundamental exchange in the primary branch;
+  \item for the pointlike primary-branch excitations considered in
+    the spin--statistics statement, no topological-defect,
+    skyrmion, or texture sector changes the exchange class;
+    extended/solitonic sectors are outside Q11.2 and remain
+    separately classified;
+  \item inherited locality/domain-of-dependence and
+    positive-Hilbert-space reconstruction in the ordered branch;
+  \item the proof is performed in the symmetric Euclidean/OS sector
+    and transported into the ordered branch; it is not derived from
+    the broken $O(3)$ structure alone.
+\end{enumerate}
+
+\paragraph{Q11.3: CAR algebra and effective Fock reconstruction
+(Level~B conditional).}
+Given Q11.1b and Q11.2, the OS reconstruction applied to
+antisymmetric Schwinger functions yields the CAR on the
+reconstructed one-particle space; in an orthonormal mode basis this
+becomes $\{\hat a_i,\hat a_j^{\dagger}\}=\delta_{ij}$.
+The result is conditional on locality, cluster decomposition, and
+positive-Hilbert-space reconstruction, and addresses
+items~(ii)--(iii) of the ``what ECT does not yet derive'' list
+above at conditional Level~B, not as a standalone result.
+
 \renewcommand{\arraystretch}{1.2}
 \begin{longtable}{@{}p{6.7cm}p{2.2cm}p{5.6cm}@{}}
 \caption*{\textbf{Status summary.}}\\[-4pt]
@@ -14505,10 +14628,37 @@ Anyonic braid statistics absent for fundamental
   & B & Ordered branch is effectively
     $3+1$-dimensional \\
 Full spin-statistics theorem
-  & Open (OP-Q11) & Developed further in
+  & Open (OP-Q11; decomposed Q11.1a--Q11.4)
+  & Euclidean OS route above; developed further in
     Section~\ref{sec:qs_statistics} \\
+Q11.1a: OS spin--statistics test, free minimal
+  Euclidean $Spin(4)$ Dirac kernel
+  & A candidate (math.)
+  & Converse calculation completed
+    (Appendix~\ref{app:q11_os_test}); final convention
+    reconciliation pending; $m>0$, minimal first-order kernel \\
+Q11.1b: application to the ECT spinor quadratic
+  subsector
+  & B conditional
+  & Requires derivation/verification of the ECT spinor kernel and
+    spinorial reflection positivity; composite/effective fermions
+    prevent Level-A ECT status \\
+Q11.2: descent $Spin(4)\to Spin(3)$ into the
+  ordered branch
+  & B conditional
+  & Pointlike primary-branch excitations only; conditions
+    (i)--(vi) above \\
+Q11.3: CAR/Fock reconstruction via OS
+  & B conditional
+  & Conditional on Q11.1b + Q11.2 \\
+Q11.4: full interacting fermionic sector
+  & Open
+  & Inherits the Level~B/open status of interacting reflection
+    positivity \\
 Operator anti-commutation algebra
-  & Open (OP-Q11) & Not yet derived \\
+  & Open (OP-Q11.3 route identified)
+  & Not yet derived; conditional OS-reconstruction route, see
+    Q11.3 above \\
 \bottomrule
 \end{longtable}
 
@@ -14534,9 +14684,11 @@ completed:
     Section~\ref{sec:spinor_structure});
   \item derive fermionic statistics beyond the structural
     $\pi_1(\mathcal{M}_2) = \mathbb{Z}_2$ exchange-topology route
-    (currently: Level~B compatibility;
-    Section~\ref{sec:fermion_statistics},
-    Section~\ref{sec:qs_statistics});
+    (currently: Level~B compatibility plus the Euclidean OS route
+    Q11.1a--Q11.4 of Section~\ref{sec:fermion_statistics} and
+    Appendix~\ref{app:q11_os_test}: the free-kernel test is a
+    candidate mathematical result, the ECT application remains
+    conditional);
   \item derive the Yukawa coupling pattern and the fermion mass
     hierarchy (currently: SM input, Level~C;
     Section~\ref{sec:yukawa});
@@ -29263,6 +29415,95 @@ When this condition holds, the OS theorem guarantees the existence of
 a physical Hilbert space $\mathcal{H}_{\rm phys}$, a vacuum state
 $|\Omega\rangle$, and a self-adjoint transfer-matrix Hamiltonian
 $\hat H\ge 0$ generating time translations.
+
+\paragraph{Euclidean spinor conventions and the graded OS form.}
+For the spinorial extension of the OS programme the following
+conventions are fixed once and used throughout
+(in particular in the spin--statistics analysis of
+\S\ref{sec:fermion_statistics} and
+Appendix~\ref{app:q11_os_test}).
+\emph{(i) Gammas.}
+Euclidean gamma matrices are hermitian and satisfy
+\begin{equation}
+  \{\gamma_A,\gamma_B\}=2\delta_{AB},
+  \qquad
+  \gamma_A^{\dagger}=\gamma_A,
+  \qquad A,B\in\{0,1,2,3\},
+  \label{eq:q11_eucl_gamma}
+\end{equation}
+with $\gamma_0$ associated to the distinguished direction $w$
+(equivalently the ordered-branch time, $t=w$).
+For the mostly-plus Lorentzian convention used in the ordered
+branch, $\eta_{\mu\nu}=\mathrm{diag}(-1,1,1,1)$, a compatible
+Wick map to the Lorentzian matrices of \S\ref{sec:dirac_eq} is
+\begin{equation}
+  \gamma^0_L = i\gamma_0,\qquad
+  \gamma^i_L=\gamma_i,
+  \label{eq:q11_wick_map}
+\end{equation}
+up to the harmless overall sign convention for $\gamma^0_L$; with
+this choice $\{\gamma^\mu_L,\gamma^\nu_L\}=2\eta^{\mu\nu}$.
+This relation is a convention-matching statement; the Euclidean OS
+analysis uses only the hermitian Euclidean matrices $\gamma_A$.
+\emph{(ii) Kernel.}
+The free minimal Euclidean Dirac operator and two-point kernel are
+\begin{equation}
+  D_E=\gamma_A\partial_A+m,\qquad m>0,
+  \qquad
+  S_E=D_E^{-1},
+  \qquad
+  \tilde S_E(p)=\frac{m-i\gamma_Ap_A}{p^2+m^2},
+  \label{eq:q11_eucl_dirac_kernel}
+\end{equation}
+with the Berezin pairing
+$\langle\psi_\alpha(x)\bar\psi_\beta(y)\rangle
+=S_{E,\alpha\beta}(x-y)$ for Grassmann fields $\psi$,
+$\bar\psi$.
+\emph{(iii) Reflection.}
+The OS reflection is the same $\Theta:(w,\vec x)\mapsto(-w,\vec x)$
+already used above; on spinor fields it acts antilinearly, reverses
+operator order, and carries the spinorial reflection matrix
+$\gamma_0$ for the Dirac variables used here
+(if the spinor sector is later rewritten in Majorana or
+charge-conjugated variables, the reflection matrix and adjoint must
+be translated accordingly):
+\begin{equation}
+  \Theta\psi(x)=\bar\psi(\Theta x)\,\gamma_0,
+  \qquad
+  \Theta\bar\psi(x)=\gamma_0\,\psi(\Theta x),
+  \qquad
+  \Theta(AB)=\Theta(B)\,\Theta(A).
+  \label{eq:q11_eucl_theta_spinor}
+\end{equation}
+The Euclidean adjoint of a smeared field polynomial is defined
+through this $\Theta$-operation together with complex conjugation
+of coefficients.
+\emph{(iv) Graded OS form.}
+For elements $F,G$ of the field algebra supported in the half-space
+$w>0$, the OS sesquilinear form is
+\begin{equation}
+  (F,G)\;\equiv\;\bigl\langle F\cdot\Theta G\bigr\rangle_E ,
+  \label{eq:q11_graded_os_form}
+\end{equation}
+with the operator order fixed as written.
+Equation~\eqref{eq:q11_graded_os_form} is the order convention used
+in the spinorial OS test; its positivity properties are not assumed
+here, but are checked explicitly in the free-kernel calculation of
+Appendix~\ref{app:q11_os_test}.
+The scalar reflection-positivity formula
+\eqref{eq:qs_reflection_positivity} is the restriction of
+\eqref{eq:q11_graded_os_form} to the bosonic subalgebra.
+\emph{(v) Scope and status.}
+These conventions lie in the standard Euclidean Fermi-field OS
+family, with $\gamma_0$ here playing the role usually denoted
+$\gamma_4$.
+They are fixed at the level of the free minimal first-order kernel;
+Majorana/charge-conjugated reformulations, higher-derivative
+kernels, and the interacting sector would require separate
+treatment.
+The conventions themselves carry no derivational content
+(definition-level; no Level assignment); all statements proved with
+them inherit their own Levels.
 
 \paragraph{Why the ECT arena is well-suited.}
 The ECT postulate structure provides the natural ingredients for
@@ -57110,6 +57351,189 @@ target (OP-Q21) contingent on the completion of the fermionic
 reconstruction programme (OP-Q11).
 
 % ============================================================
+\section{Osterwalder--Schrader spin--statistics test for the free
+minimal Euclidean Dirac kernel}
+\label{app:q11_os_test}
+
+\textit{Status: candidate Level~A mathematical result (Q11.1a) for
+the free minimal Euclidean Dirac kernel, in the conventions of
+\S\ref{sec:qs_reflection_positivity}
+(eqs.~\ref{eq:q11_eucl_gamma}--\ref{eq:q11_graded_os_form});
+the ECT application remains Level~B conditional (Q11.1b).
+Connection: \S\ref{sec:fermion_statistics},
+\S\ref{sec:qs_reflection_positivity}, \S\ref{sec:dirac_eq}.}
+
+\medskip
+Throughout, $m>0$, $\omega(\vec p)=\sqrt{\vec p^{\,2}+m^2}$, and
+the reordering rule
+\begin{equation}
+  \langle\bar\psi_\beta(y)\psi_\alpha(x)\rangle
+  =\sigma\,S_{E,\alpha\beta}(x-y),
+  \qquad
+  \sigma=\begin{cases}-1 & \text{Grassmann},\\
+  +1 & \text{commuting},\end{cases}
+  \label{eq:q11_reordering}
+\end{equation}
+is the only point at which the statistics assignment enters
+($\sigma$ is local notation of this appendix).
+Define the hermitian matrices
+$h_\pm(\vec p)=m\gamma_0\pm i\gamma_0\vec\gamma\cdot\vec p$;
+hermiticity follows from
+$(i\gamma_0\vec\gamma)^\dagger=-i\vec\gamma\gamma_0
+=+i\gamma_0\vec\gamma$, and $h_\pm^2=\omega^2$ (cross terms cancel
+by $\{\gamma_0,\vec\gamma\}=0$), so
+$(\omega\pm h_\pm)/2\omega$ are orthogonal rank-2 projectors.
+At the quadratic level the alternative order assignment
+$(F,G)=\langle\Theta F\cdot G\rangle$ differs from
+\eqref{eq:q11_graded_os_form} by the global reordering sign
+$\sigma$ on the elementary families considered below.
+The convention \eqref{eq:q11_graded_os_form} is the one for which
+both elementary Grassmann families are reflection-positive; the
+final identification with standard Euclidean Fermi-field OS
+conventions is part of the convention-reconciliation step recorded
+at the end of this appendix.
+
+\subsection*{Contour lemma}
+For $W>0$ and either sign $s=\pm$:
+\begin{equation}
+\int\frac{dp_0}{2\pi}\,
+\frac{e^{\,is\,p_0W}\,(m-i\gamma_0p_0-i\vec\gamma\cdot\vec p)}
+{p_0^2+\omega^2}
+=\frac{e^{-\omega W}}{2\omega}\,
+\bigl(m+s\,\omega\gamma_0-i\vec\gamma\cdot\vec p\bigr),
+\label{eq:q11_contour}
+\end{equation}
+by closing in the upper ($s=+$, pole $p_0=i\omega$) or lower
+($s=-$, pole $p_0=-i\omega$) half-plane.
+
+\subsection*{Grassmann case: both elementary families are
+reflection positive}
+\emph{Family I.}
+$F=\int_{w>0}d^4x\,f^\dagger(x)\psi(x)$, so
+$\Theta F=\int_{w>0}d^4y\,\bar\psi(\Theta y)\gamma_0 f(y)$ and
+\begin{equation}
+Q^{\rm I}[f]
+=\langle F\,\Theta F\rangle
+=\int\!\!\int d^4x\,d^4y\;
+f^\dagger(x)\,S_E(x-\Theta y)\,\gamma_0\,f(y),
+\end{equation}
+with no reordering (fields already ordered as in the pairing).
+Since $x-\Theta y=(w_x+w_y,\vec x-\vec y)$, the contour
+lemma~\eqref{eq:q11_contour} with $s=+$ factorises the
+$w$-dependence through
+$h_f(\vec p)=\int_0^\infty dw\,e^{-\omega w}\tilde f(w,\vec p)$:
+\begin{equation}
+Q^{\rm I}_{\rm Gr}[f]
+=\int\frac{d^3p}{(2\pi)^3}\;
+h_f^\dagger(\vec p)\,\mathcal M_{\rm I}(\vec p)\,h_f(\vec p),
+\qquad
+\mathcal M_{\rm I}
+=\frac{(m+\omega\gamma_0-i\vec\gamma\cdot\vec p)\gamma_0}{2\omega}
+=\frac{\omega+h_+(\vec p)}{2\omega}\;\ge0 .
+\end{equation}
+\emph{Family II.}
+$G=\int_{w>0}d^4x\,\bar\psi(x)g(x)$, so
+$\Theta G=\int_{w>0}d^4y\,g^\dagger(y)\gamma_0\psi(\Theta y)$.
+In components,
+\begin{equation}
+G\cdot\Theta G
+=\int\!\!\int d^4x\,d^4y\;
+g_\alpha(x)\,g^{*}_{\sigma'}(y)\,(\gamma_0)_{\sigma'\beta}\;
+\bar\psi_\alpha(x)\,\psi_\beta(\Theta y),
+\end{equation}
+and the expectation with the reordering
+rule~\eqref{eq:q11_reordering},
+$\langle\bar\psi_\alpha(x)\psi_\beta(\Theta y)\rangle
+=\sigma S_{E,\beta\alpha}(\Theta y-x)$, gives
+\begin{equation}
+Q^{\rm II}[g]
+=\sigma\int\!\!\int d^4x\,d^4y\;
+g^\dagger(y)\;\gamma_0\,S_E(\Theta y-x)\;g(x).
+\end{equation}
+Here $\Theta y-x=(-(w_x+w_y),\vec y-\vec x)$, so
+\eqref{eq:q11_contour} applies with $s=-$ and momentum $\vec q$
+conjugate to $\vec y-\vec x$:
+\begin{equation}
+\gamma_0\,S_E(\Theta y-x)\Big|_{\vec q}
+=e^{-\omega W}\,
+\frac{m\gamma_0-\omega-i\gamma_0\vec\gamma\cdot\vec q}{2\omega}
+=e^{-\omega W}\,\frac{h_-(\vec q)-\omega}{2\omega},
+\end{equation}
+and after the Fourier transform and relabelling of dummy variables
+(the $e^{-\omega w_x}$, $e^{-\omega w_y}$ factors attach to $g(x)$
+and $g^\dagger(y)$ respectively, producing the same half-space
+profile $h_g$):
+\begin{equation}
+Q^{\rm II}[g]
+=\sigma\int\frac{d^3q}{(2\pi)^3}\;
+h_g^\dagger(\vec q)\;
+\frac{h_-(\vec q)-\omega}{2\omega}\;
+h_g(\vec q).
+\end{equation}
+For Grassmann fields ($\sigma=-1$):
+\begin{equation}
+\mathcal M_{\rm II}^{\rm Gr}(\vec q)
+=\frac{\omega-h_-(\vec q)}{2\omega}\;\ge0
+\quad\text{(orthogonal projector)} .
+\end{equation}
+The spatial-momentum orientation differs between the families
+($h_+$ vs $h_-$); both conclusions are orientation-independent:
+positivity is the projector property, and the converse below uses
+only $\mathrm{spec}\,h_-=\{\pm\omega\}$.
+Extension from the two elementary quadratic families to the full
+graded polynomial algebra is the standard OS fermionic construction
+and is cited, not re-derived, here.
+
+\subsection*{Commuting case: explicit negative modes}
+The strict negative-mode test assumes $m>0$; the massless case
+requires separate infrared treatment and is not part of Q11.1a.
+Family II with $\sigma=+1$ gives
+\begin{equation}
+\mathcal M_{\rm II}^{\rm com}(\vec q)
+=\frac{h_-(\vec q)-\omega}{2\omega},
+\qquad
+\mathrm{spec}\,\mathcal M_{\rm II}^{\rm com}
+=\{\,0,\;-1\,\}\ \text{(each twice)} .
+\end{equation}
+\emph{Explicit negative-norm test function.}
+Take $\vec q\approx0$, a spinor $u_-$ with $\gamma_0u_-=-u_-$ (so
+$h_-(0)u_-=-\omega u_-$), and
+$g(w,\vec x)=\chi(w)\rho(\vec x)u_-$ with $\chi$ supported in
+$w>0$ and $\rho$ a broad spatial envelope; then
+$Q_{\rm com}[g]\to-\,|h_g(0)|^2<0$.
+Family I remains positive for $\sigma=+1$ (no reordering occurs
+there); reflection positivity nevertheless fails because the OS
+form must be non-negative on \emph{all} test functionals.
+\emph{Mechanism.}
+The statistics assignment enters in exactly one place: the
+reordering sign $\sigma$ of \eqref{eq:q11_reordering}.
+Grassmann statistics converts the Family-II kernel into the
+projector $(\omega-h_-)/2\omega$; commuting statistics leaves
+$(h_--\omega)/2\omega$ with spectrum $\{0,-1\}$.
+\emph{Diagnostic remark (not part of the proof).}
+A separate consistency route would require constructing a positive
+commuting Gaussian covariance with spinor indices; if enforcing
+ordinary symmetric covariance removes the first-order Dirac
+numerator, the resulting object is no longer the same minimal
+kernel.
+
+\subsection*{Convention reconciliation and scope}
+The conventions of \S\ref{sec:qs_reflection_positivity} lie in the
+standard Euclidean Fermi-field OS family (Osterwalder--Schrader
+Euclidean Fermi fields; transfer-matrix constructions), with
+$\gamma_0$ playing the role usually denoted $\gamma_4$; the order
+convention of \eqref{eq:q11_graded_os_form} is fixed internally by
+positivity of both Grassmann families above.
+A line-by-line reconciliation against the cited literature is the
+remaining condition for upgrading Q11.1a from candidate status.
+Scope: minimal first-order kernel; $m>0$; pointlike primary-branch
+excitations; no higher-derivative kernels;
+Majorana/charge-conjugated reformulations would require translating
+the reflection matrix and adjoint.
+The ECT application (Q11.1b) and the ordered-branch descent (Q11.2)
+remain Level~B conditional
+(\S\ref{sec:fermion_statistics}).
+
 \section{Unified vacuum-response logic: boundaries, acceleration,
 time dependence, and horizons}
 \label{app:qs_vacuum_response}

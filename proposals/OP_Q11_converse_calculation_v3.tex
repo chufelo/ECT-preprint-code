@@ -1,0 +1,236 @@
+% ============================================================
+% OP-Q11 CONVERSE CALCULATION — momentum-space OS test
+% Version: v3 (2026-06-10). STATUS: cleanup round per GPT review
+% of v2. Changes vs v2: (1) Family II index bookkeeping rewritten
+% with a single consistent x,y convention and explicit reduction
+% to the standard fixed-momentum form; (2) convention-check
+% paragraph added (Sec. 0.2); (3) Majorana/charge-conjugation
+% translation caveat recorded. No new physics relative to v2.
+% Confirmed by review (conditionally, in trial convention):
+%   M_I=(omega+h_+)/2omega   projector  (Family I, Grassmann)
+%   M_II^Gr=(omega-h_-)/2omega projector (Family II, Grassmann)
+%   M_II^com=(h_- -omega)/2omega, spectrum {0,-1} (commuting)
+% ============================================================
+
+\section*{Momentum-space OS test for the free minimal Euclidean
+Dirac kernel (v3)}
+
+% ------------------------------------------------------------
+\subsection*{0. Conventions (trial set, complete)}
+Euclidean $x=(w,\vec x)$, reflection
+$\Theta:(w,\vec x)\to(-w,\vec x)$, consistent with $t=w$.
+Hermitian gammas $\{\gamma_A,\gamma_B\}=2\delta_{AB}$.
+Mass gap $m>0$ throughout.
+Minimal kernel $D_E=\gamma_A\partial_A+m$,
+$\tilde S_E(p)=\dfrac{m-i\gamma_Ap_A}{p^2+m^2}$,
+Berezin pairing
+$\langle\psi_\alpha(x)\bar\psi_\beta(y)\rangle
+=S_{E,\alpha\beta}(x-y)$.
+Reordering rule (the only entry point of statistics):
+$\langle\bar\psi_\beta(y)\psi_\alpha(x)\rangle
+=\sigma S_{E,\alpha\beta}(x-y)$,
+$\sigma=-1$ (Grassmann), $\sigma=+1$ (commuting).
+Reflection action (trial):
+$\Theta\psi(x)=\bar\psi(\Theta x)\gamma_0$,
+$\Theta\bar\psi(x)=\gamma_0\psi(\Theta x)$,
+antilinear, order-reversing.
+OS form: $(F,G)\equiv\langle F\cdot\Theta G\rangle$.
+Fourier convention:
+$g(w,\vec x)=\int\!\frac{d^3p}{(2\pi)^3}\,
+e^{i\vec p\cdot\vec x}\,\tilde g(w,\vec p)$.
+Notation: $\omega=\sqrt{\vec p^{\,2}+m^2}$,
+$h_\pm(\vec p)=m\gamma_0\pm i\gamma_0\vec\gamma\cdot\vec p$,
+hermitian, $h_\pm^2=\omega^2$, so
+$(\omega\pm h_\pm)/2\omega$ are orthogonal rank-2 projectors.
+
+\subsubsection*{0.1 Order convention}
+At the quadratic level the alternative assignment
+$(F,G)=\langle\Theta F\cdot G\rangle$ differs by the global
+reordering sign $\sigma$; for Grassmann fields exactly one
+assignment is OS-positive.
+The order above is fixed by the internal consistency requirement
+that \emph{both} elementary families below come out positive in the
+Grassmann case; this removes the v1 sign ambiguity.
+
+\subsubsection*{0.2 Convention check (recorded; final
+reconciliation pending)}
+The trial set above is constructed to lie in the standard Euclidean
+Fermi-field OS convention family: reflection through the Euclidean
+time gamma, antilinear and order-reversing on the field algebra,
+with the sesquilinear form positive on the half-space algebra
+(Osterwalder--Schrader Euclidean Fermi fields; L\"uscher's
+transfer-matrix construction; Montvay--M\"unster \S4, with
+$\gamma_4\leftrightarrow\gamma_0$ renaming).
+A line-by-line reconciliation against these sources, and against
+the Euclidean Dirac block ultimately adopted in the main text
+(the current Lorentzian Dirac section, \S\ref{sec:dirac_eq}, fixes no Euclidean conventions), is required at
+implementation time and is the remaining condition on Q11.1a.
+If the main ECT spinor sector is later written in
+Majorana/charge-conjugated variables, the calculation must be
+translated into that convention; the natural $\psi\bar\psi$
+ordering used here makes the charge-conjugation matrix unnecessary
+for the present proof route.
+
+% ------------------------------------------------------------
+\subsection*{1. Contour lemma}
+For $W>0$, $s=\pm$:
+\[
+\int\frac{dp_0}{2\pi}\,
+\frac{e^{\,is\,p_0W}\,(m-i\gamma_0p_0-i\vec\gamma\cdot\vec p)}
+{p_0^2+\omega^2}
+=\frac{e^{-\omega W}}{2\omega}\,
+\bigl(m+s\,\omega\gamma_0-i\vec\gamma\cdot\vec p\bigr).
+\]
+
+% ------------------------------------------------------------
+\subsection*{2. Grassmann case ($\sigma=-1$): both families
+reflection positive}
+\emph{Family I.}
+$F=\int_{w>0}d^4x\,f^\dagger(x)\psi(x)$,
+$\Theta F=\int_{w>0}d^4y\,\bar\psi(\Theta y)\gamma_0 f(y)$,
+\[
+Q_{\rm Gr}^{\rm I}[f]
+=\langle F\,\Theta F\rangle
+=\int\!\!\int d^4x\,d^4y\;
+f^\dagger(x)\,S_E(x-\Theta y)\,\gamma_0\,f(y),
+\]
+no reordering needed.
+With $x-\Theta y=(w_x+w_y,\vec x-\vec y)$ and the contour lemma
+($s=+$), the $w$-dependence factorises through
+$h_f(\vec p)=\int_0^\infty dw\,e^{-\omega w}\tilde f(w,\vec p)$ and
+\[
+Q_{\rm Gr}^{\rm I}[f]
+=\int\frac{d^3p}{(2\pi)^3}\;
+h_f^\dagger(\vec p)\,\mathcal M_{\rm I}(\vec p)\,h_f(\vec p),
+\qquad
+\mathcal M_{\rm I}
+=\frac{(m+\omega\gamma_0-i\vec\gamma\cdot\vec p)\gamma_0}{2\omega}
+=\frac{\omega+h_+(\vec p)}{2\omega}\;\ge0 .
+\]
+
+\emph{Family II (rewritten; single $x,y$ convention).}
+Define
+\[
+G=\int_{w>0}d^4x\;\bar\psi(x)\,g(x),
+\qquad
+\Theta G=\int_{w>0}d^4y\;g^\dagger(y)\,\gamma_0\,\psi(\Theta y).
+\]
+Then, in components,
+\[
+G\cdot\Theta G
+=\int\!\!\int d^4x\,d^4y\;
+g_\alpha(x)\,g^{*}_{\sigma'}(y)\,(\gamma_0)_{\sigma'\beta}\;
+\bar\psi_\alpha(x)\,\psi_\beta(\Theta y),
+\]
+and taking the expectation with the reordering rule of \S0,
+$\langle\bar\psi_\alpha(x)\psi_\beta(\Theta y)\rangle
+=\sigma\,S_{E,\beta\alpha}(\Theta y-x)$:
+\[
+Q^{\rm II}[g]
+=\sigma\int\!\!\int d^4x\,d^4y\;
+g^\dagger(y)\;\gamma_0\,S_E(\Theta y-x)\;g(x).
+\]
+Here $\Theta y-x=(-(w_x+w_y),\vec y-\vec x)$, so the contour lemma
+applies with $s=-$ and momentum $\vec q$ conjugate to
+$\vec y-\vec x$:
+\[
+\gamma_0\,S_E(\Theta y-x)\Big|_{\vec q}
+=e^{-\omega W}\,
+\frac{m\gamma_0-\omega-i\gamma_0\vec\gamma\cdot\vec q}{2\omega}
+=e^{-\omega W}\,\frac{h_-(\vec q)-\omega}{2\omega}.
+\]
+After the Fourier transform and relabelling of dummy variables
+(the $e^{-\omega w_x}$, $e^{-\omega w_y}$ factors attach to $g(x)$
+and $g^\dagger(y)$ respectively, producing the same half-space
+profile $h_g$), the form reduces to the standard fixed-momentum
+expression
+\[
+Q^{\rm II}[g]
+=\sigma\int\frac{d^3q}{(2\pi)^3}\;
+h_g^\dagger(\vec q)\;
+\frac{h_-(\vec q)-\omega}{2\omega}\;
+h_g(\vec q),
+\qquad
+h_g(\vec q)=\int_0^\infty dw\,e^{-\omega w}\,\tilde g(w,\vec q).
+\]
+For Grassmann fields ($\sigma=-1$):
+\[
+\mathcal M_{\rm II}^{\rm Gr}(\vec q)
+=\frac{\omega-h_-(\vec q)}{2\omega}\;\ge0
+\quad\text{(orthogonal projector)}
+\;\Longrightarrow\;
+Q_{\rm Gr}^{\rm II}[g]\ge0 .
+\]
+[The spatial-momentum orientation differs between the families
+($h_+$ vs $h_-$); both conclusions are orientation-independent:
+positivity is the projector property, and the converse below uses
+only $\mathrm{spec}\,h_-=\{\pm\omega\}$.]
+Extension from the two elementary quadratic families to the full
+graded polynomial algebra is the standard OS fermionic construction
+(cited, not re-derived).
+
+% ------------------------------------------------------------
+\subsection*{3. Commuting case ($\sigma=+1$): explicit negative
+modes}
+The strict negative-mode test assumes $m>0$; the massless case
+requires separate infrared treatment and is not part of Q11.1a.
+Family II with $\sigma=+1$ gives
+\[
+\mathcal M_{\rm II}^{\rm com}(\vec q)
+=\frac{h_-(\vec q)-\omega}{2\omega},
+\qquad
+\mathrm{spec}=\Bigl\{\,0,\;-1\,\Bigr\}\ \text{(each twice)} .
+\]
+\emph{Explicit negative-norm test function.}
+Take $\vec q\approx0$, $u_-$ with $\gamma_0u_-=-u_-$
+(so $h_-(0)u_-=-\omega u_-$), and
+$g(w,\vec x)=\chi(w)\rho(\vec x)u_-$ with $\chi$ supported in
+$w>0$, $\rho$ a broad envelope:
+\[
+Q_{\rm com}[g]\;\longrightarrow\;-\,|h_g(0)|^2\;<\;0 .
+\]
+Family I remains positive for $\sigma=+1$ (no reordering occurs
+there); reflection positivity fails because the OS form must be
+non-negative on \emph{all} test functionals.
+\emph{Mechanism.}
+The statistics assignment enters in exactly one place: the
+reordering sign $\sigma$.
+Grassmann statistics converts the Family-II kernel into the
+projector $(\omega-h_-)/2\omega$; commuting statistics leaves
+$(h_--\omega)/2\omega$ with spectrum $\{0,-1\}$.
+
+\emph{Diagnostic remark (not part of the proof).}
+A separate consistency route would require constructing a positive
+commuting Gaussian covariance with spinor indices; if enforcing
+ordinary symmetric covariance removes the first-order Dirac
+numerator, the resulting object is no longer the same minimal
+kernel.
+Diagnostic only; the converse rests on the negative-mode test
+above.
+
+% ------------------------------------------------------------
+\subsection*{4. Status and remaining conditions}
+\begin{enumerate}[label=(\alph*)]
+  \item Review status: Families I/II (Grassmann) and the
+    $\{0,-1\}$ commuting spectrum are confirmed \emph{conditionally
+    in the trial convention} (review round v2).
+  \item Remaining condition on Q11.1a: the final convention check
+    of \S0.2 (line-by-line reconciliation with the OS/Fermi
+    literature and with the Euclidean Dirac block to be adopted in
+    the main text).
+  \item Safe status wording: ``candidate Level~A mathematical
+    result for a free minimal Euclidean Dirac kernel, with the
+    momentum-space converse calculation completed in trial OS
+    convention; pending final convention check.''
+  \item Scope: minimal first-order kernel; $m>0$; pointlike
+    primary-branch excitations; no higher-derivative kernels;
+    Majorana/charge-conjugated reformulation would require
+    translation (\S0.2).
+  \item Forbidden wording remains in force: not ``ECT derives
+    spin-statistics''; correct: ``the free-kernel OS
+    spin--statistics test has a completed candidate calculation;
+    its application to ECT fermions remains conditional on
+    deriving or verifying the ECT spinor kernel and spinorial
+    reflection-positive OS structure.''
+\end{enumerate}
+% ============================================================
