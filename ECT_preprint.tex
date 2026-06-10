@@ -572,6 +572,7 @@ QS & Quantum sector (Part~III of this paper) \\
 RG & Renormalisation group \\
 SN & Supernova (type~Ia unless stated otherwise) \\
 MWI & Many-worlds interpretation \\
+ABJ & Adler--Bell--Jackiw (anomaly; Section~\ref{sec:anomaly_architecture}) \\
 CAR & Canonical anticommutation relations (Section~\ref{sec:fermion_statistics}) \\
 OS & Osterwalder--Schrader (axioms / reconstruction theorem; Section~\ref{sec:qs_reflection_positivity}) \\
 RP & Reflection positivity \\
@@ -13503,6 +13504,31 @@ ordered-branch sector is specified;~\eqref{eq:anom_3Y}
 and~\eqref{eq:anom_YYY} depend on the full Standard-Model completion
 and are therefore discussed in Layer~C.
 
+\paragraph{B2$'$. Explicit verification for the inherited
+assignments.}
+Substituting the assignments~\eqref{eq:hypercharges} into the four
+conditions~\eqref{eq:anom_3Y}--\eqref{eq:anom_Ygrav} gives, per
+generation,
+\begin{align*}
+[SU(3)]^2 U(1)_Y&:\ 2\cdot\tfrac16-\tfrac23+\tfrac13=0,\\
+[SU(2)]^2 U(1)_Y&:\ 3\cdot\tfrac16-\tfrac12=0,\\
+U(1)_Y\text{--}\mathrm{grav}^2&:\
+  6\cdot\tfrac16-3\cdot\tfrac23+3\cdot\tfrac13-2\cdot\tfrac12+1
+  \;(+\,0)=1-2+1-1+1=0,\\
+U(1)_Y^3&:\ 6(\tfrac16)^3+3(-\tfrac23)^3+3(\tfrac13)^3
+  +2(-\tfrac12)^3+1^3\;(+\,0)
+  =\tfrac1{36}-\tfrac{32}{36}+\tfrac{4}{36}-\tfrac{9}{36}
+  +\tfrac{36}{36}=0,
+\end{align*}
+where the parenthetical $(+\,0)$ marks the optional
+hypercharge-neutral $\nu^c$ contribution.
+Witten $SU(2)$ anomaly: per generation there are $3$ colour copies
+of $Q_L$ plus one $L_L$, hence $4N_{\rm gen}$ left-handed $SU(2)$
+doublets, which is even.
+This is a Level~A arithmetic verification of inherited input, not a
+derivation; the scope classification of B3 below (which conditions
+are \emph{meaningful} in current ECT) is unchanged by it.
+
 \paragraph{B3. Hard disclaimer.}
 In the presently reconstructed ordered-branch electroweak sector,
 the $[SU(2)]^2 U(1)_Y$ condition~\eqref{eq:anom_2Y} is already
@@ -13539,6 +13565,33 @@ Therefore it can affect branch-level phenomenology, dispersion
 relations, and discrete-symmetry properties, but it does not modify
 the standard chiral anomaly constraints of the emergent gauge
 sector.
+
+\emph{Lemma (anomaly transparency at the local
+anomaly-coefficient level).}
+In the reconstructible ordered-branch chiral gauge EFT, the
+deformation $\mathcal L_5=\mu_5\bar\Psi\gamma^\mu n_\mu\Psi$
+does not change the local gauge-anomaly coefficients computed from
+the chiral representation data, and does not change the Witten
+$SU(2)$ doublet-counting class.
+\emph{Proof (representation-data).}
+Anomaly coefficients are determined by the chiral fermion
+representations and charges.
+Since $\mathcal L_5$ changes neither the gauge representation nor
+the chirality assignments --- it is the coupling of the background
+vector $B_\mu=\mu_5 n_\mu$ to the gauge-singlet vector current
+$\bar\Psi\gamma^\mu\Psi$ --- the anomaly coefficients are
+unchanged; the $SU(2)$ doublet count is likewise unchanged.
+\emph{Secondary check (Fujikawa).}
+Equivalently, in a Fujikawa description this vector background
+shifts the Dirac operator without changing the chiral
+representation trace that defines the anomaly coefficient.
+\emph{Scope.}
+Local gauge-anomaly coefficients and the Witten count only;
+flavour-diagonal $\mathcal L_5$ as defined; possible mixed
+gravitational/global or 't~Hooft-type bookkeeping involving the
+background direction is outside the lemma; the ECT application
+inherits the B1 OS-closure conditionality.
+Status: candidate Level~A at the stated level.
 
 The anomaly coefficients are determined by the chiral representation
 content and gauge charges, not by background-vector bilinear
@@ -13641,6 +13694,70 @@ Since the relevant exact global symmetries of the current ECT UV
 architecture have not yet been fully identified, this lies beyond
 the scope of the present subsection.
 
+\subsubsection*{Solution structure of the one-generation anomaly
+equations}
+
+\textit{Status: candidate Level~A algebraic classification under
+the inherited one-generation chiral content
+$\{Q,u^c,d^c,L,e^c\}$ (all left-handed Weyl).
+This is a classification of the solution set of the consistency
+conditions, not a derivation of the observed assignment;
+OP-GUT3b remains Open.}
+
+The linear conditions \eqref{eq:anom_3Y}, \eqref{eq:anom_2Y}
+and~\eqref{eq:anom_Ygrav} give
+$Y_L=-3Y_Q$, $Y_{e^c}=6Y_Q$, $Y_{u^c}+Y_{d^c}=-2Y_Q$;
+writing $Y_{u^c}=-Y_Q+\delta$, $Y_{d^c}=-Y_Q-\delta$, the cubic
+condition~\eqref{eq:anom_YYY} reduces to
+\begin{equation}
+  18\,Y_Q\,\bigl(9Y_Q^2-\delta^2\bigr)=0 .
+  \label{eq:anom_solution_structure}
+\end{equation}
+Apart from the trivial all-zero charge assignment, the solution
+set, up to overall normalisation, consists of two nontrivial
+assignments:
+(a) the \emph{non-degenerate branch} $Y_Q\neq0$,
+$\delta=\pm3Y_Q$, where the two sign choices exchange the labels
+$u^c\!\leftrightarrow\! d^c$ and reproduce the Standard-Model
+assignment~\eqref{eq:hypercharges};
+(b) the \emph{degenerate branch} $Y_Q=0$
+($Y_L=Y_{e^c}=0$, $Y_{u^c}=-Y_{d^c}$), in which hypercharge acts
+only on $u^c,d^c$ and the lepton sector is hypercharge-neutral.
+This two-assignment structure matches the published
+classification~\cite{MinahanRamondWarner1990,GengMarshak1989},
+where branch (b) corresponds to the non-SM assignment sometimes
+called ``bizarre'' in that literature.
+
+\paragraph{Exclusion of the degenerate branch.}
+Branch (b) is excluded by the inherited Standard-Model
+charge-assignment requirement for the charged-lepton sector ---
+equivalently by the inherited identification of $e^c$ as the
+charged-lepton singlet with nonzero hypercharge.
+Anomaly cancellation alone does not exclude it; this exclusion is
+recorded explicitly as inherited input.
+The corresponding uniqueness statement in
+\S\ref{sec:anomaly_constraints} is scoped accordingly.
+
+\paragraph{The $\nu^c$ freedom and the $B{-}L$ flat direction.}
+Starting from the non-degenerate SM-like branch, if a singlet
+$\nu^c$ with \emph{free} hypercharge is admitted, the shifted
+assignment $Y\to Y+t\,(B{-}L)$ is anomaly-free for all $t$.
+Here $B{-}L$ is understood in the left-handed conjugate convention:
+$Q_L:+\tfrac13$, $u^c,d^c:-\tfrac13$, $L_L:-1$, $e^c,\nu^c:+1$.
+Hence the anomaly system alone no longer fixes hypercharge.
+If $\nu^c$ is admitted but constrained from the outset to be a
+hypercharge-neutral singlet, $Y_{\nu^c}=0$, this particular
+$B{-}L$ flat direction is removed.
+
+\paragraph{What compactness adds and does not add.}
+The ECT compact-$U(1)$ lattice (Theorem~\ref{thm:charge_lattice};
+the constraint $2T+Y\in2\mathbb Z$ of \S\ref{sec:common_origin})
+enforces rationality/lattice structure but does \emph{not} remove
+the $B{-}L$ flat direction (which is rational-valued), unless
+additional normalisation or charge-identification input is imposed.
+The observed assignment therefore remains OP-GUT3b-level input.
+
+
 % ============================================================
 % Closing sentences
 % ============================================================
@@ -13714,14 +13831,31 @@ $[SU(3)]^2 U(1)_Y$ and $[U(1)_Y]^3$ conditions
   & Conditional / Open
   & Depend on colour-sector and full matter completion
     (OP-GUT1, OP-GUT2, OP-GUT3b) \\
+Explicit verification of the four conditions for the
+  inherited assignments
+  & A
+  & Arithmetic of inherited input (B2$'$); verification,
+    not derivation \\
 $\mathcal{L}_5$ does not modify anomaly coefficients
-  & B
-  & Vector bilinear; representation data unchanged \\
+  & A cand.\ / B
+  & Representation-data lemma at the local
+    anomaly-coefficient level (B4); ECT application inherits
+    B1 conditionality \\
 Witten anomaly test for the emergent chiral $SU(2)$
   sector
   & B
   & Once the fermion spectrum is fixed; automatic for an
     SM-like generation structure \\
+Solution structure of the one-generation anomaly system
+  & A cand.
+  & Two nontrivial assignments up to normalisation and
+    $u^c\!\leftrightarrow\!d^c$ relabelling; degenerate branch
+    excluded by inherited charged-lepton input \\
+$B{-}L$ flat direction for a free-hypercharge singlet
+  $\nu^c$
+  & A cand.
+  & Anomaly system alone then no longer fixes $Y$;
+    compactness does not remove it \\
 Specific observed hypercharge assignments from
   condensate dynamics
   & Open
@@ -26542,7 +26676,7 @@ G~= global whole-framework closure problem.
 \textsc{open} & G & Full non-perturbative ghost-freedom and exact TT closure of emergent graviton sector & Completion-level question tied to gauge/gravity closure (OP3) & \S\ref{sec:graviton}, \S\ref{sec:open_problems} \\
 \textsc{pass} & I & LIV empirical compatibility & $|c_{\rm GW}/c-1|<6\times10^{-15}$ from GW170817 in the current EFT parametrisation; Planck-suppressed GW delay $\Delta t_{\rm GW}\sim 10^{-64}$\,s; operator-level unification of LIV parametrisations remains open & \S\ref{sec:qs_black_holes} \\
 \textsc{part.} & I & Discrete-symmetry architecture of emergent matter sector & Three-layer architecture: geometric backbone (Level~A); conditional CPT route via Osterwalder--Schrader reconstruction for reconstructible local sectors (A/B); $\mathcal{L}_5$ reclassified as CPT-odd vector bilinear (B); full nonlinear CPT closure open (OP-CPT1) & \S\ref{sec:discrete_symmetries} \\
-\textsc{part.} & I & Anomaly architecture of emergent chiral gauge sector & Electroweak anomaly constraints inherited at ordered-branch level (B); $\mathcal{L}_5$ anomaly-transparent (B); full Standard-Model closure conditional on colour / matter completion (OP-GUT6 family) & \S\ref{sec:anomaly_architecture} \\
+\textsc{part.} & I & Anomaly architecture of emergent chiral gauge sector & Electroweak anomaly constraints inherited at ordered-branch level (B), explicitly verified for the inherited assignments (A); $\mathcal{L}_5$ anomaly-transparent (representation-data lemma, A cand.); one-generation solution structure classified (A cand.); full Standard-Model closure conditional on colour / matter completion (OP-GUT6 family) & \S\ref{sec:anomaly_architecture} \\
 \textsc{part.} & G & Flavour architecture (CKM/PMNS) & CKM as basis misalignment (A); overlap route to hierarchical mixing (B); ``CKM small / PMNS large'' structural narrative (B/C); quantitative flavour closure open under OP-Yukawa / OP-generations & \S\ref{sec:flavour_architecture} \\
 \textsc{pass} & I & Causality                 & Retarded propagation of ordered branch (Level~A); directed decoherence $\Gamma_{\rm irr}\geq 0$ (Level~A)                & \S\ref{sec:arrow_of_time} \\
 \textsc{prob.}& G & Second law $dS/dw\geq0$  & Level-A directional backbone + Level-B ohmic/Markov closure; full microscopic H-theorem open (OP-Q17) & \S\ref{sec:second_law_basics} \\
@@ -43131,8 +43265,15 @@ following mixed anomalies must cancel:
 \end{equation*}
 For the one-generation Standard-Model content
 $\{Q_L,u_R,d_R,L_L,e_R\}$, these constraints fix hypercharges up to
-normalisation.  With sterile-neutrino freedom a singlet can be added
-without disturbing anomaly balance; this is relevant for the neutrino
+normalisation, modulo the $u_R\!\leftrightarrow\! d_R$ relabelling
+and a degenerate lepton-neutral branch excluded by the inherited
+charged-lepton assignment (solution structure:
+\S\ref{sec:anomaly_architecture}).
+With sterile-neutrino freedom a hypercharge-neutral singlet
+($Y_\nu=0$) can be added without disturbing anomaly balance; if
+instead the singlet hypercharge is left free, a $B{-}L$ flat
+direction opens and the anomaly system alone no longer fixes the
+assignment (ibid.); this is relevant for the neutrino
 discussion of~\S\ref{sec:neutrino_particles} and for the proton
 stability discussion of~\S\ref{sec:proton_stability}.
 
@@ -43249,7 +43390,9 @@ Minimal admissible colour EFT
   & Closed structurally \\
 Anomaly architecture of emergent chiral gauge sector
   (\S\ref{sec:anomaly_architecture}; OP-GUT6~family)
-  & EW anomaly constraints inherited at ordered-branch level (B);
+  & EW anomaly constraints inherited at ordered-branch level (B),
+    explicitly verified for the inherited assignments
+    (\S\ref{sec:anomaly_architecture});
     full SM closure conditional on colour
   & P7-compatible restatement; SU(3)$^3$ cancellation; Witten global
     anomaly consistent with three generations; mixed-anomaly layer
@@ -46079,10 +46222,12 @@ OP-GUT5
   & Open \\
 OP-GUT6a
   & Local triangle anomaly cancellation
-  & Open (consistency test) \\
+  & Open (consistency test; explicit verification recorded for
+    the inherited content, \S\ref{sec:anomaly_architecture}) \\
 OP-GUT6b
   & Witten $SU(2)$ global $\mathbb{Z}_2$-anomaly
-  & Open (consistency test) \\
+  & Open (consistency test; doublet count verified for SM-like
+    generation structure, \S\ref{sec:anomaly_architecture}) \\
 OP-GUT6c
   & ECT-native interpretation of the mixed
     $U(1)_Y$-gravitational consistency condition in the
