@@ -46,7 +46,7 @@ digraph PartI {
   dirac [label=<Dirac eq.<BR/>§9>];
   second_law [label=<2nd law of<BR/>thermodynamics<BR/>§3.9>];
   fifth [label=<Director coupling<BR/>μ₅ψ̄γ<SUP>A</SUP>n<SUB>A</SUB>ψ<BR/>§7.6>];
-  skyrmion [label=<Skyrmion / texture sectors<BR/>π<SUB>3</SUB>(S³) = ℤ<BR/>m<SUB>n</SUB> ~ n × 1.6 GeV<BR/>§8>];
+  skyrmion [label=<Skyrmion / texture sectors<BR/>π<SUB>3</SUB>(S³) = ℤ<BR/>m<SUB>n</SUB> ~ n × 1.6 GeV<BR/>(legacy; secondary-sector route open)<BR/>§8>];
   LIV [label=<Planck-scale LIV<BR/>|δc/c| &lt; 10<SUP>−15</SUP><BR/>§10>];
   neutrino [label=<Neutrino sector §8.8<BR/>one-chiral weak route (B)<BR/>embedded neutrino preferred (C)<BR/>M<SUB>R</SUB><SUP>geom</SUP> = √(φ<SUB>0</SUB> v<SUB>2</SUB>)<BR/>PMNS intact; 0νββ discr.>];
   unruh [label=<Unruh effect<BR/>T<SUB>U</SUB>=ℏa/(2πc*k<SUB>B</SUB>)<BR/>QS>];
@@ -55,6 +55,7 @@ digraph PartI {
   node [fillcolor="white", style="rounded,dashed", fontcolor=black, penwidth=2];
   SU3 [label=<SU(3)<SUB>c</SUB> [OPEN]<BR/>dim su(3)=8 &gt; 6=dim so(4)<BR/>requires extended structure>];
   threegen [label=<3 generations<BR/>[OPEN]>];
+  cpt_open [label=<Discrete-symmetry · Anomaly · Flavour opens<BR/>OP-CPT1 · full nonlinear CPT<BR/>OP-P1 · exact max parity<BR/>OP-BRANCH1 · branch-pair cosmology<BR/>OP-GUT6c · mixed U(1)-grav (emergent)<BR/>OP-Yukawa · CKM/PMNS/CP phases/ν spectrum>];
 
   // === NEW NODES from unification integration ===
   node [fillcolor="#b8b8b8", fontcolor=black];
@@ -63,6 +64,9 @@ digraph PartI {
   node [fillcolor="#ffffff", fontcolor=black];
   boson_hier [label=<Hierarchical boson<BR/>spectrum (4 levels)<BR/>§Discussion>];
   common_origin [label=<Common pre-geometric<BR/>origin of interactions<BR/>§Discussion>];
+  cpt_arch [label=<Discrete-symmetry<BR/>architecture (§9.4)<BR/>P, T, C · conditional CPT<BR/>via OS reconstruction<BR/>Branch-pair on S³<BR/>𝓛₅ → CPT-odd phenom. op.>];
+  anomaly_arch [label=<Anomaly architecture (§9.5)<BR/>Standard EW anomaly inherited<BR/>𝓛₅ preserves anomaly polynomial<BR/>Emergent-graviton role Open (OP-GUT6c)>];
+  flavour_arch [label=<Flavour architecture<BR/>CKM from overlap misalignment<BR/>PMNS from overlap + seesaw<BR/>Near-alignment of flavour rotations<BR/>CP phases in Yukawa / Majorana sector<BR/>Numerical Open under OP-Yukawa>];
 
   // === RANKS ===
   {rank=same; P1; P2; P3; P4; Ph2; Ph1}
@@ -71,8 +75,8 @@ digraph PartI {
   {rank=same; hbar; GE}
   {rank=same; gauge; KG; einstein; unruh; schrodinger; parity}
   {rank=same; dirac; second_law}
-  {rank=same; SU3; fifth; threegen; neutrino; common_origin; boson_hier}
-  {rank=same; topo_anti; skyrmion; LIV}
+  {rank=same; SU3; fifth; threegen; neutrino; common_origin; boson_hier; cpt_arch; anomaly_arch; flavour_arch}
+  {rank=same; topo_anti; skyrmion; LIV; cpt_open}
 
   // === EDGES ===
   P1 -> SSB; P2 -> SSB; P3 -> SSB; P4 -> SSB;
@@ -103,8 +107,8 @@ digraph PartI {
   P3 -> GE [style=dashed];
   P4 -> lorentz [style=dashed];
   SSB -> GE [style=dashed];
-  gauge -> SU3 [style=dashed, color=gray50];
-  gauge -> threegen [style=dashed, color=gray50];
+  gauge -> SU3 [style=dashed, color=black];
+  gauge -> threegen [style=dashed, color=black];
 
   // === NEW EDGES ===
   gauge -> parity;
@@ -113,6 +117,20 @@ digraph PartI {
   fifth -> common_origin [style=dashed];
   gauge -> boson_hier [style=dashed];
   goldstone -> boson_hier [style=dashed];
+
+  // === F3: Discrete-symmetry architecture edges ===
+  parity -> cpt_arch;
+  fifth -> cpt_arch;
+  gauge -> cpt_arch [style=dashed];
+  cpt_arch -> cpt_open [style=dashed];
+  // === F4: Anomaly architecture edges ===
+  cpt_arch -> anomaly_arch;
+  gauge -> anomaly_arch;
+  anomaly_arch -> cpt_open [style=dashed];
+  // === F8: Flavour architecture edges ===
+  anomaly_arch -> flavour_arch;
+  dirac -> flavour_arch;
+  flavour_arch -> cpt_open [style=dashed];
 
   // === LEGEND ===
   node [shape=point, width=0, style=invis];
@@ -123,6 +141,9 @@ digraph PartI {
   SU3 -> spacer1 [style=invis];
   threegen -> spacer1 [style=invis];
   fifth -> spacer1 [style=invis];
+  cpt_open -> spacer1 [style=invis];
+  anomaly_arch -> spacer1 [style=invis];
+  flavour_arch -> spacer1 [style=invis];
 
   node [shape=plaintext, style="", fillcolor=white];
   legend [label=<

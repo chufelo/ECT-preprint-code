@@ -12,6 +12,7 @@
   \DeclareMathSymbol{\hbar}{\mathord}{AMSb}{126}%
 }
 \usepackage{amsmath,amssymb}
+\usepackage{mathrsfs}  % \mathscr for foliation extrinsic curvature
 \usepackage{alphalph}  % enables AA, AB, ... appendix labels beyond Z
 \usepackage{slashed}            % Feynman slash notation
 \numberwithin{equation}{section}
@@ -410,8 +411,8 @@ $S_0$ & Pre-quantum action-scale candidate of the coherent branch: in the fixed-
 $S_{\rm elem}$ & Elementary coherent loop action: $S_{\rm elem}=2\pi S_0$ in the fixed-core reduced-loop closure; full variational minimum in the $n\!=\!1$ sector not established (Open); related to $\hbar$ at Level~B & $[\hbar]$ \\
 $L_{\rm core}$ & Characteristic condensate core scale entering the fixed-length loop bound; explicit first-principles derivation open (OP-Q2) & m \\[4pt]
 \multicolumn{3}{@{}l}{\textit{Gravitational matching --- Macroscopic Physics (Level~B)}} \\[2pt]
-$\mathcal{C}_n$ & Orientation-stiffness coefficient: $\kappa_n=\mathcal{C}_n\,u_0^2$; $[\mathcal{C}_n]=\text{GeV}^{-2}$; not yet derived (OP-Planck) & GeV$^{-2}$ \\
-$\kappa_n$ & Orientation stiffness: $\kappa_n=\mathcal{C}_n\,u_0^2$; sets gravitational stiffness $M_G^2\sim\kappa_n$; $[\kappa_n]=\text{GeV}^2$; not yet derived microscopically (OP-Planck) & GeV$^2$ \\
+$\mathcal{C}_n$ & Orientation-stiffness coefficient: $\kappa_n=\mathcal{C}_n\,u_0^2$; $[\mathcal{C}_n]=\text{GeV}^{-2}$; candidate NLO/one-loop parametrisation $\mathcal{C}_n=\hat a_{\rm eff}/(16\pi^2 m_\sigma^2)$ used under the minimal foliation-sensitive closure (Lemma~\ref{lem:induced_stiffness_kernel}); overall normalisation and spin-2 matching remain OP-Planck & GeV$^{-2}$ \\
+$\kappa_n$ & Orientation stiffness: $\kappa_n=\mathcal{C}_n\,u_0^2$; sets gravitational stiffness $M_G^2\sim\kappa_n$; $[\kappa_n]=\text{GeV}^2$; candidate induced-structure route at Level~B conditional (Lemma~\ref{lem:induced_stiffness_kernel}), while the observed normalisation remains fixed by weak-field matching (OP-Planck) & GeV$^2$ \\
 $M_G$ & Induced gravitational stiffness scale:
   $M_G^2\sim\kappa_n\sim u_0^2/m_\sigma^2\sim\phi_0^2$
   (structural/NLO estimate);
@@ -425,7 +426,7 @@ $\hbar$ & Planck constant; identified $S_0=\hbar$ in Quantum Sector, Level~B & $
 $\mathcal{M}^4$ & Four-dimensional Euclidean manifold (P1) & --- \\
 $X^A=(x,y,z,w)$ & Euclidean coordinates & m \\
 $\delta_{AB}$ & Euclidean metric & --- \\
-$t$ & Lorentzian time; $t=w/c_*$ (real parametrisation) & s \\
+$t$ & Lorentzian time; $t=w$ (ordered-branch parametrisation; cone slope $c_*$) & s \\
 $\ell_{\rm Pl}$ & Planck length: $\ell_{\rm Pl}=\sqrt{\hbar G_N/c^3}\approx1.616\times10^{-35}$\,m; matching hypothesis $\xi_{\rm cond}\sim\ell_{\rm Pl}$ & m \\[4pt]
 \multicolumn{3}{@{}l}{\textit{Decoherence (Section~\ref{sec:influence_functional})}} \\[2pt]
 $\Gamma[q]$ & Decoherence functional & --- \\
@@ -451,6 +452,7 @@ $g_\dagger^{\rm cl}$ & Cluster-scale effective critical acceleration; merger-env
 \multicolumn{3}{@{}l}{\textit{Fifth force (Section~\ref{sec:fifth_force})}} \\[2pt]
 $\mu_5$ & Dimensionful coefficient of the ECT-specific fermion--condensate operator & GeV \\
 $\beta_5$ & Dimensionless fifth-coupling ratio defined by $\mu_5=\beta_5 m_f$ & dimensionless \\
+$\beta_\phi$ & Dimensionless amplitude--curvature coupling of the $\phi$-first closure, $F(\phi)=e^{\beta_\phi\phi}$ (distinct from the kinetic $\beta$) & dimensionless \\
 $\omega_5$ & Spin-precession frequency & rad\,s$^{-1}$ \\
 $\eta$ & E\"{o}tv\"{o}s parameter & dimensionless \\[4pt]
 \multicolumn{3}{@{}l}{\textit{Neutrino sector~(Section~\ref{sec:neutrino_particles})}} \\[2pt]
@@ -851,7 +853,7 @@ kinetic tensor
 \[
 K^{AB}=\beta\,\delta^{AB}-\alpha\,n^A n^B,
 \]
-whose Lorentzian admissibility requires $\alpha>\beta$. After the real parametrisation $t=w/c_*$ one obtains the Klein--Gordon equation, and in the
+whose Lorentzian admissibility requires $\alpha>\beta$. After the real parametrisation $t=w$ one obtains the Klein--Gordon equation, and in the
 non-relativistic limit the Schr\"odinger equation. Thus Schr\"odinger
 dynamics is not primary but the narrowest low-energy descendant of a
 more general ECT equation that also accommodates the Euclidean coherent
@@ -993,7 +995,7 @@ fifth force excluded by Solar System tests.
 These negative results are not defects of the theory but rather
 powerful constraints that uniquely select the viable mechanism:
 a \emph{nonlinear, self-screening dynamics} of the
-macroscopic amplitude variable $\phi=\frac{1}{\beta}\ln(u/u_\infty)$,
+macroscopic amplitude variable $\phi=\frac{1}{\beta_\phi}\ln(u/u_\infty)$,
 which measures the local degree of Lorentzianness of the
 vacuum.
 Within this new framework the coupling of $\phi$ to
@@ -2189,7 +2191,7 @@ The broken-phase kinetic action for fluctuations $\varphi$ is
 where $m_{\rm eff}^2$ is the EFT fluctuation mass parameter,
 not identified a priori with $V''(\phi_0)$ of the bare potential.
 The canonical normalisation
-$\tilde\varphi = (\sqrt{\alpha-\beta}/c_*)\,\varphi$ gives
+$\tilde\varphi = \sqrt{\alpha-\beta}\,\varphi$ gives
 a positive free Hamiltonian~(Level~A):
 \begin{equation}
   \label{eq:H_free}
@@ -2449,9 +2451,9 @@ phase.
 The $O(4)\to O(3)$ SSB generates a hyperbolic kinetic tensor
 $K^{AB}$~(Theorem~\ref{thm:tensor_uniqueness}).
 In the homogeneous ordered phase, the Lorentzian branch may be
-parametrised in real time by $w=c_* t$, so that the effective metric
+parametrised by the ordered-branch time coordinate $t=w$, so that the effective metric
 reduces locally to the Minkowski form
-$\eta_{\mu\nu}=\mathrm{diag}(-1,1,1,1)$ in units $c_*=1$, and
+$\eta_{\mu\nu}=\mathrm{diag}(-1,1,1,1)$ in matched units $c_*=1$, and
 the isometry group is the Poincar\'e group.
 (The Wick/Picard--Lefschetz continuation belongs to the path-integral
 justification discussed elsewhere and should not be conflated with this
@@ -2478,7 +2480,12 @@ homogeneous limit of the ordered-branch kinematics of ECT.
 
 At this stage Lorentzian signature has already appeared in the ordered-branch kinetic tensor.
 The effective real-time variable is therefore introduced by the real parametrisation
-$t=w/c_*$, with $c_*^2=\beta/(\alpha-\beta)$.
+$t=w$: the ordered direction itself serves as the emergent time
+coordinate of the Lorentzian branch, and the dimensionless cone slope
+in these coordinates is $c_*$, with $c_*^2=\beta/(\alpha-\beta)$.
+(The rescaled coordinate $w/c_*$, in which the cone slope is unity, is
+not used for the field equations in this paper; physical SI units of
+time enter only through the matching step Ph1, $c_*=c$.)
 This is the step used to write the hyperbolic field equation and the effective Lorentzian metric.
 A separate formal Euclidean--Lorentzian continuation belongs only to the amplitude/path-integral
 language discussed later in the coherent sector.
@@ -2658,7 +2665,7 @@ Section~\ref{sec:metric_classification}).
 Once the ordered branch satisfies $\alpha>\beta$, the distinguished
 coordinate $w$ becomes time-like in the effective kinetic tensor.
 The corresponding physical time is introduced by the real
-parametrisation $t=w/c_*$, with
+parametrisation $t=w$, with
 \[
 c_*^2=\frac{\beta}{\alpha-\beta}.
 \]
@@ -3769,7 +3776,7 @@ Equation of motion~\eqref{eq:eom_broken}
 Lorentzian dispersion~\eqref{eq:dispersion} for $\alpha>\beta$
   & Level~A (EFT) & Theorem~\ref{thm:tensor_uniqueness} + $\alpha>\beta$ \\
 Klein--Gordon equation~\eqref{eq:KG}
-  & Level~A (EFT) & Real parametrisation $t=w/c_*$ \\
+  & Level~A (EFT) & Real parametrisation $t=w$ \\
 Free Hamiltonian $H\geq 0$~\eqref{eq:H_free}
   & Level~A (quadratic) & Canonical normalisation; no tachyon/ghost \\
 Identification of $m_{\rm eff}^2$ with $V''(\phi_0)$
@@ -3806,7 +3813,9 @@ Pure $P(X)$ closure does not generate $(\partial n)^2$
 Orientation-sector stiffness $\kappa_n = \mathcal{C}_n\,u_0^2$;
   $[\mathcal{C}_n]=\text{mass}^{-2}$
   & Level~B (EFT) & Algebraic form exact within NLO EFT;
-    coefficient $\mathcal{C}_n$ not yet derived \\
+    full coefficient and normalisation not derived at this level \\
+Candidate one-loop induced structure and minimal leaf-conformal kernel for $\mathcal{C}_n$
+  & Level~B conditional & Conditional partial progress: an NLO/one-loop route and a conditional foliation kernel are identified; the finite Wilson coefficient, normalisation, trace-sector reduction and spin-2 map remain open \\
 Derivation of $\mathcal{C}_n$ from bare P1--P6
   & Open & OP-Planck; NLO + spin-2 normalisation \\
 Linear soft dispersion $\omega^2=c_\chi^2 k^2$
@@ -4409,7 +4418,7 @@ The relevant matching relations are:
 \begin{equation}
   G_N = \frac{c_*^4}{8\pi M_G^2},
   \qquad
-  S_0^{\rm EFT} = \frac{K_\theta\,m_\varphi}{2},
+  S_0^{\rm EFT} = \frac{c_\perp\,K_\theta}{2\,m_\varphi^{2}},
   \label{eq:GN_S0_common}
 \end{equation}
 where $M_G$, $K_\theta$, $m_\varphi$, and $c_*$ are all functions
@@ -4604,6 +4613,16 @@ where $\ell_{\rm Pl}=\sqrt{G_N\hbar/c^3}\approx 1.6\times 10^{-35}$\,m.
 This should be understood as a motivated matching hypothesis,
 not a strict derivation: $\ell_{\rm Pl}$ depends on~$\hbar$,
 which is not yet derived at this stage.
+Within the corrected reduced-loop closure of
+Section~\ref{sec:hbar_status}, the identification
+$S_0^{\rm EFT}=\hbar$ corresponds to $\lambda\sim\mathcal O(1)$
+(Eq.~\eqref{eq:S0_lambda}), and hence to
+$m_\sigma=\sqrt{2\lambda}\,\phi_0\sim\bar M_{\rm Pl}$ and
+$\xi_{\rm cond}\sim\ell_{\rm Pl}$.
+The Planck-length matching is therefore internally consistent with the
+third calibration relation rather than independent of it; this remains
+a promising consistency route conditional on the profile coefficient
+$c_\perp=\mathcal O(1)$~(Level~B), not a derivation.
 Its particle-spectrum interpretation as the primary radial condensate
 mode is developed in Section~\ref{sec:radial_mode}.
 
@@ -4681,15 +4700,40 @@ We write the reduced phase action in the schematic EFT form
 with $K_\theta\sim\phi_0^2$ in the simplest quartic bare-potential
 realisation, where $\phi_0=\sqrt{\mu^2/\lambda}$.
 
+\emph{One-dimensional reduction and the transverse three-volume
+weight.}
+For a closed coherent loop the four-dimensional phase action reduces
+to an effective one-dimensional functional only after integrating the
+transverse profile of the coherent tube over its transverse
+three-volume.
+We encode this reduction in the effective one-dimensional stiffness
+\begin{equation}
+  K_\theta^{1\mathrm D}
+  \;\equiv\;
+  K_\theta\,\mathcal A_\perp ,
+  \qquad
+  \mathcal A_\perp = c_\perp\,\xi_{\rm core}^{3},
+  \qquad
+  [K_\theta^{1\mathrm D}]=\text{GeV}^{-1},
+  \label{eq:Ktheta_1D}
+\end{equation}
+where $\xi_{\rm core}\sim m_\varphi^{-1}$ is the radial-core scale and
+$c_\perp=\mathcal O(1)$ is a profile-dependent geometric coefficient of
+the transverse three-volume weight that is \emph{not} fixed at the
+present EFT level (Appendix~\ref{app:Sloop_calc}).
+This step is a dimensionally consistent reduced-loop closure, not a
+first-principles derivation of the transverse profile~(Level~B).
+
 \emph{Sharp lower bound on loop action
 (Cauchy--Schwarz inequality).}
 Consider a closed coherent loop $\gamma$ of proper length $L$
 in the phase EFT with winding number
 $n[\gamma]=\frac{1}{2\pi}\oint_\gamma\partial_\ell\theta\,d\ell$.
-The reduced 1D action along the loop is
+The reduced 1D action along the loop, built on the reduced
+one-dimensional stiffness~\eqref{eq:Ktheta_1D}, is
 \begin{equation}
   S_{\rm loop}[\theta]
-  = \frac{K_\theta}{2}\oint_\gamma d\ell\;
+  = \frac{K_\theta^{1\mathrm D}}{2}\oint_\gamma d\ell\;
     (\partial_\ell\theta)^2.
   \label{eq:S_loop_def}
 \end{equation}
@@ -4708,7 +4752,7 @@ Therefore:
 \begin{equation}
   \boxed{S_{\rm loop}[\theta]
   \;\geq\;
-  \frac{2\pi^2 K_\theta\,n^2}{L},
+  \frac{2\pi^2 K_\theta^{1\mathrm D}\,n^2}{L},
   \qquad
   \text{equality at uniform winding.}}
   \label{eq:loop_bound}
@@ -4776,8 +4820,8 @@ elementary-loop size with $n=1$ gives the characteristic
 elementary-loop action
 \begin{equation}
   S_{\rm elem}
-  = \frac{2\pi^2 K_\theta}{L_{\rm core}}
-  = \pi\,K_\theta\,m_\varphi.
+  = \frac{2\pi^2 K_\theta^{1\mathrm D}}{L_{\rm core}}
+  = \pi\,c_\perp\,\frac{K_\theta}{m_\varphi^{2}}.
   \label{eq:S_elem}
 \end{equation}
 We then define the associated EFT action scale by
@@ -4785,9 +4829,29 @@ We then define the associated EFT action scale by
   \boxed{S_0^{\rm EFT}
   \;\equiv\;
   \frac{S_{\rm elem}}{2\pi}
-  = \frac{K_\theta\,m_\varphi}{2}.}
+  = \frac{c_\perp\,K_\theta}{2\,m_\varphi^{2}}.}
   \label{eq:S0_EFT}
 \end{equation}
+
+\emph{Dimensionless form and parameter compression.}
+In the simplest quartic realisation
+(in the convention $V(\Phi)=-\tfrac{\mu^2}{2}\Phi^2
++\tfrac{\lambda}{4}\Phi^4$ of~P3, so that $K_\theta\sim\phi_0^2$ and
+$m_\varphi^2=2\lambda\,\phi_0^2$)
+the elementary-loop scale becomes
+\begin{equation}
+  S_0^{\rm EFT}\;\sim\;\frac{c_\perp}{4\lambda},
+  \label{eq:S0_lambda}
+\end{equation}
+independent of $\phi_0$: the candidate action quantum is controlled by
+the dimensionless self-coupling alone, in structural analogy with the
+inverse-coupling scaling of instanton actions.
+Consequently the identification $S_0^{\rm EFT}=\hbar$ fixes the
+dimensionless combination $c_\perp/\lambda$ at order unity rather than
+a dimensionful scale.
+This is a promising parameter-compression route~(Level~B closure with
+profile-dependent $c_\perp$), not a completed first-principles
+determination of~$\lambda$.
 This is a distinguished EFT scale associated with the elementary
 coherent loop, not the global variational minimum over arbitrary
 loop lengths~(Level~B).
@@ -4808,7 +4872,7 @@ arbitrary loop lengths.
 The relation~\eqref{eq:S0_EFT} should be read as a
 self-consistency condition: if $S_0^{\rm EFT}$ is to be identified with
 $\hbar$, then the condensate parameters must satisfy
-$K_\theta\,m_\varphi/2\approx\hbar$.
+$c_\perp K_\theta/(2m_\varphi^{2})\approx\hbar$.
 This is analogous to the BCS gap equation, where the
 superconducting gap $\Delta$ is determined self-consistently
 rather than predicted from first principles.
@@ -4821,7 +4885,7 @@ the relation between the gradient condensate scale $u_0$ and the bare
 potential data remains open~(OP-grad).
 The relevant matching relations are:
 \begin{equation}
-  S_0^{\rm EFT} = \frac{K_\theta\,m_\varphi}{2},
+  S_0^{\rm EFT} = \frac{c_\perp\,K_\theta}{2\,m_\varphi^{2}},
   \qquad
   G_N = \frac{c_*^4}{8\pi\,M_G^2},
   \label{eq:hbar_GN_same_condensate}
@@ -4866,12 +4930,14 @@ passes through an effective integration-out of the radial mode,
 which is itself a Level~B closure step.
 
 \paragraph{Analytic continuation preserves action normalization~(Level~A/B).}
-The formal analytic continuation $w_E\to \pm ic_*t$ relates
+The formal analytic continuation $w_E\to \pm i\,t$ (with $t=w$ the
+ordered-branch time coordinate; physical SI units enter only through
+the matching $c_*=c$) relates
 Euclidean coherent weights to Lorentzian phase evolution.
-It should not be confused with the real parametrisation $t=w/c_*$,
+It should not be confused with the real parametrisation $t=w$,
 which is the primary route to the hyperbolic field equations.
 At the present stage the underlying ordered-branch hyperbolicity
-has already been fixed independently by $\alpha>\beta$
+has already been fixed independently by $\alpha>\beta$.
 
 \paragraph{Parameter-counting closure~(Level~B structural).}
 In its simplest bare-potential realisation, ECT has three
@@ -4883,13 +4949,15 @@ Three observational calibration relations are needed to fix them:
     (Section~\ref{sec:lorentz_window}; Level~A/B);
   \item $G_N=c_*^4/(8\pi M_G^2)$ fixes the gravitational stiffness
     scale~(Section~\ref{sec:GN_matching}; Level~B);
-  \item $S_0^{\rm EFT}=\hbar$ fixes $m_\varphi$, or
-    equivalently~$\lambda$.
+  \item $S_0^{\rm EFT}=\hbar$ fixes the dimensionless combination
+    $c_\perp/\lambda$~(Eq.~\eqref{eq:S0_lambda}).
 \end{itemize}
 Without the third calibration, one free parameter would remain
 physically uncalibrated at this stage of the theory.
 The identification $S_0^{\rm EFT}=\hbar$ naturally closes the theory
-by fixing $m_\varphi = 2\hbar/K_\theta$.
+by fixing the dimensionless combination $c_\perp K_\theta/m_\varphi^{2}$,
+i.e.\ in the quartic realisation $\lambda\simeq c_\perp/4$~(Level~B;
+$c_\perp$ profile-dependent and open).
 This is not a derivation of $\hbar$ from first principles, but a
 structural argument showing that the identification is the third and
 final calibration relation of a three-parameter theory, rather than
@@ -5092,8 +5160,8 @@ Uniform winding minimises the fixed-$L$ action
 Elementary loop size $L_{\rm core}\sim 2\pi/m_\varphi$
   & A/B & EFT input; supported by vortex variational
     estimate ($O(1)$ coefficient open) \\
-$S_0^{\rm EFT}=K_\theta\,m_\varphi/2$
-  & B & Characteristic elementary-loop action scale \\
+$S_0^{\rm EFT}=c_\perp K_\theta/(2m_\varphi^{2})$
+  & B & Reduced-loop closure; transverse coefficient $c_\perp$ open \\
 $S_0^{\rm EFT}$ and $G_N$ are structurally linked through the same
   ordered medium
   & B & Full microscopic unification remains open (OP-grad) \\
@@ -5473,7 +5541,7 @@ The ordered condensate therefore distinguishes the preferred
 $w$-direction from the transverse directions already at the level
 of the Noether tensor.
 In the ordered-branch Lorentzian reading, implemented through the real
-parametrisation $t=w/c_*$, this anisotropy is reinterpreted as the
+parametrisation $t=w$, this anisotropy is reinterpreted as the
 difference between temporal and spatial components in the effective
 energy--momentum description~(Level~A computation; Lorentzian
 interpretation Level~B).
@@ -7196,7 +7264,7 @@ The coefficient $\mu_5$ remains a free EFT parameter at Level~B.
 
 \paragraph{Lorentzian-branch form.}
 In the Lorentzian ordered branch, after the real parametrisation
-$t=w/c_*$, the preferred Euclidean direction is read as a timelike
+$t=w$, the preferred Euclidean direction is read as a timelike
 unit vector $u_\mu$ in the emergent low-energy spacetime.
 The coupling then takes the form
 \begin{equation}
@@ -7429,7 +7497,7 @@ By contrast, on galactic and cosmological scales the ordered branch
 develops nontrivial large-scale structure through the amplitude-sector
 variable
 \begin{equation}
-  \phi = \beta^{-1}\ln(u/u_\infty),
+  \phi = \beta_\phi^{-1}\ln(u/u_\infty),
   \label{eq:phi_macro_repeat}
 \end{equation}
 as discussed in Section~\ref{sec:mp_galactic}.
@@ -7460,7 +7528,7 @@ The ordered branch gives rise to two physically distinct mechanisms:
 
   \item \textbf{Macroscopic $\phi$-closure:}
     \[
-      G_{\rm eff}(X)=G_N e^{-\beta\phi},
+      G_{\rm eff}(X)=G_N e^{-\beta_\phi\phi},
       \qquad
       \mu(g/g^\dagger)\,g=g_{\rm bar}.
     \]
@@ -8207,7 +8275,7 @@ Figure~\ref{fig:ordered_branch_two_sectors}.
 $n_A=\partial_A\Phi/|\partial_A\Phi|$};
 
 \node[box, below right=of top] (rightmid) {\textbf{Amplitude variable}\\[2pt]
-$\phi(X)=\beta^{-1}\ln(u/u_\infty)$};
+$\phi(X)=\beta_\phi^{-1}\ln(u/u_\infty)$};
 
 \node[smallbox, below=of leftmid] (leftbot) {\textbf{Microscopic matter deformation}\\[2pt]
 $\Delta\mathcal L_5=\mu_5\bar\Psi\gamma^A n_A\Psi$\\[3pt]
@@ -9111,7 +9179,7 @@ The primary radial mass $m_\sigma$ is closely related to the
 physical scale that enters the distinguished EFT action scale of the
 coherent branch~(Section~\ref{sec:hbar_status}):
 \begin{equation}
-  S_0^{\rm EFT} = \frac{K_\theta\,m_\varphi}{2}.
+  S_0^{\rm EFT} = \frac{c_\perp\,K_\theta}{2\,m_\varphi^{2}}.
   \label{eq:S0_sigma_bridge}
 \end{equation}
 In the minimal single-condensate realisation, the radial core scale
@@ -10046,7 +10114,7 @@ G^{AC}_{\rm eff}\,g^{\rm eff}_{CB}=\delta^{A}{}_{B}.
 \end{equation}
 After passing from the Euclidean coordinate ordering $(x^1,x^2,x^3,w)$
 to the Lorentzian coordinate ordering $x^\mu=(t,\mathbf{x})$, with
-$t=w/c_*$, the canonical benchmark $(\alpha,\beta)=(2,1)$ gives the
+$t=w$, the canonical benchmark $(\alpha,\beta)=(2,1)$ gives the
 familiar background
 \[
 \eta_{\mu\nu}=\mathrm{diag}(-1,1,1,1);
@@ -10120,7 +10188,7 @@ reconstruction, not yet a complete first-principles derivation from the
 bare condensate action.
 
 \textbf{Step 3: massless spin-2 interpretation.}
-In the real Lorentzian parametrisation $t=w/c_*$, the linearised
+In the real Lorentzian parametrisation $t=w$, the linearised
 effective-metric sector admits a massless spin-2 interpretation at the
 quadratic level.
 Masslessness is protected, at the linearised effective level,
@@ -10894,7 +10962,7 @@ At the representation-theoretic level, the ordered branch admits the
 standard Lorentzian spin-group reading in which the relevant group is
 $SL(2,\mathbb{C})$.
 This group-theoretic continuation is distinct from the real
-parametrisation $t=w/c_*$ used for the hyperbolic field equations, and Dirac spinors can be
+parametrisation $t=w$ used for the hyperbolic field equations, and Dirac spinors can be
 constructed on the ordered condensate background as two Weyl
 components $\Psi = (\psi_L, \psi_R)^T$.
 This is a structural compatibility statement, not a derivation of
@@ -11305,7 +11373,8 @@ neutrino sector and the baryon-asymmetry route can then be tied to
 the same decoupled branch.
 In the baryogenesis discussion~(Section~\ref{sec:baryogenesis}),
 a right-handed neutrino scale $M_R \sim 10^9$\,GeV is used as an
-illustrative benchmark for the resonant leptogenesis estimate
+illustrative \emph{imported} benchmark (not an ECT-derived
+prediction) for the resonant leptogenesis estimate
 $\eta_B \sim 9\times10^{-10}$.
 The geometric-mean anchor $M_R^{\rm geom}\approx
 2.4\times10^{10}$\,GeV lies above the standard thermal-leptogenesis
@@ -11717,6 +11786,32 @@ a provisional phenomenological closure only.
 Its falsification would not refute the topological sector itself, but
 only the specific dynamical ansatz used to estimate its masses.
 
+\paragraph{Primary-stiffness objection and demotion of the GeV-scale
+ansatz.}
+A Derrick-type scaling argument sharpens the status of
+Eq.~\eqref{eq:topological_mass_ansatz}.
+In three spatial dimensions the two-derivative orientation term alone
+does not stabilise $\pi_3$ configurations against collapse; any
+stabilisation, if it occurs, must involve contributions beyond the
+two-derivative term, and the higher-derivative (NLO) operators of the
+same class that generates the orientation stiffness $\kappa_n$ may
+provide the required stabilising terms.
+For textures of the \emph{primary} vacuum manifold, whose stiffness is
+tied to the high condensate scale ($\kappa_n\sim\phi_0^2$), the natural
+mass scale of any so-stabilised configuration is then parametrically
+tied to the high condensate scale rather than to the GeV range, up to
+profile- and operator-dependent numerical factors (Level~B scaling
+argument; no explicit profile solution is available).
+The GeV-scale law~\eqref{eq:topological_mass_ansatz} is therefore not
+supported by the primary $\pi_3(S^3)$ sector.
+It is hereby demoted to a \emph{legacy phenomenological benchmark}: if
+retained at all, it must be reassigned to a secondary
+(electroweak- or colour-linked) topological sector, whose existence
+and scale are themselves open~(OP-top-mass; cf.\
+Appendix~\ref{app:second_transition}).
+Its falsification constrains only this legacy benchmark, not the
+Level~A sector classification.
+
 % ============ CLASS 3: SECONDARY DEFECTS ============
 
 \paragraph{Class~3: defect configurations from a possible
@@ -11811,6 +11906,10 @@ are directly connected to the predicted states:
     not the existence of topological sectors themselves.
     In other words, F6 tests a specific phenomenological realisation of
     the topological sector, not the topological sector as such.
+    Following the primary-stiffness objection of
+    Section~\ref{sec:predicted_states}, this realisation is a demoted
+    legacy benchmark reassigned at most to a secondary sector
+    (OP-top-mass).
   \item \textbf{Absence of primary-SSB relics:} if topologically
     stable domain walls, cosmic strings, or monopoles were
     unambiguously traced to the primary $O(4)\to O(3)$ transition,
@@ -11863,11 +11962,12 @@ Dynamical stability of localised texture/skyrmion
 Integer topological charge $Q = n$ labels primary
   texture sectors
   & A & Follows from $\pi_3(S^3) = \mathbb{Z}$ \\
-Phenomenological mass ansatz for topological sectors
-  & C & Not derived from topology alone \\
-Mass scale $m_1 \sim 1.6\,$GeV
-  & C & Phenomenological estimate; not
-    first-principles \\
+Legacy phenomenological mass ansatz for topological sectors
+  & C & Not derived from topology alone; primary-stiffness objection
+    demotes the GeV-scale law to a legacy benchmark \\
+Legacy mass scale $m_1 \sim 1.6\,$GeV
+  & C & Phenomenological benchmark only; not first-principles;
+    secondary-sector reassignment open (OP-top-mass) \\
 \multicolumn{3}{l}{\textit{Conditional: second transition}} \\
 $\pi_2(S^2) = \mathbb{Z}$: monopole-like defects
   & B/C & If $O(3)\to O(2)$ exists; nature depends
@@ -12600,7 +12700,7 @@ decomposition of $Spin(4)$ is no longer exact.
 \paragraph{Selection mechanism (Level~B structural argument).}
 After the ordered branch has selected a Lorentzian sign structure
 ($\alpha>\beta$) and the real time variable is introduced by
-$t=w/c_*$, the Euclidean spin group is read in the corresponding
+$t=w$, the Euclidean spin group is read in the corresponding
 Lorentzian spinorial language.
 In that language the two factors are associated with the left-handed
 and right-handed chirality sectors: $\psi_L$ and $\psi_R$ transform
@@ -12608,7 +12708,7 @@ under the $(1/2,0)$ and $(0,1/2)$ representations, respectively.
 
 The condensate direction $n_A$ breaks the equivalence between the
 two sectors because the ordered-branch structure treats the distinguished
-$w$-direction differently from the spatial directions from the three spatial directions.
+$w$-direction differently from the three spatial directions.
 If the gauge coupling is mediated through condensate-dependent
 structures (as in the electroweak-like embedding of
 Section~\ref{sec:ew_embedding}), then the geometric asymmetry of the
@@ -12813,10 +12913,9 @@ by~P2, exact symmetries of $S_E$~(Level~A).
 
 \paragraph{A2. Emergent Lorentzian parity from $R_s$.}
 After the Lorentzian window $\alpha>\beta$ is selected and the real
-parametrisation $t=w/c_\ast$ is introduced
+parametrisation $t=w$ is introduced
 (\S\ref{sec:lorentz_window}), the spatial reflection $R_s$ preserves
-the $w$-coordinate that plays the role of Lorentzian time and acts
-only on spatial indices.
+the ordered-branch time coordinate and acts only on spatial indices.
 At the level of coordinates it is therefore a natural geometric
 precursor of Lorentzian parity
 $P:(t,\mathbf{x})\mapsto(t,-\mathbf{x})$~(Level~A).
@@ -12854,7 +12953,7 @@ open problem~(OP-P1, \S\ref{sec:fermion_open}):
 \paragraph{A3. Geometric antecedent of time reversal from $R_w$.}
 The reflection $R_w$ inverts the preferred Euclidean axis
 $w\mapsto-w$.
-Under the real parametrisation $t=w/c_\ast$ it induces the classical
+Under the real parametrisation $t=w$ it induces the classical
 coordinate map $t\mapsto-t$ and is therefore the natural geometric
 antecedent of Lorentzian time reversal.
 
@@ -14881,7 +14980,9 @@ topologically classified field configurations with integer charge
 $Q\in\mathbb{Z}$.
 The dynamical stability and mass spectrum of these sectors remain
 Level~B/C; the phenomenological ansatz
-$m_n\sim n\times 1.6\,$GeV/$c^2$~(D7) is directly falsifiable
+$m_n\sim n\times 1.6\,$GeV/$c^2$~(D7) --- demoted to a legacy benchmark
+by the primary-stiffness objection
+(Section~\ref{sec:predicted_states}) --- is directly falsifiable
 independently of the underlying homotopy classification.
 
 \paragraph{Ordered-branch signature selection and one-cone realisation
@@ -14930,7 +15031,7 @@ At the ordered-branch level one has
   \qquad
   G_N = \frac{c_*^4}{8\pi M_G^2}\,,
   \qquad
-  S_0 = \frac{K_\theta\,m_\varphi}{2}\,.
+  S_0 = \frac{c_\perp\,K_\theta}{2\,m_\varphi^{2}}\,.
   \notag
 \end{align}
 The first relation is structural at the EFT level.
@@ -15935,8 +16036,7 @@ form~\eqref{eq:geff_contra} becomes
   = \mathrm{diag}(\beta,\,\beta,\,\beta,\,-\chi).
   \label{eq:sr_geff_diag}
 \end{equation}
-Introducing the emergent time coordinate
-$w = c_*\,t$~\eqref{eq:sr_cone}, the line element is
+Introducing the ordered-branch time coordinate $t=w$ (cone slope $c_*$; cf.~\eqref{eq:sr_cone}), the line element is
 \begin{equation}
   ds_*^2 = -c_*^2\,dt^2 + d\mathbf{x}^2.
   \label{eq:sr_interval}
@@ -16352,7 +16452,7 @@ of the condensate}
 
 \textit{Status: Level~A for the emergence of the effective Lorentzian
 metric structure in the broken-phase EFT~(Theorem~\ref{thm:tensor_uniqueness}).
-The position-dependent coupling $G_{\rm eff}(X)=G_N e^{-\beta\phi(X)}$
+The position-dependent coupling $G_{\rm eff}(X)=G_N e^{-\beta_\phi\phi(X)}$
 introduced below belongs to the current ordered-branch $\phi$-first closure
 and is therefore Level~B.}
 
@@ -16528,7 +16628,7 @@ distinguished direction of the gradient-ordered condensate, identified
 dynamically through the sign change of the kinetic tensor.
 
 Defining $c_*^2=\beta/(\alpha-\beta)$~\eqref{eq:c_star_general} and
-writing $w=c_*t$, the principal hyperbolic operator is:
+writing $t=w$, the principal hyperbolic operator is:
 \begin{equation}
   \label{eq:principal_op}
   g_{\rm eff}^{AB}\partial_A\partial_B
@@ -16573,13 +16673,13 @@ To parameterise slow background variations of the ordered branch, define
 the macroscopic amplitude variable:
 \begin{equation}
   \label{eq:phi_def}
-  \phi(X)\equiv\frac{1}{\beta}\ln\frac{u(X)}{u_\infty},
+  \phi(X)\equiv\frac{1}{\beta_\phi}\ln\frac{u(X)}{u_\infty},
   \qquad \phi\big|_{\rm vac}=0,
 \end{equation}
 where $u(X)$ is the ordered-branch condensate amplitude introduced in
 Section~\ref{sec:ordered_branch_eft}, $u_\infty$ is its asymptotic
-screened value, and $\beta$ is a dimensionless coupling parameter.
-With this normalisation one has $u/u_\infty=e^{\beta\phi}$, matching
+screened value, and $\beta_\phi$ is a dimensionless coupling parameter.
+With this normalisation one has $u/u_\infty=e^{\beta_\phi\phi}$, matching
 the notation used throughout the later macroscopic $\phi$-sector.
 An equivalent ordered-branch amplitude variable $\chi$ was used in
 intermediate formulations of the galactic EFT.
@@ -16588,8 +16688,13 @@ $\chi$-based formulas as their $u$-based counterparts.
 In the current ordered-branch $\phi$-first closure:
 \begin{equation}
   \label{eq:Geff_phi}
-  G_{\rm eff}(X)=G_N\,e^{-\beta\phi(X)}.
+  G_{\rm eff}(X)=G_N\,e^{-\beta_\phi\phi(X)}.
 \end{equation}
+(Here and below $\beta_\phi$ denotes the dimensionless
+amplitude--curvature coupling of the ordered-branch closure,
+notationally distinct from the kinetic coefficient $\beta$ of the
+quadratic tensor $K^{AB}$ and from the fifth-force coupling
+$\beta_5$.)
 This is not a completed first-principles theorem from bare P3; it is
 the current ansatz connecting the strict Level~A effective Lorentzian
 geometry to the Level~B phenomenological closure needed for
@@ -16615,7 +16720,7 @@ observational applications~(\S\S\ref{sec:mp_nonlinear}--\ref{sec:mp_tests}).
     physical metric of nonlinear GR.
   \item Conformal normalisation is not fixed by ECT basics alone.
   \item Matter coupling universality~(A4) is Level~B, not Level~A.
-  \item $G_{\rm eff}(X)=G_N e^{-\beta\phi}$ is a phenomenological ansatz,
+  \item $G_{\rm eff}(X)=G_N e^{-\beta_\phi\phi}$ is a phenomenological ansatz,
     not a first-principles theorem.
 \end{enumerate}
 
@@ -16868,8 +16973,7 @@ this yields a conserved rank-2 current for the scalar sector:
 \end{equation}
 The complete form including translational and rotational currents
 is derived in Appendix~\ref{app:noether_full}.
-In the Lorentzian ordered branch, parametrised in real time by
-$w=c_* t$, this becomes the standard covariant conservation law
+In the Lorentzian ordered branch, parametrised by the ordered-branch time coordinate $t=w$, this becomes the standard covariant conservation law
 $\nabla_\mu T^{\mu\nu}=0$.
 
 This is a strict Level~A statement.
@@ -17354,7 +17458,7 @@ information at the macroscopic level:
 \begin{itemize}
   \item the orientation field $n_A$,
   \item the amplitude-derived order variable
-    $\phi=\frac{1}{\beta}\ln(u/u_\infty)$ describing slow variations of the degree
+    $\phi=\frac{1}{\beta_\phi}\ln(u/u_\infty)$ describing slow variations of the degree
     of condensate ordering,
   \item anisotropic correction tensors $\Theta_{\mu\nu}[n]$
     from the rotational Noether sector~\eqref{eq:Theta_n}.
@@ -17406,7 +17510,7 @@ branch in the homogeneous large-scale limit.
 It is then natural to introduce a dimensionless amplitude variable
 \begin{equation}
   \label{eq:phi_from_u}
-  \phi(x) \equiv \frac{1}{\beta}\ln\!\frac{u(x)}{u_\infty}.
+  \phi(x) \equiv \frac{1}{\beta_\phi}\ln\!\frac{u(x)}{u_\infty}.
 \end{equation}
 By construction,
 \[
@@ -17429,7 +17533,7 @@ The logarithmic form makes the screened limit multiplicative rather than
 additive, and it turns local relative changes of the condensate response
 into additive fluctuations of $\phi$.
 It also makes exponential factors such as
-$e^{\beta\phi}=u/u_\infty$ appear naturally in the later macroscopic
+$e^{\beta_\phi\phi}=u/u_\infty$ appear naturally in the later macroscopic
 closure.
 
 \paragraph{(iii) Why the amplitude can modulate gravity macroscopically.}
@@ -17468,7 +17572,7 @@ This motivates the amplitude-dominated macroscopic reduction:
   \;\longrightarrow\;
   S_{\rm macro}[g,\phi,n],
   \qquad
-  \phi=\frac{1}{\beta}\ln\!\frac{u}{u_\infty},
+  \phi=\frac{1}{\beta_\phi}\ln\!\frac{u}{u_\infty},
 \end{equation}
 where the effective metric $g_{\mu\nu}$ is read off from the viable
 Lorentzian tensor structure of the coarse-grained ordered branch,
@@ -17532,9 +17636,9 @@ S_{\rm ord}^{(E)}[u,n]
 After amplitude-dominated coarse-graining and the logarithmic
 reparameterisation
 \[
-\phi=\frac{1}{\beta}\ln(u/u_\infty),
+\phi=\frac{1}{\beta_\phi}\ln(u/u_\infty),
 \qquad
-u=u_\infty e^{\beta\phi},
+u=u_\infty e^{\beta_\phi\phi},
 \]
 three structural correspondences become natural.
 
@@ -17543,7 +17647,7 @@ Since the ordered-branch amplitude measures the local strength of the
 condensate relative to its asymptotic screened state, the simplest
 dimensionless response factor is
 \[
-F(\phi)=\frac{u}{u_\infty}=e^{\beta\phi}.
+F(\phi)=\frac{u}{u_\infty}=e^{\beta_\phi\phi}.
 \]
 Thus the multiplicative factor in front of the macroscopic curvature
 term is not chosen independently; it is the direct amplitude ratio of
@@ -17554,9 +17658,9 @@ The amplitude-gradient term in the ordered-branch EFT,
 \[
 \frac{Z_u}{2}(\partial u)^2,
 \]
-becomes, after $u=u_\infty e^{\beta\phi}$,
+becomes, after $u=u_\infty e^{\beta_\phi\phi}$,
 \[
-\frac{Z_u\beta^2 u_\infty^2}{2}e^{2\beta\phi}(\partial\phi)^2.
+\frac{Z_u\beta_\phi^2 u_\infty^2}{2}e^{2\beta_\phi\phi}(\partial\phi)^2.
 \]
 After macroscopic field redefinitions and normalisation matching, this
 naturally gives rise to a positive kinetic closure function
@@ -17567,7 +17671,7 @@ the amplitude-sector stiffness is structural.
 \paragraph{(iii) Effective potential.}
 The branch potential $W(u)$ of the ordered condensate becomes
 \[
-U(\phi)\equiv W(u_\infty e^{\beta\phi})
+U(\phi)\equiv W(u_\infty e^{\beta_\phi\phi})
 \]
 up to macroscopic normalisation and possible coarse-graining shifts.
 Therefore the effective scalar potential of the macroscopic closure is
@@ -17637,7 +17741,7 @@ specialising~\eqref{eq:operator_basis}: the orientation sector
 $\mathcal{A}$, $\mathcal{B}$ is absorbed into the causal background
 structure and subleading anisotropic corrections~$\Theta_{\mu\nu}$,
 while the amplitude sector is retained through
-$F(\phi)=e^{\beta\phi}$, $Z(\phi)=\omega(\phi)$, and $U(\phi)$.
+$F(\phi)=e^{\beta_\phi\phi}$, $Z(\phi)=\omega(\phi)$, and $U(\phi)$.
 
 \subsubsection*{Working assumptions of the $\phi$-first macroscopic closure}
 
@@ -17676,13 +17780,13 @@ scalar-tensor closure
   S_{\rm IR}
   = \int d^4x\,\sqrt{-g}\,
   \left\{
-    \frac{\bar M_{\rm Pl}^2}{2}\,e^{\beta\phi} R
+    \frac{\bar M_{\rm Pl}^2}{2}\,e^{\beta_\phi\phi} R
     - \frac{\bar M_{\rm Pl}^2}{2}\,\omega(\phi)\,(\partial_\mu\phi)^2
     - U(\phi)
     + \mathcal{L}_{\rm mat}[g_{\mu\nu},\Psi]
   \right\},
 \end{equation}
-where $e^{\beta\phi}=u/u_\infty$ expresses the local modulation of
+where $e^{\beta_\phi\phi}=u/u_\infty$ expresses the local modulation of
 gravitational response by the condensate amplitude relative to its
 asymptotic screened value; $\omega(\phi)(\partial\phi)^2$ governs slow dynamics of the
 macroscopic amplitude variable; $U(\phi)$ is the corresponding
@@ -17697,13 +17801,13 @@ and Theorems A--F: Appendix~\ref{app:phi_first_EFE}.
 Varying~\eqref{eq:phi_first_action} w.r.t.\ $g^{\mu\nu}$:
 \begin{equation}
   \label{eq:gen_EE}
-  e^{\beta\phi}\!\left(R_{\mu\nu}-\tfrac{1}{2}g_{\mu\nu}R\right)
+  e^{\beta_\phi\phi}\!\left(R_{\mu\nu}-\tfrac{1}{2}g_{\mu\nu}R\right)
   + \Lambda_{\rm eff}(\phi)\,g_{\mu\nu}
   + \Theta_{\mu\nu}[\phi,n]
   = \frac{8\pi G_{\rm eff}(\phi)}{c^4}\,T_{\mu\nu}^{\rm mat},
 \end{equation}
 where $\Lambda_{\rm eff}(\phi)=U(\phi)/\bar M_{\rm Pl}^2$,
-$G_{\rm eff}(\phi)=G_N e^{-\beta\phi}$~\eqref{eq:Geff_phi},
+$G_{\rm eff}(\phi)=G_N e^{-\beta_\phi\phi}$~\eqref{eq:Geff_phi},
 so that the effective coupling is inversely modulated by the condensate
 amplitude relative to $u_\infty$; and
 $\Theta_{\mu\nu}[\phi,n]$~\eqref{eq:Theta_n} collects derivative and
@@ -17729,7 +17833,7 @@ Compatibility with the contracted Bianchi identity requires:
 \begin{equation}
   \label{eq:bianchi_consistency}
   \nabla^\mu\!\left[
-    e^{\beta\phi} G_{\mu\nu}
+    e^{\beta_\phi\phi} G_{\mu\nu}
     + \Lambda_{\rm eff}(\phi)\,g_{\mu\nu}
     + \Theta_{\mu\nu}[\phi,n]
   \right]
@@ -17778,7 +17882,7 @@ The benchmark scalar--tensor action used for present numerical work is a
 late-time local truncation of that parent system.
 Writing
 \[
-F(\phi)\equiv e^{\beta\phi},
+F(\phi)\equiv e^{\beta_\phi\phi},
 \]
 the background equations take the schematic scalar--tensor form
 \begin{equation}
@@ -17814,7 +17918,7 @@ These equations are not a new phenomenological layer added after the
 fact. They are the isotropic background reduction of the macroscopic
 closure already introduced above.
 What remains Level~B is the explicit choice of the closure functions
-$F(\phi)=e^{\beta\phi}$, $\omega(\phi)$, and $U(\phi)$, not the existence of a
+$F(\phi)=e^{\beta_\phi\phi}$, $\omega(\phi)$, and $U(\phi)$, not the existence of a
 coupled background system itself.
 
 \paragraph{(ii) Role of the orientation sector.}
@@ -17937,7 +18041,7 @@ on the branch potential and cosmological
 evolution~(closure-dependent).
 
 \emph{(ii)~Variable gravitational coupling $G_{\rm eff}(\phi)=G_N
-e^{-\beta\phi}$.}
+e^{-\beta_\phi\phi}$.}
 Where the condensate is more strongly ordered (larger~$u$), the medium
 is stiffer and gravity appears weaker.  In galactic environments this
 mechanism underlies the modified low-acceleration response discussed in
@@ -17987,7 +18091,7 @@ closure-dependent).
     not as an extra fundamental field~(bridge principle; structural).
   \item The first macroscopic nonlinear reduction is amplitude-dominated:
     the scalar variable retained in the closure is the condensate
-    amplitude sector, reparameterised by $\phi=\frac{1}{\beta}\ln(u/u_\infty)$,
+    amplitude sector, reparameterised by $\phi=\frac{1}{\beta_\phi}\ln(u/u_\infty)$,
     while the orientation sector survives through causal-background
     selection and anisotropic corrections~(bridge principle; structural).
   \item The geometric branch admits an isotropic background reduction in
@@ -18002,7 +18106,7 @@ closure-dependent).
     and $U(\phi)$ from the branch potential $W(u)$
     (bridge principle; explicit final forms remain Level~B).
   \item In the late-time cosmological specialisation, the exponential
-    response factor is structurally anchored by $u/u_\infty=e^{\beta\phi}$,
+    response factor is structurally anchored by $u/u_\infty=e^{\beta_\phi\phi}$,
     whereas the constant kinetic coefficient and quadratic potential are
     the simplest benchmark truncations rather than unique ECT outputs
     (bridge + Level~B distinction).
@@ -18378,7 +18482,7 @@ weak-field domain, the $\phi$-first closure leads to:
   4\pi G_{\rm eff}(X)\,\rho_{\rm bar}(X)
   + \mathcal{D}_{\phi,n}(X),
   \qquad
-  G_{\rm eff}(X) = G_N e^{-\beta\phi(X)},
+  G_{\rm eff}(X) = G_N e^{-\beta_\phi\phi(X)},
 \end{equation}
 where $\mathcal{D}_{\phi,n}$ summarises residual derivative and
 anisotropic source terms of the order field and orientation sector.
@@ -18389,10 +18493,10 @@ closure, not yet a first-principles theorem from bare~P3.
 If the weak-field configuration evolves slowly in time:
 \begin{equation}
   \label{eq:Gdot_over_G}
-  \frac{\dot G_{\rm eff}}{G_{\rm eff}} = -\dot\phi.
+  \frac{\dot G_{\rm eff}}{G_{\rm eff}} = -\beta_\phi\,\dot\phi.
 \end{equation}
 Lunar laser ranging gives $|\dot G/G|\lesssim 10^{-12}$\,yr$^{-1}$~\cite{Uzan2011},
-requiring $|\dot\phi|\lesssim 10^{-12}$\,yr$^{-1}$, fully consistent
+requiring $|\beta_\phi\dot\phi|\lesssim 10^{-12}$\,yr$^{-1}$, fully consistent
 with a quasi-static screened condensate background~(Level~B).
 
 \subsubsection*{Order-of-magnitude estimates for local deviations from GR}
@@ -18516,7 +18620,7 @@ The macroscopic closure naturally approaches the screened limit in
 dense, slowly varying gravitational environments.
 The ordered-branch amplitude saturates toward its asymptotic value
 $u_\infty$ in the Solar System, so that
-$\phi\equiv\frac{1}{\beta}\ln(u/u_\infty)\to 0$ locally.
+$\phi\equiv\frac{1}{\beta_\phi}\ln(u/u_\infty)\to 0$ locally.
 This is not introduced as an external chameleon-type mechanism; within
 the present closure it is interpreted as a consequence of amplitude
 saturation in the ordered branch~(Section~\ref{sec:mp_nonlinear}).
@@ -19141,7 +19245,7 @@ Within the $\phi$-first closure, the qualitative post-transition
 behaviour is controlled by
 the sign and magnitude of the residual condensate energy~$U(\phi)$,
 the kinetic coupling~$\omega(\phi)$ and its sign (no-ghost condition),
-the gravitational screening function~$F(\phi)=e^{\beta\phi}$,
+the gravitational screening function~$F(\phi)=e^{\beta_\phi\phi}$,
 and the matter/radiation content.
 
 The effective Friedmann equation admits both expanding and contracting
@@ -20254,7 +20358,7 @@ A slowly evolving order field produces a redshift-dependent effective
 coupling:
 \begin{equation}
   \label{eq:Geff_z}
-  G_{\rm eff}(z)=G_N\,e^{-\beta\phi_b(z)},
+  G_{\rm eff}(z)=G_N\,e^{-\beta_\phi\phi_b(z)},
 \end{equation}
 where $\phi_b(z)$ is the slowly evolving cosmological background
 of the order field.
@@ -20335,7 +20439,7 @@ Appendix~\ref{app:late_cosmo_background},
 
 \paragraph{Qualitative picture.}
 The condensate amplitude variable
-$\phi=\frac{1}{\beta}\ln(u/u_\infty)$~(\S\ref{sec:mp_nonlinear})
+$\phi=\frac{1}{\beta_\phi}\ln(u/u_\infty)$~(\S\ref{sec:mp_nonlinear})
 encodes how strongly the local condensate ordering deviates from
 its asymptotic screened value.
 Its cosmological evolution $\phi_b(z)$ is governed by the
@@ -20364,7 +20468,7 @@ into the vicinity of the potential minimum.
 \emph{(iii)~Late-time slow drift.}
 At late cosmological times, $\phi_b$ may evolve slowly,
 producing the running gravitational coupling
-$G_{\rm eff}(z)=G_N e^{-\beta\phi_b(z)}$
+$G_{\rm eff}(z)=G_N e^{-\beta_\phi\phi_b(z)}$
 and the non-phantom dark-energy contribution discussed in
 \S\ref{sec:mp_flrw}.
 The rate of this drift determines the magnitude of the
@@ -20383,10 +20487,10 @@ in the $\phi$-first closure and its derived cosmological consequences.
 \textbf{(a)}~Condensate amplitude variable $\phi_b(z)$: ordering from
 deep negative values (stage~i), stabilisation near $\phi\approx 0$
 (stage~ii), and late-time slow drift (stage~iii).
-\textbf{(b)}~Condensate amplitude ratio $u/u_\infty=e^{\beta\phi}$:
+\textbf{(b)}~Condensate amplitude ratio $u/u_\infty=e^{\beta_\phi\phi}$:
 approaches unity as ordering completes.
 \textbf{(c)}~Derived effective gravitational coupling
-$G_{\rm eff}/G_N=e^{-\beta\phi}$: enhanced at early times, approaches
+$G_{\rm eff}/G_N=e^{-\beta_\phi\phi}$: enhanced at early times, approaches
 $G_N$ at late times.
 \textbf{(d)}~Derived effective equation of state $w_\phi(z)$: frozen
 near $-1$ at high~$z$, mildly quintessence-like at late times; this is
@@ -20411,12 +20515,12 @@ Appendix~\ref{app:late_cosmo_background}.}
 time~(Gyr), complementary to the redshift-based
 Figure~\ref{fig:condensate_evolution}.
 \textbf{(a)}~Condensate amplitude variable $\phi_b(t)$ (left axis,
-black) and amplitude ratio $u/u_\infty=e^{\beta\phi}$ (right axis,
+black) and amplitude ratio $u/u_\infty=e^{\beta_\phi\phi}$ (right axis,
 grey), showing the three qualitative stages:
 ordering (dark shading), stabilisation (light shading), and late-time
 slow drift.
 \textbf{(b)}~Effective gravitational coupling
-$G_{\rm eff}/G_N=e^{-\beta\phi}$, enhanced at early times and
+$G_{\rm eff}/G_N=e^{-\beta_\phi\phi}$, enhanced at early times and
 approaching~$G_N$ at late times.
 Solid: Scenario~A (stable asymptote);
 dashed: Scenario~B (continued drift).
@@ -20838,7 +20942,7 @@ $\phi$-first closure, by two leading background ingredients:
 the evolution of the effective gravitational coupling as realised in the
 closure,
 \[
-G_{\rm eff}(z)\approx G_N e^{-\beta\phi_b(z)},
+G_{\rm eff}(z)\approx G_N e^{-\beta_\phi\phi_b(z)},
 \]
 and the non-phantom amplitude-sector dark-energy component
 ($w\ge-1$, Corollary, \S\ref{sec:mp_flrw}).
@@ -22300,8 +22404,8 @@ multi-sector conceptual map of ECT itself.
 The figure separates:
 (i)~the ordering / Lorentzian-branch emergence layer;
 (ii)~the gravitational condensate amplitude sector described by
-$\phi$ and $u/u_\infty=e^{\beta\phi}$
-($G_{\rm eff}/G_N=e^{-\beta\phi}>1$ in the early derived-parent epoch,
+$\phi$ and $u/u_\infty=e^{\beta_\phi\phi}$
+($G_{\rm eff}/G_N=e^{-\beta_\phi\phi}>1$ in the early derived-parent epoch,
 $G_{\rm eff}/G_N\approx1.5$--$1.7$ at the JWST epoch $z\sim10$--$14$);
 (iii)~the electroweak-like condensate sector
 ($v_2=246$\,GeV as a low-energy matching scale; formal
@@ -22970,9 +23074,9 @@ functions, see Appendix~\ref{app:lof_full_derivation}
 In the ordered branch the macroscopic response is naturally
 parameterised by the amplitude ratio
 \begin{equation}
-  \phi \equiv \frac{1}{\beta}\ln\frac{u}{u_\infty}\,,
+  \phi \equiv \frac{1}{\beta_\phi}\ln\frac{u}{u_\infty}\,,
   \qquad
-  F(\phi) = \frac{u}{u_\infty} = e^{\beta\phi}\,,
+  F(\phi) = \frac{u}{u_\infty} = e^{\beta_\phi\phi}\,,
   \label{eq:phi_amplitude_def}
 \end{equation}
 where $u$ is the local ordered-branch amplitude and $u_\infty$ is
@@ -22982,8 +23086,8 @@ coordinate associated with the ordered branch itself, and its
 kinetic and potential closures are inherited from the EFT reduction
 of the branch dynamics.
 The structural derivation yields a response factor
-$F(\phi) = e^{\beta\phi}$ and a kinetic coupling
-$\omega(\phi) = \omega_0\,e^{2\beta\phi}$, both of which are
+$F(\phi) = e^{\beta_\phi\phi}$ and a kinetic coupling
+$\omega(\phi) = \omega_0\,e^{2\beta_\phi\phi}$, both of which are
 inherited from the ordered-branch EFT, not postulated.
 
 \paragraph{From the postulates to the galactic amplitude branch.}
@@ -23013,7 +23117,7 @@ and the nonlinear infrared activation (dilute outskirts).
 \paragraph{Derived origin versus benchmark closure.}
 A crucial distinction should be kept explicit.
 The existence of the amplitude variable~$\phi$, the exponential
-response factor $F(\phi) = e^{\beta\phi}$, and the
+response factor $F(\phi) = e^{\beta_\phi\phi}$, and the
 matter-driven ordering tendency are structurally inherited from
 the EFT reduction of the ordered phase.
 By contrast, the simple practical kinetic/interpolating closure
@@ -24655,7 +24759,7 @@ presently derived for the galactic closure; each is listed only as
 a label for future work, with no priority ordering.
 (i) \emph{Dynamical $G_{\rm eff}(\phi)$}: the generalised field
 equations carry a dynamical $G_{\rm eff}(\phi)$ entering through
-the $e^{\beta\phi}R$ coefficient of the
+the $e^{\beta_\phi\phi}R$ coefficient of the
 action~\eqref{eq:phi_first_action}; a derivation mapping that
 degree of freedom onto the practical closure would be required
 before any $G_{\rm eff}$-based effect on $\sigma_{\rm obs}$ can be
@@ -25035,7 +25139,7 @@ macroscopic $\phi$-closure.
 At the current Level-B closure, the macroscopic amplitude variable
 $\phi(X)$ induces a position-dependent gravitational response through
 the same effective-coupling logic
-$G_{\rm eff}(X)=G_N\,e^{-\beta\phi(X)}$ discussed in the macroscopic
+$G_{\rm eff}(X)=G_N\,e^{-\beta_\phi\phi(X)}$ discussed in the macroscopic
 gravitational sector, while the critical infrared branch supplies the
 deep weak-field regime that reproduces flat rotation curves without
 particle dark matter.
@@ -25202,7 +25306,7 @@ stability, and cosmological role are not yet derived.
 \subsubsection*{Ordered-branch background energy and equation of state}
 
 \textit{Variable note.
-Throughout this subsection $\phi=\frac{1}{\beta}\ln(u/u_\infty)$
+Throughout this subsection $\phi=\frac{1}{\beta_\phi}\ln(u/u_\infty)$
 is the macroscopic amplitude variable measuring the local degree of
 Lorentzianness of the ordered vacuum---a derived infrared collective
 variable, not the fundamental field~$\Phi$ of postulate~P3.
@@ -25399,7 +25503,9 @@ BAO distance measurements to date:
   14~million redshifts (three years of operation),
   doubling DR1.  The preference for evolving dark energy
   \emph{strengthened}: $w_0w_a$CDM is preferred over
-  $\Lambda$CDM at $2.8$--$4.2\sigma$.  The best-fit
+  $\Lambda$CDM at $2.8$--$4.2\sigma$. In the DESI Collaboration CPL-combined analyses, this preference is
+reported to strengthen relative to DR1; however, the interpretation
+remains dataset- and parametrisation-dependent~\cite{Lodha2025}.  The best-fit
   CPL parameters indicate $w_0 > -1$ today and
   $w_0 + w_a < -1$, formally implying a phantom crossing
   near $z \approx 0.5$.
@@ -25455,7 +25561,7 @@ $\Lambda$CDM ($w = -1$ exact) & increasingly challenged, not yet excluded \\
 
 \paragraph{ECT confrontation with DESI.}
 The ECT thawing model~\eqref{eq:w_thaw} with
-$f_0 \approx 0.26$ and $\kappa \approx 4.3$ (calibrated,
+$f_0 \approx 0.26$ and $\kappa \approx 4.3$ (DR1-anchored legacy calibration,
 not derived from first principles) is consistent with
 DESI data at the $2\sigma$ level
 (Fig.~\ref{fig:w_z}).  It reproduces the key observational
@@ -25506,7 +25612,7 @@ matter-to-dark-energy ratio
 computed from the continuity equation
 $\dot\rho_\phi+3H(1+w)\rho_\phi=0$ with the calibrated thawing
 equation of state~\eqref{eq:w_thaw}. Numerical evaluation with the
-DESI-calibrated benchmark $(f_0,\kappa)\approx(0.26,4.3)$ yields
+DR1-calibrated legacy benchmark $(f_0,\kappa)\approx(0.26,4.3)$ yields
 $\rho_\phi(z=1)/\rho_{\phi 0}\approx 1.11$ and
 $\rho_\phi(z\!\to\!\infty)/\rho_{\phi 0}\approx 1.11$: in this
 benchmark the condensate dark-energy density varies by only
@@ -25909,9 +26015,9 @@ establishes the following main results:
     matching to $G_N$, the generalised Einstein equations with three
     characteristic departures from pure~GR ($G_{\rm eff}$,
     $\Lambda_{\rm eff}$, $\Theta_{\mu\nu}$), and closure functions
-    whose functional forms ($F=e^{\beta\phi}$,
-    $\omega=\omega_0\,e^{2\beta\phi}$,
-    $U=W(u_\infty e^{\beta\phi})$) are derived from the ordered-branch
+    whose functional forms ($F=e^{\beta_\phi\phi}$,
+    $\omega=\omega_0\,e^{2\beta_\phi\phi}$,
+    $U=W(u_\infty e^{\beta_\phi\phi})$) are derived from the ordered-branch
     EFT.
 
   \item A universal signal-speed bound
@@ -25989,13 +26095,13 @@ $w(z)\ge -1$, the Hubble/JWST mechanism, the BTFR/RAR programme, the
 baseline critical scale $g^\dagger_0$, the environmental-modulation
 framework, and the cluster-merger morphology test.
 Between the closure-level and the open layers, the functional forms of
-the closure functions ($F=e^{\beta\phi}$,
-$\omega=\omega_0\,e^{2\beta\phi}$,
-$U=W(u_\infty e^{\beta\phi})$) are already derived from the
+the closure functions ($F=e^{\beta_\phi\phi}$,
+$\omega=\omega_0\,e^{2\beta_\phi\phi}$,
+$U=W(u_\infty e^{\beta_\phi\phi})$) are already derived from the
 ordered-branch EFT amplitude reparametrisation~(Level~B;
 Appendix~\ref{app:late_cosmo_background}); what remains open is the
 first-principles determination of the underlying EFT parameters
-($Z_u$, $W(u)$, $\beta$) from bare~P3~(OP-grad).
+($Z_u$, $W(u)$, $\beta_\phi$) from bare~P3~(OP-grad).
 
 A separate beyond-benchmark layer is now provided by the observational
 NLEE footprint analysis,
@@ -26047,9 +26153,9 @@ MW rotation ($g^\dagger_{\rm eff}\approx 1.72\,g^\dagger_0$) & $\chi^2/N=2.95$ &
   & Comparative fit \\
 $n_s$ (critical-fluct.\ corridor) & $0.96$--$0.97$ & $0.965\pm0.004$ & Programme-level estimate \\
 $\eta_B$ (leptogenesis) & $\sim9\times10^{-10}$
-  & $\sim6\times10^{-10}$ & Benchmark only \\
+  & $\sim6\times10^{-10}$ & Imported benchmark only \\
 $|c_{\rm GW}/c-1|$ (GW170817) & $<6\times10^{-15}$ & $<6\times10^{-15}$ & Already satisfied \\
-$w_0$ (DESI 2024) & $-0.83$ & $-0.827$ & Closure consistency \\
+$w_0$ (DESI) & $\approx-0.83$ (thawing) & DR1: $-0.827$; DR2: dataset-dependent & Legacy DR1-anchored consistency \\
 Retained joint $\varepsilon$ band ($1\sigma$) & $[0.0296,\,0.0376]$
   & 5-probe intersection (\S\ref{subsec:eps_joint_band})
   & Diagnostic-layer effective result \\
@@ -26314,7 +26420,7 @@ D4e & Three independent physical Goldstone particles & C & Not established; redu
 D5a & Graviton: induced linearised effective-metric perturbation on ordered branch & A & $u_0^2(\alpha-\beta)>0$ & 8 \\
 D5b & Fierz--Pauli form, TT projection, ghost-free counting at linearised level & B & TT gauge; explicit mode-counting from microscopic condensate variables open (OP3 partially resolved) & 8, App.~\ref{app:GN_derivation} \\
 D6 & Dirac form (structural reconstruction once spinorial fields admitted) & B & O(3) spinor rep.; not from bare bosonic action & \ref{sec:fermions}, \ref{sec:dirac_eq} \\
-D7 & Topological-sector mass ansatz $m_n \sim n\times1.6\,$GeV & C & Phenomenological dimensional estimate; integer topological charge follows from $\pi_3(S^3)=\mathbb{Z}$, but the mass law is not derived from topology alone & \ref{sec:predicted_states} \\
+D7 & Topological-sector mass ansatz $m_n \sim n\times1.6\,$GeV & C & Phenomenological dimensional estimate; integer topological charge follows from $\pi_3(S^3)=\mathbb{Z}$, but the mass law is not derived from topology alone; demoted to a legacy benchmark, not supported by the primary-sector stiffness scale; secondary-sector reassignment open (OP-top-mass) & \ref{sec:predicted_states} \\
 D8 & Thermodynamic second law for macroscopic systems & B & Level-A directional backbone (retarded propagation, $\Gamma_{\rm irr}\geq 0$) + effective ohmic/Markov closure; full microscopic derivation open (OP-Q17) & \ref{sec:second_law_basics} \\
 D9 & Physical identification $S_0=\hbar$, $S_{\rm elem}=h$ & B & Structural action scale $S_0$ exists~(Level~A); single-field universality, analytic continuation, and parameter-counting closure protect the identification~(Level~A/B to~B); full structural r\^ole of $\hbar$ requires Quantum Sector programme~(OP-Q2) & \ref{sec:hbar_status}, \ref{sec:qs_hbar}, \ref{sec:qs_ccr} \\
 D10 & Linearised Einstein eqs. + $\Theta_{\mu\nu}$ & B & Linearisation & \ref{sec:macroscopic} \\
@@ -26446,7 +26552,7 @@ $w_0\in(-1,-0.95)$ &
 DESI DR2, Euclid &
 Condensate DE disfavoured \\
 
-F6 & Topological mass ansatz $m_n \sim n\times1.6\,$GeV &
+F6 & Topological mass ansatz $m_n \sim n\times1.6\,$GeV (legacy benchmark; primary-stiffness objection, \S\ref{sec:predicted_states}) &
 Resonance-like structure near 1.6, 3.2, 4.8 GeV &
 LHC / future collider &
 Specific phenomenological realisation of the topological sector excluded \\
@@ -26964,9 +27070,9 @@ Generalised EE~\eqref{eq:gen_EE} & Level~B & Closure & A1--A4 \\
 Observational NLEE footprint (Table~\ref{tab:nlee_footprint}) & Level~B & Assessed & OP-c1 \\
 Standard EE~\eqref{eq:EE_standard} (screened limit) & Level~A/B & Structural & A1--A5 \\
 Lovelock uniqueness & Level~A & Structural & A1--A5 \\
-$G_{\rm eff}=G_N e^{-\beta\phi}$ & Level~B & Closure & Ordered-branch $\phi$-first closure \\
+$G_{\rm eff}=G_N e^{-\beta_\phi\phi}$ & Level~B & Closure & Ordered-branch $\phi$-first closure \\
 Closure-function forms $F$, $\omega$, $U$ in present $\phi$-first closure & Level~B & Closure & Amplitude reparametrisation; bare-P3 open \\
-Underlying EFT parameters ($Z_u$, $W$, $\beta$) & Open & Open & OP-grad \\
+Underlying EFT parameters ($Z_u$, $W$, $\beta_\phi$) & Open & Open & OP-grad \\
 \hline
 \multicolumn{4}{@{}l}{\textit{Weak-field and phenomenology}} \\
 Screened weak-field $\to$ Newtonian & Level~A & Structural & Screened limit \\
@@ -27063,7 +27169,7 @@ Part~III:
     first-principles evaluation deferred
     (Appendix~\ref{app:Sloop_calc});
   \item the Lorentzian causal structure (via the real parametrisation
-    $t=w/c_*$), and the Noether/variational backbone
+    $t=w$), and the Noether/variational backbone
     are shared between both branches (Level~A).
 \end{enumerate}
 Part~III takes these as its structural starting point and develops
@@ -27261,7 +27367,7 @@ First, the theory already establishes a nontrivial coherent-branch
 infrastructure:
 a compact-phase sector, a distinguished action scale~$S_0$
 (\S\ref{par:action_scale_universality}), a wave-kinematical route
-after the real parametrisation $t=w/c_*$, a continuity structure, and a stationary-phase
+after the real parametrisation $t=w$, a continuity structure, and a stationary-phase
 classical limit~(\S\ref{par:extremal_backbone}).
 These are either strict Level~A consequences or structurally supported
 Level~A/B consequences of the ordered-condensate architecture, and are
@@ -27538,7 +27644,7 @@ where $K^{AB}(X)$ is the broken-phase Euclidean kinetic tensor of the
 ordered branch, inherited from the anisotropic EFT discussed in
 ECT basics, and $S_{\rm higher}$ denotes higher-gradient and
 interaction corrections.
-Its Lorentzian image arises after introducing the real ordered-branch time $t=w/c_*$ as discussed in
+Its Lorentzian image arises after introducing the real ordered-branch time $t=w$ as discussed in
 Section~\ref{sec:qs_wave}.
 
 Here $K_\theta^{\rm eff}$ denotes the \emph{effective phase stiffness}
@@ -27650,7 +27756,7 @@ action, the next question is how these sectors combine into an
 effective wave description.
 This step requires: (a) showing how the phase-sector path integral
 leads to a Schr\"odinger-like amplitude language; (b) verifying that
-the real parametrisation $t=w/c_*$ (established for the geometric branch;
+the real parametrisation $t=w$ (established for the geometric branch;
 Section~\ref{sec:lorentz_order_field}) carries the phase action into a
 standard kinetic term; (c) establishing when $S_0$ becomes
 identifiable with $\hbar$.
@@ -27724,12 +27830,15 @@ Section~\ref{sec:hbar_status}, is
 \begin{equation}
   S_0^{\rm EFT}
   =
-  \frac{K_\theta^{\rm eff}\,m_\varphi}{2},
+  \frac{c_\perp\,K_\theta^{\rm eff}}{2\,m_\varphi^{2}},
   \label{eq:qs_S0_recall}
 \end{equation}
 where $K_\theta^{\rm eff}$ is the effective phase stiffness of the
-coherent branch and $m_\varphi$ is the inverse core-length scale
+coherent branch, $m_\varphi$ is the inverse core-length scale
 entering the elementary-loop closure.
+Here $c_\perp=\mathcal O(1)$ is the profile-dependent coefficient of
+the transverse three-volume reduction of the coherent tube
+(Section~\ref{sec:hbar_status}, Eq.~\eqref{eq:Ktheta_1D}).
 As emphasised in ECT basics, this quantity refers to the
 \emph{elementary loop evaluated at the characteristic core scale},
 not to a global variational minimum over arbitrary loop lengths.
@@ -27836,9 +27945,9 @@ Section~\ref{sec:hbar_status}.
 \paragraph{Bridge to the rest of Part~III.}
 Once a distinguished action scale exists, the natural next question is
 how coherent sectors combine into an effective wave description and
-how the ordered-branch real parametrisation $t=w/c_*$ yields the
+how the ordered-branch real parametrisation $t=w$ yields the
 standard kinetic term, while the separate formal continuation
-$w_E\to \pm ic_*t$ provides the amplitude/path-integral bridge for
+$w_E\to \pm i\,t$ provides the amplitude/path-integral bridge for
 the same coherent sector.
 That question leads first to the wave-dynamical development of the
 Quantum Sector in Section~\ref{sec:qs_wave_kinematics}.
@@ -27943,7 +28052,7 @@ recombined into a Schr\"odinger-type evolution law.
 The logic remains staged.
 Section~\ref{sec:qs_wave} develops the coherent wave kinematics
 in the ordered branch, carefully distinguishing the real
-ordered-branch parametrisation $t=w/c_*$ from the formal
+ordered-branch parametrisation $t=w$ from the formal
 Euclidean--Lorentzian amplitude bridge.
 Section~\ref{sec:qs_extremal_action} then clarifies the status of
 extremal action and saddle dominance, and
@@ -27965,7 +28074,7 @@ Section~\ref{sec:qm_capstone}.
 
 \textit{Status: Level~A for the existence of the coherent phase
 action~\eqref{eq:qs_phase_action}, for the ordered-branch real-time
-parametrisation $t=w/c_*$ once $\alpha>\beta$, and for the Hamilton--Jacobi /
+parametrisation $t=w$ once $\alpha>\beta$, and for the Hamilton--Jacobi /
 continuity structure of the coherent phase sector~(structural
 decomposition; see below).
 Level~B for the Schr\"odinger-type complex recombination and for the
@@ -28031,7 +28140,7 @@ causal cones, and real-time propagation.
 A distinct formal operation is the Euclidean--Lorentzian amplitude continuation
 \begin{equation}
   \label{eq:qs_wick}
-  w_E \to \pm i c_* t,
+  w_E \to \pm i\,t,
 \end{equation}
 which is used only to relate Euclidean coherent weights to Lorentzian phase-amplitude language.
 It should not be identified with the derivation of hyperbolicity itself.
@@ -28039,7 +28148,7 @@ It should not be identified with the derivation of hyperbolicity itself.
 \paragraph{Two distinct operations in the ordered branch.}
 \begin{enumerate}[label=(\roman*)]
   \item \textbf{Ordered-branch real-time dynamics:}
-  the real parametrisation $t=w/c_*$ is used for the hyperbolic field equations,
+  the real parametrisation $t=w$ is used for the hyperbolic field equations,
   effective metric, causal cones, and real-time propagation.
   \item \textbf{Formal Euclidean--Lorentzian amplitude bridge:}
   the continuation~\eqref{eq:qs_wick} is used only to translate
@@ -28075,11 +28184,10 @@ K^{AB}\partial_A\theta\,\partial_B\theta
 \]
 At this stage the ordered-branch hyperbolicity and the real time variable
 have already been fixed independently by $\alpha>\beta$ and the real
-parametrisation $t=w/c_*$.
+parametrisation $t=w$.
 
 Under the real ordered-branch parametrisation one has
-$\partial_w = c_*^{-1}\partial_t$,
-so the reduced phase-sector action takes the Lorentzian kinetic form
+$\partial_w=\partial_t$; the factor $1/c_*^2$ in the Lorentzian kinetic form below is supplied by the ordered-branch kinetic tensor rather than by a rescaling of the time coordinate, so the reduced phase-sector action takes the Lorentzian kinetic form
 with the expected separation between temporal and spatial derivatives.
 At the level of the reduced isotropic closure this gives
 \begin{equation}
@@ -28273,7 +28381,7 @@ That question belongs to Section~\ref{sec:qs_ccr}.
 The coherent wave-kinematical reconstruction and the geometric branch are controlled by the same
 ordered-phase tensor $K^{AB}$ and therefore inherit the same characteristic speed $c_*$.
 In the geometric branch this speed enters through the real ordered-branch parametrisation
-$t=w/c_*$ and the resulting effective Lorentzian metric.
+$t=w$ and the resulting effective Lorentzian metric.
 In the coherent branch the formal continuation~\eqref{eq:qs_wick} is used only for the
 Euclidean--Lorentzian amplitude correspondence.
 The common causal cone is therefore a consequence of the same ordered medium, not of a single
@@ -28303,7 +28411,7 @@ organisation needed for the standard quantum wave reading.
 \statussummary
 \textit{Established~(Level~A):}
 the coherent branch admits a Lorentzian kinetic structure in the real
-ordered-branch parametrisation $t=w/c_*$, and this structure yields an exact
+ordered-branch parametrisation $t=w$, and this structure yields an exact
 Hamilton--Jacobi / continuity decomposition with $S_0$ as the
 distinguished action unit.
 
@@ -28670,7 +28778,7 @@ tensor~(Appendix~\ref{app:noether_full}):
   \partial_A T^{AB} = 0
   \qquad\text{(Level~A)}.
 \end{equation}
-After the real parametrisation $t=w/c_*$ and passage to the
+After the real parametrisation $t=w$ and passage to the
 Lorentzian ordered branch, this is reinterpreted as
 \begin{equation}
   \label{eq:qs_covariant_conservation}
@@ -28735,7 +28843,7 @@ The global $U(1)$ phase symmetry of the compact-phase EFT
   \qquad\text{(Level~A within the compact-phase EFT)},
 \end{equation}
 recalled from Eq.~\eqref{eq:U1_noether}.
-Under the real ordered-branch parametrisation $t=w/c_*$ and the
+Under the real ordered-branch parametrisation $t=w$ and the
 Level~B identification $S_0=\hbar$,
 the temporal component $j^0$ is proportional to the coherent density
 $\rho$, and the spatial components $j^i$ to the coherent current.
@@ -28935,7 +29043,7 @@ That bridge is the task of the next section.
 coherent phase action~\eqref{eq:qs_phase_action},
 distinguished action scale $S_0$~(Section~\ref{sec:qs_hbar}),
 compact-phase topology and winding sectors~(BR1),
-real parametrisation $t=w/c_*$, and
+real parametrisation $t=w$, and
 Schr\"odinger-type reduction~\eqref{eq:qs_schrodinger_type}.
 Aim: to identify the conditions under which the Euclidean coherent
 structure of ECT gives rise to a physical Hilbert space,
@@ -29007,7 +29115,7 @@ broken-phase subsectors (massive radial mode and free massless Goldstone
 modes); Level~B/open for the full interacting coherent-sector functional
 integral.
 Connection: P1~(Euclidean arena), P2~(O(4)-invariant action),
-P5~(medium character), the real parametrisation $t=w/c_*$,
+P5~(medium character), the real parametrisation $t=w$,
 the UV-threshold programme~(\S\ref{par:uv_threshold}),
 and the downstream Hilbert-space, Born, entanglement, decoherence,
 and black-hole-information programmes.}
@@ -29072,7 +29180,7 @@ the OS programme:
   \item the formal continuation~\eqref{eq:qs_wick} provides the
     Euclidean--Lorentzian amplitude bridge used in the coherent-sector
     reading; in this sense it is compatible with the OS route, while
-    remaining distinct from the real parametrisation $t=w/c_*$ used
+    remaining distinct from the real parametrisation $t=w$ used
     for the effective metric and hyperbolic dynamics.
 \end{enumerate}
 Thus the OS programme is not an external addition to ECT but a
@@ -29222,7 +29330,7 @@ The formal continuation~\eqref{eq:qs_wick} has already appeared
 in two contexts: as the amplitude bridge used in the coherent sector,
 and as the formal correspondence underlying the OS reconstruction.
 (The effective Lorentzian metric itself is obtained through the real
-parametrisation $t=w/c_*$, not through the continuation.)
+parametrisation $t=w$, not through the continuation.)
 The OS reconstruction theorem identifies the mathematical form of the
 bridge that would justify this continuation nonperturbatively.
 In the Gaussian subsectors this bridge is standard and rigorous;
@@ -30333,7 +30441,7 @@ route to several standard nonclassical phenomena in ECT.
     G_E(X_f, X_i) = \int G_E(X_f, X_m)\, G_E(X_m, X_i)\, d^4X_m.
   \]
   In the quadratic sector, after the formal Euclidean--Lorentzian
-  amplitude continuation $w_E \to \pm i c_* t$, the Euclidean propagator
+  amplitude continuation $w_E \to \pm i\,t$, the Euclidean propagator
   $G_E$ is read in the standard Feynman-propagator language $G_F$.
   The two-sided $w$-dependence is then read as the structural route to
   the superposition of quantum amplitudes.
@@ -31408,7 +31516,7 @@ Lorentzian boosts:
 K_i \equiv -\,i\,J_{i4}.
 \]
 This representation-theoretic step is distinct from the real
-ordered-branch parametrisation $t=w/c_*$ used in the hyperbolic field
+ordered-branch parametrisation $t=w$ used in the hyperbolic field
 equations.
 A direct calculation then confirms that $J_{ij}$ and $K_i$ satisfy
 the Lorentz algebra $\mathfrak{so}(1,3)$,
@@ -41053,10 +41161,10 @@ and Lorentzian sectors within the same dynamical framework.
 
 \paragraph{Level~2: relativistic Lorentzian wave equation.}
 In the ordered Lorentzian branch ($\alpha>\beta$), after the real
-parametrisation $t=w/c_*$, the fluctuation equation takes the
+parametrisation $t=w$, the fluctuation equation takes the
 relativistic Klein--Gordon form~\eqref{eq:KG}
 (see Section~\ref{sec:qs_wave_kinematics} for the derivation).
-A separate formal continuation $w_E\to\pm i c_* t$ may still be
+A separate formal continuation $w_E \to \pm i\,t$ may still be
 used when relating Euclidean coherent amplitudes to Lorentzian
 phase evolution; the first step is the derivation of real-time
 dynamics in the ordered branch, while the second is only a
@@ -41084,7 +41192,7 @@ of a deeper chain consisting of the Euclidean condensate equation
 breaking (Level~1), and the relativistic Klein--Gordon equation in
 the ordered branch (Level~2).  The downward arrows denote distinct
 reduction steps: $O(4)\to O(3)$ symmetry breaking, real
-ordered-branch parametrisation $t=w/c_*$, and the nonrelativistic
+ordered-branch parametrisation $t=w$, and the nonrelativistic
 limit.  The figure summarises the logical organisation of equations
 discussed in the text; it does not assert that all steps are
 established at the same derivational level.  The displayed
@@ -41126,7 +41234,7 @@ Lv. & Equation & Regime & Mathematical type & Data &
   & Elliptic for $\alpha<\beta$, hyperbolic for $\alpha>\beta$
   & BVP or IVP depending on regime
   & none \\
-2 & $(\Box-m^2)\chi=0$, $t=w/c_*$
+2 & $(\Box-m^2)\chi=0$, $t=w$
   & Ordered Lorentzian branch ($\alpha>\beta$)
   & Hyperbolic
   & Cauchy data on $t=\mathrm{const}$
@@ -41769,7 +41877,7 @@ structural outputs:
 \item the Schr\"odinger sector as a nonrelativistic limit of the
 ordered branch;
 \item the Klein--Gordon sector from the ordered-branch equation in
-the real parametrisation $t=w/c_*$;
+the real parametrisation $t=w$;
 \item uncertainty relations together with a structural route to
 phase quantisation through phase compactness, with the identification
 of the universal action scale $S_0$ with $\hbar$ remaining a
@@ -42370,14 +42478,16 @@ Confinement, asymptotic freedom
 $\alpha_{\rm fs}=1/137$ normalisation
   & Quark loop contribution undefined & Quark charges better posed; electroweak kinetic/mixing target for $\alpha_{\rm fs}$ sharpened (\S\ref{sec:alpha_fs}) & Full $(Z_B,Z_W)$ derivation open \\
 Baryogenesis ($\eta_B$)
-  & Baryon number definition incomplete & Colour defines baryon number; leptogenesis benchmark strengthened & Full transport open \\
+  & Baryon number definition incomplete
+  & Colour defines baryon number; imported leptogenesis benchmark clarified
+  & Full ECT-native transport open \\
 Proton stability ($\tau_p$)
   & Proton-decay selection rules not yet formulable without colour completion
   & Three selection-rule patterns (I/II/III) become formulable
     (\S\ref{sec:proton_stability})
   & Pattern identification, decay channels, and coefficient structure open \\
-Instanton spectrum $m_n\sim n\times 1.6$\,GeV
-  & Physical interpretation unclear & Comparison with QCD hadron spectrum becomes meaningful & Dynamics not derived \\
+Legacy topological mass benchmark $m_n\sim n\times 1.6$\,GeV
+  & Primary-sector interpretation demoted & Possible secondary-sector comparison becomes meaningful & Dynamics not derived; OP-top-mass open \\
 Colour-sensitive laws/formulas
   & Blocked & Obstruction removed & Individual derivations open \\
 \end{longtable}
@@ -43749,9 +43859,10 @@ At the exploratory benchmark level it also suggests three ultra-light
 Goldstone-sector modes
 ($m\sim 10^{-33}$~eV in the illustrative large-scale benchmark),
 whose possible cosmological or dark-sector role remains open,
-together with an exploratory instanton-sector mass pattern
-($m_n = n\times 1.6$~GeV/$c^2$ in the present benchmark treatment),
-whose dynamical status and observational interpretation remain open.
+together with a legacy exploratory topological-sector mass benchmark
+($m_n = n\times 1.6$~GeV/$c^2$), now demoted by the
+primary-stiffness objection and retained only as a possible
+secondary-sector route whose dynamical status remains open.
 
 \paragraph{Step~7: predictions and falsifiers.}
 The derivation chain terminates in a set of quantitative predictions
@@ -44414,11 +44525,19 @@ $|\delta c/c| < 10^{-15}$, which ECT satisfies by construction
 at the single-cone level.
 
 \paragraph{Cosmological dark-energy compatibility.}
-The DESI~2024 measurement $w_0 = -0.827$ is compatible with the
-ECT late-time amplitude-sector closure if the ratio of kinetic to
+DESI DR1/DR2 analyses provide dataset- and parametrisation-dependent
+indications of evolving dark energy in combined
+fits~\cite{DESI2024,DESIDR2_2025}, with significance depending on the
+supernova combination and on the assumed dark-energy
+parametrisation~\cite{Lodha2025}; these indications are suggestive but
+not definitive and are not used here as a fixed numerical calibration
+anchor.
+The legacy DR1 anchor $w_0=-0.827$ is compatible with the ECT
+late-time amplitude-sector closure if the ratio of kinetic to
 condensate energy density satisfies
-$\rho_{\rm kin}/\rho_{\rm cond} \approx 0.26$.
-This provides a concrete target for the full cosmological
+$\rho_{\rm kin}/\rho_{\rm cond} \approx 0.26$ (DR1-anchored legacy
+benchmark).
+This remains a concrete target for the full cosmological
 $\phi_{\rm bg}(t)$ programme.
 
 \paragraph{Summary of observational strategy.}
@@ -45033,7 +45152,7 @@ additional phenomenological parameters.
 
 \paragraph{The ordered-branch amplitude variable as an organising principle.}
 A recurring theme of the present work is that the
-macroscopic amplitude variable $\phi=\frac{1}{\beta}\ln(u/u_\infty)$
+macroscopic amplitude variable $\phi=\frac{1}{\beta_\phi}\ln(u/u_\infty)$
 provides a single variable that organises multiple
 aspects of the theory:
 the effective gravitational regime (Newtonian, MOND-like,
@@ -45195,7 +45314,7 @@ $m_f$ (fermion masses) & Follow from $y_f\cdot v_{\rm EW}$ & Requires Table~\ref
 $m_W,m_Z,m_H$ & Follow from $g_i,v_{\rm EW},\lambda_H$ & Embedding (B/C) \\
 $H_0$ & Solution-dependent & Full cosmological model \\
 $n_s$ (spectral index) & ECT-native estimate & $1-n_s\sim\hat p/\ln(L/\xi_0)$; $\hat p$ not derived \\
-$\eta_B$ (baryon asymmetry) & Benchmark leptogenesis & $\sim 9\times10^{-10}$ vs observed $6\times10^{-10}$ \\
+$\eta_B$ (baryon asymmetry) & Imported benchmark (leptogenesis) & $\sim 9\times10^{-10}$ vs observed $6\times10^{-10}$ \\
 $g-2$ & Precision observable & Requires full QED from ECT \\
 $\Omega_{\rm DM}$ & Reinterpreted & No DM particles; condensate dynamics \\
 \end{longtable}
@@ -45731,8 +45850,13 @@ $g^\dagger_0$ & $1.04\!\times\!10^{-10}$ & $1.2\!\times\!10^{-10}$ & Benchmark &
 MW $\chi^2/N$ (1 par.)\ & $2.95$ & $\Lambda$CDM: $6.55$ & Comparative fit & II \\
 $n_s$ (corridor) & $0.96$--$0.97$ & $0.965\!\pm\!0.004$ & corridor & II \\
 $|\delta c/c|$ & $<\!10^{-15}$ & $<\!10^{-15}$ & \checkmark & II \\
-$w_0$ (DESI) & $-0.83$ & $-0.827$ & \checkmark & II \\
-$\eta_B$ & $9\!\times\!10^{-10}$ & $6\!\times\!10^{-10}$ & $\sim\!1.5\times$ & II \\
+$w_0$ (DESI) & $\approx-0.83$ thawing benchmark
+& DR1: $-0.827$; DR2: dataset-/parametrisation-dependent
+& Legacy DR1-compatible, not a fixed calibration anchor & II \\
+$\eta_B$ & Imported resonant-leptogenesis benchmark
+$\sim9\!\times\!10^{-10}$
+& observed $\sim6\!\times\!10^{-10}$
+& Imported benchmark only; not ECT-derived & II \\
 CC catastrophe ($10^{120}$ UV--IR mismatch) & Classical/direct vacuum channel absent in leading ordered-branch sector (Theorem~\ref{thm:cc_decoupling}(iv), \S\ref{sec:cc_problem}); zero-derivative loop-vacuum channel conditional on $H_\Lambda$; observed IR value treated separately & ``Open problem'' in standard framework & Object~A resolved (Level~A); Object~B $H_\Lambda$-conditional; IR value Level~C & II \\
 $\rho_{\Lambda,\rm obs}$ scale & $c_\Lambda M_{\rm Pl}^2 H_0^2\!\sim\!10^{-47}\,{\rm GeV}^4$ & $\sim\!10^{-47}\,{\rm GeV}^4$ & Order-of-magnitude match (Level~C) & II \\
 \midrule
@@ -46101,10 +46225,12 @@ and a structural information-reading programme; and the cluster-merger
 lensing suite (Bullet Cluster, A520, El~Gordo, MACS~J0025) is captured at
 the present benchmark/closure level by a single $\nu$-closure rule without invoking
 collisionless dark matter.
-The cosmological sector further yields a leptogenesis estimate
-$\eta_B\sim 9\times10^{-10}$ (within a factor of~$1.5$ of the
-observed $6\times10^{-10}$) and compatibility with the
-DESI~2024 dark-energy constraint $w_0 = -0.827$.
+The cosmological sector is further compatible with an \emph{imported}
+resonant-leptogenesis benchmark $\eta_B\sim 9\times10^{-10}$ (not an
+ECT-derived prediction; within a factor of~$1.5$ of the observed
+$6\times10^{-10}$) and with the dataset- and
+parametrisation-dependent DESI~DR1/DR2 indications of evolving dark
+energy~\cite{DESIDR2_2025,Lodha2025}.
 The preferred-direction coupling $\beta_5\sim m_f/\phi_0$
 predicts a new 5th force with spin precession
 $\omega_5\sim 10^{-10}$~rad/s, E\"otv\"os parameter
@@ -46125,8 +46251,9 @@ particle sector including a surviving soft scalar mode $\chi$
 a pseudo-Goldstone mass $m\sim 10^{-33}$~eV is conceivable,
 though its phenomenological role as a dark-sector component is left open
 and is not part of the minimal ECT closure) and
-an exploratory instanton-sector mass pattern
-($m_n = n\times 1.6$~GeV/$c^2$ in the present benchmark).
+a legacy exploratory topological-sector mass benchmark
+($m_n = n\times 1.6$~GeV/$c^2$), retained only as a possible
+secondary-sector route after the primary-stiffness objection.
 The full ordered-medium logic is instantiable in
 analogue-laboratory systems (superfluid helium, BEC, nematic liquid
 crystals), providing a concrete experimental pathway for testing the
@@ -46521,7 +46648,11 @@ ECT prediction/handle (cont.) & Content & Channel & Level \\
 \endfoot
 Fifth force $\beta_5\!\sim\!m_f/\phi_0$ & ECT-specific preferred-direction fermion--condensate coupling, species-dependent and Planck-suppressed & MICROSCOPE-2, spin-sensitive E\"otv\"os & B \\
 Environmental modulation of $g^\dagger_{\rm eff}$ & Galactic critical acceleration scale correlated with ambient density & SPARC $\times$ 2MRS/SDSS cross-correlation & B \\
-Topological mass ansatz $m_n\!\sim\!n\!\times\!1.6$\,GeV & Resonance-like structure of candidate topological sector states & LHC / future collider & C \\
+Legacy topological mass benchmark $m_n\!\sim\!n\!\times\!1.6$\,GeV
+& Resonance-like structure of a possible secondary-sector realisation;
+primary-sector interpretation demoted
+& LHC / future collider
+& C \\
 Graviton polarisation: two TT modes in the completed linear closure & If the induced effective-metric sector closes exactly to the Fierz--Pauli form, only the two transverse-traceless tensor polarisations propagate; exact TT projection and ghost-freedom remain open verification tasks & Polarisation decomposition of stochastic GW background & B/Open \\
 Planck-suppressed LIV benchmark & Higher-dimension ordered-branch corrections may generate $\Delta t_{\rm LIV}\propto \zeta_\gamma E L/(M_{\rm Pl}c^2)$; the unit-coefficient linear photon benchmark is already constrained by Fermi--LAT, so a retained signal requires suppressed EFT matching, sector dependence, or quadratic leading behaviour. The GW-sector estimate remains quadratic and negligible for current sources & Multi-messenger photon/GW/neutrino timing & B/Open \\
 No exact thermality in black-hole evaporation (conditional theorem) & Under unitarity + finite shell + complete evaporation, exact thermality is excluded; deviations structurally required & Late-stage evaporation spectrum (conceptual) & B \\
@@ -46530,7 +46661,7 @@ Hubble-shift mechanism from ordered-branch $\phi$-background & Correlated shift 
 \multicolumn{4}{@{}l}{\textit{Additional structural and observational handles}} \\
 \midrule
 Nanosphere gravitational decoherence crossover & Closure-level mass scale $m_{\rm cross}\!\sim\!10^{-16}$\,kg at which a DP-type gravitational channel would dominate over environmental decoherence; in ECT this channel is interpreted as condensate-sector distinguishability rather than as an independent collapse postulate & Nanosphere interferometry (UHV, $\sim\!400$\,nm) & B \\
-Variable Newton's constant $G_{\rm eff}(\phi)$ & $G_{\rm eff}\!=\!G_N e^{-\beta\phi}$: gravitational coupling varies with condensate amplitude; absent in pure GR & Late-time growth of structure, distance-ladder systematics & B \\
+Variable Newton's constant $G_{\rm eff}(\phi)$ & $G_{\rm eff}\!=\!G_N e^{-\beta_\phi\phi}$: gravitational coupling varies with condensate amplitude; absent in pure GR & Late-time growth of structure, distance-ladder systematics & B \\
 Force-law dimensionality crossover $d_{\rm force}:\;3\!\to\!7/3\!\to\!2$ & Universal acceleration-dependent curve from single-mode $\phi$-closure; mass-independent & Pointwise $d_{\rm force}$ from SPARC rotation curves & B \\
 Redshift dependence $g^\dagger(z)$ & Critical acceleration scale evolves cosmologically via $\phi$-background; RAR intercept shift at $z\!>\!0.5$ & JWST, SKA high-$z$ kinematic surveys & B \\
 GR screening in dense environments & Chameleon-type screening: $\phi$-sector frozen in dense regimes, GR fully recovered; no anomaly in Solar System & Cassini, MICROSCOPE-2, LLR & B \\
@@ -46954,7 +47085,7 @@ G_{\rm eff}(X) \simeq
 \end{equation}
 The only remaining viable source of large-scale variation
 in the weak-field sector is the ordered-branch amplitude variable
-$\phi(X) = \frac{1}{\beta}\ln(u(X)/u_\infty)$
+$\phi(X) = \frac{1}{\beta_\phi}\ln(u(X)/u_\infty)$
 where $u(X)$ is the ordered-branch amplitude variable used in the present galactic EFT parametrisation.
 
 A possible objection: why not keep working with the product
@@ -47110,7 +47241,7 @@ We reproduce the key steps with all assumptions made explicit.
 \paragraph{Step~1: field equation for $\phi$.}
 Varying the effective action~\eqref{eq:phi_first_action}
 with respect to $\phi$ and using
-$f(\phi) = M_*^2\chi_{\rm vac}\,e^{\beta\phi}$ (so that $f' = \beta f$):
+$f(\phi) = M_*^2\chi_{\rm vac}\,e^{\beta_\phi\phi}$ (so that $f' = \beta_\phi f$):
 \begin{equation}
 \frac{f}{2}\,R
 + K(\phi)\,\Box\phi
@@ -47237,7 +47368,7 @@ R > 0
 \bar\phi(\rho_{\rm m}) > \bar\phi(0) = 0\,.
 \end{equation}
 Baryonic matter creates positive curvature, which through the
-$e^{\beta\phi} R$ coupling pushes $\phi$ upward. The vacuum is driven
+$e^{\beta_\phi\phi} R$ coupling pushes $\phi$ upward. The vacuum is driven
 deeper into the Lorentzian phase. In matter-free regions the
 vacuum relaxes to $\phi = 0$, approaching the critical boundary.
 
@@ -47498,7 +47629,7 @@ From the one-loop estimate, $K(\phi) \propto e^{-a\phi}$ with
 $a = 1/2$. Each additional gradient insertion in the effective
 action involves an extra factor of $(\partial_w\delta n)^2$
 in the Goldstone propagator, contributing an additional power of
-$\chi^{-1} = e^{-\beta\phi}$. Therefore generically:
+$\chi^{-1} = e^{-\beta_\phi\phi}$. Therefore generically:
 \begin{equation}
 K(\phi) \propto e^{-a\phi}\,,
 \qquad
@@ -48202,11 +48333,18 @@ We introduce the variable
   \label{eq:SH_variables_explicit}
 \end{equation}
 where $c_*^2 = \beta/(\alpha-\beta)$ is the effective propagation speed.
+The factor $c_*^{-1}$ in the time component is deliberate: $U^0$ is the
+orthonormal-frame time derivative $e_0\Phi$ with $e_0 = c_*^{-1}\partial_t$
+under the effective line element $ds_*^2 = -c_*^2\,dt^2 + d\vec{x}^{\,2}$
+(it is \emph{not} a remnant of any rescaled time convention).
+This choice renders all four components of $U^A$ dimensionally
+homogeneous and is what makes the time matrix below equal to the
+identity, $A^0 = I_4$, with symmetric $A^k$.
 
 \paragraph{The reduced first-order system.}
 Equation~\eqref{eq:EOM_quasilinear}, after the
 substitution~\eqref{eq:SH_variables_explicit} and the real ordered-branch
-parametrisation $t=w/c_*$, becomes
+parametrisation $t=w$, becomes
 \begin{align}
   \partial_t U^0 &= c_*\bigl(\partial_1 U^1 + \partial_2 U^2
                               + \partial_3 U^3\bigr) + F_0,
@@ -49425,12 +49563,303 @@ Using $u_0\sim m_\sigma\,\phi_0$:
 This is the dimensionally correct form of the Planck-scale
 identification.
 
+\subsection{Candidate induced orientation-stiffness kernel}
+\label{app:induced_stiffness_kernel}
+
+\paragraph{Status.}
+This subsection does \emph{not} derive \(G_N\) or the full coefficient
+\(\mathcal{C}_n\) from the bare microscopic action. It records a
+candidate NLO/one-loop route that is compatible with the
+orientation-stiffness operator and isolates a \emph{conditional}
+geometric curvature-channel kernel under a stated closure assumption.
+The overall finite Wilson coefficient, the extrinsic-curvature
+trace-sector reduction, and the full spin-2 normalisation map remain
+part of OP-Planck and are fixed only by weak-field matching in
+Section~\ref{sec:GN_matching}. The status is Level~B conditional.
+Theorem~\ref{thm:PX_no_orientation} forbids the operator only at leading
+derivative order; the present construction shows only that a compatible
+NLO/one-loop route exists, not that the coefficient has been derived from
+bare~P3.
+
+\paragraph{Setup.}
+In the ordered branch \(\partial_A\Phi=u\,n_A\) with \(n_An^A=1\), so
+that \(n_A=\partial_A\Phi/u\) is the unit normal to the level sets
+\(\{\Phi=\text{const}\}\). The heavy radial/amplitude mode \(\sigma\) is the massive fluctuation
+associated with the radial condensate scale \(\phi_0\), with
+\(m_\sigma^2=V''(\phi_0)\) (Section~\ref{sec:sigma_scales}). In the
+ordered branch this scale is related to the gradient amplitude through
+the existing matching relation \(u_0\sim m_\sigma\phi_0\), used below. We integrate
+\(\sigma\) out at one loop in a slowly varying orientation background and
+ask for the induced operator
+\(\tfrac{\mathcal{C}_n}{2}\,u^2(\partial_B n_A)(\partial^B n^A)\) of
+Eq.~\eqref{eq:kappa_n_main}.
+
+\paragraph{Step 1: integrability and projected foliation geometry.}
+Since \(u\,n_A=\partial_A\Phi\) is a gradient, its curl vanishes
+identically,
+\[
+  \partial_A(u n_B)-\partial_B(u n_A)=0 .
+\]
+Hence the antisymmetric derivative of \(n_A\) is not independent:
+\begin{equation}
+  \Omega_{AB}
+  \equiv
+  \partial_A n_B-\partial_B n_A
+  =
+  \frac{n_A\,\partial_B u-n_B\,\partial_A u}{u}.
+  \label{eq:omega_fixed}
+\end{equation}
+Equivalently, the normal acceleration
+\[
+  a_A\equiv n^B\partial_B n_A
+\]
+is fixed by the transverse radial-gradient component,
+\[
+  a_A
+  =
+  P_A{}^B\,\partial_B\ln u,
+  \qquad
+  P_{AB}\equiv\delta_{AB}-n_A n_B .
+\]
+Thus the curl and acceleration sectors are tied to the radial-gradient
+sector and are not independent orientation invariants.
+The genuinely foliation-geometric orientation data are carried by the
+projected extrinsic curvature
+\[
+  \mathscr{K}_{AB}
+  =
+  P_A{}^C P_B{}^D\,\partial_C n_D ,
+\]
+which is symmetric for a hypersurface-orthogonal normal. The single EFT
+invariant \((\partial n)^2\) should therefore be understood as a shorthand
+for a matched combination of projected extrinsic-curvature terms and the
+radial-gradient/acceleration sector. The latter is absorbed into the
+radial-sector matching, consistent with the reduction to a single
+longitudinal mode \(\chi\)
+(Section~\ref{sec:goldstone_integrability_main}).
+
+\paragraph{Step 2: minimal foliation-sensitive closure.}
+A minimal candidate coupling of \(\sigma\) to orientation gradients is
+obtained by expanding the radial-mode operator in a Gauss normal frame
+adapted to the foliation. The radial mode is still treated as a
+four-dimensional ordered-branch field. The foliation enters through
+local background invariants of the leaves, in particular the intrinsic
+leaf scalar \(R^{(3)}\), rather than by replacing the full four-dimensional
+operator with a strictly three-dimensional leaf-confined operator.
+The closure used here is therefore not a microscopic derivation of the
+full NLO operator. It is a minimal foliation-sensitive ansatz for the
+local Laplace-type operator,
+\[
+  \mathcal{O}_\sigma
+  =
+  -\nabla_{(4)}^2
+  +m_\sigma^2
+  +\xi_{\rm leaf}R^{(3)}
+  +\ldots ,
+\]
+where the ellipsis denotes other allowed foliation invariants and
+higher-derivative terms. We choose the leaf-conformal value
+\begin{equation}
+  \xi_{\rm leaf}
+  =
+  \frac{d-2}{4(d-1)}\bigg|_{d=3}
+  =
+  \frac18 ,
+  \label{eq:Osigma}
+\end{equation}
+because it is the conformal coupling for a scalar on the
+three-dimensional leaves. This choice fixes only the conditional
+coefficient multiplying the \(R^{(3)}\) channel within the stated
+closure. A non-conformal radial coupling, or a different NLO completion
+of \(\mathcal{O}_\sigma\), would rescale or modify the kernel below.
+Thus the result is conditional on this foliation-sensitive closure.
+
+\paragraph{Gauss--Codazzi caveat.}
+The leaf Ricci scalar is \emph{not} identical to the orientation-stiffness
+invariant. For a hypersurface in a flat Euclidean embedding the Gauss
+equation gives
+\begin{equation}
+  R^{(3)}=(\operatorname{tr}\mathscr{K})^2-\mathscr{K}_{AB}\mathscr{K}^{AB}
+  \label{eq:gauss_codazzi}
+\end{equation}
+(up to sign conventions). Hence the heat-kernel curvature term fixes a
+geometric kernel for the specific extrinsic-curvature combination
+\eqref{eq:gauss_codazzi}, \emph{not} automatically for the single
+invariant \((\partial n)^2\) used in the ordered-branch EFT. When
+\(\operatorname{tr}\mathscr{K}\neq0\), and before absorbing the
+radial-gradient/acceleration sector, the scalars
+\((\partial n)^2\), \(\mathscr{K}_{AB}\mathscr{K}^{AB}\),
+\((\operatorname{tr}\mathscr{K})^2\), and \(R^{(3)}\) are not
+interchangeable. The general induced structure is therefore
+\(A\,\mathscr{K}_{AB}\mathscr{K}^{AB}+B\,(\operatorname{tr}\mathscr{K})^2\),
+and the reduction to the single EFT coefficient \(\mathcal{C}_n\) requires
+either a trace constraint, a boundary-term argument, or an additional
+matching step. This reduction is included in
+\(\mathcal{N}_{\rm match}\) below.
+
+\paragraph{Step 3: conditional geometric kernel.}
+Integrating out \(\sigma\) gives
+\(\Gamma=\tfrac12\,\mathrm{Tr}\ln\mathcal{O}_\sigma\). In the Schwinger
+proper-time representation for this four-dimensional effective operator the heat-kernel diagonal is
+\(K(s;x,x)=(4\pi s)^{-2}\sum_k a_k\,s^k\). With the standard Laplace-type
+convention used here, the curvature-linear part of the first nontrivial
+heat-kernel coefficient is proportional to
+\((\tfrac16-\xi_{\rm leaf})R^{(3)}\)
+\cite{DeWitt1965,Gilkey1995,Vassilevich2003}. Under the minimal
+leaf-conformal closure \eqref{eq:Osigma},
+\begin{equation}
+  \gamma_{\rm fol}\;\equiv\;\frac16-\xi_{\rm leaf}
+  \;=\;\frac16-\frac18\;=\;\frac{1}{24},
+  \label{eq:kernel_cond}
+\end{equation}
+which is the geometric kernel of the induced curvature term, \emph{conditional}
+on the minimal leaf-conformal closure and on absorbing the Gauss--Codazzi
+trace-sector ambiguity into the matching normalisation.
+The heat-kernel coefficient fixes only the conditional dimensionless
+curvature-channel factor \(\gamma_{\rm fol}\). It does not by itself
+fix the finite Wilson coefficient of the EFT operator, because the
+induced curvature response contains cutoff-sensitive power/log pieces
+and depends on the UV completion and on the reduction from the full
+foliation-invariant basis to the single EFT coefficient. We therefore
+parametrize the candidate induced orientation-stiffness coefficient as
+\begin{equation}
+  \mathcal{C}_n
+  =
+  \frac{\hat a_{\rm eff}}{16\pi^2\,m_\sigma^2},
+  \qquad
+  \hat a_{\rm eff}
+  =
+  \gamma_{\rm fol}\,\mathcal{N}_{\rm match},
+  \qquad
+  \gamma_{\rm fol}=\tfrac{1}{24},
+  \label{eq:Cn_kernel}
+\end{equation}
+where the factor \(1/m_\sigma^2\) is the dimensional heavy-mode
+matching scale used in the NLO EFT parametrisation, not a
+parameter-free Seeley--DeWitt prediction. The matched normalisation
+\(\mathcal{N}_{\rm match}\) absorbs the cutoff-sensitive pieces,
+the reduction of the foliation-invariant basis to \((\partial n)^2\),
+and the spin-2 normalisation map. Equation~\eqref{eq:Cn_kernel}
+therefore has the correct dimension,
+\([\mathcal{C}_n]=\text{GeV}^{-2}\), but its overall coefficient is not
+derived from the bare action.
+
+\paragraph{Weak-field matching fixes the normalisation.}
+A heavy scalar induces a power- and log-divergent gravitational response,
+so \(\hat a_{\rm eff}\) is \emph{not} predicted by the kernel alone. The
+weak-field matching of Section~\ref{sec:GN_matching} gives
+\begin{equation}
+  M_G^2=\kappa_n=\mathcal{C}_n\,u_0^2
+       =\frac{\hat a_{\rm eff}}{16\pi^2}\,\phi_0^2,
+  \label{eq:MG_kernel}
+\end{equation}
+using \(u_0\sim m_\sigma\phi_0\) (Section~\ref{sec:three_scales}), so
+that matching \(M_G\simeq\bar M_{\rm Pl}=\phi_0\) \emph{fixes}
+\(\hat a_{\rm eff}\simeq16\pi^2\). Equivalently, if the kernel
+\(\gamma_{\rm fol}=1/24\) is retained literally in
+\(\hat a_{\rm eff}=\gamma_{\rm fol}\mathcal{N}_{\rm match}\), the
+required \(\mathcal{N}_{\rm match}\) is numerically large
+(\(\mathcal{N}_{\rm match}\simeq384\pi^2\)); this is \emph{not} a
+prediction of ECT but part of the unresolved matching normalisation. The
+overall normalisation is thus absorbed into the same weak-field matching
+that fixes \(M_G=\bar M_{\rm Pl}\).
+
+\begin{lemma}[Candidate induced orientation stiffness; Level~B conditional]
+\label{lem:induced_stiffness_kernel}
+In the ordered branch with \(\partial_A\Phi=u\,n_A\), integrating out the
+heavy radial mode \(\sigma\) at one loop provides a candidate route to
+the orientation-stiffness operator
+\(\tfrac{\mathcal{C}_n}{2}u^2(\partial_B n_A)(\partial^B n^A)\). Its
+antisymmetric sector is not independent by integrability
+[Eq.~\eqref{eq:omega_fixed}] and is absorbed into the radial sector. Under
+the minimal leaf-conformal closure \(\xi_{\rm leaf}=1/8\), and after
+absorbing the Gauss--Codazzi trace-sector ambiguity
+\eqref{eq:gauss_codazzi} into the matching normalisation, the NLO EFT
+coefficient
+may be parametrised as \eqref{eq:Cn_kernel} with conditional geometric kernel
+\(\gamma_{\rm fol}=1/6-\xi_{\rm leaf}=1/24\) and a normalisation
+\(\mathcal{N}_{\rm match}\) fixed by weak-field matching
+[Eq.~\eqref{eq:MG_kernel}], not predicted. Neither \(\mathcal{C}_n\) nor
+\(\hat a_{\rm eff}\) is determined from the bare action alone.
+\end{lemma}
+
+\paragraph{What is fixed and what is matched.}
+Two limited statements survive independently of the final weak-field
+normalisation. First, the orientation-stiffness operator is compatible
+with a candidate one-loop/NLO route within the stated closure; it is not
+forbidden at next order, and its antisymmetric part is not an independent
+invariant by integrability. Second, \emph{conditional} on the minimal
+leaf-conformal closure, and after the Gauss--Codazzi trace-sector
+ambiguity is absorbed into matching, the curvature-channel kernel is
+\(\gamma_{\rm fol}=1/24\). What remains matching-dependent is the finite
+Wilson coefficient, the normalisation \(\mathcal{N}_{\rm match}\)
+(absorbing the power/log divergences and the trace-sector reduction),
+and the full spin-2 map. This upgrades the OP-Planck entry from
+``not yet derived'' to ``candidate one-loop/NLO route and conditional
+geometric kernel identified (Level~B); dimensional coefficient, overall
+normalisation, trace-sector reduction, and spin-2 map remain
+matched/open.''
+
+\paragraph{Verification.}
+The arithmetic of the conditional kernel is immediate:
+\(1/6-\xi_{\rm leaf}=1/6-1/8=1/24\). The factor \(1/6-\xi\) is the standard curvature-channel factor in the
+Seeley--DeWitt coefficient for a Laplace-type scalar operator; here it is
+used only within the foliation-sensitive closure specified above
+\cite{Vassilevich2003}. Supporting numerical checks of the
+standard heat-kernel coefficients, of the Gauss--Codazzi inequivalence
+\eqref{eq:gauss_codazzi}, and of the integrability identity
+\eqref{eq:omega_fixed} were used as internal consistency checks;
+they are not part of the claimed derivation.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Decomposition of the candidate induced orientation-stiffness
+coefficient \(\mathcal{C}_n=\hat a_{\rm eff}/(16\pi^2 m_\sigma^2)\),
+\(\hat a_{\rm eff}=\gamma_{\rm fol}\mathcal{N}_{\rm match}\), into
+ECT-structural content (conditional on the stated closure) and the matched
+normalisation.}
+\label{tab:Cn_fixed_matched}
+\begin{tabular}{p{0.46\textwidth} p{0.46\textwidth}}
+\hline
+\textbf{Identified structurally (conditional)} & \textbf{Absorbed into weak-field matching} \\
+\hline
+Candidate one-loop/NLO route compatible with the operator; pure \(P(X)\) closure forbids it at LO only [Thm.~\ref{thm:PX_no_orientation}] & Normalisation \(\mathcal{N}_{\rm match}\) absorbing power/log divergences \\
+Antisymmetric part not independent by integrability, Eq.~\eqref{eq:omega_fixed} & Trace-sector reduction \(A\mathscr{K}^2+B(\operatorname{tr}\mathscr{K})^2\to\mathcal{C}_n\), Eq.~\eqref{eq:gauss_codazzi} \\
+Conditional kernel \(\gamma_{\rm fol}=1/6-\xi_{\rm leaf}=1/24\) at \(\xi_{\rm leaf}=1/8\), Eq.~\eqref{eq:kernel_cond} & Identification \(M_G\simeq\bar M_{\rm Pl}=\phi_0\Rightarrow\hat a_{\rm eff}\simeq16\pi^2\) (Sec.~\ref{sec:GN_matching}) \\
+ & Full spin-2 normalisation map \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.74\textwidth]{figures/fig_Cn_scalechain_en.png}
+\caption{Candidate one-loop route to the orientation stiffness
+(Level~B conditional): from the ordered-branch kinematics through the
+candidate heavy-mode matching route, the minimal leaf-conformal closure and the
+conditional Seeley--DeWitt kernel \(\gamma_{\rm fol}=1/24\) to the
+weak-field matching, which fixes \(\hat a_{\rm eff}\) (not predicted)
+via \(M_G\simeq\bar M_{\rm Pl}\). Integrability makes the antisymmetric
+curl non-independent; the Gauss--Codazzi trace sector and the full spin-2
+normalisation remain in the matching sector.}
+\label{fig:Cn_scalechain}
+\end{figure}
+
 \subsection{Phase sector and quantum action scale}
 \label{app:dim_phase}
 
 The phase-sector action in the coherent branch is
 $S_\theta=\frac{K_\theta}{2}\int d^4X\,(\partial_A\theta)^2$,
 with $[K_\theta]=\text{GeV}^2$ and $[\theta]=1$.
+
+For closed-loop functionals the relevant stiffness is the reduced
+one-dimensional coefficient
+$K_\theta^{1\mathrm D}=K_\theta\,\mathcal A_\perp$ with
+$[\mathcal A_\perp]=\text{GeV}^{-3}$ (transverse three-volume weight),
+so that $[K_\theta^{1\mathrm D}]=\text{GeV}^{-1}$ and the reduced loop
+action $S_{\rm loop}=\tfrac12 K_\theta^{1\mathrm D}\oint d\ell\,(\partial_\ell\theta)^2$
+is dimensionless, as required for an action scale.
 The pre-quantum action scale $S_0$ extracted from the
 winding sector has $[S_0]=[\text{action}]$.
 Its matching to $\hbar$ is a separate Level~B identification
@@ -49449,18 +49878,19 @@ These two descriptions are compatible but not equivalent:
 the $\chi$-level propagation is fully determined at leading
 derivative order, while the spin-2 normalisation requires one
 additional NLO scale.
-From the induced estimate $\mathcal{C}_n\sim1/(16\pi^2\,m_\sigma^2)$
+From the induced estimate
+$\mathcal{C}_n=\hat a_{\rm eff}/(16\pi^2\,m_\sigma^2)$
 and $M_G^2=\kappa_n=\mathcal{C}_n\,u_0^2$, one obtains
 \begin{equation}
   \frac{M_G^2}{c_*^2}
   \;\sim\;
   \frac{\mathcal{C}_n\,u_0^2}{c_*^2}
   \;=\;
-  \frac{\hat a}{16\pi^2}\,\frac{\phi_0^2}{c_*^2}\,.
+  \frac{\hat a_{\rm eff}}{16\pi^2}\,\frac{\phi_0^2}{c_*^2}\,.
   \label{eq:NLO_suppression}
 \end{equation}
 With $c_*=c$ and $\phi_0\sim\bar M_{\rm Pl}$
-this gives $M_G^2/c^2\sim\hat a\bar M_{\rm Pl}^2/(16\pi^2)$.
+this gives $M_G^2/c^2\sim\hat a_{\rm eff}\bar M_{\rm Pl}^2/(16\pi^2)$.
 Comparing with the observed Planck length
 $\ell_{\rm Pl}^2=G_N\hbar/c^3=\hbar/(8\pi\bar M_{\rm Pl}^2 c)$,
 the NLO suppression factor $1/(16\pi^2)$ does not appear in
@@ -49470,13 +49900,11 @@ definition of $M_G$.
 This should be read as a structural scaling check, not as a
 completed numerical derivation.
 The point is that the NLO/induced suppression carried by
-$\mathcal{C}_n$ can be naturally compensated by the ratio
+$\mathcal{C}_n$ can be dimensionally compensated by the ratio
 $u_0^2/m_\sigma^2\sim\phi_0^2$, so that the induced gravitational
 scale can naturally remain of order~$\phi_0$.
 Whether the final coefficient reproduces the observed
-normalisation requires the explicit determination of $\hat a$
-and of the full spin-2 normalisation map, which remain
-open in OP-Planck.
+normalisation requires the explicit determination of the matching normalisation $\mathcal{N}_{\rm match}$ and of the full spin-2 normalisation map. The conditional geometric kernel $\gamma_{\rm fol}=1/6-\xi_{\rm leaf}=1/24$ is identified in Lemma~\ref{lem:induced_stiffness_kernel}; the overall normalisation is fixed by weak-field matching ($M_G\simeq\bar M_{\rm Pl}$ requires $\hat a_{\rm eff}\simeq16\pi^2$, not a prediction), and remains open in OP-Planck.
 
 \subsection{Summary of the gravitational matching chain}
 \label{app:dim_summary}
@@ -49490,9 +49918,12 @@ The complete gravitational matching chain of ECT is:
   \item Orientation stiffness $\kappa_n=\mathcal{C}_n\,u_0^2$
     arises from NLO/induced operators
     (Level~B EFT identity).
-  \item Natural induced estimate
-    $\mathcal{C}_n\sim\hat a/(16\pi^2\,m_\sigma^2)$
-    (Level~B).
+  \item Candidate induced estimate
+    $\mathcal{C}_n=\hat a_{\rm eff}/(16\pi^2\,m_\sigma^2)$,
+    with a conditional geometric kernel identified in
+    Lemma~\ref{lem:induced_stiffness_kernel} and the overall
+    normalisation matched
+    (Level~B conditional).
   \item $M_G^2\sim\kappa_n\sim u_0^2/m_\sigma^2\sim\phi_0^2$
     (Level~B structural).
   \item $M_G=\bar M_{\rm Pl}$ by weak-field matching
@@ -50087,11 +50518,11 @@ and enters the fermion EFT through the local operator
 The macroscopic weak-field closure, by contrast, is expressed in terms
 of the amplitude-sector variable
 \[
-\phi = \beta^{-1}\ln(u/u_\infty),
+\phi = \beta_\phi^{-1}\ln(u/u_\infty),
 \]
 which modifies the effective gravitational response through
 \[
-G_{\rm eff}(X)=G_N e^{-\beta\phi}.
+G_{\rm eff}(X)=G_N e^{-\beta_\phi\phi}.
 \]
 Thus the two effects are built from different derived variables of the
 ordered branch.
@@ -50235,7 +50666,7 @@ Define $\phi\equiv\ln(\chi/\chi_\infty)$,
 $\bar{M}^2_{\rm Pl}\equiv u_0^2\chi_\infty$.
 Since $M^2_{\rm eff}\propto u_0^2\chi$:
 \begin{equation}
-  M^2_{\rm eff}(\phi) = \bar{M}^2_{\rm Pl}\,e^{\beta\phi}.
+  M^2_{\rm eff}(\phi) = \bar{M}^2_{\rm Pl}\,e^{\beta_\phi\phi}.
 \end{equation}
 This is an exact algebraic reparameterisation. $\square$
 
@@ -50346,7 +50777,7 @@ Feature & GR & Brans-Dicke / ST & Einstein-aether & ECT ($\phi$-first) \\
 Primary object & $g_{\mu\nu}$ (postulated) & $g_{\mu\nu},\,\varphi$ & $g_{\mu\nu},\,u^\mu$ &
   \textbf{$\phi$ (order field); $g^{\rm eff}$ emergent} \\
 $G_N$ & constant & $G\propto 1/\varphi$ & constant &
-  \textbf{$G_N e^{-\beta\phi(X)}$ from condensate} \\
+  \textbf{$G_N e^{-\beta_\phi\phi(X)}$ from condensate} \\
 $\Lambda$ & constant & constant & constant &
   \textbf{$\Lambda_{\rm eff}(\phi)$ dynamical} \\
 Metric equation & $G_{\mu\nu}+\Lambda g_{\mu\nu}=8\pi G T_{\mu\nu}$ &
@@ -50372,7 +50803,7 @@ Full derivation from condensate & N/A & N/A & N/A &
 \textbf{Component glossary for eq.~\eqref{eq:gen_EE}.}
 \begin{description}[noitemsep,leftmargin=2.5em]
   \item[$M^2_{\rm eff}(\phi)G_{\mu\nu}$] Einstein tensor weighted by the
-    effective Planck mass; $G_{\rm eff}(\phi)=G_N e^{-\beta\phi}$ in the screened limit.
+    effective Planck mass; $G_{\rm eff}(\phi)=G_N e^{-\beta_\phi\phi}$ in the screened limit.
   \item[$T^{\rm mat}_{\mu\nu}$] Stress tensor of standard-model matter
     (coupled universally to $g^{\rm eff}_{\mu\nu}$; assumption~A4).
   \item[$T^{(\phi)}_{\mu\nu}$] Kinetic stress of the $\phi$-field;
@@ -50501,7 +50932,7 @@ $\texttt{bbox\_inches='tight'}$.
 
 \paragraph{Regime diagram (Fig.~\ref{fig:regime_diagram}).}
 The regime diagram plots the ordered-branch amplitude variable
-$\phi = \frac{1}{\beta}\ln(u/u_\infty)$ against
+$\phi = \frac{1}{\beta_\phi}\ln(u/u_\infty)$ against
 $\log_{10}(g/g_\dagger)$.
 The screening boundary is the locus where the chameleon-like
 mass $m_\phi(\rho)$ equals the inverse distance to the
@@ -51209,7 +51640,7 @@ by identical steps with the full tensor $K^{ABCD}$
 \textit{Scope.}
 This appendix records a benchmark late-time background closure with
 specific parameter values
-($\beta=0.8$, $\mu=1.5$, $\kappa=15$, $\phi_0=-0.12$) used for
+($\beta_\phi=0.8$, $\mu=1.5$, $\kappa=15$, $\phi_0=-0.12$) used for
 numerical control and reproducibility of intermediate diagnostics.
 The headline cosmological constraint is the retained five-probe band
 $\varepsilon\in[0.0296,\,0.0376]$ at $1\sigma$ of
@@ -51249,27 +51680,27 @@ screened amplitude satisfying $W_u(u_\infty)=0$.
 The macroscopic amplitude variable is defined by the amplitude ratio:
 \begin{equation}
 \boxed{
-\phi \equiv \frac{1}{\beta}\ln\!\frac{u}{u_\infty}}
+\phi \equiv \frac{1}{\beta_\phi}\ln\!\frac{u}{u_\infty}}
 \qquad\Longleftrightarrow\qquad
-\boxed{u = u_\infty\, e^{\beta\phi}.}
+\boxed{u = u_\infty\, e^{\beta_\phi\phi}.}
 \label{eq:phi_amplitude_relation}
 \end{equation}
 This gives the response factor its structural origin:
-$F(\phi)=u/u_\infty=e^{\beta\phi}$.
+$F(\phi)=u/u_\infty=e^{\beta_\phi\phi}$.
 
 \paragraph{Derived kinetic function.}
-Substituting $u=u_\infty e^{\beta\phi}$ into the kinetic term:
+Substituting $u=u_\infty e^{\beta_\phi\phi}$ into the kinetic term:
 \begin{equation}
 \frac{Z_u}{2}(\partial u)^2
 =
-\frac{Z_u \beta^2 u_\infty^2}{2}\,e^{2\beta\phi}(\partial\phi)^2
+\frac{Z_u \beta_\phi^2 u_\infty^2}{2}\,e^{2\beta_\phi\phi}(\partial\phi)^2
 \equiv
-\frac{\omega_0}{2}\,e^{2\beta\phi}(\partial\phi)^2.
+\frac{\omega_0}{2}\,e^{2\beta_\phi\phi}(\partial\phi)^2.
 \label{eq:derived_kinetic}
 \end{equation}
 The derived kinetic closure is therefore
 \begin{equation}
-\boxed{\omega(\phi) = \omega_0\,e^{2\beta\phi}},
+\boxed{\omega(\phi) = \omega_0\,e^{2\beta_\phi\phi}},
 \label{eq:derived_omega}
 \end{equation}
 not a constant $K_0$.  The benchmark $K(\phi)=K_0$ arises only as
@@ -51278,7 +51709,7 @@ the leading local approximation of $\omega(\phi)$ around $\phi=0$.
 \paragraph{Derived potential.}
 The branch potential maps directly to the macroscopic potential via:
 \begin{equation}
-\boxed{U(\phi) = W(u_\infty\,e^{\beta\phi}).}
+\boxed{U(\phi) = W(u_\infty\,e^{\beta_\phi\phi}).}
 \label{eq:derived_potential}
 \end{equation}
 Near the screened branch $\phi=0$, expanding $W(u)$ around $u_\infty$:
@@ -51286,9 +51717,9 @@ Near the screened branch $\phi=0$, expanding $W(u)$ around $u_\infty$:
 U(\phi)
 =
 W_\infty
-+\frac{m_u^2 u_\infty^2}{2}(e^{\beta\phi}-1)^2
-+\frac{c_3 u_\infty^3}{3!}(e^{\beta\phi}-1)^3
-+\frac{c_4 u_\infty^4}{4!}(e^{\beta\phi}-1)^4+\cdots,
++\frac{m_u^2 u_\infty^2}{2}(e^{\beta_\phi\phi}-1)^2
++\frac{c_3 u_\infty^3}{3!}(e^{\beta_\phi\phi}-1)^3
++\frac{c_4 u_\infty^4}{4!}(e^{\beta_\phi\phi}-1)^4+\cdots,
 \label{eq:derived_potential_expanded}
 \end{equation}
 which reduces to the benchmark quadratic $V_0+\frac12 m_\phi^2\phi^2$
@@ -51302,8 +51733,8 @@ S_{\rm full}
 =
 \int d^4x\,\sqrt{-g}\,
 \Bigl[
-\frac{\bar M_{\rm Pl}^2}{2}\,e^{\beta\phi}R
--\frac{\bar M_{\rm Pl}^2\,\omega_0}{2}\,e^{2\beta\phi}(\nabla\phi)^2
+\frac{\bar M_{\rm Pl}^2}{2}\,e^{\beta_\phi\phi}R
+-\frac{\bar M_{\rm Pl}^2\,\omega_0}{2}\,e^{2\beta_\phi\phi}(\nabla\phi)^2
 -U(\phi)
 \Bigr]
 +S_m+S_r.
@@ -51312,24 +51743,24 @@ S_{\rm full}
 For homogeneous FRW with $\phi=\phi(t)$ this gives the
 \emph{derived condensate background system}:
 \begin{align}
-3e^{\beta\phi}H^2
+3e^{\beta_\phi\phi}H^2
 &=
 \frac{\rho_m+\rho_r+U(\phi)}{\bar M_{\rm Pl}^2}
 +\frac12\omega(\phi)\dot\phi^2
--3H\,\beta e^{\beta\phi}\dot\phi,
+-3H\,\beta_\phi e^{\beta_\phi\phi}\dot\phi,
 \label{eq:condensate_friedmann1}
 \\
--2e^{\beta\phi}\dot H
+-2e^{\beta_\phi\phi}\dot H
 &=
 \frac{\rho_m+\tfrac43\rho_r}{\bar M_{\rm Pl}^2}
 +\omega(\phi)\dot\phi^2
-+\beta^2 e^{\beta\phi}\dot\phi^2+\beta e^{\beta\phi}\ddot\phi
--H\,\beta e^{\beta\phi}\dot\phi,
++\beta_\phi^2 e^{\beta_\phi\phi}\dot\phi^2+\beta_\phi e^{\beta_\phi\phi}\ddot\phi
+-H\,\beta_\phi e^{\beta_\phi\phi}\dot\phi,
 \label{eq:condensate_friedmann2}
 \\
-\omega(\phi)\bigl(\ddot\phi+3H\dot\phi+\beta\dot\phi^2\bigr)
+\omega(\phi)\bigl(\ddot\phi+3H\dot\phi+\beta_\phi\dot\phi^2\bigr)
 &+\frac{U_{,\phi}}{\bar M_{\rm Pl}^2}
--3\beta e^{\beta\phi}(2H^2+\dot H)=0.
+-3\beta_\phi e^{\beta_\phi\phi}(2H^2+\dot H)=0.
 \label{eq:condensate_scalar}
 \end{align}
 
@@ -51343,8 +51774,8 @@ E^2(N)=
 +\Omega_{r*}e^{-4N}
 +\Omega_U(\phi)
 }{
-e^{\beta\phi}(1+\beta q)
--\tfrac{\omega_0}{6}e^{2\beta\phi}q^2
+e^{\beta_\phi\phi}(1+\beta_\phi q)
+-\tfrac{\omega_0}{6}e^{2\beta_\phi\phi}q^2
 }},
 \label{eq:condensate_E2_N}
 \end{equation}
@@ -51353,22 +51784,22 @@ The benchmark $K(\phi)=K_0$ denominator is the $\phi\to 0$ limit
 of this expression.
 The scalar equation in $N$-variables is
 \begin{equation}
-\omega_0 e^{2\beta\phi}
+\omega_0 e^{2\beta_\phi\phi}
 \Bigl[
-\phi''+(3+E'/E)\phi'+\beta(\phi')^2
+\phi''+(3+E'/E)\phi'+\beta_\phi(\phi')^2
 \Bigr]
 +
 \frac{3\,\Omega_{U,\phi}}{E^2}
--3\beta e^{\beta\phi}(2+E'/E)=0.
+-3\beta_\phi e^{\beta_\phi\phi}(2+E'/E)=0.
 \label{eq:condensate_scalar_N}
 \end{equation}
 
 The benchmark late-time equations used in the current numerical section
 are obtained by replacing the full derived functions
 \[
-\omega(\phi)=\omega_0 e^{2\beta\phi},
+\omega(\phi)=\omega_0 e^{2\beta_\phi\phi},
 \qquad
-U(\phi)=W(u_\infty e^{\beta\phi})
+U(\phi)=W(u_\infty e^{\beta_\phi\phi})
 \]
 by their local screened-branch truncations around $\phi=0$.
 
@@ -51418,13 +51849,13 @@ smooth interpolation through three regimes:
 \paragraph{Derived quantities.}
 From $\phi_b$ the derived observables follow algebraically:
 \[
-u/u_\infty = e^{\beta\phi_b},
+u/u_\infty = e^{\beta_\phi\phi_b},
 \qquad
-G_{\rm eff}/G_N = e^{-\beta\phi_b},
+G_{\rm eff}/G_N = e^{-\beta_\phi\phi_b},
 \qquad
 w_\phi = -1 + \delta w\,e^{-z/z_{\rm drift}}.
 \]
-The benchmark parameter choices are $\beta=0.8$,
+The benchmark parameter choices are $\beta_\phi=0.8$,
 $\phi_{\rm deep}=-3$, $\phi_{\rm stab}=-0.6$,
 $\phi_0=-0.10$,
 $z_{\rm ord}=2000$, $z_{\rm approach}=100$.
@@ -51509,7 +51940,7 @@ Setting $N\equiv \ln a$ and
 \[
 q(N)\equiv \frac{d\phi}{dN},
 \qquad
-\phi(N)=\frac{1}{\beta}\ln\!\frac{u(N)}{u_\infty},
+\phi(N)=\frac{1}{\beta_\phi}\ln\!\frac{u(N)}{u_\infty},
 \]
 one has $\dot\phi=Hq$ and $\dot f=Hf_{,\phi}q$. Equation~\eqref{eq:app_late_fried1}
 then gives the exact algebraic relation
@@ -51530,7 +51961,7 @@ In particular, the benchmark closure should be understood as a small-$\phi$
 truncation of the derived condensate background dynamics recorded in
 Section~\ref{sec:late_condensate_dynamics}.
 \begin{equation}
-f(\phi)=f_0 e^{\beta \phi},
+f(\phi)=f_0 e^{\beta_\phi \phi},
 \qquad
 K(\phi)=K_0,
 \qquad
@@ -51539,7 +51970,7 @@ V(\phi)=V_0+\tfrac12 m_\phi^2 \phi^2,
 \end{equation}
 Here the three choices do not have the same status.
 The exponential response factor is structurally motivated by
-$u/u_\infty=e^{\beta\phi}$.
+$u/u_\infty=e^{\beta_\phi\phi}$.
 By contrast, the constant kinetic coefficient $K(\phi)=K_0$ is the
 simplest benchmark truncation of the amplitude-sector stiffness, and
 the quadratic potential is the leading local expansion of the effective
@@ -51570,7 +52001,7 @@ E(N)\equiv \frac{H(N)}{H_*},
 The benchmark closure therefore combines one structurally motivated
 ingredient and two simplest local benchmark choices:
 \begin{gather*}
-f(\phi)\sim e^{\beta\phi} \quad \text{(structural/bridge-level)},\\
+f(\phi)\sim e^{\beta_\phi\phi} \quad \text{(structural/bridge-level)},\\
 K(\phi)=K_0,\quad
 V(\phi)=V_0+\tfrac12 m_\phi^2\phi^2
 \quad \text{(benchmark Level~B truncations)}.
@@ -51584,7 +52015,7 @@ dimensionless background variables.
 
 The macroscopic variable used in this late-time closure is
 \[
-\phi(N)=\frac{1}{\beta}\ln\!\frac{u(N)}{u_\infty},
+\phi(N)=\frac{1}{\beta_\phi}\ln\!\frac{u(N)}{u_\infty},
 \]
 where $u(N)$ is the ordered-branch condensate amplitude introduced in
 Section~\ref{sec:ordered_branch_eft}. In the late-time scalar--tensor
@@ -51601,9 +52032,9 @@ E^2(N)
 +\Omega_{V*}
 +\frac{\mu^2}{6}\phi^2
 }{
-e^{\beta \phi}
+e^{\beta_\phi \phi}
 -\frac{\kappa}{6}q^2
-+\beta e^{\beta \phi}q
++\beta_\phi e^{\beta_\phi \phi}q
 }.
 \label{eq:app_late_E2}
 \end{equation}
@@ -51622,10 +52053,10 @@ already suggests a broader family of late-time closures.
 
 The structural part is the response factor
 \[
-f(\phi)\propto e^{\beta\phi},
+f(\phi)\propto e^{\beta_\phi\phi},
 \]
 since this is directly tied to the amplitude ratio
-$u/u_\infty=e^{\beta\phi}$.
+$u/u_\infty=e^{\beta_\phi\phi}$.
 By contrast, the kinetic and potential sectors admit more general
 late-time benchmark expansions:
 \begin{equation}
@@ -51644,7 +52075,7 @@ These extensions should be interpreted carefully.
 \paragraph{(i) Why they are natural.}
 From the ordered-branch EFT perspective, $K(\phi)$ is the macroscopic
 image of amplitude-sector stiffness and $V(\phi)$ is the macroscopic
-image of the branch potential $W(u_\infty e^{\beta\phi})$.
+image of the branch potential $W(u_\infty e^{\beta_\phi\phi})$.
 A constant $K$ and a purely quadratic $V$ are therefore not expected to
 be exact in full generality; they are simply the leading local
 benchmark truncation around the screened late-time branch.
@@ -51758,7 +52189,7 @@ A first systematic scan of the derived-parent condensate background was
 performed over
 $\omega_0\in\{15,20,25,30,40,50\}$,
 $\phi_0\in\{-0.15,-0.12,-0.10,-0.08,-0.05\}$,
-with $\beta=0.8$, $\mu=1.5$, $A_2=\mu^2/(6\beta^2)$, $A_3=A_4=0$.
+with $\beta_\phi=0.8$, $\mu=1.5$, $A_2=\mu^2/(6\beta_\phi^2)$, $A_3=A_4=0$.
 The scan identifies a few-percent H1 benchmark corridor and selects
 three representative working points.
 
@@ -51820,9 +52251,9 @@ A first scan is performed over the parameter rectangle
 \]
 at fixed
 \[
-\beta=0.8,\qquad
+\beta_\phi=0.8,\qquad
 \mu=1.5,\qquad
-A_2=\frac{\mu^2}{6\beta^2},\qquad
+A_2=\frac{\mu^2}{6\beta_\phi^2},\qquad
 A_3=A_4=0.
 \]
 For each point the derived-parent background is solved and the late
@@ -51907,7 +52338,7 @@ anisotropic stress, and restrict attention to subhorizon scales for
 which the dominant effect of the modified background is captured by the
 time-dependent effective gravitational coupling
 \[
-G_{\rm eff}(z)=G_N e^{-\beta\phi(z)}.
+G_{\rm eff}(z)=G_N e^{-\beta_\phi\phi(z)}.
 \]
 At this level the ECT modification enters primarily through:
 \begin{enumerate}
@@ -51989,7 +52420,7 @@ the reference background is estimated through
 =
 \sqrt{\frac{G_{\rm eff}^{\rm ECT}}{G_N}}
 =
-e^{-\beta\phi(z)/2}.
+e^{-\beta_\phi\phi(z)/2}.
 \]
 
 \paragraph{BH-growth-like factor.}
@@ -52001,7 +52432,7 @@ taken to scale as $t_{\rm BH}\propto G_{\rm eff}^{-1}$, giving
 =
 \frac{G_{\rm eff}^{\rm ECT}}{G_N}
 =
-e^{-\beta\phi(z)}.
+e^{-\beta_\phi\phi(z)}.
 \]
 
 \paragraph{Combined maturity factors.}
@@ -52121,7 +52552,7 @@ remains open~(OP-c1).
 \subsection{Slow-drift regime and present-epoch Hubble shift}
 
 In the slow-drift branch ($|q|\ll 1$, $\kappa q^2\ll 1$,
-$|\beta q|\ll 1$), eq.~\eqref{eq:app_late_E2} simplifies to
+$|\beta_\phi q|\ll 1$), eq.~\eqref{eq:app_late_E2} simplifies to
 $H^2\approx (\rho+V)/(3f)$.
 Within the benchmark closure \eqref{eq:app_late_closure}, this yields a
 transparent analytic estimate for the present-epoch Hubble shift.
@@ -52131,17 +52562,17 @@ defined by $\phi=0$ and therefore constant $f_0,V_0$:
 \frac{\Delta H_0}{H_0}
 \approx
 \frac{\mu^2\phi_0^2}{12}
--\frac12\beta \phi_0.
+-\frac12\beta_\phi \phi_0.
 \label{eq:app_late_deltaH}
 \end{equation}
 The two terms represent vacuum drift (positive) and effective
-Planck-mass drift (sign determined by $\beta \phi_0$).
+Planck-mass drift (sign determined by $\beta_\phi \phi_0$).
 
 The slow-drift scalar balance gives
 \begin{equation}
 q
 \approx
-\frac{\beta e^{\beta \phi}}{\kappa}
+\frac{\beta_\phi e^{\beta_\phi \phi}}{\kappa}
 \left(2+\frac{E'}{E}\right)
 -
 \frac{\mu^2}{3\kappa}\frac{\phi}{E^2},
@@ -52851,7 +53282,7 @@ outstanding task}
 
 ``Benchmark achievability'' refers to the question: within the
 parameter space of the ECT ordered-branch closure, do there
-exist configurations $(\beta,\,\mu,\,\kappa,\,\phi_0,\,\ldots)$
+exist configurations $(\beta_\phi,\,\mu,\,\kappa,\,\phi_0,\,\ldots)$
 that yield a uniform-$\varepsilon$ projection in the retained
 band \eqref{eq:joint_band_A6}? The question is posed purely at
 the effective-diagnostic-layer level: can the retained band be
@@ -54938,10 +55369,9 @@ In the scalar sector alone the PPN parameter satisfies
 \begin{equation}
   \gamma_{\rm cl}^{(\phi)} \approx \frac{\omega_{\rm BD}+1}{\omega_{\rm BD}+2}
   \leq 1\,,\qquad
-  \omega_{\rm BD} = \frac{K(\bar\phi)}{\beta^2 M_{\rm Pl}^2}\,.
+  \omega_{\rm BD} = \frac{\widehat K(\bar\phi)}{\beta_\phi^2}\,, \qquad \widehat K(\bar\phi)\equiv \frac{K(\bar\phi)}{M_{\rm Pl}^2}.
 \end{equation}
-At cluster densities $\bar\phi\sim0.03$--$0.08\ll1$, so
-$K\approx1$ and $\omega_{\rm BD}\gg1$ for Planck-suppressed $\beta$,
+At cluster densities $\bar\phi\sim0.03$--$0.08\ll1$, the chosen normalisation gives $\widehat K(\bar\phi)\approx1$, so $\omega_{\rm BD}\gg1$ for Planck-suppressed $\beta_\phi$,
 giving $\gamma_{\rm cl}^{(\phi)}\approx1$.
 The scalar sector therefore contributes negligibly to lensing slip.
 
@@ -55628,9 +56058,9 @@ The full condensate background dynamics is governed by
 Eqs.~\eqref{eq:condensate_friedmann1}--\eqref{eq:condensate_scalar_N},
 with
 \[
-\omega(\phi)=\omega_0 e^{2\beta\phi},
+\omega(\phi)=\omega_0 e^{2\beta_\phi\phi},
 \qquad
-U(\phi)=W(u_\infty e^{\beta\phi}).
+U(\phi)=W(u_\infty e^{\beta_\phi\phi}).
 \]
 This is the system that should ultimately be solved for a fully
 self-consistent ECT treatment of the high-redshift branch.
@@ -55684,8 +56114,8 @@ E^{2\,(k)}(N)
 +\Omega_{r*}e^{-4N}
 +\Omega_U(\phi^{(k)})
 }{
-e^{\beta\phi^{(k)}}(1+\beta q^{(k)})
--\tfrac{\omega_0}{6}e^{2\beta\phi^{(k)}}(q^{(k)})^2
+e^{\beta_\phi\phi^{(k)}}(1+\beta_\phi q^{(k)})
+-\tfrac{\omega_0}{6}e^{2\beta_\phi\phi^{(k)}}(q^{(k)})^2
 }.
 \]
 
@@ -55729,7 +56159,7 @@ The benchmark solver remains the control numerical layer of the article,
 but the current code also implements a derived-parent background mode,
 a solved linear-growth layer, and the semi-analytic maturity accounting
 used for the JWST discussion.
-It evolves the macroscopic amplitude variable $\phi(N)=\frac{1}{\beta}\ln(u/u_\infty)$
+It evolves the macroscopic amplitude variable $\phi(N)=\frac{1}{\beta_\phi}\ln(u/u_\infty)$
 and computes the corresponding background expansion history $E(N)=H/H_*$.
 
 Rather than importing a $\Lambda$CDM background as physical input, the
@@ -55788,7 +56218,7 @@ The following ingredients are already fixed at the structural or
 bridge level:
 \begin{itemize}
   \item the ordered-branch origin of the macroscopic amplitude variable
-  $\phi=\frac{1}{\beta}\ln(u/u_\infty)$, i.e.\ $u/u_\infty=e^{\beta\phi}$;
+  $\phi=\frac{1}{\beta_\phi}\ln(u/u_\infty)$, i.e.\ $u/u_\infty=e^{\beta_\phi\phi}$;
   \item the amplitude-dominated macroscopic reduction;
   \item the existence of a coupled scalar--tensor background system for
   $(H,\phi)$ under isotropic FRW reduction;
@@ -55800,7 +56230,7 @@ bridge level:
 \paragraph{Layer 2: benchmark late-time closure.}
 The present code-facing closure
 \[
-f(\phi)=f_0 e^{\beta\phi},
+f(\phi)=f_0 e^{\beta_\phi\phi},
 \qquad
 K(\phi)=K_0,
 \qquad
@@ -55809,7 +56239,7 @@ V(\phi)=V_0+\tfrac12 m_\phi^2\phi^2
 should be understood as the first benchmark specialisation of the
 structurally anchored closure functions.
 Only the exponential response factor is directly tied to the amplitude
-ratio $u/u_\infty=e^{\beta\phi}$.
+ratio $u/u_\infty=e^{\beta_\phi\phi}$.
 The constant kinetic coefficient and quadratic potential remain the
 simplest local Level~B benchmark truncations.
 A broader admissible family of late-time closures is described in
@@ -55869,7 +56299,7 @@ At minimum, the benchmark late-time solver should accept:
 \begin{enumerate}
   \item the closure parameters
   \[
-  \beta,\qquad K_0,\qquad m_\phi,\qquad V_0,
+  \beta_\phi,\qquad K_0,\qquad m_\phi,\qquad V_0,
   \]
   or equivalently the dimensionless combinations used in
   Eq.~\eqref{eq:app_late_defs};
@@ -56048,7 +56478,7 @@ article-reproducible.
 Within the benchmark closure \eqref{eq:app_late_closure}, the natural
 slow-drift parameter window that gives a few-percent Hubble shift is
 \begin{equation}
-\beta\sim 0.7\text{--}1.0,\quad
+\beta_\phi\sim 0.7\text{--}1.0,\quad
 \phi_0\sim -(0.08\text{--}0.12),\quad
 \mu\sim 1.0\text{--}1.5,\quad
 \kappa\sim 10\text{--}20.
@@ -56059,7 +56489,7 @@ One of the next tasks is to determine how stable it remains under the
 admissible closure deformations described in
 Section~\ref{sec:late_closure_family}.
 
-For Benchmark~B ($\beta=0.8$, $\mu=1.5$, $\kappa=15$, $\phi_0=-0.12$),
+For Benchmark~B ($\beta_\phi=0.8$, $\mu=1.5$, $\kappa=15$, $\phi_0=-0.12$),
 the truncated expression~\eqref{eq:app_late_deltaH} is the $q_0\to 0$
 leading-order limit of the full present-epoch closed-form relation
 for the benchmark Hubble shift. Evaluated at the benchmark parameters
@@ -56198,7 +56628,7 @@ of~\S\ref{sec:universe_age}.
 Section~\ref{sec:hbar_status} establishes a sharp lower bound on the
 loop action at fixed length via the Cauchy--Schwarz
 inequality~\eqref{eq:loop_bound}, and defines the EFT action scale
-$S_0^{\rm EFT}=K_\theta m_\varphi/2$ by evaluating that bound at
+$S_0^{\rm EFT}=c_\perp K_\theta/(2m_\varphi^2)$ by evaluating that bound at
 the elementary-loop size $L_{\rm core}\sim 2\pi/m_\varphi$.
 
 To go beyond this EFT estimate and obtain a first-principles value
@@ -56209,14 +56639,19 @@ $S[\theta]\sim\int_{\mathcal{V}}d^4X\,f(\rho)(\partial_A\theta)^2$,
 the transition from the bulk integral over~$\mathcal{V}$ to a
 1D action along~$\mathcal{C}$ requires:
 (i)~choice of transverse profile shape;
-(ii)~integration of $f(\rho)$ over the transverse cross-section;
+(ii)~integration of $f(\rho)$ over the transverse three-volume of the
+     tube, encoded in the reduced one-dimensional stiffness
+     $K_\theta^{1\mathrm D}=K_\theta\,\mathcal A_\perp$ with
+     $\mathcal A_\perp=c_\perp\,\xi_{\rm core}^3$~\eqref{eq:Ktheta_1D};
 (iii)~introduction of an effective line tension $\mathcal{T}$
      such that $S_{\rm eff}^{\rm 1D}[\mathcal{C}]=\mathcal{T}\cdot|\mathcal{C}|$;
 (iv)~evaluation at the characteristic core-sized loop under the $n=1$
      winding constraint.
-Each of these steps requires the nonlinear broken-phase potential
-(beyond the quadratic EFT) and the choice of a vortex profile,
-which are not determined at the ECT basics level.
+Steps~(i)--(ii) are performed schematically by the transverse
+three-volume reduction~\eqref{eq:Ktheta_1D}; what remains open is the
+explicit profile coefficient $c_\perp$, which requires the nonlinear
+broken-phase potential (beyond the quadratic EFT) and the choice of a
+vortex profile, not determined at the ECT basics level.
 The explicit calculation therefore belongs to Section~\ref{sec:quantum}.
 
 
