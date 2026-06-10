@@ -1,0 +1,151 @@
+% ============================================================
+% OP_GUT1_recon_v1.tex  (PROPOSAL-ONLY RECONNAISSANCE)
+% OP-GUT1 / SU(3): map of existing material, overclaim risks,
+% candidate decomposition, formulation variants.
+% NO implementation, NO derivational claims. Per GPT mandate.
+% ============================================================
+\section*{OP-GUT1 reconnaissance (proposal-only)}
+
+\subsection*{0. Map of existing material (statuses as in the text)}
+\begin{itemize}
+  \item \textbf{Obstruction A} (triplet-condensate route):
+    condensate in $\mathbf 3$ of $SU(3)$ has stabiliser $SU(2)$;
+    exact colour cannot be carried by the condensate.
+    Proof-sketch present; reads as a Level~A structural no-go.
+  \item \textbf{Obstruction B} (dimensional exclusion):
+    $\dim\mathfrak{su}(3)=8>\dim\mathfrak{so}(4)=6$, so
+    $\mathfrak{su}(3)\not\subset\mathfrak{so}(4)$; maximal gauge
+    structure from $O(4)\to O(3)$ is
+    $U(2)=(SU(2)\times U(1))/\mathbb Z_2$. Level~A algebraic fact.
+  \item \textbf{P7} (reverse-engineered postulate): local complex
+    rank-3 module $\mathcal C_x\simeq\mathbb C^3$ with Hermitian
+    form $h$ and complex volume form
+    $\Omega\in\Lambda^3\mathcal C_x^*$; condensate singlet; frame
+    redundancy $SU(3)$. Explicitly \emph{not} derived.
+  \item \textbf{$U(3)\to SU(3)$ reduction} via $\Omega$
+    ($\varepsilon_{abc}$): part of the candidate completion.
+  \item \textbf{Zero-mode closure programme}
+    (eq.~p7\_zero\_mode\_target; closure-targets paragraph):
+    $\mathcal C_x\simeq\ker\mathcal D_{\rm defect}$,
+    $\dim_{\mathbb C}=3$, $(h,\Omega)$ induced, colour connection
+    as Berry--Wilczek--Zee connection. Recorded target; Open.
+  \item \textbf{$G_2$ candidate} (nested, deeper, not adopted):
+    $\mathrm{Stab}_{G_2}(u)=SU(3)$ (eq.~G2\_stab),
+    $J_u(v)=u\times v$, $u^\perp\simeq\mathbb C^3$ (eq.~G2\_J).
+    Standard mathematics, currently \emph{uncited}.
+  \item \textbf{Minimal colour EFT under P7}: Level~B; admissible
+    operator class; background-level triviality (clean negative).
+  \item \textbf{Registry}: OP-GUT1 status ``Reframed'' (under P7
+    with the zero-mode target); $N_{\rm colour}=3$ = minimal
+    closure hypothesis (Level~C); OP-GUT2 (fermion reps) Open;
+    anomaly side now carries the AN1--AN3 package, including the
+    $SU(3)^3$ vector-like forcing remark.
+\end{itemize}
+
+\subsection*{1. What ``deriving $SU(3)$'' actually decomposes into}
+(i)~existence of a rank-3 complex internal module from condensate
+dynamics (the zero-mode theorem) --- the hard dynamical question;
+(ii)~origin of the volume form $\Omega$, i.e.\ why $SU(3)$ rather
+than $U(3)$;
+(iii)~rank selection: why $N_c=3$;
+(iv)~origin of Yang--Mills kinetics for the connection (partially
+addressed by the EFT section; dynamical origin open).
+These are logically independent; conflating them is the main
+overclaim hazard of this OP.
+
+\subsection*{2. Candidate decomposition (no commitments)}
+\textbf{GUT1.0 --- status-audit and citation pass (low risk,
+tractable now).}
+(a)~Add literature citations for the $G_2$ facts
+(candidates, to be page-verified before insertion:
+Harvey--Lawson, \emph{Calibrated geometries}, Acta Math.\ 1982;
+Baez, \emph{The octonions}, Bull.\ AMS 2002; possibly
+Bryant 1987); the facts are standard, the article currently states
+them bare.
+(b)~Ensure the two obstructions carry explicit Level~A markers in
+the local status table (echo pass only).
+
+\textbf{GUT1.1 --- $N_c$-selection classification (candidate
+Level~A arithmetic under inherited assumptions; the AN3 analogue).}
+Generalise the anomaly system to $N_c$ colours with the inherited
+electroweak content and an inherited charge-integrality /
+atom-neutrality input; classify which $N_c$ are admissible.
+Known literature direction (to be verified page-level before any
+use: Abbas~1990-type analyses of charge quantisation with arbitrary
+$N_c$).
+Honest outcome shape: ``under the stated inherited inputs the
+anomaly system pins $N_c=3$'' --- a conditional classification that
+would sharpen the $N_{\rm colour}=3$ row from hypothesis~(C) to a
+conditional result, \emph{not} a derivation of colour.
+Moderate risk; requires own algebra + verified references.
+
+\textbf{GUT1.2 --- $G_2$ mathematical kernel (candidate Level~A
+conditional mathematics; presentational risk).}
+State $\mathrm{Stab}_{G_2}(u)=SU(3)$ and the induced
+$(J_u,h,\Omega)$ on $u^\perp$ as cited mathematical facts with a
+short proof sketch, upgrading the chain
+``$G_2$ structure $\Rightarrow$ the $SU(3)$-structure data of P7''
+to Level~A \emph{conditional} mathematics.
+The hypothesis (internal octonionic fibre) remains open/speculative
+and the primary completion remains primary --- wording must keep
+the conditional firewall.
+
+\textbf{GUT1.3 --- zero-mode programme formalisation (Open;
+definition-level).}
+Sharpen eq.~p7\_zero\_mode\_target into a precise problem
+statement: axioms on $\mathcal D_{\rm defect}$ (locality,
+condensate equivariance, ellipticity class), the exact meaning of
+``$(h,\Omega)$ induced'', and the candidate route taxonomy
+(index/defect-topology count; three-fold internal degeneracy; $G_2$
+reduction).
+No toy model, no existence claim; output is a definition + open
+problem block.
+
+\textbf{GUT1.4 --- untouched open remainder.}
+Yang--Mills kinetic origin, $g_s$, confinement, OP-GUT2
+representations, $\theta_{\rm QCD}$. No new claims.
+
+\subsection*{3. Overclaim risk register}
+Forbidden:
+``ECT derives $SU(3)$'';
+``$N_c=3$ is derived'';
+``the medium carries a $G_2$ structure'';
+``P7 is now derived'';
+inverting the obstruction theorems into positive claims;
+presenting the zero-mode target as partially achieved.
+Safe:
+``structure-preserving frame redundancy under P7'';
+``conditional mathematical chain ($G_2\Rightarrow$ P7 data)'';
+``$N_c$ pinned under stated inherited inputs'';
+``programme specification, not existence''.
+
+\subsection*{4. Formulation variants (for the upgradable bits only)}
+(a)~$G_2$ facts: ``standard mathematical facts
+[cites]; within ECT they function only as the conditional kernel of
+the non-adopted deeper candidate.''
+(b)~$N_c$ row (if GUT1.1 succeeds):
+``$N_{\rm colour}=3$ --- conditional classification: pinned by the
+anomaly system under inherited electroweak content and charge
+integrality (\S\dots); origin of the colour module itself remains
+open (P7/zero-mode programme).''
+(c)~Zero-mode block heading: ``Definition (colour zero-mode
+problem)'' + ``Open problem (OP-GUT1, sharpened)''.
+
+\subsection*{5. Recommended sequencing}
+GUT1.0 (citations + status echoes) $\to$ GUT1.1 (only after
+page-level literature verification) $\to$ GUT1.3 (formalisation)
+$\to$ GUT1.2 (optional, only with the conditional firewall).
+GUT1.1 is the single genuinely new mathematical content with
+AN3-like safety properties; everything else is consolidation.
+
+\subsection*{6. Questions for GPT}
+(Q1)~Approve the decomposition GUT1.0--GUT1.4?
+(Q2)~Does the $N_c$-from-anomalies classification belong under
+OP-GUT1 or under the anomaly family (OP-GUT6 vicinity)?
+(Q3)~$G_2$ citations: agree to add, and to keep GUT1.2 strictly
+conditional (or drop GUT1.2 entirely)?
+(Q4)~Zero-mode formalisation: place as a definition-level block
+inside \S colour\_completion, or as an expansion of the
+closure-targets paragraph?
+(Q5)~Any objection to the Abbas-type literature route for GUT1.1,
+pending page-level verification?

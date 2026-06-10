@@ -13756,6 +13756,66 @@ the $B{-}L$ flat direction (which is rational-valued), unless
 additional normalisation or charge-identification input is imposed.
 The observed assignment therefore remains OP-GUT3b-level input.
 
+\paragraph{The $N_c$-dependent classification and what it does not
+select.}
+\textit{Status: candidate Level~A algebraic classification under
+the stated inherited content at general $N_c$; a constraint
+statement, not a derivation of the colour rank.}
+The classification extends to a general number of colours
+$N_c\ge2$, with
+$Q\in(\mathbf N_c,\mathbf 2)_{Y_Q}$,
+$u^c,d^c\in(\bar{\mathbf N}_c,\mathbf 1)$,
+$L\in(\mathbf 1,\mathbf 2)_{Y_L}$,
+$e^c\in(\mathbf 1,\mathbf 1)_{Y_e}$.
+The $[SU(N_c)]^3$ condition is satisfied identically (vector-like
+colour content); the linear conditions give $Y_L=-N_cY_Q$,
+$Y_{e^c}=2N_cY_Q$, $Y_{u^c}+Y_{d^c}=-2Y_Q$; and with
+$Y_{u^c}=-Y_Q+\delta$, $Y_{d^c}=-Y_Q-\delta$ the cubic condition
+reduces to
+\begin{equation}
+  6N_c\,Y_Q\,\bigl(N_c^2Y_Q^2-\delta^2\bigr)=0 ,
+  \label{eq:anom_Nc_structure}
+\end{equation}
+recovering \eqref{eq:anom_solution_structure} at $N_c=3$.
+Apart from the all-zero and degenerate branches (structure as
+above), an SM-like family therefore exists for \emph{every}
+$N_c\ge2$:
+$\{Y_{u^c},Y_{d^c}\}=\{-(N_c{+}1)Y_Q,\,(N_c{-}1)Y_Q\}$.
+For $N_c\ge2$, the electroweak Witten condition ($N_c+1$
+left-handed doublets per generation) imposes $N_c$ \emph{odd} ---
+not $N_c=3$.
+With the charged-lepton normalisation $Q_e=-1$ the quark charges
+become $N_c$-dependent,
+\begin{equation}
+  Q_u=\frac{N_c+1}{2N_c},\qquad
+  Q_d=-\frac{N_c-1}{2N_c},
+  \label{eq:anom_Nc_charges}
+\end{equation}
+an $N_c$-quark colour-singlet baryon with $k$ up-type quarks has
+integer charge $Q_B=k-\tfrac{N_c-1}{2}$ for any odd $N_c$ (a unit-charge
+proton analogue at $k=\tfrac{N_c+1}{2}$), and the anomalous
+$\pi^0$ coefficient is $N_c$-independent,
+$N_c(Q_u^2-Q_d^2)=1$
+\cite{BarWiese2001,Abbas2000}.
+Hence charge integrality, atom neutrality, and the two-flavour
+pion--photon sector are all blind to $N_c$; phenomenological
+information sensitive to $N_c$ exists in the $N_f\ge3$
+WZW/flavour-anomaly sector (e.g.\
+$\eta\to\pi^+\pi^-\gamma\propto N_c^2$) and in the $R$-ratio
+class \cite{BarWiese2001}.
+\emph{No-overclaim statement.}
+Anomaly cancellation (including the Witten condition) constrains
+the $N_c$-dependent charge assignments --- $N_c$ odd, hypercharge
+pattern fixed up to normalisation and the
+$u^c\!\leftrightarrow\!d^c$ relabelling, degenerate branch as in
+the $N_c=3$ analysis --- but does not by itself select $N_c=3$;
+identifying $N_c=3$ requires additional input, such as inherited
+observed-charge assignments, phenomenological information sensitive
+to $N_c$ (for example in the $N_f\ge3$ WZW/flavour-anomaly sector
+or the $R$-ratio class), or an ECT-native rank-selection mechanism
+(the zero-mode programme of OP-GUT1,
+\S\ref{sec:colour_completion}).
+
 
 % ============================================================
 % Closing sentences
@@ -42783,10 +42843,13 @@ of Part~IV, unpack the physical meaning and structural consequences
 of~P7.  The status of each consequence (Level~A, B, or~C) is indicated
 locally.
 
-\paragraph{Closure route toward a derivation of P7.}
+\paragraph{Definition (the colour zero-mode problem).}
 A first-principles derivation of P7 from condensate dynamics would
 require a zero-mode construction of the colour-completion datum.
-The desired statement is
+The problem data are: a local, condensate-equivariant elliptic
+operator $\mathcal{D}_{\rm defect}$ built from the minimal
+condensate fields on stable defects or internal condensate sectors,
+for which the target statement is
 \begin{equation}
   \mathcal{C}_x \simeq \ker\mathcal{D}_{\rm defect}(x),
   \qquad
@@ -42801,10 +42864,19 @@ The colour gauge connection would then arise as the
 Berry--Wilczek--Zee connection on the resulting zero-mode bundle, and
 the structure-preserving automorphism group would coincide with the
 $SU(3)_c$ frame redundancy of P7.
+
+\paragraph{Open problem (OP-GUT1, sharpened).}
+Exhibit such an operator and prove the rank-three kernel statement
+\eqref{eq:p7_zero_mode_target} with the induced $(h,\Omega)$.
+No candidate operator is constructed here and no existence claim is
+made.
 Until such an index/zero-mode theorem is supplied, the colour sector
 in ECT is realised by the colour-completion datum but not yet derived
-from the minimal condensate dynamics; the closure programme is recorded as a target
-in~\S\ref{sec:closure_targets}.
+from the minimal condensate dynamics; the closure programme is
+recorded as a target in~\S\ref{sec:closure_targets}.
+The $N_c$-dependent anomaly classification
+(\S\ref{sec:anomaly_architecture}) shows that anomaly cancellation
+alone cannot substitute for this rank selection.
 
 \paragraph{Physical meaning.}
 The present minimal colour-completion ansatz assumes that, in addition to
@@ -42994,7 +43066,12 @@ constrained or derived; and what baryon-number selection rules are
 realised in the completed low-energy theory, which controls proton
 stability~(\S\ref{sec:proton_stability}).
 A deeper completion might eventually relate the number of colours to
-matter-representation content, but no such relation is derived here.
+matter-representation content, but no such relation is derived here;
+conversely, the $N_c$-dependent anomaly classification of
+\S\ref{sec:anomaly_architecture} shows that anomaly cancellation
+alone cannot supply this rank selection (it imposes only $N_c$ odd),
+so the rank-3 input must come from the zero-mode programme below or
+from inherited charge data.
 
 \subsubsection*{Alternative deeper geometric candidate: internal
 $G_2$~structure}
@@ -45788,7 +45865,7 @@ PMNS matrix (4--6 params) & Open & Structural route established;
     flavour closure incomplete \\
 $\theta_{\rm QCD}$ & Open & Not yet addressed \\
 $N_{\rm gen}=3$ & Open (OP-generations) & Topological classification \\
-$N_{\rm colour}=3$ & Minimal closure hypothesis (C) & Minimal rank of the primary colour module compatible with an $SU(3)$-structured completion \\
+$N_{\rm colour}=3$ & Minimal closure hypothesis (C) & Minimal rank of the primary colour module compatible with an $SU(3)$-structured completion; anomaly cancellation alone does not select the rank ($N_c$ odd only; \S\ref{sec:anomaly_architecture}) \\
 $\Lambda_{\rm eff}$ & Partial (B/Open) & Condensate background; not independent $\Lambda$ \\
 \end{longtable}
 
@@ -46202,6 +46279,8 @@ OP-GUT1
     the colour sector resides in a separate local complex rank-3
     internal module, not inside the condensate
     (\S\ref{sec:colour_completion}).
+    Anomaly cancellation shown not to select the colour rank by
+    itself ($N_c$ odd only; \S\ref{sec:anomaly_architecture}).
   & Reframed \\
 OP-GUT2
   & Derive fermion representations from condensate
