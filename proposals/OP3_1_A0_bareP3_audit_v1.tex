@@ -1,0 +1,118 @@
+% ============================================================
+% OP3_1_A0_bareP3_audit_v1.tex  (AUDIT; proposal-only, NO edits)
+% Task A0: how is the bare P3 functional/measure actually pinned
+% in the current article?
+% ============================================================
+\section*{A0 audit: status of the bare P3 functional in the text}
+
+\subsection*{1. Inventory (locations, verbatim status)}
+\begin{itemize}
+\item \textbf{Bare action (explicit equation).}
+  Postulate list, eq:ECT\_action (L$\sim$1262):
+  $S_E^{\rm bare}[\Phi]=\int d^4X\,[\tfrac12(\partial_A\Phi)^2
+  +V(\Phi)]$, $V=-\tfrac{\mu^2}{2}\Phi^2+\tfrac{\lambda}{4}\Phi^4$,
+  $\mu^2,\lambda>0$; real scalar on $\mathcal M^4$; $\mathbb Z_2$
+  double well; the orientation variable $n_A$ explicitly absent
+  from the bare action.
+\item \textbf{Bare field equation (explicit).}
+  eq:ect\_euclidean\_fundamental (L$\sim$41874):
+  $\delta^{AB}\partial_A\partial_B\Phi-V'(\Phi)=0$; elliptic;
+  solutions determined by boundary data on the full 4D domain
+  (boundary-value framing recorded there).
+\item \textbf{Gradient ordering (postulate, not derivation).}
+  P4 introduces $\langle\partial_A\Phi\rangle=u_0\,\delta_{Aw}$ with
+  amplitude $u_0$ as an input; P3 commentary states explicitly that
+  $V(\Phi)$ alone is not sufficient to produce the gradient-ordered
+  vacuum.
+\item \textbf{Recorded extension hook.}
+  P3 commentary: gradient-sensitive structures $P(X)$,
+  $X\equiv(\partial_A\Phi)^2$, ``may arise in the ordered-sector
+  analysis and provide the dynamical origin of gradient
+  condensation; they are not inserted into the bare microscopic
+  starting point'' (open problem OP-grad).
+\item \textbf{Ordered-branch EFT (separate, postulate-level data).}
+  eq:ordered\_branch\_euclidean\_eft with $Z_u,\mathcal C_n,W(u)$;
+  closure-function map \S closure\_function\_mapping
+  ($F,\omega,U$ from the EFT data).
+\item \textbf{Existing matching open problem.}
+  OP2: matching of orientation-sector EFT couplings
+  ($K_n,\lambda_n$) to bare P3 parameters --- already recorded.
+\item \textbf{Weight framework.}
+  $S_0$-weighted Euclidean extremal-action framework with
+  saddle-dominance criterion at $|\Delta S_E|/S_0\gg1$
+  (eq:qs\_extremal\_weight\_E).
+\end{itemize}
+
+\subsection*{2. Classification}
+Actual equations: eq:ECT\_action;
+eq:ect\_euclidean\_fundamental; eq:qs\_extremal\_weight\_E.
+Postulates: P3 (bare action choice), P4 (gradient condensate
+$u_0$), the ordered-branch EFT coefficient values.
+Bridges: closure-function map; coarse-graining definitions
+(eq:cg\_regime, eq:coarse\_grained\_n).
+Open problems already recorded and adjacent to OP3.1:
+OP-grad (dynamical origin of gradient condensation), OP2
+(EFT-to-bare matching).
+
+\subsection*{3. Verdict}
+\textbf{A bare variational problem IS explicitly defined} in the
+article: fields, locality, symmetries ($O(4)$, $\mathbb Z_2$),
+potential with $\lambda>0$ (bounded below), and a boundary-value
+formulation are all pinned at eq:ECT\_action /
+eq:ect\_euclidean\_fundamental.
+So OP3.1a in the form ``state the admissible bare functional
+class'' is NOT the gap for the minimal action itself.
+\textbf{The true gap is sharper:} the ordered sector
+($\langle\partial\Phi\rangle\neq0$) is introduced by P4 as a
+postulate, and the article itself records (P3 commentary, OP-grad)
+that the minimal bare action is not claimed to produce it.
+\emph{Structural observation (hedged, to be checked, not a
+theorem):} within the minimal action a uniform-gradient
+configuration is not a finite-action competitor on unbounded
+domains and leaves the potential minimum; its realisation appears
+tied to (i)~boundary data in the recorded boundary-value
+formulation and/or (ii)~the $P(X)$-type extension of OP-grad.
+Hence the honest decomposition is:
+\begin{itemize}
+\item \textbf{OP3.1a (bare$\to$P4 gap; coincides with completing
+  OP-grad):} exhibit, within an admissible extension class (e.g.\
+  $P(X)$ structures) or via boundary data of the recorded
+  boundary-value problem, a mechanism by which the gradient-ordered
+  sector exists and is selected; specify the admissible extension
+  class precisely.
+\item \textbf{OP3.1b (EFT-data derivation; subsumes OP2):} derive
+  $Z_u,\mathcal C_n,W(u)$ (hence $F,\omega,U$ within the recorded
+  closure map and its normalisation freedoms) by expansion around
+  the ordered configuration.
+\item \textbf{OP3.1c (selection as measure concentration):}
+  establish dominance of the ordered sector in the recorded
+  $S_0$-weighted framework; ``selection'' remains a statement about
+  the Euclidean measure, not a process in time.
+\end{itemize}
+
+\subsection*{4. Consequences for the recon-v2 deliverables}
+The M1--M6 interface ledger stands as written (status: Open;
+interface requirements recorded).
+The conditional existence scaffold's hypotheses are now checkable
+in principle for the minimal action ($V$ bounded below), but the
+crux is not existence of minimisers of $S_E^{\rm bare}$ --- it is
+the variational status of the \emph{ordered} sector (OP3.1a);
+the scaffold therefore stays proposal-only and is re-aimed at the
+extension class once OP3.1a specifies it.
+No insertion proposed yet.
+
+\subsection*{5. Questions for GPT}
+(Q1)~Agree that A0 shows the bare problem well-posed and relocates
+the gap to OP3.1a $=$ bare$\to$P4 (i.e.\ completing OP-grad), with
+OP3.1b subsuming OP2 and OP3.1c the measure-concentration
+statement?
+(Q2)~First insertion target: the M1--M6 interface ledger plus this
+sharpened OP3.1a/b/c decomposition as short text next to the OP3.1
+item (status ``Open; interface requirements recorded / programme
+sharpened''), cross-referencing OP-grad and OP2 rather than
+duplicating them?
+(Q3)~The hedged structural observation: include one cautious
+sentence in the article (flagged as observation, not theorem), or
+keep proposal-only?
+(Q4)~Scaffold: keep proposal-only and re-aim at the OP3.1a
+extension class --- agreed?
