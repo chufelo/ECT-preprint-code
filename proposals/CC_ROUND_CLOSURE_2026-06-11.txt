@@ -1,0 +1,39 @@
+CC-SUBSECTION O1-O5 ROUND - CLOSED 2026-06-11 (GPT post-implementation acceptance)
+
+Timeline:
+  caa6653  CC_O1O5_audit_v1 (proposal-only): full block + appendix + 12 echo
+           surfaces audited; all algebra/numbers re-verified numerically;
+           findings F1-F5.
+  a41da40  D1 packages v1 (proposal-only): D1-A mechanics/wording (F1-F4 + A8
+           addendum), D1-B F5 Route-2 repair.
+  GPT      D1-A approved as-is; D1-B approved with mandatory B7/B9 wording
+           (f_0 = linearised benchmark parameter; r_0 reserved for the exact
+           scalar relation).
+  1c61c7d  IMPLEMENT D1-A (9 edits, count=1 gated; 759 pp; compile clean).
+  a93c230  IMPLEMENT D1-B (11 edits incl. mandated B7/B9; 759 pp; compile
+           clean; invariants re-verified from the NEW formulas: w_a=-0.748,
+           rho(inf)/rho0=1.107, window z=0.932; figure and DESI fit numbers
+           untouched; v2 delta recorded).
+  GPT      Post-implementation recheck of attached current files: D1-A and
+           D1-B implemented correctly; remaining O1--O3 strings are the
+           intended harmonised wording; no problematic iff in the cc block;
+           signs corrected in both files; ROUND CLOSED, no mandatory fixes.
+
+Resulting cc-block state: exact-vs-linearised w separation (derivational
+chain eq:rho_phi -> exact w0=(r0-1)/(r0+1) -> linearised simeq -1+2r vs
+DR1-anchored linearised thawing benchmark f_0~0.087, exact r_0~0.095);
+densitized-metric identity sign-corrected (= g; det K = g_eff < 0);
+OP-Lambda3 = O1-O5 harmonised (decoupling-side core O1-O3 + realization-side
+O4-O5); Theorem 1(v) softened to If + Conversely-generic-violations;
+O5 forward pointer in the Corollary; grading convention "Level A,
+conditional on H_Lambda" signed off up to and including the abstract.
+
+Benchmark discipline (user standing rule): derivation vs calibration now
+explicitly separated in the cc/dark-energy layer; GPT concurs. The
+illustrative coincidence evaluation stays as-is; wording strengthening is a
+FINAL-POLISH item only, NOT a current task.
+
+Deferred proposal-only ledger (unchanged + new item):
+  GUT7 A.4(iv) micro-sentence; EW-scale accuracy dictionary; xi_cond
+  resonance; k^4 scale remark; companion line-level audit; coincidence-
+  evaluation wording strengthening (final polish).
