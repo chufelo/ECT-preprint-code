@@ -21240,18 +21240,20 @@ $w_0$ to the explicit background solution.
 Current late-time cosmological data are compatible with a mildly
 quintessence-like branch, although no unique ECT fit is claimed here.
 
-In terms of the kinetic-to-potential ratio:
+In terms of the kinetic-to-potential ratio
+$r\equiv\rho_{\rm kin}/\rho_{\rm cond}$, the exact $\phi$-sector
+relation and its linearised small-$r$ form read
 \begin{equation}
   \label{eq:w0_fit}
-  w_0 = -1 + \frac{2\rho_{\rm kin}}{3\rho_{\rm cond}},
+  w_0 = \frac{r_0-1}{r_0+1} \;\simeq\; -1 + 2 r_0\,,
   \qquad
   \rho_{\rm kin}\equiv\tfrac{1}{2}\omega\dot\phi^2,
   \quad
   \rho_{\rm cond}\equiv U(\phi).
 \end{equation}
-This parametrisation is most useful in the late-time
+The linearised form is the one used in the late-time
 kinetic-subdominant regime $\rho_{\rm kin}\ll\rho_{\rm cond}$.
-The ratio $\rho_{\rm kin}/\rho_{\rm cond}$ is not yet derived from
+The ratio $r_0$ is not yet derived from
 bare ECT postulates; no specific numerical value of $w_0$ can be
 claimed without a solved background history~(Level~B/Open).
 
@@ -23238,7 +23240,7 @@ Infrared dark-energy scale
   & observed dark-energy density at order-of-magnitude level \\
 
 $w_0\approx -1$ as slow-branch instance
-  & $w_0 = -1 + 2\rho_{\rm kin}/(3\rho_{\rm cond})$ grounded by FRW reduction of the ordered-branch mode (Appendix~\ref{app:frw_cc})
+  & exact $w_0=(r_0-1)/(r_0+1)$, linearised $w_0 \simeq -1 + 2\rho_{\rm kin}/\rho_{\rm cond}$, grounded by FRW reduction of the ordered-branch mode (Appendix~\ref{app:frw_cc})
   & A/B structural
   & \S\ref{subsec:frw_cc}
   & DESI-era $w_0\neq -1$ indication \\
@@ -26336,12 +26338,13 @@ The effective amplitude-sector energy density and pressure are those of
 the $\phi$-first background closure developed in
 Section~\ref{sec:mp_flrw}
 (eqs.~\eqref{eq:rho_phi}--\eqref{eq:w_phi}).
-Here we only recall the resulting late-time form,
-with the standard $\phi$-sector relation
-$w_\phi=(K-U)/(K+U)$ reducing in the kinetic-subdominant regime to
-the expression below.
+Here we only recall the resulting late-time form:
+the standard $\phi$-sector relation
+$w_\phi=(K-U)/(K+U)$ reduces in the kinetic-subdominant regime
+$r\equiv\rho_{\rm kin}/\rho_{\rm cond}\ll1$ to the linearised
+expression
 \begin{equation}
-w \approx -1 + \frac{2\rho_{\rm kin}}{3\rho_{\rm cond}},
+w \simeq -1 + 2\,\frac{\rho_{\rm kin}}{\rho_{\rm cond}},
 \qquad
 \rho_{\rm kin}\equiv\tfrac{1}{2}\omega(\phi)\dot\phi^2,
 \quad
@@ -26390,11 +26393,12 @@ discriminants at the dark-energy level.
 
 \paragraph{Thawing condensate model.}
 If the condensate rolls slowly toward its potential
-minimum, the kinetic fraction decays:
+minimum, the kinetic fraction decays. The phenomenological
+thawing benchmark adopts
 $\rho_{\rm kin}(z)/\rho_{\rm cond} = f_0\,e^{-\kappa z}$,
-giving
+giving, in the linearised small-$r$ regime,
 \begin{equation}
-w(z) = -1 + \frac{2f_0}{3}\,e^{-\kappa z}\,.
+w(z) \simeq -1 + 2 f_0\,e^{-\kappa z}\,.
 \label{eq:w_thaw}
 \end{equation}
 This is a \emph{thawing quintessence} model: $w \to -1$
@@ -26481,8 +26485,9 @@ $\Lambda$CDM ($w = -1$ exact) & increasingly challenged, not yet excluded \\
 
 \paragraph{ECT confrontation with DESI.}
 The ECT thawing model~\eqref{eq:w_thaw} with
-$f_0 \approx 0.26$ and $\kappa \approx 4.3$ (DR1-anchored legacy calibration,
-not derived from first principles) is consistent with
+$f_0 \approx 0.087$ and $\kappa \approx 4.3$ (DR1-anchored legacy
+calibration of the linearised benchmark, not derived from first
+principles) is consistent with
 DESI data at the $2\sigma$ level
 (Fig.~\ref{fig:w_z}).  It reproduces the key observational
 feature --- $w > -1$ today, evolving toward $w = -1$
@@ -26526,13 +26531,13 @@ matter-to-dark-energy ratio
 \begin{equation}
   r(z)\equiv \frac{\rho_m(z)}{\rho_\phi(z)}
   = \frac{\Omega_{m0}}{\Omega_{\phi 0}}(1+z)^3
-    \exp\!\left[-2f_0\int_0^z \frac{e^{-\kappa z'}}{1+z'}\,dz'\right],
+    \exp\!\left[-6f_0\int_0^z \frac{e^{-\kappa z'}}{1+z'}\,dz'\right],
   \label{eq:r_ratio_thaw}
 \end{equation}
 computed from the continuity equation
 $\dot\rho_\phi+3H(1+w)\rho_\phi=0$ with the calibrated thawing
 equation of state~\eqref{eq:w_thaw}. Numerical evaluation with the
-DR1-calibrated legacy benchmark $(f_0,\kappa)\approx(0.26,4.3)$ yields
+DR1-calibrated legacy benchmark $(f_0,\kappa)\approx(0.087,4.3)$ yields
 $\rho_\phi(z=1)/\rho_{\phi 0}\approx 1.11$ and
 $\rho_\phi(z\!\to\!\infty)/\rho_{\phi 0}\approx 1.11$: in this
 benchmark the condensate dark-energy density varies by only
@@ -27116,7 +27121,7 @@ vacuum~\cite{Degrassi2012,Buttazzo2013} (full branch-architecture
 and embedded-sector analysis open;
 \S\ref{sec:radial_mode}); and the matter-to-dark-energy ratio
 $r(z)=\rho_m/\rho_\phi$ in the calibrated ECT thawing benchmark
-$(f_0,\kappa)\approx(0.26,4.3)$ is only marginally wider than in pure
+$(f_0,\kappa)\approx(0.087,4.3)$ is only marginally wider than in pure
 $\Lambda$CDM (about $7\%$ for the illustrative order-unity window).
 We therefore keep the so-called cosmological coincidence question as
 an open programmatic issue rather than as a current ECT result
@@ -45627,10 +45632,10 @@ parametrisation~\cite{Lodha2025}; these indications are suggestive but
 not definitive and are not used here as a fixed numerical calibration
 anchor.
 The legacy DR1 anchor $w_0=-0.827$ is compatible with the ECT
-late-time amplitude-sector closure if the ratio of kinetic to
-condensate energy density satisfies
-$\rho_{\rm kin}/\rho_{\rm cond} \approx 0.26$ (DR1-anchored legacy
-benchmark).
+late-time amplitude-sector closure if the linearised thawing
+benchmark parameter is $f_0\approx0.087$ (while the exact scalar
+relation would assign $r_0=(1+w_0)/(1-w_0)\approx0.095$ for
+$w_0=-0.827$; DR1-anchored legacy benchmark).
 This remains a concrete target for the full cosmological
 $\phi_{\rm bg}(t)$ programme.
 
