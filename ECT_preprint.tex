@@ -14075,6 +14075,83 @@ $N_{\rm gen}=3$ from anomaly cancellation
 Its whole-framework consistency status is recorded in the global
 Level-4 self-consistency checklist~(\S\ref{sec:global_level4_checklist}).
 
+\paragraph{Hypercharge normalisation: distinct notions and
+lattice interlock.}
+Four notions must be kept separate: the rational pattern of
+hypercharge ratios within a generation (the core of OP-GUT3b);
+the charge-lattice/centre structure (OP-GUT3a and its extension
+here); the coupling magnitude ($g'$, $Z_B^{(0)}$,
+$\sin^2\theta_W$ --- OP-GUT4/OP-GUT7, not part of OP-GUT3b); and
+the bookkeeping convention $Q=T_3+Y/2$ used throughout.
+For a multiplet with triality $t$ ($\mathbf3\to+1$,
+$\bar{\mathbf3}\to-1$, colour singlet $\to0$), duality $d$ (weak
+doublet $\to1$, singlet $\to0$) and hypercharge $Y$, the centre
+element $(\omega\mathbf 1_3,\,-\mathbf 1_2,\,e^{i\pi Y})$,
+$\omega=e^{2\pi i/3}$, acts trivially iff the interlock
+congruence
+\begin{equation}
+  \frac{2t}{3}+d+Y\;\in\;2\mathbb Z
+  \quad\Longleftrightarrow\quad
+  3Y+3d+2t\equiv0\ (\mathrm{mod}\ 6)
+  \label{eq:interlock_congruence}
+\end{equation}
+holds.
+All recorded one-generation assignments~\eqref{eq:hypercharges}
+satisfy it (values $2,-2,0,0,2,0$), so the inherited content is
+consistent with the maximal quotient
+$(SU(3)\times SU(2)\times U(1)_Y)/\mathbb Z_6$; consistency does
+not select $\Gamma$, and distinguishing the
+$\mathbb Z_6/\mathbb Z_3/\mathbb Z_2$/trivial options requires
+extended-object data~\cite{AharonyEtAl2013}.
+For colour singlets in the recorded singlet/doublet sectors
+($d=2T\ \mathrm{mod}\ 2$), the congruence reduces to the recorded
+electroweak $\mathbb Z_2$ condition $2T+Y\in2\mathbb Z$
+\eqref{eq:charge_lattice}; it is the colour-completed extension
+of that refinement.
+With $Q=T_3+Y/2$ it implies $Q\equiv-t/3\ (\mathrm{mod}\ 1)$:
+colour singlets carry integer electric charge, triplets
+$Q\equiv-\tfrac13$ and antitriplets
+$Q\equiv+\tfrac13\ (\mathrm{mod}\ 1)$ --- the rule correlating
+allowed electric classes with colour representations.
+If the observed quark charges are admitted as input, the minimal
+electric lattice compatible with them has unit $e/3$; the
+nontrivial content is the correlation rule, not the arithmetic
+unit, and for the colour completion (OP-GUT1) the rule is a
+requirement: the emergent colour module must realise the
+$\mathbb Z_3$ centre with exactly this triality--charge
+correlation.
+The congruence also acts on the residual freedoms of the
+recorded anomaly solution structure.
+In the branches without a free-hypercharge $\nu^c$, the
+rescaling $Y\to\lambda Y_{\rm SM}$ is discretised: the quark
+doublet gives $\lambda\equiv1\ (\mathrm{mod}\ 6)$, and the
+remaining multiplets impose weaker congruences
+($\lambda\equiv1\ \mathrm{mod}\ 3$ or
+$\lambda\equiv1\ \mathrm{mod}\ 2$), so the combined condition is
+$\lambda\equiv1\ (\mathrm{mod}\ 6)$.
+In the free-hypercharge $\nu^c$ branch, for the pure $B{-}L$
+shift around the observed representative ($\lambda=1$) the
+interlock requires $c\in6\mathbb Z$.
+For the combined deformation
+$Y'=\lambda Y_{\rm SM}+c\,(B{-}L)$, however, the residual
+lattice is
+\[
+  c\in2\mathbb Z,\qquad \lambda+c\equiv1\pmod 6,
+\]
+equivalently $c=2m$, $\lambda=1-2m+6n$ with $m,n\in\mathbb Z$
+(the point $(\lambda,c)=(-1,2)$ realises the recorded
+$u^c\!\leftrightarrow\!d^c$ relabelling).
+Thus the interlock discretises the $B{-}L$ flat direction but
+does not eliminate it; the observed assignment remains the
+representative $(\lambda,c)=(1,0)$, and selecting it is still an
+additional minimality/completion choice
+(cf.\ the minimality convention of the matter audit below).
+This is a consistency requirement on completions, not a
+derivation of the observed hypercharges.
+OP-GUT3a is extended at the congruence level; OP-GUT3b remains
+Open, sharpened to selection within the explicitly characterised
+discrete residual family.
+
 \subsubsection*{P7-restricted matter audit (OP-GUT2): bounded
 first pass}
 
@@ -46735,10 +46812,15 @@ OP-GUT2
 OP-GUT3a
   & Global EW structure $\to$ charge lattice;
     Abelian lattice now established (Theorem~\ref{thm:charge_lattice}, Level~A);
-    EW $\mathbb{Z}_2$ refinement conditional~(B)
+    EW $\mathbb{Z}_2$ refinement conditional~(B);
+    colour-interlock congruence recorded
+    (\S\ref{sec:anomaly_architecture})
   & Partially closed \\
 OP-GUT3b
-  & Derive observed charge assignments of quarks and leptons
+  & Derive observed charge assignments of quarks and leptons;
+    sharpened to selection within an explicitly characterised
+    discrete residual family
+    (\S\ref{sec:anomaly_architecture})
   & Open \\
 OP-GUT4
   & Relate $\alpha_s$, $\alpha_{\rm em}$, $G_N$ to condensate parameters
