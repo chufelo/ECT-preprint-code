@@ -1,0 +1,62 @@
+% ============================================================
+% OP3_1a_orientation_D1_blocks_v1.tex  (EXACT INSERTION BLOCK for
+% review; NOT yet implemented). Scope per GPT verdict on recon v4:
+% one compact paragraph next to the implemented M-(alpha,beta) /
+% C-V blocks (NOT in the older two-level-description section).
+% Allowed: explicit pullback of Z_u and C_n operators; exact u_0^2
+% cancellation; both fourth-order in chi; no modification of the
+% two-derivative K^AB in the strict integrable regime; brief
+% "higher-derivative/k^4-type corrections" WITHOUT scale estimate;
+% closing localisation sentence verbatim.
+% Excluded: (beta/C_n)^(1/2) scale estimate; C-V mosaic /
+% m_sigma^-1 resonance; any defect/texture relaxation mechanism;
+% any general "fails" claim about the orientation sector; any
+% solved claim; any status upgrade.
+% Note: the block forward-references the EFT
+% (eq:ordered_branch_euclidean_eft) and the integrability
+% reduction (eq:goldstone_reduction_main), both defined later in
+% the article; this matches the article's existing
+% cross-referencing style.
+% ============================================================
+
+% ---------- ANCHOR 1 (single anchor) ----------
+% Insert AFTER the end of the implemented C-V paragraph:
+%   "No inconsistency is asserted; the computation narrows where the
+%    bridge can live (orientation/EFT-level stiffness, constraint or
+%    composite-variable structure, or the bare-versus-EFT level
+%    distinction).
+%    OP-grad/OP3.1a remains open."
+% and BEFORE:
+%   "\subsection{Collective variables and the ordered-branch infrared EFT}"
+
+\paragraph{Orientation sector and the matching question (computed;
+strict integrable regime).}
+The orientation-sector operators of the ordered-branch EFT
+recorded in \eqref{eq:ordered_branch_euclidean_eft}
+(\S\ref{sec:ordered_branch_eft}) do not alter this conclusion at
+the two-derivative level.
+Inserting the integrability reduction $\sigma=\partial_w\chi$,
+$\pi_i=\partial_i\chi/u_0$
+(eq.~\eqref{eq:goldstone_reduction_main},
+\S\ref{sec:goldstone_integrability_main}) into those operators
+gives
+\[
+\frac{Z_u}{2}\,(\partial_A\sigma)^2
+=\frac{Z_u}{2}\,(\partial_A\partial_w\chi)^2 ,
+\qquad
+\frac{\mathcal C_n}{2}\,u_0^2\,(\partial_A\pi_i)^2
+=\frac{\mathcal C_n}{2}\,(\partial_A\partial_i\chi)^2 ,
+\]
+where the background factor $u_0^2$ cancels exactly against the
+$1/u_0^2$ from $\pi_i=\partial_i\chi/u_0$.
+Both recorded operators pull back to fourth-order operators in
+$\chi$ --- higher-derivative/$k^4$-type corrections --- and do
+not modify the two-derivative tensor $K^{AB}$.
+Hence $\mathcal C_n$ is not a two-derivative transverse supplier
+in the strict integrable single-field pullback; that reading
+belongs to a coarse-grained level at which the exact constraint
+\eqref{eq:integrability_un} is relaxed and $n_A$ acquires
+effectively independent long-wavelength dynamics.
+OP-grad/OP3.1a is localised to the
+constraint-relaxation/coarse-graining bridge; completion remains
+open.
