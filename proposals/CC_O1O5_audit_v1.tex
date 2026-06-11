@@ -1,0 +1,151 @@
+% ============================================================
+% CC_O1O5_audit_v1.tex  (PROPOSAL-ONLY AUDIT; NO PREPRINT EDITS)
+% Scope: ECT_cc_subsection.tex (733 lines), App_CC_technical.tex
+% (185 lines), and the twelve echo surfaces in the main text.
+% All algebra and all quoted numbers re-verified by session
+% python (random-matrix identity tests, exact integrals).
+% ============================================================
+\section*{cc-subsection O1--O5 audit, v1 (proposal-only)}
+
+\subsection*{1. Scope and map}
+Audited: the full cc subsection (Theorem~1 with proof outline,
+$H_\Lambda$ analysis, unimodular comparison, Weinberg no-go
+discussion, FRW reduction, IR estimate, pseudo-Goldstone
+realization, comparison table, Level~A/B/C summary, claim and
+non-claim lists, O1--O5); the technical appendix
+(app:cc\_technical, input at L52742 --- rank-one identity,
+Jacobian identity, FRW reduction, dimensional audit); and the
+echo surfaces: abstract (L128--146), symbol list (L482--490),
+abbreviations ($H_\Lambda$ vs H1 disambiguation, L585--586),
+dark-energy table (L23222--23250), cosmology status paragraph
+(L26269--26305), chapter summary (L26892--26909), derived-status
+row (L27314), falsifier item (L27605--27610), closure targets
+(L45861--45894), OP-$\Lambda$3-O1\ldots O5 registry rows
+(L46861--46891), reformulated-problems list (L46193--46201),
+grand table (L46968--46969). Bibliography: all 13 keys used by
+the block present and unique.
+
+\subsection*{2. Verified PASS}
+\emph{Mathematics (numerically re-verified).} Rank-one
+determinant identity; $\det K=\beta^3(\beta-\alpha)<0$ for
+$\alpha>\beta$ (checked at two parameter points);
+$\sqrt{-\det K}=\beta^2/c_*$; the two identification conventions
+agree at the canonical benchmark; vanishing variation on the
+constraint surface; Jacobian cancellation; the $H_\Lambda$-failure
+branch ($\det\mathcal K=Z^4\det K$, $\sqrt{\;}\propto Z^2$);
+the exact FRW relation $w=(r-1)/(r+1)$.
+\emph{Numbers.} $M_{\rm Pl}^2H_0^2=1.23\times10^{-47}$;
+$(2.3\times10^{-3}\,$eV$)^4=2.8\times10^{-47}$; the catastrophe is
+$10^{119.5}$ at $\lambda=1$ (quoted ``$\sim$120''); the rejected
+alternatives $M_{\rm Pl}H_0^3\sim10^{-107.1}$ and
+$H_0^4\sim10^{-167.4}$; $M_{\rm Pl}/H_0=1.7\times10^{60}$;
+$m_G\sim H_0=1.44\times10^{-33}$\,eV; benchmark chain
+$w_a=-0.745$, $\rho_\phi(\infty)/\rho_{\phi0}=1.106$,
+coincidence windows $z=0.932$ (thawing) vs $0.869$
+($\Lambda$CDM) --- all match the quoted values.
+\emph{Status discipline.} The grading is uniform across all
+twelve surfaces up to and including the abstract: Object~A ---
+Level~A unconditional; Object~B --- Level~A \emph{conditional on}
+$H_\Lambda$; IR value --- Level~C; the falsifier list carries the
+explicit $H_\Lambda$ failure mode; $H_\Lambda$ is disambiguated
+from the Hubble-route H1 in the abbreviation list. The claim /
+non-claim lists are exemplary.
+
+\subsection*{3. Findings}
+\paragraph{F1 (mechanical; three sites): O1--O3 vs O1--O5
+extent.} The subsection and the registry define the reformulated
+OP-$\Lambda$3 programme as O1--O5 (five registry rows; closing
+summary ``O1--O5 \ldots constitute the reformulated
+OP-$\Lambda$3 programme''), but three main-text echoes say
+\emph{three}: L26303 (``listed as O1, O2, O3''), L45888--45889
+(``splits into three technical open problems (O1--O3)''),
+L46200 (``O1--O3 \ldots; alternate label: OP-$\Lambda$3'').
+Likely O4/O5 were added later. Proposed minimal fix: at the two
+narrative sites, ``the three decoupling-side core tasks
+(O1--O3), completed by the realization-side tasks O4--O5'';
+at L46200, simply ``O1--O5''.
+
+\paragraph{F2 (wording): Theorem~1(v) ``If and only if''.}
+The ``if'' direction is proved; the converse is demonstrated for
+the scalar-prefactor class $Z(\phi)$ only. Proposed: ``If'' in
+the theorem statement, plus ``conversely, a generic violation
+(e.g.\ a scalar prefactor $Z(\phi)$) reintroduces the
+coupling''; alternatively keep ``if and only if'' with an
+explicit genericity qualifier.
+
+\paragraph{F3 (optional): no forward pointer to O5.} The theorem
+corollary and the convention note restrict to the leading
+ansatz; a parenthetical ``(beyond-leading corrections: O5)''
+would close the loop.
+
+\paragraph{F4 (mechanical; appendix only; two sign sites).}
+The 4D identity is $\det(\sqrt{-g}\,g^{\mu\nu})=g$, not $-g$
+(verified numerically on a random Lorentzian metric: both sides
+$=-0.036448$); hence $\det K=g_{\rm eff}<0$, and
+$\sqrt{-g_{\rm eff}}=\sqrt{-\det K}=\sqrt{\beta^3(\alpha-\beta)}
+=\beta^2/c_*$. App.~app:rank1 currently states
+``$\det(\sqrt{-g}\,g^{\mu\nu})=-g$'' and
+``$\det K^{AB}=-g_{\rm eff}$'' yet then evaluates
+$\sqrt{\beta^3(\alpha-\beta)}$, i.e.\ it is internally off by one
+sign in the prose while the final value is correct. The main
+subsection (eq:sqrt\_g\_const) already uses the correct
+$\sqrt{-\det K^{AB}}$ form. Fix: two sign corrections in the
+appendix; no result changes.
+
+\paragraph{F5 (substantive; numerically invariant downstream):
+the factor 3 in the $w_0$ identification.} The displayed
+formulas eq:w0\_fit (L21246) and eq:w\_ect (L26343) read
+$w=-1+2\rho_{\rm kin}/(3\rho_{\rm cond})$ \emph{with the
+definitions} $\rho_{\rm kin}\equiv\frac12\omega\dot\phi^2$,
+$\rho_{\rm cond}\equiv U$. But the article's own
+eq:w\_phi gives $w_\phi=(K-U)/(K+U)$, whose
+kinetic-subdominant reduction is $-1+2\rho_{\rm kin}/
+\rho_{\rm cond}$ --- no $1/3$. The bridging sentence at
+L26339--26341 (``standard relation \ldots reducing \ldots to the
+expression below'') therefore contradicts its own display; the
+cc subsection (L375--380) and the appendix (app:frw\_cc) claim
+the homogeneous reduction ``reproduces'' the $/3$ formula ---
+false as stated. Quantitatively: exact $w_\phi$ at the quoted
+ratio $0.26$ is $-0.587$, not $-0.83$; the pairing
+$(0.26\leftrightarrow-0.83)$ holds only through the $/3$ form.
+\emph{Crucially, the entire downstream benchmark depends only on
+the product} $\tfrac23 f_0$ \emph{and} $\kappa$, and is
+internally consistent and verified: $w_a=-0.745$,
+$\rho_\phi(\infty)/\rho_{\phi0}=1.106$, windows $0.932/0.869$,
+the $w(z)$ figure, and eq:r\_ratio\_thaw's exponent
+($3(1+w)=2f_0e^{-\kappa z}$). Repair routes:
+\emph{Route 2 (recommended).} Correct the coefficient to
+$2\rho_{\rm kin}/\rho_{\rm cond}$ in eq:w0\_fit and eq:w\_ect;
+write eq:w\_thaw as $w=-1+2f_0e^{-\kappa z}$ with the rescaled
+kinetic fraction $f_0\approx0.087$ ($\kappa$ unchanged); adjust
+the quoted ratio at L26483, L26534, L27118, L45631, cc
+L379--380; fix the two ``reproduces'' sentences (cc, App), the
+r-ratio exponent prose, and note exact-vs-linear
+($-0.840$ vs $-0.827$ at the corrected ratio). All observable
+curves, $w_0$, $w_a$, the figure, $1.11$, and both windows are
+\emph{exactly unchanged}.
+\emph{Route 1 (minimal).} Keep all displays; demote
+$\rho_{\rm kin}/\rho_{\rm cond}$ at the benchmark sites to a
+calibration amplitude not identified with
+$\frac12\omega\dot\phi^2/U$, and fix only the three
+identification/``reproduces'' sentences. Decision requested.
+
+\subsection*{4. What is NOT affected}
+Findings F4/F5 do not touch Theorem~1, the decoupling claims,
+the Level-A statements, or the O1--O5 statuses: F4 is appendix
+prose around a correct result; F5 lives entirely in the IR
+benchmark layer (Object~C side). No edits have been performed.
+
+\subsection*{5. Questions for GPT}
+(Q1) Approve the F1 three-site harmonisation (variant above)?
+(Q2) Approve the F4 two-sign appendix fix?
+(Q3) F5: Route 2 (coefficient + rescaled $f_0\approx0.087$,
+observables invariant) or Route 1 (relabel only)? We recommend
+Route 2 as the ontologically honest option (the kinetic fraction
+becomes a true $8.7\%$ deep-slow-roll statement).
+(Q4) Theorem~1(v): soften ``if and only if'' per F2?
+(Q5) Sign off the grading convention ``Level~A, conditional on
+$H_\Lambda$'' (rigorous implication, unverified premise = O1 at
+Level~B) as deliberate up to and including the abstract --- or
+instruct a reformulation?
+(Q6) Take or skip the optional O5 forward pointer (F3)?
