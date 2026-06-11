@@ -1,0 +1,159 @@
+% ============================================================
+% OP3_1a_bridge_recon_v2.tex  (PROPOSAL-ONLY; v2 per GPT review)
+% Changes vs v1: the incorrect "linear profile is no longer a
+% solution" sentence REMOVED and replaced by GPT's corrected
+% statement; the three notions (local EOM / stationary-density
+% selection of u_*^2 / fluctuation-tensor matching) explicitly
+% separated with the EOM written out; full quadratic algebra
+% written out; M-(alpha,beta) kept as a matching question;
+% OP3.1a phrased as completion/testing of the recorded
+% OP-grad/P(X) route; E2 deferred with GPT's sentence.
+% NO preprint edits.
+% ============================================================
+\section*{OP3.1a bridge reconnaissance, v2 (proposal-only)}
+
+\subsection*{0. Scope and phrasing}
+OP3.1a is the OP-grad completion problem: the recorded $P(X)$
+motivation must be completed into a genuine bridge from bare~P3 to
+the postulated~P4 ordered-gradient sector.
+The recorded route is motivation, not solution; completion remains
+open, and nothing here derives the mechanism.
+
+\subsection*{1. What the article records (unchanged from v1)}
+eq:PX\_action ($O(4)$-invariant $P(X)$ extension);
+eq:PX\_minimum ($P_X(u_*^2)=0$, $P_{XX}(u_*^2)>0$);
+eq:gradient\_branch, eq:gradient\_vac (linear ordered background,
+$S^3$ degeneracy, spontaneous $O(4)\to O(3)$); status: motivation
+for P4, not derived; open: form of $P$, value of $u_*$,
+$u_*\leftrightarrow(\mu,\lambda)$.
+Adjacent: broken-phase tensor $K^{AB}=\beta\delta^{AB}-\alpha
+n^An^B$, $\alpha>\beta>0$; saddle-driven-restructuring language.
+
+\subsection*{2. Three distinct notions (the v1 conflation,
+corrected)}
+For $S=\int d^4X\,P(X)$, $X=\partial_A\Phi\,\partial_A\Phi$, the
+local field equation is
+\[
+\partial_A\bigl(P_X(X)\,\partial_A\Phi\bigr)=0 .
+\]
+\emph{(i) Local field equation.}
+A constant-gradient profile $\partial_A\Phi=u_A$ has
+$X=\mathrm{const}$, $P_X=\mathrm{const}$, and therefore solves the
+local pure-$P$ field equation for \emph{any} constant value of
+$P_X$, not only $P_X=0$.
+\emph{(ii) Stationary-density selection of $u_*^2$.}
+Among homogeneous constant-gradient configurations, the Euclidean
+action density is $P(u^2)$; the recorded condition
+$P_X(u_*^2)=0$, $P_{XX}(u_*^2)>0$ selects $u_*^2$ as a stationary
+(minimal) action density --- a statement about magnitude
+selection, distinct from~(i).
+\emph{(iii) Fluctuation-tensor matching.}
+A separate question again, computed next.
+
+\subsection*{3. Quadratic algebra (written out)}
+Around $\bar\Phi$ with $\partial_A\bar\Phi=u_*n_A$
+($n_An_A=1$), write $\Phi=\bar\Phi+\chi$.
+Then
+\[
+X=X_0+\delta X,\qquad X_0=u_*^2,\qquad
+\delta X=2u_*\,n\!\cdot\!\partial\chi+(\partial\chi)^2 ,
+\]
+and
+\[
+P(X)=P(X_0)+P_X(X_0)\,\delta X+\tfrac12P_{XX}(X_0)\,\delta X^2
++\dots
+\]
+Collecting the quadratic-in-$\chi$ pieces ($\delta X$ contributes
+$(\partial\chi)^2$ at first order and $4u_*^2(n\!\cdot\!\partial
+\chi)^2$ from $\delta X^2$ at second order; cubic and quartic
+pieces dropped):
+\[
+S^{(2)}\;=\;\int d^4X\Bigl[\,P_X(X_0)\,(\partial\chi)^2
++2P_{XX}(X_0)\,u_*^2\,(n\!\cdot\!\partial\chi)^2\Bigr]
+\;+\;\dots
+\]
+Hence the effective fluctuation tensor of the pure-$P$ sector is
+\[
+\mathcal K^{AB}\;\propto\;P_X(X_0)\,\delta^{AB}
++2P_{XX}(X_0)\,u_*^2\,n^An^B ,
+\]
+with longitudinal coefficient $P_X+2P_{XX}u_*^2$ and transverse
+coefficient $P_X$.
+\emph{At the recorded stationary-density point} ($P_X=0$,
+$P_{XX}>0$): the transverse sector receives no kinetic term from
+pure $P$ at this order (leading-order flatness of the would-be
+Goldstone directions of the $S^3$ degeneracy), and the
+longitudinal (amplitude) sector has positive Euclidean stiffness
+$2P_{XX}u_*^2$ --- consistent with $u_*$ being a density minimum.
+
+\subsection*{4. Matching question M-($\alpha,\beta$) (corrected
+statement)}
+Formally matching $\mathcal K^{AB}$ to
+$\beta\delta^{AB}-\alpha n^An^B$ gives
+$\beta\leftrightarrow P_X(X_0)$ and
+$\alpha\leftrightarrow-2P_{XX}(X_0)u_*^2$.
+Matching the form $\beta\delta^{AB}-\alpha n^An^B$ with
+$\alpha>\beta>0$ would require $P_X(X_0)>0$ and
+$P_{XX}(X_0)<0$ at the background point.
+This is not the same as the recorded pure-$P$ stationary-density
+condition $P_X(u_*^2)=0$, $P_{XX}(u_*^2)>0$.
+A constant-gradient profile may still solve the local pure-$P$
+field equation, but the mechanism selecting its magnitude and
+matching its fluctuation tensor to the broken-phase EFT tensor is
+then not supplied by the recorded $P_X=0$ minimum alone.
+\emph{Matching question M-($\alpha,\beta$).}
+Exhibit the bridge between the recorded $P(X)$-stationary
+motivation and the recorded broken-phase tensor with
+$\alpha>\beta>0$: candidates include amplitude--potential coupling
+along the profile (the $V(\Phi)$ sector), mixed $P(X,\Phi)$
+dependence, the orientation-sector stiffness
+$\mathcal C_nu^2(\partial n)^2$ entering at EFT level (natural
+supplier of the transverse kinetic term left flat by pure $P$), or
+a level distinction between the bare-fluctuation tensor and the
+EFT tensor of the emergent-metric sector.
+No inconsistency is asserted: the two tensors may legitimately
+live at different levels; the task is to exhibit the bridge
+explicitly.
+Any resolution must remain consistent with the recorded saddle
+character of the ordering configuration.
+
+\subsection*{5. Admissible extension class (draft definition;
+proposal-only)}
+Single real $\Phi$; local; $O(4)$ and $\mathbb Z_2$; first pass
+$P(X,\Phi)$ with $X\ge0$; Euclidean boundedness below; reduction
+to eq:ECT\_action in the small-$X$/weak-coupling regime; the class
+must reproduce the recorded ordered-branch EFT interface
+($Z_u$, $\mathcal C_n$, $W(u)$) upon expansion, and any candidate
+background must pass (i)--(iii) of \S2--\S4 separately.
+Optional second pass: $(\partial^2\Phi)^2$-type terms.
+
+\subsection*{6. Deferred routes}
+E2 remains deferred; it may be useful only if the
+$P(X)$-completion route fails or requires higher-gradient support.
+E3 (boundary data) and E4 (measure selection) unchanged from v1;
+E4 belongs with OP3.1c.
+
+\subsection*{7. What is NOT proposed / risks}
+No insertion; no status changes; no claim that the recorded
+motivation is wrong; no $u_*(\mu,\lambda)$ numbers; no literature
+before page-level verification.
+Forbidden: ``ECT derives gradient condensation''; presenting
+M-($\alpha,\beta$) as a contradiction; minimisation language for
+the ordering configuration.
+Safe: ``completion/testing of the recorded OP-grad/$P(X)$ route'';
+``matching question recorded''.
+
+\subsection*{8. Questions for GPT}
+(Q1)~Algebra of \S3 and the corrected \S2/\S4 statements: approved
+as the verified basis?
+(Q2)~Eventual insertion target (after your sign-off): a short
+block recording (a)~the three-notion distinction of \S2, (b)~the
+fluctuation tensor of \S3 as a small computed lemma, and (c)~the
+matching question M-($\alpha,\beta$) --- placed next to the
+recorded $P(X)$ motivation, status ``OP-grad/OP3.1a sharpened;
+completion open''?
+(Q3)~Include the Goldstone-flatness reading (transverse sector
+left flat by pure $P$; $\mathcal C_n$ as natural supplier) in that
+block, or proposal-only?
+(Q4)~After this: D1-style exact blocks for review, no edits before
+that review --- agreed?
