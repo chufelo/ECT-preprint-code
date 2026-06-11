@@ -1,0 +1,140 @@
+% ============================================================
+% OP3_1a_bridge_recon_v4.tex  (PROPOSAL-ONLY; orientation-route
+% computation for M-(alpha,beta), per GPT's go-ahead after the
+% C-V round). NO preprint edits, NO mechanism claims.
+% Key context: the article ALREADY records the integrability
+% structure (eq:integrability_un, the linear reduction to one
+% scalar chi, the Universality Corollary, and the two-level
+% chi-vs-n_A description with the kappa_n term assigned to the
+% NLO/induced sector). v4 therefore computes the explicit
+% pullback of the recorded EFT operators and draws the OP3.1a
+% synthesis; it does not re-derive recorded results.
+% ============================================================
+\section*{OP3.1a bridge, v4: the orientation route computed
+(proposal-only)}
+
+\subsection*{0. The question}
+Can the recorded orientation stiffness
+$\tfrac{\mathcal C_n}{2}u^2(\partial n)^2$
+of eq:ordered\_branch\_euclidean\_eft act as the EFT-level
+supplier of the transverse two-derivative coefficient $\beta>0$,
+and how does that square with the computed result that $P{+}V$
+supplies no kinetic bridge at the bare/profile level?
+
+\subsection*{1. What the article already records (decisive)}
+(i)~Exact integrability: $Q_A=\partial_A\Phi$, so $u,n_A$ are not
+independent; $\partial_A(un_B)-\partial_B(un_A)=0$
+(eq:integrability\_un).
+(ii)~Linear reduction (eq:goldstone\_reduction\_main):
+$u_0\pi_i=\partial_i\chi$, $\sigma=\partial_w\chi$; all linear
+soft modes are derivatives of one scalar $\chi$; the
+transverse/vortical part is eliminated; inverse-Higgs-type.
+(iii)~Universality Corollary: the quadratic action collapses to
+$\tfrac12\int K^{AB}\partial_A\chi\,\partial_B\chi$ with the
+single tensor $K^{AB}=\beta\delta^{AB}-\alpha n^An^B$.
+(iv)~Two-level description: the $\chi$-level is the two-derivative
+Level~A sector; the $n_A$-level stiffness
+($\kappa_n(\partial n)^2$) is NLO/induced ``because $n_A$-gradients
+correspond to second derivatives of~$\Phi$''.
+(v)~Defect-mediated/texture processes are recorded as structurally
+natural for the Euclidean condensate.
+Consequence: the orientation route is pre-structured by the
+article; what remains is to make the pullback explicit and draw
+the OP3.1a consequence.
+
+\subsection*{2. Lemma O1 (computed pullback of the recorded EFT
+operators; strict single-field regime)}
+Insert the recorded linear reduction into the recorded EFT
+operators around the uniform background ($u=u_0$,
+$n_A=\delta_{Aw}$):
+\[
+\frac{Z_u}{2}(\partial_A\sigma)^2
+=\frac{Z_u}{2}\,(\partial_A\partial_w\chi)^2 ,
+\qquad
+\frac{\mathcal C_n}{2}\,u_0^2\,(\partial_A\pi_i)^2
+=\frac{\mathcal C_n}{2}\,(\partial_A\partial_i\chi)^2 ,
+\]
+where in the second operator the background factor $u_0^2$
+cancels exactly against the $1/u_0^2$ from
+$\pi_i=\partial_i\chi/u_0$.
+Both recorded operators pull back to \emph{pure fourth-order}
+$\chi$-operators.
+\emph{Consequences.}
+(a)~They contribute nothing to the two-derivative tensor
+$K^{AB}$; in particular, within the strict single-field regime
+$\mathcal C_n$ is \emph{not} a two-derivative transverse supplier
+--- this makes the recorded NLO/induced assignment explicit at
+the operator level.
+(b)~The two-derivative transverse coefficient at this level is
+whatever the microscopic gradient sector provides
+($\beta=P_X(\bar X)$ in the profile mechanics), so the
+B4 sign chain
+$\alpha>\beta>0\Leftrightarrow P_X>0,\;Q'<0$
+is unchanged by the orientation sector in the strict regime.
+(c)~The pulled-back operators first appear as $k^4$ corrections
+to the $\chi$ dispersion, defining an EFT-validity scale of order
+$(\beta/\mathcal C_n)^{1/2}$-type (hedged dimensional remark;
+proposal-only).
+
+\subsection*{3. Observation O2 (where the supplier reading can
+live)}
+The reading ``$\mathcal C_nu^2(\partial n)^2$ supplies the
+transverse kinetic term'' is meaningful precisely where the exact
+constraint eq:integrability\_un is \emph{relaxed}: coarse-grained
+descriptions in which $n_A$ becomes an effectively independent
+field --- multi-domain/patch mosaics, defect-mediated or
+non-single-valued configurations (the article already records
+texture/defect processes as structurally natural; and, hedged
+interpretive resonance only, the computed C-V patch structure of
+finite extent $\sim m_\sigma^{-1}$ provides a natural mosaic
+candidate; proposal-only).
+In such a regime the three $\delta n$ modes are genuine fields
+with transverse kinetic coefficient $\mathcal C_nu_*^2$, and
+$\mathcal C_n>0$ is the corresponding no-ghost-type floor.
+
+\subsection*{4. Synthesis: the orientation route localises
+OP3.1a}
+Combining O1 with the C-V round: neither the potential sector
+(no derivative terms) nor the orientation sector (fourth-order
+under the strict map) supplies the two-derivative transverse
+coefficient at the bare/strict level; and the longitudinal sign
+requires the $Q'<0$ regime that simple profile mechanics does not
+stabilise.
+Therefore the remaining core of OP3.1a is sharply localised:
+\emph{exhibit the constraint-relaxation/coarse-graining step}
+under which (a)~$n_A$ acquires independent long-wavelength
+dynamics with $\mathcal C_n>0$, and (b)~the effective
+two-derivative tensor of the reduced scalar acquires the recorded
+$\alpha>\beta>0$ structure with external (saddle-framework)
+stabilisation.
+This merges the former separate candidates ``orientation/EFT
+supplier'' and ``bare-versus-EFT level distinction'' into one
+named task (constraint-relaxation bridge), with selection issues
+delegated to OP3.1c.
+No inconsistency is asserted at any level.
+
+\subsection*{5. What is NOT claimed}
+No relaxation mechanism is derived; no defect dynamics is
+computed; the integrability structure and its corollaries are the
+article's recorded results --- the new content here is only the
+explicit operator pullback (with the $u_0$-cancellation) and the
+localisation synthesis; no insertion; no status changes.
+
+\subsection*{6. Questions for GPT}
+(Q1)~Approve Lemma O1 (including the $u_0$-cancellation detail)
+and the synthesis \S4 as computed/derived-from-recorded
+statements?
+(Q2)~Insertion shape, if any: a compact paragraph ``Orientation
+sector and the matching question (computed)'' --- candidate
+placement either next to the implemented M-($\alpha,\beta$)/C-V
+blocks or next to the recorded two-level description --- stating
+the explicit pullback (both operators fourth-order in $\chi$;
+$u_0$ cancels), consequence (a)/(b) of O1, and the localisation
+sentence of \S4, with status ``OP-grad/OP3.1a localised to the
+constraint-relaxation step; completion open''?
+(Q3)~The $k^4$/EFT-scale remark and the C-V mosaic resonance:
+both proposal-only?
+(Q4)~After this round: pause the OP3.1a column at this natural
+stopping point (recorded route tested; failure modes computed;
+remaining core named), or attempt a relaxation-mechanism recon
+(defect/patch coarse-graining) as a larger separate project?
