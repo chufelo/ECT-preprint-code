@@ -2047,6 +2047,52 @@ The two tensors may legitimately live at different levels; the
 task recorded here is to exhibit the bridge explicitly.
 OP-grad/OP3.1a sharpened; completion open.
 
+\paragraph{Potential-sector constraint (computed; profile
+reduction only).}
+For $S=\int d^4X\,[\,P(X)+V(\Phi)\,]$ in the profile reduction
+$\Phi=\Phi(s)$, $X=\Phi'^2$, the field equation
+$2\,\tfrac{d}{ds}\bigl(P_X\Phi'\bigr)=V'(\Phi)$ has the first
+integral
+\[
+Q(X)=E+V(\Phi),\qquad Q(X):=2X\,P_X(X)-P(X),
+\]
+with the structural identity
+$Q'(X)=P_X(X)+2X\,P_{XX}(X)$ --- exactly the longitudinal
+fluctuation coefficient above; the gradient magnitude is slaved
+to the potential through $dX/d\Phi=V'(\Phi)/Q'(X)$ wherever
+$Q'\neq0$ and locally $\Phi'\neq0$.
+Two computed consequences follow.
+First, the recorded $V$ excludes an exact global linear-gradient
+solution of the simple $P{+}V$ profile equation: away from
+$\Phi\in\{0,\pm\phi_0\}$ one has $V'\neq0$, while the linear
+profile makes the left-hand side vanish; quasi-homogeneous
+gradient patches then have finite profile extent (a hedged
+dimensional estimate of order $m_\sigma^{-1}$, not a theorem).
+Second, the potential sector contributes only the
+position-dependent mass term $\tfrac12V''(\bar\Phi)\,\chi^2$ and
+the background deformation --- no derivative kinetic terms; mixed
+$P(X,\Phi)$ cross-terms likewise reduce, upon integration by
+parts, to background/mass-sector contributions.
+Hence the bridge candidate ``coupling to the potential sector''
+is reclassified: it is a constraint and a mass-sector structure,
+not the kinetic bridge.
+The matching question correspondingly sharpens: with
+$\beta=P_X(\bar X)$ and $\beta-\alpha=Q'(\bar X)$,
+\[
+\alpha>\beta>0
+\quad\Longleftrightarrow\quad
+P_X(\bar X)>0,\qquad Q'(\bar X)<0 ,
+\]
+i.e.\ the broken-phase sign structure requires the operative
+point to lie on a profile-reduction descending branch of $Q$,
+which the simple $P{+}V$ profile mechanics does not itself
+stabilise.
+No inconsistency is asserted; the computation narrows where the
+bridge can live (orientation/EFT-level stiffness, constraint or
+composite-variable structure, or the bare-versus-EFT level
+distinction).
+OP-grad/OP3.1a remains open.
+
 \subsection{Collective variables and the ordered-branch infrared EFT}
 \label{sec:ordered_branch_eft}
 
