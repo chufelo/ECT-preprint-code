@@ -1,4 +1,4 @@
-OPCONST REVIEW MANIFEST v3.2  generated 2026-06-12  (F7 recon added; preprint UNCHANGED since D4)
+OPCONST REVIEW MANIFEST v3.3  generated 2026-06-12  (F7 rev 1.1 + BB bridge recon; preprint UNCHANGED since D4)
 ==============================================================================
 THE ONLY VALID CANONICAL PREPRINT md5: 80c7896cbff702b1337ad8dde5b13698
 This manifest SUPERSEDES all earlier manifests and all earlier md5 values.
@@ -7,13 +7,19 @@ CANONICAL LOCATIONS: preprint = LaTex/ECT_preprint.tex; docs = LaTex/proposals/.
 Attach EXACTLY these files together with this manifest.
 
 1) ECT_preprint.tex  |  md5 80c7896cbff702b1337ad8dde5b13698  (unchanged since accepted D4 state)
-   grep -n "partially supported by the recorded induced-gauge" -> lines 22478
 
-2) OP_GRAD_F7_msigma_recon_v1.tex  |  md5 cc5b62bb444536b7a8eda963e48bfbb0
-   grep -n "sector-of-origin diagnostic" -> lines 19,47  [2 hits]
-   grep -n "gradient-native" -> lines 58,70,111,121  [5 hits]
-   grep -n "dimensionally forced" -> lines 57,112  [2 hits]
-   grep -n "viable alternative branch" -> lines   [0 hits]
-   grep -n "(V_{\rm eff}(u),Z_\sigma(u))" -> lines 115,138  [2 hits]
+2) OP_GRAD_F7_msigma_recon_v1.tex (rev 1.1)  |  md5 7a02c93a85423fd343a039422d092c41
+   grep -n "Incompatible with the" -> lines 64  [1 hits]
+   grep -n "no-extra-scale" -> lines 58,128  [2 hits]
+   grep -n "heavy-$\sigma$ scale remains far above Hubble" -> lines 80  [1 hits]
+   grep -n "rev.~1.1" -> lines 10  [1 hits]
+   MUST BE ABSENT "Excluded by the" -> [0 hits]
+   MUST BE ABSENT "D2 pinning logic extends" -> [0 hits]
 
-SELF-CHECK: ALL MARKERS PASS (line-level grep)
+3) OP3_BB_bridge_recon_v1.tex  |  md5 88b4da341c261d6cb77939ab0b47cdfa
+   grep -n "opening bridge" -> lines 7  [1 hits]
+   grep -n "merged breakdown" -> lines   [0 hits]
+   grep -n "event-ordering requirement" -> lines 100  [1 hits]
+   grep -n "interface requirements are respected" -> lines 123  [1 hits]
+
+SELF-CHECK: FAILURE
