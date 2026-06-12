@@ -1,0 +1,133 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}\usepackage{lmodern}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{amsmath,amssymb}\usepackage{enumitem}\usepackage{booktabs,longtable,array}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}\setlength{\parskip}{0.4em}
+\title{\textbf{OP-grad anchoring: the two-variable separation
+$u_{\rm cos}(z)$ vs $u_0,\phi_0$ at the microscopic level}\\\large Recon v1 ---
+proposal-only; opens the post-D2 front}
+\author{Per reviewer directive after D2 acceptance}
+\date{12 June 2026}
+\begin{document}\maketitle
+
+\section*{0. Scope and firewall}
+D2 recorded the protection of $\alpha,\mu$ \emph{within} the $\phi$-first
+closure, conditional on the two-variable separation. This recon opens the
+separation itself as a front: it classifies what the record already fixes,
+formulates the question operator-by-operator, localises the sharp residual
+channel, and defines the computational targets. Proposal-only; no preprint
+edits; nothing below is claimed as derived unless explicitly labelled so.
+
+\section{What is already fixed: the separation is definitional at the variable
+level}
+\textbf{(a) Two distinct variables by construction.} The ordered branch is
+decomposed as $\partial_A\Phi=u\,n_A$ (eq:ordered\_branch\_decomposition,
+L$\sim$2138): $u(x)$ is \emph{the local amplitude of the gradient condensate},
+while $\phi_0=\sqrt{\mu^2/\lambda}$ is the potential-sector VEV. The IR closure
+scalar $\phi=\beta_\phi^{-1}\ln(u/u_\infty)$ is therefore, by definition, the
+gradient-sector amplitude --- a different object from the potential VEV. The
+relation between the two scales is precisely what OP-grad leaves open.
+
+\textbf{(b) Different degrees of freedom by mass hierarchy (derived).} The
+cosmological roll requires an effective mass $m_{\rm eff}\lesssim H$; the radial
+potential mode is gapped at $m_\varphi=\sqrt{2\lambda}\,\phi_0\sim M_{\rm Pl}$,
+some $60$ orders above $H_0$. A Planck-gapped mode cannot roll on Hubble times
+(its forced displacement is the $(H/m_\varphi)^2\sim10^{-120}$ of the D2
+pinning). Hence the rolling closure scalar and the radial matching mode are
+necessarily \emph{distinct} degrees of freedom. \textbf{Consequence:} the open
+question is \emph{not} whether two variables exist --- the record and the
+hierarchy settle that --- but \emph{where the matter-sector matching
+coefficients are evaluated}: at the parameter point, or on the drifting
+$u_{\rm cos}(X)$.
+
+\section{Operator-level formulation: the dressing-exponent vector}
+For each closure coefficient $C_i$ define the dressing exponent at fixed bare
+data,
+\[
+\gamma_i\;\equiv\;\frac{\partial\ln C_i}{\partial(\beta_\phi\phi)}
+\Big|_{\mu^2,\lambda,\alpha,\beta}
+=\frac{\partial\ln C_i}{\partial\ln(u/u_\infty)}\Big|_{\rm bare}.
+\]
+The recorded closure asserts the vector
+\[
+\gamma\;=\;\big(\gamma_R;\ \gamma_{Z_B},\gamma_{Z_W},\gamma_{v_2},\dots\big)
+\;=\;\big(1;\ 0,0,0,\dots\big):
+\]
+the Einstein--Hilbert term is dressed at first power (the
+$G_{\rm eff}=G_Ne^{-\beta_\phi\phi}$ ansatz), all matter-sector coefficients are
+undressed. The $\varepsilon$-sector \emph{requires} $\gamma_R=O(1)$ for its
+cosmological role, while the verified varying-constants anchors require
+$|\gamma_{Z_B}+\sin^2\!\theta_W\,(\gamma_{Z_W}-\gamma_{Z_B})|\lesssim
+3\times10^{-5}$ and $|\gamma_{v_2\text{-chain}}|\lesssim3\times10^{-6}$.
+\textbf{The separation is therefore a falsifiable hierarchy:}
+\[
+\boxed{\;\gamma_{\rm matter}/\gamma_R\;\lesssim\;3\times10^{-5}\;}
+\]
+on the retained band --- four-and-a-half orders of magnitude between the
+gravitational and matter dressing responses to one and the same amplitude. For
+orientation only: hierarchies of exactly this kind are the subject of
+least-coupling/attractor mechanisms in scalar--tensor literature
+(Damour--Polyakov class); whether ECT realises the hierarchy by such an
+attractor, by scale-separated matching, or by structural mediation (\S4) is the
+content of this front.
+
+\section{The sharp residual channel: the shared $\kappa_n$ origin}
+The record gives \emph{both} $M_G^2\sim c_M\,\kappa_n$ (L$\sim$17969) \emph{and}
+$Z_W^{(0)}\!\leftarrow\!\kappa_n$ (Appendix A.3), with
+$\kappa_n=\mathcal C_n u_0^2$. The same parent coefficient must therefore serve
+two opposite masters: the gravitational stiffness \emph{must} respond to the
+amplitude (that is the $\varepsilon$-sector's mechanism), while the weak kinetic
+normalisation \emph{must not} (varying-constants anchors). Any derivation of the
+separation must thus distinguish \emph{how each operator inherits} $\kappa_n$:
+the graviton kinetic term as the collective IR response of the orientation
+field (locally re-evaluated), versus the gauge-kinetic normalisation as a UV
+matching datum frozen at condensate formation. A bookkeeping sub-tension is
+attached (flag F7 of the Step 1--2 audit): naive local re-evaluation
+$\kappa_n\propto u^2$ would give $c_G=-2$, while the recorded ansatz is
+$c_G=-1$; the microscopic derivation must fix whether the recorded exponent is
+matched microphysics or a $\beta_\phi$-normalisation choice.
+
+\section{Candidate mechanism and computational targets}
+\textbf{(a) Candidate structural mechanism (R-route, not yet a derivation).}
+In ECT the effective metric is itself a composite of the orientation/amplitude
+sector, and A4 couples slow matter universally to $g^{\rm eff}_{\mu\nu}$. If
+\emph{all} amplitude dependence reaches matter only through the metric
+composite, then matter-sector Wilson coefficients carry no direct
+$u$-dependence by construction: $\gamma_{\rm matter}=0$ would be a
+\emph{consequence of metric-composite mediation plus A4}, not a tuning. The
+check this route must pass is exactly the shared-$\kappa_n$ channel of \S3: the
+$Z_W^{(0)}\!\leftarrow\!\kappa_n$ inheritance happens at matching level,
+\emph{before} the geometric reading, so it must be shown that this inheritance
+fixes a frozen normalisation (parameter point) rather than a locally
+re-evaluated one.
+
+\textbf{(b) Computational targets.}
+\begin{enumerate}[leftmargin=1.9em,itemsep=2pt,label=\textbf{G\arabic*.}]
+\item Amplitude dependence of the matching integrals: compute
+$\partial\ln C_i/\partial\ln u$ at fixed bare data for
+$C_i\in\{M_G^2,\,Z_W^{(0)}\}$ (the $\kappa_n$ side, via the recorded
+induced-structure route, Lemma lem:induced\_stiffness\_kernel) and for
+$C_i\in\{K_\theta^{\rm eff},\,m_\varphi^2,\,v_2\}$ (the $\phi_0$ side, where the
+D2 pinning already anchors the evaluation point).
+\item Settle F7: derive the gravitational dressing exponent from the same
+kernel --- is $c_G=-1$ matched microphysics, or a normalisation convention with
+the physical exponent hidden in $\beta_\phi$?
+\item Classify the realised mechanism among: (i)~metric-composite mediation
+(\S4a); (ii)~scale-separated matching (UV-frozen gauge normalisation vs IR
+collective gravitational response); (iii)~least-coupling attractor dynamics.
+Each makes a different prediction for the subleading $\gamma_{\rm matter}$,
+i.e.\ for where below $3\times10^{-5}$ the residual sits --- a future
+discriminator if varying-constants sensitivity improves.
+\end{enumerate}
+
+\section{Status}
+Fixed by record + derivation: two distinct variables (definitional; mass
+hierarchy). Open and now precisely posed: the evaluation point of the matching
+coefficients, equivalently the dressing-exponent hierarchy
+$\gamma_{\rm matter}/\gamma_R\lesssim3\times10^{-5}$, with the shared-$\kappa_n$
+channel as the decisive test case and F7 as its bookkeeping companion. Nothing
+beyond \S1 is claimed as derived. Next work item: G1 on the $\kappa_n$ side,
+starting from Lemma lem:induced\_stiffness\_kernel. No D1/preprint edits from
+this front before review.
+\end{document}
