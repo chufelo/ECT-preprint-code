@@ -1,28 +1,30 @@
-OPCONST REVIEW MANIFEST v3.4  generated 2026-06-12  (B2 sublemma added; preprint UNCHANGED since D4)
+OPCONST REVIEW MANIFEST v3.5  generated 2026-06-12  (B2 rev 1.1 + H2 audit + authorized n_s dedup)
 ==============================================================================
-THE ONLY VALID CANONICAL PREPRINT md5: 80c7896cbff702b1337ad8dde5b13698
+THE ONLY VALID CANONICAL PREPRINT md5: c2b9f7d2b3fff7416654bd5617526f98
+(changed from 80c7896c... by ONE author-authorized editorial deduplication in
+sec:primordial_estimates; see OP3_B2_H2_verification ledger)
 This manifest SUPERSEDES all earlier manifests and all earlier md5 values.
-SELF-CHECK UPGRADE: absent-phrase scans are now whitespace-normalised over the
-full file text (line breaks cannot hide a forbidden phrase), per reviewer note.
 ==============================================================================
 CANONICAL LOCATIONS: preprint = LaTex/ECT_preprint.tex; docs = LaTex/proposals/.
-Attach EXACTLY these files together with this manifest.
 
-1) ECT_preprint.tex  |  md5 80c7896cbff702b1337ad8dde5b13698  (unchanged since accepted D4 state)
+1) ECT_preprint.tex  |  md5 c2b9f7d2b3fff7416654bd5617526f98
+   grep -n "conditional selective-coupling protection route" -> lines 22390,22487  [2 hits]
+   grep -n "partially supported by the recorded induced-gauge" -> lines 22475  [1 hits]
+   grep -n "values $\hat p\sim 4$--$5$ yield" -> lines 20884  [1 hits]
 
-2) OP3_B2_breakdown_sublemma_v1.tex  |  md5 e34cb7ad85d0db36534c05af68ae5e37
-   grep -n "merged vs split breakdown surfaces" -> lines 46  [1 hits]
-   grep -n "no semiclassical window" -> lines 72  [1 hits]
-   grep -n "B2-Q1" -> lines 76,99  [2 hits]
-   grep -n "flagged as an assumption" -> lines 38  [1 hits]
+2) OP3_B2_breakdown_sublemma_v1.tex (rev 1.1)  |  md5 5969e5040c1a34d47418e869c7bab210
+   grep -n "amplitude-loss indicators" -> lines 39  [1 hits]
+   grep -n "satisfying (H3)" -> lines 56  [1 hits]
+   grep -n "do not trigger indicator (iii)" -> lines 72  [1 hits]
+   grep -n "conversion/freeze-out step" -> lines 96  [1 hits]
+   grep -n "rev.~1.1" -> lines 10,12  [2 hits]
 
 Whitespace-normalised ABSENT checks (full-text):
-   [ABSENT OK] "recorded-closure protection route" in ECT_preprint.tex
-   [ABSENT OK] "proves constants protection" in ECT_preprint.tex
-   [ABSENT OK] "unconditionally protected" in ECT_preprint.tex
-   [ABSENT OK] "proven for all completions" in ECT_preprint.tex
-   [ABSENT OK] "Excluded by the data" in OP_GRAD_F7_msigma_recon_v1.tex
-   [ABSENT OK] "D2 pinning logic extends" in OP_GRAD_F7_msigma_recon_v1.tex
-   [ABSENT OK] "Excluded by the data" in OP3_BB_bridge_recon_v1.tex
+   [ABSENT OK] "recorded-closure protection route..." in ECT_preprint.tex
+   [ABSENT OK] "proves constants protection..." in ECT_preprint.tex
+   [ABSENT OK] "understood as the phenomenologically relevant target range r..." in ECT_preprint.tex
+   [ABSENT OK] "is identified with the gradient amplitude..." in OP3_B2_breakdown_sublemma_v1.tex
+   [ABSENT OK] "keep the cutoff valid..." in OP3_B2_breakdown_sublemma_v1.tex
+   [ABSENT OK] "for every such trajectory..." in OP3_B2_breakdown_sublemma_v1.tex
 
 SELF-CHECK: ALL MARKERS PASS (line grep + normalised absent scan)
