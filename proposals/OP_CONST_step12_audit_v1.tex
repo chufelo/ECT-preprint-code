@@ -1,0 +1,193 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}\usepackage{lmodern}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{amsmath,amssymb}\usepackage{enumitem}\usepackage{booktabs,longtable,array}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}\setlength{\parskip}{0.4em}
+\title{\textbf{OP-CONST Steps 1--2: matching-function inventory and the
+dimensionless locking matrix}\\\large Audit v1 --- proposal-only; no preprint edits}
+\author{Per ECT\_new\_implications\_recon\_v1 (rev.~1.2), Priority~1, narrow scope}
+\date{12 June 2026}
+\begin{document}\maketitle
+
+\section*{0. Scope and firewall}
+This audit executes Steps 1--2 of OP-CONST only: inventory of the recorded
+$\phi_b$/$u$-dependencies in the current preprint (759\,pp state of 2026-06-11) and
+construction of the dimensionless locking matrix with a five-way status
+classification (derived / assumed / unknown / protected / dangerous). All
+observational bounds quoted below are order-of-magnitude stress anchors pending a
+dedicated citation pass. The four-layer separation (local screened values;
+cosmological background values; laboratory observables; dimensionless ratios) is
+enforced throughout. No preprint text is touched; Step~3 (protection/screening
+analysis) and any D1 blocks are downstream and review-gated.
+
+\section{Step 1 --- inventory of recorded matching functions}
+Background variable: the ordered-branch amplitude $u(X)$, with the recorded
+macroscopic variable $\phi=\beta_\phi^{-1}\ln(u/u_\infty)$ (eq.~eq:phi\_def) and the
+cosmological diagnostic map $G_{\rm eff}(z)/G_N=(1+z)^{2\varepsilon}$, i.e.
+$u(z)=u_0(1+z)^{-2\varepsilon}$ on the retained band
+$\varepsilon\in[0.0296,0.0376]$.
+
+\renewcommand{\arraystretch}{1.18}\small
+\begin{longtable}{@{}p{2.6cm}p{6.2cm}p{2.9cm}p{2.8cm}@{}}
+\toprule \textbf{Function} & \textbf{Recorded form and anchor} &
+\textbf{$u$-dependence} & \textbf{Status} \\ \midrule \endhead
+\bottomrule \endfoot
+$G_{\rm eff}$ & $G_{\rm eff}(X)=G_N e^{-\beta_\phi\phi(X)}$ (eq:Geff\_phi), with
+eq:phi\_def $\Rightarrow G_{\rm eff}\propto u_\infty/u$ & $c_G=-1$ exactly in the
+$\phi$-first closure & \textbf{derived} (Level B closure) \\
+$\varepsilon$-map & $G_{\rm eff}(z)=G_N(1+z)^{2\varepsilon}$; five-probe retained
+band (symbol table; module eq:eps\_friedmann\_A1) & realises $c_G=-1$
+cosmologically & \textbf{derived} (diagnostic layer) \\
+Screening law & $\lambda_\phi=m_\phi^{-1}(\rho)$, chameleon-type; explicitly ``a
+qualitative structural interpretation rather than a quantitatively derived
+screening law'' (\S7 paragraph, L$\sim$7721) & acts on $u$ itself & \textbf{assumed}
+(qualitative) \\
+$Z_A$ & $\alpha_{\rm fs}=q^2/(4\pi Z_A)$ (eq:alpha\_fs\_ZA); required value
+$Z_A^{\rm IR}=1/(4\pi\alpha_{\rm fs})\approx10.9$ (eq:ZA\_target); ``the
+fine-structure constant is not derived in the present formulation'' (L46022); open
+target (vii): explicit computation of $Z_A$ & $\zeta_A\equiv\partial\ln
+Z_A/\partial\ln u$ \textbf{unrecorded} & \textbf{unknown ---
+dangerous if nonzero} \\
+$(Z_B,Z_W,\theta_W)$ & UV pair above $M_W$ (eq:alpha\_ew\_decomposition);
+$\alpha_{\rm fs}^{-1}=\alpha_Y^{-1}+\alpha_2^{-1}$ & unrecorded & \textbf{open}
+(OP) \\
+$q$ (charge lattice) & compact-$U(1)$ winding quantum; integer lattice +
+$\mathbb{Z}_6$ interlock congruence $\Rightarrow$ charge \emph{ratios} rigid &
+none (topological) & \textbf{protected} (ratios only; \emph{not} the magnitude of
+$\alpha$) \\
+$v_2$ & $v_2=(\sqrt2 G_F)^{-1/2}\approx246.22$\,GeV (eq:v2\_GF); ``intermediate
+condensate scale, not derived from P1--P6 (OP-EW-scale)''; relation
+$v_2=\phi_0\,e^{-\mathcal I_{\rm EW}}$ with $\mathcal I_{\rm EW}\approx36.83$ an
+input & $c_{v_2}=-\partial\mathcal I_{\rm EW}/\partial\ln u$ \textbf{unrecorded}
+(see \S3: $\phi_0$ is parameter-level) & \textbf{unknown --- dangerous if nonzero}
+\\
+$y_f$ & $m_f=y_f v_2$; ``Standard-Model-like matching inputs'' (L7265) & none
+recorded & \textbf{assumed} \\
+$\Lambda_{\rm QCD},\,g_s$ & ``remain inherited'' under P7 background-level
+triviality (L44645; OP-GUT4) & $c_\Lambda=0$ by inheritance & \textbf{assumed} \\
+$S_0$ & action scale ``with structural universality across the coherent sector''
+(L15483) & none (topological) & \textbf{protected} (candidate; A/B universality) \\
+$c_*,\ \alpha,\beta$ & kinetic constants of the bare P2 action & none
+(postulate-level) & \textbf{fixed by construction} \\
+\end{longtable}\normalsize
+
+\section{Step 2 --- dimensionless locking matrix}
+With $d\ln\mathcal O_i=c_i\,d\ln u$ and the cosmological map
+$d\ln u=-2\varepsilon\,d\ln(1+z)$:
+
+\renewcommand{\arraystretch}{1.18}\small
+\begin{longtable}{@{}p{2.5cm}p{4.6cm}p{2.2cm}p{5.0cm}@{}}
+\toprule \textbf{Invariant} & \textbf{Chain} & \textbf{$c_i$} &
+\textbf{First binding bound (anchor level)} \\ \midrule \endhead
+\bottomrule \endfoot
+$\alpha$ & $c_\alpha=-\zeta_A$ & \textbf{unknown} & quasar
+$|\Delta\alpha/\alpha|\lesssim10^{-6}$ ($z\sim1$--$2$, \emph{cosmological});
+clocks $\lesssim10^{-17}$\,yr$^{-1}$ (local) \\
+$\mu=m_p/m_e$ & $c_\mu=c_\Lambda-c_{y_e}-c_{v_2}=-c_{v_2}$ (under inheritance) &
+\textbf{unknown} & H$_2$ quasar $|\Delta\mu/\mu|\lesssim10^{-7}$
+(\emph{cosmological}); clocks (local) \\
+$G m_p^2/\hbar c$ & $c=c_G+2c_\Lambda=-1$ & \textbf{derived} & the five-probe
+$\varepsilon$ machinery itself; LLR locally (screening-dependent) \\
+$m_e/M_{\rm Pl}$ & $c=c_{v_2}-c_{M_G}$; $c_{M_G}=+\tfrac12$ \emph{if} the closure
+$G\propto u^{-1}$ is identified with $G=c_*^4/(8\pi M_G^2)$ at fixed $c_*$ &
+\textbf{unknown} & subsumed by $\alpha,\mu$ channels; bookkeeping flag F7 \\
+$Q_i/Q_j$ & charge lattice + interlock & $0$ & \textbf{protected} \\
+$S_0$-ratios & coherent-sector universality & $0$ (candidate) &
+\textbf{protected-candidate} \\
+\end{longtable}\normalsize
+
+\section{The decisive structural observation}
+\textbf{(a) Screening cannot rescue the cosmological channels.} Quasar
+$\Delta\alpha/\alpha$ and H$_2$ $\Delta\mu/\mu$ measure the \emph{cosmological
+background} at $z\sim1$--$3$ --- precisely where the retained $\varepsilon$-band
+asserts $u(z)\neq u_0$. The screened-local/cosmological split therefore cannot
+protect $\alpha$ or $\mu$ in these channels even in principle. Outcome~B of the
+recon (screening extension) is available only for \emph{local} observables (clocks,
+LLR, Oklo); for the cosmological channels only Outcome~A (structural zeros) or
+Outcome~C (a quantified bound) exist.
+
+\textbf{(b) P-anchored vs B-tracking classification.} The audit reduces Question Q1
+to a sharp dichotomy. Call a matching coefficient \emph{P-anchored} if it is fixed
+by bare action parameters (e.g.\ $\phi_0=\sqrt{\mu^2/\lambda}$, the postulate-level
+$\alpha,\beta,c_*$), and \emph{B-tracking} (with exponent $p$) if it follows the
+local/cosmological background amplitude, $\propto u(X)^p$, as the recorded induced
+stiffness chain $\kappa_n=\mathscr C_n u_0^2$ does ($p=2$). Then:
+$\zeta_A\in\{0\ (\text{P-anchored}),\ \sim2\ (\text{B-tracking, induced-kinetic
+analogy})\}$ and $c_{v_2}=-\partial\mathcal I_{\rm EW}/\partial\ln u$ with the
+$\phi_0$ factor P-anchored by construction. \emph{Step~3 is therefore reduced to two
+derivative computations}: the anchoring class of $Z_A$ (phase-sector kinetic
+normalisation) and of $\mathcal I_{\rm EW}$.
+
+\section{Scenario stress table (hypothetical-scenario layer; not predictions)}
+Computed on the recorded band, $|\Delta\ln u|(z{=}1)=2\varepsilon\ln2
+=0.041$--$0.052$:
+
+\renewcommand{\arraystretch}{1.15}\small
+\begin{longtable}{@{}p{4.2cm}p{3.4cm}p{3.0cm}p{3.4cm}@{}}
+\toprule \textbf{Scenario} & \textbf{Effect at $z=1$} & \textbf{Bound} &
+\textbf{Violation factor} \\ \midrule \endhead
+\bottomrule \endfoot
+$\zeta_A=2$ (B-tracking $Z_A$) & $|\Delta\alpha/\alpha|=0.082$--$0.104$ &
+$10^{-6}$ (quasar) & $\sim10^{5}$ \\
+$\zeta_A=0$ (P-anchored $Z_A$) & $0$ & --- & none \\
+$c_{v_2}=1$ & $|\Delta\mu/\mu|=0.041$--$0.052$ & $10^{-7}$ (H$_2$) &
+$\sim4\text{--}5\times10^{5}$ \\
+$c_{v_2}=\tfrac12$ & $0.021$--$0.026$ & $10^{-7}$ & $\sim2\times10^{5}$ \\
+$\zeta_A=2$, local, \emph{if unscreened} & $\dot\alpha/\alpha\sim1.1\times10^{-11}$
+\,yr$^{-1}$ & $10^{-17}$\,yr$^{-1}$ (clocks) & $\sim10^{6}$ \\
+\end{longtable}\normalsize
+
+\textbf{Conclusion of the stress layer.} Within the retained $\varepsilon$-band,
+\emph{any} $O(1)$ background-tracking of $Z_A$ or of the $v_2$-chain is excluded at
+the $10^5$-level by cosmological channels that screening cannot reach. The theory
+therefore \emph{requires} structural (P-anchored) protection of $\alpha$ and $\mu$
+--- or a correspondingly suppressed $\varepsilon$-sector. This is the sharpest
+consistency pressure identified in the programme to date, and it is decided by the
+two Step-3 computations above.
+
+\section{Findings and flags}
+\begin{enumerate}[leftmargin=1.8em,itemsep=2pt,label=\textbf{F\arabic*.}]
+\item $c_G=-1$ is \emph{derived} (eq:Geff\_phi); the $Gm_p^2/\hbar c$ row of the
+matrix \emph{is} the $\varepsilon$-sector, already constrained by the recorded
+five-probe machinery. Internally consistent.
+\item $c_\alpha$ is \emph{unknown} and decisive: the $\zeta_A$ dichotomy
+(P-anchored vs B-tracking) is screening-proof in the quasar channel. The recorded
+induced-stiffness analogy ($\kappa_n=\mathscr C_n u_0^2$) makes B-tracking with
+$p\approx2$ a live possibility that must be excluded by derivation, not by
+assumption.
+\item $c_{v_2}$ is \emph{unknown} with the same decisiveness via $\mu$; the danger
+localises entirely in $\partial\mathcal I_{\rm EW}/\partial\ln u$, since the
+$\phi_0$ factor is P-anchored by construction.
+\item The screening law itself is recorded as qualitative (L$\sim$7721); even
+Outcome~B for the \emph{local} channels (clocks, LLR, Oklo) requires the
+quantitative screening derivation before it can be invoked.
+\item A charge-\emph{ratio} protection theorem is essentially already available
+(integer lattice + $\mathbb Z_6$ interlock): a cheap formal statement is a
+candidate Step-3 deliverable. It protects ratios, not the magnitude of $\alpha$.
+\item Gap flag: the varying-constants channels (quasar $\alpha$, H$_2$ $\mu$,
+Oklo, clocks) are absent from the retained five-probe set (Hubble$+r_s$, JWST, CC,
+$f\sigma_8$, ISW); OP-CONST closes a real omission. Related bookkeeping question:
+the uniform-$\varepsilon$ ansatz is declared late-time while the Probe-1 module
+integrates to $z_*\approx1090$; the validity window should be stated explicitly at
+Step~3 (no claim made here).
+\item Bookkeeping ambiguity: identifying the closure-level $G_{\rm eff}\propto
+u^{-1}$ with the matching-level $G=c_*^4/(8\pi M_G^2)$ mixes two layers; the
+$u$-scaling of $M_G$ (and hence of $m_e/M_{\rm Pl}$) requires a unified closure-map
+statement before that row of the matrix can be completed.
+\end{enumerate}
+
+\section{Outcome assessment and Step 3 definition}
+No D1 block is prepared at this stage; Variant A/B/C of the recon remains
+\emph{undecided} and is now reduced to a minimal, well-posed task list:
+(i)~derive the anchoring class and exponent of $Z_A$ from the phase-sector kinetic
+normalisation (Outcome A requires $\zeta_A=0$ structurally);
+(ii)~derive the $u$-dependence of $\mathcal I_{\rm EW}$ (Outcome A requires
+$\partial\mathcal I_{\rm EW}/\partial\ln u=0$);
+(iii)~formalise the charge-ratio protection statement (F5);
+(iv)~derive the quantitative screening profile needed for the local channels (F4);
+(v)~state the validity window of the uniform-$\varepsilon$ ansatz (F6).
+Only after (i)--(ii) can a D1 block be drafted, under the recon firewall and
+external review. Items (i)--(ii) are pure derivations on recorded structures and
+are the natural first front of the next working cycle.
+\end{document}
