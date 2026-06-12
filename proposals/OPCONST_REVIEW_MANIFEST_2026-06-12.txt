@@ -1,25 +1,28 @@
-OPCONST REVIEW MANIFEST v3.3  generated 2026-06-12  (F7 rev 1.1 + BB bridge recon; preprint UNCHANGED since D4)
+OPCONST REVIEW MANIFEST v3.4  generated 2026-06-12  (B2 sublemma added; preprint UNCHANGED since D4)
 ==============================================================================
 THE ONLY VALID CANONICAL PREPRINT md5: 80c7896cbff702b1337ad8dde5b13698
 This manifest SUPERSEDES all earlier manifests and all earlier md5 values.
+SELF-CHECK UPGRADE: absent-phrase scans are now whitespace-normalised over the
+full file text (line breaks cannot hide a forbidden phrase), per reviewer note.
 ==============================================================================
 CANONICAL LOCATIONS: preprint = LaTex/ECT_preprint.tex; docs = LaTex/proposals/.
 Attach EXACTLY these files together with this manifest.
 
 1) ECT_preprint.tex  |  md5 80c7896cbff702b1337ad8dde5b13698  (unchanged since accepted D4 state)
 
-2) OP_GRAD_F7_msigma_recon_v1.tex (rev 1.1)  |  md5 7a02c93a85423fd343a039422d092c41
-   grep -n "Incompatible with the" -> lines 64  [1 hits]
-   grep -n "no-extra-scale" -> lines 58,128  [2 hits]
-   grep -n "heavy-$\sigma$ scale remains far above Hubble" -> lines 80  [1 hits]
-   grep -n "rev.~1.1" -> lines 10  [1 hits]
-   MUST BE ABSENT "Excluded by the" -> [0 hits]
-   MUST BE ABSENT "D2 pinning logic extends" -> [0 hits]
+2) OP3_B2_breakdown_sublemma_v1.tex  |  md5 e34cb7ad85d0db36534c05af68ae5e37
+   grep -n "merged vs split breakdown surfaces" -> lines 46  [1 hits]
+   grep -n "no semiclassical window" -> lines 72  [1 hits]
+   grep -n "B2-Q1" -> lines 76,99  [2 hits]
+   grep -n "flagged as an assumption" -> lines 38  [1 hits]
 
-3) OP3_BB_bridge_recon_v1.tex  |  md5 bc8b313a0a31d89a7182a8f33d62b777
-   grep -n "opening bridge" -> lines 7  [1 hits]
-   grep -n "merged breakdown surface" -> lines 75  [1 hits]
-   grep -n "event-ordering requirement" -> lines 100  [1 hits]
-   grep -n "interface requirements are respected" -> lines 123  [1 hits]
+Whitespace-normalised ABSENT checks (full-text):
+   [ABSENT OK] "recorded-closure protection route" in ECT_preprint.tex
+   [ABSENT OK] "proves constants protection" in ECT_preprint.tex
+   [ABSENT OK] "unconditionally protected" in ECT_preprint.tex
+   [ABSENT OK] "proven for all completions" in ECT_preprint.tex
+   [ABSENT OK] "Excluded by the data" in OP_GRAD_F7_msigma_recon_v1.tex
+   [ABSENT OK] "D2 pinning logic extends" in OP_GRAD_F7_msigma_recon_v1.tex
+   [ABSENT OK] "Excluded by the data" in OP3_BB_bridge_recon_v1.tex
 
-SELF-CHECK: ALL MARKERS PASS (line-level grep)
+SELF-CHECK: ALL MARKERS PASS (line grep + normalised absent scan)

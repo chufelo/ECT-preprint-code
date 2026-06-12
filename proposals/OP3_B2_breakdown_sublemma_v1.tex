@@ -1,0 +1,103 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}\usepackage{lmodern}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{amsmath,amssymb}\usepackage{enumitem}\usepackage{booktabs,longtable,array}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}\setlength{\parskip}{0.4em}
+\newtheorem{sublemma}{Sublemma}
+\title{\textbf{OP3 / B2: merged versus split breakdown surfaces ---
+a conditional sublemma}\\\large Recon v1 --- proposal-only}
+\author{Per reviewer directive after acceptance of F7 rev.~1.1 and the BB
+bridge}
+\date{12 June 2026}
+\begin{document}\maketitle
+
+\section*{0. Scope and firewall}
+B2 formalises Bridge~2 of the BB-bridge recon as a conditional sublemma at
+the level of the recorded breakdown criterion. Everything is inherited-Level-B
+conditional (kernel route); the statement concerns the \emph{structure of the
+ordered-branch validity boundary}, not the transition dynamics, and respects
+the recorded interface requirements. Proposal-only; no preprint edits.
+
+\section{Setting and hypotheses}
+Recorded breakdown indicators of the ordered geometric branch:
+(i)~amplitude collapse $\rho\to0$;
+(ii)~$T_{\rm loc}\to T_c$;
+(iii)~curvature/gradient invariants reaching the condensate threshold
+$\ell_{\rm cond}\sim m_\sigma^{-1}$, i.e.\ a curvature scale
+$K\sim m_\sigma^{2}$.
+The record already ties (iii) to the UV threshold: the same radial mode
+$m_\sigma$ sets both. Hypotheses:
+\begin{description}[leftmargin=2.0em,itemsep=2pt]
+\item[(H1)] the Level-B induced-stiffness kernel holds, with
+$\gamma_{\hat a_{\rm eff}}=0$ and no additional gradient-sector scale (the
+F7 assumptions), so the $\sigma$-gap follows one of the two F7 branches:
+gradient-native $m_\sigma^2=c\,u$, or potential-imported pinned $m_\sigma^2$;
+\item[(H2)] on the cosmological branch the breakdown amplitude of
+indicator~(i) is identified with the gradient amplitude, $\rho\equiv u$ ---
+a reading of the recorded criterion, flagged as an assumption (the recorded
+$\rho$ is introduced in the black-hole/interior context; the identification
+must be verified against that usage before any D-insertion);
+\item[(H3)] trajectories are characterised by their curvature/gradient
+invariant $K$, bounded below by some $K_0>0$ on the approach considered.
+\end{description}
+
+\section{Sublemma and proof sketch}
+\begin{sublemma}[conditional; merged vs split breakdown surfaces]
+Under (H1)--(H3):
+(a) On the gradient-native branch, indicator (iii) fires at
+$u_*\simeq K_0/c>0$, strictly before amplitude collapse; the locus
+$u\to0$ lies outside the ordered-EFT validity domain for every such
+trajectory, and the surfaces (i) and (iii) merge into a single breakdown
+boundary in the slowly-varying limit.
+(b) On the potential-imported branch, the (iii)-threshold is
+$u$-independent; every trajectory with $K<m_\sigma^2$ reaches arbitrarily
+small $u$ inside the validity domain, so the surfaces (i) and (iii) split,
+and an intermediate regime exists (small amplitude, valid cutoff).
+\end{sublemma}
+\emph{Proof sketch.} Indicator (iii) is the condition $K\gtrsim
+m_\sigma^2(u)$. (a)~Gradient-native: $m_\sigma^2(u)=c\,u$ decreases with the
+order parameter, so the threshold curvature falls linearly with $u$; for
+$K\ge K_0$ the condition is met at $u_*\simeq K_0/c>0$. The cutoff thus
+``chases'' the order parameter down: $\Lambda_{\rm UV}(u)=m_\sigma(u)=
+\sqrt{c\,u}\to0$, and no EFT-internal account of the collapse point exists.
+(b)~Potential-imported: $m_\sigma^2$ is fixed; the condition
+$K\gtrsim m_\sigma^2$ is $u$-independent, so low-curvature trajectories
+($K<m_\sigma^2$) keep the cutoff valid down to $u\to0$.\hfill$\square$
+
+\section{Corollary: a transition-side discriminator, and one sharp question}
+\textbf{Discriminator.} The two F7 branches predict structurally different
+approaches to the pre-ordered regime. Merged (gradient-native): the
+transition region is reached only through total breakdown of the ordered
+EFT --- there is \emph{no semiclassical window} in which the ordered-branch
+description covers the small-amplitude regime. Split (potential-imported):
+a semiclassical window exists in which $u\approx0$ physics is
+EFT-trustworthy below the fixed cutoff.
+\textbf{B2-Q1 (flagged question, not a claim).} The recorded
+critical-fluctuation route to the primordial tilt ($n_s\sim0.96$--$0.97$
+from critical $O(4)$ fluctuation estimates) computes near the transition.
+Whether that route presupposes the split-branch semiclassical window, or is
+formulated at the pre-emergent Euclidean level where the present sublemma
+does not apply, is a sharp follow-up question that would couple the F7
+branch choice to a recorded observable estimate. It must be answered by
+reading the recorded $n_s$ construction, not assumed.
+\textbf{Late-time invisibility.} Both branches are identical at $u\simeq
+u_0$ (heavy $m_\sigma$, far above Hubble scales); the discriminator lives
+only near the threshold. No observable consequence at current sensitivity
+follows --- consistent with the F7 classification discipline.
+
+\section{Status and verdict}
+\begin{enumerate}[leftmargin=1.9em,itemsep=2pt,label=\textbf{V\arabic*.}]
+\item Bridge~2 is now a conditional sublemma with explicit hypotheses
+(H1)--(H3) and an elementary proof sketch; inherited level: Level~B
+conditional (kernel route), candidate status pending review.
+\item Promotion path: (a)~promotion of the kernel lemma itself;
+(b)~verification of the $\rho\equiv u$ reading (H2) against the recorded
+black-hole/interior usage of the breakdown criterion --- a bounded reading
+task, named as the next micro-step if this sublemma is accepted.
+\item The sublemma equips OP3 with a structural dichotomy whose resolution
+simultaneously settles F7, and isolates B2-Q1 as the one place where the
+dichotomy may touch a recorded observable estimate. No preprint edits
+before review.
+\end{enumerate}
+\end{document}
