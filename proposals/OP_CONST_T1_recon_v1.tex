@@ -7,7 +7,7 @@
 \title{\textbf{OP-CONST T1: the $U(1)$-emergence normalisation and the anchoring
 of $\alpha$}\\\large Recon v1 --- proposal-only; no preprint edits}
 \author{Per Step 3 review directive: does $q^2/Z_A$ collapse to parameter-only?}
-\date{12 June 2026}
+\date{12 June 2026 --- rev.~1.1 (review softenings applied: candidate lemma, conditional channels, explicit C1--C4)}
 \begin{document}\maketitle
 
 \section*{0. Scope and firewall}
@@ -56,16 +56,20 @@ manifestly consistent with the recorded \emph{structural universality} of $S_0$
 across the coherent sector (Level A/B): the $\phi_0^2$ factors cancel.
 
 \textbf{(b) The lever.} Read in reverse, the identity ties the anchoring classes
-together: since $S_0$ is recorded as a protected structural invariant,
+together: since $S_0$ is recorded as a protected structural invariant, the
+identity \emph{would} enforce
 \[
 \zeta_{K_\theta}\;=\;\zeta_{m_\varphi^2}
 \qquad\text{(equal background-tracking exponents)},
 \]
-up to the kinematic factor $c_\perp$. \textbf{Mini no-go (asymmetric-tracking
-lemma, candidate formal statement):} if $K_\theta$ tracked the background while
-$m_\varphi^2$ did not (or vice versa), $S_0^{\rm EFT}$ would drift, contradicting
-its recorded universality. The recorded structure therefore already \emph{forbids}
-asymmetric tracking of the pair $(K_\theta,m_\varphi^2)$.
+up to the kinematic factor $c_\perp$, conditionally on the assumptions of the
+candidate lemma below. \textbf{Candidate no-go lemma (asymmetric tracking; not yet
+a theorem):} asymmetric tracking of $(K_\theta,m_\varphi^2)$ is incompatible with
+the recorded $S_0$-universality \emph{unless another matching factor compensates
+it}. The statement is conditional on: $S_0$ remaining a structural invariant on
+the cosmological branch; $K_\theta$ and $m_\varphi^2$ being evaluated in the same
+background/running context; and the absence of compensating factors in $c_\perp$,
+the normalisation, or the matching layer.
 
 \textbf{(c) The reduction.} The $Z_B$-channel question $\zeta_{K_\theta}=?$ thus
 collapses to a single object: the anchoring of $m_\varphi^2$ (equivalently, of the
@@ -81,14 +85,14 @@ cosmological amplitude $u(z)$ --- precisely the $u_0\!\leftrightarrow\!(\mu^2,
 
 \section{The $Z_W$ channel and the $\theta_W$ corollary}
 The orientation-sector coefficient is recorded as the induced chain
-$\kappa_n=\mathcal C_n u_0^2$ (OP-C$_n$). Its anchoring class is the anchoring of
-$u_0$ --- the same OP-grad object as in \S2(c). Hence \emph{both} electroweak
-kinetic channels reduce to one and the same anchoring question. Corollary upgrade:
-since both channels now reduce to the anchoring of a single scale, common tracking
-is the generic case, and the Step-3 ratio-protection of
-$\sin^2\theta_W=Z_W/(Z_B+Z_W)$ holds in \emph{either} outcome (P-anchored: both
-frozen; B-tracking: common factor cancels), up to the recorded structural
-difference between the two stiffness coefficients.
+$\kappa_n=\mathcal C_n u_0^2$ (OP-C$_n$); its anchoring class is the anchoring of
+$u_0$ --- the same OP-grad object as in \S2(c). Both electroweak kinetic channels
+\emph{may} therefore reduce to the same anchoring scale at leading structural
+level, but this requires the explicit inheritance maps for $Z_B$ and $Z_W$: the
+two channels could differ in inheritance factors, threshold corrections,
+$u_0$-dependence, or normalisation conventions. Correspondingly, the Step-3 ratio
+statement is conditional: $\sin^2\theta_W=Z_W/(Z_B+Z_W)$ is protected at leading
+order \emph{if} $Z_B$ and $Z_W$ share the same background-tracking factor.
 
 \section{T1 verdict}
 \begin{enumerate}[leftmargin=1.9em,itemsep=2pt,label=\textbf{V\arabic*.}]
@@ -97,18 +101,22 @@ is lattice-integer and $e$ is recorded as a free matching parameter; the holonom
 quantises $e\times$flux, not $e$. The cancellation route (P1) in its naive form is
 closed.
 \item Protection of $\alpha$ is nevertheless structurally \emph{available} through
-the $S_0$ lever: the recorded identity plus $S_0$-universality enforce equal
-tracking of $(K_\theta,m_\varphi^2)$ and reduce the question to the anchoring of
+the $S_0$ lever: the recorded identity plus $S_0$-universality \emph{would}
+enforce equal tracking of $(K_\theta,m_\varphi^2)$ (candidate lemma, \S2(b)) and
+reduce the question to the anchoring of
 the evaluation scale, with the parameter-level reading
 ($m_\varphi=\sqrt{2\lambda}\,\phi_0$) explicitly recorded in the simplest
 realisation.
-\item The remaining gaps are exactly two, both already named in the preprint:
-(C1)~the multiplicative inheritance $Z_B^{(0)}\!\leftarrow\!K_\theta^{\rm eff}$
-must be computed explicitly (the hard core of open target (vii)); (C2)~the
-$u_0\!\leftrightarrow$ bare-data closure (OP-grad). \emph{Outcome A is now a
-conditional protection-theorem sketch with two named conditions --- not
-established, but well-posed.} Outcome C remains the quantified fallback of Step 3
-(channel-dependent $\varepsilon$ bounds).
+\item Outcome A is a conditional protection-theorem sketch, possible only if all
+four of the following hold: (C1)~the inheritance
+$Z_B^{(0)}\!\leftarrow\!K_\theta^{\rm eff}$ leaves no uncancelled
+$u(z)$-dependence in physical $\alpha$ (the hard core of open target (vii));
+(C2)~the $K_\theta/m_\varphi^2$ cancellation is valid on the cosmological branch,
+not only in the parameter-level simplest realisation; (C3)~the
+$u_0\!\leftrightarrow\!(\mu^2,\lambda)$ closure is P-anchored or sufficiently
+protected (OP-grad); (C4)~threshold/running endpoints are P-anchored or cancel.
+\emph{Not established, but well-posed.} Outcome C remains the quantified fallback
+of Step 3 (channel-dependent $\varepsilon$ bounds).
 \item Cross-sector consequence: OP-CONST attaches quantitative acceptance
 thresholds to OP-grad and to target (vii): the anchoring of $u_0$ must hold to
 $|\partial\ln u_{0,{\rm eff}}/\partial\ln u_{\rm cosm}|\lesssim10^{-5}$ (via
@@ -122,7 +130,8 @@ varying-constants stress test are now one connected programme.
 explicitly --- the one remaining derivation of the $\alpha$-chain. (T1b)~On the
 OP-grad side, classify the anchoring of $u_0$ within the OP3.1 closure-map work
 (direct cross-link to the constraint-relaxation bridge programme).
-(T1c)~Formalise the asymmetric-tracking no-go of \S2(b) as a lemma --- a cheap,
-clean candidate theorem. (T1d)~The $\mu$-side selection principle of Step 3B
+(T1c)~Attempt to promote the candidate no-go lemma of \S2(b) to a theorem by
+closing its three conditional assumptions. (T1d)~The $\mu$-side selection
+principle of Step 3B
 stands unchanged. No D1/preprint contact before review of this document.
 \end{document}
