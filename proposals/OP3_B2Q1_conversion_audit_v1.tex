@@ -1,0 +1,86 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}\usepackage{lmodern}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{amsmath,amssymb}\usepackage{enumitem}\usepackage{booktabs,longtable,array}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}\setlength{\parskip}{0.4em}
+\title{\textbf{OP3 / B2-Q1 audit: does the recorded $n_s$ conversion step
+require the split-branch window?}\\\large Recon v1 --- proposal-only}
+\author{Per reviewer directive after acceptance of B2 rev.~1.1}
+\date{12 June 2026}
+\begin{document}\maketitle
+
+\section*{0. Scope and firewall}
+B2-Q1 asked whether the recorded critical-fluctuation route to
+$n_s\sim0.96$--$0.97$ presupposes the split-branch window (potential-imported
+gap) or is formulated where the B2 sublemma is silent. This audit answers it
+by dissecting the recorded construction (sec:primordial\_estimates) stage by
+stage against the recorded interface discipline. Proposal-only; no preprint
+edits; conditional on the Level-B kernel and on the recorded
+Planck-threshold matching \emph{estimate} (the record's own wording).
+
+\section{The recorded conversion architecture, dissected}
+The recorded route has three stages with different homes:
+\begin{description}[leftmargin=2.0em,itemsep=2pt]
+\item[Stage 1 (pre-emergent).] The critical correlator: $O(4)$ criticality
+at the upper critical dimension, $G_4(p)$ with logarithmic corrections
+$G(r)\sim r^{-2}[\ln(r/\xi_0)]^{-\hat p}$. This is Euclidean critical
+statistics of the order parameter --- no emergent time, no metric, no
+energy. The B2 sublemma is silent here by construction.
+\item[Stage 2 (hand-off at onset).] The fluctuation is read as a local
+transition-time imprint, $\zeta(\mathbf x)\sim\delta u_*/u_0$: critical
+statistics become \emph{initial data} for the ordered branch at onset. The
+recorded thermal-completion discipline fixes the reading: onset quantities
+are ``defined after emergence/matching within the FLRW reduction --- not an
+energy statement at the pre-emergent level.''
+\item[Stage 3 (post-onset).] The conversion proper,
+$k^2\Phi_k\sim G_N\delta\rho_k$, and the gauge-disciplined freeze-out. Both
+use post-onset structure: an FLRW reduction, a matched $G_N$, an emergent
+gauge sector. By the record's own discipline these live strictly on the
+ordered side.
+\end{description}
+
+\section{Where the ordered EFT is actually evaluated}
+The only place the ordered EFT is invoked is Stage 3, at or after branch
+onset. Under the recorded Planck-threshold matching estimate the onset
+curvature is $K_{\rm onset}\sim H_{\rm onset}^2$ with
+$|H_{\rm onset}|^{-1}$ of order $M_{\rm Pl}^{-1}$, while the gap at the
+matched point is condensate-scale: the hand-off is \emph{marginal},
+$K_{\rm onset}\sim m_\sigma^2$, on \emph{both} F7 branches, and the
+description improves monotonically afterwards as $K$ falls and $u$ settles
+to its track. The small-$u$ region \emph{before} onset --- the only region
+where the merged and split branches differ --- is never used by the
+recorded route: it is covered by Stage 1, which is pre-emergent.
+
+\section{Audit verdict}
+\begin{enumerate}[leftmargin=1.9em,itemsep=2pt,label=\textbf{A\arabic*.}]
+\item \textbf{B2-Q1 answered: the recorded $n_s$ route does not presuppose
+the split window.} The construction is hand-off-at-onset by its own
+recorded discipline: pre-emergent critical statistics (where B2 is silent)
+$\to$ initial data at a marginal onset boundary $\to$ post-onset conversion
+inside the validity domain. It is therefore compatible with \emph{both} F7
+branches; the merged (gradient-native) branch is fully consistent with the
+recorded observable estimate.
+\item \textbf{Named residue: hand-off marginality.} Because
+$K_{\rm onset}\sim m_\sigma^2$ at the matching estimate, the Stage-2/3
+hand-off carries $O(1)$ conversion uncertainty. This does \emph{not}
+touch the tilt's structure --- the logarithmic form
+$1-n_s\sim\hat p/\ln(L/\xi_0)$ is fixed in Stage 1 --- but it does sit on
+top of the amplitude bookkeeping ($\delta u_*/u_0\sim5\times10^{-5}$),
+which already carries an order-of-magnitude conversion/coarse-graining
+factor in the record. A one-line acknowledgement of this $O(1)$ hand-off
+factor in the recorded Status paragraph is a D-candidate --- only after
+review, and only if judged reader-useful.
+\item \textbf{Consequence for the discriminator.} The merged/split
+dichotomy is \emph{not} resolved by the recorded $n_s$ route: the
+discriminator remains a transition-side structural question, exactly as
+the late-time-invisibility note of B2 anticipated. No recorded observable
+currently distinguishes the F7 branches.
+\item \textbf{Honesty clause.} All statements are conditional on the
+Level-B kernel, on the F7 assumption set, and on the Planck-threshold
+matching being what the record calls it --- an estimate. If onset occurs
+parametrically below the threshold ($K_{\rm onset}\ll m_\sigma^2$), the
+hand-off ceases to be marginal and A2 weakens to a smaller correction;
+the A1 conclusion is unaffected in either case.
+\end{enumerate}
+\end{document}
