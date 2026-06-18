@@ -1,5 +1,16 @@
 #!/usr/bin/env python3
 """
+================================================================
+LEGACY / NOT A CURRENT ECT PREDICTION.
+This script implements the earlier slow-roll / logarithmic (hat-p)
+estimate of the primordial spectrum. As of the 2026-06 primordial-
+spectrum revision, the ordinary O(4)-critical route is known to project
+to a BLUE spectrum; the ECT-native scale-invariance route is instead a
+conditional isotropic-Euclidean Lifshitz window, with A_s ~ S0/(u0^2 kappa4)
+and n_s, r, non-Gaussianity open. Kept only as a legacy/conditional
+scaffold; do not cite its numbers as an ECT derivation.
+================================================================
+
 calc_inflation_spectral_index.py
 =================================
 Computes the ECT predictions for inflationary observables:
