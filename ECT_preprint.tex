@@ -45226,10 +45226,11 @@ and class-preservation content of OP-YM-polymer-entry-I, together with the
 combinatorial part of the activity bound OP-YM-polymer-entry-II, are
 reduced to a finite local norm-bookkeeping lemma. The \emph{single}
 remaining genuinely ECT-specific input is then a \emph{leg-resolved}
-bound on the anisotropy operator $Y(\phi)(n\!\cdot\!F)^2$ of
-\S\ref{sec:min_colour_eft}: its one-leg channel, if present, contracts
-only as $e^{-4s}$ and must be separately budgeted on the
-reflection-positive branch. We stress the scope: this is a sufficient
+budget for the anisotropy operator $Y(\phi)(n\!\cdot\!F)^2$ of
+\S\ref{sec:min_colour_eft}; part~(v) of the derivation below shows that
+its dangerous one-leg polymer channel is absent after extraction of the
+plane-resolved anisotropic core, leaving a single explicit one-sided
+matching inequality for the softening anisotropy $\zeta_Y(a_{\rm col})$. We stress the scope: this is a sufficient
 heat-kernel \emph{entry} criterion conditional on the $Y$-budget and on
 the chosen blocking framework, sharpening---but not closing---the colour
 polymer-entry problem, and making no claim about a continuum
@@ -45379,17 +45380,76 @@ of~\eqref{eq:hk_peterweyl} together with the diameter/locality weight
 of~\eqref{eq:hkloc_norm}, and are bounded by the same estimates rather
 than claimed to vanish.
 
+\emph{(v) The anisotropy operator and the leg-resolved $Y$-budget.} The
+remaining input is the anisotropy operator $Y(\phi)(n\!\cdot\!F)^2$
+of~\S\ref{sec:min_colour_eft}. Its structural reduction rests on the fact
+that the director $n$ and the coefficient $Y(\phi)$ carry no colour
+indices: every single-plaquette contribution of the operator is a
+$c$-number weight multiplying a gauge-invariant function of that one
+plaquette, hence a class function, and the deformed weight remains
+central to all orders in the field strength. At leading matching order
+the deformation is an orientation-dependent rescaling of the heat-kernel
+time, $s_t=s/(1+\zeta_Y)$ on plaquettes containing the $n$-direction and
+$s_\sigma=s$ on the transverse ones, with $\zeta_Y=2g^2Y$ and scheme
+constants absorbed into the definition of $\zeta_Y$ at the entry scale.
+The canonical fusion of part~(i) acts within a single plane class and
+holds verbatim, $K_{s_p}^{*4}=K_{4s_p}$ plane by plane; pointwise
+positivity and the transfer/reflection structure compatible with the
+director $n$ persist for all $s_t,s_\sigma>0$ (no claim of restored
+hypercubic reflection symmetry is made). Two facts then empty the
+dangerous channel. First, a parity lemma of the $b=2$ skeleton:
+\emph{no closed loop carries exactly one integrated (non-skeleton)
+link}. Skeleton sites have at most one odd coordinate; both endpoints of
+the unique non-skeleton link $(z,\rho)$ would have to be skeleton sites,
+forcing the odd coordinate $\nu\neq\rho$ of $z$ to be unique and
+$z_\rho$ to be even, so that $z+\hat\rho$ acquires two odd
+coordinates---a contradiction. (An exhaustive check on a $4^4$ patch
+gives the plaquette skeleton-link distribution
+$\{0{:}1152,\ 1{:}0,\ 2{:}384\}$ and no loop with a single integrated
+link.) Second, Haar orthogonality as in part~(ii) annihilates any
+hypothetical single non-trivial label on an integrated link. Hence,
+after extraction of the plane-resolved anisotropic core $K_{4s_p}$, the
+one-leg polymer remainder vanishes at single-plaquette order,
+$R^{\rm polymer}_{Y,\rm 1leg}=0$; gradients of $n$ and $Y$ and
+multi-plaquette composites are higher-support remainders in the sense of
+part~(iv). The surviving two-leg envelopes are plane-resolved,
+$e^{-4s_a-4s_b}\le e^{-8s_{\min}}$ with
+$s_{\min}=s/(1+\max(0,\zeta_Y))$, so the bookkeeping
+of~\eqref{eq:hk_96}--\eqref{eq:hk_threshold} yields the single one-sided
+matching premise
+\begin{equation}
+\max\bigl(0,\zeta_Y(a_{\rm col})\bigr)\;\le\;
+\frac{s}{s_{\rm entry}(C_{\rm loc})}-1,
+\qquad
+1+\zeta_Y(a_{\rm col})>0,
+\label{eq:hk_ybudget}
+\end{equation}
+with $s_{\rm entry}(C_{\rm loc})\equiv\ln(96\,C_{\rm loc})/8$ the
+threshold of~\eqref{eq:hk_threshold}. Numerically this is a softening
+budget of $+0.53$ ($+0.34$) at $s=1$ for $C_{\rm loc}\le1.95$
+($C_{\rm loc}\le4$); it is robust across the entry window for the soft
+norm estimate, while the conservative $C_{\rm loc}=4$ requires
+$s\gtrsim0.9$ or a very small positive $\zeta_Y$. Negative $\zeta_Y$
+strengthens the contraction and consumes no budget beyond
+$1+\zeta_Y>0$. The value $\zeta_Y(a_{\rm col})$ itself is matching data
+at the same level as $M_*$, $g_s(M_*)$ and $Z_0$, deferred to the
+zero-mode matching programme; the $Y$-sector is thus structurally
+benign, and the entry criterion holds conditionally
+on~\eqref{eq:hk_ybudget}.
+
 \emph{Consequence.} Within this fixed heat-kernel/HKLoc blocking
 framework, the same-plane sector~\eqref{eq:hk_fourfold}, the cross-sector
 bookkeeping~\eqref{eq:hk_96}--\eqref{eq:hk_threshold}, the
 reflection-positive iterability of the blocking, and the higher-cumulant
 estimates together reduce the positivity/class-preservation content of
 OP-YM-polymer-entry-I and the combinatorial part of the activity bound
-OP-YM-polymer-entry-II to one remaining ECT-specific input: a
-\emph{leg-resolved} bound on the anisotropy operator
-$Y(\phi)(n\!\cdot\!F)^2$ of~\S\ref{sec:min_colour_eft}, whose possible
-one-leg channel must satisfy a separate $e^{-4s}$ budget on the
-reflection-positive branch. This is a Level~B finite-bookkeeping
+OP-YM-polymer-entry-II to one remaining ECT-specific input, whose structure part~(v) resolves:
+the one-leg polymer channel of the anisotropy operator
+$Y(\phi)(n\!\cdot\!F)^2$ of~\S\ref{sec:min_colour_eft} is absent after
+extraction of the plane-resolved anisotropic core, and what remains is
+the single one-sided matching inequality~\eqref{eq:hk_ybudget} for the
+softening anisotropy $\zeta_Y(a_{\rm col})$, whose value is zero-mode
+matching data. This is a Level~B finite-bookkeeping
 reduction within the chosen framework---not a continuum Yang--Mills
 construction and not a proof of the colour gap. The full version history
 of the reduction, including the intermediate corrections, is kept in the
