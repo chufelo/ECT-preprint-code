@@ -45438,7 +45438,37 @@ threshold of~\eqref{eq:hk_threshold}. Numerically this is a softening
 budget of $+0.53$ ($+0.34$) at $s=1$ for $C_{\rm loc}\le1.95$
 ($C_{\rm loc}\le4$); it is robust across the entry window for the soft
 norm estimate, while the conservative $C_{\rm loc}=4$ requires
-$s\gtrsim0.9$ or a very small positive $\zeta_Y$. Negative $\zeta_Y$
+$s\gtrsim0.9$ or a very small positive $\zeta_Y$. The tightness of this conservative corner is, however, an artefact of
+reading eq.~\eqref{eq:hk_ybudget} at the earliest admissible entry
+scale. Because the plane-resolved heat-kernel core is stable under
+the same $b=2$ convolution, $K_{s_p}^{*4}=K_{4s_p}$, the core
+anisotropy ratio is unchanged by this blocking while the available
+smoothing time grows as $s\mapsto4s$ per step. The HKLoc remainders
+are transported through the additional block by the same finite local
+bookkeeping as parts~(ii)--(iv), under the
+small-remainder/stability-ball hypothesis already contained in
+OP-YM-polymer-entry-II. Thus the $Y$-budget may be read as an
+existence criterion over the blocking depth:
+\begin{equation}
+\exists\,n\ge0:\qquad
+\max\bigl(0,\zeta_Y^{(n)}\bigr)\;\le\;
+\frac{4^{\,n}s}{s_{\rm entry}(C_{\rm loc})}-1,
+\qquad
+1+\zeta_Y^{(n)}>0,
+\label{eq:hk_ybudget_blocks}
+\end{equation}
+where $\zeta_Y^{(n)}$ denotes the plane-resolved anisotropy after
+$n$ compatible $b=2$ blocking steps; for the pure heat-kernel core
+$\zeta_Y^{(n)}=\zeta_Y(a_{\rm col})$, while the non-core
+corrections are controlled by the HKLoc stability bound. The pure
+cross-sector condition $K_{\rm cross}\,e^{-8\cdot4^{n}s}<1$ is
+monotone in $n$ and is automatic at later blocks once it holds at the
+earliest one. One additional block raises the conservative budget
+from $+0.008$ to $+3.03$ at $(s,C_{\rm loc})=(0.75,4)$. Hence the
+delayed-entry criterion covers the expected small or order-unity
+softening anisotropies with finite blocking depth; choosing a later
+entry block changes only the nonuniversal $O(1)$ gap constant
+$C_{\rm gap}$ in eq.~\eqref{eq:ym_gap}. Negative $\zeta_Y$
 strengthens the contraction and consumes no budget beyond
 $1+\zeta_Y>0$. The value $\zeta_Y(a_{\rm col})$ itself is matching data
 at the same level as $M_*$, $g_s(M_*)$ and $Z_0$, deferred to the
@@ -45458,7 +45488,12 @@ $Y(\phi)(n\!\cdot\!F)^2$ of~\S\ref{sec:min_colour_eft} is absent after
 extraction of the plane-resolved anisotropic core, and what remains is
 the single one-sided matching inequality~\eqref{eq:hk_ybudget} for the
 softening anisotropy $\zeta_Y(a_{\rm col})$, whose value is zero-mode
-matching data. This is a Level~B finite-bookkeeping
+matching data. Equivalently, in the delayed-entry form~\eqref{eq:hk_ybudget_blocks},
+this matching requirement becomes an existence-over-blocks condition
+for the bounded anisotropy $\zeta_Y^{(n)}$. The earliest-entry
+($n=0$) reading remains a useful sharpening tied to the detailed P7
+matching value, but it is not required for the Level~B delayed-entry
+sufficient criterion. This is a Level~B finite-bookkeeping
 reduction within the chosen framework---not a continuum Yang--Mills
 construction and not a proof of the colour gap. The full version history
 of the reduction, including the intermediate corrections, is kept in the
