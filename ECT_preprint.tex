@@ -36425,9 +36425,50 @@ are modelled as satisfying
 $\delta\mathcal{J}_{\rm PES}=0$,
 $\delta^2\mathcal{J}_{\rm PES}\geq0$.
 
-\paragraph{Proxy model for $\Gamma_{\rm env}$.}
-A natural proxy measure of Euclidean non-stationarity is provided by
-the functional
+\paragraph{From influence functional to the local form.}
+The environmental cost $\Gamma_{\rm env}$ is not an independent
+postulate: it arises as the Markovian limit of the positive
+decoherence part of an influence functional.  Split the configuration
+into a slow candidate and fluctuations, $\Psi=q+\chi$, with a local
+linear coupling
+$S_{\rm int}=\int dw\,d^3x\; g\,\mathcal{O}[q]\,\chi$.
+For a Gaussian, stationary fluctuation sector, eliminating $\chi$
+yields a Feynman--Vernon influence
+functional~\cite{FeynmanVernon1963,CaldeiraLeggett1983},
+$\mathcal{F}[q,q']
+=\exp\{-\Phi_{\rm dec}[q,q']+i\Phi_{\rm diss}[q,q']\}$,
+whose decoherence exponent is the positive quadratic form
+\begin{equation}
+  \label{eq:Phi_dec_general}
+  \Phi_{\rm dec}[q,q']
+  =
+  \frac12\int dX\,dX'\,
+  \Delta\mathcal{O}(X)\,N(X,X')\,\Delta\mathcal{O}(X'),
+  \qquad
+  \Delta\mathcal{O}=\mathcal{O}[q]-\mathcal{O}[q'],
+\end{equation}
+with $X=(\mathbf{x},w)$ and $N$ the symmetrised noise kernel of the
+eliminated fluctuations; $N\succeq0$ implies $\Phi_{\rm dec}\ge0$.
+The selection cost of a single configuration is \emph{defined} as its
+distinguishability rate from its own Euclidean translate,
+\begin{equation}
+  \label{eq:Gamma_env_def}
+  \Gamma_{\rm env}[q]
+  \;:=\;
+  \lim_{\varepsilon\to0}
+  \frac{\Phi_{\rm dec}[q,\,q_\varepsilon]}{\varepsilon^{2}},
+  \qquad
+  q_\varepsilon(\mathbf{x},w)=q(\mathbf{x},w+\varepsilon),
+\end{equation}
+so that
+$\Delta\mathcal{O}=-\varepsilon\,\partial_w\mathcal{O}[q]
++O(\varepsilon^{2})$
+and exactly $w$-stationary configurations are exactly silent.
+In the local Markov limit,
+$N(X,X')\to(2\tau/S_0)\,\kappa(\mathbf{x})\,
+\delta^{3}(\mathbf{x}-\mathbf{x}')\,\delta(w-w')$,
+the definition~\eqref{eq:Gamma_env_def} reduces, for the minimal
+choice $\mathcal{O}[q]=q$ and a fixed observation interval in $w$, to
 \begin{equation}
   \label{eq:Gamma_env_proxy}
   \Gamma_{\rm env}[\Psi]
@@ -36437,17 +36478,46 @@ the functional
   \kappa(\mathbf{x})\,
   |\partial_w\Psi(\mathbf{x},w)|^2,
 \end{equation}
-where $\kappa(\mathbf{x})\geq0$ is an effective environmental locking
-kernel encoding the local density of medium degrees of freedom.
+where $\kappa(\mathbf{x})\geq0$, previously introduced as an effective
+environmental locking kernel, is now microscopically identified as a
+low-frequency moment of the local condensate spectral density
+$J(\omega,\mathbf{x})$ encoding the local density of medium degrees of
+freedom.
 This form is consistent with the $\Gamma_{\rm loop}$-apparatus already
 developed in~\S\ref{sec:qs_decoherence}: configurations with
 $\partial_w\Psi=0$ minimise the environmental penalty, while large
 $w$-variations incur rapid decoherence.
-The proxy~\eqref{eq:Gamma_env_proxy} should be read as the simplest
-functional form compatible with the structural requirements, not as a
-first-principles derivation from the full ECT action.
-A rigorous derivation of $\Gamma_{\rm env}$ from the bare Euclidean
-path integral remains an open target~(OP-PES-1).
+The derivation holds under four explicit assumptions:
+\textbf{(A1)}~Gaussian fluctuation sector;
+\textbf{(A2)}~weak linear coupling;
+\textbf{(A3)}~stationary environment state;
+\textbf{(A4)}~local/Markov limit of the noise kernel.
+Outside this regime the defining PES object is the nonlocal quadratic
+functional~\eqref{eq:Phi_dec_general}, not the local
+form~\eqref{eq:Gamma_env_proxy}.
+\emph{Status: Level~B under (A1)--(A4).}
+Relaxing these assumptions and deriving the noise kernel $N(X,X')$
+--- equivalently the spectral density $J(\omega,\mathbf{x})$ --- from
+the bare Euclidean path integral remains the open
+target~(OP-PES-1).
+
+\paragraph{Relation to the extremal-action principle.}
+Stationarity of the full selection functional,
+$\delta\mathcal{J}_{\rm PES}=0$, reads
+\begin{equation}
+  \label{eq:pes_ped_limit}
+  \delta S_E \;+\; S_0\,\delta\Gamma_{\rm env} \;=\; 0 ,
+\end{equation}
+so the closed-system extremal-action condition $\delta S_E=0$ is
+recovered in the quiet limit $\delta\Gamma_{\rm env}\simeq0$; the
+leading environmental correction shifts a quiet-limit extremum $q_0$
+by $\Delta q=-S_0\,H_S^{-1}(q_0)\,\nabla\Gamma_{\rm env}(q_0)$, with
+$H_S$ the action Hessian.  PES therefore does not violate the
+extremal-action principle: it replaces the closed-system condition by
+the full open-system selection functional, of which $\delta S_E=0$ is
+the quiet, leading limit (cf.\ OP-PES-2).
+\emph{Status: Level~B; the shift formula is the first-order expansion
+of $\delta\mathcal{J}_{\rm PES}=0$ around a quiet-limit extremum.}
 
 \paragraph{Distinction: stationarity, disturbance, action.}
 PES involves three related but logically distinct concepts:
@@ -36592,6 +36662,75 @@ black-hole microstate counting from first principles remain
 open~(D13, OP-PES-3).
 
 % ------------------------------------------------------------------
+\subsection{Relation to known selection mechanisms}
+\label{sec:pes_landscape}
+
+PES did not appear in a vacuum: several of its special cases are
+classic results, and its quantum-information face has a developed
+formalism.  Placing PES in this landscape both anchors it and makes
+precise what is new.
+
+\paragraph{Physical anchors.}
+First, the \emph{Landau criterion}: a superflow below the Landau
+critical velocity is kinematically unable to emit excitations of the
+medium~\cite{Landau1941}; it is a \emph{silent} configuration in
+exactly the PES sense, and its unlimited lifetime is the oldest
+laboratory instance of quietness-based selection.
+Second, \emph{molecular chirality} (Hund's paradox): energy
+eigenstates of a chiral molecule are parity superpositions, yet only
+left- or right-handed configurations are observed, because the
+environment continuously monitors handedness and destroys the
+superpositions~\cite{HarrisStodolsky1978}; selection here is
+manifestly orthogonal to energetics --- it is selection by noise.
+Third, \emph{widths}: particle-data tables de facto operate a
+quietness classification, since ``particle'' versus ``resonance'' is
+a statement about $\Gamma/E$, i.e.\ about the index introduced
+in~\S\ref{sec:pes_quietness}.
+
+\paragraph{Quantum-information anchors.}
+Environment-induced superselection of pointer
+states~\cite{Zurek1981,Zurek1982,Zurek2003}, the predictability
+sieve~\cite{ZurekHabibPaz1993}, decoherence-free subspaces and
+noiseless subsystems~\cite{ZanardiRasetti1997,LidarChuangWhaley1998},
+and quantum Darwinism~\cite{Zurek2009} together provide the formal
+machinery for ``configurations that survive environmental
+monitoring''; superselection rules for conserved long-range charges
+were recognised even earlier~\cite{WickWightmanWigner1952}.
+In PES language, the decoherence-free/noiseless-subsystem formalism
+is the theory of the $\Gamma_{\rm env}=0$ sector.
+More quantitatively, if the infrared part of the condensate noise is
+$J(\omega)\sim\omega^{a}$ and two sectors differ by a soft record
+$|\Delta F(\omega)|\sim\omega^{-\sigma}$, the infrared part of the
+distinguishing exponent scales as
+\begin{equation}
+  \label{eq:pes_ir_superselection}
+  \Phi_{\rm IR}
+  \sim
+  \int_0^{\Omega} d\omega\;\omega^{\,a-2\sigma-\zeta},
+  \qquad
+  \zeta=0\;(T=0),\qquad
+  \zeta=1\;(\text{thermal IR tail}),
+\end{equation}
+and diverges when $a-2\sigma-\zeta\le-1$: the environment then
+carries a non-integrable infrared record of the sector label, so
+$\Gamma_{\rm env}$ is effectively infinite between sectors --- the
+quantitative form of a superselection rule.
+\emph{Status: Level~B within the spectral-kernel framework; the ECT
+charge kernels $(a,\sigma)$ remain Open.}
+
+\paragraph{What is new in the ECT setting.}
+In the einselection literature the environment is external and
+model-chosen, and the selection criterion is an input.  In ECT the
+environment is the condensate itself and is therefore universal; the
+criterion is the Markov limit of a functional derived within the same
+framework that defines the theory~(\S\ref{sec:pes_formal}); and the
+scope extends beyond pointer bases to spectra, topological sectors,
+and record-carrying branch classes.  PES is thus best read as
+einselection \emph{derived and extended}, not reinvented.
+\emph{Status: the anchors are established physics; the ECT
+positioning statement is Level~B, inheriting the assumptions
+(A1)--(A4) of~\S\ref{sec:pes_formal}.}
+
 \subsection{Stability, lifetimes, and the hierarchy of decay rates}
 \label{sec:pes_lifetimes}
 
@@ -36678,6 +36817,104 @@ Rydberg-specific exponent.
 Accordingly, Rydberg systems should presently be read as a
 qualitative consistency sector for PES, not as a completed
 ECT-specific prediction.
+
+\subsection{Quietness index, persistent bands, and finite spectra}
+\label{sec:pes_quietness}
+
+The selection logic of PES compresses into one dimensionless number.
+Let $\tau_{\rm coh}$ be the time over which the environment destroys
+the coherent identity of a configuration and $\tau_{\rm dyn}$ its
+intrinsic dynamical period.  The \emph{quietness index}
+\begin{equation}
+  \label{eq:pes_quietness}
+  Q[\Psi]
+  =
+  \frac{\tau_{\rm coh}}{\tau_{\rm dyn}}
+  =
+  \frac{1}{\Gamma_{\rm env}[\Psi]\,\tau_{\rm dyn}[\Psi]}
+\end{equation}
+orders the observed hierarchy on a single scale: persistent
+structures have $Q\gg1$, resonances $Q\sim1$, and macroscopic
+superpositions $Q\ll1$.  ``To exist'' in the operational sense is to
+satisfy $Q\gg1$: to live through many intrinsic periods before the
+environment registers the configuration.
+
+For a discrete family of modes with energies $E_n$ and total widths
+$\Gamma_n$, the persistent sector is a \emph{count},
+\begin{equation}
+  \label{eq:pes_persistent_count}
+  N_{\rm persistent}
+  =
+  \#\{\,n:\;Q_n>Q_{\rm sel}\,\},
+  \qquad
+  Q_n=\frac{E_n}{\Gamma_n},
+\end{equation}
+where $Q_{\rm sel}$ is an \emph{operational} persistence threshold
+rather than a new constant of nature: in the simplest survival
+protocol (survive an observation time $T_{\rm obs}$ with probability
+at least $P_{\rm min}$, i.e.\ $N_{\rm obs}=T_{\rm obs}/\tau_{\rm dyn}$
+intrinsic periods) it is fixed by the protocol itself,
+$Q_{\rm sel}=T_{\rm obs}/(-\tau_{\rm dyn}\ln P_{\rm min})
+=N_{\rm obs}/(-\ln P_{\rm min})$.
+The persistent sector is, generically, a finite \emph{band} rather
+than a prefix of low-lying modes.  If, for asymptotic energies $E_n\sim A\,n^{s}$, the
+environmental width contains both an infrared and an ultraviolet
+loudness channel on top of the barrier one,
+\begin{equation}
+  \label{eq:pes_band_width}
+  \Gamma_n
+  =
+  \Gamma_n^{\rm tunnel}
+  +\gamma_-\,n^{-r}
+  +\gamma_+\,n^{p},
+  \qquad r>0,
+  \qquad p>s,
+\end{equation}
+then, in the high-barrier limit,
+\begin{equation}
+  \label{eq:pes_band_Q}
+  Q_n
+  \simeq
+  \frac{A\,n^{s}}{\gamma_-\,n^{-r}+\gamma_+\,n^{p}},
+\end{equation}
+so quiet modes occupy a finite window rather than all modes below a
+barrier,
+\begin{equation}
+  \label{eq:pes_band_window}
+  \left(\frac{\gamma_-\,Q_{\rm sel}}{A}\right)^{1/(s+r)}
+  < n <
+  \left(\frac{A}{\gamma_+\,Q_{\rm sel}}\right)^{1/(p-s)},
+\end{equation}
+up to the integer and combined-channel corrections captured by
+$N_{\rm persistent}=\#\{n:Q_n>Q_{\rm sel}\}$, with maximal quietness at
+$n_*^{\,p+r}=(s+r)\,\gamma_-/[(p-s)\,\gamma_+]$.
+The persistent sector is therefore the intersection of ``bound
+modes'', ``not IR-loud'', and ``not UV-loud'': a window in mode
+space --- neither the softest nor the hardest modes need survive.
+This toy parameterisation is not an ECT mass calculation; it only
+illustrates the mechanism by which condensate spectral data can
+produce a finite persistent sector.
+More generally, for $E_n\sim A\,n^{s}$ and multi-channel widths
+$\Gamma_n=\sum_i\gamma_i\,n^{b_i}$ the quiet condition reads
+$\sum_i\gamma_i\,n^{\,b_i-s}<A/Q_{\rm sel}$; a channel with $b_i>s$ enforces
+an ultraviolet cap, a sufficiently strong channel with $b_i<s$ removes
+the lowest modes, and, since $\sum_i\gamma_i\,e^{(b_i-s)\ln n}$ is
+convex in $\ln n$, the persistent sector is always a single contiguous
+band.  When the ultraviolet channel arises from resonant sampling of a
+spectral density $J(\omega)\sim\omega^{a}$ with squared form-factor
+scaling $n^{u}$, its exponent is fixed by the dictionary $p=as+u$.
+Equation~\eqref{eq:pes_persistent_count} converts questions of the
+type ``why does a finite number of generations or stable excitations
+exist?''\ into a spectral problem: determine $(E_n,\Gamma_n)$ from
+the condensate defect spectrum --- schematically
+$\Gamma_n\sim\int_0^\infty d\omega\,J(\omega,\mathbf{x})\,|F_n(\omega)|^{2}$
+with $F_n$ the mode form factor --- then count.
+\emph{Status: Level~B as a mathematical mechanism; the ECT
+microphysical input --- the spectral data $(E_n,\Gamma_n)$,
+equivalently the condensate spectral density
+$J(\omega,\mathbf{x})$ and the mode form factors $F_n$ --- is Open
+and constitutes the common target
+of OP-PES-1, OP-PES-2, and OP-PES-4.}
 
 \subsection{Unified quantisation table}
 \label{sec:pes_quant_table}
@@ -36894,6 +37131,25 @@ $S_0=\hbar$ & Level~B matching & Deepened physical interpretation of the $S_0$-p
 % ------------------------------------------------------------------
 \subsection{What PES does not yet prove}
 \label{sec:pes_open}
+
+\paragraph{Discipline statement.}
+For the avoidance of overclaim, PES as established in this section
+does \emph{not yet}:
+(i)~derive unconditional Born weights --- the conditional-uniqueness
+route remains Level~B and the unconditional statement Open;
+(ii)~select the microscopic sign of $\alpha-\beta$ --- the explicit
+non-claim stated earlier in this work stands unchanged;
+(iii)~compute Standard-Model masses or the number of fermion
+generations;
+(iv)~prove confinement.
+Its content is that each of these becomes a \emph{computable}
+question about the noise kernel $N(X,X')$, the condensate spectral
+density $J(\omega,\mathbf{x})$, and the quietness
+index~\eqref{eq:pes_quietness}.
+Accordingly, no application-level claim of the form ``PES explains
+X'' is admitted until the four objects
+$(E_n,\;\Gamma_n\ \text{or}\ \Gamma_{\rm env},\;J,\;F_n)$ are named
+for that application and the closure/quietness test is passed.
 
 The following central outputs remain beyond the current reach of PES:
 \begin{enumerate}[label=(\roman*)]
@@ -42022,6 +42278,11 @@ quantum-gravity claims remains programme-level.
   \item[OP-PES-6] Protocol-independent information--decoherence
     bound beyond the dephasing qubit model.
 \end{description}
+
+The common technical object unifying OP-PES-1, OP-PES-2, OP-PES-4,
+and the quantitative side of OP-PES-6 is the condensate spectral
+density $J(\omega,\mathbf{x})$: one kernel fixes decoherence,
+dissipation, decay widths, lifetimes, and the quietness index.
 
 \subsection{Minimal quantum core already established by ECT}
 \label{sec:qs_minimal_core}
