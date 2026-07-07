@@ -36576,13 +36576,18 @@ axiom without a physical explanation: \emph{why} does nature select
 extremal-action paths?
 PES provides a candidate answer.
 
-Configurations with non-extremal action satisfy
-$\delta S_E\neq0$ and therefore have larger Euclidean
-disturbance~\eqref{eq:Gamma_env_proxy}: their $|\partial_w\Psi|^2$
-is generically larger than that of the nearby extremal.
-They decohere faster and are effectively absorbed into the classical
-Lorentzian branch.
-Near-extremal configurations survive longest.
+Configurations away from an extremum of $S_E$ are not automatically
+excluded by PES solely because $\delta S_E\neq0$.
+Rather, once the environmental term is included, the relevant condition
+is the full open-system stationarity equation
+$\delta S_E+S_0\,\delta\Gamma_{\rm env}=0$.
+In the quiet/closed limit $\delta\Gamma_{\rm env}\simeq0$ this
+reduces to the usual extremal-action condition.
+In classes of configurations where departure from an extremum also
+increases the monitored $w$-disturbance, the local Markov
+expression~\eqref{eq:Gamma_env_proxy} gives the survival
+interpretation: such off-extremal alternatives decohere faster and do
+not dominate the persistent sector.
 
 PES therefore suggests a physical underpinning of the
 extremal-action principle: near-extremal configurations are the most
@@ -36751,11 +36756,13 @@ The proton, electron, and photon are natural benchmark cases for such
 a reading, but a first-principles derivation of their exact stability
 from PES remains outside the present scope.
 
-\paragraph{Instability from non-stationarity.}
-Unstable particles correspond to configurations with
-$\partial_w\Psi\neq0$: they continuously disturb the condensate and
-are therefore coupled to the environment.
-The programme-level scaling law for the decay rate is:
+\paragraph{Instability from residual loudness.}
+In the PES reading, unstable excitations are modelled as configurations
+with a nonzero environmental width: they are not perfectly silent with
+respect to the condensate and therefore have a finite lifetime.
+In the local Markov proxy, one contribution to this width is the
+monitored non-stationarity measure, with the programme-level scaling
+ansatz:
 \begin{equation}
   \label{eq:pes_lifetime}
   \tau_{\rm life}^{-1}
@@ -36772,10 +36779,9 @@ $\mathcal{N}_{\rm ns}$ is the non-stationarity measure.
 Eq.~\eqref{eq:pes_lifetime} should be read as a PES scaling ansatz
 for the lifetime hierarchy, not as a first-principles decay-width
 formula.
-This is a programme-level organising law, not yet a
-Standard-Model-precision calculation; deriving specific decay widths
-requires computing $\mathcal{N}_{\rm ns}$ for each particle from the
-condensate action.
+Real widths for Standard-Model particles require the appropriate
+condensate spectral kernel, form factors, available channels, and
+phase-space factors; none of these is claimed here.
 
 \paragraph{Qualitative hierarchy.}
 The PES picture is qualitatively consistent with the observed

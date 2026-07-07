@@ -1251,15 +1251,23 @@ In standard QM, these properties are either postulated directly or derived from 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.65\textwidth]{fig_pes_diagram.pdf}
-\caption{The Principle of Euclidean Stationarity (PES). Three conditions must be simultaneously satisfied: the configuration is an extremal of the Euclidean action (stationary), it is resistant to environmental decoherence ($\Gamma_{\rm loop}\ll1$), and it belongs to a well-defined phase-topological class (compact phase with integer winding). Their intersection defines the persistent configurations --- the ECT counterpart of observable quantum states. (\emph{Level~B.})}
+\caption{The Principle of Euclidean Stationarity (PES). Three conditions must be simultaneously satisfied: the configuration is an extremal of the Euclidean action (stationary), it is resistant to environmental decoherence ($\Gamma_{\rm env}\ll1$, with $\Gamma_{\rm loop}$ the earlier operational decoherence measure used in the loop-sector discussion), and it belongs to a well-defined phase-topological class (compact phase with integer winding). Their intersection defines the persistent configurations --- the ECT counterpart of observable quantum states. (\emph{Level~B.})}
 \label{fig:pop_pes}
 \end{figure}
 
 The Principle of Euclidean Stationarity (PES) is a key organising principle of ECT (Fig.~\ref{fig:pop_pes}). It is not a new postulate but an organising principle that emerges as a consequence of three already-established ingredients: the Euclidean-first ontology (P1), the compact-phase topology (BR1), and the influence-functional decoherence framework.
 
-\textbf{Statement.} The physically persistent and observable configurations are those that simultaneously: (i)~are stationary or quasi-stationary extremals of the Euclidean action; (ii)~maintain $\Gamma_{\rm loop} \ll 1$ (resist decoherence); (iii)~belong to an admissible phase-topological class (integer winding). Configurations failing any of these conditions decohere and are absorbed into the classical branch.
+\textbf{Statement.} The physically persistent and observable configurations are those that simultaneously: (i)~are stationary or quasi-stationary extremals of the Euclidean action; (ii)~maintain a small environmental decoherence cost ($\Gamma_{\rm env}\ll1$, or equivalently small $\Gamma_{\rm loop}$ in the earlier operational notation); (iii)~belong to an admissible phase-topological class (integer winding). Configurations failing any of these conditions decohere and are absorbed into the classical branch.
 
-\textbf{Physical consequences.} PES explains \emph{why} quantum systems settle into energy eigenstates: these are precisely the Euclidean-stationary configurations that survive environmental coupling. After the Wick rotation $w \to -ic_*t$, a Euclidean-stationary configuration with action $S_E$ corresponds to an energy eigenstate with energy $E = S_E/\Delta w$. The ground state corresponds to the lowest-action Euclidean extremal.
+\textbf{Physical consequences.} PES gives a structural reason why
+stationary or quasi-stationary Euclidean configurations are the natural
+persistent candidates in the quantum sector: they are the configurations
+least exposed to environmental distinguishability. In ordinary spectral
+problems this is consistent with the appearance of energy eigenstates as
+long-lived coherent modes after the Euclidean--Lorentzian reduction.
+However, PES does not replace the system-specific eigenvalue problem:
+the actual spectrum still has to be computed from the relevant effective
+Hamiltonian or condensate defect dynamics.
 
 \textbf{Relation to the principle of least action.} PES provides a candidate physical underpinning for why near-stationary configurations dominate the persistent observable sector. In the strongly decohered limit, where non-stationary alternatives are rapidly suppressed, this reduces toward the classical extremal-action selection rule. This should not yet be read as a completed theorem deriving the principle of least action from first principles; a rigorous bound relating Euclidean non-stationarity to $\Gamma_{\rm loop}$ remains part of the PES completion programme.
 
