@@ -62442,6 +62442,288 @@ five-case detuning map are deferred to the next P6 appendix.  The M3 protocols t
 external C12 monitoring and intrinsic C13$'$ threshold behaviour as the primary falsifier.  Mixing the two
 protocols is the main interpretive error this appendix is designed to prevent.
 
+% ============================================================
+% AP6-D inserted 2026-07-09 from derivations/pes/AP6_D_INSERT_ADAPTED_v1.tex (PES Round 34)
+% ============================================================
+\section{P6-D: Intrinsic threshold protection and edge-plus-line spectra}
+\label{app:AP6D-threshold-protection}
+
+\paragraph{Status and scope.}
+This appendix records the conditional C13$'$ threshold-protection mechanism of the frozen P6 ledger.  It
+uses the conventions of Appendix~\ref{app:AP6A-conventions-kernels}, the core spectral laws of
+Appendix~\ref{app:AP6B-core-laws}, and the certified line/width record operator of
+Appendix~\ref{app:AP6C-ribbon-line-records}.  The status is Level~B conditional.  The result is a
+statement about an intrinsic width-channel self-record sitting at its own soft radiation edge.  It is not a
+generic statement about every external monitor, every oscillator coupled to a bath, or every line in the
+analogue laboratory.  In particular, the external-monitor golden-rule hierarchy remains the C12 result of
+Appendix~\ref{app:AP6C-C12-form-factors}; the present appendix treats the intrinsic dressed-pole problem.
+
+The robustness claim below is the vanishing of the width for a pole below the edge, together with the
+line-plus-shoulder spectral form and the associated sum rule.  The absolute binding energy below the edge is
+not invariant until the counterterm and detuning convention have been declared.
+
+\subsection{Soft edge inherited from C8}
+\label{app:AP6D-soft-edge}
+
+For fixed longitudinal momentum $k_z$, the certified C8 kernels have the threshold
+\begin{equation}
+  E\equiv E_{\rm edge}=c|k_z|,
+\end{equation}
+and vanish below it.  Near the edge, with $\epsilon=\omega-E>0$, Appendix~\ref{app:AP6A-C8-kernels} gives
+\begin{align}
+  J_{\rm temp}^{\rm can}(\omega,k_z)
+  &=\frac{\epsilon}{8\pi E^2}+O(\epsilon^2), \\
+  J_{\rm spat}^{\rm can}(\omega,k_z)
+  &=\frac{\epsilon}{8\pi c^2}+O(\epsilon^2).
+  \label{eq:AP6D-C8-edge-onset}
+\end{align}
+Thus the intrinsic width channel sees a soft linear continuum onset, not the hard threshold singularity of
+the discarded finite-$k_z$ continuation.  For the threshold analysis it is useful to write the effective edge
+kernel in the form
+\begin{equation}
+  J_{\rm edge}(\omega)
+  =g^2A_E(\omega-E)\Theta(\omega-E)f_{\rm UV}(\omega),
+  \qquad
+  A_E>0,
+  \qquad
+  f_{\rm UV}(E)=1,
+  \label{eq:AP6D-soft-edge-model}
+\end{equation}
+where $g$ is the channel amplitude and $A_E$ includes the selected temporal/spatial component, source
+normalisation, and any declared projection.  Equation~\eqref{eq:AP6D-soft-edge-model} is a local threshold
+model, not a replacement for the full C8 kernel away from the edge.
+
+\subsection{Dressed intrinsic response and bosonic mirror dispersion}
+\label{app:AP6D-dressed-response}
+
+The intrinsic width mode is represented by the retarded dressed response
+\begin{equation}
+  G_R(z)=\frac{1}{D(z)},
+  \qquad
+  D(z)=z^2-\Omega_0^2+\Sigma_R(z)-\delta_{ct}.
+  \label{eq:AP6D-dressed-response}
+\end{equation}
+Here $\Omega_0$ is the frequency in the declared bare or calibrated convention, $\delta_{ct}$ is the
+subtraction convention, and $\Sigma_R$ is computed with the bosonic mirror kernel of
+Appendix~\ref{app:AP6A-KK-counterterm}.  With a positive continuum width above the edge, the real part is
+\begin{equation}
+  \Sigma'(\omega)=\frac{2}{\pi}\,\mathcal{P}\int_E^\infty
+  \frac{\omega'\Sigma''(\omega')}{\omega'^2-\omega^2}\,d\omega' .
+  \label{eq:AP6D-bosonic-KK}
+\end{equation}
+The one-sided kernel $1/(\omega'-\omega)$ is not used in the frozen P6 branch.  It fails the oscillator
+sum-rule audit and is included in the correction history rather than in the certified convention.
+
+A real pole below the edge satisfies
+\begin{equation}
+  D(\omega_b)=0,
+  \qquad
+  \omega_b<E.
+  \label{eq:AP6D-subedge-pole}
+\end{equation}
+Because $J_{\rm edge}(\omega_b)=0$, the intrinsic continuum gives
+\begin{equation}
+  \Gamma(\omega_b)=0
+  \label{eq:AP6D-zero-width}
+\end{equation}
+before any external readout convolution or environmental leakage is added.  This is the core of threshold
+protection.  It should not be confused with a weak but finite Lorentzian width above the edge.
+
+\subsection{\texorpdfstring{C13$'$}{C13-prime}: the conditional threshold-protection statement}
+\label{app:AP6D-C13prime}
+
+In the self-consistent intrinsic width channel, the undressed width mode is edge-aligned in the ideal
+minimal geometry,
+\begin{equation}
+  \Omega_0=E_{\rm edge},
+  \label{eq:AP6D-edge-alignment}
+\end{equation}
+and is dressed by its own soft edge.  In a bare-edge convention this produces a subedge pole,
+\begin{equation}
+  \omega_b<E_{\rm edge},
+  \qquad
+  E_{\rm edge}-\omega_b=O(g^2),
+  \qquad
+  \Gamma(\omega_b)=0,
+  \label{eq:AP6D-binding-scaling}
+\end{equation}
+with a soft continuum shoulder above the edge.  The $O(g^2)$ statement is made with $g$ the channel
+amplitude; if the scan variable is already $g^2$, the fitted exponent is unity.
+
+The intrinsic spectral form is therefore
+\begin{equation}
+  \rho_{\rm intr}(\omega)
+  =Z_b\delta(\omega-\omega_b)
+   +\rho_{\rm cont}(\omega)\Theta(\omega-E_{\rm edge}) .
+  \label{eq:AP6D-edge-plus-line}
+\end{equation}
+This is not the C12 external-monitor spectrum.  The C12 form is recovered only when an external or detuned
+monitor reads the width family through the golden-rule expression in
+Appendix~\ref{app:AP6C-C12-form-factors}.  The primary M3 discriminator is precisely this two-protocol
+contrast.
+
+\subsection{Spectral-weight sum rule}
+\label{app:AP6D-sum-rule}
+
+The subedge line and the continuum shoulder are not independent fit components.  In the oscillator
+normalisation used in the P6 audits they obey
+\begin{equation}
+  Z_b+\int_E^\infty 2\omega\rho_{\rm cont}(\omega)\,d\omega=1.
+  \label{eq:AP6D-sum-rule}
+\end{equation}
+Equivalently, $Z_b$ is the oscillator-normalised residue of $G_R$ at the subedge pole,
+\begin{equation}
+  Z_b=\frac{2\omega_b}{D'(\omega_b)}
+  =\left[1+\frac{1}{2\omega_b}\frac{d}{d\omega}
+    \bigl(\Sigma'(\omega)-\delta_{ct}\bigr)\bigg|_{\omega=\omega_b}\right]^{-1},
+  \label{eq:AP6D-residue}
+\end{equation}
+when the counterterm is frequency-independent.  If a different response normalisation is used, the sum
+rule must be transformed with it; the invariant content is that line weight lost from $Z_b$ appears in the
+same channel's continuum shoulder.  This guard eliminates the false positive in which an unrelated trapped
+mode is fitted as a protected intrinsic line.
+
+\subsection{Five-case detuning and counterterm map}
+\label{app:AP6D-five-case-map}
+
+The detuning is
+\begin{equation}
+  \Delta=\Omega_0-E_{\rm edge}.
+  \label{eq:AP6D-detuning}
+\end{equation}
+Throughout this appendix $\Delta$ denotes the edge detuning in Eq.~\eqref{eq:AP6D-detuning};
+the transverse-separation variable used in the cusp-kernel discussion of
+Appendix~\ref{app:AP6A-cusp} is local to that discussion and is not used below.
+The following cases define the frozen C13$'$ map.
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.16\textwidth}>{\raggedright\arraybackslash}p{0.36\textwidth}>{\raggedright\arraybackslash}p{0.38\textwidth}@{}}
+\toprule
+case & condition & outcome and guard \\
+\midrule
+\endfirsthead
+\toprule
+case & condition & outcome and guard \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\bottomrule
+\endlastfoot
+bare edge & $\Delta=0$ with a declared bare-edge convention & A subedge pole detaches with binding $O(g^2)$ and zero intrinsic width.  The numerical binding is convention-dependent. \\
+physical edge & $\delta_{ct}$ chosen so that the $g\to0$ physical edge is fixed & The pole may sit at the edge in the calibrated convention, but any pole below the edge still has $\Gamma=0$.  Do not quote an absolute detachment without the subtraction convention. \\
+positive detuning & $\Delta>0$ & Below a critical coupling the mode is an over-edge resonance.  Above it the pole rebinds below the edge.  The transition defines P24. \\
+negative detuning & $\Delta<0$ & The pole is already subedge in the calibrated limit; protection is then kinematic rather than a nontrivial rebinding. \\
+finite system or finite readout & edge levels, disorder, external leakage, finite $T_{\rm obs}$ & The mathematical pole is observed with residual width set by the largest non-intrinsic broadening scale in Eq.~\eqref{eq:AP6D-observed-width}. \\
+\end{longtable}
+
+For the positive-detuning branch, the soft-edge model gives the leading scaling
+\begin{equation}
+  g^2_{\rm crit}(\Delta)=\frac{\Delta}{\chi_E}+O(\Delta^2),
+  \qquad
+  \chi_E>0,
+  \label{eq:AP6D-gcrit-linear}
+\end{equation}
+Here $g^2_{\rm crit}$ is the critical channel amplitude of this detuning map; it is unrelated to
+the alignment coupling $g_{\rm crit}$ of the electroweak sector of the main text.  It follows that
+\begin{equation}
+  \frac{d\log g^2_{\rm crit}}{d\log\Delta}=1+O(\Delta).
+  \label{eq:AP6D-P24-slope}
+\end{equation}
+The coefficient $\chi_E$ is not universal: it depends on the edge normalisation, cutoff, projection, and
+counterterm convention.  The unit exponent is the P24 prediction.  If the measured continuum-onset exponent
+is not the C8 soft-edge exponent, the P24 exponent must be rederived before interpreting a failure as a
+failure of threshold protection.
+
+\subsection{Finite-resolution and observed width}
+\label{app:AP6D-finite-resolution}
+
+Below-edge zero width is an intrinsic-channel statement.  The observed width is bounded by the largest
+additional broadening mechanism,
+\begin{equation}
+  \Gamma_{\rm obs}
+  \sim \max\left(\Gamma_{\rm ext},\Gamma_{L_z},\Gamma_T,
+  \Gamma_{\rm disorder},\frac{1}{T_{\rm obs}},\delta\omega_{\rm res}\right).
+  \label{eq:AP6D-observed-width}
+\end{equation}
+Resolving the line as a subedge line rather than as an edge shoulder requires
+\begin{equation}
+  E_{\rm edge}-\omega_b \gtrsim 3\delta\omega_{\rm res},
+  \label{eq:AP6D-line-resolution}
+\end{equation}
+while resolving the shoulder as a continuum rather than as a few finite-size levels requires the opposite
+hierarchy for the edge-level spacing,
+\begin{equation}
+  \delta\omega_{\rm level}\ll \delta\omega_{\rm res} .
+  \label{eq:AP6D-shoulder-resolution}
+\end{equation}
+Both inequalities must be stated in any proposed M3 implementation.  A failure caused by finite resolution
+is a protocol failure, not a falsification of C13$'$.
+
+\subsection{P23/P24 two-protocol falsifier}
+\label{app:AP6D-P23-P24}
+
+The intrinsic protocol fits the spectrum, after convolution with the experimental resolution kernel
+$R_{\rm res}$, as
+\begin{equation}
+  \rho_{\rm intr}^{\rm obs}(\omega)
+  =\left[Z_b\delta(\omega-\omega_b)+\rho_{\rm cont}(\omega)\Theta(\omega-E)\right]
+   \ast R_{\rm res}(\omega),
+  \label{eq:AP6D-intrinsic-observed}
+\end{equation}
+with $\omega_b<E$, $\Gamma(\omega_b)=0$ before convolution, and the sum rule
+\eqref{eq:AP6D-sum-rule}.  The external protocol fits the same width-mode family with
+\begin{equation}
+  \Gamma_n^{\rm ext}=2\pi J_W(\Omega_n)|F_n(\Omega_n)|^2[1+n_{\rm eff}(\Omega_n)] .
+  \label{eq:AP6D-external-repeat}
+\end{equation}
+After division by the same $J_W$ and occupation data, the external hierarchy must reduce to the C12
+form-factor classes of Appendix~\ref{app:AP6C-C12-form-factors}.  P23 is the contrast between these two
+protocols.  P24 is the positive-detuning transition
+\begin{equation}
+  \text{over-edge resonance}
+  \quad\longrightarrow\quad
+  \text{subedge line plus soft shoulder},
+  \qquad
+  g^2_{\rm crit}(\Delta)\propto\Delta .
+  \label{eq:AP6D-P24-transition}
+\end{equation}
+
+The falsification hierarchy is deliberately local.  A failed P23/P24 implementation first challenges the
+proposed C8/C13$'$ intrinsic record operator, then the edge-alignment assumption, then the soft-edge
+threshold mechanism, and only after the protocol guards are controlled does it challenge the wider P6/PES
+spectral-record framework.  It does not by itself falsify all of ECT.
+
+\subsection{Operational guards}
+\label{app:AP6D-operational-guards}
+
+The following guards must accompany any use of C13$'$ or P23/P24.
+\begin{enumerate}
+  \item \emph{Backaction guard.}  Vary readout strength and extrapolate to the weak-reading intercept; a
+  strong readout can turn an intrinsic channel into an external C12 monitor.
+  \item \emph{Trapped-mode guard.}  A subedge line without transfer of weight to the soft shoulder is not a
+  C13$'$ line.  The sum rule~\eqref{eq:AP6D-sum-rule} is mandatory.
+  \item \emph{Detuning guard.}  Calibrate $\Delta$ by a declared $g\to0$ or counterterm-subtracted
+  procedure before fitting $g^2_{\rm crit}(\Delta)$.
+  \item \emph{Edge-exponent guard.}  Measure the continuum-onset exponent independently.  The P24 unit
+  exponent assumes the C8 soft linear edge.
+  \item \emph{Finite-size guard.}  Check Eqs.~\eqref{eq:AP6D-line-resolution} and
+  \eqref{eq:AP6D-shoulder-resolution} before interpreting line/shoulder visibility.
+  \item \emph{Matrix-channel guard.}  If intrinsic and external readouts project different eigenchannels of
+  $J^W_{ab}$, scalar closure can fail without falsifying the matrix S7 framework.
+\end{enumerate}
+These guards are operational rather than decorative: they determine whether a laboratory outcome is a
+C13$'$ result, a record-operator failure, a protocol failure, or an ambiguous mixed-channel measurement.
+
+\subsection{Handoff}
+\label{app:AP6D-handoff}
+
+Appendix~\ref{app:AP6C-ribbon-line-records} established the certified external-monitor hierarchy.  The
+present appendix established the intrinsic edge-plus-line mechanism and its detuning transition.  The later
+P6 appendices collect the remaining normalisation/fingerprint and S7 over-closure material, then assemble
+M3-1, M3-2, and M3-3 as explicit falsification protocols.  The handoff rule is simple: C12 governs external
+or detuned monitoring, C13$'$ governs the intrinsic self-channel, and a calculation that mixes the two without
+stating the protocol is not a valid P6 prediction.
+
 \section*{Data and Code Availability}
 \addcontentsline{toc}{part}{Data and Code Availability}
 
