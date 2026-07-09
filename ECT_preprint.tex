@@ -63097,6 +63097,224 @@ provides the width-sector inputs used by the M3-3 protocol, while Appendix~\ref{
 provides the P23/P24 intrinsic-threshold contrast.  The subsequent M3 appendix will assemble these inputs
 into explicit falsification protocols without rederiving the kernel, width, or threshold laws.
 
+% ============================================================
+% AP6-G inserted 2026-07-09 from derivations/pes/AP6_G_INSERT_ADAPTED_v1.tex (PES Round 41)
+% ============================================================
+\section{P6-G: M3 operational falsification protocols}
+\label{app:AP6G-M3-operational-protocols}
+
+\paragraph{Status and scope.}
+This appendix collects the three M3 protocols attached to the frozen P6 record framework.  It is a
+protocol appendix, not a new derivation appendix.  The threshold physics of P23/P24 is owned by
+Appendix~\ref{app:AP6D-P23-P24}; the width-sector observable interface is owned by
+Appendix~\ref{app:AP6E-width-observable-interface}; and the one-kernel over-closure logic is owned by
+Appendix~\ref{app:AP6F-matrix-triangle-P26}.  The analogue-observable dictionary is
+Appendix~\ref{app:analogue_dictionary}.  The role of the present appendix is to specify what must be
+measured, how the guards are sequenced, and how a pass or fail should be interpreted.
+
+A failure of an analogue M3 protocol is not by itself a falsification of all ECT.  It first tests the
+declared record operator, channel map, calibration, and platform assumptions.  Only after those guards are
+controlled does a failure bear on the corresponding P6 record claim.
+
+\subsection{Common M3 reporting packet}
+\label{app:AP6G-reporting-packet}
+
+Every M3 implementation should begin with a platform packet
+\begin{equation}
+\begin{gathered}
+  \mathsf{P}_{\rm M3}
+  =
+  \{\text{platform},\ \text{ordered variable},\ \text{record channel},
+  \\
+  \hspace{1.2cm}
+    J^W_{ab},\ F_n,\ S_\pm\ \text{or}\ T_{\rm eff},\ R_{\rm res},\ \delta_{ct},\ \text{calibrations}\}.
+\end{gathered}
+\label{eq:AP6G-platform-packet}
+\end{equation}
+The packet is deliberately redundant: it records the conventions needed to decide whether a failed
+protocol is a physical failure or a convention mismatch.  The symbols $J^W_{ab}$, $F_n$, $S_\pm$,
+$T_{\rm eff}$, $R_{\rm res}$, and $\delta_{ct}$ are the same objects used in Appendices~BI--BN.  They
+should not be redefined locally.
+
+The minimal reporting standard is
+\begin{equation}
+\begin{aligned}
+  &\mathsf{P}_{\rm M3}
+  +\text{raw spectra}
+  +\text{resolution kernel}
+  \\
+  &\hspace{1.5cm}
+  +\text{readout-strength sweep}
+  +\text{counterterm or calibration convention}.
+\end{aligned}
+\label{eq:AP6G-reporting-standard}
+\end{equation}
+Without this packet, the M3 outcome is not interpretable as a P6 test.
+
+\subsection{M3-1: intrinsic/external threshold contrast}
+\label{app:AP6G-M3-1}
+
+M3-1 operationalises the P23/P24 contrast of Appendix~\ref{app:AP6D-P23-P24}.  The same width-mode family
+is read in two protocols:
+
+\begin{enumerate}[label=(\roman*)]
+  \item an intrinsic self-channel readout, which should show the subedge line, soft shoulder, same-channel
+  sum rule, and positive-detuning transition of Appendix~\ref{app:AP6D-P23-P24};
+  \item an external detuned monitor, which should reduce to the C12 form-factor hierarchy of
+  Appendix~\ref{app:AP6C-C12-form-factors}.
+\end{enumerate}
+
+The first operational guard is weak-readout extrapolation.  Let $\epsilon_{\rm rd}$ denote the readout
+strength.  The measured line width is fitted as
+\begin{equation}
+  \Gamma_b^{\rm obs}(\epsilon_{\rm rd})
+  =
+  \Gamma_0+A_{\rm rd}\epsilon_{\rm rd}+O(\epsilon_{\rm rd}^2).
+  \label{eq:AP6G-readout-extrapolation}
+\end{equation}
+For an intrinsic C13$'$ line the intercept should be consistent with zero within the declared error model.
+A nonzero intercept is evidence for an external broadening channel, a trapped mode, or an uncontrolled
+environmental width, not for the intrinsic zero-width statement.
+
+The second guard is spectral-weight transfer.  Using the same-channel normalisation of
+Appendix~\ref{app:AP6D-sum-rule}, report
+\begin{equation}
+  Z_b+Z_{\rm cont}\simeq1,
+  \qquad
+  Z_{\rm cont}\equiv \int_E^\infty 2\omega\rho_{\rm cont}(\omega)\,d\omega .
+  \label{eq:AP6G-weight-transfer}
+\end{equation}
+A trapped-mode false positive can produce a narrow line, but it will not generically show the correlated
+line-to-shoulder weight transfer required by the C13$'$ channel.
+
+The third guard is detuning calibration.  When a positive-detuning resonance exists below the rebinding
+threshold, define
+\begin{equation}
+  \Omega_{0,{\rm cal}}=\lim_{g^2\to0}\omega_{\rm res}(g^2),
+  \qquad
+  \Delta_{\rm cal}=\Omega_{0,{\rm cal}}-E_{\rm edge}.
+  \label{eq:AP6G-detuning-calibration}
+\end{equation}
+The P24 test is then the calibrated relation
+\begin{equation}
+  g^2_{\rm crit}(\Delta_{\rm cal})\propto\Delta_{\rm cal},
+  \label{eq:AP6G-P24-calibrated}
+\end{equation}
+with the notation and disambiguation of Appendix~\ref{app:AP6D-P23-P24}.  A detuning map without the
+$g^2\to0$ calibration is not a quantitative P24 test.
+
+\subsection{M3-2: zero-mode detector through $t_*(R)$}
+\label{app:AP6G-M3-2}
+
+M3-2 tests the P6 zero-mode/Berry alternative.  The notation P7$'$ used here is a P6/M3 detector label;
+it is not the colour postulate P7 of the main text.  The minimal line/ribbon branch has
+$n_0=0$ and a linear crossover scale, while a core-Berry branch gives a log-corrected quadratic scale.
+The two flatness transforms are
+\begin{equation}
+  Q_{\rm min}(R)=\frac{t_*(R)}{R+R_{\rm off}},
+  \qquad
+  Q_{\rm core}(R)=\frac{t_*(R)\ln(R/\xi)}{R^2}.
+  \label{eq:AP6G-flatness-transforms}
+\end{equation}
+The flatness transforms $Q_{\rm min}$ and $Q_{\rm core}$ are M3-2 detector statistics; they are
+distinct from the quietness index $Q[\Psi]$ of Section~\ref{sec:pes_quietness}.
+The offset $R_{\rm off}$ was denoted $R_0$ in some P6 derivation files; the present notation
+avoids collision with the unrelated collapse-scale $R_0$ used elsewhere in the manuscript.
+The raw slope of the core-Berry branch over a finite window is not exactly two:
+\begin{equation}
+  p_{\rm raw}=2-\frac{1}{\ln(R_{\rm geo}/\xi)}+\cdots .
+  \label{eq:AP6G-log-slope-guard}
+\end{equation}
+Therefore the protocol must test the transformed flatness, not merely fit a raw power law.
+
+A positive zero-mode/Berry claim requires three correlated signatures:
+\begin{equation}
+  Q_{\rm core}(R)\simeq\text{const},
+  \qquad
+  \Phi(t)+2\sqrt{\pi}\propto t^{1/2},
+  \qquad
+  \Delta\omega_{\rm odd}(W)\propto W n_0 .
+  \label{eq:AP6G-zero-mode-triple}
+\end{equation}
+The middle signature recalls the square-root branch of Appendix~\ref{app:AP6B-nongaussian-quiet}.
+The odd frequency shift is extracted by
+\begin{equation}
+  \Delta\omega_{\rm odd}(W)
+  =
+  \frac{\Delta\omega(+W)-\Delta\omega(-W)}{2}.
+  \label{eq:AP6G-odd-projection}
+\end{equation}
+This removes even backgrounds such as pinning shifts.  A raw $R^2$ scaling without log-flatness and odd
+Berry response is a trap/diffusion false positive.
+
+The scale $\xi$ used in Eq.~\eqref{eq:AP6G-flatness-transforms} should be supplied by an independent core
+fingerprint or profile measurement.  If $\xi$ is floated freely in the same fit, the corrected slope can
+be biased and should not be read as new physics.
+
+\subsection{M3-3: Airy-width and fingerprint protocol}
+\label{app:AP6G-M3-3}
+
+M3-3 uses the observable interface of Appendix~\ref{app:AP6E-width-observable-interface}.  The protocol
+should report the data vector
+\begin{equation}
+  \mathsf{D}_{\rm M3\mbox{-}3}
+  =
+  \left(
+  \widehat{\xi}_c,\widehat{\xi}_{\rm res},\widehat{\kappa}_b,
+  \widehat{\ell}_w,\widehat E_0,\widehat L_z^{\rm coh},
+  Z_b,\rho_{\rm cont}
+  \right),
+  \label{eq:AP6G-M3-3-data-vector}
+\end{equation}
+with the hatted quantities obtained by the non-circular steps of Appendix~\ref{app:AP6E-observable-chain}.
+The decision logic is the table in Appendix~\ref{app:AP6E-M3-3-decision-table}; it should not be repeated
+as a second table here.
+
+The core warning is circularity.  Extracting $\kappa_b$ from the Airy width and then claiming the
+$\kappa_b$ exponent is a tautology.  The stiffness must instead come from the independent tilt calibration
+of Appendix~\ref{app:AP6E-tilt-calibration}.  The resolution guard is likewise inherited from
+Appendix~\ref{app:AP6E-resolution-deconvolution}.  A successful width profile without the C13$'$ package
+of Appendix~\ref{app:AP6E-C13-check} is a width-profile observation, not a persistent intrinsic record
+claim.
+
+\subsection{Shared interpretation rules}
+\label{app:AP6G-shared-interpretation}
+
+The shared M3 failure hierarchy is
+\begin{equation}
+\begin{gathered}
+  \text{instrumental/resolution failure}
+  \rightarrow
+  \text{wrong channel map}
+  \\
+  \rightarrow
+  \text{wrong occupation/counterterm convention}
+  \\
+  \rightarrow
+  \text{wrong record operator or form factor}
+  \\
+  \rightarrow
+  \text{failure of the corresponding P6 claim}.
+\end{gathered}
+\label{eq:AP6G-shared-failure-hierarchy}
+\end{equation}
+This hierarchy is the operational counterpart of the scalar-channel failure discussion in
+Appendix~\ref{app:AP6F-failure-interpretation}.  It prevents two opposite overclaims: treating every
+analogue discrepancy as a falsification of ECT, and treating every discrepancy as a harmless apparatus
+problem.
+
+A successful M3 result should be reported as a success of the declared protocol and channel, not as a
+proof of all P6/PES.  Conversely, a controlled failure should name the first failed guard in
+Eq.~\eqref{eq:AP6G-shared-failure-hierarchy}.
+
+\subsection{Handoff to the correction index}
+\label{app:AP6G-handoff}
+
+The next appendix records correction history and convention reconciliation.  Protocol outcomes should be
+interpreted through that index: factor-of-two, counterterm, and spectral-density convention mistakes can
+mimic physical failures if the audit trail is not explicit.  The already flagged
+$J_s/J_W/J_{\rm bare}$ convention reconciliation belongs there, not in the M3 protocol definitions.
+
 \section*{Data and Code Availability}
 \addcontentsline{toc}{part}{Data and Code Availability}
 
