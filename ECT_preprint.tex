@@ -336,6 +336,22 @@ $\Theta(\phi)$ & Topological coupling of the colour sector in $\Theta(\phi)F^a_{
 $\kappa_n^{\rm col}$ & Anisotropic-to-isotropic ratio $\kappa_n^{\rm col}=Y_0/Z_0$ in the colour sector; structurally subleading via shared $n^\mu$ with gravity-sector anisotropy & dimensionless \\
 $\Lambda_{\rm col}^{\rm ECT}$ & Dimensional-transmutation form of the colour infrared scale under~P7~(eq.~\ref{eq:Lambda_col_ECT}); classificatory, not predictive; reduces to standard QCD transmutation at $Z_0\to 1$ & GeV \\
 $M_\ast$ & Matching scale of the colour-sector EFT under P7; structurally natural candidates are $v_2$, $\phi_0$, or the condensate excitation scale; no ECT-specific identification established (O1 in \S\ref{sec:part4_status}) & GeV \\
+% --- P6 record sector (Appendices BI--BP) ---
+$S_{\rm rec}(\omega)$ & Record spectrum used in the dephasing representation; Appendix~\ref{app:AP6B-core-laws} & --- \\
+$J_W$, $J_{\rm bare}$ & Weiss vs bare record spectral density, $J_W=J_{\rm bare}/(2\omega)$; Appendix~\ref{app:AP6A-conventions-kernels} & --- \\
+$\sigma_{\rm dec}\equiv\sigma_{\rm pair}$ & Pair-convention decoherence pressure on a phase line; Appendix~\ref{app:AP6A-conventions-kernels} & --- \\
+$\zeta_0^{\rm pair}$ & Pair-normalised line-overlap constant; Appendix~\ref{app:AP6A-conventions-kernels} & $2$ \\
+$c_{\rm line}$ & Bessel line coefficient of the pair overlap; Appendix~\ref{app:AP6C-ribbon-line-records} & $1$ \\
+$\xi_{\rm line}$ & Phase-line core scale; Appendix~\ref{app:AP6C-ribbon-line-records} & --- \\
+$c_{\rm GP}$ & Ginzburg--Pitaevskii core constant, $c_{\rm GP}/\pi=0.3811$; Appendix~\ref{app:AP6C-ribbon-line-records} & $\approx1.20$ \\
+$\lambda_n^{\rm rec}$ & Gaussian width-record monitor scale; Appendix~\ref{app:AP6C-ribbon-line-records} & --- \\
+$\kappa_b$, $\ell_w$ & Tilt stiffness and Airy width, $\ell_w\propto(\kappa_b\sigma_{\rm dec})^{-1/3}$; Appendix~\ref{app:AP6A-conventions-kernels} & --- \\
+$T_{\rm eff}$ & Scalar detailed-balance record thermometer when it exists; otherwise use $S_\pm(\omega)$; Appendix~\ref{app:AP6A-conventions-kernels} & --- \\
+$\eta_{ab}^{\rm rec}$, $\eta_r^{\rm leak}$ & Cross-spectrum positivity ratio; eigenchannel leakage ratio; Appendix~\ref{app:AP6F-matrix-triangle-P26} & dimensionless \\
+$R^{\rm oc}_\Phi$, $R^{\rm oc}_\Omega$ & Over-closure residuals of the P26 loop; Appendix~\ref{app:AP6F-matrix-triangle-P26} & dimensionless \\
+$\mathsf{P}_{\rm M3}$, $\mathsf{D}_{\rm M3\mbox{-}3}$ & M3 reporting packet; M3-3 data vector; Appendix~\ref{app:AP6G-M3-operational-protocols} & --- \\
+$Z_b$, $Z_{\rm cont}$ & Bound-line and continuum spectral weights, $Z_b+Z_{\rm cont}\simeq1$ in M3 bookkeeping; Appendix~\ref{app:AP6D-threshold-protection} & dimensionless \\
+$R_{\rm off}$ & Crossover offset of the M3-2 flatness transforms; Appendix~\ref{app:AP6G-M3-operational-protocols} & --- \\
 \end{longtable}
 
 \section*{List of Abbreviations}
@@ -37192,6 +37208,28 @@ partially proven technical core and a large predictive programme
 around it}, not a completed final theorem of the entire quantum
 sector.
 
+\paragraph{Frozen spectral-record development (P6 appendices).}
+The record-sector implementation of PES is frozen as a
+Level~B spectral-record framework with operational falsifiers.
+Working directly with the stationarity condition
+$\delta S_E+S_0\,\delta\Gamma_{\rm env}=0$, the frozen branch fixes the
+record-kernel conventions and normalisation dictionary
+(Appendix~\ref{app:AP6A-conventions-kernels}), the core dephasing and
+spectral-record laws (Appendix~\ref{app:AP6B-core-laws}), the
+ribbon/line record sector (Appendix~\ref{app:AP6C-ribbon-line-records}),
+intrinsic threshold protection
+(Appendix~\ref{app:AP6D-threshold-protection}), the width-sector
+observable interface (Appendix~\ref{app:AP6E-width-observable-interface}),
+the matrix one-kernel triangle and P26 over-closure
+(Appendix~\ref{app:AP6F-matrix-triangle-P26}), the M3 falsification
+protocols (Appendix~\ref{app:AP6G-M3-operational-protocols}), and the
+correction and convention index
+(Appendix~\ref{app:AP6H-honesty-correction-index}).
+The freeze carries a non-proliferation guard: new record laws are
+admitted only if they close a documented open input, improve an M3
+protocol, or repair a verified inconsistency.
+These appendices do not upgrade PES beyond the status stated above.
+
 % ==============================================================
 
 % ==============================================================
@@ -41462,6 +41500,20 @@ A successful analogue programme therefore strengthens the case that ECT
 is genuinely a theory of a physical medium, not merely a formal
 re-description of quantum phenomena.
 
+\paragraph{Operational M3 protocols.}
+The ordered-branch record programme now carries three operational
+falsification protocols, specified in
+Appendix~\ref{app:AP6G-M3-operational-protocols}: the
+intrinsic/external threshold contrast (M3-1), the zero-mode detector
+(M3-2), and the Airy-width/fingerprint protocol (M3-3).
+Their observable inputs are fixed by the width-sector interface of
+Appendix~\ref{app:AP6E-width-observable-interface} and the threshold
+package of Appendix~\ref{app:AP6D-threshold-protection}, with platform
+mapping through the analogue-observable dictionary of
+Appendix~\ref{app:analogue_dictionary}.
+A failed protocol is interpreted through the failure hierarchy stated
+there; it is not automatically a falsification of the wider framework.
+
 \paragraph{Bridge to the status map.}
 The analogue-laboratory programme completes the structural development
 of the Quantum Sector.
@@ -42038,6 +42090,21 @@ PES universal extension
   & Full scope across spectra, decay rates, and quantum-gravity
     claims remains conjectural;
     Section~\ref{sec:pes_open} \\
+% --- P6 spectral-record appendices (frozen) ---
+Frozen P6 spectral-record framework (record kernels, dephasing
+classes, line/ribbon records, threshold protection, width interface,
+P26 over-closure)
+  & Level~B
+  & Frozen with non-proliferation guard;
+    Appendices~\ref{app:AP6A-conventions-kernels}--\ref{app:AP6H-honesty-correction-index} \\
+M3 operational falsification protocols (M3-1/2/3)
+  & Level~B
+  & Appendix~\ref{app:AP6G-M3-operational-protocols}; reporting packet
+    and failure hierarchy specified \\
+Analogue-platform execution of the M3 protocols
+  & Open
+  & Platform selection open (frozen-ledger item O4);
+    Appendix~\ref{app:AP6G-M3-operational-protocols} \\
 % --- QG/decoherence upgrade layer (Sections 31--36) ---
 Problem of time in ECT: three-layer framing
   & Level~B
@@ -42332,6 +42399,17 @@ clearly from what still depends on closure or remains open.
     with the global coherent framework.
   \item The ordered-condensate state space is not exhausted by the smooth
     coherent branch~BR1.
+\item[OP-P6-1] Per-protocol selection of the effective record-temperature
+  source $T_{\rm eff}$ for the M3 implementations (frozen-ledger
+  register O2).
+\item[OP-P6-2] Unresolved record/line-ensemble entropy matching in the P6
+  sector.  The frozen ledger uses the shorthand $s_{\rm unres}/\mu$
+  for the open problem of defining whether unresolved record
+  degeneracy should be represented by a coarse-grained entropy density
+  $s_{\rm unres}$, by a line/path multiplicity $\mu$, or by a
+  protocol-specific entropy factor.  Any such term must be defined at
+  a declared core scale and compared with the pair pressure
+  $\sigma_{\rm dec}$; it is not an adjustable stabilising entropy.
 \end{enumerate}
 
 \paragraph{Structurally singled-out backbone (Level~A/B).}
@@ -63464,6 +63542,15 @@ are publicly available at:
 \begin{center}
   \url{https://github.com/chufelo/ECT-preprint-code}
 \end{center}
+
+\noindent
+The P6 record-sector verification scripts used for the kernel-exponent
+checks, threshold-residue and sum-rule tests, M3 guard audits, and the
+P26 over-closure demonstration are included in the repository under
+\texttt{pes/verification/}.  The directory contains curated
+environment-stable scripts and minimal reproducibility notes; private
+working logs, exploratory scratch files, and local virtual
+environments are not part of the release archive.
 
 \noindent
 For the late-time cosmology block, the currently released code should be
