@@ -61714,6 +61714,226 @@ is predicted in~\S\ref{sec:ect_yang_mills_gap}: a numerical prediction
 would require $M_\ast$, $g_s(M_\ast)$, and $Z_0$ to be derived rather
 than matched, and any uncertainty in them is exponentially amplified.
 
+% ============================================================
+% AP6 appendix series: P6/PES frozen framework (PES Rounds 1--28).
+% AP6-A inserted 2026-07-08 from derivations/pes/AP6_A_INSERT_ADAPTED_v1.tex
+% ============================================================
+\section{P6-A: Conventions, record kernels, and normalisation dictionary}
+\label{app:AP6A-conventions-kernels}
+
+\paragraph{Status and scope.}
+This appendix begins the technical P6/PES block.  The P6/PES branch is frozen here as a
+\emph{Level-B spectral-record framework with operational falsifiers}, not as a completed first-principles
+proof of quantum mechanics from the bare postulates.  The purpose of the present appendix is narrower:
+it fixes the conventions, record kernels, normalisations, counterterm conventions, and protocol guards
+used by the later P6 appendices.  Throughout the P6 appendices the symbol $c$ denotes the
+signal speed of the record medium in the channel under discussion; for condensate
+perturbations about the homogeneous ordered background it coincides with the effective
+propagation speed $c_*$ of Section~\ref{sec:c_star}.  No formula in this appendix should be read as a derivation of
+$S_0=\hbar$, of the Born rule, of $C_n$ or OP-Planck, of the colour postulate P7, of confinement, or
+of a universal scalar bath for all record channels.
+
+\subsection{Record data and the Weiss convention}
+\label{app:AP6A-record-data-weiss}
+
+A certified P6 record channel is specified not by a bath exponent alone, but by the record data
+\begin{equation}
+  \bigl(J_W(\omega),\; F_n(\omega),\; \Delta F_{\rm record}(\omega),\; S_\pm(\omega)\ \text{or}\ T_{\rm eff}(\omega),\; \delta_{ct}\bigr),
+\end{equation}
+where $J_W$ is the Weiss-convention spectral density, $F_n$ is the mode form factor,
+$\Delta F_{\rm record}$ is the record operator difference relevant to the protocol, $S_\pm$ encode
+occupation/noise, and $\delta_{ct}$ denotes the subtraction or counterterm convention used in the
+self-energy.  In the multi-channel case $J_W$ is replaced by a positive spectral matrix
+\begin{equation}
+  J^W_{ab}(\omega)\succeq 0 .
+\end{equation}
+A scalar one-kernel description is therefore a channel-selected or diagonalised limit, not the generic
+form of the theory.
+
+All P6 exponent statements use the Weiss convention
+\begin{equation}
+  a_{\rm bare}=a_W+1 .
+\end{equation}
+This matches the convention $J_W(\omega)=J_{\rm bare}(\omega)/(2\omega)$ already used in
+Appendix~\ref{app:decoherence_apparatus}.
+Thus an apparently identical power law quoted in a bare density and in a Weiss density differs by one
+power unless the convention is declared explicitly.
+
+\subsection{Canonical C8 width-channel kernels}
+\label{app:AP6A-C8-kernels}
+
+For the certified width-channel record operator, the canonical soft-edge kernels are
+\begin{align}
+  J_{\rm temp}^{\rm can}(\omega,k_z)
+   &= \frac{\omega^2-c^2k_z^2}{16\pi\omega^3}\,
+      \Theta(\omega-c|k_z|), \\
+  J_{\rm spat}^{\rm can}(\omega,k_z)
+   &= \frac{\omega^2-c^2k_z^2}{16\pi c^2\omega}\,
+      \Theta(\omega-c|k_z|).
+\end{align}
+They obey the convention-independent invariant
+\begin{equation}
+  \frac{J_{\rm spat}^{\rm can}}{J_{\rm temp}^{\rm can}}=\frac{\omega^2}{c^2} .
+\end{equation}
+This invariant is the preferred check on component normalisation, because it is insensitive to the overall
+record-source strength.
+
+The historical reduced columns used in earlier P6 audits differ from the canonical columns by
+\begin{equation}
+  J_{\rm red}=4J_{\rm can} .
+\end{equation}
+This factor belongs only to the historical $J$-column route.  It must not be applied to native
+$\Phi$-measure quantities such as the line tension coefficient $c_1=1$, the exact cusp kernel, or the
+record-normalisation functional below.
+
+\subsection{Pair normalisation and the value of \texorpdfstring{$\zeta_0$}{zeta0}}
+\label{app:AP6A-zeta0}
+
+The canonical line-overlap functional for a pair-built record is
+\begin{equation}
+  \Phi_{\rm pair}(R,L_z)
+  =2c_1 \frac{W^2K_\theta c_\chi}{S_0} L_zR+O(\xi_cL_z),
+  \qquad c_1=1 .
+\end{equation}
+The default P6 convention is therefore
+\begin{equation}
+  \zeta_0^{\rm pair}=2,
+  \qquad
+  \sigma_{\rm dec}\equiv\sigma_{\rm pair},
+  \qquad
+  \sigma_{\rm pair}=2\sigma_{\rm face} .
+\end{equation}
+The alternative $\zeta_0^{\rm face}=1$ is reserved for genuine one-sheet objects.  No such one-sheet
+record construction is certified in the current P6 ledger.  The winding factor $2\pi W$ is already part
+of the normalised source convention; it must not be inserted again as an extra $4\pi^2$ multiplier.
+
+\subsection{Bosonic Kramers--Kronig mirror and counterterms}
+\label{app:AP6A-KK-counterterm}
+
+For oscillator-like bosonic record channels, the real self-energy shift must use the mirror-symmetric
+Kramers--Kronig kernel
+\begin{equation}
+  \Sigma'(\omega)= \frac{2}{\pi}\,\mathcal{P}\int_E^\infty
+  \frac{\omega'\Sigma''(\omega')}{\omega'^2-\omega^2}\,d\omega' .
+\end{equation}
+The one-sided principal-value kernel $1/(\omega'-\omega)$ is not the convention used in the frozen P6
+branch.  Any threshold-protection statement must also declare whether $\Omega_0$ is a bare frequency,
+a physical $g\to0$ calibrated frequency, or a counterterm-subtracted frequency.  Without this declaration
+the absolute binding below the edge is not an invariant statement, although the vanishing of the width for
+a pole below the soft edge is robust within the stated channel.
+
+\subsection{Effective temperature and occupation data}
+\label{app:AP6A-Teff}
+
+The operational detailed-balance thermometer is
+\begin{equation}
+  T_{\rm eff}(\omega)= \frac{S_0\,\omega}{\ln[S_+(\omega)/S_-(\omega)]} .
+\end{equation}
+Here $S_+(\omega)$ and $S_-(\omega)$ are ordered so that a thermal channel satisfies
+$S_+(\omega)/S_-(\omega)=\exp(S_0\omega/T)$ for $\omega>0$; if the opposite
+positive/negative-frequency convention is used, the ratio must be inverted.
+In the ledger units $S_0=1$ used in the frozen P6 derivation files this reduces to
+$\omega/\ln[S_+/S_-]$; the explicit $S_0$ restores the $\coth(S_0\omega/2T_{\rm eff})$
+convention of Appendix~\ref{app:decoherence_apparatus}.
+A scalar $T_{\rm eff}$ exists only if this expression is constant across the relevant frequency band.
+Otherwise the protocol must use $S_\pm(\omega)$, or equivalently the frequency-dependent occupation,
+directly.  For an intrinsic ground-state threshold channel, $T_{\rm eff}=0$ is an occupation statement; it
+is not a licence to replace the full soft-edge kernel by an ohmic Markov coefficient.
+
+\subsection{Exact cusp kernel and intrinsic resolution floor}
+\label{app:AP6A-cusp}
+
+The exact C10 cusp kernel is
+\begin{equation}
+\Phi(\Delta)=4\pi\left[\sqrt{4\xi_c^2+\Delta^2}-2\xi_c
+-2\xi_c\ln\left(\frac{2\xi_c+\sqrt{4\xi_c^2+\Delta^2}}{4\xi_c}\right)\right].
+\end{equation}
+It implies the intrinsic resolution floor
+\begin{equation}
+  \xi_{\rm res}^{\rm intr}=4\xi_c .
+\end{equation}
+The large-separation logarithmic part contains the shifted logarithm
+\begin{equation}
+  -8\pi\xi_c\ln(\Delta/4\xi_c),
+\end{equation}
+which should be used when comparing finite-window fits with the asymptotic law.
+
+\subsection{Core-profile fingerprint constants}
+\label{app:AP6A-fingerprint}
+
+For a regulated core profile $f(u)$, the approach to the universal asymptotic line slope contains a
+profile-dependent fingerprint
+\begin{equation}
+  a_1[f]=\int_0^\infty \frac{1-f(u)}{u^2}\,du .
+\end{equation}
+The certified examples are
+\begin{equation}
+  a_1^{\rm Gauss}=\sqrt{\pi},
+  \qquad
+  a_1^{\rm Lorentz}=\frac{\pi}{2} .
+\end{equation}
+For the exponential/C10 class the approach is logarithmic rather than finite-$a_1$:
+\begin{equation}
+  D(R)=\frac{\xi}{R}\left[\ln\frac{R}{2\xi}+1\right]+\cdots .
+\end{equation}
+Thus fitted exponents below unity in finite windows should not be promoted to new physical powers until
+this logarithmic law has been excluded.
+
+\subsection{Airy-width stiffness convention}
+\label{app:AP6A-Airy-stiffness}
+
+The width-sector tilt parameter is the physical stiffness
+\begin{equation}
+  \kappa_b=\frac{T_{\rm line}}{2S_0} .
+\end{equation}
+With the transfer Hamiltonian
+\begin{equation}
+  H=-\frac{1}{2\kappa_b}\partial_x^2+\sigma_{\rm dec}x,
+\end{equation}
+the Airy ground-state scale obeys
+\begin{equation}
+  E_0=|a_1|\left(\frac{\sigma_{\rm dec}^2}{2\kappa_b}\right)^{1/3},
+  \qquad
+  \ell_w\propto (\kappa_b\sigma_{\rm dec})^{-1/3},
+\end{equation}
+and the coherence-window scaling is
+\begin{equation}
+  L_z^{\rm coh}=\frac{-\ln P_{\rm min}}{\sigma_{\rm dec}\ell_w}
+  \propto \kappa_b^{1/3}\sigma_{\rm dec}^{-2/3} .
+\end{equation}
+A width law with $\kappa_b^{+1/3}$ is valid only after introducing a separate flexibility
+$D_b=1/\kappa_b$.  The same symbol must never be used for stiffness and flexibility.
+
+\subsection{Protocol split and matrix-kernel guard}
+\label{app:AP6A-protocol-guards}
+
+Two P6 protocol classes must not be mixed.  External or detuned monitors use the golden-rule form
+\begin{equation}
+  \Gamma_n^{\rm ext}=2\pi J_W(\Omega_n)|F_n(\Omega_n)|^2[1+n_{\rm eff}(\Omega_n)] .
+\end{equation}
+Intrinsic threshold channels instead use the dressed soft-edge pole problem and may produce a sub-edge
+line plus a continuum shoulder.  In such channels a below-edge pole satisfies $\Gamma(\omega_b)=0$
+within the ideal soft-edge kernel, while the spectral weight is shared between the bound line and the
+continuum shoulder.
+
+For multiple record operators the spectral object is a positive matrix, not a single scalar density:
+\begin{equation}
+  J_{ab}(\omega)\succeq0,
+  \qquad
+  |J_{ab}(\omega)|^2\le J_{aa}(\omega)J_{bb}(\omega).
+\end{equation}
+Scalar one-kernel closure is a further channel-selection or diagonalisation step.  This guard is required
+before applying the S7 triangle or the P26 over-closure test.
+
+\subsection{Correction index local to this appendix}
+\label{app:AP6A-corrections-local}
+
+The conventions above incorporate the frozen P6 correction history: the finite-$k_z$ C8 correction, the
+spatial factor-of-two correction caught by $J_{\rm spat}/J_{\rm temp}=\omega^2/c^2$, the $4\times$
+reduced/canonical dictionary, the bosonic KK mirror correction, the finite-window/log artefact corrections
+in P25/P18, and the P11 stiffness/flexibility transcription correction.  These are not optional historical
+notes: they are part of the reproducibility conditions for the P6/PES appendices.
+
 \section*{Data and Code Availability}
 \addcontentsline{toc}{part}{Data and Code Availability}
 
