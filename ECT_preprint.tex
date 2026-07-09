@@ -61934,6 +61934,240 @@ reduced/canonical dictionary, the bosonic KK mirror correction, the finite-windo
 in P25/P18, and the P11 stiffness/flexibility transcription correction.  These are not optional historical
 notes: they are part of the reproducibility conditions for the P6/PES appendices.
 
+% ============================================================
+% AP6-B inserted 2026-07-09 from derivations/pes/AP6_B_INSERT_ADAPTED_v1.tex (PES Round 30)
+% ============================================================
+\section{P6-B: Core spectral laws, dephasing classes, and tomography}
+\label{app:AP6B-core-laws}
+
+\paragraph{Status and scope.}
+This appendix records the frozen P6/PES core spectral laws.  It uses the conventions fixed in
+Appendix~\ref{app:AP6A-conventions-kernels}: Weiss spectral densities, explicit $S_0$ in thermal factors,
+canonical versus reduced record kernels, and the matrix-kernel guard.  The results below are Level-B
+spectral-record statements.  They organise how a certified record channel produces dephasing, induced
+coefficients, tomography data, and sign constraints.  They do not prove the full PES principle from the
+bare postulates, do not derive $S_0=\hbar$, and do not assert that every ECT channel is ohmic or scalar.
+
+\subsection{L12$'$: dispersion--dimension law for the Weiss exponent}
+\label{app:AP6B-L12prime}
+
+For a channel with effective dimension $d_{\rm eff}$, dispersion $\omega\propto k^z$, vertex derivative
+order $\ell$, and possible infrared matrix-element singularity exponent $\nu$, the Weiss low-frequency
+spectral density
+\begin{equation}
+  J_W(\omega)\sim C\omega^{a_W}
+\end{equation}
+has exponent
+\begin{equation}
+  a_W=\frac{d_{\rm eff}+2\ell}{z}+2\nu-2 .
+  \label{eq:AP6B-L12prime}
+\end{equation}
+This is a counting law for a declared record operator and channel.  It is not a rule that turns every
+boundary, line, or bulk channel into an ohmic bath.  In particular, a quoted power must always specify
+whether it is a bare density or a Weiss density, since the P6 convention is
+$a_{\rm bare}=a_W+1$.
+
+Equation~\eqref{eq:AP6B-L12prime} is the guard against exponent-only reasoning.  Persistent spectra are
+not determined by $a_W$ alone; they are determined by the pair $(J_W,F_n)$, together with the protocol
+occupation data and counterterm convention.  This is the spectral version of the PES quietness criterion:
+quiet records are selected by the actual record kernel and form factor, not by a slogan such as
+``ohmic bath''.
+
+\subsection{L16 and L40: dephasing trichotomy}
+\label{app:AP6B-L16-trichotomy}
+
+For a stationary Gaussian record channel one may write the dephasing part in the spectral form
+\begin{equation}
+  \Phi(t)=\int_0^\infty d\omega\;S_{\rm rec}(\omega)
+  \frac{1-\cos(\omega t)}{\omega^2},
+  \label{eq:AP6B-Phi-spectral}
+\end{equation}
+where $S_{\rm rec}$ includes the Weiss spectral density, the relevant record-operator difference, form
+factors, and the occupation/noise factor.  (The symbol $S_{\rm rec}$ is used for this
+record-noise spectrum to avoid any confusion with the effective action $S_{\rm eff}$ of the
+main text.)  Equivalently, for a thermal scalar channel one may absorb the
+factor $\coth(S_0\omega/2T_{\rm eff})$ into $S_{\rm rec}$.  Formula~\eqref{eq:AP6B-Phi-spectral} is a
+compact representation of the influence-functional class; outside the Gaussian/stationary setting the
+cumulant form in Section~\ref{app:AP6B-nongaussian-quiet} is the safer definition.
+
+If $J_W(\omega)\sim C\omega^{a_W}$ and the channel is in its vacuum occupation, the large-time behaviour
+falls into the trichotomy
+\begin{equation}
+  \Phi(t)\sim
+  \begin{cases}
+    t^{1-a_W}, & a_W<1,\\
+    \log t, & a_W=1,\\
+    \Phi_\infty- O(t^{1-a_W}), & a_W>1 .
+  \end{cases}
+  \label{eq:AP6B-vacuum-trichotomy}
+\end{equation}
+For an actually occupied thermal channel, the additional infrared factor from
+$\coth(S_0\omega/2T_{\rm eff})$ shifts the thresholds by one power:
+\begin{equation}
+  \Phi_T(t)\sim
+  \begin{cases}
+    t^{2-a_W}, & a_W<2,\\
+    \log t, & a_W=2,\\
+    \Phi_{T,\infty}- O(t^{2-a_W}), & a_W>2 .
+  \end{cases}
+  \label{eq:AP6B-thermal-trichotomy}
+\end{equation}
+Thus an occupied ohmic channel gives Markov-like linear growth, while a vacuum ohmic channel gives a
+logarithmic dephasing law.  The word ``temperature'' in this statement refers to the occupation of the
+actual record channel.  If the detailed-balance thermometer of Appendix~\ref{app:AP6A-Teff} is not constant
+across the relevant band, the protocol must use $S_\pm(\omega)$ directly rather than fitting a scalar
+$T_{\rm eff}$.
+
+\subsection{L19: induced-coefficient sum rule}
+\label{app:AP6B-L19-sum-rule}
+
+The same positive spectral kernel that measures record loudness also induces the corresponding quadratic
+coefficient when the record channel is integrated out.  In the Weiss convention the induced coefficient is
+\begin{equation}
+  \kappa_{\rm ind}=\frac{2}{\pi}\int_0^\infty \frac{J_W(\omega)}{\omega}\,d\omega .
+  \label{eq:AP6B-kappa-ind}
+\end{equation}
+For the regulated power-law model
+\begin{equation}
+  J_W(\omega)=C\omega^{a_W}\exp(-\omega/\omega_c),
+\end{equation}
+one obtains
+\begin{equation}
+  \kappa_{\rm ind}=\frac{2C}{\pi}\Gamma(a_W)\omega_c^{a_W} .
+  \label{eq:AP6B-kappa-ind-closed}
+\end{equation}
+This regulated family has the same form as $J_s(\omega)=A_s\omega^s e^{-\omega/\omega_c}$ of
+Appendix~\ref{app:decoherence_apparatus}, eq.~\eqref{eq:J_s_generic}, with $C=A_s$ and $a_W=s$
+\emph{when $J_s$ is read in the Weiss convention}; whether a given tabulated exponent is bare or
+Weiss must be declared explicitly, per Appendix~\ref{app:AP6A-conventions-kernels}.
+Consequently, once the induced coefficient and cutoff are fixed by a sector calculation, the spectral
+amplitude $C$ is no longer a free loudness parameter.  In the gravitational matching route this is the
+bridge from the induced coefficient to the $M_G^2$ normalisation; in the P6 record route it is the same
+object appearing in dephasing and line-shift observables.  This is the first form of the one-kernel
+closure later sharpened in the S7/P26 appendix.
+
+\subsection{L23, L29, L29a, and L30: non-Markov windows and finite-bath guards}
+\label{app:AP6B-nongaussian-quiet}
+
+Some P6 protocols use early-time or finite-window information rather than an asymptotic Markov rate.  A
+certified example is the square-root branch
+\begin{equation}
+  \Phi(t)+2\sqrt{\pi}\propto t^{1/2},
+  \label{eq:AP6B-sqrt-branch}
+\end{equation}
+which is used later as part of the guarded zero-mode/Berry detector.  This law is a channel-specific
+signature, not a generic substitute for the trichotomy of Section~\ref{app:AP6B-L16-trichotomy}.
+
+For non-Gaussian records the Gaussian variance formula must be replaced by the cumulant definition
+\begin{equation}
+  \Gamma=-\ln\left|\left\langle e^{iX}\right\rangle\right| .
+  \label{eq:AP6B-nongaussian-cumulant}
+\end{equation}
+Here $X$ denotes the accumulated record variable of the channel over the protocol window.
+The Gaussian expression is recovered as the leading second-cumulant approximation, but the exact
+characteristic function is the object that decides whether a record is erased or superselected.
+
+A useful corollary is the quiet-lattice rule.  If the environment records only quantised kicks on a
+lattice, the dephasing functional is bounded and periodic; in particular it vanishes at integer multiples
+of the environment's own quantum.  Such a bath cannot superselect states separated only by multiples of
+its own kick quantum.  Winding superselection therefore requires the continuum or non-commensurate record
+channel, not merely a quantised finite lattice of kicks.
+
+For finite baths the relevant survival criterion is not a single late-time average, but the infimum over
+the protocol window:
+\begin{equation}
+  \inf_{t\in[0,T_{\rm obs}]} \Phi(t)
+\end{equation}
+when recoherence is possible.  Finite-bath revivals and re-erasure windows must be treated as protocol data;
+otherwise a record may be falsely labelled persistent or falsely labelled erased.
+
+\subsection{L31--L35b: dephasing tomography package}
+\label{app:AP6B-tomography}
+
+When $\Phi(t)$ is known over a sufficient window and has the stationary spectral representation
+\eqref{eq:AP6B-Phi-spectral}, the effective spectral kernel may be reconstructed by the second-derivative
+cosine inversion
+\begin{equation}
+  S_{\rm rec}(\omega)=\frac{2}{\pi}\int_0^\infty \Phi''(t)\cos(\omega t)\,dt .
+  \label{eq:AP6B-tomography-second}
+\end{equation}
+This inversion supplies the basic tomography route.  Its first guard is positivity:
+\begin{equation}
+  S_{\rm rec}(\omega)\ge 0 .
+  \label{eq:AP6B-positivity}
+\end{equation}
+A negative reconstructed kernel is a diagnostic of noise, window artefacts, an incorrect subtraction, or an
+invalid Gaussian/stationary model.
+
+The second guard is detailed balance.  With explicit $S_0$ convention, a thermal channel satisfies
+\begin{equation}
+  S_-(\omega)=\exp(-S_0\omega/T)S_+(\omega),
+  \qquad \omega>0 .
+  \label{eq:AP6B-detailed-balance}
+\end{equation}
+Failure of this relation is not automatically a failure of PES; it means that the channel is athermal,
+driven, coarse-grained, or otherwise outside the scalar thermal closure.
+
+For kernels with an asymptotic plateau $\Phi_\infty$, a derivative-free inversion is often better
+conditioned:
+\begin{equation}
+  S_{\rm rec}(\omega)=\frac{2}{\pi}\omega^2\int_0^\infty
+  \bigl[\Phi_\infty-\Phi(t)\bigr]\cos(\omega t)\,dt .
+  \label{eq:AP6B-tomography-derivative-free}
+\end{equation}
+The frozen P6 audit found this route to be far better conditioned than direct differentiation in noisy
+windows.  The methodological lesson is binding: sub-ohmic and near-ohmic classes are window-hungry, and a
+finite observation time can mimic a shifted exponent unless the window law is included.
+
+The two-regime window law is
+\begin{equation}
+  \text{IR bias}\sim
+  \begin{cases}
+    T_{\rm obs}^{-a_W}, & \omega T_{\rm obs}\lesssim 1,\\
+    T_{\rm obs}^{-(a_W+1)}, & \omega T_{\rm obs}\gg 1,
+  \end{cases}
+  \label{eq:AP6B-window-law}
+\end{equation}
+up to channel-dependent prefactors.  Apparent exponents extracted from short windows must therefore be
+reported together with the window, cutoff, and inversion route.
+
+\subsection{L33 and S7 preview: triangle consistency before full closure}
+\label{app:AP6B-triangle-preview}
+
+Already at the tomography level, dephasing, widths, and shifts are not independent fit parameters.  For a
+fixed channel, the reconstructed $J_W$ that explains $\Phi(t)$ must also predict the golden-rule widths and
+Kramers--Kronig shifts once the form factors and counterterm convention are supplied.  This is the
+preliminary form of the one-kernel triangle.  The full S7/P26 statement is deferred to the dedicated P6-F
+appendix because the generic object is a positive spectral matrix $J_{ab}(\omega)$, not a universal scalar
+bath.
+
+\subsection{L36: sign-protection chain}
+\label{app:AP6B-sign-chain}
+
+For a certified passive record channel,
+\begin{equation}
+  J_W(\omega)\ge 0
+\end{equation}
+implies
+\begin{equation}
+  \kappa_{\rm ind}=\frac{2}{\pi}\int_0^\infty \frac{J_W(\omega)}{\omega}\,d\omega \ge 0 .
+\end{equation}
+Thus the induced contribution generated by tracing out a positive record kernel is non-negative.  This is a
+sign-protection statement for the induced contribution, not a claim that every renormalised low-energy
+coefficient in the full theory must be positive after all counterterms, competing sectors, and matching
+conditions are included.  Whenever a negative effective coefficient is inferred, the audit question is
+therefore: which subtraction, active channel, or non-passive sector has been introduced?
+
+\subsection{Handoff to the ribbon and threshold appendices}
+\label{app:AP6B-handoff}
+
+Appendix~\ref{app:AP6A-conventions-kernels} fixes the conventions.  The present appendix records the core
+spectral laws and tomography tools.  The next P6 appendices specialise these tools to the ribbon/line
+sector, the certified record operators and form factors, the intrinsic threshold-protection mechanism, and
+the M3 falsification protocols.  The frozen ordering is important: later claims must inherit the convention
+and tomography guards above rather than redefining the bath exponent, the occupation convention, or the
+counterterm convention locally.
+
 \section*{Data and Code Availability}
 \addcontentsline{toc}{part}{Data and Code Availability}
 
