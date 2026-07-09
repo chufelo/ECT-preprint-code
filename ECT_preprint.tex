@@ -63315,6 +63315,144 @@ interpreted through that index: factor-of-two, counterterm, and spectral-density
 mimic physical failures if the audit trail is not explicit.  The already flagged
 $J_s/J_W/J_{\rm bare}$ convention reconciliation belongs there, not in the M3 protocol definitions.
 
+% ============================================================
+% AP6-H inserted 2026-07-09 from derivations/pes/AP6_H_INSERT_ADAPTED_v1.tex (PES Round 43)
+% ============================================================
+\section{P6-H: Honesty log, correction index, and convention reconciliation}
+\label{app:AP6H-honesty-correction-index}
+
+\paragraph{Status and scope.}
+This appendix is an audit index for the P6/PES appendices.  It records the correction events and
+convention reconciliations that are part of the frozen P6 transfer into the preprint.  It is not a new
+physics appendix: the convention dictionary is owned by Appendix~\ref{app:AP6A-conventions-kernels}, the
+core spectral laws by Appendix~\ref{app:AP6B-core-laws}, the line/record sector by
+Appendix~\ref{app:AP6C-ribbon-line-records}, threshold protection by
+Appendix~\ref{app:AP6D-threshold-protection}, the width-observable interface by
+Appendix~\ref{app:AP6E-width-observable-interface}, the P26 over-closure by
+Appendix~\ref{app:AP6F-matrix-triangle-P26}, and the M3 protocols by
+Appendix~\ref{app:AP6G-M3-operational-protocols}.  The role of this appendix is to make the audit trail
+visible and reproducible without repeating the derivations.
+
+\subsection{Audit principles}
+\label{app:AP6H-audit-principles}
+
+The P6 transfer uses the following audit rules.
+
+\begin{enumerate}
+\item A correction is not a weakening of a test.  When an error is found, the corrected convention or
+  formula becomes part of the reproducibility conditions.
+\item A repeated formula must be explicitly marked as recalled or used from its owner appendix.  Silent
+  redefinition is forbidden.
+\item Level marks are part of the result.  The P6/PES branch is frozen as a Level-B spectral-record
+  framework with M3 falsifiers, not as a completed first-principles proof of quantum mechanics.
+\item Analogue-laboratory failure is interpreted through the protocol failure hierarchy of
+  Appendix~\ref{app:AP6G-shared-interpretation}; it is not automatically a falsification of the full ECT
+  programme.
+\item The public manuscript should expose the corrections that affect reproducibility.  Purely local
+  typography events are listed only when they affect future compilation or audit practice.
+\end{enumerate}
+
+\subsection{Correction index}
+\label{app:AP6H-correction-index}
+
+The following index gives the public correction map for the P6 appendices.  The owner column identifies
+where the corrected convention or result is defined; this appendix only records the audit trail.
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.17\linewidth}>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.36\linewidth}>{\raggedright\arraybackslash}p{0.17\linewidth}@{}}
+\caption{P6 correction and convention index.  The entries are audit pointers, not rederivations.}\label{tab:AP6H-correction-index}\\
+\toprule
+Event & Corrected issue & Operational meaning & Owner/status \\
+\midrule
+\endfirsthead
+\toprule
+Event & Corrected issue & Operational meaning & Owner/status \\
+\midrule
+\endhead
+C8 finite-$k_z$ correction & Early finite-$k_z$ record kernels inherited a $k_z=0$ face formula too broadly. & Use the canonical soft-edge C8 kernels and edge-onset rules; do not use the older singular finite-$k_z$ forms. & Appendix~\ref{app:AP6A-C8-kernels}; Appendix~\ref{app:AP6C-C8-record-operator}; corrected. \\
+C8 normalisation and factor-of-two audit & A later R17 spatial line carried an extra factor of $1/2$. & The convention-free invariant $J_{\rm spat}/J_{\rm temp}=\omega^2/c^2$ fixes the canonical pair; historical reduced columns are $4\times$ canonical only on the old $J$-column route. & Appendix~\ref{app:AP6A-C8-kernels}; corrected. \\
+Pair normalisation & The line-overlap normalisation must distinguish pair and face conventions. & The P6 appendices use $\sigma_{\rm dec}\equiv\sigma_{\rm pair}$ and $\zeta_0^{\rm pair}=2$; single-face quantities require an explicit declaration. & Appendix~\ref{app:AP6A-zeta0}; closed convention. \\
+Bosonic KK mirror & A one-sided dispersion kernel misses the oscillator mirror term. & Self-energy and shift formulas use the bosonic mirror convention; threshold residues and sum rules are checked in that convention. & Appendix~\ref{app:AP6A-KK-counterterm}; Appendix~\ref{app:AP6D-dressed-response}; corrected. \\
+Detailed-balance thermometer & A ledger-unit thermometer without explicit $S_0$ is dimensionally incomplete in the preprint convention. & The preprint uses the explicit $S_0$ detailed-balance thermometer and states the ordering convention for $S_+/S_-$. & Appendix~\ref{app:AP6A-Teff}; corrected during transfer. \\
+Line coefficient notation & The P6 Bessel line coefficient had been written as $c_1=1$, colliding with OP-$c_1$ usage elsewhere. & The P6 appendices use $c_{\rm line}=1$ for the line coefficient; historical mentions of $c_1$ are provenance only. & Appendix~\ref{app:AP6C-C1-C2-tension-area}; notation corrected. \\
+P11 stiffness sign & A ledger summary line once wrote the Airy width as if $\kappa_b$ were a flexibility. & With $\kappa_b$ the physical tilt stiffness, $\ell_w\propto(\kappa_b\sigma_{\rm dec})^{-1/3}$ and $L_z^{\rm coh}\propto\kappa_b^{1/3}\sigma_{\rm dec}^{-2/3}$. & Appendix~\ref{app:AP6A-Airy-stiffness}; Appendix~\ref{app:AP6E-shape-collapse}; corrected. \\
+Finite-window/log artefacts & Raw slopes near $0.97$ or $1.94$ can be intercept or logarithmic-window artefacts. & P25$'$ and M3-2 use transformed variables and explicit logarithmic guards before interpreting exponents. & Appendix~\ref{app:AP6A-fingerprint}; Appendix~\ref{app:AP6G-M3-2}; guarded. \\
+Matrix/scalar ambiguity & A scalar one-kernel statement can be over-read as a universal scalar bath. & The active P6 statement is matrix-positive; scalar P6-S7 is a selected-channel or diagonalised closure. & Appendix~\ref{app:AP6F-matrix-kernel}; guarded. \\
+Protocol mixing & Intrinsic C13$'$ lines and external C12 monitors can be accidentally fitted with the same Lorentzian logic. & External protocols use C12 golden-rule widths; intrinsic threshold channels use edge-plus-line observables and the same-channel sum rule. & Appendix~\ref{app:AP6D-P23-P24}; Appendix~\ref{app:AP6G-M3-1}; guarded. \\
+\bottomrule
+\end{longtable}
+
+\subsection{Bath-density convention reconciliation}
+\label{app:AP6H-bath-convention-reconciliation}
+
+The remaining convention issue connecting the older generic decoherence apparatus to the frozen P6
+notation is the meaning of the exponent in a generic family $J_s(\omega)$.  Earlier parts of the
+manuscript used
+$J_s(\omega)=A_s\omega^s\exp(-\omega/\omega_c)$ in the noise-kernel formula while also tabulating some
+bath powers as bare mode-density exponents.  The frozen P6 convention, recalling the declaration already made in
+Appendix~\ref{app:decoherence_apparatus} and Appendix~\ref{app:AP6A-record-data-weiss}, is that the
+spectral density entering the Feynman--Vernon/Weiss noise kernel is the Weiss density,
+\begin{equation}
+  J_W(\omega)=\frac{J_{\rm bare}(\omega)}{2\omega},
+  \qquad a_W=a_{\rm bare}-1 .
+  \label{eq:AP6H-Weiss-bare-reconciliation}
+\end{equation}
+Hence any use of the generic family $J_s$ must state whether $s$ is a Weiss exponent or a bare exponent.
+If $s$ is bare, the noise kernel must use the corresponding $J_W$; if $s$ is Weiss, comparisons with a
+bare-exponent table must shift the power by one.  This appendix records the reconciliation rule; the
+main-text cleanup phase should update the older generic-bath prose so that it states this distinction
+explicitly at the point where $J_s$ is introduced.
+
+For the already integrated P6 appendices the local protection is in place: Appendix~\ref{app:AP6B-L12prime}
+uses the conditional dictionary only when $J_s$ is read in the Weiss convention, while the C8/C12/C13$'$
+record-channel statements use the explicitly declared P6 convention of Appendix~\ref{app:AP6A-record-data-weiss}.
+
+\subsection{Transfer and typography events}
+\label{app:AP6H-transfer-events}
+
+The following transfer events do not change the P6 physics, but they are included to make the public
+manuscript reproducible.
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.58\linewidth}>{\raggedright\arraybackslash}p{0.14\linewidth}@{}}
+\caption{Transfer-process events relevant to reproducibility.}\label{tab:AP6H-transfer-events}\\
+\toprule
+Event & Resolution & Status \\
+\midrule
+\endfirsthead
+\toprule
+Event & Resolution & Status \\
+\midrule
+\endhead
+AP6-A adaptation regex undercount & A search pattern missed legacy plain-TeX fraction commands followed by digits; the final transfer uses zero such fraction commands in the adapted AP6 fragments. & Fixed. \\
+AP6-C mini-table typography & A short local record-class table briefly used \texttt{longtable} and produced a new overfull vbox.  It was returned to non-floating center/tabular form. & Local exception. \\
+AP6-E pagination ripple & AP6-E added no block-local overfulls, but the global count changed by a tiny front-matter pagination ripple.  The distinction between block-local and global box counts is now tracked explicitly. & Logged. \\
+AP6-G line-break targeting & A first typography break targeted the wrong line of a long hierarchy; the offending line was then correctly split. & Fixed. \\
+iCloud/dataless incident & Project files in an iCloud-synchronised area were temporarily evicted under disk pressure.  The working preprint, book file, backups, and logs were rehydrated and verified. & Infrastructure. \\
+\bottomrule
+\end{longtable}
+
+\subsection{How to read the correction record}
+\label{app:AP6H-public-reading}
+
+The correction index is part of the scientific claim.  A corrected entry should not be read as evidence
+that the final transferred formula is optional; it identifies the path by which the final convention was
+selected and the tests that would catch a regression.  Conversely, the existence of a correction record
+does not upgrade P6/PES beyond its stated status.  The branch remains a Level-B spectral-record framework
+with operational M3 falsifiers and explicit open programmes.
+
+The no-claim discipline is therefore unchanged.  The P6 appendices do not prove the Born rule from bare
+P1--P6, do not derive $S_0=\hbar$ beyond the matched Level-B role already stated in the manuscript, do not
+establish OP-Planck or OP-GUT1, and do not claim that an analogue-platform failure automatically falsifies
+the full ECT framework.
+
+\subsection{Handoff}
+\label{app:AP6H-handoff}
+
+After this correction index, only genuinely residual technical open-programme material should go into a
+separate P6-I appendix.  If the remaining material is mostly status text, it should be folded into the
+existing status-map section rather than creating a duplicate appendix.  The main-text update phase should
+then update the existing PES, analogue-laboratory, and status-map sections in place, using the stable
+anchors of Appendices~BI--BO and this appendix.
+
 \section*{Data and Code Availability}
 \addcontentsline{toc}{part}{Data and Code Availability}
 
