@@ -61925,7 +61925,7 @@ For multiple record operators the spectral object is a positive matrix, not a si
   |J_{ab}(\omega)|^2\le J_{aa}(\omega)J_{bb}(\omega).
 \end{equation}
 Scalar one-kernel closure is a further channel-selection or diagonalisation step.  This guard is required
-before applying the S7 triangle or the P26 over-closure test.
+before applying the P6-S7 triangle or the P26 over-closure test.
 
 \subsection{Correction index local to this appendix}
 \label{app:AP6A-corrections-local}
@@ -62046,7 +62046,7 @@ Consequently, once the induced coefficient and cutoff are fixed by a sector calc
 amplitude $C$ is no longer a free loudness parameter.  In the gravitational matching route this is the
 bridge from the induced coefficient to the $M_G^2$ normalisation; in the P6 record route it is the same
 object appearing in dephasing and line-shift observables.  This is the first form of the one-kernel
-closure later sharpened in the S7/P26 appendix.
+closure later sharpened in the P6-S7/P26 appendix.
 
 \subsection{L23, L29, L29a, and L30: non-Markov windows and finite-bath guards}
 \label{app:AP6B-nongaussian-quiet}
@@ -62133,13 +62133,13 @@ The two-regime window law is
 up to channel-dependent prefactors.  Apparent exponents extracted from short windows must therefore be
 reported together with the window, cutoff, and inversion route.
 
-\subsection{L33 and S7 preview: triangle consistency before full closure}
+\subsection{L33 and P6-S7 preview: triangle consistency before full closure}
 \label{app:AP6B-triangle-preview}
 
 Already at the tomography level, dephasing, widths, and shifts are not independent fit parameters.  For a
 fixed channel, the reconstructed $J_W$ that explains $\Phi(t)$ must also predict the golden-rule widths and
 Kramers--Kronig shifts once the form factors and counterterm convention are supplied.  This is the
-preliminary form of the one-kernel triangle.  The full S7/P26 statement is deferred to the dedicated P6-F
+preliminary form of the one-kernel triangle.  The full P6-S7/P26 statement is deferred to the dedicated P6-F
 appendix because the generic object is a positive spectral matrix $J_{ab}(\omega)$, not a universal scalar
 bath.
 
@@ -62712,7 +62712,7 @@ The following guards must accompany any use of C13$'$ or P23/P24.
   \item \emph{Finite-size guard.}  Check Eqs.~\eqref{eq:AP6D-line-resolution} and
   \eqref{eq:AP6D-shoulder-resolution} before interpreting line/shoulder visibility.
   \item \emph{Matrix-channel guard.}  If intrinsic and external readouts project different eigenchannels of
-  $J^W_{ab}$, scalar closure can fail without falsifying the matrix S7 framework.
+  $J^W_{ab}$, scalar closure can fail without falsifying the matrix P6-S7 framework.
 \end{enumerate}
 These guards are operational rather than decorative: they determine whether a laboratory outcome is a
 C13$'$ result, a record-operator failure, a protocol failure, or an ambiguous mixed-channel measurement.
@@ -62722,7 +62722,7 @@ C13$'$ result, a record-operator failure, a protocol failure, or an ambiguous mi
 
 Appendix~\ref{app:AP6C-ribbon-line-records} established the certified external-monitor hierarchy.  The
 present appendix established the intrinsic edge-plus-line mechanism and its detuning transition.  The later
-P6 appendices collect the remaining normalisation/fingerprint and S7 over-closure material, then assemble
+P6 appendices collect the remaining normalisation/fingerprint and P6-S7 over-closure material, then assemble
 M3-1, M3-2, and M3-3 as explicit falsification protocols.  The handoff rule is simple: C12 governs external
 or detuned monitoring, C13$'$ governs the intrinsic self-channel, and a calculation that mixes the two without
 stating the protocol is not a valid P6 prediction.
@@ -62739,7 +62739,7 @@ Appendix~\ref{app:AP6A-conventions-kernels}, the line/width record operators of
 Appendix~\ref{app:AP6C-ribbon-line-records}, and the intrinsic threshold-protection test of
 Appendix~\ref{app:AP6D-threshold-protection}.  It does not rederive the pair normalisation
 $\zeta_0^{\rm pair}=2$, the C10 cusp kernel, the P25/P25$'$ fingerprint constants, the Airy transfer
-Hamiltonian, or C13$'$ threshold protection.  Its role is to state the observable chain that later S7 and
+Hamiltonian, or C13$'$ threshold protection.  Its role is to state the observable chain that later P6-S7 and
 M3 protocols use without duplicating the derivations already owned by Appendices~BI--BL.
 
 \subsection{Observable chain}
@@ -62876,6 +62876,226 @@ over-close when they are projections of the same positive record kernel.  The pr
 the width-sector observable inputs for that later over-closure test.  It also supplies the non-duplicative
 interface used by the later M3-3 protocol: the protocol should call the quantities defined here rather than
 repeating the normalisation, fingerprint, and Airy derivations of Appendix~BI.
+
+% ============================================================
+% AP6-F inserted 2026-07-09 from derivations/pes/AP6_F_INSERT_ADAPTED_v1.tex (PES Round 39)
+% + R3 micro-patch: bare S7 -> P6-S7 across BI-BM (7 loci)
+% ============================================================
+\section{P6-F: Matrix one-kernel triangle and P26 over-closure}
+\label{app:AP6F-matrix-triangle-P26}
+
+\paragraph{Status and scope.}
+This appendix gives the full P6-S7/P26 closure test.  The label P6-S7 refers to the spectral-record
+milestone of the frozen P6 ledger, not to the foundational S7 admissibility postulate of the main
+axiomatic list.  The preview in Appendix~\ref{app:AP6B-triangle-preview} is upgraded here to an
+operational over-closure test.  The generic object is a positive record spectral matrix; a scalar
+one-kernel triangle is valid only after a channel-selection or diagonalisation step.
+
+This appendix does not rederive the dephasing classes of Appendix~\ref{app:AP6B-L16-trichotomy}, the
+C12 form-factor hierarchy of Appendix~\ref{app:AP6C-C12-form-factors}, the C13$'$ threshold mechanism of
+Appendix~\ref{app:AP6D-threshold-protection}, or the width-observable chain of
+Appendix~\ref{app:AP6E-width-observable-interface}.  It uses those results as inputs.
+
+\subsection{Matrix record kernel}
+\label{app:AP6F-matrix-kernel}
+
+For a set of record operators labelled by $a,b$, the P6 record environment is represented by a Weiss
+spectral matrix
+\begin{equation}
+  J^W_{ab}(\omega)\succeq0,\qquad \omega>0 .
+  \label{eq:AP6F-positive-matrix-kernel}
+\end{equation}
+Recalling the matrix guard of Appendix~\ref{app:AP6A-protocol-guards}, positivity implies the pointwise
+Cauchy--Schwarz test
+\begin{equation}
+  |J^W_{ab}(\omega)|^2\le J^W_{aa}(\omega)J^W_{bb}(\omega).
+  \label{eq:AP6F-CS-test}
+\end{equation}
+A violation of Eq.~\eqref{eq:AP6F-CS-test} is not a subtle model-selection issue: it means the proposed
+cross-channel spectral data cannot be a passive positive record kernel in the declared convention.
+
+At a fixed frequency one may diagonalise
+\begin{equation}
+  J^W_{ab}(\omega)=\sum_r j_r(\omega)e_a^{(r)}(\omega)e_b^{(r)}(\omega)^*,
+  \qquad j_r(\omega)\ge0 .
+  \label{eq:AP6F-frequency-diagonalisation}
+\end{equation}
+A scalar triangle is therefore a selected-channel statement.  It is justified when the protocol excites a
+single eigenchannel $r$, or when a declared projection $\Pi_r$ is stable over the frequency window being
+tested.  If the eigenvectors $e^{(r)}(\omega)$ rotate significantly across the window, scalar closure can
+fail even though the matrix P6-S7 statement remains viable.
+
+\subsection{P6-S7 triangle for one selected channel}
+\label{app:AP6F-scalar-triangle}
+
+For a selected channel $r$, define the projected density
+\begin{equation}
+  J^W_r(\omega)=\Pi_r^\dagger J^W(\omega)\Pi_r .
+  \label{eq:AP6F-projected-density}
+\end{equation}
+The P6-S7 triangle is the statement that, once the protocol data are declared, the three observed
+quantities are not independent fits:
+\begin{equation}
+  J^W_r(\omega)
+  \quad\Longrightarrow\quad
+  \left\{
+  \Phi_r(t),\ \Gamma_{n,r},\ \delta\Omega_{n,r}
+  \right\}.
+  \label{eq:AP6F-triangle-map}
+\end{equation}
+The dephasing arm uses the spectral representation of Appendix~\ref{app:AP6B-L16-trichotomy}.  The width
+arm uses the C12 external-monitor form factors of Appendix~\ref{app:AP6C-C12-form-factors}, or the
+intrinsic threshold objects of Appendix~\ref{app:AP6D-threshold-protection} when the channel is a C13$'$
+self-channel.  The shift arm uses the bosonic mirror convention of Appendix~\ref{app:AP6D-dressed-response}
+and the counterterm convention declared for the protocol.
+
+For an external monitor, the width arm is
+\begin{equation}
+  \Gamma_{n,r}^{\rm ext}
+  =2\pi J^W_r(\Omega_n)|F_{n,r}(\Omega_n)|^2[1+n_{\rm eff}(\Omega_n)] .
+  \label{eq:AP6F-external-width-arm}
+\end{equation}
+The corresponding counterterm-relative leading shift is obtained from the same projected kernel through
+the bosonic mirror map,
+\begin{equation}
+  \delta\Omega_{n,r}
+  =
+  -\frac{\Sigma'_{n,r}(\Omega_n)-\delta_{ct,n}}{2\Omega_n}
+  +O(\Sigma^2),
+  \label{eq:AP6F-shift-arm}
+\end{equation}
+where the sign follows the dressed-response convention
+$D(z)=z^2-\Omega_n^2+\Sigma_R(z)-\delta_{ct,n}$ used in Appendix~\ref{app:AP6D-dressed-response}.  If a
+different subtraction convention is used in a concrete protocol, Eq.~\eqref{eq:AP6F-shift-arm} must be
+translated before comparison with data.
+
+\subsection{P26 reconstruction loop}
+\label{app:AP6F-P26-loop}
+
+P26 is the over-closure loop that reconstructs the kernel from one arm and predicts the other two.  In an
+external C12 protocol the cleanest reconstruction starts from measured widths:
+\begin{equation}
+  \widehat J^W_r(\Omega_n)
+  =
+  \frac{\Gamma_{n,r}^{\rm ext}}
+       {2\pi |F_{n,r}(\Omega_n)|^2[1+n_{\rm eff}(\Omega_n)]}.
+  \label{eq:AP6F-width-reconstruction}
+\end{equation}
+A positive interpolation or model family for $\widehat J^W_r(\omega)$ then predicts
+\begin{equation}
+  \widehat\Phi_r(t_i)
+  =
+  \int_0^\infty d\omega\,
+  \widehat S_{{\rm rec},r}(\omega)
+  \frac{1-\cos\omega t_i}{\omega^2},
+  \label{eq:AP6F-predicted-dephasing}
+\end{equation}
+using the same record-spectrum convention as Appendix~\ref{app:AP6B-L16-trichotomy}, and predicts
+\begin{equation}
+  \widehat{\delta\Omega}_{n,r}
+  =
+  -\frac{\widehat\Sigma'_{n,r}(\Omega_n)-\delta_{ct,n}}{2\Omega_n}.
+  \label{eq:AP6F-predicted-shift}
+\end{equation}
+The hats mark predictions from the reconstructed kernel, not independent fits.
+
+The over-closure residuals may be reported as
+\begin{equation}
+  R^{\rm oc}_\Phi
+  =
+  \max_i
+  \left|
+  \frac{\Phi_r^{\rm obs}(t_i)-\widehat\Phi_r(t_i)}
+       {\sigma_{\Phi,i}}
+  \right|,
+  \qquad
+  R^{\rm oc}_\Omega
+  =
+  \max_n
+  \left|
+  \frac{\delta\Omega_{n,r}^{\rm obs}-\widehat{\delta\Omega}_{n,r}}
+       {\sigma_{\Omega,n}}
+  \right|.
+  \label{eq:AP6F-overclosure-residuals}
+\end{equation}
+The choice of norm is protocol-dependent; what matters is that the same reconstructed positive
+$\widehat J^W_r$ is used in all arms.
+
+\subsection{Matrix-channel diagnostics}
+\label{app:AP6F-matrix-diagnostics}
+
+When multiple record channels are measured, the scalar reconstruction should be supplemented by matrix
+diagnostics.  A useful positivity ratio is
+\begin{equation}
+  \eta_{ab}^{\rm rec}(\omega)
+  =
+  \frac{|J^W_{ab}(\omega)|^2}{J^W_{aa}(\omega)J^W_{bb}(\omega)} ,
+  \qquad
+  0\le \eta_{ab}^{\rm rec}(\omega)\le1 .
+  \label{eq:AP6F-eta-ratio}
+\end{equation}
+Values above unity flag an inconsistent cross-spectrum, a convention mismatch, or an uncontrolled
+background subtraction.  Values near unity indicate approximate rank-one behaviour in the measured
+two-channel block, while smaller values indicate genuinely multi-channel record structure.
+
+A second diagnostic is the eigenvalue leakage ratio
+\begin{equation}
+  \eta_r^{\rm leak}(\omega)
+  =
+  \frac{\sum_{s\ne r}j_s(\omega)}{j_r(\omega)}
+  \label{eq:AP6F-leakage-ratio}
+\end{equation}
+computed after the diagonalisation in Eq.~\eqref{eq:AP6F-frequency-diagonalisation}.  Scalar P26 closure
+requires $\eta_r^{\rm leak}$ to be small over the tested window, or requires the leakage to be explicitly
+modelled.  Intermediate apparent power laws are not new P6 exponents until this matrix-channel leakage has
+been controlled.
+
+\subsection{Intrinsic threshold channel}
+\label{app:AP6F-intrinsic-loop}
+
+For an intrinsic C13$'$ channel the width arm is not Eq.~\eqref{eq:AP6F-external-width-arm}.  The relevant
+observables are instead the bound-line position, the line weight, and the continuum shoulder:
+\begin{equation}
+  \{\omega_b,\ Z_b,\ \rho_{\rm cont}(\omega)\}_{r}
+  \quad\text{with}\quad
+  Z_b+\int_E^\infty 2\omega\rho_{\rm cont}(\omega)\,d\omega=1 ,
+  \label{eq:AP6F-intrinsic-observables}
+\end{equation}
+using the sum rule of Appendix~\ref{app:AP6D-sum-rule}.  The same projected kernel must also account for
+the P24 detuning transition and for the dephasing arm after the declared occupation data are supplied.
+Applying a golden-rule Lorentzian width to the intrinsic subedge line would mix protocols and would fail
+the guard of Appendix~\ref{app:AP6D-P23-P24}.
+
+\subsection{Failure interpretation}
+\label{app:AP6F-failure-interpretation}
+
+A failed scalar over-closure does not immediately falsify P6/PES.  The failure hierarchy is
+\begin{equation}
+\begin{gathered}
+  \text{wrong form factor}
+  \ \rightarrow\
+  \text{wrong record operator}
+  \ \rightarrow\
+  \text{wrong occupation/counterterm convention}
+  \\
+  \rightarrow\
+  \text{uncontrolled matrix-channel leakage}
+  \ \rightarrow\
+  \text{failure of the selected-channel P6-S7 closure} .
+\end{gathered}
+\label{eq:AP6F-failure-hierarchy}
+\end{equation}
+Only after these guards are controlled does the result challenge the wider spectral-record framework.  In
+particular, failure of a scalar fit in a multi-channel setting may simply mean that Eq.~\eqref{eq:AP6F-frequency-diagonalisation}
+has not reduced to a stable single channel.
+
+\subsection{Handoff to M3 protocols}
+\label{app:AP6F-handoff}
+
+The P26 loop is a laboratory analysis pattern, not yet a platform specification.  Appendix~\ref{app:AP6E-width-observable-interface}
+provides the width-sector inputs used by the M3-3 protocol, while Appendix~\ref{app:AP6D-P23-P24}
+provides the P23/P24 intrinsic-threshold contrast.  The subsequent M3 appendix will assemble these inputs
+into explicit falsification protocols without rederiving the kernel, width, or threshold laws.
 
 \section*{Data and Code Availability}
 \addcontentsline{toc}{part}{Data and Code Availability}
