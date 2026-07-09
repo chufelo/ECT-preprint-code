@@ -61717,6 +61717,7 @@ than matched, and any uncertainty in them is exponentially amplified.
 % ============================================================
 % AP6 appendix series: P6/PES frozen framework (PES Rounds 1--28).
 % AP6-A inserted 2026-07-08 from derivations/pes/AP6_A_INSERT_ADAPTED_v1.tex
+% 2026-07-09 Round 32: BI notation micro-patch (line coefficient renamed to c-line)
 % ============================================================
 \section{P6-A: Conventions, record kernels, and normalisation dictionary}
 \label{app:AP6A-conventions-kernels}
@@ -61783,7 +61784,7 @@ The historical reduced columns used in earlier P6 audits differ from the canonic
   J_{\rm red}=4J_{\rm can} .
 \end{equation}
 This factor belongs only to the historical $J$-column route.  It must not be applied to native
-$\Phi$-measure quantities such as the line tension coefficient $c_1=1$, the exact cusp kernel, or the
+$\Phi$-measure quantities such as the line tension coefficient $c_{\rm line}=1$, the exact cusp kernel, or the
 record-normalisation functional below.
 
 \subsection{Pair normalisation and the value of \texorpdfstring{$\zeta_0$}{zeta0}}
@@ -61792,8 +61793,9 @@ record-normalisation functional below.
 The canonical line-overlap functional for a pair-built record is
 \begin{equation}
   \Phi_{\rm pair}(R,L_z)
-  =2c_1 \frac{W^2K_\theta c_\chi}{S_0} L_zR+O(\xi_cL_z),
-  \qquad c_1=1 .
+  =2c_{\rm line} \frac{W^2K_\theta c_\chi}{S_0} L_zR+O(\xi_cL_z),
+  \qquad
+  c_{\rm line}\equiv\int_0^\infty\frac{1-J_0(x)}{x^2}\,dx=1 .
 \end{equation}
 The default P6 convention is therefore
 \begin{equation}
@@ -62167,6 +62169,278 @@ sector, the certified record operators and form factors, the intrinsic threshold
 the M3 falsification protocols.  The frozen ordering is important: later claims must inherit the convention
 and tomography guards above rather than redefining the bath exponent, the occupation convention, or the
 counterterm convention locally.
+
+% ============================================================
+% AP6-C inserted 2026-07-09 from derivations/pes/AP6_C_INSERT_ADAPTED_v1.tex (PES Round 32)
+% ============================================================
+\section{P6-C: Ribbon/line sector, record classes, and form factors}
+\label{app:AP6C-ribbon-line-records}
+
+\paragraph{Status and scope.}
+This appendix specialises the spectral-record machinery of Appendices~\ref{app:AP6A-conventions-kernels}
+and~\ref{app:AP6B-core-laws} to the certified P6 ribbon/line sector.  The status is Level~B throughout,
+except where an open input is explicitly named.  The claims below are structural record-sector statements:
+they identify the line tension, endpoint guards, core and tilt inputs, Magnus fork, record operator,
+record-class hierarchy, and external-monitor form-factor laws used by the later threshold and M3
+appendices.  They do not derive the microscopic value of $S_0$, do not prove the colour postulate P7, and
+do not turn analogue-line falsification into a falsification of the whole ECT framework.
+
+A notational warning is needed.  Appendix~\ref{app:AP6A-zeta0} denotes the P6 Bessel-integral
+line coefficient by $c_{\rm line}=1$.  This notation is used throughout the P6 appendices to avoid
+collision with the orientation-stress OP-$c_1$ used elsewhere in the manuscript.  Equivalently,
+\begin{equation}
+  c_{\rm line}\equiv \int_0^\infty \frac{1-J_0(x)}{x^2}\,dx=1 .
+  \label{eq:AP6C-line-coeff}
+\end{equation}
+(This is the same dimensionless number written $c_1$ in the P6 derivation files.)
+
+\subsection{C1--C2: pair tension and ribbon area law}
+\label{app:AP6C-C1-C2-tension-area}
+
+For a pair-built winding record of transverse separation $R$ and length $L_z$, the P6 pair convention of
+Appendix~\ref{app:AP6A-zeta0} gives
+\begin{equation}
+  \Phi_{\rm pair}(R,L_z)
+  = \sigma_{\rm dec}L_zR+O(\xi_cL_z),
+  \qquad
+  \sigma_{\rm dec}\equiv \sigma_{\rm pair}
+  =2\frac{W^2K_\theta c_\chi}{S_0} .
+  \label{eq:AP6C-pair-tension}
+\end{equation}
+In the ledger units this is the statement that the Bessel-integral slope is $2c_{\rm line}=2$.  The
+factor of two is not an optional monitor convention: all certified P6 line, width, and cusp constructions
+are pair constructions.  A one-face coefficient $\sigma_{\rm face}=\sigma_{\rm pair}/2$ may be introduced only
+for a genuine one-sheet object; none is currently certified in the P6 ledger.
+
+Because the pair can be extended along $z$ without changing the transverse kernel, the line law is also a
+ribbon area law,
+\begin{equation}
+  \Phi_{\rm ribbon}=\sigma_{\rm dec}A_{\rm ribbon}+O(\xi_cL_z),
+  \qquad
+  A_{\rm ribbon}=L_zR .
+  \label{eq:AP6C-area-law}
+\end{equation}
+The excluded alternative is an isolated unscreened winding sector, whose record cost grows with the
+transverse system size rather than with a finite pair separation.  Thus the finite P6 object is a bound
+record pair/ribbon, not a freely isolated line charge.
+
+\subsection{C4: endpoint mass, screening, and line-breaking guard}
+\label{app:AP6C-C4-endpoint-screening}
+
+The endpoint contribution is the core/perimeter part left after the extensive pair tension has been
+separated.  Without screening, an endpoint carries an infrared-linear self-loudness and cannot be used as
+a finite line-breaking defect.  With a screening length $\xi_{\rm scr}$ supplied by a specified carrier, the
+certified endpoint estimate is
+\begin{equation}
+  M_{\rm end}=\frac{1}{2}\sigma_{\rm dec}\xi_{\rm scr} .
+  \label{eq:AP6C-Mend}
+\end{equation}
+If breaking a ribbon changes the effective tension by $\sigma_{\rm br}>0$, the thin-wall estimates are
+\begin{equation}
+  R_{\rm br}=\frac{2M_{\rm end}}{\sigma_{\rm br}}
+  =\frac{\sigma_{\rm dec}}{\sigma_{\rm br}}\xi_{\rm scr},
+  \qquad
+  B=\frac{\pi M_{\rm end}^2}{\sigma_{\rm br}}
+  =\frac{\pi}{4}\frac{\sigma_{\rm dec}^2}{\sigma_{\rm br}}\xi_{\rm scr}^2 .
+  \label{eq:AP6C-breaking-bounce}
+\end{equation}
+The thick-wall prefactor is not fixed by this argument.  The screening carrier and $\xi_{\rm scr}$ are open
+sector inputs, not consequences of the line tension alone.
+
+If an unresolved ensemble entropy of line paths is included, it must be compared at the physical core
+scale rather than as a dimensionless slogan.  A persistence criterion of the schematic form
+\begin{equation}
+  \sigma_{\rm dec}\xi_{\rm line}>\ln \mu(\xi_{\rm line})
+  \label{eq:AP6C-line-entropy-guard}
+\end{equation}
+requires a declared line ensemble and a declared core scale.  The line entropy $\mu$ is therefore not a
+free after-the-fact parameter for rescuing or destroying a record sector.
+
+\subsection{S1 and C5: core profile and tilt stiffness}
+\label{app:AP6C-core-stiffness}
+
+The reduced Ginzburg--Pitaevskii core calculation fixes the line-core profile and the dimensionless core
+constant used in the ribbon sector.  In the frozen ledger the profile audit reproduces the GP value
+\begin{equation}
+  \frac{c_{\rm GP}}{\pi}=0.3811
+  \label{eq:AP6C-GP-c0}
+\end{equation}
+within the quoted numerical tolerances.  (This constant is written $c_0$ in the P6 derivation files;
+it is renamed $c_{\rm GP}$ here because $c_0$ denotes an entropy-capacity coefficient
+elsewhere in the manuscript.)  The window-independent gradient length is
+\begin{equation}
+  \xi_{\rm grad}=1.477\,\xi_{\rm cond},
+  \label{eq:AP6C-xi-grad}
+\end{equation}
+whereas any fitted $\xi_{\rm eff}$ must state the finite window used to extract it.
+
+The width-sector tilt coefficient is an independent stiffness.  In the stiffness convention fixed in
+Appendix~\ref{app:AP6A-Airy-stiffness},
+\begin{equation}
+  \kappa_b=\frac{T_{\rm line}}{2S_0},
+  \label{eq:AP6C-kappab}
+\end{equation}
+where $T_{\rm line}$ is the line's energetic tilt cost, including the appropriate core/log-running input for
+the width scale under study.  Tension does not by itself determine the Airy width spectrum; an independent
+calibration of $\kappa_b$ is required.  The loudness-gradient part of the stiffness remains an explicitly
+named open input until a sector calculation supplies it.
+
+\subsection{C6--C7: Magnus fork and the minimal ohmic branch}
+\label{app:AP6C-Magnus-C7}
+
+The minimal ribbon action inherited from the strictly second-order phase sector has the schematic form
+\begin{equation}
+  \frac{S_{\rm line}^{(2)}}{S_0}
+  =\frac{1}{2}\int dt\,dz\,
+  \left[M_\perp(\partial_t X)^2+T_{\rm line}(\partial_zX)^2\right] +\cdots .
+  \label{eq:AP6C-second-order-line}
+\end{equation}
+It gives a linear branch $\omega\propto |k_z|$, hence dynamical exponent $z=1$.  In the P6 count this is
+the minimal ohmic ribbon branch,
+\begin{equation}
+  n_0=0,
+  \qquad
+  \kappa_M^{\rm bulk}=0,
+  \qquad
+  z=1,
+  \qquad
+  a_W=1 .
+  \label{eq:AP6C-minimal-ohmic}
+\end{equation}
+The word ``ohmic'' here is a statement about the minimal Weiss exponent of this certified branch, not a
+licence to replace every subsequent protocol by a Markov bath.
+
+A first-order Magnus/Berry term would instead have the schematic form
+\begin{equation}
+  \frac{S_M}{S_0}
+  =\frac{i\kappa_M}{2}\int dt\,dz\,
+  \left(X\partial_tY-Y\partial_tX\right),
+  \qquad
+  \kappa_M\propto \frac{W n_0}{S_0},
+  \label{eq:AP6C-Magnus-term}
+\end{equation}
+and would generate a quadratic Kelvin-like branch in the infrared.  The frozen S2b verdict for the minimal
+bulk ribbon is $n_0=0$; the $n_0\ne0$ route is a separate core-zero-mode/Berry branch and is tested by the
+M3 zero-mode protocol, not assumed inside the minimal ribbon sector.
+
+\subsection{C8: certified bulk record operator and soft-edge kernels}
+\label{app:AP6C-C8-record-operator}
+
+The certified bulk record operator is dictated by the pair geometry.  For a pair separated by $d$ in the
+transverse plane its Fourier kernel is
+\begin{equation}
+  G({\bf k};d)
+  =-2\pi i W\frac{k_y\cos(k_xd/2)}{k_x^2+k_y^2+k_z^2} .
+  \label{eq:AP6C-Gk}
+\end{equation}
+Thus $|G|^2$ contains the same inverse-square kernel that appears in the C1 line-tension integral.  The
+record operator is not selected from a menu after the fact: it is the particular combination of width
+coordinate and time-derivative records induced by this vertex.
+
+After the canonical C8 normalisation of Appendix~\ref{app:AP6A-C8-kernels}, the temporal and spatial
+record kernels are
+\begin{align}
+  J_{\rm temp}^{\rm can}(\omega,k_z)
+  &=\frac{\omega^2-c^2k_z^2}{16\pi\omega^3}\Theta(\omega-c|k_z|), \\
+  J_{\rm spat}^{\rm can}(\omega,k_z)
+  &=\frac{\omega^2-c^2k_z^2}{16\pi c^2\omega}\Theta(\omega-c|k_z|).
+  \label{eq:AP6C-C8-kernels-repeat}
+\end{align}
+They are repeated here only to make the line-sector handoff explicit.  The ratio
+$J_{\rm spat}^{\rm can}/J_{\rm temp}^{\rm can}=\omega^2/c^2$ is the preferred component-normalisation check.
+The historical reduced columns are $4J^{\rm can}$ and should not be mixed into the native $\Phi$-measure
+line tension or cusp formulas.
+
+\subsection{L42--L45 and C10: record classes and cusp linkage}
+\label{app:AP6C-record-classes-cusp}
+
+Record classes are organised by the infrared measure of the record difference.  In the $G$-kernel measure,
+the critical exponent is
+\begin{equation}
+  \rho_{G,\rm crit}=1,
+  \label{eq:AP6C-rhoGcrit}
+\end{equation}
+corresponding to $\rho_{\theta,\rm crit}=3/2$ in the certified $\Phi$-measure dictionary.  The frozen class
+hierarchy is
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+record class & infrared status & interpretation \\
+\midrule
+endpoint & hard, power-divergent & the only hard class, $\rho=2$ \\
+pair separation & finite tension & the C1/C2 pair/ribbon law \\
+width difference & finite but linearly recorded & effective pair of size $|\Delta d|$ \\
+translation & soft & no hard record by itself \\
+\bottomrule
+\end{tabular}
+\end{center}
+The width-difference law, in the pair convention, is
+\begin{equation}
+  \frac{\Phi_{\rm width}(\Delta d)}{L_z}
+  =\sigma_{\rm dec}|\Delta d|+O(\xi_c) .
+  \label{eq:AP6C-width-linear}
+\end{equation}
+This statement is one reason the default assignment $\sigma_{\rm dec}=\sigma_{\rm pair}$ is used uniformly
+throughout P6.
+
+The exact C10 cusp kernel and the intrinsic resolution floor are given in
+Appendix~\ref{app:AP6A-cusp}.  The important line-sector interpretation is that separated width sectors are
+not local delta-function monitors; they are cusp-kernel objects with intrinsic floor
+\begin{equation}
+  \xi_{\rm res}^{\rm intr}=4\xi_c .
+  \label{eq:AP6C-xires-repeat}
+\end{equation}
+The Gaussian monitor introduced below is a resolved-window approximation to this cusp object, not a
+replacement for it at intrinsic resolution.
+
+\subsection{C11: Gaussian width-monitor anchor}
+\label{app:AP6C-C11-width-monitor}
+
+For a Gaussian resolved width monitor with resolution $\xi_{\rm res}$, the certified anchor is
+\begin{equation}
+  \lambda_n^{\rm rec}=\frac{\sigma_{\rm dec}}{2\xi_{\rm res}} .
+  \label{eq:AP6C-lambda-anchor}
+\end{equation}
+It is mode-independent at the level of the resolved Gaussian anchor.  This formula is the bridge from the
+exact C10 cusp kernel to the form-factor taxonomy of the external-monitor calculation.  In intrinsic
+width-sector work one should use $\xi_{\rm res}=4\xi_c$ only when the protocol really probes the intrinsic
+floor; an external detector may have a larger experimental resolution.
+
+\subsection{C12 and L46: form factors and external-monitor hierarchy}
+\label{app:AP6C-C12-form-factors}
+
+External or detuned monitors use the golden-rule form already fixed in Appendix~\ref{app:AP6A-protocol-guards},
+\begin{equation}
+  \Gamma_n^{\rm ext}
+  =2\pi J_W(\Omega_n)|F_n(\Omega_n)|^2[1+n_{\rm eff}(\Omega_n)] .
+  \label{eq:AP6C-external-width}
+\end{equation}
+The key C12 lesson is that the bath exponent alone does not determine the persistent spectrum.  After
+dividing out the same $J_W$ and the same occupation factor, the certified form-factor hierarchy is
+\begin{equation}
+  |F_n|^2\sim n^0,
+  \qquad
+  |F_n|^2\sim n^2,
+  \qquad
+  |F_n|^2\sim n^2,
+  \qquad
+  |F_n|^2\sim n^{-2}\quad \text{on the odd-parity subsector} .
+  \label{eq:AP6C-form-factor-hierarchy}
+\end{equation}
+The two $n^2$ entries correspond to distinct record operators with the same large-$n$ power.  They should
+not be collapsed unless the underlying operator has also been identified.  Conversely, an observed width
+hierarchy that does not match any certified $F_n$ class after division by $J_W$ and occupation data is a
+record-operator discriminator: it challenges the proposed monitor, not the entire P6/PES framework.
+
+\subsection{Handoff to threshold protection and M3 protocols}
+\label{app:AP6C-handoff}
+
+This appendix has established the line/ribbon object and the external-monitor form-factor hierarchy.  The
+intrinsic width channel is different: its mode sits at its own soft radiation edge and must be treated by a
+dressed pole plus continuum calculation.  That threshold-protection mechanism, its sum rule, and its
+five-case detuning map are deferred to the next P6 appendix.  The M3 protocols then use the separation between
+external C12 monitoring and intrinsic C13$'$ threshold behaviour as the primary falsifier.  Mixing the two
+protocols is the main interpretive error this appendix is designed to prevent.
 
 \section*{Data and Code Availability}
 \addcontentsline{toc}{part}{Data and Code Availability}
