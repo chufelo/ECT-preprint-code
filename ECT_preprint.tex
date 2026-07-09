@@ -62727,6 +62727,156 @@ M3-1, M3-2, and M3-3 as explicit falsification protocols.  The handoff rule is s
 or detuned monitoring, C13$'$ governs the intrinsic self-channel, and a calculation that mixes the two without
 stating the protocol is not a valid P6 prediction.
 
+% ============================================================
+% AP6-E inserted 2026-07-09 from derivations/pes/AP6_E_INSERT_ADAPTED_v1.tex (PES Round 37)
+% ============================================================
+\section{P6-E: Width-sector observable interface and M3-3 over-closure inputs}
+\label{app:AP6E-width-observable-interface}
+
+\paragraph{Status and scope.}
+This appendix is an interface layer.  It uses the convention dictionary of
+Appendix~\ref{app:AP6A-conventions-kernels}, the line/width record operators of
+Appendix~\ref{app:AP6C-ribbon-line-records}, and the intrinsic threshold-protection test of
+Appendix~\ref{app:AP6D-threshold-protection}.  It does not rederive the pair normalisation
+$\zeta_0^{\rm pair}=2$, the C10 cusp kernel, the P25/P25$'$ fingerprint constants, the Airy transfer
+Hamiltonian, or C13$'$ threshold protection.  Its role is to state the observable chain that later S7 and
+M3 protocols use without duplicating the derivations already owned by Appendices~BI--BL.
+
+\subsection{Observable chain}
+\label{app:AP6E-observable-chain}
+
+The width-sector chain is
+\begin{equation}
+\begin{gathered}
+  \text{static core-profile fit}
+  \longrightarrow \widehat{\xi}_c
+  \longrightarrow \widehat{\xi}_{\rm res}=4\widehat{\xi}_c
+  \longrightarrow \lambda_n^{\rm rec}
+  \\
+  \longrightarrow
+  \left(\widehat{\ell}_w,\widehat{E}_0,\widehat{L}_z^{\rm coh}\right)
+  \longrightarrow
+  \text{C13$'$ protection check}.
+\end{gathered}
+\label{eq:AP6E-observable-chain}
+\end{equation}
+The first arrow uses the P25/P25$'$ profile fingerprints of Appendix~\ref{app:AP6A-fingerprint}.  The
+second uses the intrinsic resolution floor of Appendix~\ref{app:AP6A-cusp}.  The monitor anchor
+$\lambda_n^{\rm rec}$ is the Gaussian record coefficient of Appendix~\ref{app:AP6C-C11-width-monitor}.
+The Airy quantities use the stiffness convention of Appendix~\ref{app:AP6A-Airy-stiffness}.  The final
+arrow is not optional: a width distribution is a persistent quantum width candidate only if the intrinsic
+line also passes the C13$'$ edge-plus-line test of Appendix~\ref{app:AP6D-threshold-protection}.
+
+\subsection{Independent tilt calibration}
+\label{app:AP6E-tilt-calibration}
+
+The width stiffness must be calibrated independently from a tilt-cost measurement.  For a small imposed
+tilt $v$, the operational calibration is
+\begin{equation}
+  \frac{\Delta\Phi_{\rm tilt}(v)}{L_z}
+  =\frac{\widehat{\kappa}_b}{2}v^2+O(v^4).
+  \label{eq:AP6E-tilt-calibration}
+\end{equation}
+The hat emphasises that this is a measured stiffness.  It must not be inferred from the Airy width fit
+itself and then reused to claim the $\kappa_b^{-1/3}$ width scaling.  That circular procedure would make
+the stiffness exponent tautological even for a false width model.  The Airy-width test is therefore
+meaningful only after Eq.~\eqref{eq:AP6E-tilt-calibration}, or an equivalent independent stiffness
+calibration, has fixed $\widehat{\kappa}_b$.
+
+\subsection{Resolution and deconvolution guard}
+\label{app:AP6E-resolution-deconvolution}
+
+Let $P_{\rm obs}(x)$ be the measured width distribution and $R_{\rm res}(x)$ the independently measured
+instrumental resolution.  The model comparison should use
+\begin{equation}
+  P_{\rm obs}(x)=P_{\rm wid}(x)\ast R_{\rm res}(x),
+  \label{eq:AP6E-resolution-convolution}
+\end{equation}
+not an unsmeared Airy profile.  For an approximately Gaussian resolution with variance
+$\sigma_{\rm res}^2$, the variance-level deconvolution is
+\begin{equation}
+  m_{2,{\rm dec}}=m_{2,{\rm obs}}-\sigma_{\rm res}^2 .
+  \label{eq:AP6E-variance-deconvolution}
+\end{equation}
+This formula is only a variance diagnostic; the full profile comparison should convolve the candidate
+distribution with the measured $R_{\rm res}$.  The certified operational requirement from the frozen P6
+M3-3 audit is
+\begin{equation}
+  \sigma_{\rm res}\lesssim 0.3\,\widehat{\ell}_w .
+  \label{eq:AP6E-resolution-bound}
+\end{equation}
+Above this scale, deconvolution errors can mimic or erase the Airy tail diagnostics.
+(In the frozen P6 audit ledger this bound is recorded as
+$\sigma_{\rm res}\lesssim0.3\,\ell_A$, where $\ell_A$ is the ledger name for the Airy width
+scale denoted $\ell_w$ in Appendix~\ref{app:AP6A-Airy-stiffness}.)
+
+\subsection{Shape collapse and non-circular Airy test}
+\label{app:AP6E-shape-collapse}
+
+Using the independent $\widehat{\kappa}_b$ and the already fixed $\sigma_{\rm dec}$ convention, the Airy
+prediction gives a width scale $\widehat{\ell}_w$ by Appendix~\ref{app:AP6A-Airy-stiffness}.  The
+shape-collapse test compares
+\begin{equation}
+  \widehat{\ell}_w\,P_{\rm wid}(\widehat{\ell}_w u)
+  \quad\text{against the universal half-line Airy profile in }u .
+  \label{eq:AP6E-shape-collapse}
+\end{equation}
+The scale collapse is not a substitute for the exponent test: both the profile shape and the independent
+scalings with $\sigma_{\rm dec}$ and $\widehat{\kappa}_b$ must be checked.  Conversely, a cube-root
+scaling alone is not sufficient evidence for a persistent quantum width, because thermal broadening,
+trapping, or resolution convolution can generate similar apparent powers over finite windows.
+
+\subsection{C13$'$ protection check}
+\label{app:AP6E-C13-check}
+
+The width-sector observable chain must be paired with the intrinsic threshold test.  The required C13$'$
+signature is the package
+\begin{equation}
+  \text{subedge line}
+  +\text{ soft continuum shoulder}
+  +\text{ same-channel sum rule}
+  +\text{ P24 detuning transition}.
+  \label{eq:AP6E-C13-package}
+\end{equation}
+Here the sum rule and detuning map are those of Appendix~\ref{app:AP6D-sum-rule} and
+Appendix~\ref{app:AP6D-five-case-map}.  A width profile without this intrinsic protection check should be
+reported as a width-profile observation, not as a persistent Airy-width record.
+
+\subsection{M3-3 decision table}
+\label{app:AP6E-M3-3-decision-table}
+
+The following table is an operational interface for the later M3 protocol appendix.  It is not a new
+derivation of the Airy or fingerprint laws.
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.30\textwidth}>{\raggedright\arraybackslash}p{0.30\textwidth}>{\raggedright\arraybackslash}p{0.32\textwidth}@{}}
+\toprule
+Observation & Required companion check & Interpretation \\
+\midrule
+\endfirsthead
+\toprule
+Observation & Required companion check & Interpretation \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\bottomrule
+\endlastfoot
+Fingerprint fit gives stable $\widehat{\xi}_c$ & Consistent $\widehat{\xi}_{\rm res}=4\widehat{\xi}_c$ in the record monitor & Core profile scale is usable as width-sector input \\
+Airy-like width profile & Independent tilt calibration from Eq.~\eqref{eq:AP6E-tilt-calibration} & Non-circular candidate for quantum width \\
+Apparent cube-root scaling only & Resolution bound Eq.~\eqref{eq:AP6E-resolution-bound} and full convolution test & Ambiguous unless deconvolution and shape collapse pass \\
+Width profile passes, C13$'$ package fails & Threshold package Eq.~\eqref{eq:AP6E-C13-package} & Width is not yet a persistent intrinsic record \\
+All checks pass & Same-channel P23/P24 contrast in Appendix~\ref{app:AP6D-P23-P24} & Candidate M3-3 success case \\
+\end{longtable}
+
+\subsection{Handoff}
+\label{app:AP6E-handoff}
+
+Appendix~\ref{app:AP6B-triangle-preview} previews the idea that dephasing, shifts, and widths should
+over-close when they are projections of the same positive record kernel.  The present appendix supplies
+the width-sector observable inputs for that later over-closure test.  It also supplies the non-duplicative
+interface used by the later M3-3 protocol: the protocol should call the quantities defined here rather than
+repeating the normalisation, fingerprint, and Airy derivations of Appendix~BI.
+
 \section*{Data and Code Availability}
 \addcontentsline{toc}{part}{Data and Code Availability}
 
