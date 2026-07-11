@@ -1,0 +1,45 @@
+# Canonical sources are never ignored. Only generated or historical variants are.
+
+# Retired attachment-copy workflow and explicit backup variants.
+* copy*
+*.bak
+*.bak_*
+*.bak-*
+*_BACKUP*
+*.BROKEN_*
+
+# LaTeX/build products. Canonical publication PDFs and committed BBL files that
+# are already tracked remain tracked despite these patterns.
+*.aux
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
+texput.log
+/.build/
+
+# Local environments, caches, editor files, and generated previews.
+/scripts/.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+*.swp
+*~
+_*.marker
+/figures/*preview*
+/figures/*draft*
+/figures/*OLD*
+
+# Shared-local material that must not enter the public publication repo by
+# accident. The deferred book and drafts are private. Proposals are opt-in:
+# an authorized Git round may force-add only individually reviewed proposal
+# paths (including reviewed renames of material already public in /proposals/).
+/book/
+/work/preprint/drafts/
+/work/preprint/proposals/
