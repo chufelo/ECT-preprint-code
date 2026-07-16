@@ -17,7 +17,8 @@ digraph PartII {
   metric [label=<Effective metric<BR/>diag(β,β,β,−(α−β))<BR/>§13.1>];
   source [label=<Conserved source<BR/>∂<SUB>A</SUB> T<SUP>AB</SUP> = 0<BR/>§13.3>];
   cgw [label=<GW speed c<SUB>GW</SUB> = c*<BR/>GW170817 ✓<BR/>§13.8>];
-  weakfield [label=<Screened Newtonian<BR/>limit<BR/>§13.6>];
+  weakfield [label=<Frozen-F GR limit<BR/>conditional<BR/>screening/body charge Open>,
+             fillcolor="white", style="rounded,dashed,filled", penwidth=1.5];
   flatness [label=<k = 0<BR/>(P1 + macrocoh.)<BR/>§14.3>];
   monopole [label=<π<SUB>2</SUB>(S³) = 0<BR/>no primary monopoles<BR/>§14.4>];
   scalar_mode [label=<Single scalar<BR/>perturb. mode<BR/>§14.5>];
@@ -27,30 +28,31 @@ digraph PartII {
   node [fillcolor="#ffffff"];
   bridge [label=<Bridge §11<BR/>Inherited inputs<BR/>(β &lt; α &lt; 4β, c*, u<SUB>0</SUB>, K<SUP>AB</SUP>)>];
   GN [label=<G<SUB>N</SUB> matching<BR/>G<SUB>N</SUB> = c*<SUP>4</SUP>/(8π M<SUB>G</SUB>²)<BR/>§13.4>];
-  closure [label=<Nonlinear φ-closure §13.5<BR/>GEE: G<SUB>eff</SUB>, Λ<SUB>eff</SUB>, Θ<SUB>μν</SUB>>];
-  closure_funcs [label=<Closure functions §13.5<BR/>F=exp(βφ), ω=ω<SUB>0</SUB>exp(2βφ)<BR/>U=W(u<SUB>∞</SUB> exp(βφ))>];
+  closure [label=<Scalar&#x2013;tensor closure §13.5<BR/>corrected metric + scalar EOM<BR/>Level B ansatz>];
+  closure_funcs [label=<Amplitude closure ansatz §13.5<BR/>F=exp(&#x03B2;&#x03C6;<SUB>u</SUB>)<BR/>u&#x2194;&#x03C7; bridge Open>];
   nophantom [label=<No-phantom bound<BR/>w(z) ≥ −1<BR/>§15.1>];
   hubble [label=<Retained ε band<BR/>ε ∈ [0.0296, 0.0376]<BR/>§15.5>];
   jwst [label=<JWST extraction<BR/>ε<SUB>JWST</SUB> binds band<BR/>§15.5>];
   age [label=<Age apparatus<BR/>t<SUB>0</SUB> ≈ 13.5 Gyr<BR/>§15.4>];
   baryogenesis [label=<Sakharov-compat.<BR/>baryogenesis env.<BR/>(compatibility)<BR/>§15.3>];
-  rotcurves [label=<Rotation curves<BR/>165 SPARC gal.<BR/>§16.3>];
-  btfr [label=<BTFR slope 4<BR/>§16.3>];
-  rar [label=<RAR σ ≈ 0.13 dex<BR/>§16.4>];
-  gdagger [label=<g<SUP>†</SUP><SUB>0</SUB> = cH<SUB>0</SUB>/(2π)<BR/>≈ 1.04×10⁻¹⁰ m/s²<BR/>§16.3>];
-  envmod [label=<Environmental<BR/>modulation g<SUP>†</SUP><SUB>eff</SUB><BR/>(F1) §16.1>];
-  cluster [label=<Cluster lensing<BR/>Bullet+3 (F10)<BR/>§16.2>];
-  darkDM [label=<No particle DM<BR/>galactic §17.2>];
+  rotcurves [label=<SPARC rotation-curve<BR/>fit closure (165 gal.)<BR/>Level C benchmark §16.3>];
+  btfr [label=<BTFR slope 4<BR/>algebra in adopted closure<BR/>Level C §16.3>];
+  rar [label=<RAR fit σ ≈ 0.13 dex<BR/>Level C benchmark<BR/>§16.4>];
+  gdagger [label=<Adopted galactic scale<BR/>g<SUP>&#x2020;</SUP><SUB>0</SUB> &#x223C; cH<SUB>0</SUB>/(2&#x03C0;)<BR/>matched B/C benchmark §16.3>];
+  envmod [label=<Environment/history law &#x039E;<BR/>sign + amplitude Open<BR/>(F1) §16.1>,
+          fillcolor="white", style="rounded,dashed,filled", penwidth=1.5];
+  cluster [label=<Cluster local-map identity<BR/>&#956;<SUB>dim</SUB>&#x2194;&#957;<SUB>cl</SUB>: order + argmax preserved<BR/>physical lensing/morphology Open §16.2>];
+  darkDM [label=<No halo term in adopted fit<BR/>particle content Open<BR/>Level C §17.2>];
   darkDE [label=<DE = ordered-branch<BR/>background §17.3>];
   branch_orient [label=<Branch orientation (OP3.2)<BR/>T-reversal covariance (A)<BR/>+ cond. persistence (B)<BR/>§14.2>];
-  tests [label=<13 Falsifiers<BR/>F1–F13 §18.1>, fontsize=10, penwidth=1.5];
+  tests [label=<13 tests / closure gates<BR/>F1–F13 §18.1>, fontsize=10, penwidth=1.5];
 
   // OPEN
   node [fillcolor="white", style="rounded,dashed,filled", penwidth=1.5];
   open_eft [label=<EFT parameters<BR/>Z<SUB>u</SUB>, W(u), β<BR/>OP-grad>];
   open_ns [label=<ECT-native n<SUB>s</SUB>, r<BR/>OP3>];
   open_fractions [label=<Cosmological<BR/>fraction budget>];
-  open_phi_bvp [label=<Full φ BVP solver>];
+  open_phi_bvp [label=<Canonical scalar BVP<BR/>body charge + PPN<BR/>Open>];
   cc_ir [label=<ρ<SUB>Λ</SUB>~c<SUB>Λ</SUB> M<SUB>Pl</SUB>²H<SUB>0</SUB>²<BR/>(Level C, §15.8)<BR/>Goldstone cand.<BR/>§15.9>];
 
   // RANKS (portrait: max 2 nodes per rank)
@@ -83,8 +85,8 @@ digraph PartII {
   sr -> closure;
   metric -> closure;
   {GN; source} -> closure;
-  closure -> closure_funcs; closure -> weakfield;
-  weakfield -> rotcurves;
+  closure -> closure_funcs [style=dashed, color="black", label="closure ansatz"];
+  closure -> weakfield [style=dashed, color="black", label="reachability open"];
   closure -> flatness;
   partI -> flatness [style=dashed];
   partI -> monopole;
@@ -97,17 +99,22 @@ digraph PartII {
   closure -> baryogenesis [style=dashed];
   partI -> baryogenesis [style=dashed];
   rotcurves -> btfr; rotcurves -> rar;
-  weakfield -> gdagger;
-  gdagger -> envmod;
-  gdagger -> rotcurves;
-  {rotcurves; envmod} -> cluster;
-  {rotcurves; envmod} -> darkDM;
+  closure_funcs -> gdagger [style=dashed, color="black", label="phenom. matching"];
+  gdagger -> envmod [style=dashed, color="black", label="Xi hypothesis"];
+  gdagger -> rotcurves [style=dashed, color="black", label="adopted fit law"];
+
+  rotcurves -> darkDM [style=dashed, color="black"];
+  envmod -> darkDM [style=dashed, color="black"];
   {nophantom; hubble} -> darkDE;
   closure_funcs -> branch_orient;
   partI -> branch_orient [style=dashed];
   branch_orient -> darkDE [style=dashed];
-  {darkDM; darkDE; envmod; cluster; cgw} -> tests;
-  gdagger -> tests;
+  darkDE -> tests;
+  cgw -> tests;
+  darkDM -> tests [style=dashed, color="black"];
+  envmod -> tests [style=dashed, color="black"];
+  cluster -> tests [style=dashed, color="black", label="future Open response specification"];
+  gdagger -> tests [style=dashed, color="black"];
   btfr -> tests;
   rar -> tests;
   age -> tests;
@@ -116,7 +123,8 @@ digraph PartII {
   closure_funcs -> open_eft [style=dashed];
   scalar_mode -> open_ns [style=dashed];
   darkDE -> open_fractions [style=dashed];
-  rotcurves -> open_phi_bvp [style=dashed];
+  closure -> open_phi_bvp [style=dashed, color="black"];
+  open_phi_bvp -> weakfield [style=dashed, color="black"];
 
   // CC catastrophe & IR estimate (§15)
   metric -> cc_catastrophe;
@@ -133,7 +141,7 @@ digraph PartII {
       <TR><TD COLSPAN="3"><B>Legend — Part II derivation logic</B></TD></TR>
       <TR>
         <TD BGCOLOR="#b8b8b8">Structural / Level A</TD>
-        <TD BGCOLOR="#ffffff" BORDER="1">Closure / Level B</TD>
+        <TD BGCOLOR="#ffffff" BORDER="1">Closure / Level B--C</TD>
         <TD BORDER="1" STYLE="DASHED">Open</TD>
       </TR>
       <TR>

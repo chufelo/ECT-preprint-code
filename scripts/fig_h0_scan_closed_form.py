@@ -7,6 +7,7 @@ no pointer line — keeps it clear of legend.
 import numpy as np
 import math
 import matplotlib.pyplot as plt
+from pathlib import Path
 
 # Fixed
 mu_fix = 1.5
@@ -79,9 +80,9 @@ ax.annotate(f'{dH_bench_closed:.1f}% (closed-form)\n{dH_bench_limit:.1f}% ($q_0{
                       edgecolor='black', linewidth=0.5, alpha=0.9))
 
 ax.set_xlabel(r'$\beta$', fontsize=13)
-ax.set_ylabel(r'$\phi_0$', fontsize=13)
+ax.set_ylabel(r'$\phi_{\rm bg,0}$', fontsize=13)
 ax.set_title(r'Late-time Hubble shift $\Delta H_0/H_0$ [%]' + '\n' +
-             r'$(\mu=1.5,\ \kappa=15)$', fontsize=11)
+             r'$(\widehat{\mu}_{\rm bg}=1.5,\ \kappa=15)$', fontsize=11)
 
 cb = fig.colorbar(cs_closed, ax=ax, shrink=0.9, label=r'$\Delta H_0/H_0$ [%] (closed-form)')
 
@@ -97,7 +98,7 @@ ax.legend(handles=legend_elements, loc='lower left', fontsize=8, framealpha=0.9)
 ax.grid(True, alpha=0.3, linestyle=':')
 
 plt.tight_layout()
-out_pdf = '/Users/chufelo/Documents/Physics/VDT/ECT/LaTex/figures/ect_h0_scan_bw.pdf'
+out_pdf = str(Path(__file__).parent.parent / 'figures' / 'ect_h0_scan_bw.pdf')
 plt.savefig(out_pdf, dpi=200, bbox_inches='tight')
 print(f"Saved: {out_pdf}")
 plt.close()

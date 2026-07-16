@@ -1,4 +1,6 @@
-# ECT Preprint — Calculation Scripts & Figures
+# ECT publication repository — manuscripts, calculations, and figures
+
+This directory is the publication layer of the shared ECT workspace. The workspace root is one level above; active research notes live in `../research/derivations/`, while this Git repository retains the canonical manuscripts and reproducibility materials.
 
 All scripts in this repository reproduce the figures and numerical results
 in the ECT preprint (*Euclidean Condensate Theory*, V. Blagovidov, 2025).
@@ -8,16 +10,31 @@ in the ECT preprint (*Euclidean Condensate Theory*, V. Blagovidov, 2025).
 ## Quick start
 
 ```bash
-pip install numpy scipy matplotlib pandas
+cd /Users/chufelo/Documents/Physics/VDT/ECT
+source .workspace/runtime/venvs/latex-scripts/bin/activate
+python3 .workspace/tools/codex_ect_preflight.py --root .
+bash LaTex/scripts/compile_preprint.sh
 ```
 
-Scripts can be run with Python 3.10+ and standard scientific packages.
-SPARC data file `MassModels_Lelli2016c.mrt` must be in the working directory
-for rotation-curve scripts.
+The repository root is the preprint layer. Included section files are under `sections/`; reusable programs under `scripts/`; notebooks under `notebooks/`; datasets under `data/`; and current figures under `figures/`. Internal work remains available locally under `work/preprint/`: drafts are private, while proposals are publication candidates and enter Git only through explicit per-file review/force-add. This preserves reviewed renames of already-public proposal history without exposing new candidates through `git add -A`. The deferred book is likewise local-only and ignored under `/book/`; it must never be published by a broad staging command. The companion and summary have their own directories. Scripts can be run with Python 3.10+ and the scientific packages recorded in `data/environment.yml`.
+
+The canonical preprint build defaults to four LaTeX passes and enforces zero
+errors, undefined references/citations, and multiply-defined labels:
+
+```bash
+PREVIOUS_PAGES=803 bash scripts/compile_preprint.sh
+```
+
+`PREVIOUS_PAGES` should be taken from the last accepted build so the report
+uses the required `X pages (was Y)` form. `LATEX_PASSES=3` is available only
+for an explicit quick diagnostic; acceptance builds use the strengthened
+default of four LaTeX runs plus BibTeX. The historical build sequence used
+three LaTeX runs plus BibTeX; the extra LaTeX run is a stabilization guard,
+not a claim about the old convention.
 
 ---
 
-## Figure-generating scripts
+## Figure-generating scripts (`scripts/`)
 
 | Script | Output figure(s) | Paper location |
 |--------|------------------|----------------|
@@ -53,7 +70,7 @@ for rotation-curve scripts.
 | `build_param_scan_bw.py` | `ect_condensate_param_scan_bw.pdf` | Condensate parameter scan |
 | `draw_derivation_logic.py` | Part I/II/III derivation logic diagrams | Uses Graphviz `.gv` source files |
 
-## Calculation scripts
+## Calculation scripts (`scripts/`)
 
 | Script | Paper section | What it computes |
 |--------|---------------|------------------|
@@ -87,7 +104,7 @@ ECT closure formula: `g(R) = 0.5 * (gN + sqrt(gN² + 4·gN·g†))` — **do not
 
 Compile with: `/opt/homebrew/bin/dot -Tpng input.gv -o output.png`
 
-## Interactive notebooks
+## Interactive notebooks (`notebooks/`)
 
 | Notebook | Description |
 |----------|-------------|

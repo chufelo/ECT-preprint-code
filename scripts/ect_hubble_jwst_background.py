@@ -6,7 +6,7 @@ ECT late-time cosmology solver (v4 — benchmark + derived-parent modes).
 Two closure modes are supported:
 
 1. benchmark (--closure_mode benchmark)
-   Local screened-branch truncation for backward compatibility,
+   Local conditional-reference truncation for backward compatibility,
    current article figures/tables, and robustness comparisons:
        F(phi)     = exp(beta*phi)
        K(phi)     = kappa * (1 + k1*phi + k2*phi^2)
@@ -518,7 +518,7 @@ def make_figure(df, summary, outpath, p):
 
     ax = axs[0]
     ax.plot(z[mask], df["E_ref"].to_numpy()[mask], "0.55", ls="--", lw=1.8,
-            label=r"screened reference ($\phi=0$)")
+            label=r"conditional reference ($\phi_{\rm bg}=0$)")
     ax.plot(z[mask], df["E"].to_numpy()[mask], "black", lw=2.2, label=mode_label)
     ax.set_xlabel("$z$"); ax.set_ylabel(r"$E(z)=H/H_*$")
     ax.set_title("(a) Expansion history", fontweight="bold", loc="left")
@@ -533,7 +533,7 @@ def make_figure(df, summary, outpath, p):
     ax = axs[1]
     dl = (df["DL"]-df["DL_ref"])/df["DL_ref"].replace(0, np.nan)
     ax.plot(z[mask], dl.to_numpy()[mask], "black", lw=2.2, label=mode_label)
-    ax.axhline(0, color="0.55", ls="--", lw=1.2, label=r"screened reference")
+    ax.axhline(0, color="0.55", ls="--", lw=1.2, label=r"conditional reference")
     ax.set_xlabel("$z$"); ax.set_ylabel(r"$\Delta D_L/D_L^{\rm ref}$")
     ax.set_title("(b) Luminosity-distance shift", fontweight="bold", loc="left")
     ax.legend(frameon=True, fontsize=9, loc="upper right")

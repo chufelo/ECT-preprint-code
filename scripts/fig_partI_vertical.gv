@@ -1,0 +1,205 @@
+digraph PartI {
+  rankdir=TB;
+  fontname="Helvetica";
+  node [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", margin="0.08,0.04"];
+  edge [fontname="Helvetica", fontsize=8];
+  splines=true;
+  nodesep=0.06;
+  ranksep=0.04;
+  newrank=true;
+  labeljust=c;
+  ratio="1.15";
+
+  // LAYER 1: POSTULATES (dark grey)
+  node [fillcolor="#404040", fontcolor=white, style="rounded,filled"];
+  P1 [label=<P1<BR/>4D Euclidean<BR/>arena<BR/>§2>];
+  P2 [label=<P2<BR/>O(4) action<BR/>S<SUB>E</SUB>[Ψ]<BR/>§2>];
+  P3 [label=<P3<BR/>Condensate Φ<BR/>§2>];
+  P4 [label=<P4<BR/>Gradient<BR/>condensate<BR/>§2>];
+  P5 [label=<P5<BR/>Medium structure /<BR/>minimal gauge-<BR/>emergence route<BR/>§2>];
+  P6 [label=<P6<BR/>Non-uniform<BR/>ordering<BR/>§2>];
+
+  // LAYER 2: SSB HUB
+  node [fillcolor="#b8b8b8", fontcolor=black];
+  SSB [label=<SSB<BR/>O(4)→O(3), selects w<BR/>§3>, penwidth=1.5];
+
+  // LAYER 3: EARLY FOUNDATIONS
+  UC [label=<Universality Corollary §4.3<BR/>single χ ⇒ single<BR/>principal symbol>];
+  PX [label=<P(X) theorem<BR/>no orientation stiffness<BR/>Level A, §3>];
+  chi [label=<Single longitudinal χ<BR/>soft mode<BR/>Level B, §4>];
+  lorentz [label=<Lorentzian<BR/>metric<BR/>§3.6>];
+  cstar [label=<c* = √(β/(α−β))<BR/>Grav. const.<BR/>§5.3>];
+  topo_anti [label=<Topological anti-predictions<BR/>π<SUB>0</SUB>=π<SUB>1</SUB>=π<SUB>2</SUB>=0<BR/>No walls / strings / monopoles<BR/>§8>];
+  skyrmion [label=<Skyrmion / texture sectors<BR/>π<SUB>3</SUB>(S³) = ℤ<BR/>m<SUB>n</SUB> ~ n × 1.6 GeV<BR/>§8>];
+
+  // LAYER 4: BRANCHING HUB §6 (recovered as darker grey with thick dashed border)
+  node [fillcolor="#707070", fontcolor=white];
+  Branching [label=<Branching §6<BR/>Geometric / Coherent<BR/>decomposition>, penwidth=2.2, style="rounded,dashed,filled", fontsize=11];
+  geom_br [label=<Geometric<BR/>branch<BR/>§6.2>, penwidth=1.8, style="rounded,dashed,filled"];
+  coh_br [label=<Coherent<BR/>branch<BR/>§6.3>, penwidth=1.8, style="rounded,dashed,filled"];
+
+  // LAYER 5: SCALES, MATCHINGS
+  node [fillcolor="#ffffff", fontcolor=black, style="rounded,filled"];
+  KG [label=<Klein–Gordon<BR/>equation<BR/>§3.6>];
+  GE [label=<Euclidean corr.<BR/>G<SUB>E</SUB>(X, X′)<BR/>§5>];
+  NLO [label=<NLO / induced stiffness<BR/>κ<SUB>n</SUB> = C<SUB>n</SUB> u<SUB>0</SUB>²<BR/>M<SUB>G</SUB>² ~ φ<SUB>0</SUB>²<BR/>Level B, §5.1>];
+  GN [label=<G<SUB>N</SUB> = c*<SUP>4</SUP>/(8π M<SUB>G</SUB>²)<BR/>Grav. const.<BR/>§5.4>];
+  Ph1 [label=<c* ↔ c (matching)<BR/>Level B, §4.8>];
+  Ph2 [label=<M<SUB>G</SUB> ↔ M̄<SUB>Pl</SUB> (matching)<BR/>Level B, §5.4>];
+  S0 [label=<Action scale S<SUB>0</SUB><BR/>ECT precursor of ℏ<BR/>Level B, §5.6>];
+  LIV [label=<Planck-scale LIV<BR/>|δc/c| &lt; 10<SUP>−15</SUP><BR/>§10>];
+  second_law [label=<2nd law of thermodynamics<BR/>Level B under ohmic/Markov<BR/>closure · §3.9>];
+
+  // LAYER 6: GAUGE & MATTER
+  gauge [label=<Gauge architecture<BR/>U(1) bundle (A) · SU(2) structural (B+)<BR/>§7>];
+  parity [label=<Parity violation<BR/>Oriented condensate<BR/>→ SU(2)<SUB>L</SUB> selected<BR/>§9>];
+  dirac [label=<Dirac eq.<BR/>§9>];
+  fifth [label=<Director coupling<BR/>μ<SUB>5</SUB> ψ̄ γ<SUP>A</SUP> n<SUB>A</SUB> ψ<BR/>§7.6>];
+  neutrino [label=<Neutrino sector §8.9<BR/>one-chiral weak (B; embedded)<BR/>M<SUB>R</SUB><SUP>geom</SUP> = √(φ<SUB>0</SUB> v<SUB>2</SUB>)>];
+
+  // LAYER 7: ARCHITECTURES
+  cpt_arch [label=<Discrete-symmetry arch. §9.4<BR/>P, T, C · conditional CPT>];
+  anomaly_arch [label=<Anomaly architecture §9.5<BR/>EW anomaly inherited<BR/>(𝓛₅ preserves polynomial)>];
+  flavour_arch [label=<Flavour architecture §9.7<BR/>CKM/PMNS via<BR/>overlap + seesaw>];
+  common_origin [label=<Common pre-geometric<BR/>origin of interactions>];
+  boson_hier [label=<Hierarchical boson<BR/>spectrum (4 levels)>];
+
+  // LAYER 8: OPEN
+  node [fillcolor="#ffffff", style="rounded,dashed,filled", penwidth=1.5];
+  SU3 [label=<SU(3)<SUB>c</SUB> [OPEN]<BR/>dim su(3)=8 &gt; 6=dim so(4)<BR/>requires extended structure>];
+  threegen [label=<3 fermion generations<BR/>[OPEN]>];
+  threegold [label=<3 independent<BR/>Goldstone particles<BR/>[Not established]>];
+  S0hbar_open [label=<Strict identification<BR/>S<SUB>0</SUB> = ℏ<BR/>[OPEN matching]>];
+  cpt_open [label=<Discrete-symmetry · Anomaly · Flavour opens<BR/>OP-CPT1 · OP-P1 · OP-BRANCH1<BR/>OP-GUT6c · OP-Yukawa>];
+
+  // RANKS (strict portrait: max 2 nodes per rank)
+  {rank=same; P1; P2}
+  {rank=same; P3; P4}
+  {rank=same; P5; P6}
+  {rank=same; SSB}
+  {rank=same; UC; PX}
+  {rank=same; chi}
+  {rank=same; topo_anti; skyrmion}
+  {rank=same; lorentz; cstar}
+  {rank=same; GE}
+  {rank=same; Branching}
+  {rank=same; geom_br; coh_br}
+  {rank=same; KG}
+  {rank=same; NLO; GN}
+  {rank=same; S0}
+  {rank=same; Ph1; Ph2}
+  {rank=same; S0hbar_open}
+  {rank=same; LIV; second_law}
+  {rank=same; gauge}
+  {rank=same; parity; dirac}
+  {rank=same; fifth}
+  {rank=same; neutrino}
+  {rank=same; cpt_arch; anomaly_arch}
+  {rank=same; flavour_arch}
+  {rank=same; common_origin; boson_hier}
+  {rank=same; SU3; threegen}
+  {rank=same; threegold}
+  {rank=same; cpt_open}
+
+  // EDGES
+  P1 -> SSB; P2 -> SSB; P3 -> SSB; P4 -> SSB;
+  P2 -> PX; P4 -> PX;
+  P1 -> GE [style=dashed]; P2 -> GE [style=dashed];
+  P5 -> gauge;
+  P6 -> topo_anti [style=dashed];
+  P6 -> skyrmion [style=dashed];
+  P6 -> second_law [style=dashed];
+
+  SSB -> UC;
+  SSB -> lorentz;
+  SSB -> chi;
+  SSB -> topo_anti;
+  SSB -> skyrmion;
+  SSB -> Branching;
+  SSB -> parity;
+  SSB -> dirac [style=dashed];
+  SSB -> fifth;
+  SSB -> second_law [style=dashed];
+  SSB -> SU3 [style=dashed, color=gray50];
+  SSB -> gauge [style=dashed];
+
+  UC -> cstar;
+  lorentz -> UC;
+
+  lorentz -> KG;
+  lorentz -> dirac [style=dashed];
+
+  cstar -> Ph1;
+  cstar -> GN;
+  cstar -> LIV;
+
+  PX -> NLO;
+
+  NLO -> Ph2;
+  NLO -> GN;
+
+  GN -> LIV;
+
+  Branching -> geom_br;
+  Branching -> coh_br;
+  chi -> geom_br [style=dashed];
+  KG -> coh_br [style=dashed];
+
+  coh_br -> S0;
+  coh_br -> second_law [style=dashed];
+  S0 -> S0hbar_open [style=dashed];
+
+  chi -> threegold [style=dashed];
+
+  gauge -> parity;
+  gauge -> dirac [style=dashed];
+  gauge -> fifth [style=dashed];
+  gauge -> neutrino [style=dashed];
+  gauge -> SU3 [style=dashed, color=gray50];
+  gauge -> threegen [style=dashed, color=gray50];
+  gauge -> common_origin [style=dashed];
+  gauge -> boson_hier [style=dashed];
+  gauge -> cpt_arch [style=dashed];
+  gauge -> anomaly_arch;
+  gauge -> flavour_arch [style=dashed];
+
+  dirac -> fifth;
+  dirac -> neutrino;
+  dirac -> flavour_arch [style=dashed];
+  dirac -> anomaly_arch [style=dashed];
+
+  parity -> cpt_arch;
+  parity -> common_origin [style=dashed];
+
+  fifth -> cpt_arch;
+  fifth -> common_origin [style=dashed];
+
+  skyrmion -> boson_hier [style=dashed];
+
+  cpt_arch -> anomaly_arch;
+  cpt_arch -> cpt_open [style=dashed];
+  anomaly_arch -> flavour_arch;
+  anomaly_arch -> cpt_open [style=dashed];
+  flavour_arch -> cpt_open [style=dashed];
+
+  // LEGEND (placed right next to the final open node in same rank area)
+  node [shape=plaintext, style="", fillcolor=white];
+  legend [label=<
+    <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="3" CELLPADDING="5" COLOR="black">
+      <TR><TD COLSPAN="5"><B>Legend — Part I derivation logic</B></TD></TR>
+      <TR>
+        <TD BGCOLOR="#404040"><FONT COLOR="white">Postulate</FONT></TD>
+        <TD BGCOLOR="#b8b8b8">Level A (strict)</TD>
+        <TD BGCOLOR="#ffffff" BORDER="1">Level B (closure / matching)</TD>
+        <TD BGCOLOR="#707070" BORDER="1" STYLE="DASHED"><FONT COLOR="white">Branching hub §6</FONT></TD>
+        <TD BORDER="1" STYLE="DASHED">Open / not established</TD>
+      </TR>
+      <TR>
+        <TD COLSPAN="2"><B>Solid arrow:</B> strict derivation</TD>
+        <TD COLSPAN="3"><B>Dashed arrow:</B> assumption / embedding / matching</TD>
+      </TR>
+    </TABLE>
+  >];
+  {rank=same; legend; cpt_open}
+  legend -> cpt_open [style=invis, weight=100];
+}

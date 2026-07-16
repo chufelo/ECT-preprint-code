@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
 """
-ECT galactic-sector fitting pipeline v3d — phi-branch closure.
 
-Variational basis (GPT 2025):
-    Gamma_gal[Phi] = int d^3x [ K(|grad Phi|/g†, phi_env)/(8pi G_N) - rho_b Phi ]
-    Critical branch: K -> (2/3g†)|grad Phi|^3  (= Y_phi^{3/2})
-    EL equation: div[mu_phi(g/g†) grad Phi] = 4pi G_N rho_b
-    mu_phi(x) = x/(x+1)  <->  g = 0.5*(gN + sqrt(gN^2 + 4*gN*g†))
-    Deep regime: g = sqrt(gN * g†)  ->  BTFR v^4 = G_N M_bar g†
+SPARC galactic-sector fitting pipeline v3d — adopted phenomenological
+galactic closure (Level C).
+
+Proposal-copy convention (Round 58):
+    Gamma_gal[Phi_gal] = integral d^3x [
+        -rho_b Phi_gal - (g_dagger)^2 F(Y)/(8 pi G_N)]
+    Y = |grad Phi_gal|^2/(g_dagger)^2,
+    mu_gal = dF/dY.
+The fitted interpolation mu_gal(x)=x/(x+1) and the reference
+g_dagger=cH0/(2 pi) are adopted phenomenological inputs here; this
+generator does not derive them from the microscopic ECT action.
 
 WHAT'S NEW IN v3d (per GPT review):
   1. UGC02885 restored in five_galaxies_comparison.csv (name normalization added)
@@ -49,11 +53,11 @@ OUTPUTS (all in --output-dir, default=figures/sparc_v3/):
 All figures in GRAYSCALE (publication-ready).
 
 Usage:
-    python ect_sparc_fit_phi_branch.py MassModels_Lelli2016c.mrt
-    python ect_sparc_fit_phi_branch.py MassModels_Lelli2016c.mrt --error-floor 0
-    python ect_sparc_fit_phi_branch.py MassModels_Lelli2016c.mrt \\
+    python ect_sparc_fit_phi_branch.py ../data/MassModels_Lelli2016c.mrt
+    python ect_sparc_fit_phi_branch.py ../data/MassModels_Lelli2016c.mrt --error-floor 0
+    python ect_sparc_fit_phi_branch.py ../data/MassModels_Lelli2016c.mrt \\
            --selected NGC3198 NGC2403 DDO154 NGC6503 UGC02885
-    python ect_sparc_fit_phi_branch.py MassModels_Lelli2016c.mrt \\
+    python ect_sparc_fit_phi_branch.py ../data/MassModels_Lelli2016c.mrt \\
            --efe-mode proxy --gext-file gext_table.csv --alpha-ext 1.0
 """
 from __future__ import annotations
@@ -206,7 +210,7 @@ def g_newton_from_vbar2(vbar2_kms2, R_kpc):
     return vbar2_kms2 / np.maximum(R_kpc, 1e-9)
 
 def ect_g_obs(gN_kpc, gdagger_kpc):
-    """ECT phi-branch: g = 0.5*(gN + sqrt(gN^2 + 4*gN*g†)). (km/s)^2/kpc
+    """Adopted Level-C closure: g = 0.5*(gN + sqrt(gN^2 + 4*gN*g†)). (km/s)^2/kpc
     IMPORTANT: This formula must not be changed."""
     return 0.5 * (gN_kpc +
                   np.sqrt(np.maximum(gN_kpc**2 + 4.0*gN_kpc*gdagger_kpc, 0.0)))
@@ -548,12 +552,12 @@ def plot_rotation_curve(ax, sub, fit: GalaxyFit, h0=70.0,
                 label=f'ΛCDM  χ²={fit.chi2_red_lcdm:.1f}  AIC={fit.aic_lcdm:.0f}')
 
     ax.plot(Rmod, Vbar,    '--', color=BAR, lw=1.0, label=f'Baryons (Υ={UPS_DISK_FIXED})')
-    ax.plot(Rmod, V_2pi,   '-',  color=MG,  lw=1.0, label=r'ECT $g^\dagger_0=cH_0/2\pi$')
+    ax.plot(Rmod, V_2pi,   '-',  color=MG,  lw=1.0, label=r'Closure reference $g^\dagger_0=cH_0/2\pi$ (Level C)')
     if show_free:
         ax.plot(Rmod, V_ect_free, '-', color=DG, lw=1.2, alpha=0.6,
-                label=f'ECT free Υ={fit.ml_disk_best:.2f}  χ²={fit.chi2_red_free:.1f}')
+                label=f'Closure fit, free Υ={fit.ml_disk_best:.2f}  χ²={fit.chi2_red_free:.1f}')
     ax.plot(Rmod, V_ect_fix, '-', color=BK, lw=1.8,
-            label=f'ECT fixed Υ  χ²={fit.chi2_red_fixed:.1f}  AIC={fit.aic_fixed:.0f}')
+            label=f'Closure fit, fixed Υ  χ²={fit.chi2_red_fixed:.1f}  AIC={fit.aic_fixed:.0f}')
 
     # EFE proxy curve — shown only if real g_ext was loaded for this galaxy
     if fit.gdag_proxy_si > 0:
@@ -635,13 +639,13 @@ def plot_milky_way(out_path, h0=70.0):
     ax.plot(Rmod, V_lcdm_MW, LS_LCDM, color=DG, lw=1.4, zorder=4,
             label='LCDM NFW (Bland-Hawthorn+2016)')
     ax.plot(Rmod, V_2pi_MW,  '-', color=MG, lw=1.3, zorder=3,
-            label='ECT g†=cH0/2pi')
+            label='Closure reference g†=cH0/2pi (Level C)')
     ax.plot(Rmod, V_ect_MW,  '-', color=BK, lw=2.0, zorder=6,
-            label=f'ECT best-fit g†={g_best_si:.2e} m/s²  chi2_r={chi2_r_mw:.2f}')
+            label=f'Closure best fit g†={g_best_si:.2e} m/s²  chi2_r={chi2_r_mw:.2f}')
     ax.errorbar(R, Vob, yerr=eVo, fmt='o', ms=4.0, color=BK,
                 elinewidth=0.9, capsize=2.5, zorder=7, label='Eilers+2019')
     ax.set_xlabel('R (kpc)', fontsize=9); ax.set_ylabel('V (km/s)', fontsize=9)
-    ax.set_title(f'Milky Way rotation curve  ECT phi-branch\n'
+    ax.set_title(f'Milky Way rotation-curve fit — adopted Level-C galactic closure\n'
                  f'g†_fit={g_best_si:.2e} m/s²  '
                  f'= {g_best_si/(cH0_si(h0)/(2*math.pi)):.2f} x cH0/2pi  '
                  f'chi2_r = {chi2_r_mw:.2f}', fontsize=9)
@@ -665,7 +669,7 @@ def plot_sparc_gallery(df, fits, out_path, ncols=4, h0=70.0):
                             show_sens_band=False, show_free=False)
     for j in range(i+1, len(axes_flat)):
         axes_flat[j].set_visible(False)
-    fig.suptitle('ECT φ-branch rotation curves vs MOND vs ΛCDM  (fixed Υ_disk=0.5)',
+    fig.suptitle('Adopted Level-C galactic-closure fits vs MOND vs ΛCDM  (fixed Υ_disk=0.5)',
                  fontsize=9, y=1.002)
     fig.tight_layout()
     fig.savefig(out_path, dpi=150, bbox_inches='tight')
@@ -1246,7 +1250,7 @@ def save_results(fits, out_path, clean_path=None):
 # ── Main ──────────────────────────────────────────────────────────────────────
 def main():
     ap = argparse.ArgumentParser(
-        description='ECT SPARC rotation curve fitting — phi-branch v3d')
+        description='SPARC rotation-curve fitting — adopted Level-C closure v3d')
     ap.add_argument('input',
                     help='SPARC mass-model table (MassModels_Lelli2016c.mrt)')
     ap.add_argument('--h0',         type=float, default=70.0)
