@@ -1,0 +1,303 @@
+{
+  "input_freeze": {
+    "constants": {
+      "G_SI_m3_kgm1_s2": "6.67430e-11",
+      "G_relative_standard_uncertainty": "2.2e-5",
+      "Mpc_m": "3.0856775814913673e22",
+      "c_m_s": "299792458",
+      "hbar_GeV_s": "6.582119569e-25",
+      "hbar_SI_J_s": "1.054571817e-34",
+      "hbar_eV_s": "6.582119569e-16",
+      "hbarc_GeV_m": "1.973269804e-16",
+      "julian_year_s": "31557600"
+    },
+    "conventions": {
+      "dp": "E_G=(G/2) integral integral Delta_rho(r) Delta_rho(r')/|r-r'| d^3r d^3r'; tau=hbar/E_G; two sharp homogeneous spheres; d/R=1.",
+      "hubble": "reduced-Compton proxy xi=hbar*c/m_E=c/(zeta_H*H0_frequency), not h/(m*c).",
+      "neutrino": "phi0_actual=zeta_phi*Mbar_Pl; M_H=c_R sqrt(phi0_actual*v2); m_nu^(5)=|C5_eff|v2^2/(2 c_Lambda phi0_actual); Type-I and Weinberg terms are alternatives unless a common matching and subtraction prescription are supplied.",
+      "proton": "conditional dimension-six external-EFT NDA: tau=Lambda_B^4/(|C_B|^2*m_p^5), then GeV^-1 to seconds to Julian years.",
+      "radial": "declared unsourced-exterior-tail negative control: m_sigma=sqrt(2 lambda)*phi_infty; xi=sqrt(beta)*hbar*c/m_sigma."
+    },
+    "dp": {
+      "R_m": "1e-6",
+      "d_over_R": "1",
+      "rho_kg_m3": "2000"
+    },
+    "hubble": {
+      "H0_alternative_km_s_Mpc": "67.4",
+      "H0_km_s_Mpc": "70",
+      "Mbar_Pl_GeV": "2.4353e18",
+      "zeta_H": "1",
+      "zeta_phi": "1"
+    },
+    "neutrino": {
+      "Mbar_Pl_GeV": "2.4353e18",
+      "c_Lambda": "1",
+      "c_R": "1",
+      "targets_eV": [
+        "0.050",
+        "0.009"
+      ],
+      "v2_GeV": "246.21967",
+      "zeta_phi": "1",
+      "zeta_phi_sensitivity_test": "4"
+    },
+    "printed_rounding": {
+      "dp_fraction": "51/160",
+      "dp_tau_ms": "70.6 ms",
+      "heavy_GeV": "2.4487e10 GeV",
+      "hubble_mass_eV": "1.493e-33 eV",
+      "hubble_ratio": "6.131e-61",
+      "hubble_xi_m": "1.322e26 m",
+      "inverse_mD_GeV": [
+        "1.1065 GeV",
+        "0.4695 GeV"
+      ],
+      "inverse_yukawa": [
+        "6.355e-3",
+        "2.696e-3"
+      ],
+      "proton_years": "1.01e42 Julian yr",
+      "radial_decades": "52.731",
+      "radial_mass_GeV": "3.444e17 GeV",
+      "radial_ratio": "5.386e52",
+      "radial_xi_m": "5.730e-34 m",
+      "weinberg_eV": "1.2447e-5 eV",
+      "weinberg_required_ratio": "4.02e3"
+    },
+    "proton": {
+      "Lambda_B_GeV": "2.4353e18",
+      "abs_C_B": "1",
+      "m_p_GeV": "0.93827208816"
+    },
+    "radial": {
+      "beta": "1",
+      "kpc_m": "3.0856775814913673e19",
+      "lambda": "1e-2",
+      "phi_infty_GeV": "2.4353e18"
+    },
+    "seeds": {
+      "note": "No stochastic procedure is used.",
+      "random_seed": null
+    },
+    "thresholds": {
+      "dp_analytic_vs_quadrature_abs_coefficient_max": "1e-10",
+      "seesaw_leading_vs_exact_relative_max": "1e-14"
+    }
+  },
+  "owner_id": "R190_CONDITIONAL_BENCHMARK_RESULTS_V1",
+  "rows": [
+    {
+      "class": "conditional_scale_orientation",
+      "formula": "m_chi,E=zeta_H*hbar*H0; xi=c/(zeta_H*H0)",
+      "id": "HUBBLE_SOFT_SCALAR_ORIENTATION",
+      "inputs": {
+        "H0_alternative_km_s_Mpc": "67.4",
+        "H0_km_s_Mpc": "70",
+        "Mbar_Pl_GeV": "2.4353e18",
+        "zeta_H": "1",
+        "zeta_phi": "1"
+      },
+      "printed_output": "1.493e-33 eV; 1.322e26 m; 6.131e-61",
+      "results": {
+        "H0_s_inverse": "2.2685455026110555E-18",
+        "alternative_H0_67p4_mass_eV": "1.4377226629626766E-33",
+        "m_chi_energy_eV": "1.4931837745903169E-33",
+        "m_chi_over_phi0_actual": "6.1314161482787209E-61",
+        "xi_reduced_Compton_proxy_m": "1.3215183810725604E+26"
+      },
+      "sensitivity": "H0 and zeta_H are supplied; h/(m*c) is 2pi larger; no pole, state, abundance, dark-sector identity, or observable owner is supplied.",
+      "status_axes": {
+        "algebra_internal": "PASS_CONDITIONAL_ARITHMETIC_ONLY",
+        "data": "NOT_A_DATA_TEST",
+        "ect_specific": "OPEN_OR_NOT_IDENTIFIABLE",
+        "source_model": "CONDITIONAL_OR_EXTERNAL_EFT_ORIENTATION_ONLY"
+      }
+    },
+    {
+      "class": "conditional_scale_hypothesis_and_inverse_fit",
+      "formula": "M_H=c_R*sqrt(zeta_phi*Mbar_Pl*v2); m_D=sqrt(m_nu*(M_H+m_nu)); s_y=sqrt(2)*m_D/v2",
+      "id": "GEOMETRIC_SEESAW_AND_INVERSE_FITS",
+      "inputs": {
+        "Mbar_Pl_GeV": "2.4353e18",
+        "c_Lambda": "1",
+        "c_R": "1",
+        "targets_eV": [
+          "0.050",
+          "0.009"
+        ],
+        "v2_GeV": "246.21967",
+        "zeta_phi": "1",
+        "zeta_phi_sensitivity_test": "4"
+      },
+      "printed_output": "M_H=2.4487e10 GeV; s_y=6.355e-3, 2.696e-3; m_D=1.1065, 0.4695 GeV",
+      "results": {
+        "M_H_GeV": "2.4487114210355617E+10",
+        "inverse_fit_points": [
+          {
+            "exact_recovery_eV": "5.0000000000000000E-2",
+            "leading_vs_exact_relative": "2.0418902599333231E-21",
+            "m_D_GeV": "1.1065060824585561E+0",
+            "status": "INVERSE_FIT_TO_EXTERNALLY_SUPPLIED_TARGET",
+            "target_eV": "5.0000000000000000E-2",
+            "yukawa_singular_value": "6.3554463729937264E-3"
+          },
+          {
+            "exact_recovery_eV": "9.0000000000000000E-3",
+            "leading_vs_exact_relative": "3.6754024678799815E-22",
+            "m_D_GeV": "4.6945077259836367E-1",
+            "status": "INVERSE_FIT_TO_EXTERNALLY_SUPPLIED_TARGET",
+            "target_eV": "9.0000000000000000E-3",
+            "yukawa_singular_value": "2.6963875366867872E-3"
+          }
+        ],
+        "phi0_actual_GeV": "2.4353000000000000E+18"
+      },
+      "sensitivity": "c_R, zeta_phi, scale identification, supplied target, flavour, RG convention and UV operator remain external/Open; these are inverse fits, not forward predictions.",
+      "status_axes": {
+        "algebra_internal": "PASS_CONDITIONAL_ARITHMETIC_ONLY",
+        "data": "NOT_A_DATA_TEST",
+        "ect_specific": "OPEN_OR_NOT_IDENTIFIABLE",
+        "source_model": "CONDITIONAL_OR_EXTERNAL_EFT_ORIENTATION_ONLY"
+      }
+    },
+    {
+      "class": "conditional_external_EFT",
+      "formula": "m_nu^(5)=|C5_eff|*v2^2/(2*c_Lambda*zeta_phi*Mbar_Pl); required ratio=m_target/(v2^2/(2*Mbar_Pl))",
+      "id": "WEINBERG_UNIT_POINT_AND_REQUIRED_COEFFICIENT",
+      "inputs": {
+        "Mbar_Pl_GeV": "2.4353e18",
+        "c_Lambda": "1",
+        "c_R": "1",
+        "targets_eV": [
+          "0.050",
+          "0.009"
+        ],
+        "v2_GeV": "246.21967",
+        "zeta_phi": "1",
+        "zeta_phi_sensitivity_test": "4"
+      },
+      "printed_output": "1.2447e-5 eV; required ratio about 4.02e3",
+      "results": {
+        "required_abs_C5eff_over_cLambda_zeta_phi_for_0p050_eV": "4.0170476094312016E+3",
+        "unit_mnu_eV": "1.2446952304625488E-5",
+        "zero_C5eff_branch": "NO_MASS_FROM_THIS_OPERATOR"
+      },
+      "sensitivity": "operator normalisation, matching scale, flavour/threshold/RG matching and physical mass-operator owner are Open; Type-I and Weinberg terms are not added without common matching plus subtraction.",
+      "status_axes": {
+        "algebra_internal": "PASS_CONDITIONAL_ARITHMETIC_ONLY",
+        "data": "NOT_A_DATA_TEST",
+        "ect_specific": "OPEN_OR_NOT_IDENTIFIABLE",
+        "source_model": "CONDITIONAL_OR_EXTERNAL_EFT_ORIENTATION_ONLY"
+      }
+    },
+    {
+      "class": "conditional_negative_control",
+      "formula": "m_sigma=sqrt(2*lambda)*phi_infty; xi=sqrt(beta)*hbar*c/m_sigma",
+      "id": "HEAVY_RADIAL_NEGATIVE_CONTROL",
+      "inputs": {
+        "beta": "1",
+        "kpc_m": "3.0856775814913673e19",
+        "lambda": "1e-2",
+        "phi_infty_GeV": "2.4353e18"
+      },
+      "printed_output": "m=3.444e17 GeV; xi=5.730e-34 m; ratio=5.386e52; 52.731 decades",
+      "results": {
+        "decades": "5.2731231541679121E+1",
+        "m_sigma_GeV": "3.4440342884471984E+17",
+        "mass_to_kpc_gate_ratio": "5.3855683455991774E+52",
+        "one_kpc_energy_GeV": "6.3949319132891414E-36",
+        "xi_exterior_m": "5.7295300764548496E-34"
+      },
+      "sensitivity": "Excludes only the named unsourced exterior proxy; lambda, beta, source, mode identification and metric map are supplied/Open and this does not exclude a driven profile or distinct mode.",
+      "status_axes": {
+        "algebra_internal": "PASS_CONDITIONAL_ARITHMETIC_ONLY",
+        "data": "NOT_A_DATA_TEST",
+        "ect_specific": "OPEN_OR_NOT_IDENTIFIABLE",
+        "source_model": "CONDITIONAL_OR_EXTERNAL_EFT_ORIENTATION_ONLY"
+      }
+    },
+    {
+      "class": "conditional_external_EFT_NDA",
+      "formula": "tau=Lambda_B^4/(|C_B|^2*m_p^5)*hbar_GeV_s/Julian_year_s",
+      "id": "PROTON_UNIT_COEFFICIENT_NDA",
+      "inputs": {
+        "Lambda_B_GeV": "2.4353e18",
+        "abs_C_B": "1",
+        "m_p_GeV": "0.93827208816"
+      },
+      "printed_output": "about 1.01e42 Julian yr",
+      "results": {
+        "tau_Julian_years": "1.0088525357236033E+42",
+        "zero_C_B_branch": "NO_DECAY_THROUGH_THIS_OPERATOR"
+      },
+      "sensitivity": "Hadronic, RG, flavour, phase-space and normalization factors are omitted; no physical uncertainty interval or proton-lifetime prediction is supplied.",
+      "status_axes": {
+        "algebra_internal": "PASS_CONDITIONAL_ARITHMETIC_ONLY",
+        "data": "NOT_A_DATA_TEST",
+        "ect_specific": "OPEN_OR_NOT_IDENTIFIABLE",
+        "source_model": "CONDITIONAL_OR_EXTERNAL_EFT_ORIENTATION_ONLY"
+      }
+    },
+    {
+      "class": "conditional_external_geometry",
+      "formula": "E_G/(G*m^2/R)=x^2/2-3*x^3/16+x^5/160 for 0<=x<=2; tau=hbar/E_G",
+      "id": "DP_HARD_SPHERE_D_OVER_R_1",
+      "inputs": {
+        "R_m": "1e-6",
+        "d_over_R": "1",
+        "rho_kg_m3": "2000"
+      },
+      "printed_output": "51/160; 70.6 ms",
+      "results": {
+        "E_G_J": "1.4931145481616560E-33",
+        "geometry_coefficient": "3.1875000000000000E-1",
+        "geometry_coefficient_exact_fraction": "51/160",
+        "independent_quadrature_coefficient": "3.1875000000000010E-1",
+        "mass_kg": "8.3775804095727820E-15",
+        "quadrature_abs_error": "1.0000000000000000E-16",
+        "tau_ms": "7.0628996167668710E+1"
+      },
+      "sensitivity": "Sharp homogeneous-sphere profile, d/R, finite-size geometry, regularisation and factor-1/2 functional convention dominate; 38 ms is not obtained under this declared functional.",
+      "status_axes": {
+        "algebra_internal": "PASS_CONDITIONAL_ARITHMETIC_ONLY",
+        "data": "NOT_A_DATA_TEST",
+        "ect_specific": "OPEN_OR_NOT_IDENTIFIABLE",
+        "source_model": "CONDITIONAL_OR_EXTERNAL_EFT_ORIENTATION_ONLY"
+      }
+    }
+  ],
+  "schema": "ect.public.conditional-benchmark-registry.v1",
+  "scope": "Standalone public arithmetic owner for exactly six declared conditional/external benchmark rows. No manuscript, internal validation package, external dataset, likelihood, fit to data, or physical ECT owner is read or claimed.",
+  "status_axes_global": {
+    "algebra_internal": "PASS_CONDITIONAL_ARITHMETIC_ONLY",
+    "data": "NOT_A_DATA_TEST",
+    "ect_specific": "OPEN_OR_NOT_IDENTIFIABLE",
+    "source_model": "CONDITIONAL_OR_EXTERNAL_EFT_ORIENTATION_ONLY"
+  },
+  "verdict": "PASS_CONDITIONAL_ARITHMETIC_ONLY_NOT_A_DATA_TEST_NOT_AN_ECT_PREDICTION",
+  "verification": {
+    "edge_cases": {
+      "dp_x_0_is_zero": true,
+      "dp_x_2_is_continuous": true,
+      "dp_x_3_uses_separated_branch": true,
+      "hubble_reduced_vs_unreduced_factor": true,
+      "hubble_zero_zeta_branch": "MASSLESS_LIMIT_REQUIRES_SEPARATE_HANDLING",
+      "proton_zero_coefficient_branch": "NO_DECAY_THROUGH_THIS_OPERATOR",
+      "zeta_phi_4_heavy_over_unit_is_2": true,
+      "zeta_phi_4_weinberg_over_unit_is_1_over_4": true
+    },
+    "finite_precision": {
+      "dp_gate": "1e-10",
+      "dp_quadrature_abs_error": "1.0000000000000000E-16",
+      "seesaw_gate": "1e-14",
+      "seesaw_leading_vs_exact_relative_max": "2.0418902599333231E-21"
+    },
+    "nuisance_and_alternative_calibration": "Recorded per row. The H0=67.4 alternative is arithmetic-only; no calibration selection or data comparison is performed.",
+    "printed_rounding_firewall": "PASS: every declared public display string was regenerated by explicit half-up rounding.",
+    "result": "PASS_CONDITIONAL_ARITHMETIC_ONLY",
+    "row_count": 6,
+    "status_firewall": "PASS: all six rows are NOT_A_DATA_TEST and OPEN_OR_NOT_IDENTIFIABLE for ECT-specific closure.",
+    "units": "PASS: D-P E_G is J and tau is s; H0 is converted from km s^-1 Mpc^-1 to s^-1; proton GeV^-1 is converted with hbar; radial hbar*c maps GeV to m."
+  }
+}

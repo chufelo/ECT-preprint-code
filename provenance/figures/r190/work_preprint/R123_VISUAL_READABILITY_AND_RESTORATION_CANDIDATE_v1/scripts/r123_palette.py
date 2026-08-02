@@ -1,0 +1,27 @@
+"""Shared luminance-first R123 publication palette."""
+
+PAPER = "#FFFFFF"
+INK = "#222222"
+GRAPHITE = "#5E5E5E"
+GRID = "#D8D8D8"
+
+EXTERNAL_FILL = "#F4F4F4"
+EXTERNAL_EDGE = "#5E5E5E"
+LEVEL_A_FILL = "#D4E8F5"
+LEVEL_A_EDGE = "#2A6F97"
+LEVEL_B_FILL = "#BDDBC7"
+LEVEL_B_EDGE = "#397A54"
+LEVEL_C_FILL = "#E2BD65"
+LEVEL_C_EDGE = "#7A5A12"
+OPEN_FILL = "#D7A347"
+OPEN_EDGE = "#6E4B00"
+TENSION_FILL = "#D27A67"
+TENSION_EDGE = "#8C3B2A"
+
+# Comparison curves.  These are not claim-status colours.
+BARYON = "#5E5E5E"
+HRC0 = "#2A6F97"
+HRC3 = "#397A54"
+MOND = "#8A5D00"
+NFW = "#8C3B2A"
+DATA = "#111111"

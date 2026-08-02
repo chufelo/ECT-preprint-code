@@ -1,0 +1,25 @@
+{
+  "comparison_semantics": "Numerical equivalence across declared runtimes. This is neither byte identity nor a scientific uncertainty budget. JSON structure, status, booleans and text are exact; only the three declared runtime-version values are ignored, and numeric values use the explicit replay tolerances.",
+  "default_tolerance": {
+    "absolute": 1e-10,
+    "relative": 1e-08
+  },
+  "files": [
+    {
+      "format": "json",
+      "ignore_json_paths": [
+        "/runtime/numpy",
+        "/runtime/python",
+        "/runtime/scipy"
+      ],
+      "path": "data/cosmology_r103/R103_TWO_SLOPE_CALIBRATED_SCAN_v1.json"
+    },
+    {
+      "format": "csv",
+      "path": "data/cosmology_r103/R103_TWO_SLOPE_CALIBRATED_SCAN_v1.csv"
+    }
+  ],
+  "policy_id": "R103_RUNTIME_EQUIVALENCE_POLICY_v1",
+  "schema_version": 1,
+  "scientific_status_guard": "The scan remains Level A only inside each supplied calibrated action/state and Level C as a completion scan; it is not a fit, not a unique ECT prediction and not evidence that the still-Open physical completion has been selected."
+}

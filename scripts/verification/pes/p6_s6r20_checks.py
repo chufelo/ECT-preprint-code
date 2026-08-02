@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# P6 S6-R20 (Claude): Y2 P25-prime — exact approach-fingerprint law for the core-smoothing slope
+# P6 S6-R20: Y2 P25-prime — exact approach-fingerprint law for the core-smoothing slope
 # (universal asymptote + regulator-specific 1/R coefficients: a1 = int_0^inf (1-f(u))/u^2 du;
 # exponential regulator: a1 divergent -> exact log law (xi/R)[ln(R/2 xi)+1] from the C10 closed form);
 # Y3 width-slope == pair-slope identity => uniform sigma_pair assignment.
@@ -36,7 +36,7 @@ for r in (60.0, 100.0, 200.0):
     thv = math.log(r/2.0) + 1.0
     print('  exp      r = %4.0f: deficit*r = %.4f vs ln(r/2)+1 = %.4f (rel %.1e)' % (r, dr, thv, abs(dr/thv - 1)))
     assert abs(dr/thv - 1) < 0.02
-RR.append({'section':'Y2','case':'exp','value':'deficit*r = ln(r/2)+1','check':'C10 closed form','note':"GPT's fitted exponent 0.80 = log artifact; true p = 1 with log"})
+RR.append({'section':'Y2','case':'exp','value':'deficit*r = ln(r/2)+1','check':'C10 closed form','note':"legacy fitted exponent 0.80 is a finite-window logarithmic artifact; asymptotic p=1 with the displayed logarithm"})
 
 print('Y3 width-slope == pair-slope identity (uniform sigma_pair assignment):')
 x = np.arange(0.005, 6000.0, 0.005)
@@ -54,7 +54,7 @@ print('  pair c1 = %.6f | width Phi/(2|Delta d|) per (2piW)^2-units = %.6f (rel 
 RR.append({'section':'Y3','case':'sigma assignment','value':'rel %.1e'%abs(width_slope/pair_slope - 1),'check':'width == pair coefficient','note':'ALL certified P6-C formulas are pair-constructed => default sigma_dec = sigma_pair (zeta_0 = 2); sigma_face reserved for genuine single-sheet constructions (none in the ledger)'})
 assert abs(width_slope/pair_slope - 1) < 0.005
 
-with open(OUT/'p6_s6r20_claude_results.csv','w',newline='') as f:
+with open(OUT/'p6_s6r20_results.csv','w',newline='') as f:
     w_ = csv.DictWriter(f, fieldnames=['section','case','value','check','note']); w_.writeheader()
     for r in RR: w_.writerow(r)
-print('WROTE p6_s6r20_claude_results.csv')
+print('WROTE p6_s6r20_results.csv')

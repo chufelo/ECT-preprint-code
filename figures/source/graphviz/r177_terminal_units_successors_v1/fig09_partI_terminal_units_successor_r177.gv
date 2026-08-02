@@ -1,0 +1,245 @@
+/*
+ * R148 PUBLIC CANONICAL SEMANTIC SOURCE — PART I.
+ * Historical R141 source: fig09_partI_complete_r141.gv
+ * Frozen R141 source SHA-256: 509c8ea76dc938553c94d5cafd919a4504e7bbc706f90d1fe15bd710cb417249
+ * Historical R141 PDF: fig09_partI_complete_logic_r141.pdf
+ * Frozen R141 PDF SHA-256: dde85f45a161db164e7fe30db93aafd0065e9f9c74b2f29fd1ee6445d7349095
+ * Contract: canonical node/edge topology, status text, palette and styles.
+ */
+digraph PartI {
+  graph [labelloc=t, labeljust=c, fontname="STIX Two Math", label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="3" CELLPADDING="4" COLOR="#222222">
+      <TR><TD COLSPAN="3" BORDER="0"><FONT POINT-SIZE="16"><B>Complete derivation logic &#8212; Part I</B></FONT></TD></TR>
+      
+      <TR>
+        <TD BGCOLOR="#DCECF7" COLOR="#0072B2"><B>A</B>: exact only in declared model / assumptions</TD>
+        <TD BGCOLOR="#DDF2E9" COLOR="#009E73"><B>B / conditional</B>: closure route; literal node text controls status</TD>
+        <TD BGCOLOR="#FFF0D3" COLOR="#E69F00"><B>C</B>: fit / benchmark, not ECT discrimination</TD>
+      </TR>
+      <TR>
+        <TD BGCOLOR="#FBE9C9" COLOR="#D55E00"><B>Open</B>: dashed border + direct label</TD>
+        <TD BGCOLOR="#E8E8E8" COLOR="#5E5E5E"><B>External / structural</B>: neutral fill + direct label</TD>
+        <TD><B>Solid arrow</B>: dependency / organisation  &#183;  <B>Dashed</B>: conditional / Open</TD>
+      </TR>
+    </TABLE>
+  >];
+  rankdir=TB;
+  fontname="STIX Two Math";
+  node [fontname="STIX Two Math", fontsize=11, shape=box, style="rounded,filled", margin="0.06,0.03"];
+  edge [fontname="STIX Two Math", fontsize=8.5, color="#222222"];
+  splines=true;
+  nodesep=0.08;
+  ranksep=0.34;
+  newrank=true;
+  labeljust=c;
+
+  // === POSTULATES ===
+  node [fillcolor="#222222", fontcolor=white];
+  P1 [label=<P1<BR/>4D Euclidean<BR/>§2>];
+  P2 [label=<P2<BR/>O(4) action<BR/>§2>];
+  P3 [label=<P3<BR/>Condensate Φ<BR/>§2>];
+  P4 [label=<P4<BR/>Supplied nonzero-vector<BR/>chart<BR/>§2>];
+  P5 [label=<P5<BR/>Medium character /<BR/>gauge-completion programme<BR/>§2>];
+  P6 [label=<P6<BR/>Non-uniform<BR/>ordering<BR/>§2>];
+
+  // === PHENOMENOLOGICAL INPUTS ===
+  node [fillcolor="#E8E8E8", color="#5E5E5E", fontcolor="#222222", penwidth=1.3];
+  Ph2 [label=<Ph2<BR/>M<SUB>G</SUB> = M̄<SUB>Pl</SUB> (obs.)<BR/>§5.4>];
+  Ph1 [label=<Ph1<BR/>c<SUB>char</SUB> ↔ c<BR/>Open clock / photon matching<BR/>§4.8>];
+
+  // === LEVEL A ===
+  node [fillcolor="#DCECF7", color="#0072B2", fontcolor="#222222", penwidth=1.5];
+  SSB [label=<Supplied-vector stabiliser<BR/>O(4)→O(3) [A-math conditional]<BR/>physical state / spontaneous selection OPEN · §3>];
+  UC [label=<Strict-map integrability<BR/>one longitudinal χ coordinate<BR/>conditional kinematics [Level A] · §4.3>];
+  lorentz [label=<Supplied scalar principal operator<BR/>one cone [Level A conditional]<BR/>physical c<SUB>char</SUB> / cross-sector cones Open · §3.6>];
+  goldstone [label=<Physical one-mode EFT [Level B/Open]<BR/>requires supplied reduced action / domain / projector<BR/>§4>];
+  cstar [label=<ĉ* = √(β/(α−β))<BR/>supplied-operator slope [Level A conditional]<BR/>physical c<SUB>char</SUB> / cross-sector matching Open · §5.3>];
+  PX [label=<Homogeneous scalar P(X) seed<BR/>no independent transverse stiffness<BR/>A-math conditional · §3>];
+  KG [label=<Klein–Gordon<BR/>equation<BR/>§3.6>];
+  topo_anti [label=<Supplied S³ target [A-math conditional]<BR/>π<SUB>0</SUB> = π<SUB>1</SUB> = π<SUB>2</SUB> = 0<BR/>topological classes only; physical defects / relic absence OPEN<BR/>secondary sectors separate · §8>];
+  gauge [label=<Gauge-completion programme<BR/>global phase algebra exact;<BR/>local bundles / photon / charges Open<BR/>§7>];
+  schrodinger [label=<Schrödinger-type envelope<BR/>conditional state / operational S<SUB>0</SUB> map<BR/>physical owner Open · QS>];
+
+  // === LEVEL B ===
+  node [fillcolor="#DDF2E9", color="#009E73", fontcolor="#222222", penwidth=1.5];
+  NLO [label=<Candidate orientation stiffness<BR/>separate operator / origin Open<BR/>κ<SUB>n</SUB> → M<SUB>G</SUB>² Open<BR/>§5.1>];
+  S0EFT [label=<Fixed-core phase-only candidate S<SUB>0</SUB><SUP>EFT</SUP><BR/>A mathematics in supplied 1D core<BR/>4D reduction / nonzero value Open · §5.6>];
+  T1MODEL [label=<Supplied T1 one-dimensional loop model [B/Input]<BR/>compact &#952; on supplied closed carrier; K<SUB>&#952;</SUB><SUP>(1D)</SUP>, T<SUB>loop</SUB> &gt; 0<BR/>n &#8800; 0, L &gt; 0; carrier and 4D action owner Open · §5.6>,
+           fillcolor="#DDF2E9", color="#009E73", style="rounded,filled,bold", penwidth=1.6];
+  T1MIN [label=<Unique length minimum [A in supplied T1 only]<BR/>L<SUB>*</SUB>=&#960;|n|&#8730;(2K<SUB>&#952;</SUB>/T<SUB>loop</SUB>); S<SUB>n,min</SUB>=2&#960;|n|&#8730;(2K<SUB>&#952;</SUB>T<SUB>loop</SUB>)<BR/>n=0 has no finite interior minimum · §5.6>,
+         fillcolor="#DCECF7", color="#0072B2", style="rounded,filled", penwidth=1.6];
+  S0BAL [label=<Conditional definition S&#8320;,bal<SUP>eff</SUP> := &#8730;(2K<SUB>&#952;</SUB><SUP>(1D)</SUP>T<SUB>loop</SUB>)<BR/>multiwinding is linear / marginal; this is not operational S&#8320;<BR/>shape, splitting, unwinding, barrier, bending and subtraction remain Open · §5.6>,
+         fillcolor="#DDF2E9", color="#009E73", style="rounded,filled,bold", penwidth=1.6];
+  MBAL [label=<M<SUB>bal</SUB> owner / matching bridge [Open]<BR/>codimension-3 worldline reduction is not a derived spatial string loop<BR/>4D profile, stability and common owner are missing · §5.6>,
+        fillcolor="#FBE9C9", color="#D55E00", style="rounded,filled,dashed", penwidth=1.8];
+  S0 [label=<Operational action-unit slot S<SUB>0</SUB><BR/>input to conditional wave / canonical / PES formulae<BR/>map from either loop candidate Open · §5.6>];
+  S0HBAR [label=<Explicit empirical calibration S<SUB>0</SUB> = ℏ [Level B]<BR/>candidate-to-operational owner map Open<BR/>absolute derivation / universality Open · §5.6>];
+  GE [label=<Euclidean corr.<BR/>G<SUB>E</SUB>(X, X′)<BR/>§5>];
+  GN [label=<Conditional tensor-EFT normalisation<BR/>G<SUB>N</SUB><SUP>nat</SUP> = (8π M<SUB>G</SUB>²)<SUP>−1</SUP><BR/>after physical matching: G<SUB>N</SUB><SUP>SI</SUP> = ℏ c<SUP>5</SUP>/(8π (E<SUB>M_G</SUB>[J])²)<BR/>E<SUB>M_G</SUB> ≡ M<SUB>G</SUB>|<SUB>joule</SUB> (GeV→J)<BR/>owners Open · §5.4>];
+  einstein [label=<Linear Einstein target<BR/>supplied tensor completion<BR/>§6>];
+  dirac [label=<Supplied spinor / Dirac<BR/>conditional standard form<BR/>physical fermions Open · §9>];
+  second_law [label=<ECT thermodynamic<BR/>second-law theorem Open<BR/>§3.9>];
+  fifth [label=<Allowed director operator<BR/>μ₅ψ̄γ<SUP>A</SUP>n<SUB>A</SUB>ψ<BR/>coefficient / observable Open · §7.6>];
+  skyrmion [label=<Texture sectors<BR/>π<SUB>3</SUB>(S³) = ℤ labels<BR/>two-derivative E₂ ∝ R collapses<BR/>stabilising action/mass Open<BR/>§8>];
+  LIV [label=<Multi-messenger cone test<BR/>|c<SUB>GW</SUB>/c<SUB>γ</SUB>−1| ≲ 10<SUP>−15</SUP><BR/>external kill gate · §10>];
+  neutrino [label=<Neutrino model-building §8.8<BR/>seesaw operator / states supplied<BR/>geometric combinations are anchors only<BR/>masses / PMNS / Majorana status Open>];
+  unruh [label=<Standard Unruh/KMS target<BR/>A external; ECT state / detector Open<BR/>QS>];
+
+  // === OPEN ===
+  node [fillcolor="#FBE9C9", color="#D55E00", style="rounded,filled,dashed", fontcolor="#222222", penwidth=2];
+  SU3 [label=<SU(3)<SUB>c</SUB> [OPEN]<BR/>dim su(3)=8 &gt; 6=dim so(4)<BR/>requires extended structure>];
+  threegen [label=<3 generations<BR/>[OPEN]>];
+  cpt_open [label=<Discrete-symmetry · Anomaly · Flavour opens<BR/>OP-CPT1 · full nonlinear CPT<BR/>OP-P1 · exact max parity<BR/>OP-BRANCH1 · branch-pair cosmology<BR/>OP-GUT6c · mixed U(1)-grav (emergent)<BR/>OP-Yukawa · CKM/PMNS/CP phases/ν spectrum>];
+
+  // === NEW NODES from unification integration ===
+  node [fillcolor="#DCECF7", color="#0072B2", fontcolor="#222222", penwidth=1.5];
+  parity [label=<Vector stabiliser = SU(2)<SUB>diag</SUB><BR/>selects neither chiral factor<BR/>physical weak bundle / chirality Open · §9>];
+
+  node [fillcolor="#DDF2E9", color="#009E73", fontcolor="#222222", penwidth=1.5];
+  boson_hier [label=<Conditional boson inventory<BR/>completion targets only<BR/>§Discussion>];
+  common_origin [label=<Common-medium architecture<BR/>physical completions Open<BR/>§Discussion>];
+  cpt_arch [label=<Discrete-symmetry programme §9.4<BR/>Euclidean reflections exact;<BR/>physical P/T/CPT Open>];
+  anomaly_arch [label=<Anomaly consistency §9.5<BR/>checks only after supplied<BR/>representations>];
+  flavour_arch [label=<Flavour programme §9.7<BR/>overlap / seesaw ansätze supplied;<BR/>CKM / PMNS hierarchy Open>];
+
+  // === RANKS ===
+  {rank=same; P1; P2; P3; P4}
+  {rank=same; P5; P6; Ph2; Ph1}
+  {rank=same; lorentz; goldstone; GN; cstar}
+  {rank=same; S0EFT; T1MODEL}
+  {rank=same; T1MIN; S0BAL}
+  {rank=same; MBAL; S0}
+  {rank=same; S0HBAR; GE}
+  {rank=same; gauge; KG; einstein; unruh}
+  {rank=same; schrodinger; parity; dirac; second_law}
+  {rank=same; SU3; fifth; threegen; neutrino; common_origin}
+  {rank=same; boson_hier; cpt_arch; anomaly_arch; flavour_arch}
+  {rank=same; topo_anti; skyrmion; LIV; cpt_open}
+
+  // === EDGES ===
+  P1 -> SSB [style=dashed]; P2 -> SSB [style=dashed];
+  P3 -> SSB [style=dashed]; P4 -> SSB;
+  P6 -> SSB [style=dashed];
+  SSB -> UC;
+  UC -> lorentz [style=dashed, label="separate supplied operator"];
+  UC -> goldstone [style=dashed, label="requires action / domain / projector"];
+  UC -> cstar [style=dashed, label="separate supplied operator"];
+  UC -> S0EFT [style=dashed, label="supplied 1D fixed-core reduction"];
+  UC -> T1MODEL [style=dashed, label="supplied conditional model"];
+  T1MODEL -> T1MIN;
+  T1MIN -> S0BAL;
+  S0EFT -> S0 [style=dashed, label="owner map Open"];
+  S0BAL -> MBAL [style=dashed, label="owner not derived"];
+  MBAL -> S0 [style=dashed, label="owner map Open"];
+  S0 -> S0HBAR [style=dashed, label="empirical calibration [Level B]"];
+  UC -> PX;
+  PX -> NLO [style=dashed, label="separate operator; no P(X) derivation"];
+  NLO -> GN [style=dashed];
+  lorentz -> KG; lorentz -> einstein [style=dashed];
+  P5 -> gauge [style=dashed];
+  lorentz -> gauge [style=dashed];
+  cstar -> GN [style=dashed]; GN -> einstein [style=dashed, label="tensor completion missing"];
+  SSB -> topo_anti; SSB -> skyrmion;
+  P6 -> topo_anti [style=dashed];
+  P6 -> skyrmion [style=dashed];
+  gauge -> dirac [style=dashed];
+  dirac -> fifth [style=dashed]; dirac -> neutrino [style=dashed];
+  gauge -> neutrino [style=dashed];
+  einstein -> second_law [style=dashed];
+  cstar -> LIV [style=dashed]; GN -> LIV [style=dashed];
+  KG -> schrodinger [style=dashed, label="NR state + S0 match"];
+  lorentz -> unruh [style=dashed];
+  S0 -> KG [style=dashed, label="operational action unit"];
+
+  Ph1 -> cstar [style=dashed];
+  Ph2 -> GN [style=dashed];
+  P3 -> GE [style=dashed];
+  P4 -> lorentz [style=dashed];
+  SSB -> GE [style=dashed];
+  gauge -> SU3 [style=dashed, color="#222222"];
+  gauge -> threegen [style=dashed, color="#222222"];
+
+  // === NEW EDGES ===
+  gauge -> parity [style=dashed];
+  gauge -> common_origin [style=dashed];
+  parity -> common_origin [style=dashed];
+  fifth -> common_origin [style=dashed];
+  gauge -> boson_hier [style=dashed];
+  goldstone -> boson_hier [style=dashed];
+
+  // === F3: Discrete-symmetry architecture edges ===
+  parity -> cpt_arch [style=dashed];
+  fifth -> cpt_arch [style=dashed];
+  gauge -> cpt_arch [style=dashed];
+  cpt_arch -> cpt_open [style=dashed];
+  // === F4: Anomaly architecture edges ===
+  cpt_arch -> anomaly_arch [style=dashed];
+  gauge -> anomaly_arch [style=dashed];
+  anomaly_arch -> cpt_open [style=dashed];
+  // === F8: Flavour architecture edges ===
+  anomaly_arch -> flavour_arch [style=dashed];
+  dirac -> flavour_arch [style=dashed];
+  flavour_arch -> cpt_open [style=dashed];
+
+  // === LEGEND ===
+  node [shape=point, width=0, style=invis];
+  spacer1 [label=""];
+  topo_anti -> spacer1 [style=invis];
+  neutrino -> spacer1 [style=invis];
+  LIV -> spacer1 [style=invis];
+  SU3 -> spacer1 [style=invis];
+  threegen -> spacer1 [style=invis];
+  fifth -> spacer1 [style=invis];
+  cpt_open -> spacer1 [style=invis];
+  anomaly_arch -> spacer1 [style=invis];
+  flavour_arch -> spacer1 [style=invis];
+
+  node [shape=plaintext, style="", fillcolor=white];
+  legend [shape=point, width=0.01, height=0.01, label="", style=invis];
+  spacer1 -> legend [style=invis];
+
+  // R122 proposal-only unified-colour style overlay.
+  // Node/edge identities remain unchanged; authorised label guards, if any, were applied above.
+  GE [fillcolor="#DDF2E9", color="#009E73", fontcolor="#222222", style="rounded,filled,bold"];
+  GN [fillcolor="#DDF2E9", color="#009E73", fontcolor="#222222", style="rounded,filled,bold"];
+  KG [fillcolor="#DCECF7", color="#0072B2", fontcolor="#222222", style="rounded,filled"];
+  LIV [fillcolor="#E8E8E8", color="#222222", fontcolor="#222222"];
+  NLO [fillcolor="#FBE9C9", color="#E69F00", fontcolor="#222222", style="rounded,filled,dashed"];
+  P1 [fillcolor="#222222", color="#222222", fontcolor="white"];
+  P2 [fillcolor="#222222", color="#222222", fontcolor="white"];
+  P3 [fillcolor="#222222", color="#222222", fontcolor="white"];
+  P4 [fillcolor="#222222", color="#222222", fontcolor="white"];
+  P5 [fillcolor="#222222", color="#222222", fontcolor="white"];
+  P6 [fillcolor="#222222", color="#222222", fontcolor="white"];
+  PX [fillcolor="#DCECF7", color="#0072B2", fontcolor="#222222", style="rounded,filled"];
+  Ph1 [fillcolor="#E8E8E8", color="#222222", fontcolor="#222222"];
+  Ph2 [fillcolor="#E8E8E8", color="#222222", fontcolor="#222222"];
+  SSB [fillcolor="#DCECF7", color="#0072B2", fontcolor="#222222", style="rounded,filled"];
+  SU3 [fillcolor="#FBE9C9", color="#E69F00", fontcolor="#222222", style="rounded,filled,dashed"];
+  UC [fillcolor="#DCECF7", color="#0072B2", fontcolor="#222222", style="rounded,filled"];
+  anomaly_arch [fillcolor="#DDF2E9", color="#009E73", fontcolor="#222222", style="rounded,filled,bold,dashed"];
+  boson_hier [fillcolor="#DDF2E9", color="#009E73", fontcolor="#222222", style="rounded,filled,bold,dashed"];
+  common_origin [fillcolor="#FBE9C9", color="#E69F00", fontcolor="#222222", style="rounded,filled,dashed"];
+  cpt_arch [fillcolor="#DDF2E9", color="#009E73", fontcolor="#222222", style="rounded,filled,bold,dashed"];
+  cpt_open [fillcolor="#FBE9C9", color="#E69F00", fontcolor="#222222", style="rounded,filled,dashed"];
+  cstar [fillcolor="#DCECF7", color="#0072B2", fontcolor="#222222", style="rounded,filled"];
+  dirac [fillcolor="#DDF2E9", color="#009E73", fontcolor="#222222", style="rounded,filled,bold"];
+  einstein [fillcolor="#DDF2E9", color="#009E73", fontcolor="#222222", style="rounded,filled,bold"];
+  fifth [fillcolor="#DDF2E9", color="#009E73", fontcolor="#222222", style="rounded,filled,bold"];
+  flavour_arch [fillcolor="#FBE9C9", color="#E69F00", fontcolor="#222222", style="rounded,filled,dashed"];
+  gauge [fillcolor="#DDF2E9", color="#009E73", fontcolor="#222222", style="rounded,filled,bold"];
+  goldstone [fillcolor="#DDF2E9", color="#009E73", fontcolor="#222222", style="rounded,filled,bold,dashed"];
+  S0EFT [fillcolor="#FBE9C9", color="#E69F00", fontcolor="#222222", style="rounded,filled,dashed"];
+  S0BAL [fillcolor="#FBE9C9", color="#E69F00", fontcolor="#222222", style="rounded,filled,dashed"];
+  S0 [fillcolor="#FBE9C9", color="#E69F00", fontcolor="#222222", style="rounded,filled,dashed"];
+  S0HBAR [fillcolor="#DDF2E9", color="#009E73", fontcolor="#222222", style="rounded,filled,bold,dashed"];
+  lorentz [fillcolor="#DCECF7", color="#0072B2", fontcolor="#222222", style="rounded,filled"];
+  neutrino [fillcolor="#FBE9C9", color="#E69F00", fontcolor="#222222", style="rounded,filled,dashed"];
+  parity [fillcolor="#DCECF7", color="#0072B2", fontcolor="#222222", style="rounded,filled"];
+  schrodinger [fillcolor="#DDF2E9", color="#009E73", fontcolor="#222222", style="rounded,filled,bold"];
+  second_law [fillcolor="#FBE9C9", color="#E69F00", fontcolor="#222222", style="rounded,filled,dashed"];
+  skyrmion [fillcolor="#F5DDD7", color="#D55E00", fontcolor="#222222", style="rounded,filled,dotted"];
+  threegen [fillcolor="#FBE9C9", color="#E69F00", fontcolor="#222222", style="rounded,filled,dashed"];
+  topo_anti [fillcolor="#DCECF7", color="#0072B2", fontcolor="#222222", style="rounded,filled"];
+  unruh [fillcolor="#E8E8E8", color="#222222", fontcolor="#222222"];
+}

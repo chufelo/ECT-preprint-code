@@ -1,185 +1,282 @@
 % =============================================================================
-% APPENDIX: Technical details of Theorem 1 (Cosmological constant subsection)
-% Included via \input{App_CC_technical} in ECT_preprint.tex
+% Included live technical appendix for the conditional vacuum-offset
+% completions.  It is a status-separated supporting owner, not a standalone
+% derivation of the physical ECT late source.
 % =============================================================================
 
-\section{Technical details for the emergent unimodular decoupling
-theorem}
+\section{Technical Details for the Conditional Vacuum-Offset Completions}
 \label{app:cc_technical}
 
-This appendix collects the explicit derivations underlying the
-cosmological constant analysis of Section~\ref{sec:cc_problem}. We
-give (i) the rank-one determinant identity with the admissible-variation
-argument; (ii) the Jacobian cancellation identity for the classical
-baseline; (iii) the FRW reduction leading to the slow-branch equation
-of state; and (iv) the dimensional-consistency audit of the infrared
-scaling with the pseudo-Goldstone candidate.
+This appendix separates three calculations that were previously conflated:
+the exact rank-one determinant identity, the standard trace-free
+scalar--tensor completion, and the ordinary two-slope background completion.
+Only the first follows from the fixed-coefficient orientation ansatz.  The
+other two are explicitly supplied action-level completions whose relation to
+the microscopic $\Phi$ medium remains to be derived.
 
-
-\subsection{Rank-one determinant identity and fixed-determinant
-property}
+\subsection{Rank-one determinant identity and the non-converse}
 \label{app:rank1}
 
-The matrix determinant lemma states, for a symmetric $4\times 4$
-matrix $M$ and a 4-vector $n$,
+For an invertible matrix $M$, the determinant lemma gives
 \begin{equation}
-\det(M + c\,n n^{\mathsf T})
-\;=\; (1 + c\,n^{\mathsf T} M^{-1} n)\,\det M\,,
-\label{eq:matrix_det_lemma}
+ \det(M+c\,nn^{\mathsf T})
+ =\bigl(1+c\,n^{\mathsf T}M^{-1}n\bigr)\det M.
+ \label{eq:matrix_det_lemma}
 \end{equation}
-provided $M$ is invertible. Specialising to $M = \beta\,\delta$ and
-$c = -\alpha$:
+Taking $M=\beta I$, $c=-\alpha$, and $n^{\mathsf T}n=1$ yields
 \begin{align}
-\det(\beta\,\delta^{AB} - \alpha\,n^A n^B)
-&\;=\; \beta^4 \cdot \Bigl(1 - \tfrac{\alpha}{\beta}\,n^A
-\delta_{AB} n^B\Bigr)\,.
-\label{eq:K_det_general_app}
+ \det(\beta I-\alpha nn^{\mathsf T})
+ &=\beta^4\left(1-{\alpha\over\beta}n^{\mathsf T}n\right),
+ \label{eq:K_det_general_app}\\
+ \det K&=\beta^3(\beta-\alpha).
+ \label{eq:detK_app}
 \end{align}
-
-In the ordered branch the orientation field satisfies the
-constraint $n^A(x)\,\delta_{AB}\,n^B(x) = 1$, reflecting that $|n|$
-is not an independent degree of freedom (amplitude variation is
-described by the radial mode $\phi$). Substituting:
+For a tangent variation, $n\cdot\delta n=0$, and therefore
 \begin{equation}
-\det K^{AB} \;=\; \beta^4\left(1 - \tfrac{\alpha}{\beta}\right)
-\;=\; \beta^3(\beta - \alpha) \;=\; -\beta^3(\alpha - \beta)\,,
-\label{eq:detK_app}
+ \delta_n\det K=-2\alpha\beta^3n\cdot\delta n=0.
+ \label{eq:detK_tangent_app}
 \end{equation}
-independent of $n^A(x)$.
 
-From the densitized-metric identification $K^{AB} \propto
-\sqrt{-g_{\mathrm{eff}}}\,g_{\mathrm{eff}}^{AB}$ and
-$\det(\sqrt{-g}\,g^{\mu\nu}) = g$ in four dimensions,
+If the additional densitized-metric identification
+$K^{AB}=C_K\sqrt{-g}\,g^{AB}$ is imposed with constant $C_K$, then
 \begin{equation}
-\det K^{AB} \;=\; g_{\mathrm{eff}} \;<\; 0\,,
-\qquad
-\sqrt{-g_{\mathrm{eff}}} \;=\; \sqrt{-\det K^{AB}} \;=\;
-\sqrt{\beta^3(\alpha-\beta)} \;=\; \frac{\beta^2}{c_*}\,,
-\label{eq:sqrt_g_value_app}
+ \sqrt{-g}\propto\sqrt{-\det K}
+ =\sqrt{\beta^3(\alpha-\beta)}.
+ \label{eq:sqrt_g_value_app}
 \end{equation}
-using $c_*^2 = \beta/(\alpha-\beta)$.
-
-\paragraph{Vanishing variation on the constraint surface.} An
-admissible variation $\delta n^A$ preserves the normalization
-$n^A\delta_{AB}n^B=1$, hence $\delta_{AB} n^A \delta n^B = 0$. Differentiating
-\eqref{eq:K_det_general_app},
+This conclusion concerns the orientation submanifold at fixed amplitude and
+fixed $\alpha,\beta$.  It is not a derivation of a constrained metric action.
+The non-converse follows both from the degree-of-freedom mismatch and from
+the explicit determinant-preserving family
 \begin{equation}
-\frac{\partial(\det K)}{\partial n^A}
-\;=\; -2\alpha\beta^3\, \delta_{AB} n^B\,,
+ g_{\mu\nu}(s)=\operatorname{diag}
+ (-e^{3s},e^{-s},e^{-s},e^{-s}),\qquad \det g=-1.
+ \label{eq:fixed_det_counterfamily_app}
 \end{equation}
-hence
+All members have the same determinant, while their lapse and spatial
+response differ.  Similarly, a fixed determinant does not forbid FLRW
+expansion; in unimodular time,
 \begin{equation}
-\delta(\det K)
-\;=\; -2\alpha\beta^3\,(\delta_{AB} n^B \delta n^A) \;=\; 0\,,
+ ds^2=-a^{-6}(\tau)d\tau^2+a^2(\tau)d\mathbf x^2,
+ \qquad\det g=-1,
+ \label{eq:unimodular_flrw_app}
 \end{equation}
-so $\delta\sqrt{-g_{\mathrm{eff}}} = 0$ on admissible variations, as
-stated in Theorem~1(iii) of the main text.
+but the determinant constraint supplies no equation for $a(\tau)$.
 
-
-\subsection{Jacobian cancellation identity for the classical
-baseline}
+\subsection{Explicit constrained action and Bianchi reconstruction}
 \label{app:jacobian_cc}
 
-The fundamental ECT action is $S_E[q] = \int_M d^4 x_E\,
-\mathcal{L}_E(q,\partial q)$ with $q^a$ collectively denoting
-$\Phi$, $n^A$, and auxiliary fields. Crucially, the emergent metric
-$g_{\mathrm{eff}}^{AB}[q]$ is a functional of the condensate fields
-rather than an independent dynamical variable; there is no variation
-step ``by $g_{\mu\nu}$''.
+Consider the separately supplied action
+\begin{equation}
+ S_{\rm TF}=\int d^4x\left\{\sqrt{-g}\left[
+ {1\over2}f(q)R-{1\over2}K(q)(\partial q)^2-V(q)
+ +\mathcal L_m\right]
+ +\lambda(\sqrt{-g}-\epsilon_0)\right\}.
+ \label{eq:tracefree_action_app}
+\end{equation}
+The constraint is $\sqrt{-g}=\epsilon_0$.  Metric variation gives
+\begin{align}
+ fG_{\mu\nu}={}&T^m_{\mu\nu}
+ +K\left(\partial_\mu q\partial_\nu q
+ -{1\over2}g_{\mu\nu}(\partial q)^2\right)-Vg_{\mu\nu}
+ \nonumber\\
+ &+\nabla_\mu\nabla_\nu f-g_{\mu\nu}\Box f
+ +\lambda g_{\mu\nu}.
+ \label{eq:tracefree_metric_app}
+\end{align}
+The scalar equation is
+\begin{equation}
+ K\Box q+{1\over2}K_{,q}(\partial q)^2
+ +{1\over2}f_{,q}R-V_{,q}=0.
+ \label{eq:tracefree_scalar_app}
+\end{equation}
+Using this equation, $\nabla^\mu T^m_{\mu\nu}=0$, and the contracted
+Bianchi identity in the divergence of
+Eq.~\eqref{eq:tracefree_metric_app} gives
+$\partial_\nu\lambda=0$.  Writing $\lambda=-C_I$ reconstructs
+\begin{align}
+ fG_{\mu\nu}={}&T^m_{\mu\nu}
+ +K\left(\partial_\mu q\partial_\nu q
+ -{1\over2}g_{\mu\nu}(\partial q)^2\right)
+ -[V+C_I]g_{\mu\nu}\nonumber\\
+ &+\nabla_\mu\nabla_\nu f-g_{\mu\nu}\Box f,
+ \qquad \partial_\mu C_I=0.
+ \label{eq:tracefree_reconstructed_app}
+\end{align}
 
-Under the shift $\mathcal{L}_E \to \mathcal{L}_E + C$ for a
-field-independent constant $C\in\mathbb{R}$:
-(a) $\partial C/\partial q^a = \partial C/\partial(\partial_A q^a)
-= 0$, so every Euler--Lagrange equation is unchanged; (b) the
-classical solutions $q^a(x)$ are unchanged; (c) the emergent metric
-$g_{\mathrm{eff}}^{AB}[q(x)]$ is unchanged on each classical
-solution. Specialising to $C = V(\phi_0)$ establishes Theorem~1(iv).
+Under $V\to V+C_0$ and $C_I\to C_I-C_0$, both
+Eqs.~\eqref{eq:tracefree_scalar_app} and
+\eqref{eq:tracefree_reconstructed_app} are invariant.  Equivalently, in
+the Lagrange-multiplier form one shifts $\lambda\to\lambda+C_0$.  This is a
+classical change of representative in the pair $(V,C_I)$, not a calculation
+of the global datum $C_I$ and not yet a quantum non-renormalization theorem.
 
-The result is non-trivial in the ECT context precisely because
-$g_{\mathrm{eff}}$ is emergent. In standard general relativity with
-an independent $g_{\mu\nu}$, the same shift generates $C\sqrt{-g}$,
-whose variation produces $\sim C g_{\mu\nu}\sqrt{-g}$ -- the standard
-cosmological-constant source. That mechanism is unavailable here.
+For a constant scalar in vacuum, the trace and scalar equation give
+\begin{equation}
+ R={4(V+C_I)\over f},\qquad
+ V_{,q}-2{f_{,q}\over f}(V+C_I)=0.
+ \label{eq:tracefree_vacuum_balance_app}
+\end{equation}
+For $f=f_*e^{aq}$ and $V=V_1e^{bq}$,
+\begin{equation}
+ e^{bq_0}={2aC_I\over(b-2a)V_1},
+ \qquad {aC_I\over(b-2a)V_1}>0.
+ \label{eq:tracefree_exponential_root_app}
+\end{equation}
+The displayed inequality, together with a nonzero denominator, is the
+general sign/existence condition.  The frequently used branch
+$a,C_I,V_1>0$ and $b>2a$ is sufficient but not necessary.
+Thus the fixed-curvature root is the on-shell form of an integration-density
+floor.  The local field equations admit a continuum of $C_I$ values.  This
+is compatible with treating $C_I$ as a boundary/state datum of a particular
+condensate; ECT still has to derive the action and its observable coupling.
 
-
-\subsection{FRW reduction and equation of state}
+\subsection{Exact FLRW equations of the declared scalar--tensor action}
 \label{app:frw_cc}
 
-On an FRW background, spatial isotropy selects a single
-long-wavelength ordered-branch degree of freedom $q(t)$. The
-minimal homogeneous effective Lagrangian is
+For the Jordan action
 \begin{equation}
-L_{\mathrm{IR}}[q; a] \;=\; a^3 \left[
-\tfrac{1}{2} Z_q\, \dot q^2 - V_{\mathrm{IR}}(q) \right],
-\label{eq:frw_lagrangian_app}
+ S_J=\int d^4x\sqrt{-g}\left[
+ {1\over2}f(q)R-{1\over2}K(q)(\partial q)^2-V(q)-C_I\right]
+ +S_m[g,\psi]+S_r[g,A_\mu],
+ \label{eq:jordan_action_app}
 \end{equation}
-with infrared stiffness $Z_q$ and residual infrared potential
-$V_{\mathrm{IR}}(q)$. Crucially, $V_{\mathrm{IR}}(q)$ is the
-dynamical dressing of the potential around the ordered-branch
-minimum; it is not $V(\phi_0)$, which is decoupled by Theorem~1(iv).
-This distinction resolves the apparent tension between the
-decoupling theorem and the dark-energy picture used in
-Sec.~\ref{sec:mp_late_cosmology}.
-
-From \eqref{eq:frw_lagrangian_app},
+the flat-FLRW equations, with $v=\dot q$, are
 \begin{align}
-\rho_q &\;=\; \tfrac{1}{2} Z_q \dot q^2 + V_{\mathrm{IR}}(q)\,,
-\\
-p_q &\;=\; \tfrac{1}{2} Z_q \dot q^2 - V_{\mathrm{IR}}(q)\,,
-\\
-w_q &\;=\; \frac{r - 1}{r + 1}\,,
-\qquad r \equiv
-\frac{\tfrac12 Z_q \dot q^2}{V_{\mathrm{IR}}(q)}\,.
+ 3fH^2={}&\rho_m+\rho_r+{1\over2}Kv^2+V+C_I-3Hf_{,q}v,
+ \label{eq:frw_friedmann_app}\\
+ -2f\dot H={}&\rho_m+{4\over3}\rho_r+Kv^2+\ddot f-H\dot f,
+ \label{eq:frw_raychaudhuri_app}\\
+ K(\dot v+3Hv)+{1\over2}K_{,q}v^2+V_{,q}
+ -3f_{,q}(2H^2+\dot H)={}&0.
+ \label{eq:frw_scalar_app}
 \end{align}
-For $r \ll 1$ (slow-branch regime), $w_q \simeq -1 + 2r$,
-matching the linearised main-text relation $w_0 \simeq -1 +
-2\rho_{\mathrm{kin}}/\rho_{\mathrm{cond}}$ upon identification
-$\rho_{\mathrm{kin}}=\tfrac12 Z_q\dot q^2$ and
-$\rho_{\mathrm{cond}}=V_{\mathrm{IR}}(q)$.
+The last two equations form
+\begin{equation}
+ \begin{pmatrix}2f&f_{,q}\\-3f_{,q}&K\end{pmatrix}
+ \begin{pmatrix}\dot H\\\dot v\end{pmatrix}
+ =
+ \begin{pmatrix}
+ -[\rho_m+\tfrac43\rho_r+Kv^2+f_{,qq}v^2-Hf_{,q}v]\\
+ -3KHv-\tfrac12K_{,q}v^2-V_{,q}+6f_{,q}H^2
+ \end{pmatrix}.
+ \label{eq:frw_response_matrix_app}
+\end{equation}
+For $f=f_*e^{aq}$ and $K=\kappa f$ the determinant is
+\begin{equation}
+ \Delta_{Hv}=2fK+3f_{,q}^2
+ =2f^2\left(\kappa+{3a^2\over2}\right).
+ \label{eq:frw_response_det_app}
+\end{equation}
+These equations belong to the declared completion.  They are not generated
+by Eq.~\eqref{eq:detK_app}.
 
-\subsection{Dimensional audit of the infrared scaling}
+Here $C_I$ is simply a declared constant term in an ordinary Jordan action.
+It must not be identified with the integration datum of the trace-free
+completion unless a single constrained action deriving that identification
+is supplied.
+
+\subsection{Two-slope ordinary completion}
 \label{app:ir_audit_cc}
 
-The observed $\rho_\Lambda$ has dimensions mass$^4$. After blocking
-the direct UV channel (Theorem~1), the scale $M_{\mathrm{Pl}}^4$ is
-not available as a direct source. Available infrared scales are the
-emergent gravitational stiffness $M_{\mathrm{Pl}}^2$ (from the
-Sakharov/Adler induced-gravity mechanism~\cite{Sakharov1967,Adler1982})
-and the Hubble scale $H_0$ (only dimensionful IR curvature/time
-scale).
-
-Dimensionally consistent combinations of mass$^4$ from
-$\{M_{\mathrm{Pl}}^2, H_0\}$ without directly invoking
-$M_{\mathrm{Pl}}^4$ are $M_{\mathrm{Pl}}^2 H_0^2$, $M_{\mathrm{Pl}}
-H_0^3$, and $H_0^4$. With $M_{\mathrm{Pl}}/H_0 \sim 10^{60}$, these
-evaluate to $10^{-47}$, $10^{-107}$, $10^{-167}\,\mathrm{GeV}^4$
-respectively; only the first matches observation at the
-order-of-magnitude level.
-
-\paragraph{Pseudo-Goldstone realization.} For a pseudo-Goldstone
-$\theta$ of mass $m_G$ and decay constant $f_G$, the natural infrared
-energy density is $\rho_G \sim m_G^2 f_G^2$, obtained from
-$V_G(\theta) \sim m_G^2\theta^2$ at $\theta \sim f_G$. Using the ECT
-values $m_G \sim H_0$ and $f_G \sim \phi_0 \sim M_{\mathrm{Pl}}$
-(Sec.~\ref{subsec:goldstone_cc}),
+Let
 \begin{equation}
-\rho_G \;\sim\; m_G^2 f_G^2 \;\sim\; H_0^2 M_{\mathrm{Pl}}^2\,,
+ f=f_*e^{aq},\qquad K=\kappa f,\qquad
+ V=V_-e^{cq}+V_+e^{bq},\qquad C_I=0,\qquad 0<c<2a<b.
+ \label{eq:two_slope_app}
 \end{equation}
-reproducing the IR scaling with $c_\Lambda = O(1)$ via independent
-inputs: $m_G$ comes from the pseudo-Goldstone (dark-matter-candidate)
-sector, $f_G$ from the gravitational SSB scale. Neither is tuned
-here.
+For $V_\pm>0$, the constant-field balance has the unique root
+\begin{equation}
+ e^{(b-c)q_{\rm vac}}
+ ={(2a-c)V_-\over(b-2a)V_+},
+ \label{eq:two_slope_root_app}
+\end{equation}
+and its restoring derivative is
+\begin{equation}
+ \mathcal E_{,q}(q_{\rm vac})
+ =(2a-c)(b-c)V_-e^{cq_{\rm vac}}>0.
+ \label{eq:two_slope_restoring_app}
+\end{equation}
+The Einstein-frame potential
+\begin{equation}
+ \mathcal U_E\propto
+ V_-e^{(c-2a)q}+V_+e^{(b-2a)q}
+ \label{eq:two_slope_einstein_app}
+\end{equation}
+diverges at both ends and is strictly convex.  If $f>0$,
+$\kappa+3a^2/2>0$, and the solution is on an expanding branch
+with nonnegative dust and radiation, it has one global minimum, confines
+each finite-energy future trajectory in that branch, and supplies a regular
+de-Sitter endpoint.
 
-\paragraph{Scope.} The estimate $\rho_G \sim H_0^2 M_{\mathrm{Pl}}^2$
-is a consistency check, not a derivation. Upgrading it to a
-prediction requires a first-principles derivation of $m_G$ from ECT
-parameters (Open Problem~O4) and an analysis of the cosmological
-evolution of the Goldstone condensate. The holographic bound of
-Cohen--Kaplan--Nelson~\cite{CohenKaplanNelson1999} states
-$\rho \lesssim M_{\mathrm{Pl}}^2/L_{\mathrm{IR}}^2$; the ECT estimate
-saturates this bound with $L_{\mathrm{IR}}\sim H_0^{-1}$, which is an
-independent phenomenological consistency check.
+In this normalisation $\kappa+3a^2/2>0$ is equivalently the statement that
+the Einstein-frame scalar kinetic coefficient is positive.
+
+This result regularizes the ordinary scalar dynamics without a literal
+constant floor.  It does not possess the shift covariance of the trace-free
+completion: adding $C_0$ to $V$ changes both the Friedmann equation and the
+scalar trace balance.
+
+The frozen near-GR benchmark quoted in the main text directly integrates
+Eqs.~\eqref{eq:frw_friedmann_app}--\eqref{eq:frw_scalar_app} and gives
+\begin{equation}
+ \tau_{2s}\equiv H_{2s}(0)\Delta t=0.96368677864.
+ \label{eq:two_slope_age_app}
+\end{equation}
+The dimensionless interval is owned by that calibrated action and state.
+Converting it to Gyr with a measured $H_0$ does not import a
+$\Lambda$CDM expansion history; it supplies the single dimensional scale of
+the already fixed orbit.  It also does not make the number a unique ECT
+prediction, because the action coefficients,
+state and physical metric have not been selected by the microscopic theory.
+
+\subsection{Why $\bar M_{\rm Pl}^2H_0^2$ is not a determination}
+
+Choose a physical metric and a fixed reference Planck calibration,
+and define
+\begin{equation}
+ \rho_{c,0}^{\rm GR\,ref}\equiv3\bar M_{\rm Pl}^2H_0^2,\qquad
+ \Omega_{\rm late,0}^{\rm GR\,ref}
+ \equiv\frac{\rho_{\rm late,0}^{(\rm GR\,ref)}}
+ {\rho_{c,0}^{\rm GR\,ref}} .
+ \label{eq:late_source_identity_app}
+\end{equation}
+Then
+$\rho_{\rm late,0}^{(\rm GR\,ref)}
+=3\Omega_{\rm late,0}^{\rm GR\,ref}\bar M_{\rm Pl}^2H_0^2$ is a
+definition, not an identity of every physical Friedmann model.  For the
+supplied scalar--tensor action, the present model-native bookkeeping instead
+obeys
+\begin{equation}
+ 3\bar M_{\rm Pl}^2F_0H_0^2
+ =\rho_{m0}+\rho_{r0}+U_0
+ +\frac{\bar M_{\rm Pl}^2}{2}\omega_0\dot\phi_0^2
+ -3\bar M_{\rm Pl}^2H_0\dot F_0
+ +\rho_{n0},
+ \label{eq:late_source_scalar_tensor_app}
+\end{equation}
+where $\rho_{n0}$ is present only after a separate orientation action is
+supplied.  Dimensional analysis can motivate candidate operators but cannot
+select the coefficient, sign, state, microscopic carrier, physical metric or
+Cavendish/Planck matching.  In particular, the current ECT action derives no
+soft-mode operator, mass, state or abundance that can be assigned to the
+observed late source.  Writing
+$H_{0,E}:=\hbar H_0^{(\mathrm{freq})}$ to distinguish frequency and
+natural-unit energy conventions, the separately named C/Open orientation
+hypothesis $m_{\chi,E}=\zeta_HH_{0,E}$ is not selected by this action and
+does not identify a carrier of that source.  No Planck-scale field excursion,
+numerical infrared-density scaling, abundance or cosmological-role inference
+is retained.
+
+\paragraph{External-Euclidean guard.}
+No spherical boundary is assumed.  A local determinant constraint does not
+fix a global integration datum, and determinant-preserving metrics are not
+unique.  Any proposed external owner must state the condensate domain,
+boundary conditions, state and response operator and reproduce the same
+local limit for nonspherical domains.  The internal Lorentzian age and an
+external Euclidean formation duration also remain distinct until an explicit
+clock map relates them.
 
 % =============================================================================
-% END OF APPENDIX App_CC_technical
+% END R103 PROPOSAL-ONLY APPENDIX
 % =============================================================================

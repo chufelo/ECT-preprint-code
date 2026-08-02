@@ -1,0 +1,579 @@
+{
+  "assumptions": [
+    {
+      "ect_status": "S0 framework exists; S0=hbar only Level B matching; generator/clock map Open",
+      "id": "A0",
+      "text": "Positive action scale S0 and declared physical time generator G"
+    },
+    {
+      "ect_status": "MISSING / NOT IDENTIFIABLE for 47C",
+      "id": "A1",
+      "text": "Physical Hermitian operators after constraint/gauge reduction"
+    },
+    {
+      "ect_status": "MISSING STATE",
+      "id": "A2",
+      "text": "Positive stationary state for the declared generator"
+    },
+    {
+      "ect_status": "MISSING VERTEX / transfer",
+      "id": "A3",
+      "text": "Same operator, vertex, projector, normalization and form factor in response and noise arms"
+    },
+    {
+      "ect_status": "unexecuted",
+      "id": "A4",
+      "text": "Linear response and probe-independent preparation"
+    },
+    {
+      "ect_status": "external benchmark assumption",
+      "id": "A5",
+      "text": "Canonical KMS with one T or explicitly declared generalized-KMS alternative"
+    },
+    {
+      "ect_status": "must be frozen",
+      "id": "A6",
+      "text": "Common angular-frequency, two-sided-spectrum, clock and signed-frequency forward model"
+    },
+    {
+      "ect_status": "extra model assumption; ECT ownership Open",
+      "id": "A7",
+      "text": "Gaussian/two-point truncation only if the pair is used as a complete influence functional"
+    },
+    {
+      "ect_status": "Open; possible DOUBLE-COUNTED branches",
+      "id": "A8",
+      "text": "Resolved/unresolved split, counterterms and initial-correlation prescription"
+    }
+  ],
+  "conventions": {
+    "fourier": "integral dt exp(+i omega t)",
+    "passive_sign": "Im D^R(omega)<=0 for omega>0",
+    "retarded_analytic_half_plane": "Im omega > 0",
+    "temperature_units": "energy; SI uses T=k_B Theta"
+  },
+  "date": "2026-07-21",
+  "definitions": {
+    "direct_ordered_identifiability": "theta=T/S0=omega/ln(S_+/S_-)",
+    "dissipation": "A(omega)=Im_H D^R(omega)",
+    "fdt_temperature": "T_eff=S0 omega/[2 artanh(D/S_H)] with D=-S0 v^dagger A v",
+    "fourier": "K_tilde(omega)=integral dt exp(+i omega t) K(t)",
+    "kms_fdt": "S_H=-S0 coth(S0 omega/(2T)) A",
+    "live_noise_dictionary": "S_H(omega)=S0 N^(S)(omega)",
+    "ordered_temperature": "T_eff=S0 omega/ln(S_+/S_-)",
+    "response_noise_identifiability": "q=S_H/(-Im D^R)=S0 coth[omega/(2 theta)]",
+    "retarded": "D^R_ab(t)=-(i/S0) theta(t) <[delta F_a(t),delta F_b(0)]>",
+    "symmetrized": "N_ab(t)=(1/(2 S0)) <{delta F_a(t),delta F_b(0)}>",
+    "wightman": "C^>=S_H-S0 A >=0; C^<=S_H+S0 A >=0"
+  },
+  "expected_publication_outputs": {
+    "pdf": {
+      "path": "figures/r114/r114_pes_m1_same_channel_fdt_protocol.pdf",
+      "sha256": "303d5d5c398f3c9713e0c25661154e0fbd1696504491f1f048022e09ffb27e69"
+    },
+    "png": {
+      "canonical_rgba": {
+        "height": 1068,
+        "mode": "RGBA",
+        "raw_pixel_sha256": "a8b64361de9f0382c2acd7f6866cb735e022cf6d50282a58e31bf30752593429",
+        "width": 2592
+      },
+      "path": "figures/r114/r114_pes_m1_same_channel_fdt_protocol.png",
+      "sha256": "1202821f4c5731210b22bc9365ee1de343472306cceebcf8991503303d1b0377"
+    }
+  },
+  "figure_payload": {
+    "active_example": {
+      "C_greater": 1.0,
+      "C_less": 1.8,
+      "S_H": 1.4,
+      "d_signed": -0.4,
+      "formal_T_eff": -7.825968628883429,
+      "guard": "gain/inversion requires a separate physical interpretation",
+      "omega": 2.0
+    },
+    "classification": "synthetic standard open-system/source-model algebra only; no experimental data and no ECT prediction",
+    "conventions": {
+      "S0": 2.3,
+      "dissipative_spectrum": "d = -S0 Im D^R",
+      "fourier": "integral dt exp(+i omega t)",
+      "passive_sign": "Im D^R(omega) <= 0 for omega > 0",
+      "temperature_units": "energy; SI kelvin requires T = k_B Theta"
+    },
+    "converse_guard": {
+      "channel_A_T_eff": 4.7,
+      "channel_B_T_eff": 7.3,
+      "conclusion": "one-channel FDT pass does not establish a global common KMS state"
+    },
+    "filter_guard": {
+      "conclusion": "same congruence filter preserves FDT; mismatch fakes violation",
+      "mismatched_filter_T_eff_band_spread": 5.498842730337092,
+      "rows": [
+        {
+          "T_eff_mismatched_filters": 4.712666372134608,
+          "T_eff_same_filter": 4.700000000000001,
+          "omega": 0.35
+        },
+        {
+          "T_eff_mismatched_filters": 4.750664313108417,
+          "T_eff_same_filter": 4.7,
+          "omega": 0.7
+        },
+        {
+          "T_eff_mismatched_filters": 4.848888204957433,
+          "T_eff_same_filter": 4.700000000000001,
+          "omega": 1.2
+        },
+        {
+          "T_eff_mismatched_filters": 5.15602929901825,
+          "T_eff_same_filter": 4.700000000000002,
+          "omega": 2.1
+        },
+        {
+          "T_eff_mismatched_filters": 5.75874357934382,
+          "T_eff_same_filter": 4.700000000000002,
+          "omega": 3.2
+        },
+        {
+          "T_eff_mismatched_filters": 6.970885069069869,
+          "T_eff_same_filter": 4.700000000000001,
+          "omega": 4.7
+        },
+        {
+          "T_eff_mismatched_filters": 10.2115091024717,
+          "T_eff_same_filter": 4.700000000000003,
+          "omega": 7.5
+        }
+      ],
+      "same_filter_max_abs_T_eff_error": 2.6645352591003757e-15
+    },
+    "non_equilibrium_two_bath_counterexample": {
+      "T_eff_band_spread": 3.641975368819562,
+      "bath_temperatures": [
+        1.4,
+        9.0
+      ],
+      "guard": "ordinary passive nonequilibrium; not ECT evidence",
+      "rows": [
+        {
+          "S_H_total": 4.140981848131721,
+          "T_eff": 4.312456509385814,
+          "d_total": 0.38537714262321243,
+          "omega": 0.35
+        },
+        {
+          "S_H_total": 4.144949412075475,
+          "T_eff": 4.491965661109341,
+          "d_total": 0.7349604608204793,
+          "omega": 0.7
+        },
+        {
+          "S_H_total": 4.146961628317089,
+          "T_eff": 4.9061068491293796,
+          "d_total": 1.136645981983732,
+          "omega": 1.2
+        },
+        {
+          "S_H_total": 4.11239518161008,
+          "T_eff": 5.849580115775273,
+          "d_total": 1.6074942513499226,
+          "omega": 2.1
+        },
+        {
+          "S_H_total": 3.957064988493428,
+          "T_eff": 6.844657637117726,
+          "d_total": 1.9437249585183134,
+          "omega": 3.2
+        },
+        {
+          "S_H_total": 3.432430829091836,
+          "T_eff": 7.604577768619896,
+          "d_total": 2.0977326458829646,
+          "omega": 4.7
+        },
+        {
+          "S_H_total": 1.9097229969500493,
+          "T_eff": 7.954431878205376,
+          "d_total": 1.5178262560424727,
+          "omega": 7.5
+        }
+      ]
+    },
+    "nonthermal_occupation_bump_counterexample": {
+      "T_eff_band_spread": 9.813657737370281,
+      "guard": "positive spectra do not imply KMS",
+      "rows": [
+        {
+          "S_H": 0.02436132380893552,
+          "T_eff": 4.700013223170218,
+          "d": 0.0020811712366364723,
+          "occupation": 5.352791778995458,
+          "omega": 0.35
+        },
+        {
+          "S_H": 0.026404583185066,
+          "T_eff": 4.70035571773307,
+          "d": 0.004478444149559448,
+          "occupation": 2.447963880230979,
+          "omega": 0.7
+        },
+        {
+          "S_H": 0.033017847239425746,
+          "T_eff": 4.713990344040549,
+          "d": 0.00939885754691936,
+          "occupation": 1.2564819487155605,
+          "omega": 1.2
+        },
+        {
+          "S_H": 0.09467110615439646,
+          "T_eff": 5.9124892728302205,
+          "d": 0.03665306349247367,
+          "occupation": 0.7914487512597164,
+          "omega": 2.1
+        },
+        {
+          "S_H": 3.7845586634113086,
+          "T_eff": 14.513657737828979,
+          "d": 0.9395424836601303,
+          "occupation": 1.5140433930501926,
+          "omega": 3.2
+        },
+        {
+          "S_H": 0.026342461301371516,
+          "T_eff": 5.559385717643728,
+          "d": 0.019748481801207682,
+          "occupation": 0.16694902338671397,
+          "omega": 4.7
+        },
+        {
+          "S_H": 0.0022575964709705874,
+          "T_eff": 4.700000000458698,
+          "d": 0.0021454463471672985,
+          "occupation": 0.026136781269632918,
+          "omega": 7.5
+        }
+      ],
+      "wightman_positivity": "PASS"
+    },
+    "status": "PASS",
+    "thermal_limits": {
+      "ground_state_S_H_equals_minus_S0_Im_D_R_error": 0.0,
+      "high_T_classical_relative_error": 1.5869949628433133e-05
+    },
+    "thermal_oscillator_benchmark": {
+      "input_temperature": 4.7,
+      "max_abs_T_eff_error_FDT": 1.7763568394002505e-15,
+      "max_abs_T_eff_error_detailed_balance": 1.7763568394002505e-15,
+      "max_abs_omitted_S0_error_from_T_over_S0": 4.440892098500626e-16,
+      "omitting_S0_returns": "T/S0 in these ledger units",
+      "rows": [
+        {
+          "C_greater": 0.026442426840591716,
+          "C_less": 0.022280084367318768,
+          "Im_D_R": -0.000904857059407162,
+          "S_H": 0.024361255603955242,
+          "T_eff_FDT": 4.699999999999999,
+          "T_eff_detailed_balance": 4.699999999999998,
+          "minus_S0_Im_D_R": 0.0020811712366364727,
+          "omega": 0.35
+        },
+        {
+          "C_greater": 0.030881067612524852,
+          "C_less": 0.021924179313405952,
+          "Im_D_R": -0.0019471496302432387,
+          "S_H": 0.026402623462965402,
+          "T_eff_FDT": 4.7,
+          "T_eff_detailed_balance": 4.699999999999999,
+          "minus_S0_Im_D_R": 0.004478444149559449,
+          "omega": 0.7
+        },
+        {
+          "C_greater": 0.04232410359794601,
+          "C_less": 0.023526388504107286,
+          "Im_D_R": -0.004086459803008419,
+          "S_H": 0.032925246051026646,
+          "T_eff_FDT": 4.700000000000001,
+          "T_eff_detailed_balance": 4.700000000000002,
+          "minus_S0_Im_D_R": 0.009398857546919362,
+          "omega": 1.2
+        },
+        {
+          "C_greater": 0.11415616837325637,
+          "C_less": 0.04085004138830902,
+          "Im_D_R": -0.01593611456194508,
+          "S_H": 0.0775031048807827,
+          "T_eff_FDT": 4.700000000000002,
+          "T_eff_detailed_balance": 4.700000000000002,
+          "minus_S0_Im_D_R": 0.03665306349247368,
+          "omega": 2.1
+        },
+        {
+          "C_greater": 2.375244937921113,
+          "C_less": 0.49615997060085215,
+          "Im_D_R": -0.4084967320261437,
+          "S_H": 1.4357024542609826,
+          "T_eff_FDT": 4.7,
+          "T_eff_detailed_balance": 4.700000000000001,
+          "minus_S0_Im_D_R": 0.9395424836601305,
+          "omega": 3.2
+        },
+        {
+          "C_greater": 0.04389814040055645,
+          "C_less": 0.004401176798141088,
+          "Im_D_R": -0.008586296435307688,
+          "S_H": 0.02414965859934877,
+          "T_eff_FDT": 4.700000000000001,
+          "T_eff_detailed_balance": 4.7,
+          "minus_S0_Im_D_R": 0.019748481801207682,
+          "omega": 4.7
+        },
+        {
+          "C_greater": 0.0044030428180966644,
+          "C_less": 0.00011215012376206753,
+          "Im_D_R": -0.000932802759637956,
+          "S_H": 0.002257596470929366,
+          "T_eff_FDT": 4.699999999999999,
+          "T_eff_detailed_balance": 4.699999999999999,
+          "minus_S0_Im_D_R": 0.0021454463471672985,
+          "omega": 7.5
+        }
+      ]
+    }
+  },
+  "forbidden_inferences": [
+    "An FDT pass in one channel proves global KMS thermality.",
+    "An FDT violation discriminates ECT from ordinary nonequilibrium physics.",
+    "A common window or bin cancels from a pointwise FDT ratio.",
+    "Several diagonal projections determine a response/noise matrix.",
+    "Pointwise FDT and positivity imply causality or Kramers--Kronig consistency.",
+    "S0 is automatically identifiable from reconstructed ordered spectra.",
+    "The synthetic curves are experimental data or ECT signals.",
+    "Current omega^3 and omega^9 results already form a same-channel ECT prediction."
+  ],
+  "owner_id": "ECT-PES-M1-SAME-CHANNEL-FDT-R120-scoped-public-owner-v2",
+  "owner_scope": {
+    "complete_protocol_serialization": false,
+    "excluded": [
+      "a lossless copy of the full prose protocol note",
+      "an experimental data package",
+      "an ECT operator, state, vertex, normalization, time generator or transfer function"
+    ],
+    "included": [
+      "the complete plotted synthetic figure payload",
+      "all machine outputs of the accepted M1-v2 numerical verifier, including v1_source_model_regression",
+      "decisive finite-window, S0-identifiability, matrix-completeness, causality/KK, generalized-generator and initial-correlation guards",
+      "claim-to-payload and manuscript-label mapping"
+    ],
+    "scope_guard": "This bundle owns the R114 figure payload and decisive machine gates. It does not claim to replace the full accepted prose protocol."
+  },
+  "protocol_gates": {
+    "S0_identifiability_gate": {
+      "classification": "one-bin identifiability counterexample",
+      "conclusion": "direct S+/S- identifies T/S0; reconstructing S+/S- from S_H and D^R requires S0, so response+symmetrised-noise needs an S0 match or a broad-band joint fit with covariance",
+      "degenerate_rows": [
+        {
+          "S0": 0.5,
+          "T": 0.978807594485609,
+          "predicted_q": 2.0000000000000004,
+          "reconstructed_C_greater": 2.5,
+          "reconstructed_C_less": 1.5,
+          "theta_equals_T_over_S0": 1.957615188971218
+        },
+        {
+          "S0": 1.0,
+          "T": 0.9102392266268373,
+          "predicted_q": 2.0,
+          "reconstructed_C_greater": 3.0,
+          "reconstructed_C_less": 1.0,
+          "theta_equals_T_over_S0": 0.9102392266268373
+        }
+      ],
+      "direct_ordered_spectra": {
+        "input_theta": 1.7,
+        "ordered_ratio": 1.8008077137563978,
+        "recovered_theta_without_S0": 1.7
+      },
+      "omega": 1.0,
+      "q_equals_S_H_over_minus_Im_D_R": 2.0
+    },
+    "causality_KK_gate": {
+      "D_of_t_at_t_minus_1": 0.10984782236693061,
+      "KK_mismatch": 0.5641895835477563,
+      "KK_required_Re_D_at_zero": -0.5641895835477563,
+      "assigned_Re_D_at_zero": 0.0,
+      "classification": "pointwise-FDT but noncausal synthetic response",
+      "conclusion": "pointwise FDT and positivity do not imply retarded support or KK consistency; tails, subtractions, and contact terms must be frozen",
+      "fake_response": "D(omega)=-i omega exp(-omega^2), assigned ReD=0",
+      "max_pointwise_FDT_temperature_error": 0.0,
+      "minimum_Wightman_margin": 0.0008631590336697428
+    },
+    "classification": "deterministic synthetic standard open-system regression only; no data and no ECT-specific prediction",
+    "conventions": {
+      "fourier": "integral dt exp(+i omega t)",
+      "passive_sign": "Im D^R(omega)<=0 for omega>0",
+      "retarded_analytic_half_plane": "Im omega > 0",
+      "temperature_units": "energy; SI uses T=k_B Theta"
+    },
+    "finite_window_forward_convolution_gate": {
+      "S0": 1.0,
+      "bin_centre": 2.0,
+      "binned_S_H": 3.268744806721165,
+      "binned_dissipation": 2.0,
+      "binned_ratio": 1.6343724033605824,
+      "classification": "exact two-line finite-bin source-model counterexample",
+      "conclusion": "a common finite window/bin is necessary but does not preserve pointwise FDT; forward-convolve the model",
+      "coth_at_bin_centre": 1.3130352854993315,
+      "direct_ordered_two_line_bin": {
+        "binned_C_greater": 2.0,
+        "binned_C_less": 0.4176665095393063,
+        "naive_bin_centre_Teff": 1.2769604911787709
+      },
+      "dissipative_weights": [
+        1.0,
+        1.0
+      ],
+      "forward_convolved_recovered_temperature": 1.0,
+      "line_frequencies": [
+        1.0,
+        3.0
+      ],
+      "naive_pointwise_Teff": 1.4047271025726755,
+      "true_temperature": 1.0
+    },
+    "generalized_Gibbs_generator_gate": {
+      "Omega_m": 0.3,
+      "S0omega": 5.0,
+      "T": 2.0,
+      "classification": "generalized-Gibbs detailed-balance guard",
+      "conclusion": "freeze the time generator, frame, and conserved charges before classifying a channel as non-KMS",
+      "correct_generalized_T": 2.0,
+      "generator_gap": 3.5,
+      "mu_q": 1.2,
+      "naive_canonical_Teff": 2.857142857142857,
+      "ordered_ratio": 5.754602676005731
+    },
+    "initial_correlation_guard": "For an influence-functional interpretation, freeze factorized preparation/switching or include correlated-state initial-slip and boundary kernels; a bare-bath Gibbs state is not automatic at strong coupling.",
+    "matrix_informational_completeness_gate": {
+      "C_greater_eigenvalues": [
+        1.1,
+        1.9
+      ],
+      "C_less_eigenvalues": [
+        0.09999999999999998,
+        0.9
+      ],
+      "S_H": [
+        [
+          1.0,
+          0.4
+        ],
+        [
+          0.4,
+          1.0
+        ]
+      ],
+      "classification": "exact Wightman-positive 2x2 projection counterexample",
+      "conclusion": "e1/e2 alone falsely accept one temperature; full matrices or an informationally complete preregistered projection set are required",
+      "dissipation_matrix": [
+        [
+          0.5,
+          0.0
+        ],
+        [
+          0.0,
+          0.5
+        ]
+      ],
+      "informationally_complete_reconstruction": {
+        "input_H12": [
+          0.4,
+          0.2
+        ],
+        "reconstructed_H12": [
+          0.3999999999999999,
+          0.19999999999999996
+        ],
+        "required_2x2_projectors": [
+          "e1",
+          "e2",
+          "plus",
+          "plus_i"
+        ]
+      },
+      "projections": {
+        "e1": {
+          "S_H": 1.0,
+          "T_eff_for_S0omega_equals_1": 0.9102392266268373,
+          "dissipation": 0.5,
+          "ratio": 0.5
+        },
+        "e2": {
+          "S_H": 1.0,
+          "T_eff_for_S0omega_equals_1": 0.9102392266268373,
+          "dissipation": 0.5,
+          "ratio": 0.5
+        },
+        "minus": {
+          "S_H": 0.5999999999999999,
+          "T_eff_for_S0omega_equals_1": 0.4170323914242463,
+          "dissipation": 0.4999999999999999,
+          "ratio": 0.8333333333333334
+        },
+        "plus": {
+          "S_H": 1.3999999999999997,
+          "T_eff_for_S0omega_equals_1": 1.3383039694505456,
+          "dissipation": 0.4999999999999999,
+          "ratio": 0.35714285714285715
+        },
+        "plus_i": {
+          "S_H": 0.9999999999999998,
+          "T_eff_for_S0omega_equals_1": 0.9102392266268373,
+          "dissipation": 0.4999999999999999,
+          "ratio": 0.5
+        }
+      }
+    },
+    "status": "PASS",
+    "v1_source_model_regression": {
+      "active_signed_Teff": -7.825968628883429,
+      "classification": "v1 synthetic source-model replay; no ECT claim",
+      "common_filter_max_error": 2.6645352591003757e-15,
+      "ground_state_assigned_saturation_error": 0.0,
+      "high_T_classical_relative_error": 1.5869949628433133e-05,
+      "mismatched_filter_false_spread": 5.498842730337092,
+      "negative_frequency_mirror_max_error": 0.0,
+      "occupation_bump_Teff_spread": 9.813657737370281,
+      "omitted_S0_returns_T_over_S0_max_error": 4.440892098500626e-16,
+      "retarded_poles": [
+        [
+          3.1920800428560687,
+          -0.225
+        ],
+        [
+          -3.1920800428560687,
+          -0.225
+        ]
+      ],
+      "thermal_FDT_max_error": 1.7763568394002505e-15,
+      "thermal_ordered_max_error": 1.7763568394002505e-15,
+      "two_bath_Teff_spread": 3.641975368819562,
+      "wording_guard": "FDT and ordered formulas are algebraically equivalent inversions, not statistically independent reconstructions"
+    }
+  },
+  "revision": "v2: adds the complete accepted v2 source-model regression and narrows semantic ownership",
+  "schema": "ECT_PES_M1_PUBLIC_PROTOCOL_PAYLOAD_v2",
+  "scientific_scope": "Same-channel KMS/FDT standard algebra, declared synthetic source models, and protocol guards only; no experimental data, no ECT-specific signal, no derived ECT operator/state/vertex, no global-KMS proof, and no ECT discrimination.",
+  "status_axes": {
+    "ect_channel": "Open: MISSING VERTEX / MISSING STATE / NOT IDENTIFIABLE",
+    "ect_discrimination": false,
+    "experimental_data": false,
+    "measurement_architecture": "Level B conditional protocol",
+    "standard_algebra": "Level A external conditional mathematics under frozen assumptions",
+    "synthetic_examples": "Level A inside declared synthetic models"
+  },
+  "supersession": {
+    "current_protocol": "M1 v2",
+    "predecessor": "M1 v1",
+    "predecessor_disposition": "SUPERSEDED for protocol interpretation; central algebra and synthetic baseline retained"
+  }
+}

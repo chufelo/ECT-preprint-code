@@ -1,0 +1,74 @@
+{
+  "all_checks_pass": true,
+  "assumptions": [
+    "alpha>beta>0",
+    "unit director n.n=1",
+    "tilt represented without loss of generality in one spatial direction"
+  ],
+  "checks": {
+    "comoving_director_source_has_no_tilt_change_exact_samples": true,
+    "delta_gww_and_fixed_ratio_exact_samples": true,
+    "determinant_tilt_independent_from_rank_one_eigenvalues": true,
+    "inverse_matches_Sherman_Morrison_exact_samples": true,
+    "quadratic_action_coefficient_from_binomial_series": true
+  },
+  "date": "2026-07-20",
+  "interpretation_guard": "The same exact metric admits a fixed-background worldline with a q^2 action change and a source co-moving with the local director with no change. Therefore the metric algebra alone does not select a universal matter-density record vertex, screening charge or gravitational mass channel.",
+  "results": {
+    "comoving_director_norm": "-1",
+    "delta_g_ww": "alpha*q^2/[beta*(alpha-beta)]",
+    "det_G_contravariant": "beta^3*(beta-alpha)",
+    "exact_rational_samples": [
+      {
+        "alpha": "2",
+        "beta": "1",
+        "comoving_director_norm": "-1",
+        "delta_g_ww": "0",
+        "fixed_proper_time_squared": "1",
+        "g_ww": "-1",
+        "inverse_product_P_coefficient": "0",
+        "q_squared": "0"
+      },
+      {
+        "alpha": "2",
+        "beta": "1",
+        "comoving_director_norm": "-1",
+        "delta_g_ww": "18/25",
+        "fixed_proper_time_squared": "7/25",
+        "g_ww": "-7/25",
+        "inverse_product_P_coefficient": "0",
+        "q_squared": "9/25"
+      },
+      {
+        "alpha": "5",
+        "beta": "2",
+        "comoving_director_norm": "-1",
+        "delta_g_ww": "5/24",
+        "fixed_proper_time_squared": "3/8",
+        "g_ww": "-1/8",
+        "inverse_product_P_coefficient": "0",
+        "q_squared": "1/4"
+      },
+      {
+        "alpha": "7",
+        "beta": "3",
+        "comoving_director_norm": "-1",
+        "delta_g_ww": "4/21",
+        "fixed_proper_time_squared": "5/21",
+        "g_ww": "-5/84",
+        "inverse_product_P_coefficient": "0",
+        "q_squared": "16/49"
+      }
+    ],
+    "fixed_worldline_Delta_L_over_m_leading_coefficient_in_q2": "alpha/(2*beta)",
+    "fixed_worldline_d_tau_over_d_tau0": "sqrt(1-alpha*q^2/beta)",
+    "g_ww": "-1/(alpha-beta)+alpha*q^2/[beta*(alpha-beta)]",
+    "inverse_metric": "g=I/beta-alpha*P/[beta*(alpha-beta)]",
+    "projector_identity": "P=n*n^T; P^2=P for n.n=1"
+  },
+  "runtime": {
+    "arithmetic": "stdlib Fraction",
+    "python": "3.13.5"
+  },
+  "status": "Level A exact metric algebra; PARAMETRIC ONLY physical density vertex because the realised matter current/worldline convention is not derived"
+}

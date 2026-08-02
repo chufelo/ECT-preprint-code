@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# P6 S6-R19 (Claude): S2 spectral-weight SUM RULE for C13' (Z + int rho_cont = 1, joint normalization);
+# P6 S6-R19: S2 spectral-weight SUM RULE for C13' (Z + int rho_cont = 1, joint normalization);
 # S3 P24 certification (g^2_crit prop Delta); S4 T_eff thermometer spot-check.
-# KERNEL NOTE (honesty log): the first version used the naive KK kernel 1/(w'-w); the correct bosonic
+# KERNEL CORRECTION RECORD: the first version used the naive KK kernel 1/(w'-w); the correct bosonic
 # dispersion for D(w) = w^2 - Om0^2 + Sigma is Sigma'(w) = (2/pi) P int w' Sigma''(w')/(w'^2 - w^2) dw'
 # (mirror term included). All numbers below use the corrected kernel; R18 B/C numbers re-quoted separately.
 import csv, math
@@ -69,7 +69,7 @@ Text = w/math.log((1 + nB)/nB)
 print('  extract at omega = %.1f: T_eff = %.6f (true 0.7)' % (w, Text))
 assert abs(Text - T) < 1e-12
 
-with open(OUT/'p6_s6r19_claude_results.csv','w',newline='') as f:
+with open(OUT/'p6_s6r19_results.csv','w',newline='') as f:
     w_ = csv.DictWriter(f, fieldnames=['section','case','value','check','note']); w_.writeheader()
     for r in RR: w_.writerow(r)
-print('WROTE p6_s6r19_claude_results.csv')
+print('WROTE p6_s6r19_results.csv')

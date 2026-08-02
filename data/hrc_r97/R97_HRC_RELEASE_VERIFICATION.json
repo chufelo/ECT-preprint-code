@@ -1,0 +1,60 @@
+{
+  "pass": true,
+  "status": "HRC_LEVEL_C_PUBLICATION_STATIC_INTEGRITY_PASS",
+  "scientific_scope": "LEVEL_C_CONDITIONAL_PUBLICATION_CALCULATION",
+  "note": "Generator rerun reproducibility is a separate clean-copy release gate.",
+  "environment": {
+    "python": "3.12.6",
+    "numpy": "2.1.2",
+    "scipy": "1.14.1",
+    "matplotlib": "3.9.3"
+  },
+  "publication_script_sha256": {
+    "scripts/hrc/compute_r97_hrc_udg.py": "bf69f716cbadbb41ff37e06297b0ae5f703f242e9e8b025a6bb11f62ef6b8281",
+    "scripts/hrc/external_inputs.py": "edce5ba971d0811a33b60de82fdbcb05c609edf19c3fce28954b4a47536d0bdd",
+    "scripts/hrc/make_r97_hrc_completion_figures.py": "fff850ed5eda29a400b63287b4b61ec26d7cfe31d3edf079c31e01e6db5fe57b",
+    "scripts/hrc/make_r97_hrc_only_figures.py": "410faf81933711b003d010ead7e842bed8164a18952952c1a09a6bdc161b9377",
+    "scripts/hrc/verify_hrc_release.py": "1d2910bf08dc5dc0eac1ec5326fd28bae3df1cf98ebb0a4b3a891446e74c49b2"
+  },
+  "manifest_path_and_hash_gate": true,
+  "external_input_contract": {
+    "environment_variable": "ECT_EXTERNAL_INPUT_ROOT",
+    "declared_inputs": 5,
+    "hashes_verified": true,
+    "redistributed_by_repository": false
+  },
+  "exact_figure_ownership": {
+    "only": 6,
+    "completion": 12,
+    "total": 18,
+    "directory_set_equality": true
+  },
+  "source_projection": {
+    "point_rows": 16715,
+    "regime_rows": 10
+  },
+  "common_ML_transfer_CV": {
+    "fold_rows": 50,
+    "test_points_per_seed": 3342,
+    "mean_test_chi2": {
+      "HRC0": 109439.94612570092,
+      "HRC3": 103763.46189891428
+    },
+    "max_abs_difference_from_frozen_R75": 0.00012073556717950851
+  },
+  "old_response_law_hits": [],
+  "max_relative_residual": {
+    "HRC0_analytic": 6.146975840429666e-16,
+    "HRC3_bisection": 6.878622704600729e-16
+  },
+  "signed_gas_gate": true,
+  "fit_rows": 165,
+  "fit_success_flags": 660,
+  "UDG_max_inverse_residual": 1.1102230246251565e-16,
+  "scope_guards": {
+    "full_disk_PDE": false,
+    "hierarchical_likelihood": false,
+    "metric_lensing_completion": false,
+    "P1_P6_owner_derived": false
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "calibration_guard": "67.4 and 73.04 are two alternative dimensional calibrations of the same fixed orbit and state; they are not merely interchangeable unit rescalings unless every physical clock, matter, Planck and recombination scale is co-rescaled",
+  "columns": {
+    "F": "exp(a q)",
+    "H": "conditional Hubble rate in H_* units",
+    "N": "log scale factor",
+    "V": "V_- exp(c q)+V_+ exp(b q)",
+    "constraint_abs": "|R_F|; absolute residual is scale dependent and is not the numerical acceptance metric",
+    "constraint_rel": "R_F/max(|H^2(3F+3F_q p-Kp^2/2)|,|rho_m+rho_r+V|,tiny); signed normalized Friedmann residual",
+    "constraint_signed": "R_F=H^2(3F+3F_q p-Kp^2/2)-(rho_m+rho_r+V)",
+    "p": "dq/dN",
+    "q": "two-slope scalar",
+    "rho_m": "rho_m0 exp(-3N)",
+    "rho_r": "rho_r0 exp(-4N)"
+  },
+  "constraint_gate": {
+    "interpretation": "large absolute residuals at very early N are floating-point cancellation between terms of order 1e100; the dimensionless relative residual is the meaningful numerical gate",
+    "metric": "max(abs(constraint_rel)) on the published 3001-point grid",
+    "pass": true,
+    "threshold": 5e-15,
+    "value": 2.948384658425195e-16
+  },
+  "grid": {
+    "N_max": 0.0,
+    "N_min": -60.0,
+    "points": 3001
+  },
+  "schema": "ECT-R103-two-slope-dense-background-v1",
+  "solver": {
+    "atol": 1e-13,
+    "independent": "Radau",
+    "max_step": 0.02,
+    "primary": "DOP853",
+    "rtol": 1e-11
+  },
+  "status": "conditional named two-slope action/state; not a universal P1--P6 history",
+  "units": "F_*=H_*=1; N=ln(a); q dimensionless; p=dq/dN"
+}

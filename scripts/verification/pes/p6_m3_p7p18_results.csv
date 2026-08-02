@@ -1,0 +1,23 @@
+section,case,value,expected,check,note
+A-slope,minimal raw t_*(R),0.975914,~1,PASS,Finite intercept gives a ledger-like slope below 1 but asymptotes to one.
+A-slope,core-Berry raw t_*(R),1.799526,1.805223,PASS,"Raw slope is window-dependent: p=2-1/log(R/xi), not exactly 2."
+A-slope,core-Berry corrected slope,1.999817,2,PASS,Fit t_* log(R/xi) vs R; this is the mandatory log guard.
+A-slope,diffusion/trap raw t_*(R),2.000122,~2 but false,FLAG,A pure diffusive trap can fake raw R^2; other guards must reject it.
+A-slope,diffusion/trap corrected slope,2.200413,>2,REJECT_CORE,Multiplying by log exposes the false positive: t logR/R^2 is not flat.
+A-asymptotic,core-Berry raw high-window slope,1.940946,~1.94,PASS,This explains the old P7-prime 1.942 number as an asymptotic-window/log-corrected value.
+B-flatness,minimal data: t_*/(R+R0),CV=1.991e-03; R0=3.050,flat,PASS,Minimal/no-zero-mode model has the flat transformed variable.
+B-flatness,minimal data: t_*logR/R^2,CV=8.234e-01,not flat,PASS,Rejects a mistaken core-Berry reading.
+B-flatness,core data: t_*/(R+R0),CV=8.296e-01; R0=0.000,not flat,PASS,Rejects a mistaken minimal reading.
+B-flatness,core data: t_*logR/R^2,CV=2.152e-03,flat,PASS,Core-zero-mode/Berry branch has the flat log-renormalized variable.
+B-flatness,diffusion data: t_*logR/R^2,CV=2.121e-01,not flat,PASS,Guard against raw-R^2 diffusion/trap false positive.
+C-model-select,minimal synthetic data,DeltaAIC(core-min)=144.625,>0 minimal wins,PASS,rms_min=1.991e-03; rms_core=8.960e-01
+C-model-select,core-Berry synthetic data,DeltaAIC(min-core)=146.038,>0 core wins,PASS,rms_min=8.699e-01; rms_core=2.153e-03
+D-mixed-channel,30% core leakage into minimal channel,raw slope=1.238367,ambiguous,GUARD,Intermediate slopes are not new laws; they signal channel mixing or insufficient diagonalisation (G4/G7).
+E-early-shape,core L23 shifted Phi(t),0.500000,1/2,PASS,Use Phi+2sqrt(pi) to avoid the known constant-contamination slip.
+E-early-shape,occupied ohmic finite-T proxy,1.000000,1,PASS,"If the data are ohmic/thermal, a sqrt-law is not expected."
+E-early-shape,vacuum-ohmic log proxy,0.172762,not 1/2,PASS,Power-law fits to logs are window artefacts; use the correct kernel class.
+F-Berry-sign,Berry branch W reversal,residual=0.000e+00; split(+1)=0.100,odd in W,PASS,kappa_M proportional to W n0/S0; reversing winding flips the sign.
+F-Berry-sign,n0=0 bulk minimal branch,split=0.000e+00,zero,PASS,Minimal ordered branch has n0=0; no bulk Magnus/Berry splitting.
+F-Berry-sign,trap false positive W reversal,residual=1.400e-01,not odd,REJECT_TRAP,A geometric trap/pinning frequency is even in W and fails the Berry sign guard.
+Z-decision-template,minimal/no-zero-mode signature,t_*/R flat + no Berry odd sign,H0,ACCEPTABLE,Supports n0=0 minimal ohmic ribbon; does not falsify P6/PES.
+Z-decision-template,core-zero-mode signature,t_*log(R/xi)/R^2 flat + sqrt early law + W-odd Berry,H1,ACCEPTABLE,Evidence for a nontrivial core zero-mode/Berry sector; still not a derivation of OP-GUT1 rank-three P7.

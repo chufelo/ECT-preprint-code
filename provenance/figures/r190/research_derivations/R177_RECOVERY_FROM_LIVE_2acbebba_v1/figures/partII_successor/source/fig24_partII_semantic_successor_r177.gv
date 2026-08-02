@@ -1,0 +1,204 @@
+/*
+ * R177 CANDIDATE SOURCE -- PART II LOGIC MAP.
+ *
+ * This is a scientific successor of the frozen R168 source
+ * fig24_partII_semantic_successor_r168.gv (SHA-256
+ * f1ebf339255d9d1e8c824a53339fe683d89edb919f4a52846c961923b1dfa9d5).
+ * It is not a live publication source.  The bounded R177 semantic changes are
+ * declared independently in SEMANTIC_TOPOLOGY_DELTA_R177.json.
+ *
+ * Non-colour status channels are mandatory:
+ *   A/external: solid border;
+ *   B conditional: striped fill;
+ *   C benchmark: dotted border;
+ *   Open: dashed border plus striped fill;
+ *   blocked non-implication: dashed line, terminal tee and literal BLOCKED.
+ */
+digraph PartII_R177 {
+  graph [
+    rankdir=TB,
+    bgcolor="white",
+    margin=0.01,
+    pad=0.02,
+    nodesep=0.025,
+    ranksep=0.030,
+    splines=spline,
+    outputorder=edgesfirst,
+    newrank=true,
+    concentrate=false,
+    fontname="STIX Two Math"
+  ];
+  node [
+    shape=box,
+    fontname="Arial Narrow",
+    fontsize=8.8,
+    fixedsize=true,
+    width=1.62,
+    height=0.43,
+    margin="0.015,0.008",
+    color="#0072B2",
+    fillcolor="#DCECF7",
+    fontcolor="#222222",
+    penwidth=1.35,
+    style="rounded,filled"
+  ];
+  edge [
+    fontname="Arial Narrow",
+    fontsize=7.6,
+    color="#222222",
+    fontcolor="#222222",
+    penwidth=0.95,
+    arrowsize=0.62
+  ];
+
+  // Level A or structural results: literal status plus solid border.
+  partI [label="Part I outputs\n[A / mixed]"];
+  sr [label="Scalar Lorentz algebra [A]\nphysical map [Open]", style="rounded,dashed,striped", fillcolor="#DCECF7:#FFFFFF"];
+  metric [label="Supplied scalar cone [A]\nphysical sectors [Open]", style="rounded,dashed,striped", fillcolor="#DCECF7:#FFFFFF"];
+  flatness [label="Flat ambient (P1) [A]\nmetric bridge [Open]", style="rounded,dashed,striped", fillcolor="#DCECF7:#FFFFFF"];
+  monopole [label="pi_2(S^3)=0 [A]\nno primary monopoles"];
+
+  // Conditional nodes: striped fill and literal B status.
+  node [color="#009E73", fillcolor="#DDF2E9:#FFFFFF", style="rounded,striped"];
+  bridge [label="Inherited scalar inputs\n[B conditional]"];
+  GN [label="Tensor match [B]\nowners [Open]"];
+  closure [label="Scalar-tensor closure\n[B supplied ansatz]"];
+  closure_funcs [label="F supplied, not derived\n[B conditional / Open]"];
+  nophantom [label="Bare ratio w_bare>=-1 [A in supplied stress]\nobservable w_eff [Open]", color="#0072B2", style="rounded,dashed,striped", fillcolor="#DCECF7:#FFFFFF"];
+  hubble [label="One supplied state\n[B / C / Open]"];
+  age [label="Two-slope age integral\n[B conditional / Open]"];
+  baryogenesis [label="Baryogenesis inventory\n[C / Open]"];
+  btfr [label="BTFR slope 4\n[A / B / C]"];
+  branch_orient [label="Branch orientation\n[A / B conditional]"];
+  scalar_mode [label="Longitudinal chi [A]\nphysical EFT [B/Open]"];
+  cluster [label="Cluster map identity [A]\nphysical map [Open]"];
+
+  // Level C benchmark nodes: literal status plus dotted border.
+  node [color="#E69F00", fillcolor="#FFF0D3", style="rounded,filled,dotted"];
+  rotcurves [label="HRC algebraic diagnostics\n[C: 165 SPARC]"];
+  rar [label="HRC RAR diagnostic\n[C; scale scatter]"];
+  jwst [label="Finite nine-node scan only\nno family no-go [C/Open]"];
+
+  // External/reference convention: neutral fill and literal status.
+  darkDE_grref [label="GR-reference conversion\nnot ECT prediction [External]", color="#222222", fillcolor="#E8E8E8", style="rounded,filled"];
+
+  // Open nodes: dashed border plus striped fill and literal Open status.
+  node [color="#E69F00", fillcolor="#FBE9C9:#FFFFFF", style="rounded,dashed,striped"];
+  source [label="Noether source [A]\ngravity vertex [MISSING]"];
+  cgw [label="Tensor completion [Open]\nc_GW external gate"];
+  weakfield [label="Frozen-F GR limit [B]\nbody charge [Open]"];
+  cc_catastrophe [label="det fixed [A]\naction map [Open]"];
+  envmod [label="History law Xi\n[Open]"];
+  hrcscale [label="HRC response bridge\n[Open]"];
+  darkDM [label="No-halo test [C]\ncontent [Open]"];
+  darkDE_st [label="ST source: F0,dot(F0)\nno ECT rho_Lambda [Open]"];
+  open_eft [label="EFT parameters\n[Open]"];
+  open_ns [label="ECT-native n_s,r\n[Open]"];
+  open_fractions [label="Fraction budget\n[Open]"];
+  open_phi_bvp [label="Scalar BVP / PPN\n[Open]"];
+  cc_ir [label="Trace-free V+C_I\n[Open]"];
+
+  // Programme gate: status text is authoritative, not its colour.
+  tests [label="Tests / closure gates\n[B/Open programme]", color="#009E73", fillcolor="#DDF2E9:#FFFFFF", style="rounded,striped", penwidth=1.5];
+
+  // Portrait rank hints inherited from R168.  The deterministic reader
+  // transform below this source supplies compact labels and routing.
+  {rank=same; partI}
+  {rank=same; bridge}
+  {rank=same; sr; metric}
+  {rank=same; source; cgw}
+  {rank=same; GN}
+  {rank=same; closure}
+  {rank=same; closure_funcs; weakfield}
+  {rank=same; flatness; monopole}
+  {rank=same; cc_catastrophe}
+  {rank=same; scalar_mode; baryogenesis}
+  {rank=same; nophantom; hubble}
+  {rank=same; branch_orient}
+  {rank=same; age; jwst}
+  {rank=same; hrcscale}
+  {rank=same; rotcurves}
+  {rank=same; btfr; rar}
+  {rank=same; envmod}
+  {rank=same; cluster; darkDM}
+  {rank=same; darkDE_grref; darkDE_st}
+  {rank=same; tests}
+  {rank=same; open_eft; open_ns}
+  {rank=same; open_fractions; open_phi_bvp}
+  {rank=same; cc_ir}
+
+  // Preserved R168 dependencies unless a bounded R177 delta is explicit.
+  partI -> bridge [style=bold, penwidth=2];
+  bridge -> sr;
+  bridge -> metric;
+  bridge -> source;
+  metric -> GN;
+  metric -> cgw;
+  sr -> closure;
+  metric -> closure;
+  GN -> closure [style=dashed, label="conditional"];
+  source -> closure [style=dashed, label="MISSING"];
+  closure -> closure_funcs [style=dashed, label="supplied"];
+  closure -> weakfield [style=dashed, label="Open"];
+  closure -> flatness;
+  partI -> flatness [style=dashed];
+  partI -> monopole;
+  closure -> monopole [style=dashed];
+  closure -> scalar_mode [style=dashed, label="physical gate"];
+  closure_funcs -> nophantom [style=dashed, label="K>=0,rho>0"];
+  closure_funcs -> hubble [style=dashed, label="supplied"];
+  hubble -> jwst [style=dashed, label="9 nodes"];
+  age -> jwst [style=dashed, constraint=false, label="9-node times"];
+  closure -> baryogenesis [style=dashed];
+  partI -> baryogenesis [style=dashed];
+  rotcurves -> btfr;
+  rotcurves -> rar;
+  closure_funcs -> hrcscale [style=dashed, label="Open"];
+  hrcscale -> envmod [style=dashed, label="Xi"];
+  hrcscale -> rotcurves [style=dashed, label="conditional"];
+  rotcurves -> darkDM [style=dashed];
+  envmod -> darkDM [style=dashed];
+
+  // Corrected late-source logic.
+  nophantom -> darkDE_st [
+    style=dashed,
+    arrowhead=tee,
+    constraint=false,
+    label="BLOCKED\nno w_eff link"
+  ];
+  hubble -> darkDE_grref [style=dashed, label="GR ref."];
+  closure_funcs -> darkDE_st [style=dashed, label="F0,dotF0"];
+  branch_orient -> darkDE_st [style=dashed, label="Open"];
+  darkDE_st -> tests [style=dashed];
+  darkDE_grref -> tests [style=dashed, label="reference"];
+  darkDE_st -> open_fractions [style=dashed];
+
+  closure_funcs -> branch_orient;
+  partI -> branch_orient [style=dashed];
+  cgw -> tests;
+  darkDM -> tests [style=dashed];
+  envmod -> tests [style=dashed];
+  cluster -> tests [style=dashed, label="Open"];
+  hrcscale -> tests [style=dashed];
+  btfr -> tests;
+  rar -> tests;
+  age -> tests;
+  jwst -> tests;
+  baryogenesis -> tests;
+  closure_funcs -> open_eft [style=dashed];
+  scalar_mode -> open_ns [style=dashed];
+  closure -> open_phi_bvp [style=dashed];
+  open_phi_bvp -> weakfield [style=dashed];
+
+  // Vacuum-offset conditional-completion logic.
+  metric -> cc_catastrophe [style=dashed, label="det only"];
+  bridge -> cc_catastrophe [style=dashed];
+  cc_catastrophe -> cc_ir [style=dashed, label="MISSING"];
+  closure_funcs -> cc_ir [style=dashed];
+  cc_catastrophe -> tests [style=dashed];
+  cc_ir -> tests [style=dashed];
+
+  // Invisible layout support retained, but not counted as a semantic node/edge.
+  legend [shape=point, width=0.01, height=0.01, label="", style=invis];
+  legend -> tests [style=invis, weight=0, constraint=false];
+}

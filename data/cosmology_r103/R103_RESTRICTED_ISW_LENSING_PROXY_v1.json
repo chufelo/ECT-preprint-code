@@ -1,0 +1,489 @@
+{
+  "all_checks_pass": true,
+  "assumptions": [
+    "conserved pressureless Jordan-frame dust",
+    "physical matter and photon metrics coincide",
+    "sub-horizon quasistatic limit",
+    "negligible scalar mass, mixing, scale dependence, radiation perturbations, and anisotropic stress",
+    "zero gravitational slip, Phi=Psi",
+    "Sigma_QS=F0/F",
+    "same primordial growth normalization D=1 and dD/dN=1 at z=100",
+    "flat radiation+matter+constant-source control with the same present density fractions"
+  ],
+  "checks": {
+    "DOP853_Radau_ISW_source_relative_below_2e_minus_9": true,
+    "DOP853_Radau_Q_relative_below_2e_minus_10": true,
+    "analytic_FD_control_relative_below_2e_minus_7": true,
+    "analytic_FD_model_relative_below_2e_minus_7": true,
+    "background_F_positive": true,
+    "background_H_positive": true,
+    "background_friedmann_denominator_positive": true,
+    "background_response_determinant_positive": true,
+    "same_primordial_growth_initial_conditions": true,
+    "source_files_exist": true
+  },
+  "cross_method": [
+    {
+      "Q_W_control_absolute_difference": 4.263256414560601e-14,
+      "Q_W_model_absolute_difference": 8.526512829121202e-14,
+      "Q_W_model_relative_difference": 1.1102230246251565e-15,
+      "S_control_absolute_difference": 7.602807272633072e-13,
+      "S_model_absolute_difference": 8.029132914089132e-13,
+      "S_model_relative_difference": 2.120525977034049e-14,
+      "z": 0.0
+    },
+    {
+      "Q_W_control_absolute_difference": 7.44648787076585e-12,
+      "Q_W_model_absolute_difference": 7.16227077646181e-12,
+      "Q_W_model_relative_difference": 7.949196856316121e-14,
+      "S_control_absolute_difference": 5.6360249800491147e-11,
+      "S_model_absolute_difference": 5.455191853798169e-11,
+      "S_model_relative_difference": 2.7656765766437275e-12,
+      "z": 0.5
+    },
+    {
+      "Q_W_control_absolute_difference": 2.7966962079517543e-11,
+      "Q_W_model_absolute_difference": 3.227285105822375e-11,
+      "Q_W_model_relative_difference": 3.3950620093037287e-13,
+      "S_control_absolute_difference": 1.2649437053369184e-11,
+      "S_model_absolute_difference": 1.4642509427176265e-11,
+      "S_model_relative_difference": 1.3351542094142133e-12,
+      "z": 1.0
+    },
+    {
+      "Q_W_control_absolute_difference": 6.254197160160402e-11,
+      "Q_W_model_absolute_difference": 6.291145382419927e-11,
+      "Q_W_model_relative_difference": 6.404876629062528e-13,
+      "S_control_absolute_difference": 1.8388224276577603e-10,
+      "S_model_absolute_difference": 1.8474288765446545e-10,
+      "S_model_relative_difference": 4.23903134816328e-11,
+      "z": 2.0
+    }
+  ],
+  "date": "2026-07-18",
+  "definitions": {
+    "F_relative": "F(N)/F(0)",
+    "Q_W": "D/[a F_relative] for the model and D/a for the control",
+    "S_ISW_proxy": "(a H/H0) dQ_W/dN",
+    "dlnQ_W_dN": "f-1-dlnF/dN",
+    "physical_sign_guard": "for a positive overdensity and the stated Poisson convention, d(Phi+Psi)/deta is proportional to -S_ISW_proxy"
+  },
+  "falsifiers_and_missing_owners": [
+    "a gauge-reduced quadratic perturbation action may produce a different Poisson kernel or slip",
+    "a finite scalar mass or mode mixing makes Sigma scale dependent and invalidates Sigma_QS=F0/F",
+    "a distinct photon metric changes the Weyl map and lensing kernel",
+    "radiation, neutrino anisotropic stress, initial isocurvature, and super-horizon evolution are omitted",
+    "no line-of-sight source distribution, transfer spectrum, nonlinear correction, or covariance is included"
+  ],
+  "immutable_inputs": {
+    "action_state": {
+      "N_growth": -4.61512051684126,
+      "N_initial": -60.0,
+      "V_minus": 0.82485,
+      "V_plus": 1.27485,
+      "a": 0.01,
+      "b": 0.03,
+      "c": 0.01,
+      "kappa": 10.0,
+      "rho_m0": 0.9,
+      "rho_r0": 0.0003
+    },
+    "control_state": {
+      "Omega_Lambda0": 0.6999328767138558,
+      "Omega_m0": 0.29996713424139704,
+      "Omega_r0": 9.998904474713234e-05
+    },
+    "evaluation_redshifts": [
+      0.0,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "finite_difference_steps_in_N": [
+      0.0001,
+      5e-05
+    ],
+    "source_json": "data/cosmology_r103/R103_TWO_SLOPE_CONDITIONAL_OBSERVABLES_v1.json",
+    "source_json_sha256": "7ab8fb98486fbd9a4a80e0c2777f666bc455a26c8f3d9bb0c6d19aa4217f151f",
+    "source_script": "scripts/cosmology/compute_r103_two_slope_conditional_observables.py",
+    "source_script_sha256": "e4b9fdd76744b9af70c624cf21f42fd423920c3b14d03283c9389c8357b7f892"
+  },
+  "interpretation_guard": "The rows quantify only a restricted limiting proxy for one supplied action/state. They cannot be called ECT C_l, weak-lensing, CMB-lensing, ISW, or ISW-galaxy predictions.",
+  "primary_method": "DOP853",
+  "rows_primary": [
+    {
+      "D_control_same_primordial_norm": 77.66925074123316,
+      "D_model_same_primordial_norm": 77.67132745323224,
+      "E_control": 1.0,
+      "E_model": 1.0,
+      "F_over_F0": 1.0,
+      "N": -0.0,
+      "Q_W_control": 77.66925074123316,
+      "Q_W_model": 77.67132745323224,
+      "Q_W_ratio_model_over_control": 1.0000267378914984,
+      "S_ISW_proxy_control": -37.84494518449312,
+      "S_ISW_proxy_model": -37.84611181826568,
+      "S_ISW_proxy_ratio_model_over_control": 1.0000308266735987,
+      "Sigma_QS_assumed": 1.0,
+      "a": 1.0,
+      "dQ_W_dN_control_analytic": -37.84494518449312,
+      "dQ_W_dN_model_analytic": -37.84611181826568,
+      "delta_Q_W_percent": 0.0026737891498429533,
+      "delta_S_ISW_proxy_percent": 0.0030826673598660648,
+      "dlnF_dN": 3.1225112073911275e-06,
+      "dlnQ_W_dN_control": -0.4872577606108146,
+      "dlnQ_W_dN_model": -0.4872597528483562,
+      "finite_difference": {
+        "h=1e-04": {
+          "control_absolute_error": 6.659917062279419e-11,
+          "control_relative_error": 1.7597034940308731e-12,
+          "dQdN_control": -37.84494518455972,
+          "dQdN_model": -37.846111818851114,
+          "model_absolute_error": 5.854303708474617e-10,
+          "model_relative_error": 1.5468737402102306e-11
+        },
+        "h=5e-05": {
+          "control_absolute_error": 8.718785693417885e-10,
+          "control_relative_error": 2.3038237983996623e-11,
+          "dQdN_control": -37.844945185365,
+          "dQdN_model": -37.846111818377416,
+          "model_absolute_error": 1.1173284519827575e-10,
+          "model_relative_error": 2.9523050670832163e-12
+        }
+      },
+      "growth_rate_f_control": 0.5127422393891854,
+      "growth_rate_f_model": 0.5127433696628512,
+      "z": 0.0
+    },
+    {
+      "D_control_same_primordial_norm": 60.05492679886789,
+      "D_model_same_primordial_norm": 60.056470000646215,
+      "E_control": 1.308750606233901,
+      "E_model": 1.3087481406687802,
+      "F_over_F0": 0.9999980682201642,
+      "N": -0.4054651081081644,
+      "Q_W_control": 90.08239019830184,
+      "Q_W_model": 90.08487902512213,
+      "Q_W_ratio_model_over_control": 1.0000276283390663,
+      "S_ISW_proxy_control": -19.723923148001013,
+      "S_ISW_proxy_model": -19.724605473814865,
+      "S_ISW_proxy_ratio_model_over_control": 1.0000345938183155,
+      "Sigma_QS_assumed": 1.0000019317835676,
+      "a": 0.6666666666666666,
+      "dQ_W_dN_control_analytic": -22.606205170852782,
+      "dQ_W_dN_model_analytic": -22.607029795360905,
+      "delta_Q_W_percent": 0.002762833906633233,
+      "delta_S_ISW_proxy_percent": 0.0034593818315498126,
+      "dlnF_dN": 6.352215919158901e-06,
+      "dlnQ_W_dN_control": -0.2509503258193846,
+      "dlnQ_W_dN_model": -0.2509525465317708,
+      "finite_difference": {
+        "h=1e-04": {
+          "control_absolute_error": 8.728306966077071e-11,
+          "control_relative_error": 3.8611336350413694e-12,
+          "dQdN_control": -22.606205170940065,
+          "dQdN_model": -22.607029795255563,
+          "model_absolute_error": 1.0534151329011365e-10,
+          "model_relative_error": 4.6597170566542445e-12
+        },
+        "h=5e-05": {
+          "control_absolute_error": 1.9693402464326937e-10,
+          "control_relative_error": 8.711475985023753e-12,
+          "dQdN_control": -22.606205170655848,
+          "dQdN_model": -22.60702979533846,
+          "model_absolute_error": 2.2446045022661565e-11,
+          "model_relative_error": 9.928724509222775e-13
+        }
+      },
+      "growth_rate_f_control": 0.7490496741806154,
+      "growth_rate_f_model": 0.7490538056841484,
+      "z": 0.5
+    },
+    {
+      "D_control_same_primordial_norm": 47.5237796126987,
+      "D_model_same_primordial_norm": 47.524931003583134,
+      "E_control": 1.7610422412199505,
+      "E_model": 1.761038703866375,
+      "F_over_F0": 0.9999959762068191,
+      "N": -0.6931471805599453,
+      "Q_W_control": 95.0475592253974,
+      "Q_W_model": 95.0502444696918,
+      "Q_W_ratio_model_over_control": 1.000028251586009,
+      "S_ISW_proxy_control": -10.96630022140431,
+      "S_ISW_proxy_model": -10.966766938039305,
+      "S_ISW_proxy_ratio_model_over_control": 1.0000425591699635,
+      "Sigma_QS_assumed": 1.000004023809372,
+      "a": 0.5,
+      "dQ_W_dN_control_analytic": -12.454329560893983,
+      "dQ_W_dN_model_analytic": -12.454884624581705,
+      "delta_Q_W_percent": 0.0028251586009053753,
+      "delta_S_ISW_proxy_percent": 0.004255916996354081,
+      "dlnF_dN": 8.070086908989275e-06,
+      "dlnQ_W_dN_control": -0.13103260791115712,
+      "dlnQ_W_dN_model": -0.1310347458238588,
+      "finite_difference": {
+        "h=1e-04": {
+          "control_absolute_error": 4.548184051600401e-11,
+          "control_relative_error": 3.6518565948995274e-12,
+          "dQdN_control": -12.454329560848501,
+          "dQdN_model": -12.454884624493918,
+          "model_absolute_error": 8.778755500316038e-11,
+          "model_relative_error": 7.048472916437731e-12
+        },
+        "h=5e-05": {
+          "control_absolute_error": 9.662670663601602e-11,
+          "control_relative_error": 7.758460540685519e-12,
+          "dQdN_control": -12.45432956099061,
+          "dQdN_model": -12.45488462489656,
+          "model_absolute_error": 3.148539207131762e-10,
+          "model_relative_error": 2.527955622610989e-11
+        }
+      },
+      "growth_rate_f_control": 0.8689673920888429,
+      "growth_rate_f_model": 0.8689733242630502,
+      "z": 1.0
+    },
+    {
+      "D_control_same_primordial_norm": 32.74298180515539,
+      "D_model_same_primordial_norm": 32.7436878520821,
+      "E_control": 2.9676833749333995,
+      "E_model": 2.967681465436593,
+      "F_over_F0": 0.999992409757766,
+      "N": -1.0986122886681098,
+      "Q_W_control": 98.22894541546617,
+      "Q_W_model": 98.23180915947289,
+      "Q_W_ratio_model_over_control": 1.0000291537692338,
+      "S_ISW_proxy_control": -4.357789986866626,
+      "S_ISW_proxy_model": -4.358144129144221,
+      "S_ISW_proxy_ratio_model_over_control": 1.000081266485687,
+      "Sigma_QS_assumed": 1.0000075902998462,
+      "a": 0.3333333333333333,
+      "dQ_W_dN_control_analytic": -4.405244195194263,
+      "dQ_W_dN_model_analytic": -4.405605028607478,
+      "delta_Q_W_percent": 0.002915376923384727,
+      "delta_S_ISW_proxy_percent": 0.00812664856870704,
+      "dlnF_dN": 9.32754222325505e-06,
+      "dlnQ_W_dN_control": -0.0448467015151387,
+      "dlnQ_W_dN_model": -0.04484906738768567,
+      "finite_difference": {
+        "h=1e-04": {
+          "control_absolute_error": 6.966427434917932e-11,
+          "control_relative_error": 1.581401676276073e-11,
+          "dQdN_control": -4.405244195263927,
+          "dQdN_model": -4.405605028582707,
+          "model_absolute_error": 2.4770407947016793e-11,
+          "model_relative_error": 5.62250246360918e-12
+        },
+        "h=5e-05": {
+          "control_absolute_error": 1.389999226830696e-12,
+          "control_relative_error": 3.155253835984695e-13,
+          "dQdN_control": -4.405244195192873,
+          "dQdN_model": -4.4056050286656046,
+          "model_absolute_error": 5.8126836677274696e-11,
+          "model_relative_error": 1.319389042464536e-11
+        }
+      },
+      "growth_rate_f_control": 0.9551532984848613,
+      "growth_rate_f_model": 0.9551602601545376,
+      "z": 2.0
+    }
+  ],
+  "rows_secondary": [
+    {
+      "D_control_same_primordial_norm": 77.6692507412332,
+      "D_model_same_primordial_norm": 77.67132745323232,
+      "E_control": 1.0,
+      "E_model": 1.0,
+      "F_over_F0": 1.0,
+      "N": -0.0,
+      "Q_W_control": 77.6692507412332,
+      "Q_W_model": 77.67132745323232,
+      "Q_W_ratio_model_over_control": 1.0000267378914989,
+      "S_ISW_proxy_control": -37.84494518449388,
+      "S_ISW_proxy_model": -37.846111818266486,
+      "S_ISW_proxy_ratio_model_over_control": 1.0000308266735998,
+      "Sigma_QS_assumed": 1.0,
+      "a": 1.0,
+      "dQ_W_dN_control_analytic": -37.84494518449388,
+      "dQ_W_dN_model_analytic": -37.846111818266486,
+      "delta_Q_W_percent": 0.0026737891498873623,
+      "delta_S_ISW_proxy_percent": 0.003082667359977087,
+      "dlnF_dN": 3.122511207390826e-06,
+      "dlnQ_W_dN_control": -0.48725776061082415,
+      "dlnQ_W_dN_model": -0.487259752848366,
+      "finite_difference": {
+        "h=1e-04": {
+          "control_absolute_error": 1.368931634715409e-10,
+          "control_relative_error": 3.61710661422876e-12,
+          "dQdN_control": -37.844945184630774,
+          "dQdN_model": -37.8461118180932,
+          "model_absolute_error": 1.7328716239717323e-10,
+          "model_relative_error": 4.578781798159071e-12
+        },
+        "h=5e-05": {
+          "control_absolute_error": 3.026841000064451e-10,
+          "control_relative_error": 7.998046669399628e-12,
+          "dQdN_control": -37.844945184796565,
+          "dQdN_model": -37.84611181875637,
+          "model_absolute_error": 4.898836891698011e-10,
+          "model_relative_error": 1.29440902441047e-11
+        }
+      },
+      "growth_rate_f_control": 0.5127422393891758,
+      "growth_rate_f_model": 0.5127433696628414,
+      "z": 0.0
+    },
+    {
+      "D_control_same_primordial_norm": 60.05492679887285,
+      "D_model_same_primordial_norm": 60.056470000651004,
+      "E_control": 1.308750606233901,
+      "E_model": 1.3087481406687804,
+      "F_over_F0": 0.9999980682201645,
+      "N": -0.4054651081081644,
+      "Q_W_control": 90.08239019830928,
+      "Q_W_model": 90.0848790251293,
+      "Q_W_ratio_model_over_control": 1.000027628339063,
+      "S_ISW_proxy_control": -19.723923148057374,
+      "S_ISW_proxy_model": -19.724605473869417,
+      "S_ISW_proxy_ratio_model_over_control": 1.0000345938182238,
+      "Sigma_QS_assumed": 1.0000019317835673,
+      "a": 0.6666666666666666,
+      "dQ_W_dN_control_analytic": -22.606205170917377,
+      "dQ_W_dN_model_analytic": -22.607029795423422,
+      "delta_Q_W_percent": 0.002762833906300166,
+      "delta_S_ISW_proxy_percent": 0.0034593818223793704,
+      "dlnF_dN": 6.352215919048644e-06,
+      "dlnQ_W_dN_control": -0.2509503258200809,
+      "dlnQ_W_dN_model": -0.2509525465324448,
+      "finite_difference": {
+        "h=1e-04": {
+          "control_absolute_error": 2.3458756714944684e-08,
+          "control_relative_error": 1.037713248663863e-09,
+          "dQdN_control": -22.606205194376134,
+          "dQdN_model": -22.607029818596892,
+          "model_absolute_error": 2.3173470253823325e-08,
+          "model_relative_error": 1.0250560400493214e-09
+        },
+        "h=5e-05": {
+          "control_absolute_error": 2.3375857693963553e-08,
+          "control_relative_error": 1.034046182013526e-09,
+          "dQdN_control": -22.606205194293235,
+          "dQdN_model": -22.607029818549524,
+          "model_absolute_error": 2.3126101922343878e-08,
+          "model_relative_error": 1.0229606051126439e-09
+        }
+      },
+      "growth_rate_f_control": 0.7490496741799191,
+      "growth_rate_f_model": 0.7490538056834742,
+      "z": 0.5
+    },
+    {
+      "D_control_same_primordial_norm": 47.52377961268472,
+      "D_model_same_primordial_norm": 47.524931003567005,
+      "E_control": 1.7610422412199505,
+      "E_model": 1.761038703866375,
+      "F_over_F0": 0.9999959762068193,
+      "N": -0.6931471805599453,
+      "Q_W_control": 95.04755922536944,
+      "Q_W_model": 95.05024446965953,
+      "Q_W_ratio_model_over_control": 1.0000282515859638,
+      "S_ISW_proxy_control": -10.966300221391661,
+      "S_ISW_proxy_model": -10.966766938024662,
+      "S_ISW_proxy_ratio_model_over_control": 1.000042559169782,
+      "Sigma_QS_assumed": 1.0000040238093717,
+      "a": 0.5,
+      "dQ_W_dN_control_analytic": -12.454329560879618,
+      "dQ_W_dN_model_analytic": -12.454884624565075,
+      "delta_Q_W_percent": 0.0028251585963756654,
+      "delta_S_ISW_proxy_percent": 0.004255916978190832,
+      "dlnF_dN": 8.070086908841588e-06,
+      "dlnQ_W_dN_control": -0.13103260791104454,
+      "dlnQ_W_dN_model": -0.13103474582372832,
+      "finite_difference": {
+        "h=1e-04": {
+          "control_absolute_error": 3.804526755857296e-07,
+          "control_relative_error": 3.054782471423323e-08,
+          "dQdN_control": -12.454329941332293,
+          "dQdN_model": -12.454885024849222,
+          "model_absolute_error": 4.0028414716175575e-07,
+          "model_relative_error": 3.213872790119865e-08
+        },
+        "h=5e-05": {
+          "control_absolute_error": 4.976093297415218e-07,
+          "control_relative_error": 3.995472641626918e-08,
+          "dQdN_control": -12.454330058488948,
+          "dQdN_model": -12.45488510503397,
+          "model_absolute_error": 4.804688948922831e-07,
+          "model_relative_error": 3.8576744021412424e-08
+        }
+      },
+      "growth_rate_f_control": 0.8689673920889555,
+      "growth_rate_f_model": 0.8689733242631805,
+      "z": 1.0
+    },
+    {
+      "D_control_same_primordial_norm": 32.742981805176235,
+      "D_model_same_primordial_norm": 32.74368785210308,
+      "E_control": 2.9676833749333995,
+      "E_model": 2.9676814654365926,
+      "F_over_F0": 0.9999924097577665,
+      "N": -1.0986122886681098,
+      "Q_W_control": 98.22894541552871,
+      "Q_W_model": 98.2318091595358,
+      "Q_W_ratio_model_over_control": 1.0000291537692374,
+      "S_ISW_proxy_control": -4.357789986682744,
+      "S_ISW_proxy_model": -4.358144128959478,
+      "S_ISW_proxy_ratio_model_over_control": 1.000081266485493,
+      "Sigma_QS_assumed": 1.0000075902998458,
+      "a": 0.3333333333333333,
+      "dQ_W_dN_control_analytic": -4.405244195008379,
+      "dQ_W_dN_model_analytic": -4.405605028420724,
+      "delta_Q_W_percent": 0.0029153769237399985,
+      "delta_S_ISW_proxy_percent": 0.008126648549300342,
+      "dlnF_dN": 9.327542223395099e-06,
+      "dlnQ_W_dN_control": -0.04484670151321779,
+      "dlnQ_W_dN_model": -0.044849067385755795,
+      "finite_difference": {
+        "h=1e-04": {
+          "control_absolute_error": 3.6230821010008185e-08,
+          "control_relative_error": 8.224475100959694e-09,
+          "dQdN_control": -4.405244158777558,
+          "dQdN_model": -4.405604993268733,
+          "model_absolute_error": 3.515199065162733e-08,
+          "model_relative_error": 7.978924632112694e-09
+        },
+        "h=5e-05": {
+          "control_absolute_error": 3.595844599857401e-08,
+          "control_relative_error": 8.162645337428387e-09,
+          "dQdN_control": -4.405244159049933,
+          "dQdN_model": -4.405604993493739,
+          "model_absolute_error": 3.492698485985102e-08,
+          "model_relative_error": 7.927852041511585e-09
+        }
+      },
+      "growth_rate_f_control": 0.9551532984867822,
+      "growth_rate_f_model": 0.9551602601564676,
+      "z": 2.0
+    }
+  ],
+  "runtime": {
+    "numpy": "2.3.0",
+    "python": "3.13.5",
+    "scipy": "1.17.1"
+  },
+  "secondary_method": "Radau",
+  "status": {
+    "ECT_specific": "Open; no gauge-complete perturbation action or metric bridge",
+    "background": "Level A inside the supplied frozen two-slope action/state",
+    "data": "untested; no data or likelihood used",
+    "proxy_algebra": "Level A under the explicitly imposed limiting assumptions",
+    "publication_verdict": "PROXY ONLY; NOT A PHYSICAL ECT ISW OR LENSING PREDICTION",
+    "source_model": "Level C restricted quasistatic completion diagnostic"
+  },
+  "validation_summary": {
+    "max_control_analytic_FD_relative_difference": 2.3038237983996623e-11,
+    "max_model_Q_W_relative_DOP853_Radau_difference": 6.404876629062528e-13,
+    "max_model_S_relative_DOP853_Radau_difference": 4.23903134816328e-11,
+    "max_model_analytic_FD_relative_difference": 2.527955622610989e-11
+  }
+}

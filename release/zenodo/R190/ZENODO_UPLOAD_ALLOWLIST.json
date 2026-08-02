@@ -1,0 +1,53 @@
+{
+  "new_version_doi_policy": "Do not enter or infer a new record ID or version-specific DOI before Zenodo assigns it.",
+  "not_in_these_two_zenodo_uploads": [
+    {
+      "artifact": "ECT_summary.pdf",
+      "disposition": "Repository artifact only unless a separate upload is explicitly authorised."
+    },
+    {
+      "artifact": "source repository archive",
+      "disposition": "Separate repository-release decision; never attach silently to either manuscript record."
+    },
+    {
+      "artifact": "raw or repackaged third-party data",
+      "disposition": "Excluded; obtain from the original source under its controlling terms."
+    },
+    {
+      "artifact": "private research, backups, work candidates, caches, chat exports, deferred book material, or non-English publication artifacts",
+      "disposition": "Excluded."
+    }
+  ],
+  "package_id": "R190",
+  "policy": "fail_closed",
+  "records": {
+    "companion": {
+      "allowed_uploads": [
+        {
+          "basename": "ECT_companion.pdf",
+          "manifest_path": "companion/ECT_companion.pdf",
+          "media_type": "application/pdf",
+          "sha256": null,
+          "sha256_policy": "Resolved only from the tag-bound pre-tag artifact manifest."
+        }
+      ],
+      "concept_doi": "10.5281/zenodo.19430795",
+      "maximum_file_count": 1
+    },
+    "preprint": {
+      "allowed_uploads": [
+        {
+          "basename": "ECT_preprint.pdf",
+          "manifest_path": "ECT_preprint.pdf",
+          "media_type": "application/pdf",
+          "sha256": null,
+          "sha256_policy": "Resolved only from the tag-bound pre-tag artifact manifest."
+        }
+      ],
+      "concept_doi": "10.5281/zenodo.18917929",
+      "maximum_file_count": 1
+    }
+  },
+  "release_status": "DRAFT_NOT_TAGGED_NOT_RELEASED",
+  "schema_version": "2.0"
+}

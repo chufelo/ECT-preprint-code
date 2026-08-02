@@ -1,0 +1,101 @@
+{
+  "status": "HRC_ONLY_PROJECTION_OF_FROZEN_R89_SOURCE_MODEL_OUTPUT",
+  "source_hashes": {
+    "R89_points": "36be5b448b20b17425e1b8216b76b3cf862e8b315731fde5b43525d21201efbc",
+    "R89_regimes": "e5f1d4a59c049362097050d8a3e129bfb90340612a2833c31e7b2fa99379370f",
+    "R89_results": "987a0531ddc1f3912717d5ce989ebb1b51b8159944944e448253f1910b4c7be3"
+  },
+  "projection": {
+    "point_columns": [
+      "seed",
+      "fold",
+      "galaxy",
+      "source_row_index",
+      "radius_kpc",
+      "vobs_km_s",
+      "error_km_s",
+      "gN_si",
+      "v_HRC0",
+      "chi2_HRC0",
+      "v_HRC3",
+      "chi2_HRC3"
+    ],
+    "point_rows": 16715,
+    "regime_columns": [
+      "bin_kind",
+      "bin",
+      "prediction_rows",
+      "unique_physical_points",
+      "mean_yN_ref",
+      "chi2_HRC0_per_one_dataset",
+      "chi2_HRC0_per_point",
+      "chi2_HRC3_per_one_dataset",
+      "chi2_HRC3_per_point"
+    ],
+    "regime_rows": 10
+  },
+  "cross_validation": {
+    "HRC0": {
+      "by_seed": {
+        "176": {
+          "a0_si_mean": 1.75875922517858e-10,
+          "chi2_total": 123519.7105402329,
+          "prediction_rows": 3343
+        },
+        "277": {
+          "a0_si_mean": 1.7542360485558544e-10,
+          "chi2_total": 114867.73899404383,
+          "prediction_rows": 3343
+        },
+        "378": {
+          "a0_si_mean": 1.7516428830067303e-10,
+          "chi2_total": 115333.94955418282,
+          "prediction_rows": 3343
+        },
+        "479": {
+          "a0_si_mean": 1.7493524140694464e-10,
+          "chi2_total": 120168.2500216838,
+          "prediction_rows": 3343
+        },
+        "75": {
+          "a0_si_mean": 1.7522427567879753e-10,
+          "chi2_total": 114103.97310977906,
+          "prediction_rows": 3343
+        }
+      }
+    },
+    "HRC3": {
+      "by_seed": {
+        "176": {
+          "a0_si_mean": 1.2710958660314523e-10,
+          "chi2_total": 104344.94150500011,
+          "prediction_rows": 3343
+        },
+        "277": {
+          "a0_si_mean": 1.2673763514643992e-10,
+          "chi2_total": 97389.18614781319,
+          "prediction_rows": 3343
+        },
+        "378": {
+          "a0_si_mean": 1.2652155038512505e-10,
+          "chi2_total": 98166.43982887747,
+          "prediction_rows": 3343
+        },
+        "479": {
+          "a0_si_mean": 1.2662861221492728e-10,
+          "chi2_total": 101385.43503599688,
+          "prediction_rows": 3343
+        },
+        "75": {
+          "a0_si_mean": 1.2670442703189253e-10,
+          "chi2_total": 96219.9556373648,
+          "prediction_rows": 3343
+        }
+      }
+    }
+  },
+  "guards": {
+    "contains_only_HRC0_HRC3": true,
+    "source_model_output_not_independent_data": true
+  }
+}

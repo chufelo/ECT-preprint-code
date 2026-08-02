@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# P6 M3-1 (Claude): operational procedures for the R22 guards.
+# P6 M3-1: operational procedures for the frozen guards.
 # O1 = M3-G1 backaction: Gamma_obs(kappa_ext) linear extrapolation to zero readout — intercept test.
 # O2 = M3-G2 trapped-mode discriminator: Z_b(g^2) must DECREASE with weight transferred to the shoulder,
 #      sum rule Z + cont = 1 maintained (a trap gives Z ~ 1 const, no transfer).
 # O3 = M3-G3 detuning calibration: omega_res(g^2) -> Omega_0 linearly in g^2 (g -> 0 extrapolation).
-# Uses GPT's R22 edge model verbatim: J = A (w-E) exp(-(w-E)/wc), A = 12, wc = 2.2, E = 1; Sigma'' = g^2 J.
+# Uses the frozen synthetic edge model J = A (w-E) exp(-(w-E)/wc),
+# A = 12, wc = 2.2, E = 1; Sigma'' = g^2 J.
 import csv, math
 import numpy as np
 from pathlib import Path
@@ -47,7 +48,7 @@ for G0, lab in ((0.0, 'intrinsic (Gamma_intr = 0)'), (0.003, 'trapped alternativ
 assert RR[0]['note'] == 'INTRINSIC' and RR[1]['note'] == 'TRAPPED'
 print('  requirement: sigma_intercept < Gamma_0-scale/2; with N points and eps relative noise, sigma_ic ~ eps Gamma(kappa_max) x O(1).')
 
-print('O2 (M3-G2) weight-transfer discriminator (Delta = 0.02, GPT edge model):')
+print('O2 (M3-G2) weight-transfer discriminator (Delta = 0.02, frozen synthetic edge model):')
 Om0 = E + 0.02
 SigE = Sp_unit(E - 1e-7)
 g2c = (Om0*Om0 - E*E)/SigE
@@ -76,7 +77,7 @@ wres = np.array([find_root(Om0, float(g), E + 1e-6, E + 0.4) for g in g2s])
 co = np.polyfit(g2s, wres, 1)
 Om0_rec = co[1]
 print('  omega_res(g^2) linear extrapolation: Omega_0_rec = %.6f (true %.6f, |err| = %.1e) => Delta_cal = %.6f' % (Om0_rec, Om0, abs(Om0_rec - Om0), Om0_rec - E))
-RR.append({'section':'O3','case':'Delta calibration','value':'Om0_rec=%.6f'%Om0_rec,'check':'true %.4f'%Om0,'note':'closes the counterterm ambiguity operationally'})
+RR.append({'section':'O3','case':'Delta calibration','value':'Om0_rec=%.6f'%Om0_rec,'check':'true %.4f'%Om0,'note':'recovers the supplied bare detuning by g^2 -> 0 extrapolation inside the normalised edge toy model'})
 assert abs(Om0_rec - Om0) < 2e-4
 
 with open(OUT/'p6_m3_operational_results.csv','w',newline='') as f:

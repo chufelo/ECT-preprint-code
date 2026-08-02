@@ -1,0 +1,82 @@
+{
+  "schema": "ECT_PUBLIC_EXTERNAL_INPUT_CONTRACT_v1",
+  "status": "FAIL_CLOSED_NON_REDISTRIBUTED_INPUTS",
+  "environment_variable": "ECT_EXTERNAL_INPUT_ROOT",
+  "resolution_rule": "Each external input is resolved only below ECT_EXTERNAL_INPUT_ROOT at logical_repository_path and must match expected_sha256. There is no in-repository fallback.",
+  "redistribution_policy": {
+    "decision": "NOT_REDISTRIBUTED_NO_EXPLICIT_LICENSE_FOUND",
+    "reason": "Public availability and citation instructions do not by themselves establish redistribution permission.",
+    "review_date": "2026-08-02",
+    "upstream_dataset_pages": [
+      "https://astroweb.cwru.edu/SPARC/",
+      "https://gitlab.com/mmoresco/CCcovariance"
+    ]
+  },
+  "inputs": [
+    {
+      "logical_repository_path": "data/MassModels_Lelli2016c.mrt",
+      "expected_sha256": "7d027e515441c6b4ebbf6aadee0327e6ad81156c4e8b151af2f6d62cb44c3962",
+      "kind": "UPSTREAM_SPARC_MASS_MODEL_TABLE",
+      "upstream_url": "https://astroweb.cwru.edu/SPARC/",
+      "citation_keys": [
+        "Lelli2016"
+      ],
+      "redistribution_status": "NOT_REDISTRIBUTED_NO_EXPLICIT_LICENSE_FOUND",
+      "acquisition_note": "Obtain the SPARC mass-model table from the upstream project under its current terms, retain the declared filename, and verify the SHA-256 before use."
+    },
+    {
+      "logical_repository_path": "data/hrc_r97/R97_HRC_SOURCE_POINTS.csv",
+      "expected_sha256": "5f9b884e611e61189a97cc6c8fdb01e430bfc7bf7cef3faf05be2b0d2b8a2e80",
+      "kind": "FROZEN_R89_PROJECTION_OF_SPARC_ORIGIN_MODEL_OUTPUT",
+      "upstream_url": "https://astroweb.cwru.edu/SPARC/",
+      "citation_keys": [
+        "Lelli2016",
+        "McGaugh2016"
+      ],
+      "redistribution_status": "NOT_REDISTRIBUTED_NO_EXPLICIT_LICENSE_FOUND",
+      "acquisition_note": "This is the exact 16715-row R89-to-R97 projection used by the HRC-only diagnostic, not an independent observation table and not a directly downloadable upstream product. Supply an authorised local copy with the declared hash."
+    },
+    {
+      "logical_repository_path": "data/hrc_r97/R97_HRC_SOURCE_REGIMES.csv",
+      "expected_sha256": "134d74573524e024a3e3433c02380a159f5ff83a00fca34b95f8eb289ef48d7e",
+      "kind": "FROZEN_R89_PROJECTION_OF_SPARC_ORIGIN_MODEL_OUTPUT",
+      "upstream_url": "https://astroweb.cwru.edu/SPARC/",
+      "citation_keys": [
+        "Lelli2016",
+        "McGaugh2016"
+      ],
+      "redistribution_status": "NOT_REDISTRIBUTED_NO_EXPLICIT_LICENSE_FOUND",
+      "acquisition_note": "This is the exact 10-row R89-to-R97 regime projection used by the HRC-only diagnostic, not an independent observation table and not a directly downloadable upstream product. Supply an authorised local copy with the declared hash."
+    },
+    {
+      "logical_repository_path": "data/cosmology_r103/OFFICIAL_CCcovariance_HzTable_MM_BC03_commit88141333.dat",
+      "expected_sha256": "0fa5e906dc0a2d58d63fdba746bfe2fbb5610a1d54e896b450795f323997fb01",
+      "kind": "REPACKAGED_FROZEN_CCCOVARIANCE_INPUT",
+      "upstream_url": "https://gitlab.com/mmoresco/CCcovariance",
+      "upstream_commit": "881413330a7f1e1e5203607d6964db49b4c6c461",
+      "upstream_path": "data/HzTable_MM_BC03.dat",
+      "upstream_sha256": "32ce92caf251cb60a7a837c71f1856bea2b44fa5c1041f85410d11cb8164da98",
+      "citation_keys": [
+        "Moresco2020Chronometers",
+        "Moresco2022"
+      ],
+      "redistribution_status": "NOT_REDISTRIBUTED_NO_EXPLICIT_LICENSE_FOUND",
+      "acquisition_note": "Obtain data/HzTable_MM_BC03.dat from the declared CCcovariance commit and run scripts/cosmology/prepare_r103_cccovariance_external_inputs.py. The helper verifies the upstream SHA-256, preserves the exact historical comment-header whitespace, and checks the prepared SHA-256 before writing below the separate external-input root."
+    },
+    {
+      "logical_repository_path": "data/cosmology_r103/OFFICIAL_CCcovariance_data_MM20_commit88141333.dat",
+      "expected_sha256": "8c88a10a0cf69620937da6c51c0c5a925377c1b514404e91ea9dae3263123c07",
+      "kind": "REPACKAGED_FROZEN_CCCOVARIANCE_INPUT",
+      "upstream_url": "https://gitlab.com/mmoresco/CCcovariance",
+      "upstream_commit": "881413330a7f1e1e5203607d6964db49b4c6c461",
+      "upstream_path": "data/data_MM20.dat",
+      "upstream_sha256": "577ac2f346e346fe7cf94daa7b7000c05d04ebc8a029cda31e0d8643b956a485",
+      "citation_keys": [
+        "Moresco2020Chronometers",
+        "Moresco2022"
+      ],
+      "redistribution_status": "NOT_REDISTRIBUTED_NO_EXPLICIT_LICENSE_FOUND",
+      "acquisition_note": "Obtain data/data_MM20.dat from the declared CCcovariance commit and run scripts/cosmology/prepare_r103_cccovariance_external_inputs.py. The helper verifies the upstream SHA-256 and checks the prepared SHA-256 before writing below the separate external-input root."
+    }
+  ]
+}

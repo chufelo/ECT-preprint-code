@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-P6 M3 primary protocol demo (GPT Round 22): P23/P24 edge-plus-line + detuning-transition falsifier.
+P6 M3 primary protocol demo: P23/P24 edge-plus-line + detuning-transition falsifier.
 Environment-compatible: numpy only, relative paths, no pandas.
 
 Purpose:
   1. Turn the P23/P24 qualitative discriminator into an executable protocol skeleton.
   2. Demonstrate the expected g2_crit(Delta) ~ Delta law for a soft-edge intrinsic channel.
   3. Demonstrate the external-vs-intrinsic contrast: external golden-rule widths vs intrinsic bound line.
-  4. Export compact CSV diagnostics for Claude/ledger review.
+  4. Export compact CSV diagnostics for reproducibility review.
 
 This is not a lab-specific design. It is a normalized toy model with the R19 bosonic mirror KK kernel.
 """
@@ -76,7 +76,7 @@ gcrit = np.array(gcrit)
 coef = np.polyfit(np.log(Deltas), np.log(gcrit), 1)
 lin_slope = np.polyfit(Deltas, gcrit, 1)[0]
 append("T1", "P24 log slope", f"{coef[0]:.6f}", "~1", "g2_crit(Delta) from D(E-)=0 with bosonic mirror KK")
-append("T1", "P24 linear slope", f"{lin_slope:.6f}", ">0", "slope depends on kernel normalization; exponent is the invariant prediction")
+append("T1", "P24 linear slope", f"{lin_slope:.6f}", ">0", "the coefficient depends on the supplied kernel normalisation; the near-linear exponent is a conditional property of this soft-edge toy model")
 assert abs(coef[0] - 1.0) < 0.04
 
 # Bound-state solver below edge.

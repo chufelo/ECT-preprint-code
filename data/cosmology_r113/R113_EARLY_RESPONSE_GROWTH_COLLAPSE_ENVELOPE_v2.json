@@ -1,0 +1,90 @@
+{
+  "all_checks_pass": true,
+  "checks": {
+    "all_rows_positive": true,
+    "epsilon_zero_control_barrier_positive": true,
+    "growth_DOP853_Radau_agree_below_5e_minus_9": true,
+    "published_8_decimal_rows_reproduced_below_6e_minus_8": true
+  },
+  "control_delta_c": 1.7267600460291173,
+  "date": "2026-07-20",
+  "equations": {
+    "background": "E^2=Omega_r exp(-4N)+Omega_m exp(-(3+2 zeta_ER)N)+Omega_L exp(-2 zeta_ER N)",
+    "cumulative_PS": "erfc[nu (delta_c/delta_c0)/(sqrt(2) D/D0)]/erfc[nu/sqrt(2)]",
+    "equality": "[(1+z_eq)/(1+z_eq0)]=(Omega_m/Omega_r)^[2 zeta_ER/(1-2 zeta_ER)]",
+    "growth": "D_NN+(2+E_N/E)D_N-(3/2)Omega_m^grav D=0",
+    "tophat": "delta_NN+(2+E_N/E)delta_N-(4/3)delta_N^2/(1+delta)-(3/2)Omega_m^grav delta(1+delta)=0"
+  },
+  "inputs": {
+    "Omega_constant_source": 0.6849080000000001,
+    "Omega_m": 0.315,
+    "Omega_r": 9.2e-05,
+    "collapse_delta_threshold": 10000000.0,
+    "nu": 5.0,
+    "z_observed": 10.0,
+    "z_on": 1000.0,
+    "zeta_ER_values": [
+      1.5612556036955692e-06,
+      0.007500442556492628,
+      0.029588344765651916,
+      0.033,
+      0.037555
+    ]
+  },
+  "interpretation_guard": "Large rare-tail ratios are accompanied by 13--94 percent shifts in the declared equality coordinate. No row closes equality, transfer/recombination, JWST selection and Solar-System gates in one physical action/state.",
+  "max_difference_from_published_8_decimal_rows": 4.947883880390691e-09,
+  "max_growth_solver_difference": 8.328893130737924e-13,
+  "rows": [
+    {
+      "D_over_D0_z10_zon1000": 1.000005207373567,
+      "cumulative_PS_ratio_nu5_fixed_barrier": 1.0001350484054579,
+      "cumulative_PS_ratio_nu5_tophat_barrier": 1.0001309052647886,
+      "delta_c": 1.7267603218731173,
+      "delta_c_over_control": 1.0000001597465733,
+      "equality_ratio": 1.0000254130825619,
+      "zeta_ER": 1.5612556036955692e-06
+    },
+    {
+      "D_over_D0_z10_zon1000": 1.0249498570089128,
+      "cumulative_PS_ratio_nu5_fixed_barrier": 1.8665676318988624,
+      "cumulative_PS_ratio_nu5_tophat_barrier": 1.8308268854180603,
+      "delta_c": 1.7281096567952192,
+      "delta_c_over_control": 1.0007815855881108,
+      "equality_ratio": 1.1319531272740926,
+      "zeta_ER": 0.007500442556492628
+    },
+    {
+      "D_over_D0_z10_zon1000": 1.0976790516351997,
+      "cumulative_PS_ratio_nu5_fixed_barrier": 9.13465296574521,
+      "cumulative_PS_ratio_nu5_tophat_barrier": 8.51585874968683,
+      "delta_c": 1.732341285052116,
+      "delta_c_over_control": 1.0032322030127079,
+      "equality_ratio": 1.6684659936585327,
+      "zeta_ER": 0.029588344765651916
+    },
+    {
+      "D_over_D0_z10_zon1000": 1.1088222065634303,
+      "cumulative_PS_ratio_nu5_fixed_barrier": 11.345688703277919,
+      "cumulative_PS_ratio_nu5_tophat_barrier": 10.502280403964598,
+      "delta_c": 1.7330254932333353,
+      "delta_c_over_control": 1.00362844114828,
+      "equality_ratio": 1.7773086227536101,
+      "zeta_ER": 0.033
+    },
+    {
+      "D_over_D0_z10_zon1000": 1.1236668228890563,
+      "cumulative_PS_ratio_nu5_fixed_barrier": 14.99787479650946,
+      "cumulative_PS_ratio_nu5_tophat_barrier": 13.755948756335057,
+      "delta_c": 1.73395051233783,
+      "delta_c_over_control": 1.004164137527532,
+      "equality_ratio": 1.936588638226792,
+      "zeta_ER": 0.037555
+    }
+  ],
+  "runtime": {
+    "numpy": "2.3.0",
+    "python": "3.13.5",
+    "scipy": "1.17.1"
+  },
+  "status": "Level A algebra/numerics inside the declared owner-specific zeta_ER envelope; Level C collapse and rare-tail sensitivity; not the withdrawn universal ECT epsilon, named two-slope orbit, CMB fit or JWST abundance prediction"
+}

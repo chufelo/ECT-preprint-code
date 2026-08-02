@@ -1,0 +1,168 @@
+{
+  "background_check": {
+    "background": "data/cosmology_r103/R103_TWO_SLOPE_BACKGROUND_DENSE_v1.csv",
+    "background_sha256": "03c9c3e7894e3b0f5b258ba0275abdf76faf80083223fe46f44727c25ebcfe56",
+    "independent_four_node_lagrange": {
+      "delta_H0_from_PCHIP": -1.8415378661984505e-06,
+      "delta_chi2_from_PCHIP": -1.261823017895125e-05,
+      "fit": {
+        "H0_best": 68.58601629026515,
+        "H0_sigma_formal_covariance": 3.949096446205737,
+        "chi2_lower_tail_probability": 0.0410825939827963,
+        "chi2_min": 6.2805379664811145,
+        "chi2_per_dof": 0.44860985474865106,
+        "chi2_upper_tail_probability": 0.9589174060172037,
+        "dof": 14
+      },
+      "max_abs_E_difference_from_PCHIP": 5.695855556098195e-07
+    },
+    "linear_interpolation_sensitivity": {
+      "delta_H0_from_PCHIP": -0.0033869779152411184,
+      "delta_chi2_from_PCHIP": -0.002049808360074401,
+      "fit": {
+        "H0_best": 68.58263115388777,
+        "H0_sigma_formal_covariance": 3.9488881991018787,
+        "chi2_lower_tail_probability": 0.041023917074520765,
+        "chi2_min": 6.278500776351219,
+        "chi2_per_dof": 0.4484643411679442,
+        "chi2_upper_tail_probability": 0.9589760829254792,
+        "dof": 14
+      },
+      "max_abs_E_difference_from_PCHIP": 0.00029621499033050114
+    },
+    "max_abs_E_difference": 0.0,
+    "performed": true,
+    "scipy": "1.17.1"
+  },
+  "conditional_age": {
+    "age_Gyr": 13.738739497625918,
+    "formal_covariance_sigma_Gyr_from_H0_only": 0.7910593353410587,
+    "interpretation": "conditional selected-history age after the same H0 calibration; not a universal P1--P6 prediction",
+    "tau_two_slope": 0.9636867786415146
+  },
+  "covariance_diagnostics": {
+    "condition_number_2": 143.82310315023585,
+    "dimension": 15,
+    "log_determinant": 77.50258487248693,
+    "maximum_eigenvalue": 2480.612565356915,
+    "minimum_eigenvalue": 17.247664047171156,
+    "off_diagonal_abs_correlation_median": 0.13223760450824068,
+    "off_diagonal_correlation_max": 0.46564825000727805,
+    "off_diagonal_correlation_min": 0.01006470141965391
+  },
+  "date": "2026-07-19",
+  "diagonal_same_15_point_subset": {
+    "H0_best": 68.25725253750797,
+    "H0_sigma_formal_covariance": 1.84628697211231,
+    "chi2_lower_tail_probability": 0.04133926789887527,
+    "chi2_min": 6.289427240148196,
+    "chi2_per_dof": 0.44924480286772833,
+    "chi2_upper_tail_probability": 0.9586607321011247,
+    "dof": 14
+  },
+  "environment": {
+    "numpy": "2.3.0",
+    "python": "3.13.5",
+    "scipy": "1.17.1"
+  },
+  "independent_linear_algebra_crosschecks": {
+    "cholesky": {
+      "H0_best": 68.58601813180303,
+      "H0_sigma": 3.9490966348411636,
+      "chi2": 6.280550584711289
+    },
+    "woodbury": {
+      "H0_best": 68.586018131803,
+      "H0_sigma": 3.9490966348411654,
+      "chi2": 6.280550584711296,
+      "max_abs_inverse_difference": 1.3877787807814457e-17
+    }
+  },
+  "interpretation": {
+    "allowed": "May serve as the main covariance-aware approximate ECT chronometer calibration if labelled as the official 15-point BC03 subset.",
+    "established": "The official suggested covariance formula and the analytic one-scale profile are reproduced.",
+    "not_allowed": "Must not be called a full/latest 32-point likelihood, an ECT prediction of H0, an ECT age prediction, a Hubble-tension resolution, or ECT-specific discrimination."
+  },
+  "local_inputs": {
+    "OFFICIAL_CCcovariance_HzTable_MM_BC03_commit88141333.dat": "0fa5e906dc0a2d58d63fdba746bfe2fbb5610a1d54e896b450795f323997fb01",
+    "OFFICIAL_CCcovariance_data_MM20_commit88141333.dat": "8c88a10a0cf69620937da6c51c0c5a925377c1b514404e91ea9dae3263123c07",
+    "R103_TWO_SLOPE_E_AT_OFFICIAL_BC03_15_v1.csv": "9d84f6ac9762ef5a6b1c83d2069d2b08294077b62856fe4a73ee7faa213d69af"
+  },
+  "official_components_notebook_covariance_variant_sensitivity": {
+    "conservative_spsooo_plus_slib": {
+      "H0_best": 67.3348662849672,
+      "H0_sigma_formal_covariance": 6.076743062473556,
+      "chi2_lower_tail_probability": 0.03900352531955199,
+      "chi2_min": 6.207166847096839,
+      "chi2_per_dof": 0.44336906050691705,
+      "chi2_upper_tail_probability": 0.960996474680448,
+      "conditional_age_Gyr": 13.99401956639303,
+      "dof": 14,
+      "formal_H0_only_age_sigma_Gyr": 1.2629127524559018
+    },
+    "extra_conservative_sps_plus_slib": {
+      "H0_best": 67.44475109448827,
+      "H0_sigma_formal_covariance": 7.688789393220844,
+      "chi2_lower_tail_probability": 0.03912131405615539,
+      "chi2_min": 6.211390877104645,
+      "chi2_per_dof": 0.44367077693604606,
+      "chi2_upper_tail_probability": 0.9608786859438446,
+      "conditional_age_Gyr": 13.971219716893508,
+      "dof": 14,
+      "formal_H0_only_age_sigma_Gyr": 1.5927372290115467
+    },
+    "suggested_primary": {
+      "H0_best": 68.58601813180302,
+      "H0_sigma_formal_covariance": 3.949096634841164,
+      "chi2_lower_tail_probability": 0.04108295759362436,
+      "chi2_min": 6.2805505847112935,
+      "chi2_per_dof": 0.4486107560508067,
+      "chi2_upper_tail_probability": 0.9589170424063757,
+      "conditional_age_Gyr": 13.738739497625918,
+      "dof": 14,
+      "formal_H0_only_age_sigma_Gyr": 0.7910593353410587
+    }
+  },
+  "official_repository_check": {
+    "performed": false,
+    "reason": "no --official-repo path supplied"
+  },
+  "official_source": {
+    "CC_covariance_notebook_sha256": "bea181a885f76ce479c226a4504758bcec9901386fcb2c9ef4000e8ecc696e30",
+    "HzTable_MM_BC03_original_sha256": "32ce92caf251cb60a7a837c71f1856bea2b44fa5c1041f85410d11cb8164da98",
+    "commit": "881413330a7f1e1e5203607d6964db49b4c6c461",
+    "commit_date": "2021-03-19T12:29:06+01:00",
+    "covariance_formula": "diag(errHz^2) + outer(Hz*imf_fraction) + outer(Hz*spsooo_fraction)",
+    "data_MM20_original_sha256": "577ac2f346e346fe7cf94daa7b7000c05d04ebc8a029cda31e0d8643b956a485",
+    "repository": "https://gitlab.com/mmoresco/CCcovariance.git"
+  },
+  "primary_covariance_fit": {
+    "H0_best": 68.58601813180302,
+    "H0_sigma_formal_covariance": 3.949096634841164,
+    "chi2_lower_tail_probability": 0.04108295759362436,
+    "chi2_min": 6.2805505847112935,
+    "chi2_per_dof": 0.4486107560508067,
+    "chi2_upper_tail_probability": 0.9589170424063757,
+    "conditional_age_Gyr": 13.738739497625918,
+    "dof": 14,
+    "formal_H0_only_age_sigma_Gyr": 0.7910593353410587
+  },
+  "same_present_fraction_flat_control": {
+    "delta_H0_ECT_minus_control": 0.00010260486831725757,
+    "delta_chi2_ECT_minus_control": 1.470841385842192e-05,
+    "fit": {
+      "H0_best": 68.5859155269347,
+      "H0_sigma_formal_covariance": 3.949090630697235,
+      "chi2_lower_tail_probability": 0.04108253375161789,
+      "chi2_min": 6.280535876297435,
+      "chi2_per_dof": 0.44860970544981676,
+      "chi2_upper_tail_probability": 0.9589174662483821,
+      "dof": 14
+    },
+    "omega_late": 0.6999328767138558,
+    "omega_m": 0.29996713424139704,
+    "omega_r": 9.998904474713234e-05
+  },
+  "schema": "ECT-R103-official-CCcovariance-BC03-subset-v1",
+  "status": "Level-C covariance-aware 15-point BC03 subset calibration; not a full/latest 32-point CC likelihood"
+}

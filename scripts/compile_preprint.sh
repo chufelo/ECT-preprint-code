@@ -4,17 +4,27 @@ set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 WORKSPACE_ROOT="$(cd "$REPO_ROOT/.." && pwd)"
 if [[ -d "$WORKSPACE_ROOT/.workspace" ]]; then
-  BUILD_DIR="$WORKSPACE_ROOT/.workspace/build/preprint"
+  DEFAULT_BUILD_DIR="$WORKSPACE_ROOT/.workspace/build/preprint"
 else
-  BUILD_DIR="$REPO_ROOT/.build/preprint"
+  DEFAULT_BUILD_DIR="$REPO_ROOT/.build/preprint"
 fi
+BUILD_DIR="${BUILD_DIR:-$DEFAULT_BUILD_DIR}"
 mkdir -p "$BUILD_DIR"
+BUILD_DIR="$(cd "$BUILD_DIR" && pwd)"
 cd "$REPO_ROOT"
 
 PDFLATEX="${PDFLATEX:-/Library/TeX/texbin/pdflatex}"
 BIBTEX="${BIBTEX:-/Library/TeX/texbin/bibtex}"
 LATEX_PASSES="${LATEX_PASSES:-${PASSES:-4}}"
 PREVIOUS_PAGES="${PREVIOUS_PAGES:-}"
+
+if [[ -n "${SOURCE_DATE_EPOCH:-}" ]]; then
+  if ! [[ "$SOURCE_DATE_EPOCH" =~ ^[0-9]+$ ]]; then
+    printf 'SOURCE_DATE_EPOCH must be a non-negative integer (received %s)\n' "$SOURCE_DATE_EPOCH" >&2
+    exit 2
+  fi
+  export SOURCE_DATE_EPOCH FORCE_SOURCE_DATE=1 TZ=UTC
+fi
 
 if ! [[ "$LATEX_PASSES" =~ ^[0-9]+$ ]] || (( LATEX_PASSES < 3 )); then
   printf 'LATEX_PASSES must be an integer >= 3 (received %s)\n' "$LATEX_PASSES" >&2
@@ -44,6 +54,11 @@ RERUN_REQUIRED="$(grep -Eci 'Rerun (LaTeX|to get)|Label\(s\) may have changed' "
 OVERFULL_BOXES="$(grep -Ec '^Overfull \\[hv]box' "$LOG" || true)"
 UNDERFULL_BOXES="$(grep -Ec '^Underfull \\[hv]box' "$LOG" || true)"
 PDF="$BUILD_DIR/ECT_preprint.pdf"
+if [[ "$PDF" == "$REPO_ROOT"/* ]]; then
+  PDF_REPORT="${PDF#"$REPO_ROOT"/}"
+else
+  PDF_REPORT="<external-build>/$(basename "$PDF")"
+fi
 if command -v pdfinfo >/dev/null 2>&1; then
   PAGES="$(pdfinfo "$PDF" | awk '/^Pages:/ {print $2; exit}')"
 elif command -v gs >/dev/null 2>&1; then
@@ -52,8 +67,9 @@ else
   PAGES="$(tr '\n' ' ' <"$LOG" | sed -nE 's/.*Output written.*\(([0-9]+) pages.*/\1/p')"
 fi
 
-printf 'PDF: %s\n' "$PDF"
+printf 'PDF: %s\n' "$PDF_REPORT"
 printf 'LaTeX passes (plus BibTeX): %s\n' "$LATEX_PASSES"
+printf 'SOURCE_DATE_EPOCH: %s\n' "${SOURCE_DATE_EPOCH:-UNSET_NONDETERMINISTIC_METADATA}"
 printf 'Errors: %s\n' "$ERRORS"
 printf 'Undefined references: %s\n' "$UNDEFINED_REFERENCES"
 printf 'Undefined citations: %s\n' "$UNDEFINED_CITATIONS"

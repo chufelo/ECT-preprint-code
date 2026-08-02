@@ -113,7 +113,7 @@ ROWS += [
 ROWS += [
     {"section":"C","case":"stiffness symbol K_b","value":"l_w~(K_b*sigma)^(-1/3)","check":"transfer matrix","note":"recommended if K_b=T_line/(2S0) from Nambu-Goto tilt inertia"},
     {"section":"C","case":"flexibility symbol D_b=1/K_b","value":"l_w~(D_b/sigma)^(1/3)","check":"same physics","note":"this is the only reading under which a +1/3 exponent is correct"},
-    {"section":"C","case":"ledger P11 guard","value":"needs symbol audit","check":"energy formula + C5 imply stiffness reading","note":"do not freeze M3-3 until Claude confirms K_b vs D_b convention"},
+    {"section":"C","case":"stiffness/flexibility dictionary","value":"resolved: K_b is stiffness; D_b=1/K_b","check":"energy formula and C5","note":"l_w~(K_b*sigma)^(-1/3)=(D_b/sigma)^(1/3); convention fixed in the current preprint"},
 ]
 
 # D. P25/P25' operational fingerprint toy: exact asymptotic laws with small finite-r corrections.

@@ -1,0 +1,21 @@
+section,case,value,check,note
+A,declared convention,S/S0=int dz [K_b/2 (dx/dz)^2 + sigma*x],H=-1/(2K_b)d2+sigma*x,K_b is physical tilt stiffness; larger K_b penalizes slopes more
+A,E0 sigma exponent,0.666667,expected +2/3,matches ledger energy formula E0=|a1|(sigma^2/(2K_b))^(1/3)
+A,E0 K_b exponent,-0.333333,expected -1/3,physical stiffness in denominator
+A,width sigma exponent,-0.333333,expected -1/3,Airy width narrows when the linear loudness slope grows
+A,width K_b exponent,-0.333333,expected -1/3 under stiffness convention,"if ledger wants +1/3, its symbol must be flexibility D_b=1/K_b, not stiffness"
+A2,Dirichlet Airy constant,2.336887,|a1|=2.338107,finite-difference half-line check
+A2,shape collapse mean/ell CV,8.47e-15,small,Airy-squared width shape is universal after x/ell rescaling
+A2,shape collapse rms/ell CV,7.48e-15,small,"use rms width or distribution quantiles, not only fit slope"
+A2,shape collapse q90/q50 CV,4.17e-15,small,dimensionless quantile ratios are boundary-condition sensitive but parameter-independent
+B,Lz_coh sigma exponent,-0.666667,expected -2/3,Lz_coh = -ln P/(sigma*l_w); l_w~sigma^-1/3
+B,Lz_coh K_b exponent,0.333333,expected +1/3 under stiffness convention,"stiffer line has smaller width, hence longer coherence length"
+C,stiffness symbol K_b,l_w~(K_b*sigma)^(-1/3),transfer matrix,recommended if K_b=T_line/(2S0) from Nambu-Goto tilt inertia
+C,flexibility symbol D_b=1/K_b,l_w~(D_b/sigma)^(1/3),same physics,this is the only reading under which a +1/3 exponent is correct
+C,stiffness/flexibility dictionary,resolved: K_b is stiffness; D_b=1/K_b,energy formula and C5,l_w~(K_b*sigma)^(-1/3)=(D_b/sigma)^(1/3); convention fixed in the current preprint
+D,gauss,1.774727 rel=1.28e-03,deficit*r -> 1.772454,P25' core-profile fingerprint toy; finite a1=sqrt(pi)
+D,lorentz,1.572086 rel=8.21e-04,deficit*r -> 1.570796,P25' core-profile fingerprint toy; finite a1=pi/2
+D,exp,1.000172 rel=1.72e-04,deficit*r/[ln(r/2)+1] -> 1,P25' core-profile fingerprint toy; log law
+E,support pattern,Airy shape + exponents + C9 window + P25' fingerprint,all four,supports M3-3 only as a composite protocol
+E,false positive,Airy-like slope without shape collapse,reject/ambiguous,"could be harmonic trap, finite resolution, wrong boundary, or mixed channels"
+E,profile mismatch,P25' fails while P11 passes,kernel mismatch,Airy width may be real but not from the certified C1/C10 record kernel

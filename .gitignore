@@ -36,11 +36,16 @@ _*.marker
 /figures/*draft*
 /figures/*OLD*
 
-# Shared-local material that must not enter the public publication repo by
-# accident. The deferred book and drafts are private. Proposals are opt-in:
-# an authorized Git round may force-add only individually reviewed proposal
-# paths (including reviewed renames of material already public in /proposals/).
+# Private/deferred/history material. Named R* candidates are reviewed and
+# applied to canonical paths; the candidate packages themselves are not public
+# repository payload.
 /book/
 /backup/
+/.archive/
+/work/preprint/R*/
 /work/preprint/drafts/
 /work/preprint/proposals/
+
+# Optional local validator output. The frozen PDF manifest is intentionally not
+# ignored and may be committed after independent review.
+/release/zenodo/R*/VALIDATION_REPORT.runtime.json

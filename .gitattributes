@@ -1,0 +1,14 @@
+# Preserve frozen numerical CSV bytes across platforms.  Several accepted
+# owners use CRLF; converting them on checkout would invalidate their hashes.
+*.csv -text whitespace=-trailing-space
+
+# Third-party licence texts are preserved verbatim, including upstream spaces.
+LICENSES/** -whitespace
+
+# Markdown hard breaks and frozen Graphviz/provenance sources are intentional.
+*.md whitespace=-trailing-space
+*.gv whitespace=-trailing-space
+provenance/** -whitespace
+
+# This frozen owner retains its historical terminal blank line byte-for-byte.
+data/cosmology_r113/MANIFEST_SHA256_v1.json -whitespace

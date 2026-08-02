@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# P6 S6-R18 (Claude, implementing new-GPT audit plan A-E):
+# P6 S6-R18 frozen normalisation audit:
 # A: C8 normalization table from ONE vertex derivation + convention-free invariant J_spat/J_temp = omega^2.
 # B: threshold theorem template with counterterm — 5-case detuning map (C13 -> C13').
 # C: residue Z_b, residual width Gamma_obs, visibility condition.

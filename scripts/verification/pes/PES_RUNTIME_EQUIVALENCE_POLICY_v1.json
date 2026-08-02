@@ -1,0 +1,48 @@
+{
+  "comparison_semantics": "Numerical equivalence across declared runtimes. This is neither byte identity nor a scientific uncertainty budget. Every CSV row, column, category and non-numeric text skeleton is exact; numeric tokens alone use the explicit replay tolerances.",
+  "default_tolerance": {
+    "absolute": 1e-12,
+    "relative": 1e-12
+  },
+  "files": [
+    {
+      "format": "csv",
+      "path": "scripts/verification/pes/p6_m3_operational_results.csv"
+    },
+    {
+      "format": "csv",
+      "path": "scripts/verification/pes/p6_m3_p11_p25_results.csv"
+    },
+    {
+      "format": "csv",
+      "path": "scripts/verification/pes/p6_m3_p23_p24_results.csv"
+    },
+    {
+      "format": "csv",
+      "path": "scripts/verification/pes/p6_m3_p7p18_results.csv"
+    },
+    {
+      "format": "csv",
+      "path": "scripts/verification/pes/p6_s6r18_results.csv"
+    },
+    {
+      "format": "csv",
+      "path": "scripts/verification/pes/p6_s6r18_shapes.csv"
+    },
+    {
+      "format": "csv",
+      "path": "scripts/verification/pes/p6_s6r19_results.csv"
+    },
+    {
+      "format": "csv",
+      "path": "scripts/verification/pes/p6_s6r20_results.csv"
+    },
+    {
+      "format": "csv",
+      "path": "scripts/verification/pes/p6_s7_results.csv"
+    }
+  ],
+  "policy_id": "PES_RUNTIME_EQUIVALENCE_POLICY_v1",
+  "schema_version": 1,
+  "scientific_status_guard": "These are model-internal algebraic and protocol checks for supplied kernels and toy models. Runtime-equivalence PASS does not identify a physical record vertex or channel, does not close global PES and does not upgrade physical/global PES from Open."
+}

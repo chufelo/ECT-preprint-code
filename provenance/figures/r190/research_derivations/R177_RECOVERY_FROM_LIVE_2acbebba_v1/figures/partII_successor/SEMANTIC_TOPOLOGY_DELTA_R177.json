@@ -1,0 +1,225 @@
+{
+  "base": {
+    "publication_asset": "LaTex/figures/r168/logic_maps/partII_a4_reader_r168.pdf",
+    "publication_asset_sha256": "ac471afef621d1d912ca4d1c3917f631a256fb4875339d92af9f5997c10596ca",
+    "semantic_source": "LaTex/figures/source/graphviz/r168_connected_map_semantics_v1/fig24_partII_semantic_successor_r168.gv",
+    "semantic_source_sha256": "f1ebf339255d9d1e8c824a53339fe683d89edb919f4a52846c961923b1dfa9d5",
+    "topology": "LaTex/data/figures_r168/topology/fig24_partII_topology_r168.json",
+    "topology_sha256": "a45704fb23b985d6494215ec5f4fb13590feeebcfa4da8e2f19f99cff70c4a0b",
+    "visible_edge_count": 57
+  },
+  "candidate": {
+    "figure_id": "fig:partII_derivation_logic",
+    "scientific_status": "R177 candidate; Level A/B/C/Open status separated; not applied to live manuscript",
+    "semantic_source": "source/fig24_partII_semantic_successor_r177.gv",
+    "semantic_source_sha256": "a21756dda12db4d06a163145e1fe540539c0e34b5f0bed5ae6ecfc52a314dbc0",
+    "semantic_node_count_excluding_layout_support": 35,
+    "visible_edge_count": 59
+  },
+  "created_utc": "2026-07-29T00:00:00Z",
+  "edge_delta": {
+    "add": [
+      {
+        "arrowhead": "tee",
+        "head": "darkDE_st",
+        "label": "BLOCKED: no generic w_eff implication",
+        "relation": "blocked_non_implication",
+        "style": "dashed",
+        "tail": "nophantom"
+      },
+      {
+        "head": "darkDE_grref",
+        "label": "conditional GR-reference conversion",
+        "relation": "conditional_reference_conversion",
+        "style": "dashed",
+        "tail": "hubble"
+      },
+      {
+        "head": "darkDE_st",
+        "label": "requires F0 and dot(F0)",
+        "relation": "conditional_scalar_tensor_source",
+        "style": "dashed",
+        "tail": "closure_funcs"
+      },
+      {
+        "head": "darkDE_st",
+        "label": "candidate owner Open",
+        "relation": "open_candidate_dependency",
+        "style": "dashed",
+        "tail": "branch_orient"
+      },
+      {
+        "head": "tests",
+        "label": "",
+        "relation": "open_test_programme",
+        "style": "dashed",
+        "tail": "darkDE_st"
+      },
+      {
+        "head": "tests",
+        "label": "reference comparison only",
+        "relation": "external_reference_comparison",
+        "style": "dashed",
+        "tail": "darkDE_grref"
+      },
+      {
+        "head": "open_fractions",
+        "label": "",
+        "relation": "open_dependency",
+        "style": "dashed",
+        "tail": "darkDE_st"
+      }
+    ],
+    "remove": [
+      {
+        "head": "darkDE",
+        "tail": "nophantom"
+      },
+      {
+        "head": "darkDE",
+        "tail": "hubble"
+      },
+      {
+        "head": "darkDE",
+        "tail": "branch_orient"
+      },
+      {
+        "head": "tests",
+        "tail": "darkDE"
+      },
+      {
+        "head": "open_fractions",
+        "tail": "darkDE"
+      }
+    ],
+    "semantic_or_style_changes_without_endpoint_change": [
+      {
+        "head": "closure_funcs",
+        "new_label": "supplied ansatz; not derived",
+        "new_style": "dashed",
+        "tail": "closure"
+      },
+      {
+        "head": "nophantom",
+        "new_label": "only if K>=0, rho>0",
+        "new_style": "dashed",
+        "tail": "closure_funcs"
+      },
+      {
+        "head": "jwst",
+        "new_label": "finite nine-node inputs",
+        "new_style": "dashed",
+        "tail": "hubble"
+      },
+      {
+        "constraint": false,
+        "head": "jwst",
+        "new_label": "time budget at evaluated nodes",
+        "new_style": "dashed",
+        "tail": "age"
+      }
+    ]
+  },
+  "expected_semantic_node_ids": [
+    "GN",
+    "age",
+    "baryogenesis",
+    "branch_orient",
+    "bridge",
+    "btfr",
+    "cc_catastrophe",
+    "cc_ir",
+    "cgw",
+    "closure",
+    "closure_funcs",
+    "cluster",
+    "darkDE_grref",
+    "darkDE_st",
+    "darkDM",
+    "envmod",
+    "flatness",
+    "hrcscale",
+    "hubble",
+    "jwst",
+    "metric",
+    "monopole",
+    "nophantom",
+    "open_eft",
+    "open_fractions",
+    "open_ns",
+    "open_phi_bvp",
+    "partI",
+    "rar",
+    "rotcurves",
+    "scalar_mode",
+    "source",
+    "sr",
+    "tests",
+    "weakfield"
+  ],
+  "live_manuscript_edited": false,
+  "node_delta": {
+    "add": [
+      {
+        "id": "darkDE_grref",
+        "status": "External",
+        "summary": "GR-reference energy-density conversion; convention, not an ECT prediction"
+      },
+      {
+        "id": "darkDE_st",
+        "status": "Open",
+        "summary": "Generic scalar-tensor late source depends on F0, dot(F0), action and state"
+      }
+    ],
+    "remove": [
+      {
+        "id": "darkDE",
+        "reason": "The R168 node conflated a GR-reference conversion with a generic scalar-tensor source."
+      }
+    ],
+    "rewrite": [
+      {
+        "id": "closure_funcs",
+        "new_contract": "F is supplied by a closure ansatz; it is not derived from the logarithmic coordinate."
+      },
+      {
+        "id": "nophantom",
+        "new_contract": "The bare scalar ratio has w_bare >= -1 at Level A inside the supplied positive-kinetic stress when K>=0 and rho=K+U>0; the observable w_eff implication is absent and remains Open for ECT."
+      },
+      {
+        "id": "jwst",
+        "new_contract": "The completed calculation is a finite nine-node scan; no continuous-family no-go is inferred."
+      }
+    ]
+  },
+  "required_semantic_contracts": {
+    "blocked_edge": {
+      "arrowhead": "tee",
+      "head": "darkDE_st",
+      "label_contains": "BLOCKED",
+      "style": "dashed",
+      "tail": "nophantom"
+    },
+    "closure_funcs_label_contains": [
+      "F supplied, not derived",
+      "[B conditional / Open]"
+    ],
+    "darkDE_grref_label_contains": [
+      "GR-reference conversion",
+      "not ECT prediction [External]"
+    ],
+    "darkDE_st_label_contains": [
+      "ST source: F0,dot(F0)",
+      "no ECT rho_Lambda [Open]"
+    ],
+    "jwst_label_contains": [
+      "Finite nine-node scan only",
+      "no family no-go [C/Open]"
+    ],
+    "nophantom_label_contains": [
+      "Bare ratio w_bare>=-1 [A in supplied stress]",
+      "observable w_eff [Open]"
+    ]
+  },
+  "schema": "ect.r177.partII.logic-map.semantic-topology-delta.v2"
+}

@@ -1,0 +1,113 @@
+{
+  "all_checks_pass": true,
+  "binding_caveat": "the dimensionless couplings, potential amplitudes, initial state and matter/photon metric are supplied or matched state data; H0 is the dimensional calibration, and the Planck normalization is an additional matched input; the microscopic completion and physical map remain Open",
+  "checks": {
+    "finite_start_age_shift_below_5e_minus_11": true,
+    "frozen_tau_reproduces_original": true,
+    "matter_correction_below_3e_minus_6_relative": true,
+    "radiation_tail_below_3e_minus_16": true,
+    "regular_branch_cross_integrator": true,
+    "regular_branch_cutoff_converged_N40_to_N60": true
+  },
+  "conditional_age_formula": "t0[Gyr] = tau * 977.7922216807891 / H0[km s^-1 Mpc^-1]",
+  "cutoff_and_integrator_runs": {
+    "DOP853_N-20": {
+      "H_today_in_reference_units": 1.0000184798677942,
+      "H_today_times_elapsed": 0.9636867786027804,
+      "N_initial": -20.0,
+      "dq_dN_at_N_minus_20": 0.0,
+      "dq_dN_today": 0.00031225112084373654,
+      "q_at_N_minus_20": 0.0,
+      "q_today": 0.007259899215313643
+    },
+    "DOP853_N-30": {
+      "H_today_in_reference_units": 1.0000184798932958,
+      "H_today_times_elapsed": 0.9636867786415128,
+      "N_initial": -30.0,
+      "dq_dN_at_N_minus_20": 4.637502182122458e-09,
+      "dq_dN_today": 0.00031225112073911764,
+      "q_at_N_minus_20": 4.63709306148916e-09,
+      "q_today": 0.007259908489672417
+    },
+    "DOP853_N-40": {
+      "H_today_in_reference_units": 1.0000184798932972,
+      "H_today_times_elapsed": 0.9636867786415148,
+      "N_initial": -40.0,
+      "dq_dN_at_N_minus_20": 4.637502190084063e-09,
+      "dq_dN_today": 0.0003122511207391123,
+      "q_at_N_minus_20": 4.637514116879676e-09,
+      "q_today": 0.007259908490093477
+    },
+    "DOP853_N-60": {
+      "H_today_in_reference_units": 1.0000184798932972,
+      "H_today_times_elapsed": 0.9636867786415146,
+      "N_initial": -60.0,
+      "dq_dN_at_N_minus_20": 4.637502191590625e-09,
+      "dq_dN_today": 0.0003122511207391138,
+      "q_at_N_minus_20": 4.637514139868759e-09,
+      "q_today": 0.0072599084900934995
+    },
+    "Radau_N-60": {
+      "H_today_in_reference_units": 1.0000184798932972,
+      "H_today_times_elapsed": 0.9636867786415129,
+      "N_initial": -60.0,
+      "dq_dN_at_N_minus_20": 4.637502190614743e-09,
+      "dq_dN_today": 0.00031225112073915526,
+      "q_at_N_minus_20": 4.63751414132229e-09,
+      "q_today": 0.007259908490086702
+    }
+  },
+  "date": "2026-07-18",
+  "inputs": {
+    "H0_unit_matching_km_s_Mpc": [
+      67.4,
+      73.04
+    ],
+    "V_minus": 0.82485,
+    "V_plus": 1.27485,
+    "a": 0.01,
+    "b": 0.03,
+    "c": 0.01,
+    "kappa": 10.0,
+    "rho_m0": 0.9,
+    "rho_r0": 0.0003
+  },
+  "omitted_tail": {
+    "H0_times_matter_radiation_tail": 2.1242120038372227e-16,
+    "H0_times_pure_radiation_tail": 2.124216382158285e-16,
+    "cutoff_N": -20.0,
+    "interpretation": "the direct proper-time tail is about 90--97 seconds after H0 matching; the larger sub-year cutoff sensitivity comes from initializing q=q_N=0 at finite N rather than evolving the selected regular radiation branch from the past",
+    "matter_radiation_relative_correction": -2.0611464532915846e-06,
+    "quadrature_error_reference_units": 2.3583054946714662e-30
+  },
+  "runtime": {
+    "numpy": "2.3.0",
+    "python": "3.13.5",
+    "scipy": "1.17.1"
+  },
+  "scope": "conditional two-slope ECT-completion background with supplied state data; model-owned dimensionless dynamics with one disclosed H0 dimensional calibration",
+  "status": "Level A inside the declared scalar-tensor completion; not a unique ECT prediction and not a LambdaCDM background calculation",
+  "tau_frozen_N_minus_20": 0.9636867786027804,
+  "tau_regular_branch_N_minus_60": 0.9636867786415146,
+  "tau_regular_minus_frozen": 3.87342380392397e-11,
+  "unit_conversions": {
+    "H0_67.40": {
+      "H0_km_s_Mpc": 67.4,
+      "Hubble_time_Gyr": 14.507302992296575,
+      "finite_start_systematic_years": 0.5619293274109899,
+      "frozen_N_minus_20_age_Gyr": 13.980496086860763,
+      "omitted_matter_radiation_tail_seconds": 97.24975309459008,
+      "omitted_pure_radiation_tail_seconds": 97.24995354098691,
+      "regular_branch_N_minus_60_age_Gyr": 13.98049608742269
+    },
+    "H0_73.04": {
+      "H0_km_s_Mpc": 73.04,
+      "Hubble_time_Gyr": 13.387078610087473,
+      "finite_start_systematic_years": 0.5185382895331423,
+      "frozen_N_minus_20_age_Gyr": 12.900950660657385,
+      "omitted_matter_radiation_tail_seconds": 89.74032528170005,
+      "omitted_pure_radiation_tail_seconds": 89.74051025003448,
+      "regular_branch_N_minus_60_age_Gyr": 12.900950661175923
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "all_checks_pass": true,
+  "assumptions": {
+    "merger_speeds_km_s": [
+      2250.0,
+      3000.0
+    ],
+    "pole_identification": "tau_pole=tau_aM=2*pi/H0",
+    "reference_H0_km_s_Mpc": 70.0,
+    "target_offsets_kpc": [
+      70.0,
+      100.0
+    ],
+    "transport_law": "ell=v*tau_pole"
+  },
+  "ballistic_transport_at_H0_70_Mpc": {
+    "v=2250": 201.9595277307724,
+    "v=3000": 269.2793703076966
+  },
+  "checks": {
+    "mismatch_exceeds_three_orders": true,
+    "required_time_matches_22p82_to_43p46_Myr": true,
+    "tau70_matches_87p7664_Gyr": true,
+    "transport_range_matches_201p96_to_269p28_Mpc": true
+  },
+  "date": "2026-07-20",
+  "interpretation_guard": "A KMS Euclidean period fixes no retarded pole without a spectral-function derivation. Multipole, dispersive, anisotropic or separately owned merger kernels are not tested.",
+  "ranges": {
+    "required_time_Myr": [
+      22.815151839218412,
+      43.45743207470174
+    ],
+    "tau_to_required_time_ratio": [
+      2019.595277307724,
+      3846.848147252808
+    ],
+    "transport_Mpc": [
+      201.9595277307724,
+      269.2793703076966
+    ]
+  },
+  "required_offset_times_Myr": {
+    "offset=100,v=2250": 43.45743207470174,
+    "offset=100,v=3000": 32.5930740560263,
+    "offset=70,v=2250": 30.420202452291218,
+    "offset=70,v=3000": 22.815151839218412
+  },
+  "scientific_freeze_policy": "Runtime metadata is execution provenance and is excluded from this deterministic scientific JSON payload.",
+  "status": "Conditional Level A arithmetic/no-go for one real constant Debye pole plus ballistic transport; not a no-go for general retarded response",
+  "tau_aM_Gyr": {
+    "H0=67.4": 91.15207300800027,
+    "H0=70": 87.76642458198884,
+    "H0=73.04": 84.11349562895973
+  }
+}

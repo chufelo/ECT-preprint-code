@@ -1,0 +1,13 @@
+name: ect-hrc-r97-frozen
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12.6
+  - numpy=2.1.2
+  - scipy=1.14.1
+  - matplotlib=3.9.3
+
+# Exact replay environment for the frozen R97 HRC CSV/JSON products and
+# publication figures.  It is deliberately separate from environment-r190.yml:
+# newer numerical libraries preserve the scientific conclusions but can alter
+# last-bit floating-point values and therefore cannot establish byte identity.

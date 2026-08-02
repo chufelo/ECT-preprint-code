@@ -1,0 +1,88 @@
+{
+  "all_checks_pass": true,
+  "checks": {
+    "all_rows_positive": true,
+    "epsilon_zero_control_barrier_positive": true,
+    "growth_DOP853_Radau_agree_below_5e_minus_9": true,
+    "published_8_decimal_rows_reproduced_below_6e_minus_8": true
+  },
+  "control_delta_c": 1.726760046029,
+  "date": "2026-07-20",
+  "equations": {
+    "background": "E^2=Omega_r exp(-4N)+Omega_m exp(-(3+2 zeta_ER)N)+Omega_L exp(-2 zeta_ER N)",
+    "cumulative_PS": "erfc[nu (delta_c/delta_c0)/(sqrt(2) D/D0)]/erfc[nu/sqrt(2)]",
+    "equality": "[(1+z_eq)/(1+z_eq0)]=(Omega_m/Omega_r)^[2 zeta_ER/(1-2 zeta_ER)]",
+    "growth": "D_NN+(2+E_N/E)D_N-(3/2)Omega_m^grav D=0",
+    "tophat": "delta_NN+(2+E_N/E)delta_N-(4/3)delta_N^2/(1+delta)-(3/2)Omega_m^grav delta(1+delta)=0"
+  },
+  "inputs": {
+    "Omega_constant_source": 0.6849080000000001,
+    "Omega_m": 0.315,
+    "Omega_r": 9.2e-05,
+    "collapse_delta_threshold": 10000000.0,
+    "nu": 5.0,
+    "z_observed": 10.0,
+    "z_on": 1000.0,
+    "zeta_ER_values": [
+      1.5612556036955692e-06,
+      0.007500442556492628,
+      0.029588344765651916,
+      0.033,
+      0.037555
+    ]
+  },
+  "interpretation_guard": "Large rare-tail ratios are accompanied by 13--94 percent shifts in the declared equality coordinate. No row closes equality, transfer/recombination, JWST selection and Solar-System gates in one physical action/state.",
+  "rows": [
+    {
+      "D_over_D0_z10_zon1000": 1.000005207374,
+      "cumulative_PS_ratio_nu5_fixed_barrier": 1.000135048405,
+      "cumulative_PS_ratio_nu5_tophat_barrier": 1.000130905265,
+      "delta_c": 1.726760321873,
+      "delta_c_over_control": 1.000000159747,
+      "equality_ratio": 1.000025413083,
+      "zeta_ER": 1.5612556036955692e-06
+    },
+    {
+      "D_over_D0_z10_zon1000": 1.024949857009,
+      "cumulative_PS_ratio_nu5_fixed_barrier": 1.866567631899,
+      "cumulative_PS_ratio_nu5_tophat_barrier": 1.830826885418,
+      "delta_c": 1.728109656795,
+      "delta_c_over_control": 1.000781585588,
+      "equality_ratio": 1.131953127274,
+      "zeta_ER": 0.007500442556492628
+    },
+    {
+      "D_over_D0_z10_zon1000": 1.097679051635,
+      "cumulative_PS_ratio_nu5_fixed_barrier": 9.134652965745,
+      "cumulative_PS_ratio_nu5_tophat_barrier": 8.515858749687,
+      "delta_c": 1.732341285052,
+      "delta_c_over_control": 1.003232203013,
+      "equality_ratio": 1.668465993659,
+      "zeta_ER": 0.029588344765651916
+    },
+    {
+      "D_over_D0_z10_zon1000": 1.108822206563,
+      "cumulative_PS_ratio_nu5_fixed_barrier": 11.34568870328,
+      "cumulative_PS_ratio_nu5_tophat_barrier": 10.50228040396,
+      "delta_c": 1.733025493233,
+      "delta_c_over_control": 1.003628441148,
+      "equality_ratio": 1.777308622754,
+      "zeta_ER": 0.033
+    },
+    {
+      "D_over_D0_z10_zon1000": 1.123666822889,
+      "cumulative_PS_ratio_nu5_fixed_barrier": 14.99787479651,
+      "cumulative_PS_ratio_nu5_tophat_barrier": 13.75594875634,
+      "delta_c": 1.733950512338,
+      "delta_c_over_control": 1.004164137528,
+      "equality_ratio": 1.936588638227,
+      "zeta_ER": 0.037555
+    }
+  ],
+  "scientific_freeze_policy": "Runtime versions and sub-publication last-bit solver residuals are emitted during execution but excluded from the scientific file hash; displayed outputs are frozen to 13 significant digits.",
+  "status": "Level A algebra/numerics inside the declared owner-specific zeta_ER envelope; Level C collapse and rare-tail sensitivity; not the withdrawn universal ECT epsilon, named two-slope orbit, CMB fit or JWST abundance prediction",
+  "verification_bounds": {
+    "DOP853_Radau_difference": "<5e-9",
+    "published_8_decimal_row_difference": "<6e-8"
+  }
+}
